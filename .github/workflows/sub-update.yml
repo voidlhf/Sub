@@ -35,8 +35,15 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r scripts/requirements.txt  # 如果有requirements.txt文件安装依赖
 
-      - name: Run dcj.py
-        run: python scripts/dcj.py  # 执行scripts目录下的dcj.py文件
+      - name: Run scripts
+        run: |
+          python scripts/dcj.py
+          python scripts/bzy.py
+          python scripts/air.py
+          python scripts/supper.py
+          python scripts/guanxi.py
+          python scripts/cf.py
+          python scripts/hlsg.py
 
       - name: Commit changes if any
         run: |
