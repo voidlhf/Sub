@@ -1,0 +1,60 @@
+name: SubAutoUpdate
+
+on:
+  push:
+    branches:
+      - branch1
+  schedule:
+    - cron: '0 * * * *'  # 每小时执行一次
+
+jobs:
+  run-python-script:
+    runs-on: ubuntu-latest  # 可以选择其他操作系统
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4  # 检出代码
+        
+      # 切换到 branch1 分支
+      - name: Checkout branch1
+        run: |
+          git fetch origin
+          git checkout branch1  # 切换到 branch1 分支
+
+      - name: Set up Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: '1.23.3' # The Go version to download (if necessary) and use.
+
+      - name: Run clash2sfa
+        run: |
+          cd clash2sfa
+          go run main.go &
+
+      - name: Set up Python
+        uses: actions/setup-python@v5  # 设置Python环境
+        with:
+          python-version: '3.13'  # 设置你需要的Python版本
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r scripts/requirements.txt  # 如果有requirements.txt文件安装依赖
+
+      - name: Run scripts
+        run: |
+          python scripts/dcj.py
+          python scripts/bzy.py
+          python scripts/air.py
+          python scripts/supper.py
+          python scripts/guanxi.py
+          python scripts/cf.py
+          python scripts/hlsg.py
+
+      - name: Commit changes if any
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "github-actions@github.com"
+          git add -A  # 添加修改的文件
+          git commit -m "Auto commit changes from GitHub Action" || echo "No changes to commit"  # 提交更改
+          git push origin branch1  # 推送到远程仓库
