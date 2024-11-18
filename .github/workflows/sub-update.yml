@@ -35,5 +35,3 @@ jobs:
           git add -A  # 添加修改的文件
           git commit -m "Auto commit changes from GitHub Action" || echo "No changes to commit"  # 提交更改
           git push origin branch1  # 推送到远程仓库
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
