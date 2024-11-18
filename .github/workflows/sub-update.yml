@@ -1,37 +1,35 @@
-# This is a basic workflow to help you get started with Actions
+name: SubAutoUpdate
 
-name: sub-update
-
-# Controls when the workflow will run
 on:
-  # Triggers the workflow on push or pull request events but only for the "master" branch
-  push:
-    branches: [ "branch1" ]
-  pull_request:
-    branches: [ "branch1" ]
+  schedule:
+    - cron: '0 * * * *'  # 每小时执行一次
+  workflow_dispatch:  # 允许手动触发工作流
 
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
-
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "build"
-  build:
-    # The type of runner that the job will run on
-    runs-on: ubuntu-latest
+  run-python-script:
+    runs-on: ubuntu-latest  # 可以选择其他操作系统
 
-    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v4
+      - name: Checkout code
+        uses: actions/checkout@v4  # 检出代码
 
-      # Runs a single command using the runners shell
-      - name: Run a one-line script
-        run: echo Hello, world!
+      - name: Set up Python
+        uses: actions/setup-python@v5  # 设置Python环境
+        with:
+          python-version: '3.13'  # 设置你需要的Python版本
 
-      # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
+      - name: Install dependencies
         run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
+          python -m pip install --upgrade pip
+          pip install -r scripts/requirements.txt  # 如果有requirements.txt文件安装依赖
 
+      - name: Run dcj.py
+        run: python scripts/dcj.py  # 执行scripts目录下的dcj.py文件
+
+      - name: Commit changes if any
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "github-actions@github.com"
+          git add .  # 添加修改的文件
+          git commit -m "Auto commit changes from GitHub Action" || echo "No changes to commit"  # 提交更改
+          git push origin main  # 推送到远程仓库
