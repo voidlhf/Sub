@@ -1,0 +1,1793 @@
+{
+    "dns": {
+        "fakeip": {
+            "enabled": true,
+            "inet4_range": "198.18.0.0/15",
+            "inet6_range": "fc00::/18"
+        },
+        "final": "dns_direct",
+        "independent_cache": true,
+        "rules": [
+            {
+                "outbound": "any",
+                "server": "dns_resolver"
+            },
+            {
+                "query_type": [
+                    "A",
+                    "AAAA"
+                ],
+                "rule_set": "geosite-geolocation-!cn",
+                "server": "dns_fakeip"
+            },
+            {
+                "query_type": [
+                    "CNAME"
+                ],
+                "rule_set": "geosite-geolocation-!cn",
+                "server": "dns_proxy"
+            },
+            {
+                "action": "route-options",
+                "disable_cache": true,
+                "invert": true,
+                "query_type": [
+                    "A",
+                    "AAAA",
+                    "CNAME"
+                ],
+                "server": "dns_refused"
+            }
+        ],
+        "servers": [
+            {
+                "address": "tcp://1.1.1.1",
+                "address_resolver": "dns_resolver",
+                "detour": "select",
+                "strategy": "ipv4_only",
+                "tag": "dns_proxy"
+            },
+            {
+                "address": "https://dns.alidns.com/dns-query",
+                "address_resolver": "dns_resolver",
+                "detour": "direct",
+                "strategy": "ipv4_only",
+                "tag": "dns_direct"
+            },
+            {
+                "address": "223.5.5.5",
+                "detour": "direct",
+                "tag": "dns_resolver"
+            },
+            {
+                "address": "rcode://success",
+                "tag": "dns_success"
+            },
+            {
+                "address": "rcode://refused",
+                "tag": "dns_refused"
+            },
+            {
+                "address": "fakeip",
+                "tag": "dns_fakeip"
+            }
+        ]
+    },
+    "experimental": {
+        "cache_file": {
+            "enabled": true,
+            "path": "cache.db",
+            "store_fakeip": true,
+            "store_rdrc": true
+        },
+        "clash_api": {
+            "default_mode": "rule",
+            "external_controller": "0.0.0.0:9090",
+            "external_ui": "metacubexd",
+            "external_ui_download_detour": "select",
+            "external_ui_download_url": "https://github.com/MetaCubeX/metacubexd/archive/refs/heads/gh-pages.zip"
+        }
+    },
+    "inbounds": [
+        {
+            "address": [
+                "172.16.0.1/30",
+                "fd00::1/126"
+            ],
+            "auto_route": true,
+            "mtu": 1492,
+            "stack": "system",
+            "strict_route": true,
+            "tag": "tun-in",
+            "type": "tun"
+        }
+    ],
+    "log": {
+        "level": "info",
+        "timestamp": true
+    },
+    "outbounds": [
+        {
+            "tag": "select",
+            "type": "selector",
+            "default": "urltest",
+            "outbounds": [
+                "urltest",
+                "Seoul  3",
+                "Singapore  Pro 1",
+                "Tokyo  Pro 1",
+                "Frankfurt  Pro 6",
+                "Warsaw Pro 5",
+                "Frankfurt  5",
+                "Riyadh Pro 1",
+                "Seoul  1",
+                "Warsaw  13",
+                "Frankfurt  1",
+                "Stockholm  1",
+                "Toronto  3",
+                "Singapore  1",
+                "Warsaw  6",
+                "Toronto  4",
+                "Tokyo  1",
+                "Frankfurt  Pro 1",
+                "Riga Pro 1",
+                "Bangalore-1K Pro 5",
+                "Warsaw  7",
+                "Kathmandu Pro 1",
+                "Ireland  Pro 4",
+                "Seoul  2",
+                "Amsterdam  Pro 20",
+                "Singapore -L22 3",
+                "London  Pro 2",
+                "London  Pro 1",
+                "Warsaw  12",
+                "Oregon  Pro 15",
+                "Tokyo  Pro 4",
+                "Stockholm  3",
+                "Tokyo  Pro 5",
+                "Singapore-1A Pro 48",
+                "New York -1K Pro 2",
+                "Singapore  Pro 4",
+                "Tokyo  Pro 3",
+                "Oregon  15",
+                "Sydney Pro 2",
+                "Warsaw  Pro 12",
+                "Warsaw  Pro 7",
+                "Sydney 2",
+                "Toronto  Pro 1",
+                "Oregon  Pro 10",
+                "Singapore -L22 Pro 11",
+                "Amsterdam  13",
+                "Seoul  Pro 2",
+                "Toronto  5",
+                "Singapore Pro 2",
+                "Singapore 2",
+                "Manila Pro 1",
+                "Seoul  4",
+                "Mumbai-1A Pro 1",
+                "Seoul  Pro 4",
+                "New York -1K 2",
+                "Sao Paulo -1K Pro 6",
+                "Oregon  13",
+                "Seoul  Pro 5",
+                "Toronto  1",
+                "Tokyo  Pro 2",
+                "Tokyo  3",
+                "Singapore -L22 Pro 3",
+                "Singapore  4",
+                "Toronto  Pro 4",
+                "Frankfurt  Pro 5",
+                "London  Pro 4",
+                "Warsaw Pro 2",
+                "London  2",
+                "Virginia-1A Pro 6",
+                "Stockholm  5",
+                "Oregon  10",
+                "Karachi Pro 1",
+                "Frankfurt  2",
+                "Amsterdam  20",
+                "Lagos Pro 2",
+                "Toronto  Pro 5",
+                "Kuala Lumpur Pro 1",
+                "Seoul  Pro 3",
+                "Lagos Pro 3",
+                "Warsaw  Pro 13",
+                "Dubai-1K Pro 5",
+                "Sydney  Pro 7",
+                "Tokyo  2",
+                "Stockholm  Pro 5",
+                "Frankfurt  Pro 2",
+                "Stockholm  2",
+                "Ireland -L22 Pro 6",
+                "Sydney  7",
+                "Stockholm  Pro 3",
+                "Seoul  Pro 1",
+                "London  1",
+                "Oregon  1",
+                "Toronto  Pro 3",
+                "Ireland -L22 6",
+                "Toronto  Pro 2",
+                "Warsaw 2",
+                "Warsaw 5",
+                "New York   Pro 3",
+                "Toronto  2",
+                "Oregon  Pro 13",
+                "Amsterdam  Pro 13",
+                "Warsaw  Pro 6",
+                "London  4",
+                "Saint Peterburg Pro 2",
+                "Tokyo  4",
+                "Frankfurt  6",
+                "Ohio  Pro 9",
+                "Oregon  Pro 1",
+                "Stockholm  Pro 1",
+                "Seoul  5",
+                "Mumbai-1A Pro 2",
+                "New York   3",
+                "Ohio  9",
+                "Moscow Pro 3",
+                "Stockholm  Pro 2"
+            ]
+        },
+        {
+            "tag": "urltest",
+            "type": "urltest",
+            "outbounds": [
+                "Seoul  3",
+                "Singapore  Pro 1",
+                "Tokyo  Pro 1",
+                "Frankfurt  Pro 6",
+                "Warsaw Pro 5",
+                "Frankfurt  5",
+                "Riyadh Pro 1",
+                "Seoul  1",
+                "Warsaw  13",
+                "Frankfurt  1",
+                "Stockholm  1",
+                "Toronto  3",
+                "Singapore  1",
+                "Warsaw  6",
+                "Toronto  4",
+                "Tokyo  1",
+                "Frankfurt  Pro 1",
+                "Riga Pro 1",
+                "Bangalore-1K Pro 5",
+                "Warsaw  7",
+                "Kathmandu Pro 1",
+                "Ireland  Pro 4",
+                "Seoul  2",
+                "Amsterdam  Pro 20",
+                "Singapore -L22 3",
+                "London  Pro 2",
+                "London  Pro 1",
+                "Warsaw  12",
+                "Oregon  Pro 15",
+                "Tokyo  Pro 4",
+                "Stockholm  3",
+                "Tokyo  Pro 5",
+                "Singapore-1A Pro 48",
+                "New York -1K Pro 2",
+                "Singapore  Pro 4",
+                "Tokyo  Pro 3",
+                "Oregon  15",
+                "Sydney Pro 2",
+                "Warsaw  Pro 12",
+                "Warsaw  Pro 7",
+                "Sydney 2",
+                "Toronto  Pro 1",
+                "Oregon  Pro 10",
+                "Singapore -L22 Pro 11",
+                "Amsterdam  13",
+                "Seoul  Pro 2",
+                "Toronto  5",
+                "Singapore Pro 2",
+                "Singapore 2",
+                "Manila Pro 1",
+                "Seoul  4",
+                "Mumbai-1A Pro 1",
+                "Seoul  Pro 4",
+                "New York -1K 2",
+                "Sao Paulo -1K Pro 6",
+                "Oregon  13",
+                "Seoul  Pro 5",
+                "Toronto  1",
+                "Tokyo  Pro 2",
+                "Tokyo  3",
+                "Singapore -L22 Pro 3",
+                "Singapore  4",
+                "Toronto  Pro 4",
+                "Frankfurt  Pro 5",
+                "London  Pro 4",
+                "Warsaw Pro 2",
+                "London  2",
+                "Virginia-1A Pro 6",
+                "Stockholm  5",
+                "Oregon  10",
+                "Karachi Pro 1",
+                "Frankfurt  2",
+                "Amsterdam  20",
+                "Lagos Pro 2",
+                "Toronto  Pro 5",
+                "Kuala Lumpur Pro 1",
+                "Seoul  Pro 3",
+                "Lagos Pro 3",
+                "Warsaw  Pro 13",
+                "Dubai-1K Pro 5",
+                "Sydney  Pro 7",
+                "Tokyo  2",
+                "Stockholm  Pro 5",
+                "Frankfurt  Pro 2",
+                "Stockholm  2",
+                "Ireland -L22 Pro 6",
+                "Sydney  7",
+                "Stockholm  Pro 3",
+                "Seoul  Pro 1",
+                "London  1",
+                "Oregon  1",
+                "Toronto  Pro 3",
+                "Ireland -L22 6",
+                "Toronto  Pro 2",
+                "Warsaw 2",
+                "Warsaw 5",
+                "New York   Pro 3",
+                "Toronto  2",
+                "Oregon  Pro 13",
+                "Amsterdam  Pro 13",
+                "Warsaw  Pro 6",
+                "London  4",
+                "Saint Peterburg Pro 2",
+                "Tokyo  4",
+                "Frankfurt  6",
+                "Ohio  Pro 9",
+                "Oregon  Pro 1",
+                "Stockholm  Pro 1",
+                "Seoul  5",
+                "Mumbai-1A Pro 2",
+                "New York   3",
+                "Ohio  9",
+                "Moscow Pro 3",
+                "Stockholm  Pro 2"
+            ]
+        },
+        {
+            "outbounds": [
+                "Seoul  3",
+                "Singapore  Pro 1",
+                "Tokyo  Pro 1",
+                "Frankfurt  Pro 6",
+                "Warsaw Pro 5",
+                "Frankfurt  5",
+                "Riyadh Pro 1",
+                "Seoul  1",
+                "Warsaw  13",
+                "Frankfurt  1",
+                "Stockholm  1",
+                "Toronto  3",
+                "Singapore  1",
+                "Warsaw  6",
+                "Toronto  4",
+                "Tokyo  1",
+                "Frankfurt  Pro 1",
+                "Riga Pro 1",
+                "Bangalore-1K Pro 5",
+                "Warsaw  7",
+                "Kathmandu Pro 1",
+                "Ireland  Pro 4",
+                "Seoul  2",
+                "Amsterdam  Pro 20",
+                "Singapore -L22 3",
+                "London  Pro 2",
+                "London  Pro 1",
+                "Warsaw  12",
+                "Oregon  Pro 15",
+                "Tokyo  Pro 4",
+                "Stockholm  3",
+                "Tokyo  Pro 5",
+                "Singapore-1A Pro 48",
+                "New York -1K Pro 2",
+                "Singapore  Pro 4",
+                "Tokyo  Pro 3",
+                "Oregon  15",
+                "Sydney Pro 2",
+                "Warsaw  Pro 12",
+                "Warsaw  Pro 7",
+                "Sydney 2",
+                "Toronto  Pro 1",
+                "Oregon  Pro 10",
+                "Singapore -L22 Pro 11",
+                "Amsterdam  13",
+                "Seoul  Pro 2",
+                "Toronto  5",
+                "Singapore Pro 2",
+                "Singapore 2",
+                "Manila Pro 1",
+                "Seoul  4",
+                "Mumbai-1A Pro 1",
+                "Seoul  Pro 4",
+                "New York -1K 2",
+                "Sao Paulo -1K Pro 6",
+                "Oregon  13",
+                "Seoul  Pro 5",
+                "Toronto  1",
+                "Tokyo  Pro 2",
+                "Tokyo  3",
+                "Singapore -L22 Pro 3",
+                "Singapore  4",
+                "Toronto  Pro 4",
+                "Frankfurt  Pro 5",
+                "London  Pro 4",
+                "Warsaw Pro 2",
+                "London  2",
+                "Virginia-1A Pro 6",
+                "Stockholm  5",
+                "Oregon  10",
+                "Karachi Pro 1",
+                "Frankfurt  2",
+                "Amsterdam  20",
+                "Lagos Pro 2",
+                "Toronto  Pro 5",
+                "Kuala Lumpur Pro 1",
+                "Seoul  Pro 3",
+                "Lagos Pro 3",
+                "Warsaw  Pro 13",
+                "Dubai-1K Pro 5",
+                "Sydney  Pro 7",
+                "Tokyo  2",
+                "Stockholm  Pro 5",
+                "Frankfurt  Pro 2",
+                "Stockholm  2",
+                "Ireland -L22 Pro 6",
+                "Sydney  7",
+                "Stockholm  Pro 3",
+                "Seoul  Pro 1",
+                "London  1",
+                "Oregon  1",
+                "Toronto  Pro 3",
+                "Ireland -L22 6",
+                "Toronto  Pro 2",
+                "Warsaw 2",
+                "Warsaw 5",
+                "New York   Pro 3",
+                "Toronto  2",
+                "Oregon  Pro 13",
+                "Amsterdam  Pro 13",
+                "Warsaw  Pro 6",
+                "London  4",
+                "Saint Peterburg Pro 2",
+                "Tokyo  4",
+                "Frankfurt  6",
+                "Ohio  Pro 9",
+                "Oregon  Pro 1",
+                "Stockholm  Pro 1",
+                "Seoul  5",
+                "Mumbai-1A Pro 2",
+                "New York   3",
+                "Ohio  9",
+                "Moscow Pro 3",
+                "Stockholm  Pro 2"
+            ],
+            "tag": "chatgpt",
+            "type": "selector"
+        },
+        {
+            "password": "3648425794742788096",
+            "server": "verified-bobcat.squid592.motorcycles",
+            "server_port": 443,
+            "tag": "Seoul  3",
+            "tls": {
+                "enabled": true,
+                "server_name": "verified-bobcat.squid592.motorcycles"
+            },
+            "type": "trojan"
+        },
+        {
+            "password": "3648425794742788096",
+            "server": "working-honeybee.squid592.motorcycles",
+            "server_port": 443,
+            "tag": "Singapore  Pro 1",
+            "tls": {
+                "enabled": true,
+                "server_name": "working-honeybee.squid592.motorcycles"
+            },
+            "type": "trojan"
+        },
+        {
+            "password": "3648425794742788096",
+            "server": "noted-jennet.squid592.motorcycles",
+            "server_port": 443,
+            "tag": "Tokyo  Pro 1",
+            "tls": {
+                "enabled": true,
+                "server_name": "noted-jennet.squid592.motorcycles"
+            },
+            "type": "trojan"
+        },
+        {
+            "password": "3648425794742788096",
+            "server": "enhanced-reindeer.squid592.motorcycles",
+            "server_port": 443,
+            "tag": "Frankfurt  Pro 6",
+            "tls": {
+                "enabled": true,
+                "server_name": "enhanced-reindeer.squid592.motorcycles"
+            },
+            "type": "trojan"
+        },
+        {
+            "password": "3648425794742788096",
+            "server": "inspired-oyster.squid592.motorcycles",
+            "server_port": 443,
+            "tag": "Warsaw Pro 5",
+            "tls": {
+                "enabled": true,
+                "server_name": "inspired-oyster.squid592.motorcycles"
+            },
+            "type": "trojan"
+        },
+        {
+            "password": "3648425794742788096",
+            "server": "joint-lynx.squid592.motorcycles",
+            "server_port": 443,
+            "tag": "Frankfurt  5",
+            "tls": {
+                "enabled": true,
+                "server_name": "joint-lynx.squid592.motorcycles"
+            },
+            "type": "trojan"
+        },
+        {
+            "password": "3648425794742788096",
+            "server": "uncommon-dolphin.pig299.lat",
+            "server_port": 443,
+            "tag": "Riyadh Pro 1",
+            "tls": {
+                "enabled": true,
+                "server_name": "uncommon-dolphin.pig299.lat"
+            },
+            "type": "trojan"
+        },
+        {
+            "password": "3648425794742788096",
+            "server": "joint-stallion.squid592.motorcycles",
+            "server_port": 443,
+            "tag": "Seoul  1",
+            "tls": {
+                "enabled": true,
+                "server_name": "joint-stallion.squid592.motorcycles"
+            },
+            "type": "trojan"
+        },
+        {
+            "password": "3648425794742788096",
+            "server": "finer-gecko.squid592.motorcycles",
+            "server_port": 443,
+            "tag": "Warsaw  13",
+            "tls": {
+                "enabled": true,
+                "server_name": "finer-gecko.squid592.motorcycles"
+            },
+            "type": "trojan"
+        },
+        {
+            "password": "3648425794742788096",
+            "server": "comic-panther.squid592.motorcycles",
+            "server_port": 443,
+            "tag": "Frankfurt  1",
+            "tls": {
+                "enabled": true,
+                "server_name": "comic-panther.squid592.motorcycles"
+            },
+            "type": "trojan"
+        },
+        {
+            "password": "3648425794742788096",
+            "server": "well-squid.squid592.motorcycles",
+            "server_port": 443,
+            "tag": "Stockholm  1",
+            "tls": {
+                "enabled": true,
+                "server_name": "well-squid.squid592.motorcycles"
+            },
+            "type": "trojan"
+        },
+        {
+            "password": "3648425794742788096",
+            "server": "useful-terrier.squid592.motorcycles",
+            "server_port": 443,
+            "tag": "Toronto  3",
+            "tls": {
+                "enabled": true,
+                "server_name": "useful-terrier.squid592.motorcycles"
+            },
+            "type": "trojan"
+        },
+        {
+            "password": "3648425794742788096",
+            "server": "working-honeybee.squid592.motorcycles",
+            "server_port": 443,
+            "tag": "Singapore  1",
+            "tls": {
+                "enabled": true,
+                "server_name": "working-honeybee.squid592.motorcycles"
+            },
+            "type": "trojan"
+        },
+        {
+            "password": "3648425794742788096",
+            "server": "good-crappie.squid592.motorcycles",
+            "server_port": 443,
+            "tag": "Warsaw  6",
+            "tls": {
+                "enabled": true,
+                "server_name": "good-crappie.squid592.motorcycles"
+            },
+            "type": "trojan"
+        },
+        {
+            "password": "3648425794742788096",
+            "server": "distinct-crab.squid592.motorcycles",
+            "server_port": 443,
+            "tag": "Toronto  4",
+            "tls": {
+                "enabled": true,
+                "server_name": "distinct-crab.squid592.motorcycles"
+            },
+            "type": "trojan"
+        },
+        {
+            "password": "3648425794742788096",
+            "server": "noted-jennet.squid592.motorcycles",
+            "server_port": 443,
+            "tag": "Tokyo  1",
+            "tls": {
+                "enabled": true,
+                "server_name": "noted-jennet.squid592.motorcycles"
+            },
+            "type": "trojan"
+        },
+        {
+            "password": "3648425794742788096",
+            "server": "comic-panther.squid592.motorcycles",
+            "server_port": 443,
+            "tag": "Frankfurt  Pro 1",
+            "tls": {
+                "enabled": true,
+                "server_name": "comic-panther.squid592.motorcycles"
+            },
+            "type": "trojan"
+        },
+        {
+            "password": "3648425794742788096",
+            "server": "allowing-pangolin.pig299.lat",
+            "server_port": 443,
+            "tag": "Riga Pro 1",
+            "tls": {
+                "enabled": true,
+                "server_name": "allowing-pangolin.pig299.lat"
+            },
+            "type": "trojan"
+        },
+        {
+            "password": "3648425794742788096",
+            "server": "pumped-parakeet.pig299.lat",
+            "server_port": 443,
+            "tag": "Bangalore-1K Pro 5",
+            "tls": {
+                "enabled": true,
+                "server_name": "pumped-parakeet.pig299.lat"
+            },
+            "type": "trojan"
+        },
+        {
+            "password": "3648425794742788096",
+            "server": "better-calf.squid592.motorcycles",
+            "server_port": 443,
+            "tag": "Warsaw  7",
+            "tls": {
+                "enabled": true,
+                "server_name": "better-calf.squid592.motorcycles"
+            },
+            "type": "trojan"
+        },
+        {
+            "password": "3648425794742788096",
+            "server": "teaching-blowfish.pig299.lat",
+            "server_port": 443,
+            "tag": "Kathmandu Pro 1",
+            "tls": {
+                "enabled": true,
+                "server_name": "teaching-blowfish.pig299.lat"
+            },
+            "type": "trojan"
+        },
+        {
+            "password": "3648425794742788096",
+            "server": "cool-meerkat.pig299.lat",
+            "server_port": 443,
+            "tag": "Ireland  Pro 4",
+            "tls": {
+                "enabled": true,
+                "server_name": "cool-meerkat.pig299.lat"
+            },
+            "type": "trojan"
+        },
+        {
+            "password": "3648425794742788096",
+            "server": "distinct-marmot.squid592.motorcycles",
+            "server_port": 443,
+            "tag": "Seoul  2",
+            "tls": {
+                "enabled": true,
+                "server_name": "distinct-marmot.squid592.motorcycles"
+            },
+            "type": "trojan"
+        },
+        {
+            "password": "3648425794742788096",
+            "server": "humorous-monkfish.squid592.motorcycles",
+            "server_port": 443,
+            "tag": "Amsterdam  Pro 20",
+            "tls": {
+                "enabled": true,
+                "server_name": "humorous-monkfish.squid592.motorcycles"
+            },
+            "type": "trojan"
+        },
+        {
+            "password": "3648425794742788096",
+            "server": "lasting-hamster.squid592.motorcycles",
+            "server_port": 443,
+            "tag": "Singapore -L22 3",
+            "tls": {
+                "enabled": true,
+                "server_name": "lasting-hamster.squid592.motorcycles"
+            },
+            "type": "trojan"
+        },
+        {
+            "password": "3648425794742788096",
+            "server": "current-joey.squid592.motorcycles",
+            "server_port": 443,
+            "tag": "London  Pro 2",
+            "tls": {
+                "enabled": true,
+                "server_name": "current-joey.squid592.motorcycles"
+            },
+            "type": "trojan"
+        },
+        {
+            "password": "3648425794742788096",
+            "server": "safe-mackerel.squid592.motorcycles",
+            "server_port": 443,
+            "tag": "London  Pro 1",
+            "tls": {
+                "enabled": true,
+                "server_name": "safe-mackerel.squid592.motorcycles"
+            },
+            "type": "trojan"
+        },
+        {
+            "password": "3648425794742788096",
+            "server": "tender-bluegill.squid592.motorcycles",
+            "server_port": 443,
+            "tag": "Warsaw  12",
+            "tls": {
+                "enabled": true,
+                "server_name": "tender-bluegill.squid592.motorcycles"
+            },
+            "type": "trojan"
+        },
+        {
+            "password": "3648425794742788096",
+            "server": "upward-camel.squid592.motorcycles",
+            "server_port": 443,
+            "tag": "Oregon  Pro 15",
+            "tls": {
+                "enabled": true,
+                "server_name": "upward-camel.squid592.motorcycles"
+            },
+            "type": "trojan"
+        },
+        {
+            "password": "3648425794742788096",
+            "server": "caring-sponge.squid592.motorcycles",
+            "server_port": 443,
+            "tag": "Tokyo  Pro 4",
+            "tls": {
+                "enabled": true,
+                "server_name": "caring-sponge.squid592.motorcycles"
+            },
+            "type": "trojan"
+        },
+        {
+            "password": "3648425794742788096",
+            "server": "fast-labrador.squid592.motorcycles",
+            "server_port": 443,
+            "tag": "Stockholm  3",
+            "tls": {
+                "enabled": true,
+                "server_name": "fast-labrador.squid592.motorcycles"
+            },
+            "type": "trojan"
+        },
+        {
+            "password": "3648425794742788096",
+            "server": "united-beetle.squid592.motorcycles",
+            "server_port": 443,
+            "tag": "Tokyo  Pro 5",
+            "tls": {
+                "enabled": true,
+                "server_name": "united-beetle.squid592.motorcycles"
+            },
+            "type": "trojan"
+        },
+        {
+            "password": "3648425794742788096",
+            "server": "master-boxer.pig299.lat",
+            "server_port": 443,
+            "tag": "Singapore-1A Pro 48",
+            "tls": {
+                "enabled": true,
+                "server_name": "master-boxer.pig299.lat"
+            },
+            "type": "trojan"
+        },
+        {
+            "password": "3648425794742788096",
+            "server": "correct-llama.squid592.motorcycles",
+            "server_port": 443,
+            "tag": "New York -1K Pro 2",
+            "tls": {
+                "enabled": true,
+                "server_name": "correct-llama.squid592.motorcycles"
+            },
+            "type": "trojan"
+        },
+        {
+            "password": "3648425794742788096",
+            "server": "relaxing-oarfish.squid592.motorcycles",
+            "server_port": 443,
+            "tag": "Singapore  Pro 4",
+            "tls": {
+                "enabled": true,
+                "server_name": "relaxing-oarfish.squid592.motorcycles"
+            },
+            "type": "trojan"
+        },
+        {
+            "password": "3648425794742788096",
+            "server": "internal-lark.squid592.motorcycles",
+            "server_port": 443,
+            "tag": "Tokyo  Pro 3",
+            "tls": {
+                "enabled": true,
+                "server_name": "internal-lark.squid592.motorcycles"
+            },
+            "type": "trojan"
+        },
+        {
+            "password": "3648425794742788096",
+            "server": "upward-camel.squid592.motorcycles",
+            "server_port": 443,
+            "tag": "Oregon  15",
+            "tls": {
+                "enabled": true,
+                "server_name": "upward-camel.squid592.motorcycles"
+            },
+            "type": "trojan"
+        },
+        {
+            "password": "3648425794742788096",
+            "server": "delicate-grizzly.squid592.motorcycles",
+            "server_port": 443,
+            "tag": "Sydney Pro 2",
+            "tls": {
+                "enabled": true,
+                "server_name": "delicate-grizzly.squid592.motorcycles"
+            },
+            "type": "trojan"
+        },
+        {
+            "password": "3648425794742788096",
+            "server": "tender-bluegill.squid592.motorcycles",
+            "server_port": 443,
+            "tag": "Warsaw  Pro 12",
+            "tls": {
+                "enabled": true,
+                "server_name": "tender-bluegill.squid592.motorcycles"
+            },
+            "type": "trojan"
+        },
+        {
+            "password": "3648425794742788096",
+            "server": "better-calf.squid592.motorcycles",
+            "server_port": 443,
+            "tag": "Warsaw  Pro 7",
+            "tls": {
+                "enabled": true,
+                "server_name": "better-calf.squid592.motorcycles"
+            },
+            "type": "trojan"
+        },
+        {
+            "password": "3648425794742788096",
+            "server": "delicate-grizzly.squid592.motorcycles",
+            "server_port": 443,
+            "tag": "Sydney 2",
+            "tls": {
+                "enabled": true,
+                "server_name": "delicate-grizzly.squid592.motorcycles"
+            },
+            "type": "trojan"
+        },
+        {
+            "password": "3648425794742788096",
+            "server": "patient-moray.squid592.motorcycles",
+            "server_port": 443,
+            "tag": "Toronto  Pro 1",
+            "tls": {
+                "enabled": true,
+                "server_name": "patient-moray.squid592.motorcycles"
+            },
+            "type": "trojan"
+        },
+        {
+            "password": "3648425794742788096",
+            "server": "sharp-pigeon.squid592.motorcycles",
+            "server_port": 443,
+            "tag": "Oregon  Pro 10",
+            "tls": {
+                "enabled": true,
+                "server_name": "sharp-pigeon.squid592.motorcycles"
+            },
+            "type": "trojan"
+        },
+        {
+            "password": "3648425794742788096",
+            "server": "flexible-antelope.pig299.lat",
+            "server_port": 443,
+            "tag": "Singapore -L22 Pro 11",
+            "tls": {
+                "enabled": true,
+                "server_name": "flexible-antelope.pig299.lat"
+            },
+            "type": "trojan"
+        },
+        {
+            "password": "3648425794742788096",
+            "server": "helping-muskrat.squid592.motorcycles",
+            "server_port": 443,
+            "tag": "Amsterdam  13",
+            "tls": {
+                "enabled": true,
+                "server_name": "helping-muskrat.squid592.motorcycles"
+            },
+            "type": "trojan"
+        },
+        {
+            "password": "3648425794742788096",
+            "server": "distinct-marmot.squid592.motorcycles",
+            "server_port": 443,
+            "tag": "Seoul  Pro 2",
+            "tls": {
+                "enabled": true,
+                "server_name": "distinct-marmot.squid592.motorcycles"
+            },
+            "type": "trojan"
+        },
+        {
+            "password": "3648425794742788096",
+            "server": "strong-grubworm.squid592.motorcycles",
+            "server_port": 443,
+            "tag": "Toronto  5",
+            "tls": {
+                "enabled": true,
+                "server_name": "strong-grubworm.squid592.motorcycles"
+            },
+            "type": "trojan"
+        },
+        {
+            "password": "3648425794742788096",
+            "server": "workable-albacore.squid592.motorcycles",
+            "server_port": 443,
+            "tag": "Singapore Pro 2",
+            "tls": {
+                "enabled": true,
+                "server_name": "workable-albacore.squid592.motorcycles"
+            },
+            "type": "trojan"
+        },
+        {
+            "password": "3648425794742788096",
+            "server": "workable-albacore.squid592.motorcycles",
+            "server_port": 443,
+            "tag": "Singapore 2",
+            "tls": {
+                "enabled": true,
+                "server_name": "workable-albacore.squid592.motorcycles"
+            },
+            "type": "trojan"
+        },
+        {
+            "password": "3648425794742788096",
+            "server": "sacred-anemone.pig299.lat",
+            "server_port": 443,
+            "tag": "Manila Pro 1",
+            "tls": {
+                "enabled": true,
+                "server_name": "sacred-anemone.pig299.lat"
+            },
+            "type": "trojan"
+        },
+        {
+            "password": "3648425794742788096",
+            "server": "glowing-caribou.squid592.motorcycles",
+            "server_port": 443,
+            "tag": "Seoul  4",
+            "tls": {
+                "enabled": true,
+                "server_name": "glowing-caribou.squid592.motorcycles"
+            },
+            "type": "trojan"
+        },
+        {
+            "password": "3648425794742788096",
+            "server": "cute-mutt.pig299.lat",
+            "server_port": 443,
+            "tag": "Mumbai-1A Pro 1",
+            "tls": {
+                "enabled": true,
+                "server_name": "cute-mutt.pig299.lat"
+            },
+            "type": "trojan"
+        },
+        {
+            "password": "3648425794742788096",
+            "server": "glowing-caribou.squid592.motorcycles",
+            "server_port": 443,
+            "tag": "Seoul  Pro 4",
+            "tls": {
+                "enabled": true,
+                "server_name": "glowing-caribou.squid592.motorcycles"
+            },
+            "type": "trojan"
+        },
+        {
+            "password": "3648425794742788096",
+            "server": "correct-llama.squid592.motorcycles",
+            "server_port": 443,
+            "tag": "New York -1K 2",
+            "tls": {
+                "enabled": true,
+                "server_name": "correct-llama.squid592.motorcycles"
+            },
+            "type": "trojan"
+        },
+        {
+            "password": "3648425794742788096",
+            "server": "vast-monarch.pig299.lat",
+            "server_port": 443,
+            "tag": "Sao Paulo -1K Pro 6",
+            "tls": {
+                "enabled": true,
+                "server_name": "vast-monarch.pig299.lat"
+            },
+            "type": "trojan"
+        },
+        {
+            "password": "3648425794742788096",
+            "server": "sincere-shiner.squid592.motorcycles",
+            "server_port": 443,
+            "tag": "Oregon  13",
+            "tls": {
+                "enabled": true,
+                "server_name": "sincere-shiner.squid592.motorcycles"
+            },
+            "type": "trojan"
+        },
+        {
+            "password": "3648425794742788096",
+            "server": "keen-kangaroo.squid592.motorcycles",
+            "server_port": 443,
+            "tag": "Seoul  Pro 5",
+            "tls": {
+                "enabled": true,
+                "server_name": "keen-kangaroo.squid592.motorcycles"
+            },
+            "type": "trojan"
+        },
+        {
+            "password": "3648425794742788096",
+            "server": "patient-moray.squid592.motorcycles",
+            "server_port": 443,
+            "tag": "Toronto  1",
+            "tls": {
+                "enabled": true,
+                "server_name": "patient-moray.squid592.motorcycles"
+            },
+            "type": "trojan"
+        },
+        {
+            "password": "3648425794742788096",
+            "server": "next-weevil.squid592.motorcycles",
+            "server_port": 443,
+            "tag": "Tokyo  Pro 2",
+            "tls": {
+                "enabled": true,
+                "server_name": "next-weevil.squid592.motorcycles"
+            },
+            "type": "trojan"
+        },
+        {
+            "password": "3648425794742788096",
+            "server": "internal-lark.squid592.motorcycles",
+            "server_port": 443,
+            "tag": "Tokyo  3",
+            "tls": {
+                "enabled": true,
+                "server_name": "internal-lark.squid592.motorcycles"
+            },
+            "type": "trojan"
+        },
+        {
+            "password": "3648425794742788096",
+            "server": "lasting-hamster.squid592.motorcycles",
+            "server_port": 443,
+            "tag": "Singapore -L22 Pro 3",
+            "tls": {
+                "enabled": true,
+                "server_name": "lasting-hamster.squid592.motorcycles"
+            },
+            "type": "trojan"
+        },
+        {
+            "password": "3648425794742788096",
+            "server": "relaxing-oarfish.squid592.motorcycles",
+            "server_port": 443,
+            "tag": "Singapore  4",
+            "tls": {
+                "enabled": true,
+                "server_name": "relaxing-oarfish.squid592.motorcycles"
+            },
+            "type": "trojan"
+        },
+        {
+            "password": "3648425794742788096",
+            "server": "distinct-crab.squid592.motorcycles",
+            "server_port": 443,
+            "tag": "Toronto  Pro 4",
+            "tls": {
+                "enabled": true,
+                "server_name": "distinct-crab.squid592.motorcycles"
+            },
+            "type": "trojan"
+        },
+        {
+            "password": "3648425794742788096",
+            "server": "joint-lynx.squid592.motorcycles",
+            "server_port": 443,
+            "tag": "Frankfurt  Pro 5",
+            "tls": {
+                "enabled": true,
+                "server_name": "joint-lynx.squid592.motorcycles"
+            },
+            "type": "trojan"
+        },
+        {
+            "password": "3648425794742788096",
+            "server": "brief-mackerel.squid592.motorcycles",
+            "server_port": 443,
+            "tag": "London  Pro 4",
+            "tls": {
+                "enabled": true,
+                "server_name": "brief-mackerel.squid592.motorcycles"
+            },
+            "type": "trojan"
+        },
+        {
+            "password": "3648425794742788096",
+            "server": "fancy-yak.squid592.motorcycles",
+            "server_port": 443,
+            "tag": "Warsaw Pro 2",
+            "tls": {
+                "enabled": true,
+                "server_name": "fancy-yak.squid592.motorcycles"
+            },
+            "type": "trojan"
+        },
+        {
+            "password": "3648425794742788096",
+            "server": "current-joey.squid592.motorcycles",
+            "server_port": 443,
+            "tag": "London  2",
+            "tls": {
+                "enabled": true,
+                "server_name": "current-joey.squid592.motorcycles"
+            },
+            "type": "trojan"
+        },
+        {
+            "password": "3648425794742788096",
+            "server": "deep-feline.pig299.lat",
+            "server_port": 443,
+            "tag": "Virginia-1A Pro 6",
+            "tls": {
+                "enabled": true,
+                "server_name": "deep-feline.pig299.lat"
+            },
+            "type": "trojan"
+        },
+        {
+            "password": "3648425794742788096",
+            "server": "winning-ibex.squid592.motorcycles",
+            "server_port": 443,
+            "tag": "Stockholm  5",
+            "tls": {
+                "enabled": true,
+                "server_name": "winning-ibex.squid592.motorcycles"
+            },
+            "type": "trojan"
+        },
+        {
+            "password": "3648425794742788096",
+            "server": "sharp-pigeon.squid592.motorcycles",
+            "server_port": 443,
+            "tag": "Oregon  10",
+            "tls": {
+                "enabled": true,
+                "server_name": "sharp-pigeon.squid592.motorcycles"
+            },
+            "type": "trojan"
+        },
+        {
+            "password": "3648425794742788096",
+            "server": "prepared-haddock.pig299.lat",
+            "server_port": 443,
+            "tag": "Karachi Pro 1",
+            "tls": {
+                "enabled": true,
+                "server_name": "prepared-haddock.pig299.lat"
+            },
+            "type": "trojan"
+        },
+        {
+            "password": "3648425794742788096",
+            "server": "wanted-ghost.squid592.motorcycles",
+            "server_port": 443,
+            "tag": "Frankfurt  2",
+            "tls": {
+                "enabled": true,
+                "server_name": "wanted-ghost.squid592.motorcycles"
+            },
+            "type": "trojan"
+        },
+        {
+            "password": "3648425794742788096",
+            "server": "humorous-monkfish.squid592.motorcycles",
+            "server_port": 443,
+            "tag": "Amsterdam  20",
+            "tls": {
+                "enabled": true,
+                "server_name": "humorous-monkfish.squid592.motorcycles"
+            },
+            "type": "trojan"
+        },
+        {
+            "password": "3648425794742788096",
+            "server": "enormous-salmon.pig299.lat",
+            "server_port": 443,
+            "tag": "Lagos Pro 2",
+            "tls": {
+                "enabled": true,
+                "server_name": "enormous-salmon.pig299.lat"
+            },
+            "type": "trojan"
+        },
+        {
+            "password": "3648425794742788096",
+            "server": "strong-grubworm.squid592.motorcycles",
+            "server_port": 443,
+            "tag": "Toronto  Pro 5",
+            "tls": {
+                "enabled": true,
+                "server_name": "strong-grubworm.squid592.motorcycles"
+            },
+            "type": "trojan"
+        },
+        {
+            "password": "3648425794742788096",
+            "server": "kind-mongrel.pig299.lat",
+            "server_port": 443,
+            "tag": "Kuala Lumpur Pro 1",
+            "tls": {
+                "enabled": true,
+                "server_name": "kind-mongrel.pig299.lat"
+            },
+            "type": "trojan"
+        },
+        {
+            "password": "3648425794742788096",
+            "server": "verified-bobcat.squid592.motorcycles",
+            "server_port": 443,
+            "tag": "Seoul  Pro 3",
+            "tls": {
+                "enabled": true,
+                "server_name": "verified-bobcat.squid592.motorcycles"
+            },
+            "type": "trojan"
+        },
+        {
+            "password": "3648425794742788096",
+            "server": "immortal-monarch.pig299.lat",
+            "server_port": 443,
+            "tag": "Lagos Pro 3",
+            "tls": {
+                "enabled": true,
+                "server_name": "immortal-monarch.pig299.lat"
+            },
+            "type": "trojan"
+        },
+        {
+            "password": "3648425794742788096",
+            "server": "finer-gecko.squid592.motorcycles",
+            "server_port": 443,
+            "tag": "Warsaw  Pro 13",
+            "tls": {
+                "enabled": true,
+                "server_name": "finer-gecko.squid592.motorcycles"
+            },
+            "type": "trojan"
+        },
+        {
+            "password": "3648425794742788096",
+            "server": "comic-gecko.pig299.lat",
+            "server_port": 443,
+            "tag": "Dubai-1K Pro 5",
+            "tls": {
+                "enabled": true,
+                "server_name": "comic-gecko.pig299.lat"
+            },
+            "type": "trojan"
+        },
+        {
+            "password": "3648425794742788096",
+            "server": "darling-jaybird.squid592.motorcycles",
+            "server_port": 443,
+            "tag": "Sydney  Pro 7",
+            "tls": {
+                "enabled": true,
+                "server_name": "darling-jaybird.squid592.motorcycles"
+            },
+            "type": "trojan"
+        },
+        {
+            "password": "3648425794742788096",
+            "server": "next-weevil.squid592.motorcycles",
+            "server_port": 443,
+            "tag": "Tokyo  2",
+            "tls": {
+                "enabled": true,
+                "server_name": "next-weevil.squid592.motorcycles"
+            },
+            "type": "trojan"
+        },
+        {
+            "password": "3648425794742788096",
+            "server": "winning-ibex.squid592.motorcycles",
+            "server_port": 443,
+            "tag": "Stockholm  Pro 5",
+            "tls": {
+                "enabled": true,
+                "server_name": "winning-ibex.squid592.motorcycles"
+            },
+            "type": "trojan"
+        },
+        {
+            "password": "3648425794742788096",
+            "server": "wanted-ghost.squid592.motorcycles",
+            "server_port": 443,
+            "tag": "Frankfurt  Pro 2",
+            "tls": {
+                "enabled": true,
+                "server_name": "wanted-ghost.squid592.motorcycles"
+            },
+            "type": "trojan"
+        },
+        {
+            "password": "3648425794742788096",
+            "server": "clear-lamprey.squid592.motorcycles",
+            "server_port": 443,
+            "tag": "Stockholm  2",
+            "tls": {
+                "enabled": true,
+                "server_name": "clear-lamprey.squid592.motorcycles"
+            },
+            "type": "trojan"
+        },
+        {
+            "password": "3648425794742788096",
+            "server": "causal-moose.squid592.motorcycles",
+            "server_port": 443,
+            "tag": "Ireland -L22 Pro 6",
+            "tls": {
+                "enabled": true,
+                "server_name": "causal-moose.squid592.motorcycles"
+            },
+            "type": "trojan"
+        },
+        {
+            "password": "3648425794742788096",
+            "server": "darling-jaybird.squid592.motorcycles",
+            "server_port": 443,
+            "tag": "Sydney  7",
+            "tls": {
+                "enabled": true,
+                "server_name": "darling-jaybird.squid592.motorcycles"
+            },
+            "type": "trojan"
+        },
+        {
+            "password": "3648425794742788096",
+            "server": "fast-labrador.squid592.motorcycles",
+            "server_port": 443,
+            "tag": "Stockholm  Pro 3",
+            "tls": {
+                "enabled": true,
+                "server_name": "fast-labrador.squid592.motorcycles"
+            },
+            "type": "trojan"
+        },
+        {
+            "password": "3648425794742788096",
+            "server": "joint-stallion.squid592.motorcycles",
+            "server_port": 443,
+            "tag": "Seoul  Pro 1",
+            "tls": {
+                "enabled": true,
+                "server_name": "joint-stallion.squid592.motorcycles"
+            },
+            "type": "trojan"
+        },
+        {
+            "password": "3648425794742788096",
+            "server": "safe-mackerel.squid592.motorcycles",
+            "server_port": 443,
+            "tag": "London  1",
+            "tls": {
+                "enabled": true,
+                "server_name": "safe-mackerel.squid592.motorcycles"
+            },
+            "type": "trojan"
+        },
+        {
+            "password": "3648425794742788096",
+            "server": "inviting-moray.squid592.motorcycles",
+            "server_port": 443,
+            "tag": "Oregon  1",
+            "tls": {
+                "enabled": true,
+                "server_name": "inviting-moray.squid592.motorcycles"
+            },
+            "type": "trojan"
+        },
+        {
+            "password": "3648425794742788096",
+            "server": "useful-terrier.squid592.motorcycles",
+            "server_port": 443,
+            "tag": "Toronto  Pro 3",
+            "tls": {
+                "enabled": true,
+                "server_name": "useful-terrier.squid592.motorcycles"
+            },
+            "type": "trojan"
+        },
+        {
+            "password": "3648425794742788096",
+            "server": "causal-moose.squid592.motorcycles",
+            "server_port": 443,
+            "tag": "Ireland -L22 6",
+            "tls": {
+                "enabled": true,
+                "server_name": "causal-moose.squid592.motorcycles"
+            },
+            "type": "trojan"
+        },
+        {
+            "password": "3648425794742788096",
+            "server": "innocent-kit.squid592.motorcycles",
+            "server_port": 443,
+            "tag": "Toronto  Pro 2",
+            "tls": {
+                "enabled": true,
+                "server_name": "innocent-kit.squid592.motorcycles"
+            },
+            "type": "trojan"
+        },
+        {
+            "password": "3648425794742788096",
+            "server": "fancy-yak.squid592.motorcycles",
+            "server_port": 443,
+            "tag": "Warsaw 2",
+            "tls": {
+                "enabled": true,
+                "server_name": "fancy-yak.squid592.motorcycles"
+            },
+            "type": "trojan"
+        },
+        {
+            "password": "3648425794742788096",
+            "server": "inspired-oyster.squid592.motorcycles",
+            "server_port": 443,
+            "tag": "Warsaw 5",
+            "tls": {
+                "enabled": true,
+                "server_name": "inspired-oyster.squid592.motorcycles"
+            },
+            "type": "trojan"
+        },
+        {
+            "password": "3648425794742788096",
+            "server": "subtle-gannet.squid592.motorcycles",
+            "server_port": 443,
+            "tag": "New York   Pro 3",
+            "tls": {
+                "enabled": true,
+                "server_name": "subtle-gannet.squid592.motorcycles"
+            },
+            "type": "trojan"
+        },
+        {
+            "password": "3648425794742788096",
+            "server": "innocent-kit.squid592.motorcycles",
+            "server_port": 443,
+            "tag": "Toronto  2",
+            "tls": {
+                "enabled": true,
+                "server_name": "innocent-kit.squid592.motorcycles"
+            },
+            "type": "trojan"
+        },
+        {
+            "password": "3648425794742788096",
+            "server": "sincere-shiner.squid592.motorcycles",
+            "server_port": 443,
+            "tag": "Oregon  Pro 13",
+            "tls": {
+                "enabled": true,
+                "server_name": "sincere-shiner.squid592.motorcycles"
+            },
+            "type": "trojan"
+        },
+        {
+            "password": "3648425794742788096",
+            "server": "helping-muskrat.squid592.motorcycles",
+            "server_port": 443,
+            "tag": "Amsterdam  Pro 13",
+            "tls": {
+                "enabled": true,
+                "server_name": "helping-muskrat.squid592.motorcycles"
+            },
+            "type": "trojan"
+        },
+        {
+            "password": "3648425794742788096",
+            "server": "good-crappie.squid592.motorcycles",
+            "server_port": 443,
+            "tag": "Warsaw  Pro 6",
+            "tls": {
+                "enabled": true,
+                "server_name": "good-crappie.squid592.motorcycles"
+            },
+            "type": "trojan"
+        },
+        {
+            "password": "3648425794742788096",
+            "server": "brief-mackerel.squid592.motorcycles",
+            "server_port": 443,
+            "tag": "London  4",
+            "tls": {
+                "enabled": true,
+                "server_name": "brief-mackerel.squid592.motorcycles"
+            },
+            "type": "trojan"
+        },
+        {
+            "password": "3648425794742788096",
+            "server": "humble-feline.pig299.lat",
+            "server_port": 443,
+            "tag": "Saint Peterburg Pro 2",
+            "tls": {
+                "enabled": true,
+                "server_name": "humble-feline.pig299.lat"
+            },
+            "type": "trojan"
+        },
+        {
+            "password": "3648425794742788096",
+            "server": "caring-sponge.squid592.motorcycles",
+            "server_port": 443,
+            "tag": "Tokyo  4",
+            "tls": {
+                "enabled": true,
+                "server_name": "caring-sponge.squid592.motorcycles"
+            },
+            "type": "trojan"
+        },
+        {
+            "password": "3648425794742788096",
+            "server": "enhanced-reindeer.squid592.motorcycles",
+            "server_port": 443,
+            "tag": "Frankfurt  6",
+            "tls": {
+                "enabled": true,
+                "server_name": "enhanced-reindeer.squid592.motorcycles"
+            },
+            "type": "trojan"
+        },
+        {
+            "password": "3648425794742788096",
+            "server": "pleased-collie.squid592.motorcycles",
+            "server_port": 443,
+            "tag": "Ohio  Pro 9",
+            "tls": {
+                "enabled": true,
+                "server_name": "pleased-collie.squid592.motorcycles"
+            },
+            "type": "trojan"
+        },
+        {
+            "password": "3648425794742788096",
+            "server": "inviting-moray.squid592.motorcycles",
+            "server_port": 443,
+            "tag": "Oregon  Pro 1",
+            "tls": {
+                "enabled": true,
+                "server_name": "inviting-moray.squid592.motorcycles"
+            },
+            "type": "trojan"
+        },
+        {
+            "password": "3648425794742788096",
+            "server": "well-squid.squid592.motorcycles",
+            "server_port": 443,
+            "tag": "Stockholm  Pro 1",
+            "tls": {
+                "enabled": true,
+                "server_name": "well-squid.squid592.motorcycles"
+            },
+            "type": "trojan"
+        },
+        {
+            "password": "3648425794742788096",
+            "server": "keen-kangaroo.squid592.motorcycles",
+            "server_port": 443,
+            "tag": "Seoul  5",
+            "tls": {
+                "enabled": true,
+                "server_name": "keen-kangaroo.squid592.motorcycles"
+            },
+            "type": "trojan"
+        },
+        {
+            "password": "3648425794742788096",
+            "server": "chief-lobster.pig299.lat",
+            "server_port": 443,
+            "tag": "Mumbai-1A Pro 2",
+            "tls": {
+                "enabled": true,
+                "server_name": "chief-lobster.pig299.lat"
+            },
+            "type": "trojan"
+        },
+        {
+            "password": "3648425794742788096",
+            "server": "subtle-gannet.squid592.motorcycles",
+            "server_port": 443,
+            "tag": "New York   3",
+            "tls": {
+                "enabled": true,
+                "server_name": "subtle-gannet.squid592.motorcycles"
+            },
+            "type": "trojan"
+        },
+        {
+            "password": "3648425794742788096",
+            "server": "pleased-collie.squid592.motorcycles",
+            "server_port": 443,
+            "tag": "Ohio  9",
+            "tls": {
+                "enabled": true,
+                "server_name": "pleased-collie.squid592.motorcycles"
+            },
+            "type": "trojan"
+        },
+        {
+            "password": "3648425794742788096",
+            "server": "unbiased-pika.pig299.lat",
+            "server_port": 443,
+            "tag": "Moscow Pro 3",
+            "tls": {
+                "enabled": true,
+                "server_name": "unbiased-pika.pig299.lat"
+            },
+            "type": "trojan"
+        },
+        {
+            "password": "3648425794742788096",
+            "server": "clear-lamprey.squid592.motorcycles",
+            "server_port": 443,
+            "tag": "Stockholm  Pro 2",
+            "tls": {
+                "enabled": true,
+                "server_name": "clear-lamprey.squid592.motorcycles"
+            },
+            "type": "trojan"
+        },
+        {
+            "tag": "direct",
+            "type": "direct"
+        }
+    ],
+    "route": {
+        "auto_detect_interface": true,
+        "final": "select",
+        "rule_set": [
+            {
+                "format": "binary",
+                "tag": "geosite-geolocation-!cn",
+                "type": "remote",
+                "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-!cn.srs"
+            },
+            {
+                "format": "binary",
+                "tag": "geoip-cn",
+                "type": "remote",
+                "url": "https://raw.githubusercontent.com/SagerNet/sing-geoip/rule-set/geoip-cn.srs"
+            }
+        ],
+        "rules": [
+            {
+                "action": "sniff",
+                "inbound": "tun-in"
+            },
+            {
+                "action": "hijack-dns",
+                "protocol": "dns"
+            },
+            {
+                "action": "reject",
+                "network": "tcp",
+                "port": 853
+            },
+            {
+                "action": "reject",
+                "network": "udp",
+                "port": 443
+            },
+            {
+                "outbound": "chatgpt",
+                "package_name": [
+                    "com.openai.chatgpt"
+                ]
+            },
+            {
+                "outbound": "select",
+                "rule_set": "geosite-geolocation-!cn"
+            },
+            {
+                "outbound": "direct",
+                "rule_set": "geoip-cn"
+            },
+            {
+                "ip_is_private": true,
+                "outbound": "direct"
+            },
+            {
+                "domain_suffix": [
+                    ".cn"
+                ],
+                "outbound": "direct"
+            }
+        ]
+    }
+}

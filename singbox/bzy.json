@@ -1,0 +1,581 @@
+{
+    "dns": {
+        "fakeip": {
+            "enabled": true,
+            "inet4_range": "198.18.0.0/15",
+            "inet6_range": "fc00::/18"
+        },
+        "final": "dns_direct",
+        "independent_cache": true,
+        "rules": [
+            {
+                "outbound": "any",
+                "server": "dns_resolver"
+            },
+            {
+                "query_type": [
+                    "A",
+                    "AAAA"
+                ],
+                "rule_set": "geosite-geolocation-!cn",
+                "server": "dns_fakeip"
+            },
+            {
+                "query_type": [
+                    "CNAME"
+                ],
+                "rule_set": "geosite-geolocation-!cn",
+                "server": "dns_proxy"
+            },
+            {
+                "action": "route-options",
+                "disable_cache": true,
+                "invert": true,
+                "query_type": [
+                    "A",
+                    "AAAA",
+                    "CNAME"
+                ],
+                "server": "dns_refused"
+            }
+        ],
+        "servers": [
+            {
+                "address": "tcp://1.1.1.1",
+                "address_resolver": "dns_resolver",
+                "detour": "select",
+                "strategy": "ipv4_only",
+                "tag": "dns_proxy"
+            },
+            {
+                "address": "https://dns.alidns.com/dns-query",
+                "address_resolver": "dns_resolver",
+                "detour": "direct",
+                "strategy": "ipv4_only",
+                "tag": "dns_direct"
+            },
+            {
+                "address": "223.5.5.5",
+                "detour": "direct",
+                "tag": "dns_resolver"
+            },
+            {
+                "address": "rcode://success",
+                "tag": "dns_success"
+            },
+            {
+                "address": "rcode://refused",
+                "tag": "dns_refused"
+            },
+            {
+                "address": "fakeip",
+                "tag": "dns_fakeip"
+            }
+        ]
+    },
+    "experimental": {
+        "cache_file": {
+            "enabled": true,
+            "path": "cache.db",
+            "store_fakeip": true,
+            "store_rdrc": true
+        },
+        "clash_api": {
+            "default_mode": "rule",
+            "external_controller": "0.0.0.0:9090",
+            "external_ui": "metacubexd",
+            "external_ui_download_detour": "select",
+            "external_ui_download_url": "https://github.com/MetaCubeX/metacubexd/archive/refs/heads/gh-pages.zip"
+        }
+    },
+    "inbounds": [
+        {
+            "address": [
+                "172.16.0.1/30",
+                "fd00::1/126"
+            ],
+            "auto_route": true,
+            "mtu": 1492,
+            "stack": "system",
+            "strict_route": true,
+            "tag": "tun-in",
+            "type": "tun"
+        }
+    ],
+    "log": {
+        "level": "info",
+        "timestamp": true
+    },
+    "outbounds": [
+        {
+            "tag": "select",
+            "type": "selector",
+            "default": "urltest",
+            "outbounds": [
+                "urltest",
+                "🇭🇰 高速-香港-A",
+                "🇭🇰 高速-香港-B",
+                "🇭🇰 高速-香港-C",
+                "🇭🇰 中国-香港-D",
+                "🇭🇰 中国-香港-E",
+                "🇭🇰 中国-香港-F",
+                "🇯🇵 日本-东京-A",
+                "🇯🇵 日本-东京-B",
+                "🇯🇵 日本-东京-C",
+                "🇺🇸 美国-洛杉矶-A",
+                "🇺🇸 美国-纽约-A",
+                "🇺🇸 美国-达拉斯-A",
+                "🇺🇸 美国-芝加哥-A",
+                "🇰🇷 韩国-首尔-A",
+                "🇸🇬 亚洲-新加坡-A",
+                "🇩🇪 欧洲-德国-A",
+                "🇪🇺 欧洲-意大利-A",
+                "🇪🇺 欧洲-英国-A",
+                "🇪🇺 欧洲-英国-B",
+                "🇪🇸 欧洲-西班牙-A",
+                "🇪🇺 欧洲-法国-A",
+                "🇪🇺 欧洲-荷兰-A",
+                "🇪🇺 欧洲-塞尔维亚-A",
+                "🇮🇱 亚洲-以色列-A",
+                "🇺🇸 北美-加拿大-A",
+                "🇦🇺 澳大利亚-悉尼-A"
+            ]
+        },
+        {
+            "tag": "urltest",
+            "type": "urltest",
+            "outbounds": [
+                "🇭🇰 高速-香港-A",
+                "🇭🇰 高速-香港-B",
+                "🇭🇰 高速-香港-C",
+                "🇭🇰 中国-香港-D",
+                "🇭🇰 中国-香港-E",
+                "🇭🇰 中国-香港-F",
+                "🇯🇵 日本-东京-A",
+                "🇯🇵 日本-东京-B",
+                "🇯🇵 日本-东京-C",
+                "🇺🇸 美国-洛杉矶-A",
+                "🇺🇸 美国-纽约-A",
+                "🇺🇸 美国-达拉斯-A",
+                "🇺🇸 美国-芝加哥-A",
+                "🇰🇷 韩国-首尔-A",
+                "🇸🇬 亚洲-新加坡-A",
+                "🇩🇪 欧洲-德国-A",
+                "🇪🇺 欧洲-意大利-A",
+                "🇪🇺 欧洲-英国-A",
+                "🇪🇺 欧洲-英国-B",
+                "🇪🇸 欧洲-西班牙-A",
+                "🇪🇺 欧洲-法国-A",
+                "🇪🇺 欧洲-荷兰-A",
+                "🇪🇺 欧洲-塞尔维亚-A",
+                "🇮🇱 亚洲-以色列-A",
+                "🇺🇸 北美-加拿大-A",
+                "🇦🇺 澳大利亚-悉尼-A"
+            ]
+        },
+        {
+            "outbounds": [
+                "🇯🇵 日本-东京-A",
+                "🇯🇵 日本-东京-B",
+                "🇯🇵 日本-东京-C",
+                "🇺🇸 美国-洛杉矶-A",
+                "🇺🇸 美国-纽约-A",
+                "🇺🇸 美国-达拉斯-A",
+                "🇺🇸 美国-芝加哥-A",
+                "🇰🇷 韩国-首尔-A",
+                "🇸🇬 亚洲-新加坡-A",
+                "🇩🇪 欧洲-德国-A",
+                "🇪🇺 欧洲-意大利-A",
+                "🇪🇺 欧洲-英国-A",
+                "🇪🇺 欧洲-英国-B",
+                "🇪🇸 欧洲-西班牙-A",
+                "🇪🇺 欧洲-法国-A",
+                "🇪🇺 欧洲-荷兰-A",
+                "🇪🇺 欧洲-塞尔维亚-A",
+                "🇮🇱 亚洲-以色列-A",
+                "🇺🇸 北美-加拿大-A",
+                "🇦🇺 澳大利亚-悉尼-A"
+            ],
+            "tag": "chatgpt",
+            "type": "selector"
+        },
+        {
+            "password": "44102a96-fbac-4f3f-9c20-04401431b9e9",
+            "server": "183.240.255.75",
+            "server_port": 11001,
+            "tag": "🇭🇰 高速-香港-A",
+            "type": "shadowsocks",
+            "method": "chacha20-ietf-poly1305",
+            "udp_over_tcp": {
+                "enabled": true,
+                "version": 2
+            }
+        },
+        {
+            "password": "44102a96-fbac-4f3f-9c20-04401431b9e9",
+            "server": "183.232.229.164",
+            "server_port": 11001,
+            "tag": "🇭🇰 高速-香港-B",
+            "type": "shadowsocks",
+            "method": "chacha20-ietf-poly1305",
+            "udp_over_tcp": {
+                "enabled": true,
+                "version": 2
+            }
+        },
+        {
+            "password": "44102a96-fbac-4f3f-9c20-04401431b9e9",
+            "server": "183.232.229.165",
+            "server_port": 11001,
+            "tag": "🇭🇰 高速-香港-C",
+            "type": "shadowsocks",
+            "method": "chacha20-ietf-poly1305",
+            "udp_over_tcp": {
+                "enabled": true,
+                "version": 2
+            }
+        },
+        {
+            "password": "44102a96-fbac-4f3f-9c20-04401431b9e9",
+            "server": "tg_mfbpn.52cloud.us.kg",
+            "server_port": 11001,
+            "tag": "🇭🇰 中国-香港-D",
+            "type": "shadowsocks",
+            "method": "chacha20-ietf-poly1305",
+            "udp_over_tcp": {
+                "enabled": true,
+                "version": 2
+            }
+        },
+        {
+            "password": "44102a96-fbac-4f3f-9c20-04401431b9e9",
+            "server": "58.254.183.32",
+            "server_port": 12002,
+            "tag": "🇭🇰 中国-香港-E",
+            "type": "shadowsocks",
+            "method": "chacha20-ietf-poly1305",
+            "udp_over_tcp": {
+                "enabled": true,
+                "version": 2
+            }
+        },
+        {
+            "password": "44102a96-fbac-4f3f-9c20-04401431b9e9",
+            "server": "120.233.98.235",
+            "server_port": 12003,
+            "tag": "🇭🇰 中国-香港-F",
+            "type": "shadowsocks",
+            "method": "chacha20-ietf-poly1305",
+            "udp_over_tcp": {
+                "enabled": true,
+                "version": 2
+            }
+        },
+        {
+            "password": "44102a96-fbac-4f3f-9c20-04401431b9e9",
+            "server": "61.172.235.22",
+            "server_port": 11001,
+            "tag": "🇯🇵 日本-东京-A",
+            "type": "shadowsocks",
+            "method": "chacha20-ietf-poly1305",
+            "udp_over_tcp": {
+                "enabled": true,
+                "version": 2
+            }
+        },
+        {
+            "password": "44102a96-fbac-4f3f-9c20-04401431b9e9",
+            "server": "61.172.235.22",
+            "server_port": 11002,
+            "tag": "🇯🇵 日本-东京-B",
+            "type": "shadowsocks",
+            "method": "chacha20-ietf-poly1305",
+            "udp_over_tcp": {
+                "enabled": true,
+                "version": 2
+            }
+        },
+        {
+            "password": "44102a96-fbac-4f3f-9c20-04401431b9e9",
+            "server": "61.172.235.22",
+            "server_port": 11003,
+            "tag": "🇯🇵 日本-东京-C",
+            "type": "shadowsocks",
+            "method": "chacha20-ietf-poly1305",
+            "udp_over_tcp": {
+                "enabled": true,
+                "version": 2
+            }
+        },
+        {
+            "password": "44102a96-fbac-4f3f-9c20-04401431b9e9",
+            "server": "tg_mfbpn.52cloud.us.kg",
+            "server_port": 12353,
+            "tag": "🇺🇸 美国-洛杉矶-A",
+            "type": "shadowsocks",
+            "method": "chacha20-ietf-poly1305",
+            "udp_over_tcp": {
+                "enabled": true,
+                "version": 2
+            }
+        },
+        {
+            "password": "44102a96-fbac-4f3f-9c20-04401431b9e9",
+            "server": "tg_mfbpn.52cloud.us.kg",
+            "server_port": 12357,
+            "tag": "🇺🇸 美国-纽约-A",
+            "type": "shadowsocks",
+            "method": "chacha20-ietf-poly1305",
+            "udp_over_tcp": {
+                "enabled": true,
+                "version": 2
+            }
+        },
+        {
+            "password": "44102a96-fbac-4f3f-9c20-04401431b9e9",
+            "server": "tg_mfbpn.52cloud.us.kg",
+            "server_port": 12356,
+            "tag": "🇺🇸 美国-达拉斯-A",
+            "type": "shadowsocks",
+            "method": "chacha20-ietf-poly1305",
+            "udp_over_tcp": {
+                "enabled": true,
+                "version": 2
+            }
+        },
+        {
+            "password": "44102a96-fbac-4f3f-9c20-04401431b9e9",
+            "server": "tg_mfbpn.52cloud.us.kg",
+            "server_port": 12362,
+            "tag": "🇺🇸 美国-芝加哥-A",
+            "type": "shadowsocks",
+            "method": "chacha20-ietf-poly1305",
+            "udp_over_tcp": {
+                "enabled": true,
+                "version": 2
+            }
+        },
+        {
+            "password": "44102a96-fbac-4f3f-9c20-04401431b9e9",
+            "server": "183.240.255.75",
+            "server_port": 11004,
+            "tag": "🇰🇷 韩国-首尔-A",
+            "type": "shadowsocks",
+            "method": "chacha20-ietf-poly1305",
+            "udp_over_tcp": {
+                "enabled": true,
+                "version": 2
+            }
+        },
+        {
+            "password": "44102a96-fbac-4f3f-9c20-04401431b9e9",
+            "server": "tg_mfbpn.52cloud.us.kg",
+            "server_port": 11008,
+            "tag": "🇸🇬 亚洲-新加坡-A",
+            "type": "shadowsocks",
+            "method": "chacha20-ietf-poly1305",
+            "udp_over_tcp": {
+                "enabled": true,
+                "version": 2
+            }
+        },
+        {
+            "password": "44102a96-fbac-4f3f-9c20-04401431b9e9",
+            "server": "tg_mfbpn.52cloud.us.kg",
+            "server_port": 11004,
+            "tag": "🇩🇪 欧洲-德国-A",
+            "type": "shadowsocks",
+            "method": "chacha20-ietf-poly1305",
+            "udp_over_tcp": {
+                "enabled": true,
+                "version": 2
+            }
+        },
+        {
+            "password": "44102a96-fbac-4f3f-9c20-04401431b9e9",
+            "server": "tg_mfbpn.52cloud.us.kg",
+            "server_port": 12363,
+            "tag": "🇪🇺 欧洲-意大利-A",
+            "type": "shadowsocks",
+            "method": "chacha20-ietf-poly1305",
+            "udp_over_tcp": {
+                "enabled": true,
+                "version": 2
+            }
+        },
+        {
+            "password": "44102a96-fbac-4f3f-9c20-04401431b9e9",
+            "server": "tg_mfbpn.52cloud.us.kg",
+            "server_port": 11006,
+            "tag": "🇪🇺 欧洲-英国-A",
+            "type": "shadowsocks",
+            "method": "chacha20-ietf-poly1305",
+            "udp_over_tcp": {
+                "enabled": true,
+                "version": 2
+            }
+        },
+        {
+            "password": "44102a96-fbac-4f3f-9c20-04401431b9e9",
+            "server": "tg_mfbpn.52cloud.us.kg",
+            "server_port": 12364,
+            "tag": "🇪🇺 欧洲-英国-B",
+            "type": "shadowsocks",
+            "method": "chacha20-ietf-poly1305",
+            "udp_over_tcp": {
+                "enabled": true,
+                "version": 2
+            }
+        },
+        {
+            "password": "44102a96-fbac-4f3f-9c20-04401431b9e9",
+            "server": "tg_mfbpn.52cloud.us.kg",
+            "server_port": 12365,
+            "tag": "🇪🇸 欧洲-西班牙-A",
+            "type": "shadowsocks",
+            "method": "chacha20-ietf-poly1305",
+            "udp_over_tcp": {
+                "enabled": true,
+                "version": 2
+            }
+        },
+        {
+            "password": "44102a96-fbac-4f3f-9c20-04401431b9e9",
+            "server": "tg_mfbpn.52cloud.us.kg",
+            "server_port": 12358,
+            "tag": "🇪🇺 欧洲-法国-A",
+            "type": "shadowsocks",
+            "method": "chacha20-ietf-poly1305",
+            "udp_over_tcp": {
+                "enabled": true,
+                "version": 2
+            }
+        },
+        {
+            "password": "44102a96-fbac-4f3f-9c20-04401431b9e9",
+            "server": "tg_mfbpn.52cloud.us.kg",
+            "server_port": 12361,
+            "tag": "🇪🇺 欧洲-荷兰-A",
+            "type": "shadowsocks",
+            "method": "chacha20-ietf-poly1305",
+            "udp_over_tcp": {
+                "enabled": true,
+                "version": 2
+            }
+        },
+        {
+            "password": "44102a96-fbac-4f3f-9c20-04401431b9e9",
+            "server": "tg_mfbpn.52cloud.us.kg",
+            "server_port": 12366,
+            "tag": "🇪🇺 欧洲-塞尔维亚-A",
+            "type": "shadowsocks",
+            "method": "chacha20-ietf-poly1305",
+            "udp_over_tcp": {
+                "enabled": true,
+                "version": 2
+            }
+        },
+        {
+            "password": "44102a96-fbac-4f3f-9c20-04401431b9e9",
+            "server": "tg_mfbpn.52cloud.us.kg",
+            "server_port": 12359,
+            "tag": "🇮🇱 亚洲-以色列-A",
+            "type": "shadowsocks",
+            "method": "chacha20-ietf-poly1305",
+            "udp_over_tcp": {
+                "enabled": true,
+                "version": 2
+            }
+        },
+        {
+            "password": "44102a96-fbac-4f3f-9c20-04401431b9e9",
+            "server": "tg_mfbpn.52cloud.us.kg",
+            "server_port": 12355,
+            "tag": "🇺🇸 北美-加拿大-A",
+            "type": "shadowsocks",
+            "method": "chacha20-ietf-poly1305",
+            "udp_over_tcp": {
+                "enabled": true,
+                "version": 2
+            }
+        },
+        {
+            "password": "44102a96-fbac-4f3f-9c20-04401431b9e9",
+            "server": "tg_mfbpn.52cloud.us.kg",
+            "server_port": 12354,
+            "tag": "🇦🇺 澳大利亚-悉尼-A",
+            "type": "shadowsocks",
+            "method": "chacha20-ietf-poly1305",
+            "udp_over_tcp": {
+                "enabled": true,
+                "version": 2
+            }
+        },
+        {
+            "tag": "direct",
+            "type": "direct"
+        }
+    ],
+    "route": {
+        "auto_detect_interface": true,
+        "final": "select",
+        "rule_set": [
+            {
+                "format": "binary",
+                "tag": "geosite-geolocation-!cn",
+                "type": "remote",
+                "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-!cn.srs"
+            },
+            {
+                "format": "binary",
+                "tag": "geoip-cn",
+                "type": "remote",
+                "url": "https://raw.githubusercontent.com/SagerNet/sing-geoip/rule-set/geoip-cn.srs"
+            }
+        ],
+        "rules": [
+            {
+                "action": "sniff",
+                "inbound": "tun-in"
+            },
+            {
+                "action": "hijack-dns",
+                "protocol": "dns"
+            },
+            {
+                "action": "reject",
+                "network": "tcp",
+                "port": 853
+            },
+            {
+                "action": "reject",
+                "network": "udp",
+                "port": 443
+            },
+            {
+                "outbound": "chatgpt",
+                "package_name": [
+                    "com.openai.chatgpt"
+                ]
+            },
+            {
+                "outbound": "select",
+                "rule_set": "geosite-geolocation-!cn"
+            },
+            {
+                "outbound": "direct",
+                "rule_set": "geoip-cn"
+            },
+            {
+                "ip_is_private": true,
+                "outbound": "direct"
+            },
+            {
+                "domain_suffix": [
+                    ".cn"
+                ],
+                "outbound": "direct"
+            }
+        ]
+    }
+}
