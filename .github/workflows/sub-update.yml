@@ -22,7 +22,8 @@ jobs:
 
       - name: Run clash2sfa
         run: |
-          go run clash2sfa/main.go
+          cd clash2sfa
+          go run main.go
 
       - name: Set up Python
         uses: actions/setup-python@v5  # 设置Python环境
