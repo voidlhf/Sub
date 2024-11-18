@@ -4,8 +4,10 @@ on:
   push:
     branches:
       - branch1
+      - master
   schedule:
     - cron: '0 * * * *'  # 每小时执行一次
+  workflow_dispatch:
 
 jobs:
   run-python-script:
