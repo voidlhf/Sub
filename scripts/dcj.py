@@ -5,8 +5,14 @@ import sys
 # 将工作目录切换到脚本所在的目录
 os.chdir(os.path.dirname(os.path.abspath(sys.argv[0])))
 
-# 定义下载 URL 和保存路径
-url = "http://localhost:8090/sub?outFields=0&sub=https%3A%2F%2Fraw.githubusercontent.com%2Fdongchengjie%2Fairport%2Fmain%2Fsubs%2Fmerged%2Ftested_within.yaml"
+# 定义基础 URL 和拼接参数
+base_url = "https://clash2sfa.xmdhs.com/sub"
+config_url = "https://raw.githubusercontent.com/voidlhf/Sub/refs/heads/branch1/config.json.template"
+sub_url = "https://raw.githubusercontent.com/dongchengjie/airport/main/subs/merged/tested_within.yaml"
+
+# 拼接完整的 URL
+url = f"{base_url}?configurl={config_url}&outFields=0&sub={sub_url}"
+
 save_path = "../singbox/dcj.json"
 
 # 创建保存目录（如果目录不存在）

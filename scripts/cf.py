@@ -5,9 +5,14 @@ import sys
 # 将工作目录切换到脚本所在的目录
 os.chdir(os.path.dirname(os.path.abspath(sys.argv[0])))
 
-# 定义下载 URL 和保存路径
-# url = "http://127.0.0.1:8090/sub?outFields=0&sub=https%3A%2F%2Fcolad.xyhk.us.kg%2Fapi%2Fclash"
-url = "http://127.0.0.1:8090/sub?outFields=0&sub=https%3A%2F%2Fgbtgurl.me%2Fapi%2Fv1%2Fclient%2Fsubscribe%3Ftoken%3Dbd0f388767d29819fced466ec0a19675"
+# 定义基础 URL 和拼接参数
+base_url = "https://clash2sfa.xmdhs.com/sub"
+config_url = "https://raw.githubusercontent.com/voidlhf/Sub/refs/heads/branch1/config.json.template"
+sub_url = "https://gbtgurl.me/api/v1/client/subscribe?token=bd0f388767d29819fced466ec0a19675"
+
+# 拼接完整的 URL
+url = f"{base_url}?configurl={config_url}&outFields=0&sub={sub_url}"
+
 save_path = "../singbox/cf.json"
 
 # 创建保存目录（如果目录不存在）

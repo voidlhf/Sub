@@ -7,8 +7,14 @@ import sys
 # 将工作目录切换到脚本所在的目录
 os.chdir(os.path.dirname(os.path.abspath(sys.argv[0])))
 
-# 定义下载 URL 和保存路径
-url = "http://127.0.0.1:8090/sub?outFields=0&sub=https%3A%2F%2Fsublinks.52cloud.eu.org%2Fapi%2Fv1%2Fclient%2Fsubscribe%3Ftoken%3Db26fe554f300d7c9573d858c11b50a0b"
+# 定义基础 URL 和拼接参数
+base_url = "https://clash2sfa.xmdhs.com/sub"
+config_url = "https://raw.githubusercontent.com/voidlhf/Sub/refs/heads/branch1/config.json.template"
+sub_url = "https://sublinks.52cloud.eu.org/api/v1/client/subscribe?token=b26fe554f300d7c9573d858c11b50a0b"
+
+# 拼接完整的 URL
+url = f"{base_url}?configurl={config_url}&outFields=0&sub={sub_url}"
+
 save_path = "../singbox/bzy.json"
 
 # 创建保存目录（如果目录不存在）
