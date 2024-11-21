@@ -21,16 +21,6 @@ jobs:
           git fetch origin
           git checkout branch1
 
-      - name: Set up Go
-        uses: actions/setup-go@v5
-        with:
-          go-version: '1.23.3'
-
-      - name: Run clash2sfa
-        run: |
-          cd clash2sfa
-          go run main.go &
-
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
