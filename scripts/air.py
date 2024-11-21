@@ -8,7 +8,7 @@ os.chdir(os.path.dirname(os.path.abspath(sys.argv[0])))
 # 定义基础 URL 和拼接参数
 base_url = "https://clash2sfa.xmdhs.com/sub"
 config_url = "https://raw.githubusercontent.com/voidlhf/Sub/refs/heads/branch1/config.json.template"
-sub_url = "https://yun-api.subcloud.xyz/sub?target=clash&url=https%3A%2F%2Fsite.airapp.club%2Fapi%2Fv1%2Fclient%2Fmacsubscribe%3Ftoken%3D005ce824afc80b9fa9611fcace6d231a&insert=false&config=https%3A%2F%2Fraw.githubusercontent.com%2FACL4SSR%2FACL4SSR%2Fmaster%2FClash%2Fconfig%2FACL4SSR_Online.ini&emoji=true&list=false&tfo=false&scv=true&fdn=false&sort=false&new_name=true"
+sub_url = "https://site.airapp.club/api/v1/client/macsubscribe?token=005ce824afc80b9fa9611fcace6d231a"
 
 # 拼接完整的 URL
 url = f"{base_url}?configurl={config_url}&outFields=0&sub={sub_url}"
