@@ -8,12 +8,14 @@ os.chdir(os.path.dirname(os.path.abspath(sys.argv[0])))
 # 定义基础 URL 和拼接参数
 base_url = "https://clash2sfa.xmdhs.com/sub"
 config_url = "https://raw.githubusercontent.com/voidlhf/Sub/refs/heads/branch1/config.json.template"
-sub_url = "https://gbtgurl.me/api/v1/client/subscribe?token=bd0f388767d29819fced466ec0a19675"
+sub_url = (
+    "https://gbtgurl.me/api/v1/client/subscribe?token=bd0f388767d29819fced466ec0a19675"
+)
 
 # 拼接完整的 URL
 url = f"{base_url}?configurl={config_url}&outFields=0&sub={sub_url}"
 
-save_path = "../singbox/cf.json"
+save_path = "../singbox/gbtg.json"
 
 # 创建保存目录（如果目录不存在）
 os.makedirs(os.path.dirname(save_path), exist_ok=True)

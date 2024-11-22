@@ -8,12 +8,12 @@ os.chdir(os.path.dirname(os.path.abspath(sys.argv[0])))
 # 定义基础 URL 和拼接参数
 base_url = "https://clash2sfa.xmdhs.com/sub"
 config_url = "https://raw.githubusercontent.com/voidlhf/Sub/refs/heads/branch1/config.json.template"
-sub_url = "https://supper.523014.xyz"
+sub_url = "https://app.jisovpn.site/api/v1/client/subscribe?token=3e483a7b7f0caaca3fa8a947495b0d92"
 
 # 拼接完整的 URL
 url = f"{base_url}?configurl={config_url}&outFields=0&sub={sub_url}"
 
-save_path = "../singbox/supper.json"
+save_path = "../singbox/jsy.json"
 
 # 创建保存目录（如果目录不存在）
 os.makedirs(os.path.dirname(save_path), exist_ok=True)
