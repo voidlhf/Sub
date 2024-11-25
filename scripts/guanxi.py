@@ -10,7 +10,7 @@ os.chdir(os.path.dirname(os.path.abspath(sys.argv[0])))
 # 定义基础 URL 和拼接参数
 base_url = "https://clash2sfa.xmdhs.com/sub"
 config_url = "https://raw.githubusercontent.com/voidlhf/Sub/refs/heads/branch1/config.json.template"
-sub_url = "https://www.guanxi.cloudns.be/api/v1/client/subscribe/token=9e48312624d64c219f8e7u9af55b4k238bh5"
+sub_url = "https://g-x.us.kg/c/?token=32170867c08c234db1abbf5dd8e5d76e"
 
 # 拼接完整的 URL
 url = f"{base_url}?configurl={config_url}&outFields=0&sub={sub_url}"
