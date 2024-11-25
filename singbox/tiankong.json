@@ -1,0 +1,203 @@
+{
+    "dns": {
+        "fakeip": {
+            "enabled": true,
+            "inet4_range": "198.18.0.0/15",
+            "inet6_range": "fc00::/18"
+        },
+        "final": "dns_direct",
+        "independent_cache": true,
+        "rules": [
+            {
+                "outbound": "any",
+                "server": "dns_resolver"
+            },
+            {
+                "query_type": [
+                    "A",
+                    "AAAA"
+                ],
+                "rule_set": "geosite-geolocation-!cn",
+                "server": "dns_fakeip"
+            },
+            {
+                "query_type": [
+                    "CNAME"
+                ],
+                "rule_set": "geosite-geolocation-!cn",
+                "server": "dns_proxy"
+            },
+            {
+                "action": "route-options",
+                "disable_cache": true,
+                "invert": true,
+                "query_type": [
+                    "A",
+                    "AAAA",
+                    "CNAME"
+                ],
+                "server": "dns_refused"
+            }
+        ],
+        "servers": [
+            {
+                "address": "tcp://1.1.1.1",
+                "address_resolver": "dns_resolver",
+                "detour": "select",
+                "strategy": "ipv4_only",
+                "tag": "dns_proxy"
+            },
+            {
+                "address": "https://dns.alidns.com/dns-query",
+                "address_resolver": "dns_resolver",
+                "detour": "direct",
+                "strategy": "ipv4_only",
+                "tag": "dns_direct"
+            },
+            {
+                "address": "223.5.5.5",
+                "detour": "direct",
+                "tag": "dns_resolver"
+            },
+            {
+                "address": "rcode://success",
+                "tag": "dns_success"
+            },
+            {
+                "address": "rcode://refused",
+                "tag": "dns_refused"
+            },
+            {
+                "address": "fakeip",
+                "tag": "dns_fakeip"
+            }
+        ]
+    },
+    "experimental": {
+        "cache_file": {
+            "enabled": true,
+            "path": "cache.db",
+            "store_fakeip": true,
+            "store_rdrc": true
+        },
+        "clash_api": {
+            "default_mode": "rule",
+            "external_controller": "0.0.0.0:9090",
+            "external_ui": "metacubexd",
+            "external_ui_download_detour": "select",
+            "external_ui_download_url": "https://github.com/MetaCubeX/metacubexd/archive/refs/heads/gh-pages.zip"
+        }
+    },
+    "inbounds": [
+        {
+            "address": [
+                "172.16.0.1/30",
+                "fd00::1/126"
+            ],
+            "auto_route": true,
+            "mtu": 1492,
+            "stack": "system",
+            "strict_route": true,
+            "tag": "tun-in",
+            "type": "tun"
+        }
+    ],
+    "log": {
+        "level": "info",
+        "timestamp": true
+    },
+    "outbounds": [
+        {
+            "tag": "select",
+            "type": "selector",
+            "default": "urltest",
+            "outbounds": [
+                "urltest"
+            ]
+        },
+        {
+            "tag": "urltest",
+            "type": "urltest"
+        },
+        {
+            "outbounds": [],
+            "tag": "chatgpt",
+            "type": "selector"
+        },
+        {
+            "tag": "direct",
+            "type": "direct"
+        }
+    ],
+    "route": {
+        "auto_detect_interface": true,
+        "final": "select",
+        "rule_set": [
+            {
+                "format": "binary",
+                "tag": "geosite-geolocation-!cn",
+                "type": "remote",
+                "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-!cn.srs"
+            },
+            {
+                "format": "binary",
+                "tag": "geoip-cn",
+                "type": "remote",
+                "url": "https://raw.githubusercontent.com/SagerNet/sing-geoip/rule-set/geoip-cn.srs"
+            }
+        ],
+        "rules": [
+            {
+                "action": "sniff",
+                "inbound": "tun-in"
+            },
+            {
+                "action": "hijack-dns",
+                "protocol": "dns"
+            },
+            {
+                "action": "reject",
+                "network": "tcp",
+                "port": 853
+            },
+            {
+                "action": "reject",
+                "network": "udp",
+                "port": 443
+            },
+            {
+                "outbound": "chatgpt",
+                "package_name": [
+                    "com.openai.chatgpt"
+                ]
+            },
+            {
+                "outbound": "direct",
+                "port": [
+                    23301,
+                    22101,
+                    22102,
+                    20501
+                ]
+            },
+            {
+                "outbound": "select",
+                "rule_set": "geosite-geolocation-!cn"
+            },
+            {
+                "outbound": "direct",
+                "rule_set": "geoip-cn"
+            },
+            {
+                "ip_is_private": true,
+                "outbound": "direct"
+            },
+            {
+                "domain_suffix": [
+                    ".cn"
+                ],
+                "outbound": "direct"
+            }
+        ]
+    }
+}
