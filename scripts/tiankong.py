@@ -8,7 +8,7 @@ os.chdir(os.path.dirname(os.path.abspath(sys.argv[0])))
 # 定义基础 URL 和拼接参数
 base_url = "https://clash2sfa.xmdhs.com/sub"
 config_url = "https://raw.githubusercontent.com/voidlhf/Sub/refs/heads/branch1/config.json.template"
-sub_url = "https://aini.200566.xyz/tzjz55/api/file/class"
+sub_url = "https://aini.200566.xyz/tzjz55/download/collection/tzjz55?target=ClashMeta"
 
 # 拼接完整的 URL
 url = f"{base_url}?configurl={config_url}&outFields=0&sub={sub_url}"
