@@ -6,4 +6,3 @@ python ./scripts/air.py
 python ./scripts/guanxi.py
 python ./scripts/gbtg.py
 python ./scripts/hlsg.py
-python ./scripts/jsy.py
