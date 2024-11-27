@@ -27,9 +27,11 @@
                 ],
                 "rule_set": [
                     "domainset/cdn",
+                    "geosite-geolocation-!cn",
                     "non_ip/cdn",
                     "non_ip/telegram",
-                    "non_ip/global"
+                    "non_ip/global",
+                    "non_ip/ai"
                 ],
                 "server": "dns-fakeip"
             },
@@ -37,8 +39,10 @@
                 "query_type": "CNAME",
                 "rule_set": [
                     "domainset/cdn",
+                    "geosite-geolocation-!cn",
                     "non_ip/cdn",
-                    "non_ip/global"
+                    "non_ip/global",
+                    "non_ip/ai"
                 ],
                 "server": "dns-proxy"
             },
@@ -1115,7 +1119,7 @@
         },
         {
             "password": "amazonskr05",
-            "server": "54.186.178.129",
+            "server": "35.88.126.102",
             "server_port": 443,
             "tag": "🇨🇦|11.27-22:50/https://t.me/tiankongtzjz55|加拿大|01",
             "type": "shadowsocks",
@@ -1195,7 +1199,7 @@
         },
         {
             "password": "amazonskr05",
-            "server": "13.231.232.11",
+            "server": "43.202.57.197",
             "server_port": 443,
             "tag": "🇨🇳|11.27-22:50/https://t.me/tiankongtzjz55|台湾|01",
             "type": "shadowsocks",
@@ -1203,7 +1207,7 @@
         },
         {
             "password": "amazonskr05",
-            "server": "52.77.209.61",
+            "server": "43.203.249.198",
             "server_port": 443,
             "tag": "🇸🇬|11.27-22:50/https://t.me/tiankongtzjz55|新加坡|01",
             "type": "shadowsocks",
@@ -1211,7 +1215,7 @@
         },
         {
             "password": "amazonskr05",
-            "server": "43.201.254.74",
+            "server": "43.201.254.211",
             "server_port": 443,
             "tag": "🇯🇵|11.27-22:50/https://t.me/tiankongtzjz55|日本|01",
             "type": "shadowsocks",
@@ -1219,7 +1223,7 @@
         },
         {
             "password": "amazonskr05",
-            "server": "43.201.254.211",
+            "server": "43.201.254.74",
             "server_port": 443,
             "tag": "🇯🇵|11.27-22:50/https://t.me/tiankongtzjz55|日本|02",
             "type": "shadowsocks",
@@ -1227,7 +1231,7 @@
         },
         {
             "password": "amazonskr05",
-            "server": "52.77.236.51",
+            "server": "35.77.100.154",
             "server_port": 443,
             "tag": "🇯🇵|11.27-22:50/https://t.me/tiankongtzjz55|日本|03",
             "type": "shadowsocks",
@@ -1247,7 +1251,7 @@
         },
         {
             "password": "amazonskr05",
-            "server": "54.200.220.184",
+            "server": "44.243.115.246",
             "server_port": 443,
             "tag": "🇺🇸|11.27-22:50/https://t.me/tiankongtzjz55|美国|01",
             "type": "shadowsocks",
@@ -1255,7 +1259,7 @@
         },
         {
             "password": "amazonskr05",
-            "server": "50.112.199.89",
+            "server": "35.89.254.222",
             "server_port": 443,
             "tag": "🇺🇸|11.27-22:50/https://t.me/tiankongtzjz55|美国|02",
             "type": "shadowsocks",
@@ -1263,7 +1267,7 @@
         },
         {
             "password": "amazonskr05",
-            "server": "44.244.25.243",
+            "server": "50.112.199.89",
             "server_port": 443,
             "tag": "🇺🇸|11.27-22:50/https://t.me/tiankongtzjz55|美国|03",
             "type": "shadowsocks",
@@ -4423,7 +4427,7 @@
         },
         {
             "password": "amazonskr05",
-            "server": "54.250.148.116",
+            "server": "3.112.124.200",
             "server_port": 443,
             "tag": "🇭🇰|11.27-22:50/https://t.me/tiankongtzjz55|香港|01",
             "type": "shadowsocks",
@@ -4431,7 +4435,7 @@
         },
         {
             "password": "amazonskr05",
-            "server": "54.95.5.168",
+            "server": "13.229.238.238",
             "server_port": 443,
             "tag": "🇭🇰|11.27-22:50/https://t.me/tiankongtzjz55|香港|02",
             "type": "shadowsocks",
@@ -6499,7 +6503,25 @@
                 "format": "source",
                 "tag": "non_ip/my_direct",
                 "type": "remote",
-                "url": "https://repo.zuoye.win/ruleset/my_direct.json"
+                "url": "https://ruleset.skk.moe/sing-box/non_ip/my_direct.json"
+            },
+            {
+                "format": "source",
+                "tag": "non_ip/ai",
+                "type": "remote",
+                "url": "https://ruleset.skk.moe/sing-box/non_ip/ai.json"
+            },
+            {
+                "format": "binary",
+                "tag": "geosite-geolocation-!cn",
+                "type": "remote",
+                "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-!cn.srs"
+            },
+            {
+                "format": "binary",
+                "tag": "geoip-cn",
+                "type": "remote",
+                "url": "https://raw.githubusercontent.com/SagerNet/sing-geoip/rule-set/geoip-cn.srs"
             }
         ],
         "rules": [
@@ -6531,6 +6553,12 @@
                 "outbound": "chatgpt"
             },
             {
+                "outbound": "chatgpt",
+                "rule_set": [
+                    "non_ip/ai"
+                ]
+            },
+            {
                 "outbound": "direct",
                 "port": [
                     23301,
@@ -6547,9 +6575,10 @@
                 ]
             },
             {
-                "outbound": "urltest",
+                "outbound": "select",
                 "rule_set": [
                     "domainset/cdn",
+                    "geosite-geolocation-!cn",
                     "non_ip/cdn"
                 ]
             },
@@ -6591,7 +6620,8 @@
                 "rule_set": [
                     "ip/domestic",
                     "ip/china_ip",
-                    "ip/china_ip_ipv6"
+                    "ip/china_ip_ipv6",
+                    "geoip-cn"
                 ]
             },
             {

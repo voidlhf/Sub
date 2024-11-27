@@ -27,9 +27,11 @@
                 ],
                 "rule_set": [
                     "domainset/cdn",
+                    "geosite-geolocation-!cn",
                     "non_ip/cdn",
                     "non_ip/telegram",
-                    "non_ip/global"
+                    "non_ip/global",
+                    "non_ip/ai"
                 ],
                 "server": "dns-fakeip"
             },
@@ -37,8 +39,10 @@
                 "query_type": "CNAME",
                 "rule_set": [
                     "domainset/cdn",
+                    "geosite-geolocation-!cn",
                     "non_ip/cdn",
-                    "non_ip/global"
+                    "non_ip/global",
+                    "non_ip/ai"
                 ],
                 "server": "dns-proxy"
             },
@@ -599,7 +603,25 @@
                 "format": "source",
                 "tag": "non_ip/my_direct",
                 "type": "remote",
-                "url": "https://repo.zuoye.win/ruleset/my_direct.json"
+                "url": "https://ruleset.skk.moe/sing-box/non_ip/my_direct.json"
+            },
+            {
+                "format": "source",
+                "tag": "non_ip/ai",
+                "type": "remote",
+                "url": "https://ruleset.skk.moe/sing-box/non_ip/ai.json"
+            },
+            {
+                "format": "binary",
+                "tag": "geosite-geolocation-!cn",
+                "type": "remote",
+                "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-!cn.srs"
+            },
+            {
+                "format": "binary",
+                "tag": "geoip-cn",
+                "type": "remote",
+                "url": "https://raw.githubusercontent.com/SagerNet/sing-geoip/rule-set/geoip-cn.srs"
             }
         ],
         "rules": [
@@ -631,6 +653,12 @@
                 "outbound": "chatgpt"
             },
             {
+                "outbound": "chatgpt",
+                "rule_set": [
+                    "non_ip/ai"
+                ]
+            },
+            {
                 "outbound": "direct",
                 "port": [
                     23301,
@@ -647,9 +675,10 @@
                 ]
             },
             {
-                "outbound": "urltest",
+                "outbound": "select",
                 "rule_set": [
                     "domainset/cdn",
+                    "geosite-geolocation-!cn",
                     "non_ip/cdn"
                 ]
             },
@@ -691,7 +720,8 @@
                 "rule_set": [
                     "ip/domestic",
                     "ip/china_ip",
-                    "ip/china_ip_ipv6"
+                    "ip/china_ip_ipv6",
+                    "geoip-cn"
                 ]
             },
             {
