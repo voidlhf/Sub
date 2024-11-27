@@ -5,71 +5,111 @@
             "inet4_range": "198.18.0.0/15",
             "inet6_range": "fc00::/18"
         },
-        "final": "dns_direct",
+        "final": "dns-proxy",
         "independent_cache": true,
         "rules": [
             {
                 "outbound": "any",
-                "server": "dns_resolver"
+                "server": "dns-local"
+            },
+            {
+                "disable_cache": true,
+                "rule_set": [
+                    "domainset/reject",
+                    "non_ip/reject"
+                ],
+                "server": "dns-block"
             },
             {
                 "query_type": [
                     "A",
                     "AAAA"
                 ],
-                "rule_set": "geosite-geolocation-!cn",
-                "server": "dns_fakeip"
+                "rule_set": [
+                    "domainset/cdn",
+                    "non_ip/cdn",
+                    "non_ip/telegram",
+                    "non_ip/global"
+                ],
+                "server": "dns-fakeip"
             },
             {
-                "query_type": [
-                    "CNAME"
+                "query_type": "CNAME",
+                "rule_set": [
+                    "domainset/cdn",
+                    "non_ip/cdn",
+                    "non_ip/global"
                 ],
-                "rule_set": "geosite-geolocation-!cn",
-                "server": "dns_proxy"
+                "server": "dns-proxy"
             },
             {
-                "action": "route-options",
-                "disable_cache": true,
-                "invert": true,
-                "query_type": [
-                    "A",
-                    "AAAA",
-                    "CNAME"
+                "rule_set": [
+                    "non_ip/apple_cdn",
+                    "non_ip/apple_cn",
+                    "non_ip/microsoft_cdn",
+                    "non_ip/microsoft",
+                    "domainset/download",
+                    "non_ip/download",
+                    "non_ip/domestic",
+                    "non_ip/direct",
+                    "non_ip/my_direct"
                 ],
-                "server": "dns_refused"
+                "server": "dns-local"
+            },
+            {
+                "mode": "and",
+                "rules": [
+                    {
+                        "invert": true,
+                        "rule_set": [
+                            "non_ip/apple_cdn",
+                            "non_ip/apple_cn",
+                            "non_ip/microsoft_cdn",
+                            "non_ip/microsoft",
+                            "domainset/download",
+                            "non_ip/download",
+                            "non_ip/domestic",
+                            "non_ip/direct",
+                            "non_ip/my_direct"
+                        ]
+                    },
+                    {
+                        "rule_set": [
+                            "ip/domestic",
+                            "ip/china_ip",
+                            "ip/china_ip_ipv6"
+                        ]
+                    }
+                ],
+                "server": "dns-direct",
+                "type": "logical"
             }
         ],
         "servers": [
             {
-                "address": "tcp://1.1.1.1",
-                "address_resolver": "dns_resolver",
+                "address": "https://1.1.1.1/dns-query",
+                "address_resolver": "dns-local",
                 "detour": "select",
                 "strategy": "ipv4_only",
-                "tag": "dns_proxy"
+                "tag": "dns-proxy"
             },
             {
-                "address": "https://dns.alidns.com/dns-query",
-                "address_resolver": "dns_resolver",
+                "address": "https://doh.pub/dns-query",
+                "address_resolver": "dns-local",
                 "detour": "direct",
-                "strategy": "ipv4_only",
-                "tag": "dns_direct"
+                "tag": "dns-direct"
             },
             {
-                "address": "223.5.5.5",
-                "detour": "direct",
-                "tag": "dns_resolver"
-            },
-            {
-                "address": "rcode://success",
-                "tag": "dns_success"
+                "address": "local",
+                "tag": "dns-local"
             },
             {
                 "address": "rcode://refused",
-                "tag": "dns_refused"
+                "tag": "dns-block"
             },
             {
                 "address": "fakeip",
-                "tag": "dns_fakeip"
+                "tag": "dns-fakeip"
             }
         ]
     },
@@ -91,12 +131,12 @@
     "inbounds": [
         {
             "address": [
-                "172.16.0.1/30",
-                "fd00::1/126"
+                "172.19.0.1/30",
+                "fdfe:dcba:9876::1/126"
             ],
             "auto_route": true,
-            "mtu": 1492,
-            "stack": "system",
+            "interface_name": "singbox-tun",
+            "stack": "mixed",
             "strict_route": true,
             "tag": "tun-in",
             "type": "tun"
@@ -439,24 +479,132 @@
     "route": {
         "auto_detect_interface": true,
         "final": "select",
+        "override_android_vpn": true,
         "rule_set": [
             {
-                "format": "binary",
-                "tag": "geosite-geolocation-!cn",
+                "format": "source",
+                "tag": "domainset/reject",
                 "type": "remote",
-                "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-!cn.srs"
+                "url": "https://ruleset.skk.moe/sing-box/domainset/reject.json"
             },
             {
-                "format": "binary",
-                "tag": "geoip-cn",
+                "format": "source",
+                "tag": "non_ip/reject",
                 "type": "remote",
-                "url": "https://raw.githubusercontent.com/SagerNet/sing-geoip/rule-set/geoip-cn.srs"
+                "url": "https://ruleset.skk.moe/sing-box/non_ip/reject.json"
+            },
+            {
+                "format": "source",
+                "tag": "non_ip/apple_cdn",
+                "type": "remote",
+                "url": "https://ruleset.skk.moe/sing-box/non_ip/apple_cdn.json"
+            },
+            {
+                "format": "source",
+                "tag": "non_ip/microsoft_cdn",
+                "type": "remote",
+                "url": "https://ruleset.skk.moe/sing-box/non_ip/microsoft_cdn.json"
+            },
+            {
+                "format": "source",
+                "tag": "non_ip/apple_cn",
+                "type": "remote",
+                "url": "https://ruleset.skk.moe/sing-box/non_ip/apple_cn.json"
+            },
+            {
+                "format": "source",
+                "tag": "domainset/download",
+                "type": "remote",
+                "url": "https://ruleset.skk.moe/sing-box/domainset/download.json"
+            },
+            {
+                "format": "source",
+                "tag": "non_ip/download",
+                "type": "remote",
+                "url": "https://ruleset.skk.moe/sing-box/non_ip/download.json"
+            },
+            {
+                "format": "source",
+                "tag": "non_ip/domestic",
+                "type": "remote",
+                "url": "https://ruleset.skk.moe/sing-box/non_ip/domestic.json"
+            },
+            {
+                "format": "source",
+                "tag": "non_ip/direct",
+                "type": "remote",
+                "url": "https://ruleset.skk.moe/sing-box/non_ip/direct.json"
+            },
+            {
+                "format": "source",
+                "tag": "non_ip/microsoft",
+                "type": "remote",
+                "url": "https://ruleset.skk.moe/sing-box/non_ip/microsoft.json"
+            },
+            {
+                "format": "source",
+                "tag": "domainset/cdn",
+                "type": "remote",
+                "url": "https://ruleset.skk.moe/sing-box/domainset/cdn.json"
+            },
+            {
+                "format": "source",
+                "tag": "non_ip/cdn",
+                "type": "remote",
+                "url": "https://ruleset.skk.moe/sing-box/non_ip/cdn.json"
+            },
+            {
+                "format": "source",
+                "tag": "non_ip/telegram",
+                "type": "remote",
+                "url": "https://ruleset.skk.moe/sing-box/non_ip/telegram.json"
+            },
+            {
+                "format": "source",
+                "tag": "non_ip/global",
+                "type": "remote",
+                "url": "https://ruleset.skk.moe/sing-box/non_ip/global.json"
+            },
+            {
+                "format": "source",
+                "tag": "ip/reject",
+                "type": "remote",
+                "url": "https://ruleset.skk.moe/sing-box/ip/reject.json"
+            },
+            {
+                "format": "source",
+                "tag": "ip/domestic",
+                "type": "remote",
+                "url": "https://ruleset.skk.moe/sing-box/ip/domestic.json"
+            },
+            {
+                "format": "source",
+                "tag": "ip/china_ip",
+                "type": "remote",
+                "url": "https://ruleset.skk.moe/sing-box/ip/china_ip.json"
+            },
+            {
+                "format": "source",
+                "tag": "ip/china_ip_ipv6",
+                "type": "remote",
+                "url": "https://ruleset.skk.moe/sing-box/ip/china_ip_ipv6.json"
+            },
+            {
+                "format": "source",
+                "tag": "ip/telegram",
+                "type": "remote",
+                "url": "https://ruleset.skk.moe/sing-box/ip/telegram.json"
+            },
+            {
+                "format": "source",
+                "tag": "non_ip/my_direct",
+                "type": "remote",
+                "url": "https://repo.zuoye.win/ruleset/my_direct.json"
             }
         ],
         "rules": [
             {
-                "action": "sniff",
-                "inbound": "tun-in"
+                "action": "sniff"
             },
             {
                 "action": "hijack-dns",
@@ -464,13 +612,11 @@
             },
             {
                 "action": "reject",
-                "network": "tcp",
-                "port": 853
+                "protocol": "quic"
             },
             {
                 "action": "reject",
-                "network": "udp",
-                "port": 443
+                "port": 853
             },
             {
                 "outbound": "chatgpt",
@@ -494,21 +640,62 @@
                 ]
             },
             {
+                "action": "reject",
+                "rule_set": [
+                    "domainset/reject",
+                    "non_ip/reject"
+                ]
+            },
+            {
+                "outbound": "urltest",
+                "rule_set": [
+                    "domainset/cdn",
+                    "non_ip/cdn"
+                ]
+            },
+            {
                 "outbound": "select",
-                "rule_set": "geosite-geolocation-!cn"
+                "rule_set": [
+                    "non_ip/telegram",
+                    "non_ip/global"
+                ]
             },
             {
                 "outbound": "direct",
-                "rule_set": "geoip-cn"
+                "protocol": "ssh"
+            },
+            {
+                "outbound": "direct",
+                "rule_set": [
+                    "non_ip/apple_cdn",
+                    "non_ip/apple_cn",
+                    "non_ip/microsoft_cdn",
+                    "non_ip/microsoft",
+                    "domainset/download",
+                    "non_ip/download",
+                    "non_ip/domestic",
+                    "non_ip/direct",
+                    "non_ip/my_direct"
+                ]
+            },
+            {
+                "action": "reject",
+                "rule_set": "ip/reject"
+            },
+            {
+                "outbound": "select",
+                "rule_set": "ip/telegram"
+            },
+            {
+                "outbound": "direct",
+                "rule_set": [
+                    "ip/domestic",
+                    "ip/china_ip",
+                    "ip/china_ip_ipv6"
+                ]
             },
             {
                 "ip_is_private": true,
-                "outbound": "direct"
-            },
-            {
-                "domain_suffix": [
-                    ".cn"
-                ],
                 "outbound": "direct"
             }
         ]
