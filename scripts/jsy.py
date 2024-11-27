@@ -7,7 +7,7 @@ os.chdir(os.path.dirname(os.path.abspath(sys.argv[0])))
 
 # 定义基础 URL 和拼接参数
 base_url = "https://clash2sfa.xmdhs.com/sub"
-config_url = "https://raw.githubusercontent.com/voidlhf/Sub/refs/heads/branch1/config.json.template"
+config_url = "https://raw.githubusercontent.com/voidlhf/Sub/refs/heads/branch1/config2.json"
 sub_url = "https://app.jisovpn.site/api/v1/client/subscribe?token=3e483a7b7f0caaca3fa8a947495b0d92"
 
 # 拼接完整的 URL

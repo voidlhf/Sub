@@ -7,7 +7,7 @@ os.chdir(os.path.dirname(os.path.abspath(sys.argv[0])))
 
 # 定义基础 URL 和拼接参数
 base_url = "https://clash2sfa.xmdhs.com/sub"
-config_url = "https://raw.githubusercontent.com/voidlhf/Sub/refs/heads/branch1/config.json.template"
+config_url = "https://raw.githubusercontent.com/voidlhf/Sub/refs/heads/branch1/config2.json"
 sub_url = (
     "https://gbtgurl.me/api/v1/client/subscribe?token=bd0f388767d29819fced466ec0a19675"
 )
