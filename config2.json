@@ -51,9 +51,11 @@
         ],
         "rule_set": [
           "domainset/cdn",
+          "geosite-geolocation-!cn",
           "non_ip/cdn",
           "non_ip/telegram",
-          "non_ip/global"
+          "non_ip/global",
+          "non_ip/ai"
         ],
         "server": "dns-fakeip"
       },
@@ -61,8 +63,10 @@
         "query_type": "CNAME",
         "rule_set": [
           "domainset/cdn",
+          "geosite-geolocation-!cn",
           "non_ip/cdn",
-          "non_ip/global"
+          "non_ip/global",
+          "non_ip/ai"
         ],
         "server": "dns-proxy"
       },
@@ -174,6 +178,12 @@
         "outbound": "chatgpt"
       },
       {
+        "rule_set": [
+          "non_ip/ai"
+        ],
+        "outbound": "chatgpt"
+      },
+      {
         "port": [
           23301,
           22101,
@@ -192,9 +202,10 @@
       {
         "rule_set": [
           "domainset/cdn",
+          "geosite-geolocation-!cn",
           "non_ip/cdn"
         ],
-        "outbound": "urltest"
+        "outbound": "select"
       },
       {
         "rule_set": [
@@ -233,7 +244,8 @@
         "rule_set": [
           "ip/domestic",
           "ip/china_ip",
-          "ip/china_ip_ipv6"
+          "ip/china_ip_ipv6",
+          "geoip-cn"
         ],
         "outbound": "direct"
       },
@@ -361,7 +373,25 @@
         "type": "remote",
         "tag": "non_ip/my_direct",
         "format": "source",
-        "url": "https://repo.zuoye.win/ruleset/my_direct.json"
+        "url": "https://ruleset.skk.moe/sing-box/non_ip/my_direct.json"
+      },
+      {
+        "type": "remote",
+        "tag": "non_ip/ai",
+        "format": "source",
+        "url": "https://ruleset.skk.moe/sing-box/non_ip/ai.json"
+      },
+      {
+        "tag": "geosite-geolocation-!cn",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-!cn.srs"
+      },
+      {
+        "tag": "geoip-cn",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/SagerNet/sing-geoip/rule-set/geoip-cn.srs"
       }
     ],
     "final": "select",
