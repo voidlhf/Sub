@@ -94,7 +94,6 @@
                 "address": "https://1.1.1.1/dns-query",
                 "address_resolver": "dns-local",
                 "detour": "select",
-                "strategy": "ipv4_only",
                 "tag": "dns-proxy"
             },
             {
@@ -115,7 +114,8 @@
                 "address": "fakeip",
                 "tag": "dns-fakeip"
             }
-        ]
+        ],
+        "strategy": "ipv4_only"
     },
     "experimental": {
         "cache_file": {
