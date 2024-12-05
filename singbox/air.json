@@ -5,7 +5,7 @@
             "inet4_range": "198.18.0.0/15",
             "inet6_range": "fc00::/18"
         },
-        "final": "dns-proxy",
+        "final": "dns-direct",
         "independent_cache": true,
         "rules": [
             {
@@ -94,16 +94,19 @@
                 "address": "https://1.1.1.1/dns-query",
                 "address_resolver": "dns-local",
                 "detour": "select",
+                "strategy": "ipv4_only",
                 "tag": "dns-proxy"
             },
             {
                 "address": "https://223.5.5.5/dns-query",
                 "address_resolver": "dns-local",
                 "detour": "direct",
+                "strategy": "ipv4_only",
                 "tag": "dns-direct"
             },
             {
-                "address": "local",
+                "address": "223.5.5.5",
+                "detour": "direct",
                 "tag": "dns-local"
             },
             {
@@ -114,8 +117,7 @@
                 "address": "fakeip",
                 "tag": "dns-fakeip"
             }
-        ],
-        "strategy": "ipv4_only"
+        ]
     },
     "experimental": {
         "cache_file": {
@@ -126,10 +128,7 @@
         },
         "clash_api": {
             "default_mode": "rule",
-            "external_controller": "0.0.0.0:9090",
-            "external_ui": "metacubexd",
-            "external_ui_download_detour": "select",
-            "external_ui_download_url": "https://github.com/MetaCubeX/metacubexd/archive/refs/heads/gh-pages.zip"
+            "external_controller": "0.0.0.0:9090"
         }
     },
     "inbounds": [
@@ -139,8 +138,8 @@
                 "fdfe:dcba:9876::1/126"
             ],
             "auto_route": true,
-            "interface_name": "singbox-tun",
-            "stack": "mixed",
+            "mtu": 1492,
+            "stack": "system",
             "strict_route": true,
             "tag": "tun-in",
             "type": "tun"
