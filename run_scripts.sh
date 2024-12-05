@@ -1,9 +1,9 @@
 #!/bin/bash
 
 python ./scripts/dcj.py
-python ./scripts/bzy.py
+#python ./scripts/bzy.py
 python ./scripts/air.py
 python ./scripts/guanxi.py
-python ./scripts/gbtg.py
+#python ./scripts/gbtg.py
 python ./scripts/hlsg.py
 python ./scripts/tiankong.py
