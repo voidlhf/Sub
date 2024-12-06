@@ -5,20 +5,21 @@
             "inet4_range": "198.18.0.0/15",
             "inet6_range": "fc00::/18"
         },
-        "final": "dns-direct",
+        "final": "dns_direct",
         "independent_cache": true,
         "rules": [
             {
                 "outbound": "any",
-                "server": "dns-local"
+                "server": "dns_resolver"
             },
             {
                 "disable_cache": true,
                 "rule_set": [
                     "domainset/reject",
+                    "domainset/reject_extra",
                     "non_ip/reject"
                 ],
-                "server": "dns-block"
+                "server": "dns_refused"
             },
             {
                 "query_type": [
@@ -29,117 +30,83 @@
                     "domainset/cdn",
                     "geosite-geolocation-!cn",
                     "non_ip/cdn",
-                    "non_ip/telegram",
-                    "non_ip/global",
                     "non_ip/ai"
                 ],
-                "server": "dns-fakeip"
+                "server": "dns_fakeip"
             },
             {
-                "query_type": "CNAME",
+                "query_type": [
+                    "CNAME"
+                ],
                 "rule_set": [
                     "domainset/cdn",
                     "geosite-geolocation-!cn",
                     "non_ip/cdn",
-                    "non_ip/global",
                     "non_ip/ai"
                 ],
-                "server": "dns-proxy"
+                "server": "dns_proxy"
             },
             {
-                "rule_set": [
-                    "non_ip/apple_cdn",
-                    "non_ip/apple_cn",
-                    "non_ip/microsoft_cdn",
-                    "non_ip/microsoft",
-                    "domainset/download",
-                    "non_ip/download",
-                    "non_ip/domestic",
-                    "non_ip/direct",
-                    "non_ip/my_direct"
+                "action": "route-options",
+                "disable_cache": true,
+                "invert": true,
+                "query_type": [
+                    "A",
+                    "AAAA",
+                    "CNAME"
                 ],
-                "server": "dns-local"
-            },
-            {
-                "mode": "and",
-                "rules": [
-                    {
-                        "invert": true,
-                        "rule_set": [
-                            "non_ip/apple_cdn",
-                            "non_ip/apple_cn",
-                            "non_ip/microsoft_cdn",
-                            "non_ip/microsoft",
-                            "domainset/download",
-                            "non_ip/download",
-                            "non_ip/domestic",
-                            "non_ip/direct",
-                            "non_ip/my_direct"
-                        ]
-                    },
-                    {
-                        "rule_set": [
-                            "ip/domestic",
-                            "ip/china_ip",
-                            "ip/china_ip_ipv6"
-                        ]
-                    }
-                ],
-                "server": "dns-direct",
-                "type": "logical"
+                "server": "dns_refused"
             }
         ],
         "servers": [
             {
                 "address": "https://1.1.1.1/dns-query",
-                "address_resolver": "dns-local",
+                "address_resolver": "dns_resolver",
                 "detour": "select",
                 "strategy": "ipv4_only",
-                "tag": "dns-proxy"
+                "tag": "dns_proxy"
             },
             {
                 "address": "https://223.5.5.5/dns-query",
-                "address_resolver": "dns-local",
+                "address_resolver": "dns_resolver",
                 "detour": "direct",
                 "strategy": "ipv4_only",
-                "tag": "dns-direct"
+                "tag": "dns_direct"
             },
             {
                 "address": "223.5.5.5",
                 "detour": "direct",
                 "strategy": "ipv4_only",
-                "tag": "dns-local"
+                "tag": "dns_resolver"
             },
             {
                 "address": "rcode://refused",
-                "tag": "dns-block"
+                "tag": "dns_refused"
             },
             {
                 "address": "fakeip",
-                "tag": "dns-fakeip"
+                "tag": "dns_fakeip"
             }
         ]
     },
     "experimental": {
         "cache_file": {
             "enabled": true,
-            "path": "cache.db",
             "store_fakeip": true,
             "store_rdrc": true
         },
         "clash_api": {
-            "default_mode": "rule",
             "external_controller": "0.0.0.0:9090"
         }
     },
     "inbounds": [
         {
             "address": [
-                "172.19.0.1/30",
+                "172.18.0.1/30",
                 "fdfe:dcba:9876::1/126"
             ],
             "auto_route": true,
-            "mtu": 1492,
+            "mtu": 9000,
             "stack": "system",
             "strict_route": true,
             "tag": "tun-in",
@@ -800,329 +767,13 @@
             ]
         },
         {
-            "outbounds": [
-                "🇨🇦|12-6🐉10:58/https://t.me/tiankongtzjz55|加拿大|01",
-                "🇨🇦|12-6🐉10:58/https://t.me/tiankongtzjz55|加拿大|02",
-                "🇨🇳|12-6🐉10:58/https://t.me/tiankongtzjz55|台湾|01",
-                "🇸🇬|12-6🐉10:58/https://t.me/tiankongtzjz55|新加坡|01",
-                "🇸🇬|12-6🐉10:58/https://t.me/tiankongtzjz55|新加坡|02",
-                "🇸🇬|12-6🐉10:58/https://t.me/tiankongtzjz55|新加坡|03",
-                "🇸🇬|12-6🐉10:58/https://t.me/tiankongtzjz55|新加坡|04",
-                "🇯🇵|12-6🐉10:58/https://t.me/tiankongtzjz55|日本|01",
-                "🇯🇵|12-6🐉10:58/https://t.me/tiankongtzjz55|日本|02",
-                "🇯🇵|12-6🐉10:58/https://t.me/tiankongtzjz55|日本|03",
-                "🇯🇵|12-6🐉10:58/https://t.me/tiankongtzjz55|日本|04",
-                "🇯🇵|12-6🐉10:58/https://t.me/tiankongtzjz55|日本|05",
-                "🇯🇵|12-6🐉10:58/https://t.me/tiankongtzjz55|日本|06",
-                "🇯🇵|12-6🐉10:58/https://t.me/tiankongtzjz55|日本|07",
-                "🇯🇵|12-6🐉10:58/https://t.me/tiankongtzjz55|日本|08",
-                "🇺🇸|12-6🐉10:58/https://t.me/tiankongtzjz55|美国|01",
-                "🇺🇸|12-6🐉10:58/https://t.me/tiankongtzjz55|美国|02",
-                "🇺🇸|12-6🐉10:58/https://t.me/tiankongtzjz55|美国|03",
-                "🇺🇸|12-6🐉10:58/https://t.me/tiankongtzjz55|美国|04",
-                "🇺🇸|12-6🐉10:58/https://t.me/tiankongtzjz55|美国|05",
-                "🇺🇸|12-6🐉10:58/https://t.me/tiankongtzjz55|美国|06",
-                "🇺🇸|12-6🐉10:58/https://t.me/tiankongtzjz55|美国|07",
-                "🇺🇸|12-6🐉10:58/https://t.me/tiankongtzjz55|美国|08",
-                "🇺🇸|12-6🐉10:58/https://t.me/tiankongtzjz55|美国|09",
-                "🇺🇸|12-6🐉10:58/https://t.me/tiankongtzjz55|美国|10",
-                "🇺🇸|12-6🐉10:58/https://t.me/tiankongtzjz55|美国|11",
-                "🇺🇸|12-6🐉10:58/https://t.me/tiankongtzjz55|美国|12",
-                "🇺🇸|12-6🐉10:58/https://t.me/tiankongtzjz55|美国|13",
-                "🇺🇸|12-6🐉10:58/https://t.me/tiankongtzjz55|美国|14",
-                "🇺🇸|12-6🐉10:58/https://t.me/tiankongtzjz55|美国|15",
-                "🇺🇸|12-6🐉10:58/https://t.me/tiankongtzjz55|美国|16",
-                "🇺🇸|12-6🐉10:58/https://t.me/tiankongtzjz55|美国|17",
-                "🇺🇸|12-6🐉10:58/https://t.me/tiankongtzjz55|美国|18",
-                "🇺🇸|12-6🐉10:58/https://t.me/tiankongtzjz55|美国|19",
-                "🇺🇸|12-6🐉10:58/https://t.me/tiankongtzjz55|美国|20",
-                "🇺🇸|12-6🐉10:58/https://t.me/tiankongtzjz55|美国|21",
-                "🇺🇸|12-6🐉10:58/https://t.me/tiankongtzjz55|美国|22",
-                "🇺🇸|12-6🐉10:58/https://t.me/tiankongtzjz55|美国|23",
-                "🇺🇸|12-6🐉10:58/https://t.me/tiankongtzjz55|美国|24",
-                "🇺🇸|12-6🐉10:58/https://t.me/tiankongtzjz55|美国|25",
-                "🇺🇸|12-6🐉10:58/https://t.me/tiankongtzjz55|美国|26",
-                "🇺🇸|12-6🐉10:58/https://t.me/tiankongtzjz55|美国|27",
-                "🇺🇸|12-6🐉10:58/https://t.me/tiankongtzjz55|美国|28",
-                "🇺🇸|12-6🐉10:58/https://t.me/tiankongtzjz55|美国|29",
-                "🇺🇸|12-6🐉10:58/https://t.me/tiankongtzjz55|美国|30",
-                "🇺🇸|12-6🐉10:58/https://t.me/tiankongtzjz55|美国|31",
-                "🇺🇸|12-6🐉10:58/https://t.me/tiankongtzjz55|美国|32",
-                "🇺🇸|12-6🐉10:58/https://t.me/tiankongtzjz55|美国|33",
-                "🇺🇸|12-6🐉10:58/https://t.me/tiankongtzjz55|美国|34",
-                "🇺🇸|12-6🐉10:58/https://t.me/tiankongtzjz55|美国|35",
-                "🇺🇸|12-6🐉10:58/https://t.me/tiankongtzjz55|美国|36",
-                "🇺🇸|12-6🐉10:58/https://t.me/tiankongtzjz55|美国|37",
-                "🇺🇸|12-6🐉10:58/https://t.me/tiankongtzjz55|美国|38",
-                "🇺🇸|12-6🐉10:58/https://t.me/tiankongtzjz55|美国|39",
-                "🇺🇸|12-6🐉10:58/https://t.me/tiankongtzjz55|美国|40",
-                "🇺🇸|12-6🐉10:58/https://t.me/tiankongtzjz55|美国|41",
-                "🇺🇸|12-6🐉10:58/https://t.me/tiankongtzjz55|美国|42",
-                "🇺🇸|12-6🐉10:58/https://t.me/tiankongtzjz55|美国|43",
-                "🇺🇸|12-6🐉10:58/https://t.me/tiankongtzjz55|美国|44",
-                "🇺🇸|12-6🐉10:58/https://t.me/tiankongtzjz55|美国|45",
-                "🇺🇸|12-6🐉10:58/https://t.me/tiankongtzjz55|美国|46",
-                "🇺🇸|12-6🐉10:58/https://t.me/tiankongtzjz55|美国|47",
-                "🇺🇸|12-6🐉10:58/https://t.me/tiankongtzjz55|美国|48",
-                "🇺🇸|12-6🐉10:58/https://t.me/tiankongtzjz55|美国|49",
-                "🇺🇸|12-6🐉10:58/https://t.me/tiankongtzjz55|美国|50",
-                "🇺🇸|12-6🐉10:58/https://t.me/tiankongtzjz55|美国|51",
-                "🇺🇸|12-6🐉10:58/https://t.me/tiankongtzjz55|美国|52",
-                "🇺🇸|12-6🐉10:58/https://t.me/tiankongtzjz55|美国|53",
-                "🇺🇸|12-6🐉10:58/https://t.me/tiankongtzjz55|美国|54",
-                "🇺🇸|12-6🐉10:58/https://t.me/tiankongtzjz55|美国|55",
-                "🇺🇸|12-6🐉10:58/https://t.me/tiankongtzjz55|美国|56",
-                "🇺🇸|12-6🐉10:58/https://t.me/tiankongtzjz55|美国|57",
-                "🇺🇸|12-6🐉10:58/https://t.me/tiankongtzjz55|美国|58",
-                "🇺🇸|12-6🐉10:58/https://t.me/tiankongtzjz55|美国|59",
-                "🇺🇸|12-6🐉10:58/https://t.me/tiankongtzjz55|美国|60",
-                "🇺🇸|12-6🐉10:58/https://t.me/tiankongtzjz55|美国|61",
-                "🇺🇸|12-6🐉10:58/https://t.me/tiankongtzjz55|美国|62",
-                "🇺🇸|12-6🐉10:58/https://t.me/tiankongtzjz55|美国|63",
-                "🇺🇸|12-6🐉10:58/https://t.me/tiankongtzjz55|美国|64",
-                "🇺🇸|12-6🐉10:58/https://t.me/tiankongtzjz55|美国|65",
-                "🇺🇸|12-6🐉10:58/https://t.me/tiankongtzjz55|美国|66",
-                "🇺🇸|12-6🐉10:58/https://t.me/tiankongtzjz55|美国|67",
-                "🇺🇸|12-6🐉10:58/https://t.me/tiankongtzjz55|美国|68",
-                "🇺🇸|12-6🐉10:58/https://t.me/tiankongtzjz55|美国|69",
-                "🇺🇸|12-6🐉10:58/https://t.me/tiankongtzjz55|美国|70",
-                "🇺🇸|12-6🐉10:58/https://t.me/tiankongtzjz55|美国|71",
-                "🇺🇸|12-6🐉10:58/https://t.me/tiankongtzjz55|美国|72",
-                "🇺🇸|12-6🐉10:58/https://t.me/tiankongtzjz55|美国|73",
-                "🇺🇸|12-6🐉10:58/https://t.me/tiankongtzjz55|美国|74",
-                "🇺🇸|12-6🐉10:58/https://t.me/tiankongtzjz55|美国|75",
-                "🇺🇸|12-6🐉10:58/https://t.me/tiankongtzjz55|美国|76",
-                "🇺🇸|12-6🐉10:58/https://t.me/tiankongtzjz55|美国|77",
-                "🇺🇸|12-6🐉10:58/https://t.me/tiankongtzjz55|美国|78",
-                "🇺🇸|12-6🐉10:58/https://t.me/tiankongtzjz55|美国|79",
-                "🇺🇸|12-6🐉10:58/https://t.me/tiankongtzjz55|美国|80",
-                "🇺🇸|12-6🐉10:58/https://t.me/tiankongtzjz55|美国|81",
-                "🇺🇸|12-6🐉10:58/https://t.me/tiankongtzjz55|美国|82",
-                "🇺🇸|12-6🐉10:58/https://t.me/tiankongtzjz55|美国|83",
-                "🇺🇸|12-6🐉10:58/https://t.me/tiankongtzjz55|美国|84",
-                "🇺🇸|12-6🐉10:58/https://t.me/tiankongtzjz55|美国|85",
-                "🇺🇸|12-6🐉10:58/https://t.me/tiankongtzjz55|美国|86",
-                "🇺🇸|12-6🐉10:58/https://t.me/tiankongtzjz55|美国|87",
-                "🇺🇸|12-6🐉10:58/https://t.me/tiankongtzjz55|美国|88",
-                "🇺🇸|12-6🐉10:58/https://t.me/tiankongtzjz55|美国|89",
-                "🇺🇸|12-6🐉10:58/https://t.me/tiankongtzjz55|美国|90",
-                "🇺🇸|12-6🐉10:58/https://t.me/tiankongtzjz55|美国|91",
-                "🇺🇸|12-6🐉10:58/https://t.me/tiankongtzjz55|美国|92",
-                "🇺🇸|12-6🐉10:58/https://t.me/tiankongtzjz55|美国|93",
-                "🇺🇸|12-6🐉10:58/https://t.me/tiankongtzjz55|美国|94",
-                "🇺🇸|12-6🐉10:58/https://t.me/tiankongtzjz55|美国|95",
-                "🇺🇸|12-6🐉10:58/https://t.me/tiankongtzjz55|美国|96",
-                "🇺🇸|12-6🐉10:58/https://t.me/tiankongtzjz55|美国|97",
-                "🇺🇸|12-6🐉10:58/https://t.me/tiankongtzjz55|美国|98",
-                "🇺🇸|12-6🐉10:58/https://t.me/tiankongtzjz55|美国|99",
-                "🇺🇸|12-6🐉10:58/https://t.me/tiankongtzjz55|美国|100",
-                "🇺🇸|12-6🐉10:58/https://t.me/tiankongtzjz55|美国|101",
-                "🇺🇸|12-6🐉10:58/https://t.me/tiankongtzjz55|美国|102",
-                "🇺🇸|12-6🐉10:58/https://t.me/tiankongtzjz55|美国|103",
-                "🇺🇸|12-6🐉10:58/https://t.me/tiankongtzjz55|美国|104",
-                "🇺🇸|12-6🐉10:58/https://t.me/tiankongtzjz55|美国|105",
-                "🇺🇸|12-6🐉10:58/https://t.me/tiankongtzjz55|美国|106",
-                "🇺🇸|12-6🐉10:58/https://t.me/tiankongtzjz55|美国|107",
-                "🇺🇸|12-6🐉10:58/https://t.me/tiankongtzjz55|美国|108",
-                "🇺🇸|12-6🐉10:58/https://t.me/tiankongtzjz55|美国|109",
-                "🇺🇸|12-6🐉10:58/https://t.me/tiankongtzjz55|美国|110",
-                "🇺🇸|12-6🐉10:58/https://t.me/tiankongtzjz55|美国|111",
-                "🇺🇸|12-6🐉10:58/https://t.me/tiankongtzjz55|美国|112",
-                "🇺🇸|12-6🐉10:58/https://t.me/tiankongtzjz55|美国|113",
-                "🇺🇸|12-6🐉10:58/https://t.me/tiankongtzjz55|美国|114",
-                "🇺🇸|12-6🐉10:58/https://t.me/tiankongtzjz55|美国|115",
-                "🇺🇸|12-6🐉10:58/https://t.me/tiankongtzjz55|美国|116",
-                "🇺🇸|12-6🐉10:58/https://t.me/tiankongtzjz55|美国|117",
-                "🇺🇸|12-6🐉10:58/https://t.me/tiankongtzjz55|美国|118",
-                "🇺🇸|12-6🐉10:58/https://t.me/tiankongtzjz55|美国|119",
-                "🇺🇸|12-6🐉10:58/https://t.me/tiankongtzjz55|美国|120",
-                "🇺🇸|12-6🐉10:58/https://t.me/tiankongtzjz55|美国|121",
-                "🇺🇸|12-6🐉10:58/https://t.me/tiankongtzjz55|美国|122",
-                "🇺🇸|12-6🐉10:58/https://t.me/tiankongtzjz55|美国|123",
-                "🇺🇸|12-6🐉10:58/https://t.me/tiankongtzjz55|美国|124",
-                "🇺🇸|12-6🐉10:58/https://t.me/tiankongtzjz55|美国|125",
-                "🇺🇸|12-6🐉10:58/https://t.me/tiankongtzjz55|美国|126",
-                "🇺🇸|12-6🐉10:58/https://t.me/tiankongtzjz55|美国|127",
-                "🇺🇸|12-6🐉10:58/https://t.me/tiankongtzjz55|美国|128",
-                "🇺🇸|12-6🐉10:58/https://t.me/tiankongtzjz55|美国|129",
-                "🇺🇸|12-6🐉10:58/https://t.me/tiankongtzjz55|美国|130",
-                "🇺🇸|12-6🐉10:58/https://t.me/tiankongtzjz55|美国|131",
-                "🇺🇸|12-6🐉10:58/https://t.me/tiankongtzjz55|美国|132",
-                "🇺🇸|12-6🐉10:58/https://t.me/tiankongtzjz55|美国|133",
-                "🇺🇸|12-6🐉10:58/https://t.me/tiankongtzjz55|美国|134",
-                "🇺🇸|12-6🐉10:58/https://t.me/tiankongtzjz55|美国|135",
-                "🇺🇸|12-6🐉10:58/https://t.me/tiankongtzjz55|美国|136",
-                "🇺🇸|12-6🐉10:58/https://t.me/tiankongtzjz55|美国|137",
-                "🇺🇸|12-6🐉10:58/https://t.me/tiankongtzjz55|美国|138",
-                "🇺🇸|12-6🐉10:58/https://t.me/tiankongtzjz55|美国|139",
-                "🇺🇸|12-6🐉10:58/https://t.me/tiankongtzjz55|美国|140",
-                "🇺🇸|12-6🐉10:58/https://t.me/tiankongtzjz55|美国|141",
-                "🇺🇸|12-6🐉10:58/https://t.me/tiankongtzjz55|美国|142",
-                "🇺🇸|12-6🐉10:58/https://t.me/tiankongtzjz55|美国|143",
-                "🇺🇸|12-6🐉10:58/https://t.me/tiankongtzjz55|美国|144",
-                "🇺🇸|12-6🐉10:58/https://t.me/tiankongtzjz55|美国|145",
-                "🇺🇸|12-6🐉10:58/https://t.me/tiankongtzjz55|美国|146",
-                "🇺🇸|12-6🐉10:58/https://t.me/tiankongtzjz55|美国|147",
-                "🇺🇸|12-6🐉10:58/https://t.me/tiankongtzjz55|美国|148",
-                "🇺🇸|12-6🐉10:58/https://t.me/tiankongtzjz55|美国|149",
-                "🇺🇸|12-6🐉10:58/https://t.me/tiankongtzjz55|美国|150",
-                "🇺🇸|12-6🐉10:58/https://t.me/tiankongtzjz55|美国|151",
-                "🇺🇸|12-6🐉10:58/https://t.me/tiankongtzjz55|美国|152",
-                "🇺🇸|12-6🐉10:58/https://t.me/tiankongtzjz55|美国|153",
-                "🇺🇸|12-6🐉10:58/https://t.me/tiankongtzjz55|美国|154",
-                "🇺🇸|12-6🐉10:58/https://t.me/tiankongtzjz55|美国|155",
-                "🇺🇸|12-6🐉10:58/https://t.me/tiankongtzjz55|美国|156",
-                "🇺🇸|12-6🐉10:58/https://t.me/tiankongtzjz55|美国|157",
-                "🇺🇸|12-6🐉10:58/https://t.me/tiankongtzjz55|美国|158",
-                "🇺🇸|12-6🐉10:58/https://t.me/tiankongtzjz55|美国|159",
-                "🇰🇷|12-6🐉10:58/https://t.me/tiankongtzjz55|韩国|01",
-                "🇰🇷|12-6🐉10:58/https://t.me/tiankongtzjz55|韩国|02",
-                "🇰🇷|12-6🐉10:58/https://t.me/tiankongtzjz55|韩国|03",
-                "12-6🐉10:58/https://t.me/tiankongtzjz55|中国_102|01",
-                "12-6🐉10:58/https://t.me/tiankongtzjz55|中国_110|01",
-                "12-6🐉10:58/https://t.me/tiankongtzjz55|中国_117|01",
-                "12-6🐉10:58/https://t.me/tiankongtzjz55|中国_122|01",
-                "12-6🐉10:58/https://t.me/tiankongtzjz55|中国_123|01",
-                "12-6🐉10:58/https://t.me/tiankongtzjz55|中国_124|01",
-                "12-6🐉10:58/https://t.me/tiankongtzjz55|中国_125|01",
-                "12-6🐉10:58/https://t.me/tiankongtzjz55|中国_126|01",
-                "12-6🐉10:58/https://t.me/tiankongtzjz55|中国_144|01",
-                "12-6🐉10:58/https://t.me/tiankongtzjz55|中国_148|01",
-                "12-6🐉10:58/https://t.me/tiankongtzjz55|中国_149|01",
-                "12-6🐉10:58/https://t.me/tiankongtzjz55|中国_150|01",
-                "12-6🐉10:58/https://t.me/tiankongtzjz55|中国_151|01",
-                "12-6🐉10:58/https://t.me/tiankongtzjz55|中国_152|01",
-                "12-6🐉10:58/https://t.me/tiankongtzjz55|中国_153|01",
-                "12-6🐉10:58/https://t.me/tiankongtzjz55|中国_154|01",
-                "12-6🐉10:58/https://t.me/tiankongtzjz55|中国_19|01",
-                "12-6🐉10:58/https://t.me/tiankongtzjz55|中国_20|01",
-                "12-6🐉10:58/https://t.me/tiankongtzjz55|中国_206|01",
-                "12-6🐉10:58/https://t.me/tiankongtzjz55|中国_21|01",
-                "12-6🐉10:58/https://t.me/tiankongtzjz55|中国_210|01",
-                "12-6🐉10:58/https://t.me/tiankongtzjz55|中国_214|01",
-                "12-6🐉10:58/https://t.me/tiankongtzjz55|中国_22|01",
-                "12-6🐉10:58/https://t.me/tiankongtzjz55|中国_227|01",
-                "12-6🐉10:58/https://t.me/tiankongtzjz55|中国_23|01",
-                "12-6🐉10:58/https://t.me/tiankongtzjz55|中国_243|01",
-                "12-6🐉10:58/https://t.me/tiankongtzjz55|中国_244|01",
-                "12-6🐉10:58/https://t.me/tiankongtzjz55|中国_248|01",
-                "12-6🐉10:58/https://t.me/tiankongtzjz55|中国_249|01",
-                "12-6🐉10:58/https://t.me/tiankongtzjz55|中国_250|01",
-                "12-6🐉10:58/https://t.me/tiankongtzjz55|中国_251|01",
-                "12-6🐉10:58/https://t.me/tiankongtzjz55|中国_254|01",
-                "12-6🐉10:58/https://t.me/tiankongtzjz55|中国_265|01",
-                "12-6🐉10:58/https://t.me/tiankongtzjz55|中国_277|01",
-                "12-6🐉10:58/https://t.me/tiankongtzjz55|中国_35|01",
-                "12-6🐉10:58/https://t.me/tiankongtzjz55|中国_36|01",
-                "12-6🐉10:58/https://t.me/tiankongtzjz55|中国_37|01",
-                "12-6🐉10:58/https://t.me/tiankongtzjz55|中国_56|01",
-                "12-6🐉10:58/https://t.me/tiankongtzjz55|中国_57|01",
-                "12-6🐉10:58/https://t.me/tiankongtzjz55|中国_58|01",
-                "12-6🐉10:58/https://t.me/tiankongtzjz55|中国_59|01",
-                "12-6🐉10:58/https://t.me/tiankongtzjz55|中国_74|01",
-                "12-6🐉10:58/https://t.me/tiankongtzjz55|中国_75|01",
-                "12-6🐉10:58/https://t.me/tiankongtzjz55|中国_76|01",
-                "12-6🐉10:58/https://t.me/tiankongtzjz55|中国_77|01",
-                "12-6🐉10:58/https://t.me/tiankongtzjz55|中国_78|01",
-                "12-6🐉10:58/https://t.me/tiankongtzjz55|中国_87|01",
-                "12-6🐉10:58/https://t.me/tiankongtzjz55|中国_95|01",
-                "12-6🐉10:58/https://t.me/tiankongtzjz55|中国_98|01",
-                "12-6🐉10:58/https://t.me/tiankongtzjz55|中国_99|01",
-                "🇷🇺|12-6🐉10:58/https://t.me/tiankongtzjz55|俄罗斯|01",
-                "🇷🇺|12-6🐉10:58/https://t.me/tiankongtzjz55|俄罗斯|02",
-                "🇷🇺|12-6🐉10:58/https://t.me/tiankongtzjz55|俄罗斯|03",
-                "🇷🇺|12-6🐉10:58/https://t.me/tiankongtzjz55|俄罗斯|04",
-                "🇷🇺|12-6🐉10:58/https://t.me/tiankongtzjz55|俄罗斯|05",
-                "🇷🇺|12-6🐉10:58/https://t.me/tiankongtzjz55|俄罗斯|06",
-                "🇷🇺|12-6🐉10:58/https://t.me/tiankongtzjz55|俄罗斯|07",
-                "🇷🇺|12-6🐉10:58/https://t.me/tiankongtzjz55|俄罗斯|08",
-                "🇷🇺|12-6🐉10:58/https://t.me/tiankongtzjz55|俄罗斯|09",
-                "🇷🇺|12-6🐉10:58/https://t.me/tiankongtzjz55|俄罗斯|10",
-                "🇷🇺|12-6🐉10:58/https://t.me/tiankongtzjz55|俄罗斯|11",
-                "🇷🇺|12-6🐉10:58/https://t.me/tiankongtzjz55|俄罗斯|12",
-                "🇷🇺|12-6🐉10:58/https://t.me/tiankongtzjz55|俄罗斯|13",
-                "🇷🇺|12-6🐉10:58/https://t.me/tiankongtzjz55|俄罗斯|14",
-                "🇷🇺|12-6🐉10:58/https://t.me/tiankongtzjz55|俄罗斯|15",
-                "🇷🇺|12-6🐉10:58/https://t.me/tiankongtzjz55|俄罗斯|16",
-                "🇷🇺|12-6🐉10:58/https://t.me/tiankongtzjz55|俄罗斯|17",
-                "🇷🇺|12-6🐉10:58/https://t.me/tiankongtzjz55|俄罗斯|18",
-                "🇷🇺|12-6🐉10:58/https://t.me/tiankongtzjz55|俄罗斯|19",
-                "🇷🇺|12-6🐉10:58/https://t.me/tiankongtzjz55|俄罗斯|20",
-                "🇷🇺|12-6🐉10:58/https://t.me/tiankongtzjz55|俄罗斯|21",
-                "🇷🇺|12-6🐉10:58/https://t.me/tiankongtzjz55|俄罗斯|22",
-                "🇷🇺|12-6🐉10:58/https://t.me/tiankongtzjz55|俄罗斯|23",
-                "🇷🇺|12-6🐉10:58/https://t.me/tiankongtzjz55|俄罗斯|24",
-                "🇷🇺|12-6🐉10:58/https://t.me/tiankongtzjz55|俄罗斯|25",
-                "🇷🇺|12-6🐉10:58/https://t.me/tiankongtzjz55|俄罗斯|26",
-                "🇷🇺|12-6🐉10:58/https://t.me/tiankongtzjz55|俄罗斯|27",
-                "🇷🇺|12-6🐉10:58/https://t.me/tiankongtzjz55|俄罗斯|28",
-                "🇷🇺|12-6🐉10:58/https://t.me/tiankongtzjz55|俄罗斯|29",
-                "🇷🇺|12-6🐉10:58/https://t.me/tiankongtzjz55|俄罗斯|30",
-                "🇷🇺|12-6🐉10:58/https://t.me/tiankongtzjz55|俄罗斯|31",
-                "🇷🇺|12-6🐉10:58/https://t.me/tiankongtzjz55|俄罗斯|32",
-                "🇷🇺|12-6🐉10:58/https://t.me/tiankongtzjz55|俄罗斯|33",
-                "🇷🇺|12-6🐉10:58/https://t.me/tiankongtzjz55|俄罗斯|34",
-                "🇷🇺|12-6🐉10:58/https://t.me/tiankongtzjz55|俄罗斯|35",
-                "🇷🇺|12-6🐉10:58/https://t.me/tiankongtzjz55|俄罗斯|36",
-                "🇷🇺|12-6🐉10:58/https://t.me/tiankongtzjz55|俄罗斯|37",
-                "🇷🇺|12-6🐉10:58/https://t.me/tiankongtzjz55|俄罗斯|38",
-                "🇷🇺|12-6🐉10:58/https://t.me/tiankongtzjz55|俄罗斯|39",
-                "🇷🇺|12-6🐉10:58/https://t.me/tiankongtzjz55|俄罗斯|40",
-                "🇧🇬|12-6🐉10:58/https://t.me/tiankongtzjz55|保加利亚|01",
-                "🇱🇺|12-6🐉10:58/https://t.me/tiankongtzjz55|卢森堡|01",
-                "🇨🇷|12-6🐉10:58/https://t.me/tiankongtzjz55|哥斯达黎加|01",
-                "🇨🇷|12-6🐉10:58/https://t.me/tiankongtzjz55|哥斯达黎加|02",
-                "🇨🇷|12-6🐉10:58/https://t.me/tiankongtzjz55|哥斯达黎加|03",
-                "🇨🇷|12-6🐉10:58/https://t.me/tiankongtzjz55|哥斯达黎加|04",
-                "🇦🇹|12-6🐉10:58/https://t.me/tiankongtzjz55|奥地利|01",
-                "🇩🇪|12-6🐉10:58/https://t.me/tiankongtzjz55|德国|01",
-                "🇲🇩|12-6🐉10:58/https://t.me/tiankongtzjz55|摩尔多瓦|01",
-                "12-6🐉10:58/https://t.me/tiankongtzjz55|未知_109|01",
-                "12-6🐉10:58/https://t.me/tiankongtzjz55|未知_118|01",
-                "12-6🐉10:58/https://t.me/tiankongtzjz55|未知_119|01",
-                "12-6🐉10:58/https://t.me/tiankongtzjz55|未知_120|01",
-                "12-6🐉10:58/https://t.me/tiankongtzjz55|未知_121|01",
-                "12-6🐉10:58/https://t.me/tiankongtzjz55|未知_133|01",
-                "12-6🐉10:58/https://t.me/tiankongtzjz55|未知_261|01",
-                "12-6🐉10:58/https://t.me/tiankongtzjz55|未知_262|01",
-                "12-6🐉10:58/https://t.me/tiankongtzjz55|未知_263|01",
-                "12-6🐉10:58/https://t.me/tiankongtzjz55|未知_268|01",
-                "🇦🇺|12-6🐉10:58/https://t.me/tiankongtzjz55|澳大利亚|01",
-                "🇱🇹|12-6🐉10:58/https://t.me/tiankongtzjz55|立陶宛|01",
-                "🇱🇹|12-6🐉10:58/https://t.me/tiankongtzjz55|立陶宛|02",
-                "🇱🇹|12-6🐉10:58/https://t.me/tiankongtzjz55|立陶宛|03",
-                "🇱🇹|12-6🐉10:58/https://t.me/tiankongtzjz55|立陶宛|04",
-                "🇬🇧|12-6🐉10:58/https://t.me/tiankongtzjz55|英国|01",
-                "🇬🇧|12-6🐉10:58/https://t.me/tiankongtzjz55|英国|02",
-                "🇬🇧|12-6🐉10:58/https://t.me/tiankongtzjz55|英国|03",
-                "🇬🇧|12-6🐉10:58/https://t.me/tiankongtzjz55|英国|04",
-                "🇬🇧|12-6🐉10:58/https://t.me/tiankongtzjz55|英国|05",
-                "🇬🇧|12-6🐉10:58/https://t.me/tiankongtzjz55|英国|06",
-                "🇬🇧|12-6🐉10:58/https://t.me/tiankongtzjz55|英国|07",
-                "🇬🇧|12-6🐉10:58/https://t.me/tiankongtzjz55|英国|08",
-                "🇬🇧|12-6🐉10:58/https://t.me/tiankongtzjz55|英国|09",
-                "🇬🇧|12-6🐉10:58/https://t.me/tiankongtzjz55|英国|10",
-                "🇬🇧|12-6🐉10:58/https://t.me/tiankongtzjz55|英国|11",
-                "🇬🇧|12-6🐉10:58/https://t.me/tiankongtzjz55|英国|12",
-                "🇬🇧|12-6🐉10:58/https://t.me/tiankongtzjz55|英国|13",
-                "🇳🇱|12-6🐉10:58/https://t.me/tiankongtzjz55|荷兰|01",
-                "🇳🇱|12-6🐉10:58/https://t.me/tiankongtzjz55|荷兰|02",
-                "🇳🇱|12-6🐉10:58/https://t.me/tiankongtzjz55|荷兰|03",
-                "🇳🇱|12-6🐉10:58/https://t.me/tiankongtzjz55|荷兰|04",
-                "🇳🇱|12-6🐉10:58/https://t.me/tiankongtzjz55|荷兰|05",
-                "🇳🇱|12-6🐉10:58/https://t.me/tiankongtzjz55|荷兰|06",
-                "🇳🇱|12-6🐉10:58/https://t.me/tiankongtzjz55|荷兰|07",
-                "🇳🇱|12-6🐉10:58/https://t.me/tiankongtzjz55|荷兰|08",
-                "🇳🇱|12-6🐉10:58/https://t.me/tiankongtzjz55|荷兰|09",
-                "🇪🇸|12-6🐉10:58/https://t.me/tiankongtzjz55|西班牙|01",
-                "🇪🇸|12-6🐉10:58/https://t.me/tiankongtzjz55|西班牙|02"
-            ],
+            "outbounds": [],
             "tag": "chatgpt",
             "type": "selector"
         },
         {
             "password": "amazonskr05",
-            "server": "34.219.118.99",
+            "server": "52.33.189.33",
             "server_port": 443,
             "tag": "🇨🇦|12-6🐉10:58/https://t.me/tiankongtzjz55|加拿大|01",
             "type": "shadowsocks",
@@ -1147,7 +798,7 @@
         },
         {
             "password": "amazonskr05",
-            "server": "43.207.112.115",
+            "server": "54.168.120.13",
             "server_port": 443,
             "tag": "🇨🇳|12-6🐉10:58/https://t.me/tiankongtzjz55|台湾|01",
             "type": "shadowsocks",
@@ -1198,7 +849,7 @@
         },
         {
             "password": "amazonskr05",
-            "server": "43.201.254.74",
+            "server": "43.207.114.248",
             "server_port": 443,
             "tag": "🇯🇵|12-6🐉10:58/https://t.me/tiankongtzjz55|日本|02",
             "type": "shadowsocks",
@@ -1206,7 +857,7 @@
         },
         {
             "password": "amazonskr05",
-            "server": "3.112.174.89",
+            "server": "43.206.233.92",
             "server_port": 443,
             "tag": "🇯🇵|12-6🐉10:58/https://t.me/tiankongtzjz55|日本|03",
             "type": "shadowsocks",
@@ -1283,7 +934,7 @@
         },
         {
             "password": "amazonskr05",
-            "server": "34.216.74.178",
+            "server": "18.236.89.178",
             "server_port": 443,
             "tag": "🇺🇸|12-6🐉10:58/https://t.me/tiankongtzjz55|美国|01",
             "type": "shadowsocks",
@@ -1291,7 +942,7 @@
         },
         {
             "password": "amazonskr05",
-            "server": "34.215.84.62",
+            "server": "54.203.119.192",
             "server_port": 443,
             "tag": "🇺🇸|12-6🐉10:58/https://t.me/tiankongtzjz55|美国|02",
             "type": "shadowsocks",
@@ -1299,7 +950,7 @@
         },
         {
             "password": "amazonskr05",
-            "server": "54.184.77.199",
+            "server": "34.216.74.178",
             "server_port": 443,
             "tag": "🇺🇸|12-6🐉10:58/https://t.me/tiankongtzjz55|美国|03",
             "type": "shadowsocks",
@@ -4085,7 +3736,7 @@
         },
         {
             "password": "amazonskr05",
-            "server": "43.207.114.248",
+            "server": "43.201.254.74",
             "server_port": 443,
             "tag": "🇰🇷|12-6🐉10:58/https://t.me/tiankongtzjz55|韩国|01",
             "type": "shadowsocks",
@@ -4114,7 +3765,7 @@
         },
         {
             "password": "amazonskr05",
-            "server": "54.168.120.13",
+            "server": "43.207.112.115",
             "server_port": 443,
             "tag": "🇭🇰|12-6🐉10:58/https://t.me/tiankongtzjz55|香港|01",
             "type": "shadowsocks",
@@ -6122,10 +5773,28 @@
         "override_android_vpn": true,
         "rule_set": [
             {
+                "format": "binary",
+                "tag": "geosite-geolocation-!cn",
+                "type": "remote",
+                "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-!cn.srs"
+            },
+            {
+                "format": "binary",
+                "tag": "geoip-cn",
+                "type": "remote",
+                "url": "https://raw.githubusercontent.com/SagerNet/sing-geoip/rule-set/geoip-cn.srs"
+            },
+            {
                 "format": "source",
                 "tag": "domainset/reject",
                 "type": "remote",
                 "url": "https://ruleset.skk.moe/sing-box/domainset/reject.json"
+            },
+            {
+                "format": "source",
+                "tag": "domainset/reject_extra",
+                "type": "remote",
+                "url": "https://ruleset.skk.moe/sing-box/domainset/reject_extra.json"
             },
             {
                 "format": "source",
@@ -6135,51 +5804,9 @@
             },
             {
                 "format": "source",
-                "tag": "non_ip/apple_cdn",
+                "tag": "non_ip/ai",
                 "type": "remote",
-                "url": "https://ruleset.skk.moe/sing-box/non_ip/apple_cdn.json"
-            },
-            {
-                "format": "source",
-                "tag": "non_ip/microsoft_cdn",
-                "type": "remote",
-                "url": "https://ruleset.skk.moe/sing-box/non_ip/microsoft_cdn.json"
-            },
-            {
-                "format": "source",
-                "tag": "non_ip/apple_cn",
-                "type": "remote",
-                "url": "https://ruleset.skk.moe/sing-box/non_ip/apple_cn.json"
-            },
-            {
-                "format": "source",
-                "tag": "domainset/download",
-                "type": "remote",
-                "url": "https://ruleset.skk.moe/sing-box/domainset/download.json"
-            },
-            {
-                "format": "source",
-                "tag": "non_ip/download",
-                "type": "remote",
-                "url": "https://ruleset.skk.moe/sing-box/non_ip/download.json"
-            },
-            {
-                "format": "source",
-                "tag": "non_ip/domestic",
-                "type": "remote",
-                "url": "https://ruleset.skk.moe/sing-box/non_ip/domestic.json"
-            },
-            {
-                "format": "source",
-                "tag": "non_ip/direct",
-                "type": "remote",
-                "url": "https://ruleset.skk.moe/sing-box/non_ip/direct.json"
-            },
-            {
-                "format": "source",
-                "tag": "non_ip/microsoft",
-                "type": "remote",
-                "url": "https://ruleset.skk.moe/sing-box/non_ip/microsoft.json"
+                "url": "https://ruleset.skk.moe/sing-box/non_ip/ai.json"
             },
             {
                 "format": "source",
@@ -6192,77 +5819,12 @@
                 "tag": "non_ip/cdn",
                 "type": "remote",
                 "url": "https://ruleset.skk.moe/sing-box/non_ip/cdn.json"
-            },
-            {
-                "format": "source",
-                "tag": "non_ip/telegram",
-                "type": "remote",
-                "url": "https://ruleset.skk.moe/sing-box/non_ip/telegram.json"
-            },
-            {
-                "format": "source",
-                "tag": "non_ip/global",
-                "type": "remote",
-                "url": "https://ruleset.skk.moe/sing-box/non_ip/global.json"
-            },
-            {
-                "format": "source",
-                "tag": "ip/reject",
-                "type": "remote",
-                "url": "https://ruleset.skk.moe/sing-box/ip/reject.json"
-            },
-            {
-                "format": "source",
-                "tag": "ip/domestic",
-                "type": "remote",
-                "url": "https://ruleset.skk.moe/sing-box/ip/domestic.json"
-            },
-            {
-                "format": "source",
-                "tag": "ip/china_ip",
-                "type": "remote",
-                "url": "https://ruleset.skk.moe/sing-box/ip/china_ip.json"
-            },
-            {
-                "format": "source",
-                "tag": "ip/china_ip_ipv6",
-                "type": "remote",
-                "url": "https://ruleset.skk.moe/sing-box/ip/china_ip_ipv6.json"
-            },
-            {
-                "format": "source",
-                "tag": "ip/telegram",
-                "type": "remote",
-                "url": "https://ruleset.skk.moe/sing-box/ip/telegram.json"
-            },
-            {
-                "format": "source",
-                "tag": "non_ip/my_direct",
-                "type": "remote",
-                "url": "https://ruleset.skk.moe/sing-box/non_ip/my_direct.json"
-            },
-            {
-                "format": "source",
-                "tag": "non_ip/ai",
-                "type": "remote",
-                "url": "https://ruleset.skk.moe/sing-box/non_ip/ai.json"
-            },
-            {
-                "format": "binary",
-                "tag": "geosite-geolocation-!cn",
-                "type": "remote",
-                "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-!cn.srs"
-            },
-            {
-                "format": "binary",
-                "tag": "geoip-cn",
-                "type": "remote",
-                "url": "https://raw.githubusercontent.com/SagerNet/sing-geoip/rule-set/geoip-cn.srs"
             }
         ],
         "rules": [
             {
-                "action": "sniff"
+                "action": "sniff",
+                "inbound": "tun-in"
             },
             {
                 "action": "hijack-dns",
@@ -6270,23 +5832,27 @@
             },
             {
                 "action": "reject",
-                "protocol": "quic"
+                "network": "tcp",
+                "port": 853
             },
             {
                 "action": "reject",
-                "port": 853
+                "network": "udp",
+                "port": 443
+            },
+            {
+                "action": "reject",
+                "rule_set": [
+                    "domainset/reject",
+                    "domainset/reject_extra",
+                    "non_ip/reject"
+                ]
             },
             {
                 "outbound": "chatgpt",
                 "package_name": [
                     "com.openai.chatgpt"
                 ]
-            },
-            {
-                "domain_suffix": [
-                    "proactivebackend-pa.googleapis.com"
-                ],
-                "outbound": "chatgpt"
             },
             {
                 "outbound": "chatgpt",
@@ -6304,13 +5870,6 @@
                 ]
             },
             {
-                "action": "reject",
-                "rule_set": [
-                    "domainset/reject",
-                    "non_ip/reject"
-                ]
-            },
-            {
                 "outbound": "select",
                 "rule_set": [
                     "domainset/cdn",
@@ -6319,46 +5878,8 @@
                 ]
             },
             {
-                "outbound": "select",
-                "rule_set": [
-                    "non_ip/telegram",
-                    "non_ip/global"
-                ]
-            },
-            {
                 "outbound": "direct",
-                "protocol": "ssh"
-            },
-            {
-                "outbound": "direct",
-                "rule_set": [
-                    "non_ip/apple_cdn",
-                    "non_ip/apple_cn",
-                    "non_ip/microsoft_cdn",
-                    "non_ip/microsoft",
-                    "domainset/download",
-                    "non_ip/download",
-                    "non_ip/domestic",
-                    "non_ip/direct",
-                    "non_ip/my_direct"
-                ]
-            },
-            {
-                "action": "reject",
-                "rule_set": "ip/reject"
-            },
-            {
-                "outbound": "select",
-                "rule_set": "ip/telegram"
-            },
-            {
-                "outbound": "direct",
-                "rule_set": [
-                    "ip/domestic",
-                    "ip/china_ip",
-                    "ip/china_ip_ipv6",
-                    "geoip-cn"
-                ]
+                "rule_set": "geoip-cn"
             },
             {
                 "ip_is_private": true,
