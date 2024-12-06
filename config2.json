@@ -53,7 +53,8 @@
           "domainset/cdn",
           "geosite-geolocation-!cn",
           "non_ip/cdn",
-          "non_ip/ai"
+          "non_ip/ai",
+          "non_ip/global"
         ],
         "query_type": [
           "A",
@@ -66,7 +67,8 @@
           "domainset/cdn",
           "geosite-geolocation-!cn",
           "non_ip/cdn",
-          "non_ip/ai"
+          "non_ip/ai",
+          "non_ip/global"
         ],
         "query_type": [
           "CNAME"
@@ -169,6 +171,12 @@
         "type": "remote",
         "format": "source",
         "url": "https://ruleset.skk.moe/sing-box/non_ip/cdn.json"
+      },
+      {
+        "tag": "non_ip/global",
+        "type": "remote",
+        "format": "source",
+        "url": "https://ruleset.skk.moe/sing-box/non_ip/global.json"
       }
     ],
     "rules": [
@@ -223,7 +231,8 @@
         "rule_set": [
           "domainset/cdn",
           "geosite-geolocation-!cn",
-          "non_ip/cdn"
+          "non_ip/cdn",
+          "non_ip/global"
         ],
         "outbound": "select"
       },
