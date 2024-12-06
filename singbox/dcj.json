@@ -30,7 +30,8 @@
                     "domainset/cdn",
                     "geosite-geolocation-!cn",
                     "non_ip/cdn",
-                    "non_ip/ai"
+                    "non_ip/ai",
+                    "non_ip/global"
                 ],
                 "server": "dns_fakeip"
             },
@@ -42,7 +43,8 @@
                     "domainset/cdn",
                     "geosite-geolocation-!cn",
                     "non_ip/cdn",
-                    "non_ip/ai"
+                    "non_ip/ai",
+                    "non_ip/global"
                 ],
                 "server": "dns_proxy"
             },
@@ -1028,6 +1030,12 @@
                 "tag": "non_ip/cdn",
                 "type": "remote",
                 "url": "https://ruleset.skk.moe/sing-box/non_ip/cdn.json"
+            },
+            {
+                "format": "source",
+                "tag": "non_ip/global",
+                "type": "remote",
+                "url": "https://ruleset.skk.moe/sing-box/non_ip/global.json"
             }
         ],
         "rules": [
@@ -1083,7 +1091,8 @@
                 "rule_set": [
                     "domainset/cdn",
                     "geosite-geolocation-!cn",
-                    "non_ip/cdn"
+                    "non_ip/cdn",
+                    "non_ip/global"
                 ]
             },
             {
