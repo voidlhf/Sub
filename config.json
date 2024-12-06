@@ -7,26 +7,20 @@
     "servers": [
       {
         "tag": "dns_proxy",
-        "address": "tcp://1.1.1.1",
+        "address": "https://1.1.1.1/dns-query",
         "address_resolver": "dns_resolver",
-        "strategy": "ipv4_only",
         "detour": "select"
       },
       {
         "tag": "dns_direct",
-        "address": "https://dns.alidns.com/dns-query",
+        "address": "https://223.5.5.5/dns-query",
         "address_resolver": "dns_resolver",
-        "strategy": "ipv4_only",
         "detour": "direct"
       },
       {
         "tag": "dns_resolver",
         "address": "223.5.5.5",
         "detour": "direct"
-      },
-      {
-        "tag": "dns_success",
-        "address": "rcode://success"
       },
       {
         "tag": "dns_refused",
@@ -43,7 +37,22 @@
         "server": "dns_resolver"
       },
       {
-        "rule_set": "geosite-geolocation-!cn",
+        "rule_set": [
+          "domainset/reject",
+          "domainset/reject_extra",
+          "non_ip/reject"
+        ],
+        "server": "dns_refused",
+        "disable_cache": true
+      },
+      {
+        "rule_set": [
+          "domainset/cdn",
+          "geosite-geolocation-!cn",
+          "non_ip/cdn",
+          "non_ip/ai",
+          "non_ip/global"
+        ],
         "query_type": [
           "A",
           "AAAA"
@@ -51,7 +60,13 @@
         "server": "dns_fakeip"
       },
       {
-        "rule_set": "geosite-geolocation-!cn",
+        "rule_set": [
+          "domainset/cdn",
+          "geosite-geolocation-!cn",
+          "non_ip/cdn",
+          "non_ip/ai",
+          "non_ip/global"
+        ],
         "query_type": [
           "CNAME"
         ],
@@ -70,6 +85,7 @@
       }
     ],
     "final": "dns_direct",
+    "strategy": "ipv4_only",
     "independent_cache": true,
     "fakeip": {
       "enabled": true,
@@ -77,6 +93,33 @@
       "inet6_range": "fc00::/18"
     }
   },
+  "inbounds": [
+    {
+      "type": "tun",
+      "tag": "tun-in",
+      "address": [
+        "172.18.0.1/30",
+        "fdfe:dcba:9876::1/126"
+      ],
+      "mtu": 9000,
+      "auto_route": true,
+      "strict_route": true,
+      "stack": "system"
+    }
+  ],
+  "outbounds": [
+    {
+      "tag": "chatgpt",
+      "type": "selector",
+      "outbounds": [
+        "exclude: 香港"
+      ]
+    },
+    {
+      "type": "direct",
+      "tag": "direct"
+    }
+  ],
   "route": {
     "rule_set": [
       {
@@ -90,6 +133,48 @@
         "type": "remote",
         "format": "binary",
         "url": "https://raw.githubusercontent.com/SagerNet/sing-geoip/rule-set/geoip-cn.srs"
+      },
+      {
+        "tag": "domainset/reject",
+        "type": "remote",
+        "format": "source",
+        "url": "https://ruleset.skk.moe/sing-box/domainset/reject.json"
+      },
+      {
+        "tag": "domainset/reject_extra",
+        "type": "remote",
+        "format": "source",
+        "url": "https://ruleset.skk.moe/sing-box/domainset/reject_extra.json"
+      },
+      {
+        "tag": "non_ip/reject",
+        "type": "remote",
+        "format": "source",
+        "url": "https://ruleset.skk.moe/sing-box/non_ip/reject.json"
+      },
+      {
+        "tag": "non_ip/ai",
+        "type": "remote",
+        "format": "source",
+        "url": "https://ruleset.skk.moe/sing-box/non_ip/ai.json"
+      },
+      {
+        "tag": "domainset/cdn",
+        "type": "remote",
+        "format": "source",
+        "url": "https://ruleset.skk.moe/sing-box/domainset/cdn.json"
+      },
+      {
+        "tag": "non_ip/cdn",
+        "type": "remote",
+        "format": "source",
+        "url": "https://ruleset.skk.moe/sing-box/non_ip/cdn.json"
+      },
+      {
+        "tag": "non_ip/global",
+        "type": "remote",
+        "format": "source",
+        "url": "https://ruleset.skk.moe/sing-box/non_ip/global.json"
       }
     ],
     "rules": [
@@ -112,14 +197,22 @@
         "action": "reject"
       },
       {
+        "rule_set": [
+          "domainset/reject",
+          "domainset/reject_extra",
+          "non_ip/reject"
+        ],
+        "action": "reject"
+      },
+      {
         "package_name": [
           "com.openai.chatgpt"
         ],
         "outbound": "chatgpt"
       },
       {
-        "domain_suffix": [
-          "proactivebackend-pa.googleapis.com"
+        "rule_set": [
+          "non_ip/ai"
         ],
         "outbound": "chatgpt"
       },
@@ -133,7 +226,12 @@
         "outbound": "direct"
       },
       {
-        "rule_set": "geosite-geolocation-!cn",
+        "rule_set": [
+          "domainset/cdn",
+          "geosite-geolocation-!cn",
+          "non_ip/cdn",
+          "non_ip/global"
+        ],
         "outbound": "select"
       },
       {
@@ -143,57 +241,20 @@
       {
         "ip_is_private": true,
         "outbound": "direct"
-      },
-      {
-        "domain_suffix": [
-          ".cn"
-        ],
-        "outbound": "direct"
       }
     ],
     "final": "select",
-    "auto_detect_interface": true
+    "auto_detect_interface": true,
+    "override_android_vpn": true
   },
-  "inbounds": [
-    {
-      "type": "tun",
-      "tag": "tun-in",
-      "address": [
-        "172.16.0.1/30",
-        "fd00::1/126"
-      ],
-      "mtu": 1492,
-      "auto_route": true,
-      "strict_route": true,
-      "stack": "system"
-    }
-  ],
-  "outbounds": [
-    {
-      "tag": "chatgpt",
-      "type": "selector",
-      "outbounds": [
-        "exclude: 香港"
-      ]
-    },
-    {
-      "type": "direct",
-      "tag": "direct"
-    }
-  ],
   "experimental": {
     "cache_file": {
       "enabled": true,
-      "path": "cache.db",
       "store_fakeip": true,
       "store_rdrc": true
     },
     "clash_api": {
-      "external_controller": "0.0.0.0:9090",
-      "external_ui": "metacubexd",
-      "external_ui_download_url": "https://github.com/MetaCubeX/metacubexd/archive/refs/heads/gh-pages.zip",
-      "external_ui_download_detour": "select",
-      "default_mode": "rule"
+      "external_controller": "0.0.0.0:9090"
     }
   }
 }

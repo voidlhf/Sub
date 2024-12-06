@@ -65,20 +65,17 @@
                 "address": "https://1.1.1.1/dns-query",
                 "address_resolver": "dns_resolver",
                 "detour": "select",
-                "strategy": "ipv4_only",
                 "tag": "dns_proxy"
             },
             {
                 "address": "https://223.5.5.5/dns-query",
                 "address_resolver": "dns_resolver",
                 "detour": "direct",
-                "strategy": "ipv4_only",
                 "tag": "dns_direct"
             },
             {
                 "address": "223.5.5.5",
                 "detour": "direct",
-                "strategy": "ipv4_only",
                 "tag": "dns_resolver"
             },
             {
@@ -89,7 +86,8 @@
                 "address": "fakeip",
                 "tag": "dns_fakeip"
             }
-        ]
+        ],
+        "strategy": "ipv4_only"
     },
     "experimental": {
         "cache_file": {
