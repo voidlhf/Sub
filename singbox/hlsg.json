@@ -5,98 +5,65 @@
             "inet4_range": "198.18.0.0/15",
             "inet6_range": "fc00::/18"
         },
-        "final": "dns_direct",
         "independent_cache": true,
         "rules": [
             {
                 "outbound": "any",
-                "server": "dns_resolver"
+                "server": "dns_direct"
             },
             {
-                "disable_cache": true,
+                "action": "reject",
                 "rule_set": [
-                    "domainset/reject",
-                    "domainset/reject_extra",
-                    "non_ip/reject"
-                ],
-                "server": "dns_refused"
+                    "AdGuardSDNSFilter",
+                    "chrome-doh"
+                ]
             },
             {
+                "action": "route",
                 "query_type": [
                     "A",
                     "AAAA"
                 ],
-                "rule_set": [
-                    "domainset/cdn",
-                    "geosite-geolocation-!cn",
-                    "non_ip/cdn",
-                    "non_ip/ai",
-                    "non_ip/global"
-                ],
+                "rewrite_ttl": 1,
                 "server": "dns_fakeip"
             },
             {
-                "query_type": [
-                    "CNAME"
-                ],
-                "rule_set": [
-                    "domainset/cdn",
-                    "geosite-geolocation-!cn",
-                    "non_ip/cdn",
-                    "non_ip/ai",
-                    "non_ip/global"
-                ],
+                "clash_mode": "global",
                 "server": "dns_proxy"
             },
             {
-                "action": "route-options",
-                "disable_cache": true,
-                "invert": true,
-                "query_type": [
-                    "A",
-                    "AAAA",
-                    "CNAME"
-                ],
-                "server": "dns_refused"
+                "clash_mode": "direct",
+                "server": "dns_direct"
+            },
+            {
+                "rule_set": "geosite-cn",
+                "server": "dns_direct"
             }
         ],
         "servers": [
             {
-                "address": "https://1.1.1.1/dns-query",
-                "address_resolver": "dns_resolver",
+                "address": "https://8.8.8.8/dns-query",
                 "detour": "select",
                 "tag": "dns_proxy"
             },
             {
                 "address": "https://223.5.5.5/dns-query",
-                "address_resolver": "dns_resolver",
                 "detour": "direct",
                 "tag": "dns_direct"
-            },
-            {
-                "address": "223.5.5.5",
-                "detour": "direct",
-                "tag": "dns_resolver"
-            },
-            {
-                "address": "rcode://refused",
-                "tag": "dns_refused"
             },
             {
                 "address": "fakeip",
                 "tag": "dns_fakeip"
             }
         ],
-        "strategy": "ipv4_only"
+        "strategy": "prefer_ipv4"
     },
     "experimental": {
         "cache_file": {
-            "enabled": true,
-            "store_fakeip": true,
-            "store_rdrc": true
+            "enabled": true
         },
         "clash_api": {
-            "external_controller": "0.0.0.0:9090"
+            "external_controller": "127.0.0.1:9090"
         }
     },
     "inbounds": [
@@ -106,17 +73,27 @@
                 "fdfe:dcba:9876::1/126"
             ],
             "auto_route": true,
+            "endpoint_independent_nat": true,
             "mtu": 9000,
-            "stack": "system",
             "strict_route": true,
-            "tag": "tun-in",
             "type": "tun"
+        },
+        {
+            "listen": "127.0.0.1",
+            "listen_port": 2333,
+            "tag": "socks-in",
+            "type": "socks",
+            "users": []
+        },
+        {
+            "listen": "127.0.0.1",
+            "listen_port": 2334,
+            "tag": "mixed-in",
+            "type": "mixed",
+            "users": []
         }
     ],
-    "log": {
-        "level": "info",
-        "timestamp": true
-    },
+    "log": {},
     "outbounds": [
         {
             "tag": "select",
@@ -533,7 +510,14 @@
             "tls": {
                 "enabled": true,
                 "server_name": "20241205.666888.lol",
-                "insecure": true
+                "alpn": [
+                    "http%2F1.1"
+                ],
+                "insecure": true,
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "random"
+                }
             },
             "transport": {
                 "headers": {
@@ -555,7 +539,14 @@
             "tls": {
                 "enabled": true,
                 "server_name": "20241205.666888.lol",
-                "insecure": true
+                "alpn": [
+                    "http%2F1.1"
+                ],
+                "insecure": true,
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "random"
+                }
             },
             "transport": {
                 "headers": {
@@ -577,7 +568,14 @@
             "tls": {
                 "enabled": true,
                 "server_name": "20241205.666888.lol",
-                "insecure": true
+                "alpn": [
+                    "http%2F1.1"
+                ],
+                "insecure": true,
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "random"
+                }
             },
             "transport": {
                 "headers": {
@@ -599,7 +597,14 @@
             "tls": {
                 "enabled": true,
                 "server_name": "20241205.666888.lol",
-                "insecure": true
+                "alpn": [
+                    "http%2F1.1"
+                ],
+                "insecure": true,
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "random"
+                }
             },
             "transport": {
                 "headers": {
@@ -621,7 +626,14 @@
             "tls": {
                 "enabled": true,
                 "server_name": "20241205.666888.lol",
-                "insecure": true
+                "alpn": [
+                    "http%2F1.1"
+                ],
+                "insecure": true,
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "random"
+                }
             },
             "transport": {
                 "headers": {
@@ -643,7 +655,14 @@
             "tls": {
                 "enabled": true,
                 "server_name": "20241205.666888.lol",
-                "insecure": true
+                "alpn": [
+                    "http%2F1.1"
+                ],
+                "insecure": true,
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "random"
+                }
             },
             "transport": {
                 "headers": {
@@ -665,7 +684,14 @@
             "tls": {
                 "enabled": true,
                 "server_name": "20241205.666888.lol",
-                "insecure": true
+                "alpn": [
+                    "http%2F1.1"
+                ],
+                "insecure": true,
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "random"
+                }
             },
             "transport": {
                 "headers": {
@@ -687,7 +713,14 @@
             "tls": {
                 "enabled": true,
                 "server_name": "20241205.666888.lol",
-                "insecure": true
+                "alpn": [
+                    "http%2F1.1"
+                ],
+                "insecure": true,
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "random"
+                }
             },
             "transport": {
                 "headers": {
@@ -709,7 +742,14 @@
             "tls": {
                 "enabled": true,
                 "server_name": "20241205.666888.lol",
-                "insecure": true
+                "alpn": [
+                    "http%2F1.1"
+                ],
+                "insecure": true,
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "random"
+                }
             },
             "transport": {
                 "headers": {
@@ -731,7 +771,14 @@
             "tls": {
                 "enabled": true,
                 "server_name": "20241205.666888.lol",
-                "insecure": true
+                "alpn": [
+                    "http%2F1.1"
+                ],
+                "insecure": true,
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "random"
+                }
             },
             "transport": {
                 "headers": {
@@ -753,7 +800,14 @@
             "tls": {
                 "enabled": true,
                 "server_name": "20241205.666888.lol",
-                "insecure": true
+                "alpn": [
+                    "http%2F1.1"
+                ],
+                "insecure": true,
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "random"
+                }
             },
             "transport": {
                 "headers": {
@@ -775,7 +829,14 @@
             "tls": {
                 "enabled": true,
                 "server_name": "20241205.666888.lol",
-                "insecure": true
+                "alpn": [
+                    "http%2F1.1"
+                ],
+                "insecure": true,
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "random"
+                }
             },
             "transport": {
                 "headers": {
@@ -797,7 +858,14 @@
             "tls": {
                 "enabled": true,
                 "server_name": "20241205.666888.lol",
-                "insecure": true
+                "alpn": [
+                    "http%2F1.1"
+                ],
+                "insecure": true,
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "random"
+                }
             },
             "transport": {
                 "headers": {
@@ -819,7 +887,14 @@
             "tls": {
                 "enabled": true,
                 "server_name": "20241205.666888.lol",
-                "insecure": true
+                "alpn": [
+                    "http%2F1.1"
+                ],
+                "insecure": true,
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "random"
+                }
             },
             "transport": {
                 "headers": {
@@ -841,7 +916,14 @@
             "tls": {
                 "enabled": true,
                 "server_name": "20241205.666888.lol",
-                "insecure": true
+                "alpn": [
+                    "http%2F1.1"
+                ],
+                "insecure": true,
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "random"
+                }
             },
             "transport": {
                 "headers": {
@@ -863,7 +945,14 @@
             "tls": {
                 "enabled": true,
                 "server_name": "20241205.666888.lol",
-                "insecure": true
+                "alpn": [
+                    "http%2F1.1"
+                ],
+                "insecure": true,
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "random"
+                }
             },
             "transport": {
                 "headers": {
@@ -885,7 +974,14 @@
             "tls": {
                 "enabled": true,
                 "server_name": "20241205.666888.lol",
-                "insecure": true
+                "alpn": [
+                    "http%2F1.1"
+                ],
+                "insecure": true,
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "random"
+                }
             },
             "transport": {
                 "headers": {
@@ -907,7 +1003,14 @@
             "tls": {
                 "enabled": true,
                 "server_name": "20241205.666888.lol",
-                "insecure": true
+                "alpn": [
+                    "http%2F1.1"
+                ],
+                "insecure": true,
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "random"
+                }
             },
             "transport": {
                 "headers": {
@@ -929,7 +1032,14 @@
             "tls": {
                 "enabled": true,
                 "server_name": "20241205.666888.lol",
-                "insecure": true
+                "alpn": [
+                    "http%2F1.1"
+                ],
+                "insecure": true,
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "random"
+                }
             },
             "transport": {
                 "headers": {
@@ -951,7 +1061,14 @@
             "tls": {
                 "enabled": true,
                 "server_name": "20241205.666888.lol",
-                "insecure": true
+                "alpn": [
+                    "http%2F1.1"
+                ],
+                "insecure": true,
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "random"
+                }
             },
             "transport": {
                 "headers": {
@@ -973,7 +1090,14 @@
             "tls": {
                 "enabled": true,
                 "server_name": "20241205.666888.lol",
-                "insecure": true
+                "alpn": [
+                    "http%2F1.1"
+                ],
+                "insecure": true,
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "random"
+                }
             },
             "transport": {
                 "headers": {
@@ -995,7 +1119,14 @@
             "tls": {
                 "enabled": true,
                 "server_name": "20241205.666888.lol",
-                "insecure": true
+                "alpn": [
+                    "http%2F1.1"
+                ],
+                "insecure": true,
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "random"
+                }
             },
             "transport": {
                 "headers": {
@@ -1017,7 +1148,14 @@
             "tls": {
                 "enabled": true,
                 "server_name": "20241205.666888.lol",
-                "insecure": true
+                "alpn": [
+                    "http%2F1.1"
+                ],
+                "insecure": true,
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "random"
+                }
             },
             "transport": {
                 "headers": {
@@ -1039,7 +1177,14 @@
             "tls": {
                 "enabled": true,
                 "server_name": "20241205.666888.lol",
-                "insecure": true
+                "alpn": [
+                    "http%2F1.1"
+                ],
+                "insecure": true,
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "random"
+                }
             },
             "transport": {
                 "headers": {
@@ -1061,7 +1206,14 @@
             "tls": {
                 "enabled": true,
                 "server_name": "20241205.666888.lol",
-                "insecure": true
+                "alpn": [
+                    "http%2F1.1"
+                ],
+                "insecure": true,
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "random"
+                }
             },
             "transport": {
                 "headers": {
@@ -1083,7 +1235,14 @@
             "tls": {
                 "enabled": true,
                 "server_name": "20241205.666888.lol",
-                "insecure": true
+                "alpn": [
+                    "http%2F1.1"
+                ],
+                "insecure": true,
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "random"
+                }
             },
             "transport": {
                 "headers": {
@@ -1105,7 +1264,14 @@
             "tls": {
                 "enabled": true,
                 "server_name": "20241205.666888.lol",
-                "insecure": true
+                "alpn": [
+                    "http%2F1.1"
+                ],
+                "insecure": true,
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "random"
+                }
             },
             "transport": {
                 "headers": {
@@ -1127,7 +1293,14 @@
             "tls": {
                 "enabled": true,
                 "server_name": "20241205.666888.lol",
-                "insecure": true
+                "alpn": [
+                    "http%2F1.1"
+                ],
+                "insecure": true,
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "random"
+                }
             },
             "transport": {
                 "headers": {
@@ -1149,7 +1322,14 @@
             "tls": {
                 "enabled": true,
                 "server_name": "20241205.666888.lol",
-                "insecure": true
+                "alpn": [
+                    "http%2F1.1"
+                ],
+                "insecure": true,
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "random"
+                }
             },
             "transport": {
                 "headers": {
@@ -1171,7 +1351,14 @@
             "tls": {
                 "enabled": true,
                 "server_name": "20241205.666888.lol",
-                "insecure": true
+                "alpn": [
+                    "http%2F1.1"
+                ],
+                "insecure": true,
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "random"
+                }
             },
             "transport": {
                 "headers": {
@@ -1193,7 +1380,14 @@
             "tls": {
                 "enabled": true,
                 "server_name": "20241205.666888.lol",
-                "insecure": true
+                "alpn": [
+                    "http%2F1.1"
+                ],
+                "insecure": true,
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "random"
+                }
             },
             "transport": {
                 "headers": {
@@ -1215,7 +1409,14 @@
             "tls": {
                 "enabled": true,
                 "server_name": "20241205.666888.lol",
-                "insecure": true
+                "alpn": [
+                    "http%2F1.1"
+                ],
+                "insecure": true,
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "random"
+                }
             },
             "transport": {
                 "headers": {
@@ -1237,7 +1438,14 @@
             "tls": {
                 "enabled": true,
                 "server_name": "20241205.666888.lol",
-                "insecure": true
+                "alpn": [
+                    "http%2F1.1"
+                ],
+                "insecure": true,
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "random"
+                }
             },
             "transport": {
                 "headers": {
@@ -1259,7 +1467,14 @@
             "tls": {
                 "enabled": true,
                 "server_name": "20241205.666888.lol",
-                "insecure": true
+                "alpn": [
+                    "http%2F1.1"
+                ],
+                "insecure": true,
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "random"
+                }
             },
             "transport": {
                 "headers": {
@@ -1281,7 +1496,14 @@
             "tls": {
                 "enabled": true,
                 "server_name": "20241205.666888.lol",
-                "insecure": true
+                "alpn": [
+                    "http%2F1.1"
+                ],
+                "insecure": true,
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "random"
+                }
             },
             "transport": {
                 "headers": {
@@ -1303,7 +1525,14 @@
             "tls": {
                 "enabled": true,
                 "server_name": "20241205.666888.lol",
-                "insecure": true
+                "alpn": [
+                    "http%2F1.1"
+                ],
+                "insecure": true,
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "random"
+                }
             },
             "transport": {
                 "headers": {
@@ -1325,7 +1554,14 @@
             "tls": {
                 "enabled": true,
                 "server_name": "20241205.666888.lol",
-                "insecure": true
+                "alpn": [
+                    "http%2F1.1"
+                ],
+                "insecure": true,
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "random"
+                }
             },
             "transport": {
                 "headers": {
@@ -1347,7 +1583,14 @@
             "tls": {
                 "enabled": true,
                 "server_name": "20241205.666888.lol",
-                "insecure": true
+                "alpn": [
+                    "http%2F1.1"
+                ],
+                "insecure": true,
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "random"
+                }
             },
             "transport": {
                 "headers": {
@@ -1369,7 +1612,14 @@
             "tls": {
                 "enabled": true,
                 "server_name": "20241205.666888.lol",
-                "insecure": true
+                "alpn": [
+                    "http%2F1.1"
+                ],
+                "insecure": true,
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "random"
+                }
             },
             "transport": {
                 "headers": {
@@ -1391,7 +1641,14 @@
             "tls": {
                 "enabled": true,
                 "server_name": "20241205.666888.lol",
-                "insecure": true
+                "alpn": [
+                    "http%2F1.1"
+                ],
+                "insecure": true,
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "random"
+                }
             },
             "transport": {
                 "headers": {
@@ -1413,7 +1670,14 @@
             "tls": {
                 "enabled": true,
                 "server_name": "20241205.666888.lol",
-                "insecure": true
+                "alpn": [
+                    "http%2F1.1"
+                ],
+                "insecure": true,
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "random"
+                }
             },
             "transport": {
                 "headers": {
@@ -1435,7 +1699,14 @@
             "tls": {
                 "enabled": true,
                 "server_name": "20241205.666888.lol",
-                "insecure": true
+                "alpn": [
+                    "http%2F1.1"
+                ],
+                "insecure": true,
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "random"
+                }
             },
             "transport": {
                 "headers": {
@@ -1457,7 +1728,14 @@
             "tls": {
                 "enabled": true,
                 "server_name": "20241205.666888.lol",
-                "insecure": true
+                "alpn": [
+                    "http%2F1.1"
+                ],
+                "insecure": true,
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "random"
+                }
             },
             "transport": {
                 "headers": {
@@ -1479,7 +1757,14 @@
             "tls": {
                 "enabled": true,
                 "server_name": "20241205.666888.lol",
-                "insecure": true
+                "alpn": [
+                    "http%2F1.1"
+                ],
+                "insecure": true,
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "random"
+                }
             },
             "transport": {
                 "headers": {
@@ -1501,7 +1786,14 @@
             "tls": {
                 "enabled": true,
                 "server_name": "20241205.666888.lol",
-                "insecure": true
+                "alpn": [
+                    "http%2F1.1"
+                ],
+                "insecure": true,
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "random"
+                }
             },
             "transport": {
                 "headers": {
@@ -1523,7 +1815,14 @@
             "tls": {
                 "enabled": true,
                 "server_name": "20241205.666888.lol",
-                "insecure": true
+                "alpn": [
+                    "http%2F1.1"
+                ],
+                "insecure": true,
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "random"
+                }
             },
             "transport": {
                 "headers": {
@@ -1545,7 +1844,14 @@
             "tls": {
                 "enabled": true,
                 "server_name": "20241205.666888.lol",
-                "insecure": true
+                "alpn": [
+                    "http%2F1.1"
+                ],
+                "insecure": true,
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "random"
+                }
             },
             "transport": {
                 "headers": {
@@ -1567,7 +1873,14 @@
             "tls": {
                 "enabled": true,
                 "server_name": "20241205.666888.lol",
-                "insecure": true
+                "alpn": [
+                    "http%2F1.1"
+                ],
+                "insecure": true,
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "random"
+                }
             },
             "transport": {
                 "headers": {
@@ -1589,7 +1902,14 @@
             "tls": {
                 "enabled": true,
                 "server_name": "20241205.666888.lol",
-                "insecure": true
+                "alpn": [
+                    "http%2F1.1"
+                ],
+                "insecure": true,
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "random"
+                }
             },
             "transport": {
                 "headers": {
@@ -1611,7 +1931,14 @@
             "tls": {
                 "enabled": true,
                 "server_name": "20241205.666888.lol",
-                "insecure": true
+                "alpn": [
+                    "http%2F1.1"
+                ],
+                "insecure": true,
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "random"
+                }
             },
             "transport": {
                 "headers": {
@@ -1633,7 +1960,14 @@
             "tls": {
                 "enabled": true,
                 "server_name": "20241205.666888.lol",
-                "insecure": true
+                "alpn": [
+                    "http%2F1.1"
+                ],
+                "insecure": true,
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "random"
+                }
             },
             "transport": {
                 "headers": {
@@ -1655,7 +1989,14 @@
             "tls": {
                 "enabled": true,
                 "server_name": "20241205.666888.lol",
-                "insecure": true
+                "alpn": [
+                    "http%2F1.1"
+                ],
+                "insecure": true,
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "random"
+                }
             },
             "transport": {
                 "headers": {
@@ -1677,7 +2018,14 @@
             "tls": {
                 "enabled": true,
                 "server_name": "20241205.666888.lol",
-                "insecure": true
+                "alpn": [
+                    "http%2F1.1"
+                ],
+                "insecure": true,
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "random"
+                }
             },
             "transport": {
                 "headers": {
@@ -1699,7 +2047,14 @@
             "tls": {
                 "enabled": true,
                 "server_name": "20241205.666888.lol",
-                "insecure": true
+                "alpn": [
+                    "http%2F1.1"
+                ],
+                "insecure": true,
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "random"
+                }
             },
             "transport": {
                 "headers": {
@@ -1721,7 +2076,14 @@
             "tls": {
                 "enabled": true,
                 "server_name": "20241205.666888.lol",
-                "insecure": true
+                "alpn": [
+                    "http%2F1.1"
+                ],
+                "insecure": true,
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "random"
+                }
             },
             "transport": {
                 "headers": {
@@ -1743,7 +2105,14 @@
             "tls": {
                 "enabled": true,
                 "server_name": "20241205.666888.lol",
-                "insecure": true
+                "alpn": [
+                    "http%2F1.1"
+                ],
+                "insecure": true,
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "random"
+                }
             },
             "transport": {
                 "headers": {
@@ -1765,7 +2134,14 @@
             "tls": {
                 "enabled": true,
                 "server_name": "20241205.666888.lol",
-                "insecure": true
+                "alpn": [
+                    "http%2F1.1"
+                ],
+                "insecure": true,
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "random"
+                }
             },
             "transport": {
                 "headers": {
@@ -1787,7 +2163,14 @@
             "tls": {
                 "enabled": true,
                 "server_name": "20241205.666888.lol",
-                "insecure": true
+                "alpn": [
+                    "http%2F1.1"
+                ],
+                "insecure": true,
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "random"
+                }
             },
             "transport": {
                 "headers": {
@@ -1809,7 +2192,14 @@
             "tls": {
                 "enabled": true,
                 "server_name": "20241205.666888.lol",
-                "insecure": true
+                "alpn": [
+                    "http%2F1.1"
+                ],
+                "insecure": true,
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "random"
+                }
             },
             "transport": {
                 "headers": {
@@ -1831,7 +2221,14 @@
             "tls": {
                 "enabled": true,
                 "server_name": "20241205.666888.lol",
-                "insecure": true
+                "alpn": [
+                    "http%2F1.1"
+                ],
+                "insecure": true,
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "random"
+                }
             },
             "transport": {
                 "headers": {
@@ -1853,7 +2250,14 @@
             "tls": {
                 "enabled": true,
                 "server_name": "20241205.666888.lol",
-                "insecure": true
+                "alpn": [
+                    "http%2F1.1"
+                ],
+                "insecure": true,
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "random"
+                }
             },
             "transport": {
                 "headers": {
@@ -1875,7 +2279,14 @@
             "tls": {
                 "enabled": true,
                 "server_name": "20241205.666888.lol",
-                "insecure": true
+                "alpn": [
+                    "http%2F1.1"
+                ],
+                "insecure": true,
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "random"
+                }
             },
             "transport": {
                 "headers": {
@@ -1897,7 +2308,14 @@
             "tls": {
                 "enabled": true,
                 "server_name": "20241205.666888.lol",
-                "insecure": true
+                "alpn": [
+                    "http%2F1.1"
+                ],
+                "insecure": true,
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "random"
+                }
             },
             "transport": {
                 "headers": {
@@ -1919,7 +2337,14 @@
             "tls": {
                 "enabled": true,
                 "server_name": "20241205.666888.lol",
-                "insecure": true
+                "alpn": [
+                    "http%2F1.1"
+                ],
+                "insecure": true,
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "random"
+                }
             },
             "transport": {
                 "headers": {
@@ -1941,7 +2366,14 @@
             "tls": {
                 "enabled": true,
                 "server_name": "20241205.666888.lol",
-                "insecure": true
+                "alpn": [
+                    "http%2F1.1"
+                ],
+                "insecure": true,
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "random"
+                }
             },
             "transport": {
                 "headers": {
@@ -1963,7 +2395,14 @@
             "tls": {
                 "enabled": true,
                 "server_name": "20241205.666888.lol",
-                "insecure": true
+                "alpn": [
+                    "http%2F1.1"
+                ],
+                "insecure": true,
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "random"
+                }
             },
             "transport": {
                 "headers": {
@@ -1985,7 +2424,14 @@
             "tls": {
                 "enabled": true,
                 "server_name": "20241205.666888.lol",
-                "insecure": true
+                "alpn": [
+                    "http%2F1.1"
+                ],
+                "insecure": true,
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "random"
+                }
             },
             "transport": {
                 "headers": {
@@ -2007,7 +2453,14 @@
             "tls": {
                 "enabled": true,
                 "server_name": "20241205.666888.lol",
-                "insecure": true
+                "alpn": [
+                    "http%2F1.1"
+                ],
+                "insecure": true,
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "random"
+                }
             },
             "transport": {
                 "headers": {
@@ -2029,7 +2482,14 @@
             "tls": {
                 "enabled": true,
                 "server_name": "20241205.666888.lol",
-                "insecure": true
+                "alpn": [
+                    "http%2F1.1"
+                ],
+                "insecure": true,
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "random"
+                }
             },
             "transport": {
                 "headers": {
@@ -2051,7 +2511,14 @@
             "tls": {
                 "enabled": true,
                 "server_name": "20241205.666888.lol",
-                "insecure": true
+                "alpn": [
+                    "http%2F1.1"
+                ],
+                "insecure": true,
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "random"
+                }
             },
             "transport": {
                 "headers": {
@@ -2073,7 +2540,14 @@
             "tls": {
                 "enabled": true,
                 "server_name": "20241205.666888.lol",
-                "insecure": true
+                "alpn": [
+                    "http%2F1.1"
+                ],
+                "insecure": true,
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "random"
+                }
             },
             "transport": {
                 "headers": {
@@ -2095,7 +2569,14 @@
             "tls": {
                 "enabled": true,
                 "server_name": "20241205.666888.lol",
-                "insecure": true
+                "alpn": [
+                    "http%2F1.1"
+                ],
+                "insecure": true,
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "random"
+                }
             },
             "transport": {
                 "headers": {
@@ -2117,7 +2598,14 @@
             "tls": {
                 "enabled": true,
                 "server_name": "20241205.666888.lol",
-                "insecure": true
+                "alpn": [
+                    "http%2F1.1"
+                ],
+                "insecure": true,
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "random"
+                }
             },
             "transport": {
                 "headers": {
@@ -2139,7 +2627,14 @@
             "tls": {
                 "enabled": true,
                 "server_name": "20241205.666888.lol",
-                "insecure": true
+                "alpn": [
+                    "http%2F1.1"
+                ],
+                "insecure": true,
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "random"
+                }
             },
             "transport": {
                 "headers": {
@@ -2161,7 +2656,14 @@
             "tls": {
                 "enabled": true,
                 "server_name": "20241205.666888.lol",
-                "insecure": true
+                "alpn": [
+                    "http%2F1.1"
+                ],
+                "insecure": true,
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "random"
+                }
             },
             "transport": {
                 "headers": {
@@ -2183,7 +2685,14 @@
             "tls": {
                 "enabled": true,
                 "server_name": "20241205.666888.lol",
-                "insecure": true
+                "alpn": [
+                    "http%2F1.1"
+                ],
+                "insecure": true,
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "random"
+                }
             },
             "transport": {
                 "headers": {
@@ -2205,7 +2714,14 @@
             "tls": {
                 "enabled": true,
                 "server_name": "20241205.666888.lol",
-                "insecure": true
+                "alpn": [
+                    "http%2F1.1"
+                ],
+                "insecure": true,
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "random"
+                }
             },
             "transport": {
                 "headers": {
@@ -2227,7 +2743,14 @@
             "tls": {
                 "enabled": true,
                 "server_name": "20241205.666888.lol",
-                "insecure": true
+                "alpn": [
+                    "http%2F1.1"
+                ],
+                "insecure": true,
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "random"
+                }
             },
             "transport": {
                 "headers": {
@@ -2249,7 +2772,14 @@
             "tls": {
                 "enabled": true,
                 "server_name": "20241205.666888.lol",
-                "insecure": true
+                "alpn": [
+                    "http%2F1.1"
+                ],
+                "insecure": true,
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "random"
+                }
             },
             "transport": {
                 "headers": {
@@ -2271,7 +2801,14 @@
             "tls": {
                 "enabled": true,
                 "server_name": "20241205.666888.lol",
-                "insecure": true
+                "alpn": [
+                    "http%2F1.1"
+                ],
+                "insecure": true,
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "random"
+                }
             },
             "transport": {
                 "headers": {
@@ -2293,7 +2830,14 @@
             "tls": {
                 "enabled": true,
                 "server_name": "20241205.666888.lol",
-                "insecure": true
+                "alpn": [
+                    "http%2F1.1"
+                ],
+                "insecure": true,
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "random"
+                }
             },
             "transport": {
                 "headers": {
@@ -2315,7 +2859,14 @@
             "tls": {
                 "enabled": true,
                 "server_name": "20241205.666888.lol",
-                "insecure": true
+                "alpn": [
+                    "http%2F1.1"
+                ],
+                "insecure": true,
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "random"
+                }
             },
             "transport": {
                 "headers": {
@@ -2337,7 +2888,14 @@
             "tls": {
                 "enabled": true,
                 "server_name": "20241205.666888.lol",
-                "insecure": true
+                "alpn": [
+                    "http%2F1.1"
+                ],
+                "insecure": true,
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "random"
+                }
             },
             "transport": {
                 "headers": {
@@ -2359,7 +2917,14 @@
             "tls": {
                 "enabled": true,
                 "server_name": "20241205.666888.lol",
-                "insecure": true
+                "alpn": [
+                    "http%2F1.1"
+                ],
+                "insecure": true,
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "random"
+                }
             },
             "transport": {
                 "headers": {
@@ -2381,7 +2946,14 @@
             "tls": {
                 "enabled": true,
                 "server_name": "20241205.666888.lol",
-                "insecure": true
+                "alpn": [
+                    "http%2F1.1"
+                ],
+                "insecure": true,
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "random"
+                }
             },
             "transport": {
                 "headers": {
@@ -2403,7 +2975,14 @@
             "tls": {
                 "enabled": true,
                 "server_name": "20241205.666888.lol",
-                "insecure": true
+                "alpn": [
+                    "http%2F1.1"
+                ],
+                "insecure": true,
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "random"
+                }
             },
             "transport": {
                 "headers": {
@@ -2425,7 +3004,14 @@
             "tls": {
                 "enabled": true,
                 "server_name": "20241205.666888.lol",
-                "insecure": true
+                "alpn": [
+                    "http%2F1.1"
+                ],
+                "insecure": true,
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "random"
+                }
             },
             "transport": {
                 "headers": {
@@ -2447,7 +3033,14 @@
             "tls": {
                 "enabled": true,
                 "server_name": "20241205.666888.lol",
-                "insecure": true
+                "alpn": [
+                    "http%2F1.1"
+                ],
+                "insecure": true,
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "random"
+                }
             },
             "transport": {
                 "headers": {
@@ -2469,7 +3062,14 @@
             "tls": {
                 "enabled": true,
                 "server_name": "20241205.666888.lol",
-                "insecure": true
+                "alpn": [
+                    "http%2F1.1"
+                ],
+                "insecure": true,
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "random"
+                }
             },
             "transport": {
                 "headers": {
@@ -2491,7 +3091,14 @@
             "tls": {
                 "enabled": true,
                 "server_name": "20241205.666888.lol",
-                "insecure": true
+                "alpn": [
+                    "http%2F1.1"
+                ],
+                "insecure": true,
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "random"
+                }
             },
             "transport": {
                 "headers": {
@@ -2513,7 +3120,14 @@
             "tls": {
                 "enabled": true,
                 "server_name": "20241205.666888.lol",
-                "insecure": true
+                "alpn": [
+                    "http%2F1.1"
+                ],
+                "insecure": true,
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "random"
+                }
             },
             "transport": {
                 "headers": {
@@ -2535,7 +3149,14 @@
             "tls": {
                 "enabled": true,
                 "server_name": "20241205.666888.lol",
-                "insecure": true
+                "alpn": [
+                    "http%2F1.1"
+                ],
+                "insecure": true,
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "random"
+                }
             },
             "transport": {
                 "headers": {
@@ -2557,7 +3178,14 @@
             "tls": {
                 "enabled": true,
                 "server_name": "20241205.666888.lol",
-                "insecure": true
+                "alpn": [
+                    "http%2F1.1"
+                ],
+                "insecure": true,
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "random"
+                }
             },
             "transport": {
                 "headers": {
@@ -2579,7 +3207,14 @@
             "tls": {
                 "enabled": true,
                 "server_name": "20241205.666888.lol",
-                "insecure": true
+                "alpn": [
+                    "http%2F1.1"
+                ],
+                "insecure": true,
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "random"
+                }
             },
             "transport": {
                 "headers": {
@@ -2601,7 +3236,14 @@
             "tls": {
                 "enabled": true,
                 "server_name": "20241205.666888.lol",
-                "insecure": true
+                "alpn": [
+                    "http%2F1.1"
+                ],
+                "insecure": true,
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "random"
+                }
             },
             "transport": {
                 "headers": {
@@ -2623,7 +3265,14 @@
             "tls": {
                 "enabled": true,
                 "server_name": "20241205.666888.lol",
-                "insecure": true
+                "alpn": [
+                    "http%2F1.1"
+                ],
+                "insecure": true,
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "random"
+                }
             },
             "transport": {
                 "headers": {
@@ -2645,7 +3294,14 @@
             "tls": {
                 "enabled": true,
                 "server_name": "20241205.666888.lol",
-                "insecure": true
+                "alpn": [
+                    "http%2F1.1"
+                ],
+                "insecure": true,
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "random"
+                }
             },
             "transport": {
                 "headers": {
@@ -2667,7 +3323,14 @@
             "tls": {
                 "enabled": true,
                 "server_name": "20241205.666888.lol",
-                "insecure": true
+                "alpn": [
+                    "http%2F1.1"
+                ],
+                "insecure": true,
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "random"
+                }
             },
             "transport": {
                 "headers": {
@@ -2689,7 +3352,14 @@
             "tls": {
                 "enabled": true,
                 "server_name": "20241205.666888.lol",
-                "insecure": true
+                "alpn": [
+                    "http%2F1.1"
+                ],
+                "insecure": true,
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "random"
+                }
             },
             "transport": {
                 "headers": {
@@ -2711,7 +3381,14 @@
             "tls": {
                 "enabled": true,
                 "server_name": "20241205.666888.lol",
-                "insecure": true
+                "alpn": [
+                    "http%2F1.1"
+                ],
+                "insecure": true,
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "random"
+                }
             },
             "transport": {
                 "headers": {
@@ -2733,7 +3410,14 @@
             "tls": {
                 "enabled": true,
                 "server_name": "20241205.666888.lol",
-                "insecure": true
+                "alpn": [
+                    "http%2F1.1"
+                ],
+                "insecure": true,
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "random"
+                }
             },
             "transport": {
                 "headers": {
@@ -2755,7 +3439,14 @@
             "tls": {
                 "enabled": true,
                 "server_name": "20241205.666888.lol",
-                "insecure": true
+                "alpn": [
+                    "http%2F1.1"
+                ],
+                "insecure": true,
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "random"
+                }
             },
             "transport": {
                 "headers": {
@@ -2777,7 +3468,14 @@
             "tls": {
                 "enabled": true,
                 "server_name": "20241205.666888.lol",
-                "insecure": true
+                "alpn": [
+                    "http%2F1.1"
+                ],
+                "insecure": true,
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "random"
+                }
             },
             "transport": {
                 "headers": {
@@ -2799,7 +3497,14 @@
             "tls": {
                 "enabled": true,
                 "server_name": "20241205.666888.lol",
-                "insecure": true
+                "alpn": [
+                    "http%2F1.1"
+                ],
+                "insecure": true,
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "random"
+                }
             },
             "transport": {
                 "headers": {
@@ -2821,7 +3526,14 @@
             "tls": {
                 "enabled": true,
                 "server_name": "20241205.666888.lol",
-                "insecure": true
+                "alpn": [
+                    "http%2F1.1"
+                ],
+                "insecure": true,
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "random"
+                }
             },
             "transport": {
                 "headers": {
@@ -2843,7 +3555,14 @@
             "tls": {
                 "enabled": true,
                 "server_name": "20241205.666888.lol",
-                "insecure": true
+                "alpn": [
+                    "http%2F1.1"
+                ],
+                "insecure": true,
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "random"
+                }
             },
             "transport": {
                 "headers": {
@@ -2865,7 +3584,14 @@
             "tls": {
                 "enabled": true,
                 "server_name": "20241205.666888.lol",
-                "insecure": true
+                "alpn": [
+                    "http%2F1.1"
+                ],
+                "insecure": true,
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "random"
+                }
             },
             "transport": {
                 "headers": {
@@ -2887,7 +3613,14 @@
             "tls": {
                 "enabled": true,
                 "server_name": "20241205.666888.lol",
-                "insecure": true
+                "alpn": [
+                    "http%2F1.1"
+                ],
+                "insecure": true,
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "random"
+                }
             },
             "transport": {
                 "headers": {
@@ -2909,7 +3642,14 @@
             "tls": {
                 "enabled": true,
                 "server_name": "20241205.666888.lol",
-                "insecure": true
+                "alpn": [
+                    "http%2F1.1"
+                ],
+                "insecure": true,
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "random"
+                }
             },
             "transport": {
                 "headers": {
@@ -2931,7 +3671,14 @@
             "tls": {
                 "enabled": true,
                 "server_name": "20241205.666888.lol",
-                "insecure": true
+                "alpn": [
+                    "http%2F1.1"
+                ],
+                "insecure": true,
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "random"
+                }
             },
             "transport": {
                 "headers": {
@@ -2953,7 +3700,14 @@
             "tls": {
                 "enabled": true,
                 "server_name": "20241205.666888.lol",
-                "insecure": true
+                "alpn": [
+                    "http%2F1.1"
+                ],
+                "insecure": true,
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "random"
+                }
             },
             "transport": {
                 "headers": {
@@ -2975,7 +3729,14 @@
             "tls": {
                 "enabled": true,
                 "server_name": "20241205.666888.lol",
-                "insecure": true
+                "alpn": [
+                    "http%2F1.1"
+                ],
+                "insecure": true,
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "random"
+                }
             },
             "transport": {
                 "headers": {
@@ -2997,7 +3758,14 @@
             "tls": {
                 "enabled": true,
                 "server_name": "20241205.666888.lol",
-                "insecure": true
+                "alpn": [
+                    "http%2F1.1"
+                ],
+                "insecure": true,
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "random"
+                }
             },
             "transport": {
                 "headers": {
@@ -3019,7 +3787,14 @@
             "tls": {
                 "enabled": true,
                 "server_name": "20241205.666888.lol",
-                "insecure": true
+                "alpn": [
+                    "http%2F1.1"
+                ],
+                "insecure": true,
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "random"
+                }
             },
             "transport": {
                 "headers": {
@@ -3041,7 +3816,14 @@
             "tls": {
                 "enabled": true,
                 "server_name": "20241205.666888.lol",
-                "insecure": true
+                "alpn": [
+                    "http%2F1.1"
+                ],
+                "insecure": true,
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "random"
+                }
             },
             "transport": {
                 "headers": {
@@ -3063,7 +3845,14 @@
             "tls": {
                 "enabled": true,
                 "server_name": "20241205.666888.lol",
-                "insecure": true
+                "alpn": [
+                    "http%2F1.1"
+                ],
+                "insecure": true,
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "random"
+                }
             },
             "transport": {
                 "headers": {
@@ -3085,7 +3874,14 @@
             "tls": {
                 "enabled": true,
                 "server_name": "20241205.666888.lol",
-                "insecure": true
+                "alpn": [
+                    "http%2F1.1"
+                ],
+                "insecure": true,
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "random"
+                }
             },
             "transport": {
                 "headers": {
@@ -3107,7 +3903,14 @@
             "tls": {
                 "enabled": true,
                 "server_name": "20241205.666888.lol",
-                "insecure": true
+                "alpn": [
+                    "http%2F1.1"
+                ],
+                "insecure": true,
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "random"
+                }
             },
             "transport": {
                 "headers": {
@@ -3129,7 +3932,14 @@
             "tls": {
                 "enabled": true,
                 "server_name": "20241205.666888.lol",
-                "insecure": true
+                "alpn": [
+                    "http%2F1.1"
+                ],
+                "insecure": true,
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "random"
+                }
             },
             "transport": {
                 "headers": {
@@ -3151,7 +3961,14 @@
             "tls": {
                 "enabled": true,
                 "server_name": "20241205.666888.lol",
-                "insecure": true
+                "alpn": [
+                    "http%2F1.1"
+                ],
+                "insecure": true,
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "random"
+                }
             },
             "transport": {
                 "headers": {
@@ -3173,7 +3990,14 @@
             "tls": {
                 "enabled": true,
                 "server_name": "20241205.666888.lol",
-                "insecure": true
+                "alpn": [
+                    "http%2F1.1"
+                ],
+                "insecure": true,
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "random"
+                }
             },
             "transport": {
                 "headers": {
@@ -3195,7 +4019,14 @@
             "tls": {
                 "enabled": true,
                 "server_name": "20241205.666888.lol",
-                "insecure": true
+                "alpn": [
+                    "http%2F1.1"
+                ],
+                "insecure": true,
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "random"
+                }
             },
             "transport": {
                 "headers": {
@@ -3217,7 +4048,14 @@
             "tls": {
                 "enabled": true,
                 "server_name": "20241205.666888.lol",
-                "insecure": true
+                "alpn": [
+                    "http%2F1.1"
+                ],
+                "insecure": true,
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "random"
+                }
             },
             "transport": {
                 "headers": {
@@ -3239,7 +4077,14 @@
             "tls": {
                 "enabled": true,
                 "server_name": "20241205.666888.lol",
-                "insecure": true
+                "alpn": [
+                    "http%2F1.1"
+                ],
+                "insecure": true,
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "random"
+                }
             },
             "transport": {
                 "headers": {
@@ -3261,7 +4106,14 @@
             "tls": {
                 "enabled": true,
                 "server_name": "20241205.666888.lol",
-                "insecure": true
+                "alpn": [
+                    "http%2F1.1"
+                ],
+                "insecure": true,
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "random"
+                }
             },
             "transport": {
                 "headers": {
@@ -3283,7 +4135,14 @@
             "tls": {
                 "enabled": true,
                 "server_name": "20241205.666888.lol",
-                "insecure": true
+                "alpn": [
+                    "http%2F1.1"
+                ],
+                "insecure": true,
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "random"
+                }
             },
             "transport": {
                 "headers": {
@@ -3305,7 +4164,14 @@
             "tls": {
                 "enabled": true,
                 "server_name": "20241205.666888.lol",
-                "insecure": true
+                "alpn": [
+                    "http%2F1.1"
+                ],
+                "insecure": true,
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "random"
+                }
             },
             "transport": {
                 "headers": {
@@ -3327,7 +4193,14 @@
             "tls": {
                 "enabled": true,
                 "server_name": "20241205.666888.lol",
-                "insecure": true
+                "alpn": [
+                    "http%2F1.1"
+                ],
+                "insecure": true,
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "random"
+                }
             },
             "transport": {
                 "headers": {
@@ -3349,7 +4222,14 @@
             "tls": {
                 "enabled": true,
                 "server_name": "20241205.666888.lol",
-                "insecure": true
+                "alpn": [
+                    "http%2F1.1"
+                ],
+                "insecure": true,
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "random"
+                }
             },
             "transport": {
                 "headers": {
@@ -3371,7 +4251,14 @@
             "tls": {
                 "enabled": true,
                 "server_name": "20241205.666888.lol",
-                "insecure": true
+                "alpn": [
+                    "http%2F1.1"
+                ],
+                "insecure": true,
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "random"
+                }
             },
             "transport": {
                 "headers": {
@@ -3393,7 +4280,14 @@
             "tls": {
                 "enabled": true,
                 "server_name": "20241205.666888.lol",
-                "insecure": true
+                "alpn": [
+                    "http%2F1.1"
+                ],
+                "insecure": true,
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "random"
+                }
             },
             "transport": {
                 "headers": {
@@ -3415,15 +4309,7 @@
     ],
     "route": {
         "auto_detect_interface": true,
-        "final": "select",
-        "override_android_vpn": true,
         "rule_set": [
-            {
-                "format": "binary",
-                "tag": "geosite-geolocation-!cn",
-                "type": "remote",
-                "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-!cn.srs"
-            },
             {
                 "format": "binary",
                 "tag": "geoip-cn",
@@ -3431,74 +4317,56 @@
                 "url": "https://raw.githubusercontent.com/SagerNet/sing-geoip/rule-set/geoip-cn.srs"
             },
             {
-                "format": "source",
-                "tag": "domainset/reject",
+                "format": "binary",
+                "tag": "geosite-cn",
                 "type": "remote",
-                "url": "https://ruleset.skk.moe/sing-box/domainset/reject.json"
+                "url": "https://raw.githubusercontent.com/xmdhs/sing-geosite/rule-set-Loyalsoldier/geosite-geolocation-cn.srs"
+            },
+            {
+                "format": "binary",
+                "tag": "AdGuardSDNSFilter",
+                "type": "remote",
+                "url": "https://raw.githubusercontent.com/xmdhs/sing-box-ruleset/rule-set/AdGuardSDNSFilter.srs"
             },
             {
                 "format": "source",
-                "tag": "domainset/reject_extra",
+                "tag": "chrome-doh",
                 "type": "remote",
-                "url": "https://ruleset.skk.moe/sing-box/domainset/reject_extra.json"
-            },
-            {
-                "format": "source",
-                "tag": "non_ip/reject",
-                "type": "remote",
-                "url": "https://ruleset.skk.moe/sing-box/non_ip/reject.json"
-            },
-            {
-                "format": "source",
-                "tag": "non_ip/ai",
-                "type": "remote",
-                "url": "https://ruleset.skk.moe/sing-box/non_ip/ai.json"
-            },
-            {
-                "format": "source",
-                "tag": "domainset/cdn",
-                "type": "remote",
-                "url": "https://ruleset.skk.moe/sing-box/domainset/cdn.json"
-            },
-            {
-                "format": "source",
-                "tag": "non_ip/cdn",
-                "type": "remote",
-                "url": "https://ruleset.skk.moe/sing-box/non_ip/cdn.json"
-            },
-            {
-                "format": "source",
-                "tag": "non_ip/global",
-                "type": "remote",
-                "url": "https://ruleset.skk.moe/sing-box/non_ip/global.json"
+                "url": "https://gist.githubusercontent.com/xmdhs/71fc5ff6ef29f5ecaf2c52b8de5c3172/raw/chrome-doh.json"
             }
         ],
         "rules": [
             {
-                "action": "sniff",
-                "inbound": "tun-in"
+                "action": "resolve",
+                "strategy": "prefer_ipv4"
+            },
+            {
+                "action": "sniff"
             },
             {
                 "action": "hijack-dns",
                 "protocol": "dns"
             },
             {
+                "clash_mode": "direct",
+                "outbound": "direct"
+            },
+            {
+                "clash_mode": "global",
+                "outbound": "select"
+            },
+            {
+                "ip_is_private": true,
+                "outbound": "direct"
+            },
+            {
+                "action": "reject",
+                "protocol": "quic"
+            },
+            {
                 "action": "reject",
                 "network": "tcp",
                 "port": 853
-            },
-            {
-                "action": "reject",
-                "network": "udp",
-                "port": 443
-            },
-            {
-                "action": "reject",
-                "rule_set": [
-                    "domainset/reject",
-                    "domainset/reject_extra",
-                    "non_ip/reject"
-                ]
             },
             {
                 "outbound": "chatgpt",
@@ -3507,10 +4375,10 @@
                 ]
             },
             {
-                "outbound": "chatgpt",
-                "rule_set": [
-                    "non_ip/ai"
-                ]
+                "domain_suffix": [
+                    "proactivebackend-pa.googleapis.com"
+                ],
+                "outbound": "chatgpt"
             },
             {
                 "outbound": "direct",
@@ -3522,21 +4390,8 @@
                 ]
             },
             {
-                "outbound": "select",
-                "rule_set": [
-                    "domainset/cdn",
-                    "geosite-geolocation-!cn",
-                    "non_ip/cdn",
-                    "non_ip/global"
-                ]
-            },
-            {
                 "outbound": "direct",
                 "rule_set": "geoip-cn"
-            },
-            {
-                "ip_is_private": true,
-                "outbound": "direct"
             }
         ]
     }
