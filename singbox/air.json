@@ -1,308 +1,308 @@
 {
-    "dns": {
-        "fakeip": {
-            "enabled": true,
-            "inet4_range": "198.18.0.0/15",
-            "inet6_range": "fc00::/18"
-        },
-        "independent_cache": true,
-        "rules": [
-            {
-                "outbound": "any",
-                "server": "dns_direct"
-            },
-            {
-                "action": "reject",
-                "rule_set": [
-                    "AdGuardSDNSFilter",
-                    "chrome-doh"
-                ]
-            },
-            {
-                "query_type": [
-                    "A",
-                    "AAAA"
-                ],
-                "rewrite_ttl": 1,
-                "server": "dns_fakeip"
-            },
-            {
-                "clash_mode": "global",
-                "server": "dns_proxy"
-            },
-            {
-                "clash_mode": "direct",
-                "server": "dns_direct"
-            },
-            {
-                "rule_set": "geosite-cn",
-                "server": "dns_direct"
-            }
-        ],
-        "servers": [
-            {
-                "address": "https://8.8.8.8/dns-query",
-                "detour": "select",
-                "tag": "dns_proxy"
-            },
-            {
-                "address": "https://223.5.5.5/dns-query",
-                "detour": "direct",
-                "tag": "dns_direct"
-            },
-            {
-                "address": "fakeip",
-                "tag": "dns_fakeip"
-            }
-        ],
-        "strategy": "prefer_ipv4"
+  "dns": {
+    "fakeip": {
+      "enabled": true,
+      "inet4_range": "198.18.0.0/15",
+      "inet6_range": "fc00::/18"
     },
-    "experimental": {
-        "cache_file": {
-            "enabled": true
-        },
-        "clash_api": {
-            "external_controller": "127.0.0.1:9090"
-        }
-    },
-    "inbounds": [
-        {
-            "address": [
-                "172.18.0.1/30",
-                "fdfe:dcba:9876::1/126"
-            ],
-            "auto_route": true,
-            "endpoint_independent_nat": true,
-            "mtu": 9000,
-            "strict_route": true,
-            "type": "tun"
-        },
-        {
-            "listen": "127.0.0.1",
-            "listen_port": 2333,
-            "tag": "socks-in",
-            "type": "socks",
-            "users": []
-        },
-        {
-            "listen": "127.0.0.1",
-            "listen_port": 2334,
-            "tag": "mixed-in",
-            "type": "mixed",
-            "users": []
-        }
-    ],
-    "log": {},
-    "outbounds": [
-        {
-            "tag": "select",
-            "type": "selector",
-            "default": "urltest",
-            "outbounds": [
-                "urltest",
-                "🇭🇰 香港 - 2x -VIP 限速試用",
-                "🇺🇸 套餐购买访问: https://airapp.us",
-                "🇭🇰 HK - IEPL",
-                "🇯🇵 JP - 2x - ChatGPT",
-                "🇬🇧 UK",
-                "🇬🇧 UK - ChatGPT",
-                "🇸🇬 SG Netflix / Disney 流媒體",
-                "🇬🇧 ChatGPT - GB",
-                "🇺🇸 US 2x - ChatGPT"
-            ]
-        },
-        {
-            "tag": "urltest",
-            "type": "urltest",
-            "outbounds": [
-                "🇭🇰 香港 - 2x -VIP 限速試用",
-                "🇺🇸 套餐购买访问: https://airapp.us",
-                "🇭🇰 HK - IEPL",
-                "🇯🇵 JP - 2x - ChatGPT",
-                "🇬🇧 UK",
-                "🇬🇧 UK - ChatGPT",
-                "🇸🇬 SG Netflix / Disney 流媒體",
-                "🇬🇧 ChatGPT - GB",
-                "🇺🇸 US 2x - ChatGPT"
-            ]
-        },
-        {
-            "outbounds": [
-                "🇺🇸 套餐购买访问: https://airapp.us",
-                "🇭🇰 HK - IEPL",
-                "🇯🇵 JP - 2x - ChatGPT",
-                "🇬🇧 UK",
-                "🇬🇧 UK - ChatGPT",
-                "🇸🇬 SG Netflix / Disney 流媒體",
-                "🇬🇧 ChatGPT - GB",
-                "🇺🇸 US 2x - ChatGPT"
-            ],
-            "tag": "chatgpt",
-            "type": "selector"
-        },
-        {
-            "password": "17995035-415e-422c-8527-6beb8899c054",
-            "server": "hk-try.webcdn.me",
-            "server_port": 55000,
-            "tag": "🇭🇰 香港 - 2x -VIP 限速試用",
-            "type": "shadowsocks",
-            "method": "chacha20-ietf-poly1305",
-            "network": "tcp"
-        },
-        {
-            "password": "17995035-415e-422c-8527-6beb8899c054",
-            "server": "kr-cdn.webcdn.me",
-            "server_port": 55400,
-            "tag": "🇺🇸 套餐购买访问: https://airapp.us",
-            "type": "shadowsocks",
-            "method": "chacha20-ietf-poly1305",
-            "network": "tcp"
-        },
-        {
-            "password": "17995035-415e-422c-8527-6beb8899c054",
-            "server": "tw-cdn.webcdn.me",
-            "server_port": 55200,
-            "tag": "🇭🇰 HK - IEPL",
-            "type": "shadowsocks",
-            "method": "chacha20-ietf-poly1305",
-            "network": "tcp"
-        },
-        {
-            "password": "17995035-415e-422c-8527-6beb8899c054",
-            "server": "jp.webcdn.me",
-            "server_port": 55300,
-            "tag": "🇯🇵 JP - 2x - ChatGPT",
-            "type": "shadowsocks",
-            "method": "chacha20-ietf-poly1305",
-            "network": "tcp"
-        },
-        {
-            "password": "17995035-415e-422c-8527-6beb8899c054",
-            "server": "uk.webcdn.me",
-            "server_port": 37291,
-            "tag": "🇬🇧 UK",
-            "type": "shadowsocks",
-            "method": "chacha20-ietf-poly1305",
-            "network": "tcp"
-        },
-        {
-            "password": "17995035-415e-422c-8527-6beb8899c054",
-            "server": "ukai.webcdn.me",
-            "server_port": 30287,
-            "tag": "🇬🇧 UK - ChatGPT",
-            "type": "shadowsocks",
-            "method": "chacha20-ietf-poly1305",
-            "network": "tcp"
-        },
-        {
-            "password": "17995035-415e-422c-8527-6beb8899c054",
-            "server": "sg-cdn.appscdn.xyz",
-            "server_port": 30000,
-            "tag": "🇸🇬 SG Netflix / Disney 流媒體",
-            "type": "shadowsocks",
-            "method": "chacha20-ietf-poly1305",
-            "network": "tcp"
-        },
-        {
-            "password": "17995035-415e-422c-8527-6beb8899c054",
-            "server": "ukchat.appscdn.xyz",
-            "server_port": 32002,
-            "tag": "🇬🇧 ChatGPT - GB",
-            "type": "shadowsocks",
-            "method": "chacha20-ietf-poly1305",
-            "network": "tcp"
-        },
-        {
-            "password": "17995035-415e-422c-8527-6beb8899c054",
-            "server": "us-free.appscdn.xyz",
-            "server_port": 10018,
-            "tag": "🇺🇸 US 2x - ChatGPT",
-            "type": "shadowsocks",
-            "method": "chacha20-ietf-poly1305",
-            "network": "tcp"
-        },
-        {
-            "tag": "direct",
-            "type": "direct"
-        }
-    ],
-    "route": {
-        "auto_detect_interface": true,
+    "independent_cache": true,
+    "rules": [
+      {
+        "outbound": "any",
+        "server": "dns_direct"
+      },
+      {
+        "action": "reject",
         "rule_set": [
-            {
-                "format": "binary",
-                "tag": "geoip-cn",
-                "type": "remote",
-                "url": "https://raw.githubusercontent.com/SagerNet/sing-geoip/rule-set/geoip-cn.srs"
-            },
-            {
-                "format": "binary",
-                "tag": "geosite-cn",
-                "type": "remote",
-                "url": "https://raw.githubusercontent.com/xmdhs/sing-geosite/rule-set-Loyalsoldier/geosite-geolocation-cn.srs"
-            },
-            {
-                "format": "binary",
-                "tag": "AdGuardSDNSFilter",
-                "type": "remote",
-                "url": "https://raw.githubusercontent.com/xmdhs/sing-box-ruleset/rule-set/AdGuardSDNSFilter.srs"
-            },
-            {
-                "format": "source",
-                "tag": "chrome-doh",
-                "type": "remote",
-                "url": "https://gist.githubusercontent.com/xmdhs/71fc5ff6ef29f5ecaf2c52b8de5c3172/raw/chrome-doh.json"
-            }
-        ],
-        "rules": [
-            {
-                "action": "resolve",
-                "strategy": "prefer_ipv4"
-            },
-            {
-                "action": "sniff"
-            },
-            {
-                "action": "hijack-dns",
-                "protocol": "dns"
-            },
-            {
-                "clash_mode": "direct",
-                "outbound": "direct"
-            },
-            {
-                "clash_mode": "global",
-                "outbound": "select"
-            },
-            {
-                "ip_is_private": true,
-                "outbound": "direct"
-            },
-            {
-                "outbound": "chatgpt",
-                "package_name": [
-                    "com.openai.chatgpt"
-                ]
-            },
-            {
-                "domain_suffix": [
-                    "proactivebackend-pa.googleapis.com"
-                ],
-                "outbound": "chatgpt"
-            },
-            {
-                "outbound": "direct",
-                "port": [
-                    23301,
-                    22101,
-                    22102,
-                    20501
-                ]
-            },
-            {
-                "outbound": "direct",
-                "rule_set": "geoip-cn"
-            }
+          "AdGuardSDNSFilter",
+          "chrome-doh"
         ]
+      },
+      {
+        "query_type": [
+          "A",
+          "AAAA"
+        ],
+        "rewrite_ttl": 1,
+        "server": "dns_fakeip"
+      },
+      {
+        "clash_mode": "global",
+        "server": "dns_proxy"
+      },
+      {
+        "clash_mode": "direct",
+        "server": "dns_direct"
+      },
+      {
+        "rule_set": "geosite-cn",
+        "server": "dns_direct"
+      }
+    ],
+    "servers": [
+      {
+        "address": "https://8.8.8.8/dns-query",
+        "detour": "select",
+        "tag": "dns_proxy"
+      },
+      {
+        "address": "https://223.5.5.5/dns-query",
+        "detour": "direct",
+        "tag": "dns_direct"
+      },
+      {
+        "address": "fakeip",
+        "tag": "dns_fakeip"
+      }
+    ],
+    "strategy": "prefer_ipv4"
+  },
+  "experimental": {
+    "cache_file": {
+      "enabled": true
+    },
+    "clash_api": {
+      "external_controller": "127.0.0.1:9090"
     }
+  },
+  "inbounds": [
+    {
+      "address": [
+        "172.18.0.1/30",
+        "fdfe:dcba:9876::1/126"
+      ],
+      "auto_route": true,
+      "endpoint_independent_nat": true,
+      "mtu": 9000,
+      "strict_route": true,
+      "type": "tun"
+    },
+    {
+      "listen": "127.0.0.1",
+      "listen_port": 2333,
+      "tag": "socks-in",
+      "type": "socks",
+      "users": []
+    },
+    {
+      "listen": "127.0.0.1",
+      "listen_port": 2334,
+      "tag": "mixed-in",
+      "type": "mixed",
+      "users": []
+    }
+  ],
+  "log": {},
+  "outbounds": [
+    {
+      "tag": "select",
+      "type": "selector",
+      "default": "urltest",
+      "outbounds": [
+        "urltest",
+        "🇭🇰 香港 - 2x -VIP 限速試用",
+        "🇺🇸 套餐购买访问: https://airapp.us",
+        "🇭🇰 HK - IEPL",
+        "🇯🇵 JP - 2x - ChatGPT",
+        "🇬🇧 UK",
+        "🇬🇧 UK - ChatGPT",
+        "🇸🇬 SG Netflix / Disney 流媒體",
+        "🇬🇧 ChatGPT - GB",
+        "🇺🇸 US 2x - ChatGPT"
+      ]
+    },
+    {
+      "tag": "urltest",
+      "type": "urltest",
+      "outbounds": [
+        "🇭🇰 香港 - 2x -VIP 限速試用",
+        "🇺🇸 套餐购买访问: https://airapp.us",
+        "🇭🇰 HK - IEPL",
+        "🇯🇵 JP - 2x - ChatGPT",
+        "🇬🇧 UK",
+        "🇬🇧 UK - ChatGPT",
+        "🇸🇬 SG Netflix / Disney 流媒體",
+        "🇬🇧 ChatGPT - GB",
+        "🇺🇸 US 2x - ChatGPT"
+      ]
+    },
+    {
+      "outbounds": [
+        "🇺🇸 套餐购买访问: https://airapp.us",
+        "🇭🇰 HK - IEPL",
+        "🇯🇵 JP - 2x - ChatGPT",
+        "🇬🇧 UK",
+        "🇬🇧 UK - ChatGPT",
+        "🇸🇬 SG Netflix / Disney 流媒體",
+        "🇬🇧 ChatGPT - GB",
+        "🇺🇸 US 2x - ChatGPT"
+      ],
+      "tag": "chatgpt",
+      "type": "selector"
+    },
+    {
+      "password": "17995035-415e-422c-8527-6beb8899c054",
+      "server": "hk-try.webcdn.me",
+      "server_port": 55000,
+      "tag": "🇭🇰 香港 - 2x -VIP 限速試用",
+      "type": "shadowsocks",
+      "method": "chacha20-ietf-poly1305",
+      "network": "tcp"
+    },
+    {
+      "password": "17995035-415e-422c-8527-6beb8899c054",
+      "server": "kr-cdn.webcdn.me",
+      "server_port": 55400,
+      "tag": "🇺🇸 套餐购买访问: https://airapp.us",
+      "type": "shadowsocks",
+      "method": "chacha20-ietf-poly1305",
+      "network": "tcp"
+    },
+    {
+      "password": "17995035-415e-422c-8527-6beb8899c054",
+      "server": "tw-cdn.webcdn.me",
+      "server_port": 55200,
+      "tag": "🇭🇰 HK - IEPL",
+      "type": "shadowsocks",
+      "method": "chacha20-ietf-poly1305",
+      "network": "tcp"
+    },
+    {
+      "password": "17995035-415e-422c-8527-6beb8899c054",
+      "server": "jp.webcdn.me",
+      "server_port": 55300,
+      "tag": "🇯🇵 JP - 2x - ChatGPT",
+      "type": "shadowsocks",
+      "method": "chacha20-ietf-poly1305",
+      "network": "tcp"
+    },
+    {
+      "password": "17995035-415e-422c-8527-6beb8899c054",
+      "server": "uk.webcdn.me",
+      "server_port": 37291,
+      "tag": "🇬🇧 UK",
+      "type": "shadowsocks",
+      "method": "chacha20-ietf-poly1305",
+      "network": "tcp"
+    },
+    {
+      "password": "17995035-415e-422c-8527-6beb8899c054",
+      "server": "ukai.webcdn.me",
+      "server_port": 30287,
+      "tag": "🇬🇧 UK - ChatGPT",
+      "type": "shadowsocks",
+      "method": "chacha20-ietf-poly1305",
+      "network": "tcp"
+    },
+    {
+      "password": "17995035-415e-422c-8527-6beb8899c054",
+      "server": "sg-cdn.appscdn.xyz",
+      "server_port": 30000,
+      "tag": "🇸🇬 SG Netflix / Disney 流媒體",
+      "type": "shadowsocks",
+      "method": "chacha20-ietf-poly1305",
+      "network": "tcp"
+    },
+    {
+      "password": "17995035-415e-422c-8527-6beb8899c054",
+      "server": "ukchat.appscdn.xyz",
+      "server_port": 32002,
+      "tag": "🇬🇧 ChatGPT - GB",
+      "type": "shadowsocks",
+      "method": "chacha20-ietf-poly1305",
+      "network": "tcp"
+    },
+    {
+      "password": "17995035-415e-422c-8527-6beb8899c054",
+      "server": "us-free.appscdn.xyz",
+      "server_port": 10018,
+      "tag": "🇺🇸 US 2x - ChatGPT",
+      "type": "shadowsocks",
+      "method": "chacha20-ietf-poly1305",
+      "network": "tcp"
+    },
+    {
+      "tag": "direct",
+      "type": "direct"
+    }
+  ],
+  "route": {
+    "auto_detect_interface": true,
+    "rule_set": [
+      {
+        "format": "binary",
+        "tag": "geoip-cn",
+        "type": "remote",
+        "url": "https://raw.githubusercontent.com/SagerNet/sing-geoip/rule-set/geoip-cn.srs"
+      },
+      {
+        "format": "binary",
+        "tag": "geosite-cn",
+        "type": "remote",
+        "url": "https://raw.githubusercontent.com/xmdhs/sing-geosite/rule-set-Loyalsoldier/geosite-geolocation-cn.srs"
+      },
+      {
+        "format": "binary",
+        "tag": "AdGuardSDNSFilter",
+        "type": "remote",
+        "url": "https://raw.githubusercontent.com/xmdhs/sing-box-ruleset/rule-set/AdGuardSDNSFilter.srs"
+      },
+      {
+        "format": "source",
+        "tag": "chrome-doh",
+        "type": "remote",
+        "url": "https://gist.githubusercontent.com/xmdhs/71fc5ff6ef29f5ecaf2c52b8de5c3172/raw/chrome-doh.json"
+      }
+    ],
+    "rules": [
+      {
+        "action": "resolve",
+        "strategy": "prefer_ipv4"
+      },
+      {
+        "action": "sniff"
+      },
+      {
+        "action": "hijack-dns",
+        "protocol": "dns"
+      },
+      {
+        "clash_mode": "direct",
+        "outbound": "direct"
+      },
+      {
+        "clash_mode": "global",
+        "outbound": "select"
+      },
+      {
+        "ip_is_private": true,
+        "outbound": "direct"
+      },
+      {
+        "outbound": "chatgpt",
+        "package_name": [
+          "com.openai.chatgpt"
+        ]
+      },
+      {
+        "domain_suffix": [
+          "proactivebackend-pa.googleapis.com"
+        ],
+        "outbound": "chatgpt"
+      },
+      {
+        "outbound": "direct",
+        "port": [
+          23301,
+          22101,
+          22102,
+          20501
+        ]
+      },
+      {
+        "outbound": "direct",
+        "rule_set": "geoip-cn"
+      }
+    ]
+  }
 }
