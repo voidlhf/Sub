@@ -34,7 +34,6 @@
           "A",
           "AAAA"
         ],
-        "action": "route",
         "server": "dns_fakeip",
         "rewrite_ttl": 1
       },
@@ -149,15 +148,6 @@
       {
         "ip_is_private": true,
         "outbound": "direct"
-      },
-      {
-        "protocol": "quic",
-        "action": "reject"
-      },
-      {
-        "port": 853,
-        "network": "tcp",
-        "action": "reject"
       },
       {
         "package_name": [
