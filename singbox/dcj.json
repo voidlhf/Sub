@@ -19,7 +19,6 @@
                 ]
             },
             {
-                "action": "route",
                 "query_type": [
                     "A",
                     "AAAA"
@@ -4143,15 +4142,6 @@
             {
                 "ip_is_private": true,
                 "outbound": "direct"
-            },
-            {
-                "action": "reject",
-                "protocol": "quic"
-            },
-            {
-                "action": "reject",
-                "network": "tcp",
-                "port": 853
             },
             {
                 "outbound": "chatgpt",
