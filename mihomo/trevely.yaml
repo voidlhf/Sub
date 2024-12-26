@@ -17,591 +17,211 @@ hosts:
   alt7-mtalk.google.com: 173.194.219.188
   alt8-mtalk.google.com: 142.250.112.188
 proxies:
-- name: 🇯🇵 日本-优化-7
-  server: dnsmart.dg-cdn.mob.networklinkpro.com
-  port: 17882
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: 77f1f040-1b7c-4e38-aadc-33b8c63875c6
-  udp: true
-- name: 🇰🇷 韩国-优化-5
-  server: dnsmart.dg-cdn.mob.networklinkpro.com
-  port: 17887
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: 77f1f040-1b7c-4e38-aadc-33b8c63875c6
-  udp: true
-- name: 🇰🇷 韩国-优化-7
-  server: dnsmart.dg-cdn.mob.networklinkpro.com
-  port: 17881
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: 77f1f040-1b7c-4e38-aadc-33b8c63875c6
-  udp: true
-- name: 🇰🇷 韩国-优化-9
-  server: dnsmart.dg-cdn.mob.networklinkpro.com
-  port: 17885
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: 77f1f040-1b7c-4e38-aadc-33b8c63875c6
-  udp: true
-- name: 🇺🇸 美国-优化-5
-  server: dnsmart.dg-cdn.mob.networklinkpro.com
-  port: 17884
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: 77f1f040-1b7c-4e38-aadc-33b8c63875c6
-  udp: true
-- name: 🇺🇸 美国-优化-7
-  server: dnsmart.dg-cdn.mob.networklinkpro.com
-  port: 17886
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: 77f1f040-1b7c-4e38-aadc-33b8c63875c6
-  udp: true
-- name: 🇸🇬 新加坡-优化-4
-  server: dnsmart.dg-cdn.mob.networklinkpro.com
-  port: 17883
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: 77f1f040-1b7c-4e38-aadc-33b8c63875c6
-  udp: true
-- name: 🇸🇬 新加坡-优化-6
-  server: dnsmart.dg-cdn.mob.networklinkpro.com
-  port: 17890
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: 77f1f040-1b7c-4e38-aadc-33b8c63875c6
-  udp: true
-- name: 🇦🇺 澳洲-优化-3
-  server: dnsmart.dg-cdn.mob.networklinkpro.com
-  port: 17888
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: 77f1f040-1b7c-4e38-aadc-33b8c63875c6
-  udp: true
-- name: 🇭🇰 香港-优化-4
-  server: dnsmart.dg-cdn.mob.networklinkpro.com
-  port: 17880
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: 77f1f040-1b7c-4e38-aadc-33b8c63875c6
-  udp: true
-- name: 🇭🇰 香港-优化-5
-  server: dnsmart.dg-cdn.mob.networklinkpro.com
-  port: 17889
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: 77f1f040-1b7c-4e38-aadc-33b8c63875c6
-  udp: true
-- name: 🇨🇳 台湾-per-c-1
-  server: svip.88de.hongxingdl.vip
-  port: 18147
-  type: trojan
-  password: cb0b7296-da0e-41d0-9eb0-ec79a0fec48a
+- name: 免费勿受骗自行优选
+  server: 104.17.178.23
+  port: 8443
+  type: vmess
+  uuid: 86e08f62-b298-4b34-fa93-6ea1f32a52ec
+  alterId: 0
+  cipher: auto
+  tls: true
   skip-cert-verify: true
-  udp: true
-- name: 🇸🇬 新加坡-per-c-1
-  server: svip.88de.hongxingdl.vip
-  port: 55357
-  type: trojan
-  password: cb0b7296-da0e-41d0-9eb0-ec79a0fec48a
+  servername: br.trevely.us.kg
+  network: ws
+  ws-opts:
+    path: /br.trevely.us.kg
+    headers:
+      Host: br.trevely.us.kg
+- name: FREE_BR CF-CU
+  server: 172.64.132.64
+  port: 8443
+  type: vmess
+  uuid: 86e08f62-b298-4b34-fa93-6ea1f32a52ec
+  alterId: 0
+  cipher: auto
+  tls: true
   skip-cert-verify: true
-  udp: true
-- name: 🇯🇵 日本-per-c-1
-  server: svip.88de.hongxingdl.vip
-  port: 28721
-  type: trojan
-  password: cb0b7296-da0e-41d0-9eb0-ec79a0fec48a
+  servername: br.trevely.us.kg
+  network: ws
+  ws-opts:
+    path: /br.trevely.us.kg
+    headers:
+      Host: br.trevely.us.kg
+- name: FREE_DE CF-CU
+  server: 172.64.162.99
+  port: 8443
+  type: vmess
+  uuid: f04dbdda-99ba-4cad-ef5c-892f4dd4c52d
+  alterId: 0
+  cipher: auto
+  tls: true
   skip-cert-verify: true
-  udp: true
-- name: 🇺🇸 美国-per-c-1
-  server: svip.88de.hongxingdl.vip
-  port: 59861
-  type: trojan
-  password: cb0b7296-da0e-41d0-9eb0-ec79a0fec48a
+  servername: de.trevely.us.kg
+  network: ws
+  ws-opts:
+    path: /de.trevely.us.kg
+    headers:
+      Host: de.trevely.us.kg
+- name: FREE_JP CF-CU
+  server: 172.64.232.0
+  port: 8443
+  type: vmess
+  uuid: 77911f97-0d7a-4864-918d-a8054922b978
+  alterId: 0
+  cipher: auto
+  tls: true
   skip-cert-verify: true
-  udp: true
-- name: 🇰🇷 韩国-per-c-1
-  server: lmgj.hongxingdl.vip
-  port: 39593
-  type: trojan
-  password: cb0b7296-da0e-41d0-9eb0-ec79a0fec48a
+  servername: jp.trevely.us.kg
+  network: ws
+  ws-opts:
+    path: /jp.trevely.us.kg
+    headers:
+      Host: jp.trevely.us.kg
+- name: FREE_FI 15 HY2 01
+  server: 65.21.206.16
+  port: 59350
+  type: hysteria2
+  password: fb0e6950-1dab-4362-9dcb-b1d55fb1fb2a
+  auth: fb0e6950-1dab-4362-9dcb-b1d55fb1fb2a
+  sni: www.bing.com
   skip-cert-verify: true
-  udp: true
-- name: 🇮🇳 印度-per-c-1
-  server: lmgj.hongxingdl.vip
-  port: 20780
-  type: trojan
-  password: cb0b7296-da0e-41d0-9eb0-ec79a0fec48a
+  alpn:
+  - h3
+- name: FREE_FI 15 HY2 02
+  server: 65.21.206.16
+  port: 59355
+  type: hysteria2
+  password: f31f60c3-835d-466d-928b-75a074ffb818
+  auth: f31f60c3-835d-466d-928b-75a074ffb818
+  sni: www.bing.com
   skip-cert-verify: true
-  udp: true
-- name: 🇩🇪 德国-per-c-1
-  server: lmgj.hongxingdl.vip
-  port: 21463
-  type: trojan
-  password: cb0b7296-da0e-41d0-9eb0-ec79a0fec48a
+  alpn:
+  - h3
+- name: FREE_FI 15 ARG 01
+  server: serv15.trevely.us.kg
+  port: 8443
+  type: vmess
+  uuid: fb0e6950-1dab-4362-9dcb-b1d55fb1fb2a
+  alterId: 0
+  cipher: auto
+  tls: true
   skip-cert-verify: true
-  udp: true
-- name: 🇬🇧 英国-per-c-1
-  server: lmgj.hongxingdl.vip
-  port: 59358
-  type: trojan
-  password: cb0b7296-da0e-41d0-9eb0-ec79a0fec48a
+  servername: serv15.trevely.us.kg
+  network: ws
+  ws-opts:
+    path: /serv00?ed=2048
+    headers:
+      Host: serv15.trevely.us.kg
+- name: FREE_FI 15 ARG 02
+  server: serv15f.trevely.us.kg
+  port: 443
+  type: vmess
+  uuid: f31f60c3-835d-466d-928b-75a074ffb818
+  alterId: 0
+  cipher: auto
+  tls: true
   skip-cert-verify: true
-  udp: true
-- name: 🇳🇱 荷兰-per-c-1
-  server: lmgj.hongxingdl.vip
-  port: 23852
-  type: trojan
-  password: cb0b7296-da0e-41d0-9eb0-ec79a0fec48a
-  skip-cert-verify: true
-  udp: true
-- name: 🇮🇹 意大利-per-c-1
-  server: lmgj.hongxingdl.vip
-  port: 35989
-  type: trojan
-  password: cb0b7296-da0e-41d0-9eb0-ec79a0fec48a
-  skip-cert-verify: true
-  udp: true
-- name: 🇮🇳 印度-per-c-2
-  server: lmgj.hongxingdl.vip
-  port: 33243
-  type: trojan
-  password: cb0b7296-da0e-41d0-9eb0-ec79a0fec48a
-  skip-cert-verify: true
-  udp: true
-- name: 🇨🇱 智利-per-c-1
-  server: lmgj.hongxingdl.vip
-  port: 44134
-  type: trojan
-  password: cb0b7296-da0e-41d0-9eb0-ec79a0fec48a
-  skip-cert-verify: true
-  udp: true
-- name: 🇧🇷 巴西-per-c-1
-  server: lmgj.hongxingdl.vip
-  port: 28499
-  type: trojan
-  password: cb0b7296-da0e-41d0-9eb0-ec79a0fec48a
-  skip-cert-verify: true
-  udp: true
-- name: 🇪🇸 西班牙-per-c-1
-  server: lmgj.hongxingdl.vip
-  port: 34249
-  type: trojan
-  password: cb0b7296-da0e-41d0-9eb0-ec79a0fec48a
-  skip-cert-verify: true
-  udp: true
-- name: 🇨🇭 瑞士-per-c-1
-  server: lmgj.hongxingdl.vip
-  port: 50140
-  type: trojan
-  password: cb0b7296-da0e-41d0-9eb0-ec79a0fec48a
-  skip-cert-verify: true
-  udp: true
-- name: 🇸🇪 瑞典-per-c-1
-  server: lmgj.hongxingdl.vip
-  port: 59225
-  type: trojan
-  password: cb0b7296-da0e-41d0-9eb0-ec79a0fec48a
-  skip-cert-verify: true
-  udp: true
-- name: 🇲🇽 墨西哥-per-c-1
-  server: lmgj.hongxingdl.vip
-  port: 14571
-  type: trojan
-  password: cb0b7296-da0e-41d0-9eb0-ec79a0fec48a
-  skip-cert-verify: true
-  udp: true
-- name: 🇨🇦 加拿大-per-c-1
-  server: lmgj.hongxingdl.vip
-  port: 50121
-  type: trojan
-  password: cb0b7296-da0e-41d0-9eb0-ec79a0fec48a
-  skip-cert-verify: true
-  udp: true
-- name: 🇦🇺 澳大利亚-per-c-1
-  server: lmgj.hongxingdl.vip
-  port: 58757
-  type: trojan
-  password: cb0b7296-da0e-41d0-9eb0-ec79a0fec48a
-  skip-cert-verify: true
-  udp: true
-- name: 🇦🇪 迪拜-per-c-1
-  server: lmgj.hongxingdl.vip
-  port: 47621
-  type: trojan
-  password: cb0b7296-da0e-41d0-9eb0-ec79a0fec48a
-  skip-cert-verify: true
-  udp: true
-- name: 🇿🇦 南非-per-c-1
-  server: lmgj.hongxingdl.vip
-  port: 53759
-  type: trojan
-  password: cb0b7296-da0e-41d0-9eb0-ec79a0fec48a
-  skip-cert-verify: true
-  udp: true
-- name: 🇸🇦 沙特阿拉伯-per-c-1
-  server: lmgj.hongxingdl.vip
-  port: 56072
-  type: trojan
-  password: cb0b7296-da0e-41d0-9eb0-ec79a0fec48a
-  skip-cert-verify: true
-  udp: true
-- name: 🇨🇴 哥伦比亚-per-c-1
-  server: lmgj.hongxingdl.vip
-  port: 25118
-  type: trojan
-  password: cb0b7296-da0e-41d0-9eb0-ec79a0fec48a
-  skip-cert-verify: true
-  udp: true
-- name: 🇮🇱 以色列-per-c-1
-  server: lmgj.hongxingdl.vip
-  port: 44650
-  type: trojan
-  password: cb0b7296-da0e-41d0-9eb0-ec79a0fec48a
-  skip-cert-verify: true
-  udp: true
-- name: 🇻🇳 越南-per-c-1
-  server: lmgj.hongxingdl.vip
-  port: 11306
-  type: trojan
-  password: cb0b7296-da0e-41d0-9eb0-ec79a0fec48a
-  skip-cert-verify: true
-  udp: true
-- name: 🇹🇭 泰国-per-c-1
-  server: lmgj.hongxingdl.vip
-  port: 43855
-  type: trojan
-  password: cb0b7296-da0e-41d0-9eb0-ec79a0fec48a
-  skip-cert-verify: true
-  udp: true
-- name: 🇲🇾 马来西亚-per-c-1
-  server: lmgj.hongxingdl.vip
-  port: 30383
-  type: trojan
-  password: cb0b7296-da0e-41d0-9eb0-ec79a0fec48a
-  skip-cert-verify: true
-  udp: true
-- name: 🇵🇭 菲律宾-per-c-1
-  server: lmgj.hongxingdl.vip
-  port: 58947
-  type: trojan
-  password: cb0b7296-da0e-41d0-9eb0-ec79a0fec48a
-  skip-cert-verify: true
-  udp: true
+  servername: serv15f.trevely.us.kg
+  network: ws
+  ws-opts:
+    path: /serv00?ed=2048
+    headers:
+      Host: serv15f.trevely.us.kg
 proxy-groups:
 - name: 🚀 节点选择
   type: select
   proxies:
   - ♻️ 自动选择
   - DIRECT
-  - 🇯🇵 日本-优化-7
-  - 🇰🇷 韩国-优化-5
-  - 🇰🇷 韩国-优化-7
-  - 🇰🇷 韩国-优化-9
-  - 🇺🇸 美国-优化-5
-  - 🇺🇸 美国-优化-7
-  - 🇸🇬 新加坡-优化-4
-  - 🇸🇬 新加坡-优化-6
-  - 🇦🇺 澳洲-优化-3
-  - 🇭🇰 香港-优化-4
-  - 🇭🇰 香港-优化-5
-  - 🇨🇳 台湾-per-c-1
-  - 🇸🇬 新加坡-per-c-1
-  - 🇯🇵 日本-per-c-1
-  - 🇺🇸 美国-per-c-1
-  - 🇰🇷 韩国-per-c-1
-  - 🇮🇳 印度-per-c-1
-  - 🇩🇪 德国-per-c-1
-  - 🇬🇧 英国-per-c-1
-  - 🇳🇱 荷兰-per-c-1
-  - 🇮🇹 意大利-per-c-1
-  - 🇮🇳 印度-per-c-2
-  - 🇨🇱 智利-per-c-1
-  - 🇧🇷 巴西-per-c-1
-  - 🇪🇸 西班牙-per-c-1
-  - 🇨🇭 瑞士-per-c-1
-  - 🇸🇪 瑞典-per-c-1
-  - 🇲🇽 墨西哥-per-c-1
-  - 🇨🇦 加拿大-per-c-1
-  - 🇦🇺 澳大利亚-per-c-1
-  - 🇦🇪 迪拜-per-c-1
-  - 🇿🇦 南非-per-c-1
-  - 🇸🇦 沙特阿拉伯-per-c-1
-  - 🇨🇴 哥伦比亚-per-c-1
-  - 🇮🇱 以色列-per-c-1
-  - 🇻🇳 越南-per-c-1
-  - 🇹🇭 泰国-per-c-1
-  - 🇲🇾 马来西亚-per-c-1
-  - 🇵🇭 菲律宾-per-c-1
+  - 免费勿受骗自行优选
+  - FREE_BR CF-CU
+  - FREE_DE CF-CU
+  - FREE_JP CF-CU
+  - FREE_FI 15 HY2 01
+  - FREE_FI 15 HY2 02
+  - FREE_FI 15 ARG 01
+  - FREE_FI 15 ARG 02
 - name: ♻️ 自动选择
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
-  - 🇯🇵 日本-优化-7
-  - 🇰🇷 韩国-优化-5
-  - 🇰🇷 韩国-优化-7
-  - 🇰🇷 韩国-优化-9
-  - 🇺🇸 美国-优化-5
-  - 🇺🇸 美国-优化-7
-  - 🇸🇬 新加坡-优化-4
-  - 🇸🇬 新加坡-优化-6
-  - 🇦🇺 澳洲-优化-3
-  - 🇭🇰 香港-优化-4
-  - 🇭🇰 香港-优化-5
-  - 🇨🇳 台湾-per-c-1
-  - 🇸🇬 新加坡-per-c-1
-  - 🇯🇵 日本-per-c-1
-  - 🇺🇸 美国-per-c-1
-  - 🇰🇷 韩国-per-c-1
-  - 🇮🇳 印度-per-c-1
-  - 🇩🇪 德国-per-c-1
-  - 🇬🇧 英国-per-c-1
-  - 🇳🇱 荷兰-per-c-1
-  - 🇮🇹 意大利-per-c-1
-  - 🇮🇳 印度-per-c-2
-  - 🇨🇱 智利-per-c-1
-  - 🇧🇷 巴西-per-c-1
-  - 🇪🇸 西班牙-per-c-1
-  - 🇨🇭 瑞士-per-c-1
-  - 🇸🇪 瑞典-per-c-1
-  - 🇲🇽 墨西哥-per-c-1
-  - 🇨🇦 加拿大-per-c-1
-  - 🇦🇺 澳大利亚-per-c-1
-  - 🇦🇪 迪拜-per-c-1
-  - 🇿🇦 南非-per-c-1
-  - 🇸🇦 沙特阿拉伯-per-c-1
-  - 🇨🇴 哥伦比亚-per-c-1
-  - 🇮🇱 以色列-per-c-1
-  - 🇻🇳 越南-per-c-1
-  - 🇹🇭 泰国-per-c-1
-  - 🇲🇾 马来西亚-per-c-1
-  - 🇵🇭 菲律宾-per-c-1
+  - 免费勿受骗自行优选
+  - FREE_BR CF-CU
+  - FREE_DE CF-CU
+  - FREE_JP CF-CU
+  - FREE_FI 15 HY2 01
+  - FREE_FI 15 HY2 02
+  - FREE_FI 15 ARG 01
+  - FREE_FI 15 ARG 02
 - name: 🌍 国外媒体
   type: select
   proxies:
   - 🚀 节点选择
   - ♻️ 自动选择
   - 🎯 全球直连
-  - 🇯🇵 日本-优化-7
-  - 🇰🇷 韩国-优化-5
-  - 🇰🇷 韩国-优化-7
-  - 🇰🇷 韩国-优化-9
-  - 🇺🇸 美国-优化-5
-  - 🇺🇸 美国-优化-7
-  - 🇸🇬 新加坡-优化-4
-  - 🇸🇬 新加坡-优化-6
-  - 🇦🇺 澳洲-优化-3
-  - 🇭🇰 香港-优化-4
-  - 🇭🇰 香港-优化-5
-  - 🇨🇳 台湾-per-c-1
-  - 🇸🇬 新加坡-per-c-1
-  - 🇯🇵 日本-per-c-1
-  - 🇺🇸 美国-per-c-1
-  - 🇰🇷 韩国-per-c-1
-  - 🇮🇳 印度-per-c-1
-  - 🇩🇪 德国-per-c-1
-  - 🇬🇧 英国-per-c-1
-  - 🇳🇱 荷兰-per-c-1
-  - 🇮🇹 意大利-per-c-1
-  - 🇮🇳 印度-per-c-2
-  - 🇨🇱 智利-per-c-1
-  - 🇧🇷 巴西-per-c-1
-  - 🇪🇸 西班牙-per-c-1
-  - 🇨🇭 瑞士-per-c-1
-  - 🇸🇪 瑞典-per-c-1
-  - 🇲🇽 墨西哥-per-c-1
-  - 🇨🇦 加拿大-per-c-1
-  - 🇦🇺 澳大利亚-per-c-1
-  - 🇦🇪 迪拜-per-c-1
-  - 🇿🇦 南非-per-c-1
-  - 🇸🇦 沙特阿拉伯-per-c-1
-  - 🇨🇴 哥伦比亚-per-c-1
-  - 🇮🇱 以色列-per-c-1
-  - 🇻🇳 越南-per-c-1
-  - 🇹🇭 泰国-per-c-1
-  - 🇲🇾 马来西亚-per-c-1
-  - 🇵🇭 菲律宾-per-c-1
+  - 免费勿受骗自行优选
+  - FREE_BR CF-CU
+  - FREE_DE CF-CU
+  - FREE_JP CF-CU
+  - FREE_FI 15 HY2 01
+  - FREE_FI 15 HY2 02
+  - FREE_FI 15 ARG 01
+  - FREE_FI 15 ARG 02
 - name: 📲 电报信息
   type: select
   proxies:
   - 🚀 节点选择
   - 🎯 全球直连
-  - 🇯🇵 日本-优化-7
-  - 🇰🇷 韩国-优化-5
-  - 🇰🇷 韩国-优化-7
-  - 🇰🇷 韩国-优化-9
-  - 🇺🇸 美国-优化-5
-  - 🇺🇸 美国-优化-7
-  - 🇸🇬 新加坡-优化-4
-  - 🇸🇬 新加坡-优化-6
-  - 🇦🇺 澳洲-优化-3
-  - 🇭🇰 香港-优化-4
-  - 🇭🇰 香港-优化-5
-  - 🇨🇳 台湾-per-c-1
-  - 🇸🇬 新加坡-per-c-1
-  - 🇯🇵 日本-per-c-1
-  - 🇺🇸 美国-per-c-1
-  - 🇰🇷 韩国-per-c-1
-  - 🇮🇳 印度-per-c-1
-  - 🇩🇪 德国-per-c-1
-  - 🇬🇧 英国-per-c-1
-  - 🇳🇱 荷兰-per-c-1
-  - 🇮🇹 意大利-per-c-1
-  - 🇮🇳 印度-per-c-2
-  - 🇨🇱 智利-per-c-1
-  - 🇧🇷 巴西-per-c-1
-  - 🇪🇸 西班牙-per-c-1
-  - 🇨🇭 瑞士-per-c-1
-  - 🇸🇪 瑞典-per-c-1
-  - 🇲🇽 墨西哥-per-c-1
-  - 🇨🇦 加拿大-per-c-1
-  - 🇦🇺 澳大利亚-per-c-1
-  - 🇦🇪 迪拜-per-c-1
-  - 🇿🇦 南非-per-c-1
-  - 🇸🇦 沙特阿拉伯-per-c-1
-  - 🇨🇴 哥伦比亚-per-c-1
-  - 🇮🇱 以色列-per-c-1
-  - 🇻🇳 越南-per-c-1
-  - 🇹🇭 泰国-per-c-1
-  - 🇲🇾 马来西亚-per-c-1
-  - 🇵🇭 菲律宾-per-c-1
+  - 免费勿受骗自行优选
+  - FREE_BR CF-CU
+  - FREE_DE CF-CU
+  - FREE_JP CF-CU
+  - FREE_FI 15 HY2 01
+  - FREE_FI 15 HY2 02
+  - FREE_FI 15 ARG 01
+  - FREE_FI 15 ARG 02
 - name: Ⓜ️ 微软服务
   type: select
   proxies:
   - 🎯 全球直连
   - 🚀 节点选择
-  - 🇯🇵 日本-优化-7
-  - 🇰🇷 韩国-优化-5
-  - 🇰🇷 韩国-优化-7
-  - 🇰🇷 韩国-优化-9
-  - 🇺🇸 美国-优化-5
-  - 🇺🇸 美国-优化-7
-  - 🇸🇬 新加坡-优化-4
-  - 🇸🇬 新加坡-优化-6
-  - 🇦🇺 澳洲-优化-3
-  - 🇭🇰 香港-优化-4
-  - 🇭🇰 香港-优化-5
-  - 🇨🇳 台湾-per-c-1
-  - 🇸🇬 新加坡-per-c-1
-  - 🇯🇵 日本-per-c-1
-  - 🇺🇸 美国-per-c-1
-  - 🇰🇷 韩国-per-c-1
-  - 🇮🇳 印度-per-c-1
-  - 🇩🇪 德国-per-c-1
-  - 🇬🇧 英国-per-c-1
-  - 🇳🇱 荷兰-per-c-1
-  - 🇮🇹 意大利-per-c-1
-  - 🇮🇳 印度-per-c-2
-  - 🇨🇱 智利-per-c-1
-  - 🇧🇷 巴西-per-c-1
-  - 🇪🇸 西班牙-per-c-1
-  - 🇨🇭 瑞士-per-c-1
-  - 🇸🇪 瑞典-per-c-1
-  - 🇲🇽 墨西哥-per-c-1
-  - 🇨🇦 加拿大-per-c-1
-  - 🇦🇺 澳大利亚-per-c-1
-  - 🇦🇪 迪拜-per-c-1
-  - 🇿🇦 南非-per-c-1
-  - 🇸🇦 沙特阿拉伯-per-c-1
-  - 🇨🇴 哥伦比亚-per-c-1
-  - 🇮🇱 以色列-per-c-1
-  - 🇻🇳 越南-per-c-1
-  - 🇹🇭 泰国-per-c-1
-  - 🇲🇾 马来西亚-per-c-1
-  - 🇵🇭 菲律宾-per-c-1
+  - 免费勿受骗自行优选
+  - FREE_BR CF-CU
+  - FREE_DE CF-CU
+  - FREE_JP CF-CU
+  - FREE_FI 15 HY2 01
+  - FREE_FI 15 HY2 02
+  - FREE_FI 15 ARG 01
+  - FREE_FI 15 ARG 02
 - name: 🍎 苹果服务
   type: select
   proxies:
   - 🚀 节点选择
   - 🎯 全球直连
-  - 🇯🇵 日本-优化-7
-  - 🇰🇷 韩国-优化-5
-  - 🇰🇷 韩国-优化-7
-  - 🇰🇷 韩国-优化-9
-  - 🇺🇸 美国-优化-5
-  - 🇺🇸 美国-优化-7
-  - 🇸🇬 新加坡-优化-4
-  - 🇸🇬 新加坡-优化-6
-  - 🇦🇺 澳洲-优化-3
-  - 🇭🇰 香港-优化-4
-  - 🇭🇰 香港-优化-5
-  - 🇨🇳 台湾-per-c-1
-  - 🇸🇬 新加坡-per-c-1
-  - 🇯🇵 日本-per-c-1
-  - 🇺🇸 美国-per-c-1
-  - 🇰🇷 韩国-per-c-1
-  - 🇮🇳 印度-per-c-1
-  - 🇩🇪 德国-per-c-1
-  - 🇬🇧 英国-per-c-1
-  - 🇳🇱 荷兰-per-c-1
-  - 🇮🇹 意大利-per-c-1
-  - 🇮🇳 印度-per-c-2
-  - 🇨🇱 智利-per-c-1
-  - 🇧🇷 巴西-per-c-1
-  - 🇪🇸 西班牙-per-c-1
-  - 🇨🇭 瑞士-per-c-1
-  - 🇸🇪 瑞典-per-c-1
-  - 🇲🇽 墨西哥-per-c-1
-  - 🇨🇦 加拿大-per-c-1
-  - 🇦🇺 澳大利亚-per-c-1
-  - 🇦🇪 迪拜-per-c-1
-  - 🇿🇦 南非-per-c-1
-  - 🇸🇦 沙特阿拉伯-per-c-1
-  - 🇨🇴 哥伦比亚-per-c-1
-  - 🇮🇱 以色列-per-c-1
-  - 🇻🇳 越南-per-c-1
-  - 🇹🇭 泰国-per-c-1
-  - 🇲🇾 马来西亚-per-c-1
-  - 🇵🇭 菲律宾-per-c-1
+  - 免费勿受骗自行优选
+  - FREE_BR CF-CU
+  - FREE_DE CF-CU
+  - FREE_JP CF-CU
+  - FREE_FI 15 HY2 01
+  - FREE_FI 15 HY2 02
+  - FREE_FI 15 ARG 01
+  - FREE_FI 15 ARG 02
 - name: 📢 谷歌FCM
   type: select
   proxies:
   - 🚀 节点选择
   - 🎯 全球直连
   - ♻️ 自动选择
-  - 🇯🇵 日本-优化-7
-  - 🇰🇷 韩国-优化-5
-  - 🇰🇷 韩国-优化-7
-  - 🇰🇷 韩国-优化-9
-  - 🇺🇸 美国-优化-5
-  - 🇺🇸 美国-优化-7
-  - 🇸🇬 新加坡-优化-4
-  - 🇸🇬 新加坡-优化-6
-  - 🇦🇺 澳洲-优化-3
-  - 🇭🇰 香港-优化-4
-  - 🇭🇰 香港-优化-5
-  - 🇨🇳 台湾-per-c-1
-  - 🇸🇬 新加坡-per-c-1
-  - 🇯🇵 日本-per-c-1
-  - 🇺🇸 美国-per-c-1
-  - 🇰🇷 韩国-per-c-1
-  - 🇮🇳 印度-per-c-1
-  - 🇩🇪 德国-per-c-1
-  - 🇬🇧 英国-per-c-1
-  - 🇳🇱 荷兰-per-c-1
-  - 🇮🇹 意大利-per-c-1
-  - 🇮🇳 印度-per-c-2
-  - 🇨🇱 智利-per-c-1
-  - 🇧🇷 巴西-per-c-1
-  - 🇪🇸 西班牙-per-c-1
-  - 🇨🇭 瑞士-per-c-1
-  - 🇸🇪 瑞典-per-c-1
-  - 🇲🇽 墨西哥-per-c-1
-  - 🇨🇦 加拿大-per-c-1
-  - 🇦🇺 澳大利亚-per-c-1
-  - 🇦🇪 迪拜-per-c-1
-  - 🇿🇦 南非-per-c-1
-  - 🇸🇦 沙特阿拉伯-per-c-1
-  - 🇨🇴 哥伦比亚-per-c-1
-  - 🇮🇱 以色列-per-c-1
-  - 🇻🇳 越南-per-c-1
-  - 🇹🇭 泰国-per-c-1
-  - 🇲🇾 马来西亚-per-c-1
-  - 🇵🇭 菲律宾-per-c-1
+  - 免费勿受骗自行优选
+  - FREE_BR CF-CU
+  - FREE_DE CF-CU
+  - FREE_JP CF-CU
+  - FREE_FI 15 HY2 01
+  - FREE_FI 15 HY2 02
+  - FREE_FI 15 ARG 01
+  - FREE_FI 15 ARG 02
 - name: 🎯 全球直连
   type: select
   proxies:
@@ -624,45 +244,14 @@ proxy-groups:
   - 🚀 节点选择
   - 🎯 全球直连
   - ♻️ 自动选择
-  - 🇯🇵 日本-优化-7
-  - 🇰🇷 韩国-优化-5
-  - 🇰🇷 韩国-优化-7
-  - 🇰🇷 韩国-优化-9
-  - 🇺🇸 美国-优化-5
-  - 🇺🇸 美国-优化-7
-  - 🇸🇬 新加坡-优化-4
-  - 🇸🇬 新加坡-优化-6
-  - 🇦🇺 澳洲-优化-3
-  - 🇭🇰 香港-优化-4
-  - 🇭🇰 香港-优化-5
-  - 🇨🇳 台湾-per-c-1
-  - 🇸🇬 新加坡-per-c-1
-  - 🇯🇵 日本-per-c-1
-  - 🇺🇸 美国-per-c-1
-  - 🇰🇷 韩国-per-c-1
-  - 🇮🇳 印度-per-c-1
-  - 🇩🇪 德国-per-c-1
-  - 🇬🇧 英国-per-c-1
-  - 🇳🇱 荷兰-per-c-1
-  - 🇮🇹 意大利-per-c-1
-  - 🇮🇳 印度-per-c-2
-  - 🇨🇱 智利-per-c-1
-  - 🇧🇷 巴西-per-c-1
-  - 🇪🇸 西班牙-per-c-1
-  - 🇨🇭 瑞士-per-c-1
-  - 🇸🇪 瑞典-per-c-1
-  - 🇲🇽 墨西哥-per-c-1
-  - 🇨🇦 加拿大-per-c-1
-  - 🇦🇺 澳大利亚-per-c-1
-  - 🇦🇪 迪拜-per-c-1
-  - 🇿🇦 南非-per-c-1
-  - 🇸🇦 沙特阿拉伯-per-c-1
-  - 🇨🇴 哥伦比亚-per-c-1
-  - 🇮🇱 以色列-per-c-1
-  - 🇻🇳 越南-per-c-1
-  - 🇹🇭 泰国-per-c-1
-  - 🇲🇾 马来西亚-per-c-1
-  - 🇵🇭 菲律宾-per-c-1
+  - 免费勿受骗自行优选
+  - FREE_BR CF-CU
+  - FREE_DE CF-CU
+  - FREE_JP CF-CU
+  - FREE_FI 15 HY2 01
+  - FREE_FI 15 HY2 02
+  - FREE_FI 15 ARG 01
+  - FREE_FI 15 ARG 02
 rules:
 - DOMAIN-SUFFIX,acl4.ssr,🎯 全球直连
 - DOMAIN-SUFFIX,ip6-localhost,🎯 全球直连
