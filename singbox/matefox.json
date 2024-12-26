@@ -1,37 +1,48 @@
 {
+  "log": {},
   "dns": {
-    "fakeip": {
-      "enabled": true,
-      "inet4_range": "198.18.0.0/15",
-      "inet6_range": "fc00::/18"
-    },
-    "independent_cache": true,
+    "servers": [
+      {
+        "tag": "dns_proxy",
+        "address": "https://8.8.8.8/dns-query",
+        "detour": "select"
+      },
+      {
+        "tag": "dns_direct",
+        "address": "https://223.5.5.5/dns-query",
+        "detour": "direct"
+      },
+      {
+        "tag": "dns_fakeip",
+        "address": "fakeip"
+      }
+    ],
     "rules": [
       {
         "outbound": "any",
         "server": "dns_direct"
       },
       {
-        "action": "reject",
         "rule_set": [
           "AdGuardSDNSFilter",
           "chrome-doh"
-        ]
+        ],
+        "action": "reject"
       },
       {
         "query_type": [
           "A",
           "AAAA"
         ],
-        "rewrite_ttl": 1,
-        "server": "dns_fakeip"
+        "server": "dns_fakeip",
+        "rewrite_ttl": 1
       },
       {
-        "clash_mode": "global",
+        "clash_mode": "Global",
         "server": "dns_proxy"
       },
       {
-        "clash_mode": "direct",
+        "clash_mode": "Direct",
         "server": "dns_direct"
       },
       {
@@ -39,1025 +50,111 @@
         "server": "dns_direct"
       }
     ],
-    "servers": [
-      {
-        "address": "https://8.8.8.8/dns-query",
-        "detour": "select",
-        "tag": "dns_proxy"
-      },
-      {
-        "address": "https://223.5.5.5/dns-query",
-        "detour": "direct",
-        "tag": "dns_direct"
-      },
-      {
-        "address": "fakeip",
-        "tag": "dns_fakeip"
-      }
-    ],
-    "strategy": "prefer_ipv4"
-  },
-  "experimental": {
-    "cache_file": {
-      "enabled": true
-    },
-    "clash_api": {
-      "external_controller": "127.0.0.1:9090"
+    "strategy": "prefer_ipv4",
+    "independent_cache": true,
+    "fakeip": {
+      "enabled": true,
+      "inet4_range": "198.18.0.0/15",
+      "inet6_range": "fc00::/18"
     }
   },
   "inbounds": [
     {
+      "type": "tun",
       "address": [
         "172.18.0.1/30",
         "fdfe:dcba:9876::1/126"
       ],
-      "auto_route": true,
-      "endpoint_independent_nat": true,
       "mtu": 9000,
+      "auto_route": true,
       "strict_route": true,
-      "type": "tun"
+      "endpoint_independent_nat": true
     },
     {
+      "type": "socks",
+      "tag": "socks-in",
       "listen": "127.0.0.1",
       "listen_port": 2333,
-      "tag": "socks-in",
-      "type": "socks",
       "users": []
     },
     {
+      "type": "mixed",
+      "tag": "mixed-in",
       "listen": "127.0.0.1",
       "listen_port": 2334,
-      "tag": "mixed-in",
-      "type": "mixed",
       "users": []
     }
   ],
-  "log": {},
   "outbounds": [
-    {
-      "tag": "select",
-      "type": "selector",
-      "outbounds": [
-        "中国大陆高速线路1",
-        "日本-优化-1",
-        "日本-优化-3",
-        "韩国-优化-1",
-        "韩国-优化-2",
-        "韩国-优化-3",
-        "美国-优化-1",
-        "美国-优化-2",
-        "美国-优化-3",
-        "迪拜-优化-1",
-        "印度-优化-1",
-        "新加坡-优化-1",
-        "德国-优化-1",
-        "英国-优化-1",
-        "加拿大-优化-1",
-        "加拿大-优化-2",
-        "澳洲-优化-1",
-        "巴西-优化-1",
-        "智利-优化-1",
-        "土耳其-优化-1",
-        "法国-优化-1",
-        "墨西哥-优化-1",
-        "以色列-优化-1",
-        "越南-优化-1",
-        "俄罗斯-优化-1",
-        "西班牙-优化-1",
-        "荷兰-优化-1",
-        "香港-优化-2",
-        "香港-优化-3",
-        "台湾-优化-1",
-        "台湾-优化-2",
-        "%25E6%2597%25A5%25E6%259C%25AC-%25E4%25BC%2598%25E5%258C%2596-4",
-        "%25E6%2597%25A5%25E6%259C%25AC-%25E4%25BC%2598%25E5%258C%2596-5",
-        "%25E6%2597%25A5%25E6%259C%25AC-%25E4%25BC%2598%25E5%258C%2596-6",
-        "日本-优化-7",
-        "%25E9%259F%25A9%25E5%259B%25BD-%25E4%25BC%2598%25E5%258C%2596-4",
-        "韩国-优化-5",
-        "%25E9%259F%25A9%25E5%259B%25BD-%25E4%25BC%2598%25E5%258C%2596-6",
-        "韩国-优化-7",
-        "%25E9%259F%25A9%25E5%259B%25BD-%25E4%25BC%2598%25E5%258C%2596-8",
-        "韩国-优化-9",
-        "%25E7%25BE%258E%25E5%259B%25BD-%25E4%25BC%2598%25E5%258C%2596-4",
-        "美国-优化-5",
-        "%25E7%25BE%258E%25E5%259B%25BD-%25E4%25BC%2598%25E5%258C%2596-6",
-        "美国-优化-7",
-        "%25E7%25BE%258E%25E5%259B%25BD-%25E4%25BC%2598%25E5%258C%2596-8",
-        "%25E8%25BF%25AA%25E6%258B%259C-%25E4%25BC%2598%25E5%258C%2596-2",
-        "%25E5%258D%25B0%25E5%25BA%25A6-%25E4%25BC%2598%25E5%258C%2596-2",
-        "%25E6%2596%25B0%25E5%258A%25A0%25E5%259D%25A1-%25E4%25BC%2598%25E5%258C%2596-3",
-        "新加坡-优化-4",
-        "%25E6%2596%25B0%25E5%258A%25A0%25E5%259D%25A1-%25E4%25BC%2598%25E5%258C%2596-5",
-        "新加坡-优化-6",
-        "%25E5%25BE%25B7%25E5%259B%25BD-%25E4%25BC%2598%25E5%258C%2596-2",
-        "%25E8%258B%25B1%25E5%259B%25BD-%25E4%25BC%2598%25E5%258C%2596-2",
-        "%25E5%258A%25A0%25E6%258B%25BF%25E5%25A4%25A7-%25E4%25BC%2598%25E5%258C%2596-3",
-        "%25E5%258A%25A0%25E6%258B%25BF%25E5%25A4%25A7-%25E4%25BC%2598%25E5%258C%2596-4",
-        "%25E6%25BE%25B3%25E6%25B4%25B2-%25E4%25BC%2598%25E5%258C%2596-2",
-        "澳洲-优化-3",
-        "香港-优化-4",
-        "香港-优化-5",
-        "%25E5%25B7%25B4%25E8%25A5%25BF-%25E4%25BC%2598%25E5%258C%2596-2",
-        "%25E5%259C%259F%25E8%2580%25B3%25E5%2585%25B6-%25E4%25BC%2598%25E5%258C%2596-2",
-        "%25E6%25B3%2595%25E5%259B%25BD-%25E4%25BC%2598%25E5%258C%2596-2",
-        "%25E5%25A2%25A8%25E8%25A5%25BF%25E5%2593%25A5-%25E4%25BC%2598%25E5%258C%2596-2",
-        "%25E4%25BB%25A5%25E8%2589%25B2%25E5%2588%2597-%25E4%25BC%2598%25E5%258C%2596-2",
-        "%25E8%25B6%258A%25E5%258D%2597-%25E4%25BC%2598%25E5%258C%2596-2",
-        "%25E4%25BF%2584%25E7%25BD%2597%25E6%2596%25AF-%25E4%25BC%2598%25E5%258C%2596-2",
-        "%25E8%25A5%25BF%25E7%258F%25AD%25E7%2589%2599-%25E4%25BC%2598%25E5%258C%2596-2",
-        "%25E8%258D%25B7%25E5%2585%25B0-%25E4%25BC%2598%25E5%258C%2596-2",
-        "%25E9%25A6%2599%25E6%25B8%25AF-%25E4%25BC%2598%25E5%258C%2596-7",
-        "%25E5%258F%25B0%25E6%25B9%25BE-%25E4%25BC%2598%25E5%258C%2596-3",
-        "%25E5%258F%25B0%25E6%25B9%25BE-%25E4%25BC%2598%25E5%258C%2596-4",
-        "台湾-per-c-1",
-        "新加坡-per-c-1",
-        "日本-per-c-1",
-        "美国-per-c-1",
-        "韩国-per-c-1",
-        "印度-per-c-1",
-        "德国-per-c-1",
-        "英国-per-c-1",
-        "荷兰-per-c-1",
-        "意大利-per-c-1",
-        "印度-per-c-2",
-        "智利-per-c-1",
-        "巴西-per-c-1",
-        "西班牙-per-c-1",
-        "瑞士-per-c-1",
-        "瑞典-per-c-1",
-        "墨西哥-per-c-1",
-        "加拿大-per-c-1",
-        "澳大利亚-per-c-1",
-        "迪拜-per-c-1",
-        "南非-per-c-1",
-        "沙特阿拉伯-per-c-1",
-        "哥伦比亚-per-c-1",
-        "以色列-per-c-1",
-        "越南-per-c-1",
-        "泰国-per-c-1",
-        "马来西亚-per-c-1",
-        "菲律宾-per-c-1"
-      ]
-    },
-    {
-      "outbounds": [
-        "中国大陆高速线路1",
-        "日本-优化-1",
-        "日本-优化-3",
-        "韩国-优化-1",
-        "韩国-优化-2",
-        "韩国-优化-3",
-        "美国-优化-1",
-        "美国-优化-2",
-        "美国-优化-3",
-        "迪拜-优化-1",
-        "印度-优化-1",
-        "新加坡-优化-1",
-        "德国-优化-1",
-        "英国-优化-1",
-        "加拿大-优化-1",
-        "加拿大-优化-2",
-        "澳洲-优化-1",
-        "巴西-优化-1",
-        "智利-优化-1",
-        "土耳其-优化-1",
-        "法国-优化-1",
-        "墨西哥-优化-1",
-        "以色列-优化-1",
-        "越南-优化-1",
-        "俄罗斯-优化-1",
-        "西班牙-优化-1",
-        "荷兰-优化-1",
-        "台湾-优化-1",
-        "台湾-优化-2",
-        "%25E6%2597%25A5%25E6%259C%25AC-%25E4%25BC%2598%25E5%258C%2596-4",
-        "%25E6%2597%25A5%25E6%259C%25AC-%25E4%25BC%2598%25E5%258C%2596-5",
-        "%25E6%2597%25A5%25E6%259C%25AC-%25E4%25BC%2598%25E5%258C%2596-6",
-        "日本-优化-7",
-        "%25E9%259F%25A9%25E5%259B%25BD-%25E4%25BC%2598%25E5%258C%2596-4",
-        "韩国-优化-5",
-        "%25E9%259F%25A9%25E5%259B%25BD-%25E4%25BC%2598%25E5%258C%2596-6",
-        "韩国-优化-7",
-        "%25E9%259F%25A9%25E5%259B%25BD-%25E4%25BC%2598%25E5%258C%2596-8",
-        "韩国-优化-9",
-        "%25E7%25BE%258E%25E5%259B%25BD-%25E4%25BC%2598%25E5%258C%2596-4",
-        "美国-优化-5",
-        "%25E7%25BE%258E%25E5%259B%25BD-%25E4%25BC%2598%25E5%258C%2596-6",
-        "美国-优化-7",
-        "%25E7%25BE%258E%25E5%259B%25BD-%25E4%25BC%2598%25E5%258C%2596-8",
-        "%25E8%25BF%25AA%25E6%258B%259C-%25E4%25BC%2598%25E5%258C%2596-2",
-        "%25E5%258D%25B0%25E5%25BA%25A6-%25E4%25BC%2598%25E5%258C%2596-2",
-        "%25E6%2596%25B0%25E5%258A%25A0%25E5%259D%25A1-%25E4%25BC%2598%25E5%258C%2596-3",
-        "新加坡-优化-4",
-        "%25E6%2596%25B0%25E5%258A%25A0%25E5%259D%25A1-%25E4%25BC%2598%25E5%258C%2596-5",
-        "新加坡-优化-6",
-        "%25E5%25BE%25B7%25E5%259B%25BD-%25E4%25BC%2598%25E5%258C%2596-2",
-        "%25E8%258B%25B1%25E5%259B%25BD-%25E4%25BC%2598%25E5%258C%2596-2",
-        "%25E5%258A%25A0%25E6%258B%25BF%25E5%25A4%25A7-%25E4%25BC%2598%25E5%258C%2596-3",
-        "%25E5%258A%25A0%25E6%258B%25BF%25E5%25A4%25A7-%25E4%25BC%2598%25E5%258C%2596-4",
-        "%25E6%25BE%25B3%25E6%25B4%25B2-%25E4%25BC%2598%25E5%258C%2596-2",
-        "澳洲-优化-3",
-        "%25E5%25B7%25B4%25E8%25A5%25BF-%25E4%25BC%2598%25E5%258C%2596-2",
-        "%25E5%259C%259F%25E8%2580%25B3%25E5%2585%25B6-%25E4%25BC%2598%25E5%258C%2596-2",
-        "%25E6%25B3%2595%25E5%259B%25BD-%25E4%25BC%2598%25E5%258C%2596-2",
-        "%25E5%25A2%25A8%25E8%25A5%25BF%25E5%2593%25A5-%25E4%25BC%2598%25E5%258C%2596-2",
-        "%25E4%25BB%25A5%25E8%2589%25B2%25E5%2588%2597-%25E4%25BC%2598%25E5%258C%2596-2",
-        "%25E8%25B6%258A%25E5%258D%2597-%25E4%25BC%2598%25E5%258C%2596-2",
-        "%25E4%25BF%2584%25E7%25BD%2597%25E6%2596%25AF-%25E4%25BC%2598%25E5%258C%2596-2",
-        "%25E8%25A5%25BF%25E7%258F%25AD%25E7%2589%2599-%25E4%25BC%2598%25E5%258C%2596-2",
-        "%25E8%258D%25B7%25E5%2585%25B0-%25E4%25BC%2598%25E5%258C%2596-2",
-        "%25E9%25A6%2599%25E6%25B8%25AF-%25E4%25BC%2598%25E5%258C%2596-7",
-        "%25E5%258F%25B0%25E6%25B9%25BE-%25E4%25BC%2598%25E5%258C%2596-3",
-        "%25E5%258F%25B0%25E6%25B9%25BE-%25E4%25BC%2598%25E5%258C%2596-4",
-        "台湾-per-c-1",
-        "新加坡-per-c-1",
-        "日本-per-c-1",
-        "美国-per-c-1",
-        "韩国-per-c-1",
-        "印度-per-c-1",
-        "德国-per-c-1",
-        "英国-per-c-1",
-        "荷兰-per-c-1",
-        "意大利-per-c-1",
-        "印度-per-c-2",
-        "智利-per-c-1",
-        "巴西-per-c-1",
-        "西班牙-per-c-1",
-        "瑞士-per-c-1",
-        "瑞典-per-c-1",
-        "墨西哥-per-c-1",
-        "加拿大-per-c-1",
-        "澳大利亚-per-c-1",
-        "迪拜-per-c-1",
-        "南非-per-c-1",
-        "沙特阿拉伯-per-c-1",
-        "哥伦比亚-per-c-1",
-        "以色列-per-c-1",
-        "越南-per-c-1",
-        "泰国-per-c-1",
-        "马来西亚-per-c-1",
-        "菲律宾-per-c-1"
-      ],
-      "tag": "chatgpt",
-      "type": "selector"
-    },
-    {
-      "password": "WqzGKnmZ9UaB",
-      "server": "218.245.99.79",
-      "server_port": 61970,
-      "tag": "中国大陆高速线路1",
-      "tls": {
-        "enabled": true,
-        "server_name": "bing.com",
-        "insecure": true
-      },
-      "type": "hysteria2",
-      "obfs": {
-        "password": "41nPRX39cSt6",
-        "type": "salamander"
-      }
-    },
-    {
-      "password": "77f1f040-1b7c-4e38-aadc-33b8c63875c6",
-      "server": "6jp.prometheusnet01.xyz",
-      "server_port": 23363,
-      "tag": "日本-优化-1",
-      "tls": {
-        "enabled": true,
-        "server_name": "6jp.prometheusnet01.xyz",
-        "insecure": true
-      },
-      "type": "hysteria2",
-      "obfs": {
-        "password": "UMgXgkNWKmMCrLd8",
-        "type": "salamander"
-      }
-    },
-    {
-      "password": "77f1f040-1b7c-4e38-aadc-33b8c63875c6",
-      "server": "10jp.prometheusnet01.xyz",
-      "server_port": 21862,
-      "tag": "日本-优化-3",
-      "tls": {
-        "enabled": true,
-        "server_name": "10jp.prometheusnet01.xyz",
-        "insecure": true
-      },
-      "type": "hysteria2"
-    },
-    {
-      "password": "77f1f040-1b7c-4e38-aadc-33b8c63875c6",
-      "server": "8kr.prometheusnet01.xyz",
-      "server_port": 21529,
-      "tag": "韩国-优化-1",
-      "tls": {
-        "enabled": true,
-        "server_name": "8kr.prometheusnet01.xyz",
-        "insecure": true
-      },
-      "type": "hysteria2"
-    },
-    {
-      "password": "77f1f040-1b7c-4e38-aadc-33b8c63875c6",
-      "server": "9kr.prometheusnet01.xyz",
-      "server_port": 25487,
-      "tag": "韩国-优化-2",
-      "tls": {
-        "enabled": true,
-        "server_name": "9kr.prometheusnet01.xyz",
-        "insecure": true
-      },
-      "type": "hysteria2"
-    },
-    {
-      "password": "77f1f040-1b7c-4e38-aadc-33b8c63875c6",
-      "server": "25kr.prometheusnet01.xyz",
-      "server_port": 22446,
-      "tag": "韩国-优化-3",
-      "tls": {
-        "enabled": true,
-        "server_name": "25kr.prometheusnet01.xyz",
-        "insecure": true
-      },
-      "type": "hysteria2"
-    },
-    {
-      "password": "77f1f040-1b7c-4e38-aadc-33b8c63875c6",
-      "server": "11us.prometheusnet01.xyz",
-      "server_port": 25641,
-      "tag": "美国-优化-1",
-      "tls": {
-        "enabled": true,
-        "server_name": "11us.prometheusnet01.xyz",
-        "insecure": true
-      },
-      "type": "hysteria2"
-    },
-    {
-      "password": "77f1f040-1b7c-4e38-aadc-33b8c63875c6",
-      "server": "12us.prometheusnet01.xyz",
-      "server_port": 22021,
-      "tag": "美国-优化-2",
-      "tls": {
-        "enabled": true,
-        "server_name": "12us.prometheusnet01.xyz",
-        "insecure": true
-      },
-      "type": "hysteria2"
-    },
-    {
-      "password": "77f1f040-1b7c-4e38-aadc-33b8c63875c6",
-      "server": "29us.prometheusnet01.xyz",
-      "server_port": 24232,
-      "tag": "美国-优化-3",
-      "tls": {
-        "enabled": true,
-        "server_name": "29us.prometheusnet01.xyz",
-        "insecure": true
-      },
-      "type": "hysteria2"
-    },
-    {
-      "password": "77f1f040-1b7c-4e38-aadc-33b8c63875c6",
-      "server": "13dxb.prometheusnet01.xyz",
-      "server_port": 21489,
-      "tag": "迪拜-优化-1",
-      "tls": {
-        "enabled": true,
-        "server_name": "13dxb.prometheusnet01.xyz",
-        "insecure": true
-      },
-      "type": "hysteria2"
-    },
-    {
-      "password": "77f1f040-1b7c-4e38-aadc-33b8c63875c6",
-      "server": "14in.prometheusnet01.xyz",
-      "server_port": 23570,
-      "tag": "印度-优化-1",
-      "tls": {
-        "enabled": true,
-        "server_name": "14in.prometheusnet01.xyz",
-        "insecure": true
-      },
-      "type": "hysteria2"
-    },
-    {
-      "password": "77f1f040-1b7c-4e38-aadc-33b8c63875c6",
-      "server": "15sg.prometheusnet01.xyz",
-      "server_port": 22624,
-      "tag": "新加坡-优化-1",
-      "tls": {
-        "enabled": true,
-        "server_name": "15sg.prometheusnet01.xyz",
-        "insecure": true
-      },
-      "type": "hysteria2"
-    },
-    {
-      "password": "77f1f040-1b7c-4e38-aadc-33b8c63875c6",
-      "server": "16de.prometheusnet01.xyz",
-      "server_port": 21761,
-      "tag": "德国-优化-1",
-      "tls": {
-        "enabled": true,
-        "server_name": "16de.prometheusnet01.xyz",
-        "insecure": true
-      },
-      "type": "hysteria2"
-    },
-    {
-      "password": "77f1f040-1b7c-4e38-aadc-33b8c63875c6",
-      "server": "17uk.prometheusnet01.xyz",
-      "server_port": 24225,
-      "tag": "英国-优化-1",
-      "tls": {
-        "enabled": true,
-        "server_name": "17uk.prometheusnet01.xyz",
-        "insecure": true
-      },
-      "type": "hysteria2"
-    },
-    {
-      "password": "77f1f040-1b7c-4e38-aadc-33b8c63875c6",
-      "server": "18ca.prometheusnet01.xyz",
-      "server_port": 21408,
-      "tag": "加拿大-优化-1",
-      "tls": {
-        "enabled": true,
-        "server_name": "18ca.prometheusnet01.xyz",
-        "insecure": true
-      },
-      "type": "hysteria2"
-    },
-    {
-      "password": "77f1f040-1b7c-4e38-aadc-33b8c63875c6",
-      "server": "26ca.prometheusnet01.xyz",
-      "server_port": 24851,
-      "tag": "加拿大-优化-2",
-      "tls": {
-        "enabled": true,
-        "server_name": "26ca.prometheusnet01.xyz",
-        "insecure": true
-      },
-      "type": "hysteria2"
-    },
-    {
-      "password": "77f1f040-1b7c-4e38-aadc-33b8c63875c6",
-      "server": "19sdy.prometheusnet01.xyz",
-      "server_port": 21867,
-      "tag": "澳洲-优化-1",
-      "tls": {
-        "enabled": true,
-        "server_name": "19sdy.prometheusnet01.xyz",
-        "insecure": true
-      },
-      "type": "hysteria2"
-    },
-    {
-      "password": "77f1f040-1b7c-4e38-aadc-33b8c63875c6",
-      "server": "20br.prometheusnet01.xyz",
-      "server_port": 23456,
-      "tag": "巴西-优化-1",
-      "tls": {
-        "enabled": true,
-        "server_name": "20br.prometheusnet01.xyz",
-        "insecure": true
-      },
-      "type": "hysteria2"
-    },
-    {
-      "password": "77f1f040-1b7c-4e38-aadc-33b8c63875c6",
-      "server": "21chi.prometheusnet01.xyz",
-      "server_port": 23358,
-      "tag": "智利-优化-1",
-      "tls": {
-        "enabled": true,
-        "server_name": "21chi.prometheusnet01.xyz",
-        "insecure": true
-      },
-      "type": "hysteria2"
-    },
-    {
-      "password": "77f1f040-1b7c-4e38-aadc-33b8c63875c6",
-      "server": "22tr.prometheusnet01.xyz",
-      "server_port": 24167,
-      "tag": "土耳其-优化-1",
-      "tls": {
-        "enabled": true,
-        "server_name": "22tr.prometheusnet01.xyz",
-        "insecure": true
-      },
-      "type": "hysteria2"
-    },
-    {
-      "password": "77f1f040-1b7c-4e38-aadc-33b8c63875c6",
-      "server": "23fr.prometheusnet01.xyz",
-      "server_port": 21296,
-      "tag": "法国-优化-1",
-      "tls": {
-        "enabled": true,
-        "server_name": "23fr.prometheusnet01.xyz",
-        "insecure": true
-      },
-      "type": "hysteria2"
-    },
-    {
-      "password": "77f1f040-1b7c-4e38-aadc-33b8c63875c6",
-      "server": "27mx.prometheusnet01.xyz",
-      "server_port": 23705,
-      "tag": "墨西哥-优化-1",
-      "tls": {
-        "enabled": true,
-        "server_name": "27mx.prometheusnet01.xyz",
-        "insecure": true
-      },
-      "type": "hysteria2"
-    },
-    {
-      "password": "77f1f040-1b7c-4e38-aadc-33b8c63875c6",
-      "server": "30il.prometheusnet01.xyz",
-      "server_port": 23077,
-      "tag": "以色列-优化-1",
-      "tls": {
-        "enabled": true,
-        "server_name": "30il.prometheusnet01.xyz",
-        "insecure": true
-      },
-      "type": "hysteria2"
-    },
-    {
-      "password": "77f1f040-1b7c-4e38-aadc-33b8c63875c6",
-      "server": "33vn.prometheusnet01.xyz",
-      "server_port": 24980,
-      "tag": "越南-优化-1",
-      "tls": {
-        "enabled": true,
-        "server_name": "33vn.prometheusnet01.xyz",
-        "insecure": true
-      },
-      "type": "hysteria2"
-    },
-    {
-      "password": "77f1f040-1b7c-4e38-aadc-33b8c63875c6",
-      "server": "32ru.prometheusnet01.xyz",
-      "server_port": 23960,
-      "tag": "俄罗斯-优化-1",
-      "tls": {
-        "enabled": true,
-        "server_name": "32ru.prometheusnet01.xyz",
-        "insecure": true
-      },
-      "type": "hysteria2"
-    },
-    {
-      "password": "77f1f040-1b7c-4e38-aadc-33b8c63875c6",
-      "server": "31es.prometheusnet01.xyz",
-      "server_port": 25770,
-      "tag": "西班牙-优化-1",
-      "tls": {
-        "enabled": true,
-        "server_name": "31es.prometheusnet01.xyz",
-        "insecure": true
-      },
-      "type": "hysteria2"
-    },
-    {
-      "password": "77f1f040-1b7c-4e38-aadc-33b8c63875c6",
-      "server": "28nl.prometheusnet01.xyz",
-      "server_port": 23656,
-      "tag": "荷兰-优化-1",
-      "tls": {
-        "enabled": true,
-        "server_name": "28nl.prometheusnet01.xyz",
-        "insecure": true
-      },
-      "type": "hysteria2"
-    },
-    {
-      "password": "77f1f040-1b7c-4e38-aadc-33b8c63875c6",
-      "server": "2hk.prometheusnet01.xyz",
-      "server_port": 22262,
-      "tag": "香港-优化-2",
-      "tls": {
-        "enabled": true,
-        "server_name": "2hk.prometheusnet01.xyz",
-        "insecure": true
-      },
-      "type": "hysteria2"
-    },
-    {
-      "password": "77f1f040-1b7c-4e38-aadc-33b8c63875c6",
-      "server": "3hk.prometheusnet01.xyz",
-      "server_port": 21765,
-      "tag": "香港-优化-3",
-      "tls": {
-        "enabled": true,
-        "server_name": "3hk.prometheusnet01.xyz",
-        "insecure": true
-      },
-      "type": "hysteria2"
-    },
-    {
-      "password": "77f1f040-1b7c-4e38-aadc-33b8c63875c6",
-      "server": "4tw.prometheusnet01.xyz",
-      "server_port": 22919,
-      "tag": "台湾-优化-1",
-      "tls": {
-        "enabled": true,
-        "server_name": "4tw.prometheusnet01.xyz",
-        "insecure": true
-      },
-      "type": "hysteria2"
-    },
-    {
-      "password": "77f1f040-1b7c-4e38-aadc-33b8c63875c6",
-      "server": "5tw.prometheusnet01.xyz",
-      "server_port": 52324,
-      "tag": "台湾-优化-2",
-      "tls": {
-        "enabled": true,
-        "server_name": "5tw.prometheusnet01.xyz",
-        "insecure": true
-      },
-      "type": "hysteria2"
-    },
-    {
-      "server": "6jp.prometheusnet01.xyz",
-      "server_port": 5227,
-      "tag": "%25E6%2597%25A5%25E6%259C%25AC-%25E4%25BC%2598%25E5%258C%2596-4",
-      "tls": {
-        "enabled": true,
-        "server_name": "6jp.prometheusnet01.xyz",
-        "alpn": [
-          "h3"
-        ],
-        "insecure": true
-      },
-      "type": "hysteria",
-      "auth_str": "77f1f040-1b7c-4e38-aadc-33b8c63875c6",
-      "down_mbps": 150,
-      "up_mbps": 70,
-      "obfs": "xplus"
-    },
-    {
-      "server": "7jp.prometheusnet01.xyz",
-      "server_port": 8755,
-      "tag": "%25E6%2597%25A5%25E6%259C%25AC-%25E4%25BC%2598%25E5%258C%2596-5",
-      "tls": {
-        "enabled": true,
-        "server_name": "7jp.prometheusnet01.xyz",
-        "alpn": [
-          "h3"
-        ],
-        "insecure": true
-      },
-      "type": "hysteria",
-      "auth_str": "77f1f040-1b7c-4e38-aadc-33b8c63875c6",
-      "down_mbps": 150,
-      "up_mbps": 70
-    },
-    {
-      "server": "10jp.prometheusnet01.xyz",
-      "server_port": 8461,
-      "tag": "%25E6%2597%25A5%25E6%259C%25AC-%25E4%25BC%2598%25E5%258C%2596-6",
-      "tls": {
-        "enabled": true,
-        "server_name": "10jp.prometheusnet01.xyz",
-        "alpn": [
-          "h3"
-        ],
-        "insecure": true
-      },
-      "type": "hysteria",
-      "auth_str": "77f1f040-1b7c-4e38-aadc-33b8c63875c6",
-      "down_mbps": 150,
-      "up_mbps": 70
-    },
     {
       "password": "77f1f040-1b7c-4e38-aadc-33b8c63875c6",
       "server": "dnsmart.dg-cdn.mob.networklinkpro.com",
       "server_port": 17882,
-      "tag": "日本-优化-7",
+      "tag": "🇯🇵 日本-优化-7",
       "type": "shadowsocks",
       "method": "chacha20-ietf-poly1305"
-    },
-    {
-      "server": "8kr.prometheusnet01.xyz",
-      "server_port": 7490,
-      "tag": "%25E9%259F%25A9%25E5%259B%25BD-%25E4%25BC%2598%25E5%258C%2596-4",
-      "tls": {
-        "enabled": true,
-        "server_name": "8kr.prometheusnet01.xyz",
-        "alpn": [
-          "h3"
-        ],
-        "insecure": true
-      },
-      "type": "hysteria",
-      "auth_str": "77f1f040-1b7c-4e38-aadc-33b8c63875c6",
-      "down_mbps": 150,
-      "up_mbps": 70
     },
     {
       "password": "77f1f040-1b7c-4e38-aadc-33b8c63875c6",
       "server": "dnsmart.dg-cdn.mob.networklinkpro.com",
       "server_port": 17887,
-      "tag": "韩国-优化-5",
+      "tag": "🇰🇷 韩国-优化-5",
       "type": "shadowsocks",
       "method": "chacha20-ietf-poly1305"
-    },
-    {
-      "server": "9kr.prometheusnet01.xyz",
-      "server_port": 7082,
-      "tag": "%25E9%259F%25A9%25E5%259B%25BD-%25E4%25BC%2598%25E5%258C%2596-6",
-      "tls": {
-        "enabled": true,
-        "server_name": "9kr.prometheusnet01.xyz",
-        "alpn": [
-          "h3"
-        ],
-        "insecure": true
-      },
-      "type": "hysteria",
-      "auth_str": "77f1f040-1b7c-4e38-aadc-33b8c63875c6",
-      "down_mbps": 150,
-      "up_mbps": 70
     },
     {
       "password": "77f1f040-1b7c-4e38-aadc-33b8c63875c6",
       "server": "dnsmart.dg-cdn.mob.networklinkpro.com",
       "server_port": 17881,
-      "tag": "韩国-优化-7",
+      "tag": "🇰🇷 韩国-优化-7",
       "type": "shadowsocks",
       "method": "chacha20-ietf-poly1305"
-    },
-    {
-      "server": "25kr.prometheusnet01.xyz",
-      "server_port": 6948,
-      "tag": "%25E9%259F%25A9%25E5%259B%25BD-%25E4%25BC%2598%25E5%258C%2596-8",
-      "tls": {
-        "enabled": true,
-        "server_name": "25kr.prometheusnet01.xyz",
-        "alpn": [
-          "h3"
-        ],
-        "insecure": true
-      },
-      "type": "hysteria",
-      "auth_str": "77f1f040-1b7c-4e38-aadc-33b8c63875c6",
-      "down_mbps": 150,
-      "up_mbps": 70
     },
     {
       "password": "77f1f040-1b7c-4e38-aadc-33b8c63875c6",
       "server": "dnsmart.dg-cdn.mob.networklinkpro.com",
       "server_port": 17885,
-      "tag": "韩国-优化-9",
+      "tag": "🇰🇷 韩国-优化-9",
       "type": "shadowsocks",
       "method": "chacha20-ietf-poly1305"
-    },
-    {
-      "server": "11us.prometheusnet01.xyz",
-      "server_port": 7115,
-      "tag": "%25E7%25BE%258E%25E5%259B%25BD-%25E4%25BC%2598%25E5%258C%2596-4",
-      "tls": {
-        "enabled": true,
-        "server_name": "11us.prometheusnet01.xyz",
-        "alpn": [
-          "h3"
-        ],
-        "insecure": true
-      },
-      "type": "hysteria",
-      "auth_str": "77f1f040-1b7c-4e38-aadc-33b8c63875c6",
-      "down_mbps": 150,
-      "up_mbps": 70
     },
     {
       "password": "77f1f040-1b7c-4e38-aadc-33b8c63875c6",
       "server": "dnsmart.dg-cdn.mob.networklinkpro.com",
       "server_port": 17884,
-      "tag": "美国-优化-5",
+      "tag": "🇺🇸 美国-优化-5",
       "type": "shadowsocks",
       "method": "chacha20-ietf-poly1305"
-    },
-    {
-      "server": "12us.prometheusnet01.xyz",
-      "server_port": 5998,
-      "tag": "%25E7%25BE%258E%25E5%259B%25BD-%25E4%25BC%2598%25E5%258C%2596-6",
-      "tls": {
-        "enabled": true,
-        "server_name": "12us.prometheusnet01.xyz",
-        "alpn": [
-          "h3"
-        ],
-        "insecure": true
-      },
-      "type": "hysteria",
-      "auth_str": "77f1f040-1b7c-4e38-aadc-33b8c63875c6",
-      "down_mbps": 150,
-      "up_mbps": 70
     },
     {
       "password": "77f1f040-1b7c-4e38-aadc-33b8c63875c6",
       "server": "dnsmart.dg-cdn.mob.networklinkpro.com",
       "server_port": 17886,
-      "tag": "美国-优化-7",
+      "tag": "🇺🇸 美国-优化-7",
       "type": "shadowsocks",
       "method": "chacha20-ietf-poly1305"
-    },
-    {
-      "server": "29us.prometheusnet01.xyz",
-      "server_port": 8013,
-      "tag": "%25E7%25BE%258E%25E5%259B%25BD-%25E4%25BC%2598%25E5%258C%2596-8",
-      "tls": {
-        "enabled": true,
-        "server_name": "29us.prometheusnet01.xyz",
-        "alpn": [
-          "h3"
-        ],
-        "insecure": true
-      },
-      "type": "hysteria",
-      "auth_str": "77f1f040-1b7c-4e38-aadc-33b8c63875c6",
-      "down_mbps": 150,
-      "up_mbps": 70
-    },
-    {
-      "server": "13dxb.prometheusnet01.xyz",
-      "server_port": 7066,
-      "tag": "%25E8%25BF%25AA%25E6%258B%259C-%25E4%25BC%2598%25E5%258C%2596-2",
-      "tls": {
-        "enabled": true,
-        "server_name": "13dxb.prometheusnet01.xyz",
-        "alpn": [
-          "h3"
-        ],
-        "insecure": true
-      },
-      "type": "hysteria",
-      "auth_str": "77f1f040-1b7c-4e38-aadc-33b8c63875c6",
-      "down_mbps": 150,
-      "up_mbps": 70
-    },
-    {
-      "server": "14in.prometheusnet01.xyz",
-      "server_port": 9575,
-      "tag": "%25E5%258D%25B0%25E5%25BA%25A6-%25E4%25BC%2598%25E5%258C%2596-2",
-      "tls": {
-        "enabled": true,
-        "server_name": "14in.prometheusnet01.xyz",
-        "alpn": [
-          "h3"
-        ],
-        "insecure": true
-      },
-      "type": "hysteria",
-      "auth_str": "77f1f040-1b7c-4e38-aadc-33b8c63875c6",
-      "down_mbps": 150,
-      "up_mbps": 70
-    },
-    {
-      "server": "15sg.prometheusnet01.xyz",
-      "server_port": 5017,
-      "tag": "%25E6%2596%25B0%25E5%258A%25A0%25E5%259D%25A1-%25E4%25BC%2598%25E5%258C%2596-3",
-      "tls": {
-        "enabled": true,
-        "server_name": "15sg.prometheusnet01.xyz",
-        "alpn": [
-          "h3"
-        ],
-        "insecure": true
-      },
-      "type": "hysteria",
-      "auth_str": "77f1f040-1b7c-4e38-aadc-33b8c63875c6",
-      "down_mbps": 150,
-      "up_mbps": 70
     },
     {
       "password": "77f1f040-1b7c-4e38-aadc-33b8c63875c6",
       "server": "dnsmart.dg-cdn.mob.networklinkpro.com",
       "server_port": 17883,
-      "tag": "新加坡-优化-4",
+      "tag": "🇸🇬 新加坡-优化-4",
       "type": "shadowsocks",
       "method": "chacha20-ietf-poly1305"
-    },
-    {
-      "server": "24sg.prometheusnet01.xyz",
-      "server_port": 7337,
-      "tag": "%25E6%2596%25B0%25E5%258A%25A0%25E5%259D%25A1-%25E4%25BC%2598%25E5%258C%2596-5",
-      "tls": {
-        "enabled": true,
-        "server_name": "24sg.prometheusnet01.xyz",
-        "alpn": [
-          "h3"
-        ],
-        "insecure": true
-      },
-      "type": "hysteria",
-      "auth_str": "77f1f040-1b7c-4e38-aadc-33b8c63875c6",
-      "down_mbps": 150,
-      "up_mbps": 70
     },
     {
       "password": "77f1f040-1b7c-4e38-aadc-33b8c63875c6",
       "server": "dnsmart.dg-cdn.mob.networklinkpro.com",
       "server_port": 17890,
-      "tag": "新加坡-优化-6",
+      "tag": "🇸🇬 新加坡-优化-6",
       "type": "shadowsocks",
       "method": "chacha20-ietf-poly1305"
-    },
-    {
-      "server": "16de.prometheusnet01.xyz",
-      "server_port": 9988,
-      "tag": "%25E5%25BE%25B7%25E5%259B%25BD-%25E4%25BC%2598%25E5%258C%2596-2",
-      "tls": {
-        "enabled": true,
-        "server_name": "16de.prometheusnet01.xyz",
-        "alpn": [
-          "h3"
-        ],
-        "insecure": true
-      },
-      "type": "hysteria",
-      "auth_str": "77f1f040-1b7c-4e38-aadc-33b8c63875c6",
-      "down_mbps": 150,
-      "up_mbps": 70
-    },
-    {
-      "server": "17uk.prometheusnet01.xyz",
-      "server_port": 7877,
-      "tag": "%25E8%258B%25B1%25E5%259B%25BD-%25E4%25BC%2598%25E5%258C%2596-2",
-      "tls": {
-        "enabled": true,
-        "server_name": "17uk.prometheusnet01.xyz",
-        "alpn": [
-          "h3"
-        ],
-        "insecure": true
-      },
-      "type": "hysteria",
-      "auth_str": "77f1f040-1b7c-4e38-aadc-33b8c63875c6",
-      "down_mbps": 150,
-      "up_mbps": 70
-    },
-    {
-      "server": "18ca.prometheusnet01.xyz",
-      "server_port": 6479,
-      "tag": "%25E5%258A%25A0%25E6%258B%25BF%25E5%25A4%25A7-%25E4%25BC%2598%25E5%258C%2596-3",
-      "tls": {
-        "enabled": true,
-        "server_name": "18ca.prometheusnet01.xyz",
-        "alpn": [
-          "h3"
-        ],
-        "insecure": true
-      },
-      "type": "hysteria",
-      "auth_str": "77f1f040-1b7c-4e38-aadc-33b8c63875c6",
-      "down_mbps": 150,
-      "up_mbps": 70
-    },
-    {
-      "server": "26ca.prometheusnet01.xyz",
-      "server_port": 8590,
-      "tag": "%25E5%258A%25A0%25E6%258B%25BF%25E5%25A4%25A7-%25E4%25BC%2598%25E5%258C%2596-4",
-      "tls": {
-        "enabled": true,
-        "server_name": "26ca.prometheusnet01.xyz",
-        "alpn": [
-          "h3"
-        ],
-        "insecure": true
-      },
-      "type": "hysteria",
-      "auth_str": "77f1f040-1b7c-4e38-aadc-33b8c63875c6",
-      "down_mbps": 150,
-      "up_mbps": 70
-    },
-    {
-      "server": "19sdy.prometheusnet01.xyz",
-      "server_port": 7498,
-      "tag": "%25E6%25BE%25B3%25E6%25B4%25B2-%25E4%25BC%2598%25E5%258C%2596-2",
-      "tls": {
-        "enabled": true,
-        "server_name": "19sdy.prometheusnet01.xyz",
-        "alpn": [
-          "h3"
-        ],
-        "insecure": true
-      },
-      "type": "hysteria",
-      "auth_str": "77f1f040-1b7c-4e38-aadc-33b8c63875c6",
-      "down_mbps": 150,
-      "up_mbps": 70
     },
     {
       "password": "77f1f040-1b7c-4e38-aadc-33b8c63875c6",
       "server": "dnsmart.dg-cdn.mob.networklinkpro.com",
       "server_port": 17888,
-      "tag": "澳洲-优化-3",
+      "tag": "🇦🇺 澳洲-优化-3",
       "type": "shadowsocks",
       "method": "chacha20-ietf-poly1305"
     },
@@ -1065,7 +162,7 @@
       "password": "77f1f040-1b7c-4e38-aadc-33b8c63875c6",
       "server": "dnsmart.dg-cdn.mob.networklinkpro.com",
       "server_port": 17880,
-      "tag": "香港-优化-4",
+      "tag": "🇭🇰 香港-优化-4",
       "type": "shadowsocks",
       "method": "chacha20-ietf-poly1305"
     },
@@ -1073,219 +170,15 @@
       "password": "77f1f040-1b7c-4e38-aadc-33b8c63875c6",
       "server": "dnsmart.dg-cdn.mob.networklinkpro.com",
       "server_port": 17889,
-      "tag": "香港-优化-5",
+      "tag": "🇭🇰 香港-优化-5",
       "type": "shadowsocks",
       "method": "chacha20-ietf-poly1305"
-    },
-    {
-      "server": "20br.prometheusnet01.xyz",
-      "server_port": 8542,
-      "tag": "%25E5%25B7%25B4%25E8%25A5%25BF-%25E4%25BC%2598%25E5%258C%2596-2",
-      "tls": {
-        "enabled": true,
-        "server_name": "20br.prometheusnet01.xyz",
-        "alpn": [
-          "h3"
-        ],
-        "insecure": true
-      },
-      "type": "hysteria",
-      "auth_str": "77f1f040-1b7c-4e38-aadc-33b8c63875c6",
-      "down_mbps": 150,
-      "up_mbps": 70
-    },
-    {
-      "server": "22tr.prometheusnet01.xyz",
-      "server_port": 9586,
-      "tag": "%25E5%259C%259F%25E8%2580%25B3%25E5%2585%25B6-%25E4%25BC%2598%25E5%258C%2596-2",
-      "tls": {
-        "enabled": true,
-        "server_name": "22tr.prometheusnet01.xyz",
-        "alpn": [
-          "h3"
-        ],
-        "insecure": true
-      },
-      "type": "hysteria",
-      "auth_str": "77f1f040-1b7c-4e38-aadc-33b8c63875c6",
-      "down_mbps": 150,
-      "up_mbps": 70
-    },
-    {
-      "server": "23fr.prometheusnet01.xyz",
-      "server_port": 8173,
-      "tag": "%25E6%25B3%2595%25E5%259B%25BD-%25E4%25BC%2598%25E5%258C%2596-2",
-      "tls": {
-        "enabled": true,
-        "server_name": "23fr.prometheusnet01.xyz",
-        "alpn": [
-          "h3"
-        ],
-        "insecure": true
-      },
-      "type": "hysteria",
-      "auth_str": "77f1f040-1b7c-4e38-aadc-33b8c63875c6",
-      "down_mbps": 150,
-      "up_mbps": 70
-    },
-    {
-      "server": "27mx.prometheusnet01.xyz",
-      "server_port": 5793,
-      "tag": "%25E5%25A2%25A8%25E8%25A5%25BF%25E5%2593%25A5-%25E4%25BC%2598%25E5%258C%2596-2",
-      "tls": {
-        "enabled": true,
-        "server_name": "27mx.prometheusnet01.xyz",
-        "alpn": [
-          "h3"
-        ],
-        "insecure": true
-      },
-      "type": "hysteria",
-      "auth_str": "77f1f040-1b7c-4e38-aadc-33b8c63875c6",
-      "down_mbps": 150,
-      "up_mbps": 70
-    },
-    {
-      "server": "30il.prometheusnet01.xyz",
-      "server_port": 6045,
-      "tag": "%25E4%25BB%25A5%25E8%2589%25B2%25E5%2588%2597-%25E4%25BC%2598%25E5%258C%2596-2",
-      "tls": {
-        "enabled": true,
-        "server_name": "30il.prometheusnet01.xyz",
-        "alpn": [
-          "h3"
-        ],
-        "insecure": true
-      },
-      "type": "hysteria",
-      "auth_str": "77f1f040-1b7c-4e38-aadc-33b8c63875c6",
-      "down_mbps": 150,
-      "up_mbps": 70
-    },
-    {
-      "server": "33vn.prometheusnet01.xyz",
-      "server_port": 6034,
-      "tag": "%25E8%25B6%258A%25E5%258D%2597-%25E4%25BC%2598%25E5%258C%2596-2",
-      "tls": {
-        "enabled": true,
-        "server_name": "33vn.prometheusnet01.xyz",
-        "alpn": [
-          "h3"
-        ],
-        "insecure": true
-      },
-      "type": "hysteria",
-      "auth_str": "77f1f040-1b7c-4e38-aadc-33b8c63875c6",
-      "down_mbps": 150,
-      "up_mbps": 70
-    },
-    {
-      "server": "32ru.prometheusnet01.xyz",
-      "server_port": 5210,
-      "tag": "%25E4%25BF%2584%25E7%25BD%2597%25E6%2596%25AF-%25E4%25BC%2598%25E5%258C%2596-2",
-      "tls": {
-        "enabled": true,
-        "server_name": "32ru.prometheusnet01.xyz",
-        "alpn": [
-          "h3"
-        ],
-        "insecure": true
-      },
-      "type": "hysteria",
-      "auth_str": "77f1f040-1b7c-4e38-aadc-33b8c63875c6",
-      "down_mbps": 150,
-      "up_mbps": 70
-    },
-    {
-      "server": "31es.prometheusnet01.xyz",
-      "server_port": 7478,
-      "tag": "%25E8%25A5%25BF%25E7%258F%25AD%25E7%2589%2599-%25E4%25BC%2598%25E5%258C%2596-2",
-      "tls": {
-        "enabled": true,
-        "server_name": "31es.prometheusnet01.xyz",
-        "alpn": [
-          "h3"
-        ],
-        "insecure": true
-      },
-      "type": "hysteria",
-      "auth_str": "77f1f040-1b7c-4e38-aadc-33b8c63875c6",
-      "down_mbps": 150,
-      "up_mbps": 70
-    },
-    {
-      "server": "28nl.prometheusnet01.xyz",
-      "server_port": 6802,
-      "tag": "%25E8%258D%25B7%25E5%2585%25B0-%25E4%25BC%2598%25E5%258C%2596-2",
-      "tls": {
-        "enabled": true,
-        "server_name": "28nl.prometheusnet01.xyz",
-        "alpn": [
-          "h3"
-        ],
-        "insecure": true
-      },
-      "type": "hysteria",
-      "auth_str": "77f1f040-1b7c-4e38-aadc-33b8c63875c6",
-      "down_mbps": 150,
-      "up_mbps": 70
-    },
-    {
-      "server": "2hk.prometheusnet01.xyz",
-      "server_port": 7807,
-      "tag": "%25E9%25A6%2599%25E6%25B8%25AF-%25E4%25BC%2598%25E5%258C%2596-7",
-      "tls": {
-        "enabled": true,
-        "server_name": "2hk.prometheusnet01.xyz",
-        "alpn": [
-          "h3"
-        ],
-        "insecure": true
-      },
-      "type": "hysteria",
-      "auth_str": "77f1f040-1b7c-4e38-aadc-33b8c63875c6",
-      "down_mbps": 100,
-      "up_mbps": 50
-    },
-    {
-      "server": "4tw.prometheusnet01.xyz",
-      "server_port": 7895,
-      "tag": "%25E5%258F%25B0%25E6%25B9%25BE-%25E4%25BC%2598%25E5%258C%2596-3",
-      "tls": {
-        "enabled": true,
-        "server_name": "4tw.prometheusnet01.xyz",
-        "alpn": [
-          "h3"
-        ],
-        "insecure": true
-      },
-      "type": "hysteria",
-      "auth_str": "77f1f040-1b7c-4e38-aadc-33b8c63875c6",
-      "down_mbps": 150,
-      "up_mbps": 70
-    },
-    {
-      "server": "5tw.prometheusnet01.xyz",
-      "server_port": 44451,
-      "tag": "%25E5%258F%25B0%25E6%25B9%25BE-%25E4%25BC%2598%25E5%258C%2596-4",
-      "tls": {
-        "enabled": true,
-        "server_name": "5tw.prometheusnet01.xyz",
-        "alpn": [
-          "h3"
-        ],
-        "insecure": true
-      },
-      "type": "hysteria",
-      "auth_str": "77f1f040-1b7c-4e38-aadc-33b8c63875c6",
-      "down_mbps": 150,
-      "up_mbps": 70
     },
     {
       "password": "cb0b7296-da0e-41d0-9eb0-ec79a0fec48a",
       "server": "svip.88de.hongxingdl.vip",
       "server_port": 18147,
-      "tag": "台湾-per-c-1",
+      "tag": "🇨🇳 台湾-per-c-1",
       "tls": {
         "enabled": true,
         "server_name": "svip.88de.hongxingdl.vip",
@@ -1297,7 +190,7 @@
       "password": "cb0b7296-da0e-41d0-9eb0-ec79a0fec48a",
       "server": "svip.88de.hongxingdl.vip",
       "server_port": 55357,
-      "tag": "新加坡-per-c-1",
+      "tag": "🇸🇬 新加坡-per-c-1",
       "tls": {
         "enabled": true,
         "server_name": "svip.88de.hongxingdl.vip",
@@ -1309,7 +202,7 @@
       "password": "cb0b7296-da0e-41d0-9eb0-ec79a0fec48a",
       "server": "svip.88de.hongxingdl.vip",
       "server_port": 28721,
-      "tag": "日本-per-c-1",
+      "tag": "🇯🇵 日本-per-c-1",
       "tls": {
         "enabled": true,
         "server_name": "svip.88de.hongxingdl.vip",
@@ -1321,7 +214,7 @@
       "password": "cb0b7296-da0e-41d0-9eb0-ec79a0fec48a",
       "server": "svip.88de.hongxingdl.vip",
       "server_port": 59861,
-      "tag": "美国-per-c-1",
+      "tag": "🇺🇸 美国-per-c-1",
       "tls": {
         "enabled": true,
         "server_name": "svip.88de.hongxingdl.vip",
@@ -1333,7 +226,7 @@
       "password": "cb0b7296-da0e-41d0-9eb0-ec79a0fec48a",
       "server": "lmgj.hongxingdl.vip",
       "server_port": 39593,
-      "tag": "韩国-per-c-1",
+      "tag": "🇰🇷 韩国-per-c-1",
       "tls": {
         "enabled": true,
         "server_name": "lmgj.hongxingdl.vip",
@@ -1345,7 +238,7 @@
       "password": "cb0b7296-da0e-41d0-9eb0-ec79a0fec48a",
       "server": "lmgj.hongxingdl.vip",
       "server_port": 20780,
-      "tag": "印度-per-c-1",
+      "tag": "🇮🇳 印度-per-c-1",
       "tls": {
         "enabled": true,
         "server_name": "lmgj.hongxingdl.vip",
@@ -1357,7 +250,7 @@
       "password": "cb0b7296-da0e-41d0-9eb0-ec79a0fec48a",
       "server": "lmgj.hongxingdl.vip",
       "server_port": 21463,
-      "tag": "德国-per-c-1",
+      "tag": "🇩🇪 德国-per-c-1",
       "tls": {
         "enabled": true,
         "server_name": "lmgj.hongxingdl.vip",
@@ -1369,7 +262,7 @@
       "password": "cb0b7296-da0e-41d0-9eb0-ec79a0fec48a",
       "server": "lmgj.hongxingdl.vip",
       "server_port": 59358,
-      "tag": "英国-per-c-1",
+      "tag": "🇬🇧 英国-per-c-1",
       "tls": {
         "enabled": true,
         "server_name": "lmgj.hongxingdl.vip",
@@ -1381,7 +274,7 @@
       "password": "cb0b7296-da0e-41d0-9eb0-ec79a0fec48a",
       "server": "lmgj.hongxingdl.vip",
       "server_port": 23852,
-      "tag": "荷兰-per-c-1",
+      "tag": "🇳🇱 荷兰-per-c-1",
       "tls": {
         "enabled": true,
         "server_name": "lmgj.hongxingdl.vip",
@@ -1393,7 +286,7 @@
       "password": "cb0b7296-da0e-41d0-9eb0-ec79a0fec48a",
       "server": "lmgj.hongxingdl.vip",
       "server_port": 35989,
-      "tag": "意大利-per-c-1",
+      "tag": "🇮🇹 意大利-per-c-1",
       "tls": {
         "enabled": true,
         "server_name": "lmgj.hongxingdl.vip",
@@ -1405,7 +298,7 @@
       "password": "cb0b7296-da0e-41d0-9eb0-ec79a0fec48a",
       "server": "lmgj.hongxingdl.vip",
       "server_port": 33243,
-      "tag": "印度-per-c-2",
+      "tag": "🇮🇳 印度-per-c-2",
       "tls": {
         "enabled": true,
         "server_name": "lmgj.hongxingdl.vip",
@@ -1417,7 +310,7 @@
       "password": "cb0b7296-da0e-41d0-9eb0-ec79a0fec48a",
       "server": "lmgj.hongxingdl.vip",
       "server_port": 44134,
-      "tag": "智利-per-c-1",
+      "tag": "🇨🇱 智利-per-c-1",
       "tls": {
         "enabled": true,
         "server_name": "lmgj.hongxingdl.vip",
@@ -1429,7 +322,7 @@
       "password": "cb0b7296-da0e-41d0-9eb0-ec79a0fec48a",
       "server": "lmgj.hongxingdl.vip",
       "server_port": 28499,
-      "tag": "巴西-per-c-1",
+      "tag": "🇧🇷 巴西-per-c-1",
       "tls": {
         "enabled": true,
         "server_name": "lmgj.hongxingdl.vip",
@@ -1441,7 +334,7 @@
       "password": "cb0b7296-da0e-41d0-9eb0-ec79a0fec48a",
       "server": "lmgj.hongxingdl.vip",
       "server_port": 34249,
-      "tag": "西班牙-per-c-1",
+      "tag": "🇪🇸 西班牙-per-c-1",
       "tls": {
         "enabled": true,
         "server_name": "lmgj.hongxingdl.vip",
@@ -1453,7 +346,7 @@
       "password": "cb0b7296-da0e-41d0-9eb0-ec79a0fec48a",
       "server": "lmgj.hongxingdl.vip",
       "server_port": 50140,
-      "tag": "瑞士-per-c-1",
+      "tag": "🇨🇭 瑞士-per-c-1",
       "tls": {
         "enabled": true,
         "server_name": "lmgj.hongxingdl.vip",
@@ -1465,7 +358,7 @@
       "password": "cb0b7296-da0e-41d0-9eb0-ec79a0fec48a",
       "server": "lmgj.hongxingdl.vip",
       "server_port": 59225,
-      "tag": "瑞典-per-c-1",
+      "tag": "🇸🇪 瑞典-per-c-1",
       "tls": {
         "enabled": true,
         "server_name": "lmgj.hongxingdl.vip",
@@ -1477,7 +370,7 @@
       "password": "cb0b7296-da0e-41d0-9eb0-ec79a0fec48a",
       "server": "lmgj.hongxingdl.vip",
       "server_port": 14571,
-      "tag": "墨西哥-per-c-1",
+      "tag": "🇲🇽 墨西哥-per-c-1",
       "tls": {
         "enabled": true,
         "server_name": "lmgj.hongxingdl.vip",
@@ -1489,7 +382,7 @@
       "password": "cb0b7296-da0e-41d0-9eb0-ec79a0fec48a",
       "server": "lmgj.hongxingdl.vip",
       "server_port": 50121,
-      "tag": "加拿大-per-c-1",
+      "tag": "🇨🇦 加拿大-per-c-1",
       "tls": {
         "enabled": true,
         "server_name": "lmgj.hongxingdl.vip",
@@ -1501,7 +394,7 @@
       "password": "cb0b7296-da0e-41d0-9eb0-ec79a0fec48a",
       "server": "lmgj.hongxingdl.vip",
       "server_port": 58757,
-      "tag": "澳大利亚-per-c-1",
+      "tag": "🇦🇺 澳大利亚-per-c-1",
       "tls": {
         "enabled": true,
         "server_name": "lmgj.hongxingdl.vip",
@@ -1513,7 +406,7 @@
       "password": "cb0b7296-da0e-41d0-9eb0-ec79a0fec48a",
       "server": "lmgj.hongxingdl.vip",
       "server_port": 47621,
-      "tag": "迪拜-per-c-1",
+      "tag": "🇦🇪 迪拜-per-c-1",
       "tls": {
         "enabled": true,
         "server_name": "lmgj.hongxingdl.vip",
@@ -1525,7 +418,7 @@
       "password": "cb0b7296-da0e-41d0-9eb0-ec79a0fec48a",
       "server": "lmgj.hongxingdl.vip",
       "server_port": 53759,
-      "tag": "南非-per-c-1",
+      "tag": "🇿🇦 南非-per-c-1",
       "tls": {
         "enabled": true,
         "server_name": "lmgj.hongxingdl.vip",
@@ -1537,7 +430,7 @@
       "password": "cb0b7296-da0e-41d0-9eb0-ec79a0fec48a",
       "server": "lmgj.hongxingdl.vip",
       "server_port": 56072,
-      "tag": "沙特阿拉伯-per-c-1",
+      "tag": "🇸🇦 沙特阿拉伯-per-c-1",
       "tls": {
         "enabled": true,
         "server_name": "lmgj.hongxingdl.vip",
@@ -1549,7 +442,7 @@
       "password": "cb0b7296-da0e-41d0-9eb0-ec79a0fec48a",
       "server": "lmgj.hongxingdl.vip",
       "server_port": 25118,
-      "tag": "哥伦比亚-per-c-1",
+      "tag": "🇨🇴 哥伦比亚-per-c-1",
       "tls": {
         "enabled": true,
         "server_name": "lmgj.hongxingdl.vip",
@@ -1561,7 +454,7 @@
       "password": "cb0b7296-da0e-41d0-9eb0-ec79a0fec48a",
       "server": "lmgj.hongxingdl.vip",
       "server_port": 44650,
-      "tag": "以色列-per-c-1",
+      "tag": "🇮🇱 以色列-per-c-1",
       "tls": {
         "enabled": true,
         "server_name": "lmgj.hongxingdl.vip",
@@ -1573,7 +466,7 @@
       "password": "cb0b7296-da0e-41d0-9eb0-ec79a0fec48a",
       "server": "lmgj.hongxingdl.vip",
       "server_port": 11306,
-      "tag": "越南-per-c-1",
+      "tag": "🇻🇳 越南-per-c-1",
       "tls": {
         "enabled": true,
         "server_name": "lmgj.hongxingdl.vip",
@@ -1585,7 +478,7 @@
       "password": "cb0b7296-da0e-41d0-9eb0-ec79a0fec48a",
       "server": "lmgj.hongxingdl.vip",
       "server_port": 43855,
-      "tag": "泰国-per-c-1",
+      "tag": "🇹🇭 泰国-per-c-1",
       "tls": {
         "enabled": true,
         "server_name": "lmgj.hongxingdl.vip",
@@ -1597,7 +490,7 @@
       "password": "cb0b7296-da0e-41d0-9eb0-ec79a0fec48a",
       "server": "lmgj.hongxingdl.vip",
       "server_port": 30383,
-      "tag": "马来西亚-per-c-1",
+      "tag": "🇲🇾 马来西亚-per-c-1",
       "tls": {
         "enabled": true,
         "server_name": "lmgj.hongxingdl.vip",
@@ -1609,7 +502,7 @@
       "password": "cb0b7296-da0e-41d0-9eb0-ec79a0fec48a",
       "server": "lmgj.hongxingdl.vip",
       "server_port": 58947,
-      "tag": "菲律宾-per-c-1",
+      "tag": "🇵🇭 菲律宾-per-c-1",
       "tls": {
         "enabled": true,
         "server_name": "lmgj.hongxingdl.vip",
@@ -1618,35 +511,171 @@
       "type": "trojan"
     },
     {
+      "tag": "select",
+      "type": "selector",
+      "default": "urltest",
+      "outbounds": [
+        "urltest",
+        "🇯🇵 日本-优化-7",
+        "🇰🇷 韩国-优化-5",
+        "🇰🇷 韩国-优化-7",
+        "🇰🇷 韩国-优化-9",
+        "🇺🇸 美国-优化-5",
+        "🇺🇸 美国-优化-7",
+        "🇸🇬 新加坡-优化-4",
+        "🇸🇬 新加坡-优化-6",
+        "🇦🇺 澳洲-优化-3",
+        "🇭🇰 香港-优化-4",
+        "🇭🇰 香港-优化-5",
+        "🇨🇳 台湾-per-c-1",
+        "🇸🇬 新加坡-per-c-1",
+        "🇯🇵 日本-per-c-1",
+        "🇺🇸 美国-per-c-1",
+        "🇰🇷 韩国-per-c-1",
+        "🇮🇳 印度-per-c-1",
+        "🇩🇪 德国-per-c-1",
+        "🇬🇧 英国-per-c-1",
+        "🇳🇱 荷兰-per-c-1",
+        "🇮🇹 意大利-per-c-1",
+        "🇮🇳 印度-per-c-2",
+        "🇨🇱 智利-per-c-1",
+        "🇧🇷 巴西-per-c-1",
+        "🇪🇸 西班牙-per-c-1",
+        "🇨🇭 瑞士-per-c-1",
+        "🇸🇪 瑞典-per-c-1",
+        "🇲🇽 墨西哥-per-c-1",
+        "🇨🇦 加拿大-per-c-1",
+        "🇦🇺 澳大利亚-per-c-1",
+        "🇦🇪 迪拜-per-c-1",
+        "🇿🇦 南非-per-c-1",
+        "🇸🇦 沙特阿拉伯-per-c-1",
+        "🇨🇴 哥伦比亚-per-c-1",
+        "🇮🇱 以色列-per-c-1",
+        "🇻🇳 越南-per-c-1",
+        "🇹🇭 泰国-per-c-1",
+        "🇲🇾 马来西亚-per-c-1",
+        "🇵🇭 菲律宾-per-c-1"
+      ]
+    },
+    {
+      "tag": "urltest",
+      "type": "urltest",
+      "outbounds": [
+        "🇯🇵 日本-优化-7",
+        "🇰🇷 韩国-优化-5",
+        "🇰🇷 韩国-优化-7",
+        "🇰🇷 韩国-优化-9",
+        "🇺🇸 美国-优化-5",
+        "🇺🇸 美国-优化-7",
+        "🇸🇬 新加坡-优化-4",
+        "🇸🇬 新加坡-优化-6",
+        "🇦🇺 澳洲-优化-3",
+        "🇭🇰 香港-优化-4",
+        "🇭🇰 香港-优化-5",
+        "🇨🇳 台湾-per-c-1",
+        "🇸🇬 新加坡-per-c-1",
+        "🇯🇵 日本-per-c-1",
+        "🇺🇸 美国-per-c-1",
+        "🇰🇷 韩国-per-c-1",
+        "🇮🇳 印度-per-c-1",
+        "🇩🇪 德国-per-c-1",
+        "🇬🇧 英国-per-c-1",
+        "🇳🇱 荷兰-per-c-1",
+        "🇮🇹 意大利-per-c-1",
+        "🇮🇳 印度-per-c-2",
+        "🇨🇱 智利-per-c-1",
+        "🇧🇷 巴西-per-c-1",
+        "🇪🇸 西班牙-per-c-1",
+        "🇨🇭 瑞士-per-c-1",
+        "🇸🇪 瑞典-per-c-1",
+        "🇲🇽 墨西哥-per-c-1",
+        "🇨🇦 加拿大-per-c-1",
+        "🇦🇺 澳大利亚-per-c-1",
+        "🇦🇪 迪拜-per-c-1",
+        "🇿🇦 南非-per-c-1",
+        "🇸🇦 沙特阿拉伯-per-c-1",
+        "🇨🇴 哥伦比亚-per-c-1",
+        "🇮🇱 以色列-per-c-1",
+        "🇻🇳 越南-per-c-1",
+        "🇹🇭 泰国-per-c-1",
+        "🇲🇾 马来西亚-per-c-1",
+        "🇵🇭 菲律宾-per-c-1"
+      ]
+    },
+    {
+      "tag": "chatgpt",
+      "type": "selector",
+      "outbounds": [
+        "🇯🇵 日本-优化-7",
+        "🇰🇷 韩国-优化-5",
+        "🇰🇷 韩国-优化-7",
+        "🇰🇷 韩国-优化-9",
+        "🇺🇸 美国-优化-5",
+        "🇺🇸 美国-优化-7",
+        "🇸🇬 新加坡-优化-4",
+        "🇸🇬 新加坡-优化-6",
+        "🇦🇺 澳洲-优化-3",
+        "🇭🇰 香港-优化-4",
+        "🇭🇰 香港-优化-5",
+        "🇨🇳 台湾-per-c-1",
+        "🇸🇬 新加坡-per-c-1",
+        "🇯🇵 日本-per-c-1",
+        "🇺🇸 美国-per-c-1",
+        "🇰🇷 韩国-per-c-1",
+        "🇮🇳 印度-per-c-1",
+        "🇩🇪 德国-per-c-1",
+        "🇬🇧 英国-per-c-1",
+        "🇳🇱 荷兰-per-c-1",
+        "🇮🇹 意大利-per-c-1",
+        "🇮🇳 印度-per-c-2",
+        "🇨🇱 智利-per-c-1",
+        "🇧🇷 巴西-per-c-1",
+        "🇪🇸 西班牙-per-c-1",
+        "🇨🇭 瑞士-per-c-1",
+        "🇸🇪 瑞典-per-c-1",
+        "🇲🇽 墨西哥-per-c-1",
+        "🇨🇦 加拿大-per-c-1",
+        "🇦🇺 澳大利亚-per-c-1",
+        "🇦🇪 迪拜-per-c-1",
+        "🇿🇦 南非-per-c-1",
+        "🇸🇦 沙特阿拉伯-per-c-1",
+        "🇨🇴 哥伦比亚-per-c-1",
+        "🇮🇱 以色列-per-c-1",
+        "🇻🇳 越南-per-c-1",
+        "🇹🇭 泰国-per-c-1",
+        "🇲🇾 马来西亚-per-c-1",
+        "🇵🇭 菲律宾-per-c-1"
+      ]
+    },
+    {
       "tag": "direct",
       "type": "direct"
     }
   ],
   "route": {
-    "auto_detect_interface": true,
     "rule_set": [
       {
-        "format": "binary",
         "tag": "geoip-cn",
         "type": "remote",
+        "format": "binary",
         "url": "https://raw.githubusercontent.com/SagerNet/sing-geoip/rule-set/geoip-cn.srs"
       },
       {
-        "format": "binary",
         "tag": "geosite-cn",
         "type": "remote",
+        "format": "binary",
         "url": "https://raw.githubusercontent.com/xmdhs/sing-geosite/rule-set-Loyalsoldier/geosite-geolocation-cn.srs"
       },
       {
-        "format": "binary",
         "tag": "AdGuardSDNSFilter",
         "type": "remote",
+        "format": "binary",
         "url": "https://raw.githubusercontent.com/xmdhs/sing-box-ruleset/rule-set/AdGuardSDNSFilter.srs"
       },
       {
-        "format": "source",
         "tag": "chrome-doh",
         "type": "remote",
+        "format": "source",
         "url": "https://gist.githubusercontent.com/xmdhs/71fc5ff6ef29f5ecaf2c52b8de5c3172/raw/chrome-doh.json"
       }
     ],
@@ -1655,19 +684,19 @@
         "action": "sniff"
       },
       {
-        "action": "hijack-dns",
-        "protocol": "dns"
+        "protocol": "dns",
+        "action": "hijack-dns"
       },
       {
         "action": "resolve",
         "strategy": "prefer_ipv4"
       },
       {
-        "clash_mode": "direct",
+        "clash_mode": "Direct",
         "outbound": "direct"
       },
       {
-        "clash_mode": "global",
+        "clash_mode": "Global",
         "outbound": "select"
       },
       {
@@ -1675,10 +704,10 @@
         "outbound": "direct"
       },
       {
-        "outbound": "chatgpt",
         "package_name": [
           "com.openai.chatgpt"
-        ]
+        ],
+        "outbound": "chatgpt"
       },
       {
         "domain_suffix": [
@@ -1690,18 +719,27 @@
         "outbound": "chatgpt"
       },
       {
-        "outbound": "direct",
         "port": [
           23301,
           22101,
           22102,
           20501
-        ]
+        ],
+        "outbound": "direct"
       },
       {
-        "outbound": "direct",
-        "rule_set": "geoip-cn"
+        "rule_set": "geoip-cn",
+        "outbound": "direct"
       }
-    ]
+    ],
+    "auto_detect_interface": true
+  },
+  "experimental": {
+    "cache_file": {
+      "enabled": true
+    },
+    "clash_api": {
+      "external_controller": "127.0.0.1:9090"
+    }
   }
 }
