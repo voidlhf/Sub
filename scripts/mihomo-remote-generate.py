@@ -31,9 +31,9 @@ def main():
     file_url = args.url
     config_path = args.config_path
 
-    general_path = os.path.join(script_dir, "config/general.yaml")
-    proxy_groups_path = os.path.join(script_dir, "config/proxy-groups.yaml")
-    rules_path = os.path.join(script_dir, "config/rules.yaml")
+    general_path = os.path.join(script_dir, "mihomo-config/general.yaml")
+    proxy_groups_path = os.path.join(script_dir, "mihomo-config/proxy-groups.yaml")
+    rules_path = os.path.join(script_dir, "mihomo-config/rules.yaml")
 
     if not config_path:
         print("提供的 config.yaml 文件路径无效。")
