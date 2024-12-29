@@ -1,0 +1,582 @@
+{
+  "log": {},
+  "dns": {
+    "servers": [
+      {
+        "tag": "dns_proxy",
+        "address": "https://8.8.8.8/dns-query",
+        "detour": "select"
+      },
+      {
+        "tag": "dns_direct",
+        "address": "https://223.5.5.5/dns-query",
+        "detour": "direct"
+      },
+      {
+        "tag": "dns_fakeip",
+        "address": "fakeip"
+      }
+    ],
+    "rules": [
+      {
+        "outbound": "any",
+        "server": "dns_direct"
+      },
+      {
+        "rule_set": [
+          "AdGuardSDNSFilter",
+          "chrome-doh"
+        ],
+        "action": "reject"
+      },
+      {
+        "query_type": [
+          "A",
+          "AAAA"
+        ],
+        "server": "dns_fakeip",
+        "rewrite_ttl": 1
+      },
+      {
+        "clash_mode": "Global",
+        "server": "dns_proxy"
+      },
+      {
+        "clash_mode": "Direct",
+        "server": "dns_direct"
+      },
+      {
+        "rule_set": "geosite-cn",
+        "server": "dns_direct"
+      }
+    ],
+    "strategy": "prefer_ipv4",
+    "independent_cache": true,
+    "fakeip": {
+      "enabled": true,
+      "inet4_range": "198.18.0.0/15",
+      "inet6_range": "fc00::/18"
+    }
+  },
+  "inbounds": [
+    {
+      "type": "tun",
+      "address": [
+        "172.18.0.1/30",
+        "fdfe:dcba:9876::1/126"
+      ],
+      "mtu": 9000,
+      "auto_route": true,
+      "strict_route": true,
+      "endpoint_independent_nat": true
+    },
+    {
+      "type": "socks",
+      "tag": "socks-in",
+      "listen": "127.0.0.1",
+      "listen_port": 2333,
+      "users": []
+    },
+    {
+      "type": "mixed",
+      "tag": "mixed-in",
+      "listen": "127.0.0.1",
+      "listen_port": 2334,
+      "users": []
+    }
+  ],
+  "outbounds": [
+    {
+      "password": "09833a6f-4d46-426e-87fe-7793a5489f84",
+      "server": "s-g04.loveroise.com",
+      "server_port": 54030,
+      "tag": "CN_speednode_0001",
+      "type": "shadowsocks",
+      "method": "chacha20-ietf-poly1305",
+      "network": "tcp"
+    },
+    {
+      "server": "183.236.48.163",
+      "server_port": 54882,
+      "tag": "CN_speednode_0002",
+      "type": "vmess",
+      "alter_id": 64,
+      "security": "auto",
+      "uuid": "418048af-a293-4b99-9b0c-98ca3580dd24"
+    },
+    {
+      "password": "09833a6f-4d46-426e-87fe-7793a5489f84",
+      "server": "j-p04.loveroise.com",
+      "server_port": 54102,
+      "tag": "CN_speednode_0003",
+      "type": "shadowsocks",
+      "method": "chacha20-ietf-poly1305",
+      "network": "tcp"
+    },
+    {
+      "password": "09833a6f-4d46-426e-87fe-7793a5489f84",
+      "server": "k-r03.loveroise.com",
+      "server_port": 54012,
+      "tag": "CN_speednode_0004",
+      "type": "shadowsocks",
+      "method": "chacha20-ietf-poly1305",
+      "network": "tcp"
+    },
+    {
+      "server": "183.236.51.23",
+      "server_port": 41020,
+      "tag": "CN_speednode_0005",
+      "type": "vmess",
+      "alter_id": 64,
+      "security": "auto",
+      "uuid": "418048af-a293-4b99-9b0c-98ca3580dd24"
+    },
+    {
+      "password": "09833a6f-4d46-426e-87fe-7793a5489f84",
+      "server": "h-k02.loveroise.com",
+      "server_port": 54002,
+      "tag": "CN_speednode_0006",
+      "type": "shadowsocks",
+      "method": "chacha20-ietf-poly1305",
+      "network": "tcp"
+    },
+    {
+      "server": "us-w-s3.riot-cdn.com",
+      "server_port": 443,
+      "tag": "DE_speednode_0007",
+      "tls": {
+        "enabled": true,
+        "server_name": "contents.riot-cdn.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "type": "vless",
+      "uuid": "61eb66a8-bc41-491e-a8dc-270874140f41",
+      "flow": "xtls-rprx-vision",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "147.45.68.132",
+      "server_port": 80,
+      "tag": "FR_speednode_0008",
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "28265dd5-342c-4d63-bdbb-a3259e2cf4d7"
+    },
+    {
+      "server": "51.158.243.62",
+      "server_port": 443,
+      "tag": "FR_speednode_0009",
+      "tls": {
+        "enabled": true,
+        "server_name": "cloudflare.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "1gKloUYtea1EJfBcatiTkmJVdCbb6SfVrnL6Lz-RYj0",
+          "short_id": "42"
+        }
+      },
+      "type": "vless",
+      "uuid": "fd17fd03-844b-4c4b-9551-27f2b055d4f8",
+      "flow": "xtls-rprx-vision",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "8.217.246.186",
+      "server_port": 443,
+      "tag": "HK_speednode_0010",
+      "tls": {
+        "enabled": true,
+        "server_name": "b.travel-assets.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "DNdTBHyztOVJOBJQX91YXEhNkWbSAntqUoTFBHc6Clw",
+          "short_id": "6ba85179e30d4fc2"
+        }
+      },
+      "type": "vless",
+      "uuid": "e927b27f-e73c-4580-802e-9265fd7c40e8",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "47.76.136.169",
+      "server_port": 443,
+      "tag": "HK_speednode_0011",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.dayuse.com.hk",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "DNdTBHyztOVJOBJQX91YXEhNkWbSAntqUoTFBHc6Clw",
+          "short_id": "6ba85179e30d4fc2"
+        }
+      },
+      "type": "vless",
+      "uuid": "e927b27f-e73c-4580-802e-9265fd7c40e8",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "195.211.24.243",
+      "server_port": 443,
+      "tag": "IL_speednode_0012",
+      "tls": {
+        "enabled": true,
+        "server_name": "apple.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "-ALxkpd7Wi7WKs1dXND7yqoYQfJW8d4BctjfXIy0L1M",
+          "short_id": "b5ed878b"
+        }
+      },
+      "type": "vless",
+      "uuid": "71b60539-19bf-4282-b09f-7596ffc3cc8b",
+      "flow": "xtls-rprx-vision",
+      "packet_encoding": "xudp"
+    },
+    {
+      "password": "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv",
+      "server": "18.176.215.63",
+      "server_port": 2377,
+      "tag": "JP_speednode_0013",
+      "type": "shadowsocks",
+      "method": "chacha20-ietf-poly1305",
+      "network": "tcp",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=tls;obfs-host=(TG @WangCai2)a7bbfde:185966"
+    },
+    {
+      "server": "185.235.243.133",
+      "server_port": 443,
+      "tag": "MD_speednode_0014",
+      "tls": {
+        "enabled": true,
+        "server_name": "tr-s.xor-vpn.ru"
+      },
+      "type": "vless",
+      "uuid": "64a1796c-95f8-40e4-9a56-825823212648",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "185.40.153.191",
+      "server_port": 443,
+      "tag": "RU_speednode_0015",
+      "tls": {
+        "enabled": true,
+        "server_name": "vk.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "NsRSWMDMKxVFiry3uRJB8tG5rG8LdIJqTJvHK0Uc6Gw",
+          "short_id": "EeEFB5bF"
+        }
+      },
+      "type": "vless",
+      "uuid": "71b60539-19bf-4282-b09f-7596ffc3cc8b",
+      "flow": "xtls-rprx-vision",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "194.87.69.244",
+      "server_port": 6814,
+      "tag": "RU_speednode_0016",
+      "transport": {
+        "path": "/",
+        "type": "ws"
+      },
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "8765b365-4d13-4b15-b5cb-74a8a18b2260"
+    },
+    {
+      "server": "165.22.50.149",
+      "server_port": 443,
+      "tag": "SG_speednode_0017",
+      "tls": {
+        "enabled": true,
+        "server_name": "zoom.us",
+        "alpn": [
+          "h3",
+          "h2",
+          "http/1.1"
+        ],
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "type": "vless",
+      "uuid": "57252ea4-602b-4210-9a6c-f1588ea07f04",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "8.222.158.140",
+      "server_port": 443,
+      "tag": "SG_speednode_0018",
+      "tls": {
+        "enabled": true,
+        "server_name": "147135010103.sec19org.com"
+      },
+      "type": "vless",
+      "uuid": "3b9bc773-05eb-4d5f-8c1f-57342c0c4f40",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "176.98.41.45",
+      "server_port": 13509,
+      "tag": "TR_speednode_0019",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.sega.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "IiuIighvDsor2v-vb5s3IJbNiqwLw568auiqoXxc7FM"
+        }
+      },
+      "type": "vless",
+      "uuid": "dbc34aa9-3cb1-477a-c47d-998f8badf0e8",
+      "flow": "xtls-rprx-vision",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "phx-plus-1ddns.faforex.eu.org",
+      "server_port": 18443,
+      "tag": "US_speednode_0020",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.tesla.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "ios"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "8233FxCRw1a_aCJ8d1HwHBMD_fABUNNW7rsrFe3vK0s",
+          "short_id": "e6658462"
+        }
+      },
+      "type": "vless",
+      "uuid": "86206c88-b8e3-4cb3-8932-3ca6ea1b6033",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "209.141.53.75",
+      "server_port": 443,
+      "tag": "US_speednode_0021",
+      "tls": {
+        "enabled": true,
+        "server_name": "contents.riot-cdn.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "type": "vless",
+      "uuid": "61eb66a8-bc41-491e-a8dc-270874140f41",
+      "flow": "xtls-rprx-vision",
+      "packet_encoding": "xudp"
+    },
+    {
+      "tag": "select",
+      "type": "selector",
+      "default": "urltest",
+      "outbounds": [
+        "urltest",
+        "CN_speednode_0001",
+        "CN_speednode_0002",
+        "CN_speednode_0003",
+        "CN_speednode_0004",
+        "CN_speednode_0005",
+        "CN_speednode_0006",
+        "DE_speednode_0007",
+        "FR_speednode_0008",
+        "FR_speednode_0009",
+        "HK_speednode_0010",
+        "HK_speednode_0011",
+        "IL_speednode_0012",
+        "JP_speednode_0013",
+        "MD_speednode_0014",
+        "RU_speednode_0015",
+        "RU_speednode_0016",
+        "SG_speednode_0017",
+        "SG_speednode_0018",
+        "TR_speednode_0019",
+        "US_speednode_0020",
+        "US_speednode_0021"
+      ]
+    },
+    {
+      "tag": "urltest",
+      "type": "urltest",
+      "outbounds": [
+        "CN_speednode_0001",
+        "CN_speednode_0002",
+        "CN_speednode_0003",
+        "CN_speednode_0004",
+        "CN_speednode_0005",
+        "CN_speednode_0006",
+        "DE_speednode_0007",
+        "FR_speednode_0008",
+        "FR_speednode_0009",
+        "HK_speednode_0010",
+        "HK_speednode_0011",
+        "IL_speednode_0012",
+        "JP_speednode_0013",
+        "MD_speednode_0014",
+        "RU_speednode_0015",
+        "RU_speednode_0016",
+        "SG_speednode_0017",
+        "SG_speednode_0018",
+        "TR_speednode_0019",
+        "US_speednode_0020",
+        "US_speednode_0021"
+      ]
+    },
+    {
+      "tag": "chatgpt",
+      "type": "selector",
+      "outbounds": [
+        "CN_speednode_0001",
+        "CN_speednode_0002",
+        "CN_speednode_0003",
+        "CN_speednode_0004",
+        "CN_speednode_0005",
+        "CN_speednode_0006",
+        "DE_speednode_0007",
+        "FR_speednode_0008",
+        "FR_speednode_0009",
+        "HK_speednode_0010",
+        "HK_speednode_0011",
+        "IL_speednode_0012",
+        "JP_speednode_0013",
+        "MD_speednode_0014",
+        "RU_speednode_0015",
+        "RU_speednode_0016",
+        "SG_speednode_0017",
+        "SG_speednode_0018",
+        "TR_speednode_0019",
+        "US_speednode_0020",
+        "US_speednode_0021"
+      ]
+    },
+    {
+      "tag": "direct",
+      "type": "direct"
+    }
+  ],
+  "route": {
+    "rule_set": [
+      {
+        "tag": "geoip-cn",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/SagerNet/sing-geoip/rule-set/geoip-cn.srs"
+      },
+      {
+        "tag": "geosite-cn",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/xmdhs/sing-geosite/rule-set-Loyalsoldier/geosite-geolocation-cn.srs"
+      },
+      {
+        "tag": "AdGuardSDNSFilter",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/xmdhs/sing-box-ruleset/rule-set/AdGuardSDNSFilter.srs"
+      },
+      {
+        "tag": "chrome-doh",
+        "type": "remote",
+        "format": "source",
+        "url": "https://gist.githubusercontent.com/xmdhs/71fc5ff6ef29f5ecaf2c52b8de5c3172/raw/chrome-doh.json"
+      }
+    ],
+    "rules": [
+      {
+        "action": "sniff"
+      },
+      {
+        "protocol": "dns",
+        "action": "hijack-dns"
+      },
+      {
+        "action": "resolve",
+        "strategy": "prefer_ipv4"
+      },
+      {
+        "clash_mode": "Direct",
+        "outbound": "direct"
+      },
+      {
+        "clash_mode": "Global",
+        "outbound": "select"
+      },
+      {
+        "ip_is_private": true,
+        "outbound": "direct"
+      },
+      {
+        "package_name": [
+          "com.openai.chatgpt"
+        ],
+        "outbound": "chatgpt"
+      },
+      {
+        "domain_suffix": [
+          "proactivebackend-pa.googleapis.com",
+          "bing.com",
+          "bing.net",
+          "bingapis.com"
+        ],
+        "outbound": "chatgpt"
+      },
+      {
+        "port": [
+          23301,
+          22101,
+          22102,
+          20501
+        ],
+        "outbound": "direct"
+      },
+      {
+        "rule_set": "geoip-cn",
+        "outbound": "direct"
+      }
+    ],
+    "auto_detect_interface": true
+  },
+  "experimental": {
+    "cache_file": {
+      "enabled": true
+    },
+    "clash_api": {
+      "external_controller": "127.0.0.1:9090"
+    }
+  }
+}

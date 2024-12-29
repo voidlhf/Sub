@@ -3,7 +3,7 @@
 # mihono
 python scripts/mihomo-remote-generate.py "https://suo.st/d2Y76gj" ../mihomo/air.yaml
 
-python scripts/mihomo-remote-generate.py "http://api.scyu.xyz/sub?token=WxMk2VVGqNHuforQPneQ7g&tag=clash" ../mihomo/dx.yaml
+# python scripts/mihomo-remote-generate.py "http://api.scyu.xyz/sub?token=WxMk2VVGqNHuforQPneQ7g&tag=clash" ../mihomo/dx.yaml
 
 python scripts/mihomo-remote-generate.py "https://sublinks.52cloud.eu.org/api/v1/client/subscribe?token=b26fe554f300d7c9573d858c11b50a0b" ../mihomo/bzy.yaml
 
@@ -27,3 +27,5 @@ python scripts/singbox-remote-generate.py "https://clash2sfa.xmdhs.com/sub?sub=h
 python scripts/singbox-remote-generate.py "https://clash2sfa.xmdhs.com/sub?sub=https://raw.githubusercontent.com/ripaojiedian/freenode/main/clash" ../singbox/ripao.json
 
 python scripts/singbox-remote-generate.py "https://clash2sfa.xmdhs.com/sub?sub=https://raw.githubusercontent.com/go4sharing/sub/main/sub.yaml" ../singbox/go4sharing.json
+
+python scripts/singbox-remote-generate.py "https://clash2sfa.xmdhs.com/sub?sub=https://raw.githubusercontent.com/zhangkaiitugithub/passcro/main/speednodes.yaml" ../singbox/speednodes.json
