@@ -18,61 +18,55 @@ hosts:
   alt8-mtalk.google.com: 142.250.112.188
 proxies:
 - name: 🇨🇳 TW, Taipei
-  server: 3.112.236.3
-  port: 443
-  type: ss
-  cipher: aes-256-cfb
-  password: amazonskr05
-- name: 🇰🇷 KR, Incheon
-  server: 3.113.31.223
-  port: 443
-  type: ss
-  cipher: aes-256-cfb
-  password: amazonskr05
-- name: 🇯🇵 JP, Tokyo 2
-  server: 13.114.31.63
-  port: 443
-  type: ss
-  cipher: aes-256-cfb
-  password: amazonskr05
-- name: 🇨🇦 CA, Vancouver
-  server: 35.94.113.67
-  port: 443
-  type: ss
-  cipher: aes-256-cfb
-  password: amazonskr05
-- name: 🇯🇵 JP, Osaka
-  server: 13.212.204.100
-  port: 443
-  type: ss
-  cipher: aes-256-cfb
-  password: amazonskr05
-- name: 🇭🇰 HK, Kowloon
-  server: 3.38.212.48
-  port: 443
-  type: ss
-  cipher: aes-256-cfb
-  password: amazonskr05
-- name: 🇭🇰 HK, New Territories
-  server: 54.248.142.136
-  port: 443
-  type: ss
-  cipher: aes-256-cfb
-  password: amazonskr05
-- name: 🇭🇰 HK, Los Angeles
-  server: 52.24.9.214
+  server: 18.139.115.92
   port: 443
   type: ss
   cipher: aes-256-cfb
   password: amazonskr05
 - name: 🇯🇵 JP, Tokyo
+  server: 52.221.190.255
+  port: 443
+  type: ss
+  cipher: aes-256-cfb
+  password: amazonskr05
+- name: 🇭🇰 HK, Los Angeles
+  server: 35.166.2.215
+  port: 443
+  type: ss
+  cipher: aes-256-cfb
+  password: amazonskr05
+- name: 🇯🇵 JP, Tokyo 2
   server: 3.35.206.24
   port: 443
   type: ss
   cipher: aes-256-cfb
   password: amazonskr05
-- name: 🇺🇸 US, Dallas 2
-  server: 34.215.249.54
+- name: 🇸🇬 SG, Singapore
+  server: 57.181.42.233
+  port: 443
+  type: ss
+  cipher: aes-256-cfb
+  password: amazonskr05
+- name: 🇨🇦 CA, Vancouver
+  server: 54.186.92.34
+  port: 443
+  type: ss
+  cipher: aes-256-cfb
+  password: amazonskr05
+- name: 🇭🇰 HK, Kowloon
+  server: 18.181.162.137
+  port: 443
+  type: ss
+  cipher: aes-256-cfb
+  password: amazonskr05
+- name: 🇰🇷 KR, Incheon
+  server: 13.115.231.64
+  port: 443
+  type: ss
+  cipher: aes-256-cfb
+  password: amazonskr05
+- name: 🇭🇰 HK, New Territories
+  server: 52.194.212.235
   port: 443
   type: ss
   cipher: aes-256-cfb
@@ -83,8 +77,14 @@ proxies:
   type: ss
   cipher: aes-256-cfb
   password: amazonskr05
-- name: 🇸🇬 SG, Singapore
-  server: 13.115.231.64
+- name: 🇺🇸 US, Dallas 2
+  server: 54.187.231.227
+  port: 443
+  type: ss
+  cipher: aes-256-cfb
+  password: amazonskr05
+- name: 🇯🇵 JP, Osaka
+  server: 13.212.204.100
   port: 443
   type: ss
   cipher: aes-256-cfb
@@ -96,17 +96,17 @@ proxy-groups:
   - ♻️ 自动选择
   - DIRECT
   - 🇨🇳 TW, Taipei
-  - 🇰🇷 KR, Incheon
-  - 🇯🇵 JP, Tokyo 2
-  - 🇨🇦 CA, Vancouver
-  - 🇯🇵 JP, Osaka
-  - 🇭🇰 HK, Kowloon
-  - 🇭🇰 HK, New Territories
-  - 🇭🇰 HK, Los Angeles
   - 🇯🇵 JP, Tokyo
-  - 🇺🇸 US, Dallas 2
-  - 🇺🇸 US, Houston
+  - 🇭🇰 HK, Los Angeles
+  - 🇯🇵 JP, Tokyo 2
   - 🇸🇬 SG, Singapore
+  - 🇨🇦 CA, Vancouver
+  - 🇭🇰 HK, Kowloon
+  - 🇰🇷 KR, Incheon
+  - 🇭🇰 HK, New Territories
+  - 🇺🇸 US, Houston
+  - 🇺🇸 US, Dallas 2
+  - 🇯🇵 JP, Osaka
 - name: ♻️ 自动选择
   type: url-test
   url: http://www.gstatic.com/generate_204
@@ -114,17 +114,17 @@ proxy-groups:
   tolerance: 50
   proxies:
   - 🇨🇳 TW, Taipei
-  - 🇰🇷 KR, Incheon
-  - 🇯🇵 JP, Tokyo 2
-  - 🇨🇦 CA, Vancouver
-  - 🇯🇵 JP, Osaka
-  - 🇭🇰 HK, Kowloon
-  - 🇭🇰 HK, New Territories
-  - 🇭🇰 HK, Los Angeles
   - 🇯🇵 JP, Tokyo
-  - 🇺🇸 US, Dallas 2
-  - 🇺🇸 US, Houston
+  - 🇭🇰 HK, Los Angeles
+  - 🇯🇵 JP, Tokyo 2
   - 🇸🇬 SG, Singapore
+  - 🇨🇦 CA, Vancouver
+  - 🇭🇰 HK, Kowloon
+  - 🇰🇷 KR, Incheon
+  - 🇭🇰 HK, New Territories
+  - 🇺🇸 US, Houston
+  - 🇺🇸 US, Dallas 2
+  - 🇯🇵 JP, Osaka
 - name: 🌍 国外媒体
   type: select
   proxies:
@@ -132,68 +132,68 @@ proxy-groups:
   - ♻️ 自动选择
   - 🎯 全球直连
   - 🇨🇳 TW, Taipei
-  - 🇰🇷 KR, Incheon
-  - 🇯🇵 JP, Tokyo 2
-  - 🇨🇦 CA, Vancouver
-  - 🇯🇵 JP, Osaka
-  - 🇭🇰 HK, Kowloon
-  - 🇭🇰 HK, New Territories
-  - 🇭🇰 HK, Los Angeles
   - 🇯🇵 JP, Tokyo
-  - 🇺🇸 US, Dallas 2
-  - 🇺🇸 US, Houston
+  - 🇭🇰 HK, Los Angeles
+  - 🇯🇵 JP, Tokyo 2
   - 🇸🇬 SG, Singapore
+  - 🇨🇦 CA, Vancouver
+  - 🇭🇰 HK, Kowloon
+  - 🇰🇷 KR, Incheon
+  - 🇭🇰 HK, New Territories
+  - 🇺🇸 US, Houston
+  - 🇺🇸 US, Dallas 2
+  - 🇯🇵 JP, Osaka
 - name: 📲 电报信息
   type: select
   proxies:
   - 🚀 节点选择
   - 🎯 全球直连
   - 🇨🇳 TW, Taipei
-  - 🇰🇷 KR, Incheon
-  - 🇯🇵 JP, Tokyo 2
-  - 🇨🇦 CA, Vancouver
-  - 🇯🇵 JP, Osaka
-  - 🇭🇰 HK, Kowloon
-  - 🇭🇰 HK, New Territories
-  - 🇭🇰 HK, Los Angeles
   - 🇯🇵 JP, Tokyo
-  - 🇺🇸 US, Dallas 2
-  - 🇺🇸 US, Houston
+  - 🇭🇰 HK, Los Angeles
+  - 🇯🇵 JP, Tokyo 2
   - 🇸🇬 SG, Singapore
+  - 🇨🇦 CA, Vancouver
+  - 🇭🇰 HK, Kowloon
+  - 🇰🇷 KR, Incheon
+  - 🇭🇰 HK, New Territories
+  - 🇺🇸 US, Houston
+  - 🇺🇸 US, Dallas 2
+  - 🇯🇵 JP, Osaka
 - name: Ⓜ️ 微软服务
   type: select
   proxies:
   - 🎯 全球直连
   - 🚀 节点选择
   - 🇨🇳 TW, Taipei
-  - 🇰🇷 KR, Incheon
-  - 🇯🇵 JP, Tokyo 2
-  - 🇨🇦 CA, Vancouver
-  - 🇯🇵 JP, Osaka
-  - 🇭🇰 HK, Kowloon
-  - 🇭🇰 HK, New Territories
-  - 🇭🇰 HK, Los Angeles
   - 🇯🇵 JP, Tokyo
-  - 🇺🇸 US, Dallas 2
-  - 🇺🇸 US, Houston
+  - 🇭🇰 HK, Los Angeles
+  - 🇯🇵 JP, Tokyo 2
   - 🇸🇬 SG, Singapore
+  - 🇨🇦 CA, Vancouver
+  - 🇭🇰 HK, Kowloon
+  - 🇰🇷 KR, Incheon
+  - 🇭🇰 HK, New Territories
+  - 🇺🇸 US, Houston
+  - 🇺🇸 US, Dallas 2
+  - 🇯🇵 JP, Osaka
 - name: 🍎 苹果服务
   type: select
   proxies:
   - 🚀 节点选择
   - 🎯 全球直连
   - 🇨🇳 TW, Taipei
-  - 🇰🇷 KR, Incheon
-  - 🇯🇵 JP, Tokyo 2
-  - 🇨🇦 CA, Vancouver
-  - 🇯🇵 JP, Osaka
-  - 🇭🇰 HK, Kowloon
-  - 🇭🇰 HK, New Territories
-  - 🇭🇰 HK, Los Angeles
   - 🇯🇵 JP, Tokyo
-  - 🇺🇸 US, Dallas 2
-  - 🇺🇸 US, Houston
+  - 🇭🇰 HK, Los Angeles
+  - 🇯🇵 JP, Tokyo 2
   - 🇸🇬 SG, Singapore
+  - 🇨🇦 CA, Vancouver
+  - 🇭🇰 HK, Kowloon
+  - 🇰🇷 KR, Incheon
+  - 🇭🇰 HK, New Territories
+  - 🇺🇸 US, Houston
+  - 🇺🇸 US, Dallas 2
+  - 🇯🇵 JP, Osaka
 - name: 📢 谷歌FCM
   type: select
   proxies:
@@ -201,17 +201,17 @@ proxy-groups:
   - 🎯 全球直连
   - ♻️ 自动选择
   - 🇨🇳 TW, Taipei
-  - 🇰🇷 KR, Incheon
-  - 🇯🇵 JP, Tokyo 2
-  - 🇨🇦 CA, Vancouver
-  - 🇯🇵 JP, Osaka
-  - 🇭🇰 HK, Kowloon
-  - 🇭🇰 HK, New Territories
-  - 🇭🇰 HK, Los Angeles
   - 🇯🇵 JP, Tokyo
-  - 🇺🇸 US, Dallas 2
-  - 🇺🇸 US, Houston
+  - 🇭🇰 HK, Los Angeles
+  - 🇯🇵 JP, Tokyo 2
   - 🇸🇬 SG, Singapore
+  - 🇨🇦 CA, Vancouver
+  - 🇭🇰 HK, Kowloon
+  - 🇰🇷 KR, Incheon
+  - 🇭🇰 HK, New Territories
+  - 🇺🇸 US, Houston
+  - 🇺🇸 US, Dallas 2
+  - 🇯🇵 JP, Osaka
 - name: 🎯 全球直连
   type: select
   proxies:
@@ -235,17 +235,17 @@ proxy-groups:
   - 🎯 全球直连
   - ♻️ 自动选择
   - 🇨🇳 TW, Taipei
-  - 🇰🇷 KR, Incheon
-  - 🇯🇵 JP, Tokyo 2
-  - 🇨🇦 CA, Vancouver
-  - 🇯🇵 JP, Osaka
-  - 🇭🇰 HK, Kowloon
-  - 🇭🇰 HK, New Territories
-  - 🇭🇰 HK, Los Angeles
   - 🇯🇵 JP, Tokyo
-  - 🇺🇸 US, Dallas 2
-  - 🇺🇸 US, Houston
+  - 🇭🇰 HK, Los Angeles
+  - 🇯🇵 JP, Tokyo 2
   - 🇸🇬 SG, Singapore
+  - 🇨🇦 CA, Vancouver
+  - 🇭🇰 HK, Kowloon
+  - 🇰🇷 KR, Incheon
+  - 🇭🇰 HK, New Territories
+  - 🇺🇸 US, Houston
+  - 🇺🇸 US, Dallas 2
+  - 🇯🇵 JP, Osaka
 rules:
 - DOMAIN-SUFFIX,acl4.ssr,🎯 全球直连
 - DOMAIN-SUFFIX,ip6-localhost,🎯 全球直连
