@@ -24,3 +24,4 @@ python scripts/singbox-remote-generate.py "https://clash2sfa.xmdhs.com/sub?sub=h
 
 python scripts/singbox-remote-generate.py "https://clash2sfa.xmdhs.com/sub?sub=https://raw.githubusercontent.com/voidlhf/Sub/refs/heads/branch1/mihomo/sl.yaml" ../singbox/sl.json
 
+python scripts/singbox-remote-generate.py "https://clash2sfa.xmdhs.com/sub?sub=https://raw.githubusercontent.com/ripaojiedian/freenode/main/clash" ../singbox/ripao.json

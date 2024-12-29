@@ -1,0 +1,573 @@
+{
+  "log": {},
+  "dns": {
+    "servers": [
+      {
+        "tag": "dns_proxy",
+        "address": "https://8.8.8.8/dns-query",
+        "detour": "select"
+      },
+      {
+        "tag": "dns_direct",
+        "address": "https://223.5.5.5/dns-query",
+        "detour": "direct"
+      },
+      {
+        "tag": "dns_fakeip",
+        "address": "fakeip"
+      }
+    ],
+    "rules": [
+      {
+        "outbound": "any",
+        "server": "dns_direct"
+      },
+      {
+        "rule_set": [
+          "AdGuardSDNSFilter",
+          "chrome-doh"
+        ],
+        "action": "reject"
+      },
+      {
+        "query_type": [
+          "A",
+          "AAAA"
+        ],
+        "server": "dns_fakeip",
+        "rewrite_ttl": 1
+      },
+      {
+        "clash_mode": "Global",
+        "server": "dns_proxy"
+      },
+      {
+        "clash_mode": "Direct",
+        "server": "dns_direct"
+      },
+      {
+        "rule_set": "geosite-cn",
+        "server": "dns_direct"
+      }
+    ],
+    "strategy": "prefer_ipv4",
+    "independent_cache": true,
+    "fakeip": {
+      "enabled": true,
+      "inet4_range": "198.18.0.0/15",
+      "inet6_range": "fc00::/18"
+    }
+  },
+  "inbounds": [
+    {
+      "type": "tun",
+      "address": [
+        "172.18.0.1/30",
+        "fdfe:dcba:9876::1/126"
+      ],
+      "mtu": 9000,
+      "auto_route": true,
+      "strict_route": true,
+      "endpoint_independent_nat": true
+    },
+    {
+      "type": "socks",
+      "tag": "socks-in",
+      "listen": "127.0.0.1",
+      "listen_port": 2333,
+      "users": []
+    },
+    {
+      "type": "mixed",
+      "tag": "mixed-in",
+      "listen": "127.0.0.1",
+      "listen_port": 2334,
+      "users": []
+    }
+  ],
+  "outbounds": [
+    {
+      "server": "ftq.ink",
+      "server_port": 4000,
+      "tag": "tg频道:@ripaojiedian",
+      "tls": {
+        "enabled": true,
+        "server_name": "ftq.ink"
+      },
+      "type": "http"
+    },
+    {
+      "password": "lidnBTGb",
+      "server": "36.150.215.196",
+      "server_port": 42395,
+      "tag": "🇭🇰 香港|@ripaojiedian",
+      "tls": {
+        "enabled": true,
+        "server_name": "36.150.215.196",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "QwwHvrnN",
+      "server": "223.113.54.145",
+      "server_port": 36442,
+      "tag": "🇭🇰 香港2|@ripaojiedian",
+      "tls": {
+        "enabled": true,
+        "server_name": "223.113.54.145",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "type": "trojan"
+    },
+    {
+      "server": "120.234.102.229",
+      "server_port": 52908,
+      "tag": "🇭🇰 香港3|@ripaojiedian",
+      "type": "vmess",
+      "alter_id": 64,
+      "security": "auto",
+      "uuid": "418048af-a293-4b99-9b0c-98ca3580dd24"
+    },
+    {
+      "server": "120.198.71.214",
+      "server_port": 34493,
+      "tag": "🇭🇰 香港4|@ripaojiedian",
+      "type": "vmess",
+      "alter_id": 64,
+      "security": "auto",
+      "uuid": "418048af-a293-4b99-9b0c-98ca3580dd24"
+    },
+    {
+      "server": "183.236.51.23",
+      "server_port": 51704,
+      "tag": "🇭🇰 香港5|@ripaojiedian",
+      "type": "vmess",
+      "alter_id": 64,
+      "security": "auto",
+      "uuid": "418048af-a293-4b99-9b0c-98ca3580dd24"
+    },
+    {
+      "password": "2add6241-8fe8-3922-8347-da25e8ced601",
+      "server": "120.233.26.140",
+      "server_port": 12345,
+      "tag": "🇭🇰 香港6|@ripaojiedian",
+      "tls": {
+        "enabled": true,
+        "server_name": "bestbgp.doubledou.icu",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "type": "trojan"
+    },
+    {
+      "server": "183.236.51.23",
+      "server_port": 46602,
+      "tag": "🇭🇰 香港7|@ripaojiedian",
+      "type": "vmess",
+      "alter_id": 64,
+      "security": "auto",
+      "uuid": "418048af-a293-4b99-9b0c-98ca3580dd24"
+    },
+    {
+      "server": "tw2.sdklkd.org",
+      "server_port": 1443,
+      "tag": "🇹🇼 台湾|@ripaojiedian",
+      "tls": {
+        "enabled": true,
+        "server_name": "tw2.sdklkd.org",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "headers": {
+          "Host": [
+            "tw2.sdklkd.org"
+          ]
+        },
+        "path": "/game",
+        "type": "http",
+        "host": [
+          "tw2.sdklkd.org"
+        ],
+        "method": "GET"
+      },
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "0ccaf60a-664e-38f3-8ebb-aa70d1de7d21"
+    },
+    {
+      "password": "shadowsocks",
+      "server": "149.22.87.204",
+      "server_port": 443,
+      "tag": "🇯🇵 日本|@ripaojiedian",
+      "type": "shadowsocks",
+      "method": "aes-128-gcm",
+      "network": "tcp"
+    },
+    {
+      "server": "45.159.50.143",
+      "server_port": 28984,
+      "tag": "🇯🇵 日本2|@ripaojiedian",
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "c56d61d4-9914-4252-83be-16562e24ea0b"
+    },
+    {
+      "server": "jpp1.pfdsddla.com",
+      "server_port": 38953,
+      "tag": "🇯🇵 日本3|@ripaojiedian",
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "0ccaf60a-664e-38f3-8ebb-aa70d1de7d21"
+    },
+    {
+      "password": "2add6241-8fe8-3922-8347-da25e8ced601",
+      "server": "120.233.26.140",
+      "server_port": 50001,
+      "tag": "🇯🇵 日本4|@ripaojiedian",
+      "tls": {
+        "enabled": true,
+        "server_name": "jpcn2.doubledou.icu",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "09833a6f-4d46-426e-87fe-7793a5489f84",
+      "server": "k-r01.loveroise.com",
+      "server_port": 54008,
+      "tag": "🇰🇷 韩国|@ripaojiedian",
+      "type": "shadowsocks",
+      "method": "chacha20-ietf-poly1305",
+      "network": "tcp"
+    },
+    {
+      "password": "qwerREWQ@@",
+      "server": "27.255.82.134",
+      "server_port": 57643,
+      "tag": "🇰🇷 韩国3|@ripaojiedian",
+      "type": "shadowsocks",
+      "method": "aes-256-cfb",
+      "network": "tcp"
+    },
+    {
+      "password": "qwerREWQ@@",
+      "server": "218.38.103.150",
+      "server_port": 34304,
+      "tag": "🇰🇷 韩国2|@ripaojiedian",
+      "type": "shadowsocks",
+      "method": "aes-256-cfb",
+      "network": "tcp"
+    },
+    {
+      "server": "www.aetv.com",
+      "server_port": 80,
+      "tag": "🇸🇬 新加坡|@ripaojiedian",
+      "transport": {
+        "headers": {
+          "Host": [
+            "amd.al"
+          ]
+        },
+        "path": "/?ed=2048",
+        "type": "ws"
+      },
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "beb7d098-48ba-4be8-a47a-758bf3c470b8"
+    },
+    {
+      "password": "09833a6f-4d46-426e-87fe-7793a5489f84",
+      "server": "s-g04.loveroise.com",
+      "server_port": 54030,
+      "tag": "🇸🇬 新加坡2|@ripaojiedian",
+      "type": "shadowsocks",
+      "method": "chacha20-ietf-poly1305",
+      "network": "tcp"
+    },
+    {
+      "password": "amazonskr05",
+      "server": "43.203.122.162",
+      "server_port": 443,
+      "tag": "🇸🇬 狮城特殊|@ripaojiedian",
+      "type": "shadowsocks",
+      "method": "aes-256-cfb",
+      "network": "tcp"
+    },
+    {
+      "password": "amazonskr05",
+      "server": "18.139.115.92",
+      "server_port": 443,
+      "tag": "🇰🇷 韩国特殊|@ripaojiedian",
+      "type": "shadowsocks",
+      "method": "aes-256-cfb",
+      "network": "tcp"
+    },
+    {
+      "password": "amazonskr05",
+      "server": "43.203.127.152",
+      "server_port": 443,
+      "tag": "🇯🇵 日本特殊|@ripaojiedian",
+      "type": "shadowsocks",
+      "method": "aes-256-cfb",
+      "network": "tcp"
+    },
+    {
+      "password": "1ba48a0e-af2e-45fb-9e15-2b2d4134657c",
+      "server": "vn.mjt000.com",
+      "server_port": 443,
+      "tag": "🇻🇳 越南|@ripaojiedian",
+      "tls": {
+        "enabled": true,
+        "server_name": "vn.mjt000.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "type": "trojan"
+    },
+    {
+      "server": "primer.ibilibi.li",
+      "server_port": 443,
+      "tag": "🇫🇷 法国|@ripaojiedian",
+      "tls": {
+        "enabled": true,
+        "server_name": "ameblo.jp",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "headers": {
+          "Host": [
+            "loki.oracle"
+          ]
+        },
+        "path": "/farcry?ed=2560",
+        "type": "ws"
+      },
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "e5852393-ca52-4c90-a237-d63cbbb57f21"
+    },
+    {
+      "password": "2add6241-8fe8-3922-8347-da25e8ced601",
+      "server": "120.233.26.140",
+      "server_port": 50015,
+      "tag": "🇲🇾 马来西亚|@ripaojiedian",
+      "tls": {
+        "enabled": true,
+        "server_name": "my.doubledou.icu",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "type": "trojan"
+    },
+    {
+      "tag": "select",
+      "type": "selector",
+      "default": "urltest",
+      "outbounds": [
+        "urltest",
+        "tg频道:@ripaojiedian",
+        "🇭🇰 香港|@ripaojiedian",
+        "🇭🇰 香港2|@ripaojiedian",
+        "🇭🇰 香港3|@ripaojiedian",
+        "🇭🇰 香港4|@ripaojiedian",
+        "🇭🇰 香港5|@ripaojiedian",
+        "🇭🇰 香港6|@ripaojiedian",
+        "🇭🇰 香港7|@ripaojiedian",
+        "🇹🇼 台湾|@ripaojiedian",
+        "🇯🇵 日本|@ripaojiedian",
+        "🇯🇵 日本2|@ripaojiedian",
+        "🇯🇵 日本3|@ripaojiedian",
+        "🇯🇵 日本4|@ripaojiedian",
+        "🇰🇷 韩国|@ripaojiedian",
+        "🇰🇷 韩国3|@ripaojiedian",
+        "🇰🇷 韩国2|@ripaojiedian",
+        "🇸🇬 新加坡|@ripaojiedian",
+        "🇸🇬 新加坡2|@ripaojiedian",
+        "🇸🇬 狮城特殊|@ripaojiedian",
+        "🇰🇷 韩国特殊|@ripaojiedian",
+        "🇯🇵 日本特殊|@ripaojiedian",
+        "🇻🇳 越南|@ripaojiedian",
+        "🇫🇷 法国|@ripaojiedian",
+        "🇲🇾 马来西亚|@ripaojiedian"
+      ]
+    },
+    {
+      "tag": "urltest",
+      "type": "urltest",
+      "outbounds": [
+        "tg频道:@ripaojiedian",
+        "🇭🇰 香港|@ripaojiedian",
+        "🇭🇰 香港2|@ripaojiedian",
+        "🇭🇰 香港3|@ripaojiedian",
+        "🇭🇰 香港4|@ripaojiedian",
+        "🇭🇰 香港5|@ripaojiedian",
+        "🇭🇰 香港6|@ripaojiedian",
+        "🇭🇰 香港7|@ripaojiedian",
+        "🇹🇼 台湾|@ripaojiedian",
+        "🇯🇵 日本|@ripaojiedian",
+        "🇯🇵 日本2|@ripaojiedian",
+        "🇯🇵 日本3|@ripaojiedian",
+        "🇯🇵 日本4|@ripaojiedian",
+        "🇰🇷 韩国|@ripaojiedian",
+        "🇰🇷 韩国3|@ripaojiedian",
+        "🇰🇷 韩国2|@ripaojiedian",
+        "🇸🇬 新加坡|@ripaojiedian",
+        "🇸🇬 新加坡2|@ripaojiedian",
+        "🇸🇬 狮城特殊|@ripaojiedian",
+        "🇰🇷 韩国特殊|@ripaojiedian",
+        "🇯🇵 日本特殊|@ripaojiedian",
+        "🇻🇳 越南|@ripaojiedian",
+        "🇫🇷 法国|@ripaojiedian",
+        "🇲🇾 马来西亚|@ripaojiedian"
+      ]
+    },
+    {
+      "tag": "chatgpt",
+      "type": "selector",
+      "outbounds": [
+        "tg频道:@ripaojiedian",
+        "🇭🇰 香港|@ripaojiedian",
+        "🇭🇰 香港2|@ripaojiedian",
+        "🇭🇰 香港3|@ripaojiedian",
+        "🇭🇰 香港4|@ripaojiedian",
+        "🇭🇰 香港5|@ripaojiedian",
+        "🇭🇰 香港6|@ripaojiedian",
+        "🇭🇰 香港7|@ripaojiedian",
+        "🇹🇼 台湾|@ripaojiedian",
+        "🇯🇵 日本|@ripaojiedian",
+        "🇯🇵 日本2|@ripaojiedian",
+        "🇯🇵 日本3|@ripaojiedian",
+        "🇯🇵 日本4|@ripaojiedian",
+        "🇰🇷 韩国|@ripaojiedian",
+        "🇰🇷 韩国3|@ripaojiedian",
+        "🇰🇷 韩国2|@ripaojiedian",
+        "🇸🇬 新加坡|@ripaojiedian",
+        "🇸🇬 新加坡2|@ripaojiedian",
+        "🇸🇬 狮城特殊|@ripaojiedian",
+        "🇰🇷 韩国特殊|@ripaojiedian",
+        "🇯🇵 日本特殊|@ripaojiedian",
+        "🇻🇳 越南|@ripaojiedian",
+        "🇫🇷 法国|@ripaojiedian",
+        "🇲🇾 马来西亚|@ripaojiedian"
+      ]
+    },
+    {
+      "tag": "direct",
+      "type": "direct"
+    }
+  ],
+  "route": {
+    "rule_set": [
+      {
+        "tag": "geoip-cn",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/SagerNet/sing-geoip/rule-set/geoip-cn.srs"
+      },
+      {
+        "tag": "geosite-cn",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/xmdhs/sing-geosite/rule-set-Loyalsoldier/geosite-geolocation-cn.srs"
+      },
+      {
+        "tag": "AdGuardSDNSFilter",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/xmdhs/sing-box-ruleset/rule-set/AdGuardSDNSFilter.srs"
+      },
+      {
+        "tag": "chrome-doh",
+        "type": "remote",
+        "format": "source",
+        "url": "https://gist.githubusercontent.com/xmdhs/71fc5ff6ef29f5ecaf2c52b8de5c3172/raw/chrome-doh.json"
+      }
+    ],
+    "rules": [
+      {
+        "action": "sniff"
+      },
+      {
+        "protocol": "dns",
+        "action": "hijack-dns"
+      },
+      {
+        "action": "resolve",
+        "strategy": "prefer_ipv4"
+      },
+      {
+        "clash_mode": "Direct",
+        "outbound": "direct"
+      },
+      {
+        "clash_mode": "Global",
+        "outbound": "select"
+      },
+      {
+        "ip_is_private": true,
+        "outbound": "direct"
+      },
+      {
+        "package_name": [
+          "com.openai.chatgpt"
+        ],
+        "outbound": "chatgpt"
+      },
+      {
+        "domain_suffix": [
+          "proactivebackend-pa.googleapis.com",
+          "bing.com",
+          "bing.net",
+          "bingapis.com"
+        ],
+        "outbound": "chatgpt"
+      },
+      {
+        "port": [
+          23301,
+          22101,
+          22102,
+          20501
+        ],
+        "outbound": "direct"
+      },
+      {
+        "rule_set": "geoip-cn",
+        "outbound": "direct"
+      }
+    ],
+    "auto_detect_interface": true
+  },
+  "experimental": {
+    "cache_file": {
+      "enabled": true
+    },
+    "clash_api": {
+      "external_controller": "127.0.0.1:9090"
+    }
+  }
+}
