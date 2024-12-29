@@ -29,3 +29,5 @@ python scripts/singbox-remote-generate.py "https://clash2sfa.xmdhs.com/sub?sub=h
 python scripts/singbox-remote-generate.py "https://clash2sfa.xmdhs.com/sub?sub=https://raw.githubusercontent.com/go4sharing/sub/main/sub.yaml" ../singbox/go4sharing.json
 
 python scripts/singbox-remote-generate.py "https://clash2sfa.xmdhs.com/sub?sub=https://raw.githubusercontent.com/zhangkaiitugithub/passcro/main/speednodes.yaml" ../singbox/speednodes.json
+
+python scripts/singbox-remote-generate.py "https://clash2sfa.xmdhs.com/sub?sub=https://www.flyintpro05.com/api/v1/client/subscribe?token=62be89e4bc828cdfd0c62bfb44746312" ../singbox/flyintpro05.json

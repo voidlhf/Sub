@@ -1,0 +1,893 @@
+{
+  "log": {},
+  "dns": {
+    "servers": [
+      {
+        "tag": "dns_proxy",
+        "address": "https://8.8.8.8/dns-query",
+        "detour": "select"
+      },
+      {
+        "tag": "dns_direct",
+        "address": "https://223.5.5.5/dns-query",
+        "detour": "direct"
+      },
+      {
+        "tag": "dns_fakeip",
+        "address": "fakeip"
+      }
+    ],
+    "rules": [
+      {
+        "outbound": "any",
+        "server": "dns_direct"
+      },
+      {
+        "rule_set": [
+          "AdGuardSDNSFilter",
+          "chrome-doh"
+        ],
+        "action": "reject"
+      },
+      {
+        "query_type": [
+          "A",
+          "AAAA"
+        ],
+        "server": "dns_fakeip",
+        "rewrite_ttl": 1
+      },
+      {
+        "clash_mode": "Global",
+        "server": "dns_proxy"
+      },
+      {
+        "clash_mode": "Direct",
+        "server": "dns_direct"
+      },
+      {
+        "rule_set": "geosite-cn",
+        "server": "dns_direct"
+      }
+    ],
+    "strategy": "prefer_ipv4",
+    "independent_cache": true,
+    "fakeip": {
+      "enabled": true,
+      "inet4_range": "198.18.0.0/15",
+      "inet6_range": "fc00::/18"
+    }
+  },
+  "inbounds": [
+    {
+      "type": "tun",
+      "address": [
+        "172.18.0.1/30",
+        "fdfe:dcba:9876::1/126"
+      ],
+      "mtu": 9000,
+      "auto_route": true,
+      "strict_route": true,
+      "endpoint_independent_nat": true
+    },
+    {
+      "type": "socks",
+      "tag": "socks-in",
+      "listen": "127.0.0.1",
+      "listen_port": 2333,
+      "users": []
+    },
+    {
+      "type": "mixed",
+      "tag": "mixed-in",
+      "listen": "127.0.0.1",
+      "listen_port": 2334,
+      "users": []
+    }
+  ],
+  "outbounds": [
+    {
+      "password": "777bc05be0dd624959fb",
+      "server": "console.03.aliyun.aq.kunlunaqs.com",
+      "server_port": 45905,
+      "tag": "🇭🇰 Hongkong 021",
+      "type": "shadowsocks",
+      "method": "aes-128-gcm",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=215996dd9f1c3db1e54b.microsoft.com"
+    },
+    {
+      "password": "a643f6f3733c9962851d",
+      "server": "console.02.aliyun.aq.kunlunaqs.com",
+      "server_port": 45936,
+      "tag": "🇭🇰 Hongkong 008",
+      "type": "shadowsocks",
+      "method": "aes-128-gcm",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=215996dd9f1c3db1e54b.microsoft.com"
+    },
+    {
+      "password": "7243745919d6de49a5db",
+      "server": "console.02.aliyun.aq.kunlunaqs.com",
+      "server_port": 45578,
+      "tag": "🇭🇰 Hongkong 077",
+      "type": "shadowsocks",
+      "method": "chacha20-ietf-poly1305",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=215996dd9f1c3db1e54b.microsoft.com"
+    },
+    {
+      "password": "0a74c9e4565e935cf1ac",
+      "server": "console.01.aliyun.aq.kunlunaqs.com",
+      "server_port": 45902,
+      "tag": "🇭🇰 Hongkong 018",
+      "type": "shadowsocks",
+      "method": "aes-128-gcm",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=215996dd9f1c3db1e54b.microsoft.com"
+    },
+    {
+      "password": "7338d988d71591d76b3f",
+      "server": "console.01.aliyun.aq.kunlunaqs.com",
+      "server_port": 45901,
+      "tag": "🇭🇰 Hongkong 016",
+      "type": "shadowsocks",
+      "method": "aes-128-gcm",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=215996dd9f1c3db1e54b.microsoft.com"
+    },
+    {
+      "password": "51f8c7454c93d0d83c29",
+      "server": "console.01.aliyun.aq.kunlunaqs.com",
+      "server_port": 45900,
+      "tag": "🇭🇰 Hongkong 017",
+      "type": "shadowsocks",
+      "method": "aes-128-gcm",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=215996dd9f1c3db1e54b.microsoft.com"
+    },
+    {
+      "password": "6113536135af69e572c6",
+      "server": "console.01.aliyun.aq.kunlunaqs.com",
+      "server_port": 45904,
+      "tag": "🇭🇰 Hongkong 020",
+      "type": "shadowsocks",
+      "method": "aes-128-gcm",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=215996dd9f1c3db1e54b.microsoft.com"
+    },
+    {
+      "password": "b16cb18d8992f3b83b7d",
+      "server": "console.01.aliyun.aq.kunlunaqs.com",
+      "server_port": 45903,
+      "tag": "🇭🇰 Hongkong 019",
+      "type": "shadowsocks",
+      "method": "aes-128-gcm",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=215996dd9f1c3db1e54b.microsoft.com"
+    },
+    {
+      "password": "a643f6f3733c9962851d",
+      "server": "console.02.aliyun.aq.kunlunaqs.com",
+      "server_port": 45936,
+      "tag": "to.FlyintPro.om",
+      "type": "shadowsocks",
+      "method": "aes-128-gcm",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=215996dd9f1c3db1e54b.microsoft.com"
+    },
+    {
+      "password": "722a54414ae6ee706ac9",
+      "server": "console.02.aliyun.aq.kunlunaqs.com",
+      "server_port": 45572,
+      "tag": "🇯🇵 Japan 07",
+      "type": "shadowsocks",
+      "method": "aes-128-gcm",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=215996dd9f1c3db1e54b.microsoft.com"
+    },
+    {
+      "password": "c8960ca4a0add435fc34",
+      "server": "console.02.aliyun.aq.kunlunaqs.com",
+      "server_port": 45913,
+      "tag": "🇯🇵 Japan 029",
+      "type": "shadowsocks",
+      "method": "aes-128-gcm",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=215996dd9f1c3db1e54b.microsoft.com"
+    },
+    {
+      "password": "97b53b570db0917935e0",
+      "server": "console.02.aliyun.aq.kunlunaqs.com",
+      "server_port": 45939,
+      "tag": "🇯🇵 Japan 050",
+      "type": "shadowsocks",
+      "method": "aes-128-gcm",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=215996dd9f1c3db1e54b.microsoft.com"
+    },
+    {
+      "password": "97998add7bf4fea885ef",
+      "server": "console.02.aliyun.aq.kunlunaqs.com",
+      "server_port": 45912,
+      "tag": "🇯🇵 Japan 028",
+      "type": "shadowsocks",
+      "method": "aes-128-gcm",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=215996dd9f1c3db1e54b.microsoft.com"
+    },
+    {
+      "password": "6014caa3a323920c7fd0",
+      "server": "console.02.aliyun.aq.kunlunaqs.com",
+      "server_port": 45581,
+      "tag": "🇯🇵 Japan 083",
+      "type": "shadowsocks",
+      "method": "aes-128-gcm",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=215996dd9f1c3db1e54b.microsoft.com"
+    },
+    {
+      "password": "69dc0306f1bfb1af49a5",
+      "server": "console.02.aliyun.aq.kunlunaqs.com",
+      "server_port": 45911,
+      "tag": "🇯🇵 Japan 027",
+      "type": "shadowsocks",
+      "method": "aes-128-gcm",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=215996dd9f1c3db1e54b.microsoft.com"
+    },
+    {
+      "password": "4092a0d31011e2046687",
+      "server": "console.03.aliyun.aq.kunlunaqs.com",
+      "server_port": 45937,
+      "tag": "🇸🇬 Singapore 057",
+      "type": "shadowsocks",
+      "method": "aes-128-gcm",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=215996dd9f1c3db1e54b.microsoft.com"
+    },
+    {
+      "password": "f4cd0a554e9d0558c581",
+      "server": "console.03.aliyun.aq.kunlunaqs.com",
+      "server_port": 45917,
+      "tag": "🇸🇬 Singapore 032",
+      "type": "shadowsocks",
+      "method": "aes-128-gcm",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=215996dd9f1c3db1e54b.microsoft.com"
+    },
+    {
+      "password": "0722bd4137ff579e6917",
+      "server": "console.03.aliyun.aq.kunlunaqs.com",
+      "server_port": 45579,
+      "tag": "🇸🇬 Singapore 078",
+      "type": "shadowsocks",
+      "method": "aes-128-gcm",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=215996dd9f1c3db1e54b.microsoft.com"
+    },
+    {
+      "password": "b74518fb49bd645e6ce7",
+      "server": "console.03.aliyun.aq.kunlunaqs.com",
+      "server_port": 45913,
+      "tag": "有问题请随时联系我们",
+      "type": "shadowsocks",
+      "method": "aes-128-gcm",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=215996dd9f1c3db1e54b.microsoft.com"
+    },
+    {
+      "password": "cfc6f3f75f5ef7b2665c",
+      "server": "console.03.aliyun.aq.kunlunaqs.com",
+      "server_port": 45916,
+      "tag": "🇹🇼 Taiwan 065",
+      "type": "shadowsocks",
+      "method": "aes-128-gcm",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=215996dd9f1c3db1e54b.microsoft.com"
+    },
+    {
+      "password": "b74518fb49bd645e6ce7",
+      "server": "console.03.aliyun.aq.kunlunaqs.com",
+      "server_port": 45915,
+      "tag": "🇹🇼 Taiwan 031",
+      "type": "shadowsocks",
+      "method": "aes-128-gcm",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=215996dd9f1c3db1e54b.microsoft.com"
+    },
+    {
+      "password": "b270fd77db2ecb7acbc8",
+      "server": "console.03.aliyun.aq.kunlunaqs.com",
+      "server_port": 45914,
+      "tag": "🇹🇼 Taiwan 030",
+      "type": "shadowsocks",
+      "method": "aes-128-gcm",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=215996dd9f1c3db1e54b.microsoft.com"
+    },
+    {
+      "password": "3e26a8cfb09fda219b36",
+      "server": "console.03.aliyun.aq.kunlunaqs.com",
+      "server_port": 45573,
+      "tag": "🇹🇼 TaiwanDynamicIP",
+      "type": "shadowsocks",
+      "method": "aes-128-gcm",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=215996dd9f1c3db1e54b.microsoft.com"
+    },
+    {
+      "password": "d7577ca6729babe0790f",
+      "server": "console.02.aliyun.aq.kunlunaqs.com",
+      "server_port": 45921,
+      "tag": "🇰🇷 SouthKorea 037",
+      "type": "shadowsocks",
+      "method": "aes-128-gcm",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=215996dd9f1c3db1e54b.microsoft.com"
+    },
+    {
+      "password": "e6db72e9415e60e35892",
+      "server": "console.03.aliyun.aq.kunlunaqs.com",
+      "server_port": 45580,
+      "tag": "🇺🇸 USA 084",
+      "type": "shadowsocks",
+      "method": "chacha20-ietf-poly1305",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=215996dd9f1c3db1e54b.microsoft.com"
+    },
+    {
+      "password": "4605c34b957ab8e1001b",
+      "server": "console.02.aliyun.aq.kunlunaqs.com",
+      "server_port": 45584,
+      "tag": "🇺🇸 USA 086",
+      "type": "shadowsocks",
+      "method": "chacha20-ietf-poly1305",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=215996dd9f1c3db1e54b.microsoft.com"
+    },
+    {
+      "password": "c1ee5895686790a383fb",
+      "server": "console.03.aliyun.aq.kunlunaqs.com",
+      "server_port": 45922,
+      "tag": "🇺🇸 USA 038",
+      "type": "shadowsocks",
+      "method": "aes-128-gcm",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=215996dd9f1c3db1e54b.microsoft.com"
+    },
+    {
+      "password": "2b7df6aadc759756b0cd",
+      "server": "console.02.aliyun.aq.kunlunaqs.com",
+      "server_port": 45923,
+      "tag": "🇺🇸 USA 039",
+      "type": "shadowsocks",
+      "method": "aes-128-gcm",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=215996dd9f1c3db1e54b.microsoft.com"
+    },
+    {
+      "password": "0a0fb8dbfb8cc2f25f02",
+      "server": "console.02.aliyun.aq.kunlunaqs.com",
+      "server_port": 45924,
+      "tag": "🇺🇸 USA 040",
+      "type": "shadowsocks",
+      "method": "aes-128-gcm",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=215996dd9f1c3db1e54b.microsoft.com"
+    },
+    {
+      "password": "8bf642be1622a09558bb",
+      "server": "console.02.aliyun.aq.kunlunaqs.com",
+      "server_port": 45935,
+      "tag": "🇺🇸 USA 067",
+      "type": "shadowsocks",
+      "method": "aes-128-gcm",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=215996dd9f1c3db1e54b.microsoft.com"
+    },
+    {
+      "password": "3938bfae997974860251",
+      "server": "console.02.aliyun.aq.kunlunaqs.com",
+      "server_port": 45938,
+      "tag": "🇺🇸 USA 069",
+      "type": "shadowsocks",
+      "method": "aes-128-gcm",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=215996dd9f1c3db1e54b.microsoft.com"
+    },
+    {
+      "password": "9d29e58723af34cad8da",
+      "server": "console.02.aliyun.aq.kunlunaqs.com",
+      "server_port": 45909,
+      "tag": "🇺🇸 USA 026",
+      "type": "shadowsocks",
+      "method": "aes-128-gcm",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=215996dd9f1c3db1e54b.microsoft.com"
+    },
+    {
+      "password": "97c3cf442df2d7099275",
+      "server": "console.02.aliyun.aq.kunlunaqs.com",
+      "server_port": 45908,
+      "tag": "🇺🇸 USA 025",
+      "type": "shadowsocks",
+      "method": "aes-128-gcm",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=215996dd9f1c3db1e54b.microsoft.com"
+    },
+    {
+      "password": "8141b20c775ce63fab96",
+      "server": "console.03.aliyun.aq.kunlunaqs.com",
+      "server_port": 45927,
+      "tag": "🇫🇷 France 043",
+      "type": "shadowsocks",
+      "method": "aes-128-gcm",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=215996dd9f1c3db1e54b.microsoft.com"
+    },
+    {
+      "password": "6180d9dc7075e7fe509b",
+      "server": "console.03.aliyun.aq.kunlunaqs.com",
+      "server_port": 45587,
+      "tag": "🇮🇹 Italy 091",
+      "type": "shadowsocks",
+      "method": "chacha20-ietf-poly1305",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=215996dd9f1c3db1e54b.microsoft.com"
+    },
+    {
+      "password": "05ff48fd41178ed790ec",
+      "server": "console.03.aliyun.aq.kunlunaqs.com",
+      "server_port": 45588,
+      "tag": "🇰🇿 Kazakhstan 092",
+      "type": "shadowsocks",
+      "method": "chacha20-ietf-poly1305",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=215996dd9f1c3db1e54b.microsoft.com"
+    },
+    {
+      "password": "e3d6f327d91656f89f07",
+      "server": "console.03.aliyun.aq.kunlunaqs.com",
+      "server_port": 45589,
+      "tag": "🇧🇷 Brazil 093",
+      "type": "shadowsocks",
+      "method": "chacha20-ietf-poly1305",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=215996dd9f1c3db1e54b.microsoft.com"
+    },
+    {
+      "password": "b8dd96a81eac14b376c3",
+      "server": "console.03.aliyun.aq.kunlunaqs.com",
+      "server_port": 45590,
+      "tag": "🇮🇩 Indonesia 094",
+      "type": "shadowsocks",
+      "method": "chacha20-ietf-poly1305",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=215996dd9f1c3db1e54b.microsoft.com"
+    },
+    {
+      "password": "bd62dac6636078647014",
+      "server": "console.03.aliyun.aq.kunlunaqs.com",
+      "server_port": 45928,
+      "tag": "🇩🇪 Germany 044",
+      "type": "shadowsocks",
+      "method": "aes-128-gcm",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=215996dd9f1c3db1e54b.microsoft.com"
+    },
+    {
+      "password": "c8a1d0a69902859d209f",
+      "server": "console.03.aliyun.aq.kunlunaqs.com",
+      "server_port": 45929,
+      "tag": "🇬🇧 Kingdom 045",
+      "type": "shadowsocks",
+      "method": "aes-128-gcm",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=215996dd9f1c3db1e54b.microsoft.com"
+    },
+    {
+      "password": "b252e75cc98799d5b2d1",
+      "server": "console.03.aliyun.aq.kunlunaqs.com",
+      "server_port": 45570,
+      "tag": "🇬🇧 Kingdom 081",
+      "type": "shadowsocks",
+      "method": "aes-128-gcm",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=215996dd9f1c3db1e54b.microsoft.com"
+    },
+    {
+      "password": "3fb1d360ec0c4c7a5054",
+      "server": "console.03.aliyun.aq.kunlunaqs.com",
+      "server_port": 45910,
+      "tag": "🇨🇦 Canada 070",
+      "type": "shadowsocks",
+      "method": "aes-128-gcm",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=215996dd9f1c3db1e54b.microsoft.com"
+    },
+    {
+      "password": "7452c550383bf60ac9d3",
+      "server": "console.03.aliyun.aq.kunlunaqs.com",
+      "server_port": 45926,
+      "tag": "🇹🇷 Turkey 042",
+      "type": "shadowsocks",
+      "method": "aes-128-gcm",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=215996dd9f1c3db1e54b.microsoft.com"
+    },
+    {
+      "password": "d3a40b9d9b91c1e412c5",
+      "server": "console.03.aliyun.aq.kunlunaqs.com",
+      "server_port": 45907,
+      "tag": "🇵🇰 Pakistan 024",
+      "type": "shadowsocks",
+      "method": "aes-128-gcm",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=215996dd9f1c3db1e54b.microsoft.com"
+    },
+    {
+      "password": "ec39dd066cc142fbb81c",
+      "server": "console.03.aliyun.aq.kunlunaqs.com",
+      "server_port": 45934,
+      "tag": "🇦🇺 Australia 071",
+      "type": "shadowsocks",
+      "method": "aes-128-gcm",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=215996dd9f1c3db1e54b.microsoft.com"
+    },
+    {
+      "password": "c9fa2bcffa379937679e",
+      "server": "console.03.aliyun.aq.kunlunaqs.com",
+      "server_port": 45582,
+      "tag": "🇨🇭 Switzerland 087",
+      "type": "shadowsocks",
+      "method": "chacha20-ietf-poly1305",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=215996dd9f1c3db1e54b.microsoft.com"
+    },
+    {
+      "password": "fe51727afe2fca582ebf",
+      "server": "console.03.aliyun.aq.kunlunaqs.com",
+      "server_port": 45576,
+      "tag": "🇲🇾 Malaysia 075 *1.5",
+      "type": "shadowsocks",
+      "method": "aes-128-gcm",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=215996dd9f1c3db1e54b.microsoft.com"
+    },
+    {
+      "password": "22046a35aa74890b48f5",
+      "server": "console.03.aliyun.aq.kunlunaqs.com",
+      "server_port": 45574,
+      "tag": "🇵🇭 Philippines 05",
+      "type": "shadowsocks",
+      "method": "aes-128-gcm",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=215996dd9f1c3db1e54b.microsoft.com"
+    },
+    {
+      "password": "1a402babc02465f45bea",
+      "server": "console.03.aliyun.aq.kunlunaqs.com",
+      "server_port": 45925,
+      "tag": "🇹🇭 Thailand 041",
+      "type": "shadowsocks",
+      "method": "aes-128-gcm",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=215996dd9f1c3db1e54b.microsoft.com"
+    },
+    {
+      "password": "11575f448fb4021fc611",
+      "server": "console.03.aliyun.aq.kunlunaqs.com",
+      "server_port": 45930,
+      "tag": "🇷🇺 Russia 046",
+      "type": "shadowsocks",
+      "method": "aes-128-gcm",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=215996dd9f1c3db1e54b.microsoft.com"
+    },
+    {
+      "password": "3e79196cf9e970671245",
+      "server": "console.03.aliyun.aq.kunlunaqs.com",
+      "server_port": 45931,
+      "tag": "🇻🇳 Vietnam 047",
+      "type": "shadowsocks",
+      "method": "aes-128-gcm",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=215996dd9f1c3db1e54b.microsoft.com"
+    },
+    {
+      "password": "4f308f8c43ae78a779f5",
+      "server": "console.03.aliyun.aq.kunlunaqs.com",
+      "server_port": 45583,
+      "tag": "🇺🇦 Ukraine 085",
+      "type": "shadowsocks",
+      "method": "chacha20-ietf-poly1305",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=215996dd9f1c3db1e54b.microsoft.com"
+    },
+    {
+      "password": "1954df8a5f3876000ea6",
+      "server": "console.03.aliyun.aq.kunlunaqs.com",
+      "server_port": 45932,
+      "tag": "🇮🇳 India 048",
+      "type": "shadowsocks",
+      "method": "aes-128-gcm",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=215996dd9f1c3db1e54b.microsoft.com"
+    },
+    {
+      "tag": "select",
+      "type": "selector",
+      "default": "urltest",
+      "outbounds": [
+        "urltest",
+        "🇭🇰 Hongkong 021",
+        "🇭🇰 Hongkong 008",
+        "🇭🇰 Hongkong 077",
+        "🇭🇰 Hongkong 018",
+        "🇭🇰 Hongkong 016",
+        "🇭🇰 Hongkong 017",
+        "🇭🇰 Hongkong 020",
+        "🇭🇰 Hongkong 019",
+        "to.FlyintPro.om",
+        "🇯🇵 Japan 07",
+        "🇯🇵 Japan 029",
+        "🇯🇵 Japan 050",
+        "🇯🇵 Japan 028",
+        "🇯🇵 Japan 083",
+        "🇯🇵 Japan 027",
+        "🇸🇬 Singapore 057",
+        "🇸🇬 Singapore 032",
+        "🇸🇬 Singapore 078",
+        "有问题请随时联系我们",
+        "🇹🇼 Taiwan 065",
+        "🇹🇼 Taiwan 031",
+        "🇹🇼 Taiwan 030",
+        "🇹🇼 TaiwanDynamicIP",
+        "🇰🇷 SouthKorea 037",
+        "🇺🇸 USA 084",
+        "🇺🇸 USA 086",
+        "🇺🇸 USA 038",
+        "🇺🇸 USA 039",
+        "🇺🇸 USA 040",
+        "🇺🇸 USA 067",
+        "🇺🇸 USA 069",
+        "🇺🇸 USA 026",
+        "🇺🇸 USA 025",
+        "🇫🇷 France 043",
+        "🇮🇹 Italy 091",
+        "🇰🇿 Kazakhstan 092",
+        "🇧🇷 Brazil 093",
+        "🇮🇩 Indonesia 094",
+        "🇩🇪 Germany 044",
+        "🇬🇧 Kingdom 045",
+        "🇬🇧 Kingdom 081",
+        "🇨🇦 Canada 070",
+        "🇹🇷 Turkey 042",
+        "🇵🇰 Pakistan 024",
+        "🇦🇺 Australia 071",
+        "🇨🇭 Switzerland 087",
+        "🇲🇾 Malaysia 075 *1.5",
+        "🇵🇭 Philippines 05",
+        "🇹🇭 Thailand 041",
+        "🇷🇺 Russia 046",
+        "🇻🇳 Vietnam 047",
+        "🇺🇦 Ukraine 085",
+        "🇮🇳 India 048"
+      ]
+    },
+    {
+      "tag": "urltest",
+      "type": "urltest",
+      "outbounds": [
+        "🇭🇰 Hongkong 021",
+        "🇭🇰 Hongkong 008",
+        "🇭🇰 Hongkong 077",
+        "🇭🇰 Hongkong 018",
+        "🇭🇰 Hongkong 016",
+        "🇭🇰 Hongkong 017",
+        "🇭🇰 Hongkong 020",
+        "🇭🇰 Hongkong 019",
+        "to.FlyintPro.om",
+        "🇯🇵 Japan 07",
+        "🇯🇵 Japan 029",
+        "🇯🇵 Japan 050",
+        "🇯🇵 Japan 028",
+        "🇯🇵 Japan 083",
+        "🇯🇵 Japan 027",
+        "🇸🇬 Singapore 057",
+        "🇸🇬 Singapore 032",
+        "🇸🇬 Singapore 078",
+        "有问题请随时联系我们",
+        "🇹🇼 Taiwan 065",
+        "🇹🇼 Taiwan 031",
+        "🇹🇼 Taiwan 030",
+        "🇹🇼 TaiwanDynamicIP",
+        "🇰🇷 SouthKorea 037",
+        "🇺🇸 USA 084",
+        "🇺🇸 USA 086",
+        "🇺🇸 USA 038",
+        "🇺🇸 USA 039",
+        "🇺🇸 USA 040",
+        "🇺🇸 USA 067",
+        "🇺🇸 USA 069",
+        "🇺🇸 USA 026",
+        "🇺🇸 USA 025",
+        "🇫🇷 France 043",
+        "🇮🇹 Italy 091",
+        "🇰🇿 Kazakhstan 092",
+        "🇧🇷 Brazil 093",
+        "🇮🇩 Indonesia 094",
+        "🇩🇪 Germany 044",
+        "🇬🇧 Kingdom 045",
+        "🇬🇧 Kingdom 081",
+        "🇨🇦 Canada 070",
+        "🇹🇷 Turkey 042",
+        "🇵🇰 Pakistan 024",
+        "🇦🇺 Australia 071",
+        "🇨🇭 Switzerland 087",
+        "🇲🇾 Malaysia 075 *1.5",
+        "🇵🇭 Philippines 05",
+        "🇹🇭 Thailand 041",
+        "🇷🇺 Russia 046",
+        "🇻🇳 Vietnam 047",
+        "🇺🇦 Ukraine 085",
+        "🇮🇳 India 048"
+      ]
+    },
+    {
+      "tag": "chatgpt",
+      "type": "selector",
+      "outbounds": [
+        "🇭🇰 Hongkong 021",
+        "🇭🇰 Hongkong 008",
+        "🇭🇰 Hongkong 077",
+        "🇭🇰 Hongkong 018",
+        "🇭🇰 Hongkong 016",
+        "🇭🇰 Hongkong 017",
+        "🇭🇰 Hongkong 020",
+        "🇭🇰 Hongkong 019",
+        "to.FlyintPro.om",
+        "🇯🇵 Japan 07",
+        "🇯🇵 Japan 029",
+        "🇯🇵 Japan 050",
+        "🇯🇵 Japan 028",
+        "🇯🇵 Japan 083",
+        "🇯🇵 Japan 027",
+        "🇸🇬 Singapore 057",
+        "🇸🇬 Singapore 032",
+        "🇸🇬 Singapore 078",
+        "有问题请随时联系我们",
+        "🇹🇼 Taiwan 065",
+        "🇹🇼 Taiwan 031",
+        "🇹🇼 Taiwan 030",
+        "🇹🇼 TaiwanDynamicIP",
+        "🇰🇷 SouthKorea 037",
+        "🇺🇸 USA 084",
+        "🇺🇸 USA 086",
+        "🇺🇸 USA 038",
+        "🇺🇸 USA 039",
+        "🇺🇸 USA 040",
+        "🇺🇸 USA 067",
+        "🇺🇸 USA 069",
+        "🇺🇸 USA 026",
+        "🇺🇸 USA 025",
+        "🇫🇷 France 043",
+        "🇮🇹 Italy 091",
+        "🇰🇿 Kazakhstan 092",
+        "🇧🇷 Brazil 093",
+        "🇮🇩 Indonesia 094",
+        "🇩🇪 Germany 044",
+        "🇬🇧 Kingdom 045",
+        "🇬🇧 Kingdom 081",
+        "🇨🇦 Canada 070",
+        "🇹🇷 Turkey 042",
+        "🇵🇰 Pakistan 024",
+        "🇦🇺 Australia 071",
+        "🇨🇭 Switzerland 087",
+        "🇲🇾 Malaysia 075 *1.5",
+        "🇵🇭 Philippines 05",
+        "🇹🇭 Thailand 041",
+        "🇷🇺 Russia 046",
+        "🇻🇳 Vietnam 047",
+        "🇺🇦 Ukraine 085",
+        "🇮🇳 India 048"
+      ]
+    },
+    {
+      "tag": "direct",
+      "type": "direct"
+    }
+  ],
+  "route": {
+    "rule_set": [
+      {
+        "tag": "geoip-cn",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/SagerNet/sing-geoip/rule-set/geoip-cn.srs"
+      },
+      {
+        "tag": "geosite-cn",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/xmdhs/sing-geosite/rule-set-Loyalsoldier/geosite-geolocation-cn.srs"
+      },
+      {
+        "tag": "AdGuardSDNSFilter",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/xmdhs/sing-box-ruleset/rule-set/AdGuardSDNSFilter.srs"
+      },
+      {
+        "tag": "chrome-doh",
+        "type": "remote",
+        "format": "source",
+        "url": "https://gist.githubusercontent.com/xmdhs/71fc5ff6ef29f5ecaf2c52b8de5c3172/raw/chrome-doh.json"
+      }
+    ],
+    "rules": [
+      {
+        "action": "sniff"
+      },
+      {
+        "protocol": "dns",
+        "action": "hijack-dns"
+      },
+      {
+        "action": "resolve",
+        "strategy": "prefer_ipv4"
+      },
+      {
+        "clash_mode": "Direct",
+        "outbound": "direct"
+      },
+      {
+        "clash_mode": "Global",
+        "outbound": "select"
+      },
+      {
+        "ip_is_private": true,
+        "outbound": "direct"
+      },
+      {
+        "package_name": [
+          "com.openai.chatgpt"
+        ],
+        "outbound": "chatgpt"
+      },
+      {
+        "domain_suffix": [
+          "proactivebackend-pa.googleapis.com",
+          "bing.com",
+          "bing.net",
+          "bingapis.com"
+        ],
+        "outbound": "chatgpt"
+      },
+      {
+        "port": [
+          23301,
+          22101,
+          22102,
+          20501
+        ],
+        "outbound": "direct"
+      },
+      {
+        "rule_set": "geoip-cn",
+        "outbound": "direct"
+      }
+    ],
+    "auto_detect_interface": true
+  },
+  "experimental": {
+    "cache_file": {
+      "enabled": true
+    },
+    "clash_api": {
+      "external_controller": "127.0.0.1:9090"
+    }
+  }
+}
