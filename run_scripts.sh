@@ -17,6 +17,8 @@ python scripts/mihomo-remote-generate.py "https://aini.200566.xyz/tzjz55/downloa
 
 python scripts/mihomo-remote-generate.py "https://aini.200566.xyz/tzjz55/download/collection/tzjz66?target=ClashMeta" ../mihomo/tk2.yaml
 
+python scripts/mihomo-remote-generate.py "http://tg.hwzy0.ggff.net/sub?token=oLKUUBC7cJPmouRzlnw2bg&tag=clash" ../mihomo/hwzy0.yaml
+
 # singbox
 python scripts/singbox-remote-generate.py "https://clash2sfa.xmdhs.com/sub?sub=https://suo.st/d2Y76gj" ../singbox/air.json
 
@@ -37,3 +39,6 @@ python scripts/singbox-remote-generate.py "https://clash2sfa.xmdhs.com/sub?sub=h
 python scripts/singbox-remote-generate.py "https://clash2sfa.xmdhs.com/sub?sub=https://aini.200566.xyz/tzjz55/download/collection/love?target=ClashMeta" ../singbox/tk1.json
 
 python scripts/singbox-remote-generate.py "https://clash2sfa.xmdhs.com/sub?sub=https://aini.200566.xyz/tzjz55/download/collection/tzjz66?target=ClashMeta" ../singbox/tk2.json
+
+python scripts/singbox-remote-generate.py "https://clash2sfa.xmdhs.com/sub?sub=http%3A%2F%2Ftg.hwzy0.ggff.net%2Fsub%3Ftoken%3DoLKUUBC7cJPmouRzlnw2bg%26tag%3Dclash" ../singbox/hwzy0.json
+

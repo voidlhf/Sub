@@ -1,0 +1,912 @@
+{
+  "log": {},
+  "dns": {
+    "servers": [
+      {
+        "tag": "dns_proxy",
+        "address": "https://8.8.8.8/dns-query",
+        "detour": "select"
+      },
+      {
+        "tag": "dns_direct",
+        "address": "https://223.5.5.5/dns-query",
+        "detour": "direct"
+      },
+      {
+        "tag": "dns_fakeip",
+        "address": "fakeip"
+      }
+    ],
+    "rules": [
+      {
+        "outbound": "any",
+        "server": "dns_direct"
+      },
+      {
+        "rule_set": [
+          "AdGuardSDNSFilter",
+          "chrome-doh"
+        ],
+        "action": "reject"
+      },
+      {
+        "query_type": [
+          "A",
+          "AAAA"
+        ],
+        "server": "dns_fakeip",
+        "rewrite_ttl": 1
+      },
+      {
+        "clash_mode": "Global",
+        "server": "dns_proxy"
+      },
+      {
+        "clash_mode": "Direct",
+        "server": "dns_direct"
+      },
+      {
+        "rule_set": "geosite-cn",
+        "server": "dns_direct"
+      }
+    ],
+    "strategy": "prefer_ipv4",
+    "independent_cache": true,
+    "fakeip": {
+      "enabled": true,
+      "inet4_range": "198.18.0.0/15",
+      "inet6_range": "fc00::/18"
+    }
+  },
+  "inbounds": [
+    {
+      "type": "tun",
+      "address": [
+        "172.18.0.1/30",
+        "fdfe:dcba:9876::1/126"
+      ],
+      "mtu": 9000,
+      "auto_route": true,
+      "strict_route": true,
+      "endpoint_independent_nat": true
+    },
+    {
+      "type": "socks",
+      "tag": "socks-in",
+      "listen": "127.0.0.1",
+      "listen_port": 2333,
+      "users": []
+    },
+    {
+      "type": "mixed",
+      "tag": "mixed-in",
+      "listen": "127.0.0.1",
+      "listen_port": 2334,
+      "users": []
+    }
+  ],
+  "outbounds": [
+    {
+      "password": "nUthZ7z3VmyV",
+      "server": "14.18.253.178",
+      "server_port": 9001,
+      "tag": "✈️ 频道：@HelloWorld_1024",
+      "type": "shadowsocks",
+      "method": "chacha20",
+      "tcp_fast_open": true
+    },
+    {
+      "password": "nUthZ7z3VmyV",
+      "server": "14.18.253.178",
+      "server_port": 9001,
+      "tag": "🇭🇰 香港1",
+      "type": "shadowsocks",
+      "method": "chacha20",
+      "tcp_fast_open": true
+    },
+    {
+      "password": "passLUsO2Ktuer77tu",
+      "server": "14.18.253.178",
+      "server_port": 8321,
+      "tag": "🇭🇰 香港",
+      "type": "shadowsocks",
+      "method": "chacha20",
+      "tcp_fast_open": true
+    },
+    {
+      "password": "v5aUUtme3jxs",
+      "server": "14.18.253.178",
+      "server_port": 9003,
+      "tag": "🇭🇰 香港3",
+      "type": "shadowsocks",
+      "method": "chacha20",
+      "tcp_fast_open": true
+    },
+    {
+      "password": "PTgFLLrT5pVg",
+      "server": "14.18.253.178",
+      "server_port": 9002,
+      "tag": "🇭🇰 香港2",
+      "type": "shadowsocks",
+      "method": "chacha20",
+      "tcp_fast_open": true
+    },
+    {
+      "password": "s6Zau9ioic",
+      "server": "14.18.253.178",
+      "server_port": 9004,
+      "tag": "🇭🇰 香港4",
+      "type": "shadowsocks",
+      "method": "chacha20",
+      "tcp_fast_open": true
+    },
+    {
+      "password": "sJMdcI7NPj",
+      "server": "14.18.253.178",
+      "server_port": 9005,
+      "tag": "🇭🇰 香港5",
+      "type": "shadowsocks",
+      "method": "chacha20",
+      "tcp_fast_open": true
+    },
+    {
+      "password": "DvPfKa8vsV9K",
+      "server": "14.18.253.178",
+      "server_port": 8334,
+      "tag": "🇸🇬 新加坡",
+      "type": "shadowsocks",
+      "method": "chacha20",
+      "tcp_fast_open": true
+    },
+    {
+      "password": "avpBqFFmsYBN",
+      "server": "14.18.253.178",
+      "server_port": 8335,
+      "tag": "🇯🇵 日本1",
+      "type": "shadowsocks",
+      "method": "chacha20",
+      "tcp_fast_open": true
+    },
+    {
+      "password": "GqbcCfh365aT",
+      "server": "14.18.253.178",
+      "server_port": 8331,
+      "tag": "🇯🇵 日本2",
+      "type": "shadowsocks",
+      "method": "chacha20",
+      "tcp_fast_open": true
+    },
+    {
+      "password": "ADZmRQUGHTwX",
+      "server": "14.18.253.178",
+      "server_port": 8339,
+      "tag": "🇰🇷 韩国首尔",
+      "type": "shadowsocks",
+      "method": "chacha20",
+      "tcp_fast_open": true
+    },
+    {
+      "password": "d3baK6NW2HEc",
+      "server": "14.18.253.178",
+      "server_port": 8349,
+      "tag": "🇺🇸 美国纽约",
+      "type": "shadowsocks",
+      "method": "chacha20",
+      "tcp_fast_open": true
+    },
+    {
+      "password": "8BZ5uBrPuUDY",
+      "server": "14.18.253.178",
+      "server_port": 8332,
+      "tag": "🇸🇬 美国洛杉矶新",
+      "type": "shadowsocks",
+      "method": "chacha20",
+      "tcp_fast_open": true
+    },
+    {
+      "password": "wDazHDu63gcg",
+      "server": "14.18.253.178",
+      "server_port": 8344,
+      "tag": "🇺🇸 美国达拉斯",
+      "type": "shadowsocks",
+      "method": "chacha20",
+      "tcp_fast_open": true
+    },
+    {
+      "password": "jrgc64sFSLQM",
+      "server": "14.18.253.178",
+      "server_port": 8333,
+      "tag": "🇩🇪 德国法兰克福",
+      "type": "shadowsocks",
+      "method": "chacha20",
+      "tcp_fast_open": true
+    },
+    {
+      "password": "3fn3CH5Swh2N",
+      "server": "14.18.253.178",
+      "server_port": 8337,
+      "tag": "🇬🇧 英国",
+      "type": "shadowsocks",
+      "method": "chacha20",
+      "tcp_fast_open": true
+    },
+    {
+      "password": "r8jh6ZeykHvB",
+      "server": "14.18.253.178",
+      "server_port": 8342,
+      "tag": "🇺🇸 美国洛杉矶",
+      "type": "shadowsocks",
+      "method": "chacha20",
+      "tcp_fast_open": true
+    },
+    {
+      "password": "N9k4f2PORl14",
+      "server": "14.18.253.178",
+      "server_port": 8348,
+      "tag": "🇮🇱 以色列",
+      "type": "shadowsocks",
+      "method": "chacha20",
+      "tcp_fast_open": true
+    },
+    {
+      "password": "dkYsdgWqegNV",
+      "server": "14.18.253.178",
+      "server_port": 8343,
+      "tag": "🇨🇦 加拿大",
+      "type": "shadowsocks",
+      "method": "chacha20",
+      "tcp_fast_open": true
+    },
+    {
+      "password": "zWyQvJbQRZaV",
+      "server": "14.18.253.178",
+      "server_port": 8341,
+      "tag": "🇦🇺 澳大利亚",
+      "type": "shadowsocks",
+      "method": "chacha20",
+      "tcp_fast_open": true
+    },
+    {
+      "password": "q2kSGp4ayFKB",
+      "server": "14.18.253.178",
+      "server_port": 8347,
+      "tag": "🇫🇷 法国巴黎",
+      "type": "shadowsocks",
+      "method": "chacha20",
+      "tcp_fast_open": true
+    },
+    {
+      "password": "qwerREWQ@@",
+      "server": "p230.panda004.net",
+      "server_port": 41748,
+      "tag": "대한민국 11🐼@hwzy0",
+      "type": "shadowsocks",
+      "method": "aes-256-cfb",
+      "tcp_fast_open": true
+    },
+    {
+      "password": "qwerREWQ@@",
+      "server": "p231.panda004.net",
+      "server_port": 44987,
+      "tag": "대한민국 12🐼@hwzy0",
+      "type": "shadowsocks",
+      "method": "aes-256-cfb",
+      "tcp_fast_open": true
+    },
+    {
+      "password": "qwerREWQ@@",
+      "server": "p225.panda004.net",
+      "server_port": 3771,
+      "tag": "대한민국 06🐼@hwzy0",
+      "type": "shadowsocks",
+      "method": "aes-256-cfb",
+      "tcp_fast_open": true
+    },
+    {
+      "password": "qwerREWQ@@",
+      "server": "p227.panda004.net",
+      "server_port": 33551,
+      "tag": "대한민국 08🐼@hwzy0",
+      "type": "shadowsocks",
+      "method": "aes-256-cfb",
+      "tcp_fast_open": true
+    },
+    {
+      "password": "qwerREWQ@@",
+      "server": "p239.panda004.net",
+      "server_port": 3231,
+      "tag": "Giga MAX 01🐼@hwzy0",
+      "type": "shadowsocks",
+      "method": "aes-256-cfb",
+      "tcp_fast_open": true
+    },
+    {
+      "password": "qwerREWQ@@",
+      "server": "p233.panda004.net",
+      "server_port": 7303,
+      "tag": "대한민국 14🐼@hwzy0",
+      "type": "shadowsocks",
+      "method": "aes-256-cfb",
+      "tcp_fast_open": true
+    },
+    {
+      "password": "qwerREWQ@@",
+      "server": "p237.panda004.net",
+      "server_port": 6416,
+      "tag": "대한민국 18🐼@hwzy0",
+      "type": "shadowsocks",
+      "method": "aes-256-cfb",
+      "tcp_fast_open": true
+    },
+    {
+      "password": "qwerREWQ@@",
+      "server": "p234.panda004.net",
+      "server_port": 43249,
+      "tag": "대한민국 15🐼@hwzy0",
+      "type": "shadowsocks",
+      "method": "aes-256-cfb",
+      "tcp_fast_open": true
+    },
+    {
+      "password": "qwerREWQ@@",
+      "server": "p229.panda004.net",
+      "server_port": 40244,
+      "tag": "대한민국 10🐼@hwzy0",
+      "type": "shadowsocks",
+      "method": "aes-256-cfb",
+      "tcp_fast_open": true
+    },
+    {
+      "password": "qwerREWQ@@",
+      "server": "p236.panda004.net",
+      "server_port": 2479,
+      "tag": "대한민국 17🐼@hwzy0",
+      "type": "shadowsocks",
+      "method": "aes-256-cfb",
+      "tcp_fast_open": true
+    },
+    {
+      "password": "qwerREWQ@@",
+      "server": "p238.panda004.net",
+      "server_port": 41105,
+      "tag": "대한민국 19🐼@hwzy0",
+      "type": "shadowsocks",
+      "method": "aes-256-cfb",
+      "tcp_fast_open": true
+    },
+    {
+      "password": "qwerREWQ@@",
+      "server": "p235.panda004.net",
+      "server_port": 40677,
+      "tag": "대힌민국 16🐼@hwzy0",
+      "type": "shadowsocks",
+      "method": "aes-256-cfb",
+      "tcp_fast_open": true
+    },
+    {
+      "password": "qwerREWQ@@",
+      "server": "p228.panda004.net",
+      "server_port": 21215,
+      "tag": "대한민국 09🐼@hwzy0",
+      "type": "shadowsocks",
+      "method": "aes-256-cfb",
+      "tcp_fast_open": true
+    },
+    {
+      "password": "qwerREWQ@@",
+      "server": "p199.panda003.net",
+      "server_port": 58368,
+      "tag": "Only for game 03 ( streaming X , Download X )🐼@hwzy0",
+      "type": "shadowsocks",
+      "method": "aes-256-cfb",
+      "tcp_fast_open": true
+    },
+    {
+      "password": "qwerREWQ@@",
+      "server": "p241.panda004.net",
+      "server_port": 59974,
+      "tag": "Giga MAX 03🐼@hwzy0",
+      "type": "shadowsocks",
+      "method": "aes-256-cfb",
+      "tcp_fast_open": true
+    },
+    {
+      "password": "qwerREWQ@@",
+      "server": "p196.panda001.net",
+      "server_port": 28139,
+      "tag": "프리미엄 KT 29🐼@hwzy0",
+      "type": "shadowsocks",
+      "method": "aes-256-cfb",
+      "tcp_fast_open": true
+    },
+    {
+      "server": "50021.baidu-cdn.top",
+      "server_port": 50021,
+      "tag": "🇭🇰 🅷🆆 HK 01",
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "fa2c4c94-b477-4809-9db8-3db03ef06202",
+      "tcp_fast_open": true
+    },
+    {
+      "server": "50022.baidu-cdn.top",
+      "server_port": 50022,
+      "tag": "🇭🇰 🅷🆆 HK 02",
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "fa2c4c94-b477-4809-9db8-3db03ef06202",
+      "tcp_fast_open": true
+    },
+    {
+      "server": "50023.baidu-cdn.top",
+      "server_port": 50023,
+      "tag": "🇭🇰 🅷🆆 HK 03",
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "fa2c4c94-b477-4809-9db8-3db03ef06202",
+      "tcp_fast_open": true
+    },
+    {
+      "server": "50025.baidu-cdn.top",
+      "server_port": 50025,
+      "tag": "🇭🇰 🅷🆆 HK 04",
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "fa2c4c94-b477-4809-9db8-3db03ef06202",
+      "tcp_fast_open": true
+    },
+    {
+      "server": "50026.baidu-cdn.top",
+      "server_port": 50026,
+      "tag": "🇭🇰 🅷🆆 HK 05",
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "fa2c4c94-b477-4809-9db8-3db03ef06202",
+      "tcp_fast_open": true
+    },
+    {
+      "server": "50027.baidu-cdn.top",
+      "server_port": 50027,
+      "tag": "🇭🇰 🅷🆆 HK 06",
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "fa2c4c94-b477-4809-9db8-3db03ef06202",
+      "tcp_fast_open": true
+    },
+    {
+      "server": "50028.baidu-cdn.top",
+      "server_port": 50028,
+      "tag": "🇭🇰 🅷🆆 HK 07",
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "fa2c4c94-b477-4809-9db8-3db03ef06202",
+      "tcp_fast_open": true
+    },
+    {
+      "server": "50029.baidu-cdn.top",
+      "server_port": 50029,
+      "tag": "🇭🇰 🅷🆆 HK 08",
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "fa2c4c94-b477-4809-9db8-3db03ef06202",
+      "tcp_fast_open": true
+    },
+    {
+      "server": "50031.baidu-cdn.top",
+      "server_port": 50031,
+      "tag": "🇯🇵 🅷🆆 JP 01",
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "fa2c4c94-b477-4809-9db8-3db03ef06202",
+      "tcp_fast_open": true
+    },
+    {
+      "server": "50032.baidu-cdn.top",
+      "server_port": 50032,
+      "tag": "🇯🇵 🅷🆆 JP 02",
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "fa2c4c94-b477-4809-9db8-3db03ef06202",
+      "tcp_fast_open": true
+    },
+    {
+      "server": "50033.baidu-cdn.top",
+      "server_port": 50033,
+      "tag": "🇯🇵 🅷🆆 JP 03",
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "fa2c4c94-b477-4809-9db8-3db03ef06202",
+      "tcp_fast_open": true
+    },
+    {
+      "server": "50034.baidu-cdn.top",
+      "server_port": 50034,
+      "tag": "🇯🇵 🅷🆆 JP 04",
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "fa2c4c94-b477-4809-9db8-3db03ef06202",
+      "tcp_fast_open": true
+    },
+    {
+      "server": "50015.baidu-cdn.top",
+      "server_port": 50015,
+      "tag": "🇸🇬 🅷🆆 SG 01",
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "fa2c4c94-b477-4809-9db8-3db03ef06202",
+      "tcp_fast_open": true
+    },
+    {
+      "server": "50008.baidu-cdn.top",
+      "server_port": 50008,
+      "tag": "🇸🇬 🅷🆆 SG 02",
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "fa2c4c94-b477-4809-9db8-3db03ef06202",
+      "tcp_fast_open": true
+    },
+    {
+      "server": "50009.baidu-cdn.top",
+      "server_port": 50009,
+      "tag": "🇸🇬 🅷🆆 SG 03",
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "fa2c4c94-b477-4809-9db8-3db03ef06202",
+      "tcp_fast_open": true
+    },
+    {
+      "server": "50010.baidu-cdn.top",
+      "server_port": 50010,
+      "tag": "🇸🇬 🅷🆆 SG 04",
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "fa2c4c94-b477-4809-9db8-3db03ef06202",
+      "tcp_fast_open": true
+    },
+    {
+      "server": "50011.baidu-cdn.top",
+      "server_port": 50011,
+      "tag": "🇸🇬 🅷🆆 SG 05",
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "fa2c4c94-b477-4809-9db8-3db03ef06202",
+      "tcp_fast_open": true
+    },
+    {
+      "server": "50012.baidu-cdn.top",
+      "server_port": 50012,
+      "tag": "🇸🇬 🅷🆆 SG 06",
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "fa2c4c94-b477-4809-9db8-3db03ef06202",
+      "tcp_fast_open": true
+    },
+    {
+      "server": "50001.baidu-cdn.top",
+      "server_port": 50001,
+      "tag": "🇺🇸 🅷🆆 US 01",
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "fa2c4c94-b477-4809-9db8-3db03ef06202",
+      "tcp_fast_open": true
+    },
+    {
+      "server": "50003.baidu-cdn.top",
+      "server_port": 50003,
+      "tag": "🇺🇸 🅷🆆 US 02",
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "fa2c4c94-b477-4809-9db8-3db03ef06202",
+      "tcp_fast_open": true
+    },
+    {
+      "server": "50004.baidu-cdn.top",
+      "server_port": 50004,
+      "tag": "🇺🇸 🅷🆆 US 03",
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "fa2c4c94-b477-4809-9db8-3db03ef06202",
+      "tcp_fast_open": true
+    },
+    {
+      "server": "50005.baidu-cdn.top",
+      "server_port": 50005,
+      "tag": "🇺🇸 🅷🆆 US 04",
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "fa2c4c94-b477-4809-9db8-3db03ef06202",
+      "tcp_fast_open": true
+    },
+    {
+      "tag": "select",
+      "type": "selector",
+      "default": "urltest",
+      "outbounds": [
+        "urltest",
+        "✈️ 频道：@HelloWorld_1024",
+        "🇭🇰 香港1",
+        "🇭🇰 香港",
+        "🇭🇰 香港3",
+        "🇭🇰 香港2",
+        "🇭🇰 香港4",
+        "🇭🇰 香港5",
+        "🇸🇬 新加坡",
+        "🇯🇵 日本1",
+        "🇯🇵 日本2",
+        "🇰🇷 韩国首尔",
+        "🇺🇸 美国纽约",
+        "🇸🇬 美国洛杉矶新",
+        "🇺🇸 美国达拉斯",
+        "🇩🇪 德国法兰克福",
+        "🇬🇧 英国",
+        "🇺🇸 美国洛杉矶",
+        "🇮🇱 以色列",
+        "🇨🇦 加拿大",
+        "🇦🇺 澳大利亚",
+        "🇫🇷 法国巴黎",
+        "대한민국 11🐼@hwzy0",
+        "대한민국 12🐼@hwzy0",
+        "대한민국 06🐼@hwzy0",
+        "대한민국 08🐼@hwzy0",
+        "Giga MAX 01🐼@hwzy0",
+        "대한민국 14🐼@hwzy0",
+        "대한민국 18🐼@hwzy0",
+        "대한민국 15🐼@hwzy0",
+        "대한민국 10🐼@hwzy0",
+        "대한민국 17🐼@hwzy0",
+        "대한민국 19🐼@hwzy0",
+        "대힌민국 16🐼@hwzy0",
+        "대한민국 09🐼@hwzy0",
+        "Only for game 03 ( streaming X , Download X )🐼@hwzy0",
+        "Giga MAX 03🐼@hwzy0",
+        "프리미엄 KT 29🐼@hwzy0",
+        "🇭🇰 🅷🆆 HK 01",
+        "🇭🇰 🅷🆆 HK 02",
+        "🇭🇰 🅷🆆 HK 03",
+        "🇭🇰 🅷🆆 HK 04",
+        "🇭🇰 🅷🆆 HK 05",
+        "🇭🇰 🅷🆆 HK 06",
+        "🇭🇰 🅷🆆 HK 07",
+        "🇭🇰 🅷🆆 HK 08",
+        "🇯🇵 🅷🆆 JP 01",
+        "🇯🇵 🅷🆆 JP 02",
+        "🇯🇵 🅷🆆 JP 03",
+        "🇯🇵 🅷🆆 JP 04",
+        "🇸🇬 🅷🆆 SG 01",
+        "🇸🇬 🅷🆆 SG 02",
+        "🇸🇬 🅷🆆 SG 03",
+        "🇸🇬 🅷🆆 SG 04",
+        "🇸🇬 🅷🆆 SG 05",
+        "🇸🇬 🅷🆆 SG 06",
+        "🇺🇸 🅷🆆 US 01",
+        "🇺🇸 🅷🆆 US 02",
+        "🇺🇸 🅷🆆 US 03",
+        "🇺🇸 🅷🆆 US 04"
+      ]
+    },
+    {
+      "tag": "urltest",
+      "type": "urltest",
+      "outbounds": [
+        "✈️ 频道：@HelloWorld_1024",
+        "🇭🇰 香港1",
+        "🇭🇰 香港",
+        "🇭🇰 香港3",
+        "🇭🇰 香港2",
+        "🇭🇰 香港4",
+        "🇭🇰 香港5",
+        "🇸🇬 新加坡",
+        "🇯🇵 日本1",
+        "🇯🇵 日本2",
+        "🇰🇷 韩国首尔",
+        "🇺🇸 美国纽约",
+        "🇸🇬 美国洛杉矶新",
+        "🇺🇸 美国达拉斯",
+        "🇩🇪 德国法兰克福",
+        "🇬🇧 英国",
+        "🇺🇸 美国洛杉矶",
+        "🇮🇱 以色列",
+        "🇨🇦 加拿大",
+        "🇦🇺 澳大利亚",
+        "🇫🇷 法国巴黎",
+        "대한민국 11🐼@hwzy0",
+        "대한민국 12🐼@hwzy0",
+        "대한민국 06🐼@hwzy0",
+        "대한민국 08🐼@hwzy0",
+        "Giga MAX 01🐼@hwzy0",
+        "대한민국 14🐼@hwzy0",
+        "대한민국 18🐼@hwzy0",
+        "대한민국 15🐼@hwzy0",
+        "대한민국 10🐼@hwzy0",
+        "대한민국 17🐼@hwzy0",
+        "대한민국 19🐼@hwzy0",
+        "대힌민국 16🐼@hwzy0",
+        "대한민국 09🐼@hwzy0",
+        "Only for game 03 ( streaming X , Download X )🐼@hwzy0",
+        "Giga MAX 03🐼@hwzy0",
+        "프리미엄 KT 29🐼@hwzy0",
+        "🇭🇰 🅷🆆 HK 01",
+        "🇭🇰 🅷🆆 HK 02",
+        "🇭🇰 🅷🆆 HK 03",
+        "🇭🇰 🅷🆆 HK 04",
+        "🇭🇰 🅷🆆 HK 05",
+        "🇭🇰 🅷🆆 HK 06",
+        "🇭🇰 🅷🆆 HK 07",
+        "🇭🇰 🅷🆆 HK 08",
+        "🇯🇵 🅷🆆 JP 01",
+        "🇯🇵 🅷🆆 JP 02",
+        "🇯🇵 🅷🆆 JP 03",
+        "🇯🇵 🅷🆆 JP 04",
+        "🇸🇬 🅷🆆 SG 01",
+        "🇸🇬 🅷🆆 SG 02",
+        "🇸🇬 🅷🆆 SG 03",
+        "🇸🇬 🅷🆆 SG 04",
+        "🇸🇬 🅷🆆 SG 05",
+        "🇸🇬 🅷🆆 SG 06",
+        "🇺🇸 🅷🆆 US 01",
+        "🇺🇸 🅷🆆 US 02",
+        "🇺🇸 🅷🆆 US 03",
+        "🇺🇸 🅷🆆 US 04"
+      ]
+    },
+    {
+      "tag": "chatgpt",
+      "type": "selector",
+      "outbounds": [
+        "✈️ 频道：@HelloWorld_1024",
+        "🇭🇰 香港1",
+        "🇭🇰 香港",
+        "🇭🇰 香港3",
+        "🇭🇰 香港2",
+        "🇭🇰 香港4",
+        "🇭🇰 香港5",
+        "🇸🇬 新加坡",
+        "🇯🇵 日本1",
+        "🇯🇵 日本2",
+        "🇰🇷 韩国首尔",
+        "🇺🇸 美国纽约",
+        "🇸🇬 美国洛杉矶新",
+        "🇺🇸 美国达拉斯",
+        "🇩🇪 德国法兰克福",
+        "🇬🇧 英国",
+        "🇺🇸 美国洛杉矶",
+        "🇮🇱 以色列",
+        "🇨🇦 加拿大",
+        "🇦🇺 澳大利亚",
+        "🇫🇷 法国巴黎",
+        "대한민국 11🐼@hwzy0",
+        "대한민국 12🐼@hwzy0",
+        "대한민국 06🐼@hwzy0",
+        "대한민국 08🐼@hwzy0",
+        "Giga MAX 01🐼@hwzy0",
+        "대한민국 14🐼@hwzy0",
+        "대한민국 18🐼@hwzy0",
+        "대한민국 15🐼@hwzy0",
+        "대한민국 10🐼@hwzy0",
+        "대한민국 17🐼@hwzy0",
+        "대한민국 19🐼@hwzy0",
+        "대힌민국 16🐼@hwzy0",
+        "대한민국 09🐼@hwzy0",
+        "Only for game 03 ( streaming X , Download X )🐼@hwzy0",
+        "Giga MAX 03🐼@hwzy0",
+        "프리미엄 KT 29🐼@hwzy0",
+        "🇭🇰 🅷🆆 HK 01",
+        "🇭🇰 🅷🆆 HK 02",
+        "🇭🇰 🅷🆆 HK 03",
+        "🇭🇰 🅷🆆 HK 04",
+        "🇭🇰 🅷🆆 HK 05",
+        "🇭🇰 🅷🆆 HK 06",
+        "🇭🇰 🅷🆆 HK 07",
+        "🇭🇰 🅷🆆 HK 08",
+        "🇯🇵 🅷🆆 JP 01",
+        "🇯🇵 🅷🆆 JP 02",
+        "🇯🇵 🅷🆆 JP 03",
+        "🇯🇵 🅷🆆 JP 04",
+        "🇸🇬 🅷🆆 SG 01",
+        "🇸🇬 🅷🆆 SG 02",
+        "🇸🇬 🅷🆆 SG 03",
+        "🇸🇬 🅷🆆 SG 04",
+        "🇸🇬 🅷🆆 SG 05",
+        "🇸🇬 🅷🆆 SG 06",
+        "🇺🇸 🅷🆆 US 01",
+        "🇺🇸 🅷🆆 US 02",
+        "🇺🇸 🅷🆆 US 03",
+        "🇺🇸 🅷🆆 US 04"
+      ]
+    },
+    {
+      "tag": "direct",
+      "type": "direct"
+    }
+  ],
+  "route": {
+    "rule_set": [
+      {
+        "tag": "geoip-cn",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/SagerNet/sing-geoip/rule-set/geoip-cn.srs"
+      },
+      {
+        "tag": "geosite-cn",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/xmdhs/sing-geosite/rule-set-Loyalsoldier/geosite-geolocation-cn.srs"
+      },
+      {
+        "tag": "AdGuardSDNSFilter",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/xmdhs/sing-box-ruleset/rule-set/AdGuardSDNSFilter.srs"
+      },
+      {
+        "tag": "chrome-doh",
+        "type": "remote",
+        "format": "source",
+        "url": "https://gist.githubusercontent.com/xmdhs/71fc5ff6ef29f5ecaf2c52b8de5c3172/raw/chrome-doh.json"
+      }
+    ],
+    "rules": [
+      {
+        "action": "sniff"
+      },
+      {
+        "protocol": "dns",
+        "action": "hijack-dns"
+      },
+      {
+        "action": "resolve",
+        "strategy": "prefer_ipv4"
+      },
+      {
+        "clash_mode": "Direct",
+        "outbound": "direct"
+      },
+      {
+        "clash_mode": "Global",
+        "outbound": "select"
+      },
+      {
+        "ip_is_private": true,
+        "outbound": "direct"
+      },
+      {
+        "package_name": [
+          "com.openai.chatgpt"
+        ],
+        "outbound": "chatgpt"
+      },
+      {
+        "domain_suffix": [
+          "proactivebackend-pa.googleapis.com",
+          "bing.com",
+          "bing.net",
+          "bingapis.com"
+        ],
+        "outbound": "chatgpt"
+      },
+      {
+        "port": [
+          23301,
+          22101,
+          22102,
+          20501
+        ],
+        "outbound": "direct"
+      },
+      {
+        "rule_set": "geoip-cn",
+        "outbound": "direct"
+      }
+    ],
+    "auto_detect_interface": true
+  },
+  "experimental": {
+    "cache_file": {
+      "enabled": true
+    },
+    "clash_api": {
+      "external_controller": "127.0.0.1:9090"
+    }
+  }
+}
