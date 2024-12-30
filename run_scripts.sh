@@ -13,6 +13,10 @@ python scripts/mihomo-remote-generate.py "https://ly.ccwink.cc/api/v1/client/sub
 
 python scripts/mihomo-remote-generate.py "https://suo.st/E2VJf4t" ../mihomo/skr.yaml
 
+python scripts/mihomo-remote-generate.py "https://aini.200566.xyz/tzjz55/download/collection/love?target=ClashMeta" ../mihomo/tk1.yaml
+
+python scripts/mihomo-remote-generate.py "https://aini.200566.xyz/tzjz55/download/collection/tzjz66?target=ClashMeta" ../mihomo/tk2.yaml
+
 # singbox
 python scripts/singbox-remote-generate.py "https://clash2sfa.xmdhs.com/sub?sub=https://suo.st/d2Y76gj" ../singbox/air.json
 
