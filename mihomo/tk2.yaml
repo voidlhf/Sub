@@ -17,99 +17,73 @@ hosts:
   alt7-mtalk.google.com: 173.194.219.188
   alt8-mtalk.google.com: 142.250.112.188
 proxies:
+- name: 🇹🇬|12-30🚚@xkmfjd|多哥|01
+  server: us.vvcloud.us.kg
+  port: 20940
+  up: 200
+  down: 200
+  skip-cert-verify: false
+  type: hysteria2
+  password: e07e6bb4-1a55-4e5f-92c5-25585c9715b6
+  ports: 20901-20999
+  sni: us.vvcloud.us.kg
+- name: 🇹🇬|12-30🚚@xkmfjd|多哥|02
+  server: us.vvcloud.us.kg
+  port: 20934
+  up: 200
+  down: 200
+  skip-cert-verify: false
+  type: hysteria2
+  password: c09bef8e-84a7-4ef2-a599-4958684be702
+  ports: 20901-20999
+  sni: us.vvcloud.us.kg
+- name: 🇹🇬|12-30🚚@xkmfjd|多哥|03
+  server: us.vvcloud.us.kg
+  port: 20906
+  up: 200
+  down: 200
+  skip-cert-verify: false
+  type: hysteria2
+  password: 6ae7cc14-81f8-45d0-92d1-8995de83b702
+  ports: 20901-20999
+  sni: us.vvcloud.us.kg
+- name: 🇹🇬|12-30🚚@xkmfjd|多哥|04
+  server: us.vvcloud.us.kg
+  port: 20904
+  up: 200
+  down: 200
+  skip-cert-verify: false
+  type: hysteria2
+  password: 4ab78ac3-df62-49e0-a60e-3f89cfacc635
+  ports: 20901-20999
+  sni: us.vvcloud.us.kg
 - name: 🇺🇸|12-30🚚@xkmfjd|美国|01
-  type: vless
+  type: vmess
   server: bbq1.kuailejc.xyz
   port: 2052
   uuid: d0b749a8-c120-4c07-958a-db14d0d52169
+  alterId: 0
+  cipher: auto
   udp: true
   network: ws
   ws-opts:
     path: /kuaile
     headers:
-      Host: cs.kuailejc.xyz
+      Host: ffmg.kuailejc.xyz
 - name: 🇺🇸|12-30🚚@xkmfjd|美国|02
-  type: vless
+  type: vmess
   server: bbq2.kuailejc.xyz
   port: 2052
   uuid: d0b749a8-c120-4c07-958a-db14d0d52169
+  alterId: 0
+  cipher: auto
   udp: true
   network: ws
   ws-opts:
     path: /kuaile
     headers:
-      Host: cs.kuailejc.xyz
+      Host: ffmg.kuailejc.xyz
 - name: 🇺🇸|12-30🚚@xkmfjd|美国|03
-  type: vless
-  server: bbq3.kuailejc.xyz
-  port: 2052
-  uuid: d0b749a8-c120-4c07-958a-db14d0d52169
-  udp: true
-  network: ws
-  ws-opts:
-    path: /kuaile
-    headers:
-      Host: cs.kuailejc.xyz
-- name: 🇺🇸|12-30🚚@xkmfjd|美国|04
-  type: vless
-  server: fmg.kuailejc.xyz
-  port: 2052
-  uuid: d0b749a8-c120-4c07-958a-db14d0d52169
-  udp: true
-  network: ws
-  ws-opts:
-    path: /kuaile2024
-    headers:
-      Host: fmg.kuailejc.xyz
-- name: 🇺🇸|12-30🚚@xkmfjd|美国|05
-  type: vmess
-  server: bbq1.kuailejc.xyz
-  port: 2052
-  uuid: d0b749a8-c120-4c07-958a-db14d0d52169
-  alterId: 0
-  cipher: auto
-  udp: true
-  network: ws
-  ws-opts:
-    path: /kuaile
-    headers:
-      Host: fmg.kuailejc.xyz
-- name: 🇺🇸|12-30🚚@xkmfjd|美国|06
-  type: vless
-  server: bbq1.kuailejc.xyz
-  port: 2052
-  uuid: d0b749a8-c120-4c07-958a-db14d0d52169
-  udp: true
-  network: ws
-  ws-opts:
-    path: /kuaile2024
-    headers:
-      Host: fmg.kuailejc.xyz
-- name: 🇺🇸|12-30🚚@xkmfjd|美国|07
-  type: vmess
-  server: bbq2.kuailejc.xyz
-  port: 2052
-  uuid: d0b749a8-c120-4c07-958a-db14d0d52169
-  alterId: 0
-  cipher: auto
-  udp: true
-  network: ws
-  ws-opts:
-    path: /kuaile
-    headers:
-      Host: fmg.kuailejc.xyz
-- name: 🇺🇸|12-30🚚@xkmfjd|美国|08
-  type: vless
-  server: bbq2.kuailejc.xyz
-  port: 2052
-  uuid: d0b749a8-c120-4c07-958a-db14d0d52169
-  udp: true
-  network: ws
-  ws-opts:
-    path: /kuaile2024
-    headers:
-      Host: fmg.kuailejc.xyz
-- name: 🇺🇸|12-30🚚@xkmfjd|美国|09
   type: vmess
   server: bbq3.kuailejc.xyz
   port: 2052
@@ -121,20 +95,9 @@ proxies:
   ws-opts:
     path: /kuaile
     headers:
-      Host: fmg.kuailejc.xyz
-- name: 🇺🇸|12-30🚚@xkmfjd|美国|10
-  type: vless
-  server: bbq3.kuailejc.xyz
-  port: 2052
-  uuid: d0b749a8-c120-4c07-958a-db14d0d52169
-  udp: true
-  network: ws
-  ws-opts:
-    path: /kuaile2024
-    headers:
-      Host: fmg.kuailejc.xyz
+      Host: ffmg.kuailejc.xyz
 - type: vless
-  name: 🇺🇸|12-30🚚@xkmfjd|美国|11
+  name: 🇺🇸|12-30🚚@xkmfjd|美国|04
   server: 107.175.70.80
   port: 8852
   uuid: 023f7aa2-d079-40d8-a730-c681947f10bb
@@ -148,7 +111,7 @@ proxies:
     grpc-service-name: grpc
   servername: addons.mozilla.org
 - type: vless
-  name: 🇺🇸|12-30🚚@xkmfjd|美国|12
+  name: 🇺🇸|12-30🚚@xkmfjd|美国|05
   server: 107.175.70.80
   port: 8851
   uuid: 023f7aa2-d079-40d8-a730-c681947f10bb
@@ -165,7 +128,7 @@ proxies:
     - /
   servername: addons.mozilla.org
 - type: hysteria2
-  name: 🇺🇸|12-30🚚@xkmfjd|美国|13
+  name: 🇺🇸|12-30🚚@xkmfjd|美国|06
   server: 107.175.70.80
   port: 8844
   password: 023f7aa2-d079-40d8-a730-c681947f10bb
@@ -177,9 +140,9 @@ proxies:
   password: 023f7aa2-d079-40d8-a730-c681947f10bb
   server: 107.175.70.80
   port: 8848
-  name: 🇺🇸|12-30🚚@xkmfjd|美国|14
+  name: 🇺🇸|12-30🚚@xkmfjd|美国|07
 - type: tuic
-  name: 🇺🇸|12-30🚚@xkmfjd|美国|15
+  name: 🇺🇸|12-30🚚@xkmfjd|美国|08
   server: 107.175.70.80
   port: 8845
   password: 023f7aa2-d079-40d8-a730-c681947f10bb
@@ -192,7 +155,7 @@ proxies:
   disable-sni: true
   version: 5
 - type: vless
-  name: 🇺🇸|12-30🚚@xkmfjd|美国|16
+  name: 🇺🇸|12-30🚚@xkmfjd|美国|09
   server: time.is
   port: 443
   uuid: 023f7aa2-d079-40d8-a730-c681947f10bb
@@ -204,7 +167,7 @@ proxies:
       Host: rangers-plugins-workshop-respect.trycloudflare.com
     path: /023f7aa2-d079-40d8-a730-c681947f10bb-vless?ed=2048
   servername: rangers-plugins-workshop-respect.trycloudflare.com
-- name: 🇺🇸|12-30🚚@xkmfjd|美国|17
+- name: 🇺🇸|12-30🚚@xkmfjd|美国|10
   type: vmess
   server: time.is
   port: 80
@@ -218,7 +181,7 @@ proxies:
     headers:
       Host: rangers-plugins-workshop-respect.trycloudflare.com
 - type: vless
-  name: 🇺🇸|12-30🚚@xkmfjd|美国|18
+  name: 🇺🇸|12-30🚚@xkmfjd|美国|11
   server: 107.175.70.80
   port: 8843
   uuid: 023f7aa2-d079-40d8-a730-c681947f10bb
@@ -229,9 +192,9 @@ proxies:
     public-key: 22vKyS9fZFtSVQf2n6mkxRThLjtMJ4hMR_KfStdSLx0
   network: tcp
   servername: addons.mozilla.org
-- name: 🇺🇸|12-30🚚@xkmfjd|美国|19
+- name: 🇺🇸|12-30🚚@xkmfjd|美国|12
   server: us.vvcloud.us.kg
-  port: 20963
+  port: 20984
   up: 200
   down: 200
   skip-cert-verify: false
@@ -239,9 +202,9 @@ proxies:
   password: e07e6bb4-1a55-4e5f-92c5-25585c9715b6
   ports: 20901-20999
   sni: us.vvcloud.us.kg
-- name: 🇺🇸|12-30🚚@xkmfjd|美国|20
+- name: 🇺🇸|12-30🚚@xkmfjd|美国|13
   server: us.vvcloud.us.kg
-  port: 20989
+  port: 20953
   up: 200
   down: 200
   skip-cert-verify: false
@@ -249,9 +212,9 @@ proxies:
   password: c09bef8e-84a7-4ef2-a599-4958684be702
   ports: 20901-20999
   sni: us.vvcloud.us.kg
-- name: 🇺🇸|12-30🚚@xkmfjd|美国|21
+- name: 🇺🇸|12-30🚚@xkmfjd|美国|14
   server: us.vvcloud.us.kg
-  port: 20942
+  port: 20929
   up: 200
   down: 200
   skip-cert-verify: false
@@ -259,9 +222,9 @@ proxies:
   password: 6ae7cc14-81f8-45d0-92d1-8995de83b702
   ports: 20901-20999
   sni: us.vvcloud.us.kg
-- name: 🇺🇸|12-30🚚@xkmfjd|美国|22
+- name: 🇺🇸|12-30🚚@xkmfjd|美国|15
   server: us.vvcloud.us.kg
-  port: 20974
+  port: 20985
   up: 200
   down: 200
   skip-cert-verify: false
@@ -269,129 +232,199 @@ proxies:
   password: 4ab78ac3-df62-49e0-a60e-3f89cfacc635
   ports: 20901-20999
   sni: us.vvcloud.us.kg
-- name: 🇺🇸|12-30🚚@xkmfjd|美国|23
+- name: 🇺🇸|12-30🚚@xkmfjd|美国|16
+  server: us.vvcloud.us.kg
+  port: 20971
+  up: 200
+  down: 200
+  skip-cert-verify: false
+  type: hysteria2
+  password: e07e6bb4-1a55-4e5f-92c5-25585c9715b6
+  ports: 20901-20999
+  sni: us.vvcloud.us.kg
+- name: 🇺🇸|12-30🚚@xkmfjd|美国|17
   server: us.vvcloud.us.kg
   port: 20995
   up: 200
   down: 200
   skip-cert-verify: false
   type: hysteria2
+  password: c09bef8e-84a7-4ef2-a599-4958684be702
+  ports: 20901-20999
+  sni: us.vvcloud.us.kg
+- name: 🇺🇸|12-30🚚@xkmfjd|美国|18
+  server: us.vvcloud.us.kg
+  port: 20983
+  up: 200
+  down: 200
+  skip-cert-verify: false
+  type: hysteria2
+  password: 6ae7cc14-81f8-45d0-92d1-8995de83b702
+  ports: 20901-20999
+  sni: us.vvcloud.us.kg
+- name: 🇺🇸|12-30🚚@xkmfjd|美国|19
+  server: us.vvcloud.us.kg
+  port: 20999
+  up: 200
+  down: 200
+  skip-cert-verify: false
+  type: hysteria2
+  password: 4ab78ac3-df62-49e0-a60e-3f89cfacc635
+  ports: 20901-20999
+  sni: us.vvcloud.us.kg
+- name: 🇺🇸|12-30🚚@xkmfjd|美国|20
+  server: us.vvcloud.us.kg
+  port: 20903
+  up: 200
+  down: 200
+  skip-cert-verify: false
+  type: hysteria2
   password: e07e6bb4-1a55-4e5f-92c5-25585c9715b6
+  ports: 20901-20999
+  sni: us.vvcloud.us.kg
+- name: 🇺🇸|12-30🚚@xkmfjd|美国|21
+  server: us.vvcloud.us.kg
+  port: 20956
+  up: 200
+  down: 200
+  skip-cert-verify: false
+  type: hysteria2
+  password: c09bef8e-84a7-4ef2-a599-4958684be702
+  ports: 20901-20999
+  sni: us.vvcloud.us.kg
+- name: 🇺🇸|12-30🚚@xkmfjd|美国|22
+  server: us.vvcloud.us.kg
+  port: 20946
+  up: 200
+  down: 200
+  skip-cert-verify: false
+  type: hysteria2
+  password: 6ae7cc14-81f8-45d0-92d1-8995de83b702
+  ports: 20901-20999
+  sni: us.vvcloud.us.kg
+- name: 🇺🇸|12-30🚚@xkmfjd|美国|23
+  server: us.vvcloud.us.kg
+  port: 20925
+  up: 200
+  down: 200
+  skip-cert-verify: false
+  type: hysteria2
+  password: 4ab78ac3-df62-49e0-a60e-3f89cfacc635
   ports: 20901-20999
   sni: us.vvcloud.us.kg
 - name: 🇺🇸|12-30🚚@xkmfjd|美国|24
   server: us.vvcloud.us.kg
-  port: 20922
+  port: 20935
   up: 200
   down: 200
   skip-cert-verify: false
   type: hysteria2
-  password: c09bef8e-84a7-4ef2-a599-4958684be702
+  password: e07e6bb4-1a55-4e5f-92c5-25585c9715b6
   ports: 20901-20999
   sni: us.vvcloud.us.kg
 - name: 🇺🇸|12-30🚚@xkmfjd|美国|25
   server: us.vvcloud.us.kg
-  port: 20941
+  port: 20954
   up: 200
   down: 200
   skip-cert-verify: false
   type: hysteria2
-  password: 6ae7cc14-81f8-45d0-92d1-8995de83b702
+  password: c09bef8e-84a7-4ef2-a599-4958684be702
   ports: 20901-20999
   sni: us.vvcloud.us.kg
 - name: 🇺🇸|12-30🚚@xkmfjd|美国|26
   server: us.vvcloud.us.kg
-  port: 20944
+  port: 20914
   up: 200
   down: 200
   skip-cert-verify: false
   type: hysteria2
-  password: 4ab78ac3-df62-49e0-a60e-3f89cfacc635
+  password: 6ae7cc14-81f8-45d0-92d1-8995de83b702
   ports: 20901-20999
   sni: us.vvcloud.us.kg
 - name: 🇺🇸|12-30🚚@xkmfjd|美国|27
   server: us.vvcloud.us.kg
-  port: 20952
+  port: 20945
   up: 200
   down: 200
   skip-cert-verify: false
   type: hysteria2
-  password: e07e6bb4-1a55-4e5f-92c5-25585c9715b6
+  password: 4ab78ac3-df62-49e0-a60e-3f89cfacc635
   ports: 20901-20999
   sni: us.vvcloud.us.kg
 - name: 🇺🇸|12-30🚚@xkmfjd|美国|28
-  server: us.vvcloud.us.kg
-  port: 20928
-  up: 200
-  down: 200
+  server: kaikaixinxin-us.legeth.xyz
+  port: 61548
+  up: 1000
+  down: 1000
   skip-cert-verify: false
   type: hysteria2
-  password: c09bef8e-84a7-4ef2-a599-4958684be702
-  ports: 20901-20999
-  sni: us.vvcloud.us.kg
+  password: f3182d97-8472-4433-8d75-7598d6978364
+  ports: 61001-61999
+  sni: kaikaixinxin-us.legeth.xyz
 - name: 🇺🇸|12-30🚚@xkmfjd|美国|29
-  server: us.vvcloud.us.kg
-  port: 20981
-  up: 200
-  down: 200
+  server: kaikaixinxin-us.legeth.xyz
+  port: 61076
+  up: 1000
+  down: 1000
   skip-cert-verify: false
   type: hysteria2
-  password: 6ae7cc14-81f8-45d0-92d1-8995de83b702
-  ports: 20901-20999
-  sni: us.vvcloud.us.kg
+  password: a2c3fe27-2df2-4acb-92a1-2c56ef6ca896
+  ports: 61001-61999
+  sni: kaikaixinxin-us.legeth.xyz
 - name: 🇺🇸|12-30🚚@xkmfjd|美国|30
-  server: us.vvcloud.us.kg
-  port: 20921
-  up: 200
-  down: 200
+  server: kaikaixinxin-us.legeth.xyz
+  port: 61138
+  up: 1000
+  down: 1000
   skip-cert-verify: false
   type: hysteria2
-  password: 4ab78ac3-df62-49e0-a60e-3f89cfacc635
-  ports: 20901-20999
-  sni: us.vvcloud.us.kg
+  password: 5e689361-6b4d-4034-97f0-7793f09cc387
+  ports: 61001-61999
+  sni: kaikaixinxin-us.legeth.xyz
 - name: 🇺🇸|12-30🚚@xkmfjd|美国|31
-  server: us.vvcloud.us.kg
-  port: 20994
-  up: 200
-  down: 200
+  server: kaikaixinxin-us.legeth.xyz
+  port: 61886
+  up: 1000
+  down: 1000
   skip-cert-verify: false
   type: hysteria2
-  password: e07e6bb4-1a55-4e5f-92c5-25585c9715b6
-  ports: 20901-20999
-  sni: us.vvcloud.us.kg
+  password: fb15ac3f-6acd-44cb-8d74-a2f26ee2295b
+  ports: 61001-61999
+  sni: kaikaixinxin-us.legeth.xyz
 - name: 🇺🇸|12-30🚚@xkmfjd|美国|32
-  server: us.vvcloud.us.kg
-  port: 20993
-  up: 200
-  down: 200
+  server: kaikaixinxin-us.legeth.xyz
+  port: 61042
+  up: 1000
+  down: 1000
   skip-cert-verify: false
   type: hysteria2
-  password: c09bef8e-84a7-4ef2-a599-4958684be702
-  ports: 20901-20999
-  sni: us.vvcloud.us.kg
+  password: b5a6c71c-b0e2-49f2-a20f-d3d1fceba8a1
+  ports: 61001-61999
+  sni: kaikaixinxin-us.legeth.xyz
 - name: 🇺🇸|12-30🚚@xkmfjd|美国|33
-  server: us.vvcloud.us.kg
-  port: 20905
-  up: 200
-  down: 200
+  server: kaikaixinxin-us.legeth.xyz
+  port: 61620
+  up: 1000
+  down: 1000
   skip-cert-verify: false
   type: hysteria2
-  password: 6ae7cc14-81f8-45d0-92d1-8995de83b702
-  ports: 20901-20999
-  sni: us.vvcloud.us.kg
+  password: 35a2b560-9980-42f0-a367-3707b13a0c7b
+  ports: 61001-61999
+  sni: kaikaixinxin-us.legeth.xyz
 - name: 🇺🇸|12-30🚚@xkmfjd|美国|34
-  server: us.vvcloud.us.kg
-  port: 20916
-  up: 200
-  down: 200
+  server: kaikaixinxin-us.legeth.xyz
+  port: 61983
+  up: 1000
+  down: 1000
   skip-cert-verify: false
   type: hysteria2
-  password: 4ab78ac3-df62-49e0-a60e-3f89cfacc635
-  ports: 20901-20999
-  sni: us.vvcloud.us.kg
+  password: 47af5d0f-126d-4e44-a399-e40e5043f97c
+  ports: 61001-61999
+  sni: kaikaixinxin-us.legeth.xyz
 - name: 🇺🇸|12-30🚚@xkmfjd|美国|35
   server: kaikaixinxin-us.legeth.xyz
-  port: 61432
+  port: 61216
   up: 1000
   down: 1000
   skip-cert-verify: false
@@ -401,7 +434,7 @@ proxies:
   sni: kaikaixinxin-us.legeth.xyz
 - name: 🇺🇸|12-30🚚@xkmfjd|美国|36
   server: kaikaixinxin-us.legeth.xyz
-  port: 61184
+  port: 61113
   up: 1000
   down: 1000
   skip-cert-verify: false
@@ -411,7 +444,7 @@ proxies:
   sni: kaikaixinxin-us.legeth.xyz
 - name: 🇺🇸|12-30🚚@xkmfjd|美国|37
   server: kaikaixinxin-us.legeth.xyz
-  port: 61608
+  port: 61835
   up: 1000
   down: 1000
   skip-cert-verify: false
@@ -421,7 +454,7 @@ proxies:
   sni: kaikaixinxin-us.legeth.xyz
 - name: 🇺🇸|12-30🚚@xkmfjd|美国|38
   server: kaikaixinxin-us.legeth.xyz
-  port: 61739
+  port: 61721
   up: 1000
   down: 1000
   skip-cert-verify: false
@@ -431,7 +464,7 @@ proxies:
   sni: kaikaixinxin-us.legeth.xyz
 - name: 🇺🇸|12-30🚚@xkmfjd|美国|39
   server: kaikaixinxin-us.legeth.xyz
-  port: 61218
+  port: 61679
   up: 1000
   down: 1000
   skip-cert-verify: false
@@ -441,7 +474,7 @@ proxies:
   sni: kaikaixinxin-us.legeth.xyz
 - name: 🇺🇸|12-30🚚@xkmfjd|美国|40
   server: kaikaixinxin-us.legeth.xyz
-  port: 61980
+  port: 61298
   up: 1000
   down: 1000
   skip-cert-verify: false
@@ -451,7 +484,7 @@ proxies:
   sni: kaikaixinxin-us.legeth.xyz
 - name: 🇺🇸|12-30🚚@xkmfjd|美国|41
   server: kaikaixinxin-us.legeth.xyz
-  port: 61954
+  port: 61228
   up: 1000
   down: 1000
   skip-cert-verify: false
@@ -461,7 +494,7 @@ proxies:
   sni: kaikaixinxin-us.legeth.xyz
 - name: 🇺🇸|12-30🚚@xkmfjd|美国|42
   server: kaikaixinxin-us.legeth.xyz
-  port: 61305
+  port: 61510
   up: 1000
   down: 1000
   skip-cert-verify: false
@@ -471,7 +504,7 @@ proxies:
   sni: kaikaixinxin-us.legeth.xyz
 - name: 🇺🇸|12-30🚚@xkmfjd|美国|43
   server: kaikaixinxin-us.legeth.xyz
-  port: 61459
+  port: 61528
   up: 1000
   down: 1000
   skip-cert-verify: false
@@ -481,7 +514,7 @@ proxies:
   sni: kaikaixinxin-us.legeth.xyz
 - name: 🇺🇸|12-30🚚@xkmfjd|美国|44
   server: kaikaixinxin-us.legeth.xyz
-  port: 61385
+  port: 61006
   up: 1000
   down: 1000
   skip-cert-verify: false
@@ -491,7 +524,7 @@ proxies:
   sni: kaikaixinxin-us.legeth.xyz
 - name: 🇺🇸|12-30🚚@xkmfjd|美国|45
   server: kaikaixinxin-us.legeth.xyz
-  port: 61684
+  port: 61984
   up: 1000
   down: 1000
   skip-cert-verify: false
@@ -501,7 +534,7 @@ proxies:
   sni: kaikaixinxin-us.legeth.xyz
 - name: 🇺🇸|12-30🚚@xkmfjd|美国|46
   server: kaikaixinxin-us.legeth.xyz
-  port: 61060
+  port: 61750
   up: 1000
   down: 1000
   skip-cert-verify: false
@@ -511,7 +544,7 @@ proxies:
   sni: kaikaixinxin-us.legeth.xyz
 - name: 🇺🇸|12-30🚚@xkmfjd|美国|47
   server: kaikaixinxin-us.legeth.xyz
-  port: 61286
+  port: 61538
   up: 1000
   down: 1000
   skip-cert-verify: false
@@ -521,7 +554,7 @@ proxies:
   sni: kaikaixinxin-us.legeth.xyz
 - name: 🇺🇸|12-30🚚@xkmfjd|美国|48
   server: kaikaixinxin-us.legeth.xyz
-  port: 61691
+  port: 61591
   up: 1000
   down: 1000
   skip-cert-verify: false
@@ -531,7 +564,7 @@ proxies:
   sni: kaikaixinxin-us.legeth.xyz
 - name: 🇺🇸|12-30🚚@xkmfjd|美国|49
   server: kaikaixinxin-us.legeth.xyz
-  port: 61567
+  port: 61835
   up: 1000
   down: 1000
   skip-cert-verify: false
@@ -541,7 +574,7 @@ proxies:
   sni: kaikaixinxin-us.legeth.xyz
 - name: 🇺🇸|12-30🚚@xkmfjd|美国|50
   server: kaikaixinxin-us.legeth.xyz
-  port: 61387
+  port: 61160
   up: 1000
   down: 1000
   skip-cert-verify: false
@@ -551,7 +584,7 @@ proxies:
   sni: kaikaixinxin-us.legeth.xyz
 - name: 🇺🇸|12-30🚚@xkmfjd|美国|51
   server: kaikaixinxin-us.legeth.xyz
-  port: 61313
+  port: 61699
   up: 1000
   down: 1000
   skip-cert-verify: false
@@ -561,7 +594,7 @@ proxies:
   sni: kaikaixinxin-us.legeth.xyz
 - name: 🇺🇸|12-30🚚@xkmfjd|美国|52
   server: kaikaixinxin-us.legeth.xyz
-  port: 61874
+  port: 61325
   up: 1000
   down: 1000
   skip-cert-verify: false
@@ -571,7 +604,7 @@ proxies:
   sni: kaikaixinxin-us.legeth.xyz
 - name: 🇺🇸|12-30🚚@xkmfjd|美国|53
   server: kaikaixinxin-us.legeth.xyz
-  port: 61542
+  port: 61753
   up: 1000
   down: 1000
   skip-cert-verify: false
@@ -581,7 +614,7 @@ proxies:
   sni: kaikaixinxin-us.legeth.xyz
 - name: 🇺🇸|12-30🚚@xkmfjd|美国|54
   server: kaikaixinxin-us.legeth.xyz
-  port: 61123
+  port: 61907
   up: 1000
   down: 1000
   skip-cert-verify: false
@@ -591,7 +624,7 @@ proxies:
   sni: kaikaixinxin-us.legeth.xyz
 - name: 🇺🇸|12-30🚚@xkmfjd|美国|55
   server: kaikaixinxin-us.legeth.xyz
-  port: 61458
+  port: 61986
   up: 1000
   down: 1000
   skip-cert-verify: false
@@ -599,116 +632,6 @@ proxies:
   password: 47af5d0f-126d-4e44-a399-e40e5043f97c
   ports: 61001-61999
   sni: kaikaixinxin-us.legeth.xyz
-- name: 🇺🇸|12-30🚚@xkmfjd|美国|56
-  server: kaikaixinxin-us.legeth.xyz
-  port: 61516
-  up: 1000
-  down: 1000
-  skip-cert-verify: false
-  type: hysteria2
-  password: f3182d97-8472-4433-8d75-7598d6978364
-  ports: 61001-61999
-  sni: kaikaixinxin-us.legeth.xyz
-- name: 🇺🇸|12-30🚚@xkmfjd|美国|57
-  server: kaikaixinxin-us.legeth.xyz
-  port: 61225
-  up: 1000
-  down: 1000
-  skip-cert-verify: false
-  type: hysteria2
-  password: a2c3fe27-2df2-4acb-92a1-2c56ef6ca896
-  ports: 61001-61999
-  sni: kaikaixinxin-us.legeth.xyz
-- name: 🇺🇸|12-30🚚@xkmfjd|美国|58
-  server: kaikaixinxin-us.legeth.xyz
-  port: 61017
-  up: 1000
-  down: 1000
-  skip-cert-verify: false
-  type: hysteria2
-  password: 5e689361-6b4d-4034-97f0-7793f09cc387
-  ports: 61001-61999
-  sni: kaikaixinxin-us.legeth.xyz
-- name: 🇺🇸|12-30🚚@xkmfjd|美国|59
-  server: kaikaixinxin-us.legeth.xyz
-  port: 61126
-  up: 1000
-  down: 1000
-  skip-cert-verify: false
-  type: hysteria2
-  password: fb15ac3f-6acd-44cb-8d74-a2f26ee2295b
-  ports: 61001-61999
-  sni: kaikaixinxin-us.legeth.xyz
-- name: 🇺🇸|12-30🚚@xkmfjd|美国|60
-  server: kaikaixinxin-us.legeth.xyz
-  port: 61273
-  up: 1000
-  down: 1000
-  skip-cert-verify: false
-  type: hysteria2
-  password: b5a6c71c-b0e2-49f2-a20f-d3d1fceba8a1
-  ports: 61001-61999
-  sni: kaikaixinxin-us.legeth.xyz
-- name: 🇺🇸|12-30🚚@xkmfjd|美国|61
-  server: kaikaixinxin-us.legeth.xyz
-  port: 61003
-  up: 1000
-  down: 1000
-  skip-cert-verify: false
-  type: hysteria2
-  password: 35a2b560-9980-42f0-a367-3707b13a0c7b
-  ports: 61001-61999
-  sni: kaikaixinxin-us.legeth.xyz
-- name: 🇺🇸|12-30🚚@xkmfjd|美国|62
-  server: kaikaixinxin-us.legeth.xyz
-  port: 61856
-  up: 1000
-  down: 1000
-  skip-cert-verify: false
-  type: hysteria2
-  password: 47af5d0f-126d-4e44-a399-e40e5043f97c
-  ports: 61001-61999
-  sni: kaikaixinxin-us.legeth.xyz
-- name: 🇹🇬|12-30🚚@xkmfjd|多哥|01
-  server: us.vvcloud.us.kg
-  port: 20989
-  up: 200
-  down: 200
-  skip-cert-verify: false
-  type: hysteria2
-  password: e07e6bb4-1a55-4e5f-92c5-25585c9715b6
-  ports: 20901-20999
-  sni: us.vvcloud.us.kg
-- name: 🇹🇬|12-30🚚@xkmfjd|多哥|02
-  server: us.vvcloud.us.kg
-  port: 20979
-  up: 200
-  down: 200
-  skip-cert-verify: false
-  type: hysteria2
-  password: c09bef8e-84a7-4ef2-a599-4958684be702
-  ports: 20901-20999
-  sni: us.vvcloud.us.kg
-- name: 🇹🇬|12-30🚚@xkmfjd|多哥|03
-  server: us.vvcloud.us.kg
-  port: 20995
-  up: 200
-  down: 200
-  skip-cert-verify: false
-  type: hysteria2
-  password: 6ae7cc14-81f8-45d0-92d1-8995de83b702
-  ports: 20901-20999
-  sni: us.vvcloud.us.kg
-- name: 🇹🇬|12-30🚚@xkmfjd|多哥|04
-  server: us.vvcloud.us.kg
-  port: 20908
-  up: 200
-  down: 200
-  skip-cert-verify: false
-  type: hysteria2
-  password: 4ab78ac3-df62-49e0-a60e-3f89cfacc635
-  ports: 20901-20999
-  sni: us.vvcloud.us.kg
 - name: 🇭🇰|12-30🚚@xkmfjd|香港|01
   type: vmess
   server: bbq1.kuailejc.xyz
@@ -721,7 +644,7 @@ proxies:
   ws-opts:
     path: /kuaile
     headers:
-      Host: hk.kuailejc.xyz
+      Host: hhk.kuailejc.xyz
 - name: 🇭🇰|12-30🚚@xkmfjd|香港|02
   type: vmess
   server: bbq2.kuailejc.xyz
@@ -734,7 +657,7 @@ proxies:
   ws-opts:
     path: /kuaile
     headers:
-      Host: hk.kuailejc.xyz
+      Host: hhk.kuailejc.xyz
 - name: 🇭🇰|12-30🚚@xkmfjd|香港|03
   type: vmess
   server: bbq3.kuailejc.xyz
@@ -747,10 +670,10 @@ proxies:
   ws-opts:
     path: /kuaile
     headers:
-      Host: hk.kuailejc.xyz
+      Host: hhk.kuailejc.xyz
 - name: 🇭🇰|12-30🚚@xkmfjd|香港|04
   server: hk.vvcloud.us.kg
-  port: 20907
+  port: 20903
   up: 200
   down: 200
   skip-cert-verify: false
@@ -760,7 +683,7 @@ proxies:
   sni: hk.vvcloud.us.kg
 - name: 🇭🇰|12-30🚚@xkmfjd|香港|05
   server: hk.vvcloud.us.kg
-  port: 20946
+  port: 20903
   up: 200
   down: 200
   skip-cert-verify: false
@@ -770,7 +693,7 @@ proxies:
   sni: hk.vvcloud.us.kg
 - name: 🇭🇰|12-30🚚@xkmfjd|香港|06
   server: hk.vvcloud.us.kg
-  port: 20989
+  port: 20925
   up: 200
   down: 200
   skip-cert-verify: false
@@ -780,7 +703,7 @@ proxies:
   sni: hk.vvcloud.us.kg
 - name: 🇭🇰|12-30🚚@xkmfjd|香港|07
   server: hk.vvcloud.us.kg
-  port: 20997
+  port: 20978
   up: 200
   down: 200
   skip-cert-verify: false
@@ -790,7 +713,7 @@ proxies:
   sni: hk.vvcloud.us.kg
 - name: 🇭🇰|12-30🚚@xkmfjd|香港|08
   server: hk.vvcloud.us.kg
-  port: 20973
+  port: 20968
   up: 200
   down: 200
   skip-cert-verify: false
@@ -800,7 +723,7 @@ proxies:
   sni: hk.vvcloud.us.kg
 - name: 🇭🇰|12-30🚚@xkmfjd|香港|09
   server: hk.vvcloud.us.kg
-  port: 20935
+  port: 20952
   up: 200
   down: 200
   skip-cert-verify: false
@@ -810,7 +733,7 @@ proxies:
   sni: hk.vvcloud.us.kg
 - name: 🇭🇰|12-30🚚@xkmfjd|香港|10
   server: hk.vvcloud.us.kg
-  port: 20978
+  port: 20977
   up: 200
   down: 200
   skip-cert-verify: false
@@ -820,7 +743,7 @@ proxies:
   sni: hk.vvcloud.us.kg
 - name: 🇭🇰|12-30🚚@xkmfjd|香港|11
   server: hk.vvcloud.us.kg
-  port: 20971
+  port: 20940
   up: 200
   down: 200
   skip-cert-verify: false
@@ -830,7 +753,7 @@ proxies:
   sni: hk.vvcloud.us.kg
 - name: 🇭🇰|12-30🚚@xkmfjd|香港|12
   server: hk.vvcloud.us.kg
-  port: 20957
+  port: 20911
   up: 200
   down: 200
   skip-cert-verify: false
@@ -840,7 +763,7 @@ proxies:
   sni: hk.vvcloud.us.kg
 - name: 🇭🇰|12-30🚚@xkmfjd|香港|13
   server: hk.vvcloud.us.kg
-  port: 20997
+  port: 20930
   up: 200
   down: 200
   skip-cert-verify: false
@@ -850,7 +773,7 @@ proxies:
   sni: hk.vvcloud.us.kg
 - name: 🇭🇰|12-30🚚@xkmfjd|香港|14
   server: hk.vvcloud.us.kg
-  port: 20967
+  port: 20935
   up: 200
   down: 200
   skip-cert-verify: false
@@ -860,7 +783,7 @@ proxies:
   sni: hk.vvcloud.us.kg
 - name: 🇭🇰|12-30🚚@xkmfjd|香港|15
   server: hk.vvcloud.us.kg
-  port: 20974
+  port: 20991
   up: 200
   down: 200
   skip-cert-verify: false
@@ -870,7 +793,7 @@ proxies:
   sni: hk.vvcloud.us.kg
 - name: 🇭🇰|12-30🚚@xkmfjd|香港|16
   server: hk.vvcloud.us.kg
-  port: 20991
+  port: 20980
   up: 200
   down: 200
   skip-cert-verify: false
@@ -880,7 +803,7 @@ proxies:
   sni: hk.vvcloud.us.kg
 - name: 🇭🇰|12-30🚚@xkmfjd|香港|17
   server: hk.vvcloud.us.kg
-  port: 20975
+  port: 20964
   up: 200
   down: 200
   skip-cert-verify: false
@@ -890,7 +813,7 @@ proxies:
   sni: hk.vvcloud.us.kg
 - name: 🇭🇰|12-30🚚@xkmfjd|香港|18
   server: hk.vvcloud.us.kg
-  port: 20908
+  port: 20951
   up: 200
   down: 200
   skip-cert-verify: false
@@ -900,7 +823,7 @@ proxies:
   sni: hk.vvcloud.us.kg
 - name: 🇭🇰|12-30🚚@xkmfjd|香港|19
   server: hk.vvcloud.us.kg
-  port: 20916
+  port: 20917
   up: 200
   down: 200
   skip-cert-verify: false
@@ -911,196 +834,196 @@ proxies:
 - name: 🇭🇰|12-30🚚@xkmfjd|香港|20
   type: ss
   server: kaikaixinxin-hk.legeth.xyz
-  port: 61543
+  port: 61111
   cipher: 2022-blake3-aes-256-gcm
   password: Y2U5MWY0N2IwMDAxY2EwMmQzNzdkM2RhNDYyNjFiOGY=:ZjMxODJkOTctODQ3Mi00NDMzLThkNzUtNzU5OGQ2OTc=
   udp: true
 - name: 🇭🇰|12-30🚚@xkmfjd|香港|21
   type: ss
   server: kaikaixinxin-hk.legeth.xyz
-  port: 61853
+  port: 61384
   cipher: 2022-blake3-aes-256-gcm
   password: Y2U5MWY0N2IwMDAxY2EwMmQzNzdkM2RhNDYyNjFiOGY=:YTJjM2ZlMjctMmRmMi00YWNiLTkyYTEtMmM1NmVmNmM=
   udp: true
 - name: 🇭🇰|12-30🚚@xkmfjd|香港|22
   type: ss
   server: kaikaixinxin-hk.legeth.xyz
-  port: 61793
+  port: 61770
   cipher: 2022-blake3-aes-256-gcm
   password: Y2U5MWY0N2IwMDAxY2EwMmQzNzdkM2RhNDYyNjFiOGY=:NWU2ODkzNjEtNmI0ZC00MDM0LTk3ZjAtNzc5M2YwOWM=
   udp: true
 - name: 🇭🇰|12-30🚚@xkmfjd|香港|23
   type: ss
   server: kaikaixinxin-hk.legeth.xyz
-  port: 61704
+  port: 61421
   cipher: 2022-blake3-aes-256-gcm
   password: Y2U5MWY0N2IwMDAxY2EwMmQzNzdkM2RhNDYyNjFiOGY=:ZmIxNWFjM2YtNmFjZC00NGNiLThkNzQtYTJmMjZlZTI=
   udp: true
 - name: 🇭🇰|12-30🚚@xkmfjd|香港|24
   type: ss
   server: kaikaixinxin-hk.legeth.xyz
-  port: 61243
+  port: 61395
   cipher: 2022-blake3-aes-256-gcm
   password: Y2U5MWY0N2IwMDAxY2EwMmQzNzdkM2RhNDYyNjFiOGY=:YjVhNmM3MWMtYjBlMi00OWYyLWEyMGYtZDNkMWZjZWI=
   udp: true
 - name: 🇭🇰|12-30🚚@xkmfjd|香港|25
   type: ss
   server: kaikaixinxin-hk.legeth.xyz
-  port: 61112
+  port: 61098
   cipher: 2022-blake3-aes-256-gcm
   password: Y2U5MWY0N2IwMDAxY2EwMmQzNzdkM2RhNDYyNjFiOGY=:MzVhMmI1NjAtOTk4MC00MmYwLWEzNjctMzcwN2IxM2E=
   udp: true
 - name: 🇭🇰|12-30🚚@xkmfjd|香港|26
   type: ss
   server: kaikaixinxin-hk.legeth.xyz
-  port: 61745
+  port: 61459
   cipher: 2022-blake3-aes-256-gcm
   password: Y2U5MWY0N2IwMDAxY2EwMmQzNzdkM2RhNDYyNjFiOGY=:NDdhZjVkMGYtMTI2ZC00ZTQ0LWEzOTktZTQwZTUwNDM=
   udp: true
 - name: 🇭🇰|12-30🚚@xkmfjd|香港|27
   type: ss
   server: kaikaixinxin-hk.legeth.xyz
-  port: 61528
+  port: 61689
   cipher: 2022-blake3-aes-256-gcm
   password: Y2U5MWY0N2IwMDAxY2EwMmQzNzdkM2RhNDYyNjFiOGY=:ZjMxODJkOTctODQ3Mi00NDMzLThkNzUtNzU5OGQ2OTc=
   udp: true
 - name: 🇭🇰|12-30🚚@xkmfjd|香港|28
   type: ss
   server: kaikaixinxin-hk.legeth.xyz
-  port: 61667
+  port: 61840
   cipher: 2022-blake3-aes-256-gcm
   password: Y2U5MWY0N2IwMDAxY2EwMmQzNzdkM2RhNDYyNjFiOGY=:YTJjM2ZlMjctMmRmMi00YWNiLTkyYTEtMmM1NmVmNmM=
   udp: true
 - name: 🇭🇰|12-30🚚@xkmfjd|香港|29
   type: ss
   server: kaikaixinxin-hk.legeth.xyz
-  port: 61787
+  port: 61960
   cipher: 2022-blake3-aes-256-gcm
   password: Y2U5MWY0N2IwMDAxY2EwMmQzNzdkM2RhNDYyNjFiOGY=:NWU2ODkzNjEtNmI0ZC00MDM0LTk3ZjAtNzc5M2YwOWM=
   udp: true
 - name: 🇭🇰|12-30🚚@xkmfjd|香港|30
   type: ss
   server: kaikaixinxin-hk.legeth.xyz
-  port: 61585
+  port: 61318
   cipher: 2022-blake3-aes-256-gcm
   password: Y2U5MWY0N2IwMDAxY2EwMmQzNzdkM2RhNDYyNjFiOGY=:ZmIxNWFjM2YtNmFjZC00NGNiLThkNzQtYTJmMjZlZTI=
   udp: true
 - name: 🇭🇰|12-30🚚@xkmfjd|香港|31
   type: ss
   server: kaikaixinxin-hk.legeth.xyz
-  port: 61675
+  port: 61712
   cipher: 2022-blake3-aes-256-gcm
   password: Y2U5MWY0N2IwMDAxY2EwMmQzNzdkM2RhNDYyNjFiOGY=:YjVhNmM3MWMtYjBlMi00OWYyLWEyMGYtZDNkMWZjZWI=
   udp: true
 - name: 🇭🇰|12-30🚚@xkmfjd|香港|32
   type: ss
   server: kaikaixinxin-hk.legeth.xyz
-  port: 61797
+  port: 61413
   cipher: 2022-blake3-aes-256-gcm
   password: Y2U5MWY0N2IwMDAxY2EwMmQzNzdkM2RhNDYyNjFiOGY=:MzVhMmI1NjAtOTk4MC00MmYwLWEzNjctMzcwN2IxM2E=
   udp: true
 - name: 🇭🇰|12-30🚚@xkmfjd|香港|33
   type: ss
   server: kaikaixinxin-hk.legeth.xyz
-  port: 61282
+  port: 61890
   cipher: 2022-blake3-aes-256-gcm
   password: Y2U5MWY0N2IwMDAxY2EwMmQzNzdkM2RhNDYyNjFiOGY=:NDdhZjVkMGYtMTI2ZC00ZTQ0LWEzOTktZTQwZTUwNDM=
   udp: true
 - name: 🇭🇰|12-30🚚@xkmfjd|香港|34
   type: ss
   server: kaikaixinxin-hk.legeth.xyz
-  port: 61105
+  port: 61425
   cipher: 2022-blake3-aes-256-gcm
   password: Y2U5MWY0N2IwMDAxY2EwMmQzNzdkM2RhNDYyNjFiOGY=:ZjMxODJkOTctODQ3Mi00NDMzLThkNzUtNzU5OGQ2OTc=
   udp: true
 - name: 🇭🇰|12-30🚚@xkmfjd|香港|35
   type: ss
   server: kaikaixinxin-hk.legeth.xyz
-  port: 61351
+  port: 61833
   cipher: 2022-blake3-aes-256-gcm
   password: Y2U5MWY0N2IwMDAxY2EwMmQzNzdkM2RhNDYyNjFiOGY=:YTJjM2ZlMjctMmRmMi00YWNiLTkyYTEtMmM1NmVmNmM=
   udp: true
 - name: 🇭🇰|12-30🚚@xkmfjd|香港|36
   type: ss
   server: kaikaixinxin-hk.legeth.xyz
-  port: 61943
+  port: 61510
   cipher: 2022-blake3-aes-256-gcm
   password: Y2U5MWY0N2IwMDAxY2EwMmQzNzdkM2RhNDYyNjFiOGY=:NWU2ODkzNjEtNmI0ZC00MDM0LTk3ZjAtNzc5M2YwOWM=
   udp: true
 - name: 🇭🇰|12-30🚚@xkmfjd|香港|37
   type: ss
   server: kaikaixinxin-hk.legeth.xyz
-  port: 61036
+  port: 61456
   cipher: 2022-blake3-aes-256-gcm
   password: Y2U5MWY0N2IwMDAxY2EwMmQzNzdkM2RhNDYyNjFiOGY=:ZmIxNWFjM2YtNmFjZC00NGNiLThkNzQtYTJmMjZlZTI=
   udp: true
 - name: 🇭🇰|12-30🚚@xkmfjd|香港|38
   type: ss
   server: kaikaixinxin-hk.legeth.xyz
-  port: 61834
+  port: 61494
   cipher: 2022-blake3-aes-256-gcm
   password: Y2U5MWY0N2IwMDAxY2EwMmQzNzdkM2RhNDYyNjFiOGY=:YjVhNmM3MWMtYjBlMi00OWYyLWEyMGYtZDNkMWZjZWI=
   udp: true
 - name: 🇭🇰|12-30🚚@xkmfjd|香港|39
   type: ss
   server: kaikaixinxin-hk.legeth.xyz
-  port: 61570
+  port: 61977
   cipher: 2022-blake3-aes-256-gcm
   password: Y2U5MWY0N2IwMDAxY2EwMmQzNzdkM2RhNDYyNjFiOGY=:MzVhMmI1NjAtOTk4MC00MmYwLWEzNjctMzcwN2IxM2E=
   udp: true
 - name: 🇭🇰|12-30🚚@xkmfjd|香港|40
   type: ss
   server: kaikaixinxin-hk.legeth.xyz
-  port: 61100
+  port: 61451
   cipher: 2022-blake3-aes-256-gcm
   password: Y2U5MWY0N2IwMDAxY2EwMmQzNzdkM2RhNDYyNjFiOGY=:NDdhZjVkMGYtMTI2ZC00ZTQ0LWEzOTktZTQwZTUwNDM=
   udp: true
 - name: 🇭🇰|12-30🚚@xkmfjd|香港|41
   type: ss
   server: kaikaixinxin-hk.legeth.xyz
-  port: 61032
+  port: 61815
   cipher: 2022-blake3-aes-256-gcm
   password: Y2U5MWY0N2IwMDAxY2EwMmQzNzdkM2RhNDYyNjFiOGY=:ZjMxODJkOTctODQ3Mi00NDMzLThkNzUtNzU5OGQ2OTc=
   udp: true
 - name: 🇭🇰|12-30🚚@xkmfjd|香港|42
   type: ss
   server: kaikaixinxin-hk.legeth.xyz
-  port: 61373
+  port: 61633
   cipher: 2022-blake3-aes-256-gcm
   password: Y2U5MWY0N2IwMDAxY2EwMmQzNzdkM2RhNDYyNjFiOGY=:YTJjM2ZlMjctMmRmMi00YWNiLTkyYTEtMmM1NmVmNmM=
   udp: true
 - name: 🇭🇰|12-30🚚@xkmfjd|香港|43
   type: ss
   server: kaikaixinxin-hk.legeth.xyz
-  port: 61346
+  port: 61863
   cipher: 2022-blake3-aes-256-gcm
   password: Y2U5MWY0N2IwMDAxY2EwMmQzNzdkM2RhNDYyNjFiOGY=:NWU2ODkzNjEtNmI0ZC00MDM0LTk3ZjAtNzc5M2YwOWM=
   udp: true
 - name: 🇭🇰|12-30🚚@xkmfjd|香港|44
   type: ss
   server: kaikaixinxin-hk.legeth.xyz
-  port: 61247
+  port: 61992
   cipher: 2022-blake3-aes-256-gcm
   password: Y2U5MWY0N2IwMDAxY2EwMmQzNzdkM2RhNDYyNjFiOGY=:ZmIxNWFjM2YtNmFjZC00NGNiLThkNzQtYTJmMjZlZTI=
   udp: true
 - name: 🇭🇰|12-30🚚@xkmfjd|香港|45
   type: ss
   server: kaikaixinxin-hk.legeth.xyz
-  port: 61012
+  port: 61478
   cipher: 2022-blake3-aes-256-gcm
   password: Y2U5MWY0N2IwMDAxY2EwMmQzNzdkM2RhNDYyNjFiOGY=:YjVhNmM3MWMtYjBlMi00OWYyLWEyMGYtZDNkMWZjZWI=
   udp: true
 - name: 🇭🇰|12-30🚚@xkmfjd|香港|46
   type: ss
   server: kaikaixinxin-hk.legeth.xyz
-  port: 61237
+  port: 61746
   cipher: 2022-blake3-aes-256-gcm
   password: Y2U5MWY0N2IwMDAxY2EwMmQzNzdkM2RhNDYyNjFiOGY=:MzVhMmI1NjAtOTk4MC00MmYwLWEzNjctMzcwN2IxM2E=
   udp: true
 - name: 🇭🇰|12-30🚚@xkmfjd|香港|47
   type: ss
   server: kaikaixinxin-hk.legeth.xyz
-  port: 61253
+  port: 61989
   cipher: 2022-blake3-aes-256-gcm
   password: Y2U5MWY0N2IwMDAxY2EwMmQzNzdkM2RhNDYyNjFiOGY=:NDdhZjVkMGYtMTI2ZC00ZTQ0LWEzOTktZTQwZTUwNDM=
   udp: true
@@ -1252,7 +1175,7 @@ proxies:
   password: 338b9800-fb4d-4934-8425-388f6d4342f5
 - name: 🇸🇬|12-30🚚@xkmfjd|新加坡|01
   server: sg.vvcloud.us.kg
-  port: 20985
+  port: 20994
   up: 200
   down: 200
   skip-cert-verify: false
@@ -1262,7 +1185,7 @@ proxies:
   sni: sg.vvcloud.us.kg
 - name: 🇸🇬|12-30🚚@xkmfjd|新加坡|02
   server: sg.vvcloud.us.kg
-  port: 20917
+  port: 20972
   up: 200
   down: 200
   skip-cert-verify: false
@@ -1272,7 +1195,7 @@ proxies:
   sni: sg.vvcloud.us.kg
 - name: 🇸🇬|12-30🚚@xkmfjd|新加坡|03
   server: sg.vvcloud.us.kg
-  port: 20946
+  port: 20932
   up: 200
   down: 200
   skip-cert-verify: false
@@ -1282,7 +1205,7 @@ proxies:
   sni: sg.vvcloud.us.kg
 - name: 🇸🇬|12-30🚚@xkmfjd|新加坡|04
   server: sg.vvcloud.us.kg
-  port: 20996
+  port: 20947
   up: 200
   down: 200
   skip-cert-verify: false
@@ -1377,7 +1300,7 @@ proxies:
   password: 338b9800-fb4d-4934-8425-388f6d4342f5
 - name: 🇯🇵|12-30🚚@xkmfjd|日本|01
   server: jp.vvcloud.us.kg
-  port: 20924
+  port: 20929
   up: 200
   down: 200
   skip-cert-verify: false
@@ -1387,7 +1310,7 @@ proxies:
   sni: jp.vvcloud.us.kg
 - name: 🇯🇵|12-30🚚@xkmfjd|日本|02
   server: jp.vvcloud.us.kg
-  port: 20904
+  port: 20919
   up: 200
   down: 200
   skip-cert-verify: false
@@ -1397,7 +1320,7 @@ proxies:
   sni: jp.vvcloud.us.kg
 - name: 🇯🇵|12-30🚚@xkmfjd|日本|03
   server: jp.vvcloud.us.kg
-  port: 20956
+  port: 20992
   up: 200
   down: 200
   skip-cert-verify: false
@@ -1407,7 +1330,7 @@ proxies:
   sni: jp.vvcloud.us.kg
 - name: 🇯🇵|12-30🚚@xkmfjd|日本|04
   server: jp.vvcloud.us.kg
-  port: 20972
+  port: 20902
   up: 200
   down: 200
   skip-cert-verify: false
@@ -1471,7 +1394,7 @@ proxies:
   password: 338b9800-fb4d-4934-8425-388f6d4342f5
 - name: 🇨🇦|12-30🚚@xkmfjd|加拿大|01
   server: kaikaixinxin-ca.legeth.xyz
-  port: 61344
+  port: 61942
   up: 1000
   down: 1000
   skip-cert-verify: false
@@ -1481,7 +1404,7 @@ proxies:
   sni: kaikaixinxin-ca.legeth.xyz
 - name: 🇨🇦|12-30🚚@xkmfjd|加拿大|02
   server: kaikaixinxin-ca.legeth.xyz
-  port: 61563
+  port: 61730
   up: 1000
   down: 1000
   skip-cert-verify: false
@@ -1491,7 +1414,7 @@ proxies:
   sni: kaikaixinxin-ca.legeth.xyz
 - name: 🇨🇦|12-30🚚@xkmfjd|加拿大|03
   server: kaikaixinxin-ca.legeth.xyz
-  port: 61790
+  port: 61406
   up: 1000
   down: 1000
   skip-cert-verify: false
@@ -1501,7 +1424,7 @@ proxies:
   sni: kaikaixinxin-ca.legeth.xyz
 - name: 🇨🇦|12-30🚚@xkmfjd|加拿大|04
   server: kaikaixinxin-ca.legeth.xyz
-  port: 61804
+  port: 61418
   up: 1000
   down: 1000
   skip-cert-verify: false
@@ -1511,7 +1434,7 @@ proxies:
   sni: kaikaixinxin-ca.legeth.xyz
 - name: 🇨🇦|12-30🚚@xkmfjd|加拿大|05
   server: kaikaixinxin-ca.legeth.xyz
-  port: 61570
+  port: 61593
   up: 1000
   down: 1000
   skip-cert-verify: false
@@ -1521,7 +1444,7 @@ proxies:
   sni: kaikaixinxin-ca.legeth.xyz
 - name: 🇨🇦|12-30🚚@xkmfjd|加拿大|06
   server: kaikaixinxin-ca.legeth.xyz
-  port: 61406
+  port: 61282
   up: 1000
   down: 1000
   skip-cert-verify: false
@@ -1531,7 +1454,7 @@ proxies:
   sni: kaikaixinxin-ca.legeth.xyz
 - name: 🇨🇦|12-30🚚@xkmfjd|加拿大|07
   server: kaikaixinxin-ca.legeth.xyz
-  port: 61004
+  port: 61739
   up: 1000
   down: 1000
   skip-cert-verify: false
@@ -1541,7 +1464,7 @@ proxies:
   sni: kaikaixinxin-ca.legeth.xyz
 - name: 🇨🇦|12-30🚚@xkmfjd|加拿大|08
   server: kaikaixinxin-ca.legeth.xyz
-  port: 61354
+  port: 61236
   up: 1000
   down: 1000
   skip-cert-verify: false
@@ -1551,7 +1474,7 @@ proxies:
   sni: kaikaixinxin-ca.legeth.xyz
 - name: 🇨🇦|12-30🚚@xkmfjd|加拿大|09
   server: kaikaixinxin-ca.legeth.xyz
-  port: 61147
+  port: 61307
   up: 1000
   down: 1000
   skip-cert-verify: false
@@ -1561,7 +1484,7 @@ proxies:
   sni: kaikaixinxin-ca.legeth.xyz
 - name: 🇨🇦|12-30🚚@xkmfjd|加拿大|10
   server: kaikaixinxin-ca.legeth.xyz
-  port: 61320
+  port: 61577
   up: 1000
   down: 1000
   skip-cert-verify: false
@@ -1571,7 +1494,7 @@ proxies:
   sni: kaikaixinxin-ca.legeth.xyz
 - name: 🇨🇦|12-30🚚@xkmfjd|加拿大|11
   server: kaikaixinxin-ca.legeth.xyz
-  port: 61650
+  port: 61427
   up: 1000
   down: 1000
   skip-cert-verify: false
@@ -1581,7 +1504,7 @@ proxies:
   sni: kaikaixinxin-ca.legeth.xyz
 - name: 🇨🇦|12-30🚚@xkmfjd|加拿大|12
   server: kaikaixinxin-ca.legeth.xyz
-  port: 61713
+  port: 61863
   up: 1000
   down: 1000
   skip-cert-verify: false
@@ -1591,7 +1514,7 @@ proxies:
   sni: kaikaixinxin-ca.legeth.xyz
 - name: 🇨🇦|12-30🚚@xkmfjd|加拿大|13
   server: kaikaixinxin-ca.legeth.xyz
-  port: 61962
+  port: 61306
   up: 1000
   down: 1000
   skip-cert-verify: false
@@ -1601,7 +1524,7 @@ proxies:
   sni: kaikaixinxin-ca.legeth.xyz
 - name: 🇨🇦|12-30🚚@xkmfjd|加拿大|14
   server: kaikaixinxin-ca.legeth.xyz
-  port: 61989
+  port: 61732
   up: 1000
   down: 1000
   skip-cert-verify: false
@@ -1611,7 +1534,7 @@ proxies:
   sni: kaikaixinxin-ca.legeth.xyz
 - name: 🇨🇦|12-30🚚@xkmfjd|加拿大|15
   server: kaikaixinxin-ca.legeth.xyz
-  port: 61035
+  port: 61834
   up: 1000
   down: 1000
   skip-cert-verify: false
@@ -1621,7 +1544,7 @@ proxies:
   sni: kaikaixinxin-ca.legeth.xyz
 - name: 🇨🇦|12-30🚚@xkmfjd|加拿大|16
   server: kaikaixinxin-ca.legeth.xyz
-  port: 61893
+  port: 61816
   up: 1000
   down: 1000
   skip-cert-verify: false
@@ -1631,7 +1554,7 @@ proxies:
   sni: kaikaixinxin-ca.legeth.xyz
 - name: 🇨🇦|12-30🚚@xkmfjd|加拿大|17
   server: kaikaixinxin-ca.legeth.xyz
-  port: 61929
+  port: 61622
   up: 1000
   down: 1000
   skip-cert-verify: false
@@ -1641,7 +1564,7 @@ proxies:
   sni: kaikaixinxin-ca.legeth.xyz
 - name: 🇨🇦|12-30🚚@xkmfjd|加拿大|18
   server: kaikaixinxin-ca.legeth.xyz
-  port: 61717
+  port: 61441
   up: 1000
   down: 1000
   skip-cert-verify: false
@@ -1651,7 +1574,7 @@ proxies:
   sni: kaikaixinxin-ca.legeth.xyz
 - name: 🇨🇦|12-30🚚@xkmfjd|加拿大|19
   server: kaikaixinxin-ca.legeth.xyz
-  port: 61942
+  port: 61899
   up: 1000
   down: 1000
   skip-cert-verify: false
@@ -1661,7 +1584,7 @@ proxies:
   sni: kaikaixinxin-ca.legeth.xyz
 - name: 🇨🇦|12-30🚚@xkmfjd|加拿大|20
   server: kaikaixinxin-ca.legeth.xyz
-  port: 61403
+  port: 61168
   up: 1000
   down: 1000
   skip-cert-verify: false
@@ -1671,7 +1594,7 @@ proxies:
   sni: kaikaixinxin-ca.legeth.xyz
 - name: 🇨🇦|12-30🚚@xkmfjd|加拿大|21
   server: kaikaixinxin-ca.legeth.xyz
-  port: 61952
+  port: 61335
   up: 1000
   down: 1000
   skip-cert-verify: false
@@ -1681,7 +1604,7 @@ proxies:
   sni: kaikaixinxin-ca.legeth.xyz
 - name: 🇨🇦|12-30🚚@xkmfjd|加拿大|22
   server: kaikaixinxin-ca.legeth.xyz
-  port: 61744
+  port: 61593
   up: 1000
   down: 1000
   skip-cert-verify: false
@@ -1691,7 +1614,7 @@ proxies:
   sni: kaikaixinxin-ca.legeth.xyz
 - name: 🇨🇦|12-30🚚@xkmfjd|加拿大|23
   server: kaikaixinxin-ca.legeth.xyz
-  port: 61256
+  port: 61924
   up: 1000
   down: 1000
   skip-cert-verify: false
@@ -1701,7 +1624,7 @@ proxies:
   sni: kaikaixinxin-ca.legeth.xyz
 - name: 🇨🇦|12-30🚚@xkmfjd|加拿大|24
   server: kaikaixinxin-ca.legeth.xyz
-  port: 61110
+  port: 61715
   up: 1000
   down: 1000
   skip-cert-verify: false
@@ -1711,7 +1634,7 @@ proxies:
   sni: kaikaixinxin-ca.legeth.xyz
 - name: 🇨🇦|12-30🚚@xkmfjd|加拿大|25
   server: kaikaixinxin-ca.legeth.xyz
-  port: 61319
+  port: 61107
   up: 1000
   down: 1000
   skip-cert-verify: false
@@ -1721,7 +1644,7 @@ proxies:
   sni: kaikaixinxin-ca.legeth.xyz
 - name: 🇨🇦|12-30🚚@xkmfjd|加拿大|26
   server: kaikaixinxin-ca.legeth.xyz
-  port: 61111
+  port: 61405
   up: 1000
   down: 1000
   skip-cert-verify: false
@@ -1731,7 +1654,7 @@ proxies:
   sni: kaikaixinxin-ca.legeth.xyz
 - name: 🇨🇦|12-30🚚@xkmfjd|加拿大|27
   server: kaikaixinxin-ca.legeth.xyz
-  port: 61935
+  port: 61449
   up: 1000
   down: 1000
   skip-cert-verify: false
@@ -1741,7 +1664,7 @@ proxies:
   sni: kaikaixinxin-ca.legeth.xyz
 - name: 🇨🇦|12-30🚚@xkmfjd|加拿大|28
   server: kaikaixinxin-ca.legeth.xyz
-  port: 61980
+  port: 61599
   up: 1000
   down: 1000
   skip-cert-verify: false
@@ -1838,196 +1761,196 @@ proxies:
 - name: 🇨🇳|12-30🚚@xkmfjd|台湾|08
   type: ss
   server: kaikaixinxin-tw.legeth.xyz
-  port: 61601
+  port: 61524
   cipher: 2022-blake3-aes-256-gcm
   password: Y2U5MWY0N2IwMDAxY2EwMmQzNzdkM2RhNDYyNjFiOGY=:ZjMxODJkOTctODQ3Mi00NDMzLThkNzUtNzU5OGQ2OTc=
   udp: true
 - name: 🇨🇳|12-30🚚@xkmfjd|台湾|09
   type: ss
   server: kaikaixinxin-tw.legeth.xyz
-  port: 61421
+  port: 61482
   cipher: 2022-blake3-aes-256-gcm
   password: Y2U5MWY0N2IwMDAxY2EwMmQzNzdkM2RhNDYyNjFiOGY=:YTJjM2ZlMjctMmRmMi00YWNiLTkyYTEtMmM1NmVmNmM=
   udp: true
 - name: 🇨🇳|12-30🚚@xkmfjd|台湾|10
   type: ss
   server: kaikaixinxin-tw.legeth.xyz
-  port: 61679
+  port: 61629
   cipher: 2022-blake3-aes-256-gcm
   password: Y2U5MWY0N2IwMDAxY2EwMmQzNzdkM2RhNDYyNjFiOGY=:NWU2ODkzNjEtNmI0ZC00MDM0LTk3ZjAtNzc5M2YwOWM=
   udp: true
 - name: 🇨🇳|12-30🚚@xkmfjd|台湾|11
   type: ss
   server: kaikaixinxin-tw.legeth.xyz
-  port: 61926
+  port: 61570
   cipher: 2022-blake3-aes-256-gcm
   password: Y2U5MWY0N2IwMDAxY2EwMmQzNzdkM2RhNDYyNjFiOGY=:ZmIxNWFjM2YtNmFjZC00NGNiLThkNzQtYTJmMjZlZTI=
   udp: true
 - name: 🇨🇳|12-30🚚@xkmfjd|台湾|12
   type: ss
   server: kaikaixinxin-tw.legeth.xyz
-  port: 61228
+  port: 61504
   cipher: 2022-blake3-aes-256-gcm
   password: Y2U5MWY0N2IwMDAxY2EwMmQzNzdkM2RhNDYyNjFiOGY=:YjVhNmM3MWMtYjBlMi00OWYyLWEyMGYtZDNkMWZjZWI=
   udp: true
 - name: 🇨🇳|12-30🚚@xkmfjd|台湾|13
   type: ss
   server: kaikaixinxin-tw.legeth.xyz
-  port: 61145
+  port: 61689
   cipher: 2022-blake3-aes-256-gcm
   password: Y2U5MWY0N2IwMDAxY2EwMmQzNzdkM2RhNDYyNjFiOGY=:MzVhMmI1NjAtOTk4MC00MmYwLWEzNjctMzcwN2IxM2E=
   udp: true
 - name: 🇨🇳|12-30🚚@xkmfjd|台湾|14
   type: ss
   server: kaikaixinxin-tw.legeth.xyz
-  port: 61078
+  port: 61357
   cipher: 2022-blake3-aes-256-gcm
   password: Y2U5MWY0N2IwMDAxY2EwMmQzNzdkM2RhNDYyNjFiOGY=:NDdhZjVkMGYtMTI2ZC00ZTQ0LWEzOTktZTQwZTUwNDM=
   udp: true
 - name: 🇨🇳|12-30🚚@xkmfjd|台湾|15
   type: ss
   server: kaikaixinxin-tw.legeth.xyz
-  port: 61723
+  port: 61608
   cipher: 2022-blake3-aes-256-gcm
   password: Y2U5MWY0N2IwMDAxY2EwMmQzNzdkM2RhNDYyNjFiOGY=:ZjMxODJkOTctODQ3Mi00NDMzLThkNzUtNzU5OGQ2OTc=
   udp: true
 - name: 🇨🇳|12-30🚚@xkmfjd|台湾|16
   type: ss
   server: kaikaixinxin-tw.legeth.xyz
-  port: 61472
+  port: 61151
   cipher: 2022-blake3-aes-256-gcm
   password: Y2U5MWY0N2IwMDAxY2EwMmQzNzdkM2RhNDYyNjFiOGY=:YTJjM2ZlMjctMmRmMi00YWNiLTkyYTEtMmM1NmVmNmM=
   udp: true
 - name: 🇨🇳|12-30🚚@xkmfjd|台湾|17
   type: ss
   server: kaikaixinxin-tw.legeth.xyz
-  port: 61048
+  port: 61875
   cipher: 2022-blake3-aes-256-gcm
   password: Y2U5MWY0N2IwMDAxY2EwMmQzNzdkM2RhNDYyNjFiOGY=:NWU2ODkzNjEtNmI0ZC00MDM0LTk3ZjAtNzc5M2YwOWM=
   udp: true
 - name: 🇨🇳|12-30🚚@xkmfjd|台湾|18
   type: ss
   server: kaikaixinxin-tw.legeth.xyz
-  port: 61845
+  port: 61608
   cipher: 2022-blake3-aes-256-gcm
   password: Y2U5MWY0N2IwMDAxY2EwMmQzNzdkM2RhNDYyNjFiOGY=:ZmIxNWFjM2YtNmFjZC00NGNiLThkNzQtYTJmMjZlZTI=
   udp: true
 - name: 🇨🇳|12-30🚚@xkmfjd|台湾|19
   type: ss
   server: kaikaixinxin-tw.legeth.xyz
-  port: 61969
+  port: 61210
   cipher: 2022-blake3-aes-256-gcm
   password: Y2U5MWY0N2IwMDAxY2EwMmQzNzdkM2RhNDYyNjFiOGY=:YjVhNmM3MWMtYjBlMi00OWYyLWEyMGYtZDNkMWZjZWI=
   udp: true
 - name: 🇨🇳|12-30🚚@xkmfjd|台湾|20
   type: ss
   server: kaikaixinxin-tw.legeth.xyz
-  port: 61961
+  port: 61767
   cipher: 2022-blake3-aes-256-gcm
   password: Y2U5MWY0N2IwMDAxY2EwMmQzNzdkM2RhNDYyNjFiOGY=:MzVhMmI1NjAtOTk4MC00MmYwLWEzNjctMzcwN2IxM2E=
   udp: true
 - name: 🇨🇳|12-30🚚@xkmfjd|台湾|21
   type: ss
   server: kaikaixinxin-tw.legeth.xyz
-  port: 61841
+  port: 61153
   cipher: 2022-blake3-aes-256-gcm
   password: Y2U5MWY0N2IwMDAxY2EwMmQzNzdkM2RhNDYyNjFiOGY=:NDdhZjVkMGYtMTI2ZC00ZTQ0LWEzOTktZTQwZTUwNDM=
   udp: true
 - name: 🇨🇳|12-30🚚@xkmfjd|台湾|22
   type: ss
   server: kaikaixinxin-tw.legeth.xyz
-  port: 61481
+  port: 61143
   cipher: 2022-blake3-aes-256-gcm
   password: Y2U5MWY0N2IwMDAxY2EwMmQzNzdkM2RhNDYyNjFiOGY=:ZjMxODJkOTctODQ3Mi00NDMzLThkNzUtNzU5OGQ2OTc=
   udp: true
 - name: 🇨🇳|12-30🚚@xkmfjd|台湾|23
   type: ss
   server: kaikaixinxin-tw.legeth.xyz
-  port: 61429
+  port: 61051
   cipher: 2022-blake3-aes-256-gcm
   password: Y2U5MWY0N2IwMDAxY2EwMmQzNzdkM2RhNDYyNjFiOGY=:YTJjM2ZlMjctMmRmMi00YWNiLTkyYTEtMmM1NmVmNmM=
   udp: true
 - name: 🇨🇳|12-30🚚@xkmfjd|台湾|24
   type: ss
   server: kaikaixinxin-tw.legeth.xyz
-  port: 61840
+  port: 61750
   cipher: 2022-blake3-aes-256-gcm
   password: Y2U5MWY0N2IwMDAxY2EwMmQzNzdkM2RhNDYyNjFiOGY=:NWU2ODkzNjEtNmI0ZC00MDM0LTk3ZjAtNzc5M2YwOWM=
   udp: true
 - name: 🇨🇳|12-30🚚@xkmfjd|台湾|25
   type: ss
   server: kaikaixinxin-tw.legeth.xyz
-  port: 61712
+  port: 61455
   cipher: 2022-blake3-aes-256-gcm
   password: Y2U5MWY0N2IwMDAxY2EwMmQzNzdkM2RhNDYyNjFiOGY=:ZmIxNWFjM2YtNmFjZC00NGNiLThkNzQtYTJmMjZlZTI=
   udp: true
 - name: 🇨🇳|12-30🚚@xkmfjd|台湾|26
   type: ss
   server: kaikaixinxin-tw.legeth.xyz
-  port: 61121
+  port: 61818
   cipher: 2022-blake3-aes-256-gcm
   password: Y2U5MWY0N2IwMDAxY2EwMmQzNzdkM2RhNDYyNjFiOGY=:YjVhNmM3MWMtYjBlMi00OWYyLWEyMGYtZDNkMWZjZWI=
   udp: true
 - name: 🇨🇳|12-30🚚@xkmfjd|台湾|27
   type: ss
   server: kaikaixinxin-tw.legeth.xyz
-  port: 61645
+  port: 61079
   cipher: 2022-blake3-aes-256-gcm
   password: Y2U5MWY0N2IwMDAxY2EwMmQzNzdkM2RhNDYyNjFiOGY=:MzVhMmI1NjAtOTk4MC00MmYwLWEzNjctMzcwN2IxM2E=
   udp: true
 - name: 🇨🇳|12-30🚚@xkmfjd|台湾|28
   type: ss
   server: kaikaixinxin-tw.legeth.xyz
-  port: 61249
+  port: 61764
   cipher: 2022-blake3-aes-256-gcm
   password: Y2U5MWY0N2IwMDAxY2EwMmQzNzdkM2RhNDYyNjFiOGY=:NDdhZjVkMGYtMTI2ZC00ZTQ0LWEzOTktZTQwZTUwNDM=
   udp: true
 - name: 🇨🇳|12-30🚚@xkmfjd|台湾|29
   type: ss
   server: kaikaixinxin-tw.legeth.xyz
-  port: 61812
+  port: 61818
   cipher: 2022-blake3-aes-256-gcm
   password: Y2U5MWY0N2IwMDAxY2EwMmQzNzdkM2RhNDYyNjFiOGY=:ZjMxODJkOTctODQ3Mi00NDMzLThkNzUtNzU5OGQ2OTc=
   udp: true
 - name: 🇨🇳|12-30🚚@xkmfjd|台湾|30
   type: ss
   server: kaikaixinxin-tw.legeth.xyz
-  port: 61654
+  port: 61431
   cipher: 2022-blake3-aes-256-gcm
   password: Y2U5MWY0N2IwMDAxY2EwMmQzNzdkM2RhNDYyNjFiOGY=:YTJjM2ZlMjctMmRmMi00YWNiLTkyYTEtMmM1NmVmNmM=
   udp: true
 - name: 🇨🇳|12-30🚚@xkmfjd|台湾|31
   type: ss
   server: kaikaixinxin-tw.legeth.xyz
-  port: 61455
+  port: 61419
   cipher: 2022-blake3-aes-256-gcm
   password: Y2U5MWY0N2IwMDAxY2EwMmQzNzdkM2RhNDYyNjFiOGY=:NWU2ODkzNjEtNmI0ZC00MDM0LTk3ZjAtNzc5M2YwOWM=
   udp: true
 - name: 🇨🇳|12-30🚚@xkmfjd|台湾|32
   type: ss
   server: kaikaixinxin-tw.legeth.xyz
-  port: 61941
+  port: 61307
   cipher: 2022-blake3-aes-256-gcm
   password: Y2U5MWY0N2IwMDAxY2EwMmQzNzdkM2RhNDYyNjFiOGY=:ZmIxNWFjM2YtNmFjZC00NGNiLThkNzQtYTJmMjZlZTI=
   udp: true
 - name: 🇨🇳|12-30🚚@xkmfjd|台湾|33
   type: ss
   server: kaikaixinxin-tw.legeth.xyz
-  port: 61116
+  port: 61873
   cipher: 2022-blake3-aes-256-gcm
   password: Y2U5MWY0N2IwMDAxY2EwMmQzNzdkM2RhNDYyNjFiOGY=:YjVhNmM3MWMtYjBlMi00OWYyLWEyMGYtZDNkMWZjZWI=
   udp: true
 - name: 🇨🇳|12-30🚚@xkmfjd|台湾|34
   type: ss
   server: kaikaixinxin-tw.legeth.xyz
-  port: 61732
+  port: 61035
   cipher: 2022-blake3-aes-256-gcm
   password: Y2U5MWY0N2IwMDAxY2EwMmQzNzdkM2RhNDYyNjFiOGY=:MzVhMmI1NjAtOTk4MC00MmYwLWEzNjctMzcwN2IxM2E=
   udp: true
 - name: 🇨🇳|12-30🚚@xkmfjd|台湾|35
   type: ss
   server: kaikaixinxin-tw.legeth.xyz
-  port: 61654
+  port: 61852
   cipher: 2022-blake3-aes-256-gcm
   password: Y2U5MWY0N2IwMDAxY2EwMmQzNzdkM2RhNDYyNjFiOGY=:NDdhZjVkMGYtMTI2ZC00ZTQ0LWEzOTktZTQwZTUwNDM=
   udp: true
@@ -2145,6 +2068,10 @@ proxy-groups:
   proxies:
   - ♻️ 自动选择
   - DIRECT
+  - 🇹🇬|12-30🚚@xkmfjd|多哥|01
+  - 🇹🇬|12-30🚚@xkmfjd|多哥|02
+  - 🇹🇬|12-30🚚@xkmfjd|多哥|03
+  - 🇹🇬|12-30🚚@xkmfjd|多哥|04
   - 🇺🇸|12-30🚚@xkmfjd|美国|01
   - 🇺🇸|12-30🚚@xkmfjd|美国|02
   - 🇺🇸|12-30🚚@xkmfjd|美国|03
@@ -2200,17 +2127,6 @@ proxy-groups:
   - 🇺🇸|12-30🚚@xkmfjd|美国|53
   - 🇺🇸|12-30🚚@xkmfjd|美国|54
   - 🇺🇸|12-30🚚@xkmfjd|美国|55
-  - 🇺🇸|12-30🚚@xkmfjd|美国|56
-  - 🇺🇸|12-30🚚@xkmfjd|美国|57
-  - 🇺🇸|12-30🚚@xkmfjd|美国|58
-  - 🇺🇸|12-30🚚@xkmfjd|美国|59
-  - 🇺🇸|12-30🚚@xkmfjd|美国|60
-  - 🇺🇸|12-30🚚@xkmfjd|美国|61
-  - 🇺🇸|12-30🚚@xkmfjd|美国|62
-  - 🇹🇬|12-30🚚@xkmfjd|多哥|01
-  - 🇹🇬|12-30🚚@xkmfjd|多哥|02
-  - 🇹🇬|12-30🚚@xkmfjd|多哥|03
-  - 🇹🇬|12-30🚚@xkmfjd|多哥|04
   - 🇭🇰|12-30🚚@xkmfjd|香港|01
   - 🇭🇰|12-30🚚@xkmfjd|香港|02
   - 🇭🇰|12-30🚚@xkmfjd|香港|03
@@ -2375,6 +2291,10 @@ proxy-groups:
   interval: 300
   tolerance: 50
   proxies:
+  - 🇹🇬|12-30🚚@xkmfjd|多哥|01
+  - 🇹🇬|12-30🚚@xkmfjd|多哥|02
+  - 🇹🇬|12-30🚚@xkmfjd|多哥|03
+  - 🇹🇬|12-30🚚@xkmfjd|多哥|04
   - 🇺🇸|12-30🚚@xkmfjd|美国|01
   - 🇺🇸|12-30🚚@xkmfjd|美国|02
   - 🇺🇸|12-30🚚@xkmfjd|美国|03
@@ -2430,17 +2350,6 @@ proxy-groups:
   - 🇺🇸|12-30🚚@xkmfjd|美国|53
   - 🇺🇸|12-30🚚@xkmfjd|美国|54
   - 🇺🇸|12-30🚚@xkmfjd|美国|55
-  - 🇺🇸|12-30🚚@xkmfjd|美国|56
-  - 🇺🇸|12-30🚚@xkmfjd|美国|57
-  - 🇺🇸|12-30🚚@xkmfjd|美国|58
-  - 🇺🇸|12-30🚚@xkmfjd|美国|59
-  - 🇺🇸|12-30🚚@xkmfjd|美国|60
-  - 🇺🇸|12-30🚚@xkmfjd|美国|61
-  - 🇺🇸|12-30🚚@xkmfjd|美国|62
-  - 🇹🇬|12-30🚚@xkmfjd|多哥|01
-  - 🇹🇬|12-30🚚@xkmfjd|多哥|02
-  - 🇹🇬|12-30🚚@xkmfjd|多哥|03
-  - 🇹🇬|12-30🚚@xkmfjd|多哥|04
   - 🇭🇰|12-30🚚@xkmfjd|香港|01
   - 🇭🇰|12-30🚚@xkmfjd|香港|02
   - 🇭🇰|12-30🚚@xkmfjd|香港|03
@@ -2605,6 +2514,10 @@ proxy-groups:
   - 🚀 节点选择
   - ♻️ 自动选择
   - 🎯 全球直连
+  - 🇹🇬|12-30🚚@xkmfjd|多哥|01
+  - 🇹🇬|12-30🚚@xkmfjd|多哥|02
+  - 🇹🇬|12-30🚚@xkmfjd|多哥|03
+  - 🇹🇬|12-30🚚@xkmfjd|多哥|04
   - 🇺🇸|12-30🚚@xkmfjd|美国|01
   - 🇺🇸|12-30🚚@xkmfjd|美国|02
   - 🇺🇸|12-30🚚@xkmfjd|美国|03
@@ -2660,17 +2573,6 @@ proxy-groups:
   - 🇺🇸|12-30🚚@xkmfjd|美国|53
   - 🇺🇸|12-30🚚@xkmfjd|美国|54
   - 🇺🇸|12-30🚚@xkmfjd|美国|55
-  - 🇺🇸|12-30🚚@xkmfjd|美国|56
-  - 🇺🇸|12-30🚚@xkmfjd|美国|57
-  - 🇺🇸|12-30🚚@xkmfjd|美国|58
-  - 🇺🇸|12-30🚚@xkmfjd|美国|59
-  - 🇺🇸|12-30🚚@xkmfjd|美国|60
-  - 🇺🇸|12-30🚚@xkmfjd|美国|61
-  - 🇺🇸|12-30🚚@xkmfjd|美国|62
-  - 🇹🇬|12-30🚚@xkmfjd|多哥|01
-  - 🇹🇬|12-30🚚@xkmfjd|多哥|02
-  - 🇹🇬|12-30🚚@xkmfjd|多哥|03
-  - 🇹🇬|12-30🚚@xkmfjd|多哥|04
   - 🇭🇰|12-30🚚@xkmfjd|香港|01
   - 🇭🇰|12-30🚚@xkmfjd|香港|02
   - 🇭🇰|12-30🚚@xkmfjd|香港|03
@@ -2834,6 +2736,10 @@ proxy-groups:
   proxies:
   - 🚀 节点选择
   - 🎯 全球直连
+  - 🇹🇬|12-30🚚@xkmfjd|多哥|01
+  - 🇹🇬|12-30🚚@xkmfjd|多哥|02
+  - 🇹🇬|12-30🚚@xkmfjd|多哥|03
+  - 🇹🇬|12-30🚚@xkmfjd|多哥|04
   - 🇺🇸|12-30🚚@xkmfjd|美国|01
   - 🇺🇸|12-30🚚@xkmfjd|美国|02
   - 🇺🇸|12-30🚚@xkmfjd|美国|03
@@ -2889,17 +2795,6 @@ proxy-groups:
   - 🇺🇸|12-30🚚@xkmfjd|美国|53
   - 🇺🇸|12-30🚚@xkmfjd|美国|54
   - 🇺🇸|12-30🚚@xkmfjd|美国|55
-  - 🇺🇸|12-30🚚@xkmfjd|美国|56
-  - 🇺🇸|12-30🚚@xkmfjd|美国|57
-  - 🇺🇸|12-30🚚@xkmfjd|美国|58
-  - 🇺🇸|12-30🚚@xkmfjd|美国|59
-  - 🇺🇸|12-30🚚@xkmfjd|美国|60
-  - 🇺🇸|12-30🚚@xkmfjd|美国|61
-  - 🇺🇸|12-30🚚@xkmfjd|美国|62
-  - 🇹🇬|12-30🚚@xkmfjd|多哥|01
-  - 🇹🇬|12-30🚚@xkmfjd|多哥|02
-  - 🇹🇬|12-30🚚@xkmfjd|多哥|03
-  - 🇹🇬|12-30🚚@xkmfjd|多哥|04
   - 🇭🇰|12-30🚚@xkmfjd|香港|01
   - 🇭🇰|12-30🚚@xkmfjd|香港|02
   - 🇭🇰|12-30🚚@xkmfjd|香港|03
@@ -3063,6 +2958,10 @@ proxy-groups:
   proxies:
   - 🎯 全球直连
   - 🚀 节点选择
+  - 🇹🇬|12-30🚚@xkmfjd|多哥|01
+  - 🇹🇬|12-30🚚@xkmfjd|多哥|02
+  - 🇹🇬|12-30🚚@xkmfjd|多哥|03
+  - 🇹🇬|12-30🚚@xkmfjd|多哥|04
   - 🇺🇸|12-30🚚@xkmfjd|美国|01
   - 🇺🇸|12-30🚚@xkmfjd|美国|02
   - 🇺🇸|12-30🚚@xkmfjd|美国|03
@@ -3118,17 +3017,6 @@ proxy-groups:
   - 🇺🇸|12-30🚚@xkmfjd|美国|53
   - 🇺🇸|12-30🚚@xkmfjd|美国|54
   - 🇺🇸|12-30🚚@xkmfjd|美国|55
-  - 🇺🇸|12-30🚚@xkmfjd|美国|56
-  - 🇺🇸|12-30🚚@xkmfjd|美国|57
-  - 🇺🇸|12-30🚚@xkmfjd|美国|58
-  - 🇺🇸|12-30🚚@xkmfjd|美国|59
-  - 🇺🇸|12-30🚚@xkmfjd|美国|60
-  - 🇺🇸|12-30🚚@xkmfjd|美国|61
-  - 🇺🇸|12-30🚚@xkmfjd|美国|62
-  - 🇹🇬|12-30🚚@xkmfjd|多哥|01
-  - 🇹🇬|12-30🚚@xkmfjd|多哥|02
-  - 🇹🇬|12-30🚚@xkmfjd|多哥|03
-  - 🇹🇬|12-30🚚@xkmfjd|多哥|04
   - 🇭🇰|12-30🚚@xkmfjd|香港|01
   - 🇭🇰|12-30🚚@xkmfjd|香港|02
   - 🇭🇰|12-30🚚@xkmfjd|香港|03
@@ -3292,6 +3180,10 @@ proxy-groups:
   proxies:
   - 🚀 节点选择
   - 🎯 全球直连
+  - 🇹🇬|12-30🚚@xkmfjd|多哥|01
+  - 🇹🇬|12-30🚚@xkmfjd|多哥|02
+  - 🇹🇬|12-30🚚@xkmfjd|多哥|03
+  - 🇹🇬|12-30🚚@xkmfjd|多哥|04
   - 🇺🇸|12-30🚚@xkmfjd|美国|01
   - 🇺🇸|12-30🚚@xkmfjd|美国|02
   - 🇺🇸|12-30🚚@xkmfjd|美国|03
@@ -3347,17 +3239,6 @@ proxy-groups:
   - 🇺🇸|12-30🚚@xkmfjd|美国|53
   - 🇺🇸|12-30🚚@xkmfjd|美国|54
   - 🇺🇸|12-30🚚@xkmfjd|美国|55
-  - 🇺🇸|12-30🚚@xkmfjd|美国|56
-  - 🇺🇸|12-30🚚@xkmfjd|美国|57
-  - 🇺🇸|12-30🚚@xkmfjd|美国|58
-  - 🇺🇸|12-30🚚@xkmfjd|美国|59
-  - 🇺🇸|12-30🚚@xkmfjd|美国|60
-  - 🇺🇸|12-30🚚@xkmfjd|美国|61
-  - 🇺🇸|12-30🚚@xkmfjd|美国|62
-  - 🇹🇬|12-30🚚@xkmfjd|多哥|01
-  - 🇹🇬|12-30🚚@xkmfjd|多哥|02
-  - 🇹🇬|12-30🚚@xkmfjd|多哥|03
-  - 🇹🇬|12-30🚚@xkmfjd|多哥|04
   - 🇭🇰|12-30🚚@xkmfjd|香港|01
   - 🇭🇰|12-30🚚@xkmfjd|香港|02
   - 🇭🇰|12-30🚚@xkmfjd|香港|03
@@ -3522,6 +3403,10 @@ proxy-groups:
   - 🚀 节点选择
   - 🎯 全球直连
   - ♻️ 自动选择
+  - 🇹🇬|12-30🚚@xkmfjd|多哥|01
+  - 🇹🇬|12-30🚚@xkmfjd|多哥|02
+  - 🇹🇬|12-30🚚@xkmfjd|多哥|03
+  - 🇹🇬|12-30🚚@xkmfjd|多哥|04
   - 🇺🇸|12-30🚚@xkmfjd|美国|01
   - 🇺🇸|12-30🚚@xkmfjd|美国|02
   - 🇺🇸|12-30🚚@xkmfjd|美国|03
@@ -3577,17 +3462,6 @@ proxy-groups:
   - 🇺🇸|12-30🚚@xkmfjd|美国|53
   - 🇺🇸|12-30🚚@xkmfjd|美国|54
   - 🇺🇸|12-30🚚@xkmfjd|美国|55
-  - 🇺🇸|12-30🚚@xkmfjd|美国|56
-  - 🇺🇸|12-30🚚@xkmfjd|美国|57
-  - 🇺🇸|12-30🚚@xkmfjd|美国|58
-  - 🇺🇸|12-30🚚@xkmfjd|美国|59
-  - 🇺🇸|12-30🚚@xkmfjd|美国|60
-  - 🇺🇸|12-30🚚@xkmfjd|美国|61
-  - 🇺🇸|12-30🚚@xkmfjd|美国|62
-  - 🇹🇬|12-30🚚@xkmfjd|多哥|01
-  - 🇹🇬|12-30🚚@xkmfjd|多哥|02
-  - 🇹🇬|12-30🚚@xkmfjd|多哥|03
-  - 🇹🇬|12-30🚚@xkmfjd|多哥|04
   - 🇭🇰|12-30🚚@xkmfjd|香港|01
   - 🇭🇰|12-30🚚@xkmfjd|香港|02
   - 🇭🇰|12-30🚚@xkmfjd|香港|03
@@ -3768,6 +3642,10 @@ proxy-groups:
   - 🚀 节点选择
   - 🎯 全球直连
   - ♻️ 自动选择
+  - 🇹🇬|12-30🚚@xkmfjd|多哥|01
+  - 🇹🇬|12-30🚚@xkmfjd|多哥|02
+  - 🇹🇬|12-30🚚@xkmfjd|多哥|03
+  - 🇹🇬|12-30🚚@xkmfjd|多哥|04
   - 🇺🇸|12-30🚚@xkmfjd|美国|01
   - 🇺🇸|12-30🚚@xkmfjd|美国|02
   - 🇺🇸|12-30🚚@xkmfjd|美国|03
@@ -3823,17 +3701,6 @@ proxy-groups:
   - 🇺🇸|12-30🚚@xkmfjd|美国|53
   - 🇺🇸|12-30🚚@xkmfjd|美国|54
   - 🇺🇸|12-30🚚@xkmfjd|美国|55
-  - 🇺🇸|12-30🚚@xkmfjd|美国|56
-  - 🇺🇸|12-30🚚@xkmfjd|美国|57
-  - 🇺🇸|12-30🚚@xkmfjd|美国|58
-  - 🇺🇸|12-30🚚@xkmfjd|美国|59
-  - 🇺🇸|12-30🚚@xkmfjd|美国|60
-  - 🇺🇸|12-30🚚@xkmfjd|美国|61
-  - 🇺🇸|12-30🚚@xkmfjd|美国|62
-  - 🇹🇬|12-30🚚@xkmfjd|多哥|01
-  - 🇹🇬|12-30🚚@xkmfjd|多哥|02
-  - 🇹🇬|12-30🚚@xkmfjd|多哥|03
-  - 🇹🇬|12-30🚚@xkmfjd|多哥|04
   - 🇭🇰|12-30🚚@xkmfjd|香港|01
   - 🇭🇰|12-30🚚@xkmfjd|香港|02
   - 🇭🇰|12-30🚚@xkmfjd|香港|03
