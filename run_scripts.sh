@@ -39,6 +39,3 @@ python scripts/singbox-remote-generate.py "https://clash2sfa.xmdhs.com/sub?sub=h
 python scripts/singbox-remote-generate.py "https://clash2sfa.xmdhs.com/sub?sub=https://aini.200566.xyz/tzjz55/download/collection/love?target=ClashMeta" ../singbox/tk1.json
 
 python scripts/singbox-remote-generate.py "https://clash2sfa.xmdhs.com/sub?sub=https://aini.200566.xyz/tzjz55/download/collection/tzjz66?target=ClashMeta" ../singbox/tk2.json
-
-python scripts/singbox-remote-generate.py "https://clash2sfa.xmdhs.com/sub?sub=http%3A%2F%2Ftg.hwzy0.ggff.net%2Fsub%3Ftoken%3DoLKUUBC7cJPmouRzlnw2bg%26tag%3Dclash" ../singbox/hwzy0.json
-
