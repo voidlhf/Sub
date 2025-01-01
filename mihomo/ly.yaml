@@ -17,7 +17,7 @@ hosts:
   alt7-mtalk.google.com: 173.194.219.188
   alt8-mtalk.google.com: 142.250.112.188
 proxies:
-- name: 剩余流量：480221.35 GB
+- name: 剩余流量：480051.95 GB
   server: tw.akebi.cc
   port: 1000
   sni: hk03.akebi.cc
@@ -234,18 +234,27 @@ proxies:
   type: hysteria2
   password: 338b9800-fb4d-4934-8425-388f6d4342f5
 - name: 🇹🇼台湾｜04｜原生IP
-  server: tw4.akebi.cc
-  port: 33750
+  server: tw04.akebi.cc
+  port: 9000
+  sni: tw04.akebi.cc
+  up: 500
+  down: 500
+  skip-cert-verify: true
+  type: hysteria2
+  password: 338b9800-fb4d-4934-8425-388f6d4342f5
+- name: 🇹🇼台湾｜05｜原生IP
+  server: tw04.akebi.cc
+  port: 9001
   sni: tw04.akebi.cc
   up: 500
   down: 500
   skip-cert-verify: false
   type: hysteria2
   password: 338b9800-fb4d-4934-8425-388f6d4342f5
-- name: 🇹🇼台湾｜05｜原生IP
-  server: tw4.akebi.cc
-  port: 33751
-  sni: tw04.akebi.cc
+- name: 🇯🇵日本｜03｜原生IP｜IPV6
+  server: 2001:e42:102:1519:160:16:86:192
+  port: 3000
+  sni: jp02.akebi.cc
   up: 500
   down: 500
   skip-cert-verify: false
@@ -257,7 +266,7 @@ proxy-groups:
   proxies:
   - ♻️ 自动选择
   - DIRECT
-  - 剩余流量：480221.35 GB
+  - 剩余流量：480051.95 GB
   - 距离下次重置剩余：26 天
   - 套餐到期：2025-01-27
   - 🇭🇰香港｜01
@@ -283,13 +292,14 @@ proxy-groups:
   - 🇧🇩孟加拉｜01｜住宅IP
   - 🇹🇼台湾｜04｜原生IP
   - 🇹🇼台湾｜05｜原生IP
+  - 🇯🇵日本｜03｜原生IP｜IPV6
 - name: ♻️ 自动选择
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
-  - 剩余流量：480221.35 GB
+  - 剩余流量：480051.95 GB
   - 距离下次重置剩余：26 天
   - 套餐到期：2025-01-27
   - 🇭🇰香港｜01
@@ -315,13 +325,14 @@ proxy-groups:
   - 🇧🇩孟加拉｜01｜住宅IP
   - 🇹🇼台湾｜04｜原生IP
   - 🇹🇼台湾｜05｜原生IP
+  - 🇯🇵日本｜03｜原生IP｜IPV6
 - name: 🌍 国外媒体
   type: select
   proxies:
   - 🚀 节点选择
   - ♻️ 自动选择
   - 🎯 全球直连
-  - 剩余流量：480221.35 GB
+  - 剩余流量：480051.95 GB
   - 距离下次重置剩余：26 天
   - 套餐到期：2025-01-27
   - 🇭🇰香港｜01
@@ -347,12 +358,13 @@ proxy-groups:
   - 🇧🇩孟加拉｜01｜住宅IP
   - 🇹🇼台湾｜04｜原生IP
   - 🇹🇼台湾｜05｜原生IP
+  - 🇯🇵日本｜03｜原生IP｜IPV6
 - name: 📲 电报信息
   type: select
   proxies:
   - 🚀 节点选择
   - 🎯 全球直连
-  - 剩余流量：480221.35 GB
+  - 剩余流量：480051.95 GB
   - 距离下次重置剩余：26 天
   - 套餐到期：2025-01-27
   - 🇭🇰香港｜01
@@ -378,12 +390,13 @@ proxy-groups:
   - 🇧🇩孟加拉｜01｜住宅IP
   - 🇹🇼台湾｜04｜原生IP
   - 🇹🇼台湾｜05｜原生IP
+  - 🇯🇵日本｜03｜原生IP｜IPV6
 - name: Ⓜ️ 微软服务
   type: select
   proxies:
   - 🎯 全球直连
   - 🚀 节点选择
-  - 剩余流量：480221.35 GB
+  - 剩余流量：480051.95 GB
   - 距离下次重置剩余：26 天
   - 套餐到期：2025-01-27
   - 🇭🇰香港｜01
@@ -409,12 +422,13 @@ proxy-groups:
   - 🇧🇩孟加拉｜01｜住宅IP
   - 🇹🇼台湾｜04｜原生IP
   - 🇹🇼台湾｜05｜原生IP
+  - 🇯🇵日本｜03｜原生IP｜IPV6
 - name: 🍎 苹果服务
   type: select
   proxies:
   - 🚀 节点选择
   - 🎯 全球直连
-  - 剩余流量：480221.35 GB
+  - 剩余流量：480051.95 GB
   - 距离下次重置剩余：26 天
   - 套餐到期：2025-01-27
   - 🇭🇰香港｜01
@@ -440,13 +454,14 @@ proxy-groups:
   - 🇧🇩孟加拉｜01｜住宅IP
   - 🇹🇼台湾｜04｜原生IP
   - 🇹🇼台湾｜05｜原生IP
+  - 🇯🇵日本｜03｜原生IP｜IPV6
 - name: 📢 谷歌FCM
   type: select
   proxies:
   - 🚀 节点选择
   - 🎯 全球直连
   - ♻️ 自动选择
-  - 剩余流量：480221.35 GB
+  - 剩余流量：480051.95 GB
   - 距离下次重置剩余：26 天
   - 套餐到期：2025-01-27
   - 🇭🇰香港｜01
@@ -472,6 +487,7 @@ proxy-groups:
   - 🇧🇩孟加拉｜01｜住宅IP
   - 🇹🇼台湾｜04｜原生IP
   - 🇹🇼台湾｜05｜原生IP
+  - 🇯🇵日本｜03｜原生IP｜IPV6
 - name: 🎯 全球直连
   type: select
   proxies:
@@ -494,7 +510,7 @@ proxy-groups:
   - 🚀 节点选择
   - 🎯 全球直连
   - ♻️ 自动选择
-  - 剩余流量：480221.35 GB
+  - 剩余流量：480051.95 GB
   - 距离下次重置剩余：26 天
   - 套餐到期：2025-01-27
   - 🇭🇰香港｜01
@@ -520,6 +536,7 @@ proxy-groups:
   - 🇧🇩孟加拉｜01｜住宅IP
   - 🇹🇼台湾｜04｜原生IP
   - 🇹🇼台湾｜05｜原生IP
+  - 🇯🇵日本｜03｜原生IP｜IPV6
 rules:
 - DOMAIN-SUFFIX,acl4.ssr,🎯 全球直连
 - DOMAIN-SUFFIX,ip6-localhost,🎯 全球直连
