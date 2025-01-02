@@ -19,6 +19,8 @@ python scripts/mihomo-remote-generate.py "https://aini.200566.xyz/tzjz55/downloa
 
 python scripts/mihomo-remote-generate.py "http://tg.hwzy0.ggff.net/sub?token=oLKUUBC7cJPmouRzlnw2bg&tag=clash" ../mihomo/hwzy0.yaml
 
+python scripts/mihomo-remote-generate.py "https://aini.200566.xyz/tzjz55/download/xinniankuaile?target=ClashMeta" ../mihomo/xnkl.yaml
+
 # singbox
 python scripts/singbox-remote-generate.py "https://clash2sfa.xmdhs.com/sub?sub=https://suo.st/d2Y76gj" ../singbox/air.json
 
