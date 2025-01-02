@@ -18,7 +18,7 @@ hosts:
   alt8-mtalk.google.com: 142.250.112.188
 proxies:
 - type: hysteria2
-  name: 1-2🦅@xkmfjd|Hysteria2 kaikaixinxin-us.legeth.xyz:61902|01
+  name: 1-2🕸️@xkmfjd|Hysteria2 kaikaixinxin-us.legeth.xyz:61902|01
   server: kaikaixinxin-us.legeth.xyz
   port: 61902
   password: c8e088a6-f96c-4a24-abb9-b35631f5324e
@@ -26,7 +26,7 @@ proxies:
   skip-cert-verify: false
   tfo: false
 - type: hysteria2
-  name: 🇺🇸|1-2🦅@xkmfjd|美国|01
+  name: 🇺🇸|1-2🕸️@xkmfjd|美国|01
   server: kaikaixinxin-us.legeth.xyz
   port: 61489
   password: c8e088a6-f96c-4a24-abb9-b35631f5324e
@@ -34,23 +34,23 @@ proxies:
   skip-cert-verify: false
   tfo: false
 - type: hysteria2
-  name: 🇺🇸|1-2🦅@xkmfjd|美国|02
-  server: kaikaixinxin-us.legeth.xyz
-  port: 61970
-  password: c8e088a6-f96c-4a24-abb9-b35631f5324e
-  sni: kaikaixinxin-us.legeth.xyz
-  skip-cert-verify: false
-  tfo: false
-- type: hysteria2
-  name: 1-2🦅@xkmfjd|Hysteria2 kaikaixinxin-us.legeth.xyz:61950|01
+  name: 1-2🕸️@xkmfjd|Hysteria2 kaikaixinxin-us.legeth.xyz:61950|01
   server: kaikaixinxin-us.legeth.xyz
   port: 61950
   password: c8e088a6-f96c-4a24-abb9-b35631f5324e
   sni: kaikaixinxin-us.legeth.xyz
   skip-cert-verify: false
   tfo: false
+- type: hysteria2
+  name: 1-2🕸️@xkmfjd|Hysteria2 kaikaixinxin-us.legeth.xyz:61970|01
+  server: kaikaixinxin-us.legeth.xyz
+  port: 61970
+  password: c8e088a6-f96c-4a24-abb9-b35631f5324e
+  sni: kaikaixinxin-us.legeth.xyz
+  skip-cert-verify: false
+  tfo: false
 - type: vless
-  name: 🇪🇸|1-2🦅@xkmfjd|西班牙|01
+  name: 🇪🇸|1-2🕸️@xkmfjd|西班牙|01
   server: 129.146.130.37
   port: 18443
   uuid: 86206c88-b8e3-4cb3-8932-3ca6ea1b6033
@@ -63,7 +63,7 @@ proxies:
   network: tcp
   servername: www.tesla.com
 - type: vless
-  name: 🇪🇸|1-2🦅@xkmfjd|西班牙|02
+  name: 🇪🇸|1-2🕸️@xkmfjd|西班牙|02
   server: 146.190.16.108
   port: 23701
   uuid: 677a41e5-dbe6-429b-8f91-cc014b1ae1bd
@@ -76,73 +76,72 @@ proxies:
     path:
     - /
 - type: vless
-  name: 🇪🇸|1-2🦅@xkmfjd|西班牙|03
-  server: 174.138.13.224
-  port: 15891
-  uuid: ae2228d1-9b8f-4914-9e0a-68a115f8dbe1
+  name: 🇪🇸|1-2🕸️@xkmfjd|西班牙|03
+  server: 146.190.16.108
+  port: 23701
+  uuid: 677a41e5-dbe6-429b-8f91-cc014b1ae1bd
+  skip-cert-verify: false
+  network: http
+  http-opts:
+    headers:
+      Host:
+      - Speedtest.net
+    path:
+    - /
+- type: vless
+  name: 🇪🇸|1-2🕸️@xkmfjd|西班牙|04
+  server: 163.123.192.35
+  port: 443
+  uuid: ca756654-b47f-449a-bf95-82cba53810bd
   tls: true
-  client-fingerprint: random
+  flow: xtls-rprx-vision
+  client-fingerprint: chrome
+  skip-cert-verify: false
+  network: tcp
+  servername: yfus2.xn--4gq62f52gppi29k.com
+- type: vless
+  name: 🇪🇸|1-2🕸️@xkmfjd|西班牙|05
+  server: phx-plus-1ddns.faforex.eu.org
+  port: 23258
+  uuid: 73159dbd-e01e-4492-a234-e5d7c335b128
+  tls: true
+  flow: xtls-rprx-vision
+  client-fingerprint: chrome
   skip-cert-verify: false
   reality-opts:
-    public-key: 4FNDHgDP2lnetuRioH6DsE9kMnDyhkJ2NHLMpZgyci0
-    short-id: 10f1
+    public-key: BSEvpP7N7XNtOgzDrCFEgu6ejgdBHOYRug6S_lTf5GM
+    short-id: bfbc4c1f
   network: tcp
-  servername: ftp.debian.org
+  servername: microsoft.com
 - type: vless
-  name: 🇪🇸|1-2🦅@xkmfjd|西班牙|04
-  server: 146.190.16.108
-  port: 23701
-  uuid: 677a41e5-dbe6-429b-8f91-cc014b1ae1bd
+  name: 🇪🇸|1-2🕸️@xkmfjd|西班牙|06
+  server: 185.236.233.136
+  port: 2198
+  uuid: 838f5273-5d2d-4630-a0f5-9cc8e4aef4d6
   skip-cert-verify: false
-  network: http
-  http-opts:
-    headers:
-      Host:
-      - Speedtest.net
-    path:
-    - /
+  network: tcp
 - type: hysteria2
-  name: 1-2🦅@xkmfjd|1-Hysteria2 91.184.242.252:443|01
-  server: 91.184.242.252
-  port: 443
-  password: p6FfuI684f
-  sni: www.whatsapp.com
-  obfs: salamander
-  obfs-password: ZHr2aBtNWmYGZ8NnBfjxU7A
-  skip-cert-verify: true
-  tfo: false
-- type: hysteria2
-  name: 1-2🦅@xkmfjd|Hysteria2 31.186.87.211:19187|01
+  name: 1-2🕸️@xkmfjd|Hysteria2 31.186.87.211:19187|01
   server: 31.186.87.211
   port: 19187
   password: 3e6603a4-304f-468d-9e27-47a7c97640e9
   skip-cert-verify: true
   tfo: false
-- type: hysteria2
-  name: 1-2🦅@xkmfjd|2-Hysteria2 91.184.242.252:443|01
-  server: 91.184.242.252
-  port: 443
-  password: p6FfuI684f
-  sni: www.whatsapp.com
-  obfs: salamander
-  obfs-password: ZHr2aBtNWmYGZ8NnBfjxU7A
-  skip-cert-verify: true
-  tfo: false
-- name: 1-2🦅@xkmfjd|1-undefined|01
+- name: 1-2🕸️@xkmfjd|1-undefined|01
   type: ss
   server: 169.150.210.233
   port: 8080
   cipher: rc4-md5
   password: 14fFPrbezE3HDZzsMOr6
 - type: hysteria2
-  name: 🇵🇱|1-2🦅@xkmfjd|波兰|01
+  name: 🇵🇱|1-2🕸️@xkmfjd|波兰|01
   server: 31.186.87.211
   port: 19187
   password: 3e6603a4-304f-468d-9e27-47a7c97640e9
   skip-cert-verify: true
   tfo: false
 - type: hysteria2
-  name: 🇸🇪|1-2🦅@xkmfjd|瑞典|01
+  name: 🇸🇪|1-2🕸️@xkmfjd|瑞典|01
   server: 150.241.77.182
   port: 11122
   password: c76f08e20fb6368b
@@ -151,75 +150,43 @@ proxies:
   obfs-password: 64da92df31fc63c1
   skip-cert-verify: true
   tfo: false
-- name: 1-2🦅@xkmfjd|2-undefined|01
+- name: 1-2🕸️@xkmfjd|2-undefined|01
   type: ss
   server: 23.251.121.242
   port: 8080
   cipher: rc4-md5
   password: 14fFPrbezE3HDZzsMOr6
-- name: 1-2🦅@xkmfjd|3-undefined|01
+- name: 1-2🕸️@xkmfjd|3-undefined|01
   type: ss
   server: 169.150.210.233
   port: 8080
   cipher: rc4-md5
   password: 14fFPrbezE3HDZzsMOr6
-- name: 1-2🦅@xkmfjd|4-undefined|01
-  type: ss
-  server: 212.102.53.193
-  port: 443
-  cipher: aes-128-gcm
-  password: shadowsocks
-- name: 1-2🦅@xkmfjd|1-|01
-  type: vmess
-  server: cu.awslcn.info
-  port: 25284
-  cipher: auto
-  uuid: 243eab52-9ac1-405c-887c-eb112c0985b8
-  alterId: 0
-  tls: false
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: cu.awslcn.info
-- name: 1-2🦅@xkmfjd|2-|01
-  type: vmess
-  server: cm1.awslcn.info
-  port: 25216
-  cipher: auto
-  uuid: 243eab52-9ac1-405c-887c-eb112c0985b8
-  alterId: 0
-  tls: false
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: cm1.awslcn.info
-- name: 1-2🦅@xkmfjd|5-undefined|01
+- name: 1-2🕸️@xkmfjd|4-undefined|01
   type: ss
   server: p227.panda004.net
   port: 33551
   cipher: aes-256-cfb
   password: qwerREWQ@@
-- name: 1-2🦅@xkmfjd|대한민국 11🐼|01
+- name: 1-2🕸️@xkmfjd|5-undefined|01
   type: ss
   server: p230.panda004.net
   port: 41748
   cipher: aes-256-cfb
   password: qwerREWQ@@
-- name: 1-2🦅@xkmfjd|대한민국 10🐼|01
+- name: 1-2🕸️@xkmfjd|6-undefined|01
   type: ss
   server: p229.panda004.net
   port: 40244
   cipher: aes-256-cfb
   password: qwerREWQ@@
-- name: 1-2🦅@xkmfjd|대힌민국 16🐼|01
+- name: 1-2🕸️@xkmfjd|7-undefined|01
   type: ss
   server: p235.panda004.net
   port: 40677
   cipher: aes-256-cfb
   password: qwerREWQ@@
-- name: 🇲🇦|1-2🦅@xkmfjd|摩洛哥|01
+- name: 1-2🕸️@xkmfjd|8-undefined|01
   type: ss
   server: p239.panda004.net
   port: 3231
@@ -231,15 +198,15 @@ proxies:
   password: '3723507166611775488'
   server: unbiased-manatee.boa152.lol
   port: 443
-  name: 🇯🇵|1-2🦅@xkmfjd|日本|01
+  name: 1-2🕸️@xkmfjd|unbiased-manatee.boa152.lol:443|01
 - skip-cert-verify: true
   sni: wise-cowbird.boa152.lol
   type: trojan
   password: '3723507166611775488'
   server: wise-cowbird.boa152.lol
   port: 443
-  name: 1-2🦅@xkmfjd|Amsterdam  Pro 16|01
-- name: 1-2🦅@xkmfjd|6-undefined|01
+  name: 1-2🕸️@xkmfjd|wise-cowbird.boa152.lol:443|01
+- name: 1-2🕸️@xkmfjd|9-undefined|01
   type: ss
   server: p228.panda004.net
   port: 21215
@@ -251,270 +218,296 @@ proxies:
   password: '3723507166611775488'
   server: sensible-ocelot.boa152.lol
   port: 443
-  name: 1-2🦅@xkmfjd|Amsterdam  Pro 6|01
+  name: 1-2🕸️@xkmfjd|1-sensible-ocelot.boa152.lol:443|01
 - skip-cert-verify: true
   sni: national-gar.boa152.lol
   type: trojan
   password: '3723507166611775488'
   server: national-gar.boa152.lol
   port: 443
-  name: 1-2🦅@xkmfjd|Amsterdam  22|01
+  name: 1-2🕸️@xkmfjd|national-gar.boa152.lol:443|01
 - skip-cert-verify: true
   sni: sensible-ocelot.boa152.lol
   type: trojan
   password: '3723507166611775488'
   server: sensible-ocelot.boa152.lol
   port: 443
-  name: 1-2🦅@xkmfjd|Amsterdam  6|01
+  name: 1-2🕸️@xkmfjd|2-sensible-ocelot.boa152.lol:443|01
+- type: hysteria2
+  name: 1-2🕸️@xkmfjd|Hysteria2 kevin.iserver.store:8443|01
+  server: kevin.iserver.store
+  port: 8443
+  password: Telegram:@KevinZakarian
+  sni: kevin.iserver.store
+  obfs: salamander
+  obfs-password: Telegram:@KevinZakarian
+  skip-cert-verify: true
+  tfo: false
+- type: hysteria2
+  name: 1-2🕸️@xkmfjd|Hysteria2 ca.1010520.xyz:1001|01
+  server: ca.1010520.xyz
+  port: 1001
+  password: e1c77eb5-eacd-4afd-8da3-9fd2c1d3b499
+  sni: ca.1010520.xyz
+  skip-cert-verify: false
+  tfo: false
+- type: hysteria2
+  name: 1-2🕸️@xkmfjd|Hysteria2 de.1010520.xyz:1001|01
+  server: de.1010520.xyz
+  port: 1001
+  password: e1c77eb5-eacd-4afd-8da3-9fd2c1d3b499
+  sni: de.1010520.xyz
+  skip-cert-verify: false
+  tfo: false
 proxy-groups:
 - name: 🚀 节点选择
   type: select
   proxies:
   - ♻️ 自动选择
   - DIRECT
-  - 1-2🦅@xkmfjd|Hysteria2 kaikaixinxin-us.legeth.xyz:61902|01
-  - 🇺🇸|1-2🦅@xkmfjd|美国|01
-  - 🇺🇸|1-2🦅@xkmfjd|美国|02
-  - 1-2🦅@xkmfjd|Hysteria2 kaikaixinxin-us.legeth.xyz:61950|01
-  - 🇪🇸|1-2🦅@xkmfjd|西班牙|01
-  - 🇪🇸|1-2🦅@xkmfjd|西班牙|02
-  - 🇪🇸|1-2🦅@xkmfjd|西班牙|03
-  - 🇪🇸|1-2🦅@xkmfjd|西班牙|04
-  - 1-2🦅@xkmfjd|1-Hysteria2 91.184.242.252:443|01
-  - 1-2🦅@xkmfjd|Hysteria2 31.186.87.211:19187|01
-  - 1-2🦅@xkmfjd|2-Hysteria2 91.184.242.252:443|01
-  - 1-2🦅@xkmfjd|1-undefined|01
-  - 🇵🇱|1-2🦅@xkmfjd|波兰|01
-  - 🇸🇪|1-2🦅@xkmfjd|瑞典|01
-  - 1-2🦅@xkmfjd|2-undefined|01
-  - 1-2🦅@xkmfjd|3-undefined|01
-  - 1-2🦅@xkmfjd|4-undefined|01
-  - 1-2🦅@xkmfjd|1-|01
-  - 1-2🦅@xkmfjd|2-|01
-  - 1-2🦅@xkmfjd|5-undefined|01
-  - 1-2🦅@xkmfjd|대한민국 11🐼|01
-  - 1-2🦅@xkmfjd|대한민국 10🐼|01
-  - 1-2🦅@xkmfjd|대힌민국 16🐼|01
-  - 🇲🇦|1-2🦅@xkmfjd|摩洛哥|01
-  - 🇯🇵|1-2🦅@xkmfjd|日本|01
-  - 1-2🦅@xkmfjd|Amsterdam  Pro 16|01
-  - 1-2🦅@xkmfjd|6-undefined|01
-  - 1-2🦅@xkmfjd|Amsterdam  Pro 6|01
-  - 1-2🦅@xkmfjd|Amsterdam  22|01
-  - 1-2🦅@xkmfjd|Amsterdam  6|01
+  - 1-2🕸️@xkmfjd|Hysteria2 kaikaixinxin-us.legeth.xyz:61902|01
+  - 🇺🇸|1-2🕸️@xkmfjd|美国|01
+  - 1-2🕸️@xkmfjd|Hysteria2 kaikaixinxin-us.legeth.xyz:61950|01
+  - 1-2🕸️@xkmfjd|Hysteria2 kaikaixinxin-us.legeth.xyz:61970|01
+  - 🇪🇸|1-2🕸️@xkmfjd|西班牙|01
+  - 🇪🇸|1-2🕸️@xkmfjd|西班牙|02
+  - 🇪🇸|1-2🕸️@xkmfjd|西班牙|03
+  - 🇪🇸|1-2🕸️@xkmfjd|西班牙|04
+  - 🇪🇸|1-2🕸️@xkmfjd|西班牙|05
+  - 🇪🇸|1-2🕸️@xkmfjd|西班牙|06
+  - 1-2🕸️@xkmfjd|Hysteria2 31.186.87.211:19187|01
+  - 1-2🕸️@xkmfjd|1-undefined|01
+  - 🇵🇱|1-2🕸️@xkmfjd|波兰|01
+  - 🇸🇪|1-2🕸️@xkmfjd|瑞典|01
+  - 1-2🕸️@xkmfjd|2-undefined|01
+  - 1-2🕸️@xkmfjd|3-undefined|01
+  - 1-2🕸️@xkmfjd|4-undefined|01
+  - 1-2🕸️@xkmfjd|5-undefined|01
+  - 1-2🕸️@xkmfjd|6-undefined|01
+  - 1-2🕸️@xkmfjd|7-undefined|01
+  - 1-2🕸️@xkmfjd|8-undefined|01
+  - 1-2🕸️@xkmfjd|unbiased-manatee.boa152.lol:443|01
+  - 1-2🕸️@xkmfjd|wise-cowbird.boa152.lol:443|01
+  - 1-2🕸️@xkmfjd|9-undefined|01
+  - 1-2🕸️@xkmfjd|1-sensible-ocelot.boa152.lol:443|01
+  - 1-2🕸️@xkmfjd|national-gar.boa152.lol:443|01
+  - 1-2🕸️@xkmfjd|2-sensible-ocelot.boa152.lol:443|01
+  - 1-2🕸️@xkmfjd|Hysteria2 kevin.iserver.store:8443|01
+  - 1-2🕸️@xkmfjd|Hysteria2 ca.1010520.xyz:1001|01
+  - 1-2🕸️@xkmfjd|Hysteria2 de.1010520.xyz:1001|01
 - name: ♻️ 自动选择
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
-  - 1-2🦅@xkmfjd|Hysteria2 kaikaixinxin-us.legeth.xyz:61902|01
-  - 🇺🇸|1-2🦅@xkmfjd|美国|01
-  - 🇺🇸|1-2🦅@xkmfjd|美国|02
-  - 1-2🦅@xkmfjd|Hysteria2 kaikaixinxin-us.legeth.xyz:61950|01
-  - 🇪🇸|1-2🦅@xkmfjd|西班牙|01
-  - 🇪🇸|1-2🦅@xkmfjd|西班牙|02
-  - 🇪🇸|1-2🦅@xkmfjd|西班牙|03
-  - 🇪🇸|1-2🦅@xkmfjd|西班牙|04
-  - 1-2🦅@xkmfjd|1-Hysteria2 91.184.242.252:443|01
-  - 1-2🦅@xkmfjd|Hysteria2 31.186.87.211:19187|01
-  - 1-2🦅@xkmfjd|2-Hysteria2 91.184.242.252:443|01
-  - 1-2🦅@xkmfjd|1-undefined|01
-  - 🇵🇱|1-2🦅@xkmfjd|波兰|01
-  - 🇸🇪|1-2🦅@xkmfjd|瑞典|01
-  - 1-2🦅@xkmfjd|2-undefined|01
-  - 1-2🦅@xkmfjd|3-undefined|01
-  - 1-2🦅@xkmfjd|4-undefined|01
-  - 1-2🦅@xkmfjd|1-|01
-  - 1-2🦅@xkmfjd|2-|01
-  - 1-2🦅@xkmfjd|5-undefined|01
-  - 1-2🦅@xkmfjd|대한민국 11🐼|01
-  - 1-2🦅@xkmfjd|대한민국 10🐼|01
-  - 1-2🦅@xkmfjd|대힌민국 16🐼|01
-  - 🇲🇦|1-2🦅@xkmfjd|摩洛哥|01
-  - 🇯🇵|1-2🦅@xkmfjd|日本|01
-  - 1-2🦅@xkmfjd|Amsterdam  Pro 16|01
-  - 1-2🦅@xkmfjd|6-undefined|01
-  - 1-2🦅@xkmfjd|Amsterdam  Pro 6|01
-  - 1-2🦅@xkmfjd|Amsterdam  22|01
-  - 1-2🦅@xkmfjd|Amsterdam  6|01
+  - 1-2🕸️@xkmfjd|Hysteria2 kaikaixinxin-us.legeth.xyz:61902|01
+  - 🇺🇸|1-2🕸️@xkmfjd|美国|01
+  - 1-2🕸️@xkmfjd|Hysteria2 kaikaixinxin-us.legeth.xyz:61950|01
+  - 1-2🕸️@xkmfjd|Hysteria2 kaikaixinxin-us.legeth.xyz:61970|01
+  - 🇪🇸|1-2🕸️@xkmfjd|西班牙|01
+  - 🇪🇸|1-2🕸️@xkmfjd|西班牙|02
+  - 🇪🇸|1-2🕸️@xkmfjd|西班牙|03
+  - 🇪🇸|1-2🕸️@xkmfjd|西班牙|04
+  - 🇪🇸|1-2🕸️@xkmfjd|西班牙|05
+  - 🇪🇸|1-2🕸️@xkmfjd|西班牙|06
+  - 1-2🕸️@xkmfjd|Hysteria2 31.186.87.211:19187|01
+  - 1-2🕸️@xkmfjd|1-undefined|01
+  - 🇵🇱|1-2🕸️@xkmfjd|波兰|01
+  - 🇸🇪|1-2🕸️@xkmfjd|瑞典|01
+  - 1-2🕸️@xkmfjd|2-undefined|01
+  - 1-2🕸️@xkmfjd|3-undefined|01
+  - 1-2🕸️@xkmfjd|4-undefined|01
+  - 1-2🕸️@xkmfjd|5-undefined|01
+  - 1-2🕸️@xkmfjd|6-undefined|01
+  - 1-2🕸️@xkmfjd|7-undefined|01
+  - 1-2🕸️@xkmfjd|8-undefined|01
+  - 1-2🕸️@xkmfjd|unbiased-manatee.boa152.lol:443|01
+  - 1-2🕸️@xkmfjd|wise-cowbird.boa152.lol:443|01
+  - 1-2🕸️@xkmfjd|9-undefined|01
+  - 1-2🕸️@xkmfjd|1-sensible-ocelot.boa152.lol:443|01
+  - 1-2🕸️@xkmfjd|national-gar.boa152.lol:443|01
+  - 1-2🕸️@xkmfjd|2-sensible-ocelot.boa152.lol:443|01
+  - 1-2🕸️@xkmfjd|Hysteria2 kevin.iserver.store:8443|01
+  - 1-2🕸️@xkmfjd|Hysteria2 ca.1010520.xyz:1001|01
+  - 1-2🕸️@xkmfjd|Hysteria2 de.1010520.xyz:1001|01
 - name: 🌍 国外媒体
   type: select
   proxies:
   - 🚀 节点选择
   - ♻️ 自动选择
   - 🎯 全球直连
-  - 1-2🦅@xkmfjd|Hysteria2 kaikaixinxin-us.legeth.xyz:61902|01
-  - 🇺🇸|1-2🦅@xkmfjd|美国|01
-  - 🇺🇸|1-2🦅@xkmfjd|美国|02
-  - 1-2🦅@xkmfjd|Hysteria2 kaikaixinxin-us.legeth.xyz:61950|01
-  - 🇪🇸|1-2🦅@xkmfjd|西班牙|01
-  - 🇪🇸|1-2🦅@xkmfjd|西班牙|02
-  - 🇪🇸|1-2🦅@xkmfjd|西班牙|03
-  - 🇪🇸|1-2🦅@xkmfjd|西班牙|04
-  - 1-2🦅@xkmfjd|1-Hysteria2 91.184.242.252:443|01
-  - 1-2🦅@xkmfjd|Hysteria2 31.186.87.211:19187|01
-  - 1-2🦅@xkmfjd|2-Hysteria2 91.184.242.252:443|01
-  - 1-2🦅@xkmfjd|1-undefined|01
-  - 🇵🇱|1-2🦅@xkmfjd|波兰|01
-  - 🇸🇪|1-2🦅@xkmfjd|瑞典|01
-  - 1-2🦅@xkmfjd|2-undefined|01
-  - 1-2🦅@xkmfjd|3-undefined|01
-  - 1-2🦅@xkmfjd|4-undefined|01
-  - 1-2🦅@xkmfjd|1-|01
-  - 1-2🦅@xkmfjd|2-|01
-  - 1-2🦅@xkmfjd|5-undefined|01
-  - 1-2🦅@xkmfjd|대한민국 11🐼|01
-  - 1-2🦅@xkmfjd|대한민국 10🐼|01
-  - 1-2🦅@xkmfjd|대힌민국 16🐼|01
-  - 🇲🇦|1-2🦅@xkmfjd|摩洛哥|01
-  - 🇯🇵|1-2🦅@xkmfjd|日本|01
-  - 1-2🦅@xkmfjd|Amsterdam  Pro 16|01
-  - 1-2🦅@xkmfjd|6-undefined|01
-  - 1-2🦅@xkmfjd|Amsterdam  Pro 6|01
-  - 1-2🦅@xkmfjd|Amsterdam  22|01
-  - 1-2🦅@xkmfjd|Amsterdam  6|01
+  - 1-2🕸️@xkmfjd|Hysteria2 kaikaixinxin-us.legeth.xyz:61902|01
+  - 🇺🇸|1-2🕸️@xkmfjd|美国|01
+  - 1-2🕸️@xkmfjd|Hysteria2 kaikaixinxin-us.legeth.xyz:61950|01
+  - 1-2🕸️@xkmfjd|Hysteria2 kaikaixinxin-us.legeth.xyz:61970|01
+  - 🇪🇸|1-2🕸️@xkmfjd|西班牙|01
+  - 🇪🇸|1-2🕸️@xkmfjd|西班牙|02
+  - 🇪🇸|1-2🕸️@xkmfjd|西班牙|03
+  - 🇪🇸|1-2🕸️@xkmfjd|西班牙|04
+  - 🇪🇸|1-2🕸️@xkmfjd|西班牙|05
+  - 🇪🇸|1-2🕸️@xkmfjd|西班牙|06
+  - 1-2🕸️@xkmfjd|Hysteria2 31.186.87.211:19187|01
+  - 1-2🕸️@xkmfjd|1-undefined|01
+  - 🇵🇱|1-2🕸️@xkmfjd|波兰|01
+  - 🇸🇪|1-2🕸️@xkmfjd|瑞典|01
+  - 1-2🕸️@xkmfjd|2-undefined|01
+  - 1-2🕸️@xkmfjd|3-undefined|01
+  - 1-2🕸️@xkmfjd|4-undefined|01
+  - 1-2🕸️@xkmfjd|5-undefined|01
+  - 1-2🕸️@xkmfjd|6-undefined|01
+  - 1-2🕸️@xkmfjd|7-undefined|01
+  - 1-2🕸️@xkmfjd|8-undefined|01
+  - 1-2🕸️@xkmfjd|unbiased-manatee.boa152.lol:443|01
+  - 1-2🕸️@xkmfjd|wise-cowbird.boa152.lol:443|01
+  - 1-2🕸️@xkmfjd|9-undefined|01
+  - 1-2🕸️@xkmfjd|1-sensible-ocelot.boa152.lol:443|01
+  - 1-2🕸️@xkmfjd|national-gar.boa152.lol:443|01
+  - 1-2🕸️@xkmfjd|2-sensible-ocelot.boa152.lol:443|01
+  - 1-2🕸️@xkmfjd|Hysteria2 kevin.iserver.store:8443|01
+  - 1-2🕸️@xkmfjd|Hysteria2 ca.1010520.xyz:1001|01
+  - 1-2🕸️@xkmfjd|Hysteria2 de.1010520.xyz:1001|01
 - name: 📲 电报信息
   type: select
   proxies:
   - 🚀 节点选择
   - 🎯 全球直连
-  - 1-2🦅@xkmfjd|Hysteria2 kaikaixinxin-us.legeth.xyz:61902|01
-  - 🇺🇸|1-2🦅@xkmfjd|美国|01
-  - 🇺🇸|1-2🦅@xkmfjd|美国|02
-  - 1-2🦅@xkmfjd|Hysteria2 kaikaixinxin-us.legeth.xyz:61950|01
-  - 🇪🇸|1-2🦅@xkmfjd|西班牙|01
-  - 🇪🇸|1-2🦅@xkmfjd|西班牙|02
-  - 🇪🇸|1-2🦅@xkmfjd|西班牙|03
-  - 🇪🇸|1-2🦅@xkmfjd|西班牙|04
-  - 1-2🦅@xkmfjd|1-Hysteria2 91.184.242.252:443|01
-  - 1-2🦅@xkmfjd|Hysteria2 31.186.87.211:19187|01
-  - 1-2🦅@xkmfjd|2-Hysteria2 91.184.242.252:443|01
-  - 1-2🦅@xkmfjd|1-undefined|01
-  - 🇵🇱|1-2🦅@xkmfjd|波兰|01
-  - 🇸🇪|1-2🦅@xkmfjd|瑞典|01
-  - 1-2🦅@xkmfjd|2-undefined|01
-  - 1-2🦅@xkmfjd|3-undefined|01
-  - 1-2🦅@xkmfjd|4-undefined|01
-  - 1-2🦅@xkmfjd|1-|01
-  - 1-2🦅@xkmfjd|2-|01
-  - 1-2🦅@xkmfjd|5-undefined|01
-  - 1-2🦅@xkmfjd|대한민국 11🐼|01
-  - 1-2🦅@xkmfjd|대한민국 10🐼|01
-  - 1-2🦅@xkmfjd|대힌민국 16🐼|01
-  - 🇲🇦|1-2🦅@xkmfjd|摩洛哥|01
-  - 🇯🇵|1-2🦅@xkmfjd|日本|01
-  - 1-2🦅@xkmfjd|Amsterdam  Pro 16|01
-  - 1-2🦅@xkmfjd|6-undefined|01
-  - 1-2🦅@xkmfjd|Amsterdam  Pro 6|01
-  - 1-2🦅@xkmfjd|Amsterdam  22|01
-  - 1-2🦅@xkmfjd|Amsterdam  6|01
+  - 1-2🕸️@xkmfjd|Hysteria2 kaikaixinxin-us.legeth.xyz:61902|01
+  - 🇺🇸|1-2🕸️@xkmfjd|美国|01
+  - 1-2🕸️@xkmfjd|Hysteria2 kaikaixinxin-us.legeth.xyz:61950|01
+  - 1-2🕸️@xkmfjd|Hysteria2 kaikaixinxin-us.legeth.xyz:61970|01
+  - 🇪🇸|1-2🕸️@xkmfjd|西班牙|01
+  - 🇪🇸|1-2🕸️@xkmfjd|西班牙|02
+  - 🇪🇸|1-2🕸️@xkmfjd|西班牙|03
+  - 🇪🇸|1-2🕸️@xkmfjd|西班牙|04
+  - 🇪🇸|1-2🕸️@xkmfjd|西班牙|05
+  - 🇪🇸|1-2🕸️@xkmfjd|西班牙|06
+  - 1-2🕸️@xkmfjd|Hysteria2 31.186.87.211:19187|01
+  - 1-2🕸️@xkmfjd|1-undefined|01
+  - 🇵🇱|1-2🕸️@xkmfjd|波兰|01
+  - 🇸🇪|1-2🕸️@xkmfjd|瑞典|01
+  - 1-2🕸️@xkmfjd|2-undefined|01
+  - 1-2🕸️@xkmfjd|3-undefined|01
+  - 1-2🕸️@xkmfjd|4-undefined|01
+  - 1-2🕸️@xkmfjd|5-undefined|01
+  - 1-2🕸️@xkmfjd|6-undefined|01
+  - 1-2🕸️@xkmfjd|7-undefined|01
+  - 1-2🕸️@xkmfjd|8-undefined|01
+  - 1-2🕸️@xkmfjd|unbiased-manatee.boa152.lol:443|01
+  - 1-2🕸️@xkmfjd|wise-cowbird.boa152.lol:443|01
+  - 1-2🕸️@xkmfjd|9-undefined|01
+  - 1-2🕸️@xkmfjd|1-sensible-ocelot.boa152.lol:443|01
+  - 1-2🕸️@xkmfjd|national-gar.boa152.lol:443|01
+  - 1-2🕸️@xkmfjd|2-sensible-ocelot.boa152.lol:443|01
+  - 1-2🕸️@xkmfjd|Hysteria2 kevin.iserver.store:8443|01
+  - 1-2🕸️@xkmfjd|Hysteria2 ca.1010520.xyz:1001|01
+  - 1-2🕸️@xkmfjd|Hysteria2 de.1010520.xyz:1001|01
 - name: Ⓜ️ 微软服务
   type: select
   proxies:
   - 🎯 全球直连
   - 🚀 节点选择
-  - 1-2🦅@xkmfjd|Hysteria2 kaikaixinxin-us.legeth.xyz:61902|01
-  - 🇺🇸|1-2🦅@xkmfjd|美国|01
-  - 🇺🇸|1-2🦅@xkmfjd|美国|02
-  - 1-2🦅@xkmfjd|Hysteria2 kaikaixinxin-us.legeth.xyz:61950|01
-  - 🇪🇸|1-2🦅@xkmfjd|西班牙|01
-  - 🇪🇸|1-2🦅@xkmfjd|西班牙|02
-  - 🇪🇸|1-2🦅@xkmfjd|西班牙|03
-  - 🇪🇸|1-2🦅@xkmfjd|西班牙|04
-  - 1-2🦅@xkmfjd|1-Hysteria2 91.184.242.252:443|01
-  - 1-2🦅@xkmfjd|Hysteria2 31.186.87.211:19187|01
-  - 1-2🦅@xkmfjd|2-Hysteria2 91.184.242.252:443|01
-  - 1-2🦅@xkmfjd|1-undefined|01
-  - 🇵🇱|1-2🦅@xkmfjd|波兰|01
-  - 🇸🇪|1-2🦅@xkmfjd|瑞典|01
-  - 1-2🦅@xkmfjd|2-undefined|01
-  - 1-2🦅@xkmfjd|3-undefined|01
-  - 1-2🦅@xkmfjd|4-undefined|01
-  - 1-2🦅@xkmfjd|1-|01
-  - 1-2🦅@xkmfjd|2-|01
-  - 1-2🦅@xkmfjd|5-undefined|01
-  - 1-2🦅@xkmfjd|대한민국 11🐼|01
-  - 1-2🦅@xkmfjd|대한민국 10🐼|01
-  - 1-2🦅@xkmfjd|대힌민국 16🐼|01
-  - 🇲🇦|1-2🦅@xkmfjd|摩洛哥|01
-  - 🇯🇵|1-2🦅@xkmfjd|日本|01
-  - 1-2🦅@xkmfjd|Amsterdam  Pro 16|01
-  - 1-2🦅@xkmfjd|6-undefined|01
-  - 1-2🦅@xkmfjd|Amsterdam  Pro 6|01
-  - 1-2🦅@xkmfjd|Amsterdam  22|01
-  - 1-2🦅@xkmfjd|Amsterdam  6|01
+  - 1-2🕸️@xkmfjd|Hysteria2 kaikaixinxin-us.legeth.xyz:61902|01
+  - 🇺🇸|1-2🕸️@xkmfjd|美国|01
+  - 1-2🕸️@xkmfjd|Hysteria2 kaikaixinxin-us.legeth.xyz:61950|01
+  - 1-2🕸️@xkmfjd|Hysteria2 kaikaixinxin-us.legeth.xyz:61970|01
+  - 🇪🇸|1-2🕸️@xkmfjd|西班牙|01
+  - 🇪🇸|1-2🕸️@xkmfjd|西班牙|02
+  - 🇪🇸|1-2🕸️@xkmfjd|西班牙|03
+  - 🇪🇸|1-2🕸️@xkmfjd|西班牙|04
+  - 🇪🇸|1-2🕸️@xkmfjd|西班牙|05
+  - 🇪🇸|1-2🕸️@xkmfjd|西班牙|06
+  - 1-2🕸️@xkmfjd|Hysteria2 31.186.87.211:19187|01
+  - 1-2🕸️@xkmfjd|1-undefined|01
+  - 🇵🇱|1-2🕸️@xkmfjd|波兰|01
+  - 🇸🇪|1-2🕸️@xkmfjd|瑞典|01
+  - 1-2🕸️@xkmfjd|2-undefined|01
+  - 1-2🕸️@xkmfjd|3-undefined|01
+  - 1-2🕸️@xkmfjd|4-undefined|01
+  - 1-2🕸️@xkmfjd|5-undefined|01
+  - 1-2🕸️@xkmfjd|6-undefined|01
+  - 1-2🕸️@xkmfjd|7-undefined|01
+  - 1-2🕸️@xkmfjd|8-undefined|01
+  - 1-2🕸️@xkmfjd|unbiased-manatee.boa152.lol:443|01
+  - 1-2🕸️@xkmfjd|wise-cowbird.boa152.lol:443|01
+  - 1-2🕸️@xkmfjd|9-undefined|01
+  - 1-2🕸️@xkmfjd|1-sensible-ocelot.boa152.lol:443|01
+  - 1-2🕸️@xkmfjd|national-gar.boa152.lol:443|01
+  - 1-2🕸️@xkmfjd|2-sensible-ocelot.boa152.lol:443|01
+  - 1-2🕸️@xkmfjd|Hysteria2 kevin.iserver.store:8443|01
+  - 1-2🕸️@xkmfjd|Hysteria2 ca.1010520.xyz:1001|01
+  - 1-2🕸️@xkmfjd|Hysteria2 de.1010520.xyz:1001|01
 - name: 🍎 苹果服务
   type: select
   proxies:
   - 🚀 节点选择
   - 🎯 全球直连
-  - 1-2🦅@xkmfjd|Hysteria2 kaikaixinxin-us.legeth.xyz:61902|01
-  - 🇺🇸|1-2🦅@xkmfjd|美国|01
-  - 🇺🇸|1-2🦅@xkmfjd|美国|02
-  - 1-2🦅@xkmfjd|Hysteria2 kaikaixinxin-us.legeth.xyz:61950|01
-  - 🇪🇸|1-2🦅@xkmfjd|西班牙|01
-  - 🇪🇸|1-2🦅@xkmfjd|西班牙|02
-  - 🇪🇸|1-2🦅@xkmfjd|西班牙|03
-  - 🇪🇸|1-2🦅@xkmfjd|西班牙|04
-  - 1-2🦅@xkmfjd|1-Hysteria2 91.184.242.252:443|01
-  - 1-2🦅@xkmfjd|Hysteria2 31.186.87.211:19187|01
-  - 1-2🦅@xkmfjd|2-Hysteria2 91.184.242.252:443|01
-  - 1-2🦅@xkmfjd|1-undefined|01
-  - 🇵🇱|1-2🦅@xkmfjd|波兰|01
-  - 🇸🇪|1-2🦅@xkmfjd|瑞典|01
-  - 1-2🦅@xkmfjd|2-undefined|01
-  - 1-2🦅@xkmfjd|3-undefined|01
-  - 1-2🦅@xkmfjd|4-undefined|01
-  - 1-2🦅@xkmfjd|1-|01
-  - 1-2🦅@xkmfjd|2-|01
-  - 1-2🦅@xkmfjd|5-undefined|01
-  - 1-2🦅@xkmfjd|대한민국 11🐼|01
-  - 1-2🦅@xkmfjd|대한민국 10🐼|01
-  - 1-2🦅@xkmfjd|대힌민국 16🐼|01
-  - 🇲🇦|1-2🦅@xkmfjd|摩洛哥|01
-  - 🇯🇵|1-2🦅@xkmfjd|日本|01
-  - 1-2🦅@xkmfjd|Amsterdam  Pro 16|01
-  - 1-2🦅@xkmfjd|6-undefined|01
-  - 1-2🦅@xkmfjd|Amsterdam  Pro 6|01
-  - 1-2🦅@xkmfjd|Amsterdam  22|01
-  - 1-2🦅@xkmfjd|Amsterdam  6|01
+  - 1-2🕸️@xkmfjd|Hysteria2 kaikaixinxin-us.legeth.xyz:61902|01
+  - 🇺🇸|1-2🕸️@xkmfjd|美国|01
+  - 1-2🕸️@xkmfjd|Hysteria2 kaikaixinxin-us.legeth.xyz:61950|01
+  - 1-2🕸️@xkmfjd|Hysteria2 kaikaixinxin-us.legeth.xyz:61970|01
+  - 🇪🇸|1-2🕸️@xkmfjd|西班牙|01
+  - 🇪🇸|1-2🕸️@xkmfjd|西班牙|02
+  - 🇪🇸|1-2🕸️@xkmfjd|西班牙|03
+  - 🇪🇸|1-2🕸️@xkmfjd|西班牙|04
+  - 🇪🇸|1-2🕸️@xkmfjd|西班牙|05
+  - 🇪🇸|1-2🕸️@xkmfjd|西班牙|06
+  - 1-2🕸️@xkmfjd|Hysteria2 31.186.87.211:19187|01
+  - 1-2🕸️@xkmfjd|1-undefined|01
+  - 🇵🇱|1-2🕸️@xkmfjd|波兰|01
+  - 🇸🇪|1-2🕸️@xkmfjd|瑞典|01
+  - 1-2🕸️@xkmfjd|2-undefined|01
+  - 1-2🕸️@xkmfjd|3-undefined|01
+  - 1-2🕸️@xkmfjd|4-undefined|01
+  - 1-2🕸️@xkmfjd|5-undefined|01
+  - 1-2🕸️@xkmfjd|6-undefined|01
+  - 1-2🕸️@xkmfjd|7-undefined|01
+  - 1-2🕸️@xkmfjd|8-undefined|01
+  - 1-2🕸️@xkmfjd|unbiased-manatee.boa152.lol:443|01
+  - 1-2🕸️@xkmfjd|wise-cowbird.boa152.lol:443|01
+  - 1-2🕸️@xkmfjd|9-undefined|01
+  - 1-2🕸️@xkmfjd|1-sensible-ocelot.boa152.lol:443|01
+  - 1-2🕸️@xkmfjd|national-gar.boa152.lol:443|01
+  - 1-2🕸️@xkmfjd|2-sensible-ocelot.boa152.lol:443|01
+  - 1-2🕸️@xkmfjd|Hysteria2 kevin.iserver.store:8443|01
+  - 1-2🕸️@xkmfjd|Hysteria2 ca.1010520.xyz:1001|01
+  - 1-2🕸️@xkmfjd|Hysteria2 de.1010520.xyz:1001|01
 - name: 📢 谷歌FCM
   type: select
   proxies:
   - 🚀 节点选择
   - 🎯 全球直连
   - ♻️ 自动选择
-  - 1-2🦅@xkmfjd|Hysteria2 kaikaixinxin-us.legeth.xyz:61902|01
-  - 🇺🇸|1-2🦅@xkmfjd|美国|01
-  - 🇺🇸|1-2🦅@xkmfjd|美国|02
-  - 1-2🦅@xkmfjd|Hysteria2 kaikaixinxin-us.legeth.xyz:61950|01
-  - 🇪🇸|1-2🦅@xkmfjd|西班牙|01
-  - 🇪🇸|1-2🦅@xkmfjd|西班牙|02
-  - 🇪🇸|1-2🦅@xkmfjd|西班牙|03
-  - 🇪🇸|1-2🦅@xkmfjd|西班牙|04
-  - 1-2🦅@xkmfjd|1-Hysteria2 91.184.242.252:443|01
-  - 1-2🦅@xkmfjd|Hysteria2 31.186.87.211:19187|01
-  - 1-2🦅@xkmfjd|2-Hysteria2 91.184.242.252:443|01
-  - 1-2🦅@xkmfjd|1-undefined|01
-  - 🇵🇱|1-2🦅@xkmfjd|波兰|01
-  - 🇸🇪|1-2🦅@xkmfjd|瑞典|01
-  - 1-2🦅@xkmfjd|2-undefined|01
-  - 1-2🦅@xkmfjd|3-undefined|01
-  - 1-2🦅@xkmfjd|4-undefined|01
-  - 1-2🦅@xkmfjd|1-|01
-  - 1-2🦅@xkmfjd|2-|01
-  - 1-2🦅@xkmfjd|5-undefined|01
-  - 1-2🦅@xkmfjd|대한민국 11🐼|01
-  - 1-2🦅@xkmfjd|대한민국 10🐼|01
-  - 1-2🦅@xkmfjd|대힌민국 16🐼|01
-  - 🇲🇦|1-2🦅@xkmfjd|摩洛哥|01
-  - 🇯🇵|1-2🦅@xkmfjd|日本|01
-  - 1-2🦅@xkmfjd|Amsterdam  Pro 16|01
-  - 1-2🦅@xkmfjd|6-undefined|01
-  - 1-2🦅@xkmfjd|Amsterdam  Pro 6|01
-  - 1-2🦅@xkmfjd|Amsterdam  22|01
-  - 1-2🦅@xkmfjd|Amsterdam  6|01
+  - 1-2🕸️@xkmfjd|Hysteria2 kaikaixinxin-us.legeth.xyz:61902|01
+  - 🇺🇸|1-2🕸️@xkmfjd|美国|01
+  - 1-2🕸️@xkmfjd|Hysteria2 kaikaixinxin-us.legeth.xyz:61950|01
+  - 1-2🕸️@xkmfjd|Hysteria2 kaikaixinxin-us.legeth.xyz:61970|01
+  - 🇪🇸|1-2🕸️@xkmfjd|西班牙|01
+  - 🇪🇸|1-2🕸️@xkmfjd|西班牙|02
+  - 🇪🇸|1-2🕸️@xkmfjd|西班牙|03
+  - 🇪🇸|1-2🕸️@xkmfjd|西班牙|04
+  - 🇪🇸|1-2🕸️@xkmfjd|西班牙|05
+  - 🇪🇸|1-2🕸️@xkmfjd|西班牙|06
+  - 1-2🕸️@xkmfjd|Hysteria2 31.186.87.211:19187|01
+  - 1-2🕸️@xkmfjd|1-undefined|01
+  - 🇵🇱|1-2🕸️@xkmfjd|波兰|01
+  - 🇸🇪|1-2🕸️@xkmfjd|瑞典|01
+  - 1-2🕸️@xkmfjd|2-undefined|01
+  - 1-2🕸️@xkmfjd|3-undefined|01
+  - 1-2🕸️@xkmfjd|4-undefined|01
+  - 1-2🕸️@xkmfjd|5-undefined|01
+  - 1-2🕸️@xkmfjd|6-undefined|01
+  - 1-2🕸️@xkmfjd|7-undefined|01
+  - 1-2🕸️@xkmfjd|8-undefined|01
+  - 1-2🕸️@xkmfjd|unbiased-manatee.boa152.lol:443|01
+  - 1-2🕸️@xkmfjd|wise-cowbird.boa152.lol:443|01
+  - 1-2🕸️@xkmfjd|9-undefined|01
+  - 1-2🕸️@xkmfjd|1-sensible-ocelot.boa152.lol:443|01
+  - 1-2🕸️@xkmfjd|national-gar.boa152.lol:443|01
+  - 1-2🕸️@xkmfjd|2-sensible-ocelot.boa152.lol:443|01
+  - 1-2🕸️@xkmfjd|Hysteria2 kevin.iserver.store:8443|01
+  - 1-2🕸️@xkmfjd|Hysteria2 ca.1010520.xyz:1001|01
+  - 1-2🕸️@xkmfjd|Hysteria2 de.1010520.xyz:1001|01
 - name: 🎯 全球直连
   type: select
   proxies:
@@ -537,36 +530,36 @@ proxy-groups:
   - 🚀 节点选择
   - 🎯 全球直连
   - ♻️ 自动选择
-  - 1-2🦅@xkmfjd|Hysteria2 kaikaixinxin-us.legeth.xyz:61902|01
-  - 🇺🇸|1-2🦅@xkmfjd|美国|01
-  - 🇺🇸|1-2🦅@xkmfjd|美国|02
-  - 1-2🦅@xkmfjd|Hysteria2 kaikaixinxin-us.legeth.xyz:61950|01
-  - 🇪🇸|1-2🦅@xkmfjd|西班牙|01
-  - 🇪🇸|1-2🦅@xkmfjd|西班牙|02
-  - 🇪🇸|1-2🦅@xkmfjd|西班牙|03
-  - 🇪🇸|1-2🦅@xkmfjd|西班牙|04
-  - 1-2🦅@xkmfjd|1-Hysteria2 91.184.242.252:443|01
-  - 1-2🦅@xkmfjd|Hysteria2 31.186.87.211:19187|01
-  - 1-2🦅@xkmfjd|2-Hysteria2 91.184.242.252:443|01
-  - 1-2🦅@xkmfjd|1-undefined|01
-  - 🇵🇱|1-2🦅@xkmfjd|波兰|01
-  - 🇸🇪|1-2🦅@xkmfjd|瑞典|01
-  - 1-2🦅@xkmfjd|2-undefined|01
-  - 1-2🦅@xkmfjd|3-undefined|01
-  - 1-2🦅@xkmfjd|4-undefined|01
-  - 1-2🦅@xkmfjd|1-|01
-  - 1-2🦅@xkmfjd|2-|01
-  - 1-2🦅@xkmfjd|5-undefined|01
-  - 1-2🦅@xkmfjd|대한민국 11🐼|01
-  - 1-2🦅@xkmfjd|대한민국 10🐼|01
-  - 1-2🦅@xkmfjd|대힌민국 16🐼|01
-  - 🇲🇦|1-2🦅@xkmfjd|摩洛哥|01
-  - 🇯🇵|1-2🦅@xkmfjd|日本|01
-  - 1-2🦅@xkmfjd|Amsterdam  Pro 16|01
-  - 1-2🦅@xkmfjd|6-undefined|01
-  - 1-2🦅@xkmfjd|Amsterdam  Pro 6|01
-  - 1-2🦅@xkmfjd|Amsterdam  22|01
-  - 1-2🦅@xkmfjd|Amsterdam  6|01
+  - 1-2🕸️@xkmfjd|Hysteria2 kaikaixinxin-us.legeth.xyz:61902|01
+  - 🇺🇸|1-2🕸️@xkmfjd|美国|01
+  - 1-2🕸️@xkmfjd|Hysteria2 kaikaixinxin-us.legeth.xyz:61950|01
+  - 1-2🕸️@xkmfjd|Hysteria2 kaikaixinxin-us.legeth.xyz:61970|01
+  - 🇪🇸|1-2🕸️@xkmfjd|西班牙|01
+  - 🇪🇸|1-2🕸️@xkmfjd|西班牙|02
+  - 🇪🇸|1-2🕸️@xkmfjd|西班牙|03
+  - 🇪🇸|1-2🕸️@xkmfjd|西班牙|04
+  - 🇪🇸|1-2🕸️@xkmfjd|西班牙|05
+  - 🇪🇸|1-2🕸️@xkmfjd|西班牙|06
+  - 1-2🕸️@xkmfjd|Hysteria2 31.186.87.211:19187|01
+  - 1-2🕸️@xkmfjd|1-undefined|01
+  - 🇵🇱|1-2🕸️@xkmfjd|波兰|01
+  - 🇸🇪|1-2🕸️@xkmfjd|瑞典|01
+  - 1-2🕸️@xkmfjd|2-undefined|01
+  - 1-2🕸️@xkmfjd|3-undefined|01
+  - 1-2🕸️@xkmfjd|4-undefined|01
+  - 1-2🕸️@xkmfjd|5-undefined|01
+  - 1-2🕸️@xkmfjd|6-undefined|01
+  - 1-2🕸️@xkmfjd|7-undefined|01
+  - 1-2🕸️@xkmfjd|8-undefined|01
+  - 1-2🕸️@xkmfjd|unbiased-manatee.boa152.lol:443|01
+  - 1-2🕸️@xkmfjd|wise-cowbird.boa152.lol:443|01
+  - 1-2🕸️@xkmfjd|9-undefined|01
+  - 1-2🕸️@xkmfjd|1-sensible-ocelot.boa152.lol:443|01
+  - 1-2🕸️@xkmfjd|national-gar.boa152.lol:443|01
+  - 1-2🕸️@xkmfjd|2-sensible-ocelot.boa152.lol:443|01
+  - 1-2🕸️@xkmfjd|Hysteria2 kevin.iserver.store:8443|01
+  - 1-2🕸️@xkmfjd|Hysteria2 ca.1010520.xyz:1001|01
+  - 1-2🕸️@xkmfjd|Hysteria2 de.1010520.xyz:1001|01
 rules:
 - DOMAIN-SUFFIX,acl4.ssr,🎯 全球直连
 - DOMAIN-SUFFIX,ip6-localhost,🎯 全球直连
