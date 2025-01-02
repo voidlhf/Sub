@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# mihono
+# mihomo
 python scripts/mihomo-remote-generate.py "https://suo.st/d2Y76gj" ../mihomo/air.yaml
 
 # python scripts/mihomo-remote-generate.py "http://api.scyu.xyz/sub?token=WxMk2VVGqNHuforQPneQ7g&tag=clash" ../mihomo/dx.yaml
