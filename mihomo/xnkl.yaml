@@ -27,19 +27,6 @@ proxies:
   tfo: false
 - type: vless
   name: 🇪🇸|1-3🐭@xkmfjd|西班牙|01
-  server: 129.146.130.37
-  port: 18443
-  uuid: 86206c88-b8e3-4cb3-8932-3ca6ea1b6033
-  tls: true
-  client-fingerprint: ios
-  skip-cert-verify: false
-  reality-opts:
-    public-key: 8233FxCRw1a_aCJ8d1HwHBMD_fABUNNW7rsrFe3vK0s
-    short-id: e6658462
-  network: tcp
-  servername: www.tesla.com
-- type: vless
-  name: 🇪🇸|1-3🐭@xkmfjd|西班牙|02
   server: 146.190.16.108
   port: 23701
   uuid: 677a41e5-dbe6-429b-8f91-cc014b1ae1bd
@@ -52,7 +39,7 @@ proxies:
     path:
     - /
 - type: vless
-  name: 🇪🇸|1-3🐭@xkmfjd|西班牙|03
+  name: 🇪🇸|1-3🐭@xkmfjd|西班牙|02
   server: 163.123.192.35
   port: 443
   uuid: ca756654-b47f-449a-bf95-82cba53810bd
@@ -63,7 +50,7 @@ proxies:
   network: tcp
   servername: yfus2.xn--4gq62f52gppi29k.com
 - type: vless
-  name: 🇪🇸|1-3🐭@xkmfjd|西班牙|04
+  name: 🇪🇸|1-3🐭@xkmfjd|西班牙|03
   server: phx-plus-1ddns.faforex.eu.org
   port: 23258
   uuid: 73159dbd-e01e-4492-a234-e5d7c335b128
@@ -76,13 +63,6 @@ proxies:
     short-id: bfbc4c1f
   network: tcp
   servername: microsoft.com
-- type: vless
-  name: 🇪🇸|1-3🐭@xkmfjd|西班牙|05
-  server: 185.236.233.136
-  port: 2198
-  uuid: 838f5273-5d2d-4630-a0f5-9cc8e4aef4d6
-  skip-cert-verify: false
-  network: tcp
 - type: hysteria2
   name: 🇸🇪|1-3🐭@xkmfjd|瑞典|01
   server: 150.241.77.182
@@ -95,29 +75,23 @@ proxies:
   tfo: false
 - name: 1-3🐭@xkmfjd|1-undefined|01
   type: ss
-  server: 23.251.121.242
-  port: 8080
-  cipher: rc4-md5
-  password: 14fFPrbezE3HDZzsMOr6
-- name: 1-3🐭@xkmfjd|2-undefined|01
-  type: ss
   server: p227.panda004.net
   port: 33551
   cipher: aes-256-cfb
   password: qwerREWQ@@
-- name: 1-3🐭@xkmfjd|3-undefined|01
+- name: 1-3🐭@xkmfjd|2-undefined|01
   type: ss
   server: p229.panda004.net
   port: 40244
   cipher: aes-256-cfb
   password: qwerREWQ@@
-- name: 1-3🐭@xkmfjd|4-undefined|01
+- name: 1-3🐭@xkmfjd|3-undefined|01
   type: ss
   server: p235.panda004.net
   port: 40677
   cipher: aes-256-cfb
   password: qwerREWQ@@
-- name: 1-3🐭@xkmfjd|5-undefined|01
+- name: 1-3🐭@xkmfjd|4-undefined|01
   type: ss
   server: p239.panda004.net
   port: 3231
@@ -130,7 +104,7 @@ proxies:
   server: wise-cowbird.boa152.lol
   port: 443
   name: 1-3🐭@xkmfjd|1-wise-cowbird.boa152.lol:443|01
-- name: 1-3🐭@xkmfjd|6-undefined|01
+- name: 1-3🐭@xkmfjd|5-undefined|01
   type: ss
   server: p228.panda004.net
   port: 21215
@@ -191,7 +165,7 @@ proxies:
   password: '3723507166611775488'
   server: neutral-magpie.treefrog761.one
   port: 443
-  name: 1-3🐭@xkmfjd|neutral-magpie.treefrog761.one:443|01
+  name: 1-3🐭@xkmfjd|1-neutral-magpie.treefrog761.one:443|01
 - skip-cert-verify: true
   sni: fresh-grub.boa152.lol
   type: trojan
@@ -205,7 +179,7 @@ proxies:
   password: '3723507166611775488'
   server: profound-anemone.boa152.lol
   port: 443
-  name: 1-3🐭@xkmfjd|1-profound-anemone.boa152.lol:443|01
+  name: 1-3🐭@xkmfjd|profound-anemone.boa152.lol:443|01
 - skip-cert-verify: true
   sni: tight-clam.boa152.lol
   type: trojan
@@ -235,13 +209,6 @@ proxies:
   port: 443
   name: 1-3🐭@xkmfjd|2-fresh-grub.boa152.lol:443|01
 - skip-cert-verify: true
-  sni: profound-anemone.boa152.lol
-  type: trojan
-  password: '3723507166611775488'
-  server: profound-anemone.boa152.lol
-  port: 443
-  name: 1-3🐭@xkmfjd|2-profound-anemone.boa152.lol:443|01
-- skip-cert-verify: true
   sni: wise-cowbird.boa152.lol
   type: trojan
   password: '3723507166611775488'
@@ -255,6 +222,32 @@ proxies:
   server: eternal-tadpole.boa152.lol
   port: 443
   name: 1-3🐭@xkmfjd|eternal-tadpole.boa152.lol:443|01
+- name: 1-3🐭@xkmfjd|6-undefined|01
+  type: ss
+  server: 183.232.229.164
+  port: 11001
+  cipher: chacha20-ietf-poly1305
+  password: 54f4e2f4-f0e1-4a15-a0cf-3a3234ab58fb
+- name: 1-3🐭@xkmfjd|7-undefined|01
+  type: ss
+  server: p227.panda004.net
+  port: 33551
+  cipher: aes-256-cfb
+  password: qwerREWQ@@
+- skip-cert-verify: true
+  sni: relative-rhino.boa152.lol
+  type: trojan
+  password: '3723507166611775488'
+  server: relative-rhino.boa152.lol
+  port: 443
+  name: 1-3🐭@xkmfjd|relative-rhino.boa152.lol:443|01
+- skip-cert-verify: true
+  sni: neutral-magpie.treefrog761.one
+  type: trojan
+  password: '3723507166611775488'
+  server: neutral-magpie.treefrog761.one
+  port: 443
+  name: 1-3🐭@xkmfjd|2-neutral-magpie.treefrog761.one:443|01
 proxy-groups:
 - name: 🚀 节点选择
   type: select
@@ -265,32 +258,32 @@ proxy-groups:
   - 🇪🇸|1-3🐭@xkmfjd|西班牙|01
   - 🇪🇸|1-3🐭@xkmfjd|西班牙|02
   - 🇪🇸|1-3🐭@xkmfjd|西班牙|03
-  - 🇪🇸|1-3🐭@xkmfjd|西班牙|04
-  - 🇪🇸|1-3🐭@xkmfjd|西班牙|05
   - 🇸🇪|1-3🐭@xkmfjd|瑞典|01
   - 1-3🐭@xkmfjd|1-undefined|01
   - 1-3🐭@xkmfjd|2-undefined|01
   - 1-3🐭@xkmfjd|3-undefined|01
   - 1-3🐭@xkmfjd|4-undefined|01
-  - 1-3🐭@xkmfjd|5-undefined|01
   - 1-3🐭@xkmfjd|1-wise-cowbird.boa152.lol:443|01
-  - 1-3🐭@xkmfjd|6-undefined|01
+  - 1-3🐭@xkmfjd|5-undefined|01
   - 1-3🐭@xkmfjd|Hysteria2 kevin.iserver.store:8443|01
   - 1-3🐭@xkmfjd|Hysteria2 ca.1010520.xyz:1001|01
   - 1-3🐭@xkmfjd|Hysteria2 de.1010520.xyz:1001|01
   - 1-3🐭@xkmfjd|Hysteria2 sg.mjhy2.com:1443|01
   - 1-3🐭@xkmfjd|Hysteria2 tk-007.xiaoxiaobujidao.xyz:443|01
   - 1-3🐭@xkmfjd|fitting-ox.boa152.lol:443|01
-  - 1-3🐭@xkmfjd|neutral-magpie.treefrog761.one:443|01
+  - 1-3🐭@xkmfjd|1-neutral-magpie.treefrog761.one:443|01
   - 1-3🐭@xkmfjd|1-fresh-grub.boa152.lol:443|01
-  - 1-3🐭@xkmfjd|1-profound-anemone.boa152.lol:443|01
+  - 1-3🐭@xkmfjd|profound-anemone.boa152.lol:443|01
   - 1-3🐭@xkmfjd|tight-clam.boa152.lol:443|01
   - 1-3🐭@xkmfjd|social-bream.boa152.lol:443|01
   - 🇨🇦|1-3🐭@xkmfjd|加拿大|01
   - 1-3🐭@xkmfjd|2-fresh-grub.boa152.lol:443|01
-  - 1-3🐭@xkmfjd|2-profound-anemone.boa152.lol:443|01
   - 1-3🐭@xkmfjd|2-wise-cowbird.boa152.lol:443|01
   - 1-3🐭@xkmfjd|eternal-tadpole.boa152.lol:443|01
+  - 1-3🐭@xkmfjd|6-undefined|01
+  - 1-3🐭@xkmfjd|7-undefined|01
+  - 1-3🐭@xkmfjd|relative-rhino.boa152.lol:443|01
+  - 1-3🐭@xkmfjd|2-neutral-magpie.treefrog761.one:443|01
 - name: ♻️ 自动选择
   type: url-test
   url: http://www.gstatic.com/generate_204
@@ -301,32 +294,32 @@ proxy-groups:
   - 🇪🇸|1-3🐭@xkmfjd|西班牙|01
   - 🇪🇸|1-3🐭@xkmfjd|西班牙|02
   - 🇪🇸|1-3🐭@xkmfjd|西班牙|03
-  - 🇪🇸|1-3🐭@xkmfjd|西班牙|04
-  - 🇪🇸|1-3🐭@xkmfjd|西班牙|05
   - 🇸🇪|1-3🐭@xkmfjd|瑞典|01
   - 1-3🐭@xkmfjd|1-undefined|01
   - 1-3🐭@xkmfjd|2-undefined|01
   - 1-3🐭@xkmfjd|3-undefined|01
   - 1-3🐭@xkmfjd|4-undefined|01
-  - 1-3🐭@xkmfjd|5-undefined|01
   - 1-3🐭@xkmfjd|1-wise-cowbird.boa152.lol:443|01
-  - 1-3🐭@xkmfjd|6-undefined|01
+  - 1-3🐭@xkmfjd|5-undefined|01
   - 1-3🐭@xkmfjd|Hysteria2 kevin.iserver.store:8443|01
   - 1-3🐭@xkmfjd|Hysteria2 ca.1010520.xyz:1001|01
   - 1-3🐭@xkmfjd|Hysteria2 de.1010520.xyz:1001|01
   - 1-3🐭@xkmfjd|Hysteria2 sg.mjhy2.com:1443|01
   - 1-3🐭@xkmfjd|Hysteria2 tk-007.xiaoxiaobujidao.xyz:443|01
   - 1-3🐭@xkmfjd|fitting-ox.boa152.lol:443|01
-  - 1-3🐭@xkmfjd|neutral-magpie.treefrog761.one:443|01
+  - 1-3🐭@xkmfjd|1-neutral-magpie.treefrog761.one:443|01
   - 1-3🐭@xkmfjd|1-fresh-grub.boa152.lol:443|01
-  - 1-3🐭@xkmfjd|1-profound-anemone.boa152.lol:443|01
+  - 1-3🐭@xkmfjd|profound-anemone.boa152.lol:443|01
   - 1-3🐭@xkmfjd|tight-clam.boa152.lol:443|01
   - 1-3🐭@xkmfjd|social-bream.boa152.lol:443|01
   - 🇨🇦|1-3🐭@xkmfjd|加拿大|01
   - 1-3🐭@xkmfjd|2-fresh-grub.boa152.lol:443|01
-  - 1-3🐭@xkmfjd|2-profound-anemone.boa152.lol:443|01
   - 1-3🐭@xkmfjd|2-wise-cowbird.boa152.lol:443|01
   - 1-3🐭@xkmfjd|eternal-tadpole.boa152.lol:443|01
+  - 1-3🐭@xkmfjd|6-undefined|01
+  - 1-3🐭@xkmfjd|7-undefined|01
+  - 1-3🐭@xkmfjd|relative-rhino.boa152.lol:443|01
+  - 1-3🐭@xkmfjd|2-neutral-magpie.treefrog761.one:443|01
 - name: 🌍 国外媒体
   type: select
   proxies:
@@ -337,32 +330,32 @@ proxy-groups:
   - 🇪🇸|1-3🐭@xkmfjd|西班牙|01
   - 🇪🇸|1-3🐭@xkmfjd|西班牙|02
   - 🇪🇸|1-3🐭@xkmfjd|西班牙|03
-  - 🇪🇸|1-3🐭@xkmfjd|西班牙|04
-  - 🇪🇸|1-3🐭@xkmfjd|西班牙|05
   - 🇸🇪|1-3🐭@xkmfjd|瑞典|01
   - 1-3🐭@xkmfjd|1-undefined|01
   - 1-3🐭@xkmfjd|2-undefined|01
   - 1-3🐭@xkmfjd|3-undefined|01
   - 1-3🐭@xkmfjd|4-undefined|01
-  - 1-3🐭@xkmfjd|5-undefined|01
   - 1-3🐭@xkmfjd|1-wise-cowbird.boa152.lol:443|01
-  - 1-3🐭@xkmfjd|6-undefined|01
+  - 1-3🐭@xkmfjd|5-undefined|01
   - 1-3🐭@xkmfjd|Hysteria2 kevin.iserver.store:8443|01
   - 1-3🐭@xkmfjd|Hysteria2 ca.1010520.xyz:1001|01
   - 1-3🐭@xkmfjd|Hysteria2 de.1010520.xyz:1001|01
   - 1-3🐭@xkmfjd|Hysteria2 sg.mjhy2.com:1443|01
   - 1-3🐭@xkmfjd|Hysteria2 tk-007.xiaoxiaobujidao.xyz:443|01
   - 1-3🐭@xkmfjd|fitting-ox.boa152.lol:443|01
-  - 1-3🐭@xkmfjd|neutral-magpie.treefrog761.one:443|01
+  - 1-3🐭@xkmfjd|1-neutral-magpie.treefrog761.one:443|01
   - 1-3🐭@xkmfjd|1-fresh-grub.boa152.lol:443|01
-  - 1-3🐭@xkmfjd|1-profound-anemone.boa152.lol:443|01
+  - 1-3🐭@xkmfjd|profound-anemone.boa152.lol:443|01
   - 1-3🐭@xkmfjd|tight-clam.boa152.lol:443|01
   - 1-3🐭@xkmfjd|social-bream.boa152.lol:443|01
   - 🇨🇦|1-3🐭@xkmfjd|加拿大|01
   - 1-3🐭@xkmfjd|2-fresh-grub.boa152.lol:443|01
-  - 1-3🐭@xkmfjd|2-profound-anemone.boa152.lol:443|01
   - 1-3🐭@xkmfjd|2-wise-cowbird.boa152.lol:443|01
   - 1-3🐭@xkmfjd|eternal-tadpole.boa152.lol:443|01
+  - 1-3🐭@xkmfjd|6-undefined|01
+  - 1-3🐭@xkmfjd|7-undefined|01
+  - 1-3🐭@xkmfjd|relative-rhino.boa152.lol:443|01
+  - 1-3🐭@xkmfjd|2-neutral-magpie.treefrog761.one:443|01
 - name: 📲 电报信息
   type: select
   proxies:
@@ -372,32 +365,32 @@ proxy-groups:
   - 🇪🇸|1-3🐭@xkmfjd|西班牙|01
   - 🇪🇸|1-3🐭@xkmfjd|西班牙|02
   - 🇪🇸|1-3🐭@xkmfjd|西班牙|03
-  - 🇪🇸|1-3🐭@xkmfjd|西班牙|04
-  - 🇪🇸|1-3🐭@xkmfjd|西班牙|05
   - 🇸🇪|1-3🐭@xkmfjd|瑞典|01
   - 1-3🐭@xkmfjd|1-undefined|01
   - 1-3🐭@xkmfjd|2-undefined|01
   - 1-3🐭@xkmfjd|3-undefined|01
   - 1-3🐭@xkmfjd|4-undefined|01
-  - 1-3🐭@xkmfjd|5-undefined|01
   - 1-3🐭@xkmfjd|1-wise-cowbird.boa152.lol:443|01
-  - 1-3🐭@xkmfjd|6-undefined|01
+  - 1-3🐭@xkmfjd|5-undefined|01
   - 1-3🐭@xkmfjd|Hysteria2 kevin.iserver.store:8443|01
   - 1-3🐭@xkmfjd|Hysteria2 ca.1010520.xyz:1001|01
   - 1-3🐭@xkmfjd|Hysteria2 de.1010520.xyz:1001|01
   - 1-3🐭@xkmfjd|Hysteria2 sg.mjhy2.com:1443|01
   - 1-3🐭@xkmfjd|Hysteria2 tk-007.xiaoxiaobujidao.xyz:443|01
   - 1-3🐭@xkmfjd|fitting-ox.boa152.lol:443|01
-  - 1-3🐭@xkmfjd|neutral-magpie.treefrog761.one:443|01
+  - 1-3🐭@xkmfjd|1-neutral-magpie.treefrog761.one:443|01
   - 1-3🐭@xkmfjd|1-fresh-grub.boa152.lol:443|01
-  - 1-3🐭@xkmfjd|1-profound-anemone.boa152.lol:443|01
+  - 1-3🐭@xkmfjd|profound-anemone.boa152.lol:443|01
   - 1-3🐭@xkmfjd|tight-clam.boa152.lol:443|01
   - 1-3🐭@xkmfjd|social-bream.boa152.lol:443|01
   - 🇨🇦|1-3🐭@xkmfjd|加拿大|01
   - 1-3🐭@xkmfjd|2-fresh-grub.boa152.lol:443|01
-  - 1-3🐭@xkmfjd|2-profound-anemone.boa152.lol:443|01
   - 1-3🐭@xkmfjd|2-wise-cowbird.boa152.lol:443|01
   - 1-3🐭@xkmfjd|eternal-tadpole.boa152.lol:443|01
+  - 1-3🐭@xkmfjd|6-undefined|01
+  - 1-3🐭@xkmfjd|7-undefined|01
+  - 1-3🐭@xkmfjd|relative-rhino.boa152.lol:443|01
+  - 1-3🐭@xkmfjd|2-neutral-magpie.treefrog761.one:443|01
 - name: Ⓜ️ 微软服务
   type: select
   proxies:
@@ -407,32 +400,32 @@ proxy-groups:
   - 🇪🇸|1-3🐭@xkmfjd|西班牙|01
   - 🇪🇸|1-3🐭@xkmfjd|西班牙|02
   - 🇪🇸|1-3🐭@xkmfjd|西班牙|03
-  - 🇪🇸|1-3🐭@xkmfjd|西班牙|04
-  - 🇪🇸|1-3🐭@xkmfjd|西班牙|05
   - 🇸🇪|1-3🐭@xkmfjd|瑞典|01
   - 1-3🐭@xkmfjd|1-undefined|01
   - 1-3🐭@xkmfjd|2-undefined|01
   - 1-3🐭@xkmfjd|3-undefined|01
   - 1-3🐭@xkmfjd|4-undefined|01
-  - 1-3🐭@xkmfjd|5-undefined|01
   - 1-3🐭@xkmfjd|1-wise-cowbird.boa152.lol:443|01
-  - 1-3🐭@xkmfjd|6-undefined|01
+  - 1-3🐭@xkmfjd|5-undefined|01
   - 1-3🐭@xkmfjd|Hysteria2 kevin.iserver.store:8443|01
   - 1-3🐭@xkmfjd|Hysteria2 ca.1010520.xyz:1001|01
   - 1-3🐭@xkmfjd|Hysteria2 de.1010520.xyz:1001|01
   - 1-3🐭@xkmfjd|Hysteria2 sg.mjhy2.com:1443|01
   - 1-3🐭@xkmfjd|Hysteria2 tk-007.xiaoxiaobujidao.xyz:443|01
   - 1-3🐭@xkmfjd|fitting-ox.boa152.lol:443|01
-  - 1-3🐭@xkmfjd|neutral-magpie.treefrog761.one:443|01
+  - 1-3🐭@xkmfjd|1-neutral-magpie.treefrog761.one:443|01
   - 1-3🐭@xkmfjd|1-fresh-grub.boa152.lol:443|01
-  - 1-3🐭@xkmfjd|1-profound-anemone.boa152.lol:443|01
+  - 1-3🐭@xkmfjd|profound-anemone.boa152.lol:443|01
   - 1-3🐭@xkmfjd|tight-clam.boa152.lol:443|01
   - 1-3🐭@xkmfjd|social-bream.boa152.lol:443|01
   - 🇨🇦|1-3🐭@xkmfjd|加拿大|01
   - 1-3🐭@xkmfjd|2-fresh-grub.boa152.lol:443|01
-  - 1-3🐭@xkmfjd|2-profound-anemone.boa152.lol:443|01
   - 1-3🐭@xkmfjd|2-wise-cowbird.boa152.lol:443|01
   - 1-3🐭@xkmfjd|eternal-tadpole.boa152.lol:443|01
+  - 1-3🐭@xkmfjd|6-undefined|01
+  - 1-3🐭@xkmfjd|7-undefined|01
+  - 1-3🐭@xkmfjd|relative-rhino.boa152.lol:443|01
+  - 1-3🐭@xkmfjd|2-neutral-magpie.treefrog761.one:443|01
 - name: 🍎 苹果服务
   type: select
   proxies:
@@ -442,32 +435,32 @@ proxy-groups:
   - 🇪🇸|1-3🐭@xkmfjd|西班牙|01
   - 🇪🇸|1-3🐭@xkmfjd|西班牙|02
   - 🇪🇸|1-3🐭@xkmfjd|西班牙|03
-  - 🇪🇸|1-3🐭@xkmfjd|西班牙|04
-  - 🇪🇸|1-3🐭@xkmfjd|西班牙|05
   - 🇸🇪|1-3🐭@xkmfjd|瑞典|01
   - 1-3🐭@xkmfjd|1-undefined|01
   - 1-3🐭@xkmfjd|2-undefined|01
   - 1-3🐭@xkmfjd|3-undefined|01
   - 1-3🐭@xkmfjd|4-undefined|01
-  - 1-3🐭@xkmfjd|5-undefined|01
   - 1-3🐭@xkmfjd|1-wise-cowbird.boa152.lol:443|01
-  - 1-3🐭@xkmfjd|6-undefined|01
+  - 1-3🐭@xkmfjd|5-undefined|01
   - 1-3🐭@xkmfjd|Hysteria2 kevin.iserver.store:8443|01
   - 1-3🐭@xkmfjd|Hysteria2 ca.1010520.xyz:1001|01
   - 1-3🐭@xkmfjd|Hysteria2 de.1010520.xyz:1001|01
   - 1-3🐭@xkmfjd|Hysteria2 sg.mjhy2.com:1443|01
   - 1-3🐭@xkmfjd|Hysteria2 tk-007.xiaoxiaobujidao.xyz:443|01
   - 1-3🐭@xkmfjd|fitting-ox.boa152.lol:443|01
-  - 1-3🐭@xkmfjd|neutral-magpie.treefrog761.one:443|01
+  - 1-3🐭@xkmfjd|1-neutral-magpie.treefrog761.one:443|01
   - 1-3🐭@xkmfjd|1-fresh-grub.boa152.lol:443|01
-  - 1-3🐭@xkmfjd|1-profound-anemone.boa152.lol:443|01
+  - 1-3🐭@xkmfjd|profound-anemone.boa152.lol:443|01
   - 1-3🐭@xkmfjd|tight-clam.boa152.lol:443|01
   - 1-3🐭@xkmfjd|social-bream.boa152.lol:443|01
   - 🇨🇦|1-3🐭@xkmfjd|加拿大|01
   - 1-3🐭@xkmfjd|2-fresh-grub.boa152.lol:443|01
-  - 1-3🐭@xkmfjd|2-profound-anemone.boa152.lol:443|01
   - 1-3🐭@xkmfjd|2-wise-cowbird.boa152.lol:443|01
   - 1-3🐭@xkmfjd|eternal-tadpole.boa152.lol:443|01
+  - 1-3🐭@xkmfjd|6-undefined|01
+  - 1-3🐭@xkmfjd|7-undefined|01
+  - 1-3🐭@xkmfjd|relative-rhino.boa152.lol:443|01
+  - 1-3🐭@xkmfjd|2-neutral-magpie.treefrog761.one:443|01
 - name: 📢 谷歌FCM
   type: select
   proxies:
@@ -478,32 +471,32 @@ proxy-groups:
   - 🇪🇸|1-3🐭@xkmfjd|西班牙|01
   - 🇪🇸|1-3🐭@xkmfjd|西班牙|02
   - 🇪🇸|1-3🐭@xkmfjd|西班牙|03
-  - 🇪🇸|1-3🐭@xkmfjd|西班牙|04
-  - 🇪🇸|1-3🐭@xkmfjd|西班牙|05
   - 🇸🇪|1-3🐭@xkmfjd|瑞典|01
   - 1-3🐭@xkmfjd|1-undefined|01
   - 1-3🐭@xkmfjd|2-undefined|01
   - 1-3🐭@xkmfjd|3-undefined|01
   - 1-3🐭@xkmfjd|4-undefined|01
-  - 1-3🐭@xkmfjd|5-undefined|01
   - 1-3🐭@xkmfjd|1-wise-cowbird.boa152.lol:443|01
-  - 1-3🐭@xkmfjd|6-undefined|01
+  - 1-3🐭@xkmfjd|5-undefined|01
   - 1-3🐭@xkmfjd|Hysteria2 kevin.iserver.store:8443|01
   - 1-3🐭@xkmfjd|Hysteria2 ca.1010520.xyz:1001|01
   - 1-3🐭@xkmfjd|Hysteria2 de.1010520.xyz:1001|01
   - 1-3🐭@xkmfjd|Hysteria2 sg.mjhy2.com:1443|01
   - 1-3🐭@xkmfjd|Hysteria2 tk-007.xiaoxiaobujidao.xyz:443|01
   - 1-3🐭@xkmfjd|fitting-ox.boa152.lol:443|01
-  - 1-3🐭@xkmfjd|neutral-magpie.treefrog761.one:443|01
+  - 1-3🐭@xkmfjd|1-neutral-magpie.treefrog761.one:443|01
   - 1-3🐭@xkmfjd|1-fresh-grub.boa152.lol:443|01
-  - 1-3🐭@xkmfjd|1-profound-anemone.boa152.lol:443|01
+  - 1-3🐭@xkmfjd|profound-anemone.boa152.lol:443|01
   - 1-3🐭@xkmfjd|tight-clam.boa152.lol:443|01
   - 1-3🐭@xkmfjd|social-bream.boa152.lol:443|01
   - 🇨🇦|1-3🐭@xkmfjd|加拿大|01
   - 1-3🐭@xkmfjd|2-fresh-grub.boa152.lol:443|01
-  - 1-3🐭@xkmfjd|2-profound-anemone.boa152.lol:443|01
   - 1-3🐭@xkmfjd|2-wise-cowbird.boa152.lol:443|01
   - 1-3🐭@xkmfjd|eternal-tadpole.boa152.lol:443|01
+  - 1-3🐭@xkmfjd|6-undefined|01
+  - 1-3🐭@xkmfjd|7-undefined|01
+  - 1-3🐭@xkmfjd|relative-rhino.boa152.lol:443|01
+  - 1-3🐭@xkmfjd|2-neutral-magpie.treefrog761.one:443|01
 - name: 🎯 全球直连
   type: select
   proxies:
@@ -530,32 +523,32 @@ proxy-groups:
   - 🇪🇸|1-3🐭@xkmfjd|西班牙|01
   - 🇪🇸|1-3🐭@xkmfjd|西班牙|02
   - 🇪🇸|1-3🐭@xkmfjd|西班牙|03
-  - 🇪🇸|1-3🐭@xkmfjd|西班牙|04
-  - 🇪🇸|1-3🐭@xkmfjd|西班牙|05
   - 🇸🇪|1-3🐭@xkmfjd|瑞典|01
   - 1-3🐭@xkmfjd|1-undefined|01
   - 1-3🐭@xkmfjd|2-undefined|01
   - 1-3🐭@xkmfjd|3-undefined|01
   - 1-3🐭@xkmfjd|4-undefined|01
-  - 1-3🐭@xkmfjd|5-undefined|01
   - 1-3🐭@xkmfjd|1-wise-cowbird.boa152.lol:443|01
-  - 1-3🐭@xkmfjd|6-undefined|01
+  - 1-3🐭@xkmfjd|5-undefined|01
   - 1-3🐭@xkmfjd|Hysteria2 kevin.iserver.store:8443|01
   - 1-3🐭@xkmfjd|Hysteria2 ca.1010520.xyz:1001|01
   - 1-3🐭@xkmfjd|Hysteria2 de.1010520.xyz:1001|01
   - 1-3🐭@xkmfjd|Hysteria2 sg.mjhy2.com:1443|01
   - 1-3🐭@xkmfjd|Hysteria2 tk-007.xiaoxiaobujidao.xyz:443|01
   - 1-3🐭@xkmfjd|fitting-ox.boa152.lol:443|01
-  - 1-3🐭@xkmfjd|neutral-magpie.treefrog761.one:443|01
+  - 1-3🐭@xkmfjd|1-neutral-magpie.treefrog761.one:443|01
   - 1-3🐭@xkmfjd|1-fresh-grub.boa152.lol:443|01
-  - 1-3🐭@xkmfjd|1-profound-anemone.boa152.lol:443|01
+  - 1-3🐭@xkmfjd|profound-anemone.boa152.lol:443|01
   - 1-3🐭@xkmfjd|tight-clam.boa152.lol:443|01
   - 1-3🐭@xkmfjd|social-bream.boa152.lol:443|01
   - 🇨🇦|1-3🐭@xkmfjd|加拿大|01
   - 1-3🐭@xkmfjd|2-fresh-grub.boa152.lol:443|01
-  - 1-3🐭@xkmfjd|2-profound-anemone.boa152.lol:443|01
   - 1-3🐭@xkmfjd|2-wise-cowbird.boa152.lol:443|01
   - 1-3🐭@xkmfjd|eternal-tadpole.boa152.lol:443|01
+  - 1-3🐭@xkmfjd|6-undefined|01
+  - 1-3🐭@xkmfjd|7-undefined|01
+  - 1-3🐭@xkmfjd|relative-rhino.boa152.lol:443|01
+  - 1-3🐭@xkmfjd|2-neutral-magpie.treefrog761.one:443|01
 rules:
 - DOMAIN-SUFFIX,acl4.ssr,🎯 全球直连
 - DOMAIN-SUFFIX,ip6-localhost,🎯 全球直连
