@@ -18,67 +18,67 @@ hosts:
   alt8-mtalk.google.com: 142.250.112.188
 proxies:
 - name: 免费勿受骗自行优选
-  server: 104.19.124.164
+  server: www.visa.com.tw
   port: 443
   type: vmess
-  uuid: 86e08f62-b298-4b34-fa93-6ea1f32a52ec
+  uuid: 8eacbe39-b52e-42a9-a3ca-3cfbf963579f
   alterId: 0
   cipher: auto
   tls: true
   skip-cert-verify: true
-  servername: br.trevely.us.kg
+  servername: brargo.trevely.us.kg
   network: ws
   ws-opts:
-    path: /br.trevely.us.kg
+    path: /vmess-argo?ed=2048
     headers:
-      Host: br.trevely.us.kg
-- name: FREE_BR CF-CU
-  server: 104.17.238.49
+      Host: brargo.trevely.us.kg
+- name: FREE_BR ARG
+  server: www.visa.com.tw
   port: 2053
   type: vmess
-  uuid: 86e08f62-b298-4b34-fa93-6ea1f32a52ec
+  uuid: 8eacbe39-b52e-42a9-a3ca-3cfbf963579f
   alterId: 0
   cipher: auto
   tls: true
   skip-cert-verify: true
-  servername: br.trevely.us.kg
+  servername: brargo.trevely.us.kg
   network: ws
   ws-opts:
-    path: /br.trevely.us.kg
+    path: /vmess-argo?ed=2048
     headers:
-      Host: br.trevely.us.kg
-- name: FREE_DE CF-CU
-  server: 172.64.230.32
+      Host: brargo.trevely.us.kg
+- name: FREE_DE ARG
+  server: www.visa.com.tw
   port: 2083
   type: vmess
-  uuid: f04dbdda-99ba-4cad-ef5c-892f4dd4c52d
+  uuid: a09c91c2-96a3-4ac4-94e0-90e9fb1b1db5
   alterId: 0
   cipher: auto
   tls: true
   skip-cert-verify: true
-  servername: de.trevely.us.kg
+  servername: deargo.trevely.us.kg
   network: ws
   ws-opts:
-    path: /de.trevely.us.kg
+    path: /vmess-argo?ed=2048
     headers:
-      Host: de.trevely.us.kg
-- name: FREE_JP CF-CU
-  server: 172.64.232.0
+      Host: deargo.trevely.us.kg
+- name: FREE_JP ARG
+  server: www.visa.com.tw
   port: 2087
   type: vmess
-  uuid: 77911f97-0d7a-4864-918d-a8054922b978
+  uuid: f4a8da6a-d519-4692-93cf-bda85323a45f
   alterId: 0
   cipher: auto
   tls: true
   skip-cert-verify: true
-  servername: jp.trevely.us.kg
+  servername: jpargo.trevely.us.kg
   network: ws
   ws-opts:
-    path: /jp.trevely.us.kg
+    path: /vmess-argo?ed=2048
     headers:
-      Host: jp.trevely.us.kg
-- name: FREE_FI 15 ARG 01
-  server: 172.64.230.32
+      Host: jpargo.trevely.us.kg
+- name: FREE_FI ARG 01
+  server: www.visa.com.tw
   port: 2096
   type: vmess
   uuid: fb0e6950-1dab-4362-9dcb-b1d55fb1fb2a
@@ -92,8 +92,8 @@ proxies:
     path: /serv00?ed=2048
     headers:
       Host: serv15.trevely.us.kg
-- name: FREE_FI 15 ARG 02
-  server: 172.64.230.32
+- name: FREE_FI ARG 02
+  server: www.visa.com.tw
   port: 8443
   type: vmess
   uuid: f31f60c3-835d-466d-928b-75a074ffb818
@@ -114,11 +114,11 @@ proxy-groups:
   - ♻️ 自动选择
   - DIRECT
   - 免费勿受骗自行优选
-  - FREE_BR CF-CU
-  - FREE_DE CF-CU
-  - FREE_JP CF-CU
-  - FREE_FI 15 ARG 01
-  - FREE_FI 15 ARG 02
+  - FREE_BR ARG
+  - FREE_DE ARG
+  - FREE_JP ARG
+  - FREE_FI ARG 01
+  - FREE_FI ARG 02
 - name: ♻️ 自动选择
   type: url-test
   url: http://www.gstatic.com/generate_204
@@ -126,11 +126,11 @@ proxy-groups:
   tolerance: 50
   proxies:
   - 免费勿受骗自行优选
-  - FREE_BR CF-CU
-  - FREE_DE CF-CU
-  - FREE_JP CF-CU
-  - FREE_FI 15 ARG 01
-  - FREE_FI 15 ARG 02
+  - FREE_BR ARG
+  - FREE_DE ARG
+  - FREE_JP ARG
+  - FREE_FI ARG 01
+  - FREE_FI ARG 02
 - name: 🌍 国外媒体
   type: select
   proxies:
@@ -138,44 +138,44 @@ proxy-groups:
   - ♻️ 自动选择
   - 🎯 全球直连
   - 免费勿受骗自行优选
-  - FREE_BR CF-CU
-  - FREE_DE CF-CU
-  - FREE_JP CF-CU
-  - FREE_FI 15 ARG 01
-  - FREE_FI 15 ARG 02
+  - FREE_BR ARG
+  - FREE_DE ARG
+  - FREE_JP ARG
+  - FREE_FI ARG 01
+  - FREE_FI ARG 02
 - name: 📲 电报信息
   type: select
   proxies:
   - 🚀 节点选择
   - 🎯 全球直连
   - 免费勿受骗自行优选
-  - FREE_BR CF-CU
-  - FREE_DE CF-CU
-  - FREE_JP CF-CU
-  - FREE_FI 15 ARG 01
-  - FREE_FI 15 ARG 02
+  - FREE_BR ARG
+  - FREE_DE ARG
+  - FREE_JP ARG
+  - FREE_FI ARG 01
+  - FREE_FI ARG 02
 - name: Ⓜ️ 微软服务
   type: select
   proxies:
   - 🎯 全球直连
   - 🚀 节点选择
   - 免费勿受骗自行优选
-  - FREE_BR CF-CU
-  - FREE_DE CF-CU
-  - FREE_JP CF-CU
-  - FREE_FI 15 ARG 01
-  - FREE_FI 15 ARG 02
+  - FREE_BR ARG
+  - FREE_DE ARG
+  - FREE_JP ARG
+  - FREE_FI ARG 01
+  - FREE_FI ARG 02
 - name: 🍎 苹果服务
   type: select
   proxies:
   - 🚀 节点选择
   - 🎯 全球直连
   - 免费勿受骗自行优选
-  - FREE_BR CF-CU
-  - FREE_DE CF-CU
-  - FREE_JP CF-CU
-  - FREE_FI 15 ARG 01
-  - FREE_FI 15 ARG 02
+  - FREE_BR ARG
+  - FREE_DE ARG
+  - FREE_JP ARG
+  - FREE_FI ARG 01
+  - FREE_FI ARG 02
 - name: 📢 谷歌FCM
   type: select
   proxies:
@@ -183,11 +183,11 @@ proxy-groups:
   - 🎯 全球直连
   - ♻️ 自动选择
   - 免费勿受骗自行优选
-  - FREE_BR CF-CU
-  - FREE_DE CF-CU
-  - FREE_JP CF-CU
-  - FREE_FI 15 ARG 01
-  - FREE_FI 15 ARG 02
+  - FREE_BR ARG
+  - FREE_DE ARG
+  - FREE_JP ARG
+  - FREE_FI ARG 01
+  - FREE_FI ARG 02
 - name: 🎯 全球直连
   type: select
   proxies:
@@ -211,11 +211,11 @@ proxy-groups:
   - 🎯 全球直连
   - ♻️ 自动选择
   - 免费勿受骗自行优选
-  - FREE_BR CF-CU
-  - FREE_DE CF-CU
-  - FREE_JP CF-CU
-  - FREE_FI 15 ARG 01
-  - FREE_FI 15 ARG 02
+  - FREE_BR ARG
+  - FREE_DE ARG
+  - FREE_JP ARG
+  - FREE_FI ARG 01
+  - FREE_FI ARG 02
 rules:
 - DOMAIN-SUFFIX,acl4.ssr,🎯 全球直连
 - DOMAIN-SUFFIX,ip6-localhost,🎯 全球直连
