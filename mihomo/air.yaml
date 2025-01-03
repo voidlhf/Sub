@@ -23,6 +23,12 @@ proxies:
   type: ss
   cipher: chacha20-ietf-poly1305
   password: 17995035-415e-422c-8527-6beb8899c054
+- name: Netflix/Disney+/油管Premium/ChatGPT
+  server: hkdns.webcdn.me
+  port: 31900
+  type: ss
+  cipher: chacha20-ietf-poly1305
+  password: 17995035-415e-422c-8527-6beb8899c054
 - name: 🇭🇰 香港 - 2x -VIP 限速試用
   server: hk-try.webcdn.me
   port: 55000
@@ -35,27 +41,15 @@ proxies:
   type: ss
   cipher: chacha20-ietf-poly1305
   password: 17995035-415e-422c-8527-6beb8899c054
-- name: 🇭🇰 HK - IEPL
-  server: tw-cdn.webcdn.me
-  port: 55200
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: 17995035-415e-422c-8527-6beb8899c054
-- name: 🇯🇵 JP - 2x - ChatGPT
-  server: jp.webcdn.me
-  port: 55300
+- name: 🇺🇸 US - ChatGPT | 流媒体
+  server: usvip.webcdn.me
+  port: 55001
   type: ss
   cipher: chacha20-ietf-poly1305
   password: 17995035-415e-422c-8527-6beb8899c054
 - name: 🇬🇧 UK
   server: uk.webcdn.me
   port: 37291
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: 17995035-415e-422c-8527-6beb8899c054
-- name: 🇬🇧 UK - ChatGPT
-  server: ukai.webcdn.me
-  port: 30287
   type: ss
   cipher: chacha20-ietf-poly1305
   password: 17995035-415e-422c-8527-6beb8899c054
@@ -71,12 +65,6 @@ proxies:
   type: ss
   cipher: chacha20-ietf-poly1305
   password: 17995035-415e-422c-8527-6beb8899c054
-- name: 🇺🇸 US 2x - ChatGPT
-  server: us-free.appscdn.xyz
-  port: 10018
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: 17995035-415e-422c-8527-6beb8899c054
 proxy-groups:
 - name: 🚀 节点选择
   type: select
@@ -84,15 +72,13 @@ proxy-groups:
   - ♻️ 自动选择
   - DIRECT
   - 🇭🇰 HK - 1x
+  - Netflix/Disney+/油管Premium/ChatGPT
   - 🇭🇰 香港 - 2x -VIP 限速試用
   - '🇺🇸 套餐购买访问: https://airapp.us'
-  - 🇭🇰 HK - IEPL
-  - 🇯🇵 JP - 2x - ChatGPT
+  - 🇺🇸 US - ChatGPT | 流媒体
   - 🇬🇧 UK
-  - 🇬🇧 UK - ChatGPT
   - 🇸🇬 SG Netflix / Disney 流媒體
   - 🇬🇧 ChatGPT - GB
-  - 🇺🇸 US 2x - ChatGPT
 - name: ♻️ 自动选择
   type: url-test
   url: http://www.gstatic.com/generate_204
@@ -100,15 +86,13 @@ proxy-groups:
   tolerance: 50
   proxies:
   - 🇭🇰 HK - 1x
+  - Netflix/Disney+/油管Premium/ChatGPT
   - 🇭🇰 香港 - 2x -VIP 限速試用
   - '🇺🇸 套餐购买访问: https://airapp.us'
-  - 🇭🇰 HK - IEPL
-  - 🇯🇵 JP - 2x - ChatGPT
+  - 🇺🇸 US - ChatGPT | 流媒体
   - 🇬🇧 UK
-  - 🇬🇧 UK - ChatGPT
   - 🇸🇬 SG Netflix / Disney 流媒體
   - 🇬🇧 ChatGPT - GB
-  - 🇺🇸 US 2x - ChatGPT
 - name: 🌍 国外媒体
   type: select
   proxies:
@@ -116,60 +100,52 @@ proxy-groups:
   - ♻️ 自动选择
   - 🎯 全球直连
   - 🇭🇰 HK - 1x
+  - Netflix/Disney+/油管Premium/ChatGPT
   - 🇭🇰 香港 - 2x -VIP 限速試用
   - '🇺🇸 套餐购买访问: https://airapp.us'
-  - 🇭🇰 HK - IEPL
-  - 🇯🇵 JP - 2x - ChatGPT
+  - 🇺🇸 US - ChatGPT | 流媒体
   - 🇬🇧 UK
-  - 🇬🇧 UK - ChatGPT
   - 🇸🇬 SG Netflix / Disney 流媒體
   - 🇬🇧 ChatGPT - GB
-  - 🇺🇸 US 2x - ChatGPT
 - name: 📲 电报信息
   type: select
   proxies:
   - 🚀 节点选择
   - 🎯 全球直连
   - 🇭🇰 HK - 1x
+  - Netflix/Disney+/油管Premium/ChatGPT
   - 🇭🇰 香港 - 2x -VIP 限速試用
   - '🇺🇸 套餐购买访问: https://airapp.us'
-  - 🇭🇰 HK - IEPL
-  - 🇯🇵 JP - 2x - ChatGPT
+  - 🇺🇸 US - ChatGPT | 流媒体
   - 🇬🇧 UK
-  - 🇬🇧 UK - ChatGPT
   - 🇸🇬 SG Netflix / Disney 流媒體
   - 🇬🇧 ChatGPT - GB
-  - 🇺🇸 US 2x - ChatGPT
 - name: Ⓜ️ 微软服务
   type: select
   proxies:
   - 🎯 全球直连
   - 🚀 节点选择
   - 🇭🇰 HK - 1x
+  - Netflix/Disney+/油管Premium/ChatGPT
   - 🇭🇰 香港 - 2x -VIP 限速試用
   - '🇺🇸 套餐购买访问: https://airapp.us'
-  - 🇭🇰 HK - IEPL
-  - 🇯🇵 JP - 2x - ChatGPT
+  - 🇺🇸 US - ChatGPT | 流媒体
   - 🇬🇧 UK
-  - 🇬🇧 UK - ChatGPT
   - 🇸🇬 SG Netflix / Disney 流媒體
   - 🇬🇧 ChatGPT - GB
-  - 🇺🇸 US 2x - ChatGPT
 - name: 🍎 苹果服务
   type: select
   proxies:
   - 🚀 节点选择
   - 🎯 全球直连
   - 🇭🇰 HK - 1x
+  - Netflix/Disney+/油管Premium/ChatGPT
   - 🇭🇰 香港 - 2x -VIP 限速試用
   - '🇺🇸 套餐购买访问: https://airapp.us'
-  - 🇭🇰 HK - IEPL
-  - 🇯🇵 JP - 2x - ChatGPT
+  - 🇺🇸 US - ChatGPT | 流媒体
   - 🇬🇧 UK
-  - 🇬🇧 UK - ChatGPT
   - 🇸🇬 SG Netflix / Disney 流媒體
   - 🇬🇧 ChatGPT - GB
-  - 🇺🇸 US 2x - ChatGPT
 - name: 📢 谷歌FCM
   type: select
   proxies:
@@ -177,15 +153,13 @@ proxy-groups:
   - 🎯 全球直连
   - ♻️ 自动选择
   - 🇭🇰 HK - 1x
+  - Netflix/Disney+/油管Premium/ChatGPT
   - 🇭🇰 香港 - 2x -VIP 限速試用
   - '🇺🇸 套餐购买访问: https://airapp.us'
-  - 🇭🇰 HK - IEPL
-  - 🇯🇵 JP - 2x - ChatGPT
+  - 🇺🇸 US - ChatGPT | 流媒体
   - 🇬🇧 UK
-  - 🇬🇧 UK - ChatGPT
   - 🇸🇬 SG Netflix / Disney 流媒體
   - 🇬🇧 ChatGPT - GB
-  - 🇺🇸 US 2x - ChatGPT
 - name: 🎯 全球直连
   type: select
   proxies:
@@ -209,15 +183,13 @@ proxy-groups:
   - 🎯 全球直连
   - ♻️ 自动选择
   - 🇭🇰 HK - 1x
+  - Netflix/Disney+/油管Premium/ChatGPT
   - 🇭🇰 香港 - 2x -VIP 限速試用
   - '🇺🇸 套餐购买访问: https://airapp.us'
-  - 🇭🇰 HK - IEPL
-  - 🇯🇵 JP - 2x - ChatGPT
+  - 🇺🇸 US - ChatGPT | 流媒体
   - 🇬🇧 UK
-  - 🇬🇧 UK - ChatGPT
   - 🇸🇬 SG Netflix / Disney 流媒體
   - 🇬🇧 ChatGPT - GB
-  - 🇺🇸 US 2x - ChatGPT
 rules:
 - DOMAIN-SUFFIX,acl4.ssr,🎯 全球直连
 - DOMAIN-SUFFIX,ip6-localhost,🎯 全球直连
