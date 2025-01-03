@@ -2,6 +2,7 @@ import os
 import yaml
 import requests
 import argparse
+import re
 
 def download_file(url, save_path):
     headers = {
@@ -18,6 +19,14 @@ def download_file(url, save_path):
 
     with open(save_path, "wb") as file:
         file.write(response.content)
+
+def preprocess_yaml(file_path):
+    """移除 YAML 文件中的 !<str> 标签"""
+    with open(file_path, "r", encoding="utf-8") as file:
+        content = file.read()
+    # 移除所有 "!<str>" 标签
+    content = re.sub(r"!\<str\>", "", content)
+    return yaml.safe_load(content)
 
 def main():
     script_dir = os.path.dirname(os.path.abspath(__file__))
@@ -41,17 +50,10 @@ def main():
 
     download_file(file_url, config_path)
 
-    with open(config_path, "r", encoding="utf-8") as file:
-        data = yaml.safe_load(file)
-
-    with open(general_path, "r", encoding="utf-8") as file:
-        general_data = yaml.safe_load(file)
-
-    with open(proxy_groups_path, "r", encoding="utf-8") as file:
-        proxy_groups_data = yaml.safe_load(file)
-
-    with open(rules_path, "r", encoding="utf-8") as file:
-        rules_data = yaml.safe_load(file)
+    data = preprocess_yaml(config_path)
+    general_data = preprocess_yaml(general_path)
+    proxy_groups_data = preprocess_yaml(proxy_groups_path)
+    rules_data = preprocess_yaml(rules_path)
 
     proxies_data = data.get("proxies", [])
     proxy_names = [proxy.get("name") for proxy in proxies_data if "name" in proxy]
