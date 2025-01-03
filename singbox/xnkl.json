@@ -1,0 +1,523 @@
+{
+  "log": {},
+  "dns": {
+    "servers": [
+      {
+        "tag": "dns_proxy",
+        "address": "https://8.8.8.8/dns-query",
+        "detour": "select"
+      },
+      {
+        "tag": "dns_direct",
+        "address": "https://223.5.5.5/dns-query",
+        "detour": "direct"
+      },
+      {
+        "tag": "dns_fakeip",
+        "address": "fakeip"
+      }
+    ],
+    "rules": [
+      {
+        "outbound": "any",
+        "server": "dns_direct"
+      },
+      {
+        "rule_set": [
+          "AdGuardSDNSFilter",
+          "chrome-doh"
+        ],
+        "action": "reject"
+      },
+      {
+        "query_type": [
+          "A",
+          "AAAA"
+        ],
+        "server": "dns_fakeip",
+        "rewrite_ttl": 1
+      },
+      {
+        "clash_mode": "Global",
+        "server": "dns_proxy"
+      },
+      {
+        "clash_mode": "Direct",
+        "server": "dns_direct"
+      },
+      {
+        "rule_set": "geosite-cn",
+        "server": "dns_direct"
+      }
+    ],
+    "strategy": "prefer_ipv4",
+    "independent_cache": true,
+    "fakeip": {
+      "enabled": true,
+      "inet4_range": "198.18.0.0/15",
+      "inet6_range": "fc00::/18"
+    }
+  },
+  "inbounds": [
+    {
+      "type": "tun",
+      "address": [
+        "172.18.0.1/30",
+        "fdfe:dcba:9876::1/126"
+      ],
+      "mtu": 9000,
+      "auto_route": true,
+      "strict_route": true,
+      "endpoint_independent_nat": true
+    },
+    {
+      "type": "socks",
+      "tag": "socks-in",
+      "listen": "127.0.0.1",
+      "listen_port": 2333,
+      "users": []
+    },
+    {
+      "type": "mixed",
+      "tag": "mixed-in",
+      "listen": "127.0.0.1",
+      "listen_port": 2334,
+      "users": []
+    }
+  ],
+  "outbounds": [
+    {
+      "password": "c8e088a6-f96c-4a24-abb9-b35631f5324e",
+      "server": "kaikaixinxin-us.legeth.xyz",
+      "server_port": 61950,
+      "tag": "🇺🇸|1-4🐉@xkmfjd|美国|01",
+      "tls": {
+        "enabled": true,
+        "server_name": "kaikaixinxin-us.legeth.xyz"
+      },
+      "type": "hysteria2"
+    },
+    {
+      "server": "163.123.192.35",
+      "server_port": 443,
+      "tag": "🇺🇸|1-4🐉@xkmfjd|美国|02",
+      "tls": {
+        "enabled": true,
+        "server_name": "yfus2.xn--4gq62f52gppi29k.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "type": "vless",
+      "uuid": "ca756654-b47f-449a-bf95-82cba53810bd",
+      "flow": "xtls-rprx-vision",
+      "packet_encoding": "xudp"
+    },
+    {
+      "password": "Telegram:@KevinZakarian",
+      "server": "kevin.iserver.store",
+      "server_port": 8443,
+      "tag": "🇺🇸|1-4🐉@xkmfjd|美国|03",
+      "tls": {
+        "enabled": true,
+        "server_name": "kevin.iserver.store",
+        "insecure": true
+      },
+      "type": "hysteria2",
+      "obfs": {
+        "password": "Telegram:@KevinZakarian",
+        "type": "salamander"
+      }
+    },
+    {
+      "server": "phx-plus-1ddns.faforex.eu.org",
+      "server_port": 23258,
+      "tag": "🇺🇸|1-4🐉@xkmfjd|美国|04",
+      "tls": {
+        "enabled": true,
+        "server_name": "microsoft.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "BSEvpP7N7XNtOgzDrCFEgu6ejgdBHOYRug6S_lTf5GM",
+          "short_id": "bfbc4c1f"
+        }
+      },
+      "type": "vless",
+      "uuid": "73159dbd-e01e-4492-a234-e5d7c335b128",
+      "flow": "xtls-rprx-vision",
+      "packet_encoding": "xudp"
+    },
+    {
+      "password": "3723507166611775488",
+      "server": "fresh-grub.boa152.lol",
+      "server_port": 443,
+      "tag": "🇺🇸|1-4🐉@xkmfjd|美国|05",
+      "tls": {
+        "enabled": true,
+        "server_name": "fresh-grub.boa152.lol",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "Telegram:@KevinZakarian",
+      "server": "kevin.iserver.store",
+      "server_port": 8443,
+      "tag": "🇺🇸|1-4🐉@xkmfjd|美国|06",
+      "tls": {
+        "enabled": true,
+        "server_name": "kevin.iserver.store",
+        "insecure": true
+      },
+      "type": "hysteria2",
+      "obfs": {
+        "password": "Telegram:@KevinZakarian",
+        "type": "salamander"
+      }
+    },
+    {
+      "server": "146.190.16.108",
+      "server_port": 23701,
+      "tag": "🇳🇱|1-4🐉@xkmfjd|荷兰|01",
+      "type": "vless",
+      "uuid": "677a41e5-dbe6-429b-8f91-cc014b1ae1bd",
+      "packet_encoding": "xudp"
+    },
+    {
+      "password": "qwerREWQ@@",
+      "server": "p228.panda004.net",
+      "server_port": 21215,
+      "tag": "🇰🇷|1-4🐉@xkmfjd|韩国|01",
+      "type": "shadowsocks",
+      "method": "aes-256-cfb",
+      "network": "tcp"
+    },
+    {
+      "password": "e1c77eb5-eacd-4afd-8da3-9fd2c1d3b499",
+      "server": "ca.1010520.xyz",
+      "server_port": 1001,
+      "tag": "🇨🇦|1-4🐉@xkmfjd|加拿大|01",
+      "tls": {
+        "enabled": true,
+        "server_name": "ca.1010520.xyz"
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "e1c77eb5-eacd-4afd-8da3-9fd2c1d3b499",
+      "server": "de.1010520.xyz",
+      "server_port": 1001,
+      "tag": "🇩🇪|1-4🐉@xkmfjd|德国|01",
+      "tls": {
+        "enabled": true,
+        "server_name": "de.1010520.xyz"
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "8156ed4b-b8d9-46c8-8e69-4cc1b78e09f2",
+      "server": "tk-007.xiaoxiaobujidao.xyz",
+      "server_port": 443,
+      "tag": "🇯🇵|1-4🐉@xkmfjd|日本|01",
+      "tls": {
+        "enabled": true,
+        "server_name": "tk-007.xiaoxiaobujidao.xyz",
+        "insecure": true
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "54f4e2f4-f0e1-4a15-a0cf-3a3234ab58fb",
+      "server": "183.232.229.164",
+      "server_port": 11001,
+      "tag": "🇭🇰|1-4🐉@xkmfjd|香港|01",
+      "type": "shadowsocks",
+      "method": "chacha20-ietf-poly1305",
+      "network": "tcp"
+    },
+    {
+      "password": "0ed2ff21-d51d-4500-9197-66596897cdfa",
+      "server": "sgzl1.stardad.lol",
+      "server_port": 35781,
+      "tag": "🇸🇬|1-4🐉@xkmfjd|新加坡|01",
+      "tls": {
+        "enabled": true,
+        "server_name": "https://bing.com",
+        "insecure": true
+      },
+      "type": "hysteria2"
+    },
+    {
+      "server": "tp1.bmkg.xyz",
+      "server_port": 443,
+      "tag": "🇨🇳|1-4🐉@xkmfjd|台湾|01",
+      "tls": {
+        "enabled": true,
+        "server_name": "tp1.bmkg.xyz"
+      },
+      "transport": {
+        "headers": {
+          "Host": [
+            "tp1.bmkg.xyz"
+          ]
+        },
+        "path": "/141.11.87.111-8080",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "4bd8caeb-50e6-4ce6-b753-0be337822bf7",
+      "packet_encoding": "xudp"
+    },
+    {
+      "password": "9cc20269-5a37-4260-b173-b5d6a44b2e3b",
+      "server": "fffwkl.naisicloud.xyz",
+      "server_port": 35600,
+      "tag": "1-4🐉@xkmfjd|Hysteria2 fffwkl.naisicloud.xyz:35600|01",
+      "tls": {
+        "enabled": true,
+        "server_name": "fffwkl.naisicloud.xyz",
+        "insecure": true
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "3723507166611775488",
+      "server": "leading-shrew.boa152.lol",
+      "server_port": 443,
+      "tag": "1-4🐉@xkmfjd|leading-shrew.boa152.lol:443|01",
+      "tls": {
+        "enabled": true,
+        "server_name": "leading-shrew.boa152.lol",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "9cc20269-5a37-4260-b173-b5d6a44b2e3b",
+      "server": "fffmg.naisicloud.xyz",
+      "server_port": 35600,
+      "tag": "1-4🐉@xkmfjd|Hysteria2 fffmg.naisicloud.xyz:35600|01",
+      "tls": {
+        "enabled": true,
+        "server_name": "fffmg.naisicloud.xyz",
+        "insecure": true
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "9cc20269-5a37-4260-b173-b5d6a44b2e3b",
+      "server": "dddoyd.naisicloud.xyz",
+      "server_port": 35600,
+      "tag": "1-4🐉@xkmfjd|Hysteria2 dddoyd.naisicloud.xyz:35600|01",
+      "tls": {
+        "enabled": true,
+        "server_name": "dddoyd.naisicloud.xyz",
+        "insecure": true
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "9cc20269-5a37-4260-b173-b5d6a44b2e3b",
+      "server": "dddoyg.naisicloud.xyz",
+      "server_port": 35600,
+      "tag": "1-4🐉@xkmfjd|Hysteria2 dddoyg.naisicloud.xyz:35600|01",
+      "tls": {
+        "enabled": true,
+        "server_name": "dddoyg.naisicloud.xyz",
+        "insecure": true
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "3723507166611775488",
+      "server": "oriented-terrier.boa152.lol",
+      "server_port": 443,
+      "tag": "1-4🐉@xkmfjd|oriented-terrier.boa152.lol:443|01",
+      "tls": {
+        "enabled": true,
+        "server_name": "oriented-terrier.boa152.lol",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "tag": "select",
+      "type": "selector",
+      "default": "urltest",
+      "outbounds": [
+        "urltest",
+        "🇺🇸|1-4🐉@xkmfjd|美国|01",
+        "🇺🇸|1-4🐉@xkmfjd|美国|02",
+        "🇺🇸|1-4🐉@xkmfjd|美国|03",
+        "🇺🇸|1-4🐉@xkmfjd|美国|04",
+        "🇺🇸|1-4🐉@xkmfjd|美国|05",
+        "🇺🇸|1-4🐉@xkmfjd|美国|06",
+        "🇳🇱|1-4🐉@xkmfjd|荷兰|01",
+        "🇰🇷|1-4🐉@xkmfjd|韩国|01",
+        "🇨🇦|1-4🐉@xkmfjd|加拿大|01",
+        "🇩🇪|1-4🐉@xkmfjd|德国|01",
+        "🇯🇵|1-4🐉@xkmfjd|日本|01",
+        "🇭🇰|1-4🐉@xkmfjd|香港|01",
+        "🇸🇬|1-4🐉@xkmfjd|新加坡|01",
+        "🇨🇳|1-4🐉@xkmfjd|台湾|01",
+        "1-4🐉@xkmfjd|Hysteria2 fffwkl.naisicloud.xyz:35600|01",
+        "1-4🐉@xkmfjd|leading-shrew.boa152.lol:443|01",
+        "1-4🐉@xkmfjd|Hysteria2 fffmg.naisicloud.xyz:35600|01",
+        "1-4🐉@xkmfjd|Hysteria2 dddoyd.naisicloud.xyz:35600|01",
+        "1-4🐉@xkmfjd|Hysteria2 dddoyg.naisicloud.xyz:35600|01",
+        "1-4🐉@xkmfjd|oriented-terrier.boa152.lol:443|01"
+      ]
+    },
+    {
+      "tag": "urltest",
+      "type": "urltest",
+      "outbounds": [
+        "🇺🇸|1-4🐉@xkmfjd|美国|01",
+        "🇺🇸|1-4🐉@xkmfjd|美国|02",
+        "🇺🇸|1-4🐉@xkmfjd|美国|03",
+        "🇺🇸|1-4🐉@xkmfjd|美国|04",
+        "🇺🇸|1-4🐉@xkmfjd|美国|05",
+        "🇺🇸|1-4🐉@xkmfjd|美国|06",
+        "🇳🇱|1-4🐉@xkmfjd|荷兰|01",
+        "🇰🇷|1-4🐉@xkmfjd|韩国|01",
+        "🇨🇦|1-4🐉@xkmfjd|加拿大|01",
+        "🇩🇪|1-4🐉@xkmfjd|德国|01",
+        "🇯🇵|1-4🐉@xkmfjd|日本|01",
+        "🇭🇰|1-4🐉@xkmfjd|香港|01",
+        "🇸🇬|1-4🐉@xkmfjd|新加坡|01",
+        "🇨🇳|1-4🐉@xkmfjd|台湾|01",
+        "1-4🐉@xkmfjd|Hysteria2 fffwkl.naisicloud.xyz:35600|01",
+        "1-4🐉@xkmfjd|leading-shrew.boa152.lol:443|01",
+        "1-4🐉@xkmfjd|Hysteria2 fffmg.naisicloud.xyz:35600|01",
+        "1-4🐉@xkmfjd|Hysteria2 dddoyd.naisicloud.xyz:35600|01",
+        "1-4🐉@xkmfjd|Hysteria2 dddoyg.naisicloud.xyz:35600|01",
+        "1-4🐉@xkmfjd|oriented-terrier.boa152.lol:443|01"
+      ]
+    },
+    {
+      "tag": "chatgpt",
+      "type": "selector",
+      "outbounds": [
+        "🇺🇸|1-4🐉@xkmfjd|美国|01",
+        "🇺🇸|1-4🐉@xkmfjd|美国|02",
+        "🇺🇸|1-4🐉@xkmfjd|美国|03",
+        "🇺🇸|1-4🐉@xkmfjd|美国|04",
+        "🇺🇸|1-4🐉@xkmfjd|美国|05",
+        "🇺🇸|1-4🐉@xkmfjd|美国|06",
+        "🇳🇱|1-4🐉@xkmfjd|荷兰|01",
+        "🇰🇷|1-4🐉@xkmfjd|韩国|01",
+        "🇨🇦|1-4🐉@xkmfjd|加拿大|01",
+        "🇩🇪|1-4🐉@xkmfjd|德国|01",
+        "🇯🇵|1-4🐉@xkmfjd|日本|01",
+        "🇭🇰|1-4🐉@xkmfjd|香港|01",
+        "🇸🇬|1-4🐉@xkmfjd|新加坡|01",
+        "🇨🇳|1-4🐉@xkmfjd|台湾|01",
+        "1-4🐉@xkmfjd|Hysteria2 fffwkl.naisicloud.xyz:35600|01",
+        "1-4🐉@xkmfjd|leading-shrew.boa152.lol:443|01",
+        "1-4🐉@xkmfjd|Hysteria2 fffmg.naisicloud.xyz:35600|01",
+        "1-4🐉@xkmfjd|Hysteria2 dddoyd.naisicloud.xyz:35600|01",
+        "1-4🐉@xkmfjd|Hysteria2 dddoyg.naisicloud.xyz:35600|01",
+        "1-4🐉@xkmfjd|oriented-terrier.boa152.lol:443|01"
+      ]
+    },
+    {
+      "tag": "direct",
+      "type": "direct"
+    }
+  ],
+  "route": {
+    "rule_set": [
+      {
+        "tag": "geoip-cn",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/SagerNet/sing-geoip/rule-set/geoip-cn.srs"
+      },
+      {
+        "tag": "geosite-cn",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/xmdhs/sing-geosite/rule-set-Loyalsoldier/geosite-geolocation-cn.srs"
+      },
+      {
+        "tag": "AdGuardSDNSFilter",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/xmdhs/sing-box-ruleset/rule-set/AdGuardSDNSFilter.srs"
+      },
+      {
+        "tag": "chrome-doh",
+        "type": "remote",
+        "format": "source",
+        "url": "https://gist.githubusercontent.com/xmdhs/71fc5ff6ef29f5ecaf2c52b8de5c3172/raw/chrome-doh.json"
+      }
+    ],
+    "rules": [
+      {
+        "action": "sniff"
+      },
+      {
+        "protocol": "dns",
+        "action": "hijack-dns"
+      },
+      {
+        "action": "resolve",
+        "strategy": "prefer_ipv4"
+      },
+      {
+        "clash_mode": "Direct",
+        "outbound": "direct"
+      },
+      {
+        "clash_mode": "Global",
+        "outbound": "select"
+      },
+      {
+        "ip_is_private": true,
+        "outbound": "direct"
+      },
+      {
+        "package_name": [
+          "com.openai.chatgpt"
+        ],
+        "outbound": "chatgpt"
+      },
+      {
+        "domain_suffix": [
+          "proactivebackend-pa.googleapis.com",
+          "bing.com",
+          "bing.net",
+          "bingapis.com"
+        ],
+        "outbound": "chatgpt"
+      },
+      {
+        "port": [
+          23301,
+          22101,
+          22102,
+          20501
+        ],
+        "outbound": "direct"
+      },
+      {
+        "rule_set": "geoip-cn",
+        "outbound": "direct"
+      }
+    ],
+    "auto_detect_interface": true
+  },
+  "experimental": {
+    "cache_file": {
+      "enabled": true
+    },
+    "clash_api": {
+      "external_controller": "127.0.0.1:9090"
+    }
+  }
+}

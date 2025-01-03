@@ -1,0 +1,658 @@
+{
+  "log": {},
+  "dns": {
+    "servers": [
+      {
+        "tag": "dns_proxy",
+        "address": "https://8.8.8.8/dns-query",
+        "detour": "select"
+      },
+      {
+        "tag": "dns_direct",
+        "address": "https://223.5.5.5/dns-query",
+        "detour": "direct"
+      },
+      {
+        "tag": "dns_fakeip",
+        "address": "fakeip"
+      }
+    ],
+    "rules": [
+      {
+        "outbound": "any",
+        "server": "dns_direct"
+      },
+      {
+        "rule_set": [
+          "AdGuardSDNSFilter",
+          "chrome-doh"
+        ],
+        "action": "reject"
+      },
+      {
+        "query_type": [
+          "A",
+          "AAAA"
+        ],
+        "server": "dns_fakeip",
+        "rewrite_ttl": 1
+      },
+      {
+        "clash_mode": "Global",
+        "server": "dns_proxy"
+      },
+      {
+        "clash_mode": "Direct",
+        "server": "dns_direct"
+      },
+      {
+        "rule_set": "geosite-cn",
+        "server": "dns_direct"
+      }
+    ],
+    "strategy": "prefer_ipv4",
+    "independent_cache": true,
+    "fakeip": {
+      "enabled": true,
+      "inet4_range": "198.18.0.0/15",
+      "inet6_range": "fc00::/18"
+    }
+  },
+  "inbounds": [
+    {
+      "type": "tun",
+      "address": [
+        "172.18.0.1/30",
+        "fdfe:dcba:9876::1/126"
+      ],
+      "mtu": 9000,
+      "auto_route": true,
+      "strict_route": true,
+      "endpoint_independent_nat": true
+    },
+    {
+      "type": "socks",
+      "tag": "socks-in",
+      "listen": "127.0.0.1",
+      "listen_port": 2333,
+      "users": []
+    },
+    {
+      "type": "mixed",
+      "tag": "mixed-in",
+      "listen": "127.0.0.1",
+      "listen_port": 2334,
+      "users": []
+    }
+  ],
+  "outbounds": [
+    {
+      "password": "e1c77eb5-eacd-4afd-8da3-9fd2c1d3b499",
+      "server": "br.1010520.xyz",
+      "server_port": 1001,
+      "tag": "1-3🐮@xkmfjd|Hysteria2 br.1010520.xyz:1001|01",
+      "tls": {
+        "enabled": true,
+        "server_name": "br.1010520.xyz"
+      },
+      "type": "hysteria2"
+    },
+    {
+      "server": "146.190.16.108",
+      "server_port": 23701,
+      "tag": "🇪🇸|1-3🐮@xkmfjd|西班牙|01",
+      "type": "vless",
+      "uuid": "677a41e5-dbe6-429b-8f91-cc014b1ae1bd",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "tp1.bmkg.xyz",
+      "server_port": 443,
+      "tag": "🇪🇸|1-3🐮@xkmfjd|西班牙|02",
+      "tls": {
+        "enabled": true,
+        "server_name": "tp1.bmkg.xyz"
+      },
+      "transport": {
+        "headers": {
+          "Host": [
+            "tp1.bmkg.xyz"
+          ]
+        },
+        "path": "/61.220.65.189-26832",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "52bd4634-fb8b-4627-a234-0bd26a62f1df",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "tp1.bmkg.xyz",
+      "server_port": 443,
+      "tag": "🇪🇸|1-3🐮@xkmfjd|西班牙|03",
+      "tls": {
+        "enabled": true,
+        "server_name": "tp1.bmkg.xyz"
+      },
+      "transport": {
+        "headers": {
+          "Host": [
+            "tp1.bmkg.xyz"
+          ]
+        },
+        "path": "/220.130.80.171-20655",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "463040fc-0f34-4bf4-a1b7-17f8e29691d5",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "tp1.bmkg.xyz",
+      "server_port": 443,
+      "tag": "🇪🇸|1-3🐮@xkmfjd|西班牙|04",
+      "tls": {
+        "enabled": true,
+        "server_name": "tp1.bmkg.xyz"
+      },
+      "transport": {
+        "headers": {
+          "Host": [
+            "tp1.bmkg.xyz"
+          ]
+        },
+        "path": "/59.127.80.162-12224",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "d49d74ea-d696-420a-9196-77bb273fa5aa",
+      "packet_encoding": "xudp"
+    },
+    {
+      "password": "15558d9e-8539-4c79-bc69-6593c8ad4cd0",
+      "server": "yn.lianjievpn.com",
+      "server_port": 60100,
+      "tag": "1-3🐮@xkmfjd|Hysteria2 yn.lianjievpn.com:60100|01",
+      "tls": {
+        "enabled": true,
+        "server_name": "yn.lianjievpn.com"
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "e1c77eb5-eacd-4afd-8da3-9fd2c1d3b499",
+      "server": "sg.1010520.xyz",
+      "server_port": 1001,
+      "tag": "1-3🐮@xkmfjd|Hysteria2 sg.1010520.xyz:1001|01",
+      "tls": {
+        "enabled": true,
+        "server_name": "sg.1010520.xyz"
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "e1c77eb5-eacd-4afd-8da3-9fd2c1d3b499",
+      "server": "uk.1010520.xyz",
+      "server_port": 1001,
+      "tag": "1-3🐮@xkmfjd|Hysteria2 uk.1010520.xyz:1001|01",
+      "tls": {
+        "enabled": true,
+        "server_name": "uk.1010520.xyz"
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "3723507166611775488",
+      "server": "profound-anemone.boa152.lol",
+      "server_port": 443,
+      "tag": "1-3🐮@xkmfjd|profound-anemone.boa152.lol:443|01",
+      "tls": {
+        "enabled": true,
+        "server_name": "profound-anemone.boa152.lol",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3723507166611775488",
+      "server": "usable-toad.treefrog761.one",
+      "server_port": 443,
+      "tag": "1-3🐮@xkmfjd|usable-toad.treefrog761.one:443|01",
+      "tls": {
+        "enabled": true,
+        "server_name": "usable-toad.treefrog761.one",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3723507166611775488",
+      "server": "nearby-hedgehog.boa152.lol",
+      "server_port": 443,
+      "tag": "1-3🐮@xkmfjd|nearby-hedgehog.boa152.lol:443|01",
+      "tls": {
+        "enabled": true,
+        "server_name": "nearby-hedgehog.boa152.lol",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3723507166611775488",
+      "server": "nearby-hedgehog.boa152.lol",
+      "server_port": 443,
+      "tag": "1-3🐮@xkmfjd|nearby-hedgehog.boa152.lol:443|02",
+      "tls": {
+        "enabled": true,
+        "server_name": "nearby-hedgehog.boa152.lol",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3723507166611775488",
+      "server": "wise-cowbird.boa152.lol",
+      "server_port": 443,
+      "tag": "1-3🐮@xkmfjd|wise-cowbird.boa152.lol:443|01",
+      "tls": {
+        "enabled": true,
+        "server_name": "wise-cowbird.boa152.lol",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3723507166611775488",
+      "server": "oriented-terrier.boa152.lol",
+      "server_port": 443,
+      "tag": "1-3🐮@xkmfjd|oriented-terrier.boa152.lol:443|01",
+      "tls": {
+        "enabled": true,
+        "server_name": "oriented-terrier.boa152.lol",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3723507166611775488",
+      "server": "pleased-airedale.boa152.lol",
+      "server_port": 443,
+      "tag": "1-3🐮@xkmfjd|pleased-airedale.boa152.lol:443|01",
+      "tls": {
+        "enabled": true,
+        "server_name": "pleased-airedale.boa152.lol",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3723507166611775488",
+      "server": "devoted-starfish.boa152.lol",
+      "server_port": 443,
+      "tag": "1-3🐮@xkmfjd|devoted-starfish.boa152.lol:443|01",
+      "tls": {
+        "enabled": true,
+        "server_name": "devoted-starfish.boa152.lol",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3723507166611775488",
+      "server": "settled-seal.treefrog761.one",
+      "server_port": 443,
+      "tag": "1-3🐮@xkmfjd|settled-seal.treefrog761.one:443|01",
+      "tls": {
+        "enabled": true,
+        "server_name": "settled-seal.treefrog761.one",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3723507166611775488",
+      "server": "leading-shrew.boa152.lol",
+      "server_port": 443,
+      "tag": "1-3🐮@xkmfjd|leading-shrew.boa152.lol:443|01",
+      "tls": {
+        "enabled": true,
+        "server_name": "leading-shrew.boa152.lol",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3723507166611775488",
+      "server": "leading-shrew.boa152.lol",
+      "server_port": 443,
+      "tag": "1-3🐮@xkmfjd|leading-shrew.boa152.lol:443|02",
+      "tls": {
+        "enabled": true,
+        "server_name": "leading-shrew.boa152.lol",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "243eab52-9ac1-405c-887c-eb112c0985b8",
+      "server": "sg01.trojanyyds.xyz",
+      "server_port": 443,
+      "tag": "1-3🐮@xkmfjd|sg01.trojanyyds.xyz:443|01",
+      "tls": {
+        "enabled": true,
+        "server_name": "sg01.trojanyyds.xyz"
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "243eab52-9ac1-405c-887c-eb112c0985b8",
+      "server": "my01.trojanyyds.xyz",
+      "server_port": 443,
+      "tag": "1-3🐮@xkmfjd|my01.trojanyyds.xyz:443|01",
+      "tls": {
+        "enabled": true,
+        "server_name": "my01.trojanyyds.xyz"
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "243eab52-9ac1-405c-887c-eb112c0985b8",
+      "server": "us01.trojanyyds.xyz",
+      "server_port": 443,
+      "tag": "1-3🐮@xkmfjd|us01.trojanyyds.xyz:443|01",
+      "tls": {
+        "enabled": true,
+        "server_name": "us01.trojanyyds.xyz"
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3723507166611775488",
+      "server": "native-tetra.boa152.lol",
+      "server_port": 443,
+      "tag": "1-3🐮@xkmfjd|native-tetra.boa152.lol:443|01",
+      "tls": {
+        "enabled": true,
+        "server_name": "native-tetra.boa152.lol"
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3723507166611775488",
+      "server": "social-bream.boa152.lol",
+      "server_port": 443,
+      "tag": "1-3🐮@xkmfjd|social-bream.boa152.lol:443|01",
+      "tls": {
+        "enabled": true,
+        "server_name": "social-bream.boa152.lol"
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3723507166611775488",
+      "server": "tight-clam.boa152.lol",
+      "server_port": 443,
+      "tag": "1-3🐮@xkmfjd|tight-clam.boa152.lol:443|01",
+      "tls": {
+        "enabled": true,
+        "server_name": "tight-clam.boa152.lol"
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "243eab52-9ac1-405c-887c-eb112c0985b8",
+      "server": "in01.trojanyyds.xyz",
+      "server_port": 443,
+      "tag": "1-3🐮@xkmfjd|in01.trojanyyds.xyz:443|01",
+      "tls": {
+        "enabled": true,
+        "server_name": "in01.trojanyyds.xyz"
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3723507166611775488",
+      "server": "boss-hound.boa152.lol",
+      "server_port": 443,
+      "tag": "1-3🐮@xkmfjd|boss-hound.boa152.lol:443|01",
+      "tls": {
+        "enabled": true,
+        "server_name": "boss-hound.boa152.lol"
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "LuxyNetBot",
+      "server": "apple.slumbo.com",
+      "server_port": 443,
+      "tag": "1-3🐮@xkmfjd|undefined|01",
+      "type": "shadowsocks",
+      "method": "chacha20-ietf-poly1305",
+      "network": "tcp"
+    },
+    {
+      "password": "LuxyNetBot",
+      "server": "23.88.37.31",
+      "server_port": 443,
+      "tag": "1-3🐮@xkmfjd|undefined|02",
+      "type": "shadowsocks",
+      "method": "chacha20-ietf-poly1305",
+      "network": "tcp"
+    },
+    {
+      "password": "243eab52-9ac1-405c-887c-eb112c0985b8",
+      "server": "tw01.trojanyyds.xyz",
+      "server_port": 443,
+      "tag": "1-3🐮@xkmfjd|tw01.trojanyyds.xyz:443|01",
+      "tls": {
+        "enabled": true,
+        "server_name": "tw01.trojanyyds.xyz"
+      },
+      "type": "trojan"
+    },
+    {
+      "tag": "select",
+      "type": "selector",
+      "default": "urltest",
+      "outbounds": [
+        "urltest",
+        "1-3🐮@xkmfjd|Hysteria2 br.1010520.xyz:1001|01",
+        "🇪🇸|1-3🐮@xkmfjd|西班牙|01",
+        "🇪🇸|1-3🐮@xkmfjd|西班牙|02",
+        "🇪🇸|1-3🐮@xkmfjd|西班牙|03",
+        "🇪🇸|1-3🐮@xkmfjd|西班牙|04",
+        "1-3🐮@xkmfjd|Hysteria2 yn.lianjievpn.com:60100|01",
+        "1-3🐮@xkmfjd|Hysteria2 sg.1010520.xyz:1001|01",
+        "1-3🐮@xkmfjd|Hysteria2 uk.1010520.xyz:1001|01",
+        "1-3🐮@xkmfjd|profound-anemone.boa152.lol:443|01",
+        "1-3🐮@xkmfjd|usable-toad.treefrog761.one:443|01",
+        "1-3🐮@xkmfjd|nearby-hedgehog.boa152.lol:443|01",
+        "1-3🐮@xkmfjd|nearby-hedgehog.boa152.lol:443|02",
+        "1-3🐮@xkmfjd|wise-cowbird.boa152.lol:443|01",
+        "1-3🐮@xkmfjd|oriented-terrier.boa152.lol:443|01",
+        "1-3🐮@xkmfjd|pleased-airedale.boa152.lol:443|01",
+        "1-3🐮@xkmfjd|devoted-starfish.boa152.lol:443|01",
+        "1-3🐮@xkmfjd|settled-seal.treefrog761.one:443|01",
+        "1-3🐮@xkmfjd|leading-shrew.boa152.lol:443|01",
+        "1-3🐮@xkmfjd|leading-shrew.boa152.lol:443|02",
+        "1-3🐮@xkmfjd|sg01.trojanyyds.xyz:443|01",
+        "1-3🐮@xkmfjd|my01.trojanyyds.xyz:443|01",
+        "1-3🐮@xkmfjd|us01.trojanyyds.xyz:443|01",
+        "1-3🐮@xkmfjd|native-tetra.boa152.lol:443|01",
+        "1-3🐮@xkmfjd|social-bream.boa152.lol:443|01",
+        "1-3🐮@xkmfjd|tight-clam.boa152.lol:443|01",
+        "1-3🐮@xkmfjd|in01.trojanyyds.xyz:443|01",
+        "1-3🐮@xkmfjd|boss-hound.boa152.lol:443|01",
+        "1-3🐮@xkmfjd|undefined|01",
+        "1-3🐮@xkmfjd|undefined|02",
+        "1-3🐮@xkmfjd|tw01.trojanyyds.xyz:443|01"
+      ]
+    },
+    {
+      "tag": "urltest",
+      "type": "urltest",
+      "outbounds": [
+        "1-3🐮@xkmfjd|Hysteria2 br.1010520.xyz:1001|01",
+        "🇪🇸|1-3🐮@xkmfjd|西班牙|01",
+        "🇪🇸|1-3🐮@xkmfjd|西班牙|02",
+        "🇪🇸|1-3🐮@xkmfjd|西班牙|03",
+        "🇪🇸|1-3🐮@xkmfjd|西班牙|04",
+        "1-3🐮@xkmfjd|Hysteria2 yn.lianjievpn.com:60100|01",
+        "1-3🐮@xkmfjd|Hysteria2 sg.1010520.xyz:1001|01",
+        "1-3🐮@xkmfjd|Hysteria2 uk.1010520.xyz:1001|01",
+        "1-3🐮@xkmfjd|profound-anemone.boa152.lol:443|01",
+        "1-3🐮@xkmfjd|usable-toad.treefrog761.one:443|01",
+        "1-3🐮@xkmfjd|nearby-hedgehog.boa152.lol:443|01",
+        "1-3🐮@xkmfjd|nearby-hedgehog.boa152.lol:443|02",
+        "1-3🐮@xkmfjd|wise-cowbird.boa152.lol:443|01",
+        "1-3🐮@xkmfjd|oriented-terrier.boa152.lol:443|01",
+        "1-3🐮@xkmfjd|pleased-airedale.boa152.lol:443|01",
+        "1-3🐮@xkmfjd|devoted-starfish.boa152.lol:443|01",
+        "1-3🐮@xkmfjd|settled-seal.treefrog761.one:443|01",
+        "1-3🐮@xkmfjd|leading-shrew.boa152.lol:443|01",
+        "1-3🐮@xkmfjd|leading-shrew.boa152.lol:443|02",
+        "1-3🐮@xkmfjd|sg01.trojanyyds.xyz:443|01",
+        "1-3🐮@xkmfjd|my01.trojanyyds.xyz:443|01",
+        "1-3🐮@xkmfjd|us01.trojanyyds.xyz:443|01",
+        "1-3🐮@xkmfjd|native-tetra.boa152.lol:443|01",
+        "1-3🐮@xkmfjd|social-bream.boa152.lol:443|01",
+        "1-3🐮@xkmfjd|tight-clam.boa152.lol:443|01",
+        "1-3🐮@xkmfjd|in01.trojanyyds.xyz:443|01",
+        "1-3🐮@xkmfjd|boss-hound.boa152.lol:443|01",
+        "1-3🐮@xkmfjd|undefined|01",
+        "1-3🐮@xkmfjd|undefined|02",
+        "1-3🐮@xkmfjd|tw01.trojanyyds.xyz:443|01"
+      ]
+    },
+    {
+      "tag": "chatgpt",
+      "type": "selector",
+      "outbounds": [
+        "1-3🐮@xkmfjd|Hysteria2 br.1010520.xyz:1001|01",
+        "🇪🇸|1-3🐮@xkmfjd|西班牙|01",
+        "🇪🇸|1-3🐮@xkmfjd|西班牙|02",
+        "🇪🇸|1-3🐮@xkmfjd|西班牙|03",
+        "🇪🇸|1-3🐮@xkmfjd|西班牙|04",
+        "1-3🐮@xkmfjd|Hysteria2 yn.lianjievpn.com:60100|01",
+        "1-3🐮@xkmfjd|Hysteria2 sg.1010520.xyz:1001|01",
+        "1-3🐮@xkmfjd|Hysteria2 uk.1010520.xyz:1001|01",
+        "1-3🐮@xkmfjd|profound-anemone.boa152.lol:443|01",
+        "1-3🐮@xkmfjd|usable-toad.treefrog761.one:443|01",
+        "1-3🐮@xkmfjd|nearby-hedgehog.boa152.lol:443|01",
+        "1-3🐮@xkmfjd|nearby-hedgehog.boa152.lol:443|02",
+        "1-3🐮@xkmfjd|wise-cowbird.boa152.lol:443|01",
+        "1-3🐮@xkmfjd|oriented-terrier.boa152.lol:443|01",
+        "1-3🐮@xkmfjd|pleased-airedale.boa152.lol:443|01",
+        "1-3🐮@xkmfjd|devoted-starfish.boa152.lol:443|01",
+        "1-3🐮@xkmfjd|settled-seal.treefrog761.one:443|01",
+        "1-3🐮@xkmfjd|leading-shrew.boa152.lol:443|01",
+        "1-3🐮@xkmfjd|leading-shrew.boa152.lol:443|02",
+        "1-3🐮@xkmfjd|sg01.trojanyyds.xyz:443|01",
+        "1-3🐮@xkmfjd|my01.trojanyyds.xyz:443|01",
+        "1-3🐮@xkmfjd|us01.trojanyyds.xyz:443|01",
+        "1-3🐮@xkmfjd|native-tetra.boa152.lol:443|01",
+        "1-3🐮@xkmfjd|social-bream.boa152.lol:443|01",
+        "1-3🐮@xkmfjd|tight-clam.boa152.lol:443|01",
+        "1-3🐮@xkmfjd|in01.trojanyyds.xyz:443|01",
+        "1-3🐮@xkmfjd|boss-hound.boa152.lol:443|01",
+        "1-3🐮@xkmfjd|undefined|01",
+        "1-3🐮@xkmfjd|undefined|02",
+        "1-3🐮@xkmfjd|tw01.trojanyyds.xyz:443|01"
+      ]
+    },
+    {
+      "tag": "direct",
+      "type": "direct"
+    }
+  ],
+  "route": {
+    "rule_set": [
+      {
+        "tag": "geoip-cn",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/SagerNet/sing-geoip/rule-set/geoip-cn.srs"
+      },
+      {
+        "tag": "geosite-cn",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/xmdhs/sing-geosite/rule-set-Loyalsoldier/geosite-geolocation-cn.srs"
+      },
+      {
+        "tag": "AdGuardSDNSFilter",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/xmdhs/sing-box-ruleset/rule-set/AdGuardSDNSFilter.srs"
+      },
+      {
+        "tag": "chrome-doh",
+        "type": "remote",
+        "format": "source",
+        "url": "https://gist.githubusercontent.com/xmdhs/71fc5ff6ef29f5ecaf2c52b8de5c3172/raw/chrome-doh.json"
+      }
+    ],
+    "rules": [
+      {
+        "action": "sniff"
+      },
+      {
+        "protocol": "dns",
+        "action": "hijack-dns"
+      },
+      {
+        "action": "resolve",
+        "strategy": "prefer_ipv4"
+      },
+      {
+        "clash_mode": "Direct",
+        "outbound": "direct"
+      },
+      {
+        "clash_mode": "Global",
+        "outbound": "select"
+      },
+      {
+        "ip_is_private": true,
+        "outbound": "direct"
+      },
+      {
+        "package_name": [
+          "com.openai.chatgpt"
+        ],
+        "outbound": "chatgpt"
+      },
+      {
+        "domain_suffix": [
+          "proactivebackend-pa.googleapis.com",
+          "bing.com",
+          "bing.net",
+          "bingapis.com"
+        ],
+        "outbound": "chatgpt"
+      },
+      {
+        "port": [
+          23301,
+          22101,
+          22102,
+          20501
+        ],
+        "outbound": "direct"
+      },
+      {
+        "rule_set": "geoip-cn",
+        "outbound": "direct"
+      }
+    ],
+    "auto_detect_interface": true
+  },
+  "experimental": {
+    "cache_file": {
+      "enabled": true
+    },
+    "clash_api": {
+      "external_controller": "127.0.0.1:9090"
+    }
+  }
+}

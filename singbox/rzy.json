@@ -1,0 +1,1153 @@
+{
+  "log": {},
+  "dns": {
+    "servers": [
+      {
+        "tag": "dns_proxy",
+        "address": "https://8.8.8.8/dns-query",
+        "detour": "select"
+      },
+      {
+        "tag": "dns_direct",
+        "address": "https://223.5.5.5/dns-query",
+        "detour": "direct"
+      },
+      {
+        "tag": "dns_fakeip",
+        "address": "fakeip"
+      }
+    ],
+    "rules": [
+      {
+        "outbound": "any",
+        "server": "dns_direct"
+      },
+      {
+        "rule_set": [
+          "AdGuardSDNSFilter",
+          "chrome-doh"
+        ],
+        "action": "reject"
+      },
+      {
+        "query_type": [
+          "A",
+          "AAAA"
+        ],
+        "server": "dns_fakeip",
+        "rewrite_ttl": 1
+      },
+      {
+        "clash_mode": "Global",
+        "server": "dns_proxy"
+      },
+      {
+        "clash_mode": "Direct",
+        "server": "dns_direct"
+      },
+      {
+        "rule_set": "geosite-cn",
+        "server": "dns_direct"
+      }
+    ],
+    "strategy": "prefer_ipv4",
+    "independent_cache": true,
+    "fakeip": {
+      "enabled": true,
+      "inet4_range": "198.18.0.0/15",
+      "inet6_range": "fc00::/18"
+    }
+  },
+  "inbounds": [
+    {
+      "type": "tun",
+      "address": [
+        "172.18.0.1/30",
+        "fdfe:dcba:9876::1/126"
+      ],
+      "mtu": 9000,
+      "auto_route": true,
+      "strict_route": true,
+      "endpoint_independent_nat": true
+    },
+    {
+      "type": "socks",
+      "tag": "socks-in",
+      "listen": "127.0.0.1",
+      "listen_port": 2333,
+      "users": []
+    },
+    {
+      "type": "mixed",
+      "tag": "mixed-in",
+      "listen": "127.0.0.1",
+      "listen_port": 2334,
+      "users": []
+    }
+  ],
+  "outbounds": [
+    {
+      "password": "RenzheCloudSS",
+      "server": "pr3.jymzffbquawl.com",
+      "server_port": 3026,
+      "tag": "Premium|广台|IEPL|01",
+      "type": "shadowsocks",
+      "method": "rc4-md5",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=78fe8292462.microsoft.com"
+    },
+    {
+      "password": "RenzheCloudSS",
+      "server": "pr3.jymzffbquawl.com",
+      "server_port": 3036,
+      "tag": "Premium|广台|IEPL|02",
+      "type": "shadowsocks",
+      "method": "rc4-md5",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=78fe8292462.microsoft.com"
+    },
+    {
+      "password": "RenzheCloudSS",
+      "server": "pr3.jymzffbquawl.com",
+      "server_port": 3046,
+      "tag": "Premium|广台|IEPL|03",
+      "type": "shadowsocks",
+      "method": "rc4-md5",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=78fe8292462.microsoft.com"
+    },
+    {
+      "password": "RenzheCloudSS",
+      "server": "pr3.jymzffbquawl.com",
+      "server_port": 3056,
+      "tag": "Premium|广台|IEPL|04",
+      "type": "shadowsocks",
+      "method": "rc4-md5",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=78fe8292462.microsoft.com"
+    },
+    {
+      "password": "RenzheCloudSS",
+      "server": "pr3.jymzffbquawl.com",
+      "server_port": 6606,
+      "tag": "Premium|广新|IEPL|01",
+      "type": "shadowsocks",
+      "method": "rc4-md5",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=78fe8292462.microsoft.com"
+    },
+    {
+      "password": "RenzheCloudSS",
+      "server": "pr3.jymzffbquawl.com",
+      "server_port": 6607,
+      "tag": "Premium|广新|IEPL|02",
+      "type": "shadowsocks",
+      "method": "rc4-md5",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=78fe8292462.microsoft.com"
+    },
+    {
+      "password": "RenzheCloudSS",
+      "server": "pr3.jymzffbquawl.com",
+      "server_port": 6608,
+      "tag": "Premium|广新|IEPL|03",
+      "type": "shadowsocks",
+      "method": "rc4-md5",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=78fe8292462.microsoft.com"
+    },
+    {
+      "password": "RenzheCloudSS",
+      "server": "pr3.jymzffbquawl.com",
+      "server_port": 6609,
+      "tag": "Premium|广新|IEPL|04",
+      "type": "shadowsocks",
+      "method": "rc4-md5",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=78fe8292462.microsoft.com"
+    },
+    {
+      "password": "RenzheCloudSS",
+      "server": "pr3.jymzffbquawl.com",
+      "server_port": 4600,
+      "tag": "Premium|广日|IEPL|01",
+      "type": "shadowsocks",
+      "method": "rc4-md5",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=78fe8292462.microsoft.com"
+    },
+    {
+      "password": "RenzheCloudSS",
+      "server": "pr3.jymzffbquawl.com",
+      "server_port": 4601,
+      "tag": "Premium|广日|IEPL|02",
+      "type": "shadowsocks",
+      "method": "rc4-md5",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=78fe8292462.microsoft.com"
+    },
+    {
+      "password": "RenzheCloudSS",
+      "server": "pr3.jymzffbquawl.com",
+      "server_port": 4602,
+      "tag": "Premium|广日|IEPL|03",
+      "type": "shadowsocks",
+      "method": "rc4-md5",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=78fe8292462.microsoft.com"
+    },
+    {
+      "password": "RenzheCloudSS",
+      "server": "pr3.jymzffbquawl.com",
+      "server_port": 4603,
+      "tag": "Premium|广日|IEPL|04",
+      "type": "shadowsocks",
+      "method": "rc4-md5",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=78fe8292462.microsoft.com"
+    },
+    {
+      "password": "RenzheCloudSS",
+      "server": "pr3.jymzffbquawl.com",
+      "server_port": 4604,
+      "tag": "Premium|广日|IEPL|05",
+      "type": "shadowsocks",
+      "method": "rc4-md5",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=78fe8292462.microsoft.com"
+    },
+    {
+      "password": "RenzheCloudSS",
+      "server": "pr3.jymzffbquawl.com",
+      "server_port": 4605,
+      "tag": "Premium|广日|IEPL|06",
+      "type": "shadowsocks",
+      "method": "rc4-md5",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=78fe8292462.microsoft.com"
+    },
+    {
+      "password": "RenzheCloudSS",
+      "server": "pr3.jymzffbquawl.com",
+      "server_port": 4606,
+      "tag": "Premium|广日|IEPL|07",
+      "type": "shadowsocks",
+      "method": "rc4-md5",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=78fe8292462.microsoft.com"
+    },
+    {
+      "password": "RenzheCloudSS",
+      "server": "pr3.jymzffbquawl.com",
+      "server_port": 4607,
+      "tag": "Premium|广日|IEPL|08",
+      "type": "shadowsocks",
+      "method": "rc4-md5",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=78fe8292462.microsoft.com"
+    },
+    {
+      "password": "RenzheCloudSS",
+      "server": "pr3.jymzffbquawl.com",
+      "server_port": 4608,
+      "tag": "Premium|广日|IEPL|09",
+      "type": "shadowsocks",
+      "method": "rc4-md5",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=78fe8292462.microsoft.com"
+    },
+    {
+      "password": "RenzheCloudSS",
+      "server": "pr3.jymzffbquawl.com",
+      "server_port": 4609,
+      "tag": "Premium|广日|IEPL|10",
+      "type": "shadowsocks",
+      "method": "rc4-md5",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=78fe8292462.microsoft.com"
+    },
+    {
+      "password": "RenzheCloudSS",
+      "server": "pr1.jymzffbquawl.com",
+      "server_port": 3600,
+      "tag": "Premium|广港|IEPL|01",
+      "type": "shadowsocks",
+      "method": "rc4-md5",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=78fe8292462.microsoft.com"
+    },
+    {
+      "password": "RenzheCloudSS",
+      "server": "pr1.jymzffbquawl.com",
+      "server_port": 3601,
+      "tag": "Premium|广港|IEPL|02",
+      "type": "shadowsocks",
+      "method": "rc4-md5",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=78fe8292462.microsoft.com"
+    },
+    {
+      "password": "RenzheCloudSS",
+      "server": "pr1.jymzffbquawl.com",
+      "server_port": 3602,
+      "tag": "Premium|广港|IEPL|03",
+      "type": "shadowsocks",
+      "method": "rc4-md5",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=78fe8292462.microsoft.com"
+    },
+    {
+      "password": "RenzheCloudSS",
+      "server": "pr1.jymzffbquawl.com",
+      "server_port": 3603,
+      "tag": "Premium|广港|IEPL|04",
+      "type": "shadowsocks",
+      "method": "rc4-md5",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=78fe8292462.microsoft.com"
+    },
+    {
+      "password": "RenzheCloudSS",
+      "server": "pr1.jymzffbquawl.com",
+      "server_port": 3604,
+      "tag": "Premium|广港|IEPL|05",
+      "type": "shadowsocks",
+      "method": "rc4-md5",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=78fe8292462.microsoft.com"
+    },
+    {
+      "password": "RenzheCloudSS",
+      "server": "pr1.jymzffbquawl.com",
+      "server_port": 3605,
+      "tag": "Premium|广港|IEPL|06",
+      "type": "shadowsocks",
+      "method": "rc4-md5",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=78fe8292462.microsoft.com"
+    },
+    {
+      "password": "RenzheCloudSS",
+      "server": "pr1.jymzffbquawl.com",
+      "server_port": 3606,
+      "tag": "Premium|广港|IEPL|07",
+      "type": "shadowsocks",
+      "method": "rc4-md5",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=78fe8292462.microsoft.com"
+    },
+    {
+      "password": "RenzheCloudSS",
+      "server": "pr1.jymzffbquawl.com",
+      "server_port": 3607,
+      "tag": "Premium|广港|IEPL|08",
+      "type": "shadowsocks",
+      "method": "rc4-md5",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=78fe8292462.microsoft.com"
+    },
+    {
+      "password": "RenzheCloudSS",
+      "server": "pr1.jymzffbquawl.com",
+      "server_port": 3608,
+      "tag": "Premium|广港|IEPL|09",
+      "type": "shadowsocks",
+      "method": "rc4-md5",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=78fe8292462.microsoft.com"
+    },
+    {
+      "password": "RenzheCloudSS",
+      "server": "pr1.jymzffbquawl.com",
+      "server_port": 3609,
+      "tag": "Premium|广港|IEPL|10",
+      "type": "shadowsocks",
+      "method": "rc4-md5",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=78fe8292462.microsoft.com"
+    },
+    {
+      "password": "RenzheCloudSS",
+      "server": "pr3.jymzffbquawl.com",
+      "server_port": 5608,
+      "tag": "Premium|广美|IEPL|01",
+      "type": "shadowsocks",
+      "method": "rc4-md5",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=78fe8292462.microsoft.com"
+    },
+    {
+      "password": "RenzheCloudSS",
+      "server": "pr3.jymzffbquawl.com",
+      "server_port": 5609,
+      "tag": "Premium|广美|IEPL|02",
+      "type": "shadowsocks",
+      "method": "rc4-md5",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=78fe8292462.microsoft.com"
+    },
+    {
+      "password": "RenzheCloudSS",
+      "server": "pr3.jymzffbquawl.com",
+      "server_port": 5610,
+      "tag": "Premium|广美|IEPL|03",
+      "type": "shadowsocks",
+      "method": "rc4-md5",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=78fe8292462.microsoft.com"
+    },
+    {
+      "password": "RenzheCloudSS",
+      "server": "pr3.jymzffbquawl.com",
+      "server_port": 5611,
+      "tag": "Premium|广美|IEPL|04",
+      "type": "shadowsocks",
+      "method": "rc4-md5",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=78fe8292462.microsoft.com"
+    },
+    {
+      "password": "RenzheCloudSS",
+      "server": "bs3.jymzffbquawl.com",
+      "server_port": 3026,
+      "tag": "Standard|广台|IEPL|01",
+      "type": "shadowsocks",
+      "method": "rc4-md5",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=78fe8292462.microsoft.com"
+    },
+    {
+      "password": "RenzheCloudSS",
+      "server": "bs3.jymzffbquawl.com",
+      "server_port": 3036,
+      "tag": "Standard|广台|IEPL|02",
+      "type": "shadowsocks",
+      "method": "rc4-md5",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=78fe8292462.microsoft.com"
+    },
+    {
+      "password": "RenzheCloudSS",
+      "server": "bs3.jymzffbquawl.com",
+      "server_port": 3046,
+      "tag": "Standard|广台|IEPL|03",
+      "type": "shadowsocks",
+      "method": "rc4-md5",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=78fe8292462.microsoft.com"
+    },
+    {
+      "password": "RenzheCloudSS",
+      "server": "bs3.jymzffbquawl.com",
+      "server_port": 3056,
+      "tag": "Standard|广台|IEPL|04",
+      "type": "shadowsocks",
+      "method": "rc4-md5",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=78fe8292462.microsoft.com"
+    },
+    {
+      "password": "RenzheCloudSS",
+      "server": "bs3.jymzffbquawl.com",
+      "server_port": 6600,
+      "tag": "Standard|广新|IEPL|01",
+      "type": "shadowsocks",
+      "method": "rc4-md5",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=78fe8292462.microsoft.com"
+    },
+    {
+      "password": "RenzheCloudSS",
+      "server": "bs3.jymzffbquawl.com",
+      "server_port": 6601,
+      "tag": "Standard|广新|IEPL|02",
+      "type": "shadowsocks",
+      "method": "rc4-md5",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=78fe8292462.microsoft.com"
+    },
+    {
+      "password": "RenzheCloudSS",
+      "server": "bs3.jymzffbquawl.com",
+      "server_port": 6602,
+      "tag": "Standard|广新|IEPL|03",
+      "type": "shadowsocks",
+      "method": "rc4-md5",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=78fe8292462.microsoft.com"
+    },
+    {
+      "password": "RenzheCloudSS",
+      "server": "bs3.jymzffbquawl.com",
+      "server_port": 6603,
+      "tag": "Standard|广新|IEPL|04",
+      "type": "shadowsocks",
+      "method": "rc4-md5",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=78fe8292462.microsoft.com"
+    },
+    {
+      "password": "RenzheCloudSS",
+      "server": "bs3.jymzffbquawl.com",
+      "server_port": 6604,
+      "tag": "Standard|广新|IEPL|05",
+      "type": "shadowsocks",
+      "method": "rc4-md5",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=78fe8292462.microsoft.com"
+    },
+    {
+      "password": "RenzheCloudSS",
+      "server": "bs3.jymzffbquawl.com",
+      "server_port": 6605,
+      "tag": "Standard|广新|IEPL|06",
+      "type": "shadowsocks",
+      "method": "rc4-md5",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=78fe8292462.microsoft.com"
+    },
+    {
+      "password": "RenzheCloudSS",
+      "server": "bs3.jymzffbquawl.com",
+      "server_port": 4600,
+      "tag": "Standard|广日|IEPL|01",
+      "type": "shadowsocks",
+      "method": "rc4-md5",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=78fe8292462.microsoft.com"
+    },
+    {
+      "password": "RenzheCloudSS",
+      "server": "bs3.jymzffbquawl.com",
+      "server_port": 4601,
+      "tag": "Standard|广日|IEPL|02",
+      "type": "shadowsocks",
+      "method": "rc4-md5",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=78fe8292462.microsoft.com"
+    },
+    {
+      "password": "RenzheCloudSS",
+      "server": "bs3.jymzffbquawl.com",
+      "server_port": 4602,
+      "tag": "Standard|广日|IEPL|03",
+      "type": "shadowsocks",
+      "method": "rc4-md5",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=78fe8292462.microsoft.com"
+    },
+    {
+      "password": "RenzheCloudSS",
+      "server": "bs3.jymzffbquawl.com",
+      "server_port": 4603,
+      "tag": "Standard|广日|IEPL|04",
+      "type": "shadowsocks",
+      "method": "rc4-md5",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=78fe8292462.microsoft.com"
+    },
+    {
+      "password": "RenzheCloudSS",
+      "server": "bs3.jymzffbquawl.com",
+      "server_port": 4604,
+      "tag": "Standard|广日|IEPL|05",
+      "type": "shadowsocks",
+      "method": "rc4-md5",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=78fe8292462.microsoft.com"
+    },
+    {
+      "password": "RenzheCloudSS",
+      "server": "bs3.jymzffbquawl.com",
+      "server_port": 4605,
+      "tag": "Standard|广日|IEPL|06",
+      "type": "shadowsocks",
+      "method": "rc4-md5",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=78fe8292462.microsoft.com"
+    },
+    {
+      "password": "RenzheCloudSS",
+      "server": "bs3.jymzffbquawl.com",
+      "server_port": 4606,
+      "tag": "Standard|广日|IEPL|07",
+      "type": "shadowsocks",
+      "method": "rc4-md5",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=78fe8292462.microsoft.com"
+    },
+    {
+      "password": "RenzheCloudSS",
+      "server": "bs3.jymzffbquawl.com",
+      "server_port": 4607,
+      "tag": "Standard|广日|IEPL|08",
+      "type": "shadowsocks",
+      "method": "rc4-md5",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=78fe8292462.microsoft.com"
+    },
+    {
+      "password": "RenzheCloudSS",
+      "server": "bs3.jymzffbquawl.com",
+      "server_port": 4608,
+      "tag": "Standard|广日|IEPL|09",
+      "type": "shadowsocks",
+      "method": "rc4-md5",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=78fe8292462.microsoft.com"
+    },
+    {
+      "password": "RenzheCloudSS",
+      "server": "bs3.jymzffbquawl.com",
+      "server_port": 4609,
+      "tag": "Standard|广日|IEPL|10",
+      "type": "shadowsocks",
+      "method": "rc4-md5",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=78fe8292462.microsoft.com"
+    },
+    {
+      "password": "RenzheCloudSS",
+      "server": "bs1.jymzffbquawl.com",
+      "server_port": 3600,
+      "tag": "Standard|广港|IEPL|01",
+      "type": "shadowsocks",
+      "method": "rc4-md5",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=78fe8292462.microsoft.com"
+    },
+    {
+      "password": "RenzheCloudSS",
+      "server": "bs1.jymzffbquawl.com",
+      "server_port": 3601,
+      "tag": "Standard|广港|IEPL|02",
+      "type": "shadowsocks",
+      "method": "rc4-md5",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=78fe8292462.microsoft.com"
+    },
+    {
+      "password": "RenzheCloudSS",
+      "server": "bs1.jymzffbquawl.com",
+      "server_port": 3602,
+      "tag": "Standard|广港|IEPL|03",
+      "type": "shadowsocks",
+      "method": "rc4-md5",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=78fe8292462.microsoft.com"
+    },
+    {
+      "password": "RenzheCloudSS",
+      "server": "bs1.jymzffbquawl.com",
+      "server_port": 3603,
+      "tag": "Standard|广港|IEPL|04",
+      "type": "shadowsocks",
+      "method": "rc4-md5",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=78fe8292462.microsoft.com"
+    },
+    {
+      "password": "RenzheCloudSS",
+      "server": "bs1.jymzffbquawl.com",
+      "server_port": 3604,
+      "tag": "Standard|广港|IEPL|05",
+      "type": "shadowsocks",
+      "method": "rc4-md5",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=78fe8292462.microsoft.com"
+    },
+    {
+      "password": "RenzheCloudSS",
+      "server": "bs1.jymzffbquawl.com",
+      "server_port": 3605,
+      "tag": "Standard|广港|IEPL|06",
+      "type": "shadowsocks",
+      "method": "rc4-md5",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=78fe8292462.microsoft.com"
+    },
+    {
+      "password": "RenzheCloudSS",
+      "server": "bs1.jymzffbquawl.com",
+      "server_port": 3606,
+      "tag": "Standard|广港|IEPL|07",
+      "type": "shadowsocks",
+      "method": "rc4-md5",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=78fe8292462.microsoft.com"
+    },
+    {
+      "password": "RenzheCloudSS",
+      "server": "bs1.jymzffbquawl.com",
+      "server_port": 3607,
+      "tag": "Standard|广港|IEPL|08",
+      "type": "shadowsocks",
+      "method": "rc4-md5",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=78fe8292462.microsoft.com"
+    },
+    {
+      "password": "RenzheCloudSS",
+      "server": "bs1.jymzffbquawl.com",
+      "server_port": 3608,
+      "tag": "Standard|广港|IEPL|09",
+      "type": "shadowsocks",
+      "method": "rc4-md5",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=78fe8292462.microsoft.com"
+    },
+    {
+      "password": "RenzheCloudSS",
+      "server": "bs1.jymzffbquawl.com",
+      "server_port": 3609,
+      "tag": "Standard|广港|IEPL|10",
+      "type": "shadowsocks",
+      "method": "rc4-md5",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=78fe8292462.microsoft.com"
+    },
+    {
+      "password": "RenzheCloudSS",
+      "server": "bs3.jymzffbquawl.com",
+      "server_port": 5600,
+      "tag": "Standard|广美|IEPL|01",
+      "type": "shadowsocks",
+      "method": "rc4-md5",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=78fe8292462.microsoft.com"
+    },
+    {
+      "password": "RenzheCloudSS",
+      "server": "bs3.jymzffbquawl.com",
+      "server_port": 5601,
+      "tag": "Standard|广美|IEPL|02",
+      "type": "shadowsocks",
+      "method": "rc4-md5",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=78fe8292462.microsoft.com"
+    },
+    {
+      "password": "RenzheCloudSS",
+      "server": "bs3.jymzffbquawl.com",
+      "server_port": 5602,
+      "tag": "Standard|广美|IEPL|03",
+      "type": "shadowsocks",
+      "method": "rc4-md5",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=78fe8292462.microsoft.com"
+    },
+    {
+      "password": "RenzheCloudSS",
+      "server": "bs3.jymzffbquawl.com",
+      "server_port": 5603,
+      "tag": "Standard|广美|IEPL|04",
+      "type": "shadowsocks",
+      "method": "rc4-md5",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=78fe8292462.microsoft.com"
+    },
+    {
+      "password": "RenzheCloudSS",
+      "server": "bs3.jymzffbquawl.com",
+      "server_port": 5604,
+      "tag": "Standard|广美|IEPL|05",
+      "type": "shadowsocks",
+      "method": "rc4-md5",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=78fe8292462.microsoft.com"
+    },
+    {
+      "password": "RenzheCloudSS",
+      "server": "bs3.jymzffbquawl.com",
+      "server_port": 5605,
+      "tag": "Standard|广美|IEPL|06",
+      "type": "shadowsocks",
+      "method": "rc4-md5",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=78fe8292462.microsoft.com"
+    },
+    {
+      "password": "RenzheCloudSS",
+      "server": "bs3.jymzffbquawl.com",
+      "server_port": 5606,
+      "tag": "Standard|广美|IEPL|07",
+      "type": "shadowsocks",
+      "method": "rc4-md5",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=78fe8292462.microsoft.com"
+    },
+    {
+      "password": "RenzheCloudSS",
+      "server": "bs3.jymzffbquawl.com",
+      "server_port": 5607,
+      "tag": "Standard|广美|IEPL|08",
+      "type": "shadowsocks",
+      "method": "rc4-md5",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=78fe8292462.microsoft.com"
+    },
+    {
+      "password": "RenzheCloudSS",
+      "server": "f-sg-01.ninjanode.pro",
+      "server_port": 63257,
+      "tag": "海外用户专用-新加坡",
+      "type": "shadowsocks",
+      "method": "rc4-md5",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=78fe8292462.microsoft.com"
+    },
+    {
+      "password": "RenzheCloudSS",
+      "server": "f-jp-01.ninjanode.pro",
+      "server_port": 63257,
+      "tag": "海外用户专用-日本",
+      "type": "shadowsocks",
+      "method": "rc4-md5",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=78fe8292462.microsoft.com"
+    },
+    {
+      "password": "RenzheCloudSS",
+      "server": "f-us-01.ninjanode.pro",
+      "server_port": 63257,
+      "tag": "海外用户专用-美国",
+      "type": "shadowsocks",
+      "method": "rc4-md5",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=78fe8292462.microsoft.com"
+    },
+    {
+      "tag": "select",
+      "type": "selector",
+      "default": "urltest",
+      "outbounds": [
+        "urltest",
+        "Premium|广台|IEPL|01",
+        "Premium|广台|IEPL|02",
+        "Premium|广台|IEPL|03",
+        "Premium|广台|IEPL|04",
+        "Premium|广新|IEPL|01",
+        "Premium|广新|IEPL|02",
+        "Premium|广新|IEPL|03",
+        "Premium|广新|IEPL|04",
+        "Premium|广日|IEPL|01",
+        "Premium|广日|IEPL|02",
+        "Premium|广日|IEPL|03",
+        "Premium|广日|IEPL|04",
+        "Premium|广日|IEPL|05",
+        "Premium|广日|IEPL|06",
+        "Premium|广日|IEPL|07",
+        "Premium|广日|IEPL|08",
+        "Premium|广日|IEPL|09",
+        "Premium|广日|IEPL|10",
+        "Premium|广港|IEPL|01",
+        "Premium|广港|IEPL|02",
+        "Premium|广港|IEPL|03",
+        "Premium|广港|IEPL|04",
+        "Premium|广港|IEPL|05",
+        "Premium|广港|IEPL|06",
+        "Premium|广港|IEPL|07",
+        "Premium|广港|IEPL|08",
+        "Premium|广港|IEPL|09",
+        "Premium|广港|IEPL|10",
+        "Premium|广美|IEPL|01",
+        "Premium|广美|IEPL|02",
+        "Premium|广美|IEPL|03",
+        "Premium|广美|IEPL|04",
+        "Standard|广台|IEPL|01",
+        "Standard|广台|IEPL|02",
+        "Standard|广台|IEPL|03",
+        "Standard|广台|IEPL|04",
+        "Standard|广新|IEPL|01",
+        "Standard|广新|IEPL|02",
+        "Standard|广新|IEPL|03",
+        "Standard|广新|IEPL|04",
+        "Standard|广新|IEPL|05",
+        "Standard|广新|IEPL|06",
+        "Standard|广日|IEPL|01",
+        "Standard|广日|IEPL|02",
+        "Standard|广日|IEPL|03",
+        "Standard|广日|IEPL|04",
+        "Standard|广日|IEPL|05",
+        "Standard|广日|IEPL|06",
+        "Standard|广日|IEPL|07",
+        "Standard|广日|IEPL|08",
+        "Standard|广日|IEPL|09",
+        "Standard|广日|IEPL|10",
+        "Standard|广港|IEPL|01",
+        "Standard|广港|IEPL|02",
+        "Standard|广港|IEPL|03",
+        "Standard|广港|IEPL|04",
+        "Standard|广港|IEPL|05",
+        "Standard|广港|IEPL|06",
+        "Standard|广港|IEPL|07",
+        "Standard|广港|IEPL|08",
+        "Standard|广港|IEPL|09",
+        "Standard|广港|IEPL|10",
+        "Standard|广美|IEPL|01",
+        "Standard|广美|IEPL|02",
+        "Standard|广美|IEPL|03",
+        "Standard|广美|IEPL|04",
+        "Standard|广美|IEPL|05",
+        "Standard|广美|IEPL|06",
+        "Standard|广美|IEPL|07",
+        "Standard|广美|IEPL|08",
+        "海外用户专用-新加坡",
+        "海外用户专用-日本",
+        "海外用户专用-美国"
+      ]
+    },
+    {
+      "tag": "urltest",
+      "type": "urltest",
+      "outbounds": [
+        "Premium|广台|IEPL|01",
+        "Premium|广台|IEPL|02",
+        "Premium|广台|IEPL|03",
+        "Premium|广台|IEPL|04",
+        "Premium|广新|IEPL|01",
+        "Premium|广新|IEPL|02",
+        "Premium|广新|IEPL|03",
+        "Premium|广新|IEPL|04",
+        "Premium|广日|IEPL|01",
+        "Premium|广日|IEPL|02",
+        "Premium|广日|IEPL|03",
+        "Premium|广日|IEPL|04",
+        "Premium|广日|IEPL|05",
+        "Premium|广日|IEPL|06",
+        "Premium|广日|IEPL|07",
+        "Premium|广日|IEPL|08",
+        "Premium|广日|IEPL|09",
+        "Premium|广日|IEPL|10",
+        "Premium|广港|IEPL|01",
+        "Premium|广港|IEPL|02",
+        "Premium|广港|IEPL|03",
+        "Premium|广港|IEPL|04",
+        "Premium|广港|IEPL|05",
+        "Premium|广港|IEPL|06",
+        "Premium|广港|IEPL|07",
+        "Premium|广港|IEPL|08",
+        "Premium|广港|IEPL|09",
+        "Premium|广港|IEPL|10",
+        "Premium|广美|IEPL|01",
+        "Premium|广美|IEPL|02",
+        "Premium|广美|IEPL|03",
+        "Premium|广美|IEPL|04",
+        "Standard|广台|IEPL|01",
+        "Standard|广台|IEPL|02",
+        "Standard|广台|IEPL|03",
+        "Standard|广台|IEPL|04",
+        "Standard|广新|IEPL|01",
+        "Standard|广新|IEPL|02",
+        "Standard|广新|IEPL|03",
+        "Standard|广新|IEPL|04",
+        "Standard|广新|IEPL|05",
+        "Standard|广新|IEPL|06",
+        "Standard|广日|IEPL|01",
+        "Standard|广日|IEPL|02",
+        "Standard|广日|IEPL|03",
+        "Standard|广日|IEPL|04",
+        "Standard|广日|IEPL|05",
+        "Standard|广日|IEPL|06",
+        "Standard|广日|IEPL|07",
+        "Standard|广日|IEPL|08",
+        "Standard|广日|IEPL|09",
+        "Standard|广日|IEPL|10",
+        "Standard|广港|IEPL|01",
+        "Standard|广港|IEPL|02",
+        "Standard|广港|IEPL|03",
+        "Standard|广港|IEPL|04",
+        "Standard|广港|IEPL|05",
+        "Standard|广港|IEPL|06",
+        "Standard|广港|IEPL|07",
+        "Standard|广港|IEPL|08",
+        "Standard|广港|IEPL|09",
+        "Standard|广港|IEPL|10",
+        "Standard|广美|IEPL|01",
+        "Standard|广美|IEPL|02",
+        "Standard|广美|IEPL|03",
+        "Standard|广美|IEPL|04",
+        "Standard|广美|IEPL|05",
+        "Standard|广美|IEPL|06",
+        "Standard|广美|IEPL|07",
+        "Standard|广美|IEPL|08",
+        "海外用户专用-新加坡",
+        "海外用户专用-日本",
+        "海外用户专用-美国"
+      ]
+    },
+    {
+      "tag": "chatgpt",
+      "type": "selector",
+      "outbounds": [
+        "Premium|广台|IEPL|01",
+        "Premium|广台|IEPL|02",
+        "Premium|广台|IEPL|03",
+        "Premium|广台|IEPL|04",
+        "Premium|广新|IEPL|01",
+        "Premium|广新|IEPL|02",
+        "Premium|广新|IEPL|03",
+        "Premium|广新|IEPL|04",
+        "Premium|广日|IEPL|01",
+        "Premium|广日|IEPL|02",
+        "Premium|广日|IEPL|03",
+        "Premium|广日|IEPL|04",
+        "Premium|广日|IEPL|05",
+        "Premium|广日|IEPL|06",
+        "Premium|广日|IEPL|07",
+        "Premium|广日|IEPL|08",
+        "Premium|广日|IEPL|09",
+        "Premium|广日|IEPL|10",
+        "Premium|广港|IEPL|01",
+        "Premium|广港|IEPL|02",
+        "Premium|广港|IEPL|03",
+        "Premium|广港|IEPL|04",
+        "Premium|广港|IEPL|05",
+        "Premium|广港|IEPL|06",
+        "Premium|广港|IEPL|07",
+        "Premium|广港|IEPL|08",
+        "Premium|广港|IEPL|09",
+        "Premium|广港|IEPL|10",
+        "Premium|广美|IEPL|01",
+        "Premium|广美|IEPL|02",
+        "Premium|广美|IEPL|03",
+        "Premium|广美|IEPL|04",
+        "Standard|广台|IEPL|01",
+        "Standard|广台|IEPL|02",
+        "Standard|广台|IEPL|03",
+        "Standard|广台|IEPL|04",
+        "Standard|广新|IEPL|01",
+        "Standard|广新|IEPL|02",
+        "Standard|广新|IEPL|03",
+        "Standard|广新|IEPL|04",
+        "Standard|广新|IEPL|05",
+        "Standard|广新|IEPL|06",
+        "Standard|广日|IEPL|01",
+        "Standard|广日|IEPL|02",
+        "Standard|广日|IEPL|03",
+        "Standard|广日|IEPL|04",
+        "Standard|广日|IEPL|05",
+        "Standard|广日|IEPL|06",
+        "Standard|广日|IEPL|07",
+        "Standard|广日|IEPL|08",
+        "Standard|广日|IEPL|09",
+        "Standard|广日|IEPL|10",
+        "Standard|广港|IEPL|01",
+        "Standard|广港|IEPL|02",
+        "Standard|广港|IEPL|03",
+        "Standard|广港|IEPL|04",
+        "Standard|广港|IEPL|05",
+        "Standard|广港|IEPL|06",
+        "Standard|广港|IEPL|07",
+        "Standard|广港|IEPL|08",
+        "Standard|广港|IEPL|09",
+        "Standard|广港|IEPL|10",
+        "Standard|广美|IEPL|01",
+        "Standard|广美|IEPL|02",
+        "Standard|广美|IEPL|03",
+        "Standard|广美|IEPL|04",
+        "Standard|广美|IEPL|05",
+        "Standard|广美|IEPL|06",
+        "Standard|广美|IEPL|07",
+        "Standard|广美|IEPL|08",
+        "海外用户专用-新加坡",
+        "海外用户专用-日本",
+        "海外用户专用-美国"
+      ]
+    },
+    {
+      "tag": "direct",
+      "type": "direct"
+    }
+  ],
+  "route": {
+    "rule_set": [
+      {
+        "tag": "geoip-cn",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/SagerNet/sing-geoip/rule-set/geoip-cn.srs"
+      },
+      {
+        "tag": "geosite-cn",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/xmdhs/sing-geosite/rule-set-Loyalsoldier/geosite-geolocation-cn.srs"
+      },
+      {
+        "tag": "AdGuardSDNSFilter",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/xmdhs/sing-box-ruleset/rule-set/AdGuardSDNSFilter.srs"
+      },
+      {
+        "tag": "chrome-doh",
+        "type": "remote",
+        "format": "source",
+        "url": "https://gist.githubusercontent.com/xmdhs/71fc5ff6ef29f5ecaf2c52b8de5c3172/raw/chrome-doh.json"
+      }
+    ],
+    "rules": [
+      {
+        "action": "sniff"
+      },
+      {
+        "protocol": "dns",
+        "action": "hijack-dns"
+      },
+      {
+        "action": "resolve",
+        "strategy": "prefer_ipv4"
+      },
+      {
+        "clash_mode": "Direct",
+        "outbound": "direct"
+      },
+      {
+        "clash_mode": "Global",
+        "outbound": "select"
+      },
+      {
+        "ip_is_private": true,
+        "outbound": "direct"
+      },
+      {
+        "package_name": [
+          "com.openai.chatgpt"
+        ],
+        "outbound": "chatgpt"
+      },
+      {
+        "domain_suffix": [
+          "proactivebackend-pa.googleapis.com",
+          "bing.com",
+          "bing.net",
+          "bingapis.com"
+        ],
+        "outbound": "chatgpt"
+      },
+      {
+        "port": [
+          23301,
+          22101,
+          22102,
+          20501
+        ],
+        "outbound": "direct"
+      },
+      {
+        "rule_set": "geoip-cn",
+        "outbound": "direct"
+      }
+    ],
+    "auto_detect_interface": true
+  },
+  "experimental": {
+    "cache_file": {
+      "enabled": true
+    },
+    "clash_api": {
+      "external_controller": "127.0.0.1:9090"
+    }
+  }
+}
