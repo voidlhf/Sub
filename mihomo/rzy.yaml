@@ -1138,8 +1138,8 @@ proxy-groups:
 - name: Ⓜ️ 微软服务
   type: select
   proxies:
-  - 🎯 全球直连
   - 🚀 节点选择
+  - 🎯 全球直连
   - Premium|广台|IEPL|01
   - Premium|广台|IEPL|02
   - Premium|广台|IEPL|03
@@ -1294,8 +1294,8 @@ proxy-groups:
 - name: 📢 谷歌FCM
   type: select
   proxies:
-  - 🚀 节点选择
   - 🎯 全球直连
+  - 🚀 节点选择
   - ♻️ 自动选择
   - Premium|广台|IEPL|01
   - Premium|广台|IEPL|02
@@ -1466,6 +1466,8 @@ proxy-groups:
   - 海外用户专用-日本
   - 海外用户专用-美国
 rules:
+- DOMAIN-SUFFIX,ushd.xmsl.org,🎯 全球直连
+- DOMAIN-SUFFIX,cf.gtlx.org,🎯 全球直连
 - DOMAIN-SUFFIX,acl4.ssr,🎯 全球直连
 - DOMAIN-SUFFIX,ip6-localhost,🎯 全球直连
 - DOMAIN-SUFFIX,ip6-loopback,🎯 全球直连

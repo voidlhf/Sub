@@ -17,34 +17,16 @@ hosts:
   alt7-mtalk.google.com: 173.194.219.188
   alt8-mtalk.google.com: 142.250.112.188
 proxies:
+- type: hysteria2
+  name: 1-4🦊@xkmfjd|Hysteria2 uk.1010520.xyz:1001|01
+  server: uk.1010520.xyz
+  port: 1001
+  password: e1c77eb5-eacd-4afd-8da3-9fd2c1d3b499
+  sni: uk.1010520.xyz
+  skip-cert-verify: false
+  tfo: false
 - type: vless
   name: 🇪🇸|1-4🦊@xkmfjd|西班牙|01
-  server: 146.190.16.108
-  port: 23701
-  uuid: 677a41e5-dbe6-429b-8f91-cc014b1ae1bd
-  skip-cert-verify: false
-  network: http
-  http-opts:
-    headers:
-      Host:
-      - Speedtest.net
-    path:
-    - /
-- type: vless
-  name: 🇪🇸|1-4🦊@xkmfjd|西班牙|02
-  server: tp1.bmkg.xyz
-  port: 443
-  uuid: 52bd4634-fb8b-4627-a234-0bd26a62f1df
-  tls: true
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    headers:
-      Host: tp1.bmkg.xyz
-    path: /61.220.65.189-26832
-  servername: tp1.bmkg.xyz
-- type: vless
-  name: 🇪🇸|1-4🦊@xkmfjd|西班牙|03
   server: tp1.bmkg.xyz
   port: 443
   uuid: 463040fc-0f34-4bf4-a1b7-17f8e29691d5
@@ -57,7 +39,7 @@ proxies:
     path: /220.130.80.171-20655
   servername: tp1.bmkg.xyz
 - type: vless
-  name: 🇪🇸|1-4🦊@xkmfjd|西班牙|04
+  name: 🇪🇸|1-4🦊@xkmfjd|西班牙|02
   server: tp1.bmkg.xyz
   port: 443
   uuid: d49d74ea-d696-420a-9196-77bb273fa5aa
@@ -69,158 +51,6 @@ proxies:
       Host: tp1.bmkg.xyz
     path: /59.127.80.162-12224
   servername: tp1.bmkg.xyz
-- type: hysteria2
-  name: 1-4🦊@xkmfjd|Hysteria2 uk.1010520.xyz:1001|01
-  server: uk.1010520.xyz
-  port: 1001
-  password: e1c77eb5-eacd-4afd-8da3-9fd2c1d3b499
-  sni: uk.1010520.xyz
-  skip-cert-verify: false
-  tfo: false
-- type: hysteria2
-  name: 🇦🇪|1-4🦊@xkmfjd|阿联酋|01
-  server: ae.1010520.xyz
-  port: 1001
-  password: f5136746-de79-46d0-b3be-d15d9992fa07
-  sni: ae.1010520.xyz
-  skip-cert-verify: false
-  tfo: false
-- name: 1-4🦊@xkmfjd|undefined|01
-  type: ss
-  server: 23.251.121.242
-  port: 8080
-  cipher: rc4-md5
-  password: 14fFPrbezE3HDZzsMOr6
-- name: 1-4🦊@xkmfjd|undefined|02
-  type: ss
-  server: pr1.jymzffbquawl.com
-  port: 3604
-  cipher: rc4-md5
-  password: RenzheCloudSS
-  plugin: obfs
-  plugin-opts:
-    mode: http
-    host: 78fe8292462.microsoft.com
-- name: 1-4🦊@xkmfjd|undefined|03
-  type: ss
-  server: pr1.jymzffbquawl.com
-  port: 3603
-  cipher: rc4-md5
-  password: RenzheCloudSS
-  plugin: obfs
-  plugin-opts:
-    mode: http
-    host: 78fe8292462.microsoft.com
-- name: 1-4🦊@xkmfjd|undefined|04
-  type: ss
-  server: pr1.jymzffbquawl.com
-  port: 3606
-  cipher: rc4-md5
-  password: RenzheCloudSS
-  plugin: obfs
-  plugin-opts:
-    mode: http
-    host: 78fe8292462.microsoft.com
-- name: 1-4🦊@xkmfjd|undefined|05
-  type: ss
-  server: pr1.jymzffbquawl.com
-  port: 3605
-  cipher: rc4-md5
-  password: RenzheCloudSS
-  plugin: obfs
-  plugin-opts:
-    mode: http
-    host: 78fe8292462.microsoft.com
-- name: 1-4🦊@xkmfjd|undefined|06
-  type: ss
-  server: bs1.jymzffbquawl.com
-  port: 3605
-  cipher: rc4-md5
-  password: RenzheCloudSS
-  plugin: obfs
-  plugin-opts:
-    mode: http
-    host: 78fe8292462.microsoft.com
-- name: 1-4🦊@xkmfjd|undefined|07
-  type: ss
-  server: pr1.jymzffbquawl.com
-  port: 3607
-  cipher: rc4-md5
-  password: RenzheCloudSS
-  plugin: obfs
-  plugin-opts:
-    mode: http
-    host: 78fe8292462.microsoft.com
-- name: 1-4🦊@xkmfjd|undefined|08
-  type: ss
-  server: bs1.jymzffbquawl.com
-  port: 3607
-  cipher: rc4-md5
-  password: RenzheCloudSS
-  plugin: obfs
-  plugin-opts:
-    mode: http
-    host: 78fe8292462.microsoft.com
-- name: 1-4🦊@xkmfjd|undefined|09
-  type: ss
-  server: bs1.jymzffbquawl.com
-  port: 3602
-  cipher: rc4-md5
-  password: RenzheCloudSS
-  plugin: obfs
-  plugin-opts:
-    mode: http
-    host: 78fe8292462.microsoft.com
-- name: 1-4🦊@xkmfjd|undefined|10
-  type: ss
-  server: bs1.jymzffbquawl.com
-  port: 3608
-  cipher: rc4-md5
-  password: RenzheCloudSS
-  plugin: obfs
-  plugin-opts:
-    mode: http
-    host: 78fe8292462.microsoft.com
-- name: 1-4🦊@xkmfjd|undefined|11
-  type: ss
-  server: pr1.jymzffbquawl.com
-  port: 3602
-  cipher: rc4-md5
-  password: RenzheCloudSS
-  plugin: obfs
-  plugin-opts:
-    mode: http
-    host: 78fe8292462.microsoft.com
-- name: 1-4🦊@xkmfjd|undefined|12
-  type: ss
-  server: bs1.jymzffbquawl.com
-  port: 3606
-  cipher: rc4-md5
-  password: RenzheCloudSS
-  plugin: obfs
-  plugin-opts:
-    mode: http
-    host: 78fe8292462.microsoft.com
-- name: 1-4🦊@xkmfjd|undefined|13
-  type: ss
-  server: pr1.jymzffbquawl.com
-  port: 3608
-  cipher: rc4-md5
-  password: RenzheCloudSS
-  plugin: obfs
-  plugin-opts:
-    mode: http
-    host: 78fe8292462.microsoft.com
-- name: 1-4🦊@xkmfjd|undefined|14
-  type: ss
-  server: pr1.jymzffbquawl.com
-  port: 3601
-  cipher: rc4-md5
-  password: RenzheCloudSS
-  plugin: obfs
-  plugin-opts:
-    mode: http
-    host: 78fe8292462.microsoft.com
 - type: hysteria2
   name: 🇯🇵|1-4🦊@xkmfjd|日本|01
   server: jjjp.naisicloud.xyz
@@ -266,20 +96,6 @@ proxies:
   name: 🇭🇰|1-4🦊@xkmfjd|香港|03
 - name: 1-4🦊@xkmfjd||01
   type: vmess
-  server: obdii.cfd
-  port: 443
-  cipher: auto
-  uuid: 05641cf5-58d2-4ba4-a9f1-b3cda0b1fb1d
-  alterId: 0
-  tls: true
-  network: ws
-  ws-opts:
-    path: /linkws
-    headers:
-      Host: obdii.cfd
-  servername: obdii.cfd
-- name: 1-4🦊@xkmfjd||02
-  type: vmess
   server: hms02opi.fxiaomi.sbs
   port: 443
   cipher: auto
@@ -322,18 +138,284 @@ proxies:
   server: 219.135.231.205
   port: 21042
   name: 1-4🦊@xkmfjd|🇺🇳 |01
+- name: 1-4🦊@xkmfjd|undefined|01
+  type: ss
+  server: pr1.jymzffbquawl.com
+  port: 3604
+  cipher: rc4-md5
+  password: RenzheCloudSS
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 78fe8292462.microsoft.com
+- name: 1-4🦊@xkmfjd|undefined|02
+  type: ss
+  server: pr1.jymzffbquawl.com
+  port: 3603
+  cipher: rc4-md5
+  password: RenzheCloudSS
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 78fe8292462.microsoft.com
+- name: 1-4🦊@xkmfjd|undefined|03
+  type: ss
+  server: pr1.jymzffbquawl.com
+  port: 3606
+  cipher: rc4-md5
+  password: RenzheCloudSS
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 78fe8292462.microsoft.com
+- name: 1-4🦊@xkmfjd|undefined|04
+  type: ss
+  server: bs1.jymzffbquawl.com
+  port: 3605
+  cipher: rc4-md5
+  password: RenzheCloudSS
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 78fe8292462.microsoft.com
+- name: 1-4🦊@xkmfjd|undefined|05
+  type: ss
+  server: pr1.jymzffbquawl.com
+  port: 3607
+  cipher: rc4-md5
+  password: RenzheCloudSS
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 78fe8292462.microsoft.com
+- name: 1-4🦊@xkmfjd|undefined|06
+  type: ss
+  server: bs1.jymzffbquawl.com
+  port: 3607
+  cipher: rc4-md5
+  password: RenzheCloudSS
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 78fe8292462.microsoft.com
+- name: 1-4🦊@xkmfjd|undefined|07
+  type: ss
+  server: bs1.jymzffbquawl.com
+  port: 3602
+  cipher: rc4-md5
+  password: RenzheCloudSS
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 78fe8292462.microsoft.com
+- name: 1-4🦊@xkmfjd|undefined|08
+  type: ss
+  server: bs1.jymzffbquawl.com
+  port: 3608
+  cipher: rc4-md5
+  password: RenzheCloudSS
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 78fe8292462.microsoft.com
+- name: 1-4🦊@xkmfjd|undefined|09
+  type: ss
+  server: pr1.jymzffbquawl.com
+  port: 3602
+  cipher: rc4-md5
+  password: RenzheCloudSS
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 78fe8292462.microsoft.com
+- name: 1-4🦊@xkmfjd|undefined|10
+  type: ss
+  server: bs1.jymzffbquawl.com
+  port: 3606
+  cipher: rc4-md5
+  password: RenzheCloudSS
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 78fe8292462.microsoft.com
+- name: 1-4🦊@xkmfjd|undefined|11
+  type: ss
+  server: pr1.jymzffbquawl.com
+  port: 3608
+  cipher: rc4-md5
+  password: RenzheCloudSS
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 78fe8292462.microsoft.com
+- name: 1-4🦊@xkmfjd|undefined|12
+  type: ss
+  server: pr1.jymzffbquawl.com
+  port: 3601
+  cipher: rc4-md5
+  password: RenzheCloudSS
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 78fe8292462.microsoft.com
+- name: 1-4🦊@xkmfjd|undefined|13
+  type: ss
+  server: pr3.jymzffbquawl.com
+  port: 6606
+  cipher: rc4-md5
+  password: RenzheCloudSS
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 78fe8292462.microsoft.com
+- name: 1-4🦊@xkmfjd|undefined|14
+  type: ss
+  server: console.02.aliyun.aq.kunlunaqs.com
+  port: 45578
+  cipher: chacha20-ietf-poly1305
+  password: 7243745919d6de49a5db
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 215996dd9f1c3db1e54b.microsoft.com
+- name: 1-4🦊@xkmfjd|undefined|15
+  type: ss
+  server: 54.151.212.176
+  port: 443
+  cipher: aes-256-cfb
+  password: amazonskr05
+- name: 1-4🦊@xkmfjd|undefined|16
+  type: ss
+  server: bs3.jymzffbquawl.com
+  port: 6604
+  cipher: rc4-md5
+  password: RenzheCloudSS
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 78fe8292462.microsoft.com
+- name: 1-4🦊@xkmfjd|undefined|17
+  type: ss
+  server: 122.248.193.242
+  port: 443
+  cipher: aes-256-cfb
+  password: amazonskr05
+- name: 1-4🦊@xkmfjd|undefined|18
+  type: ss
+  server: 54.169.231.25
+  port: 443
+  cipher: aes-256-cfb
+  password: amazonskr05
+- name: 1-4🦊@xkmfjd|undefined|19
+  type: ss
+  server: pr3.jymzffbquawl.com
+  port: 6609
+  cipher: rc4-md5
+  password: RenzheCloudSS
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 78fe8292462.microsoft.com
+- name: 1-4🦊@xkmfjd|undefined|20
+  type: ss
+  server: 54.179.78.99
+  port: 443
+  cipher: aes-256-cfb
+  password: amazonskr05
+- name: 1-4🦊@xkmfjd|undefined|21
+  type: ss
+  server: bs1.jymzffbquawl.com
+  port: 3600
+  cipher: rc4-md5
+  password: RenzheCloudSS
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 78fe8292462.microsoft.com
+- name: 1-4🦊@xkmfjd|undefined|22
+  type: ss
+  server: 13.212.194.118
+  port: 443
+  cipher: aes-256-cfb
+  password: amazonskr05
+- name: 1-4🦊@xkmfjd|undefined|23
+  type: ss
+  server: pr3.jymzffbquawl.com
+  port: 4606
+  cipher: rc4-md5
+  password: RenzheCloudSS
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 78fe8292462.microsoft.com
+- name: 1-4🦊@xkmfjd|undefined|24
+  type: ss
+  server: bs3.jymzffbquawl.com
+  port: 4604
+  cipher: rc4-md5
+  password: RenzheCloudSS
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 78fe8292462.microsoft.com
+- name: 1-4🦊@xkmfjd|undefined|25
+  type: ss
+  server: pr3.jymzffbquawl.com
+  port: 4601
+  cipher: rc4-md5
+  password: RenzheCloudSS
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 78fe8292462.microsoft.com
+- name: 1-4🦊@xkmfjd|undefined|26
+  type: ss
+  server: bs3.jymzffbquawl.com
+  port: 4603
+  cipher: rc4-md5
+  password: RenzheCloudSS
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 78fe8292462.microsoft.com
+- name: 1-4🦊@xkmfjd|undefined|27
+  type: ss
+  server: bs3.jymzffbquawl.com
+  port: 6602
+  cipher: rc4-md5
+  password: RenzheCloudSS
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 78fe8292462.microsoft.com
+- name: 1-4🦊@xkmfjd|undefined|28
+  type: ss
+  server: pr3.jymzffbquawl.com
+  port: 4609
+  cipher: rc4-md5
+  password: RenzheCloudSS
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 78fe8292462.microsoft.com
 proxy-groups:
 - name: 🚀 节点选择
   type: select
   proxies:
   - ♻️ 自动选择
   - DIRECT
+  - 1-4🦊@xkmfjd|Hysteria2 uk.1010520.xyz:1001|01
   - 🇪🇸|1-4🦊@xkmfjd|西班牙|01
   - 🇪🇸|1-4🦊@xkmfjd|西班牙|02
-  - 🇪🇸|1-4🦊@xkmfjd|西班牙|03
-  - 🇪🇸|1-4🦊@xkmfjd|西班牙|04
-  - 1-4🦊@xkmfjd|Hysteria2 uk.1010520.xyz:1001|01
-  - 🇦🇪|1-4🦊@xkmfjd|阿联酋|01
+  - 🇯🇵|1-4🦊@xkmfjd|日本|01
+  - 🇯🇵|1-4🦊@xkmfjd|日本|02
+  - 🇭🇰|1-4🦊@xkmfjd|香港|01
+  - 🇭🇰|1-4🦊@xkmfjd|香港|02
+  - 🇭🇰|1-4🦊@xkmfjd|香港|03
+  - 1-4🦊@xkmfjd||01
+  - 🇰🇷|1-4🦊@xkmfjd|韩国|01
+  - 🇺🇸|1-4🦊@xkmfjd|美国|01
+  - 1-4🦊@xkmfjd|🇺🇳 |01
   - 1-4🦊@xkmfjd|undefined|01
   - 1-4🦊@xkmfjd|undefined|02
   - 1-4🦊@xkmfjd|undefined|03
@@ -348,28 +430,38 @@ proxy-groups:
   - 1-4🦊@xkmfjd|undefined|12
   - 1-4🦊@xkmfjd|undefined|13
   - 1-4🦊@xkmfjd|undefined|14
-  - 🇯🇵|1-4🦊@xkmfjd|日本|01
-  - 🇯🇵|1-4🦊@xkmfjd|日本|02
-  - 🇭🇰|1-4🦊@xkmfjd|香港|01
-  - 🇭🇰|1-4🦊@xkmfjd|香港|02
-  - 🇭🇰|1-4🦊@xkmfjd|香港|03
-  - 1-4🦊@xkmfjd||01
-  - 1-4🦊@xkmfjd||02
-  - 🇰🇷|1-4🦊@xkmfjd|韩国|01
-  - 🇺🇸|1-4🦊@xkmfjd|美国|01
-  - 1-4🦊@xkmfjd|🇺🇳 |01
+  - 1-4🦊@xkmfjd|undefined|15
+  - 1-4🦊@xkmfjd|undefined|16
+  - 1-4🦊@xkmfjd|undefined|17
+  - 1-4🦊@xkmfjd|undefined|18
+  - 1-4🦊@xkmfjd|undefined|19
+  - 1-4🦊@xkmfjd|undefined|20
+  - 1-4🦊@xkmfjd|undefined|21
+  - 1-4🦊@xkmfjd|undefined|22
+  - 1-4🦊@xkmfjd|undefined|23
+  - 1-4🦊@xkmfjd|undefined|24
+  - 1-4🦊@xkmfjd|undefined|25
+  - 1-4🦊@xkmfjd|undefined|26
+  - 1-4🦊@xkmfjd|undefined|27
+  - 1-4🦊@xkmfjd|undefined|28
 - name: ♻️ 自动选择
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
+  - 1-4🦊@xkmfjd|Hysteria2 uk.1010520.xyz:1001|01
   - 🇪🇸|1-4🦊@xkmfjd|西班牙|01
   - 🇪🇸|1-4🦊@xkmfjd|西班牙|02
-  - 🇪🇸|1-4🦊@xkmfjd|西班牙|03
-  - 🇪🇸|1-4🦊@xkmfjd|西班牙|04
-  - 1-4🦊@xkmfjd|Hysteria2 uk.1010520.xyz:1001|01
-  - 🇦🇪|1-4🦊@xkmfjd|阿联酋|01
+  - 🇯🇵|1-4🦊@xkmfjd|日本|01
+  - 🇯🇵|1-4🦊@xkmfjd|日本|02
+  - 🇭🇰|1-4🦊@xkmfjd|香港|01
+  - 🇭🇰|1-4🦊@xkmfjd|香港|02
+  - 🇭🇰|1-4🦊@xkmfjd|香港|03
+  - 1-4🦊@xkmfjd||01
+  - 🇰🇷|1-4🦊@xkmfjd|韩国|01
+  - 🇺🇸|1-4🦊@xkmfjd|美国|01
+  - 1-4🦊@xkmfjd|🇺🇳 |01
   - 1-4🦊@xkmfjd|undefined|01
   - 1-4🦊@xkmfjd|undefined|02
   - 1-4🦊@xkmfjd|undefined|03
@@ -384,28 +476,38 @@ proxy-groups:
   - 1-4🦊@xkmfjd|undefined|12
   - 1-4🦊@xkmfjd|undefined|13
   - 1-4🦊@xkmfjd|undefined|14
-  - 🇯🇵|1-4🦊@xkmfjd|日本|01
-  - 🇯🇵|1-4🦊@xkmfjd|日本|02
-  - 🇭🇰|1-4🦊@xkmfjd|香港|01
-  - 🇭🇰|1-4🦊@xkmfjd|香港|02
-  - 🇭🇰|1-4🦊@xkmfjd|香港|03
-  - 1-4🦊@xkmfjd||01
-  - 1-4🦊@xkmfjd||02
-  - 🇰🇷|1-4🦊@xkmfjd|韩国|01
-  - 🇺🇸|1-4🦊@xkmfjd|美国|01
-  - 1-4🦊@xkmfjd|🇺🇳 |01
+  - 1-4🦊@xkmfjd|undefined|15
+  - 1-4🦊@xkmfjd|undefined|16
+  - 1-4🦊@xkmfjd|undefined|17
+  - 1-4🦊@xkmfjd|undefined|18
+  - 1-4🦊@xkmfjd|undefined|19
+  - 1-4🦊@xkmfjd|undefined|20
+  - 1-4🦊@xkmfjd|undefined|21
+  - 1-4🦊@xkmfjd|undefined|22
+  - 1-4🦊@xkmfjd|undefined|23
+  - 1-4🦊@xkmfjd|undefined|24
+  - 1-4🦊@xkmfjd|undefined|25
+  - 1-4🦊@xkmfjd|undefined|26
+  - 1-4🦊@xkmfjd|undefined|27
+  - 1-4🦊@xkmfjd|undefined|28
 - name: 🌍 国外媒体
   type: select
   proxies:
   - 🚀 节点选择
   - ♻️ 自动选择
   - 🎯 全球直连
+  - 1-4🦊@xkmfjd|Hysteria2 uk.1010520.xyz:1001|01
   - 🇪🇸|1-4🦊@xkmfjd|西班牙|01
   - 🇪🇸|1-4🦊@xkmfjd|西班牙|02
-  - 🇪🇸|1-4🦊@xkmfjd|西班牙|03
-  - 🇪🇸|1-4🦊@xkmfjd|西班牙|04
-  - 1-4🦊@xkmfjd|Hysteria2 uk.1010520.xyz:1001|01
-  - 🇦🇪|1-4🦊@xkmfjd|阿联酋|01
+  - 🇯🇵|1-4🦊@xkmfjd|日本|01
+  - 🇯🇵|1-4🦊@xkmfjd|日本|02
+  - 🇭🇰|1-4🦊@xkmfjd|香港|01
+  - 🇭🇰|1-4🦊@xkmfjd|香港|02
+  - 🇭🇰|1-4🦊@xkmfjd|香港|03
+  - 1-4🦊@xkmfjd||01
+  - 🇰🇷|1-4🦊@xkmfjd|韩国|01
+  - 🇺🇸|1-4🦊@xkmfjd|美国|01
+  - 1-4🦊@xkmfjd|🇺🇳 |01
   - 1-4🦊@xkmfjd|undefined|01
   - 1-4🦊@xkmfjd|undefined|02
   - 1-4🦊@xkmfjd|undefined|03
@@ -420,27 +522,37 @@ proxy-groups:
   - 1-4🦊@xkmfjd|undefined|12
   - 1-4🦊@xkmfjd|undefined|13
   - 1-4🦊@xkmfjd|undefined|14
-  - 🇯🇵|1-4🦊@xkmfjd|日本|01
-  - 🇯🇵|1-4🦊@xkmfjd|日本|02
-  - 🇭🇰|1-4🦊@xkmfjd|香港|01
-  - 🇭🇰|1-4🦊@xkmfjd|香港|02
-  - 🇭🇰|1-4🦊@xkmfjd|香港|03
-  - 1-4🦊@xkmfjd||01
-  - 1-4🦊@xkmfjd||02
-  - 🇰🇷|1-4🦊@xkmfjd|韩国|01
-  - 🇺🇸|1-4🦊@xkmfjd|美国|01
-  - 1-4🦊@xkmfjd|🇺🇳 |01
+  - 1-4🦊@xkmfjd|undefined|15
+  - 1-4🦊@xkmfjd|undefined|16
+  - 1-4🦊@xkmfjd|undefined|17
+  - 1-4🦊@xkmfjd|undefined|18
+  - 1-4🦊@xkmfjd|undefined|19
+  - 1-4🦊@xkmfjd|undefined|20
+  - 1-4🦊@xkmfjd|undefined|21
+  - 1-4🦊@xkmfjd|undefined|22
+  - 1-4🦊@xkmfjd|undefined|23
+  - 1-4🦊@xkmfjd|undefined|24
+  - 1-4🦊@xkmfjd|undefined|25
+  - 1-4🦊@xkmfjd|undefined|26
+  - 1-4🦊@xkmfjd|undefined|27
+  - 1-4🦊@xkmfjd|undefined|28
 - name: 📲 电报信息
   type: select
   proxies:
   - 🚀 节点选择
   - 🎯 全球直连
+  - 1-4🦊@xkmfjd|Hysteria2 uk.1010520.xyz:1001|01
   - 🇪🇸|1-4🦊@xkmfjd|西班牙|01
   - 🇪🇸|1-4🦊@xkmfjd|西班牙|02
-  - 🇪🇸|1-4🦊@xkmfjd|西班牙|03
-  - 🇪🇸|1-4🦊@xkmfjd|西班牙|04
-  - 1-4🦊@xkmfjd|Hysteria2 uk.1010520.xyz:1001|01
-  - 🇦🇪|1-4🦊@xkmfjd|阿联酋|01
+  - 🇯🇵|1-4🦊@xkmfjd|日本|01
+  - 🇯🇵|1-4🦊@xkmfjd|日本|02
+  - 🇭🇰|1-4🦊@xkmfjd|香港|01
+  - 🇭🇰|1-4🦊@xkmfjd|香港|02
+  - 🇭🇰|1-4🦊@xkmfjd|香港|03
+  - 1-4🦊@xkmfjd||01
+  - 🇰🇷|1-4🦊@xkmfjd|韩国|01
+  - 🇺🇸|1-4🦊@xkmfjd|美国|01
+  - 1-4🦊@xkmfjd|🇺🇳 |01
   - 1-4🦊@xkmfjd|undefined|01
   - 1-4🦊@xkmfjd|undefined|02
   - 1-4🦊@xkmfjd|undefined|03
@@ -455,27 +567,37 @@ proxy-groups:
   - 1-4🦊@xkmfjd|undefined|12
   - 1-4🦊@xkmfjd|undefined|13
   - 1-4🦊@xkmfjd|undefined|14
-  - 🇯🇵|1-4🦊@xkmfjd|日本|01
-  - 🇯🇵|1-4🦊@xkmfjd|日本|02
-  - 🇭🇰|1-4🦊@xkmfjd|香港|01
-  - 🇭🇰|1-4🦊@xkmfjd|香港|02
-  - 🇭🇰|1-4🦊@xkmfjd|香港|03
-  - 1-4🦊@xkmfjd||01
-  - 1-4🦊@xkmfjd||02
-  - 🇰🇷|1-4🦊@xkmfjd|韩国|01
-  - 🇺🇸|1-4🦊@xkmfjd|美国|01
-  - 1-4🦊@xkmfjd|🇺🇳 |01
+  - 1-4🦊@xkmfjd|undefined|15
+  - 1-4🦊@xkmfjd|undefined|16
+  - 1-4🦊@xkmfjd|undefined|17
+  - 1-4🦊@xkmfjd|undefined|18
+  - 1-4🦊@xkmfjd|undefined|19
+  - 1-4🦊@xkmfjd|undefined|20
+  - 1-4🦊@xkmfjd|undefined|21
+  - 1-4🦊@xkmfjd|undefined|22
+  - 1-4🦊@xkmfjd|undefined|23
+  - 1-4🦊@xkmfjd|undefined|24
+  - 1-4🦊@xkmfjd|undefined|25
+  - 1-4🦊@xkmfjd|undefined|26
+  - 1-4🦊@xkmfjd|undefined|27
+  - 1-4🦊@xkmfjd|undefined|28
 - name: Ⓜ️ 微软服务
   type: select
   proxies:
-  - 🎯 全球直连
   - 🚀 节点选择
+  - 🎯 全球直连
+  - 1-4🦊@xkmfjd|Hysteria2 uk.1010520.xyz:1001|01
   - 🇪🇸|1-4🦊@xkmfjd|西班牙|01
   - 🇪🇸|1-4🦊@xkmfjd|西班牙|02
-  - 🇪🇸|1-4🦊@xkmfjd|西班牙|03
-  - 🇪🇸|1-4🦊@xkmfjd|西班牙|04
-  - 1-4🦊@xkmfjd|Hysteria2 uk.1010520.xyz:1001|01
-  - 🇦🇪|1-4🦊@xkmfjd|阿联酋|01
+  - 🇯🇵|1-4🦊@xkmfjd|日本|01
+  - 🇯🇵|1-4🦊@xkmfjd|日本|02
+  - 🇭🇰|1-4🦊@xkmfjd|香港|01
+  - 🇭🇰|1-4🦊@xkmfjd|香港|02
+  - 🇭🇰|1-4🦊@xkmfjd|香港|03
+  - 1-4🦊@xkmfjd||01
+  - 🇰🇷|1-4🦊@xkmfjd|韩国|01
+  - 🇺🇸|1-4🦊@xkmfjd|美国|01
+  - 1-4🦊@xkmfjd|🇺🇳 |01
   - 1-4🦊@xkmfjd|undefined|01
   - 1-4🦊@xkmfjd|undefined|02
   - 1-4🦊@xkmfjd|undefined|03
@@ -490,27 +612,37 @@ proxy-groups:
   - 1-4🦊@xkmfjd|undefined|12
   - 1-4🦊@xkmfjd|undefined|13
   - 1-4🦊@xkmfjd|undefined|14
-  - 🇯🇵|1-4🦊@xkmfjd|日本|01
-  - 🇯🇵|1-4🦊@xkmfjd|日本|02
-  - 🇭🇰|1-4🦊@xkmfjd|香港|01
-  - 🇭🇰|1-4🦊@xkmfjd|香港|02
-  - 🇭🇰|1-4🦊@xkmfjd|香港|03
-  - 1-4🦊@xkmfjd||01
-  - 1-4🦊@xkmfjd||02
-  - 🇰🇷|1-4🦊@xkmfjd|韩国|01
-  - 🇺🇸|1-4🦊@xkmfjd|美国|01
-  - 1-4🦊@xkmfjd|🇺🇳 |01
+  - 1-4🦊@xkmfjd|undefined|15
+  - 1-4🦊@xkmfjd|undefined|16
+  - 1-4🦊@xkmfjd|undefined|17
+  - 1-4🦊@xkmfjd|undefined|18
+  - 1-4🦊@xkmfjd|undefined|19
+  - 1-4🦊@xkmfjd|undefined|20
+  - 1-4🦊@xkmfjd|undefined|21
+  - 1-4🦊@xkmfjd|undefined|22
+  - 1-4🦊@xkmfjd|undefined|23
+  - 1-4🦊@xkmfjd|undefined|24
+  - 1-4🦊@xkmfjd|undefined|25
+  - 1-4🦊@xkmfjd|undefined|26
+  - 1-4🦊@xkmfjd|undefined|27
+  - 1-4🦊@xkmfjd|undefined|28
 - name: 🍎 苹果服务
   type: select
   proxies:
   - 🚀 节点选择
   - 🎯 全球直连
+  - 1-4🦊@xkmfjd|Hysteria2 uk.1010520.xyz:1001|01
   - 🇪🇸|1-4🦊@xkmfjd|西班牙|01
   - 🇪🇸|1-4🦊@xkmfjd|西班牙|02
-  - 🇪🇸|1-4🦊@xkmfjd|西班牙|03
-  - 🇪🇸|1-4🦊@xkmfjd|西班牙|04
-  - 1-4🦊@xkmfjd|Hysteria2 uk.1010520.xyz:1001|01
-  - 🇦🇪|1-4🦊@xkmfjd|阿联酋|01
+  - 🇯🇵|1-4🦊@xkmfjd|日本|01
+  - 🇯🇵|1-4🦊@xkmfjd|日本|02
+  - 🇭🇰|1-4🦊@xkmfjd|香港|01
+  - 🇭🇰|1-4🦊@xkmfjd|香港|02
+  - 🇭🇰|1-4🦊@xkmfjd|香港|03
+  - 1-4🦊@xkmfjd||01
+  - 🇰🇷|1-4🦊@xkmfjd|韩国|01
+  - 🇺🇸|1-4🦊@xkmfjd|美国|01
+  - 1-4🦊@xkmfjd|🇺🇳 |01
   - 1-4🦊@xkmfjd|undefined|01
   - 1-4🦊@xkmfjd|undefined|02
   - 1-4🦊@xkmfjd|undefined|03
@@ -525,28 +657,38 @@ proxy-groups:
   - 1-4🦊@xkmfjd|undefined|12
   - 1-4🦊@xkmfjd|undefined|13
   - 1-4🦊@xkmfjd|undefined|14
-  - 🇯🇵|1-4🦊@xkmfjd|日本|01
-  - 🇯🇵|1-4🦊@xkmfjd|日本|02
-  - 🇭🇰|1-4🦊@xkmfjd|香港|01
-  - 🇭🇰|1-4🦊@xkmfjd|香港|02
-  - 🇭🇰|1-4🦊@xkmfjd|香港|03
-  - 1-4🦊@xkmfjd||01
-  - 1-4🦊@xkmfjd||02
-  - 🇰🇷|1-4🦊@xkmfjd|韩国|01
-  - 🇺🇸|1-4🦊@xkmfjd|美国|01
-  - 1-4🦊@xkmfjd|🇺🇳 |01
+  - 1-4🦊@xkmfjd|undefined|15
+  - 1-4🦊@xkmfjd|undefined|16
+  - 1-4🦊@xkmfjd|undefined|17
+  - 1-4🦊@xkmfjd|undefined|18
+  - 1-4🦊@xkmfjd|undefined|19
+  - 1-4🦊@xkmfjd|undefined|20
+  - 1-4🦊@xkmfjd|undefined|21
+  - 1-4🦊@xkmfjd|undefined|22
+  - 1-4🦊@xkmfjd|undefined|23
+  - 1-4🦊@xkmfjd|undefined|24
+  - 1-4🦊@xkmfjd|undefined|25
+  - 1-4🦊@xkmfjd|undefined|26
+  - 1-4🦊@xkmfjd|undefined|27
+  - 1-4🦊@xkmfjd|undefined|28
 - name: 📢 谷歌FCM
   type: select
   proxies:
-  - 🚀 节点选择
   - 🎯 全球直连
+  - 🚀 节点选择
   - ♻️ 自动选择
+  - 1-4🦊@xkmfjd|Hysteria2 uk.1010520.xyz:1001|01
   - 🇪🇸|1-4🦊@xkmfjd|西班牙|01
   - 🇪🇸|1-4🦊@xkmfjd|西班牙|02
-  - 🇪🇸|1-4🦊@xkmfjd|西班牙|03
-  - 🇪🇸|1-4🦊@xkmfjd|西班牙|04
-  - 1-4🦊@xkmfjd|Hysteria2 uk.1010520.xyz:1001|01
-  - 🇦🇪|1-4🦊@xkmfjd|阿联酋|01
+  - 🇯🇵|1-4🦊@xkmfjd|日本|01
+  - 🇯🇵|1-4🦊@xkmfjd|日本|02
+  - 🇭🇰|1-4🦊@xkmfjd|香港|01
+  - 🇭🇰|1-4🦊@xkmfjd|香港|02
+  - 🇭🇰|1-4🦊@xkmfjd|香港|03
+  - 1-4🦊@xkmfjd||01
+  - 🇰🇷|1-4🦊@xkmfjd|韩国|01
+  - 🇺🇸|1-4🦊@xkmfjd|美国|01
+  - 1-4🦊@xkmfjd|🇺🇳 |01
   - 1-4🦊@xkmfjd|undefined|01
   - 1-4🦊@xkmfjd|undefined|02
   - 1-4🦊@xkmfjd|undefined|03
@@ -561,16 +703,20 @@ proxy-groups:
   - 1-4🦊@xkmfjd|undefined|12
   - 1-4🦊@xkmfjd|undefined|13
   - 1-4🦊@xkmfjd|undefined|14
-  - 🇯🇵|1-4🦊@xkmfjd|日本|01
-  - 🇯🇵|1-4🦊@xkmfjd|日本|02
-  - 🇭🇰|1-4🦊@xkmfjd|香港|01
-  - 🇭🇰|1-4🦊@xkmfjd|香港|02
-  - 🇭🇰|1-4🦊@xkmfjd|香港|03
-  - 1-4🦊@xkmfjd||01
-  - 1-4🦊@xkmfjd||02
-  - 🇰🇷|1-4🦊@xkmfjd|韩国|01
-  - 🇺🇸|1-4🦊@xkmfjd|美国|01
-  - 1-4🦊@xkmfjd|🇺🇳 |01
+  - 1-4🦊@xkmfjd|undefined|15
+  - 1-4🦊@xkmfjd|undefined|16
+  - 1-4🦊@xkmfjd|undefined|17
+  - 1-4🦊@xkmfjd|undefined|18
+  - 1-4🦊@xkmfjd|undefined|19
+  - 1-4🦊@xkmfjd|undefined|20
+  - 1-4🦊@xkmfjd|undefined|21
+  - 1-4🦊@xkmfjd|undefined|22
+  - 1-4🦊@xkmfjd|undefined|23
+  - 1-4🦊@xkmfjd|undefined|24
+  - 1-4🦊@xkmfjd|undefined|25
+  - 1-4🦊@xkmfjd|undefined|26
+  - 1-4🦊@xkmfjd|undefined|27
+  - 1-4🦊@xkmfjd|undefined|28
 - name: 🎯 全球直连
   type: select
   proxies:
@@ -593,12 +739,18 @@ proxy-groups:
   - 🚀 节点选择
   - 🎯 全球直连
   - ♻️ 自动选择
+  - 1-4🦊@xkmfjd|Hysteria2 uk.1010520.xyz:1001|01
   - 🇪🇸|1-4🦊@xkmfjd|西班牙|01
   - 🇪🇸|1-4🦊@xkmfjd|西班牙|02
-  - 🇪🇸|1-4🦊@xkmfjd|西班牙|03
-  - 🇪🇸|1-4🦊@xkmfjd|西班牙|04
-  - 1-4🦊@xkmfjd|Hysteria2 uk.1010520.xyz:1001|01
-  - 🇦🇪|1-4🦊@xkmfjd|阿联酋|01
+  - 🇯🇵|1-4🦊@xkmfjd|日本|01
+  - 🇯🇵|1-4🦊@xkmfjd|日本|02
+  - 🇭🇰|1-4🦊@xkmfjd|香港|01
+  - 🇭🇰|1-4🦊@xkmfjd|香港|02
+  - 🇭🇰|1-4🦊@xkmfjd|香港|03
+  - 1-4🦊@xkmfjd||01
+  - 🇰🇷|1-4🦊@xkmfjd|韩国|01
+  - 🇺🇸|1-4🦊@xkmfjd|美国|01
+  - 1-4🦊@xkmfjd|🇺🇳 |01
   - 1-4🦊@xkmfjd|undefined|01
   - 1-4🦊@xkmfjd|undefined|02
   - 1-4🦊@xkmfjd|undefined|03
@@ -613,17 +765,23 @@ proxy-groups:
   - 1-4🦊@xkmfjd|undefined|12
   - 1-4🦊@xkmfjd|undefined|13
   - 1-4🦊@xkmfjd|undefined|14
-  - 🇯🇵|1-4🦊@xkmfjd|日本|01
-  - 🇯🇵|1-4🦊@xkmfjd|日本|02
-  - 🇭🇰|1-4🦊@xkmfjd|香港|01
-  - 🇭🇰|1-4🦊@xkmfjd|香港|02
-  - 🇭🇰|1-4🦊@xkmfjd|香港|03
-  - 1-4🦊@xkmfjd||01
-  - 1-4🦊@xkmfjd||02
-  - 🇰🇷|1-4🦊@xkmfjd|韩国|01
-  - 🇺🇸|1-4🦊@xkmfjd|美国|01
-  - 1-4🦊@xkmfjd|🇺🇳 |01
+  - 1-4🦊@xkmfjd|undefined|15
+  - 1-4🦊@xkmfjd|undefined|16
+  - 1-4🦊@xkmfjd|undefined|17
+  - 1-4🦊@xkmfjd|undefined|18
+  - 1-4🦊@xkmfjd|undefined|19
+  - 1-4🦊@xkmfjd|undefined|20
+  - 1-4🦊@xkmfjd|undefined|21
+  - 1-4🦊@xkmfjd|undefined|22
+  - 1-4🦊@xkmfjd|undefined|23
+  - 1-4🦊@xkmfjd|undefined|24
+  - 1-4🦊@xkmfjd|undefined|25
+  - 1-4🦊@xkmfjd|undefined|26
+  - 1-4🦊@xkmfjd|undefined|27
+  - 1-4🦊@xkmfjd|undefined|28
 rules:
+- DOMAIN-SUFFIX,ushd.xmsl.org,🎯 全球直连
+- DOMAIN-SUFFIX,cf.gtlx.org,🎯 全球直连
 - DOMAIN-SUFFIX,acl4.ssr,🎯 全球直连
 - DOMAIN-SUFFIX,ip6-localhost,🎯 全球直连
 - DOMAIN-SUFFIX,ip6-loopback,🎯 全球直连
