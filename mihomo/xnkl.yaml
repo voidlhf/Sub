@@ -72,6 +72,30 @@ proxies:
   server: fresh-grub.boa152.lol
   port: 443
   name: 🇺🇸|1-4🐸@xkmfjd|美国|04
+- type: vless
+  name: 🇺🇸|1-4🐸@xkmfjd|美国|05
+  server: phx-plus-1ddns.faforex.eu.org
+  port: 23258
+  uuid: 73159dbd-e01e-4492-a234-e5d7c335b128
+  tls: true
+  flow: xtls-rprx-vision
+  client-fingerprint: chrome
+  skip-cert-verify: false
+  reality-opts:
+    public-key: BSEvpP7N7XNtOgzDrCFEgu6ejgdBHOYRug6S_lTf5GM
+    short-id: bfbc4c1f
+  network: tcp
+  servername: microsoft.com
+- type: hysteria2
+  name: 🇺🇸|1-4🐸@xkmfjd|美国|06
+  server: kevin.iserver.store
+  port: 8443
+  password: Telegram:@KevinZakarian
+  sni: kevin.iserver.store
+  obfs: salamander
+  obfs-password: Telegram:@KevinZakarian
+  skip-cert-verify: true
+  tfo: false
 - type: hysteria2
   name: 🇨🇦|1-4🐸@xkmfjd|加拿大|01
   server: ca.1010520.xyz
@@ -81,10 +105,26 @@ proxies:
   skip-cert-verify: false
   tfo: false
 - type: hysteria2
+  name: 🇨🇦|1-4🐸@xkmfjd|加拿大|02
+  server: ca.1010520.xyz
+  port: 1001
+  password: f5136746-de79-46d0-b3be-d15d9992fa07
+  sni: ca.1010520.xyz
+  skip-cert-verify: false
+  tfo: false
+- type: hysteria2
   name: 🇩🇪|1-4🐸@xkmfjd|德国|01
   server: de.1010520.xyz
   port: 1001
   password: e1c77eb5-eacd-4afd-8da3-9fd2c1d3b499
+  sni: de.1010520.xyz
+  skip-cert-verify: false
+  tfo: false
+- type: hysteria2
+  name: 🇩🇪|1-4🐸@xkmfjd|德国|02
+  server: de.1010520.xyz
+  port: 1001
+  password: f5136746-de79-46d0-b3be-d15d9992fa07
   sni: de.1010520.xyz
   skip-cert-verify: false
   tfo: false
@@ -107,6 +147,22 @@ proxies:
   server: 62.216.92.60
   port: 35600
   password: 50e3f748-4217-4680-887b-6c1eedb276bf
+  sni: hhhk.naisicloud.xyz
+  skip-cert-verify: true
+  tfo: false
+- type: hysteria2
+  name: 🇭🇰|1-4🐸@xkmfjd|香港|04
+  server: 62.216.92.60
+  port: 35600
+  password: 50e3f748-4217-4680-887b-6c1eedb276bf
+  sni: hhhk.naisicloud.xyz
+  skip-cert-verify: true
+  tfo: false
+- type: hysteria2
+  name: 🇭🇰|1-4🐸@xkmfjd|香港|05
+  server: hhhk.naisicloud.xyz
+  port: 35600
+  password: 9cc20269-5a37-4260-b173-b5d6a44b2e3b
   sni: hhhk.naisicloud.xyz
   skip-cert-verify: true
   tfo: false
@@ -147,21 +203,6 @@ proxies:
   sni: br.1010520.xyz
   skip-cert-verify: false
   tfo: false
-- name: 1-4🐸@xkmfjd||01
-  type: vmess
-  server: 139.59.142.237
-  port: 2082
-  cipher: auto
-  uuid: ba80b11b-2578-43c4-929d-89095af066ba
-  alterId: 0
-  tls: false
-  network: http
-  http-opts:
-    path:
-    - /
-    headers:
-      Host:
-      - soft98.ir
 - type: hysteria2
   name: 1-4🐸@xkmfjd|Hysteria2 uk.1010520.xyz:1001|01
   server: uk.1010520.xyz
@@ -177,15 +218,22 @@ proxies:
   server: settled-seal.treefrog761.one
   port: 443
   name: 1-4🐸@xkmfjd|settled-seal.treefrog761.one:443|01
-- skip-cert-verify: true
-  sni: profound-elk.boa152.lol
-  type: trojan
-  password: '3723507166611775488'
-  server: profound-elk.boa152.lol
-  port: 443
-  name: 1-4🐸@xkmfjd|profound-elk.boa152.lol:443|01
 - type: vless
   name: 🇰🇷|1-4🐸@xkmfjd|韩国|01
+  server: seoul-plus-ddns.faforex.eu.org
+  port: 23258
+  uuid: 73159dbd-e01e-4492-a234-e5d7c335b128
+  tls: true
+  flow: xtls-rprx-vision
+  client-fingerprint: chrome
+  skip-cert-verify: false
+  reality-opts:
+    public-key: p-g7A0RMBXZOUey2V-HjWsI-5j-EpNITj_JVqx_9OnI
+    short-id: 545abc6e
+  network: tcp
+  servername: microsoft.com
+- type: vless
+  name: 🇰🇷|1-4🐸@xkmfjd|韩国|02
   server: seoul-plus-ddns.faforex.eu.org
   port: 23258
   uuid: 73159dbd-e01e-4492-a234-e5d7c335b128
@@ -237,52 +285,32 @@ proxies:
   plugin-opts:
     mode: http
     host: 215996dd9f1c3db1e54b.microsoft.com
-- skip-cert-verify: true
-  type: trojan
-  password: vzhXXZVw
-  server: 36.150.215.196
-  port: 18681
-  name: 1-4🐸@xkmfjd|36.150.215.196:18681|01
-- name: 1-4🐸@xkmfjd|3-undefined|01
-  type: ss
-  server: console.02.aliyun.aq.kunlunaqs.com
-  port: 45909
-  cipher: aes-128-gcm
-  password: 9d29e58723af34cad8da
-  plugin: obfs
-  plugin-opts:
-    mode: http
-    host: 215996dd9f1c3db1e54b.microsoft.com
-- name: 🇨🇭|1-4🐸@xkmfjd|瑞士|01
-  type: ss
-  server: zx1.1010520.xyz
-  port: 26436
-  cipher: chacha20-ietf-poly1305
-  password: f5136746-de79-46d0-b3be-d15d9992fa07
 - type: hysteria2
-  name: 🇨🇭|1-4🐸@xkmfjd|瑞士|02
-  server: ch.1010520.xyz
+  name: 🇧🇷|1-4🐸@xkmfjd|巴西|01
+  server: br.1010520.xyz
   port: 1001
   password: f5136746-de79-46d0-b3be-d15d9992fa07
-  sni: ch.1010520.xyz
+  sni: br.1010520.xyz
   skip-cert-verify: false
   tfo: false
-- name: 🇨🇭|1-4🐸@xkmfjd|瑞士|03
+- type: hysteria2
+  name: 🇬🇧|1-4🐸@xkmfjd|英国|01
+  server: uk.1010520.xyz
+  port: 1001
+  password: f5136746-de79-46d0-b3be-d15d9992fa07
+  sni: uk.1010520.xyz
+  skip-cert-verify: false
+  tfo: false
+- name: 🇬🇧|1-4🐸@xkmfjd|英国|02
   type: ss
   server: zx3.1010520.xyz
-  port: 26436
+  port: 18769
   cipher: chacha20-ietf-poly1305
   password: f5136746-de79-46d0-b3be-d15d9992fa07
-- name: 🇷🇴|1-4🐸@xkmfjd|罗马尼亚|01
-  type: ss
-  server: zx1.1010520.xyz
-  port: 23781
-  cipher: chacha20-ietf-poly1305
-  password: f5136746-de79-46d0-b3be-d15d9992fa07
-- name: 🇷🇴|1-4🐸@xkmfjd|罗马尼亚|02
+- name: 🇨🇭|1-4🐸@xkmfjd|瑞士|01
   type: ss
   server: zx2.1010520.xyz
-  port: 23781
+  port: 26436
   cipher: chacha20-ietf-poly1305
   password: f5136746-de79-46d0-b3be-d15d9992fa07
 proxy-groups:
@@ -296,31 +324,33 @@ proxy-groups:
   - 🇺🇸|1-4🐸@xkmfjd|美国|02
   - 🇺🇸|1-4🐸@xkmfjd|美国|03
   - 🇺🇸|1-4🐸@xkmfjd|美国|04
+  - 🇺🇸|1-4🐸@xkmfjd|美国|05
+  - 🇺🇸|1-4🐸@xkmfjd|美国|06
   - 🇨🇦|1-4🐸@xkmfjd|加拿大|01
+  - 🇨🇦|1-4🐸@xkmfjd|加拿大|02
   - 🇩🇪|1-4🐸@xkmfjd|德国|01
+  - 🇩🇪|1-4🐸@xkmfjd|德国|02
   - 🇭🇰|1-4🐸@xkmfjd|香港|01
   - 🇭🇰|1-4🐸@xkmfjd|香港|02
   - 🇭🇰|1-4🐸@xkmfjd|香港|03
+  - 🇭🇰|1-4🐸@xkmfjd|香港|04
+  - 🇭🇰|1-4🐸@xkmfjd|香港|05
   - 🇸🇬|1-4🐸@xkmfjd|新加坡|01
   - 🇨🇳|1-4🐸@xkmfjd|台湾|01
   - 1-4🐸@xkmfjd|Hysteria2 sg.1010520.xyz:1001|01
   - 1-4🐸@xkmfjd|Hysteria2 br.1010520.xyz:1001|01
-  - 1-4🐸@xkmfjd||01
   - 1-4🐸@xkmfjd|Hysteria2 uk.1010520.xyz:1001|01
   - 1-4🐸@xkmfjd|settled-seal.treefrog761.one:443|01
-  - 1-4🐸@xkmfjd|profound-elk.boa152.lol:443|01
   - 🇰🇷|1-4🐸@xkmfjd|韩国|01
+  - 🇰🇷|1-4🐸@xkmfjd|韩国|02
   - 🇯🇵|1-4🐸@xkmfjd|日本|01
   - 🇯🇵|1-4🐸@xkmfjd|日本|02
   - 1-4🐸@xkmfjd|1-undefined|01
   - 1-4🐸@xkmfjd|2-undefined|01
-  - 1-4🐸@xkmfjd|36.150.215.196:18681|01
-  - 1-4🐸@xkmfjd|3-undefined|01
+  - 🇧🇷|1-4🐸@xkmfjd|巴西|01
+  - 🇬🇧|1-4🐸@xkmfjd|英国|01
+  - 🇬🇧|1-4🐸@xkmfjd|英国|02
   - 🇨🇭|1-4🐸@xkmfjd|瑞士|01
-  - 🇨🇭|1-4🐸@xkmfjd|瑞士|02
-  - 🇨🇭|1-4🐸@xkmfjd|瑞士|03
-  - 🇷🇴|1-4🐸@xkmfjd|罗马尼亚|01
-  - 🇷🇴|1-4🐸@xkmfjd|罗马尼亚|02
 - name: ♻️ 自动选择
   type: url-test
   url: http://www.gstatic.com/generate_204
@@ -332,31 +362,33 @@ proxy-groups:
   - 🇺🇸|1-4🐸@xkmfjd|美国|02
   - 🇺🇸|1-4🐸@xkmfjd|美国|03
   - 🇺🇸|1-4🐸@xkmfjd|美国|04
+  - 🇺🇸|1-4🐸@xkmfjd|美国|05
+  - 🇺🇸|1-4🐸@xkmfjd|美国|06
   - 🇨🇦|1-4🐸@xkmfjd|加拿大|01
+  - 🇨🇦|1-4🐸@xkmfjd|加拿大|02
   - 🇩🇪|1-4🐸@xkmfjd|德国|01
+  - 🇩🇪|1-4🐸@xkmfjd|德国|02
   - 🇭🇰|1-4🐸@xkmfjd|香港|01
   - 🇭🇰|1-4🐸@xkmfjd|香港|02
   - 🇭🇰|1-4🐸@xkmfjd|香港|03
+  - 🇭🇰|1-4🐸@xkmfjd|香港|04
+  - 🇭🇰|1-4🐸@xkmfjd|香港|05
   - 🇸🇬|1-4🐸@xkmfjd|新加坡|01
   - 🇨🇳|1-4🐸@xkmfjd|台湾|01
   - 1-4🐸@xkmfjd|Hysteria2 sg.1010520.xyz:1001|01
   - 1-4🐸@xkmfjd|Hysteria2 br.1010520.xyz:1001|01
-  - 1-4🐸@xkmfjd||01
   - 1-4🐸@xkmfjd|Hysteria2 uk.1010520.xyz:1001|01
   - 1-4🐸@xkmfjd|settled-seal.treefrog761.one:443|01
-  - 1-4🐸@xkmfjd|profound-elk.boa152.lol:443|01
   - 🇰🇷|1-4🐸@xkmfjd|韩国|01
+  - 🇰🇷|1-4🐸@xkmfjd|韩国|02
   - 🇯🇵|1-4🐸@xkmfjd|日本|01
   - 🇯🇵|1-4🐸@xkmfjd|日本|02
   - 1-4🐸@xkmfjd|1-undefined|01
   - 1-4🐸@xkmfjd|2-undefined|01
-  - 1-4🐸@xkmfjd|36.150.215.196:18681|01
-  - 1-4🐸@xkmfjd|3-undefined|01
+  - 🇧🇷|1-4🐸@xkmfjd|巴西|01
+  - 🇬🇧|1-4🐸@xkmfjd|英国|01
+  - 🇬🇧|1-4🐸@xkmfjd|英国|02
   - 🇨🇭|1-4🐸@xkmfjd|瑞士|01
-  - 🇨🇭|1-4🐸@xkmfjd|瑞士|02
-  - 🇨🇭|1-4🐸@xkmfjd|瑞士|03
-  - 🇷🇴|1-4🐸@xkmfjd|罗马尼亚|01
-  - 🇷🇴|1-4🐸@xkmfjd|罗马尼亚|02
 - name: 🌍 国外媒体
   type: select
   proxies:
@@ -368,31 +400,33 @@ proxy-groups:
   - 🇺🇸|1-4🐸@xkmfjd|美国|02
   - 🇺🇸|1-4🐸@xkmfjd|美国|03
   - 🇺🇸|1-4🐸@xkmfjd|美国|04
+  - 🇺🇸|1-4🐸@xkmfjd|美国|05
+  - 🇺🇸|1-4🐸@xkmfjd|美国|06
   - 🇨🇦|1-4🐸@xkmfjd|加拿大|01
+  - 🇨🇦|1-4🐸@xkmfjd|加拿大|02
   - 🇩🇪|1-4🐸@xkmfjd|德国|01
+  - 🇩🇪|1-4🐸@xkmfjd|德国|02
   - 🇭🇰|1-4🐸@xkmfjd|香港|01
   - 🇭🇰|1-4🐸@xkmfjd|香港|02
   - 🇭🇰|1-4🐸@xkmfjd|香港|03
+  - 🇭🇰|1-4🐸@xkmfjd|香港|04
+  - 🇭🇰|1-4🐸@xkmfjd|香港|05
   - 🇸🇬|1-4🐸@xkmfjd|新加坡|01
   - 🇨🇳|1-4🐸@xkmfjd|台湾|01
   - 1-4🐸@xkmfjd|Hysteria2 sg.1010520.xyz:1001|01
   - 1-4🐸@xkmfjd|Hysteria2 br.1010520.xyz:1001|01
-  - 1-4🐸@xkmfjd||01
   - 1-4🐸@xkmfjd|Hysteria2 uk.1010520.xyz:1001|01
   - 1-4🐸@xkmfjd|settled-seal.treefrog761.one:443|01
-  - 1-4🐸@xkmfjd|profound-elk.boa152.lol:443|01
   - 🇰🇷|1-4🐸@xkmfjd|韩国|01
+  - 🇰🇷|1-4🐸@xkmfjd|韩国|02
   - 🇯🇵|1-4🐸@xkmfjd|日本|01
   - 🇯🇵|1-4🐸@xkmfjd|日本|02
   - 1-4🐸@xkmfjd|1-undefined|01
   - 1-4🐸@xkmfjd|2-undefined|01
-  - 1-4🐸@xkmfjd|36.150.215.196:18681|01
-  - 1-4🐸@xkmfjd|3-undefined|01
+  - 🇧🇷|1-4🐸@xkmfjd|巴西|01
+  - 🇬🇧|1-4🐸@xkmfjd|英国|01
+  - 🇬🇧|1-4🐸@xkmfjd|英国|02
   - 🇨🇭|1-4🐸@xkmfjd|瑞士|01
-  - 🇨🇭|1-4🐸@xkmfjd|瑞士|02
-  - 🇨🇭|1-4🐸@xkmfjd|瑞士|03
-  - 🇷🇴|1-4🐸@xkmfjd|罗马尼亚|01
-  - 🇷🇴|1-4🐸@xkmfjd|罗马尼亚|02
 - name: 📲 电报信息
   type: select
   proxies:
@@ -403,31 +437,33 @@ proxy-groups:
   - 🇺🇸|1-4🐸@xkmfjd|美国|02
   - 🇺🇸|1-4🐸@xkmfjd|美国|03
   - 🇺🇸|1-4🐸@xkmfjd|美国|04
+  - 🇺🇸|1-4🐸@xkmfjd|美国|05
+  - 🇺🇸|1-4🐸@xkmfjd|美国|06
   - 🇨🇦|1-4🐸@xkmfjd|加拿大|01
+  - 🇨🇦|1-4🐸@xkmfjd|加拿大|02
   - 🇩🇪|1-4🐸@xkmfjd|德国|01
+  - 🇩🇪|1-4🐸@xkmfjd|德国|02
   - 🇭🇰|1-4🐸@xkmfjd|香港|01
   - 🇭🇰|1-4🐸@xkmfjd|香港|02
   - 🇭🇰|1-4🐸@xkmfjd|香港|03
+  - 🇭🇰|1-4🐸@xkmfjd|香港|04
+  - 🇭🇰|1-4🐸@xkmfjd|香港|05
   - 🇸🇬|1-4🐸@xkmfjd|新加坡|01
   - 🇨🇳|1-4🐸@xkmfjd|台湾|01
   - 1-4🐸@xkmfjd|Hysteria2 sg.1010520.xyz:1001|01
   - 1-4🐸@xkmfjd|Hysteria2 br.1010520.xyz:1001|01
-  - 1-4🐸@xkmfjd||01
   - 1-4🐸@xkmfjd|Hysteria2 uk.1010520.xyz:1001|01
   - 1-4🐸@xkmfjd|settled-seal.treefrog761.one:443|01
-  - 1-4🐸@xkmfjd|profound-elk.boa152.lol:443|01
   - 🇰🇷|1-4🐸@xkmfjd|韩国|01
+  - 🇰🇷|1-4🐸@xkmfjd|韩国|02
   - 🇯🇵|1-4🐸@xkmfjd|日本|01
   - 🇯🇵|1-4🐸@xkmfjd|日本|02
   - 1-4🐸@xkmfjd|1-undefined|01
   - 1-4🐸@xkmfjd|2-undefined|01
-  - 1-4🐸@xkmfjd|36.150.215.196:18681|01
-  - 1-4🐸@xkmfjd|3-undefined|01
+  - 🇧🇷|1-4🐸@xkmfjd|巴西|01
+  - 🇬🇧|1-4🐸@xkmfjd|英国|01
+  - 🇬🇧|1-4🐸@xkmfjd|英国|02
   - 🇨🇭|1-4🐸@xkmfjd|瑞士|01
-  - 🇨🇭|1-4🐸@xkmfjd|瑞士|02
-  - 🇨🇭|1-4🐸@xkmfjd|瑞士|03
-  - 🇷🇴|1-4🐸@xkmfjd|罗马尼亚|01
-  - 🇷🇴|1-4🐸@xkmfjd|罗马尼亚|02
 - name: Ⓜ️ 微软服务
   type: select
   proxies:
@@ -438,31 +474,33 @@ proxy-groups:
   - 🇺🇸|1-4🐸@xkmfjd|美国|02
   - 🇺🇸|1-4🐸@xkmfjd|美国|03
   - 🇺🇸|1-4🐸@xkmfjd|美国|04
+  - 🇺🇸|1-4🐸@xkmfjd|美国|05
+  - 🇺🇸|1-4🐸@xkmfjd|美国|06
   - 🇨🇦|1-4🐸@xkmfjd|加拿大|01
+  - 🇨🇦|1-4🐸@xkmfjd|加拿大|02
   - 🇩🇪|1-4🐸@xkmfjd|德国|01
+  - 🇩🇪|1-4🐸@xkmfjd|德国|02
   - 🇭🇰|1-4🐸@xkmfjd|香港|01
   - 🇭🇰|1-4🐸@xkmfjd|香港|02
   - 🇭🇰|1-4🐸@xkmfjd|香港|03
+  - 🇭🇰|1-4🐸@xkmfjd|香港|04
+  - 🇭🇰|1-4🐸@xkmfjd|香港|05
   - 🇸🇬|1-4🐸@xkmfjd|新加坡|01
   - 🇨🇳|1-4🐸@xkmfjd|台湾|01
   - 1-4🐸@xkmfjd|Hysteria2 sg.1010520.xyz:1001|01
   - 1-4🐸@xkmfjd|Hysteria2 br.1010520.xyz:1001|01
-  - 1-4🐸@xkmfjd||01
   - 1-4🐸@xkmfjd|Hysteria2 uk.1010520.xyz:1001|01
   - 1-4🐸@xkmfjd|settled-seal.treefrog761.one:443|01
-  - 1-4🐸@xkmfjd|profound-elk.boa152.lol:443|01
   - 🇰🇷|1-4🐸@xkmfjd|韩国|01
+  - 🇰🇷|1-4🐸@xkmfjd|韩国|02
   - 🇯🇵|1-4🐸@xkmfjd|日本|01
   - 🇯🇵|1-4🐸@xkmfjd|日本|02
   - 1-4🐸@xkmfjd|1-undefined|01
   - 1-4🐸@xkmfjd|2-undefined|01
-  - 1-4🐸@xkmfjd|36.150.215.196:18681|01
-  - 1-4🐸@xkmfjd|3-undefined|01
+  - 🇧🇷|1-4🐸@xkmfjd|巴西|01
+  - 🇬🇧|1-4🐸@xkmfjd|英国|01
+  - 🇬🇧|1-4🐸@xkmfjd|英国|02
   - 🇨🇭|1-4🐸@xkmfjd|瑞士|01
-  - 🇨🇭|1-4🐸@xkmfjd|瑞士|02
-  - 🇨🇭|1-4🐸@xkmfjd|瑞士|03
-  - 🇷🇴|1-4🐸@xkmfjd|罗马尼亚|01
-  - 🇷🇴|1-4🐸@xkmfjd|罗马尼亚|02
 - name: 🍎 苹果服务
   type: select
   proxies:
@@ -473,31 +511,33 @@ proxy-groups:
   - 🇺🇸|1-4🐸@xkmfjd|美国|02
   - 🇺🇸|1-4🐸@xkmfjd|美国|03
   - 🇺🇸|1-4🐸@xkmfjd|美国|04
+  - 🇺🇸|1-4🐸@xkmfjd|美国|05
+  - 🇺🇸|1-4🐸@xkmfjd|美国|06
   - 🇨🇦|1-4🐸@xkmfjd|加拿大|01
+  - 🇨🇦|1-4🐸@xkmfjd|加拿大|02
   - 🇩🇪|1-4🐸@xkmfjd|德国|01
+  - 🇩🇪|1-4🐸@xkmfjd|德国|02
   - 🇭🇰|1-4🐸@xkmfjd|香港|01
   - 🇭🇰|1-4🐸@xkmfjd|香港|02
   - 🇭🇰|1-4🐸@xkmfjd|香港|03
+  - 🇭🇰|1-4🐸@xkmfjd|香港|04
+  - 🇭🇰|1-4🐸@xkmfjd|香港|05
   - 🇸🇬|1-4🐸@xkmfjd|新加坡|01
   - 🇨🇳|1-4🐸@xkmfjd|台湾|01
   - 1-4🐸@xkmfjd|Hysteria2 sg.1010520.xyz:1001|01
   - 1-4🐸@xkmfjd|Hysteria2 br.1010520.xyz:1001|01
-  - 1-4🐸@xkmfjd||01
   - 1-4🐸@xkmfjd|Hysteria2 uk.1010520.xyz:1001|01
   - 1-4🐸@xkmfjd|settled-seal.treefrog761.one:443|01
-  - 1-4🐸@xkmfjd|profound-elk.boa152.lol:443|01
   - 🇰🇷|1-4🐸@xkmfjd|韩国|01
+  - 🇰🇷|1-4🐸@xkmfjd|韩国|02
   - 🇯🇵|1-4🐸@xkmfjd|日本|01
   - 🇯🇵|1-4🐸@xkmfjd|日本|02
   - 1-4🐸@xkmfjd|1-undefined|01
   - 1-4🐸@xkmfjd|2-undefined|01
-  - 1-4🐸@xkmfjd|36.150.215.196:18681|01
-  - 1-4🐸@xkmfjd|3-undefined|01
+  - 🇧🇷|1-4🐸@xkmfjd|巴西|01
+  - 🇬🇧|1-4🐸@xkmfjd|英国|01
+  - 🇬🇧|1-4🐸@xkmfjd|英国|02
   - 🇨🇭|1-4🐸@xkmfjd|瑞士|01
-  - 🇨🇭|1-4🐸@xkmfjd|瑞士|02
-  - 🇨🇭|1-4🐸@xkmfjd|瑞士|03
-  - 🇷🇴|1-4🐸@xkmfjd|罗马尼亚|01
-  - 🇷🇴|1-4🐸@xkmfjd|罗马尼亚|02
 - name: 📢 谷歌FCM
   type: select
   proxies:
@@ -509,31 +549,33 @@ proxy-groups:
   - 🇺🇸|1-4🐸@xkmfjd|美国|02
   - 🇺🇸|1-4🐸@xkmfjd|美国|03
   - 🇺🇸|1-4🐸@xkmfjd|美国|04
+  - 🇺🇸|1-4🐸@xkmfjd|美国|05
+  - 🇺🇸|1-4🐸@xkmfjd|美国|06
   - 🇨🇦|1-4🐸@xkmfjd|加拿大|01
+  - 🇨🇦|1-4🐸@xkmfjd|加拿大|02
   - 🇩🇪|1-4🐸@xkmfjd|德国|01
+  - 🇩🇪|1-4🐸@xkmfjd|德国|02
   - 🇭🇰|1-4🐸@xkmfjd|香港|01
   - 🇭🇰|1-4🐸@xkmfjd|香港|02
   - 🇭🇰|1-4🐸@xkmfjd|香港|03
+  - 🇭🇰|1-4🐸@xkmfjd|香港|04
+  - 🇭🇰|1-4🐸@xkmfjd|香港|05
   - 🇸🇬|1-4🐸@xkmfjd|新加坡|01
   - 🇨🇳|1-4🐸@xkmfjd|台湾|01
   - 1-4🐸@xkmfjd|Hysteria2 sg.1010520.xyz:1001|01
   - 1-4🐸@xkmfjd|Hysteria2 br.1010520.xyz:1001|01
-  - 1-4🐸@xkmfjd||01
   - 1-4🐸@xkmfjd|Hysteria2 uk.1010520.xyz:1001|01
   - 1-4🐸@xkmfjd|settled-seal.treefrog761.one:443|01
-  - 1-4🐸@xkmfjd|profound-elk.boa152.lol:443|01
   - 🇰🇷|1-4🐸@xkmfjd|韩国|01
+  - 🇰🇷|1-4🐸@xkmfjd|韩国|02
   - 🇯🇵|1-4🐸@xkmfjd|日本|01
   - 🇯🇵|1-4🐸@xkmfjd|日本|02
   - 1-4🐸@xkmfjd|1-undefined|01
   - 1-4🐸@xkmfjd|2-undefined|01
-  - 1-4🐸@xkmfjd|36.150.215.196:18681|01
-  - 1-4🐸@xkmfjd|3-undefined|01
+  - 🇧🇷|1-4🐸@xkmfjd|巴西|01
+  - 🇬🇧|1-4🐸@xkmfjd|英国|01
+  - 🇬🇧|1-4🐸@xkmfjd|英国|02
   - 🇨🇭|1-4🐸@xkmfjd|瑞士|01
-  - 🇨🇭|1-4🐸@xkmfjd|瑞士|02
-  - 🇨🇭|1-4🐸@xkmfjd|瑞士|03
-  - 🇷🇴|1-4🐸@xkmfjd|罗马尼亚|01
-  - 🇷🇴|1-4🐸@xkmfjd|罗马尼亚|02
 - name: 🎯 全球直连
   type: select
   proxies:
@@ -561,31 +603,33 @@ proxy-groups:
   - 🇺🇸|1-4🐸@xkmfjd|美国|02
   - 🇺🇸|1-4🐸@xkmfjd|美国|03
   - 🇺🇸|1-4🐸@xkmfjd|美国|04
+  - 🇺🇸|1-4🐸@xkmfjd|美国|05
+  - 🇺🇸|1-4🐸@xkmfjd|美国|06
   - 🇨🇦|1-4🐸@xkmfjd|加拿大|01
+  - 🇨🇦|1-4🐸@xkmfjd|加拿大|02
   - 🇩🇪|1-4🐸@xkmfjd|德国|01
+  - 🇩🇪|1-4🐸@xkmfjd|德国|02
   - 🇭🇰|1-4🐸@xkmfjd|香港|01
   - 🇭🇰|1-4🐸@xkmfjd|香港|02
   - 🇭🇰|1-4🐸@xkmfjd|香港|03
+  - 🇭🇰|1-4🐸@xkmfjd|香港|04
+  - 🇭🇰|1-4🐸@xkmfjd|香港|05
   - 🇸🇬|1-4🐸@xkmfjd|新加坡|01
   - 🇨🇳|1-4🐸@xkmfjd|台湾|01
   - 1-4🐸@xkmfjd|Hysteria2 sg.1010520.xyz:1001|01
   - 1-4🐸@xkmfjd|Hysteria2 br.1010520.xyz:1001|01
-  - 1-4🐸@xkmfjd||01
   - 1-4🐸@xkmfjd|Hysteria2 uk.1010520.xyz:1001|01
   - 1-4🐸@xkmfjd|settled-seal.treefrog761.one:443|01
-  - 1-4🐸@xkmfjd|profound-elk.boa152.lol:443|01
   - 🇰🇷|1-4🐸@xkmfjd|韩国|01
+  - 🇰🇷|1-4🐸@xkmfjd|韩国|02
   - 🇯🇵|1-4🐸@xkmfjd|日本|01
   - 🇯🇵|1-4🐸@xkmfjd|日本|02
   - 1-4🐸@xkmfjd|1-undefined|01
   - 1-4🐸@xkmfjd|2-undefined|01
-  - 1-4🐸@xkmfjd|36.150.215.196:18681|01
-  - 1-4🐸@xkmfjd|3-undefined|01
+  - 🇧🇷|1-4🐸@xkmfjd|巴西|01
+  - 🇬🇧|1-4🐸@xkmfjd|英国|01
+  - 🇬🇧|1-4🐸@xkmfjd|英国|02
   - 🇨🇭|1-4🐸@xkmfjd|瑞士|01
-  - 🇨🇭|1-4🐸@xkmfjd|瑞士|02
-  - 🇨🇭|1-4🐸@xkmfjd|瑞士|03
-  - 🇷🇴|1-4🐸@xkmfjd|罗马尼亚|01
-  - 🇷🇴|1-4🐸@xkmfjd|罗马尼亚|02
 rules:
 - DOMAIN-SUFFIX,acl4.ssr,🎯 全球直连
 - DOMAIN-SUFFIX,ip6-localhost,🎯 全球直连

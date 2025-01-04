@@ -17,177 +17,159 @@ hosts:
   alt7-mtalk.google.com: 173.194.219.188
   alt8-mtalk.google.com: 142.250.112.188
 proxies:
-- name: 免费勿受骗自行优选
-  server: www.visa.com.tw
+- name: 免费请勿受骗
+  server: theo.ns.cloudflare.com
   port: 443
-  type: vmess
-  uuid: 64a2ffc1-3deb-4485-bf45-7beb98878037
-  alterId: 0
-  cipher: auto
-  tls: true
+  type: trojan
+  password: Trevely
+  sni: trojans.trevely.us.kg
   skip-cert-verify: true
-  servername: br.trevely.us.kg
   network: ws
   ws-opts:
-    path: /vmess-argo?ed=2048
+    path: /?ed=2560
     headers:
-      Host: br.trevely.us.kg
-- name: FREE_BR ARG
-  server: www.visa.com.tw
-  port: 2053
-  type: vmess
-  uuid: 64a2ffc1-3deb-4485-bf45-7beb98878037
-  alterId: 0
-  cipher: auto
-  tls: true
+      Host: trojans.trevely.us.kg
+- name: FREE_US 01
+  server: duke.ns.cloudflare.com
+  port: 443
+  type: trojan
+  password: Trevely
+  sni: trojans.trevely.us.kg
   skip-cert-verify: true
-  servername: br.trevely.us.kg
   network: ws
   ws-opts:
-    path: /vmess-argo?ed=2048
+    path: /?ed=2560
     headers:
-      Host: br.trevely.us.kg
-- name: FREE_DE ARG
-  server: www.visa.com.tw
-  port: 2083
-  type: vmess
-  uuid: 6b35c5e2-1ba6-4875-dbc9-abd95eea8d26
-  alterId: 0
-  cipher: auto
-  tls: true
+      Host: trojans.trevely.us.kg
+- name: FREE_US 02
+  server: fred.ns.cloudflare.com
+  port: 443
+  type: trojan
+  password: Trevely
+  sni: trojans.trevely.us.kg
   skip-cert-verify: true
-  servername: de.trevely.us.kg
   network: ws
   ws-opts:
-    path: /de.trevely.us.kg
+    path: /?ed=2560
     headers:
-      Host: de.trevely.us.kg
-- name: FREE_JP ARG
-  server: www.visa.com.tw
-  port: 2087
-  type: vmess
-  uuid: 2175e09a-672c-4a6b-8ff7-aabcfa691931
-  alterId: 0
-  cipher: auto
-  tls: true
+      Host: trojans.trevely.us.kg
+- name: FREE_US 03
+  server: hugh.ns.cloudflare.com
+  port: 443
+  type: trojan
+  password: Trevely
+  sni: trojans.trevely.us.kg
   skip-cert-verify: true
-  servername: jp.trevely.us.kg
   network: ws
   ws-opts:
-    path: /jp.trevely.us.kg
+    path: /?ed=2560
     headers:
-      Host: jp.trevely.us.kg
-- name: FREE_FI ARG 01
-  server: www.visa.com.tw
-  port: 2096
-  type: vmess
-  uuid: fb0e6950-1dab-4362-9dcb-b1d55fb1fb2a
-  alterId: 0
-  cipher: auto
-  tls: true
+      Host: trojans.trevely.us.kg
+- name: FREE_US 04
+  server: kyle.ns.cloudflare.com
+  port: 443
+  type: trojan
+  password: Trevely
+  sni: trojans.trevely.us.kg
   skip-cert-verify: true
-  servername: serv15.trevely.us.kg
   network: ws
   ws-opts:
-    path: /serv00?ed=2048
+    path: /?ed=2560
     headers:
-      Host: serv15.trevely.us.kg
-- name: FREE_FI ARG 02
-  server: www.visa.com.tw
-  port: 8443
-  type: vmess
-  uuid: f31f60c3-835d-466d-928b-75a074ffb818
-  alterId: 0
-  cipher: auto
-  tls: true
+      Host: trojans.trevely.us.kg
+- name: FREE_US 05
+  server: lynn.ns.cloudflare.com
+  port: 443
+  type: trojan
+  password: Trevely
+  sni: trojans.trevely.us.kg
   skip-cert-verify: true
-  servername: serv15f.trevely.us.kg
   network: ws
   ws-opts:
-    path: /serv00?ed=2048
+    path: /?ed=2560
     headers:
-      Host: serv15f.trevely.us.kg
+      Host: trojans.trevely.us.kg
 proxy-groups:
 - name: 🚀 节点选择
   type: select
   proxies:
   - ♻️ 自动选择
   - DIRECT
-  - 免费勿受骗自行优选
-  - FREE_BR ARG
-  - FREE_DE ARG
-  - FREE_JP ARG
-  - FREE_FI ARG 01
-  - FREE_FI ARG 02
+  - 免费请勿受骗
+  - FREE_US 01
+  - FREE_US 02
+  - FREE_US 03
+  - FREE_US 04
+  - FREE_US 05
 - name: ♻️ 自动选择
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
-  - 免费勿受骗自行优选
-  - FREE_BR ARG
-  - FREE_DE ARG
-  - FREE_JP ARG
-  - FREE_FI ARG 01
-  - FREE_FI ARG 02
+  - 免费请勿受骗
+  - FREE_US 01
+  - FREE_US 02
+  - FREE_US 03
+  - FREE_US 04
+  - FREE_US 05
 - name: 🌍 国外媒体
   type: select
   proxies:
   - 🚀 节点选择
   - ♻️ 自动选择
   - 🎯 全球直连
-  - 免费勿受骗自行优选
-  - FREE_BR ARG
-  - FREE_DE ARG
-  - FREE_JP ARG
-  - FREE_FI ARG 01
-  - FREE_FI ARG 02
+  - 免费请勿受骗
+  - FREE_US 01
+  - FREE_US 02
+  - FREE_US 03
+  - FREE_US 04
+  - FREE_US 05
 - name: 📲 电报信息
   type: select
   proxies:
   - 🚀 节点选择
   - 🎯 全球直连
-  - 免费勿受骗自行优选
-  - FREE_BR ARG
-  - FREE_DE ARG
-  - FREE_JP ARG
-  - FREE_FI ARG 01
-  - FREE_FI ARG 02
+  - 免费请勿受骗
+  - FREE_US 01
+  - FREE_US 02
+  - FREE_US 03
+  - FREE_US 04
+  - FREE_US 05
 - name: Ⓜ️ 微软服务
   type: select
   proxies:
   - 🎯 全球直连
   - 🚀 节点选择
-  - 免费勿受骗自行优选
-  - FREE_BR ARG
-  - FREE_DE ARG
-  - FREE_JP ARG
-  - FREE_FI ARG 01
-  - FREE_FI ARG 02
+  - 免费请勿受骗
+  - FREE_US 01
+  - FREE_US 02
+  - FREE_US 03
+  - FREE_US 04
+  - FREE_US 05
 - name: 🍎 苹果服务
   type: select
   proxies:
   - 🚀 节点选择
   - 🎯 全球直连
-  - 免费勿受骗自行优选
-  - FREE_BR ARG
-  - FREE_DE ARG
-  - FREE_JP ARG
-  - FREE_FI ARG 01
-  - FREE_FI ARG 02
+  - 免费请勿受骗
+  - FREE_US 01
+  - FREE_US 02
+  - FREE_US 03
+  - FREE_US 04
+  - FREE_US 05
 - name: 📢 谷歌FCM
   type: select
   proxies:
   - 🚀 节点选择
   - 🎯 全球直连
   - ♻️ 自动选择
-  - 免费勿受骗自行优选
-  - FREE_BR ARG
-  - FREE_DE ARG
-  - FREE_JP ARG
-  - FREE_FI ARG 01
-  - FREE_FI ARG 02
+  - 免费请勿受骗
+  - FREE_US 01
+  - FREE_US 02
+  - FREE_US 03
+  - FREE_US 04
+  - FREE_US 05
 - name: 🎯 全球直连
   type: select
   proxies:
@@ -210,12 +192,12 @@ proxy-groups:
   - 🚀 节点选择
   - 🎯 全球直连
   - ♻️ 自动选择
-  - 免费勿受骗自行优选
-  - FREE_BR ARG
-  - FREE_DE ARG
-  - FREE_JP ARG
-  - FREE_FI ARG 01
-  - FREE_FI ARG 02
+  - 免费请勿受骗
+  - FREE_US 01
+  - FREE_US 02
+  - FREE_US 03
+  - FREE_US 04
+  - FREE_US 05
 rules:
 - DOMAIN-SUFFIX,acl4.ssr,🎯 全球直连
 - DOMAIN-SUFFIX,ip6-localhost,🎯 全球直连
