@@ -87,14 +87,6 @@
   ],
   "outbounds": [
     {
-      "server": "146.190.16.108",
-      "server_port": 23701,
-      "tag": "🇳🇱|1-4🐸@xkmfjd|荷兰|01",
-      "type": "vless",
-      "uuid": "677a41e5-dbe6-429b-8f91-cc014b1ae1bd",
-      "packet_encoding": "xudp"
-    },
-    {
       "server": "163.123.192.35",
       "server_port": 443,
       "tag": "🇺🇸|1-4🐸@xkmfjd|美国|01",
@@ -200,6 +192,18 @@
       }
     },
     {
+      "password": "1c46e0fe-4d64-3990-8445-42c751fbd932",
+      "server": "103.136.185.28",
+      "server_port": 3516,
+      "tag": "🇺🇸|1-4🐸@xkmfjd|美国|07",
+      "tls": {
+        "enabled": true,
+        "server_name": "103.136.185.28",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
       "password": "e1c77eb5-eacd-4afd-8da3-9fd2c1d3b499",
       "server": "ca.1010520.xyz",
       "server_port": 1001,
@@ -218,85 +222,6 @@
       "tls": {
         "enabled": true,
         "server_name": "ca.1010520.xyz"
-      },
-      "type": "hysteria2"
-    },
-    {
-      "password": "e1c77eb5-eacd-4afd-8da3-9fd2c1d3b499",
-      "server": "de.1010520.xyz",
-      "server_port": 1001,
-      "tag": "🇩🇪|1-4🐸@xkmfjd|德国|01",
-      "tls": {
-        "enabled": true,
-        "server_name": "de.1010520.xyz"
-      },
-      "type": "hysteria2"
-    },
-    {
-      "password": "f5136746-de79-46d0-b3be-d15d9992fa07",
-      "server": "de.1010520.xyz",
-      "server_port": 1001,
-      "tag": "🇩🇪|1-4🐸@xkmfjd|德国|02",
-      "tls": {
-        "enabled": true,
-        "server_name": "de.1010520.xyz"
-      },
-      "type": "hysteria2"
-    },
-    {
-      "password": "54f4e2f4-f0e1-4a15-a0cf-3a3234ab58fb",
-      "server": "183.232.229.164",
-      "server_port": 11001,
-      "tag": "🇭🇰|1-4🐸@xkmfjd|香港|01",
-      "type": "shadowsocks",
-      "method": "chacha20-ietf-poly1305",
-      "network": "tcp"
-    },
-    {
-      "password": "9cc20269-5a37-4260-b173-b5d6a44b2e3b",
-      "server": "hhhk.naisicloud.xyz",
-      "server_port": 35600,
-      "tag": "🇭🇰|1-4🐸@xkmfjd|香港|02",
-      "tls": {
-        "enabled": true,
-        "server_name": "hhhk.naisicloud.xyz",
-        "insecure": true
-      },
-      "type": "hysteria2"
-    },
-    {
-      "password": "50e3f748-4217-4680-887b-6c1eedb276bf",
-      "server": "62.216.92.60",
-      "server_port": 35600,
-      "tag": "🇭🇰|1-4🐸@xkmfjd|香港|03",
-      "tls": {
-        "enabled": true,
-        "server_name": "hhhk.naisicloud.xyz",
-        "insecure": true
-      },
-      "type": "hysteria2"
-    },
-    {
-      "password": "50e3f748-4217-4680-887b-6c1eedb276bf",
-      "server": "62.216.92.60",
-      "server_port": 35600,
-      "tag": "🇭🇰|1-4🐸@xkmfjd|香港|04",
-      "tls": {
-        "enabled": true,
-        "server_name": "hhhk.naisicloud.xyz",
-        "insecure": true
-      },
-      "type": "hysteria2"
-    },
-    {
-      "password": "9cc20269-5a37-4260-b173-b5d6a44b2e3b",
-      "server": "hhhk.naisicloud.xyz",
-      "server_port": 35600,
-      "tag": "🇭🇰|1-4🐸@xkmfjd|香港|05",
-      "tls": {
-        "enabled": true,
-        "server_name": "hhhk.naisicloud.xyz",
-        "insecure": true
       },
       "type": "hysteria2"
     },
@@ -345,28 +270,6 @@
       "type": "hysteria2"
     },
     {
-      "password": "e1c77eb5-eacd-4afd-8da3-9fd2c1d3b499",
-      "server": "br.1010520.xyz",
-      "server_port": 1001,
-      "tag": "1-4🐸@xkmfjd|Hysteria2 br.1010520.xyz:1001|01",
-      "tls": {
-        "enabled": true,
-        "server_name": "br.1010520.xyz"
-      },
-      "type": "hysteria2"
-    },
-    {
-      "password": "e1c77eb5-eacd-4afd-8da3-9fd2c1d3b499",
-      "server": "uk.1010520.xyz",
-      "server_port": 1001,
-      "tag": "1-4🐸@xkmfjd|Hysteria2 uk.1010520.xyz:1001|01",
-      "tls": {
-        "enabled": true,
-        "server_name": "uk.1010520.xyz"
-      },
-      "type": "hysteria2"
-    },
-    {
       "password": "3723507166611775488",
       "server": "settled-seal.treefrog761.one",
       "server_port": 443,
@@ -401,48 +304,10 @@
       "packet_encoding": "xudp"
     },
     {
-      "server": "seoul-plus-ddns.faforex.eu.org",
-      "server_port": 23258,
-      "tag": "🇰🇷|1-4🐸@xkmfjd|韩国|02",
-      "tls": {
-        "enabled": true,
-        "server_name": "microsoft.com",
-        "utls": {
-          "enabled": true,
-          "fingerprint": "chrome"
-        },
-        "reality": {
-          "enabled": true,
-          "public_key": "p-g7A0RMBXZOUey2V-HjWsI-5j-EpNITj_JVqx_9OnI",
-          "short_id": "545abc6e"
-        }
-      },
-      "type": "vless",
-      "uuid": "73159dbd-e01e-4492-a234-e5d7c335b128",
-      "flow": "xtls-rprx-vision",
-      "packet_encoding": "xudp"
-    },
-    {
-      "password": "e9a93162-a054-4a80-9fb1-14f8c0a4488e",
-      "server": "jp01.poke-mon.xyz",
-      "server_port": 443,
-      "tag": "🇯🇵|1-4🐸@xkmfjd|日本|01",
-      "tls": {
-        "enabled": true,
-        "server_name": "www.bing.com",
-        "insecure": true
-      },
-      "type": "hysteria2",
-      "obfs": {
-        "password": "NzI5MTU0YTY0NmJkMDUwNQ==",
-        "type": "salamander"
-      }
-    },
-    {
       "password": "9cc20269-5a37-4260-b173-b5d6a44b2e3b",
       "server": "jjjp.naisicloud.xyz",
       "server_port": 35600,
-      "tag": "🇯🇵|1-4🐸@xkmfjd|日本|02",
+      "tag": "🇯🇵|1-4🐸@xkmfjd|日本|01",
       "tls": {
         "enabled": true,
         "server_name": "jjjp.naisicloud.xyz",
@@ -473,6 +338,42 @@
       "plugin_opts": "obfs=http;obfs-host=215996dd9f1c3db1e54b.microsoft.com"
     },
     {
+      "password": "9cc20269-5a37-4260-b173-b5d6a44b2e3b",
+      "server": "hhhk.naisicloud.xyz",
+      "server_port": 35600,
+      "tag": "🇭🇰|1-4🐸@xkmfjd|香港|01",
+      "tls": {
+        "enabled": true,
+        "server_name": "hhhk.naisicloud.xyz",
+        "insecure": true
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "50e3f748-4217-4680-887b-6c1eedb276bf",
+      "server": "62.216.92.60",
+      "server_port": 35600,
+      "tag": "🇭🇰|1-4🐸@xkmfjd|香港|02",
+      "tls": {
+        "enabled": true,
+        "server_name": "hhhk.naisicloud.xyz",
+        "insecure": true
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "50e3f748-4217-4680-887b-6c1eedb276bf",
+      "server": "62.216.92.60",
+      "server_port": 35600,
+      "tag": "🇭🇰|1-4🐸@xkmfjd|香港|03",
+      "tls": {
+        "enabled": true,
+        "server_name": "hhhk.naisicloud.xyz",
+        "insecure": true
+      },
+      "type": "hysteria2"
+    },
+    {
       "password": "f5136746-de79-46d0-b3be-d15d9992fa07",
       "server": "br.1010520.xyz",
       "server_port": 1001,
@@ -484,32 +385,102 @@
       "type": "hysteria2"
     },
     {
-      "password": "f5136746-de79-46d0-b3be-d15d9992fa07",
-      "server": "uk.1010520.xyz",
-      "server_port": 1001,
-      "tag": "🇬🇧|1-4🐸@xkmfjd|英国|01",
+      "password": "32aa7a8f-2323-3b2d-b546-1338da14bca1",
+      "server": "gy.58n.net",
+      "server_port": 30712,
+      "tag": "1-4🐸@xkmfjd|gy.58n.net:30712|01",
       "tls": {
         "enabled": true,
-        "server_name": "uk.1010520.xyz"
+        "server_name": "gy.58n.net",
+        "insecure": true
       },
-      "type": "hysteria2"
+      "type": "trojan"
     },
     {
-      "password": "f5136746-de79-46d0-b3be-d15d9992fa07",
-      "server": "zx3.1010520.xyz",
-      "server_port": 18769,
-      "tag": "🇬🇧|1-4🐸@xkmfjd|英国|02",
+      "password": "0a5eee77-14d7-3a7c-ae42-06860353340d",
+      "server": "52.34.94.52",
+      "server_port": 443,
+      "tag": "1-4🐸@xkmfjd|1-52.34.94.52:443|01",
+      "tls": {
+        "enabled": true,
+        "server_name": "52.34.94.52",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "RenzheCloudSS",
+      "server": "bs1.jymzffbquawl.com",
+      "server_port": 3606,
+      "tag": "1-4🐸@xkmfjd|3-undefined|01",
       "type": "shadowsocks",
-      "method": "chacha20-ietf-poly1305",
+      "method": "rc4-md5",
+      "network": "tcp",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=78fe8292462.microsoft.com"
+    },
+    {
+      "password": "RenzheCloudSS",
+      "server": "pr3.jymzffbquawl.com",
+      "server_port": 4603,
+      "tag": "1-4🐸@xkmfjd|4-undefined|01",
+      "type": "shadowsocks",
+      "method": "rc4-md5",
+      "network": "tcp",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=78fe8292462.microsoft.com"
+    },
+    {
+      "password": "0f912fca-3bf6-37a2-8d4a-e6ab97b81640",
+      "server": "103.136.185.28",
+      "server_port": 3516,
+      "tag": "1-4🐸@xkmfjd|103.136.185.28:3516|01",
+      "tls": {
+        "enabled": true,
+        "server_name": "103.136.185.28",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "5b6e453f-a738-3dd8-a6f0-eac56b40ed40",
+      "server": "52.34.94.52",
+      "server_port": 443,
+      "tag": "1-4🐸@xkmfjd|2-52.34.94.52:443|01",
+      "tls": {
+        "enabled": true,
+        "server_name": "52.34.94.52",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "amazonskr05",
+      "server": "54.202.77.81",
+      "server_port": 443,
+      "tag": "1-4🐸@xkmfjd|5-undefined|01",
+      "type": "shadowsocks",
+      "method": "aes-256-cfb",
       "network": "tcp"
     },
     {
-      "password": "f5136746-de79-46d0-b3be-d15d9992fa07",
-      "server": "zx2.1010520.xyz",
-      "server_port": 26436,
-      "tag": "🇨🇭|1-4🐸@xkmfjd|瑞士|01",
+      "password": "RenzheCloudSS",
+      "server": "bs1.jymzffbquawl.com",
+      "server_port": 3600,
+      "tag": "1-4🐸@xkmfjd|6-undefined|01",
       "type": "shadowsocks",
-      "method": "chacha20-ietf-poly1305",
+      "method": "rc4-md5",
+      "network": "tcp",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=78fe8292462.microsoft.com"
+    },
+    {
+      "password": "14fFPrbezE3HDZzsMOr6",
+      "server": "107.155.57.11",
+      "server_port": 8080,
+      "tag": "1-4🐸@xkmfjd|7-undefined|01",
+      "type": "shadowsocks",
+      "method": "rc4-md5",
       "network": "tcp"
     },
     {
@@ -518,114 +489,108 @@
       "default": "urltest",
       "outbounds": [
         "urltest",
-        "🇳🇱|1-4🐸@xkmfjd|荷兰|01",
         "🇺🇸|1-4🐸@xkmfjd|美国|01",
         "🇺🇸|1-4🐸@xkmfjd|美国|02",
         "🇺🇸|1-4🐸@xkmfjd|美国|03",
         "🇺🇸|1-4🐸@xkmfjd|美国|04",
         "🇺🇸|1-4🐸@xkmfjd|美国|05",
         "🇺🇸|1-4🐸@xkmfjd|美国|06",
+        "🇺🇸|1-4🐸@xkmfjd|美国|07",
         "🇨🇦|1-4🐸@xkmfjd|加拿大|01",
         "🇨🇦|1-4🐸@xkmfjd|加拿大|02",
-        "🇩🇪|1-4🐸@xkmfjd|德国|01",
-        "🇩🇪|1-4🐸@xkmfjd|德国|02",
-        "🇭🇰|1-4🐸@xkmfjd|香港|01",
-        "🇭🇰|1-4🐸@xkmfjd|香港|02",
-        "🇭🇰|1-4🐸@xkmfjd|香港|03",
-        "🇭🇰|1-4🐸@xkmfjd|香港|04",
-        "🇭🇰|1-4🐸@xkmfjd|香港|05",
         "🇸🇬|1-4🐸@xkmfjd|新加坡|01",
         "🇨🇳|1-4🐸@xkmfjd|台湾|01",
         "1-4🐸@xkmfjd|Hysteria2 sg.1010520.xyz:1001|01",
-        "1-4🐸@xkmfjd|Hysteria2 br.1010520.xyz:1001|01",
-        "1-4🐸@xkmfjd|Hysteria2 uk.1010520.xyz:1001|01",
         "1-4🐸@xkmfjd|settled-seal.treefrog761.one:443|01",
         "🇰🇷|1-4🐸@xkmfjd|韩国|01",
-        "🇰🇷|1-4🐸@xkmfjd|韩国|02",
         "🇯🇵|1-4🐸@xkmfjd|日本|01",
-        "🇯🇵|1-4🐸@xkmfjd|日本|02",
         "1-4🐸@xkmfjd|1-undefined|01",
         "1-4🐸@xkmfjd|2-undefined|01",
+        "🇭🇰|1-4🐸@xkmfjd|香港|01",
+        "🇭🇰|1-4🐸@xkmfjd|香港|02",
+        "🇭🇰|1-4🐸@xkmfjd|香港|03",
         "🇧🇷|1-4🐸@xkmfjd|巴西|01",
-        "🇬🇧|1-4🐸@xkmfjd|英国|01",
-        "🇬🇧|1-4🐸@xkmfjd|英国|02",
-        "🇨🇭|1-4🐸@xkmfjd|瑞士|01"
+        "1-4🐸@xkmfjd|gy.58n.net:30712|01",
+        "1-4🐸@xkmfjd|1-52.34.94.52:443|01",
+        "1-4🐸@xkmfjd|3-undefined|01",
+        "1-4🐸@xkmfjd|4-undefined|01",
+        "1-4🐸@xkmfjd|103.136.185.28:3516|01",
+        "1-4🐸@xkmfjd|2-52.34.94.52:443|01",
+        "1-4🐸@xkmfjd|5-undefined|01",
+        "1-4🐸@xkmfjd|6-undefined|01",
+        "1-4🐸@xkmfjd|7-undefined|01"
       ]
     },
     {
       "tag": "urltest",
       "type": "urltest",
       "outbounds": [
-        "🇳🇱|1-4🐸@xkmfjd|荷兰|01",
         "🇺🇸|1-4🐸@xkmfjd|美国|01",
         "🇺🇸|1-4🐸@xkmfjd|美国|02",
         "🇺🇸|1-4🐸@xkmfjd|美国|03",
         "🇺🇸|1-4🐸@xkmfjd|美国|04",
         "🇺🇸|1-4🐸@xkmfjd|美国|05",
         "🇺🇸|1-4🐸@xkmfjd|美国|06",
+        "🇺🇸|1-4🐸@xkmfjd|美国|07",
         "🇨🇦|1-4🐸@xkmfjd|加拿大|01",
         "🇨🇦|1-4🐸@xkmfjd|加拿大|02",
-        "🇩🇪|1-4🐸@xkmfjd|德国|01",
-        "🇩🇪|1-4🐸@xkmfjd|德国|02",
-        "🇭🇰|1-4🐸@xkmfjd|香港|01",
-        "🇭🇰|1-4🐸@xkmfjd|香港|02",
-        "🇭🇰|1-4🐸@xkmfjd|香港|03",
-        "🇭🇰|1-4🐸@xkmfjd|香港|04",
-        "🇭🇰|1-4🐸@xkmfjd|香港|05",
         "🇸🇬|1-4🐸@xkmfjd|新加坡|01",
         "🇨🇳|1-4🐸@xkmfjd|台湾|01",
         "1-4🐸@xkmfjd|Hysteria2 sg.1010520.xyz:1001|01",
-        "1-4🐸@xkmfjd|Hysteria2 br.1010520.xyz:1001|01",
-        "1-4🐸@xkmfjd|Hysteria2 uk.1010520.xyz:1001|01",
         "1-4🐸@xkmfjd|settled-seal.treefrog761.one:443|01",
         "🇰🇷|1-4🐸@xkmfjd|韩国|01",
-        "🇰🇷|1-4🐸@xkmfjd|韩国|02",
         "🇯🇵|1-4🐸@xkmfjd|日本|01",
-        "🇯🇵|1-4🐸@xkmfjd|日本|02",
         "1-4🐸@xkmfjd|1-undefined|01",
         "1-4🐸@xkmfjd|2-undefined|01",
+        "🇭🇰|1-4🐸@xkmfjd|香港|01",
+        "🇭🇰|1-4🐸@xkmfjd|香港|02",
+        "🇭🇰|1-4🐸@xkmfjd|香港|03",
         "🇧🇷|1-4🐸@xkmfjd|巴西|01",
-        "🇬🇧|1-4🐸@xkmfjd|英国|01",
-        "🇬🇧|1-4🐸@xkmfjd|英国|02",
-        "🇨🇭|1-4🐸@xkmfjd|瑞士|01"
+        "1-4🐸@xkmfjd|gy.58n.net:30712|01",
+        "1-4🐸@xkmfjd|1-52.34.94.52:443|01",
+        "1-4🐸@xkmfjd|3-undefined|01",
+        "1-4🐸@xkmfjd|4-undefined|01",
+        "1-4🐸@xkmfjd|103.136.185.28:3516|01",
+        "1-4🐸@xkmfjd|2-52.34.94.52:443|01",
+        "1-4🐸@xkmfjd|5-undefined|01",
+        "1-4🐸@xkmfjd|6-undefined|01",
+        "1-4🐸@xkmfjd|7-undefined|01"
       ]
     },
     {
       "tag": "chatgpt",
       "type": "selector",
       "outbounds": [
-        "🇳🇱|1-4🐸@xkmfjd|荷兰|01",
         "🇺🇸|1-4🐸@xkmfjd|美国|01",
         "🇺🇸|1-4🐸@xkmfjd|美国|02",
         "🇺🇸|1-4🐸@xkmfjd|美国|03",
         "🇺🇸|1-4🐸@xkmfjd|美国|04",
         "🇺🇸|1-4🐸@xkmfjd|美国|05",
         "🇺🇸|1-4🐸@xkmfjd|美国|06",
+        "🇺🇸|1-4🐸@xkmfjd|美国|07",
         "🇨🇦|1-4🐸@xkmfjd|加拿大|01",
         "🇨🇦|1-4🐸@xkmfjd|加拿大|02",
-        "🇩🇪|1-4🐸@xkmfjd|德国|01",
-        "🇩🇪|1-4🐸@xkmfjd|德国|02",
-        "🇭🇰|1-4🐸@xkmfjd|香港|01",
-        "🇭🇰|1-4🐸@xkmfjd|香港|02",
-        "🇭🇰|1-4🐸@xkmfjd|香港|03",
-        "🇭🇰|1-4🐸@xkmfjd|香港|04",
-        "🇭🇰|1-4🐸@xkmfjd|香港|05",
         "🇸🇬|1-4🐸@xkmfjd|新加坡|01",
         "🇨🇳|1-4🐸@xkmfjd|台湾|01",
         "1-4🐸@xkmfjd|Hysteria2 sg.1010520.xyz:1001|01",
-        "1-4🐸@xkmfjd|Hysteria2 br.1010520.xyz:1001|01",
-        "1-4🐸@xkmfjd|Hysteria2 uk.1010520.xyz:1001|01",
         "1-4🐸@xkmfjd|settled-seal.treefrog761.one:443|01",
         "🇰🇷|1-4🐸@xkmfjd|韩国|01",
-        "🇰🇷|1-4🐸@xkmfjd|韩国|02",
         "🇯🇵|1-4🐸@xkmfjd|日本|01",
-        "🇯🇵|1-4🐸@xkmfjd|日本|02",
         "1-4🐸@xkmfjd|1-undefined|01",
         "1-4🐸@xkmfjd|2-undefined|01",
+        "🇭🇰|1-4🐸@xkmfjd|香港|01",
+        "🇭🇰|1-4🐸@xkmfjd|香港|02",
+        "🇭🇰|1-4🐸@xkmfjd|香港|03",
         "🇧🇷|1-4🐸@xkmfjd|巴西|01",
-        "🇬🇧|1-4🐸@xkmfjd|英国|01",
-        "🇬🇧|1-4🐸@xkmfjd|英国|02",
-        "🇨🇭|1-4🐸@xkmfjd|瑞士|01"
+        "1-4🐸@xkmfjd|gy.58n.net:30712|01",
+        "1-4🐸@xkmfjd|1-52.34.94.52:443|01",
+        "1-4🐸@xkmfjd|3-undefined|01",
+        "1-4🐸@xkmfjd|4-undefined|01",
+        "1-4🐸@xkmfjd|103.136.185.28:3516|01",
+        "1-4🐸@xkmfjd|2-52.34.94.52:443|01",
+        "1-4🐸@xkmfjd|5-undefined|01",
+        "1-4🐸@xkmfjd|6-undefined|01",
+        "1-4🐸@xkmfjd|7-undefined|01"
       ]
     },
     {
