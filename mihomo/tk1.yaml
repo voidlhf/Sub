@@ -18,7 +18,7 @@ hosts:
   alt8-mtalk.google.com: 142.250.112.188
 proxies:
 - type: vless
-  name: 🇪🇸|1-3🐰@xkmfjd|西班牙|01
+  name: 🇪🇸|1-4☕@xkmfjd|西班牙|01
   server: seoul-plus-ddns.faforex.eu.org
   port: 23258
   uuid: 73159dbd-e01e-4492-a234-e5d7c335b128
@@ -31,56 +31,7 @@ proxies:
     short-id: 545abc6e
   network: tcp
   servername: microsoft.com
-- type: vless
-  name: 🇪🇸|1-3🐰@xkmfjd|西班牙|02
-  server: westsg2-ddns.oraclenat.cc
-  port: 23258
-  uuid: 73159dbd-e01e-4492-a234-e5d7c335b128
-  tls: true
-  flow: xtls-rprx-vision
-  client-fingerprint: chrome
-  skip-cert-verify: false
-  reality-opts:
-    public-key: v9m-ycF2l5blui_GP28Gjmre_1CL4glEHR8AIzor2VA
-    short-id: 9affe89d
-  network: tcp
-  servername: microsoft.com
-- skip-cert-verify: true
-  sni: tight-clam.boa152.lol
-  type: trojan
-  password: '3723507166611775488'
-  server: tight-clam.boa152.lol
-  port: 443
-  name: 1-3🐰@xkmfjd|tight-clam.boa152.lol:443|01
-- skip-cert-verify: true
-  sni: tight-clam.boa152.lol
-  type: trojan
-  password: '3723507166611775488'
-  server: tight-clam.boa152.lol
-  port: 443
-  name: 1-3🐰@xkmfjd|tight-clam.boa152.lol:443|02
-- skip-cert-verify: true
-  sni: profound-anemone.boa152.lol
-  type: trojan
-  password: '3723507166611775488'
-  server: profound-anemone.boa152.lol
-  port: 443
-  name: 1-3🐰@xkmfjd|profound-anemone.boa152.lol:443|01
-- skip-cert-verify: true
-  sni: concrete-buzzard.boa152.lol
-  type: trojan
-  password: '3723507166611775488'
-  server: concrete-buzzard.boa152.lol
-  port: 443
-  name: 1-3🐰@xkmfjd|concrete-buzzard.boa152.lol:443|01
-- skip-cert-verify: true
-  sni: lucky-grouper.boa152.lol
-  type: trojan
-  password: '3723507166611775488'
-  server: lucky-grouper.boa152.lol
-  port: 443
-  name: 1-3🐰@xkmfjd|lucky-grouper.boa152.lol:443|01
-- name: 1-3🐰@xkmfjd||01
+- name: 1-4☕@xkmfjd||01
   type: vmess
   server: cm1.awslcn.info
   port: 25230
@@ -93,89 +44,88 @@ proxies:
     path: /
     headers:
       Host: cm1.awslcn.info
-- name: 1-3🐰@xkmfjd||02
+- name: 1-4☕@xkmfjd||02
   type: vmess
-  server: 92.242.220.22
-  port: 37885
+  server: 183.236.51.23
+  port: 51037
   cipher: auto
-  uuid: 8dee19ab-50ce-4d06-be42-5e53c8989ccc
+  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
+  alterId: 64
+  tls: false
+- name: 1-4☕@xkmfjd||03
+  type: vmess
+  server: i.needss.top
+  port: 20021
+  cipher: auto
+  uuid: 791a9279-48cd-4f90-9130-31096f9abffb
   alterId: 0
   tls: false
-- name: 1-3🐰@xkmfjd|undefined|01
+- name: 1-4☕@xkmfjd|undefined|01
   type: ss
   server: p228.panda004.net
   port: 21215
   cipher: aes-256-cfb
   password: qwerREWQ@@
-- name: 1-3🐰@xkmfjd|undefined|02
-  type: ss
-  server: p230.panda004.net
-  port: 41748
-  cipher: aes-256-cfb
-  password: qwerREWQ@@
-- name: 1-3🐰@xkmfjd|undefined|03
-  type: ss
-  server: 77.105.147.212
-  port: 55098
-  cipher: chacha20-ietf-poly1305
-  password: NChVdloynewtqS0847jui6PQejHLO3gUuw1tnUmYVPI=
-- name: 1-3🐰@xkmfjd|undefined|04
+- name: 1-4☕@xkmfjd|undefined|02
   type: ss
   server: series-a2-me.varzesh360.co
   port: 443
   cipher: chacha20-ietf-poly1305
   password: Bog0ELmMM9DSxDdQ
-- name: 1-3🐰@xkmfjd|undefined|05
+- name: 1-4☕@xkmfjd|undefined|03
   type: ss
-  server: series-a1.samanehha.co
-  port: 443
-  cipher: chacha20-ietf-poly1305
-  password: W74XFALLLuw6m5IA
-- name: 1-3🐰@xkmfjd|undefined|06
+  server: bs1.jymzffbquawl.com
+  port: 3607
+  cipher: rc4-md5
+  password: RenzheCloudSS
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 78fe8292462.microsoft.com
+- name: 1-4☕@xkmfjd|undefined|04
   type: ss
-  server: 171.111.216.155
-  port: 30002
+  server: fee2c6c.t2.gladns.com
+  port: 2377
   cipher: chacha20-ietf-poly1305
-  password: ded43fd2-4f6f-4736-af45-77f507a4065a
-- type: hysteria2
-  name: 1-3🐰@xkmfjd|Hysteria2 jpzl2.stardad.lol:48512|01
-  server: jpzl2.stardad.lol
-  port: 48512
-  password: 2a1a0537-717c-402e-8e4f-7e81369997bd
-  sni: https://bing.com
-  skip-cert-verify: true
-  tfo: false
+  password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv
+  plugin: obfs
+  plugin-opts:
+    mode: tls
+    host: fee2c6c.dl.nintendo.net:91198
+- name: 1-4☕@xkmfjd|undefined|05
+  type: ss
+  server: gzyd5-1.piaomiaoxu.net
+  port: 36042
+  cipher: aes-256-gcm
+  password: 6b165d29-a95e-455d-aabf-060d5c0c1e72
+- name: 1-4☕@xkmfjd|undefined|06
+  type: ss
+  server: zf11.wwnet.cloud
+  port: 18875
+  cipher: chacha20-ietf-poly1305
+  password: ecd53efc-33fe-45ce-b83a-0648adf0a6c5
+- name: 1-4☕@xkmfjd|undefined|07
+  type: ss
+  server: gdydbzgsv.ccooz.top
+  port: 56655
+  cipher: chacha20-ietf-poly1305
+  password: ecd53efc-33fe-45ce-b83a-0648adf0a6c5
 - skip-cert-verify: true
   sni: usable-toad.treefrog761.one
   type: trojan
   password: '3723507166611775488'
   server: usable-toad.treefrog761.one
   port: 443
-  name: 1-3🐰@xkmfjd|usable-toad.treefrog761.one:443|01
+  name: 1-4☕@xkmfjd|usable-toad.treefrog761.one:443|01
 - skip-cert-verify: true
   sni: usable-toad.treefrog761.one
   type: trojan
   password: '3723507166611775488'
   server: usable-toad.treefrog761.one
   port: 443
-  name: 1-3🐰@xkmfjd|usable-toad.treefrog761.one:443|02
-- skip-cert-verify: true
-  sni: usable-toad.treefrog761.one
-  type: trojan
-  password: '3723507166611775488'
-  server: usable-toad.treefrog761.one
-  port: 443
-  name: 1-3🐰@xkmfjd|usable-toad.treefrog761.one:443|03
+  name: 1-4☕@xkmfjd|usable-toad.treefrog761.one:443|02
 - type: hysteria2
-  name: 1-3🐰@xkmfjd|Hysteria2 yn.lianjievpn.com:60100|01
-  server: yn.lianjievpn.com
-  port: 60100
-  password: 15558d9e-8539-4c79-bc69-6593c8ad4cd0
-  sni: yn.lianjievpn.com
-  skip-cert-verify: false
-  tfo: false
-- type: hysteria2
-  name: 1-3🐰@xkmfjd|Hysteria2 uk.1010520.xyz:1001|01
+  name: 1-4☕@xkmfjd|Hysteria2 uk.1010520.xyz:1001|01
   server: uk.1010520.xyz
   port: 1001
   password: e1c77eb5-eacd-4afd-8da3-9fd2c1d3b499
@@ -188,22 +138,22 @@ proxies:
   password: '3723507166611775488'
   server: boss-hound.boa152.lol
   port: 443
-  name: 1-3🐰@xkmfjd|boss-hound.boa152.lol:443|01
+  name: 1-4☕@xkmfjd|boss-hound.boa152.lol:443|01
 - skip-cert-verify: true
   sni: settled-seal.treefrog761.one
   type: trojan
   password: '3723507166611775488'
   server: settled-seal.treefrog761.one
   port: 443
-  name: 1-3🐰@xkmfjd|settled-seal.treefrog761.one:443|01
+  name: 1-4☕@xkmfjd|settled-seal.treefrog761.one:443|01
 - sni: settled-seal.treefrog761.one
   type: trojan
   password: '3723507166611775488'
   server: settled-seal.treefrog761.one
   port: 443
-  name: 1-3🐰@xkmfjd|settled-seal.treefrog761.one:443|02
+  name: 1-4☕@xkmfjd|settled-seal.treefrog761.one:443|02
 - type: hysteria2
-  name: 1-3🐰@xkmfjd|Hysteria2 150.241.77.182:11122|01
+  name: 1-4☕@xkmfjd|Hysteria2 150.241.77.182:11122|01
   server: 150.241.77.182
   port: 11122
   password: c76f08e20fb6368b
@@ -217,282 +167,472 @@ proxies:
   password: '3723507166611775488'
   server: fresh-grub.boa152.lol
   port: 443
-  name: 1-3🐰@xkmfjd|fresh-grub.boa152.lol:443|01
+  name: 1-4☕@xkmfjd|fresh-grub.boa152.lol:443|01
 - sni: leading-shrew.boa152.lol
   type: trojan
   password: '3723507166611775488'
   server: leading-shrew.boa152.lol
   port: 443
-  name: 1-3🐰@xkmfjd|leading-shrew.boa152.lol:443|01
+  name: 1-4☕@xkmfjd|leading-shrew.boa152.lol:443|01
 - sni: neutral-magpie.treefrog761.one
   type: trojan
   password: '3723507166611775488'
   server: neutral-magpie.treefrog761.one
   port: 443
-  name: 1-3🐰@xkmfjd|neutral-magpie.treefrog761.one:443|01
-- name: 1-3🐰@xkmfjd|(tg群:https://t.me/zhibeii_13|01
-  type: ss
-  server: 223.113.53.141
-  port: 30002
-  cipher: chacha20-ietf-poly1305
-  password: ded43fd2-4f6f-4736-af45-77f507a4065a
+  name: 1-4☕@xkmfjd|neutral-magpie.treefrog761.one:443|01
 - type: hysteria2
-  name: 1-3🐰@xkmfjd|Hysteria2 sg.1010520.xyz:1001|01
+  name: 1-4☕@xkmfjd|Hysteria2 sg.1010520.xyz:1001|01
   server: sg.1010520.xyz
   port: 1001
   password: e1c77eb5-eacd-4afd-8da3-9fd2c1d3b499
   sni: sg.1010520.xyz
   skip-cert-verify: false
   tfo: false
+- type: hysteria2
+  name: 🇯🇵|1-4☕@xkmfjd|日本|01
+  server: jp01.poke-mon.xyz
+  port: 443
+  ports: 20000-50000
+  password: e9a93162-a054-4a80-9fb1-14f8c0a4488e
+  sni: www.bing.com
+  obfs: salamander
+  obfs-password: NzI5MTU0YTY0NmJkMDUwNQ==
+  skip-cert-verify: true
+  tfo: false
+- type: hysteria2
+  name: 🇸🇬|1-4☕@xkmfjd|新加坡|01
+  server: sg.1010520.xyz
+  port: 1001
+  password: f5136746-de79-46d0-b3be-d15d9992fa07
+  sni: sg.1010520.xyz
+  skip-cert-verify: false
+  tfo: false
+- name: 🇬🇧|1-4☕@xkmfjd|英国|01
+  type: ss
+  server: zx2.1010520.xyz
+  port: 18769
+  cipher: chacha20-ietf-poly1305
+  password: f5136746-de79-46d0-b3be-d15d9992fa07
+- type: hysteria2
+  name: 🇮🇹|1-4☕@xkmfjd|意大利|01
+  server: it.1010520.xyz
+  port: 1001
+  password: f5136746-de79-46d0-b3be-d15d9992fa07
+  sni: it.1010520.xyz
+  skip-cert-verify: false
+  tfo: false
+- skip-cert-verify: true
+  type: trojan
+  password: 0bc68743-cff8-4730-9818-9d8192ee335c
+  server: 219.135.231.205
+  port: 21042
+  name: 1-4☕@xkmfjd|219.135.231.205:21042|01
+- skip-cert-verify: true
+  sni: m.ctrip.com
+  type: trojan
+  password: B8A42608-85EF-FCC0-E5FC-8A109C20C284
+  server: gzdata1.fc-sigma.xyz
+  port: 12103
+  name: 1-4☕@xkmfjd|gzdata1.fc-sigma.xyz:12103|01
+- skip-cert-verify: true
+  sni: m.ctrip.com
+  type: trojan
+  password: B8A42608-85EF-FCC0-E5FC-8A109C20C284
+  server: gzdata1.fc-sigma.xyz
+  port: 11103
+  name: 1-4☕@xkmfjd|gzdata1.fc-sigma.xyz:11103|01
+- skip-cert-verify: true
+  sni: m.ctrip.com
+  type: trojan
+  password: B8A42608-85EF-FCC0-E5FC-8A109C20C284
+  server: gzdata1.fc-sigma.xyz
+  port: 11101
+  name: 1-4☕@xkmfjd|gzdata1.fc-sigma.xyz:11101|01
+- skip-cert-verify: true
+  sni: m.ctrip.com
+  type: trojan
+  password: B8A42608-85EF-FCC0-E5FC-8A109C20C284
+  server: gzdata1.fc-sigma.xyz
+  port: 11106
+  name: 1-4☕@xkmfjd|gzdata1.fc-sigma.xyz:11106|01
+- skip-cert-verify: true
+  sni: m.ctrip.com
+  type: trojan
+  password: B8A42608-85EF-FCC0-E5FC-8A109C20C284
+  server: gzdata1.fc-sigma.xyz
+  port: 12101
+  name: 1-4☕@xkmfjd|gzdata1.fc-sigma.xyz:12101|01
+- skip-cert-verify: true
+  sni: m.ctrip.com
+  type: trojan
+  password: B8A42608-85EF-FCC0-E5FC-8A109C20C284
+  server: gzdata1.fc-sigma.xyz
+  port: 12132
+  name: 1-4☕@xkmfjd|gzdata1.fc-sigma.xyz:12132|01
+- skip-cert-verify: true
+  sni: m.ctrip.com
+  type: trojan
+  password: B8A42608-85EF-FCC0-E5FC-8A109C20C284
+  server: gzdata1.fc-sigma.xyz
+  port: 11134
+  name: 1-4☕@xkmfjd|gzdata1.fc-sigma.xyz:11134|01
+- skip-cert-verify: true
+  sni: x76.flybar.work
+  type: trojan
+  password: af06d871-470e-3a9a-95cc-5fdf4cbf0246
+  server: gy.58n.net
+  port: 20076
+  name: 1-4☕@xkmfjd|gy.58n.net:20076|01
+- skip-cert-verify: true
+  type: trojan
+  password: 0f0ae7a6-2703-3fdc-ac24-354a0a52a227
+  server: 103.136.185.28
+  port: 3516
+  name: 1-4☕@xkmfjd|103.136.185.28:3516|01
+- skip-cert-verify: true
+  type: trojan
+  password: 97eb6489-baef-33a5-91f5-413fda3e7f1a
+  server: 103.136.185.28
+  port: 3516
+  name: 1-4☕@xkmfjd|103.136.185.28:3516|02
+- skip-cert-verify: true
+  type: trojan
+  password: f3c6c273-f30a-35a9-87c7-7e484954263c
+  server: 103.136.185.28
+  port: 3516
+  name: 1-4☕@xkmfjd|103.136.185.28:3516|03
+- skip-cert-verify: true
+  type: trojan
+  password: 39998ade-99d4-3953-9d11-476faded8037
+  server: 103.136.185.28
+  port: 3516
+  name: 1-4☕@xkmfjd|103.136.185.28:3516|04
+- skip-cert-verify: true
+  sni: x65.flybar.work
+  type: trojan
+  password: af06d871-470e-3a9a-95cc-5fdf4cbf0246
+  server: gy.58n.net
+  port: 17806
+  name: 1-4☕@xkmfjd|gy.58n.net:17806|01
 proxy-groups:
 - name: 🚀 节点选择
   type: select
   proxies:
   - ♻️ 自动选择
   - DIRECT
-  - 🇪🇸|1-3🐰@xkmfjd|西班牙|01
-  - 🇪🇸|1-3🐰@xkmfjd|西班牙|02
-  - 1-3🐰@xkmfjd|tight-clam.boa152.lol:443|01
-  - 1-3🐰@xkmfjd|tight-clam.boa152.lol:443|02
-  - 1-3🐰@xkmfjd|profound-anemone.boa152.lol:443|01
-  - 1-3🐰@xkmfjd|concrete-buzzard.boa152.lol:443|01
-  - 1-3🐰@xkmfjd|lucky-grouper.boa152.lol:443|01
-  - 1-3🐰@xkmfjd||01
-  - 1-3🐰@xkmfjd||02
-  - 1-3🐰@xkmfjd|undefined|01
-  - 1-3🐰@xkmfjd|undefined|02
-  - 1-3🐰@xkmfjd|undefined|03
-  - 1-3🐰@xkmfjd|undefined|04
-  - 1-3🐰@xkmfjd|undefined|05
-  - 1-3🐰@xkmfjd|undefined|06
-  - 1-3🐰@xkmfjd|Hysteria2 jpzl2.stardad.lol:48512|01
-  - 1-3🐰@xkmfjd|usable-toad.treefrog761.one:443|01
-  - 1-3🐰@xkmfjd|usable-toad.treefrog761.one:443|02
-  - 1-3🐰@xkmfjd|usable-toad.treefrog761.one:443|03
-  - 1-3🐰@xkmfjd|Hysteria2 yn.lianjievpn.com:60100|01
-  - 1-3🐰@xkmfjd|Hysteria2 uk.1010520.xyz:1001|01
-  - 1-3🐰@xkmfjd|boss-hound.boa152.lol:443|01
-  - 1-3🐰@xkmfjd|settled-seal.treefrog761.one:443|01
-  - 1-3🐰@xkmfjd|settled-seal.treefrog761.one:443|02
-  - 1-3🐰@xkmfjd|Hysteria2 150.241.77.182:11122|01
-  - 1-3🐰@xkmfjd|fresh-grub.boa152.lol:443|01
-  - 1-3🐰@xkmfjd|leading-shrew.boa152.lol:443|01
-  - 1-3🐰@xkmfjd|neutral-magpie.treefrog761.one:443|01
-  - 1-3🐰@xkmfjd|(tg群:https://t.me/zhibeii_13|01
-  - 1-3🐰@xkmfjd|Hysteria2 sg.1010520.xyz:1001|01
+  - 🇪🇸|1-4☕@xkmfjd|西班牙|01
+  - 1-4☕@xkmfjd||01
+  - 1-4☕@xkmfjd||02
+  - 1-4☕@xkmfjd||03
+  - 1-4☕@xkmfjd|undefined|01
+  - 1-4☕@xkmfjd|undefined|02
+  - 1-4☕@xkmfjd|undefined|03
+  - 1-4☕@xkmfjd|undefined|04
+  - 1-4☕@xkmfjd|undefined|05
+  - 1-4☕@xkmfjd|undefined|06
+  - 1-4☕@xkmfjd|undefined|07
+  - 1-4☕@xkmfjd|usable-toad.treefrog761.one:443|01
+  - 1-4☕@xkmfjd|usable-toad.treefrog761.one:443|02
+  - 1-4☕@xkmfjd|Hysteria2 uk.1010520.xyz:1001|01
+  - 1-4☕@xkmfjd|boss-hound.boa152.lol:443|01
+  - 1-4☕@xkmfjd|settled-seal.treefrog761.one:443|01
+  - 1-4☕@xkmfjd|settled-seal.treefrog761.one:443|02
+  - 1-4☕@xkmfjd|Hysteria2 150.241.77.182:11122|01
+  - 1-4☕@xkmfjd|fresh-grub.boa152.lol:443|01
+  - 1-4☕@xkmfjd|leading-shrew.boa152.lol:443|01
+  - 1-4☕@xkmfjd|neutral-magpie.treefrog761.one:443|01
+  - 1-4☕@xkmfjd|Hysteria2 sg.1010520.xyz:1001|01
+  - 🇯🇵|1-4☕@xkmfjd|日本|01
+  - 🇸🇬|1-4☕@xkmfjd|新加坡|01
+  - 🇬🇧|1-4☕@xkmfjd|英国|01
+  - 🇮🇹|1-4☕@xkmfjd|意大利|01
+  - 1-4☕@xkmfjd|219.135.231.205:21042|01
+  - 1-4☕@xkmfjd|gzdata1.fc-sigma.xyz:12103|01
+  - 1-4☕@xkmfjd|gzdata1.fc-sigma.xyz:11103|01
+  - 1-4☕@xkmfjd|gzdata1.fc-sigma.xyz:11101|01
+  - 1-4☕@xkmfjd|gzdata1.fc-sigma.xyz:11106|01
+  - 1-4☕@xkmfjd|gzdata1.fc-sigma.xyz:12101|01
+  - 1-4☕@xkmfjd|gzdata1.fc-sigma.xyz:12132|01
+  - 1-4☕@xkmfjd|gzdata1.fc-sigma.xyz:11134|01
+  - 1-4☕@xkmfjd|gy.58n.net:20076|01
+  - 1-4☕@xkmfjd|103.136.185.28:3516|01
+  - 1-4☕@xkmfjd|103.136.185.28:3516|02
+  - 1-4☕@xkmfjd|103.136.185.28:3516|03
+  - 1-4☕@xkmfjd|103.136.185.28:3516|04
+  - 1-4☕@xkmfjd|gy.58n.net:17806|01
 - name: ♻️ 自动选择
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
-  - 🇪🇸|1-3🐰@xkmfjd|西班牙|01
-  - 🇪🇸|1-3🐰@xkmfjd|西班牙|02
-  - 1-3🐰@xkmfjd|tight-clam.boa152.lol:443|01
-  - 1-3🐰@xkmfjd|tight-clam.boa152.lol:443|02
-  - 1-3🐰@xkmfjd|profound-anemone.boa152.lol:443|01
-  - 1-3🐰@xkmfjd|concrete-buzzard.boa152.lol:443|01
-  - 1-3🐰@xkmfjd|lucky-grouper.boa152.lol:443|01
-  - 1-3🐰@xkmfjd||01
-  - 1-3🐰@xkmfjd||02
-  - 1-3🐰@xkmfjd|undefined|01
-  - 1-3🐰@xkmfjd|undefined|02
-  - 1-3🐰@xkmfjd|undefined|03
-  - 1-3🐰@xkmfjd|undefined|04
-  - 1-3🐰@xkmfjd|undefined|05
-  - 1-3🐰@xkmfjd|undefined|06
-  - 1-3🐰@xkmfjd|Hysteria2 jpzl2.stardad.lol:48512|01
-  - 1-3🐰@xkmfjd|usable-toad.treefrog761.one:443|01
-  - 1-3🐰@xkmfjd|usable-toad.treefrog761.one:443|02
-  - 1-3🐰@xkmfjd|usable-toad.treefrog761.one:443|03
-  - 1-3🐰@xkmfjd|Hysteria2 yn.lianjievpn.com:60100|01
-  - 1-3🐰@xkmfjd|Hysteria2 uk.1010520.xyz:1001|01
-  - 1-3🐰@xkmfjd|boss-hound.boa152.lol:443|01
-  - 1-3🐰@xkmfjd|settled-seal.treefrog761.one:443|01
-  - 1-3🐰@xkmfjd|settled-seal.treefrog761.one:443|02
-  - 1-3🐰@xkmfjd|Hysteria2 150.241.77.182:11122|01
-  - 1-3🐰@xkmfjd|fresh-grub.boa152.lol:443|01
-  - 1-3🐰@xkmfjd|leading-shrew.boa152.lol:443|01
-  - 1-3🐰@xkmfjd|neutral-magpie.treefrog761.one:443|01
-  - 1-3🐰@xkmfjd|(tg群:https://t.me/zhibeii_13|01
-  - 1-3🐰@xkmfjd|Hysteria2 sg.1010520.xyz:1001|01
+  - 🇪🇸|1-4☕@xkmfjd|西班牙|01
+  - 1-4☕@xkmfjd||01
+  - 1-4☕@xkmfjd||02
+  - 1-4☕@xkmfjd||03
+  - 1-4☕@xkmfjd|undefined|01
+  - 1-4☕@xkmfjd|undefined|02
+  - 1-4☕@xkmfjd|undefined|03
+  - 1-4☕@xkmfjd|undefined|04
+  - 1-4☕@xkmfjd|undefined|05
+  - 1-4☕@xkmfjd|undefined|06
+  - 1-4☕@xkmfjd|undefined|07
+  - 1-4☕@xkmfjd|usable-toad.treefrog761.one:443|01
+  - 1-4☕@xkmfjd|usable-toad.treefrog761.one:443|02
+  - 1-4☕@xkmfjd|Hysteria2 uk.1010520.xyz:1001|01
+  - 1-4☕@xkmfjd|boss-hound.boa152.lol:443|01
+  - 1-4☕@xkmfjd|settled-seal.treefrog761.one:443|01
+  - 1-4☕@xkmfjd|settled-seal.treefrog761.one:443|02
+  - 1-4☕@xkmfjd|Hysteria2 150.241.77.182:11122|01
+  - 1-4☕@xkmfjd|fresh-grub.boa152.lol:443|01
+  - 1-4☕@xkmfjd|leading-shrew.boa152.lol:443|01
+  - 1-4☕@xkmfjd|neutral-magpie.treefrog761.one:443|01
+  - 1-4☕@xkmfjd|Hysteria2 sg.1010520.xyz:1001|01
+  - 🇯🇵|1-4☕@xkmfjd|日本|01
+  - 🇸🇬|1-4☕@xkmfjd|新加坡|01
+  - 🇬🇧|1-4☕@xkmfjd|英国|01
+  - 🇮🇹|1-4☕@xkmfjd|意大利|01
+  - 1-4☕@xkmfjd|219.135.231.205:21042|01
+  - 1-4☕@xkmfjd|gzdata1.fc-sigma.xyz:12103|01
+  - 1-4☕@xkmfjd|gzdata1.fc-sigma.xyz:11103|01
+  - 1-4☕@xkmfjd|gzdata1.fc-sigma.xyz:11101|01
+  - 1-4☕@xkmfjd|gzdata1.fc-sigma.xyz:11106|01
+  - 1-4☕@xkmfjd|gzdata1.fc-sigma.xyz:12101|01
+  - 1-4☕@xkmfjd|gzdata1.fc-sigma.xyz:12132|01
+  - 1-4☕@xkmfjd|gzdata1.fc-sigma.xyz:11134|01
+  - 1-4☕@xkmfjd|gy.58n.net:20076|01
+  - 1-4☕@xkmfjd|103.136.185.28:3516|01
+  - 1-4☕@xkmfjd|103.136.185.28:3516|02
+  - 1-4☕@xkmfjd|103.136.185.28:3516|03
+  - 1-4☕@xkmfjd|103.136.185.28:3516|04
+  - 1-4☕@xkmfjd|gy.58n.net:17806|01
 - name: 🌍 国外媒体
   type: select
   proxies:
   - 🚀 节点选择
   - ♻️ 自动选择
   - 🎯 全球直连
-  - 🇪🇸|1-3🐰@xkmfjd|西班牙|01
-  - 🇪🇸|1-3🐰@xkmfjd|西班牙|02
-  - 1-3🐰@xkmfjd|tight-clam.boa152.lol:443|01
-  - 1-3🐰@xkmfjd|tight-clam.boa152.lol:443|02
-  - 1-3🐰@xkmfjd|profound-anemone.boa152.lol:443|01
-  - 1-3🐰@xkmfjd|concrete-buzzard.boa152.lol:443|01
-  - 1-3🐰@xkmfjd|lucky-grouper.boa152.lol:443|01
-  - 1-3🐰@xkmfjd||01
-  - 1-3🐰@xkmfjd||02
-  - 1-3🐰@xkmfjd|undefined|01
-  - 1-3🐰@xkmfjd|undefined|02
-  - 1-3🐰@xkmfjd|undefined|03
-  - 1-3🐰@xkmfjd|undefined|04
-  - 1-3🐰@xkmfjd|undefined|05
-  - 1-3🐰@xkmfjd|undefined|06
-  - 1-3🐰@xkmfjd|Hysteria2 jpzl2.stardad.lol:48512|01
-  - 1-3🐰@xkmfjd|usable-toad.treefrog761.one:443|01
-  - 1-3🐰@xkmfjd|usable-toad.treefrog761.one:443|02
-  - 1-3🐰@xkmfjd|usable-toad.treefrog761.one:443|03
-  - 1-3🐰@xkmfjd|Hysteria2 yn.lianjievpn.com:60100|01
-  - 1-3🐰@xkmfjd|Hysteria2 uk.1010520.xyz:1001|01
-  - 1-3🐰@xkmfjd|boss-hound.boa152.lol:443|01
-  - 1-3🐰@xkmfjd|settled-seal.treefrog761.one:443|01
-  - 1-3🐰@xkmfjd|settled-seal.treefrog761.one:443|02
-  - 1-3🐰@xkmfjd|Hysteria2 150.241.77.182:11122|01
-  - 1-3🐰@xkmfjd|fresh-grub.boa152.lol:443|01
-  - 1-3🐰@xkmfjd|leading-shrew.boa152.lol:443|01
-  - 1-3🐰@xkmfjd|neutral-magpie.treefrog761.one:443|01
-  - 1-3🐰@xkmfjd|(tg群:https://t.me/zhibeii_13|01
-  - 1-3🐰@xkmfjd|Hysteria2 sg.1010520.xyz:1001|01
+  - 🇪🇸|1-4☕@xkmfjd|西班牙|01
+  - 1-4☕@xkmfjd||01
+  - 1-4☕@xkmfjd||02
+  - 1-4☕@xkmfjd||03
+  - 1-4☕@xkmfjd|undefined|01
+  - 1-4☕@xkmfjd|undefined|02
+  - 1-4☕@xkmfjd|undefined|03
+  - 1-4☕@xkmfjd|undefined|04
+  - 1-4☕@xkmfjd|undefined|05
+  - 1-4☕@xkmfjd|undefined|06
+  - 1-4☕@xkmfjd|undefined|07
+  - 1-4☕@xkmfjd|usable-toad.treefrog761.one:443|01
+  - 1-4☕@xkmfjd|usable-toad.treefrog761.one:443|02
+  - 1-4☕@xkmfjd|Hysteria2 uk.1010520.xyz:1001|01
+  - 1-4☕@xkmfjd|boss-hound.boa152.lol:443|01
+  - 1-4☕@xkmfjd|settled-seal.treefrog761.one:443|01
+  - 1-4☕@xkmfjd|settled-seal.treefrog761.one:443|02
+  - 1-4☕@xkmfjd|Hysteria2 150.241.77.182:11122|01
+  - 1-4☕@xkmfjd|fresh-grub.boa152.lol:443|01
+  - 1-4☕@xkmfjd|leading-shrew.boa152.lol:443|01
+  - 1-4☕@xkmfjd|neutral-magpie.treefrog761.one:443|01
+  - 1-4☕@xkmfjd|Hysteria2 sg.1010520.xyz:1001|01
+  - 🇯🇵|1-4☕@xkmfjd|日本|01
+  - 🇸🇬|1-4☕@xkmfjd|新加坡|01
+  - 🇬🇧|1-4☕@xkmfjd|英国|01
+  - 🇮🇹|1-4☕@xkmfjd|意大利|01
+  - 1-4☕@xkmfjd|219.135.231.205:21042|01
+  - 1-4☕@xkmfjd|gzdata1.fc-sigma.xyz:12103|01
+  - 1-4☕@xkmfjd|gzdata1.fc-sigma.xyz:11103|01
+  - 1-4☕@xkmfjd|gzdata1.fc-sigma.xyz:11101|01
+  - 1-4☕@xkmfjd|gzdata1.fc-sigma.xyz:11106|01
+  - 1-4☕@xkmfjd|gzdata1.fc-sigma.xyz:12101|01
+  - 1-4☕@xkmfjd|gzdata1.fc-sigma.xyz:12132|01
+  - 1-4☕@xkmfjd|gzdata1.fc-sigma.xyz:11134|01
+  - 1-4☕@xkmfjd|gy.58n.net:20076|01
+  - 1-4☕@xkmfjd|103.136.185.28:3516|01
+  - 1-4☕@xkmfjd|103.136.185.28:3516|02
+  - 1-4☕@xkmfjd|103.136.185.28:3516|03
+  - 1-4☕@xkmfjd|103.136.185.28:3516|04
+  - 1-4☕@xkmfjd|gy.58n.net:17806|01
 - name: 📲 电报信息
   type: select
   proxies:
   - 🚀 节点选择
   - 🎯 全球直连
-  - 🇪🇸|1-3🐰@xkmfjd|西班牙|01
-  - 🇪🇸|1-3🐰@xkmfjd|西班牙|02
-  - 1-3🐰@xkmfjd|tight-clam.boa152.lol:443|01
-  - 1-3🐰@xkmfjd|tight-clam.boa152.lol:443|02
-  - 1-3🐰@xkmfjd|profound-anemone.boa152.lol:443|01
-  - 1-3🐰@xkmfjd|concrete-buzzard.boa152.lol:443|01
-  - 1-3🐰@xkmfjd|lucky-grouper.boa152.lol:443|01
-  - 1-3🐰@xkmfjd||01
-  - 1-3🐰@xkmfjd||02
-  - 1-3🐰@xkmfjd|undefined|01
-  - 1-3🐰@xkmfjd|undefined|02
-  - 1-3🐰@xkmfjd|undefined|03
-  - 1-3🐰@xkmfjd|undefined|04
-  - 1-3🐰@xkmfjd|undefined|05
-  - 1-3🐰@xkmfjd|undefined|06
-  - 1-3🐰@xkmfjd|Hysteria2 jpzl2.stardad.lol:48512|01
-  - 1-3🐰@xkmfjd|usable-toad.treefrog761.one:443|01
-  - 1-3🐰@xkmfjd|usable-toad.treefrog761.one:443|02
-  - 1-3🐰@xkmfjd|usable-toad.treefrog761.one:443|03
-  - 1-3🐰@xkmfjd|Hysteria2 yn.lianjievpn.com:60100|01
-  - 1-3🐰@xkmfjd|Hysteria2 uk.1010520.xyz:1001|01
-  - 1-3🐰@xkmfjd|boss-hound.boa152.lol:443|01
-  - 1-3🐰@xkmfjd|settled-seal.treefrog761.one:443|01
-  - 1-3🐰@xkmfjd|settled-seal.treefrog761.one:443|02
-  - 1-3🐰@xkmfjd|Hysteria2 150.241.77.182:11122|01
-  - 1-3🐰@xkmfjd|fresh-grub.boa152.lol:443|01
-  - 1-3🐰@xkmfjd|leading-shrew.boa152.lol:443|01
-  - 1-3🐰@xkmfjd|neutral-magpie.treefrog761.one:443|01
-  - 1-3🐰@xkmfjd|(tg群:https://t.me/zhibeii_13|01
-  - 1-3🐰@xkmfjd|Hysteria2 sg.1010520.xyz:1001|01
+  - 🇪🇸|1-4☕@xkmfjd|西班牙|01
+  - 1-4☕@xkmfjd||01
+  - 1-4☕@xkmfjd||02
+  - 1-4☕@xkmfjd||03
+  - 1-4☕@xkmfjd|undefined|01
+  - 1-4☕@xkmfjd|undefined|02
+  - 1-4☕@xkmfjd|undefined|03
+  - 1-4☕@xkmfjd|undefined|04
+  - 1-4☕@xkmfjd|undefined|05
+  - 1-4☕@xkmfjd|undefined|06
+  - 1-4☕@xkmfjd|undefined|07
+  - 1-4☕@xkmfjd|usable-toad.treefrog761.one:443|01
+  - 1-4☕@xkmfjd|usable-toad.treefrog761.one:443|02
+  - 1-4☕@xkmfjd|Hysteria2 uk.1010520.xyz:1001|01
+  - 1-4☕@xkmfjd|boss-hound.boa152.lol:443|01
+  - 1-4☕@xkmfjd|settled-seal.treefrog761.one:443|01
+  - 1-4☕@xkmfjd|settled-seal.treefrog761.one:443|02
+  - 1-4☕@xkmfjd|Hysteria2 150.241.77.182:11122|01
+  - 1-4☕@xkmfjd|fresh-grub.boa152.lol:443|01
+  - 1-4☕@xkmfjd|leading-shrew.boa152.lol:443|01
+  - 1-4☕@xkmfjd|neutral-magpie.treefrog761.one:443|01
+  - 1-4☕@xkmfjd|Hysteria2 sg.1010520.xyz:1001|01
+  - 🇯🇵|1-4☕@xkmfjd|日本|01
+  - 🇸🇬|1-4☕@xkmfjd|新加坡|01
+  - 🇬🇧|1-4☕@xkmfjd|英国|01
+  - 🇮🇹|1-4☕@xkmfjd|意大利|01
+  - 1-4☕@xkmfjd|219.135.231.205:21042|01
+  - 1-4☕@xkmfjd|gzdata1.fc-sigma.xyz:12103|01
+  - 1-4☕@xkmfjd|gzdata1.fc-sigma.xyz:11103|01
+  - 1-4☕@xkmfjd|gzdata1.fc-sigma.xyz:11101|01
+  - 1-4☕@xkmfjd|gzdata1.fc-sigma.xyz:11106|01
+  - 1-4☕@xkmfjd|gzdata1.fc-sigma.xyz:12101|01
+  - 1-4☕@xkmfjd|gzdata1.fc-sigma.xyz:12132|01
+  - 1-4☕@xkmfjd|gzdata1.fc-sigma.xyz:11134|01
+  - 1-4☕@xkmfjd|gy.58n.net:20076|01
+  - 1-4☕@xkmfjd|103.136.185.28:3516|01
+  - 1-4☕@xkmfjd|103.136.185.28:3516|02
+  - 1-4☕@xkmfjd|103.136.185.28:3516|03
+  - 1-4☕@xkmfjd|103.136.185.28:3516|04
+  - 1-4☕@xkmfjd|gy.58n.net:17806|01
 - name: Ⓜ️ 微软服务
   type: select
   proxies:
   - 🎯 全球直连
   - 🚀 节点选择
-  - 🇪🇸|1-3🐰@xkmfjd|西班牙|01
-  - 🇪🇸|1-3🐰@xkmfjd|西班牙|02
-  - 1-3🐰@xkmfjd|tight-clam.boa152.lol:443|01
-  - 1-3🐰@xkmfjd|tight-clam.boa152.lol:443|02
-  - 1-3🐰@xkmfjd|profound-anemone.boa152.lol:443|01
-  - 1-3🐰@xkmfjd|concrete-buzzard.boa152.lol:443|01
-  - 1-3🐰@xkmfjd|lucky-grouper.boa152.lol:443|01
-  - 1-3🐰@xkmfjd||01
-  - 1-3🐰@xkmfjd||02
-  - 1-3🐰@xkmfjd|undefined|01
-  - 1-3🐰@xkmfjd|undefined|02
-  - 1-3🐰@xkmfjd|undefined|03
-  - 1-3🐰@xkmfjd|undefined|04
-  - 1-3🐰@xkmfjd|undefined|05
-  - 1-3🐰@xkmfjd|undefined|06
-  - 1-3🐰@xkmfjd|Hysteria2 jpzl2.stardad.lol:48512|01
-  - 1-3🐰@xkmfjd|usable-toad.treefrog761.one:443|01
-  - 1-3🐰@xkmfjd|usable-toad.treefrog761.one:443|02
-  - 1-3🐰@xkmfjd|usable-toad.treefrog761.one:443|03
-  - 1-3🐰@xkmfjd|Hysteria2 yn.lianjievpn.com:60100|01
-  - 1-3🐰@xkmfjd|Hysteria2 uk.1010520.xyz:1001|01
-  - 1-3🐰@xkmfjd|boss-hound.boa152.lol:443|01
-  - 1-3🐰@xkmfjd|settled-seal.treefrog761.one:443|01
-  - 1-3🐰@xkmfjd|settled-seal.treefrog761.one:443|02
-  - 1-3🐰@xkmfjd|Hysteria2 150.241.77.182:11122|01
-  - 1-3🐰@xkmfjd|fresh-grub.boa152.lol:443|01
-  - 1-3🐰@xkmfjd|leading-shrew.boa152.lol:443|01
-  - 1-3🐰@xkmfjd|neutral-magpie.treefrog761.one:443|01
-  - 1-3🐰@xkmfjd|(tg群:https://t.me/zhibeii_13|01
-  - 1-3🐰@xkmfjd|Hysteria2 sg.1010520.xyz:1001|01
+  - 🇪🇸|1-4☕@xkmfjd|西班牙|01
+  - 1-4☕@xkmfjd||01
+  - 1-4☕@xkmfjd||02
+  - 1-4☕@xkmfjd||03
+  - 1-4☕@xkmfjd|undefined|01
+  - 1-4☕@xkmfjd|undefined|02
+  - 1-4☕@xkmfjd|undefined|03
+  - 1-4☕@xkmfjd|undefined|04
+  - 1-4☕@xkmfjd|undefined|05
+  - 1-4☕@xkmfjd|undefined|06
+  - 1-4☕@xkmfjd|undefined|07
+  - 1-4☕@xkmfjd|usable-toad.treefrog761.one:443|01
+  - 1-4☕@xkmfjd|usable-toad.treefrog761.one:443|02
+  - 1-4☕@xkmfjd|Hysteria2 uk.1010520.xyz:1001|01
+  - 1-4☕@xkmfjd|boss-hound.boa152.lol:443|01
+  - 1-4☕@xkmfjd|settled-seal.treefrog761.one:443|01
+  - 1-4☕@xkmfjd|settled-seal.treefrog761.one:443|02
+  - 1-4☕@xkmfjd|Hysteria2 150.241.77.182:11122|01
+  - 1-4☕@xkmfjd|fresh-grub.boa152.lol:443|01
+  - 1-4☕@xkmfjd|leading-shrew.boa152.lol:443|01
+  - 1-4☕@xkmfjd|neutral-magpie.treefrog761.one:443|01
+  - 1-4☕@xkmfjd|Hysteria2 sg.1010520.xyz:1001|01
+  - 🇯🇵|1-4☕@xkmfjd|日本|01
+  - 🇸🇬|1-4☕@xkmfjd|新加坡|01
+  - 🇬🇧|1-4☕@xkmfjd|英国|01
+  - 🇮🇹|1-4☕@xkmfjd|意大利|01
+  - 1-4☕@xkmfjd|219.135.231.205:21042|01
+  - 1-4☕@xkmfjd|gzdata1.fc-sigma.xyz:12103|01
+  - 1-4☕@xkmfjd|gzdata1.fc-sigma.xyz:11103|01
+  - 1-4☕@xkmfjd|gzdata1.fc-sigma.xyz:11101|01
+  - 1-4☕@xkmfjd|gzdata1.fc-sigma.xyz:11106|01
+  - 1-4☕@xkmfjd|gzdata1.fc-sigma.xyz:12101|01
+  - 1-4☕@xkmfjd|gzdata1.fc-sigma.xyz:12132|01
+  - 1-4☕@xkmfjd|gzdata1.fc-sigma.xyz:11134|01
+  - 1-4☕@xkmfjd|gy.58n.net:20076|01
+  - 1-4☕@xkmfjd|103.136.185.28:3516|01
+  - 1-4☕@xkmfjd|103.136.185.28:3516|02
+  - 1-4☕@xkmfjd|103.136.185.28:3516|03
+  - 1-4☕@xkmfjd|103.136.185.28:3516|04
+  - 1-4☕@xkmfjd|gy.58n.net:17806|01
 - name: 🍎 苹果服务
   type: select
   proxies:
   - 🚀 节点选择
   - 🎯 全球直连
-  - 🇪🇸|1-3🐰@xkmfjd|西班牙|01
-  - 🇪🇸|1-3🐰@xkmfjd|西班牙|02
-  - 1-3🐰@xkmfjd|tight-clam.boa152.lol:443|01
-  - 1-3🐰@xkmfjd|tight-clam.boa152.lol:443|02
-  - 1-3🐰@xkmfjd|profound-anemone.boa152.lol:443|01
-  - 1-3🐰@xkmfjd|concrete-buzzard.boa152.lol:443|01
-  - 1-3🐰@xkmfjd|lucky-grouper.boa152.lol:443|01
-  - 1-3🐰@xkmfjd||01
-  - 1-3🐰@xkmfjd||02
-  - 1-3🐰@xkmfjd|undefined|01
-  - 1-3🐰@xkmfjd|undefined|02
-  - 1-3🐰@xkmfjd|undefined|03
-  - 1-3🐰@xkmfjd|undefined|04
-  - 1-3🐰@xkmfjd|undefined|05
-  - 1-3🐰@xkmfjd|undefined|06
-  - 1-3🐰@xkmfjd|Hysteria2 jpzl2.stardad.lol:48512|01
-  - 1-3🐰@xkmfjd|usable-toad.treefrog761.one:443|01
-  - 1-3🐰@xkmfjd|usable-toad.treefrog761.one:443|02
-  - 1-3🐰@xkmfjd|usable-toad.treefrog761.one:443|03
-  - 1-3🐰@xkmfjd|Hysteria2 yn.lianjievpn.com:60100|01
-  - 1-3🐰@xkmfjd|Hysteria2 uk.1010520.xyz:1001|01
-  - 1-3🐰@xkmfjd|boss-hound.boa152.lol:443|01
-  - 1-3🐰@xkmfjd|settled-seal.treefrog761.one:443|01
-  - 1-3🐰@xkmfjd|settled-seal.treefrog761.one:443|02
-  - 1-3🐰@xkmfjd|Hysteria2 150.241.77.182:11122|01
-  - 1-3🐰@xkmfjd|fresh-grub.boa152.lol:443|01
-  - 1-3🐰@xkmfjd|leading-shrew.boa152.lol:443|01
-  - 1-3🐰@xkmfjd|neutral-magpie.treefrog761.one:443|01
-  - 1-3🐰@xkmfjd|(tg群:https://t.me/zhibeii_13|01
-  - 1-3🐰@xkmfjd|Hysteria2 sg.1010520.xyz:1001|01
+  - 🇪🇸|1-4☕@xkmfjd|西班牙|01
+  - 1-4☕@xkmfjd||01
+  - 1-4☕@xkmfjd||02
+  - 1-4☕@xkmfjd||03
+  - 1-4☕@xkmfjd|undefined|01
+  - 1-4☕@xkmfjd|undefined|02
+  - 1-4☕@xkmfjd|undefined|03
+  - 1-4☕@xkmfjd|undefined|04
+  - 1-4☕@xkmfjd|undefined|05
+  - 1-4☕@xkmfjd|undefined|06
+  - 1-4☕@xkmfjd|undefined|07
+  - 1-4☕@xkmfjd|usable-toad.treefrog761.one:443|01
+  - 1-4☕@xkmfjd|usable-toad.treefrog761.one:443|02
+  - 1-4☕@xkmfjd|Hysteria2 uk.1010520.xyz:1001|01
+  - 1-4☕@xkmfjd|boss-hound.boa152.lol:443|01
+  - 1-4☕@xkmfjd|settled-seal.treefrog761.one:443|01
+  - 1-4☕@xkmfjd|settled-seal.treefrog761.one:443|02
+  - 1-4☕@xkmfjd|Hysteria2 150.241.77.182:11122|01
+  - 1-4☕@xkmfjd|fresh-grub.boa152.lol:443|01
+  - 1-4☕@xkmfjd|leading-shrew.boa152.lol:443|01
+  - 1-4☕@xkmfjd|neutral-magpie.treefrog761.one:443|01
+  - 1-4☕@xkmfjd|Hysteria2 sg.1010520.xyz:1001|01
+  - 🇯🇵|1-4☕@xkmfjd|日本|01
+  - 🇸🇬|1-4☕@xkmfjd|新加坡|01
+  - 🇬🇧|1-4☕@xkmfjd|英国|01
+  - 🇮🇹|1-4☕@xkmfjd|意大利|01
+  - 1-4☕@xkmfjd|219.135.231.205:21042|01
+  - 1-4☕@xkmfjd|gzdata1.fc-sigma.xyz:12103|01
+  - 1-4☕@xkmfjd|gzdata1.fc-sigma.xyz:11103|01
+  - 1-4☕@xkmfjd|gzdata1.fc-sigma.xyz:11101|01
+  - 1-4☕@xkmfjd|gzdata1.fc-sigma.xyz:11106|01
+  - 1-4☕@xkmfjd|gzdata1.fc-sigma.xyz:12101|01
+  - 1-4☕@xkmfjd|gzdata1.fc-sigma.xyz:12132|01
+  - 1-4☕@xkmfjd|gzdata1.fc-sigma.xyz:11134|01
+  - 1-4☕@xkmfjd|gy.58n.net:20076|01
+  - 1-4☕@xkmfjd|103.136.185.28:3516|01
+  - 1-4☕@xkmfjd|103.136.185.28:3516|02
+  - 1-4☕@xkmfjd|103.136.185.28:3516|03
+  - 1-4☕@xkmfjd|103.136.185.28:3516|04
+  - 1-4☕@xkmfjd|gy.58n.net:17806|01
 - name: 📢 谷歌FCM
   type: select
   proxies:
   - 🚀 节点选择
   - 🎯 全球直连
   - ♻️ 自动选择
-  - 🇪🇸|1-3🐰@xkmfjd|西班牙|01
-  - 🇪🇸|1-3🐰@xkmfjd|西班牙|02
-  - 1-3🐰@xkmfjd|tight-clam.boa152.lol:443|01
-  - 1-3🐰@xkmfjd|tight-clam.boa152.lol:443|02
-  - 1-3🐰@xkmfjd|profound-anemone.boa152.lol:443|01
-  - 1-3🐰@xkmfjd|concrete-buzzard.boa152.lol:443|01
-  - 1-3🐰@xkmfjd|lucky-grouper.boa152.lol:443|01
-  - 1-3🐰@xkmfjd||01
-  - 1-3🐰@xkmfjd||02
-  - 1-3🐰@xkmfjd|undefined|01
-  - 1-3🐰@xkmfjd|undefined|02
-  - 1-3🐰@xkmfjd|undefined|03
-  - 1-3🐰@xkmfjd|undefined|04
-  - 1-3🐰@xkmfjd|undefined|05
-  - 1-3🐰@xkmfjd|undefined|06
-  - 1-3🐰@xkmfjd|Hysteria2 jpzl2.stardad.lol:48512|01
-  - 1-3🐰@xkmfjd|usable-toad.treefrog761.one:443|01
-  - 1-3🐰@xkmfjd|usable-toad.treefrog761.one:443|02
-  - 1-3🐰@xkmfjd|usable-toad.treefrog761.one:443|03
-  - 1-3🐰@xkmfjd|Hysteria2 yn.lianjievpn.com:60100|01
-  - 1-3🐰@xkmfjd|Hysteria2 uk.1010520.xyz:1001|01
-  - 1-3🐰@xkmfjd|boss-hound.boa152.lol:443|01
-  - 1-3🐰@xkmfjd|settled-seal.treefrog761.one:443|01
-  - 1-3🐰@xkmfjd|settled-seal.treefrog761.one:443|02
-  - 1-3🐰@xkmfjd|Hysteria2 150.241.77.182:11122|01
-  - 1-3🐰@xkmfjd|fresh-grub.boa152.lol:443|01
-  - 1-3🐰@xkmfjd|leading-shrew.boa152.lol:443|01
-  - 1-3🐰@xkmfjd|neutral-magpie.treefrog761.one:443|01
-  - 1-3🐰@xkmfjd|(tg群:https://t.me/zhibeii_13|01
-  - 1-3🐰@xkmfjd|Hysteria2 sg.1010520.xyz:1001|01
+  - 🇪🇸|1-4☕@xkmfjd|西班牙|01
+  - 1-4☕@xkmfjd||01
+  - 1-4☕@xkmfjd||02
+  - 1-4☕@xkmfjd||03
+  - 1-4☕@xkmfjd|undefined|01
+  - 1-4☕@xkmfjd|undefined|02
+  - 1-4☕@xkmfjd|undefined|03
+  - 1-4☕@xkmfjd|undefined|04
+  - 1-4☕@xkmfjd|undefined|05
+  - 1-4☕@xkmfjd|undefined|06
+  - 1-4☕@xkmfjd|undefined|07
+  - 1-4☕@xkmfjd|usable-toad.treefrog761.one:443|01
+  - 1-4☕@xkmfjd|usable-toad.treefrog761.one:443|02
+  - 1-4☕@xkmfjd|Hysteria2 uk.1010520.xyz:1001|01
+  - 1-4☕@xkmfjd|boss-hound.boa152.lol:443|01
+  - 1-4☕@xkmfjd|settled-seal.treefrog761.one:443|01
+  - 1-4☕@xkmfjd|settled-seal.treefrog761.one:443|02
+  - 1-4☕@xkmfjd|Hysteria2 150.241.77.182:11122|01
+  - 1-4☕@xkmfjd|fresh-grub.boa152.lol:443|01
+  - 1-4☕@xkmfjd|leading-shrew.boa152.lol:443|01
+  - 1-4☕@xkmfjd|neutral-magpie.treefrog761.one:443|01
+  - 1-4☕@xkmfjd|Hysteria2 sg.1010520.xyz:1001|01
+  - 🇯🇵|1-4☕@xkmfjd|日本|01
+  - 🇸🇬|1-4☕@xkmfjd|新加坡|01
+  - 🇬🇧|1-4☕@xkmfjd|英国|01
+  - 🇮🇹|1-4☕@xkmfjd|意大利|01
+  - 1-4☕@xkmfjd|219.135.231.205:21042|01
+  - 1-4☕@xkmfjd|gzdata1.fc-sigma.xyz:12103|01
+  - 1-4☕@xkmfjd|gzdata1.fc-sigma.xyz:11103|01
+  - 1-4☕@xkmfjd|gzdata1.fc-sigma.xyz:11101|01
+  - 1-4☕@xkmfjd|gzdata1.fc-sigma.xyz:11106|01
+  - 1-4☕@xkmfjd|gzdata1.fc-sigma.xyz:12101|01
+  - 1-4☕@xkmfjd|gzdata1.fc-sigma.xyz:12132|01
+  - 1-4☕@xkmfjd|gzdata1.fc-sigma.xyz:11134|01
+  - 1-4☕@xkmfjd|gy.58n.net:20076|01
+  - 1-4☕@xkmfjd|103.136.185.28:3516|01
+  - 1-4☕@xkmfjd|103.136.185.28:3516|02
+  - 1-4☕@xkmfjd|103.136.185.28:3516|03
+  - 1-4☕@xkmfjd|103.136.185.28:3516|04
+  - 1-4☕@xkmfjd|gy.58n.net:17806|01
 - name: 🎯 全球直连
   type: select
   proxies:
@@ -515,36 +655,46 @@ proxy-groups:
   - 🚀 节点选择
   - 🎯 全球直连
   - ♻️ 自动选择
-  - 🇪🇸|1-3🐰@xkmfjd|西班牙|01
-  - 🇪🇸|1-3🐰@xkmfjd|西班牙|02
-  - 1-3🐰@xkmfjd|tight-clam.boa152.lol:443|01
-  - 1-3🐰@xkmfjd|tight-clam.boa152.lol:443|02
-  - 1-3🐰@xkmfjd|profound-anemone.boa152.lol:443|01
-  - 1-3🐰@xkmfjd|concrete-buzzard.boa152.lol:443|01
-  - 1-3🐰@xkmfjd|lucky-grouper.boa152.lol:443|01
-  - 1-3🐰@xkmfjd||01
-  - 1-3🐰@xkmfjd||02
-  - 1-3🐰@xkmfjd|undefined|01
-  - 1-3🐰@xkmfjd|undefined|02
-  - 1-3🐰@xkmfjd|undefined|03
-  - 1-3🐰@xkmfjd|undefined|04
-  - 1-3🐰@xkmfjd|undefined|05
-  - 1-3🐰@xkmfjd|undefined|06
-  - 1-3🐰@xkmfjd|Hysteria2 jpzl2.stardad.lol:48512|01
-  - 1-3🐰@xkmfjd|usable-toad.treefrog761.one:443|01
-  - 1-3🐰@xkmfjd|usable-toad.treefrog761.one:443|02
-  - 1-3🐰@xkmfjd|usable-toad.treefrog761.one:443|03
-  - 1-3🐰@xkmfjd|Hysteria2 yn.lianjievpn.com:60100|01
-  - 1-3🐰@xkmfjd|Hysteria2 uk.1010520.xyz:1001|01
-  - 1-3🐰@xkmfjd|boss-hound.boa152.lol:443|01
-  - 1-3🐰@xkmfjd|settled-seal.treefrog761.one:443|01
-  - 1-3🐰@xkmfjd|settled-seal.treefrog761.one:443|02
-  - 1-3🐰@xkmfjd|Hysteria2 150.241.77.182:11122|01
-  - 1-3🐰@xkmfjd|fresh-grub.boa152.lol:443|01
-  - 1-3🐰@xkmfjd|leading-shrew.boa152.lol:443|01
-  - 1-3🐰@xkmfjd|neutral-magpie.treefrog761.one:443|01
-  - 1-3🐰@xkmfjd|(tg群:https://t.me/zhibeii_13|01
-  - 1-3🐰@xkmfjd|Hysteria2 sg.1010520.xyz:1001|01
+  - 🇪🇸|1-4☕@xkmfjd|西班牙|01
+  - 1-4☕@xkmfjd||01
+  - 1-4☕@xkmfjd||02
+  - 1-4☕@xkmfjd||03
+  - 1-4☕@xkmfjd|undefined|01
+  - 1-4☕@xkmfjd|undefined|02
+  - 1-4☕@xkmfjd|undefined|03
+  - 1-4☕@xkmfjd|undefined|04
+  - 1-4☕@xkmfjd|undefined|05
+  - 1-4☕@xkmfjd|undefined|06
+  - 1-4☕@xkmfjd|undefined|07
+  - 1-4☕@xkmfjd|usable-toad.treefrog761.one:443|01
+  - 1-4☕@xkmfjd|usable-toad.treefrog761.one:443|02
+  - 1-4☕@xkmfjd|Hysteria2 uk.1010520.xyz:1001|01
+  - 1-4☕@xkmfjd|boss-hound.boa152.lol:443|01
+  - 1-4☕@xkmfjd|settled-seal.treefrog761.one:443|01
+  - 1-4☕@xkmfjd|settled-seal.treefrog761.one:443|02
+  - 1-4☕@xkmfjd|Hysteria2 150.241.77.182:11122|01
+  - 1-4☕@xkmfjd|fresh-grub.boa152.lol:443|01
+  - 1-4☕@xkmfjd|leading-shrew.boa152.lol:443|01
+  - 1-4☕@xkmfjd|neutral-magpie.treefrog761.one:443|01
+  - 1-4☕@xkmfjd|Hysteria2 sg.1010520.xyz:1001|01
+  - 🇯🇵|1-4☕@xkmfjd|日本|01
+  - 🇸🇬|1-4☕@xkmfjd|新加坡|01
+  - 🇬🇧|1-4☕@xkmfjd|英国|01
+  - 🇮🇹|1-4☕@xkmfjd|意大利|01
+  - 1-4☕@xkmfjd|219.135.231.205:21042|01
+  - 1-4☕@xkmfjd|gzdata1.fc-sigma.xyz:12103|01
+  - 1-4☕@xkmfjd|gzdata1.fc-sigma.xyz:11103|01
+  - 1-4☕@xkmfjd|gzdata1.fc-sigma.xyz:11101|01
+  - 1-4☕@xkmfjd|gzdata1.fc-sigma.xyz:11106|01
+  - 1-4☕@xkmfjd|gzdata1.fc-sigma.xyz:12101|01
+  - 1-4☕@xkmfjd|gzdata1.fc-sigma.xyz:12132|01
+  - 1-4☕@xkmfjd|gzdata1.fc-sigma.xyz:11134|01
+  - 1-4☕@xkmfjd|gy.58n.net:20076|01
+  - 1-4☕@xkmfjd|103.136.185.28:3516|01
+  - 1-4☕@xkmfjd|103.136.185.28:3516|02
+  - 1-4☕@xkmfjd|103.136.185.28:3516|03
+  - 1-4☕@xkmfjd|103.136.185.28:3516|04
+  - 1-4☕@xkmfjd|gy.58n.net:17806|01
 rules:
 - DOMAIN-SUFFIX,acl4.ssr,🎯 全球直连
 - DOMAIN-SUFFIX,ip6-localhost,🎯 全球直连
