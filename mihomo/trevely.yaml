@@ -77,18 +77,6 @@ proxies:
     path: /?ed=2560
     headers:
       Host: trojans.trevely.us.kg
-- name: FREE_US 05
-  server: lynn.ns.cloudflare.com
-  port: 443
-  type: trojan
-  password: Trevely
-  sni: trojans.trevely.us.kg
-  skip-cert-verify: true
-  network: ws
-  ws-opts:
-    path: /?ed=2560
-    headers:
-      Host: trojans.trevely.us.kg
 proxy-groups:
 - name: 🚀 节点选择
   type: select
@@ -100,7 +88,6 @@ proxy-groups:
   - FREE_US 02
   - FREE_US 03
   - FREE_US 04
-  - FREE_US 05
 - name: ♻️ 自动选择
   type: url-test
   url: http://www.gstatic.com/generate_204
@@ -112,7 +99,6 @@ proxy-groups:
   - FREE_US 02
   - FREE_US 03
   - FREE_US 04
-  - FREE_US 05
 - name: 🌍 国外媒体
   type: select
   proxies:
@@ -124,7 +110,6 @@ proxy-groups:
   - FREE_US 02
   - FREE_US 03
   - FREE_US 04
-  - FREE_US 05
 - name: 📲 电报信息
   type: select
   proxies:
@@ -135,7 +120,6 @@ proxy-groups:
   - FREE_US 02
   - FREE_US 03
   - FREE_US 04
-  - FREE_US 05
 - name: Ⓜ️ 微软服务
   type: select
   proxies:
@@ -146,7 +130,6 @@ proxy-groups:
   - FREE_US 02
   - FREE_US 03
   - FREE_US 04
-  - FREE_US 05
 - name: 🍎 苹果服务
   type: select
   proxies:
@@ -157,7 +140,6 @@ proxy-groups:
   - FREE_US 02
   - FREE_US 03
   - FREE_US 04
-  - FREE_US 05
 - name: 📢 谷歌FCM
   type: select
   proxies:
@@ -169,7 +151,6 @@ proxy-groups:
   - FREE_US 02
   - FREE_US 03
   - FREE_US 04
-  - FREE_US 05
 - name: 🎯 全球直连
   type: select
   proxies:
@@ -197,7 +178,6 @@ proxy-groups:
   - FREE_US 02
   - FREE_US 03
   - FREE_US 04
-  - FREE_US 05
 rules:
 - DOMAIN-SUFFIX,acl4.ssr,🎯 全球直连
 - DOMAIN-SUFFIX,ip6-localhost,🎯 全球直连
