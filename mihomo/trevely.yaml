@@ -17,19 +17,7 @@ hosts:
   alt7-mtalk.google.com: 173.194.219.188
   alt8-mtalk.google.com: 142.250.112.188
 proxies:
-- name: 免费请勿受骗
-  server: theo.ns.cloudflare.com
-  port: 443
-  type: trojan
-  password: Trevely
-  sni: trojans.trevely.us.kg
-  skip-cert-verify: true
-  network: ws
-  ws-opts:
-    path: /?ed=2560
-    headers:
-      Host: trojans.trevely.us.kg
-- name: FREE_US 01
+- name: 🇺🇸 免费_美国 01
   server: duke.ns.cloudflare.com
   port: 443
   type: trojan
@@ -41,7 +29,7 @@ proxies:
     path: /?ed=2560
     headers:
       Host: trojans.trevely.us.kg
-- name: FREE_US 02
+- name: 🇺🇸 免费_美国 02
   server: fred.ns.cloudflare.com
   port: 443
   type: trojan
@@ -53,31 +41,7 @@ proxies:
     path: /?ed=2560
     headers:
       Host: trojans.trevely.us.kg
-- name: FREE_US 03
-  server: hugh.ns.cloudflare.com
-  port: 443
-  type: trojan
-  password: Trevely
-  sni: trojans.trevely.us.kg
-  skip-cert-verify: true
-  network: ws
-  ws-opts:
-    path: /?ed=2560
-    headers:
-      Host: trojans.trevely.us.kg
-- name: FREE_US 04
-  server: kyle.ns.cloudflare.com
-  port: 443
-  type: trojan
-  password: Trevely
-  sni: trojans.trevely.us.kg
-  skip-cert-verify: true
-  network: ws
-  ws-opts:
-    path: /?ed=2560
-    headers:
-      Host: trojans.trevely.us.kg
-- name: FREE_US 03 2
+- name: 🇺🇸 免费_美国 03
   server: theo.ns.cloudflare.com
   port: 443
   type: trojan
@@ -95,81 +59,60 @@ proxy-groups:
   proxies:
   - ♻️ 自动选择
   - DIRECT
-  - 免费请勿受骗
-  - FREE_US 01
-  - FREE_US 02
-  - FREE_US 03
-  - FREE_US 04
-  - FREE_US 03 2
+  - 🇺🇸 免费_美国 01
+  - 🇺🇸 免费_美国 02
+  - 🇺🇸 免费_美国 03
 - name: ♻️ 自动选择
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
-  - 免费请勿受骗
-  - FREE_US 01
-  - FREE_US 02
-  - FREE_US 03
-  - FREE_US 04
-  - FREE_US 03 2
+  - 🇺🇸 免费_美国 01
+  - 🇺🇸 免费_美国 02
+  - 🇺🇸 免费_美国 03
 - name: 🌍 国外媒体
   type: select
   proxies:
   - 🚀 节点选择
   - ♻️ 自动选择
   - 🎯 全球直连
-  - 免费请勿受骗
-  - FREE_US 01
-  - FREE_US 02
-  - FREE_US 03
-  - FREE_US 04
-  - FREE_US 03 2
+  - 🇺🇸 免费_美国 01
+  - 🇺🇸 免费_美国 02
+  - 🇺🇸 免费_美国 03
 - name: 📲 电报信息
   type: select
   proxies:
   - 🚀 节点选择
   - 🎯 全球直连
-  - 免费请勿受骗
-  - FREE_US 01
-  - FREE_US 02
-  - FREE_US 03
-  - FREE_US 04
-  - FREE_US 03 2
+  - 🇺🇸 免费_美国 01
+  - 🇺🇸 免费_美国 02
+  - 🇺🇸 免费_美国 03
 - name: Ⓜ️ 微软服务
   type: select
   proxies:
   - 🚀 节点选择
   - 🎯 全球直连
-  - 免费请勿受骗
-  - FREE_US 01
-  - FREE_US 02
-  - FREE_US 03
-  - FREE_US 04
-  - FREE_US 03 2
+  - 🇺🇸 免费_美国 01
+  - 🇺🇸 免费_美国 02
+  - 🇺🇸 免费_美国 03
 - name: 🍎 苹果服务
   type: select
   proxies:
   - 🚀 节点选择
   - 🎯 全球直连
-  - 免费请勿受骗
-  - FREE_US 01
-  - FREE_US 02
-  - FREE_US 03
-  - FREE_US 04
-  - FREE_US 03 2
+  - 🇺🇸 免费_美国 01
+  - 🇺🇸 免费_美国 02
+  - 🇺🇸 免费_美国 03
 - name: 📢 谷歌FCM
   type: select
   proxies:
   - 🎯 全球直连
   - 🚀 节点选择
   - ♻️ 自动选择
-  - 免费请勿受骗
-  - FREE_US 01
-  - FREE_US 02
-  - FREE_US 03
-  - FREE_US 04
-  - FREE_US 03 2
+  - 🇺🇸 免费_美国 01
+  - 🇺🇸 免费_美国 02
+  - 🇺🇸 免费_美国 03
 - name: 🎯 全球直连
   type: select
   proxies:
@@ -192,12 +135,9 @@ proxy-groups:
   - 🚀 节点选择
   - 🎯 全球直连
   - ♻️ 自动选择
-  - 免费请勿受骗
-  - FREE_US 01
-  - FREE_US 02
-  - FREE_US 03
-  - FREE_US 04
-  - FREE_US 03 2
+  - 🇺🇸 免费_美国 01
+  - 🇺🇸 免费_美国 02
+  - 🇺🇸 免费_美国 03
 rules:
 - DOMAIN-SUFFIX,ushd.xmsl.org,🎯 全球直连
 - DOMAIN-SUFFIX,cf.gtlx.org,🎯 全球直连
