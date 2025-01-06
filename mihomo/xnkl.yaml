@@ -92,28 +92,12 @@ proxies:
     short-id: 545abc6e
   network: tcp
   servername: microsoft.com
-- name: 1-6🍜@xkmfjd|01-undefined|01
-  type: ss
-  server: 34.216.172.180
-  port: 443
-  cipher: aes-256-cfb
-  password: amazonskr05
-- name: 1-6🍜@xkmfjd|02-undefined|01
+- name: 1-6🍜@xkmfjd|1-undefined|01
   type: ss
   server: 54.201.172.79
   port: 443
   cipher: aes-256-cfb
   password: amazonskr05
-- type: hysteria2
-  name: 1-6🍜@xkmfjd|01-Hysteria2 kevin.iserver.store:8443|01
-  server: kevin.iserver.store
-  port: 8443
-  password: Telegram:@KevinZakarian
-  sni: kevin.iserver.store
-  obfs: salamander
-  obfs-password: Telegram:@KevinZakarian
-  skip-cert-verify: true
-  tfo: false
 - type: hysteria
   name: 1-6🍜@xkmfjd|Hysteria 195.154.184.5:22787|01
   server: 195.154.184.5
@@ -142,18 +126,17 @@ proxies:
   servername: microsoft.com
 - type: vless
   name: 🇪🇸|1-6🍜@xkmfjd|西班牙|02
-  server: phx-plus-1ddns.faforex.eu.org
-  port: 23258
-  uuid: 73159dbd-e01e-4492-a234-e5d7c335b128
+  server: 192.9.158.188
+  port: 443
+  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
   tls: true
-  flow: xtls-rprx-vision
-  client-fingerprint: chrome
   skip-cert-verify: false
-  reality-opts:
-    public-key: BSEvpP7N7XNtOgzDrCFEgu6ejgdBHOYRug6S_lTf5GM
-    short-id: bfbc4c1f
-  network: tcp
-  servername: microsoft.com
+  network: ws
+  ws-opts:
+    headers:
+      Host: a.xn--i-sx6a60i.us.kg
+    path: /
+  servername: a.xn--i-sx6a60i.us.kg
 - type: vless
   name: 🇪🇸|1-6🍜@xkmfjd|西班牙|03
   server: 140.238.23.148
@@ -169,45 +152,6 @@ proxies:
   servername: a.xn--i-sx6a60i.us.kg
 - type: vless
   name: 🇪🇸|1-6🍜@xkmfjd|西班牙|04
-  server: 192.9.158.188
-  port: 443
-  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
-  tls: true
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    headers:
-      Host: a.xn--i-sx6a60i.us.kg
-    path: /
-  servername: a.xn--i-sx6a60i.us.kg
-- type: vless
-  name: 🇪🇸|1-6🍜@xkmfjd|西班牙|05
-  server: 140.238.23.148
-  port: 443
-  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
-  tls: true
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    headers:
-      Host: a.xn--i-sx6a60i.us.kg
-    path: /
-  servername: a.xn--i-sx6a60i.us.kg
-- type: vless
-  name: 🇪🇸|1-6🍜@xkmfjd|西班牙|06
-  server: 140.238.2.81
-  port: 587
-  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
-  tls: true
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    headers:
-      Host: a.mifeng.us.kg
-    path: /?ed=2560
-  servername: a.mifeng.us.kg
-- type: vless
-  name: 🇪🇸|1-6🍜@xkmfjd|西班牙|07
   server: 104.17.157.1
   port: 443
   uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
@@ -220,20 +164,7 @@ proxies:
     path: /
   servername: a.xn--i-sx6a60i.us.kg
 - type: vless
-  name: 🇪🇸|1-6🍜@xkmfjd|西班牙|08
-  server: 104.17.247.19
-  port: 443
-  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
-  tls: true
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    headers:
-      Host: a.xn--i-sx6a60i.us.kg
-    path: /?ed=2560
-  servername: a.xn--i-sx6a60i.us.kg
-- type: vless
-  name: 🇪🇸|1-6🍜@xkmfjd|西班牙|09
+  name: 🇪🇸|1-6🍜@xkmfjd|西班牙|05
   server: 172.64.147.50
   port: 443
   uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
@@ -246,7 +177,7 @@ proxies:
     path: /
   servername: a.xn--i-sx6a60i.us.kg
 - type: vless
-  name: 🇪🇸|1-6🍜@xkmfjd|西班牙|10
+  name: 🇪🇸|1-6🍜@xkmfjd|西班牙|06
   server: 104.17.197.1
   port: 443
   uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
@@ -259,7 +190,7 @@ proxies:
     path: /?d=2560
   servername: a.xn--i-sx6a60i.us.kg
 - type: vless
-  name: 🇪🇸|1-6🍜@xkmfjd|西班牙|11
+  name: 🇪🇸|1-6🍜@xkmfjd|西班牙|07
   server: 104.18.43.169
   port: 443
   uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
@@ -271,8 +202,138 @@ proxies:
       Host: a.xn--i-sx6a60i.us.kg
     path: /?ed=2560
   servername: a.xn--i-sx6a60i.us.kg
+- type: vless
+  name: 🇪🇸|1-6🍜@xkmfjd|西班牙|08
+  server: 104.16.39.67
+  port: 443
+  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
+  tls: true
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    headers:
+      Host: a.xn--i-sx6a60i.us.kg
+    path: /?ed=2560
+  servername: a.xn--i-sx6a60i.us.kg
+- type: vless
+  name: 🇪🇸|1-6🍜@xkmfjd|西班牙|09
+  server: 104.21.49.114
+  port: 443
+  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
+  tls: true
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    headers:
+      Host: a.xn--i-sx6a60i.us.kg
+    path: /
+  servername: a.xn--i-sx6a60i.us.kg
+- type: vless
+  name: 🇪🇸|1-6🍜@xkmfjd|西班牙|10
+  server: 104.21.21.181
+  port: 443
+  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
+  tls: true
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    headers:
+      Host: a.xn--i-sx6a60i.us.kg
+    path: /
+  servername: a.xn--i-sx6a60i.us.kg
+- type: vless
+  name: 🇪🇸|1-6🍜@xkmfjd|西班牙|11
+  server: 172.67.199.19
+  port: 443
+  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
+  tls: true
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    headers:
+      Host: a.xn--i-sx6a60i.us.kg
+    path: /?ed=2560
+  servername: a.xn--i-sx6a60i.us.kg
+- type: vless
+  name: 🇪🇸|1-6🍜@xkmfjd|西班牙|12
+  server: pqsbgp.doubledou.icu
+  port: 443
+  uuid: d2093082-a38a-316b-adcb-71013e595bd0
+  tls: true
+  flow: xtls-rprx-vision
+  client-fingerprint: random
+  skip-cert-verify: false
+  reality-opts:
+    public-key: zRZhlkKjUeqtIk9j6yy95aX-2krqQVyWORLv5tQkQGM
+  network: tcp
+  servername: tesla.com
+- type: vless
+  name: 🇪🇸|1-6🍜@xkmfjd|西班牙|13
+  server: sakura.aaaa.gay
+  port: 443
+  uuid: d2093082-a38a-316b-adcb-71013e595bd0
+  tls: true
+  flow: xtls-rprx-vision
+  client-fingerprint: random
+  skip-cert-verify: false
+  reality-opts:
+    public-key: zRZhlkKjUeqtIk9j6yy95aX-2krqQVyWORLv5tQkQGM
+  network: tcp
+  servername: tesla.com
+- type: vless
+  name: 🇪🇸|1-6🍜@xkmfjd|西班牙|14
+  server: twb.doubledou.icu
+  port: 443
+  uuid: d2093082-a38a-316b-adcb-71013e595bd0
+  tls: true
+  flow: xtls-rprx-vision
+  client-fingerprint: random
+  skip-cert-verify: false
+  reality-opts:
+    public-key: zRZhlkKjUeqtIk9j6yy95aX-2krqQVyWORLv5tQkQGM
+  network: tcp
+  servername: tesla.com
+- type: vless
+  name: 🇪🇸|1-6🍜@xkmfjd|西班牙|15
+  server: cuvip.doubledou.icu
+  port: 443
+  uuid: d2093082-a38a-316b-adcb-71013e595bd0
+  tls: true
+  flow: xtls-rprx-vision
+  client-fingerprint: random
+  skip-cert-verify: false
+  reality-opts:
+    public-key: zRZhlkKjUeqtIk9j6yy95aX-2krqQVyWORLv5tQkQGM
+  network: tcp
+  servername: tesla.com
+- type: vless
+  name: 🇪🇸|1-6🍜@xkmfjd|西班牙|16
+  server: vltw1.doubledou.icu
+  port: 443
+  uuid: d2093082-a38a-316b-adcb-71013e595bd0
+  tls: true
+  flow: xtls-rprx-vision
+  client-fingerprint: random
+  skip-cert-verify: false
+  reality-opts:
+    public-key: zRZhlkKjUeqtIk9j6yy95aX-2krqQVyWORLv5tQkQGM
+  network: tcp
+  servername: tesla.com
+- type: vless
+  name: 🇪🇸|1-6🍜@xkmfjd|西班牙|17
+  server: cmin2.doubledou.icu
+  port: 443
+  uuid: d2093082-a38a-316b-adcb-71013e595bd0
+  tls: true
+  flow: xtls-rprx-vision
+  client-fingerprint: random
+  skip-cert-verify: false
+  reality-opts:
+    public-key: zRZhlkKjUeqtIk9j6yy95aX-2krqQVyWORLv5tQkQGM
+  network: tcp
+  servername: tesla.com
 - type: hysteria2
-  name: 1-6🍜@xkmfjd|02-Hysteria2 kevin.iserver.store:8443|01
+  name: 1-6🍜@xkmfjd|Hysteria2 kevin.iserver.store:8443|01
   server: kevin.iserver.store
   port: 8443
   password: Telegram:@KevinZakarian
@@ -281,7 +342,7 @@ proxies:
   obfs-password: Telegram:@KevinZakarian
   skip-cert-verify: true
   tfo: false
-- name: 1-6🍜@xkmfjd|03-undefined|01
+- name: 1-6🍜@xkmfjd|2-undefined|01
   type: ss
   server: pr1.jymzffbquawl.com
   port: 3604
@@ -291,48 +352,24 @@ proxies:
   plugin-opts:
     mode: http
     host: 78fe8292462.microsoft.com
-- name: 1-6🍜@xkmfjd|04-undefined|01
-  type: ss
-  server: 46.183.217.232
-  port: 990
-  cipher: chacha20-ietf-poly1305
-  password: f8f7aCzcPKbsF8p3
-- name: 1-6🍜@xkmfjd|05-undefined|01
+- name: 1-6🍜@xkmfjd|3-undefined|01
   type: ss
   server: 221.150.109.90
   port: 41748
   cipher: aes-256-cfb
   password: qwerREWQ@@
-- name: 1-6🍜@xkmfjd|06-undefined|01
-  type: ss
-  server: 54.248.142.136
-  port: 443
-  cipher: aes-256-cfb
-  password: amazonskr05
-- name: 1-6🍜@xkmfjd|07-undefined|01
-  type: ss
-  server: 54.178.84.59
-  port: 443
-  cipher: aes-256-cfb
-  password: amazonskr05
-- name: 1-6🍜@xkmfjd|08-undefined|01
+- name: 1-6🍜@xkmfjd|4-undefined|01
   type: ss
   server: 107.155.57.11
   port: 8080
   cipher: rc4-md5
   password: 14fFPrbezE3HDZzsMOr6
-- name: 1-6🍜@xkmfjd|09-undefined|01
-  type: ss
-  server: 168.126.234.233
-  port: 40915
-  cipher: aes-256-cfb
-  password: qwerREWQ@@
-- name: 1-6🍜@xkmfjd|10-undefined|01
-  type: ss
-  server: 169.150.210.233
-  port: 8080
-  cipher: rc4-md5
-  password: 14fFPrbezE3HDZzsMOr6
+- sni: my01.trojanyyds.xyz
+  type: trojan
+  password: 243eab52-9ac1-405c-887c-eb112c0985b8
+  server: my01.trojanyyds.xyz
+  port: 443
+  name: 1-6🍜@xkmfjd|my01.trojanyyds.xyz:443|01
 proxy-groups:
 - name: 🚀 节点选择
   type: select
@@ -345,9 +382,7 @@ proxy-groups:
   - 🇺🇸|1-6🍜@xkmfjd|美国|04
   - 🇨🇳|1-6🍜@xkmfjd|台湾|01
   - 🇰🇷|1-6🍜@xkmfjd|韩国|01
-  - 1-6🍜@xkmfjd|01-undefined|01
-  - 1-6🍜@xkmfjd|02-undefined|01
-  - 1-6🍜@xkmfjd|01-Hysteria2 kevin.iserver.store:8443|01
+  - 1-6🍜@xkmfjd|1-undefined|01
   - 1-6🍜@xkmfjd|Hysteria 195.154.184.5:22787|01
   - 🇪🇸|1-6🍜@xkmfjd|西班牙|01
   - 🇪🇸|1-6🍜@xkmfjd|西班牙|02
@@ -360,15 +395,17 @@ proxy-groups:
   - 🇪🇸|1-6🍜@xkmfjd|西班牙|09
   - 🇪🇸|1-6🍜@xkmfjd|西班牙|10
   - 🇪🇸|1-6🍜@xkmfjd|西班牙|11
-  - 1-6🍜@xkmfjd|02-Hysteria2 kevin.iserver.store:8443|01
-  - 1-6🍜@xkmfjd|03-undefined|01
-  - 1-6🍜@xkmfjd|04-undefined|01
-  - 1-6🍜@xkmfjd|05-undefined|01
-  - 1-6🍜@xkmfjd|06-undefined|01
-  - 1-6🍜@xkmfjd|07-undefined|01
-  - 1-6🍜@xkmfjd|08-undefined|01
-  - 1-6🍜@xkmfjd|09-undefined|01
-  - 1-6🍜@xkmfjd|10-undefined|01
+  - 🇪🇸|1-6🍜@xkmfjd|西班牙|12
+  - 🇪🇸|1-6🍜@xkmfjd|西班牙|13
+  - 🇪🇸|1-6🍜@xkmfjd|西班牙|14
+  - 🇪🇸|1-6🍜@xkmfjd|西班牙|15
+  - 🇪🇸|1-6🍜@xkmfjd|西班牙|16
+  - 🇪🇸|1-6🍜@xkmfjd|西班牙|17
+  - 1-6🍜@xkmfjd|Hysteria2 kevin.iserver.store:8443|01
+  - 1-6🍜@xkmfjd|2-undefined|01
+  - 1-6🍜@xkmfjd|3-undefined|01
+  - 1-6🍜@xkmfjd|4-undefined|01
+  - 1-6🍜@xkmfjd|my01.trojanyyds.xyz:443|01
 - name: ♻️ 自动选择
   type: url-test
   url: http://www.gstatic.com/generate_204
@@ -381,9 +418,7 @@ proxy-groups:
   - 🇺🇸|1-6🍜@xkmfjd|美国|04
   - 🇨🇳|1-6🍜@xkmfjd|台湾|01
   - 🇰🇷|1-6🍜@xkmfjd|韩国|01
-  - 1-6🍜@xkmfjd|01-undefined|01
-  - 1-6🍜@xkmfjd|02-undefined|01
-  - 1-6🍜@xkmfjd|01-Hysteria2 kevin.iserver.store:8443|01
+  - 1-6🍜@xkmfjd|1-undefined|01
   - 1-6🍜@xkmfjd|Hysteria 195.154.184.5:22787|01
   - 🇪🇸|1-6🍜@xkmfjd|西班牙|01
   - 🇪🇸|1-6🍜@xkmfjd|西班牙|02
@@ -396,15 +431,17 @@ proxy-groups:
   - 🇪🇸|1-6🍜@xkmfjd|西班牙|09
   - 🇪🇸|1-6🍜@xkmfjd|西班牙|10
   - 🇪🇸|1-6🍜@xkmfjd|西班牙|11
-  - 1-6🍜@xkmfjd|02-Hysteria2 kevin.iserver.store:8443|01
-  - 1-6🍜@xkmfjd|03-undefined|01
-  - 1-6🍜@xkmfjd|04-undefined|01
-  - 1-6🍜@xkmfjd|05-undefined|01
-  - 1-6🍜@xkmfjd|06-undefined|01
-  - 1-6🍜@xkmfjd|07-undefined|01
-  - 1-6🍜@xkmfjd|08-undefined|01
-  - 1-6🍜@xkmfjd|09-undefined|01
-  - 1-6🍜@xkmfjd|10-undefined|01
+  - 🇪🇸|1-6🍜@xkmfjd|西班牙|12
+  - 🇪🇸|1-6🍜@xkmfjd|西班牙|13
+  - 🇪🇸|1-6🍜@xkmfjd|西班牙|14
+  - 🇪🇸|1-6🍜@xkmfjd|西班牙|15
+  - 🇪🇸|1-6🍜@xkmfjd|西班牙|16
+  - 🇪🇸|1-6🍜@xkmfjd|西班牙|17
+  - 1-6🍜@xkmfjd|Hysteria2 kevin.iserver.store:8443|01
+  - 1-6🍜@xkmfjd|2-undefined|01
+  - 1-6🍜@xkmfjd|3-undefined|01
+  - 1-6🍜@xkmfjd|4-undefined|01
+  - 1-6🍜@xkmfjd|my01.trojanyyds.xyz:443|01
 - name: 🌍 国外媒体
   type: select
   proxies:
@@ -417,9 +454,7 @@ proxy-groups:
   - 🇺🇸|1-6🍜@xkmfjd|美国|04
   - 🇨🇳|1-6🍜@xkmfjd|台湾|01
   - 🇰🇷|1-6🍜@xkmfjd|韩国|01
-  - 1-6🍜@xkmfjd|01-undefined|01
-  - 1-6🍜@xkmfjd|02-undefined|01
-  - 1-6🍜@xkmfjd|01-Hysteria2 kevin.iserver.store:8443|01
+  - 1-6🍜@xkmfjd|1-undefined|01
   - 1-6🍜@xkmfjd|Hysteria 195.154.184.5:22787|01
   - 🇪🇸|1-6🍜@xkmfjd|西班牙|01
   - 🇪🇸|1-6🍜@xkmfjd|西班牙|02
@@ -432,15 +467,17 @@ proxy-groups:
   - 🇪🇸|1-6🍜@xkmfjd|西班牙|09
   - 🇪🇸|1-6🍜@xkmfjd|西班牙|10
   - 🇪🇸|1-6🍜@xkmfjd|西班牙|11
-  - 1-6🍜@xkmfjd|02-Hysteria2 kevin.iserver.store:8443|01
-  - 1-6🍜@xkmfjd|03-undefined|01
-  - 1-6🍜@xkmfjd|04-undefined|01
-  - 1-6🍜@xkmfjd|05-undefined|01
-  - 1-6🍜@xkmfjd|06-undefined|01
-  - 1-6🍜@xkmfjd|07-undefined|01
-  - 1-6🍜@xkmfjd|08-undefined|01
-  - 1-6🍜@xkmfjd|09-undefined|01
-  - 1-6🍜@xkmfjd|10-undefined|01
+  - 🇪🇸|1-6🍜@xkmfjd|西班牙|12
+  - 🇪🇸|1-6🍜@xkmfjd|西班牙|13
+  - 🇪🇸|1-6🍜@xkmfjd|西班牙|14
+  - 🇪🇸|1-6🍜@xkmfjd|西班牙|15
+  - 🇪🇸|1-6🍜@xkmfjd|西班牙|16
+  - 🇪🇸|1-6🍜@xkmfjd|西班牙|17
+  - 1-6🍜@xkmfjd|Hysteria2 kevin.iserver.store:8443|01
+  - 1-6🍜@xkmfjd|2-undefined|01
+  - 1-6🍜@xkmfjd|3-undefined|01
+  - 1-6🍜@xkmfjd|4-undefined|01
+  - 1-6🍜@xkmfjd|my01.trojanyyds.xyz:443|01
 - name: 📲 电报信息
   type: select
   proxies:
@@ -452,9 +489,7 @@ proxy-groups:
   - 🇺🇸|1-6🍜@xkmfjd|美国|04
   - 🇨🇳|1-6🍜@xkmfjd|台湾|01
   - 🇰🇷|1-6🍜@xkmfjd|韩国|01
-  - 1-6🍜@xkmfjd|01-undefined|01
-  - 1-6🍜@xkmfjd|02-undefined|01
-  - 1-6🍜@xkmfjd|01-Hysteria2 kevin.iserver.store:8443|01
+  - 1-6🍜@xkmfjd|1-undefined|01
   - 1-6🍜@xkmfjd|Hysteria 195.154.184.5:22787|01
   - 🇪🇸|1-6🍜@xkmfjd|西班牙|01
   - 🇪🇸|1-6🍜@xkmfjd|西班牙|02
@@ -467,15 +502,17 @@ proxy-groups:
   - 🇪🇸|1-6🍜@xkmfjd|西班牙|09
   - 🇪🇸|1-6🍜@xkmfjd|西班牙|10
   - 🇪🇸|1-6🍜@xkmfjd|西班牙|11
-  - 1-6🍜@xkmfjd|02-Hysteria2 kevin.iserver.store:8443|01
-  - 1-6🍜@xkmfjd|03-undefined|01
-  - 1-6🍜@xkmfjd|04-undefined|01
-  - 1-6🍜@xkmfjd|05-undefined|01
-  - 1-6🍜@xkmfjd|06-undefined|01
-  - 1-6🍜@xkmfjd|07-undefined|01
-  - 1-6🍜@xkmfjd|08-undefined|01
-  - 1-6🍜@xkmfjd|09-undefined|01
-  - 1-6🍜@xkmfjd|10-undefined|01
+  - 🇪🇸|1-6🍜@xkmfjd|西班牙|12
+  - 🇪🇸|1-6🍜@xkmfjd|西班牙|13
+  - 🇪🇸|1-6🍜@xkmfjd|西班牙|14
+  - 🇪🇸|1-6🍜@xkmfjd|西班牙|15
+  - 🇪🇸|1-6🍜@xkmfjd|西班牙|16
+  - 🇪🇸|1-6🍜@xkmfjd|西班牙|17
+  - 1-6🍜@xkmfjd|Hysteria2 kevin.iserver.store:8443|01
+  - 1-6🍜@xkmfjd|2-undefined|01
+  - 1-6🍜@xkmfjd|3-undefined|01
+  - 1-6🍜@xkmfjd|4-undefined|01
+  - 1-6🍜@xkmfjd|my01.trojanyyds.xyz:443|01
 - name: Ⓜ️ 微软服务
   type: select
   proxies:
@@ -487,9 +524,7 @@ proxy-groups:
   - 🇺🇸|1-6🍜@xkmfjd|美国|04
   - 🇨🇳|1-6🍜@xkmfjd|台湾|01
   - 🇰🇷|1-6🍜@xkmfjd|韩国|01
-  - 1-6🍜@xkmfjd|01-undefined|01
-  - 1-6🍜@xkmfjd|02-undefined|01
-  - 1-6🍜@xkmfjd|01-Hysteria2 kevin.iserver.store:8443|01
+  - 1-6🍜@xkmfjd|1-undefined|01
   - 1-6🍜@xkmfjd|Hysteria 195.154.184.5:22787|01
   - 🇪🇸|1-6🍜@xkmfjd|西班牙|01
   - 🇪🇸|1-6🍜@xkmfjd|西班牙|02
@@ -502,15 +537,17 @@ proxy-groups:
   - 🇪🇸|1-6🍜@xkmfjd|西班牙|09
   - 🇪🇸|1-6🍜@xkmfjd|西班牙|10
   - 🇪🇸|1-6🍜@xkmfjd|西班牙|11
-  - 1-6🍜@xkmfjd|02-Hysteria2 kevin.iserver.store:8443|01
-  - 1-6🍜@xkmfjd|03-undefined|01
-  - 1-6🍜@xkmfjd|04-undefined|01
-  - 1-6🍜@xkmfjd|05-undefined|01
-  - 1-6🍜@xkmfjd|06-undefined|01
-  - 1-6🍜@xkmfjd|07-undefined|01
-  - 1-6🍜@xkmfjd|08-undefined|01
-  - 1-6🍜@xkmfjd|09-undefined|01
-  - 1-6🍜@xkmfjd|10-undefined|01
+  - 🇪🇸|1-6🍜@xkmfjd|西班牙|12
+  - 🇪🇸|1-6🍜@xkmfjd|西班牙|13
+  - 🇪🇸|1-6🍜@xkmfjd|西班牙|14
+  - 🇪🇸|1-6🍜@xkmfjd|西班牙|15
+  - 🇪🇸|1-6🍜@xkmfjd|西班牙|16
+  - 🇪🇸|1-6🍜@xkmfjd|西班牙|17
+  - 1-6🍜@xkmfjd|Hysteria2 kevin.iserver.store:8443|01
+  - 1-6🍜@xkmfjd|2-undefined|01
+  - 1-6🍜@xkmfjd|3-undefined|01
+  - 1-6🍜@xkmfjd|4-undefined|01
+  - 1-6🍜@xkmfjd|my01.trojanyyds.xyz:443|01
 - name: 🍎 苹果服务
   type: select
   proxies:
@@ -522,9 +559,7 @@ proxy-groups:
   - 🇺🇸|1-6🍜@xkmfjd|美国|04
   - 🇨🇳|1-6🍜@xkmfjd|台湾|01
   - 🇰🇷|1-6🍜@xkmfjd|韩国|01
-  - 1-6🍜@xkmfjd|01-undefined|01
-  - 1-6🍜@xkmfjd|02-undefined|01
-  - 1-6🍜@xkmfjd|01-Hysteria2 kevin.iserver.store:8443|01
+  - 1-6🍜@xkmfjd|1-undefined|01
   - 1-6🍜@xkmfjd|Hysteria 195.154.184.5:22787|01
   - 🇪🇸|1-6🍜@xkmfjd|西班牙|01
   - 🇪🇸|1-6🍜@xkmfjd|西班牙|02
@@ -537,15 +572,17 @@ proxy-groups:
   - 🇪🇸|1-6🍜@xkmfjd|西班牙|09
   - 🇪🇸|1-6🍜@xkmfjd|西班牙|10
   - 🇪🇸|1-6🍜@xkmfjd|西班牙|11
-  - 1-6🍜@xkmfjd|02-Hysteria2 kevin.iserver.store:8443|01
-  - 1-6🍜@xkmfjd|03-undefined|01
-  - 1-6🍜@xkmfjd|04-undefined|01
-  - 1-6🍜@xkmfjd|05-undefined|01
-  - 1-6🍜@xkmfjd|06-undefined|01
-  - 1-6🍜@xkmfjd|07-undefined|01
-  - 1-6🍜@xkmfjd|08-undefined|01
-  - 1-6🍜@xkmfjd|09-undefined|01
-  - 1-6🍜@xkmfjd|10-undefined|01
+  - 🇪🇸|1-6🍜@xkmfjd|西班牙|12
+  - 🇪🇸|1-6🍜@xkmfjd|西班牙|13
+  - 🇪🇸|1-6🍜@xkmfjd|西班牙|14
+  - 🇪🇸|1-6🍜@xkmfjd|西班牙|15
+  - 🇪🇸|1-6🍜@xkmfjd|西班牙|16
+  - 🇪🇸|1-6🍜@xkmfjd|西班牙|17
+  - 1-6🍜@xkmfjd|Hysteria2 kevin.iserver.store:8443|01
+  - 1-6🍜@xkmfjd|2-undefined|01
+  - 1-6🍜@xkmfjd|3-undefined|01
+  - 1-6🍜@xkmfjd|4-undefined|01
+  - 1-6🍜@xkmfjd|my01.trojanyyds.xyz:443|01
 - name: 📢 谷歌FCM
   type: select
   proxies:
@@ -558,9 +595,7 @@ proxy-groups:
   - 🇺🇸|1-6🍜@xkmfjd|美国|04
   - 🇨🇳|1-6🍜@xkmfjd|台湾|01
   - 🇰🇷|1-6🍜@xkmfjd|韩国|01
-  - 1-6🍜@xkmfjd|01-undefined|01
-  - 1-6🍜@xkmfjd|02-undefined|01
-  - 1-6🍜@xkmfjd|01-Hysteria2 kevin.iserver.store:8443|01
+  - 1-6🍜@xkmfjd|1-undefined|01
   - 1-6🍜@xkmfjd|Hysteria 195.154.184.5:22787|01
   - 🇪🇸|1-6🍜@xkmfjd|西班牙|01
   - 🇪🇸|1-6🍜@xkmfjd|西班牙|02
@@ -573,15 +608,17 @@ proxy-groups:
   - 🇪🇸|1-6🍜@xkmfjd|西班牙|09
   - 🇪🇸|1-6🍜@xkmfjd|西班牙|10
   - 🇪🇸|1-6🍜@xkmfjd|西班牙|11
-  - 1-6🍜@xkmfjd|02-Hysteria2 kevin.iserver.store:8443|01
-  - 1-6🍜@xkmfjd|03-undefined|01
-  - 1-6🍜@xkmfjd|04-undefined|01
-  - 1-6🍜@xkmfjd|05-undefined|01
-  - 1-6🍜@xkmfjd|06-undefined|01
-  - 1-6🍜@xkmfjd|07-undefined|01
-  - 1-6🍜@xkmfjd|08-undefined|01
-  - 1-6🍜@xkmfjd|09-undefined|01
-  - 1-6🍜@xkmfjd|10-undefined|01
+  - 🇪🇸|1-6🍜@xkmfjd|西班牙|12
+  - 🇪🇸|1-6🍜@xkmfjd|西班牙|13
+  - 🇪🇸|1-6🍜@xkmfjd|西班牙|14
+  - 🇪🇸|1-6🍜@xkmfjd|西班牙|15
+  - 🇪🇸|1-6🍜@xkmfjd|西班牙|16
+  - 🇪🇸|1-6🍜@xkmfjd|西班牙|17
+  - 1-6🍜@xkmfjd|Hysteria2 kevin.iserver.store:8443|01
+  - 1-6🍜@xkmfjd|2-undefined|01
+  - 1-6🍜@xkmfjd|3-undefined|01
+  - 1-6🍜@xkmfjd|4-undefined|01
+  - 1-6🍜@xkmfjd|my01.trojanyyds.xyz:443|01
 - name: 🎯 全球直连
   type: select
   proxies:
@@ -610,9 +647,7 @@ proxy-groups:
   - 🇺🇸|1-6🍜@xkmfjd|美国|04
   - 🇨🇳|1-6🍜@xkmfjd|台湾|01
   - 🇰🇷|1-6🍜@xkmfjd|韩国|01
-  - 1-6🍜@xkmfjd|01-undefined|01
-  - 1-6🍜@xkmfjd|02-undefined|01
-  - 1-6🍜@xkmfjd|01-Hysteria2 kevin.iserver.store:8443|01
+  - 1-6🍜@xkmfjd|1-undefined|01
   - 1-6🍜@xkmfjd|Hysteria 195.154.184.5:22787|01
   - 🇪🇸|1-6🍜@xkmfjd|西班牙|01
   - 🇪🇸|1-6🍜@xkmfjd|西班牙|02
@@ -625,15 +660,17 @@ proxy-groups:
   - 🇪🇸|1-6🍜@xkmfjd|西班牙|09
   - 🇪🇸|1-6🍜@xkmfjd|西班牙|10
   - 🇪🇸|1-6🍜@xkmfjd|西班牙|11
-  - 1-6🍜@xkmfjd|02-Hysteria2 kevin.iserver.store:8443|01
-  - 1-6🍜@xkmfjd|03-undefined|01
-  - 1-6🍜@xkmfjd|04-undefined|01
-  - 1-6🍜@xkmfjd|05-undefined|01
-  - 1-6🍜@xkmfjd|06-undefined|01
-  - 1-6🍜@xkmfjd|07-undefined|01
-  - 1-6🍜@xkmfjd|08-undefined|01
-  - 1-6🍜@xkmfjd|09-undefined|01
-  - 1-6🍜@xkmfjd|10-undefined|01
+  - 🇪🇸|1-6🍜@xkmfjd|西班牙|12
+  - 🇪🇸|1-6🍜@xkmfjd|西班牙|13
+  - 🇪🇸|1-6🍜@xkmfjd|西班牙|14
+  - 🇪🇸|1-6🍜@xkmfjd|西班牙|15
+  - 🇪🇸|1-6🍜@xkmfjd|西班牙|16
+  - 🇪🇸|1-6🍜@xkmfjd|西班牙|17
+  - 1-6🍜@xkmfjd|Hysteria2 kevin.iserver.store:8443|01
+  - 1-6🍜@xkmfjd|2-undefined|01
+  - 1-6🍜@xkmfjd|3-undefined|01
+  - 1-6🍜@xkmfjd|4-undefined|01
+  - 1-6🍜@xkmfjd|my01.trojanyyds.xyz:443|01
 rules:
 - DOMAIN-SUFFIX,ushd.xmsl.org,🎯 全球直连
 - DOMAIN-SUFFIX,cf.gtlx.org,🎯 全球直连
