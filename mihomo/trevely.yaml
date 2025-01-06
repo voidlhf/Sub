@@ -17,6 +17,42 @@ hosts:
   alt7-mtalk.google.com: 173.194.219.188
   alt8-mtalk.google.com: 142.250.112.188
 proxies:
+- name: 🇺🇸 免费_美国 01
+  server: duke.ns.cloudflare.com
+  port: 443
+  type: trojan
+  password: Trevely
+  sni: trojans.trevely.us.kg
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /?ed=2560
+    headers:
+      Host: trojans.trevely.us.kg
+- name: 🇺🇸 免费_美国 02
+  server: fred.ns.cloudflare.com
+  port: 443
+  type: trojan
+  password: Trevely
+  sni: trojans.trevely.us.kg
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /?ed=2560
+    headers:
+      Host: trojans.trevely.us.kg
+- name: 🇺🇸 免费_美国 03
+  server: theo.ns.cloudflare.com
+  port: 443
+  type: trojan
+  password: Trevely
+  sni: trojans.trevely.us.kg
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /?ed=2560
+    headers:
+      Host: trojans.trevely.us.kg
 - name: 🇺🇸 免费_美国
   server: duke.ns.cloudflare.com
   port: 443
@@ -35,6 +71,9 @@ proxy-groups:
   proxies:
   - ♻️ 自动选择
   - DIRECT
+  - 🇺🇸 免费_美国 01
+  - 🇺🇸 免费_美国 02
+  - 🇺🇸 免费_美国 03
   - 🇺🇸 免费_美国
 - name: ♻️ 自动选择
   type: url-test
@@ -42,6 +81,9 @@ proxy-groups:
   interval: 300
   tolerance: 50
   proxies:
+  - 🇺🇸 免费_美国 01
+  - 🇺🇸 免费_美国 02
+  - 🇺🇸 免费_美国 03
   - 🇺🇸 免费_美国
 - name: 🌍 国外媒体
   type: select
@@ -49,24 +91,36 @@ proxy-groups:
   - 🚀 节点选择
   - ♻️ 自动选择
   - 🎯 全球直连
+  - 🇺🇸 免费_美国 01
+  - 🇺🇸 免费_美国 02
+  - 🇺🇸 免费_美国 03
   - 🇺🇸 免费_美国
 - name: 📲 电报信息
   type: select
   proxies:
   - 🚀 节点选择
   - 🎯 全球直连
+  - 🇺🇸 免费_美国 01
+  - 🇺🇸 免费_美国 02
+  - 🇺🇸 免费_美国 03
   - 🇺🇸 免费_美国
 - name: Ⓜ️ 微软服务
   type: select
   proxies:
   - 🚀 节点选择
   - 🎯 全球直连
+  - 🇺🇸 免费_美国 01
+  - 🇺🇸 免费_美国 02
+  - 🇺🇸 免费_美国 03
   - 🇺🇸 免费_美国
 - name: 🍎 苹果服务
   type: select
   proxies:
   - 🚀 节点选择
   - 🎯 全球直连
+  - 🇺🇸 免费_美国 01
+  - 🇺🇸 免费_美国 02
+  - 🇺🇸 免费_美国 03
   - 🇺🇸 免费_美国
 - name: 📢 谷歌FCM
   type: select
@@ -74,6 +128,9 @@ proxy-groups:
   - 🎯 全球直连
   - 🚀 节点选择
   - ♻️ 自动选择
+  - 🇺🇸 免费_美国 01
+  - 🇺🇸 免费_美国 02
+  - 🇺🇸 免费_美国 03
   - 🇺🇸 免费_美国
 - name: 🎯 全球直连
   type: select
@@ -97,6 +154,9 @@ proxy-groups:
   - 🚀 节点选择
   - 🎯 全球直连
   - ♻️ 自动选择
+  - 🇺🇸 免费_美国 01
+  - 🇺🇸 免费_美国 02
+  - 🇺🇸 免费_美国 03
   - 🇺🇸 免费_美国
 rules:
 - DOMAIN-SUFFIX,ushd.xmsl.org,🎯 全球直连
