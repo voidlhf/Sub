@@ -7,7 +7,7 @@ python scripts/mihomo-remote-generate.py "https://trojans.trevely.us.kg/Trevely"
 python scripts/mihomo-remote-generate.py "https://ly.ccwink.cc/api/v1/client/subscribe?token=c2bc3bc950ec1e5d22bc9f45716a28a2" ../mihomo/ly.yaml
 python scripts/mihomo-remote-generate.py "https://aini.200566.xyz/tzjz55/download/collection/love?target=ClashMeta" ../mihomo/tk1.yaml
 python scripts/mihomo-remote-generate.py "https://aini.200566.xyz/tzjz55/download/collection/tzjz66?target=ClashMeta" ../mihomo/tk2.yaml
-python scripts/mihomo-remote-generate.py "http://tg.hwzy0.ggff.net/sub?token=oLKUUBC7cJPmouRzlnw2bg&tag=clash" ../mihomo/hwzy0.yaml
+python scripts/mihomo-remote-generate.py "http://flynb.site/sub?token=oLKUUBC7cJPmouRzlnw2bg&tag=clash" ../mihomo/flynb.yaml
 python scripts/mihomo-remote-generate.py "https://aini.200566.xyz/tzjz55/download/xinniankuaile?target=ClashMeta" ../mihomo/xnkl.yaml
 python scripts/mihomo-remote-generate.py "https://aini.200566.xyz/tzjz55/download/beiyongjiedian" ../mihomo/byjd.yaml
 python scripts/mihomo-remote-generate.py "https://raw.githubusercontent.com/ripaojiedian/freenode/main/clash" ../mihomo/ripao.yaml
