@@ -14,6 +14,7 @@ python scripts/mihomo-remote-generate.py "https://raw.githubusercontent.com/ripa
 python scripts/mihomo-remote-generate.py "https://raw.githubusercontent.com/go4sharing/sub/main/sub.yaml" ../mihomo/go4sharing.yaml
 python scripts/mihomo-remote-generate.py "https://raw.githubusercontent.com/zhangkaiitugithub/passcro/main/speednodes.yaml" ../mihomo/speednodes.yaml
 python scripts/mihomo-remote-generate.py "https://raw.githubusercontent.com/dongchengjie/airport/main/subs/merged/tested_within.yaml" ../mihomo/dcj.yaml
+python scripts/mihomo-remote-generate.py "https://qq.xlm.plus/api/v1/client/subscribe?token=9e5db95336ab586ac6c4e2306c4d25a9" ../mihomo/shanyun.yaml
 
 # singbox
 python scripts/singbox-remote-generate.py "https://clash2sfa.xmdhs.com/sub?sub=https://suo.st/d2Y76gj" ../singbox/air.json
@@ -26,3 +27,4 @@ python scripts/singbox-remote-generate.py "https://clash2sfa.xmdhs.com/sub?sub=h
 python scripts/singbox-remote-generate.py "https://clash2sfa.xmdhs.com/sub?sub=https://aini.200566.xyz/tzjz55/download/xinniankuaile?target=ClashMeta" ../singbox/xnkl.json
 python scripts/singbox-remote-generate.py "https://clash2sfa.xmdhs.com/sub?sub=https://aini.200566.xyz/tzjz55/download/beiyongjiedian" ../singbox/byjd.json
 python scripts/singbox-remote-generate.py "https://clash2sfa.xmdhs.com/sub?sub=https://raw.githubusercontent.com/dongchengjie/airport/main/subs/merged/tested_within.yaml" ../singbox/dcj.json
+
