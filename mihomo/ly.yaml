@@ -17,240 +17,59 @@ hosts:
   alt7-mtalk.google.com: 173.194.219.188
   alt8-mtalk.google.com: 142.250.112.188
 proxies:
-- name: 剩余流量：0
-  server: tw.akebi.cc
-  port: 30000
-  sni: tw.akebi.cc
-  up: 500
-  down: 500
-  skip-cert-verify: false
-  type: hysteria2
-  password: 338b9800-fb4d-4934-8425-388f6d4342f5
-- name: 距离下次重置剩余：19 天
-  server: tw.akebi.cc
-  port: 30000
-  sni: tw.akebi.cc
-  up: 500
-  down: 500
-  skip-cert-verify: false
-  type: hysteria2
-  password: 338b9800-fb4d-4934-8425-388f6d4342f5
-- name: 套餐到期：2025-01-27
-  server: tw.akebi.cc
-  port: 30000
-  sni: tw.akebi.cc
-  up: 500
-  down: 500
-  skip-cert-verify: false
-  type: hysteria2
-  password: 338b9800-fb4d-4934-8425-388f6d4342f5
-- name: 🇹🇼台湾｜01｜原生IP
-  server: tw.akebi.cc
-  port: 30000
-  sni: tw.akebi.cc
-  up: 500
-  down: 500
-  skip-cert-verify: false
-  type: hysteria2
-  password: 338b9800-fb4d-4934-8425-388f6d4342f5
-- name: 🇹🇼台湾｜02｜原生IP
-  server: tw2.akebi.cc
-  port: 33751
-  sni: tw2.akebi.cc
-  up: 500
-  down: 500
-  skip-cert-verify: false
-  type: hysteria2
-  password: 338b9800-fb4d-4934-8425-388f6d4342f5
-- name: 🇹🇼台湾｜03｜原生IP
-  server: tw3.akebi.cc
-  port: 5006
-  sni: tw3.akebi.cc
-  up: 500
-  down: 500
-  skip-cert-verify: false
-  type: hysteria2
-  password: 338b9800-fb4d-4934-8425-388f6d4342f5
-- name: 🇹🇼台湾｜04｜原生IP
-  server: tw04.akebi.cc
-  port: 9000
-  sni: tw04.akebi.cc
-  up: 500
-  down: 500
-  skip-cert-verify: true
-  type: hysteria2
-  password: 338b9800-fb4d-4934-8425-388f6d4342f5
-- name: 🇹🇼台湾｜05｜原生IP
-  server: tw04.akebi.cc
-  port: 9001
-  sni: tw04.akebi.cc
-  up: 500
-  down: 500
-  skip-cert-verify: false
-  type: hysteria2
-  password: 338b9800-fb4d-4934-8425-388f6d4342f5
-- name: 🇭🇰香港｜01
-  server: tw.akebi.cc
-  port: 1000
-  sni: hk03.akebi.cc
-  up: 500
-  down: 500
-  skip-cert-verify: false
-  type: hysteria2
-  password: 338b9800-fb4d-4934-8425-388f6d4342f5
-- name: 🇭🇰香港｜02
-  server: tw3.akebi.cc
-  port: 2000
-  sni: hk03.akebi.cc
-  up: 500
-  down: 500
-  skip-cert-verify: false
-  type: hysteria2
-  password: 338b9800-fb4d-4934-8425-388f6d4342f5
-- name: 🇭🇰香港｜04
-  server: tw.akebi.cc
-  port: 2006
-  sni: hk02.akebi.cc
-  up: 500
-  down: 500
-  skip-cert-verify: false
-  type: hysteria2
-  password: 338b9800-fb4d-4934-8425-388f6d4342f5
-- name: 🇭🇰香港｜06
-  server: tw3.akebi.cc
-  port: 2010
-  sni: hk02.akebi.cc
-  up: 500
-  down: 500
-  skip-cert-verify: false
-  type: hysteria2
-  password: 338b9800-fb4d-4934-8425-388f6d4342f5
-- name: 🇭🇰香港｜09｜IPV6
-  server: 2001:e42:102:1208:153:121:74:219
-  port: 2000
-  sni: hk03.ccwink.cc
-  up: 500
-  down: 500
-  skip-cert-verify: true
-  type: hysteria2
-  password: 338b9800-fb4d-4934-8425-388f6d4342f5
-- name: 🇯🇵日本｜01｜住宅IP
-  server: jp.akebi.cc
-  port: 20440
-  sni: jp.akebi.cc
-  up: 500
-  down: 500
-  skip-cert-verify: false
-  type: hysteria2
-  password: 338b9800-fb4d-4934-8425-388f6d4342f5
-- name: 🇯🇵日本｜02｜原生IP｜IPV6
-  server: 2001:e42:102:1208:153:121:74:219
-  port: 3000
-  sni: jp01.akebi.cc
-  up: 500
-  down: 500
-  skip-cert-verify: false
-  type: hysteria2
-  password: 338b9800-fb4d-4934-8425-388f6d4342f5
-- name: 🇯🇵日本｜03｜原生IP
-  server: tw3.akebi.cc
-  port: 2015
-  sni: jp01.akebi.cc
-  up: 500
-  down: 500
-  skip-cert-verify: false
-  type: hysteria2
-  password: 338b9800-fb4d-4934-8425-388f6d4342f5
-- name: 🇯🇵日本｜04｜原生IP｜IPV6
-  server: 2001:e42:102:1519:160:16:86:192
-  port: 3000
-  sni: jp02.akebi.cc
-  up: 500
-  down: 500
-  skip-cert-verify: false
-  type: hysteria2
-  password: 338b9800-fb4d-4934-8425-388f6d4342f5
-- name: 🇰🇷韩国丨01
-  server: tw3.akebi.cc
-  port: 2016
-  sni: kr02.akebi.cc
-  up: 500
-  down: 500
-  skip-cert-verify: false
-  type: hysteria2
-  password: 338b9800-fb4d-4934-8425-388f6d4342f5
-- name: 🇹🇭泰国丨01｜原生IP
-  server: tw04.akebi.cc
-  port: 1000
-  sni: th.akebi.cc
-  up: 500
-  down: 500
-  skip-cert-verify: true
-  type: hysteria2
-  password: 338b9800-fb4d-4934-8425-388f6d4342f5
-- name: 🇹🇭泰国丨02｜原生IP
-  server: tw3.akebi.cc
-  port: 2018
-  sni: th.akebi.cc
-  up: 500
-  down: 500
-  skip-cert-verify: true
-  type: hysteria2
-  password: 338b9800-fb4d-4934-8425-388f6d4342f5
-- name: 🇧🇩孟加拉｜01｜住宅IP
-  server: tw3.akebi.cc
-  port: 2019
-  sni: bd.akebi.cc
-  up: 500
-  down: 500
-  skip-cert-verify: true
-  type: hysteria2
-  password: 338b9800-fb4d-4934-8425-388f6d4342f5
-- name: 🇰🇭柬埔寨｜01
-  server: tw4.akebi.cc
-  port: 1001
-  sni: kh01.akebi.cc
-  up: 500
-  down: 500
-  skip-cert-verify: false
-  type: hysteria2
-  password: 338b9800-fb4d-4934-8425-388f6d4342f5
-- name: 🇺🇦乌克兰｜01｜原生IP
-  server: tw4.akebi.cc
-  port: 1002
-  sni: ua01.akebi.cc
-  up: 500
-  down: 500
-  skip-cert-verify: false
-  type: hysteria2
-  password: 338b9800-fb4d-4934-8425-388f6d4342f5
-- name: 🇮🇸冰岛｜01
-  server: tw3.akebi.cc
-  port: 2003
-  sni: is01.akebi.cc
-  up: 500
-  down: 500
-  skip-cert-verify: false
-  type: hysteria2
-  password: 338b9800-fb4d-4934-8425-388f6d4342f5
-- name: 🇫🇷法国｜01｜原生IP
-  server: tw3.akebi.cc
-  port: 2005
-  sni: fr01.akebi.cc
-  up: 500
-  down: 500
-  skip-cert-verify: false
-  type: hysteria2
-  password: 338b9800-fb4d-4934-8425-388f6d4342f5
-- name: 🇦🇺澳大利亚｜01｜原生IP
-  server: tw3.akebi.cc
-  port: 2006
-  sni: au01.akebi.cc
-  up: 500
-  down: 500
-  skip-cert-verify: false
-  type: hysteria2
-  password: 338b9800-fb4d-4934-8425-388f6d4342f5
+- {name: 剩余流量：0, server: tw.akebi.cc, port: 30000, sni: tw.akebi.cc, up: 500, down: 500,
+  skip-cert-verify: false, type: hysteria2, password: 338b9800-fb4d-4934-8425-388f6d4342f5}
+- {name: 距离下次重置剩余：19 天, server: tw.akebi.cc, port: 30000, sni: tw.akebi.cc, up: 500,
+  down: 500, skip-cert-verify: false, type: hysteria2, password: 338b9800-fb4d-4934-8425-388f6d4342f5}
+- {name: 套餐到期：2025-01-27, server: tw.akebi.cc, port: 30000, sni: tw.akebi.cc, up: 500,
+  down: 500, skip-cert-verify: false, type: hysteria2, password: 338b9800-fb4d-4934-8425-388f6d4342f5}
+- {name: 🇹🇼台湾｜01｜原生IP, server: tw.akebi.cc, port: 30000, sni: tw.akebi.cc, up: 500,
+  down: 500, skip-cert-verify: false, type: hysteria2, password: 338b9800-fb4d-4934-8425-388f6d4342f5}
+- {name: 🇹🇼台湾｜02｜原生IP, server: tw2.akebi.cc, port: 33751, sni: tw2.akebi.cc, up: 500,
+  down: 500, skip-cert-verify: false, type: hysteria2, password: 338b9800-fb4d-4934-8425-388f6d4342f5}
+- {name: 🇹🇼台湾｜03｜原生IP, server: tw3.akebi.cc, port: 5006, sni: tw3.akebi.cc, up: 500,
+  down: 500, skip-cert-verify: false, type: hysteria2, password: 338b9800-fb4d-4934-8425-388f6d4342f5}
+- {name: 🇹🇼台湾｜04｜原生IP, server: tw04.akebi.cc, port: 9000, sni: tw04.akebi.cc, up: 500,
+  down: 500, skip-cert-verify: true, type: hysteria2, password: 338b9800-fb4d-4934-8425-388f6d4342f5}
+- {name: 🇹🇼台湾｜05｜原生IP, server: tw04.akebi.cc, port: 9001, sni: tw04.akebi.cc, up: 500,
+  down: 500, skip-cert-verify: false, type: hysteria2, password: 338b9800-fb4d-4934-8425-388f6d4342f5}
+- {name: 🇭🇰香港｜01, server: tw.akebi.cc, port: 1000, sni: hk03.akebi.cc, up: 500, down: 500,
+  skip-cert-verify: false, type: hysteria2, password: 338b9800-fb4d-4934-8425-388f6d4342f5}
+- {name: 🇭🇰香港｜02, server: tw3.akebi.cc, port: 2000, sni: hk03.akebi.cc, up: 500, down: 500,
+  skip-cert-verify: false, type: hysteria2, password: 338b9800-fb4d-4934-8425-388f6d4342f5}
+- {name: 🇭🇰香港｜04, server: tw.akebi.cc, port: 2006, sni: hk02.akebi.cc, up: 500, down: 500,
+  skip-cert-verify: false, type: hysteria2, password: 338b9800-fb4d-4934-8425-388f6d4342f5}
+- {name: 🇭🇰香港｜06, server: tw3.akebi.cc, port: 2010, sni: hk02.akebi.cc, up: 500, down: 500,
+  skip-cert-verify: false, type: hysteria2, password: 338b9800-fb4d-4934-8425-388f6d4342f5}
+- {name: 🇭🇰香港｜09｜IPV6, server: 2001:e42:102:1208:153:121:74:219, port: 2000, sni: hk03.ccwink.cc,
+  up: 500, down: 500, skip-cert-verify: true, type: hysteria2, password: 338b9800-fb4d-4934-8425-388f6d4342f5}
+- {name: 🇯🇵日本｜01｜住宅IP, server: jp.akebi.cc, port: 20440, sni: jp.akebi.cc, up: 500,
+  down: 500, skip-cert-verify: false, type: hysteria2, password: 338b9800-fb4d-4934-8425-388f6d4342f5}
+- {name: 🇯🇵日本｜02｜原生IP｜IPV6, server: 2001:e42:102:1208:153:121:74:219, port: 3000,
+  sni: jp01.akebi.cc, up: 500, down: 500, skip-cert-verify: false, type: hysteria2,
+  password: 338b9800-fb4d-4934-8425-388f6d4342f5}
+- {name: 🇯🇵日本｜03｜原生IP, server: tw3.akebi.cc, port: 2015, sni: jp01.akebi.cc, up: 500,
+  down: 500, skip-cert-verify: false, type: hysteria2, password: 338b9800-fb4d-4934-8425-388f6d4342f5}
+- {name: 🇯🇵日本｜04｜原生IP｜IPV6, server: 2001:e42:102:1519:160:16:86:192, port: 3000, sni: jp02.akebi.cc,
+  up: 500, down: 500, skip-cert-verify: false, type: hysteria2, password: 338b9800-fb4d-4934-8425-388f6d4342f5}
+- {name: 🇰🇷韩国丨01, server: tw3.akebi.cc, port: 2016, sni: kr02.akebi.cc, up: 500, down: 500,
+  skip-cert-verify: false, type: hysteria2, password: 338b9800-fb4d-4934-8425-388f6d4342f5}
+- {name: 🇹🇭泰国丨01｜原生IP, server: tw04.akebi.cc, port: 1000, sni: th.akebi.cc, up: 500,
+  down: 500, skip-cert-verify: true, type: hysteria2, password: 338b9800-fb4d-4934-8425-388f6d4342f5}
+- {name: 🇹🇭泰国丨02｜原生IP, server: tw3.akebi.cc, port: 2018, sni: th.akebi.cc, up: 500,
+  down: 500, skip-cert-verify: true, type: hysteria2, password: 338b9800-fb4d-4934-8425-388f6d4342f5}
+- {name: 🇧🇩孟加拉｜01｜住宅IP, server: tw3.akebi.cc, port: 2019, sni: bd.akebi.cc, up: 500,
+  down: 500, skip-cert-verify: true, type: hysteria2, password: 338b9800-fb4d-4934-8425-388f6d4342f5}
+- {name: 🇰🇭柬埔寨｜01, server: tw4.akebi.cc, port: 1001, sni: kh01.akebi.cc, up: 500,
+  down: 500, skip-cert-verify: false, type: hysteria2, password: 338b9800-fb4d-4934-8425-388f6d4342f5}
+- {name: 🇺🇦乌克兰｜01｜原生IP, server: tw4.akebi.cc, port: 1002, sni: ua01.akebi.cc, up: 500,
+  down: 500, skip-cert-verify: false, type: hysteria2, password: 338b9800-fb4d-4934-8425-388f6d4342f5}
+- {name: 🇮🇸冰岛｜01, server: tw3.akebi.cc, port: 2003, sni: is01.akebi.cc, up: 500, down: 500,
+  skip-cert-verify: false, type: hysteria2, password: 338b9800-fb4d-4934-8425-388f6d4342f5}
+- {name: 🇫🇷法国｜01｜原生IP, server: tw3.akebi.cc, port: 2005, sni: fr01.akebi.cc, up: 500,
+  down: 500, skip-cert-verify: false, type: hysteria2, password: 338b9800-fb4d-4934-8425-388f6d4342f5}
+- {name: 🇦🇺澳大利亚｜01｜原生IP, server: tw3.akebi.cc, port: 2006, sni: au01.akebi.cc, up: 500,
+  down: 500, skip-cert-verify: false, type: hysteria2, password: 338b9800-fb4d-4934-8425-388f6d4342f5}
 proxy-groups:
 - name: 🚀 节点选择
   type: select
@@ -3978,3 +3797,4 @@ rules:
 - IP-CIDR,101.199.196.0/22,🎯 全球直连,no-resolve
 - GEOIP,CN,🎯 全球直连
 - MATCH,🐟 漏网之鱼
+

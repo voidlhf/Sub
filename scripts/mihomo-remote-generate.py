@@ -1,98 +1,103 @@
-import os
-import yaml
 import requests
+import os
+import sys
 import argparse
 import re
+import ruamel.yaml
 
-def download_file(url, save_path):
-    headers = {
-        "User-Agent": "clash.meta"
-    }
+script_dir = os.path.dirname(os.path.abspath(sys.argv[0]))
+os.chdir(script_dir)
+
+
+def download_yaml(url):
+    headers = {"User-Agent": "clash.meta"}
     response = requests.get(url, headers=headers)
     response.raise_for_status()
+    return response.text
 
-    if not save_path:
-        raise ValueError("保存路径无效，请提供有效的文件路径")
 
-    save_dir = os.path.dirname(save_path) if os.path.dirname(save_path) else os.getcwd()
-    os.makedirs(save_dir, exist_ok=True)
+def preprocess_yaml(yaml_content):
+    content = re.sub(r"!\<str\>", "", yaml_content)
+    return content
 
-    with open(save_path, "wb") as file:
-        file.write(response.content)
 
-def preprocess_yaml(file_path):
-    """移除 YAML 文件中的 !<str> 标签"""
-    with open(file_path, "r", encoding="utf-8") as file:
-        content = file.read()
-    # 移除所有 "!<str>" 标签
-    content = re.sub(r"!\<str\>", "", content)
-    return yaml.safe_load(content)
+def extract_proxies(yaml_content):
+    yaml_content = preprocess_yaml(yaml_content)
+    yaml = ruamel.yaml.YAML(typ="rt")
+    data = yaml.load(yaml_content)
+    return data.get("proxies", [])
 
-def main():
-    script_dir = os.path.dirname(os.path.abspath(__file__))
-    os.chdir(script_dir)
 
-    parser = argparse.ArgumentParser(description="通过 URL 下载 YAML 文件并合并内容")
-    parser.add_argument("url", help="config.yaml 文件的 URL")
-    parser.add_argument("config_path", help="保存的 config.yaml 文件路径")
-    args = parser.parse_args()
+def load_config(config_path):
+    yaml = ruamel.yaml.YAML(typ="rt")
+    with open(config_path, "r", encoding="utf-8") as file:
+        return yaml.load(file)
 
-    file_url = args.url
-    config_path = args.config_path
 
-    general_path = os.path.join(script_dir, "mihomo-config/general.yaml")
-    proxy_groups_path = os.path.join(script_dir, "mihomo-config/proxy-groups.yaml")
-    rules_path = os.path.join(script_dir, "mihomo-config/rules.yaml")
+def insert_proxies_to_config(config_data, proxies):
+    proxy_groups_index = None
+    for idx, key in enumerate(config_data.keys()):
+        if key == "proxy-groups":
+            proxy_groups_index = idx
+            break
 
-    if not config_path:
-        print("提供的 config.yaml 文件路径无效。")
-        return
+    if proxy_groups_index is not None:
+        items = list(config_data.items())
+        items.insert(proxy_groups_index, ("proxies", proxies))
+        config_data.clear()
+        config_data.update(dict(items))
+    else:
+        config_data["proxies"] = proxies
+    return config_data
 
-    download_file(file_url, config_path)
 
-    data = preprocess_yaml(config_path)
-    general_data = preprocess_yaml(general_path)
-    proxy_groups_data = preprocess_yaml(proxy_groups_path)
-    rules_data = preprocess_yaml(rules_path)
+def insert_names_into_proxy_groups(config_data):
+    proxies = config_data.get("proxies", [])
+    proxy_groups = config_data.get("proxy-groups", [])
 
-    proxies_data = data.get("proxies", [])
-    proxy_names = [proxy.get("name") for proxy in proxies_data if "name" in proxy]
-
-    combined_data = {}
-    combined_data.update(general_data)
-    combined_data["proxies"] = proxies_data
-
-    proxy_groups = proxy_groups_data.get("proxy-groups", [])
-    excluded_names = {"🛑 全球拦截", "🍃 应用净化", "🎯 全球直连"}
+    proxy_names = [proxy.get("name") for proxy in proxies if "name" in proxy]
+    excluded_names = ["🎯 全球直连", "🛑 全球拦截", "🍃 应用净化"]
 
     for group in proxy_groups:
-        if group.get("name") in excluded_names:
-            continue
-        if "proxies" not in group or group["proxies"] is None:
-            group["proxies"] = []
-        group["proxies"].extend(proxy_names)
+        if "proxies" in group:
+            if group.get("name") not in excluded_names:
+                if not group["proxies"]:
+                    group["proxies"] = proxy_names
+                else:
+                    group["proxies"].extend(proxy_names)
 
-    combined_data["proxy-groups"] = proxy_groups
+    return config_data
 
-    if isinstance(rules_data, dict):
-        if "rules" in rules_data:
-            combined_data["rules"] = rules_data["rules"]
-    else:
-        raise ValueError("rules.yaml 的格式应为字典类型，且包含 rules 键")
 
-    os.makedirs(os.path.dirname(config_path) if os.path.dirname(config_path) else os.getcwd(), exist_ok=True)
+def save_result(config_data, result_path):
+    dir_name = os.path.dirname(result_path)
+    if dir_name:
+        os.makedirs(dir_name, exist_ok=True)
 
-    with open(config_path, "w", encoding="utf-8") as file:
-        yaml.dump(
-            combined_data,
-            file,
-            allow_unicode=True,
-            default_flow_style=False,
-            indent=2,
-            sort_keys=False
-        )
+    yaml = ruamel.yaml.YAML(typ="rt")
+    with open(result_path, "w", encoding="utf-8") as file:
+        yaml.dump(config_data, file)
 
-    print(f"文件已覆盖，内容已合并到 {config_path}。")
+
+def main(url, result_path):
+    yaml_content = download_yaml(url)
+    proxies = extract_proxies(yaml_content)
+
+    config_path = os.path.join("mihomo-config", "config.yaml")
+    config_data = load_config(config_path)
+
+    updated_config = insert_proxies_to_config(config_data, proxies)
+    updated_config = insert_names_into_proxy_groups(updated_config)
+
+    save_result(updated_config, result_path)
+    print(f"处理完成，结果已保存到 {result_path}")
+
 
 if __name__ == "__main__":
-    main()
+    parser = argparse.ArgumentParser(description="通过URL下载YAML文件并更新config.yaml")
+    parser.add_argument("url", help="需要下载的YAML文件URL")
+    parser.add_argument("result_path", help="保存结果的路径")
+    args = parser.parse_args()
+
+    main(args.url, args.result_path)
+

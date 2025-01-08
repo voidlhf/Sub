@@ -17,33 +17,12 @@ hosts:
   alt7-mtalk.google.com: 173.194.219.188
   alt8-mtalk.google.com: 142.250.112.188
 proxies:
-- name: 公益|俄罗斯|V2
-  type: vmess
-  server: 45.8.158.32
-  port: 14585
-  uuid: 398ce84e-4849-4e5f-9b1a-a56fbe233b81
-  alterId: 0
-  cipher: auto
-  udp: true
-  network: ws
-- name: 闪云.com 永久官网高速付费服务
-  type: vmess
-  server: 45.8.158.32
-  port: 13530
-  uuid: 398ce84e-4849-4e5f-9b1a-a56fbe233b81
-  alterId: 0
-  cipher: auto
-  udp: true
-  network: ws
-- name: 公益|英国|V2
-  type: vmess
-  server: 5.39.254.196
-  port: 23169
-  uuid: 398ce84e-4849-4e5f-9b1a-a56fbe233b81
-  alterId: 0
-  cipher: auto
-  udp: true
-  network: ws
+- {name: 公益|俄罗斯|V2, type: vmess, server: 45.8.158.32, port: 14585, uuid: 398ce84e-4849-4e5f-9b1a-a56fbe233b81,
+  alterId: 0, cipher: auto, udp: true, network: ws}
+- {name: 闪云.com 永久官网高速付费服务, type: vmess, server: 45.8.158.32, port: 13530, uuid: 398ce84e-4849-4e5f-9b1a-a56fbe233b81,
+  alterId: 0, cipher: auto, udp: true, network: ws}
+- {name: 公益|英国|V2, type: vmess, server: 5.39.254.196, port: 23169, uuid: 398ce84e-4849-4e5f-9b1a-a56fbe233b81,
+  alterId: 0, cipher: auto, udp: true, network: ws}
 proxy-groups:
 - name: 🚀 节点选择
   type: select
@@ -3587,3 +3566,4 @@ rules:
 - IP-CIDR,101.199.196.0/22,🎯 全球直连,no-resolve
 - GEOIP,CN,🎯 全球直连
 - MATCH,🐟 漏网之鱼
+

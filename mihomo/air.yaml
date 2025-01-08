@@ -17,54 +17,22 @@ hosts:
   alt7-mtalk.google.com: 173.194.219.188
   alt8-mtalk.google.com: 142.250.112.188
 proxies:
-- name: Netflix/Disney+/油管Premium/ChatGPT
-  server: hkdns.webcdn.me
-  port: 31900
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: 17995035-415e-422c-8527-6beb8899c054
-- name: 🇭🇰 香港 - 2x -VIP 限速試用
-  server: hk-try.webcdn.me
-  port: 55000
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: 17995035-415e-422c-8527-6beb8899c054
-- name: '🇺🇸 套餐购买访问: https://airapp.us'
-  server: kr-cdn.webcdn.me
-  port: 55400
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: 17995035-415e-422c-8527-6beb8899c054
-- name: 🇺🇸 US - ChatGPT | 流媒体
-  server: usvip.webcdn.me
-  port: 55001
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: 17995035-415e-422c-8527-6beb8899c054
-- name: 🇭🇰 HK - 1x
-  server: hk2.webcdn.me
-  port: 55900
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: 17995035-415e-422c-8527-6beb8899c054
-- name: 🇬🇧 UK
-  server: uk.webcdn.me
-  port: 37291
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: 17995035-415e-422c-8527-6beb8899c054
-- name: 🇸🇬 SG Netflix / Disney 流媒體
-  server: sg-cdn.appscdn.xyz
-  port: 30000
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: 17995035-415e-422c-8527-6beb8899c054
-- name: 🇬🇧 ChatGPT - GB
-  server: ukchat.appscdn.xyz
-  port: 32002
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: 17995035-415e-422c-8527-6beb8899c054
+- {name: Netflix/Disney+/油管Premium/ChatGPT, server: hkdns.webcdn.me, port: 31900,
+  type: ss, cipher: chacha20-ietf-poly1305, password: 17995035-415e-422c-8527-6beb8899c054}
+- {name: 🇭🇰 香港 - 2x -VIP 限速試用, server: hk-try.webcdn.me, port: 55000, type: ss, cipher: chacha20-ietf-poly1305,
+  password: 17995035-415e-422c-8527-6beb8899c054}
+- {name: '🇺🇸 套餐购买访问: https://airapp.us', server: kr-cdn.webcdn.me, port: 55400, type: ss,
+  cipher: chacha20-ietf-poly1305, password: 17995035-415e-422c-8527-6beb8899c054}
+- {name: 🇺🇸 US - ChatGPT | 流媒体, server: usvip.webcdn.me, port: 55001, type: ss, cipher: chacha20-ietf-poly1305,
+  password: 17995035-415e-422c-8527-6beb8899c054}
+- {name: 🇭🇰 HK - 1x, server: hk2.webcdn.me, port: 55900, type: ss, cipher: chacha20-ietf-poly1305,
+  password: 17995035-415e-422c-8527-6beb8899c054}
+- {name: 🇬🇧 UK, server: uk.webcdn.me, port: 37291, type: ss, cipher: chacha20-ietf-poly1305,
+  password: 17995035-415e-422c-8527-6beb8899c054}
+- {name: 🇸🇬 SG Netflix / Disney 流媒體, server: sg-cdn.appscdn.xyz, port: 30000, type: ss,
+  cipher: chacha20-ietf-poly1305, password: 17995035-415e-422c-8527-6beb8899c054}
+- {name: 🇬🇧 ChatGPT - GB, server: ukchat.appscdn.xyz, port: 32002, type: ss, cipher: chacha20-ietf-poly1305,
+  password: 17995035-415e-422c-8527-6beb8899c054}
 proxy-groups:
 - name: 🚀 节点选择
   type: select
@@ -3648,3 +3616,4 @@ rules:
 - IP-CIDR,101.199.196.0/22,🎯 全球直连,no-resolve
 - GEOIP,CN,🎯 全球直连
 - MATCH,🐟 漏网之鱼
+
