@@ -4,6 +4,8 @@ import sys
 import argparse
 import re
 import ruamel.yaml
+from ruamel.yaml.scalarstring import DoubleQuotedScalarString
+
 
 script_dir = os.path.dirname(os.path.abspath(sys.argv[0]))
 os.chdir(script_dir)
@@ -69,12 +71,25 @@ def insert_names_into_proxy_groups(config_data):
     return config_data
 
 
+def apply_quotes_to_strings(data):
+    if isinstance(data, dict):
+        for key, value in data.items():
+            data[key] = apply_quotes_to_strings(value)
+    elif isinstance(data, list):
+        return [apply_quotes_to_strings(item) for item in data]
+    elif isinstance(data, str):
+        return DoubleQuotedScalarString(data)
+    return data
+
+
 def save_result(config_data, result_path):
     dir_name = os.path.dirname(result_path)
     if dir_name:
         os.makedirs(dir_name, exist_ok=True)
 
     yaml = ruamel.yaml.YAML(typ="rt")
+    yaml.width = float("inf")
+    config_data = apply_quotes_to_strings(config_data)
     with open(result_path, "w", encoding="utf-8") as file:
         yaml.dump(config_data, file)
 
@@ -100,4 +115,3 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     main(args.url, args.result_path)
-
