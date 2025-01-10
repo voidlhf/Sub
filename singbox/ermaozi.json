@@ -1,0 +1,544 @@
+{
+  "log": {},
+  "dns": {
+    "servers": [
+      {
+        "tag": "dns_proxy",
+        "address": "https://8.8.8.8/dns-query",
+        "detour": "select"
+      },
+      {
+        "tag": "dns_direct",
+        "address": "https://223.5.5.5/dns-query",
+        "detour": "direct"
+      },
+      {
+        "tag": "dns_fakeip",
+        "address": "fakeip"
+      }
+    ],
+    "rules": [
+      {
+        "outbound": "any",
+        "server": "dns_direct"
+      },
+      {
+        "rule_set": [
+          "AdGuardSDNSFilter",
+          "chrome-doh"
+        ],
+        "action": "reject"
+      },
+      {
+        "query_type": [
+          "A",
+          "AAAA"
+        ],
+        "server": "dns_fakeip",
+        "rewrite_ttl": 1
+      },
+      {
+        "clash_mode": "Global",
+        "server": "dns_proxy"
+      },
+      {
+        "clash_mode": "Direct",
+        "server": "dns_direct"
+      },
+      {
+        "rule_set": "geosite-cn",
+        "server": "dns_direct"
+      }
+    ],
+    "strategy": "prefer_ipv4",
+    "independent_cache": true,
+    "fakeip": {
+      "enabled": true,
+      "inet4_range": "198.18.0.0/15",
+      "inet6_range": "fc00::/18"
+    }
+  },
+  "inbounds": [
+    {
+      "type": "tun",
+      "address": [
+        "172.18.0.1/30",
+        "fdfe:dcba:9876::1/126"
+      ],
+      "mtu": 9000,
+      "auto_route": true,
+      "strict_route": true,
+      "endpoint_independent_nat": true
+    },
+    {
+      "type": "socks",
+      "tag": "socks-in",
+      "listen": "127.0.0.1",
+      "listen_port": 2333,
+      "users": []
+    },
+    {
+      "type": "mixed",
+      "tag": "mixed-in",
+      "listen": "127.0.0.1",
+      "listen_port": 2334,
+      "users": []
+    }
+  ],
+  "outbounds": [
+    {
+      "password": "38571ca6-6692-4559-b901-0bc5826b7661",
+      "server": "ru0195.alibabaokz.com",
+      "server_port": 60194,
+      "tag": "🇨🇳_CN_中国->🇷🇺_RU_俄罗斯",
+      "tls": {
+        "enabled": true,
+        "server_name": "ru0195.alibabaokz.com",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "server": "151.101.3.8",
+      "server_port": 80,
+      "tag": "🇺🇸_US_美国",
+      "transport": {
+        "headers": {
+          "host": [
+            "khamenei-313.IR."
+          ]
+        },
+        "path": "/?ed=80/#id-telegram:--->@vpn_whal<---",
+        "type": "ws"
+      },
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "67650521-85de-4679-bf72-920a09781374"
+    },
+    {
+      "password": "fG2artUmHfNT2cX7",
+      "server": "217.30.10.18",
+      "server_port": 9018,
+      "tag": "🇷🇺_RU_俄罗斯",
+      "type": "shadowsocks",
+      "method": "aes-256-cfb",
+      "network": "tcp"
+    },
+    {
+      "password": "UkXRsXvR6buDMG2Y",
+      "server": "217.30.10.18",
+      "server_port": 9001,
+      "tag": "🇷🇺_RU_俄罗斯_1",
+      "type": "shadowsocks",
+      "method": "aes-256-cfb",
+      "network": "tcp"
+    },
+    {
+      "password": "telegram-id-directvpn",
+      "server": "3.97.111.195",
+      "server_port": 22222,
+      "tag": "🇺🇸_US_美国_1",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojan.burgerip.co.uk",
+        "alpn": [
+          "http/1.1"
+        ]
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "dongtaiwang.com",
+      "server": "185.22.155.228",
+      "server_port": 23456,
+      "tag": "🇷🇺_RU_俄罗斯_2",
+      "type": "shadowsocks",
+      "method": "aes-256-gcm",
+      "network": "tcp"
+    },
+    {
+      "password": "TPqX8edgbAURcAMb",
+      "server": "217.30.10.18",
+      "server_port": 9079,
+      "tag": "🇷🇺_RU_俄罗斯_3",
+      "type": "shadowsocks",
+      "method": "aes-256-cfb",
+      "network": "tcp"
+    },
+    {
+      "server": "92.242.220.22",
+      "server_port": 37885,
+      "tag": "🇮🇷_IR_伊朗->🇺🇸_US_美国",
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "8dee19ab-50ce-4d06-be42-5e53c8989ccc"
+    },
+    {
+      "password": "BwcAUZk8hUFAkDGN",
+      "server": "217.30.10.18",
+      "server_port": 9031,
+      "tag": "🇷🇺_RU_俄罗斯_4",
+      "type": "shadowsocks",
+      "method": "aes-256-cfb",
+      "network": "tcp"
+    },
+    {
+      "password": "3723507166611775488",
+      "server": "195.133.93.63",
+      "server_port": 443,
+      "tag": "🇷🇺_RU_俄罗斯->🇩🇪_DE_德国",
+      "tls": {
+        "enabled": true,
+        "server_name": "correct-redbird.boa152.lol",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "server": "183.236.51.23",
+      "server_port": 52112,
+      "tag": "🇨🇳_CN_中国->🇺🇸_US_美国",
+      "type": "vmess",
+      "alter_id": 64,
+      "security": "auto",
+      "uuid": "418048af-a293-4b99-9b0c-98ca3580dd24"
+    },
+    {
+      "password": "U6qnYRhfyDmn8sgn",
+      "server": "217.30.10.18",
+      "server_port": 9041,
+      "tag": "🇷🇺_RU_俄罗斯_5",
+      "type": "shadowsocks",
+      "method": "aes-256-cfb",
+      "network": "tcp"
+    },
+    {
+      "password": "TEzjfAYq2IjtuoS",
+      "server": "69.50.95.203",
+      "server_port": 6679,
+      "tag": "🇺🇸_US_美国_2",
+      "type": "shadowsocks",
+      "method": "aes-256-gcm",
+      "network": "tcp"
+    },
+    {
+      "password": "auPD89z7JneRsFA228YwFMrhGKAmG30Atq6HbZY4Ka8=",
+      "server": "46.202.130.110",
+      "server_port": 49693,
+      "tag": "🇺🇦_UA_乌克兰",
+      "type": "shadowsocks",
+      "method": "aes-256-gcm",
+      "network": "tcp"
+    },
+    {
+      "password": "c4843eba-b070-403f-b43f-ef1ef7db571e",
+      "server": "jp.lydurlclub.top",
+      "server_port": 443,
+      "tag": "🇺🇸_US_美国_3",
+      "tls": {
+        "enabled": true,
+        "server_name": "jp.lydurlclub.top"
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "M3t2ZEQcMGRWBjRa",
+      "server": "217.30.10.18",
+      "server_port": 9011,
+      "tag": "🇷🇺_RU_俄罗斯_6",
+      "type": "shadowsocks",
+      "method": "aes-256-cfb",
+      "network": "tcp"
+    },
+    {
+      "password": "UTJA57ypk2XKQpnm",
+      "server": "217.30.10.18",
+      "server_port": 9033,
+      "tag": "🇷🇺_RU_俄罗斯_7",
+      "type": "shadowsocks",
+      "method": "aes-256-cfb",
+      "network": "tcp"
+    },
+    {
+      "password": "FAdUvMJUq5vDgKEq",
+      "server": "217.30.10.18",
+      "server_port": 9006,
+      "tag": "🇷🇺_RU_俄罗斯_8",
+      "type": "shadowsocks",
+      "method": "aes-256-cfb",
+      "network": "tcp"
+    },
+    {
+      "password": "f8f7aCzcPKbsF8p3",
+      "server": "37.143.129.230",
+      "server_port": 989,
+      "tag": "🇮🇹_IT_意大利",
+      "type": "shadowsocks",
+      "method": "aes-256-cfb",
+      "network": "tcp"
+    },
+    {
+      "password": "telegram-id-privatevpns",
+      "server": "52.47.166.211",
+      "server_port": 22222,
+      "tag": "🇫🇷_FR_法国->🇷🇺_RU_俄罗斯",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojan.burgerip.co.uk",
+        "alpn": [
+          "http/1.1"
+        ]
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "zUQvFioae7KzAZ2GCMgNum",
+      "server": "83.147.216.173",
+      "server_port": 9848,
+      "tag": "🇮🇷_IR_伊朗",
+      "type": "shadowsocks",
+      "method": "chacha20-ietf-poly1305",
+      "network": "tcp"
+    },
+    {
+      "password": "EXN3S3eQpjE7EJu8",
+      "server": "217.30.10.18",
+      "server_port": 9027,
+      "tag": "🇷🇺_RU_俄罗斯_9",
+      "type": "shadowsocks",
+      "method": "aes-256-cfb",
+      "network": "tcp"
+    },
+    {
+      "server": "cm1.awslcn.info",
+      "server_port": 25230,
+      "tag": "🇨🇳_CN_中国->🇷🇺_RU_俄罗斯_1",
+      "transport": {
+        "headers": {
+          "host": [
+            "cm1.awslcn.info"
+          ]
+        },
+        "path": "/",
+        "type": "ws"
+      },
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "243eab52-9ac1-405c-887c-eb112c0985b8"
+    },
+    {
+      "password": "cp8pRSUAyLhTfVWH",
+      "server": "217.30.10.18",
+      "server_port": 9064,
+      "tag": "🇷🇺_RU_俄罗斯_10",
+      "type": "shadowsocks",
+      "method": "aes-256-cfb",
+      "network": "tcp"
+    },
+    {
+      "password": "f8npKgNzdkss2ytn",
+      "server": "217.30.10.18",
+      "server_port": 9088,
+      "tag": "🇷🇺_RU_俄罗斯_11",
+      "type": "shadowsocks",
+      "method": "aes-256-cfb",
+      "network": "tcp"
+    },
+    {
+      "tag": "select",
+      "type": "selector",
+      "default": "urltest",
+      "outbounds": [
+        "urltest",
+        "🇨🇳_CN_中国->🇷🇺_RU_俄罗斯",
+        "🇺🇸_US_美国",
+        "🇷🇺_RU_俄罗斯",
+        "🇷🇺_RU_俄罗斯_1",
+        "🇺🇸_US_美国_1",
+        "🇷🇺_RU_俄罗斯_2",
+        "🇷🇺_RU_俄罗斯_3",
+        "🇮🇷_IR_伊朗->🇺🇸_US_美国",
+        "🇷🇺_RU_俄罗斯_4",
+        "🇷🇺_RU_俄罗斯->🇩🇪_DE_德国",
+        "🇨🇳_CN_中国->🇺🇸_US_美国",
+        "🇷🇺_RU_俄罗斯_5",
+        "🇺🇸_US_美国_2",
+        "🇺🇦_UA_乌克兰",
+        "🇺🇸_US_美国_3",
+        "🇷🇺_RU_俄罗斯_6",
+        "🇷🇺_RU_俄罗斯_7",
+        "🇷🇺_RU_俄罗斯_8",
+        "🇮🇹_IT_意大利",
+        "🇫🇷_FR_法国->🇷🇺_RU_俄罗斯",
+        "🇮🇷_IR_伊朗",
+        "🇷🇺_RU_俄罗斯_9",
+        "🇨🇳_CN_中国->🇷🇺_RU_俄罗斯_1",
+        "🇷🇺_RU_俄罗斯_10",
+        "🇷🇺_RU_俄罗斯_11"
+      ]
+    },
+    {
+      "tag": "urltest",
+      "type": "urltest",
+      "outbounds": [
+        "🇨🇳_CN_中国->🇷🇺_RU_俄罗斯",
+        "🇺🇸_US_美国",
+        "🇷🇺_RU_俄罗斯",
+        "🇷🇺_RU_俄罗斯_1",
+        "🇺🇸_US_美国_1",
+        "🇷🇺_RU_俄罗斯_2",
+        "🇷🇺_RU_俄罗斯_3",
+        "🇮🇷_IR_伊朗->🇺🇸_US_美国",
+        "🇷🇺_RU_俄罗斯_4",
+        "🇷🇺_RU_俄罗斯->🇩🇪_DE_德国",
+        "🇨🇳_CN_中国->🇺🇸_US_美国",
+        "🇷🇺_RU_俄罗斯_5",
+        "🇺🇸_US_美国_2",
+        "🇺🇦_UA_乌克兰",
+        "🇺🇸_US_美国_3",
+        "🇷🇺_RU_俄罗斯_6",
+        "🇷🇺_RU_俄罗斯_7",
+        "🇷🇺_RU_俄罗斯_8",
+        "🇮🇹_IT_意大利",
+        "🇫🇷_FR_法国->🇷🇺_RU_俄罗斯",
+        "🇮🇷_IR_伊朗",
+        "🇷🇺_RU_俄罗斯_9",
+        "🇨🇳_CN_中国->🇷🇺_RU_俄罗斯_1",
+        "🇷🇺_RU_俄罗斯_10",
+        "🇷🇺_RU_俄罗斯_11"
+      ]
+    },
+    {
+      "tag": "chatgpt",
+      "type": "selector",
+      "outbounds": [
+        "🇨🇳_CN_中国->🇷🇺_RU_俄罗斯",
+        "🇺🇸_US_美国",
+        "🇷🇺_RU_俄罗斯",
+        "🇷🇺_RU_俄罗斯_1",
+        "🇺🇸_US_美国_1",
+        "🇷🇺_RU_俄罗斯_2",
+        "🇷🇺_RU_俄罗斯_3",
+        "🇮🇷_IR_伊朗->🇺🇸_US_美国",
+        "🇷🇺_RU_俄罗斯_4",
+        "🇷🇺_RU_俄罗斯->🇩🇪_DE_德国",
+        "🇨🇳_CN_中国->🇺🇸_US_美国",
+        "🇷🇺_RU_俄罗斯_5",
+        "🇺🇸_US_美国_2",
+        "🇺🇦_UA_乌克兰",
+        "🇺🇸_US_美国_3",
+        "🇷🇺_RU_俄罗斯_6",
+        "🇷🇺_RU_俄罗斯_7",
+        "🇷🇺_RU_俄罗斯_8",
+        "🇮🇹_IT_意大利",
+        "🇫🇷_FR_法国->🇷🇺_RU_俄罗斯",
+        "🇮🇷_IR_伊朗",
+        "🇷🇺_RU_俄罗斯_9",
+        "🇨🇳_CN_中国->🇷🇺_RU_俄罗斯_1",
+        "🇷🇺_RU_俄罗斯_10",
+        "🇷🇺_RU_俄罗斯_11"
+      ]
+    },
+    {
+      "tag": "direct",
+      "type": "direct"
+    }
+  ],
+  "route": {
+    "rule_set": [
+      {
+        "tag": "geoip-cn",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/SagerNet/sing-geoip/rule-set/geoip-cn.srs"
+      },
+      {
+        "tag": "geosite-cn",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/xmdhs/sing-geosite/rule-set-Loyalsoldier/geosite-geolocation-cn.srs"
+      },
+      {
+        "tag": "AdGuardSDNSFilter",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/xmdhs/sing-box-ruleset/rule-set/AdGuardSDNSFilter.srs"
+      },
+      {
+        "tag": "chrome-doh",
+        "type": "remote",
+        "format": "source",
+        "url": "https://gist.githubusercontent.com/xmdhs/71fc5ff6ef29f5ecaf2c52b8de5c3172/raw/chrome-doh.json"
+      }
+    ],
+    "rules": [
+      {
+        "action": "sniff"
+      },
+      {
+        "protocol": "dns",
+        "action": "hijack-dns"
+      },
+      {
+        "action": "resolve",
+        "strategy": "prefer_ipv4"
+      },
+      {
+        "clash_mode": "Direct",
+        "outbound": "direct"
+      },
+      {
+        "clash_mode": "Global",
+        "outbound": "select"
+      },
+      {
+        "ip_is_private": true,
+        "outbound": "direct"
+      },
+      {
+        "package_name": [
+          "com.openai.chatgpt"
+        ],
+        "outbound": "chatgpt"
+      },
+      {
+        "domain_suffix": [
+          "proactivebackend-pa.googleapis.com",
+          "bing.com",
+          "bing.net",
+          "bingapis.com"
+        ],
+        "outbound": "chatgpt"
+      },
+      {
+        "domain_suffix": [
+          "ushd.xmsl.org",
+          "cf.gtlx.org"
+        ],
+        "outbound": "direct"
+      },
+      {
+        "port": [
+          23301,
+          22101,
+          22102,
+          20501
+        ],
+        "outbound": "direct"
+      },
+      {
+        "rule_set": "geoip-cn",
+        "outbound": "direct"
+      }
+    ],
+    "auto_detect_interface": true
+  },
+  "experimental": {
+    "cache_file": {
+      "enabled": true
+    },
+    "clash_api": {
+      "external_controller": "127.0.0.1:9090"
+    }
+  }
+}

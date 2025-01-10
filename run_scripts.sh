@@ -1,30 +1,34 @@
 #!/bin/bash
 
-# mihomo
-python scripts/mihomo-remote-generate.py "https://suo.st/d2Y76gj" ../mihomo/air.yaml
-python scripts/mihomo-remote-generate.py "https://sublinks.52cloud.eu.org/api/v1/client/subscribe?token=b26fe554f300d7c9573d858c11b50a0b" ../mihomo/bzy.yaml
-python scripts/mihomo-remote-generate.py "https://trojans.trevely.us.kg/Trevely" ../mihomo/trevely.yaml
-python scripts/mihomo-remote-generate.py "https://ly.ccwink.cc/api/v1/client/subscribe?token=c2bc3bc950ec1e5d22bc9f45716a28a2" ../mihomo/ly.yaml
-python scripts/mihomo-remote-generate.py "https://aini.200566.xyz/tzjz55/download/collection/love?target=ClashMeta" ../mihomo/tk1.yaml
-python scripts/mihomo-remote-generate.py "https://aini.200566.xyz/tzjz55/download/collection/tzjz66?target=ClashMeta" ../mihomo/tk2.yaml
-python scripts/mihomo-remote-generate.py "http://flynb.site/sub?token=oLKUUBC7cJPmouRzlnw2bg&tag=clash" ../mihomo/flynb.yaml
-python scripts/mihomo-remote-generate.py "https://aini.200566.xyz/tzjz55/download/xinniankuaile?target=ClashMeta" ../mihomo/xnkl.yaml
-python scripts/mihomo-remote-generate.py "https://aini.200566.xyz/tzjz55/download/beiyongjiedian" ../mihomo/byjd.yaml
-python scripts/mihomo-remote-generate.py "https://raw.githubusercontent.com/ripaojiedian/freenode/main/clash" ../mihomo/ripao.yaml
-python scripts/mihomo-remote-generate.py "https://raw.githubusercontent.com/go4sharing/sub/main/sub.yaml" ../mihomo/go4sharing.yaml
-python scripts/mihomo-remote-generate.py "https://raw.githubusercontent.com/zhangkaiitugithub/passcro/main/speednodes.yaml" ../mihomo/speednodes.yaml
-python scripts/mihomo-remote-generate.py "https://raw.githubusercontent.com/dongchengjie/airport/main/subs/merged/tested_within.yaml" ../mihomo/dcj.yaml
-python scripts/mihomo-remote-generate.py "https://qq.xlm.plus/api/v1/client/subscribe?token=9e5db95336ab586ac6c4e2306c4d25a9" ../mihomo/shanyun.yaml
+generate_mihomo() {
+    local url=$1
+    local output=$2
+    python scripts/mihomo-remote-generate.py "$url" "$output"
+}
 
-# singbox
-python scripts/singbox-remote-generate.py "https://clash2sfa.xmdhs.com/sub?sub=https://suo.st/d2Y76gj" ../singbox/air.json
-python scripts/singbox-remote-generate.py "https://clash2sfa.xmdhs.com/sub?sub=https://ly.ccwink.cc/api/v1/client/subscribe?token=c2bc3bc950ec1e5d22bc9f45716a28a2" ../singbox/ly.json
-python scripts/singbox-remote-generate.py "https://clash2sfa.xmdhs.com/sub?sub=https://raw.githubusercontent.com/ripaojiedian/freenode/main/clash" ../singbox/ripao.json
-python scripts/singbox-remote-generate.py "https://clash2sfa.xmdhs.com/sub?sub=https://raw.githubusercontent.com/go4sharing/sub/main/sub.yaml" ../singbox/go4sharing.json
-python scripts/singbox-remote-generate.py "https://clash2sfa.xmdhs.com/sub?sub=https://raw.githubusercontent.com/zhangkaiitugithub/passcro/main/speednodes.yaml" ../singbox/speednodes.json
-python scripts/singbox-remote-generate.py "https://clash2sfa.xmdhs.com/sub?sub=https://aini.200566.xyz/tzjz55/download/collection/love?target=ClashMeta" ../singbox/tk1.json
-python scripts/singbox-remote-generate.py "https://clash2sfa.xmdhs.com/sub?sub=https://aini.200566.xyz/tzjz55/download/collection/tzjz66?target=ClashMeta" ../singbox/tk2.json
-python scripts/singbox-remote-generate.py "https://clash2sfa.xmdhs.com/sub?sub=https://aini.200566.xyz/tzjz55/download/xinniankuaile?target=ClashMeta" ../singbox/xnkl.json
-python scripts/singbox-remote-generate.py "https://clash2sfa.xmdhs.com/sub?sub=https://aini.200566.xyz/tzjz55/download/beiyongjiedian" ../singbox/byjd.json
-python scripts/singbox-remote-generate.py "https://clash2sfa.xmdhs.com/sub?sub=https://raw.githubusercontent.com/dongchengjie/airport/main/subs/merged/tested_within.yaml" ../singbox/dcj.json
-python scripts/singbox-remote-generate.py "https://clash2sfa.xmdhs.com/sub?sub=https://qq.xlm.plus/api/v1/client/subscribe?token=9e5db95336ab586ac6c4e2306c4d25a9" ../singbox/shanyun.json
+generate_singbox() {
+    local url=$1
+    local output=$2
+    local prefix="https://clash2sfa.xmdhs.com/sub?sub="
+    python scripts/singbox-remote-generate.py "${prefix}${url}" "$output"
+}
+
+process_json() {
+    local json_file=$1
+    local output_dir=$2
+    local mode=$3
+
+    jq -c '.[]' "$json_file" | while read -r entry; do
+        name=$(echo "$entry" | jq -r '.name')
+        url=$(echo "$entry" | jq -r '.url')
+        
+        if [ "$mode" == "mihomo" ]; then
+            generate_mihomo "$url" "$output_dir/$name.yaml"
+        elif [ "$mode" == "singbox" ]; then
+            generate_singbox "$url" "$output_dir/$name.json"
+        fi
+    done
+}
+
+process_json "sub.json" "../mihomo" "mihomo"
+process_json "sub.json" "../singbox" "singbox"
