@@ -27,4 +27,4 @@ python scripts/singbox-remote-generate.py "https://clash2sfa.xmdhs.com/sub?sub=h
 python scripts/singbox-remote-generate.py "https://clash2sfa.xmdhs.com/sub?sub=https://aini.200566.xyz/tzjz55/download/xinniankuaile?target=ClashMeta" ../singbox/xnkl.json
 python scripts/singbox-remote-generate.py "https://clash2sfa.xmdhs.com/sub?sub=https://aini.200566.xyz/tzjz55/download/beiyongjiedian" ../singbox/byjd.json
 python scripts/singbox-remote-generate.py "https://clash2sfa.xmdhs.com/sub?sub=https://raw.githubusercontent.com/dongchengjie/airport/main/subs/merged/tested_within.yaml" ../singbox/dcj.json
-
+python scripts/singbox-remote-generate.py "https://clash2sfa.xmdhs.com/sub?sub=https://qq.xlm.plus/api/v1/client/subscribe?token=9e5db95336ab586ac6c4e2306c4d25a9" ../singbox/shanyun.json
