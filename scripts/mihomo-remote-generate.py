@@ -6,7 +6,6 @@ import re
 import ruamel.yaml
 from ruamel.yaml.scalarstring import DoubleQuotedScalarString
 
-
 script_dir = os.path.dirname(os.path.abspath(sys.argv[0]))
 os.chdir(script_dir)
 
@@ -27,7 +26,19 @@ def extract_proxies(yaml_content):
     yaml_content = preprocess_yaml(yaml_content)
     yaml = ruamel.yaml.YAML(typ="rt")
     data = yaml.load(yaml_content)
-    return data.get("proxies", [])
+    proxies = data.get("proxies", [])
+
+    name_count = {}
+    for proxy in proxies:
+        if "name" in proxy:
+            name = proxy["name"]
+            if name in name_count:
+                name_count[name] += 1
+                proxy["name"] = f"{name}_{name_count[name]}"
+            else:
+                name_count[name] = 0
+
+    return proxies
 
 
 def load_config(config_path):
