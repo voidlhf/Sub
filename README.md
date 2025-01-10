@@ -9,6 +9,6 @@ bash run_scripts.sh
 #### arch
 ```shell
 pacman -Syu
-pacman -Sy jq python-requests python-ruamel-yaml
+pacman -S jq python-requests python-ruamel-yaml
 bash run_scripts.sh
 ```
