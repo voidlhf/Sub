@@ -1,0 +1,1628 @@
+{
+  "log": {},
+  "dns": {
+    "servers": [
+      {
+        "tag": "dns_proxy",
+        "address": "https://8.8.8.8/dns-query",
+        "detour": "select"
+      },
+      {
+        "tag": "dns_direct",
+        "address": "https://223.5.5.5/dns-query",
+        "detour": "direct"
+      },
+      {
+        "tag": "dns_fakeip",
+        "address": "fakeip"
+      }
+    ],
+    "rules": [
+      {
+        "outbound": "any",
+        "server": "dns_direct"
+      },
+      {
+        "rule_set": [
+          "AdGuardSDNSFilter",
+          "chrome-doh"
+        ],
+        "action": "reject",
+        "method": "default"
+      },
+      {
+        "query_type": [
+          "A",
+          "AAAA"
+        ],
+        "server": "dns_fakeip",
+        "rewrite_ttl": 1
+      },
+      {
+        "clash_mode": "Global",
+        "server": "dns_proxy"
+      },
+      {
+        "clash_mode": "Direct",
+        "server": "dns_direct"
+      },
+      {
+        "rule_set": "geosite-cn",
+        "server": "dns_direct"
+      }
+    ],
+    "fakeip": {
+      "enabled": true,
+      "inet4_range": "198.18.0.0/15",
+      "inet6_range": "fc00::/18"
+    },
+    "strategy": "prefer_ipv4",
+    "independent_cache": true
+  },
+  "inbounds": [
+    {
+      "type": "tun",
+      "mtu": 9000,
+      "address": [
+        "172.18.0.1/30",
+        "fdfe:dcba:9876::1/126"
+      ],
+      "auto_route": true,
+      "strict_route": true,
+      "endpoint_independent_nat": true
+    },
+    {
+      "type": "socks",
+      "tag": "socks-in",
+      "listen": "127.0.0.1",
+      "listen_port": 2333
+    },
+    {
+      "type": "mixed",
+      "tag": "mixed-in",
+      "listen": "127.0.0.1",
+      "listen_port": 2334
+    }
+  ],
+  "outbounds": [
+    {
+      "password": "4f8546a0-e907-40be-aeea-d8648f828099",
+      "server": "best.networklinkpro.net",
+      "server_port": 24704,
+      "tag": "🌏自动最优(hy2)-网址vp0.org",
+      "tls": {
+        "enabled": true,
+        "server_name": "best.networklinkpro.net",
+        "insecure": true
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "4f8546a0-e907-40be-aeea-d8648f828099",
+      "server": "5us.networklinkpro.net",
+      "server_port": 24465,
+      "tag": "🇺🇸5美国波特兰-全网优化(hy2)",
+      "tls": {
+        "enabled": true,
+        "server_name": "5us.networklinkpro.net",
+        "insecure": true
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "4f8546a0-e907-40be-aeea-d8648f828099",
+      "server": "6us.networklinkpro.net",
+      "server_port": 24492,
+      "tag": "🇺🇸6美国圣何塞集群-全网优化(hy2)",
+      "tls": {
+        "enabled": true,
+        "server_name": "6us.networklinkpro.net",
+        "insecure": true
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "4f8546a0-e907-40be-aeea-d8648f828099",
+      "server": "16us.networklinkpro.net",
+      "server_port": 21578,
+      "tag": "🇺🇸16美国凤凰城集群-联通优化(hy2)",
+      "tls": {
+        "enabled": true,
+        "server_name": "16us.networklinkpro.net",
+        "insecure": true
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "4f8546a0-e907-40be-aeea-d8648f828099",
+      "server": "28us.networklinkpro.net",
+      "server_port": 24248,
+      "tag": "🇺🇸28美国东部-全网优化(hy2)",
+      "tls": {
+        "enabled": true,
+        "server_name": "28us.networklinkpro.net",
+        "insecure": true
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "4f8546a0-e907-40be-aeea-d8648f828099",
+      "server": "38us.networklinkpro.net",
+      "server_port": 23570,
+      "tag": "🇺🇸38美国洛杉矶-全网优化(hy2)",
+      "tls": {
+        "enabled": true,
+        "server_name": "38us.networklinkpro.net",
+        "insecure": true
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "4f8546a0-e907-40be-aeea-d8648f828099",
+      "server": "7kr.networklinkpro.net",
+      "server_port": 24009,
+      "tag": "🇰🇷7韩国春川集群-联通/移动(hy2)",
+      "tls": {
+        "enabled": true,
+        "server_name": "7kr.networklinkpro.net",
+        "insecure": true
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "4f8546a0-e907-40be-aeea-d8648f828099",
+      "server": "8kr.networklinkpro.net",
+      "server_port": 25274,
+      "tag": "🇰🇷8韩国首尔-全网优化(hy2)",
+      "tls": {
+        "enabled": true,
+        "server_name": "8kr.networklinkpro.net",
+        "insecure": true
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "4f8546a0-e907-40be-aeea-d8648f828099",
+      "server": "35kr.networklinkpro.net",
+      "server_port": 24679,
+      "tag": "🇰🇷35韩国首尔集群-电信/联通(hy2)",
+      "tls": {
+        "enabled": true,
+        "server_name": "35kr.networklinkpro.net",
+        "insecure": true
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "4f8546a0-e907-40be-aeea-d8648f828099",
+      "server": "10uae.networklinkpro.net",
+      "server_port": 23317,
+      "tag": "🇦🇪10阿联酋集群-电信/移动(hy2)",
+      "tls": {
+        "enabled": true,
+        "server_name": "10uae.networklinkpro.net",
+        "insecure": true
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "4f8546a0-e907-40be-aeea-d8648f828099",
+      "server": "11de.networklinkpro.net",
+      "server_port": 23908,
+      "tag": "🇩🇪11德国-全网优化(hy2)",
+      "tls": {
+        "enabled": true,
+        "server_name": "11de.networklinkpro.net",
+        "insecure": true
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "4f8546a0-e907-40be-aeea-d8648f828099",
+      "server": "12uk.networklinkpro.net",
+      "server_port": 22312,
+      "tag": "🇬🇧12英国-全网优化(hy2)",
+      "tls": {
+        "enabled": true,
+        "server_name": "12uk.networklinkpro.net",
+        "insecure": true
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "4f8546a0-e907-40be-aeea-d8648f828099",
+      "server": "13in.networklinkpro.net",
+      "server_port": 22292,
+      "tag": "🇮🇳13印度孟买-电信/联通(hy2)",
+      "tls": {
+        "enabled": true,
+        "server_name": "13in.networklinkpro.net",
+        "insecure": true
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "4f8546a0-e907-40be-aeea-d8648f828099",
+      "server": "14sg.networklinkpro.net",
+      "server_port": 25806,
+      "tag": "🇸🇬14新加坡集群-全网优化(hy2)",
+      "tls": {
+        "enabled": true,
+        "server_name": "14sg.networklinkpro.net",
+        "insecure": true
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "4f8546a0-e907-40be-aeea-d8648f828099",
+      "server": "15sg.networklinkpro.net",
+      "server_port": 23220,
+      "tag": "🇸🇬15新加坡集群-联通/移动(hy2)",
+      "tls": {
+        "enabled": true,
+        "server_name": "15sg.networklinkpro.net",
+        "insecure": true
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "4f8546a0-e907-40be-aeea-d8648f828099",
+      "server": "17ru.networklinkpro.net",
+      "server_port": 24433,
+      "tag": "🇷🇺17俄罗斯-电信/联通(hy2)",
+      "tls": {
+        "enabled": true,
+        "server_name": "17ru.networklinkpro.net",
+        "insecure": true
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "4f8546a0-e907-40be-aeea-d8648f828099",
+      "server": "9jp.networklinkpro.net",
+      "server_port": 22380,
+      "tag": "🇯🇵9日本大版集群-电信/移动(hy2)",
+      "tls": {
+        "enabled": true,
+        "server_name": "9jp.networklinkpro.net",
+        "insecure": true
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "4f8546a0-e907-40be-aeea-d8648f828099",
+      "server": "18jp.networklinkpro.net",
+      "server_port": 21337,
+      "tag": "🇯🇵18日本东京集群-联通/移动(hy2)",
+      "tls": {
+        "enabled": true,
+        "server_name": "18jp.networklinkpro.net",
+        "insecure": true
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "4f8546a0-e907-40be-aeea-d8648f828099",
+      "server": "19jp.networklinkpro.net",
+      "server_port": 24458,
+      "tag": "🇯🇵19日本东京-联通/移动(hy2)",
+      "tls": {
+        "enabled": true,
+        "server_name": "19jp.networklinkpro.net",
+        "insecure": true
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "4f8546a0-e907-40be-aeea-d8648f828099",
+      "server": "20au.networklinkpro.net",
+      "server_port": 25320,
+      "tag": "🇦🇺20澳洲-电信/移动(hy2)",
+      "tls": {
+        "enabled": true,
+        "server_name": "20au.networklinkpro.net",
+        "insecure": true
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "4f8546a0-e907-40be-aeea-d8648f828099",
+      "server": "22br.networklinkpro.net",
+      "server_port": 25489,
+      "tag": "🇧🇷22巴西-联通/移动(hy2)",
+      "tls": {
+        "enabled": true,
+        "server_name": "22br.networklinkpro.net",
+        "insecure": true
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "4f8546a0-e907-40be-aeea-d8648f828099",
+      "server": "23il.networklinkpro.net",
+      "server_port": 23333,
+      "tag": "🇮🇱23以色列-联通/移动(hy2)",
+      "tls": {
+        "enabled": true,
+        "server_name": "23il.networklinkpro.net",
+        "insecure": true
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "4f8546a0-e907-40be-aeea-d8648f828099",
+      "server": "24tr.networklinkpro.net",
+      "server_port": 22997,
+      "tag": "🇹🇷24土耳其-电信/联通(hy2)",
+      "tls": {
+        "enabled": true,
+        "server_name": "24tr.networklinkpro.net",
+        "insecure": true
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "4f8546a0-e907-40be-aeea-d8648f828099",
+      "server": "26nl.networklinkpro.net",
+      "server_port": 24306,
+      "tag": "🇳🇱26荷兰-全网优化(hy2)",
+      "tls": {
+        "enabled": true,
+        "server_name": "26nl.networklinkpro.net",
+        "insecure": true
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "4f8546a0-e907-40be-aeea-d8648f828099",
+      "server": "27fr.networklinkpro.net",
+      "server_port": 21199,
+      "tag": "🇫🇷27法国-全网优化(hy2)",
+      "tls": {
+        "enabled": true,
+        "server_name": "27fr.networklinkpro.net",
+        "insecure": true
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "4f8546a0-e907-40be-aeea-d8648f828099",
+      "server": "29chi.networklinkpro.net",
+      "server_port": 25077,
+      "tag": "🇨🇱29智利-全网优化(hy2)",
+      "tls": {
+        "enabled": true,
+        "server_name": "29chi.networklinkpro.net",
+        "insecure": true
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "4f8546a0-e907-40be-aeea-d8648f828099",
+      "server": "30it.networklinkpro.net",
+      "server_port": 22061,
+      "tag": "🇮🇹30意大利-全网优化(hy2)",
+      "tls": {
+        "enabled": true,
+        "server_name": "30it.networklinkpro.net",
+        "insecure": true
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "4f8546a0-e907-40be-aeea-d8648f828099",
+      "server": "31se.networklinkpro.net",
+      "server_port": 21579,
+      "tag": "🇸🇪31瑞典-电信/移动(hy2)",
+      "tls": {
+        "enabled": true,
+        "server_name": "31se.networklinkpro.net",
+        "insecure": true
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "4f8546a0-e907-40be-aeea-d8648f828099",
+      "server": "32za.networklinkpro.net",
+      "server_port": 23798,
+      "tag": "🇿🇦32南非-约翰内斯堡(hy2)",
+      "tls": {
+        "enabled": true,
+        "server_name": "32za.networklinkpro.net",
+        "insecure": true
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "4f8546a0-e907-40be-aeea-d8648f828099",
+      "server": "33ca.networklinkpro.net",
+      "server_port": 25033,
+      "tag": "🇨🇦33加拿大-全网优化(hy2)",
+      "tls": {
+        "enabled": true,
+        "server_name": "33ca.networklinkpro.net",
+        "insecure": true
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "4f8546a0-e907-40be-aeea-d8648f828099",
+      "server": "34ch.networklinkpro.net",
+      "server_port": 25433,
+      "tag": "🇨🇭34瑞士-全网优化(hy2)",
+      "tls": {
+        "enabled": true,
+        "server_name": "34ch.networklinkpro.net",
+        "insecure": true
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "4f8546a0-e907-40be-aeea-d8648f828099",
+      "server": "36es.networklinkpro.net",
+      "server_port": 21849,
+      "tag": "🇪🇸36西班牙-电信/联通(hy2)",
+      "tls": {
+        "enabled": true,
+        "server_name": "36es.networklinkpro.net",
+        "insecure": true
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "4f8546a0-e907-40be-aeea-d8648f828099",
+      "server": "37mx.networklinkpro.net",
+      "server_port": 25177,
+      "tag": "🇲🇽37墨西哥-电信/联通(hy2)",
+      "tls": {
+        "enabled": true,
+        "server_name": "37mx.networklinkpro.net",
+        "insecure": true
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "4f8546a0-e907-40be-aeea-d8648f828099",
+      "server": "1hk.networklinkpro.net",
+      "server_port": 21386,
+      "tag": "🇭🇰1香港集群-电信/联通(hy2)(限速30M)",
+      "tls": {
+        "enabled": true,
+        "server_name": "1hk.networklinkpro.net",
+        "insecure": true
+      },
+      "type": "hysteria2",
+      "down_mbps": 100,
+      "up_mbps": 50
+    },
+    {
+      "password": "4f8546a0-e907-40be-aeea-d8648f828099",
+      "server": "2hk.networklinkpro.net",
+      "server_port": 25282,
+      "tag": "🇭🇰2香港-全网优化(hy2)",
+      "tls": {
+        "enabled": true,
+        "server_name": "2hk.networklinkpro.net",
+        "insecure": true
+      },
+      "type": "hysteria2",
+      "down_mbps": 100,
+      "up_mbps": 50
+    },
+    {
+      "password": "4f8546a0-e907-40be-aeea-d8648f828099",
+      "server": "4tw.networklinkpro.net",
+      "server_port": 23520,
+      "tag": "🇨🇳4台湾-电信/联通(hy2)",
+      "tls": {
+        "enabled": true,
+        "server_name": "4tw.networklinkpro.net",
+        "insecure": true
+      },
+      "type": "hysteria2"
+    },
+    {
+      "server": "best.networklinkpro.net",
+      "server_port": 6444,
+      "tag": "🌎自动最优(新协议)-网址vp0.org",
+      "tls": {
+        "enabled": true,
+        "server_name": "best.networklinkpro.net",
+        "alpn": [
+          "h3"
+        ],
+        "insecure": true
+      },
+      "type": "hysteria",
+      "auth_str": "4f8546a0-e907-40be-aeea-d8648f828099",
+      "down_mbps": 100,
+      "up_mbps": 50
+    },
+    {
+      "password": "4f8546a0-e907-40be-aeea-d8648f828099",
+      "server": "dnsmart.vp-cdn.mob.networklinkpro.com",
+      "server_port": 15380,
+      "tag": "🌎网址: vp0.org",
+      "type": "shadowsocks",
+      "method": "chacha20-ietf-poly1305"
+    },
+    {
+      "server": "15sg.networklinkpro.net",
+      "server_port": 7403,
+      "tag": "🇸🇬15新加坡集群-联通/移动(新协议)",
+      "tls": {
+        "enabled": true,
+        "server_name": "15sg.networklinkpro.net",
+        "alpn": [
+          "h3"
+        ],
+        "insecure": true
+      },
+      "type": "hysteria",
+      "auth_str": "4f8546a0-e907-40be-aeea-d8648f828099",
+      "down_mbps": 100,
+      "up_mbps": 50
+    },
+    {
+      "server": "14sg.networklinkpro.net",
+      "server_port": 9509,
+      "tag": "🇸🇬14新加坡集群-全网优化(新协议)",
+      "tls": {
+        "enabled": true,
+        "server_name": "14sg.networklinkpro.net",
+        "alpn": [
+          "h3"
+        ],
+        "insecure": true
+      },
+      "type": "hysteria",
+      "auth_str": "4f8546a0-e907-40be-aeea-d8648f828099",
+      "down_mbps": 100,
+      "up_mbps": 50
+    },
+    {
+      "password": "4f8546a0-e907-40be-aeea-d8648f828099",
+      "server": "dnsmart.vp-cdn.mob.networklinkpro.com",
+      "server_port": 15380,
+      "tag": "🇸🇬15新加坡集群-专线(iOS优化)",
+      "type": "shadowsocks",
+      "method": "chacha20-ietf-poly1305"
+    },
+    {
+      "server": "8kr.networklinkpro.net",
+      "server_port": 6846,
+      "tag": "🇰🇷8韩国首尔-全网优化(新协议)",
+      "tls": {
+        "enabled": true,
+        "server_name": "8kr.networklinkpro.net",
+        "alpn": [
+          "h3"
+        ],
+        "insecure": true
+      },
+      "type": "hysteria",
+      "auth_str": "4f8546a0-e907-40be-aeea-d8648f828099",
+      "down_mbps": 100,
+      "up_mbps": 50
+    },
+    {
+      "password": "4f8546a0-e907-40be-aeea-d8648f828099",
+      "server": "dnsmart.vp-cdn.mob.networklinkpro.com",
+      "server_port": 15384,
+      "tag": "🇰🇷35韩国集群-专线(iOS优化)",
+      "type": "shadowsocks",
+      "method": "chacha20-ietf-poly1305"
+    },
+    {
+      "server": "18jp.networklinkpro.net",
+      "server_port": 5995,
+      "tag": "🇯🇵18日本东京集群-联通/移动(新协议)",
+      "tls": {
+        "enabled": true,
+        "server_name": "18jp.networklinkpro.net",
+        "alpn": [
+          "h3"
+        ],
+        "insecure": true
+      },
+      "type": "hysteria",
+      "auth_str": "4f8546a0-e907-40be-aeea-d8648f828099",
+      "down_mbps": 100,
+      "up_mbps": 50
+    },
+    {
+      "password": "4f8546a0-e907-40be-aeea-d8648f828099",
+      "server": "dnsmart.vp-cdn.mob.networklinkpro.com",
+      "server_port": 15383,
+      "tag": "🇯🇵18日本集群-专线(iOS优化)",
+      "type": "shadowsocks",
+      "method": "chacha20-ietf-poly1305"
+    },
+    {
+      "server": "19jp.networklinkpro.net",
+      "server_port": 9896,
+      "tag": "🇯🇵19日本东京-联通/移动(新协议)",
+      "tls": {
+        "enabled": true,
+        "server_name": "19jp.networklinkpro.net",
+        "alpn": [
+          "h3"
+        ],
+        "insecure": true
+      },
+      "type": "hysteria",
+      "auth_str": "4f8546a0-e907-40be-aeea-d8648f828099",
+      "disable_mtu_discovery": true,
+      "down_mbps": 100,
+      "up_mbps": 50
+    },
+    {
+      "password": "4f8546a0-e907-40be-aeea-d8648f828099",
+      "server": "dnsmart.vp-cdn.mob.networklinkpro.com",
+      "server_port": 15386,
+      "tag": "🇯🇵19日本东京-专线(iOS优化)",
+      "type": "shadowsocks",
+      "method": "chacha20-ietf-poly1305"
+    },
+    {
+      "server": "5us.networklinkpro.net",
+      "server_port": 9568,
+      "tag": "🇺🇸5美国波特兰-ChatGPT(新协议)",
+      "tls": {
+        "enabled": true,
+        "server_name": "5us.networklinkpro.net",
+        "alpn": [
+          "h3"
+        ],
+        "insecure": true
+      },
+      "type": "hysteria",
+      "auth_str": "4f8546a0-e907-40be-aeea-d8648f828099",
+      "down_mbps": 100,
+      "up_mbps": 50
+    },
+    {
+      "password": "4f8546a0-e907-40be-aeea-d8648f828099",
+      "server": "dnsmart.vp-cdn.mob.networklinkpro.com",
+      "server_port": 15387,
+      "tag": "🇺🇸5美国波特兰集群-专线(iOS优化)",
+      "type": "shadowsocks",
+      "method": "chacha20-ietf-poly1305"
+    },
+    {
+      "server": "6us.networklinkpro.net",
+      "server_port": 7123,
+      "tag": "🇺🇸6美国圣何塞集群-全网优化(新协议)",
+      "tls": {
+        "enabled": true,
+        "server_name": "6us.networklinkpro.net",
+        "alpn": [
+          "h3"
+        ],
+        "insecure": true
+      },
+      "type": "hysteria",
+      "auth_str": "4f8546a0-e907-40be-aeea-d8648f828099",
+      "disable_mtu_discovery": true,
+      "down_mbps": 100,
+      "up_mbps": 50
+    },
+    {
+      "password": "4f8546a0-e907-40be-aeea-d8648f828099",
+      "server": "dnsmart.vp-cdn.mob.networklinkpro.com",
+      "server_port": 15382,
+      "tag": "🇺🇸6美国圣何塞集群-专线(iOS优化)",
+      "type": "shadowsocks",
+      "method": "chacha20-ietf-poly1305"
+    },
+    {
+      "server": "16us.networklinkpro.net",
+      "server_port": 5873,
+      "tag": "🇺🇸16美国凤凰城集群-联通优化(新协议)",
+      "tls": {
+        "enabled": true,
+        "server_name": "16us.networklinkpro.net",
+        "alpn": [
+          "h3"
+        ],
+        "insecure": true
+      },
+      "type": "hysteria",
+      "auth_str": "4f8546a0-e907-40be-aeea-d8648f828099",
+      "disable_mtu_discovery": true,
+      "down_mbps": 100,
+      "up_mbps": 50
+    },
+    {
+      "password": "4f8546a0-e907-40be-aeea-d8648f828099",
+      "server": "dnsmart.vp-cdn.mob.networklinkpro.com",
+      "server_port": 15391,
+      "tag": "🇺🇸16美国凤凰城集群-专线(iOS优化)",
+      "type": "shadowsocks",
+      "method": "chacha20-ietf-poly1305"
+    },
+    {
+      "server": "28us.networklinkpro.net",
+      "server_port": 9163,
+      "tag": "🇺🇸28美国东部-电信/联通(新协议)",
+      "tls": {
+        "enabled": true,
+        "server_name": "28us.networklinkpro.net",
+        "alpn": [
+          "h3"
+        ],
+        "insecure": true
+      },
+      "type": "hysteria",
+      "auth_str": "4f8546a0-e907-40be-aeea-d8648f828099",
+      "disable_mtu_discovery": true,
+      "down_mbps": 100,
+      "up_mbps": 50
+    },
+    {
+      "server": "38us.networklinkpro.net",
+      "server_port": 9140,
+      "tag": "🇺🇸38美国洛杉矶-全网优化(新协议)",
+      "tls": {
+        "enabled": true,
+        "server_name": "38us.networklinkpro.net",
+        "alpn": [
+          "h3"
+        ],
+        "insecure": true
+      },
+      "type": "hysteria",
+      "auth_str": "4f8546a0-e907-40be-aeea-d8648f828099",
+      "down_mbps": 100,
+      "up_mbps": 50
+    },
+    {
+      "server": "7kr.networklinkpro.net",
+      "server_port": 6951,
+      "tag": "🇰🇷7韩国春川集群-联通/移动(新协议)",
+      "tls": {
+        "enabled": true,
+        "server_name": "7kr.networklinkpro.net",
+        "alpn": [
+          "h3"
+        ],
+        "insecure": true
+      },
+      "type": "hysteria",
+      "auth_str": "4f8546a0-e907-40be-aeea-d8648f828099",
+      "disable_mtu_discovery": true,
+      "down_mbps": 100,
+      "up_mbps": 50
+    },
+    {
+      "password": "4f8546a0-e907-40be-aeea-d8648f828099",
+      "server": "dnsmart.vp-cdn.mob.networklinkpro.com",
+      "server_port": 15389,
+      "tag": "🇰🇷7韩国春川集群-专线(iOS优化)",
+      "type": "shadowsocks",
+      "method": "chacha20-ietf-poly1305"
+    },
+    {
+      "server": "35kr.networklinkpro.net",
+      "server_port": 9393,
+      "tag": "🇰🇷35韩国首尔集群-电信/联通(新协议)",
+      "tls": {
+        "enabled": true,
+        "server_name": "35kr.networklinkpro.net",
+        "alpn": [
+          "h3"
+        ],
+        "insecure": true
+      },
+      "type": "hysteria",
+      "auth_str": "4f8546a0-e907-40be-aeea-d8648f828099",
+      "disable_mtu_discovery": true,
+      "down_mbps": 100,
+      "up_mbps": 50
+    },
+    {
+      "server": "9jp.networklinkpro.net",
+      "server_port": 7684,
+      "tag": "🇯🇵9日本大版集群-电信/移动(新协议)",
+      "tls": {
+        "enabled": true,
+        "server_name": "9jp.networklinkpro.net",
+        "alpn": [
+          "h3"
+        ],
+        "insecure": true
+      },
+      "type": "hysteria",
+      "auth_str": "4f8546a0-e907-40be-aeea-d8648f828099",
+      "disable_mtu_discovery": true,
+      "down_mbps": 100,
+      "up_mbps": 50
+    },
+    {
+      "password": "4f8546a0-e907-40be-aeea-d8648f828099",
+      "server": "dnsmart.vp-cdn.mob.networklinkpro.com",
+      "server_port": 15390,
+      "tag": "🇯🇵9日本大版集群-专线(iOS优化)",
+      "type": "shadowsocks",
+      "method": "chacha20-ietf-poly1305"
+    },
+    {
+      "server": "10uae.networklinkpro.net",
+      "server_port": 6563,
+      "tag": "🇦🇪10阿联酋集群-电信/移动(新协议)",
+      "tls": {
+        "enabled": true,
+        "server_name": "10uae.networklinkpro.net",
+        "alpn": [
+          "h3"
+        ],
+        "insecure": true
+      },
+      "type": "hysteria",
+      "auth_str": "4f8546a0-e907-40be-aeea-d8648f828099",
+      "down_mbps": 100,
+      "up_mbps": 50
+    },
+    {
+      "server": "11de.networklinkpro.net",
+      "server_port": 9760,
+      "tag": "🇩🇪11德国-ChatGPT(新协议)",
+      "tls": {
+        "enabled": true,
+        "server_name": "11de.networklinkpro.net",
+        "alpn": [
+          "h3"
+        ],
+        "insecure": true
+      },
+      "type": "hysteria",
+      "auth_str": "4f8546a0-e907-40be-aeea-d8648f828099",
+      "down_mbps": 100,
+      "up_mbps": 50
+    },
+    {
+      "server": "12uk.networklinkpro.net",
+      "server_port": 8153,
+      "tag": "🇬🇧12英国-ChatGPT(新协议)",
+      "tls": {
+        "enabled": true,
+        "server_name": "12uk.networklinkpro.net",
+        "alpn": [
+          "h3"
+        ],
+        "insecure": true
+      },
+      "type": "hysteria",
+      "auth_str": "4f8546a0-e907-40be-aeea-d8648f828099",
+      "disable_mtu_discovery": true,
+      "down_mbps": 100,
+      "up_mbps": 50
+    },
+    {
+      "server": "13in.networklinkpro.net",
+      "server_port": 7608,
+      "tag": "🇮🇳13印度孟买-电信/联通(新协议)",
+      "tls": {
+        "enabled": true,
+        "server_name": "13in.networklinkpro.net",
+        "alpn": [
+          "h3"
+        ],
+        "insecure": true
+      },
+      "type": "hysteria",
+      "auth_str": "4f8546a0-e907-40be-aeea-d8648f828099",
+      "disable_mtu_discovery": true,
+      "down_mbps": 100,
+      "up_mbps": 50
+    },
+    {
+      "server": "17ru.networklinkpro.net",
+      "server_port": 9667,
+      "tag": "🇷🇺17俄罗斯-电信/联通(新协议)",
+      "tls": {
+        "enabled": true,
+        "server_name": "17ru.networklinkpro.net",
+        "alpn": [
+          "h3"
+        ],
+        "insecure": true
+      },
+      "type": "hysteria",
+      "auth_str": "4f8546a0-e907-40be-aeea-d8648f828099",
+      "down_mbps": 100,
+      "up_mbps": 50
+    },
+    {
+      "server": "20au.networklinkpro.net",
+      "server_port": 8890,
+      "tag": "🇦🇺20澳洲-电信/移动(新协议)",
+      "tls": {
+        "enabled": true,
+        "server_name": "20au.networklinkpro.net",
+        "alpn": [
+          "h3"
+        ],
+        "insecure": true
+      },
+      "type": "hysteria",
+      "auth_str": "4f8546a0-e907-40be-aeea-d8648f828099",
+      "down_mbps": 100,
+      "up_mbps": 50
+    },
+    {
+      "server": "22br.networklinkpro.net",
+      "server_port": 5461,
+      "tag": "🇧🇷22巴西-ChatGPT(新协议)",
+      "tls": {
+        "enabled": true,
+        "server_name": "22br.networklinkpro.net",
+        "alpn": [
+          "h3"
+        ],
+        "insecure": true
+      },
+      "type": "hysteria",
+      "auth_str": "4f8546a0-e907-40be-aeea-d8648f828099",
+      "disable_mtu_discovery": true,
+      "down_mbps": 100,
+      "up_mbps": 50
+    },
+    {
+      "server": "23il.networklinkpro.net",
+      "server_port": 5762,
+      "tag": "🇮🇱23以色列-联通/移动(新协议)",
+      "tls": {
+        "enabled": true,
+        "server_name": "23il.networklinkpro.net",
+        "alpn": [
+          "h3"
+        ],
+        "insecure": true
+      },
+      "type": "hysteria",
+      "auth_str": "4f8546a0-e907-40be-aeea-d8648f828099",
+      "down_mbps": 100,
+      "up_mbps": 50
+    },
+    {
+      "server": "24tr.networklinkpro.net",
+      "server_port": 8237,
+      "tag": "🇹🇷24土耳其-电信/联通(新协议)",
+      "tls": {
+        "enabled": true,
+        "server_name": "24tr.networklinkpro.net",
+        "alpn": [
+          "h3"
+        ],
+        "insecure": true
+      },
+      "type": "hysteria",
+      "auth_str": "4f8546a0-e907-40be-aeea-d8648f828099",
+      "disable_mtu_discovery": true,
+      "down_mbps": 100,
+      "up_mbps": 50
+    },
+    {
+      "server": "26nl.networklinkpro.net",
+      "server_port": 8222,
+      "tag": "🇳🇱26荷兰-全网优化(新协议)",
+      "tls": {
+        "enabled": true,
+        "server_name": "26nl.networklinkpro.net",
+        "alpn": [
+          "h3"
+        ],
+        "insecure": true
+      },
+      "type": "hysteria",
+      "auth_str": "4f8546a0-e907-40be-aeea-d8648f828099",
+      "disable_mtu_discovery": true,
+      "down_mbps": 100,
+      "up_mbps": 50
+    },
+    {
+      "server": "27fr.networklinkpro.net",
+      "server_port": 9197,
+      "tag": "🇫🇷27法国-ChatGPT(新协议)",
+      "tls": {
+        "enabled": true,
+        "server_name": "27fr.networklinkpro.net",
+        "alpn": [
+          "h3"
+        ],
+        "insecure": true
+      },
+      "type": "hysteria",
+      "auth_str": "4f8546a0-e907-40be-aeea-d8648f828099",
+      "down_mbps": 100,
+      "up_mbps": 50
+    },
+    {
+      "server": "29chi.networklinkpro.net",
+      "server_port": 5486,
+      "tag": "🇨🇱29智利-ChatGPT(新协议)",
+      "tls": {
+        "enabled": true,
+        "server_name": "29chi.networklinkpro.net",
+        "alpn": [
+          "h3"
+        ],
+        "insecure": true
+      },
+      "type": "hysteria",
+      "auth_str": "4f8546a0-e907-40be-aeea-d8648f828099",
+      "disable_mtu_discovery": true,
+      "down_mbps": 100,
+      "up_mbps": 50
+    },
+    {
+      "server": "30it.networklinkpro.net",
+      "server_port": 8029,
+      "tag": "🇮🇹30意大利-ChatGPT(新协议)",
+      "tls": {
+        "enabled": true,
+        "server_name": "30it.networklinkpro.net",
+        "alpn": [
+          "h3"
+        ],
+        "insecure": true
+      },
+      "type": "hysteria",
+      "auth_str": "4f8546a0-e907-40be-aeea-d8648f828099",
+      "down_mbps": 100,
+      "up_mbps": 50
+    },
+    {
+      "server": "31se.networklinkpro.net",
+      "server_port": 6594,
+      "tag": "🇸🇪31瑞典-电信/移动(新协议)",
+      "tls": {
+        "enabled": true,
+        "server_name": "31se.networklinkpro.net",
+        "alpn": [
+          "h3"
+        ],
+        "insecure": true
+      },
+      "type": "hysteria",
+      "auth_str": "4f8546a0-e907-40be-aeea-d8648f828099",
+      "disable_mtu_discovery": true,
+      "down_mbps": 100,
+      "up_mbps": 50
+    },
+    {
+      "server": "32za.networklinkpro.net",
+      "server_port": 5911,
+      "tag": "🇿🇦32南非-约翰内斯堡(新协议)",
+      "tls": {
+        "enabled": true,
+        "server_name": "32za.networklinkpro.net",
+        "alpn": [
+          "h3"
+        ],
+        "insecure": true
+      },
+      "type": "hysteria",
+      "auth_str": "4f8546a0-e907-40be-aeea-d8648f828099",
+      "down_mbps": 100,
+      "up_mbps": 50
+    },
+    {
+      "server": "33ca.networklinkpro.net",
+      "server_port": 5584,
+      "tag": "🇨🇦33加拿大-ChatGPT(新协议)",
+      "tls": {
+        "enabled": true,
+        "server_name": "33ca.networklinkpro.net",
+        "alpn": [
+          "h3"
+        ],
+        "insecure": true
+      },
+      "type": "hysteria",
+      "auth_str": "4f8546a0-e907-40be-aeea-d8648f828099",
+      "down_mbps": 100,
+      "up_mbps": 50
+    },
+    {
+      "server": "34ch.networklinkpro.net",
+      "server_port": 5599,
+      "tag": "🇨🇭34瑞士-ChatGPT(新协议)",
+      "tls": {
+        "enabled": true,
+        "server_name": "34ch.networklinkpro.net",
+        "alpn": [
+          "h3"
+        ],
+        "insecure": true
+      },
+      "type": "hysteria",
+      "auth_str": "4f8546a0-e907-40be-aeea-d8648f828099",
+      "disable_mtu_discovery": true,
+      "down_mbps": 100,
+      "up_mbps": 50
+    },
+    {
+      "server": "36es.networklinkpro.net",
+      "server_port": 9622,
+      "tag": "🇪🇸36西班牙-电信/联通(新协议)",
+      "tls": {
+        "enabled": true,
+        "server_name": "36es.networklinkpro.net",
+        "alpn": [
+          "h3"
+        ],
+        "insecure": true
+      },
+      "type": "hysteria",
+      "auth_str": "4f8546a0-e907-40be-aeea-d8648f828099",
+      "down_mbps": 100,
+      "up_mbps": 50
+    },
+    {
+      "server": "37mx.networklinkpro.net",
+      "server_port": 9355,
+      "tag": "🇲🇽37墨西哥-电信/联通(新协议)",
+      "tls": {
+        "enabled": true,
+        "server_name": "37mx.networklinkpro.net",
+        "alpn": [
+          "h3"
+        ],
+        "insecure": true
+      },
+      "type": "hysteria",
+      "auth_str": "4f8546a0-e907-40be-aeea-d8648f828099",
+      "disable_mtu_discovery": true,
+      "down_mbps": 100,
+      "up_mbps": 50
+    },
+    {
+      "server": "1hk.networklinkpro.net",
+      "server_port": 5883,
+      "tag": "🇭🇰1香港集群-电信/联通(新协议)(限速30M)",
+      "tls": {
+        "enabled": true,
+        "server_name": "1hk.networklinkpro.net",
+        "alpn": [
+          "h3"
+        ],
+        "insecure": true
+      },
+      "type": "hysteria",
+      "auth_str": "4f8546a0-e907-40be-aeea-d8648f828099",
+      "disable_mtu_discovery": true,
+      "down_mbps": 100,
+      "up_mbps": 50
+    },
+    {
+      "server": "2hk.networklinkpro.net",
+      "server_port": 6057,
+      "tag": "🇭🇰2香港集群-全网优化(新协议)(限速30M)",
+      "tls": {
+        "enabled": true,
+        "server_name": "2hk.networklinkpro.net",
+        "alpn": [
+          "h3"
+        ],
+        "insecure": true
+      },
+      "type": "hysteria",
+      "auth_str": "4f8546a0-e907-40be-aeea-d8648f828099",
+      "disable_mtu_discovery": true,
+      "down_mbps": 100,
+      "up_mbps": 50
+    },
+    {
+      "password": "4f8546a0-e907-40be-aeea-d8648f828099",
+      "server": "dnsmart.vp-cdn.mob.networklinkpro.com",
+      "server_port": 15381,
+      "tag": "🇭🇰2香港-专线(iOS优化)",
+      "type": "shadowsocks",
+      "method": "chacha20-ietf-poly1305"
+    },
+    {
+      "password": "4f8546a0-e907-40be-aeea-d8648f828099",
+      "server": "dnsmart.vp-cdn.mob.networklinkpro.com",
+      "server_port": 15385,
+      "tag": "🇭🇰3香港集群-专线(iOS优化)",
+      "type": "shadowsocks",
+      "method": "chacha20-ietf-poly1305"
+    },
+    {
+      "server": "4tw.networklinkpro.net",
+      "server_port": 9760,
+      "tag": "🇨🇳4台湾-电信/联通(新协议)",
+      "tls": {
+        "enabled": true,
+        "server_name": "4tw.networklinkpro.net",
+        "alpn": [
+          "h3"
+        ],
+        "insecure": true
+      },
+      "type": "hysteria",
+      "auth_str": "4f8546a0-e907-40be-aeea-d8648f828099",
+      "disable_mtu_discovery": true,
+      "down_mbps": 100,
+      "up_mbps": 50
+    },
+    {
+      "tag": "select",
+      "type": "selector",
+      "default": "urltest",
+      "outbounds": [
+        "urltest",
+        "🌏自动最优(hy2)-网址vp0.org",
+        "🇺🇸5美国波特兰-全网优化(hy2)",
+        "🇺🇸6美国圣何塞集群-全网优化(hy2)",
+        "🇺🇸16美国凤凰城集群-联通优化(hy2)",
+        "🇺🇸28美国东部-全网优化(hy2)",
+        "🇺🇸38美国洛杉矶-全网优化(hy2)",
+        "🇰🇷7韩国春川集群-联通/移动(hy2)",
+        "🇰🇷8韩国首尔-全网优化(hy2)",
+        "🇰🇷35韩国首尔集群-电信/联通(hy2)",
+        "🇦🇪10阿联酋集群-电信/移动(hy2)",
+        "🇩🇪11德国-全网优化(hy2)",
+        "🇬🇧12英国-全网优化(hy2)",
+        "🇮🇳13印度孟买-电信/联通(hy2)",
+        "🇸🇬14新加坡集群-全网优化(hy2)",
+        "🇸🇬15新加坡集群-联通/移动(hy2)",
+        "🇷🇺17俄罗斯-电信/联通(hy2)",
+        "🇯🇵9日本大版集群-电信/移动(hy2)",
+        "🇯🇵18日本东京集群-联通/移动(hy2)",
+        "🇯🇵19日本东京-联通/移动(hy2)",
+        "🇦🇺20澳洲-电信/移动(hy2)",
+        "🇧🇷22巴西-联通/移动(hy2)",
+        "🇮🇱23以色列-联通/移动(hy2)",
+        "🇹🇷24土耳其-电信/联通(hy2)",
+        "🇳🇱26荷兰-全网优化(hy2)",
+        "🇫🇷27法国-全网优化(hy2)",
+        "🇨🇱29智利-全网优化(hy2)",
+        "🇮🇹30意大利-全网优化(hy2)",
+        "🇸🇪31瑞典-电信/移动(hy2)",
+        "🇿🇦32南非-约翰内斯堡(hy2)",
+        "🇨🇦33加拿大-全网优化(hy2)",
+        "🇨🇭34瑞士-全网优化(hy2)",
+        "🇪🇸36西班牙-电信/联通(hy2)",
+        "🇲🇽37墨西哥-电信/联通(hy2)",
+        "🇭🇰1香港集群-电信/联通(hy2)(限速30M)",
+        "🇭🇰2香港-全网优化(hy2)",
+        "🇨🇳4台湾-电信/联通(hy2)",
+        "🌎自动最优(新协议)-网址vp0.org",
+        "🌎网址: vp0.org",
+        "🇸🇬15新加坡集群-联通/移动(新协议)",
+        "🇸🇬14新加坡集群-全网优化(新协议)",
+        "🇸🇬15新加坡集群-专线(iOS优化)",
+        "🇰🇷8韩国首尔-全网优化(新协议)",
+        "🇰🇷35韩国集群-专线(iOS优化)",
+        "🇯🇵18日本东京集群-联通/移动(新协议)",
+        "🇯🇵18日本集群-专线(iOS优化)",
+        "🇯🇵19日本东京-联通/移动(新协议)",
+        "🇯🇵19日本东京-专线(iOS优化)",
+        "🇺🇸5美国波特兰-ChatGPT(新协议)",
+        "🇺🇸5美国波特兰集群-专线(iOS优化)",
+        "🇺🇸6美国圣何塞集群-全网优化(新协议)",
+        "🇺🇸6美国圣何塞集群-专线(iOS优化)",
+        "🇺🇸16美国凤凰城集群-联通优化(新协议)",
+        "🇺🇸16美国凤凰城集群-专线(iOS优化)",
+        "🇺🇸28美国东部-电信/联通(新协议)",
+        "🇺🇸38美国洛杉矶-全网优化(新协议)",
+        "🇰🇷7韩国春川集群-联通/移动(新协议)",
+        "🇰🇷7韩国春川集群-专线(iOS优化)",
+        "🇰🇷35韩国首尔集群-电信/联通(新协议)",
+        "🇯🇵9日本大版集群-电信/移动(新协议)",
+        "🇯🇵9日本大版集群-专线(iOS优化)",
+        "🇦🇪10阿联酋集群-电信/移动(新协议)",
+        "🇩🇪11德国-ChatGPT(新协议)",
+        "🇬🇧12英国-ChatGPT(新协议)",
+        "🇮🇳13印度孟买-电信/联通(新协议)",
+        "🇷🇺17俄罗斯-电信/联通(新协议)",
+        "🇦🇺20澳洲-电信/移动(新协议)",
+        "🇧🇷22巴西-ChatGPT(新协议)",
+        "🇮🇱23以色列-联通/移动(新协议)",
+        "🇹🇷24土耳其-电信/联通(新协议)",
+        "🇳🇱26荷兰-全网优化(新协议)",
+        "🇫🇷27法国-ChatGPT(新协议)",
+        "🇨🇱29智利-ChatGPT(新协议)",
+        "🇮🇹30意大利-ChatGPT(新协议)",
+        "🇸🇪31瑞典-电信/移动(新协议)",
+        "🇿🇦32南非-约翰内斯堡(新协议)",
+        "🇨🇦33加拿大-ChatGPT(新协议)",
+        "🇨🇭34瑞士-ChatGPT(新协议)",
+        "🇪🇸36西班牙-电信/联通(新协议)",
+        "🇲🇽37墨西哥-电信/联通(新协议)",
+        "🇭🇰1香港集群-电信/联通(新协议)(限速30M)",
+        "🇭🇰2香港集群-全网优化(新协议)(限速30M)",
+        "🇭🇰2香港-专线(iOS优化)",
+        "🇭🇰3香港集群-专线(iOS优化)",
+        "🇨🇳4台湾-电信/联通(新协议)"
+      ]
+    },
+    {
+      "tag": "urltest",
+      "type": "urltest",
+      "outbounds": [
+        "🌏自动最优(hy2)-网址vp0.org",
+        "🇺🇸5美国波特兰-全网优化(hy2)",
+        "🇺🇸6美国圣何塞集群-全网优化(hy2)",
+        "🇺🇸16美国凤凰城集群-联通优化(hy2)",
+        "🇺🇸28美国东部-全网优化(hy2)",
+        "🇺🇸38美国洛杉矶-全网优化(hy2)",
+        "🇰🇷7韩国春川集群-联通/移动(hy2)",
+        "🇰🇷8韩国首尔-全网优化(hy2)",
+        "🇰🇷35韩国首尔集群-电信/联通(hy2)",
+        "🇦🇪10阿联酋集群-电信/移动(hy2)",
+        "🇩🇪11德国-全网优化(hy2)",
+        "🇬🇧12英国-全网优化(hy2)",
+        "🇮🇳13印度孟买-电信/联通(hy2)",
+        "🇸🇬14新加坡集群-全网优化(hy2)",
+        "🇸🇬15新加坡集群-联通/移动(hy2)",
+        "🇷🇺17俄罗斯-电信/联通(hy2)",
+        "🇯🇵9日本大版集群-电信/移动(hy2)",
+        "🇯🇵18日本东京集群-联通/移动(hy2)",
+        "🇯🇵19日本东京-联通/移动(hy2)",
+        "🇦🇺20澳洲-电信/移动(hy2)",
+        "🇧🇷22巴西-联通/移动(hy2)",
+        "🇮🇱23以色列-联通/移动(hy2)",
+        "🇹🇷24土耳其-电信/联通(hy2)",
+        "🇳🇱26荷兰-全网优化(hy2)",
+        "🇫🇷27法国-全网优化(hy2)",
+        "🇨🇱29智利-全网优化(hy2)",
+        "🇮🇹30意大利-全网优化(hy2)",
+        "🇸🇪31瑞典-电信/移动(hy2)",
+        "🇿🇦32南非-约翰内斯堡(hy2)",
+        "🇨🇦33加拿大-全网优化(hy2)",
+        "🇨🇭34瑞士-全网优化(hy2)",
+        "🇪🇸36西班牙-电信/联通(hy2)",
+        "🇲🇽37墨西哥-电信/联通(hy2)",
+        "🇭🇰1香港集群-电信/联通(hy2)(限速30M)",
+        "🇭🇰2香港-全网优化(hy2)",
+        "🇨🇳4台湾-电信/联通(hy2)",
+        "🌎自动最优(新协议)-网址vp0.org",
+        "🌎网址: vp0.org",
+        "🇸🇬15新加坡集群-联通/移动(新协议)",
+        "🇸🇬14新加坡集群-全网优化(新协议)",
+        "🇸🇬15新加坡集群-专线(iOS优化)",
+        "🇰🇷8韩国首尔-全网优化(新协议)",
+        "🇰🇷35韩国集群-专线(iOS优化)",
+        "🇯🇵18日本东京集群-联通/移动(新协议)",
+        "🇯🇵18日本集群-专线(iOS优化)",
+        "🇯🇵19日本东京-联通/移动(新协议)",
+        "🇯🇵19日本东京-专线(iOS优化)",
+        "🇺🇸5美国波特兰-ChatGPT(新协议)",
+        "🇺🇸5美国波特兰集群-专线(iOS优化)",
+        "🇺🇸6美国圣何塞集群-全网优化(新协议)",
+        "🇺🇸6美国圣何塞集群-专线(iOS优化)",
+        "🇺🇸16美国凤凰城集群-联通优化(新协议)",
+        "🇺🇸16美国凤凰城集群-专线(iOS优化)",
+        "🇺🇸28美国东部-电信/联通(新协议)",
+        "🇺🇸38美国洛杉矶-全网优化(新协议)",
+        "🇰🇷7韩国春川集群-联通/移动(新协议)",
+        "🇰🇷7韩国春川集群-专线(iOS优化)",
+        "🇰🇷35韩国首尔集群-电信/联通(新协议)",
+        "🇯🇵9日本大版集群-电信/移动(新协议)",
+        "🇯🇵9日本大版集群-专线(iOS优化)",
+        "🇦🇪10阿联酋集群-电信/移动(新协议)",
+        "🇩🇪11德国-ChatGPT(新协议)",
+        "🇬🇧12英国-ChatGPT(新协议)",
+        "🇮🇳13印度孟买-电信/联通(新协议)",
+        "🇷🇺17俄罗斯-电信/联通(新协议)",
+        "🇦🇺20澳洲-电信/移动(新协议)",
+        "🇧🇷22巴西-ChatGPT(新协议)",
+        "🇮🇱23以色列-联通/移动(新协议)",
+        "🇹🇷24土耳其-电信/联通(新协议)",
+        "🇳🇱26荷兰-全网优化(新协议)",
+        "🇫🇷27法国-ChatGPT(新协议)",
+        "🇨🇱29智利-ChatGPT(新协议)",
+        "🇮🇹30意大利-ChatGPT(新协议)",
+        "🇸🇪31瑞典-电信/移动(新协议)",
+        "🇿🇦32南非-约翰内斯堡(新协议)",
+        "🇨🇦33加拿大-ChatGPT(新协议)",
+        "🇨🇭34瑞士-ChatGPT(新协议)",
+        "🇪🇸36西班牙-电信/联通(新协议)",
+        "🇲🇽37墨西哥-电信/联通(新协议)",
+        "🇭🇰1香港集群-电信/联通(新协议)(限速30M)",
+        "🇭🇰2香港集群-全网优化(新协议)(限速30M)",
+        "🇭🇰2香港-专线(iOS优化)",
+        "🇭🇰3香港集群-专线(iOS优化)",
+        "🇨🇳4台湾-电信/联通(新协议)"
+      ]
+    },
+    {
+      "tag": "chatgpt",
+      "type": "selector",
+      "outbounds": [
+        "🌏自动最优(hy2)-网址vp0.org",
+        "🇺🇸5美国波特兰-全网优化(hy2)",
+        "🇺🇸6美国圣何塞集群-全网优化(hy2)",
+        "🇺🇸16美国凤凰城集群-联通优化(hy2)",
+        "🇺🇸28美国东部-全网优化(hy2)",
+        "🇺🇸38美国洛杉矶-全网优化(hy2)",
+        "🇰🇷7韩国春川集群-联通/移动(hy2)",
+        "🇰🇷8韩国首尔-全网优化(hy2)",
+        "🇰🇷35韩国首尔集群-电信/联通(hy2)",
+        "🇦🇪10阿联酋集群-电信/移动(hy2)",
+        "🇩🇪11德国-全网优化(hy2)",
+        "🇬🇧12英国-全网优化(hy2)",
+        "🇮🇳13印度孟买-电信/联通(hy2)",
+        "🇸🇬14新加坡集群-全网优化(hy2)",
+        "🇸🇬15新加坡集群-联通/移动(hy2)",
+        "🇷🇺17俄罗斯-电信/联通(hy2)",
+        "🇯🇵9日本大版集群-电信/移动(hy2)",
+        "🇯🇵18日本东京集群-联通/移动(hy2)",
+        "🇯🇵19日本东京-联通/移动(hy2)",
+        "🇦🇺20澳洲-电信/移动(hy2)",
+        "🇧🇷22巴西-联通/移动(hy2)",
+        "🇮🇱23以色列-联通/移动(hy2)",
+        "🇹🇷24土耳其-电信/联通(hy2)",
+        "🇳🇱26荷兰-全网优化(hy2)",
+        "🇫🇷27法国-全网优化(hy2)",
+        "🇨🇱29智利-全网优化(hy2)",
+        "🇮🇹30意大利-全网优化(hy2)",
+        "🇸🇪31瑞典-电信/移动(hy2)",
+        "🇿🇦32南非-约翰内斯堡(hy2)",
+        "🇨🇦33加拿大-全网优化(hy2)",
+        "🇨🇭34瑞士-全网优化(hy2)",
+        "🇪🇸36西班牙-电信/联通(hy2)",
+        "🇲🇽37墨西哥-电信/联通(hy2)",
+        "🇭🇰1香港集群-电信/联通(hy2)(限速30M)",
+        "🇭🇰2香港-全网优化(hy2)",
+        "🇨🇳4台湾-电信/联通(hy2)",
+        "🌎自动最优(新协议)-网址vp0.org",
+        "🌎网址: vp0.org",
+        "🇸🇬15新加坡集群-联通/移动(新协议)",
+        "🇸🇬14新加坡集群-全网优化(新协议)",
+        "🇸🇬15新加坡集群-专线(iOS优化)",
+        "🇰🇷8韩国首尔-全网优化(新协议)",
+        "🇰🇷35韩国集群-专线(iOS优化)",
+        "🇯🇵18日本东京集群-联通/移动(新协议)",
+        "🇯🇵18日本集群-专线(iOS优化)",
+        "🇯🇵19日本东京-联通/移动(新协议)",
+        "🇯🇵19日本东京-专线(iOS优化)",
+        "🇺🇸5美国波特兰-ChatGPT(新协议)",
+        "🇺🇸5美国波特兰集群-专线(iOS优化)",
+        "🇺🇸6美国圣何塞集群-全网优化(新协议)",
+        "🇺🇸6美国圣何塞集群-专线(iOS优化)",
+        "🇺🇸16美国凤凰城集群-联通优化(新协议)",
+        "🇺🇸16美国凤凰城集群-专线(iOS优化)",
+        "🇺🇸28美国东部-电信/联通(新协议)",
+        "🇺🇸38美国洛杉矶-全网优化(新协议)",
+        "🇰🇷7韩国春川集群-联通/移动(新协议)",
+        "🇰🇷7韩国春川集群-专线(iOS优化)",
+        "🇰🇷35韩国首尔集群-电信/联通(新协议)",
+        "🇯🇵9日本大版集群-电信/移动(新协议)",
+        "🇯🇵9日本大版集群-专线(iOS优化)",
+        "🇦🇪10阿联酋集群-电信/移动(新协议)",
+        "🇩🇪11德国-ChatGPT(新协议)",
+        "🇬🇧12英国-ChatGPT(新协议)",
+        "🇮🇳13印度孟买-电信/联通(新协议)",
+        "🇷🇺17俄罗斯-电信/联通(新协议)",
+        "🇦🇺20澳洲-电信/移动(新协议)",
+        "🇧🇷22巴西-ChatGPT(新协议)",
+        "🇮🇱23以色列-联通/移动(新协议)",
+        "🇹🇷24土耳其-电信/联通(新协议)",
+        "🇳🇱26荷兰-全网优化(新协议)",
+        "🇫🇷27法国-ChatGPT(新协议)",
+        "🇨🇱29智利-ChatGPT(新协议)",
+        "🇮🇹30意大利-ChatGPT(新协议)",
+        "🇸🇪31瑞典-电信/移动(新协议)",
+        "🇿🇦32南非-约翰内斯堡(新协议)",
+        "🇨🇦33加拿大-ChatGPT(新协议)",
+        "🇨🇭34瑞士-ChatGPT(新协议)",
+        "🇪🇸36西班牙-电信/联通(新协议)",
+        "🇲🇽37墨西哥-电信/联通(新协议)",
+        "🇭🇰1香港集群-电信/联通(新协议)(限速30M)",
+        "🇭🇰2香港集群-全网优化(新协议)(限速30M)",
+        "🇭🇰2香港-专线(iOS优化)",
+        "🇭🇰3香港集群-专线(iOS优化)",
+        "🇨🇳4台湾-电信/联通(新协议)"
+      ]
+    },
+    {
+      "tag": "direct",
+      "type": "direct"
+    }
+  ],
+  "route": {
+    "rules": [
+      {
+        "action": "sniff"
+      },
+      {
+        "protocol": "dns",
+        "action": "hijack-dns"
+      },
+      {
+        "action": "resolve",
+        "strategy": "prefer_ipv4"
+      },
+      {
+        "clash_mode": "Direct",
+        "outbound": "direct"
+      },
+      {
+        "clash_mode": "Global",
+        "outbound": "select"
+      },
+      {
+        "ip_is_private": true,
+        "outbound": "direct"
+      },
+      {
+        "package_name": "com.openai.chatgpt",
+        "outbound": "chatgpt"
+      },
+      {
+        "domain_suffix": [
+          "proactivebackend-pa.googleapis.com",
+          "bing.com",
+          "bing.net",
+          "bingapis.com"
+        ],
+        "outbound": "chatgpt"
+      },
+      {
+        "domain_suffix": [
+          "ushd.xmsl.org",
+          "cf.gtlx.org"
+        ],
+        "outbound": "direct"
+      },
+      {
+        "port": [
+          23301,
+          22101,
+          22102,
+          20501
+        ],
+        "outbound": "direct"
+      },
+      {
+        "rule_set": "geoip-cn",
+        "outbound": "direct"
+      }
+    ],
+    "rule_set": [
+      {
+        "type": "remote",
+        "tag": "geoip-cn",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/SagerNet/sing-geoip/rule-set/geoip-cn.srs",
+        "download_detour": "select"
+      },
+      {
+        "type": "remote",
+        "tag": "geosite-cn",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/xmdhs/sing-geosite/rule-set-Loyalsoldier/geosite-geolocation-cn.srs",
+        "download_detour": "select"
+      },
+      {
+        "type": "remote",
+        "tag": "AdGuardSDNSFilter",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/xmdhs/sing-box-ruleset/rule-set/AdGuardSDNSFilter.srs",
+        "download_detour": "select"
+      },
+      {
+        "type": "remote",
+        "tag": "chrome-doh",
+        "format": "source",
+        "url": "https://gist.githubusercontent.com/xmdhs/71fc5ff6ef29f5ecaf2c52b8de5c3172/raw/chrome-doh.json",
+        "download_detour": "select"
+      }
+    ],
+    "final": "select",
+    "auto_detect_interface": true
+  },
+  "experimental": {
+    "cache_file": {
+      "enabled": true
+    },
+    "clash_api": {
+      "external_controller": "127.0.0.1:9090"
+    }
+  }
+}
