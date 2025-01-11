@@ -27,7 +27,8 @@
           "AdGuardSDNSFilter",
           "chrome-doh"
         ],
-        "action": "reject"
+        "action": "reject",
+        "method": "default"
       },
       {
         "query_type": [
@@ -50,22 +51,22 @@
         "server": "dns_direct"
       }
     ],
-    "strategy": "prefer_ipv4",
-    "independent_cache": true,
     "fakeip": {
       "enabled": true,
       "inet4_range": "198.18.0.0/15",
       "inet6_range": "fc00::/18"
-    }
+    },
+    "strategy": "prefer_ipv4",
+    "independent_cache": true
   },
   "inbounds": [
     {
       "type": "tun",
+      "mtu": 9000,
       "address": [
         "172.18.0.1/30",
         "fdfe:dcba:9876::1/126"
       ],
-      "mtu": 9000,
       "auto_route": true,
       "strict_route": true,
       "endpoint_independent_nat": true
@@ -74,15 +75,13 @@
       "type": "socks",
       "tag": "socks-in",
       "listen": "127.0.0.1",
-      "listen_port": 2333,
-      "users": []
+      "listen_port": 2333
     },
     {
       "type": "mixed",
       "tag": "mixed-in",
       "listen": "127.0.0.1",
-      "listen_port": 2334,
-      "users": []
+      "listen_port": 2334
     }
   ],
   "outbounds": [
@@ -1729,32 +1728,6 @@
     }
   ],
   "route": {
-    "rule_set": [
-      {
-        "tag": "geoip-cn",
-        "type": "remote",
-        "format": "binary",
-        "url": "https://raw.githubusercontent.com/SagerNet/sing-geoip/rule-set/geoip-cn.srs"
-      },
-      {
-        "tag": "geosite-cn",
-        "type": "remote",
-        "format": "binary",
-        "url": "https://raw.githubusercontent.com/xmdhs/sing-geosite/rule-set-Loyalsoldier/geosite-geolocation-cn.srs"
-      },
-      {
-        "tag": "AdGuardSDNSFilter",
-        "type": "remote",
-        "format": "binary",
-        "url": "https://raw.githubusercontent.com/xmdhs/sing-box-ruleset/rule-set/AdGuardSDNSFilter.srs"
-      },
-      {
-        "tag": "chrome-doh",
-        "type": "remote",
-        "format": "source",
-        "url": "https://gist.githubusercontent.com/xmdhs/71fc5ff6ef29f5ecaf2c52b8de5c3172/raw/chrome-doh.json"
-      }
-    ],
     "rules": [
       {
         "action": "sniff"
@@ -1780,9 +1753,7 @@
         "outbound": "direct"
       },
       {
-        "package_name": [
-          "com.openai.chatgpt"
-        ],
+        "package_name": "com.openai.chatgpt",
         "outbound": "chatgpt"
       },
       {
@@ -1815,6 +1786,37 @@
         "outbound": "direct"
       }
     ],
+    "rule_set": [
+      {
+        "type": "remote",
+        "tag": "geoip-cn",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/SagerNet/sing-geoip/rule-set/geoip-cn.srs",
+        "download_detour": "select"
+      },
+      {
+        "type": "remote",
+        "tag": "geosite-cn",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/xmdhs/sing-geosite/rule-set-Loyalsoldier/geosite-geolocation-cn.srs",
+        "download_detour": "select"
+      },
+      {
+        "type": "remote",
+        "tag": "AdGuardSDNSFilter",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/xmdhs/sing-box-ruleset/rule-set/AdGuardSDNSFilter.srs",
+        "download_detour": "select"
+      },
+      {
+        "type": "remote",
+        "tag": "chrome-doh",
+        "format": "source",
+        "url": "https://gist.githubusercontent.com/xmdhs/71fc5ff6ef29f5ecaf2c52b8de5c3172/raw/chrome-doh.json",
+        "download_detour": "select"
+      }
+    ],
+    "final": "select",
     "auto_detect_interface": true
   },
   "experimental": {

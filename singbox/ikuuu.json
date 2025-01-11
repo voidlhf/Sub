@@ -27,7 +27,8 @@
           "AdGuardSDNSFilter",
           "chrome-doh"
         ],
-        "action": "reject"
+        "action": "reject",
+        "method": "default"
       },
       {
         "query_type": [
@@ -50,22 +51,22 @@
         "server": "dns_direct"
       }
     ],
-    "strategy": "prefer_ipv4",
-    "independent_cache": true,
     "fakeip": {
       "enabled": true,
       "inet4_range": "198.18.0.0/15",
       "inet6_range": "fc00::/18"
-    }
+    },
+    "strategy": "prefer_ipv4",
+    "independent_cache": true
   },
   "inbounds": [
     {
       "type": "tun",
+      "mtu": 9000,
       "address": [
         "172.18.0.1/30",
         "fdfe:dcba:9876::1/126"
       ],
-      "mtu": 9000,
       "auto_route": true,
       "strict_route": true,
       "endpoint_independent_nat": true
@@ -74,15 +75,13 @@
       "type": "socks",
       "tag": "socks-in",
       "listen": "127.0.0.1",
-      "listen_port": 2333,
-      "users": []
+      "listen_port": 2333
     },
     {
       "type": "mixed",
       "tag": "mixed-in",
       "listen": "127.0.0.1",
-      "listen_port": 2334,
-      "users": []
+      "listen_port": 2334
     }
   ],
   "outbounds": [
@@ -105,12 +104,12 @@
       "uuid": "2661b5f8-8062-34a5-9371-a44313a75b6b"
     },
     {
-      "server": "uy98b-g03.jp01-0986-vm0.entry.fr0307a.art",
+      "server": "627nn-g03.jp01-0986-vm0.entry.fr0307a.art",
       "server_port": 21583,
       "tag": "🇯🇵 免费-日本1-Ver.6",
       "tls": {
         "enabled": true,
-        "server_name": "uy98b-g03.jp01-0986-vm0.entry.fr0307a.art",
+        "server_name": "627nn-g03.jp01-0986-vm0.entry.fr0307a.art",
         "insecure": true
       },
       "type": "vmess",
@@ -119,7 +118,7 @@
       "uuid": "1b3d7897-9d28-3ae9-8c9f-9e4a74f1b523"
     },
     {
-      "server": "3a042-g03.jp02-9a99-vm0.entry.fr0307a.art",
+      "server": "49rd8-g03.jp02-9a99-vm0.entry.fr0307a.art",
       "server_port": 11775,
       "tag": "🇯🇵 免费-日本2-Ver.7",
       "type": "vmess",
@@ -128,12 +127,12 @@
       "uuid": "1b3d7897-9d28-3ae9-8c9f-9e4a74f1b523"
     },
     {
-      "server": "jqw4k-g03.jp03-7d22-vm0.entry.fr0307a.art",
+      "server": "7dcem-g03.jp03-7d22-vm0.entry.fr0307a.art",
       "server_port": 21583,
       "tag": "🇯🇵 免费-日本3-Ver.6",
       "tls": {
         "enabled": true,
-        "server_name": "jqw4k-g03.jp03-7d22-vm0.entry.fr0307a.art",
+        "server_name": "7dcem-g03.jp03-7d22-vm0.entry.fr0307a.art",
         "insecure": true
       },
       "type": "vmess",
@@ -142,7 +141,7 @@
       "uuid": "1b3d7897-9d28-3ae9-8c9f-9e4a74f1b523"
     },
     {
-      "server": "wkp6n-g03.jp04-3771-vm0.entry.fr0307a.art",
+      "server": "571ch-g03.jp04-3771-vm0.entry.fr0307a.art",
       "server_port": 446,
       "tag": "🇯🇵 免费-日本4-Ver.7",
       "type": "vmess",
@@ -151,7 +150,7 @@
       "uuid": "1b3d7897-9d28-3ae9-8c9f-9e4a74f1b523"
     },
     {
-      "server": "0pgwn-g03.jp05-6786-vm0.entry.fr0307a.art",
+      "server": "y4z52-g03.jp05-6786-vm0.entry.fr0307a.art",
       "server_port": 46484,
       "tag": "🇯🇵 免费-日本5-Ver.8",
       "type": "vmess",
@@ -160,12 +159,12 @@
       "uuid": "1b3d7897-9d28-3ae9-8c9f-9e4a74f1b523"
     },
     {
-      "server": "nvxu0-g03.jp06-7c5a-vm0.entry.fr0307a.art",
+      "server": "k2fcf-g03.jp06-7c5a-vm0.entry.fr0307a.art",
       "server_port": 28785,
       "tag": "🇯🇵 免费-日本6-Ver.7",
       "tls": {
         "enabled": true,
-        "server_name": "nvxu0-g03.jp06-7c5a-vm0.entry.fr0307a.art",
+        "server_name": "k2fcf-g03.jp06-7c5a-vm0.entry.fr0307a.art",
         "insecure": true
       },
       "type": "vmess",
@@ -174,7 +173,7 @@
       "uuid": "1b3d7897-9d28-3ae9-8c9f-9e4a74f1b523"
     },
     {
-      "server": "vosdj-g03.jp07-1f28-vm0.entry.fr0307a.art",
+      "server": "vnpwh-g03.jp07-1f28-vm0.entry.fr0307a.art",
       "server_port": 28785,
       "tag": "🇯🇵 免费-日本7-Ver.1",
       "type": "vmess",
@@ -235,32 +234,6 @@
     }
   ],
   "route": {
-    "rule_set": [
-      {
-        "tag": "geoip-cn",
-        "type": "remote",
-        "format": "binary",
-        "url": "https://raw.githubusercontent.com/SagerNet/sing-geoip/rule-set/geoip-cn.srs"
-      },
-      {
-        "tag": "geosite-cn",
-        "type": "remote",
-        "format": "binary",
-        "url": "https://raw.githubusercontent.com/xmdhs/sing-geosite/rule-set-Loyalsoldier/geosite-geolocation-cn.srs"
-      },
-      {
-        "tag": "AdGuardSDNSFilter",
-        "type": "remote",
-        "format": "binary",
-        "url": "https://raw.githubusercontent.com/xmdhs/sing-box-ruleset/rule-set/AdGuardSDNSFilter.srs"
-      },
-      {
-        "tag": "chrome-doh",
-        "type": "remote",
-        "format": "source",
-        "url": "https://gist.githubusercontent.com/xmdhs/71fc5ff6ef29f5ecaf2c52b8de5c3172/raw/chrome-doh.json"
-      }
-    ],
     "rules": [
       {
         "action": "sniff"
@@ -286,9 +259,7 @@
         "outbound": "direct"
       },
       {
-        "package_name": [
-          "com.openai.chatgpt"
-        ],
+        "package_name": "com.openai.chatgpt",
         "outbound": "chatgpt"
       },
       {
@@ -321,6 +292,37 @@
         "outbound": "direct"
       }
     ],
+    "rule_set": [
+      {
+        "type": "remote",
+        "tag": "geoip-cn",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/SagerNet/sing-geoip/rule-set/geoip-cn.srs",
+        "download_detour": "select"
+      },
+      {
+        "type": "remote",
+        "tag": "geosite-cn",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/xmdhs/sing-geosite/rule-set-Loyalsoldier/geosite-geolocation-cn.srs",
+        "download_detour": "select"
+      },
+      {
+        "type": "remote",
+        "tag": "AdGuardSDNSFilter",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/xmdhs/sing-box-ruleset/rule-set/AdGuardSDNSFilter.srs",
+        "download_detour": "select"
+      },
+      {
+        "type": "remote",
+        "tag": "chrome-doh",
+        "format": "source",
+        "url": "https://gist.githubusercontent.com/xmdhs/71fc5ff6ef29f5ecaf2c52b8de5c3172/raw/chrome-doh.json",
+        "download_detour": "select"
+      }
+    ],
+    "final": "select",
     "auto_detect_interface": true
   },
   "experimental": {
