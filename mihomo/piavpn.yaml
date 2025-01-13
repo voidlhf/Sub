@@ -17,17 +17,14 @@ hosts:
   alt7-mtalk.google.com: "173.194.219.188"
   alt8-mtalk.google.com: "142.250.112.188"
 proxies:
-  - {
-      name: "前置代理",
-      type: "vmess",
-      server: "45.8.158.32",
-      port: 24695,
-      uuid: "398ce84e-4849-4e5f-9b1a-a56fbe233b81",
-      alterId: 0,
-      cipher: "auto",
-      udp: true,
-      network: "ws",
-    }
+  - name: 前置代理
+    port: 21368
+    server: 156.246.91.14
+    type: hysteria2
+    udp: true
+    sni: www.bing.com
+    password: fc24c40b
+    skip-cert-verify: true
   - {
       name: "🇬🇧英国曼彻斯特1",
       type: "ss",
