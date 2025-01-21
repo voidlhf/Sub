@@ -86,13 +86,39 @@
   ],
   "outbounds": [
     {
-      "password": "14fFPrbezE3HDZzsMOr6",
-      "server": "194.5.215.59",
-      "server_port": 8080,
-      "tag": "🇷🇴_RO_罗马尼亚",
+      "password": "f8f7aCzcPKbsF8p3",
+      "server": "84.17.53.160",
+      "server_port": 989,
+      "tag": "🇨🇭_CH_瑞士->🇨🇳_CN_中国",
       "type": "shadowsocks",
-      "method": "rc4-md5",
+      "method": "aes-256-cfb",
       "network": "tcp"
+    },
+    {
+      "password": "f8f7aCzcPKbsF8p3",
+      "server": "192.36.61.59",
+      "server_port": 990,
+      "tag": "🇦🇹_AT_奥地利->🇺🇸_US_美国",
+      "type": "shadowsocks",
+      "method": "chacha20-ietf-poly1305",
+      "network": "tcp"
+    },
+    {
+      "server": "190.93.245.230",
+      "server_port": 2086,
+      "tag": "🇺🇸_US_美国",
+      "transport": {
+        "headers": {
+          "host": [
+            "shs.xiaoqi666.xyz"
+          ]
+        },
+        "path": "/",
+        "type": "ws"
+      },
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "3fd7b958-2161-46e1-b6fc-bd6bb2165312"
     },
     {
       "tag": "select",
@@ -100,21 +126,27 @@
       "default": "urltest",
       "outbounds": [
         "urltest",
-        "🇷🇴_RO_罗马尼亚"
+        "🇨🇭_CH_瑞士->🇨🇳_CN_中国",
+        "🇦🇹_AT_奥地利->🇺🇸_US_美国",
+        "🇺🇸_US_美国"
       ]
     },
     {
       "tag": "urltest",
       "type": "urltest",
       "outbounds": [
-        "🇷🇴_RO_罗马尼亚"
+        "🇨🇭_CH_瑞士->🇨🇳_CN_中国",
+        "🇦🇹_AT_奥地利->🇺🇸_US_美国",
+        "🇺🇸_US_美国"
       ]
     },
     {
       "tag": "chatgpt",
       "type": "selector",
       "outbounds": [
-        "🇷🇴_RO_罗马尼亚"
+        "🇨🇭_CH_瑞士->🇨🇳_CN_中国",
+        "🇦🇹_AT_奥地利->🇺🇸_US_美国",
+        "🇺🇸_US_美国"
       ]
     },
     {
