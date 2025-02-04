@@ -7,7 +7,8 @@ os.chdir(os.path.dirname(os.path.abspath(__file__)))
 
 def download_json_from_url(url):
     try:
-        response = requests.get(url, timeout=10)
+        headers = {"User-Agent": "sing-box"}
+        response = requests.get(url, headers=headers, timeout=10)
         response.raise_for_status()
         return response.json()
     except requests.exceptions.RequestException as e:
