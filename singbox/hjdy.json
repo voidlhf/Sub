@@ -1,0 +1,5966 @@
+{
+  "log": {},
+  "dns": {
+    "servers": [
+      {
+        "tag": "dns_proxy",
+        "type": "https",
+        "server": "8.8.8.8",
+        "detour": "select"
+      },
+      {
+        "tag": "dns_direct",
+        "type": "https",
+        "server": "223.5.5.5",
+        "detour": "direct"
+      },
+      {
+        "tag": "dns_fakeip",
+        "type": "fakeip",
+        "inet4_range": "198.18.0.0/15",
+        "inet6_range": "fc00::/18"
+      }
+    ],
+    "rules": [
+      {
+        "rule_set": [
+          "AdGuardSDNSFilter",
+          "chrome-doh"
+        ],
+        "action": "reject",
+        "method": "default"
+      },
+      {
+        "query_type": [
+          "A",
+          "AAAA"
+        ],
+        "server": "dns_fakeip",
+        "rewrite_ttl": 1
+      },
+      {
+        "clash_mode": "Global",
+        "server": "dns_proxy"
+      },
+      {
+        "clash_mode": "Direct",
+        "server": "dns_direct"
+      },
+      {
+        "rule_set": "geosite-cn",
+        "server": "dns_direct"
+      }
+    ],
+    "strategy": "prefer_ipv4",
+    "independent_cache": true
+  },
+  "inbounds": [
+    {
+      "type": "tun",
+      "mtu": 9000,
+      "address": [
+        "172.18.0.1/30",
+        "fdfe:dcba:9876::1/126"
+      ],
+      "auto_route": true,
+      "strict_route": true,
+      "endpoint_independent_nat": true
+    },
+    {
+      "type": "socks",
+      "tag": "socks-in",
+      "listen": "127.0.0.1",
+      "listen_port": 2333
+    },
+    {
+      "type": "mixed",
+      "tag": "mixed-in",
+      "listen": "127.0.0.1",
+      "listen_port": 2334
+    }
+  ],
+  "outbounds": [
+    {
+      "server": "46.232.61.55",
+      "server_port": 55555,
+      "tag": "🇭🇰 公益_香港 RAY",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.apple.com",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "AXB2ZGR0hIpkteupFvadjVnXtlmcFBjvBRYpLvTyX18",
+          "short_id": "c3ee58e1ec207953"
+        }
+      },
+      "type": "vless",
+      "uuid": "e9f3977b-7331-4e01-866b-7b196478cd9d",
+      "flow": "xtls-rprx-vision",
+      "packet_encoding": "xudp"
+    },
+    {
+      "password": "f5ce5e0d-f739-4a13-bbe9-054f7c1b1a58",
+      "server": "46.232.61.55",
+      "server_port": 59350,
+      "tag": "🇭🇰 公益_香港 HYT",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.bing.com",
+        "alpn": [
+          "h3"
+        ],
+        "insecure": true
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "da85e2f4-acfc-4e7c-8512-ded015105fef",
+      "server": "213.136.83.240",
+      "server_port": 25565,
+      "tag": "🇫🇷 FR-serv00-s16-hysteria2",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.bing.com",
+        "alpn": [
+          "h3"
+        ],
+        "insecure": true
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "exotic-bengal.treefrog761.one",
+      "server_port": 443,
+      "tag": "超时就是被墙，使用代理连可用！",
+      "tls": {
+        "enabled": true,
+        "server_name": "exotic-bengal.treefrog761.one",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "exotic-bengal.treefrog761.one",
+      "server_port": 443,
+      "tag": "新城 - 01",
+      "tls": {
+        "enabled": true,
+        "server_name": "exotic-bengal.treefrog761.one",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "probable-drum.treefrog761.one",
+      "server_port": 443,
+      "tag": "新城 - 02",
+      "tls": {
+        "enabled": true,
+        "server_name": "probable-drum.treefrog761.one",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "guiding-raven.treefrog761.one",
+      "server_port": 443,
+      "tag": "新城 - 03",
+      "tls": {
+        "enabled": true,
+        "server_name": "guiding-raven.treefrog761.one",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "amazed-gobbler.treefrog761.one",
+      "server_port": 443,
+      "tag": "新城 - 04",
+      "tls": {
+        "enabled": true,
+        "server_name": "amazed-gobbler.treefrog761.one",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "flying-tuna.treefrog761.one",
+      "server_port": 443,
+      "tag": "新城 - 05",
+      "tls": {
+        "enabled": true,
+        "server_name": "flying-tuna.treefrog761.one",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "settled-corgi.insect388.motorcycles",
+      "server_port": 443,
+      "tag": "🇯🇵 日本 - 01",
+      "tls": {
+        "enabled": true,
+        "server_name": "settled-corgi.insect388.motorcycles",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "hip-spider.insect388.motorcycles",
+      "server_port": 443,
+      "tag": "🇯🇵 日本 - 02",
+      "tls": {
+        "enabled": true,
+        "server_name": "hip-spider.insect388.motorcycles",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "maximum-meerkat.insect388.motorcycles",
+      "server_port": 443,
+      "tag": "🇯🇵 日本 - 03",
+      "tls": {
+        "enabled": true,
+        "server_name": "maximum-meerkat.insect388.motorcycles",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "quick-corgi.insect388.motorcycles",
+      "server_port": 443,
+      "tag": "🇯🇵 日本 - 04",
+      "tls": {
+        "enabled": true,
+        "server_name": "quick-corgi.insect388.motorcycles",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "rested-civet.insect388.motorcycles",
+      "server_port": 443,
+      "tag": "🇯🇵 日本 - 05",
+      "tls": {
+        "enabled": true,
+        "server_name": "rested-civet.insect388.motorcycles",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "distinct-mantis.insect388.motorcycles",
+      "server_port": 443,
+      "tag": "🇯🇵 日本 - 06",
+      "tls": {
+        "enabled": true,
+        "server_name": "distinct-mantis.insect388.motorcycles",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "robust-insect.insect388.motorcycles",
+      "server_port": 443,
+      "tag": "🇯🇵 日本 - 07",
+      "tls": {
+        "enabled": true,
+        "server_name": "robust-insect.insect388.motorcycles",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "more-tomcat.insect388.motorcycles",
+      "server_port": 443,
+      "tag": "🇰🇷 韩国 - 01",
+      "tls": {
+        "enabled": true,
+        "server_name": "more-tomcat.insect388.motorcycles",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "evident-bug.insect388.motorcycles",
+      "server_port": 443,
+      "tag": "🇰🇷 韩国 - 02",
+      "tls": {
+        "enabled": true,
+        "server_name": "evident-bug.insect388.motorcycles",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "real-meerkat.insect388.motorcycles",
+      "server_port": 443,
+      "tag": "🇰🇷 韩国 - 03",
+      "tls": {
+        "enabled": true,
+        "server_name": "real-meerkat.insect388.motorcycles",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "square-pug.insect388.motorcycles",
+      "server_port": 443,
+      "tag": "🇺🇸 美国 - 01",
+      "tls": {
+        "enabled": true,
+        "server_name": "square-pug.insect388.motorcycles",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "sterling-marmot.treefrog761.one",
+      "server_port": 443,
+      "tag": "🇺🇸 美国 - 02",
+      "tls": {
+        "enabled": true,
+        "server_name": "sterling-marmot.treefrog761.one",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "better-caribou.insect388.motorcycles",
+      "server_port": 443,
+      "tag": "🇺🇸 美国 - 03",
+      "tls": {
+        "enabled": true,
+        "server_name": "better-caribou.insect388.motorcycles",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "pure-parrot.insect388.motorcycles",
+      "server_port": 443,
+      "tag": "🇺🇸 美国 - 04",
+      "tls": {
+        "enabled": true,
+        "server_name": "pure-parrot.insect388.motorcycles",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "magnetic-bream.insect388.motorcycles",
+      "server_port": 443,
+      "tag": "🇺🇸 美国 - 05",
+      "tls": {
+        "enabled": true,
+        "server_name": "magnetic-bream.insect388.motorcycles",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "magical-peacock.insect388.motorcycles",
+      "server_port": 443,
+      "tag": "🇺🇸 美国 - 06",
+      "tls": {
+        "enabled": true,
+        "server_name": "magical-peacock.insect388.motorcycles",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "winning-tortoise.insect388.motorcycles",
+      "server_port": 443,
+      "tag": "🇺🇸 美国 - 07",
+      "tls": {
+        "enabled": true,
+        "server_name": "winning-tortoise.insect388.motorcycles",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "romantic-hedgehog.insect388.motorcycles",
+      "server_port": 443,
+      "tag": "🇺🇸 美国 - 08",
+      "tls": {
+        "enabled": true,
+        "server_name": "romantic-hedgehog.insect388.motorcycles",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "summary-rat.insect388.motorcycles",
+      "server_port": 443,
+      "tag": "🇺🇸 美国 - 09",
+      "tls": {
+        "enabled": true,
+        "server_name": "summary-rat.insect388.motorcycles",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "awaited-hedgehog.insect388.motorcycles",
+      "server_port": 443,
+      "tag": "🇳🇱 荷兰 - 01",
+      "tls": {
+        "enabled": true,
+        "server_name": "awaited-hedgehog.insect388.motorcycles",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "eternal-sole.insect388.motorcycles",
+      "server_port": 443,
+      "tag": "🇳🇱 荷兰 - 02",
+      "tls": {
+        "enabled": true,
+        "server_name": "eternal-sole.insect388.motorcycles",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "epic-weasel.treefrog761.one",
+      "server_port": 443,
+      "tag": "🇳🇱 荷兰 - 03",
+      "tls": {
+        "enabled": true,
+        "server_name": "epic-weasel.treefrog761.one",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "sunny-jackal.insect388.motorcycles",
+      "server_port": 443,
+      "tag": "🇳🇱 荷兰 - 04",
+      "tls": {
+        "enabled": true,
+        "server_name": "sunny-jackal.insect388.motorcycles",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "modest-bulldog.goat627.mom",
+      "server_port": 443,
+      "tag": "🇳🇱 荷兰 - 05",
+      "tls": {
+        "enabled": true,
+        "server_name": "modest-bulldog.goat627.mom",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "inspired-cardinal.insect388.motorcycles",
+      "server_port": 443,
+      "tag": "🇳🇱 荷兰 - 06",
+      "tls": {
+        "enabled": true,
+        "server_name": "inspired-cardinal.insect388.motorcycles",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "endless-lion.treefrog761.one",
+      "server_port": 443,
+      "tag": "🇵🇱 波兰 - 01",
+      "tls": {
+        "enabled": true,
+        "server_name": "endless-lion.treefrog761.one",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "main-crane.insect388.motorcycles",
+      "server_port": 443,
+      "tag": "🇩🇪 德国 - 01",
+      "tls": {
+        "enabled": true,
+        "server_name": "main-crane.insect388.motorcycles",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "content-adder.insect388.motorcycles",
+      "server_port": 443,
+      "tag": "🇩🇪 德国 - 02",
+      "tls": {
+        "enabled": true,
+        "server_name": "content-adder.insect388.motorcycles",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "elegant-meerkat.insect388.motorcycles",
+      "server_port": 443,
+      "tag": "🇩🇪 德国 - 03",
+      "tls": {
+        "enabled": true,
+        "server_name": "elegant-meerkat.insect388.motorcycles",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "natural-aphid.insect388.motorcycles",
+      "server_port": 443,
+      "tag": "🇩🇪 德国 - 04",
+      "tls": {
+        "enabled": true,
+        "server_name": "natural-aphid.insect388.motorcycles",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "clean-ray.insect388.motorcycles",
+      "server_port": 443,
+      "tag": "🇩🇪 德国 - 05",
+      "tls": {
+        "enabled": true,
+        "server_name": "clean-ray.insect388.motorcycles",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "sacred-marten.insect388.motorcycles",
+      "server_port": 443,
+      "tag": "🇩🇪 德国 - 06",
+      "tls": {
+        "enabled": true,
+        "server_name": "sacred-marten.insect388.motorcycles",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "more-sunfish.insect388.motorcycles",
+      "server_port": 443,
+      "tag": "🇩🇪 德国 - 07",
+      "tls": {
+        "enabled": true,
+        "server_name": "more-sunfish.insect388.motorcycles",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "touching-sloth.insect388.motorcycles",
+      "server_port": 443,
+      "tag": "🇩🇪 德国 - 08",
+      "tls": {
+        "enabled": true,
+        "server_name": "touching-sloth.insect388.motorcycles",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "concrete-arachnid.insect388.motorcycles",
+      "server_port": 443,
+      "tag": "🇩🇪 德国 - 09",
+      "tls": {
+        "enabled": true,
+        "server_name": "concrete-arachnid.insect388.motorcycles",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "steady-gopher.insect388.motorcycles",
+      "server_port": 443,
+      "tag": "🇫🇷 法国 - 01",
+      "tls": {
+        "enabled": true,
+        "server_name": "steady-gopher.insect388.motorcycles",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "amused-buzzard.insect388.motorcycles",
+      "server_port": 443,
+      "tag": "🇫🇷 法国 - 02",
+      "tls": {
+        "enabled": true,
+        "server_name": "amused-buzzard.insect388.motorcycles",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "caring-arachnid.insect388.motorcycles",
+      "server_port": 443,
+      "tag": "🇬🇧 伦敦 - 01",
+      "tls": {
+        "enabled": true,
+        "server_name": "caring-arachnid.insect388.motorcycles",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "choice-longhorn.insect388.motorcycles",
+      "server_port": 443,
+      "tag": "🇬🇧 伦敦 - 02",
+      "tls": {
+        "enabled": true,
+        "server_name": "choice-longhorn.insect388.motorcycles",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "awake-wasp.insect388.motorcycles",
+      "server_port": 443,
+      "tag": "🇬🇧 伦敦 - 03",
+      "tls": {
+        "enabled": true,
+        "server_name": "awake-wasp.insect388.motorcycles",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "modern-bengal.insect388.motorcycles",
+      "server_port": 443,
+      "tag": "🇬🇧 伦敦 - 04",
+      "tls": {
+        "enabled": true,
+        "server_name": "modern-bengal.insect388.motorcycles",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "kind-dragon.insect388.motorcycles",
+      "server_port": 443,
+      "tag": "🇬🇧 伦敦 - 05",
+      "tls": {
+        "enabled": true,
+        "server_name": "kind-dragon.insect388.motorcycles",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "holy-colt.insect388.motorcycles",
+      "server_port": 443,
+      "tag": "🇬🇧 伦敦 - 06",
+      "tls": {
+        "enabled": true,
+        "server_name": "holy-colt.insect388.motorcycles",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "teaching-lamb.insect388.motorcycles",
+      "server_port": 443,
+      "tag": "🇬🇧 伦敦 - 07",
+      "tls": {
+        "enabled": true,
+        "server_name": "teaching-lamb.insect388.motorcycles",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "allowed-bear.insect388.motorcycles",
+      "server_port": 443,
+      "tag": "🇸🇪 瑞典 - 01",
+      "tls": {
+        "enabled": true,
+        "server_name": "allowed-bear.insect388.motorcycles",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "healthy-lacewing.insect388.motorcycles",
+      "server_port": 443,
+      "tag": "🇸🇪 瑞典 - 02",
+      "tls": {
+        "enabled": true,
+        "server_name": "healthy-lacewing.insect388.motorcycles",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "blessed-ladybug.insect388.motorcycles",
+      "server_port": 443,
+      "tag": "🇸🇪 瑞典 - 03",
+      "tls": {
+        "enabled": true,
+        "server_name": "blessed-ladybug.insect388.motorcycles",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "warm-fish.insect388.motorcycles",
+      "server_port": 443,
+      "tag": "🇮🇳 印度 - 01",
+      "tls": {
+        "enabled": true,
+        "server_name": "warm-fish.insect388.motorcycles",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "flexible-urchin.insect388.motorcycles",
+      "server_port": 443,
+      "tag": "🇮🇳 印度 - 02",
+      "tls": {
+        "enabled": true,
+        "server_name": "flexible-urchin.insect388.motorcycles",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "sweeping-buzzard.insect388.motorcycles",
+      "server_port": 443,
+      "tag": "🇮🇳 印度 - 03",
+      "tls": {
+        "enabled": true,
+        "server_name": "sweeping-buzzard.insect388.motorcycles",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "smooth-monkfish.insect388.motorcycles",
+      "server_port": 443,
+      "tag": "🇮🇳 印度 - 04",
+      "tls": {
+        "enabled": true,
+        "server_name": "smooth-monkfish.insect388.motorcycles",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "harmless-mosquito.insect388.motorcycles",
+      "server_port": 443,
+      "tag": "🇮🇳 印度 - 05",
+      "tls": {
+        "enabled": true,
+        "server_name": "harmless-mosquito.insect388.motorcycles",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "deciding-mantis.treefrog761.one",
+      "server_port": 443,
+      "tag": "🇮🇳 印度 - 06",
+      "tls": {
+        "enabled": true,
+        "server_name": "deciding-mantis.treefrog761.one",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "fancy-javelin.treefrog761.one",
+      "server_port": 443,
+      "tag": "🇧🇷 巴西 - 01",
+      "tls": {
+        "enabled": true,
+        "server_name": "fancy-javelin.treefrog761.one",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "driving-aphid.treefrog761.one",
+      "server_port": 443,
+      "tag": "🇹🇭 泰国 - 01",
+      "tls": {
+        "enabled": true,
+        "server_name": "driving-aphid.treefrog761.one",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "fancy-jackal.treefrog761.one",
+      "server_port": 443,
+      "tag": "🇸🇦 沙特 - 01",
+      "tls": {
+        "enabled": true,
+        "server_name": "fancy-jackal.treefrog761.one",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "grateful-bobcat.treefrog761.one",
+      "server_port": 443,
+      "tag": "🇨🇿 捷克 - 01",
+      "tls": {
+        "enabled": true,
+        "server_name": "grateful-bobcat.treefrog761.one",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "unbiased-gnu.treefrog761.one",
+      "server_port": 443,
+      "tag": "巴林 - 01",
+      "tls": {
+        "enabled": true,
+        "server_name": "unbiased-gnu.treefrog761.one",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "trusty-bullfrog.insect388.motorcycles",
+      "server_port": 443,
+      "tag": "🇨🇦 加拿大 - 01",
+      "tls": {
+        "enabled": true,
+        "server_name": "trusty-bullfrog.insect388.motorcycles",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "living-terrapin.insect388.motorcycles",
+      "server_port": 443,
+      "tag": "🇮🇪 爱尔兰 - 01",
+      "tls": {
+        "enabled": true,
+        "server_name": "living-terrapin.insect388.motorcycles",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "adapting-sponge.insect388.motorcycles",
+      "server_port": 443,
+      "tag": "🇮🇪 爱尔兰 - 02",
+      "tls": {
+        "enabled": true,
+        "server_name": "adapting-sponge.insect388.motorcycles",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "better-crappie.treefrog761.one",
+      "server_port": 443,
+      "tag": "🇷🇺 俄罗斯 - 01",
+      "tls": {
+        "enabled": true,
+        "server_name": "better-crappie.treefrog761.one",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "cool-shrimp.treefrog761.one",
+      "server_port": 443,
+      "tag": "🇷🇺 俄罗斯 - 02",
+      "tls": {
+        "enabled": true,
+        "server_name": "cool-shrimp.treefrog761.one",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "next-hippo.treefrog761.one",
+      "server_port": 443,
+      "tag": "🇪🇸 西班牙 - 01",
+      "tls": {
+        "enabled": true,
+        "server_name": "next-hippo.treefrog761.one",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "immortal-badger.treefrog761.one",
+      "server_port": 443,
+      "tag": "阿拉伯 - 01",
+      "tls": {
+        "enabled": true,
+        "server_name": "immortal-badger.treefrog761.one",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "destined-cub.treefrog761.one",
+      "server_port": 443,
+      "tag": "🇮🇹 意大利 - 01",
+      "tls": {
+        "enabled": true,
+        "server_name": "destined-cub.treefrog761.one",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "game-condor.treefrog761.one",
+      "server_port": 443,
+      "tag": "🇹🇷 土耳其 - 01",
+      "tls": {
+        "enabled": true,
+        "server_name": "game-condor.treefrog761.one",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "loving-boa.treefrog761.one",
+      "server_port": 443,
+      "tag": "🇳🇵 尼泊尔 - 01",
+      "tls": {
+        "enabled": true,
+        "server_name": "loving-boa.treefrog761.one",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "legal-lioness.treefrog761.one",
+      "server_port": 443,
+      "tag": "🇵🇭 菲律宾 - 01",
+      "tls": {
+        "enabled": true,
+        "server_name": "legal-lioness.treefrog761.one",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "grateful-glowworm.treefrog761.one",
+      "server_port": 443,
+      "tag": "🇲🇽 墨西哥 - 01",
+      "tls": {
+        "enabled": true,
+        "server_name": "grateful-glowworm.treefrog761.one",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "fleet-arachnid.treefrog761.one",
+      "server_port": 443,
+      "tag": "🇳🇬 尼日利亚 - 01",
+      "tls": {
+        "enabled": true,
+        "server_name": "fleet-arachnid.treefrog761.one",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "mint-pangolin.treefrog761.one",
+      "server_port": 443,
+      "tag": "🇳🇬 尼日利亚 - 02",
+      "tls": {
+        "enabled": true,
+        "server_name": "mint-pangolin.treefrog761.one",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "communal-lark.treefrog761.one",
+      "server_port": 443,
+      "tag": "🇦🇺 澳大利亚 - 01",
+      "tls": {
+        "enabled": true,
+        "server_name": "communal-lark.treefrog761.one",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "key-pangolin.treefrog761.one",
+      "server_port": 443,
+      "tag": "🇱🇻 拉脱维亚 - 01",
+      "tls": {
+        "enabled": true,
+        "server_name": "key-pangolin.treefrog761.one",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "dynamic-tomcat.treefrog761.one",
+      "server_port": 443,
+      "tag": "🇵🇰 巴基斯坦 - 01",
+      "tls": {
+        "enabled": true,
+        "server_name": "dynamic-tomcat.treefrog761.one",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "hopeful-egret.treefrog761.one",
+      "server_port": 443,
+      "tag": "🇲🇾 马来西亚 - 01",
+      "tls": {
+        "enabled": true,
+        "server_name": "hopeful-egret.treefrog761.one",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "server": "104.19.57.52",
+      "server_port": 2053,
+      "tag": "🇺🇸 美国.加州.圣何塞 — Cloudflare CDN 节点",
+      "tls": {
+        "enabled": true,
+        "server_name": "argo15s.moooiooom.us.kg",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "headers": {
+          "Host": [
+            "argo15s.moooiooom.us.kg"
+          ]
+        },
+        "path": "/vless?ed=2048",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "fc44fe6a-f083-4591-9c03-f8d61dc3907f",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "104.19.103.242",
+      "server_port": 2083,
+      "tag": "🇺🇸 美国.加州.圣何塞 — Cloudflare CDN 节点 2",
+      "tls": {
+        "enabled": true,
+        "server_name": "argo15s.moooiooom.us.kg",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "headers": {
+          "Host": [
+            "argo15s.moooiooom.us.kg"
+          ]
+        },
+        "path": "/vless?ed=2048",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "fc44fe6a-f083-4591-9c03-f8d61dc3907f",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "104.19.57.161",
+      "server_port": 2083,
+      "tag": "🇺🇸 美国.加州.圣何塞 — Cloudflare CDN 节点 3",
+      "tls": {
+        "enabled": true,
+        "server_name": "argo15s.moooiooom.us.kg",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "headers": {
+          "Host": [
+            "argo15s.moooiooom.us.kg"
+          ]
+        },
+        "path": "/vless?ed=2048",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "fc44fe6a-f083-4591-9c03-f8d61dc3907f",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "104.19.249.171",
+      "server_port": 2083,
+      "tag": "🇺🇸 美国.加州.洛杉矶 — Cloudflare CDN 节点",
+      "tls": {
+        "enabled": true,
+        "server_name": "argo15s.moooiooom.us.kg",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "headers": {
+          "Host": [
+            "argo15s.moooiooom.us.kg"
+          ]
+        },
+        "path": "/vless?ed=2048",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "fc44fe6a-f083-4591-9c03-f8d61dc3907f",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "104.19.142.253",
+      "server_port": 2053,
+      "tag": "🇺🇸 美国.加州.洛杉矶 — Cloudflare CDN 节点 2",
+      "tls": {
+        "enabled": true,
+        "server_name": "argo15s.moooiooom.us.kg",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "headers": {
+          "Host": [
+            "argo15s.moooiooom.us.kg"
+          ]
+        },
+        "path": "/vless?ed=2048",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "fc44fe6a-f083-4591-9c03-f8d61dc3907f",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "104.18.177.66",
+      "server_port": 2087,
+      "tag": "🇺🇸 美国.加州.洛杉矶 — Cloudflare CDN 节点 3",
+      "tls": {
+        "enabled": true,
+        "server_name": "argo15s.moooiooom.us.kg",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "headers": {
+          "Host": [
+            "argo15s.moooiooom.us.kg"
+          ]
+        },
+        "path": "/vless?ed=2048",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "fc44fe6a-f083-4591-9c03-f8d61dc3907f",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "104.22.53.239",
+      "server_port": 443,
+      "tag": "🇭🇰 中国.香港.服务区 — Cloudflare CDN 节点",
+      "tls": {
+        "enabled": true,
+        "server_name": "argo15s.moooiooom.us.kg",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "headers": {
+          "Host": [
+            "argo15s.moooiooom.us.kg"
+          ]
+        },
+        "path": "/vless?ed=2048",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "fc44fe6a-f083-4591-9c03-f8d61dc3907f",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "104.16.36.187",
+      "server_port": 2053,
+      "tag": "🇭🇰 中国.香港.服务区 — Cloudflare CDN 节点 2",
+      "tls": {
+        "enabled": true,
+        "server_name": "argo15s.moooiooom.us.kg",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "headers": {
+          "Host": [
+            "argo15s.moooiooom.us.kg"
+          ]
+        },
+        "path": "/vless?ed=2048",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "fc44fe6a-f083-4591-9c03-f8d61dc3907f",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "172.67.29.50",
+      "server_port": 443,
+      "tag": "🇭🇰 中国.香港.服务区 — Cloudflare CDN 节点 3",
+      "tls": {
+        "enabled": true,
+        "server_name": "argo15s.moooiooom.us.kg",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "headers": {
+          "Host": [
+            "argo15s.moooiooom.us.kg"
+          ]
+        },
+        "path": "/vless?ed=2048",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "fc44fe6a-f083-4591-9c03-f8d61dc3907f",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "172.67.247.37",
+      "server_port": 443,
+      "tag": "🇬🇧 英国.伦敦.英格兰 — Cloudflare CDN 节点",
+      "tls": {
+        "enabled": true,
+        "server_name": "argo15s.moooiooom.us.kg",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "headers": {
+          "Host": [
+            "argo15s.moooiooom.us.kg"
+          ]
+        },
+        "path": "/vless?ed=2048",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "fc44fe6a-f083-4591-9c03-f8d61dc3907f",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "172.67.247.110",
+      "server_port": 2053,
+      "tag": "🇬🇧 英国.伦敦.英格兰 — Cloudflare CDN 节点 2",
+      "tls": {
+        "enabled": true,
+        "server_name": "argo15s.moooiooom.us.kg",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "headers": {
+          "Host": [
+            "argo15s.moooiooom.us.kg"
+          ]
+        },
+        "path": "/vless?ed=2048",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "fc44fe6a-f083-4591-9c03-f8d61dc3907f",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "104.21.63.222",
+      "server_port": 443,
+      "tag": "🇬🇧 英国.伦敦.英格兰 — Cloudflare CDN 节点 3",
+      "tls": {
+        "enabled": true,
+        "server_name": "argo15s.moooiooom.us.kg",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "headers": {
+          "Host": [
+            "argo15s.moooiooom.us.kg"
+          ]
+        },
+        "path": "/vless?ed=2048",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "fc44fe6a-f083-4591-9c03-f8d61dc3907f",
+      "packet_encoding": "xudp"
+    },
+    {
+      "password": "f988a84a-236a-4aae-8823-b84757769ea7",
+      "server": "serv01.trevely.us.kg",
+      "server_port": 59350,
+      "tag": "🇵🇱 公益_波兰01",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.bing.com",
+        "alpn": [
+          "h3"
+        ],
+        "insecure": true
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "fc10a4d6-f946-478f-a3db-57f73cdb0407",
+      "server": "serv05.trevely.us.kg",
+      "server_port": 59350,
+      "tag": "🇵🇱 公益_波兰05",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.bing.com",
+        "alpn": [
+          "h3"
+        ],
+        "insecure": true
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "f00dd1c7-1636-4090-9f47-8448256386cc",
+      "server": "serv08.trevely.us.kg",
+      "server_port": 59350,
+      "tag": "🇵🇱 公益_波兰08",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.bing.com",
+        "alpn": [
+          "h3"
+        ],
+        "insecure": true
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "f7d948ae-80c9-478c-894a-5da2b1534189",
+      "server": "serv09.trevely.us.kg",
+      "server_port": 59350,
+      "tag": "🇵🇱 公益_波兰09",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.bing.com",
+        "alpn": [
+          "h3"
+        ],
+        "insecure": true
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "f7cf4765-5745-490b-8f8c-9f865901f971",
+      "server": "serv10.trevely.us.kg",
+      "server_port": 59350,
+      "tag": "🇵🇱 公益_波兰10",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.bing.com",
+        "alpn": [
+          "h3"
+        ],
+        "insecure": true
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "fa8a0187-6011-4f1f-bdf4-bbf928259000",
+      "server": "serv11.trevely.us.kg",
+      "server_port": 59350,
+      "tag": "🇵🇱 公益_波兰11",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.bing.com",
+        "alpn": [
+          "h3"
+        ],
+        "insecure": true
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "fb508d86-1679-4b22-8c09-0cd4cdbb887d",
+      "server": "serv12.trevely.us.kg",
+      "server_port": 59350,
+      "tag": "🇵🇱 公益_波兰12",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.bing.com",
+        "alpn": [
+          "h3"
+        ],
+        "insecure": true
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "f6f404b3-62f6-47aa-b4d8-93c5cdae1a0a",
+      "server": "serv13.trevely.us.kg",
+      "server_port": 59350,
+      "tag": "🇵🇱 公益_波兰13",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.bing.com",
+        "alpn": [
+          "h3"
+        ],
+        "insecure": true
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "fb765045-55d6-4b12-bfe6-3639fab3412f",
+      "server": "serv14.trevely.us.kg",
+      "server_port": 59355,
+      "tag": "🇵🇱 公益_波兰14",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.bing.com",
+        "alpn": [
+          "h3"
+        ],
+        "insecure": true
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "f1243102-9c1e-4bf8-b3d6-abf773f49154",
+      "server": "serv15.trevely.us.kg",
+      "server_port": 59355,
+      "tag": "🇵🇱 公益_波兰15",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.bing.com",
+        "alpn": [
+          "h3"
+        ],
+        "insecure": true
+      },
+      "type": "hysteria2"
+    },
+    {
+      "server": "theo.ns.cloudflare.com",
+      "server_port": 80,
+      "tag": "🇧🇷 公益_巴西",
+      "transport": {
+        "headers": {
+          "Host": [
+            "vmessbr.trevely.us.kg"
+          ]
+        },
+        "path": "/vmessbr.trevely.us.kg",
+        "type": "ws"
+      },
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "329fd5ca-e104-43c1-b0d9-a73f7939a6f5"
+    },
+    {
+      "server": "dora.ns.cloudflare.com",
+      "server_port": 80,
+      "tag": "🇵🇱 公益_波兰",
+      "transport": {
+        "headers": {
+          "Host": [
+            "vmesspl.trevely.us.kg"
+          ]
+        },
+        "path": "/serv00?ed=2048",
+        "type": "ws"
+      },
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "f26505cc-2278-4bab-b0ca-955c3c966baa"
+    },
+    {
+      "server": "dave.ns.cloudflare.com",
+      "server_port": 80,
+      "tag": "🇩🇪 公益_德国",
+      "transport": {
+        "headers": {
+          "Host": [
+            "vmessde.trevely.us.kg"
+          ]
+        },
+        "path": "/serv00?ed=2048",
+        "type": "ws"
+      },
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "f46bb68f-3069-494d-8650-f8e2a9294c92"
+    },
+    {
+      "server": "duke.ns.cloudflare.com",
+      "server_port": 80,
+      "tag": "🇫🇷 公益_法国",
+      "transport": {
+        "headers": {
+          "Host": [
+            "vmessfr.trevely.us.kg"
+          ]
+        },
+        "path": "/vmessfr.trevely.us.kg",
+        "type": "ws"
+      },
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "03d08755-21e7-418b-979d-cb5f4f34b1f6"
+    },
+    {
+      "server": "hugh.ns.cloudflare.com",
+      "server_port": 80,
+      "tag": "🇰🇷 公益_韩国",
+      "transport": {
+        "headers": {
+          "Host": [
+            "vmesskr.trevely.us.kg"
+          ]
+        },
+        "path": "/vmesskr.trevely.us.kg",
+        "type": "ws"
+      },
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "88f9037f-85d2-4524-eb7d-121b59d14db0"
+    },
+    {
+      "server": "lynn.ns.cloudflare.com",
+      "server_port": 80,
+      "tag": "🇺🇸 公益_美国",
+      "transport": {
+        "headers": {
+          "Host": [
+            "vmessus02.trevely.us.kg"
+          ]
+        },
+        "path": "/vmessus02.trevely.us.kg",
+        "type": "ws"
+      },
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "b8eb2576-3aca-4e0a-bf46-2ac12a7ccbc3"
+    },
+    {
+      "server": "fred.ns.cloudflare.com",
+      "server_port": 80,
+      "tag": "🇯🇵 公益_日本",
+      "transport": {
+        "headers": {
+          "Host": [
+            "vmessjp.trevely.us.kg"
+          ]
+        },
+        "path": "/vmessjp.trevely.us.kg",
+        "type": "ws"
+      },
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "d3d7daea-b61a-40a1-833e-318952cd0ab1"
+    },
+    {
+      "server": "paul.ns.cloudflare.com",
+      "server_port": 80,
+      "tag": "🇭🇰 公益_香港",
+      "transport": {
+        "headers": {
+          "Host": [
+            "vmesshk.trevely.us.kg"
+          ]
+        },
+        "path": "/vmesshk.trevely.us.kg",
+        "type": "ws"
+      },
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "19f281c4-6188-4461-a7fc-f1f9ac343049"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "flying-tuna.treefrog761.one",
+      "server_port": 443,
+      "tag": "超时就是被墙，使用代理连可用！ 2",
+      "tls": {
+        "enabled": true,
+        "server_name": "flying-tuna.treefrog761.one",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "flying-tuna.treefrog761.one",
+      "server_port": 443,
+      "tag": "新城 - 01 2",
+      "tls": {
+        "enabled": true,
+        "server_name": "flying-tuna.treefrog761.one",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "exotic-bengal.treefrog761.one",
+      "server_port": 443,
+      "tag": "新城 - 02 2",
+      "tls": {
+        "enabled": true,
+        "server_name": "exotic-bengal.treefrog761.one",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "probable-drum.treefrog761.one",
+      "server_port": 443,
+      "tag": "新城 - 04 2",
+      "tls": {
+        "enabled": true,
+        "server_name": "probable-drum.treefrog761.one",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "amazed-gobbler.treefrog761.one",
+      "server_port": 443,
+      "tag": "新城 - 05 2",
+      "tls": {
+        "enabled": true,
+        "server_name": "amazed-gobbler.treefrog761.one",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "distinct-mantis.insect388.motorcycles",
+      "server_port": 443,
+      "tag": "🇯🇵 日本 - 01 2",
+      "tls": {
+        "enabled": true,
+        "server_name": "distinct-mantis.insect388.motorcycles",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "quick-corgi.insect388.motorcycles",
+      "server_port": 443,
+      "tag": "🇯🇵 日本 - 02 2",
+      "tls": {
+        "enabled": true,
+        "server_name": "quick-corgi.insect388.motorcycles",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "settled-corgi.insect388.motorcycles",
+      "server_port": 443,
+      "tag": "🇯🇵 日本 - 03 2",
+      "tls": {
+        "enabled": true,
+        "server_name": "settled-corgi.insect388.motorcycles",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "hip-spider.insect388.motorcycles",
+      "server_port": 443,
+      "tag": "🇯🇵 日本 - 04 2",
+      "tls": {
+        "enabled": true,
+        "server_name": "hip-spider.insect388.motorcycles",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "maximum-meerkat.insect388.motorcycles",
+      "server_port": 443,
+      "tag": "🇯🇵 日本 - 05 2",
+      "tls": {
+        "enabled": true,
+        "server_name": "maximum-meerkat.insect388.motorcycles",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "robust-insect.insect388.motorcycles",
+      "server_port": 443,
+      "tag": "🇯🇵 日本 - 06 2",
+      "tls": {
+        "enabled": true,
+        "server_name": "robust-insect.insect388.motorcycles",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "rested-civet.insect388.motorcycles",
+      "server_port": 443,
+      "tag": "🇯🇵 日本 - 07 2",
+      "tls": {
+        "enabled": true,
+        "server_name": "rested-civet.insect388.motorcycles",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "pure-parrot.insect388.motorcycles",
+      "server_port": 443,
+      "tag": "🇺🇸 美国 - 02 2",
+      "tls": {
+        "enabled": true,
+        "server_name": "pure-parrot.insect388.motorcycles",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "magnetic-bream.insect388.motorcycles",
+      "server_port": 443,
+      "tag": "🇺🇸 美国 - 03 2",
+      "tls": {
+        "enabled": true,
+        "server_name": "magnetic-bream.insect388.motorcycles",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "romantic-hedgehog.insect388.motorcycles",
+      "server_port": 443,
+      "tag": "🇺🇸 美国 - 04 2",
+      "tls": {
+        "enabled": true,
+        "server_name": "romantic-hedgehog.insect388.motorcycles",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "winning-tortoise.insect388.motorcycles",
+      "server_port": 443,
+      "tag": "🇺🇸 美国 - 05 2",
+      "tls": {
+        "enabled": true,
+        "server_name": "winning-tortoise.insect388.motorcycles",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "better-caribou.insect388.motorcycles",
+      "server_port": 443,
+      "tag": "🇺🇸 美国 - 06 2",
+      "tls": {
+        "enabled": true,
+        "server_name": "better-caribou.insect388.motorcycles",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "magical-peacock.insect388.motorcycles",
+      "server_port": 443,
+      "tag": "🇺🇸 美国 - 07 2",
+      "tls": {
+        "enabled": true,
+        "server_name": "magical-peacock.insect388.motorcycles",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "sterling-marmot.treefrog761.one",
+      "server_port": 443,
+      "tag": "🇺🇸 美国 - 08 2",
+      "tls": {
+        "enabled": true,
+        "server_name": "sterling-marmot.treefrog761.one",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "epic-weasel.treefrog761.one",
+      "server_port": 443,
+      "tag": "🇳🇱 荷兰 - 01 2",
+      "tls": {
+        "enabled": true,
+        "server_name": "epic-weasel.treefrog761.one",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "sunny-jackal.insect388.motorcycles",
+      "server_port": 443,
+      "tag": "🇳🇱 荷兰 - 02 2",
+      "tls": {
+        "enabled": true,
+        "server_name": "sunny-jackal.insect388.motorcycles",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "inspired-cardinal.insect388.motorcycles",
+      "server_port": 443,
+      "tag": "🇳🇱 荷兰 - 03 2",
+      "tls": {
+        "enabled": true,
+        "server_name": "inspired-cardinal.insect388.motorcycles",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "modest-bulldog.goat627.mom",
+      "server_port": 443,
+      "tag": "🇳🇱 荷兰 - 04 2",
+      "tls": {
+        "enabled": true,
+        "server_name": "modest-bulldog.goat627.mom",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "awaited-hedgehog.insect388.motorcycles",
+      "server_port": 443,
+      "tag": "🇳🇱 荷兰 - 05 2",
+      "tls": {
+        "enabled": true,
+        "server_name": "awaited-hedgehog.insect388.motorcycles",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "eternal-sole.insect388.motorcycles",
+      "server_port": 443,
+      "tag": "🇳🇱 荷兰 - 06 2",
+      "tls": {
+        "enabled": true,
+        "server_name": "eternal-sole.insect388.motorcycles",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "more-sunfish.insect388.motorcycles",
+      "server_port": 443,
+      "tag": "🇩🇪 德国 - 01 2",
+      "tls": {
+        "enabled": true,
+        "server_name": "more-sunfish.insect388.motorcycles",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "sacred-marten.insect388.motorcycles",
+      "server_port": 443,
+      "tag": "🇩🇪 德国 - 02 2",
+      "tls": {
+        "enabled": true,
+        "server_name": "sacred-marten.insect388.motorcycles",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "natural-aphid.insect388.motorcycles",
+      "server_port": 443,
+      "tag": "🇩🇪 德国 - 03 2",
+      "tls": {
+        "enabled": true,
+        "server_name": "natural-aphid.insect388.motorcycles",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "clean-ray.insect388.motorcycles",
+      "server_port": 443,
+      "tag": "🇩🇪 德国 - 04 2",
+      "tls": {
+        "enabled": true,
+        "server_name": "clean-ray.insect388.motorcycles",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "concrete-arachnid.insect388.motorcycles",
+      "server_port": 443,
+      "tag": "🇩🇪 德国 - 05 2",
+      "tls": {
+        "enabled": true,
+        "server_name": "concrete-arachnid.insect388.motorcycles",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "content-adder.insect388.motorcycles",
+      "server_port": 443,
+      "tag": "🇩🇪 德国 - 06 2",
+      "tls": {
+        "enabled": true,
+        "server_name": "content-adder.insect388.motorcycles",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "touching-sloth.insect388.motorcycles",
+      "server_port": 443,
+      "tag": "🇩🇪 德国 - 07 2",
+      "tls": {
+        "enabled": true,
+        "server_name": "touching-sloth.insect388.motorcycles",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "elegant-meerkat.insect388.motorcycles",
+      "server_port": 443,
+      "tag": "🇩🇪 德国 - 08 2",
+      "tls": {
+        "enabled": true,
+        "server_name": "elegant-meerkat.insect388.motorcycles",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "main-crane.insect388.motorcycles",
+      "server_port": 443,
+      "tag": "🇩🇪 德国 - 09 2",
+      "tls": {
+        "enabled": true,
+        "server_name": "main-crane.insect388.motorcycles",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "holy-colt.insect388.motorcycles",
+      "server_port": 443,
+      "tag": "🇬🇧 伦敦 - 02 2",
+      "tls": {
+        "enabled": true,
+        "server_name": "holy-colt.insect388.motorcycles",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "choice-longhorn.insect388.motorcycles",
+      "server_port": 443,
+      "tag": "🇬🇧 伦敦 - 04 2",
+      "tls": {
+        "enabled": true,
+        "server_name": "choice-longhorn.insect388.motorcycles",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "modern-bengal.insect388.motorcycles",
+      "server_port": 443,
+      "tag": "🇬🇧 伦敦 - 06 2",
+      "tls": {
+        "enabled": true,
+        "server_name": "modern-bengal.insect388.motorcycles",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "harmless-mosquito.insect388.motorcycles",
+      "server_port": 443,
+      "tag": "🇮🇳 印度 - 01 2",
+      "tls": {
+        "enabled": true,
+        "server_name": "harmless-mosquito.insect388.motorcycles",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "warm-fish.insect388.motorcycles",
+      "server_port": 443,
+      "tag": "🇮🇳 印度 - 03 2",
+      "tls": {
+        "enabled": true,
+        "server_name": "warm-fish.insect388.motorcycles",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "sweeping-buzzard.insect388.motorcycles",
+      "server_port": 443,
+      "tag": "🇮🇳 印度 - 04 2",
+      "tls": {
+        "enabled": true,
+        "server_name": "sweeping-buzzard.insect388.motorcycles",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "deciding-mantis.treefrog761.one",
+      "server_port": 443,
+      "tag": "🇮🇳 印度 - 05 2",
+      "tls": {
+        "enabled": true,
+        "server_name": "deciding-mantis.treefrog761.one",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "smooth-monkfish.insect388.motorcycles",
+      "server_port": 443,
+      "tag": "🇮🇳 印度 - 06 2",
+      "tls": {
+        "enabled": true,
+        "server_name": "smooth-monkfish.insect388.motorcycles",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "adapting-sponge.insect388.motorcycles",
+      "server_port": 443,
+      "tag": "🇮🇪 爱尔兰 - 01 2",
+      "tls": {
+        "enabled": true,
+        "server_name": "adapting-sponge.insect388.motorcycles",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "living-terrapin.insect388.motorcycles",
+      "server_port": 443,
+      "tag": "🇮🇪 爱尔兰 - 02 2",
+      "tls": {
+        "enabled": true,
+        "server_name": "living-terrapin.insect388.motorcycles",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "cool-shrimp.treefrog761.one",
+      "server_port": 443,
+      "tag": "🇷🇺 俄罗斯 - 01 2",
+      "tls": {
+        "enabled": true,
+        "server_name": "cool-shrimp.treefrog761.one",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "better-crappie.treefrog761.one",
+      "server_port": 443,
+      "tag": "🇷🇺 俄罗斯 - 02 2",
+      "tls": {
+        "enabled": true,
+        "server_name": "better-crappie.treefrog761.one",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "server": "104.19.249.157",
+      "server_port": 2083,
+      "tag": "🇺🇸 美国.加州.洛杉矶 — Cloudflare CDN 节点 4",
+      "tls": {
+        "enabled": true,
+        "server_name": "argo15s.moooiooom.us.kg",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "headers": {
+          "Host": [
+            "argo15s.moooiooom.us.kg"
+          ]
+        },
+        "path": "/vless?ed=2048",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "fc44fe6a-f083-4591-9c03-f8d61dc3907f",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "104.18.177.91",
+      "server_port": 2083,
+      "tag": "🇺🇸 美国.加州.洛杉矶 — Cloudflare CDN 节点 5",
+      "tls": {
+        "enabled": true,
+        "server_name": "argo15s.moooiooom.us.kg",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "headers": {
+          "Host": [
+            "argo15s.moooiooom.us.kg"
+          ]
+        },
+        "path": "/vless?ed=2048",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "fc44fe6a-f083-4591-9c03-f8d61dc3907f",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "104.18.177.45",
+      "server_port": 2083,
+      "tag": "🇺🇸 美国.加州.洛杉矶 — Cloudflare CDN 节点 6",
+      "tls": {
+        "enabled": true,
+        "server_name": "argo15s.moooiooom.us.kg",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "headers": {
+          "Host": [
+            "argo15s.moooiooom.us.kg"
+          ]
+        },
+        "path": "/vless?ed=2048",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "fc44fe6a-f083-4591-9c03-f8d61dc3907f",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "104.16.34.118",
+      "server_port": 2053,
+      "tag": "🇭🇰 中国.香港.服务区 — Cloudflare CDN 节点 4",
+      "tls": {
+        "enabled": true,
+        "server_name": "argo15s.moooiooom.us.kg",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "headers": {
+          "Host": [
+            "argo15s.moooiooom.us.kg"
+          ]
+        },
+        "path": "/vless?ed=2048",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "fc44fe6a-f083-4591-9c03-f8d61dc3907f",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "104.17.73.149",
+      "server_port": 2083,
+      "tag": "🇭🇰 中国.香港.服务区 — Cloudflare CDN 节点 5",
+      "tls": {
+        "enabled": true,
+        "server_name": "argo15s.moooiooom.us.kg",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "headers": {
+          "Host": [
+            "argo15s.moooiooom.us.kg"
+          ]
+        },
+        "path": "/vless?ed=2048",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "fc44fe6a-f083-4591-9c03-f8d61dc3907f",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "104.16.223.143",
+      "server_port": 2083,
+      "tag": "🇭🇰 中国.香港.服务区 — Cloudflare CDN 节点 6",
+      "tls": {
+        "enabled": true,
+        "server_name": "argo15s.moooiooom.us.kg",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "headers": {
+          "Host": [
+            "argo15s.moooiooom.us.kg"
+          ]
+        },
+        "path": "/vless?ed=2048",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "fc44fe6a-f083-4591-9c03-f8d61dc3907f",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "104.19.103.0",
+      "server_port": 8443,
+      "tag": "🇺🇸 美国.加州.圣何塞 — Cloudflare CDN 节点 4",
+      "tls": {
+        "enabled": true,
+        "server_name": "argo15s.moooiooom.us.kg",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "headers": {
+          "Host": [
+            "argo15s.moooiooom.us.kg"
+          ]
+        },
+        "path": "/vless?ed=2048",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "fc44fe6a-f083-4591-9c03-f8d61dc3907f",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "104.19.56.30",
+      "server_port": 2087,
+      "tag": "🇺🇸 美国.加州.圣何塞 — Cloudflare CDN 节点 5",
+      "tls": {
+        "enabled": true,
+        "server_name": "argo15s.moooiooom.us.kg",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "headers": {
+          "Host": [
+            "argo15s.moooiooom.us.kg"
+          ]
+        },
+        "path": "/vless?ed=2048",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "fc44fe6a-f083-4591-9c03-f8d61dc3907f",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "104.19.104.231",
+      "server_port": 2096,
+      "tag": "🇺🇸 美国.加州.圣何塞 — Cloudflare CDN 节点 6",
+      "tls": {
+        "enabled": true,
+        "server_name": "argo15s.moooiooom.us.kg",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "headers": {
+          "Host": [
+            "argo15s.moooiooom.us.kg"
+          ]
+        },
+        "path": "/vless?ed=2048",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "fc44fe6a-f083-4591-9c03-f8d61dc3907f",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "172.67.253.171",
+      "server_port": 2083,
+      "tag": "🇬🇧 英国.伦敦.英格兰 — Cloudflare CDN 节点 4",
+      "tls": {
+        "enabled": true,
+        "server_name": "argo15s.moooiooom.us.kg",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "headers": {
+          "Host": [
+            "argo15s.moooiooom.us.kg"
+          ]
+        },
+        "path": "/vless?ed=2048",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "fc44fe6a-f083-4591-9c03-f8d61dc3907f",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "104.21.41.221",
+      "server_port": 8443,
+      "tag": "🇬🇧 英国.伦敦.英格兰 — Cloudflare CDN 节点 5",
+      "tls": {
+        "enabled": true,
+        "server_name": "argo15s.moooiooom.us.kg",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "headers": {
+          "Host": [
+            "argo15s.moooiooom.us.kg"
+          ]
+        },
+        "path": "/vless?ed=2048",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "fc44fe6a-f083-4591-9c03-f8d61dc3907f",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "172.67.253.216",
+      "server_port": 2083,
+      "tag": "🇬🇧 英国.伦敦.英格兰 — Cloudflare CDN 节点 6",
+      "tls": {
+        "enabled": true,
+        "server_name": "argo15s.moooiooom.us.kg",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "headers": {
+          "Host": [
+            "argo15s.moooiooom.us.kg"
+          ]
+        },
+        "path": "/vless?ed=2048",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "fc44fe6a-f083-4591-9c03-f8d61dc3907f",
+      "packet_encoding": "xudp"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "amazed-gobbler.treefrog761.one",
+      "server_port": 443,
+      "tag": "新城 - 02 3",
+      "tls": {
+        "enabled": true,
+        "server_name": "amazed-gobbler.treefrog761.one",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "exotic-bengal.treefrog761.one",
+      "server_port": 443,
+      "tag": "新城 - 03 2",
+      "tls": {
+        "enabled": true,
+        "server_name": "exotic-bengal.treefrog761.one",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "guiding-raven.treefrog761.one",
+      "server_port": 443,
+      "tag": "新城 - 04 3",
+      "tls": {
+        "enabled": true,
+        "server_name": "guiding-raven.treefrog761.one",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "probable-drum.treefrog761.one",
+      "server_port": 443,
+      "tag": "新城 - 05 3",
+      "tls": {
+        "enabled": true,
+        "server_name": "probable-drum.treefrog761.one",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "hip-spider.insect388.motorcycles",
+      "server_port": 443,
+      "tag": "🇯🇵 日本 - 01 3",
+      "tls": {
+        "enabled": true,
+        "server_name": "hip-spider.insect388.motorcycles",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "distinct-mantis.insect388.motorcycles",
+      "server_port": 443,
+      "tag": "🇯🇵 日本 - 03 3",
+      "tls": {
+        "enabled": true,
+        "server_name": "distinct-mantis.insect388.motorcycles",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "maximum-meerkat.insect388.motorcycles",
+      "server_port": 443,
+      "tag": "🇯🇵 日本 - 04 3",
+      "tls": {
+        "enabled": true,
+        "server_name": "maximum-meerkat.insect388.motorcycles",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "settled-corgi.insect388.motorcycles",
+      "server_port": 443,
+      "tag": "🇯🇵 日本 - 05 3",
+      "tls": {
+        "enabled": true,
+        "server_name": "settled-corgi.insect388.motorcycles",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "evident-bug.insect388.motorcycles",
+      "server_port": 443,
+      "tag": "🇰🇷 韩国 - 01 2",
+      "tls": {
+        "enabled": true,
+        "server_name": "evident-bug.insect388.motorcycles",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "more-tomcat.insect388.motorcycles",
+      "server_port": 443,
+      "tag": "🇰🇷 韩国 - 02 2",
+      "tls": {
+        "enabled": true,
+        "server_name": "more-tomcat.insect388.motorcycles",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "magnetic-bream.insect388.motorcycles",
+      "server_port": 443,
+      "tag": "🇺🇸 美国 - 01 2",
+      "tls": {
+        "enabled": true,
+        "server_name": "magnetic-bream.insect388.motorcycles",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "better-caribou.insect388.motorcycles",
+      "server_port": 443,
+      "tag": "🇺🇸 美国 - 02 3",
+      "tls": {
+        "enabled": true,
+        "server_name": "better-caribou.insect388.motorcycles",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "romantic-hedgehog.insect388.motorcycles",
+      "server_port": 443,
+      "tag": "🇺🇸 美国 - 03 3",
+      "tls": {
+        "enabled": true,
+        "server_name": "romantic-hedgehog.insect388.motorcycles",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "square-pug.insect388.motorcycles",
+      "server_port": 443,
+      "tag": "🇺🇸 美国 - 05 3",
+      "tls": {
+        "enabled": true,
+        "server_name": "square-pug.insect388.motorcycles",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "summary-rat.insect388.motorcycles",
+      "server_port": 443,
+      "tag": "🇺🇸 美国 - 06 3",
+      "tls": {
+        "enabled": true,
+        "server_name": "summary-rat.insect388.motorcycles",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "winning-tortoise.insect388.motorcycles",
+      "server_port": 443,
+      "tag": "🇺🇸 美国 - 08 3",
+      "tls": {
+        "enabled": true,
+        "server_name": "winning-tortoise.insect388.motorcycles",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "sterling-marmot.treefrog761.one",
+      "server_port": 443,
+      "tag": "🇺🇸 美国 - 09 2",
+      "tls": {
+        "enabled": true,
+        "server_name": "sterling-marmot.treefrog761.one",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "eternal-sole.insect388.motorcycles",
+      "server_port": 443,
+      "tag": "🇳🇱 荷兰 - 01 3",
+      "tls": {
+        "enabled": true,
+        "server_name": "eternal-sole.insect388.motorcycles",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "awaited-hedgehog.insect388.motorcycles",
+      "server_port": 443,
+      "tag": "🇳🇱 荷兰 - 02 3",
+      "tls": {
+        "enabled": true,
+        "server_name": "awaited-hedgehog.insect388.motorcycles",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "modest-bulldog.goat627.mom",
+      "server_port": 443,
+      "tag": "🇳🇱 荷兰 - 03 3",
+      "tls": {
+        "enabled": true,
+        "server_name": "modest-bulldog.goat627.mom",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "epic-weasel.treefrog761.one",
+      "server_port": 443,
+      "tag": "🇳🇱 荷兰 - 05 3",
+      "tls": {
+        "enabled": true,
+        "server_name": "epic-weasel.treefrog761.one",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "clean-ray.insect388.motorcycles",
+      "server_port": 443,
+      "tag": "🇩🇪 德国 - 01 3",
+      "tls": {
+        "enabled": true,
+        "server_name": "clean-ray.insect388.motorcycles",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "main-crane.insect388.motorcycles",
+      "server_port": 443,
+      "tag": "🇩🇪 德国 - 02 3",
+      "tls": {
+        "enabled": true,
+        "server_name": "main-crane.insect388.motorcycles",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "more-sunfish.insect388.motorcycles",
+      "server_port": 443,
+      "tag": "🇩🇪 德国 - 05 3",
+      "tls": {
+        "enabled": true,
+        "server_name": "more-sunfish.insect388.motorcycles",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "concrete-arachnid.insect388.motorcycles",
+      "server_port": 443,
+      "tag": "🇩🇪 德国 - 07 3",
+      "tls": {
+        "enabled": true,
+        "server_name": "concrete-arachnid.insect388.motorcycles",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "sacred-marten.insect388.motorcycles",
+      "server_port": 443,
+      "tag": "🇩🇪 德国 - 09 3",
+      "tls": {
+        "enabled": true,
+        "server_name": "sacred-marten.insect388.motorcycles",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "amused-buzzard.insect388.motorcycles",
+      "server_port": 443,
+      "tag": "🇫🇷 法国 - 01 2",
+      "tls": {
+        "enabled": true,
+        "server_name": "amused-buzzard.insect388.motorcycles",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "steady-gopher.insect388.motorcycles",
+      "server_port": 443,
+      "tag": "🇫🇷 法国 - 02 2",
+      "tls": {
+        "enabled": true,
+        "server_name": "steady-gopher.insect388.motorcycles",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "kind-dragon.insect388.motorcycles",
+      "server_port": 443,
+      "tag": "🇬🇧 伦敦 - 01 2",
+      "tls": {
+        "enabled": true,
+        "server_name": "kind-dragon.insect388.motorcycles",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "modern-bengal.insect388.motorcycles",
+      "server_port": 443,
+      "tag": "🇬🇧 伦敦 - 02 3",
+      "tls": {
+        "enabled": true,
+        "server_name": "modern-bengal.insect388.motorcycles",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "choice-longhorn.insect388.motorcycles",
+      "server_port": 443,
+      "tag": "🇬🇧 伦敦 - 03 2",
+      "tls": {
+        "enabled": true,
+        "server_name": "choice-longhorn.insect388.motorcycles",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "teaching-lamb.insect388.motorcycles",
+      "server_port": 443,
+      "tag": "🇬🇧 伦敦 - 04 3",
+      "tls": {
+        "enabled": true,
+        "server_name": "teaching-lamb.insect388.motorcycles",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "awake-wasp.insect388.motorcycles",
+      "server_port": 443,
+      "tag": "🇬🇧 伦敦 - 05 2",
+      "tls": {
+        "enabled": true,
+        "server_name": "awake-wasp.insect388.motorcycles",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "caring-arachnid.insect388.motorcycles",
+      "server_port": 443,
+      "tag": "🇬🇧 伦敦 - 06 3",
+      "tls": {
+        "enabled": true,
+        "server_name": "caring-arachnid.insect388.motorcycles",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "holy-colt.insect388.motorcycles",
+      "server_port": 443,
+      "tag": "🇬🇧 伦敦 - 07 2",
+      "tls": {
+        "enabled": true,
+        "server_name": "holy-colt.insect388.motorcycles",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "healthy-lacewing.insect388.motorcycles",
+      "server_port": 443,
+      "tag": "🇸🇪 瑞典 - 01 2",
+      "tls": {
+        "enabled": true,
+        "server_name": "healthy-lacewing.insect388.motorcycles",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "blessed-ladybug.insect388.motorcycles",
+      "server_port": 443,
+      "tag": "🇸🇪 瑞典 - 02 2",
+      "tls": {
+        "enabled": true,
+        "server_name": "blessed-ladybug.insect388.motorcycles",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "allowed-bear.insect388.motorcycles",
+      "server_port": 443,
+      "tag": "🇸🇪 瑞典 - 03 2",
+      "tls": {
+        "enabled": true,
+        "server_name": "allowed-bear.insect388.motorcycles",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "flexible-urchin.insect388.motorcycles",
+      "server_port": 443,
+      "tag": "🇮🇳 印度 - 01 3",
+      "tls": {
+        "enabled": true,
+        "server_name": "flexible-urchin.insect388.motorcycles",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "warm-fish.insect388.motorcycles",
+      "server_port": 443,
+      "tag": "🇮🇳 印度 - 02 2",
+      "tls": {
+        "enabled": true,
+        "server_name": "warm-fish.insect388.motorcycles",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "deciding-mantis.treefrog761.one",
+      "server_port": 443,
+      "tag": "🇮🇳 印度 - 04 3",
+      "tls": {
+        "enabled": true,
+        "server_name": "deciding-mantis.treefrog761.one",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "mint-pangolin.treefrog761.one",
+      "server_port": 443,
+      "tag": "🇳🇬 尼日利亚 - 01 2",
+      "tls": {
+        "enabled": true,
+        "server_name": "mint-pangolin.treefrog761.one",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "fleet-arachnid.treefrog761.one",
+      "server_port": 443,
+      "tag": "🇳🇬 尼日利亚 - 02 2",
+      "tls": {
+        "enabled": true,
+        "server_name": "fleet-arachnid.treefrog761.one",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "server": "172.67.29.175",
+      "server_port": 443,
+      "tag": "🇭🇰 中国.香港.服务区 — Cloudflare CDN 节点 7",
+      "tls": {
+        "enabled": true,
+        "server_name": "argo15s.moooiooom.us.kg",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "headers": {
+          "Host": [
+            "argo15s.moooiooom.us.kg"
+          ]
+        },
+        "path": "/vless?ed=2048",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "fc44fe6a-f083-4591-9c03-f8d61dc3907f",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "104.17.73.150",
+      "server_port": 2053,
+      "tag": "🇭🇰 中国.香港.服务区 — Cloudflare CDN 节点 8",
+      "tls": {
+        "enabled": true,
+        "server_name": "argo15s.moooiooom.us.kg",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "headers": {
+          "Host": [
+            "argo15s.moooiooom.us.kg"
+          ]
+        },
+        "path": "/vless?ed=2048",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "fc44fe6a-f083-4591-9c03-f8d61dc3907f",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "172.67.29.44",
+      "server_port": 8443,
+      "tag": "🇭🇰 中国.香港.服务区 — Cloudflare CDN 节点 9",
+      "tls": {
+        "enabled": true,
+        "server_name": "argo15s.moooiooom.us.kg",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "headers": {
+          "Host": [
+            "argo15s.moooiooom.us.kg"
+          ]
+        },
+        "path": "/vless?ed=2048",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "fc44fe6a-f083-4591-9c03-f8d61dc3907f",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "172.67.253.248",
+      "server_port": 2087,
+      "tag": "🇬🇧 英国.伦敦.英格兰 — Cloudflare CDN 节点 7",
+      "tls": {
+        "enabled": true,
+        "server_name": "argo15s.moooiooom.us.kg",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "headers": {
+          "Host": [
+            "argo15s.moooiooom.us.kg"
+          ]
+        },
+        "path": "/vless?ed=2048",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "fc44fe6a-f083-4591-9c03-f8d61dc3907f",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "172.67.171.200",
+      "server_port": 2053,
+      "tag": "🇬🇧 英国.伦敦.英格兰 — Cloudflare CDN 节点 8",
+      "tls": {
+        "enabled": true,
+        "server_name": "argo15s.moooiooom.us.kg",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "headers": {
+          "Host": [
+            "argo15s.moooiooom.us.kg"
+          ]
+        },
+        "path": "/vless?ed=2048",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "fc44fe6a-f083-4591-9c03-f8d61dc3907f",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "172.67.253.101",
+      "server_port": 443,
+      "tag": "🇬🇧 英国.伦敦.英格兰 — Cloudflare CDN 节点 9",
+      "tls": {
+        "enabled": true,
+        "server_name": "argo15s.moooiooom.us.kg",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "headers": {
+          "Host": [
+            "argo15s.moooiooom.us.kg"
+          ]
+        },
+        "path": "/vless?ed=2048",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "fc44fe6a-f083-4591-9c03-f8d61dc3907f",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "104.19.255.49",
+      "server_port": 443,
+      "tag": "🇺🇸 美国.加州.洛杉矶 — Cloudflare CDN 节点 7",
+      "tls": {
+        "enabled": true,
+        "server_name": "argo15s.moooiooom.us.kg",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "headers": {
+          "Host": [
+            "argo15s.moooiooom.us.kg"
+          ]
+        },
+        "path": "/vless?ed=2048",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "fc44fe6a-f083-4591-9c03-f8d61dc3907f",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "104.19.142.33",
+      "server_port": 2053,
+      "tag": "🇺🇸 美国.加州.洛杉矶 — Cloudflare CDN 节点 8",
+      "tls": {
+        "enabled": true,
+        "server_name": "argo15s.moooiooom.us.kg",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "headers": {
+          "Host": [
+            "argo15s.moooiooom.us.kg"
+          ]
+        },
+        "path": "/vless?ed=2048",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "fc44fe6a-f083-4591-9c03-f8d61dc3907f",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "104.19.142.119",
+      "server_port": 2096,
+      "tag": "🇺🇸 美国.加州.洛杉矶 — Cloudflare CDN 节点 9",
+      "tls": {
+        "enabled": true,
+        "server_name": "argo15s.moooiooom.us.kg",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "headers": {
+          "Host": [
+            "argo15s.moooiooom.us.kg"
+          ]
+        },
+        "path": "/vless?ed=2048",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "fc44fe6a-f083-4591-9c03-f8d61dc3907f",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "104.19.56.162",
+      "server_port": 2053,
+      "tag": "🇺🇸 美国.加州.圣何塞 — Cloudflare CDN 节点 7",
+      "tls": {
+        "enabled": true,
+        "server_name": "argo15s.moooiooom.us.kg",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "headers": {
+          "Host": [
+            "argo15s.moooiooom.us.kg"
+          ]
+        },
+        "path": "/vless?ed=2048",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "fc44fe6a-f083-4591-9c03-f8d61dc3907f",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "104.19.103.16",
+      "server_port": 2087,
+      "tag": "🇺🇸 美国.加州.圣何塞 — Cloudflare CDN 节点 8",
+      "tls": {
+        "enabled": true,
+        "server_name": "argo15s.moooiooom.us.kg",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "headers": {
+          "Host": [
+            "argo15s.moooiooom.us.kg"
+          ]
+        },
+        "path": "/vless?ed=2048",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "fc44fe6a-f083-4591-9c03-f8d61dc3907f",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "104.19.104.102",
+      "server_port": 8443,
+      "tag": "🇺🇸 美国.加州.圣何塞 — Cloudflare CDN 节点 9",
+      "tls": {
+        "enabled": true,
+        "server_name": "argo15s.moooiooom.us.kg",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "headers": {
+          "Host": [
+            "argo15s.moooiooom.us.kg"
+          ]
+        },
+        "path": "/vless?ed=2048",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "fc44fe6a-f083-4591-9c03-f8d61dc3907f",
+      "packet_encoding": "xudp"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "guiding-raven.treefrog761.one",
+      "server_port": 443,
+      "tag": "新城 - 02 4",
+      "tls": {
+        "enabled": true,
+        "server_name": "guiding-raven.treefrog761.one",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "maximum-meerkat.insect388.motorcycles",
+      "server_port": 443,
+      "tag": "🇯🇵 日本 - 01 4",
+      "tls": {
+        "enabled": true,
+        "server_name": "maximum-meerkat.insect388.motorcycles",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "robust-insect.insect388.motorcycles",
+      "server_port": 443,
+      "tag": "🇯🇵 日本 - 02 3",
+      "tls": {
+        "enabled": true,
+        "server_name": "robust-insect.insect388.motorcycles",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "rested-civet.insect388.motorcycles",
+      "server_port": 443,
+      "tag": "🇯🇵 日本 - 03 4",
+      "tls": {
+        "enabled": true,
+        "server_name": "rested-civet.insect388.motorcycles",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "distinct-mantis.insect388.motorcycles",
+      "server_port": 443,
+      "tag": "🇯🇵 日本 - 04 4",
+      "tls": {
+        "enabled": true,
+        "server_name": "distinct-mantis.insect388.motorcycles",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "quick-corgi.insect388.motorcycles",
+      "server_port": 443,
+      "tag": "🇯🇵 日本 - 05 4",
+      "tls": {
+        "enabled": true,
+        "server_name": "quick-corgi.insect388.motorcycles",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "hip-spider.insect388.motorcycles",
+      "server_port": 443,
+      "tag": "🇯🇵 日本 - 06 3",
+      "tls": {
+        "enabled": true,
+        "server_name": "hip-spider.insect388.motorcycles",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "settled-corgi.insect388.motorcycles",
+      "server_port": 443,
+      "tag": "🇯🇵 日本 - 07 3",
+      "tls": {
+        "enabled": true,
+        "server_name": "settled-corgi.insect388.motorcycles",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "real-meerkat.insect388.motorcycles",
+      "server_port": 443,
+      "tag": "🇰🇷 韩国 - 02 3",
+      "tls": {
+        "enabled": true,
+        "server_name": "real-meerkat.insect388.motorcycles",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "more-tomcat.insect388.motorcycles",
+      "server_port": 443,
+      "tag": "🇰🇷 韩国 - 03 2",
+      "tls": {
+        "enabled": true,
+        "server_name": "more-tomcat.insect388.motorcycles",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "magnetic-bream.insect388.motorcycles",
+      "server_port": 443,
+      "tag": "🇺🇸 美国 - 02 4",
+      "tls": {
+        "enabled": true,
+        "server_name": "magnetic-bream.insect388.motorcycles",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "better-caribou.insect388.motorcycles",
+      "server_port": 443,
+      "tag": "🇺🇸 美国 - 04 3",
+      "tls": {
+        "enabled": true,
+        "server_name": "better-caribou.insect388.motorcycles",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "magical-peacock.insect388.motorcycles",
+      "server_port": 443,
+      "tag": "🇺🇸 美国 - 05 4",
+      "tls": {
+        "enabled": true,
+        "server_name": "magical-peacock.insect388.motorcycles",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "winning-tortoise.insect388.motorcycles",
+      "server_port": 443,
+      "tag": "🇺🇸 美国 - 06 4",
+      "tls": {
+        "enabled": true,
+        "server_name": "winning-tortoise.insect388.motorcycles",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "summary-rat.insect388.motorcycles",
+      "server_port": 443,
+      "tag": "🇺🇸 美国 - 07 3",
+      "tls": {
+        "enabled": true,
+        "server_name": "summary-rat.insect388.motorcycles",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "pure-parrot.insect388.motorcycles",
+      "server_port": 443,
+      "tag": "🇺🇸 美国 - 08 4",
+      "tls": {
+        "enabled": true,
+        "server_name": "pure-parrot.insect388.motorcycles",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "inspired-cardinal.insect388.motorcycles",
+      "server_port": 443,
+      "tag": "🇳🇱 荷兰 - 02 4",
+      "tls": {
+        "enabled": true,
+        "server_name": "inspired-cardinal.insect388.motorcycles",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "eternal-sole.insect388.motorcycles",
+      "server_port": 443,
+      "tag": "🇳🇱 荷兰 - 04 3",
+      "tls": {
+        "enabled": true,
+        "server_name": "eternal-sole.insect388.motorcycles",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "sunny-jackal.insect388.motorcycles",
+      "server_port": 443,
+      "tag": "🇳🇱 荷兰 - 05 4",
+      "tls": {
+        "enabled": true,
+        "server_name": "sunny-jackal.insect388.motorcycles",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "epic-weasel.treefrog761.one",
+      "server_port": 443,
+      "tag": "🇳🇱 荷兰 - 06 3",
+      "tls": {
+        "enabled": true,
+        "server_name": "epic-weasel.treefrog761.one",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "content-adder.insect388.motorcycles",
+      "server_port": 443,
+      "tag": "🇩🇪 德国 - 01 4",
+      "tls": {
+        "enabled": true,
+        "server_name": "content-adder.insect388.motorcycles",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "touching-sloth.insect388.motorcycles",
+      "server_port": 443,
+      "tag": "🇩🇪 德国 - 02 4",
+      "tls": {
+        "enabled": true,
+        "server_name": "touching-sloth.insect388.motorcycles",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "concrete-arachnid.insect388.motorcycles",
+      "server_port": 443,
+      "tag": "🇩🇪 德国 - 03 3",
+      "tls": {
+        "enabled": true,
+        "server_name": "concrete-arachnid.insect388.motorcycles",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "more-sunfish.insect388.motorcycles",
+      "server_port": 443,
+      "tag": "🇩🇪 德国 - 04 3",
+      "tls": {
+        "enabled": true,
+        "server_name": "more-sunfish.insect388.motorcycles",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "main-crane.insect388.motorcycles",
+      "server_port": 443,
+      "tag": "🇩🇪 德国 - 05 4",
+      "tls": {
+        "enabled": true,
+        "server_name": "main-crane.insect388.motorcycles",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "clean-ray.insect388.motorcycles",
+      "server_port": 443,
+      "tag": "🇩🇪 德国 - 06 3",
+      "tls": {
+        "enabled": true,
+        "server_name": "clean-ray.insect388.motorcycles",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "natural-aphid.insect388.motorcycles",
+      "server_port": 443,
+      "tag": "🇩🇪 德国 - 07 4",
+      "tls": {
+        "enabled": true,
+        "server_name": "natural-aphid.insect388.motorcycles",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "sacred-marten.insect388.motorcycles",
+      "server_port": 443,
+      "tag": "🇩🇪 德国 - 08 3",
+      "tls": {
+        "enabled": true,
+        "server_name": "sacred-marten.insect388.motorcycles",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "elegant-meerkat.insect388.motorcycles",
+      "server_port": 443,
+      "tag": "🇩🇪 德国 - 09 4",
+      "tls": {
+        "enabled": true,
+        "server_name": "elegant-meerkat.insect388.motorcycles",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "teaching-lamb.insect388.motorcycles",
+      "server_port": 443,
+      "tag": "🇬🇧 伦敦 - 03 3",
+      "tls": {
+        "enabled": true,
+        "server_name": "teaching-lamb.insect388.motorcycles",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "awake-wasp.insect388.motorcycles",
+      "server_port": 443,
+      "tag": "🇬🇧 伦敦 - 04 4",
+      "tls": {
+        "enabled": true,
+        "server_name": "awake-wasp.insect388.motorcycles",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "choice-longhorn.insect388.motorcycles",
+      "server_port": 443,
+      "tag": "🇬🇧 伦敦 - 05 3",
+      "tls": {
+        "enabled": true,
+        "server_name": "choice-longhorn.insect388.motorcycles",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "caring-arachnid.insect388.motorcycles",
+      "server_port": 443,
+      "tag": "🇬🇧 伦敦 - 07 3",
+      "tls": {
+        "enabled": true,
+        "server_name": "caring-arachnid.insect388.motorcycles",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "blessed-ladybug.insect388.motorcycles",
+      "server_port": 443,
+      "tag": "🇸🇪 瑞典 - 01 3",
+      "tls": {
+        "enabled": true,
+        "server_name": "blessed-ladybug.insect388.motorcycles",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "allowed-bear.insect388.motorcycles",
+      "server_port": 443,
+      "tag": "🇸🇪 瑞典 - 02 3",
+      "tls": {
+        "enabled": true,
+        "server_name": "allowed-bear.insect388.motorcycles",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "healthy-lacewing.insect388.motorcycles",
+      "server_port": 443,
+      "tag": "🇸🇪 瑞典 - 03 3",
+      "tls": {
+        "enabled": true,
+        "server_name": "healthy-lacewing.insect388.motorcycles",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "warm-fish.insect388.motorcycles",
+      "server_port": 443,
+      "tag": "🇮🇳 印度 - 06 3",
+      "tls": {
+        "enabled": true,
+        "server_name": "warm-fish.insect388.motorcycles",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "server": "104.19.249.59",
+      "server_port": 2096,
+      "tag": "🇺🇸 美国.加州.洛杉矶 — Cloudflare CDN 节点 10",
+      "tls": {
+        "enabled": true,
+        "server_name": "argo15s.moooiooom.us.kg",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "headers": {
+          "Host": [
+            "argo15s.moooiooom.us.kg"
+          ]
+        },
+        "path": "/vless?ed=2048",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "fc44fe6a-f083-4591-9c03-f8d61dc3907f",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "104.19.249.76",
+      "server_port": 2096,
+      "tag": "🇺🇸 美国.加州.洛杉矶 — Cloudflare CDN 节点 11",
+      "tls": {
+        "enabled": true,
+        "server_name": "argo15s.moooiooom.us.kg",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "headers": {
+          "Host": [
+            "argo15s.moooiooom.us.kg"
+          ]
+        },
+        "path": "/vless?ed=2048",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "fc44fe6a-f083-4591-9c03-f8d61dc3907f",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "104.19.249.187",
+      "server_port": 2083,
+      "tag": "🇺🇸 美国.加州.洛杉矶 — Cloudflare CDN 节点 12",
+      "tls": {
+        "enabled": true,
+        "server_name": "argo15s.moooiooom.us.kg",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "headers": {
+          "Host": [
+            "argo15s.moooiooom.us.kg"
+          ]
+        },
+        "path": "/vless?ed=2048",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "fc44fe6a-f083-4591-9c03-f8d61dc3907f",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "104.22.59.89",
+      "server_port": 443,
+      "tag": "🇭🇰 中国.香港.服务区 — Cloudflare CDN 节点 10",
+      "tls": {
+        "enabled": true,
+        "server_name": "argo15s.moooiooom.us.kg",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "headers": {
+          "Host": [
+            "argo15s.moooiooom.us.kg"
+          ]
+        },
+        "path": "/vless?ed=2048",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "fc44fe6a-f083-4591-9c03-f8d61dc3907f",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "104.18.17.91",
+      "server_port": 8443,
+      "tag": "🇭🇰 中国.香港.服务区 — Cloudflare CDN 节点 11",
+      "tls": {
+        "enabled": true,
+        "server_name": "argo15s.moooiooom.us.kg",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "headers": {
+          "Host": [
+            "argo15s.moooiooom.us.kg"
+          ]
+        },
+        "path": "/vless?ed=2048",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "fc44fe6a-f083-4591-9c03-f8d61dc3907f",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "104.16.223.196",
+      "server_port": 2087,
+      "tag": "🇭🇰 中国.香港.服务区 — Cloudflare CDN 节点 12",
+      "tls": {
+        "enabled": true,
+        "server_name": "argo15s.moooiooom.us.kg",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "headers": {
+          "Host": [
+            "argo15s.moooiooom.us.kg"
+          ]
+        },
+        "path": "/vless?ed=2048",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "fc44fe6a-f083-4591-9c03-f8d61dc3907f",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "104.19.56.119",
+      "server_port": 443,
+      "tag": "🇺🇸 美国.加州.圣何塞 — Cloudflare CDN 节点 10",
+      "tls": {
+        "enabled": true,
+        "server_name": "argo15s.moooiooom.us.kg",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "headers": {
+          "Host": [
+            "argo15s.moooiooom.us.kg"
+          ]
+        },
+        "path": "/vless?ed=2048",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "fc44fe6a-f083-4591-9c03-f8d61dc3907f",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "104.19.57.187",
+      "server_port": 2096,
+      "tag": "🇺🇸 美国.加州.圣何塞 — Cloudflare CDN 节点 11",
+      "tls": {
+        "enabled": true,
+        "server_name": "argo15s.moooiooom.us.kg",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "headers": {
+          "Host": [
+            "argo15s.moooiooom.us.kg"
+          ]
+        },
+        "path": "/vless?ed=2048",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "fc44fe6a-f083-4591-9c03-f8d61dc3907f",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "104.19.56.112",
+      "server_port": 2083,
+      "tag": "🇺🇸 美国.加州.圣何塞 — Cloudflare CDN 节点 12",
+      "tls": {
+        "enabled": true,
+        "server_name": "argo15s.moooiooom.us.kg",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "headers": {
+          "Host": [
+            "argo15s.moooiooom.us.kg"
+          ]
+        },
+        "path": "/vless?ed=2048",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "fc44fe6a-f083-4591-9c03-f8d61dc3907f",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "172.67.253.246",
+      "server_port": 443,
+      "tag": "🇬🇧 英国.伦敦.英格兰 — Cloudflare CDN 节点 10",
+      "tls": {
+        "enabled": true,
+        "server_name": "argo15s.moooiooom.us.kg",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "headers": {
+          "Host": [
+            "argo15s.moooiooom.us.kg"
+          ]
+        },
+        "path": "/vless?ed=2048",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "fc44fe6a-f083-4591-9c03-f8d61dc3907f",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "172.67.247.120",
+      "server_port": 2053,
+      "tag": "🇬🇧 英国.伦敦.英格兰 — Cloudflare CDN 节点 11",
+      "tls": {
+        "enabled": true,
+        "server_name": "argo15s.moooiooom.us.kg",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "headers": {
+          "Host": [
+            "argo15s.moooiooom.us.kg"
+          ]
+        },
+        "path": "/vless?ed=2048",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "fc44fe6a-f083-4591-9c03-f8d61dc3907f",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "172.67.253.79",
+      "server_port": 2087,
+      "tag": "🇬🇧 英国.伦敦.英格兰 — Cloudflare CDN 节点 12",
+      "tls": {
+        "enabled": true,
+        "server_name": "argo15s.moooiooom.us.kg",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "headers": {
+          "Host": [
+            "argo15s.moooiooom.us.kg"
+          ]
+        },
+        "path": "/vless?ed=2048",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "fc44fe6a-f083-4591-9c03-f8d61dc3907f",
+      "packet_encoding": "xudp"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "guiding-raven.treefrog761.one",
+      "server_port": 443,
+      "tag": "超时就是被墙，使用代理连可用！ 3",
+      "tls": {
+        "enabled": true,
+        "server_name": "guiding-raven.treefrog761.one",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "guiding-raven.treefrog761.one",
+      "server_port": 443,
+      "tag": "新城 - 01 3",
+      "tls": {
+        "enabled": true,
+        "server_name": "guiding-raven.treefrog761.one",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "amazed-gobbler.treefrog761.one",
+      "server_port": 443,
+      "tag": "新城 - 03 3",
+      "tls": {
+        "enabled": true,
+        "server_name": "amazed-gobbler.treefrog761.one",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "flying-tuna.treefrog761.one",
+      "server_port": 443,
+      "tag": "新城 - 04 4",
+      "tls": {
+        "enabled": true,
+        "server_name": "flying-tuna.treefrog761.one",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "exotic-bengal.treefrog761.one",
+      "server_port": 443,
+      "tag": "新城 - 05 4",
+      "tls": {
+        "enabled": true,
+        "server_name": "exotic-bengal.treefrog761.one",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "robust-insect.insect388.motorcycles",
+      "server_port": 443,
+      "tag": "🇯🇵 日本 - 03 5",
+      "tls": {
+        "enabled": true,
+        "server_name": "robust-insect.insect388.motorcycles",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "settled-corgi.insect388.motorcycles",
+      "server_port": 443,
+      "tag": "🇯🇵 日本 - 04 5",
+      "tls": {
+        "enabled": true,
+        "server_name": "settled-corgi.insect388.motorcycles",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "quick-corgi.insect388.motorcycles",
+      "server_port": 443,
+      "tag": "🇯🇵 日本 - 06 4",
+      "tls": {
+        "enabled": true,
+        "server_name": "quick-corgi.insect388.motorcycles",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "summary-rat.insect388.motorcycles",
+      "server_port": 443,
+      "tag": "🇺🇸 美国 - 01 3",
+      "tls": {
+        "enabled": true,
+        "server_name": "summary-rat.insect388.motorcycles",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "magical-peacock.insect388.motorcycles",
+      "server_port": 443,
+      "tag": "🇺🇸 美国 - 02 5",
+      "tls": {
+        "enabled": true,
+        "server_name": "magical-peacock.insect388.motorcycles",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "square-pug.insect388.motorcycles",
+      "server_port": 443,
+      "tag": "🇺🇸 美国 - 03 4",
+      "tls": {
+        "enabled": true,
+        "server_name": "square-pug.insect388.motorcycles",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "better-caribou.insect388.motorcycles",
+      "server_port": 443,
+      "tag": "🇺🇸 美国 - 05 5",
+      "tls": {
+        "enabled": true,
+        "server_name": "better-caribou.insect388.motorcycles",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "magnetic-bream.insect388.motorcycles",
+      "server_port": 443,
+      "tag": "🇺🇸 美国 - 06 5",
+      "tls": {
+        "enabled": true,
+        "server_name": "magnetic-bream.insect388.motorcycles",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "romantic-hedgehog.insect388.motorcycles",
+      "server_port": 443,
+      "tag": "🇺🇸 美国 - 07 4",
+      "tls": {
+        "enabled": true,
+        "server_name": "romantic-hedgehog.insect388.motorcycles",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "modest-bulldog.goat627.mom",
+      "server_port": 443,
+      "tag": "🇳🇱 荷兰 - 01 4",
+      "tls": {
+        "enabled": true,
+        "server_name": "modest-bulldog.goat627.mom",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "awaited-hedgehog.insect388.motorcycles",
+      "server_port": 443,
+      "tag": "🇳🇱 荷兰 - 03 4",
+      "tls": {
+        "enabled": true,
+        "server_name": "awaited-hedgehog.insect388.motorcycles",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "epic-weasel.treefrog761.one",
+      "server_port": 443,
+      "tag": "🇳🇱 荷兰 - 04 4",
+      "tls": {
+        "enabled": true,
+        "server_name": "epic-weasel.treefrog761.one",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "touching-sloth.insect388.motorcycles",
+      "server_port": 443,
+      "tag": "🇩🇪 德国 - 01 5",
+      "tls": {
+        "enabled": true,
+        "server_name": "touching-sloth.insect388.motorcycles",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "more-sunfish.insect388.motorcycles",
+      "server_port": 443,
+      "tag": "🇩🇪 德国 - 02 5",
+      "tls": {
+        "enabled": true,
+        "server_name": "more-sunfish.insect388.motorcycles",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "main-crane.insect388.motorcycles",
+      "server_port": 443,
+      "tag": "🇩🇪 德国 - 04 4",
+      "tls": {
+        "enabled": true,
+        "server_name": "main-crane.insect388.motorcycles",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "natural-aphid.insect388.motorcycles",
+      "server_port": 443,
+      "tag": "🇩🇪 德国 - 06 4",
+      "tls": {
+        "enabled": true,
+        "server_name": "natural-aphid.insect388.motorcycles",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "elegant-meerkat.insect388.motorcycles",
+      "server_port": 443,
+      "tag": "🇩🇪 德国 - 07 5",
+      "tls": {
+        "enabled": true,
+        "server_name": "elegant-meerkat.insect388.motorcycles",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "content-adder.insect388.motorcycles",
+      "server_port": 443,
+      "tag": "🇩🇪 德国 - 08 4",
+      "tls": {
+        "enabled": true,
+        "server_name": "content-adder.insect388.motorcycles",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "holy-colt.insect388.motorcycles",
+      "server_port": 443,
+      "tag": "🇬🇧 伦敦 - 04 5",
+      "tls": {
+        "enabled": true,
+        "server_name": "holy-colt.insect388.motorcycles",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "teaching-lamb.insect388.motorcycles",
+      "server_port": 443,
+      "tag": "🇬🇧 伦敦 - 05 4",
+      "tls": {
+        "enabled": true,
+        "server_name": "teaching-lamb.insect388.motorcycles",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "modern-bengal.insect388.motorcycles",
+      "server_port": 443,
+      "tag": "🇬🇧 伦敦 - 07 4",
+      "tls": {
+        "enabled": true,
+        "server_name": "modern-bengal.insect388.motorcycles",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "smooth-monkfish.insect388.motorcycles",
+      "server_port": 443,
+      "tag": "🇮🇳 印度 - 02 3",
+      "tls": {
+        "enabled": true,
+        "server_name": "smooth-monkfish.insect388.motorcycles",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "deciding-mantis.treefrog761.one",
+      "server_port": 443,
+      "tag": "🇮🇳 印度 - 03 3",
+      "tls": {
+        "enabled": true,
+        "server_name": "deciding-mantis.treefrog761.one",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "harmless-mosquito.insect388.motorcycles",
+      "server_port": 443,
+      "tag": "🇮🇳 印度 - 04 4",
+      "tls": {
+        "enabled": true,
+        "server_name": "harmless-mosquito.insect388.motorcycles",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "sweeping-buzzard.insect388.motorcycles",
+      "server_port": 443,
+      "tag": "🇮🇳 印度 - 05 3",
+      "tls": {
+        "enabled": true,
+        "server_name": "sweeping-buzzard.insect388.motorcycles",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "flexible-urchin.insect388.motorcycles",
+      "server_port": 443,
+      "tag": "🇮🇳 印度 - 06 4",
+      "tls": {
+        "enabled": true,
+        "server_name": "flexible-urchin.insect388.motorcycles",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "server": "104.19.142.30",
+      "server_port": 8443,
+      "tag": "🇺🇸 美国.加州.洛杉矶 — Cloudflare CDN 节点 13",
+      "tls": {
+        "enabled": true,
+        "server_name": "argo15s.moooiooom.us.kg",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "headers": {
+          "Host": [
+            "argo15s.moooiooom.us.kg"
+          ]
+        },
+        "path": "/vless?ed=2048",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "fc44fe6a-f083-4591-9c03-f8d61dc3907f",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "104.19.142.128",
+      "server_port": 2096,
+      "tag": "🇺🇸 美国.加州.洛杉矶 — Cloudflare CDN 节点 14",
+      "tls": {
+        "enabled": true,
+        "server_name": "argo15s.moooiooom.us.kg",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "headers": {
+          "Host": [
+            "argo15s.moooiooom.us.kg"
+          ]
+        },
+        "path": "/vless?ed=2048",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "fc44fe6a-f083-4591-9c03-f8d61dc3907f",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "104.19.142.66",
+      "server_port": 2083,
+      "tag": "🇺🇸 美国.加州.洛杉矶 — Cloudflare CDN 节点 15",
+      "tls": {
+        "enabled": true,
+        "server_name": "argo15s.moooiooom.us.kg",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "headers": {
+          "Host": [
+            "argo15s.moooiooom.us.kg"
+          ]
+        },
+        "path": "/vless?ed=2048",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "fc44fe6a-f083-4591-9c03-f8d61dc3907f",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "104.19.103.68",
+      "server_port": 2087,
+      "tag": "🇺🇸 美国.加州.圣何塞 — Cloudflare CDN 节点 13",
+      "tls": {
+        "enabled": true,
+        "server_name": "argo15s.moooiooom.us.kg",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "headers": {
+          "Host": [
+            "argo15s.moooiooom.us.kg"
+          ]
+        },
+        "path": "/vless?ed=2048",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "fc44fe6a-f083-4591-9c03-f8d61dc3907f",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "104.19.103.186",
+      "server_port": 8443,
+      "tag": "🇺🇸 美国.加州.圣何塞 — Cloudflare CDN 节点 14",
+      "tls": {
+        "enabled": true,
+        "server_name": "argo15s.moooiooom.us.kg",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "headers": {
+          "Host": [
+            "argo15s.moooiooom.us.kg"
+          ]
+        },
+        "path": "/vless?ed=2048",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "fc44fe6a-f083-4591-9c03-f8d61dc3907f",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "104.19.103.135",
+      "server_port": 443,
+      "tag": "🇺🇸 美国.加州.圣何塞 — Cloudflare CDN 节点 15",
+      "tls": {
+        "enabled": true,
+        "server_name": "argo15s.moooiooom.us.kg",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "headers": {
+          "Host": [
+            "argo15s.moooiooom.us.kg"
+          ]
+        },
+        "path": "/vless?ed=2048",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "fc44fe6a-f083-4591-9c03-f8d61dc3907f",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "104.17.134.254",
+      "server_port": 443,
+      "tag": "🇭🇰 中国.香港.服务区 — Cloudflare CDN 节点 13",
+      "tls": {
+        "enabled": true,
+        "server_name": "argo15s.moooiooom.us.kg",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "headers": {
+          "Host": [
+            "argo15s.moooiooom.us.kg"
+          ]
+        },
+        "path": "/vless?ed=2048",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "fc44fe6a-f083-4591-9c03-f8d61dc3907f",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "104.17.73.17",
+      "server_port": 2083,
+      "tag": "🇭🇰 中国.香港.服务区 — Cloudflare CDN 节点 14",
+      "tls": {
+        "enabled": true,
+        "server_name": "argo15s.moooiooom.us.kg",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "headers": {
+          "Host": [
+            "argo15s.moooiooom.us.kg"
+          ]
+        },
+        "path": "/vless?ed=2048",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "fc44fe6a-f083-4591-9c03-f8d61dc3907f",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "104.16.34.102",
+      "server_port": 2053,
+      "tag": "🇭🇰 中国.香港.服务区 — Cloudflare CDN 节点 15",
+      "tls": {
+        "enabled": true,
+        "server_name": "argo15s.moooiooom.us.kg",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "headers": {
+          "Host": [
+            "argo15s.moooiooom.us.kg"
+          ]
+        },
+        "path": "/vless?ed=2048",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "fc44fe6a-f083-4591-9c03-f8d61dc3907f",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "104.21.41.49",
+      "server_port": 8443,
+      "tag": "🇬🇧 英国.伦敦.英格兰 — Cloudflare CDN 节点 13",
+      "tls": {
+        "enabled": true,
+        "server_name": "argo15s.moooiooom.us.kg",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "headers": {
+          "Host": [
+            "argo15s.moooiooom.us.kg"
+          ]
+        },
+        "path": "/vless?ed=2048",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "fc44fe6a-f083-4591-9c03-f8d61dc3907f",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "104.21.41.92",
+      "server_port": 2053,
+      "tag": "🇬🇧 英国.伦敦.英格兰 — Cloudflare CDN 节点 14",
+      "tls": {
+        "enabled": true,
+        "server_name": "argo15s.moooiooom.us.kg",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "headers": {
+          "Host": [
+            "argo15s.moooiooom.us.kg"
+          ]
+        },
+        "path": "/vless?ed=2048",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "fc44fe6a-f083-4591-9c03-f8d61dc3907f",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "104.21.41.215",
+      "server_port": 2083,
+      "tag": "🇬🇧 英国.伦敦.英格兰 — Cloudflare CDN 节点 15",
+      "tls": {
+        "enabled": true,
+        "server_name": "argo15s.moooiooom.us.kg",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "headers": {
+          "Host": [
+            "argo15s.moooiooom.us.kg"
+          ]
+        },
+        "path": "/vless?ed=2048",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "fc44fe6a-f083-4591-9c03-f8d61dc3907f",
+      "packet_encoding": "xudp"
+    },
+    {
+      "password": "CMLiussss",
+      "server": "127.0.0.1",
+      "server_port": 8888,
+      "tag": "异常订阅 hj-94d.pages.dev",
+      "tls": {
+        "enabled": true,
+        "server_name": "127.0.0.1",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "CMLiussss",
+      "server": "127.0.0.1",
+      "server_port": 8888,
+      "tag": "异常订阅 mihu.sorry.ip-ddns.com",
+      "tls": {
+        "enabled": true,
+        "server_name": "127.0.0.1",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "tag": "select",
+      "type": "selector",
+      "default": "urltest",
+      "outbounds": [
+        "urltest",
+        "🇭🇰 公益_香港 RAY",
+        "🇭🇰 公益_香港 HYT",
+        "🇫🇷 FR-serv00-s16-hysteria2",
+        "超时就是被墙，使用代理连可用！",
+        "新城 - 01",
+        "新城 - 02",
+        "新城 - 03",
+        "新城 - 04",
+        "新城 - 05",
+        "🇯🇵 日本 - 01",
+        "🇯🇵 日本 - 02",
+        "🇯🇵 日本 - 03",
+        "🇯🇵 日本 - 04",
+        "🇯🇵 日本 - 05",
+        "🇯🇵 日本 - 06",
+        "🇯🇵 日本 - 07",
+        "🇰🇷 韩国 - 01",
+        "🇰🇷 韩国 - 02",
+        "🇰🇷 韩国 - 03",
+        "🇺🇸 美国 - 01",
+        "🇺🇸 美国 - 02",
+        "🇺🇸 美国 - 03",
+        "🇺🇸 美国 - 04",
+        "🇺🇸 美国 - 05",
+        "🇺🇸 美国 - 06",
+        "🇺🇸 美国 - 07",
+        "🇺🇸 美国 - 08",
+        "🇺🇸 美国 - 09",
+        "🇳🇱 荷兰 - 01",
+        "🇳🇱 荷兰 - 02",
+        "🇳🇱 荷兰 - 03",
+        "🇳🇱 荷兰 - 04",
+        "🇳🇱 荷兰 - 05",
+        "🇳🇱 荷兰 - 06",
+        "🇵🇱 波兰 - 01",
+        "🇩🇪 德国 - 01",
+        "🇩🇪 德国 - 02",
+        "🇩🇪 德国 - 03",
+        "🇩🇪 德国 - 04",
+        "🇩🇪 德国 - 05",
+        "🇩🇪 德国 - 06",
+        "🇩🇪 德国 - 07",
+        "🇩🇪 德国 - 08",
+        "🇩🇪 德国 - 09",
+        "🇫🇷 法国 - 01",
+        "🇫🇷 法国 - 02",
+        "🇬🇧 伦敦 - 01",
+        "🇬🇧 伦敦 - 02",
+        "🇬🇧 伦敦 - 03",
+        "🇬🇧 伦敦 - 04",
+        "🇬🇧 伦敦 - 05",
+        "🇬🇧 伦敦 - 06",
+        "🇬🇧 伦敦 - 07",
+        "🇸🇪 瑞典 - 01",
+        "🇸🇪 瑞典 - 02",
+        "🇸🇪 瑞典 - 03",
+        "🇮🇳 印度 - 01",
+        "🇮🇳 印度 - 02",
+        "🇮🇳 印度 - 03",
+        "🇮🇳 印度 - 04",
+        "🇮🇳 印度 - 05",
+        "🇮🇳 印度 - 06",
+        "🇧🇷 巴西 - 01",
+        "🇹🇭 泰国 - 01",
+        "🇸🇦 沙特 - 01",
+        "🇨🇿 捷克 - 01",
+        "巴林 - 01",
+        "🇨🇦 加拿大 - 01",
+        "🇮🇪 爱尔兰 - 01",
+        "🇮🇪 爱尔兰 - 02",
+        "🇷🇺 俄罗斯 - 01",
+        "🇷🇺 俄罗斯 - 02",
+        "🇪🇸 西班牙 - 01",
+        "阿拉伯 - 01",
+        "🇮🇹 意大利 - 01",
+        "🇹🇷 土耳其 - 01",
+        "🇳🇵 尼泊尔 - 01",
+        "🇵🇭 菲律宾 - 01",
+        "🇲🇽 墨西哥 - 01",
+        "🇳🇬 尼日利亚 - 01",
+        "🇳🇬 尼日利亚 - 02",
+        "🇦🇺 澳大利亚 - 01",
+        "🇱🇻 拉脱维亚 - 01",
+        "🇵🇰 巴基斯坦 - 01",
+        "🇲🇾 马来西亚 - 01",
+        "🇺🇸 美国.加州.圣何塞 — Cloudflare CDN 节点",
+        "🇺🇸 美国.加州.圣何塞 — Cloudflare CDN 节点 2",
+        "🇺🇸 美国.加州.圣何塞 — Cloudflare CDN 节点 3",
+        "🇺🇸 美国.加州.洛杉矶 — Cloudflare CDN 节点",
+        "🇺🇸 美国.加州.洛杉矶 — Cloudflare CDN 节点 2",
+        "🇺🇸 美国.加州.洛杉矶 — Cloudflare CDN 节点 3",
+        "🇭🇰 中国.香港.服务区 — Cloudflare CDN 节点",
+        "🇭🇰 中国.香港.服务区 — Cloudflare CDN 节点 2",
+        "🇭🇰 中国.香港.服务区 — Cloudflare CDN 节点 3",
+        "🇬🇧 英国.伦敦.英格兰 — Cloudflare CDN 节点",
+        "🇬🇧 英国.伦敦.英格兰 — Cloudflare CDN 节点 2",
+        "🇬🇧 英国.伦敦.英格兰 — Cloudflare CDN 节点 3",
+        "🇵🇱 公益_波兰01",
+        "🇵🇱 公益_波兰05",
+        "🇵🇱 公益_波兰08",
+        "🇵🇱 公益_波兰09",
+        "🇵🇱 公益_波兰10",
+        "🇵🇱 公益_波兰11",
+        "🇵🇱 公益_波兰12",
+        "🇵🇱 公益_波兰13",
+        "🇵🇱 公益_波兰14",
+        "🇵🇱 公益_波兰15",
+        "🇧🇷 公益_巴西",
+        "🇵🇱 公益_波兰",
+        "🇩🇪 公益_德国",
+        "🇫🇷 公益_法国",
+        "🇰🇷 公益_韩国",
+        "🇺🇸 公益_美国",
+        "🇯🇵 公益_日本",
+        "🇭🇰 公益_香港",
+        "超时就是被墙，使用代理连可用！ 2",
+        "新城 - 01 2",
+        "新城 - 02 2",
+        "新城 - 04 2",
+        "新城 - 05 2",
+        "🇯🇵 日本 - 01 2",
+        "🇯🇵 日本 - 02 2",
+        "🇯🇵 日本 - 03 2",
+        "🇯🇵 日本 - 04 2",
+        "🇯🇵 日本 - 05 2",
+        "🇯🇵 日本 - 06 2",
+        "🇯🇵 日本 - 07 2",
+        "🇺🇸 美国 - 02 2",
+        "🇺🇸 美国 - 03 2",
+        "🇺🇸 美国 - 04 2",
+        "🇺🇸 美国 - 05 2",
+        "🇺🇸 美国 - 06 2",
+        "🇺🇸 美国 - 07 2",
+        "🇺🇸 美国 - 08 2",
+        "🇳🇱 荷兰 - 01 2",
+        "🇳🇱 荷兰 - 02 2",
+        "🇳🇱 荷兰 - 03 2",
+        "🇳🇱 荷兰 - 04 2",
+        "🇳🇱 荷兰 - 05 2",
+        "🇳🇱 荷兰 - 06 2",
+        "🇩🇪 德国 - 01 2",
+        "🇩🇪 德国 - 02 2",
+        "🇩🇪 德国 - 03 2",
+        "🇩🇪 德国 - 04 2",
+        "🇩🇪 德国 - 05 2",
+        "🇩🇪 德国 - 06 2",
+        "🇩🇪 德国 - 07 2",
+        "🇩🇪 德国 - 08 2",
+        "🇩🇪 德国 - 09 2",
+        "🇬🇧 伦敦 - 02 2",
+        "🇬🇧 伦敦 - 04 2",
+        "🇬🇧 伦敦 - 06 2",
+        "🇮🇳 印度 - 01 2",
+        "🇮🇳 印度 - 03 2",
+        "🇮🇳 印度 - 04 2",
+        "🇮🇳 印度 - 05 2",
+        "🇮🇳 印度 - 06 2",
+        "🇮🇪 爱尔兰 - 01 2",
+        "🇮🇪 爱尔兰 - 02 2",
+        "🇷🇺 俄罗斯 - 01 2",
+        "🇷🇺 俄罗斯 - 02 2",
+        "🇺🇸 美国.加州.洛杉矶 — Cloudflare CDN 节点 4",
+        "🇺🇸 美国.加州.洛杉矶 — Cloudflare CDN 节点 5",
+        "🇺🇸 美国.加州.洛杉矶 — Cloudflare CDN 节点 6",
+        "🇭🇰 中国.香港.服务区 — Cloudflare CDN 节点 4",
+        "🇭🇰 中国.香港.服务区 — Cloudflare CDN 节点 5",
+        "🇭🇰 中国.香港.服务区 — Cloudflare CDN 节点 6",
+        "🇺🇸 美国.加州.圣何塞 — Cloudflare CDN 节点 4",
+        "🇺🇸 美国.加州.圣何塞 — Cloudflare CDN 节点 5",
+        "🇺🇸 美国.加州.圣何塞 — Cloudflare CDN 节点 6",
+        "🇬🇧 英国.伦敦.英格兰 — Cloudflare CDN 节点 4",
+        "🇬🇧 英国.伦敦.英格兰 — Cloudflare CDN 节点 5",
+        "🇬🇧 英国.伦敦.英格兰 — Cloudflare CDN 节点 6",
+        "新城 - 02 3",
+        "新城 - 03 2",
+        "新城 - 04 3",
+        "新城 - 05 3",
+        "🇯🇵 日本 - 01 3",
+        "🇯🇵 日本 - 03 3",
+        "🇯🇵 日本 - 04 3",
+        "🇯🇵 日本 - 05 3",
+        "🇰🇷 韩国 - 01 2",
+        "🇰🇷 韩国 - 02 2",
+        "🇺🇸 美国 - 01 2",
+        "🇺🇸 美国 - 02 3",
+        "🇺🇸 美国 - 03 3",
+        "🇺🇸 美国 - 05 3",
+        "🇺🇸 美国 - 06 3",
+        "🇺🇸 美国 - 08 3",
+        "🇺🇸 美国 - 09 2",
+        "🇳🇱 荷兰 - 01 3",
+        "🇳🇱 荷兰 - 02 3",
+        "🇳🇱 荷兰 - 03 3",
+        "🇳🇱 荷兰 - 05 3",
+        "🇩🇪 德国 - 01 3",
+        "🇩🇪 德国 - 02 3",
+        "🇩🇪 德国 - 05 3",
+        "🇩🇪 德国 - 07 3",
+        "🇩🇪 德国 - 09 3",
+        "🇫🇷 法国 - 01 2",
+        "🇫🇷 法国 - 02 2",
+        "🇬🇧 伦敦 - 01 2",
+        "🇬🇧 伦敦 - 02 3",
+        "🇬🇧 伦敦 - 03 2",
+        "🇬🇧 伦敦 - 04 3",
+        "🇬🇧 伦敦 - 05 2",
+        "🇬🇧 伦敦 - 06 3",
+        "🇬🇧 伦敦 - 07 2",
+        "🇸🇪 瑞典 - 01 2",
+        "🇸🇪 瑞典 - 02 2",
+        "🇸🇪 瑞典 - 03 2",
+        "🇮🇳 印度 - 01 3",
+        "🇮🇳 印度 - 02 2",
+        "🇮🇳 印度 - 04 3",
+        "🇳🇬 尼日利亚 - 01 2",
+        "🇳🇬 尼日利亚 - 02 2",
+        "🇭🇰 中国.香港.服务区 — Cloudflare CDN 节点 7",
+        "🇭🇰 中国.香港.服务区 — Cloudflare CDN 节点 8",
+        "🇭🇰 中国.香港.服务区 — Cloudflare CDN 节点 9",
+        "🇬🇧 英国.伦敦.英格兰 — Cloudflare CDN 节点 7",
+        "🇬🇧 英国.伦敦.英格兰 — Cloudflare CDN 节点 8",
+        "🇬🇧 英国.伦敦.英格兰 — Cloudflare CDN 节点 9",
+        "🇺🇸 美国.加州.洛杉矶 — Cloudflare CDN 节点 7",
+        "🇺🇸 美国.加州.洛杉矶 — Cloudflare CDN 节点 8",
+        "🇺🇸 美国.加州.洛杉矶 — Cloudflare CDN 节点 9",
+        "🇺🇸 美国.加州.圣何塞 — Cloudflare CDN 节点 7",
+        "🇺🇸 美国.加州.圣何塞 — Cloudflare CDN 节点 8",
+        "🇺🇸 美国.加州.圣何塞 — Cloudflare CDN 节点 9",
+        "新城 - 02 4",
+        "🇯🇵 日本 - 01 4",
+        "🇯🇵 日本 - 02 3",
+        "🇯🇵 日本 - 03 4",
+        "🇯🇵 日本 - 04 4",
+        "🇯🇵 日本 - 05 4",
+        "🇯🇵 日本 - 06 3",
+        "🇯🇵 日本 - 07 3",
+        "🇰🇷 韩国 - 02 3",
+        "🇰🇷 韩国 - 03 2",
+        "🇺🇸 美国 - 02 4",
+        "🇺🇸 美国 - 04 3",
+        "🇺🇸 美国 - 05 4",
+        "🇺🇸 美国 - 06 4",
+        "🇺🇸 美国 - 07 3",
+        "🇺🇸 美国 - 08 4",
+        "🇳🇱 荷兰 - 02 4",
+        "🇳🇱 荷兰 - 04 3",
+        "🇳🇱 荷兰 - 05 4",
+        "🇳🇱 荷兰 - 06 3",
+        "🇩🇪 德国 - 01 4",
+        "🇩🇪 德国 - 02 4",
+        "🇩🇪 德国 - 03 3",
+        "🇩🇪 德国 - 04 3",
+        "🇩🇪 德国 - 05 4",
+        "🇩🇪 德国 - 06 3",
+        "🇩🇪 德国 - 07 4",
+        "🇩🇪 德国 - 08 3",
+        "🇩🇪 德国 - 09 4",
+        "🇬🇧 伦敦 - 03 3",
+        "🇬🇧 伦敦 - 04 4",
+        "🇬🇧 伦敦 - 05 3",
+        "🇬🇧 伦敦 - 07 3",
+        "🇸🇪 瑞典 - 01 3",
+        "🇸🇪 瑞典 - 02 3",
+        "🇸🇪 瑞典 - 03 3",
+        "🇮🇳 印度 - 06 3",
+        "🇺🇸 美国.加州.洛杉矶 — Cloudflare CDN 节点 10",
+        "🇺🇸 美国.加州.洛杉矶 — Cloudflare CDN 节点 11",
+        "🇺🇸 美国.加州.洛杉矶 — Cloudflare CDN 节点 12",
+        "🇭🇰 中国.香港.服务区 — Cloudflare CDN 节点 10",
+        "🇭🇰 中国.香港.服务区 — Cloudflare CDN 节点 11",
+        "🇭🇰 中国.香港.服务区 — Cloudflare CDN 节点 12",
+        "🇺🇸 美国.加州.圣何塞 — Cloudflare CDN 节点 10",
+        "🇺🇸 美国.加州.圣何塞 — Cloudflare CDN 节点 11",
+        "🇺🇸 美国.加州.圣何塞 — Cloudflare CDN 节点 12",
+        "🇬🇧 英国.伦敦.英格兰 — Cloudflare CDN 节点 10",
+        "🇬🇧 英国.伦敦.英格兰 — Cloudflare CDN 节点 11",
+        "🇬🇧 英国.伦敦.英格兰 — Cloudflare CDN 节点 12",
+        "超时就是被墙，使用代理连可用！ 3",
+        "新城 - 01 3",
+        "新城 - 03 3",
+        "新城 - 04 4",
+        "新城 - 05 4",
+        "🇯🇵 日本 - 03 5",
+        "🇯🇵 日本 - 04 5",
+        "🇯🇵 日本 - 06 4",
+        "🇺🇸 美国 - 01 3",
+        "🇺🇸 美国 - 02 5",
+        "🇺🇸 美国 - 03 4",
+        "🇺🇸 美国 - 05 5",
+        "🇺🇸 美国 - 06 5",
+        "🇺🇸 美国 - 07 4",
+        "🇳🇱 荷兰 - 01 4",
+        "🇳🇱 荷兰 - 03 4",
+        "🇳🇱 荷兰 - 04 4",
+        "🇩🇪 德国 - 01 5",
+        "🇩🇪 德国 - 02 5",
+        "🇩🇪 德国 - 04 4",
+        "🇩🇪 德国 - 06 4",
+        "🇩🇪 德国 - 07 5",
+        "🇩🇪 德国 - 08 4",
+        "🇬🇧 伦敦 - 04 5",
+        "🇬🇧 伦敦 - 05 4",
+        "🇬🇧 伦敦 - 07 4",
+        "🇮🇳 印度 - 02 3",
+        "🇮🇳 印度 - 03 3",
+        "🇮🇳 印度 - 04 4",
+        "🇮🇳 印度 - 05 3",
+        "🇮🇳 印度 - 06 4",
+        "🇺🇸 美国.加州.洛杉矶 — Cloudflare CDN 节点 13",
+        "🇺🇸 美国.加州.洛杉矶 — Cloudflare CDN 节点 14",
+        "🇺🇸 美国.加州.洛杉矶 — Cloudflare CDN 节点 15",
+        "🇺🇸 美国.加州.圣何塞 — Cloudflare CDN 节点 13",
+        "🇺🇸 美国.加州.圣何塞 — Cloudflare CDN 节点 14",
+        "🇺🇸 美国.加州.圣何塞 — Cloudflare CDN 节点 15",
+        "🇭🇰 中国.香港.服务区 — Cloudflare CDN 节点 13",
+        "🇭🇰 中国.香港.服务区 — Cloudflare CDN 节点 14",
+        "🇭🇰 中国.香港.服务区 — Cloudflare CDN 节点 15",
+        "🇬🇧 英国.伦敦.英格兰 — Cloudflare CDN 节点 13",
+        "🇬🇧 英国.伦敦.英格兰 — Cloudflare CDN 节点 14",
+        "🇬🇧 英国.伦敦.英格兰 — Cloudflare CDN 节点 15",
+        "异常订阅 hj-94d.pages.dev",
+        "异常订阅 mihu.sorry.ip-ddns.com"
+      ]
+    },
+    {
+      "tag": "urltest",
+      "type": "urltest",
+      "outbounds": [
+        "🇭🇰 公益_香港 RAY",
+        "🇭🇰 公益_香港 HYT",
+        "🇫🇷 FR-serv00-s16-hysteria2",
+        "超时就是被墙，使用代理连可用！",
+        "新城 - 01",
+        "新城 - 02",
+        "新城 - 03",
+        "新城 - 04",
+        "新城 - 05",
+        "🇯🇵 日本 - 01",
+        "🇯🇵 日本 - 02",
+        "🇯🇵 日本 - 03",
+        "🇯🇵 日本 - 04",
+        "🇯🇵 日本 - 05",
+        "🇯🇵 日本 - 06",
+        "🇯🇵 日本 - 07",
+        "🇰🇷 韩国 - 01",
+        "🇰🇷 韩国 - 02",
+        "🇰🇷 韩国 - 03",
+        "🇺🇸 美国 - 01",
+        "🇺🇸 美国 - 02",
+        "🇺🇸 美国 - 03",
+        "🇺🇸 美国 - 04",
+        "🇺🇸 美国 - 05",
+        "🇺🇸 美国 - 06",
+        "🇺🇸 美国 - 07",
+        "🇺🇸 美国 - 08",
+        "🇺🇸 美国 - 09",
+        "🇳🇱 荷兰 - 01",
+        "🇳🇱 荷兰 - 02",
+        "🇳🇱 荷兰 - 03",
+        "🇳🇱 荷兰 - 04",
+        "🇳🇱 荷兰 - 05",
+        "🇳🇱 荷兰 - 06",
+        "🇵🇱 波兰 - 01",
+        "🇩🇪 德国 - 01",
+        "🇩🇪 德国 - 02",
+        "🇩🇪 德国 - 03",
+        "🇩🇪 德国 - 04",
+        "🇩🇪 德国 - 05",
+        "🇩🇪 德国 - 06",
+        "🇩🇪 德国 - 07",
+        "🇩🇪 德国 - 08",
+        "🇩🇪 德国 - 09",
+        "🇫🇷 法国 - 01",
+        "🇫🇷 法国 - 02",
+        "🇬🇧 伦敦 - 01",
+        "🇬🇧 伦敦 - 02",
+        "🇬🇧 伦敦 - 03",
+        "🇬🇧 伦敦 - 04",
+        "🇬🇧 伦敦 - 05",
+        "🇬🇧 伦敦 - 06",
+        "🇬🇧 伦敦 - 07",
+        "🇸🇪 瑞典 - 01",
+        "🇸🇪 瑞典 - 02",
+        "🇸🇪 瑞典 - 03",
+        "🇮🇳 印度 - 01",
+        "🇮🇳 印度 - 02",
+        "🇮🇳 印度 - 03",
+        "🇮🇳 印度 - 04",
+        "🇮🇳 印度 - 05",
+        "🇮🇳 印度 - 06",
+        "🇧🇷 巴西 - 01",
+        "🇹🇭 泰国 - 01",
+        "🇸🇦 沙特 - 01",
+        "🇨🇿 捷克 - 01",
+        "巴林 - 01",
+        "🇨🇦 加拿大 - 01",
+        "🇮🇪 爱尔兰 - 01",
+        "🇮🇪 爱尔兰 - 02",
+        "🇷🇺 俄罗斯 - 01",
+        "🇷🇺 俄罗斯 - 02",
+        "🇪🇸 西班牙 - 01",
+        "阿拉伯 - 01",
+        "🇮🇹 意大利 - 01",
+        "🇹🇷 土耳其 - 01",
+        "🇳🇵 尼泊尔 - 01",
+        "🇵🇭 菲律宾 - 01",
+        "🇲🇽 墨西哥 - 01",
+        "🇳🇬 尼日利亚 - 01",
+        "🇳🇬 尼日利亚 - 02",
+        "🇦🇺 澳大利亚 - 01",
+        "🇱🇻 拉脱维亚 - 01",
+        "🇵🇰 巴基斯坦 - 01",
+        "🇲🇾 马来西亚 - 01",
+        "🇺🇸 美国.加州.圣何塞 — Cloudflare CDN 节点",
+        "🇺🇸 美国.加州.圣何塞 — Cloudflare CDN 节点 2",
+        "🇺🇸 美国.加州.圣何塞 — Cloudflare CDN 节点 3",
+        "🇺🇸 美国.加州.洛杉矶 — Cloudflare CDN 节点",
+        "🇺🇸 美国.加州.洛杉矶 — Cloudflare CDN 节点 2",
+        "🇺🇸 美国.加州.洛杉矶 — Cloudflare CDN 节点 3",
+        "🇭🇰 中国.香港.服务区 — Cloudflare CDN 节点",
+        "🇭🇰 中国.香港.服务区 — Cloudflare CDN 节点 2",
+        "🇭🇰 中国.香港.服务区 — Cloudflare CDN 节点 3",
+        "🇬🇧 英国.伦敦.英格兰 — Cloudflare CDN 节点",
+        "🇬🇧 英国.伦敦.英格兰 — Cloudflare CDN 节点 2",
+        "🇬🇧 英国.伦敦.英格兰 — Cloudflare CDN 节点 3",
+        "🇵🇱 公益_波兰01",
+        "🇵🇱 公益_波兰05",
+        "🇵🇱 公益_波兰08",
+        "🇵🇱 公益_波兰09",
+        "🇵🇱 公益_波兰10",
+        "🇵🇱 公益_波兰11",
+        "🇵🇱 公益_波兰12",
+        "🇵🇱 公益_波兰13",
+        "🇵🇱 公益_波兰14",
+        "🇵🇱 公益_波兰15",
+        "🇧🇷 公益_巴西",
+        "🇵🇱 公益_波兰",
+        "🇩🇪 公益_德国",
+        "🇫🇷 公益_法国",
+        "🇰🇷 公益_韩国",
+        "🇺🇸 公益_美国",
+        "🇯🇵 公益_日本",
+        "🇭🇰 公益_香港",
+        "超时就是被墙，使用代理连可用！ 2",
+        "新城 - 01 2",
+        "新城 - 02 2",
+        "新城 - 04 2",
+        "新城 - 05 2",
+        "🇯🇵 日本 - 01 2",
+        "🇯🇵 日本 - 02 2",
+        "🇯🇵 日本 - 03 2",
+        "🇯🇵 日本 - 04 2",
+        "🇯🇵 日本 - 05 2",
+        "🇯🇵 日本 - 06 2",
+        "🇯🇵 日本 - 07 2",
+        "🇺🇸 美国 - 02 2",
+        "🇺🇸 美国 - 03 2",
+        "🇺🇸 美国 - 04 2",
+        "🇺🇸 美国 - 05 2",
+        "🇺🇸 美国 - 06 2",
+        "🇺🇸 美国 - 07 2",
+        "🇺🇸 美国 - 08 2",
+        "🇳🇱 荷兰 - 01 2",
+        "🇳🇱 荷兰 - 02 2",
+        "🇳🇱 荷兰 - 03 2",
+        "🇳🇱 荷兰 - 04 2",
+        "🇳🇱 荷兰 - 05 2",
+        "🇳🇱 荷兰 - 06 2",
+        "🇩🇪 德国 - 01 2",
+        "🇩🇪 德国 - 02 2",
+        "🇩🇪 德国 - 03 2",
+        "🇩🇪 德国 - 04 2",
+        "🇩🇪 德国 - 05 2",
+        "🇩🇪 德国 - 06 2",
+        "🇩🇪 德国 - 07 2",
+        "🇩🇪 德国 - 08 2",
+        "🇩🇪 德国 - 09 2",
+        "🇬🇧 伦敦 - 02 2",
+        "🇬🇧 伦敦 - 04 2",
+        "🇬🇧 伦敦 - 06 2",
+        "🇮🇳 印度 - 01 2",
+        "🇮🇳 印度 - 03 2",
+        "🇮🇳 印度 - 04 2",
+        "🇮🇳 印度 - 05 2",
+        "🇮🇳 印度 - 06 2",
+        "🇮🇪 爱尔兰 - 01 2",
+        "🇮🇪 爱尔兰 - 02 2",
+        "🇷🇺 俄罗斯 - 01 2",
+        "🇷🇺 俄罗斯 - 02 2",
+        "🇺🇸 美国.加州.洛杉矶 — Cloudflare CDN 节点 4",
+        "🇺🇸 美国.加州.洛杉矶 — Cloudflare CDN 节点 5",
+        "🇺🇸 美国.加州.洛杉矶 — Cloudflare CDN 节点 6",
+        "🇭🇰 中国.香港.服务区 — Cloudflare CDN 节点 4",
+        "🇭🇰 中国.香港.服务区 — Cloudflare CDN 节点 5",
+        "🇭🇰 中国.香港.服务区 — Cloudflare CDN 节点 6",
+        "🇺🇸 美国.加州.圣何塞 — Cloudflare CDN 节点 4",
+        "🇺🇸 美国.加州.圣何塞 — Cloudflare CDN 节点 5",
+        "🇺🇸 美国.加州.圣何塞 — Cloudflare CDN 节点 6",
+        "🇬🇧 英国.伦敦.英格兰 — Cloudflare CDN 节点 4",
+        "🇬🇧 英国.伦敦.英格兰 — Cloudflare CDN 节点 5",
+        "🇬🇧 英国.伦敦.英格兰 — Cloudflare CDN 节点 6",
+        "新城 - 02 3",
+        "新城 - 03 2",
+        "新城 - 04 3",
+        "新城 - 05 3",
+        "🇯🇵 日本 - 01 3",
+        "🇯🇵 日本 - 03 3",
+        "🇯🇵 日本 - 04 3",
+        "🇯🇵 日本 - 05 3",
+        "🇰🇷 韩国 - 01 2",
+        "🇰🇷 韩国 - 02 2",
+        "🇺🇸 美国 - 01 2",
+        "🇺🇸 美国 - 02 3",
+        "🇺🇸 美国 - 03 3",
+        "🇺🇸 美国 - 05 3",
+        "🇺🇸 美国 - 06 3",
+        "🇺🇸 美国 - 08 3",
+        "🇺🇸 美国 - 09 2",
+        "🇳🇱 荷兰 - 01 3",
+        "🇳🇱 荷兰 - 02 3",
+        "🇳🇱 荷兰 - 03 3",
+        "🇳🇱 荷兰 - 05 3",
+        "🇩🇪 德国 - 01 3",
+        "🇩🇪 德国 - 02 3",
+        "🇩🇪 德国 - 05 3",
+        "🇩🇪 德国 - 07 3",
+        "🇩🇪 德国 - 09 3",
+        "🇫🇷 法国 - 01 2",
+        "🇫🇷 法国 - 02 2",
+        "🇬🇧 伦敦 - 01 2",
+        "🇬🇧 伦敦 - 02 3",
+        "🇬🇧 伦敦 - 03 2",
+        "🇬🇧 伦敦 - 04 3",
+        "🇬🇧 伦敦 - 05 2",
+        "🇬🇧 伦敦 - 06 3",
+        "🇬🇧 伦敦 - 07 2",
+        "🇸🇪 瑞典 - 01 2",
+        "🇸🇪 瑞典 - 02 2",
+        "🇸🇪 瑞典 - 03 2",
+        "🇮🇳 印度 - 01 3",
+        "🇮🇳 印度 - 02 2",
+        "🇮🇳 印度 - 04 3",
+        "🇳🇬 尼日利亚 - 01 2",
+        "🇳🇬 尼日利亚 - 02 2",
+        "🇭🇰 中国.香港.服务区 — Cloudflare CDN 节点 7",
+        "🇭🇰 中国.香港.服务区 — Cloudflare CDN 节点 8",
+        "🇭🇰 中国.香港.服务区 — Cloudflare CDN 节点 9",
+        "🇬🇧 英国.伦敦.英格兰 — Cloudflare CDN 节点 7",
+        "🇬🇧 英国.伦敦.英格兰 — Cloudflare CDN 节点 8",
+        "🇬🇧 英国.伦敦.英格兰 — Cloudflare CDN 节点 9",
+        "🇺🇸 美国.加州.洛杉矶 — Cloudflare CDN 节点 7",
+        "🇺🇸 美国.加州.洛杉矶 — Cloudflare CDN 节点 8",
+        "🇺🇸 美国.加州.洛杉矶 — Cloudflare CDN 节点 9",
+        "🇺🇸 美国.加州.圣何塞 — Cloudflare CDN 节点 7",
+        "🇺🇸 美国.加州.圣何塞 — Cloudflare CDN 节点 8",
+        "🇺🇸 美国.加州.圣何塞 — Cloudflare CDN 节点 9",
+        "新城 - 02 4",
+        "🇯🇵 日本 - 01 4",
+        "🇯🇵 日本 - 02 3",
+        "🇯🇵 日本 - 03 4",
+        "🇯🇵 日本 - 04 4",
+        "🇯🇵 日本 - 05 4",
+        "🇯🇵 日本 - 06 3",
+        "🇯🇵 日本 - 07 3",
+        "🇰🇷 韩国 - 02 3",
+        "🇰🇷 韩国 - 03 2",
+        "🇺🇸 美国 - 02 4",
+        "🇺🇸 美国 - 04 3",
+        "🇺🇸 美国 - 05 4",
+        "🇺🇸 美国 - 06 4",
+        "🇺🇸 美国 - 07 3",
+        "🇺🇸 美国 - 08 4",
+        "🇳🇱 荷兰 - 02 4",
+        "🇳🇱 荷兰 - 04 3",
+        "🇳🇱 荷兰 - 05 4",
+        "🇳🇱 荷兰 - 06 3",
+        "🇩🇪 德国 - 01 4",
+        "🇩🇪 德国 - 02 4",
+        "🇩🇪 德国 - 03 3",
+        "🇩🇪 德国 - 04 3",
+        "🇩🇪 德国 - 05 4",
+        "🇩🇪 德国 - 06 3",
+        "🇩🇪 德国 - 07 4",
+        "🇩🇪 德国 - 08 3",
+        "🇩🇪 德国 - 09 4",
+        "🇬🇧 伦敦 - 03 3",
+        "🇬🇧 伦敦 - 04 4",
+        "🇬🇧 伦敦 - 05 3",
+        "🇬🇧 伦敦 - 07 3",
+        "🇸🇪 瑞典 - 01 3",
+        "🇸🇪 瑞典 - 02 3",
+        "🇸🇪 瑞典 - 03 3",
+        "🇮🇳 印度 - 06 3",
+        "🇺🇸 美国.加州.洛杉矶 — Cloudflare CDN 节点 10",
+        "🇺🇸 美国.加州.洛杉矶 — Cloudflare CDN 节点 11",
+        "🇺🇸 美国.加州.洛杉矶 — Cloudflare CDN 节点 12",
+        "🇭🇰 中国.香港.服务区 — Cloudflare CDN 节点 10",
+        "🇭🇰 中国.香港.服务区 — Cloudflare CDN 节点 11",
+        "🇭🇰 中国.香港.服务区 — Cloudflare CDN 节点 12",
+        "🇺🇸 美国.加州.圣何塞 — Cloudflare CDN 节点 10",
+        "🇺🇸 美国.加州.圣何塞 — Cloudflare CDN 节点 11",
+        "🇺🇸 美国.加州.圣何塞 — Cloudflare CDN 节点 12",
+        "🇬🇧 英国.伦敦.英格兰 — Cloudflare CDN 节点 10",
+        "🇬🇧 英国.伦敦.英格兰 — Cloudflare CDN 节点 11",
+        "🇬🇧 英国.伦敦.英格兰 — Cloudflare CDN 节点 12",
+        "超时就是被墙，使用代理连可用！ 3",
+        "新城 - 01 3",
+        "新城 - 03 3",
+        "新城 - 04 4",
+        "新城 - 05 4",
+        "🇯🇵 日本 - 03 5",
+        "🇯🇵 日本 - 04 5",
+        "🇯🇵 日本 - 06 4",
+        "🇺🇸 美国 - 01 3",
+        "🇺🇸 美国 - 02 5",
+        "🇺🇸 美国 - 03 4",
+        "🇺🇸 美国 - 05 5",
+        "🇺🇸 美国 - 06 5",
+        "🇺🇸 美国 - 07 4",
+        "🇳🇱 荷兰 - 01 4",
+        "🇳🇱 荷兰 - 03 4",
+        "🇳🇱 荷兰 - 04 4",
+        "🇩🇪 德国 - 01 5",
+        "🇩🇪 德国 - 02 5",
+        "🇩🇪 德国 - 04 4",
+        "🇩🇪 德国 - 06 4",
+        "🇩🇪 德国 - 07 5",
+        "🇩🇪 德国 - 08 4",
+        "🇬🇧 伦敦 - 04 5",
+        "🇬🇧 伦敦 - 05 4",
+        "🇬🇧 伦敦 - 07 4",
+        "🇮🇳 印度 - 02 3",
+        "🇮🇳 印度 - 03 3",
+        "🇮🇳 印度 - 04 4",
+        "🇮🇳 印度 - 05 3",
+        "🇮🇳 印度 - 06 4",
+        "🇺🇸 美国.加州.洛杉矶 — Cloudflare CDN 节点 13",
+        "🇺🇸 美国.加州.洛杉矶 — Cloudflare CDN 节点 14",
+        "🇺🇸 美国.加州.洛杉矶 — Cloudflare CDN 节点 15",
+        "🇺🇸 美国.加州.圣何塞 — Cloudflare CDN 节点 13",
+        "🇺🇸 美国.加州.圣何塞 — Cloudflare CDN 节点 14",
+        "🇺🇸 美国.加州.圣何塞 — Cloudflare CDN 节点 15",
+        "🇭🇰 中国.香港.服务区 — Cloudflare CDN 节点 13",
+        "🇭🇰 中国.香港.服务区 — Cloudflare CDN 节点 14",
+        "🇭🇰 中国.香港.服务区 — Cloudflare CDN 节点 15",
+        "🇬🇧 英国.伦敦.英格兰 — Cloudflare CDN 节点 13",
+        "🇬🇧 英国.伦敦.英格兰 — Cloudflare CDN 节点 14",
+        "🇬🇧 英国.伦敦.英格兰 — Cloudflare CDN 节点 15",
+        "异常订阅 hj-94d.pages.dev",
+        "异常订阅 mihu.sorry.ip-ddns.com"
+      ]
+    },
+    {
+      "tag": "chatgpt",
+      "type": "selector",
+      "outbounds": [
+        "🇭🇰 公益_香港 RAY",
+        "🇭🇰 公益_香港 HYT",
+        "🇫🇷 FR-serv00-s16-hysteria2",
+        "超时就是被墙，使用代理连可用！",
+        "新城 - 01",
+        "新城 - 02",
+        "新城 - 03",
+        "新城 - 04",
+        "新城 - 05",
+        "🇯🇵 日本 - 01",
+        "🇯🇵 日本 - 02",
+        "🇯🇵 日本 - 03",
+        "🇯🇵 日本 - 04",
+        "🇯🇵 日本 - 05",
+        "🇯🇵 日本 - 06",
+        "🇯🇵 日本 - 07",
+        "🇰🇷 韩国 - 01",
+        "🇰🇷 韩国 - 02",
+        "🇰🇷 韩国 - 03",
+        "🇺🇸 美国 - 01",
+        "🇺🇸 美国 - 02",
+        "🇺🇸 美国 - 03",
+        "🇺🇸 美国 - 04",
+        "🇺🇸 美国 - 05",
+        "🇺🇸 美国 - 06",
+        "🇺🇸 美国 - 07",
+        "🇺🇸 美国 - 08",
+        "🇺🇸 美国 - 09",
+        "🇳🇱 荷兰 - 01",
+        "🇳🇱 荷兰 - 02",
+        "🇳🇱 荷兰 - 03",
+        "🇳🇱 荷兰 - 04",
+        "🇳🇱 荷兰 - 05",
+        "🇳🇱 荷兰 - 06",
+        "🇵🇱 波兰 - 01",
+        "🇩🇪 德国 - 01",
+        "🇩🇪 德国 - 02",
+        "🇩🇪 德国 - 03",
+        "🇩🇪 德国 - 04",
+        "🇩🇪 德国 - 05",
+        "🇩🇪 德国 - 06",
+        "🇩🇪 德国 - 07",
+        "🇩🇪 德国 - 08",
+        "🇩🇪 德国 - 09",
+        "🇫🇷 法国 - 01",
+        "🇫🇷 法国 - 02",
+        "🇬🇧 伦敦 - 01",
+        "🇬🇧 伦敦 - 02",
+        "🇬🇧 伦敦 - 03",
+        "🇬🇧 伦敦 - 04",
+        "🇬🇧 伦敦 - 05",
+        "🇬🇧 伦敦 - 06",
+        "🇬🇧 伦敦 - 07",
+        "🇸🇪 瑞典 - 01",
+        "🇸🇪 瑞典 - 02",
+        "🇸🇪 瑞典 - 03",
+        "🇮🇳 印度 - 01",
+        "🇮🇳 印度 - 02",
+        "🇮🇳 印度 - 03",
+        "🇮🇳 印度 - 04",
+        "🇮🇳 印度 - 05",
+        "🇮🇳 印度 - 06",
+        "🇧🇷 巴西 - 01",
+        "🇹🇭 泰国 - 01",
+        "🇸🇦 沙特 - 01",
+        "🇨🇿 捷克 - 01",
+        "巴林 - 01",
+        "🇨🇦 加拿大 - 01",
+        "🇮🇪 爱尔兰 - 01",
+        "🇮🇪 爱尔兰 - 02",
+        "🇷🇺 俄罗斯 - 01",
+        "🇷🇺 俄罗斯 - 02",
+        "🇪🇸 西班牙 - 01",
+        "阿拉伯 - 01",
+        "🇮🇹 意大利 - 01",
+        "🇹🇷 土耳其 - 01",
+        "🇳🇵 尼泊尔 - 01",
+        "🇵🇭 菲律宾 - 01",
+        "🇲🇽 墨西哥 - 01",
+        "🇳🇬 尼日利亚 - 01",
+        "🇳🇬 尼日利亚 - 02",
+        "🇦🇺 澳大利亚 - 01",
+        "🇱🇻 拉脱维亚 - 01",
+        "🇵🇰 巴基斯坦 - 01",
+        "🇲🇾 马来西亚 - 01",
+        "🇺🇸 美国.加州.圣何塞 — Cloudflare CDN 节点",
+        "🇺🇸 美国.加州.圣何塞 — Cloudflare CDN 节点 2",
+        "🇺🇸 美国.加州.圣何塞 — Cloudflare CDN 节点 3",
+        "🇺🇸 美国.加州.洛杉矶 — Cloudflare CDN 节点",
+        "🇺🇸 美国.加州.洛杉矶 — Cloudflare CDN 节点 2",
+        "🇺🇸 美国.加州.洛杉矶 — Cloudflare CDN 节点 3",
+        "🇭🇰 中国.香港.服务区 — Cloudflare CDN 节点",
+        "🇭🇰 中国.香港.服务区 — Cloudflare CDN 节点 2",
+        "🇭🇰 中国.香港.服务区 — Cloudflare CDN 节点 3",
+        "🇬🇧 英国.伦敦.英格兰 — Cloudflare CDN 节点",
+        "🇬🇧 英国.伦敦.英格兰 — Cloudflare CDN 节点 2",
+        "🇬🇧 英国.伦敦.英格兰 — Cloudflare CDN 节点 3",
+        "🇵🇱 公益_波兰01",
+        "🇵🇱 公益_波兰05",
+        "🇵🇱 公益_波兰08",
+        "🇵🇱 公益_波兰09",
+        "🇵🇱 公益_波兰10",
+        "🇵🇱 公益_波兰11",
+        "🇵🇱 公益_波兰12",
+        "🇵🇱 公益_波兰13",
+        "🇵🇱 公益_波兰14",
+        "🇵🇱 公益_波兰15",
+        "🇧🇷 公益_巴西",
+        "🇵🇱 公益_波兰",
+        "🇩🇪 公益_德国",
+        "🇫🇷 公益_法国",
+        "🇰🇷 公益_韩国",
+        "🇺🇸 公益_美国",
+        "🇯🇵 公益_日本",
+        "🇭🇰 公益_香港",
+        "超时就是被墙，使用代理连可用！ 2",
+        "新城 - 01 2",
+        "新城 - 02 2",
+        "新城 - 04 2",
+        "新城 - 05 2",
+        "🇯🇵 日本 - 01 2",
+        "🇯🇵 日本 - 02 2",
+        "🇯🇵 日本 - 03 2",
+        "🇯🇵 日本 - 04 2",
+        "🇯🇵 日本 - 05 2",
+        "🇯🇵 日本 - 06 2",
+        "🇯🇵 日本 - 07 2",
+        "🇺🇸 美国 - 02 2",
+        "🇺🇸 美国 - 03 2",
+        "🇺🇸 美国 - 04 2",
+        "🇺🇸 美国 - 05 2",
+        "🇺🇸 美国 - 06 2",
+        "🇺🇸 美国 - 07 2",
+        "🇺🇸 美国 - 08 2",
+        "🇳🇱 荷兰 - 01 2",
+        "🇳🇱 荷兰 - 02 2",
+        "🇳🇱 荷兰 - 03 2",
+        "🇳🇱 荷兰 - 04 2",
+        "🇳🇱 荷兰 - 05 2",
+        "🇳🇱 荷兰 - 06 2",
+        "🇩🇪 德国 - 01 2",
+        "🇩🇪 德国 - 02 2",
+        "🇩🇪 德国 - 03 2",
+        "🇩🇪 德国 - 04 2",
+        "🇩🇪 德国 - 05 2",
+        "🇩🇪 德国 - 06 2",
+        "🇩🇪 德国 - 07 2",
+        "🇩🇪 德国 - 08 2",
+        "🇩🇪 德国 - 09 2",
+        "🇬🇧 伦敦 - 02 2",
+        "🇬🇧 伦敦 - 04 2",
+        "🇬🇧 伦敦 - 06 2",
+        "🇮🇳 印度 - 01 2",
+        "🇮🇳 印度 - 03 2",
+        "🇮🇳 印度 - 04 2",
+        "🇮🇳 印度 - 05 2",
+        "🇮🇳 印度 - 06 2",
+        "🇮🇪 爱尔兰 - 01 2",
+        "🇮🇪 爱尔兰 - 02 2",
+        "🇷🇺 俄罗斯 - 01 2",
+        "🇷🇺 俄罗斯 - 02 2",
+        "🇺🇸 美国.加州.洛杉矶 — Cloudflare CDN 节点 4",
+        "🇺🇸 美国.加州.洛杉矶 — Cloudflare CDN 节点 5",
+        "🇺🇸 美国.加州.洛杉矶 — Cloudflare CDN 节点 6",
+        "🇭🇰 中国.香港.服务区 — Cloudflare CDN 节点 4",
+        "🇭🇰 中国.香港.服务区 — Cloudflare CDN 节点 5",
+        "🇭🇰 中国.香港.服务区 — Cloudflare CDN 节点 6",
+        "🇺🇸 美国.加州.圣何塞 — Cloudflare CDN 节点 4",
+        "🇺🇸 美国.加州.圣何塞 — Cloudflare CDN 节点 5",
+        "🇺🇸 美国.加州.圣何塞 — Cloudflare CDN 节点 6",
+        "🇬🇧 英国.伦敦.英格兰 — Cloudflare CDN 节点 4",
+        "🇬🇧 英国.伦敦.英格兰 — Cloudflare CDN 节点 5",
+        "🇬🇧 英国.伦敦.英格兰 — Cloudflare CDN 节点 6",
+        "新城 - 02 3",
+        "新城 - 03 2",
+        "新城 - 04 3",
+        "新城 - 05 3",
+        "🇯🇵 日本 - 01 3",
+        "🇯🇵 日本 - 03 3",
+        "🇯🇵 日本 - 04 3",
+        "🇯🇵 日本 - 05 3",
+        "🇰🇷 韩国 - 01 2",
+        "🇰🇷 韩国 - 02 2",
+        "🇺🇸 美国 - 01 2",
+        "🇺🇸 美国 - 02 3",
+        "🇺🇸 美国 - 03 3",
+        "🇺🇸 美国 - 05 3",
+        "🇺🇸 美国 - 06 3",
+        "🇺🇸 美国 - 08 3",
+        "🇺🇸 美国 - 09 2",
+        "🇳🇱 荷兰 - 01 3",
+        "🇳🇱 荷兰 - 02 3",
+        "🇳🇱 荷兰 - 03 3",
+        "🇳🇱 荷兰 - 05 3",
+        "🇩🇪 德国 - 01 3",
+        "🇩🇪 德国 - 02 3",
+        "🇩🇪 德国 - 05 3",
+        "🇩🇪 德国 - 07 3",
+        "🇩🇪 德国 - 09 3",
+        "🇫🇷 法国 - 01 2",
+        "🇫🇷 法国 - 02 2",
+        "🇬🇧 伦敦 - 01 2",
+        "🇬🇧 伦敦 - 02 3",
+        "🇬🇧 伦敦 - 03 2",
+        "🇬🇧 伦敦 - 04 3",
+        "🇬🇧 伦敦 - 05 2",
+        "🇬🇧 伦敦 - 06 3",
+        "🇬🇧 伦敦 - 07 2",
+        "🇸🇪 瑞典 - 01 2",
+        "🇸🇪 瑞典 - 02 2",
+        "🇸🇪 瑞典 - 03 2",
+        "🇮🇳 印度 - 01 3",
+        "🇮🇳 印度 - 02 2",
+        "🇮🇳 印度 - 04 3",
+        "🇳🇬 尼日利亚 - 01 2",
+        "🇳🇬 尼日利亚 - 02 2",
+        "🇭🇰 中国.香港.服务区 — Cloudflare CDN 节点 7",
+        "🇭🇰 中国.香港.服务区 — Cloudflare CDN 节点 8",
+        "🇭🇰 中国.香港.服务区 — Cloudflare CDN 节点 9",
+        "🇬🇧 英国.伦敦.英格兰 — Cloudflare CDN 节点 7",
+        "🇬🇧 英国.伦敦.英格兰 — Cloudflare CDN 节点 8",
+        "🇬🇧 英国.伦敦.英格兰 — Cloudflare CDN 节点 9",
+        "🇺🇸 美国.加州.洛杉矶 — Cloudflare CDN 节点 7",
+        "🇺🇸 美国.加州.洛杉矶 — Cloudflare CDN 节点 8",
+        "🇺🇸 美国.加州.洛杉矶 — Cloudflare CDN 节点 9",
+        "🇺🇸 美国.加州.圣何塞 — Cloudflare CDN 节点 7",
+        "🇺🇸 美国.加州.圣何塞 — Cloudflare CDN 节点 8",
+        "🇺🇸 美国.加州.圣何塞 — Cloudflare CDN 节点 9",
+        "新城 - 02 4",
+        "🇯🇵 日本 - 01 4",
+        "🇯🇵 日本 - 02 3",
+        "🇯🇵 日本 - 03 4",
+        "🇯🇵 日本 - 04 4",
+        "🇯🇵 日本 - 05 4",
+        "🇯🇵 日本 - 06 3",
+        "🇯🇵 日本 - 07 3",
+        "🇰🇷 韩国 - 02 3",
+        "🇰🇷 韩国 - 03 2",
+        "🇺🇸 美国 - 02 4",
+        "🇺🇸 美国 - 04 3",
+        "🇺🇸 美国 - 05 4",
+        "🇺🇸 美国 - 06 4",
+        "🇺🇸 美国 - 07 3",
+        "🇺🇸 美国 - 08 4",
+        "🇳🇱 荷兰 - 02 4",
+        "🇳🇱 荷兰 - 04 3",
+        "🇳🇱 荷兰 - 05 4",
+        "🇳🇱 荷兰 - 06 3",
+        "🇩🇪 德国 - 01 4",
+        "🇩🇪 德国 - 02 4",
+        "🇩🇪 德国 - 03 3",
+        "🇩🇪 德国 - 04 3",
+        "🇩🇪 德国 - 05 4",
+        "🇩🇪 德国 - 06 3",
+        "🇩🇪 德国 - 07 4",
+        "🇩🇪 德国 - 08 3",
+        "🇩🇪 德国 - 09 4",
+        "🇬🇧 伦敦 - 03 3",
+        "🇬🇧 伦敦 - 04 4",
+        "🇬🇧 伦敦 - 05 3",
+        "🇬🇧 伦敦 - 07 3",
+        "🇸🇪 瑞典 - 01 3",
+        "🇸🇪 瑞典 - 02 3",
+        "🇸🇪 瑞典 - 03 3",
+        "🇮🇳 印度 - 06 3",
+        "🇺🇸 美国.加州.洛杉矶 — Cloudflare CDN 节点 10",
+        "🇺🇸 美国.加州.洛杉矶 — Cloudflare CDN 节点 11",
+        "🇺🇸 美国.加州.洛杉矶 — Cloudflare CDN 节点 12",
+        "🇭🇰 中国.香港.服务区 — Cloudflare CDN 节点 10",
+        "🇭🇰 中国.香港.服务区 — Cloudflare CDN 节点 11",
+        "🇭🇰 中国.香港.服务区 — Cloudflare CDN 节点 12",
+        "🇺🇸 美国.加州.圣何塞 — Cloudflare CDN 节点 10",
+        "🇺🇸 美国.加州.圣何塞 — Cloudflare CDN 节点 11",
+        "🇺🇸 美国.加州.圣何塞 — Cloudflare CDN 节点 12",
+        "🇬🇧 英国.伦敦.英格兰 — Cloudflare CDN 节点 10",
+        "🇬🇧 英国.伦敦.英格兰 — Cloudflare CDN 节点 11",
+        "🇬🇧 英国.伦敦.英格兰 — Cloudflare CDN 节点 12",
+        "超时就是被墙，使用代理连可用！ 3",
+        "新城 - 01 3",
+        "新城 - 03 3",
+        "新城 - 04 4",
+        "新城 - 05 4",
+        "🇯🇵 日本 - 03 5",
+        "🇯🇵 日本 - 04 5",
+        "🇯🇵 日本 - 06 4",
+        "🇺🇸 美国 - 01 3",
+        "🇺🇸 美国 - 02 5",
+        "🇺🇸 美国 - 03 4",
+        "🇺🇸 美国 - 05 5",
+        "🇺🇸 美国 - 06 5",
+        "🇺🇸 美国 - 07 4",
+        "🇳🇱 荷兰 - 01 4",
+        "🇳🇱 荷兰 - 03 4",
+        "🇳🇱 荷兰 - 04 4",
+        "🇩🇪 德国 - 01 5",
+        "🇩🇪 德国 - 02 5",
+        "🇩🇪 德国 - 04 4",
+        "🇩🇪 德国 - 06 4",
+        "🇩🇪 德国 - 07 5",
+        "🇩🇪 德国 - 08 4",
+        "🇬🇧 伦敦 - 04 5",
+        "🇬🇧 伦敦 - 05 4",
+        "🇬🇧 伦敦 - 07 4",
+        "🇮🇳 印度 - 02 3",
+        "🇮🇳 印度 - 03 3",
+        "🇮🇳 印度 - 04 4",
+        "🇮🇳 印度 - 05 3",
+        "🇮🇳 印度 - 06 4",
+        "🇺🇸 美国.加州.洛杉矶 — Cloudflare CDN 节点 13",
+        "🇺🇸 美国.加州.洛杉矶 — Cloudflare CDN 节点 14",
+        "🇺🇸 美国.加州.洛杉矶 — Cloudflare CDN 节点 15",
+        "🇺🇸 美国.加州.圣何塞 — Cloudflare CDN 节点 13",
+        "🇺🇸 美国.加州.圣何塞 — Cloudflare CDN 节点 14",
+        "🇺🇸 美国.加州.圣何塞 — Cloudflare CDN 节点 15",
+        "🇭🇰 中国.香港.服务区 — Cloudflare CDN 节点 13",
+        "🇭🇰 中国.香港.服务区 — Cloudflare CDN 节点 14",
+        "🇭🇰 中国.香港.服务区 — Cloudflare CDN 节点 15",
+        "🇬🇧 英国.伦敦.英格兰 — Cloudflare CDN 节点 13",
+        "🇬🇧 英国.伦敦.英格兰 — Cloudflare CDN 节点 14",
+        "🇬🇧 英国.伦敦.英格兰 — Cloudflare CDN 节点 15",
+        "异常订阅 hj-94d.pages.dev",
+        "异常订阅 mihu.sorry.ip-ddns.com"
+      ]
+    },
+    {
+      "tag": "direct",
+      "type": "direct"
+    }
+  ],
+  "route": {
+    "rules": [
+      {
+        "action": "sniff"
+      },
+      {
+        "protocol": "dns",
+        "action": "hijack-dns"
+      },
+      {
+        "action": "resolve",
+        "strategy": "prefer_ipv4"
+      },
+      {
+        "clash_mode": "Direct",
+        "outbound": "direct"
+      },
+      {
+        "clash_mode": "Global",
+        "outbound": "select"
+      },
+      {
+        "ip_is_private": true,
+        "outbound": "direct"
+      },
+      {
+        "package_name": "com.openai.chatgpt",
+        "outbound": "chatgpt"
+      },
+      {
+        "domain_suffix": [
+          "proactivebackend-pa.googleapis.com",
+          "bing.com",
+          "bing.net",
+          "bingapis.com"
+        ],
+        "outbound": "chatgpt"
+      },
+      {
+        "domain_suffix": [
+          "ushd.xmsl.org",
+          "cf.gtlx.org"
+        ],
+        "outbound": "direct"
+      },
+      {
+        "port": [
+          23301,
+          22101,
+          22102,
+          20501
+        ],
+        "outbound": "direct"
+      },
+      {
+        "rule_set": "geoip-cn",
+        "outbound": "direct"
+      }
+    ],
+    "rule_set": [
+      {
+        "type": "remote",
+        "tag": "geoip-cn",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/SagerNet/sing-geoip/rule-set/geoip-cn.srs",
+        "download_detour": "select"
+      },
+      {
+        "type": "remote",
+        "tag": "geosite-cn",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/xmdhs/sing-geosite/rule-set-Loyalsoldier/geosite-geolocation-cn.srs",
+        "download_detour": "select"
+      },
+      {
+        "type": "remote",
+        "tag": "AdGuardSDNSFilter",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/xmdhs/sing-box-ruleset/rule-set/AdGuardSDNSFilterSingBox.srs",
+        "download_detour": "select"
+      },
+      {
+        "type": "remote",
+        "tag": "chrome-doh",
+        "format": "source",
+        "url": "https://gist.githubusercontent.com/xmdhs/71fc5ff6ef29f5ecaf2c52b8de5c3172/raw/chrome-doh.json",
+        "download_detour": "select"
+      }
+    ],
+    "default_domain_resolver": "dns_direct",
+    "final": "select",
+    "auto_detect_interface": true
+  },
+  "experimental": {
+    "cache_file": {
+      "enabled": true
+    },
+    "clash_api": {
+      "external_controller": "127.0.0.1:9090"
+    }
+  }
+}
