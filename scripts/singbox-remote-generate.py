@@ -42,7 +42,7 @@ def extract_and_generate_new_outbounds(source_data):
         raise
 
 def replace_outbounds_in_fixed_target(source_data, output_file):
-    target_file = "singbox-config/config.json"
+    target_file = "singbox-config/config-1.12.json"
     if not os.path.exists(target_file):
         raise FileNotFoundError(f"目标文件 '{target_file}' 未找到。")
     try:
