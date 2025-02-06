@@ -1,0 +1,1315 @@
+{
+  "log": {},
+  "dns": {
+    "servers": [
+      {
+        "tag": "dns_proxy",
+        "address": "https://8.8.8.8/dns-query",
+        "detour": "select"
+      },
+      {
+        "tag": "dns_direct",
+        "address": "https://223.5.5.5/dns-query",
+        "detour": "direct"
+      },
+      {
+        "tag": "dns_fakeip",
+        "address": "fakeip"
+      }
+    ],
+    "rules": [
+      {
+        "outbound": "any",
+        "server": "dns_direct"
+      },
+      {
+        "rule_set": [
+          "AdGuardSDNSFilter",
+          "chrome-doh"
+        ],
+        "action": "reject",
+        "method": "default"
+      },
+      {
+        "query_type": [
+          "A",
+          "AAAA"
+        ],
+        "server": "dns_fakeip",
+        "rewrite_ttl": 1
+      },
+      {
+        "clash_mode": "Global",
+        "server": "dns_proxy"
+      },
+      {
+        "clash_mode": "Direct",
+        "server": "dns_direct"
+      },
+      {
+        "rule_set": "geosite-cn",
+        "server": "dns_direct"
+      }
+    ],
+    "fakeip": {
+      "enabled": true,
+      "inet4_range": "198.18.0.0/15",
+      "inet6_range": "fc00::/18"
+    },
+    "strategy": "prefer_ipv4",
+    "independent_cache": true
+  },
+  "inbounds": [
+    {
+      "type": "tun",
+      "mtu": 9000,
+      "address": [
+        "172.18.0.1/30",
+        "fdfe:dcba:9876::1/126"
+      ],
+      "auto_route": true,
+      "strict_route": true,
+      "endpoint_independent_nat": true
+    },
+    {
+      "type": "socks",
+      "tag": "socks-in",
+      "listen": "127.0.0.1",
+      "listen_port": 2333
+    },
+    {
+      "type": "mixed",
+      "tag": "mixed-in",
+      "listen": "127.0.0.1",
+      "listen_port": 2334
+    }
+  ],
+  "outbounds": [
+    {
+      "server": "109.122.255.200",
+      "server_port": 2055,
+      "tag": "🇮🇷 伊朗[Kristi专享]",
+      "tls": {
+        "enabled": true,
+        "server_name": "etc.mesa.ip-ddns.com",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "headers": {
+          "Host": [
+            "etc.mesa.ip-ddns.com"
+          ]
+        },
+        "path": "/?ed=2560&proxyip=168.138.46.67",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "cdfc1998-277b-4a6b-97cc-7f14a78ccc0d",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "176.120.72.188",
+      "server_port": 444,
+      "tag": "🇰🇿 哈萨克斯坦[Kristi专享]",
+      "tls": {
+        "enabled": true,
+        "server_name": "etc.mesa.ip-ddns.com",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "headers": {
+          "Host": [
+            "etc.mesa.ip-ddns.com"
+          ]
+        },
+        "path": "/?ed=2560&proxyip=168.138.46.67",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "cdfc1998-277b-4a6b-97cc-7f14a78ccc0d",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "212.52.1.202",
+      "server_port": 81,
+      "tag": "🇩🇪 德国[Kristi专享]",
+      "tls": {
+        "enabled": true,
+        "server_name": "etc.mesa.ip-ddns.com",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "headers": {
+          "Host": [
+            "etc.mesa.ip-ddns.com"
+          ]
+        },
+        "path": "/?ed=2560&proxyip=168.138.46.67",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "cdfc1998-277b-4a6b-97cc-7f14a78ccc0d",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "5.104.75.28",
+      "server_port": 587,
+      "tag": "🇩🇪 德国[Kristi专享] 2",
+      "tls": {
+        "enabled": true,
+        "server_name": "etc.mesa.ip-ddns.com",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "headers": {
+          "Host": [
+            "etc.mesa.ip-ddns.com"
+          ]
+        },
+        "path": "/?ed=2560&proxyip=168.138.46.67",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "cdfc1998-277b-4a6b-97cc-7f14a78ccc0d",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "109.237.99.141",
+      "server_port": 9443,
+      "tag": "🇩🇪 德国[Kristi专享] 3",
+      "tls": {
+        "enabled": true,
+        "server_name": "etc.mesa.ip-ddns.com",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "headers": {
+          "Host": [
+            "etc.mesa.ip-ddns.com"
+          ]
+        },
+        "path": "/?ed=2560&proxyip=168.138.46.67",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "cdfc1998-277b-4a6b-97cc-7f14a78ccc0d",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "95.164.84.9",
+      "server_port": 81,
+      "tag": "🇳🇴 挪威[Kristi专享]",
+      "tls": {
+        "enabled": true,
+        "server_name": "etc.mesa.ip-ddns.com",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "headers": {
+          "Host": [
+            "etc.mesa.ip-ddns.com"
+          ]
+        },
+        "path": "/?ed=2560&proxyip=168.138.46.67",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "cdfc1998-277b-4a6b-97cc-7f14a78ccc0d",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "185.112.249.87",
+      "server_port": 587,
+      "tag": "🇸🇰 斯洛伐克[Kristi专享]",
+      "tls": {
+        "enabled": true,
+        "server_name": "etc.mesa.ip-ddns.com",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "headers": {
+          "Host": [
+            "etc.mesa.ip-ddns.com"
+          ]
+        },
+        "path": "/?ed=2560&proxyip=168.138.46.67",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "cdfc1998-277b-4a6b-97cc-7f14a78ccc0d",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "13.229.72.179",
+      "server_port": 42235,
+      "tag": "🇸🇬 新加坡[Kristi专享]",
+      "tls": {
+        "enabled": true,
+        "server_name": "etc.mesa.ip-ddns.com",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "headers": {
+          "Host": [
+            "etc.mesa.ip-ddns.com"
+          ]
+        },
+        "path": "/?ed=2560&proxyip=168.138.46.67",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "cdfc1998-277b-4a6b-97cc-7f14a78ccc0d",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "139.180.191.96",
+      "server_port": 31001,
+      "tag": "🇸🇬 新加坡[Kristi专享] 2",
+      "tls": {
+        "enabled": true,
+        "server_name": "etc.mesa.ip-ddns.com",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "headers": {
+          "Host": [
+            "etc.mesa.ip-ddns.com"
+          ]
+        },
+        "path": "/?ed=2560&proxyip=168.138.46.67",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "cdfc1998-277b-4a6b-97cc-7f14a78ccc0d",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "150.109.94.144",
+      "server_port": 8900,
+      "tag": "🇸🇬 新加坡[Kristi专享] 3",
+      "tls": {
+        "enabled": true,
+        "server_name": "etc.mesa.ip-ddns.com",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "headers": {
+          "Host": [
+            "etc.mesa.ip-ddns.com"
+          ]
+        },
+        "path": "/?ed=2560&proxyip=168.138.46.67",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "cdfc1998-277b-4a6b-97cc-7f14a78ccc0d",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "193.176.153.104",
+      "server_port": 587,
+      "tag": "🇫🇷 法国[Kristi专享]",
+      "tls": {
+        "enabled": true,
+        "server_name": "etc.mesa.ip-ddns.com",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "headers": {
+          "Host": [
+            "etc.mesa.ip-ddns.com"
+          ]
+        },
+        "path": "/?ed=2560&proxyip=168.138.46.67",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "cdfc1998-277b-4a6b-97cc-7f14a78ccc0d",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "192.109.139.136",
+      "server_port": 587,
+      "tag": "🇸🇪 瑞典[Kristi专享]",
+      "tls": {
+        "enabled": true,
+        "server_name": "etc.mesa.ip-ddns.com",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "headers": {
+          "Host": [
+            "etc.mesa.ip-ddns.com"
+          ]
+        },
+        "path": "/?ed=2560&proxyip=168.138.46.67",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "cdfc1998-277b-4a6b-97cc-7f14a78ccc0d",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "95.164.33.32",
+      "server_port": 81,
+      "tag": "🇸🇪 瑞典[Kristi专享] 2",
+      "tls": {
+        "enabled": true,
+        "server_name": "etc.mesa.ip-ddns.com",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "headers": {
+          "Host": [
+            "etc.mesa.ip-ddns.com"
+          ]
+        },
+        "path": "/?ed=2560&proxyip=168.138.46.67",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "cdfc1998-277b-4a6b-97cc-7f14a78ccc0d",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "94.131.119.136",
+      "server_port": 81,
+      "tag": "🇷🇴 罗马尼亚[Kristi专享]",
+      "tls": {
+        "enabled": true,
+        "server_name": "etc.mesa.ip-ddns.com",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "headers": {
+          "Host": [
+            "etc.mesa.ip-ddns.com"
+          ]
+        },
+        "path": "/?ed=2560&proxyip=168.138.46.67",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "cdfc1998-277b-4a6b-97cc-7f14a78ccc0d",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "195.123.240.40",
+      "server_port": 81,
+      "tag": "🇺🇸 美国[Kristi专享]",
+      "tls": {
+        "enabled": true,
+        "server_name": "etc.mesa.ip-ddns.com",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "headers": {
+          "Host": [
+            "etc.mesa.ip-ddns.com"
+          ]
+        },
+        "path": "/?ed=2560&proxyip=168.138.46.67",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "cdfc1998-277b-4a6b-97cc-7f14a78ccc0d",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "185.184.120.18",
+      "server_port": 9443,
+      "tag": "🇺🇸 美国[Kristi专享] 2",
+      "tls": {
+        "enabled": true,
+        "server_name": "etc.mesa.ip-ddns.com",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "headers": {
+          "Host": [
+            "etc.mesa.ip-ddns.com"
+          ]
+        },
+        "path": "/?ed=2560&proxyip=168.138.46.67",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "cdfc1998-277b-4a6b-97cc-7f14a78ccc0d",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "195.26.230.120",
+      "server_port": 587,
+      "tag": "🇫🇮 芬兰[Kristi专享]",
+      "tls": {
+        "enabled": true,
+        "server_name": "etc.mesa.ip-ddns.com",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "headers": {
+          "Host": [
+            "etc.mesa.ip-ddns.com"
+          ]
+        },
+        "path": "/?ed=2560&proxyip=168.138.46.67",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "cdfc1998-277b-4a6b-97cc-7f14a78ccc0d",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "89.185.84.110",
+      "server_port": 9104,
+      "tag": "🇬🇧 英国[Kristi专享]",
+      "tls": {
+        "enabled": true,
+        "server_name": "etc.mesa.ip-ddns.com",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "headers": {
+          "Host": [
+            "etc.mesa.ip-ddns.com"
+          ]
+        },
+        "path": "/?ed=2560&proxyip=168.138.46.67",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "cdfc1998-277b-4a6b-97cc-7f14a78ccc0d",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "89.185.84.110",
+      "server_port": 7170,
+      "tag": "🇬🇧 英国[Kristi专享] 2",
+      "tls": {
+        "enabled": true,
+        "server_name": "etc.mesa.ip-ddns.com",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "headers": {
+          "Host": [
+            "etc.mesa.ip-ddns.com"
+          ]
+        },
+        "path": "/?ed=2560&proxyip=168.138.46.67",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "cdfc1998-277b-4a6b-97cc-7f14a78ccc0d",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "89.185.84.110",
+      "server_port": 4433,
+      "tag": "🇬🇧 英国[Kristi专享] 3",
+      "tls": {
+        "enabled": true,
+        "server_name": "etc.mesa.ip-ddns.com",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "headers": {
+          "Host": [
+            "etc.mesa.ip-ddns.com"
+          ]
+        },
+        "path": "/?ed=2560&proxyip=168.138.46.67",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "cdfc1998-277b-4a6b-97cc-7f14a78ccc0d",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "141.147.106.18",
+      "server_port": 10086,
+      "tag": "🇬🇧 英国[Kristi专享] 4",
+      "tls": {
+        "enabled": true,
+        "server_name": "etc.mesa.ip-ddns.com",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "headers": {
+          "Host": [
+            "etc.mesa.ip-ddns.com"
+          ]
+        },
+        "path": "/?ed=2560&proxyip=168.138.46.67",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "cdfc1998-277b-4a6b-97cc-7f14a78ccc0d",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "95.164.18.132",
+      "server_port": 81,
+      "tag": "🇬🇧 英国[Kristi专享] 5",
+      "tls": {
+        "enabled": true,
+        "server_name": "etc.mesa.ip-ddns.com",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "headers": {
+          "Host": [
+            "etc.mesa.ip-ddns.com"
+          ]
+        },
+        "path": "/?ed=2560&proxyip=168.138.46.67",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "cdfc1998-277b-4a6b-97cc-7f14a78ccc0d",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "45.94.31.125",
+      "server_port": 4001,
+      "tag": "🇳🇱 荷兰[Kristi专享]",
+      "tls": {
+        "enabled": true,
+        "server_name": "etc.mesa.ip-ddns.com",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "headers": {
+          "Host": [
+            "etc.mesa.ip-ddns.com"
+          ]
+        },
+        "path": "/?ed=2560&proxyip=168.138.46.67",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "cdfc1998-277b-4a6b-97cc-7f14a78ccc0d",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "195.200.19.139",
+      "server_port": 8444,
+      "tag": "🇳🇱 荷兰[Kristi专享] 2",
+      "tls": {
+        "enabled": true,
+        "server_name": "etc.mesa.ip-ddns.com",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "headers": {
+          "Host": [
+            "etc.mesa.ip-ddns.com"
+          ]
+        },
+        "path": "/?ed=2560&proxyip=168.138.46.67",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "cdfc1998-277b-4a6b-97cc-7f14a78ccc0d",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "89.110.105.41",
+      "server_port": 587,
+      "tag": "🇳🇱 荷兰[Kristi专享] 3",
+      "tls": {
+        "enabled": true,
+        "server_name": "etc.mesa.ip-ddns.com",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "headers": {
+          "Host": [
+            "etc.mesa.ip-ddns.com"
+          ]
+        },
+        "path": "/?ed=2560&proxyip=168.138.46.67",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "cdfc1998-277b-4a6b-97cc-7f14a78ccc0d",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "195.200.19.139",
+      "server_port": 6080,
+      "tag": "🇳🇱 荷兰[Kristi专享] 4",
+      "tls": {
+        "enabled": true,
+        "server_name": "etc.mesa.ip-ddns.com",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "headers": {
+          "Host": [
+            "etc.mesa.ip-ddns.com"
+          ]
+        },
+        "path": "/?ed=2560&proxyip=168.138.46.67",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "cdfc1998-277b-4a6b-97cc-7f14a78ccc0d",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "185.233.184.66",
+      "server_port": 8442,
+      "tag": "🇳🇱 荷兰[Kristi专享] 5",
+      "tls": {
+        "enabled": true,
+        "server_name": "etc.mesa.ip-ddns.com",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "headers": {
+          "Host": [
+            "etc.mesa.ip-ddns.com"
+          ]
+        },
+        "path": "/?ed=2560&proxyip=168.138.46.67",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "cdfc1998-277b-4a6b-97cc-7f14a78ccc0d",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "45.159.251.8",
+      "server_port": 81,
+      "tag": "🇵🇹 葡萄牙[Kristi专享]",
+      "tls": {
+        "enabled": true,
+        "server_name": "etc.mesa.ip-ddns.com",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "headers": {
+          "Host": [
+            "etc.mesa.ip-ddns.com"
+          ]
+        },
+        "path": "/?ed=2560&proxyip=168.138.46.67",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "cdfc1998-277b-4a6b-97cc-7f14a78ccc0d",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "95.85.89.70",
+      "server_port": 81,
+      "tag": "🇪🇸 西班牙[Kristi专享]",
+      "tls": {
+        "enabled": true,
+        "server_name": "etc.mesa.ip-ddns.com",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "headers": {
+          "Host": [
+            "etc.mesa.ip-ddns.com"
+          ]
+        },
+        "path": "/?ed=2560&proxyip=168.138.46.67",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "cdfc1998-277b-4a6b-97cc-7f14a78ccc0d",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "211.209.109.162",
+      "server_port": 10122,
+      "tag": "🇰🇷 韩国[Kristi专享]",
+      "tls": {
+        "enabled": true,
+        "server_name": "etc.mesa.ip-ddns.com",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "headers": {
+          "Host": [
+            "etc.mesa.ip-ddns.com"
+          ]
+        },
+        "path": "/?ed=2560&proxyip=168.138.46.67",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "cdfc1998-277b-4a6b-97cc-7f14a78ccc0d",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "222.106.221.131",
+      "server_port": 13579,
+      "tag": "🇰🇷 韩国[Kristi专享] 2",
+      "tls": {
+        "enabled": true,
+        "server_name": "etc.mesa.ip-ddns.com",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "headers": {
+          "Host": [
+            "etc.mesa.ip-ddns.com"
+          ]
+        },
+        "path": "/?ed=2560&proxyip=168.138.46.67",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "cdfc1998-277b-4a6b-97cc-7f14a78ccc0d",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "116.126.187.38",
+      "server_port": 20547,
+      "tag": "🇰🇷 韩国[Kristi专享] 3",
+      "tls": {
+        "enabled": true,
+        "server_name": "etc.mesa.ip-ddns.com",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "headers": {
+          "Host": [
+            "etc.mesa.ip-ddns.com"
+          ]
+        },
+        "path": "/?ed=2560&proxyip=168.138.46.67",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "cdfc1998-277b-4a6b-97cc-7f14a78ccc0d",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "106.253.168.87",
+      "server_port": 18080,
+      "tag": "🇰🇷 韩国[Kristi专享] 4",
+      "tls": {
+        "enabled": true,
+        "server_name": "etc.mesa.ip-ddns.com",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "headers": {
+          "Host": [
+            "etc.mesa.ip-ddns.com"
+          ]
+        },
+        "path": "/?ed=2560&proxyip=168.138.46.67",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "cdfc1998-277b-4a6b-97cc-7f14a78ccc0d",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "211.243.107.157",
+      "server_port": 10443,
+      "tag": "🇰🇷 韩国[Kristi专享] 5",
+      "tls": {
+        "enabled": true,
+        "server_name": "etc.mesa.ip-ddns.com",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "headers": {
+          "Host": [
+            "etc.mesa.ip-ddns.com"
+          ]
+        },
+        "path": "/?ed=2560&proxyip=168.138.46.67",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "cdfc1998-277b-4a6b-97cc-7f14a78ccc0d",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "ads.misakanetwork.us.kg",
+      "server_port": 443,
+      "tag": "🇩🇪 德国-高速",
+      "tls": {
+        "enabled": true,
+        "server_name": "ads.misakanetwork.us.kg",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "headers": {
+          "Host": [
+            "ads.misakanetwork.us.kg"
+          ]
+        },
+        "path": "vmess-argo?ed=2048",
+        "type": "ws"
+      },
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "fc44fe6a-f083-4591-9c03-f8d61dc3907f"
+    },
+    {
+      "server": "edf.misakanetwork.us.kg",
+      "server_port": 443,
+      "tag": "🇫🇮 芬兰-高速",
+      "tls": {
+        "enabled": true,
+        "server_name": "edf.misakanetwork.us.kg",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "headers": {
+          "Host": [
+            "edf.misakanetwork.us.kg"
+          ]
+        },
+        "path": "vmess-argo?ed=2048",
+        "type": "ws"
+      },
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "fc44fe6a-f083-4591-9c03-f8d61dc3907f"
+    },
+    {
+      "server": "de.misakanetwork.us.kg",
+      "server_port": 443,
+      "tag": "🇩🇪 德国-高速 2",
+      "tls": {
+        "enabled": true,
+        "server_name": "de.misakanetwork.us.kg",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "headers": {
+          "Host": [
+            "de.misakanetwork.us.kg"
+          ]
+        },
+        "path": "/vmess-argo?ed=2048",
+        "type": "ws"
+      },
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "0239be38-da93-4c91-a6c4-64e9b03d3b9e"
+    },
+    {
+      "server": "sers.misakanetwork.us.kg",
+      "server_port": 443,
+      "tag": "🇩🇪 德国-高速 3",
+      "tls": {
+        "enabled": true,
+        "server_name": "sers.misakanetwork.us.kg",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "headers": {
+          "Host": [
+            "sers.misakanetwork.us.kg"
+          ]
+        },
+        "path": "vmess-argo?ed=2048",
+        "type": "ws"
+      },
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "fc44fe6a-f083-4591-9c03-f8d61dc3907f"
+    },
+    {
+      "tag": "select",
+      "type": "selector",
+      "default": "urltest",
+      "outbounds": [
+        "urltest",
+        "🇮🇷 伊朗[Kristi专享]",
+        "🇰🇿 哈萨克斯坦[Kristi专享]",
+        "🇩🇪 德国[Kristi专享]",
+        "🇩🇪 德国[Kristi专享] 2",
+        "🇩🇪 德国[Kristi专享] 3",
+        "🇳🇴 挪威[Kristi专享]",
+        "🇸🇰 斯洛伐克[Kristi专享]",
+        "🇸🇬 新加坡[Kristi专享]",
+        "🇸🇬 新加坡[Kristi专享] 2",
+        "🇸🇬 新加坡[Kristi专享] 3",
+        "🇫🇷 法国[Kristi专享]",
+        "🇸🇪 瑞典[Kristi专享]",
+        "🇸🇪 瑞典[Kristi专享] 2",
+        "🇷🇴 罗马尼亚[Kristi专享]",
+        "🇺🇸 美国[Kristi专享]",
+        "🇺🇸 美国[Kristi专享] 2",
+        "🇫🇮 芬兰[Kristi专享]",
+        "🇬🇧 英国[Kristi专享]",
+        "🇬🇧 英国[Kristi专享] 2",
+        "🇬🇧 英国[Kristi专享] 3",
+        "🇬🇧 英国[Kristi专享] 4",
+        "🇬🇧 英国[Kristi专享] 5",
+        "🇳🇱 荷兰[Kristi专享]",
+        "🇳🇱 荷兰[Kristi专享] 2",
+        "🇳🇱 荷兰[Kristi专享] 3",
+        "🇳🇱 荷兰[Kristi专享] 4",
+        "🇳🇱 荷兰[Kristi专享] 5",
+        "🇵🇹 葡萄牙[Kristi专享]",
+        "🇪🇸 西班牙[Kristi专享]",
+        "🇰🇷 韩国[Kristi专享]",
+        "🇰🇷 韩国[Kristi专享] 2",
+        "🇰🇷 韩国[Kristi专享] 3",
+        "🇰🇷 韩国[Kristi专享] 4",
+        "🇰🇷 韩国[Kristi专享] 5",
+        "🇩🇪 德国-高速",
+        "🇫🇮 芬兰-高速",
+        "🇩🇪 德国-高速 2",
+        "🇩🇪 德国-高速 3"
+      ]
+    },
+    {
+      "tag": "urltest",
+      "type": "urltest",
+      "outbounds": [
+        "🇮🇷 伊朗[Kristi专享]",
+        "🇰🇿 哈萨克斯坦[Kristi专享]",
+        "🇩🇪 德国[Kristi专享]",
+        "🇩🇪 德国[Kristi专享] 2",
+        "🇩🇪 德国[Kristi专享] 3",
+        "🇳🇴 挪威[Kristi专享]",
+        "🇸🇰 斯洛伐克[Kristi专享]",
+        "🇸🇬 新加坡[Kristi专享]",
+        "🇸🇬 新加坡[Kristi专享] 2",
+        "🇸🇬 新加坡[Kristi专享] 3",
+        "🇫🇷 法国[Kristi专享]",
+        "🇸🇪 瑞典[Kristi专享]",
+        "🇸🇪 瑞典[Kristi专享] 2",
+        "🇷🇴 罗马尼亚[Kristi专享]",
+        "🇺🇸 美国[Kristi专享]",
+        "🇺🇸 美国[Kristi专享] 2",
+        "🇫🇮 芬兰[Kristi专享]",
+        "🇬🇧 英国[Kristi专享]",
+        "🇬🇧 英国[Kristi专享] 2",
+        "🇬🇧 英国[Kristi专享] 3",
+        "🇬🇧 英国[Kristi专享] 4",
+        "🇬🇧 英国[Kristi专享] 5",
+        "🇳🇱 荷兰[Kristi专享]",
+        "🇳🇱 荷兰[Kristi专享] 2",
+        "🇳🇱 荷兰[Kristi专享] 3",
+        "🇳🇱 荷兰[Kristi专享] 4",
+        "🇳🇱 荷兰[Kristi专享] 5",
+        "🇵🇹 葡萄牙[Kristi专享]",
+        "🇪🇸 西班牙[Kristi专享]",
+        "🇰🇷 韩国[Kristi专享]",
+        "🇰🇷 韩国[Kristi专享] 2",
+        "🇰🇷 韩国[Kristi专享] 3",
+        "🇰🇷 韩国[Kristi专享] 4",
+        "🇰🇷 韩国[Kristi专享] 5",
+        "🇩🇪 德国-高速",
+        "🇫🇮 芬兰-高速",
+        "🇩🇪 德国-高速 2",
+        "🇩🇪 德国-高速 3"
+      ]
+    },
+    {
+      "tag": "chatgpt",
+      "type": "selector",
+      "outbounds": [
+        "🇮🇷 伊朗[Kristi专享]",
+        "🇰🇿 哈萨克斯坦[Kristi专享]",
+        "🇩🇪 德国[Kristi专享]",
+        "🇩🇪 德国[Kristi专享] 2",
+        "🇩🇪 德国[Kristi专享] 3",
+        "🇳🇴 挪威[Kristi专享]",
+        "🇸🇰 斯洛伐克[Kristi专享]",
+        "🇸🇬 新加坡[Kristi专享]",
+        "🇸🇬 新加坡[Kristi专享] 2",
+        "🇸🇬 新加坡[Kristi专享] 3",
+        "🇫🇷 法国[Kristi专享]",
+        "🇸🇪 瑞典[Kristi专享]",
+        "🇸🇪 瑞典[Kristi专享] 2",
+        "🇷🇴 罗马尼亚[Kristi专享]",
+        "🇺🇸 美国[Kristi专享]",
+        "🇺🇸 美国[Kristi专享] 2",
+        "🇫🇮 芬兰[Kristi专享]",
+        "🇬🇧 英国[Kristi专享]",
+        "🇬🇧 英国[Kristi专享] 2",
+        "🇬🇧 英国[Kristi专享] 3",
+        "🇬🇧 英国[Kristi专享] 4",
+        "🇬🇧 英国[Kristi专享] 5",
+        "🇳🇱 荷兰[Kristi专享]",
+        "🇳🇱 荷兰[Kristi专享] 2",
+        "🇳🇱 荷兰[Kristi专享] 3",
+        "🇳🇱 荷兰[Kristi专享] 4",
+        "🇳🇱 荷兰[Kristi专享] 5",
+        "🇵🇹 葡萄牙[Kristi专享]",
+        "🇪🇸 西班牙[Kristi专享]",
+        "🇰🇷 韩国[Kristi专享]",
+        "🇰🇷 韩国[Kristi专享] 2",
+        "🇰🇷 韩国[Kristi专享] 3",
+        "🇰🇷 韩国[Kristi专享] 4",
+        "🇰🇷 韩国[Kristi专享] 5",
+        "🇩🇪 德国-高速",
+        "🇫🇮 芬兰-高速",
+        "🇩🇪 德国-高速 2",
+        "🇩🇪 德国-高速 3"
+      ]
+    },
+    {
+      "tag": "direct",
+      "type": "direct"
+    }
+  ],
+  "route": {
+    "rules": [
+      {
+        "action": "sniff"
+      },
+      {
+        "protocol": "dns",
+        "action": "hijack-dns"
+      },
+      {
+        "action": "resolve",
+        "strategy": "prefer_ipv4"
+      },
+      {
+        "clash_mode": "Direct",
+        "outbound": "direct"
+      },
+      {
+        "clash_mode": "Global",
+        "outbound": "select"
+      },
+      {
+        "ip_is_private": true,
+        "outbound": "direct"
+      },
+      {
+        "package_name": "com.openai.chatgpt",
+        "outbound": "chatgpt"
+      },
+      {
+        "domain_suffix": [
+          "proactivebackend-pa.googleapis.com",
+          "bing.com",
+          "bing.net",
+          "bingapis.com"
+        ],
+        "outbound": "chatgpt"
+      },
+      {
+        "domain_suffix": [
+          "ushd.xmsl.org",
+          "cf.gtlx.org"
+        ],
+        "outbound": "direct"
+      },
+      {
+        "port": [
+          23301,
+          22101,
+          22102,
+          20501
+        ],
+        "outbound": "direct"
+      },
+      {
+        "rule_set": "geoip-cn",
+        "outbound": "direct"
+      }
+    ],
+    "rule_set": [
+      {
+        "type": "remote",
+        "tag": "geoip-cn",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/SagerNet/sing-geoip/rule-set/geoip-cn.srs",
+        "download_detour": "select"
+      },
+      {
+        "type": "remote",
+        "tag": "geosite-cn",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/xmdhs/sing-geosite/rule-set-Loyalsoldier/geosite-geolocation-cn.srs",
+        "download_detour": "select"
+      },
+      {
+        "type": "remote",
+        "tag": "AdGuardSDNSFilter",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/xmdhs/sing-box-ruleset/rule-set/AdGuardSDNSFilterSingBox.srs",
+        "download_detour": "select"
+      },
+      {
+        "type": "remote",
+        "tag": "chrome-doh",
+        "format": "source",
+        "url": "https://gist.githubusercontent.com/xmdhs/71fc5ff6ef29f5ecaf2c52b8de5c3172/raw/chrome-doh.json",
+        "download_detour": "select"
+      }
+    ],
+    "final": "select",
+    "auto_detect_interface": true
+  },
+  "experimental": {
+    "cache_file": {
+      "enabled": true
+    },
+    "clash_api": {
+      "external_controller": "127.0.0.1:9090"
+    }
+  }
+}
