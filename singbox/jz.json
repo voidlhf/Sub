@@ -1,0 +1,4986 @@
+{
+  "log": {},
+  "dns": {
+    "servers": [
+      {
+        "tag": "dns_proxy",
+        "type": "https",
+        "server": "8.8.8.8",
+        "detour": "select"
+      },
+      {
+        "tag": "dns_direct",
+        "type": "https",
+        "server": "223.5.5.5",
+        "detour": "direct"
+      },
+      {
+        "tag": "dns_fakeip",
+        "type": "fakeip",
+        "inet4_range": "198.18.0.0/15",
+        "inet6_range": "fc00::/18"
+      }
+    ],
+    "rules": [
+      {
+        "rule_set": [
+          "AdGuardSDNSFilter",
+          "chrome-doh"
+        ],
+        "action": "reject",
+        "method": "default"
+      },
+      {
+        "query_type": [
+          "A",
+          "AAAA"
+        ],
+        "server": "dns_fakeip",
+        "rewrite_ttl": 1
+      },
+      {
+        "clash_mode": "Global",
+        "server": "dns_proxy"
+      },
+      {
+        "clash_mode": "Direct",
+        "server": "dns_direct"
+      },
+      {
+        "rule_set": "geosite-cn",
+        "server": "dns_direct"
+      }
+    ],
+    "strategy": "prefer_ipv4",
+    "independent_cache": true
+  },
+  "inbounds": [
+    {
+      "type": "tun",
+      "mtu": 9000,
+      "address": [
+        "172.18.0.1/30",
+        "fdfe:dcba:9876::1/126"
+      ],
+      "auto_route": true,
+      "strict_route": true,
+      "endpoint_independent_nat": true
+    },
+    {
+      "type": "socks",
+      "tag": "socks-in",
+      "listen": "127.0.0.1",
+      "listen_port": 2333
+    },
+    {
+      "type": "mixed",
+      "tag": "mixed-in",
+      "listen": "127.0.0.1",
+      "listen_port": 2334
+    }
+  ],
+  "outbounds": [
+    {
+      "password": "Aimer",
+      "server": "59.149.77.122",
+      "server_port": 12246,
+      "tag": "HKG_1",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngepz.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngepz.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "trojan"
+    },
+    {
+      "server": "8.218.55.212",
+      "server_port": 587,
+      "tag": "HK_1",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngedb.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngedb.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "cf3df05c-bb63-427a-b48a-d8b1d9ada2c4",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "47.76.130.197",
+      "server_port": 60001,
+      "tag": "HK_2",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngedb.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngedb.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "cf3df05c-bb63-427a-b48a-d8b1d9ada2c4",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "8.210.58.6",
+      "server_port": 443,
+      "tag": "HK_3",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngedb.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngedb.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "cf3df05c-bb63-427a-b48a-d8b1d9ada2c4",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "47.238.197.26",
+      "server_port": 587,
+      "tag": "HK_4",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngedb.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngedb.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "cf3df05c-bb63-427a-b48a-d8b1d9ada2c4",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "8.217.244.253",
+      "server_port": 587,
+      "tag": "HK_5",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngedb.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngedb.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "cf3df05c-bb63-427a-b48a-d8b1d9ada2c4",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "59.149.77.122",
+      "server_port": 12246,
+      "tag": "HK_6",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngedb.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngedb.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "cf3df05c-bb63-427a-b48a-d8b1d9ada2c4",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "43.154.34.74",
+      "server_port": 1935,
+      "tag": "HK_7",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngedb.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngedb.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "cf3df05c-bb63-427a-b48a-d8b1d9ada2c4",
+      "packet_encoding": "xudp"
+    },
+    {
+      "password": "Aimer",
+      "server": "43.154.34.74",
+      "server_port": 1935,
+      "tag": "HKG_2",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngepz.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngepz.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "trojan"
+    },
+    {
+      "server": "47.239.1.168",
+      "server_port": 443,
+      "tag": "HK_8",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngedb.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngedb.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "cf3df05c-bb63-427a-b48a-d8b1d9ada2c4",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "47.242.216.185",
+      "server_port": 587,
+      "tag": "HK_9",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngedb.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngedb.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "cf3df05c-bb63-427a-b48a-d8b1d9ada2c4",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "8.222.178.214",
+      "server_port": 6666,
+      "tag": "SG_1",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngedb.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngedb.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "cf3df05c-bb63-427a-b48a-d8b1d9ada2c4",
+      "packet_encoding": "xudp"
+    },
+    {
+      "password": "Aimer",
+      "server": "45.66.216.162",
+      "server_port": 50000,
+      "tag": "NRT",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngepz.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngepz.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "Aimer",
+      "server": "52.220.205.101",
+      "server_port": 9997,
+      "tag": "SIN",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngepz.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngepz.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "trojan"
+    },
+    {
+      "server": "8.210.213.159",
+      "server_port": 587,
+      "tag": "HK_10",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngedb.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngedb.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "cf3df05c-bb63-427a-b48a-d8b1d9ada2c4",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "43.156.205.36",
+      "server_port": 7777,
+      "tag": "SG_2",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngedb.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngedb.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "cf3df05c-bb63-427a-b48a-d8b1d9ada2c4",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "52.220.205.101",
+      "server_port": 9997,
+      "tag": "SG_3",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngedb.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngedb.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "cf3df05c-bb63-427a-b48a-d8b1d9ada2c4",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "48.218.15.95",
+      "server_port": 12581,
+      "tag": "JP_1",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngedb.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngedb.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "cf3df05c-bb63-427a-b48a-d8b1d9ada2c4",
+      "packet_encoding": "xudp"
+    },
+    {
+      "password": "Aimer",
+      "server": "219.76.13.180",
+      "server_port": 443,
+      "tag": "HKG_3",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngepz.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngepz.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "Aimer",
+      "server": "106.240.1.52",
+      "server_port": 20443,
+      "tag": "ICN_1",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngepz.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngepz.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "Aimer",
+      "server": "106.240.1.52",
+      "server_port": 20443,
+      "tag": "ICN_2",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngepz.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngepz.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "trojan"
+    },
+    {
+      "server": "45.66.216.162",
+      "server_port": 50000,
+      "tag": "JP_2",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngedb.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngedb.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "cf3df05c-bb63-427a-b48a-d8b1d9ada2c4",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "106.240.1.52",
+      "server_port": 20443,
+      "tag": "KR_1",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngedb.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngedb.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "cf3df05c-bb63-427a-b48a-d8b1d9ada2c4",
+      "packet_encoding": "xudp"
+    },
+    {
+      "password": "Aimer",
+      "server": "172.67.68.56",
+      "server_port": 2096,
+      "tag": "IAD_1",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngepz.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngepz.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "Aimer",
+      "server": "104.26.15.138",
+      "server_port": 2053,
+      "tag": "IAD_2",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngepz.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngepz.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "Aimer",
+      "server": "172.67.68.56",
+      "server_port": 2096,
+      "tag": "IAD_3",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngepz.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngepz.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "Aimer",
+      "server": "104.20.30.149",
+      "server_port": 8443,
+      "tag": "IAD_4",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngepz.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngepz.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "Aimer",
+      "server": "45.147.50.154",
+      "server_port": 443,
+      "tag": "FRA_1",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngepz.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngepz.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "trojan"
+    },
+    {
+      "server": "172.67.74.9",
+      "server_port": 2087,
+      "tag": "US_1",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngedb.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngedb.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "cf3df05c-bb63-427a-b48a-d8b1d9ada2c4",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "104.20.30.149",
+      "server_port": 8443,
+      "tag": "US_2",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngedb.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngedb.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "cf3df05c-bb63-427a-b48a-d8b1d9ada2c4",
+      "packet_encoding": "xudp"
+    },
+    {
+      "password": "Aimer",
+      "server": "172.67.70.33",
+      "server_port": 2096,
+      "tag": "IAD_5",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngepz.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngepz.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "Aimer",
+      "server": "45.147.50.154",
+      "server_port": 443,
+      "tag": "FRA_2",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngepz.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngepz.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "Aimer",
+      "server": "172.67.65.113",
+      "server_port": 2083,
+      "tag": "IAD_6",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngepz.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngepz.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "Aimer",
+      "server": "89.248.207.37",
+      "server_port": 443,
+      "tag": "LED_1",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngepz.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngepz.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "Aimer",
+      "server": "104.26.15.138",
+      "server_port": 2053,
+      "tag": "IAD_7",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngepz.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngepz.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "Aimer",
+      "server": "89.248.207.37",
+      "server_port": 443,
+      "tag": "LED_2",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngepz.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngepz.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "Aimer",
+      "server": "154.17.226.170",
+      "server_port": 443,
+      "tag": "LAX_1",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngepz.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngepz.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "Aimer",
+      "server": "154.26.176.94",
+      "server_port": 8443,
+      "tag": "LAX_2",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngepz.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngepz.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "Aimer",
+      "server": "104.18.123.117",
+      "server_port": 2053,
+      "tag": "LAX_3",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngepz.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngepz.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "Aimer",
+      "server": "91.149.239.234",
+      "server_port": 443,
+      "tag": "LAX_4",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngepz.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngepz.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "trojan"
+    },
+    {
+      "server": "154.26.176.94",
+      "server_port": 8443,
+      "tag": "US_3",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngedb.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngedb.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "cf3df05c-bb63-427a-b48a-d8b1d9ada2c4",
+      "packet_encoding": "xudp"
+    },
+    {
+      "password": "Aimer",
+      "server": "51.44.86.78",
+      "server_port": 443,
+      "tag": "CDG",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngepz.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngepz.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "trojan"
+    },
+    {
+      "server": "5.253.36.190",
+      "server_port": 4433,
+      "tag": "SG_4",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngedb.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngedb.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "cf3df05c-bb63-427a-b48a-d8b1d9ada2c4",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "138.2.36.157",
+      "server_port": 8443,
+      "tag": "JP_3",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngedb.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngedb.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "cf3df05c-bb63-427a-b48a-d8b1d9ada2c4",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "154.26.186.85",
+      "server_port": 443,
+      "tag": "US_4",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngedb.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngedb.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "cf3df05c-bb63-427a-b48a-d8b1d9ada2c4",
+      "packet_encoding": "xudp"
+    },
+    {
+      "password": "Aimer",
+      "server": "154.26.176.94",
+      "server_port": 8443,
+      "tag": "LAX_5",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngepz.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngepz.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "Aimer",
+      "server": "45.87.103.154",
+      "server_port": 52001,
+      "tag": "HKG_4",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngepz.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngepz.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "Aimer",
+      "server": "219.76.13.166",
+      "server_port": 443,
+      "tag": "HKG_5",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngepz.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngepz.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "trojan"
+    },
+    {
+      "server": "45.87.103.154",
+      "server_port": 52001,
+      "tag": "HK_11",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngedb.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngedb.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "cf3df05c-bb63-427a-b48a-d8b1d9ada2c4",
+      "packet_encoding": "xudp"
+    },
+    {
+      "password": "Aimer",
+      "server": "162.159.44.78",
+      "server_port": 2096,
+      "tag": "LAX_6",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngepz.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngepz.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "trojan"
+    },
+    {
+      "server": "193.226.78.85",
+      "server_port": 443,
+      "tag": "HK_12",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngedb.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngedb.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "cf3df05c-bb63-427a-b48a-d8b1d9ada2c4",
+      "packet_encoding": "xudp"
+    },
+    {
+      "password": "Aimer",
+      "server": "kip.ns.cloudflare.com",
+      "server_port": 443,
+      "tag": "官方优选_1",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngepz.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngepz.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "Aimer",
+      "server": "185.204.109.190",
+      "server_port": 8443,
+      "tag": "AMS_1",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngepz.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngepz.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "trojan"
+    },
+    {
+      "server": "121.137.2.55",
+      "server_port": 18245,
+      "tag": "KR_2",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngedb.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngedb.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "cf3df05c-bb63-427a-b48a-d8b1d9ada2c4",
+      "packet_encoding": "xudp"
+    },
+    {
+      "password": "Aimer",
+      "server": "185.204.109.190",
+      "server_port": 8443,
+      "tag": "AMS_2",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngepz.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngepz.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "Aimer",
+      "server": "theo.ns.cloudflare.com",
+      "server_port": 443,
+      "tag": "官方优选_2",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngepz.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngepz.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "trojan"
+    },
+    {
+      "server": "27.50.49.242",
+      "server_port": 8443,
+      "tag": "SG_5",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngedb.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngedb.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "cf3df05c-bb63-427a-b48a-d8b1d9ada2c4",
+      "packet_encoding": "xudp"
+    },
+    {
+      "password": "Aimer",
+      "server": "119.198.67.48",
+      "server_port": 10033,
+      "tag": "ICN_3",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngepz.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngepz.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "Aimer",
+      "server": "ignacio.ns.cloudflare.com",
+      "server_port": 443,
+      "tag": "官方优选_3",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngepz.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngepz.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "trojan"
+    },
+    {
+      "server": "45.140.88.214",
+      "server_port": 4443,
+      "tag": "US_5",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngedb.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngedb.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "cf3df05c-bb63-427a-b48a-d8b1d9ada2c4",
+      "packet_encoding": "xudp"
+    },
+    {
+      "password": "wb6368",
+      "server": "103.116.7.103",
+      "server_port": 2083,
+      "tag": "JP_4",
+      "tls": {
+        "enabled": true,
+        "server_name": "hsdgbuys.pages.dev",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "hsdgbuys.pages.dev"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "Aimer",
+      "server": "theo.ns.cloudflare.com",
+      "server_port": 443,
+      "tag": "官方优选_4",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngepz.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngepz.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "Aimer",
+      "server": "arvind.ns.cloudflare.com",
+      "server_port": 443,
+      "tag": "官方优选_5",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngepz.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngepz.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "Aimer",
+      "server": "162.159.44.233",
+      "server_port": 8443,
+      "tag": "LAX_7",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngepz.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngepz.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "trojan"
+    },
+    {
+      "server": "156.255.90.175",
+      "server_port": 8443,
+      "tag": "HK_13",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngedb.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngedb.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "cf3df05c-bb63-427a-b48a-d8b1d9ada2c4",
+      "packet_encoding": "xudp"
+    },
+    {
+      "password": "Aimer",
+      "server": "104.196.250.34",
+      "server_port": 2087,
+      "tag": "SEA_1",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngepz.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngepz.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "trojan"
+    },
+    {
+      "server": "112.162.27.122",
+      "server_port": 50000,
+      "tag": "KR_3",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngedb.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngedb.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "cf3df05c-bb63-427a-b48a-d8b1d9ada2c4",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "sjgi.pages.dev",
+      "server_port": 443,
+      "tag": "edgetunnel",
+      "tls": {
+        "enabled": true,
+        "server_name": "sjgi.pages.dev",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "sjgi.pages.dev"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "576d5e09-997b-47b8-9783-afa6c72e9364",
+      "packet_encoding": "xudp"
+    },
+    {
+      "password": "Aimer",
+      "server": "162.159.44.50",
+      "server_port": 2087,
+      "tag": "LAX_8",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngepz.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngepz.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "trojan"
+    },
+    {
+      "server": "kip.ns.cloudflare.com",
+      "server_port": 443,
+      "tag": "官方优选_6",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngedb.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngedb.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "cf3df05c-bb63-427a-b48a-d8b1d9ada2c4",
+      "packet_encoding": "xudp"
+    },
+    {
+      "password": "Aimer",
+      "server": "125.130.105.60",
+      "server_port": 12150,
+      "tag": "ICN_4",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngepz.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngepz.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "Aimer",
+      "server": "91.149.239.234",
+      "server_port": 443,
+      "tag": "LAX_9",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngepz.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngepz.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "Aimer",
+      "server": "172.66.207.17",
+      "server_port": 2083,
+      "tag": "IAD_8",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngepz.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngepz.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "trojan"
+    },
+    {
+      "server": "arvind.ns.cloudflare.com",
+      "server_port": 443,
+      "tag": "官方优选_7",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngedb.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngedb.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "cf3df05c-bb63-427a-b48a-d8b1d9ada2c4",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "14.56.139.220",
+      "server_port": 11112,
+      "tag": "KR_4",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngedb.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngedb.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "cf3df05c-bb63-427a-b48a-d8b1d9ada2c4",
+      "packet_encoding": "xudp"
+    },
+    {
+      "password": "Aimer",
+      "server": "183.102.71.200",
+      "server_port": 50000,
+      "tag": "ICN_5",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngepz.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngepz.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "Aimer",
+      "server": "14.38.83.195",
+      "server_port": 12578,
+      "tag": "ICN_6",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngepz.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngepz.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "Aimer",
+      "server": "14.56.139.220",
+      "server_port": 11112,
+      "tag": "ICN_7",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngepz.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngepz.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "Aimer",
+      "server": "156.255.90.175",
+      "server_port": 8443,
+      "tag": "HKG_6",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngepz.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngepz.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "Aimer",
+      "server": "211.199.65.186",
+      "server_port": 14524,
+      "tag": "ICN_8",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngepz.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngepz.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "Aimer",
+      "server": "183.106.210.156",
+      "server_port": 30003,
+      "tag": "ICN_9",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngepz.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngepz.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "Aimer",
+      "server": "121.181.209.121",
+      "server_port": 50000,
+      "tag": "ICN_10",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngepz.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngepz.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "trojan"
+    },
+    {
+      "server": "45.85.210.234",
+      "server_port": 25463,
+      "tag": "PL_1",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngedb.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngedb.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "cf3df05c-bb63-427a-b48a-d8b1d9ada2c4",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "27.50.48.115",
+      "server_port": 2087,
+      "tag": "SG_6",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngedb.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngedb.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "cf3df05c-bb63-427a-b48a-d8b1d9ada2c4",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "222.104.23.36",
+      "server_port": 11210,
+      "tag": "KR_5",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngedb.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngedb.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "cf3df05c-bb63-427a-b48a-d8b1d9ada2c4",
+      "packet_encoding": "xudp"
+    },
+    {
+      "password": "Aimer",
+      "server": "175.198.255.61",
+      "server_port": 12550,
+      "tag": "ICN_11",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngepz.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngepz.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "Aimer",
+      "server": "175.192.27.197",
+      "server_port": 16992,
+      "tag": "ICN_12",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngepz.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngepz.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "Aimer",
+      "server": "91.193.5.121",
+      "server_port": 8443,
+      "tag": "FRA_3",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngepz.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngepz.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "Aimer",
+      "server": "112.170.255.67",
+      "server_port": 50000,
+      "tag": "ICN_13",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngepz.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngepz.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "trojan"
+    },
+    {
+      "server": "220.94.139.69",
+      "server_port": 10083,
+      "tag": "KR_6",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngedb.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngedb.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "cf3df05c-bb63-427a-b48a-d8b1d9ada2c4",
+      "packet_encoding": "xudp"
+    },
+    {
+      "password": "Aimer",
+      "server": "185.204.109.190",
+      "server_port": 8443,
+      "tag": "AMS_3",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngepz.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngepz.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "Aimer",
+      "server": "lynn.ns.cloudflare.com",
+      "server_port": 443,
+      "tag": "官方优选_8",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngepz.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngepz.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "trojan"
+    },
+    {
+      "server": "183.106.210.156",
+      "server_port": 30003,
+      "tag": "KR_7",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngedb.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngedb.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "cf3df05c-bb63-427a-b48a-d8b1d9ada2c4",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "104.196.250.34",
+      "server_port": 2087,
+      "tag": "US_6",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngedb.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngedb.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "cf3df05c-bb63-427a-b48a-d8b1d9ada2c4",
+      "packet_encoding": "xudp"
+    },
+    {
+      "password": "Aimer",
+      "server": "175.208.140.189",
+      "server_port": 50000,
+      "tag": "ICN_14",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngepz.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngepz.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "trojan"
+    },
+    {
+      "server": "175.208.140.189",
+      "server_port": 50000,
+      "tag": "KR_8",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngedb.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngedb.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "cf3df05c-bb63-427a-b48a-d8b1d9ada2c4",
+      "packet_encoding": "xudp"
+    },
+    {
+      "password": "Aimer",
+      "server": "theo.ns.cloudflare.com",
+      "server_port": 443,
+      "tag": "官方优选_9",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngepz.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngepz.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "Aimer",
+      "server": "220.94.139.69",
+      "server_port": 10083,
+      "tag": "ICN_15",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngepz.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngepz.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "trojan"
+    },
+    {
+      "server": "185.144.245.62",
+      "server_port": 18556,
+      "tag": "PL_2",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngedb.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngedb.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "cf3df05c-bb63-427a-b48a-d8b1d9ada2c4",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "14.38.83.195",
+      "server_port": 12578,
+      "tag": "KR_9",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngedb.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngedb.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "cf3df05c-bb63-427a-b48a-d8b1d9ada2c4",
+      "packet_encoding": "xudp"
+    },
+    {
+      "password": "Aimer",
+      "server": "lynn.ns.cloudflare.com",
+      "server_port": 443,
+      "tag": "官方优选_10",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngepz.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngepz.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "Aimer",
+      "server": "121.137.2.55",
+      "server_port": 18245,
+      "tag": "ICN_16",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngepz.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngepz.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "wb6368",
+      "server": "hsdgbuys.pages.dev",
+      "server_port": 443,
+      "tag": "epeius_1",
+      "tls": {
+        "enabled": true,
+        "server_name": "hsdgbuys.pages.dev",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "hsdgbuys.pages.dev"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "Aimer",
+      "server": "162.159.44.235",
+      "server_port": 2053,
+      "tag": "LAX_10",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngepz.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngepz.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "Aimer",
+      "server": "duke.ns.cloudflare.com",
+      "server_port": 443,
+      "tag": "官方优选_11",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngepz.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngepz.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "Aimer",
+      "server": "thaddeus.ns.cloudflare.com",
+      "server_port": 443,
+      "tag": "官方优选_12",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngepz.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngepz.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "Aimer",
+      "server": "91.193.5.121",
+      "server_port": 8443,
+      "tag": "FRA_4",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngepz.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngepz.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "Aimer",
+      "server": "162.159.44.233",
+      "server_port": 8443,
+      "tag": "LAX_11",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngepz.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngepz.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "Aimer",
+      "server": "220.71.185.223",
+      "server_port": 10093,
+      "tag": "ICN_17",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngepz.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngepz.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "Aimer",
+      "server": "thaddeus.ns.cloudflare.com",
+      "server_port": 443,
+      "tag": "官方优选_13",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngepz.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngepz.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "trojan"
+    },
+    {
+      "server": "damien.ns.cloudflare.com",
+      "server_port": 443,
+      "tag": "官方优选_14",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngedb.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngedb.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "cf3df05c-bb63-427a-b48a-d8b1d9ada2c4",
+      "packet_encoding": "xudp"
+    },
+    {
+      "password": "Aimer",
+      "server": "54.203.85.46",
+      "server_port": 80,
+      "tag": "PDX",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngepz.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngepz.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "trojan"
+    },
+    {
+      "server": "206.238.237.86",
+      "server_port": 2087,
+      "tag": "SG_7",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngedb.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngedb.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "cf3df05c-bb63-427a-b48a-d8b1d9ada2c4",
+      "packet_encoding": "xudp"
+    },
+    {
+      "password": "Aimer",
+      "server": "104.25.252.184",
+      "server_port": 8443,
+      "tag": "IAD_9",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngepz.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngepz.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "trojan"
+    },
+    {
+      "server": "104.25.254.197",
+      "server_port": 2096,
+      "tag": "US_7",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngedb.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngedb.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "cf3df05c-bb63-427a-b48a-d8b1d9ada2c4",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "59.21.231.2",
+      "server_port": 50003,
+      "tag": "KR_10",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngedb.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngedb.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "cf3df05c-bb63-427a-b48a-d8b1d9ada2c4",
+      "packet_encoding": "xudp"
+    },
+    {
+      "password": "Aimer",
+      "server": "damien.ns.cloudflare.com",
+      "server_port": 443,
+      "tag": "官方优选_15",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngepz.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngepz.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "Aimer",
+      "server": "kip.ns.cloudflare.com",
+      "server_port": 443,
+      "tag": "官方优选_16",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngepz.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngepz.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "Aimer",
+      "server": "kip.ns.cloudflare.com",
+      "server_port": 443,
+      "tag": "官方优选_17",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngepz.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngepz.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "Aimer",
+      "server": "duke.ns.cloudflare.com",
+      "server_port": 443,
+      "tag": "官方优选_18",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngepz.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngepz.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "Aimer",
+      "server": "162.159.44.48",
+      "server_port": 443,
+      "tag": "LAX_12",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngepz.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngepz.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "Aimer",
+      "server": "91.193.5.121",
+      "server_port": 8443,
+      "tag": "FRA_5",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngepz.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngepz.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "Aimer",
+      "server": "arvind.ns.cloudflare.com",
+      "server_port": 443,
+      "tag": "官方优选_19",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngepz.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngepz.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "Aimer",
+      "server": "duke.ns.cloudflare.com",
+      "server_port": 443,
+      "tag": "官方优选_20",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngepz.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngepz.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "Aimer",
+      "server": "162.159.39.181",
+      "server_port": 443,
+      "tag": "LAX_13",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngepz.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngepz.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "Aimer",
+      "server": "damien.ns.cloudflare.com",
+      "server_port": 443,
+      "tag": "官方优选_21",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngepz.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngepz.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "Aimer",
+      "server": "duke.ns.cloudflare.com",
+      "server_port": 443,
+      "tag": "官方优选_22",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngepz.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngepz.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "Aimer",
+      "server": "162.159.44.48",
+      "server_port": 443,
+      "tag": "LAX_14",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngepz.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngepz.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "Aimer",
+      "server": "thaddeus.ns.cloudflare.com",
+      "server_port": 443,
+      "tag": "官方优选_23",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngepz.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngepz.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "Aimer",
+      "server": "kip.ns.cloudflare.com",
+      "server_port": 443,
+      "tag": "官方优选_24",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngepz.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngepz.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "trojan"
+    },
+    {
+      "server": "thaddeus.ns.cloudflare.com",
+      "server_port": 443,
+      "tag": "官方优选_25",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngedb.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngedb.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "cf3df05c-bb63-427a-b48a-d8b1d9ada2c4",
+      "packet_encoding": "xudp"
+    },
+    {
+      "password": "Aimer",
+      "server": "thaddeus.ns.cloudflare.com",
+      "server_port": 443,
+      "tag": "官方优选_26",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngepz.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngepz.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "Aimer",
+      "server": "59.0.201.231",
+      "server_port": 35531,
+      "tag": "ICN_18",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngepz.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngepz.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "Aimer",
+      "server": "162.159.44.233",
+      "server_port": 8443,
+      "tag": "LAX_15",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngepz.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngepz.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "trojan"
+    },
+    {
+      "server": "188.253.6.210",
+      "server_port": 443,
+      "tag": "TW_1",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngedb.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngedb.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "cf3df05c-bb63-427a-b48a-d8b1d9ada2c4",
+      "packet_encoding": "xudp"
+    },
+    {
+      "password": "Aimer",
+      "server": "162.159.44.76",
+      "server_port": 443,
+      "tag": "LAX_16",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngepz.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngepz.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "trojan"
+    },
+    {
+      "server": "104.25.252.184",
+      "server_port": 8443,
+      "tag": "US_8",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngedb.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngedb.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "cf3df05c-bb63-427a-b48a-d8b1d9ada2c4",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "44.228.63.60",
+      "server_port": 443,
+      "tag": "US_9",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngedb.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngedb.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "cf3df05c-bb63-427a-b48a-d8b1d9ada2c4",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "91.149.239.234",
+      "server_port": 443,
+      "tag": "US_10",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngedb.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngedb.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "cf3df05c-bb63-427a-b48a-d8b1d9ada2c4",
+      "packet_encoding": "xudp"
+    },
+    {
+      "password": "Aimer",
+      "server": "162.159.44.76",
+      "server_port": 443,
+      "tag": "LAX_17",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngepz.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngepz.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "trojan"
+    },
+    {
+      "server": "27.50.48.189",
+      "server_port": 2083,
+      "tag": "SG_8",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngedb.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngedb.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "cf3df05c-bb63-427a-b48a-d8b1d9ada2c4",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "141.11.86.109",
+      "server_port": 8080,
+      "tag": "TW_2",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngedb.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngedb.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "cf3df05c-bb63-427a-b48a-d8b1d9ada2c4",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "lynn.ns.cloudflare.com",
+      "server_port": 443,
+      "tag": "官方优选_27",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngedb.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngedb.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "cf3df05c-bb63-427a-b48a-d8b1d9ada2c4",
+      "packet_encoding": "xudp"
+    },
+    {
+      "password": "Aimer",
+      "server": "37.27.20.35",
+      "server_port": 2053,
+      "tag": "HEL_1",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngepz.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngepz.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "trojan"
+    },
+    {
+      "server": "206.238.236.252",
+      "server_port": 2096,
+      "tag": "SG_9",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngedb.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngedb.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "cf3df05c-bb63-427a-b48a-d8b1d9ada2c4",
+      "packet_encoding": "xudp"
+    },
+    {
+      "password": "Aimer",
+      "server": "59.0.201.231",
+      "server_port": 35531,
+      "tag": "ICN_19",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngepz.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngepz.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "Aimer",
+      "server": "194.164.35.192",
+      "server_port": 2053,
+      "tag": "AMS_4",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngepz.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngepz.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "Aimer",
+      "server": "192.227.247.75",
+      "server_port": 443,
+      "tag": "LAX_18",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngepz.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngepz.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "Aimer",
+      "server": "129.146.226.222",
+      "server_port": 587,
+      "tag": "LAX_19",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngepz.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngepz.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "trojan"
+    },
+    {
+      "server": "176.105.253.98",
+      "server_port": 443,
+      "tag": "PL_3",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngedb.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngedb.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "cf3df05c-bb63-427a-b48a-d8b1d9ada2c4",
+      "packet_encoding": "xudp"
+    },
+    {
+      "password": "Aimer",
+      "server": "194.164.35.192",
+      "server_port": 2053,
+      "tag": "AMS_5",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngepz.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngepz.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "Aimer",
+      "server": "178.128.198.120",
+      "server_port": 8443,
+      "tag": "FRA_6",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngepz.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngepz.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "Aimer",
+      "server": "188.166.162.201",
+      "server_port": 443,
+      "tag": "FRA_7",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngepz.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngepz.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "Aimer",
+      "server": "damien.ns.cloudflare.com",
+      "server_port": 443,
+      "tag": "官方优选_28",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngepz.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngepz.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "Aimer",
+      "server": "45.140.88.214",
+      "server_port": 4443,
+      "tag": "LAX_20",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngepz.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngepz.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "trojan"
+    },
+    {
+      "server": "27.50.49.188",
+      "server_port": 2096,
+      "tag": "SG_10",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngedb.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngedb.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "cf3df05c-bb63-427a-b48a-d8b1d9ada2c4",
+      "packet_encoding": "xudp"
+    },
+    {
+      "password": "Aimer",
+      "server": "3.230.207.59",
+      "server_port": 8443,
+      "tag": "IAD_10",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngepz.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngepz.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "trojan"
+    },
+    {
+      "server": "155.248.177.176",
+      "server_port": 443,
+      "tag": "JP_5",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngedb.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngedb.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "cf3df05c-bb63-427a-b48a-d8b1d9ada2c4",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "67.226.222.38",
+      "server_port": 80,
+      "tag": "US_11",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngedb.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngedb.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "cf3df05c-bb63-427a-b48a-d8b1d9ada2c4",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "138.3.219.125",
+      "server_port": 443,
+      "tag": "JP_6",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngedb.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngedb.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "cf3df05c-bb63-427a-b48a-d8b1d9ada2c4",
+      "packet_encoding": "xudp"
+    },
+    {
+      "password": "Aimer",
+      "server": "188.166.162.201",
+      "server_port": 443,
+      "tag": "FRA_8",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngepz.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngepz.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "Aimer",
+      "server": "3.230.207.59",
+      "server_port": 8443,
+      "tag": "IAD_11",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngepz.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngepz.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "trojan"
+    },
+    {
+      "server": "158.101.70.156",
+      "server_port": 443,
+      "tag": "JP_7",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngedb.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngedb.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "cf3df05c-bb63-427a-b48a-d8b1d9ada2c4",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "47.76.62.98",
+      "server_port": 587,
+      "tag": "HK_14",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngedb.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngedb.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "cf3df05c-bb63-427a-b48a-d8b1d9ada2c4",
+      "packet_encoding": "xudp"
+    },
+    {
+      "password": "Aimer",
+      "server": "104.25.254.197",
+      "server_port": 2096,
+      "tag": "IAD_12",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngepz.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngepz.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "Aimer",
+      "server": "178.250.159.120",
+      "server_port": 2053,
+      "tag": "WAW_1",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngepz.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngepz.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "Aimer",
+      "server": "156.229.164.148",
+      "server_port": 443,
+      "tag": "LAX_21",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngepz.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngepz.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "trojan"
+    },
+    {
+      "server": "154.17.3.66",
+      "server_port": 28909,
+      "tag": "US_12",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngedb.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngedb.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "cf3df05c-bb63-427a-b48a-d8b1d9ada2c4",
+      "packet_encoding": "xudp"
+    },
+    {
+      "password": "Aimer",
+      "server": "178.128.198.120",
+      "server_port": 8443,
+      "tag": "FRA_9",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngepz.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngepz.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "Aimer",
+      "server": "109.234.39.115",
+      "server_port": 2053,
+      "tag": "AMS_6",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngepz.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngepz.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "Aimer",
+      "server": "92.63.192.110",
+      "server_port": 444,
+      "tag": "LED_3",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngepz.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngepz.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "Aimer",
+      "server": "45.155.121.169",
+      "server_port": 443,
+      "tag": "AMS_7",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngepz.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngepz.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "Aimer",
+      "server": "65.109.199.131",
+      "server_port": 443,
+      "tag": "HEL_2",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngepz.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngepz.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "trojan"
+    },
+    {
+      "server": "219.76.13.166",
+      "server_port": 443,
+      "tag": "HK_15",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngedb.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngedb.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "cf3df05c-bb63-427a-b48a-d8b1d9ada2c4",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "47.79.34.47",
+      "server_port": 443,
+      "tag": "JP_8",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngedb.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngedb.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "cf3df05c-bb63-427a-b48a-d8b1d9ada2c4",
+      "packet_encoding": "xudp"
+    },
+    {
+      "password": "Aimer",
+      "server": "107.174.247.25",
+      "server_port": 54021,
+      "tag": "SEA_2",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngepz.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngepz.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "Aimer",
+      "server": "156.229.164.148",
+      "server_port": 443,
+      "tag": "LAX_22",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngepz.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngepz.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "trojan"
+    },
+    {
+      "server": "47.79.36.165",
+      "server_port": 443,
+      "tag": "JP_9",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngedb.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngedb.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "cf3df05c-bb63-427a-b48a-d8b1d9ada2c4",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "107.174.247.25",
+      "server_port": 54021,
+      "tag": "US_13",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngedb.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngedb.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "cf3df05c-bb63-427a-b48a-d8b1d9ada2c4",
+      "packet_encoding": "xudp"
+    },
+    {
+      "password": "Aimer",
+      "server": "95.216.143.166",
+      "server_port": 443,
+      "tag": "HEL_3",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngepz.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngepz.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "Aimer",
+      "server": "178.250.159.120",
+      "server_port": 2053,
+      "tag": "WAW_2",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngepz.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngepz.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "Aimer",
+      "server": "23.94.211.148",
+      "server_port": 443,
+      "tag": "SEA_3",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngepz.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngepz.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "Aimer",
+      "server": "172.67.65.113",
+      "server_port": 2083,
+      "tag": "IAD_13",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngepz.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngepz.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "Aimer",
+      "server": "109.234.39.115",
+      "server_port": 2053,
+      "tag": "AMS_8",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngepz.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngepz.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "Aimer",
+      "server": "91.197.3.168",
+      "server_port": 8443,
+      "tag": "VNO_1",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngepz.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngepz.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "Aimer",
+      "server": "91.197.3.168",
+      "server_port": 8443,
+      "tag": "VNO_2",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngepz.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngepz.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "er668",
+      "server": "kfjdi.pages.dev",
+      "server_port": 443,
+      "tag": "epeius_2",
+      "tls": {
+        "enabled": true,
+        "server_name": "kfjdi.pages.dev",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "kfjdi.pages.dev"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "Aimer",
+      "server": "119.196.34.173",
+      "server_port": 50000,
+      "tag": "ICN_20",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngepz.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngepz.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "Aimer",
+      "server": "172.67.70.33",
+      "server_port": 2096,
+      "tag": "IAD_14",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngepz.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngepz.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "Aimer",
+      "server": "210.100.215.99",
+      "server_port": 18017,
+      "tag": "ICN_21",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngepz.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngepz.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "Aimer",
+      "server": "45.155.121.169",
+      "server_port": 443,
+      "tag": "AMS_9",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngepz.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngepz.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "Aimer",
+      "server": "65.109.199.131",
+      "server_port": 443,
+      "tag": "HEL_4",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngepz.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngepz.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "Aimer",
+      "server": "23.94.211.148",
+      "server_port": 443,
+      "tag": "SEA_4",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngepz.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngepz.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "Aimer",
+      "server": "23.94.136.126",
+      "server_port": 8080,
+      "tag": "ORD",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngepz.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngepz.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "Aimer",
+      "server": "156.229.164.158",
+      "server_port": 10443,
+      "tag": "LAX_23",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngepz.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngepz.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "Aimer",
+      "server": "220.94.7.86",
+      "server_port": 16443,
+      "tag": "ICN_22",
+      "tls": {
+        "enabled": true,
+        "server_name": "ngepz.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "ngepz.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "trojan"
+    },
+    {
+      "tag": "select",
+      "type": "selector",
+      "default": "urltest",
+      "outbounds": [
+        "urltest",
+        "HKG_1",
+        "HK_1",
+        "HK_2",
+        "HK_3",
+        "HK_4",
+        "HK_5",
+        "HK_6",
+        "HK_7",
+        "HKG_2",
+        "HK_8",
+        "HK_9",
+        "SG_1",
+        "NRT",
+        "SIN",
+        "HK_10",
+        "SG_2",
+        "SG_3",
+        "JP_1",
+        "HKG_3",
+        "ICN_1",
+        "ICN_2",
+        "JP_2",
+        "KR_1",
+        "IAD_1",
+        "IAD_2",
+        "IAD_3",
+        "IAD_4",
+        "FRA_1",
+        "US_1",
+        "US_2",
+        "IAD_5",
+        "FRA_2",
+        "IAD_6",
+        "LED_1",
+        "IAD_7",
+        "LED_2",
+        "LAX_1",
+        "LAX_2",
+        "LAX_3",
+        "LAX_4",
+        "US_3",
+        "CDG",
+        "SG_4",
+        "JP_3",
+        "US_4",
+        "LAX_5",
+        "HKG_4",
+        "HKG_5",
+        "HK_11",
+        "LAX_6",
+        "HK_12",
+        "官方优选_1",
+        "AMS_1",
+        "KR_2",
+        "AMS_2",
+        "官方优选_2",
+        "SG_5",
+        "ICN_3",
+        "官方优选_3",
+        "US_5",
+        "JP_4",
+        "官方优选_4",
+        "官方优选_5",
+        "LAX_7",
+        "HK_13",
+        "SEA_1",
+        "KR_3",
+        "edgetunnel",
+        "LAX_8",
+        "官方优选_6",
+        "ICN_4",
+        "LAX_9",
+        "IAD_8",
+        "官方优选_7",
+        "KR_4",
+        "ICN_5",
+        "ICN_6",
+        "ICN_7",
+        "HKG_6",
+        "ICN_8",
+        "ICN_9",
+        "ICN_10",
+        "PL_1",
+        "SG_6",
+        "KR_5",
+        "ICN_11",
+        "ICN_12",
+        "FRA_3",
+        "ICN_13",
+        "KR_6",
+        "AMS_3",
+        "官方优选_8",
+        "KR_7",
+        "US_6",
+        "ICN_14",
+        "KR_8",
+        "官方优选_9",
+        "ICN_15",
+        "PL_2",
+        "KR_9",
+        "官方优选_10",
+        "ICN_16",
+        "epeius_1",
+        "LAX_10",
+        "官方优选_11",
+        "官方优选_12",
+        "FRA_4",
+        "LAX_11",
+        "ICN_17",
+        "官方优选_13",
+        "官方优选_14",
+        "PDX",
+        "SG_7",
+        "IAD_9",
+        "US_7",
+        "KR_10",
+        "官方优选_15",
+        "官方优选_16",
+        "官方优选_17",
+        "官方优选_18",
+        "LAX_12",
+        "FRA_5",
+        "官方优选_19",
+        "官方优选_20",
+        "LAX_13",
+        "官方优选_21",
+        "官方优选_22",
+        "LAX_14",
+        "官方优选_23",
+        "官方优选_24",
+        "官方优选_25",
+        "官方优选_26",
+        "ICN_18",
+        "LAX_15",
+        "TW_1",
+        "LAX_16",
+        "US_8",
+        "US_9",
+        "US_10",
+        "LAX_17",
+        "SG_8",
+        "TW_2",
+        "官方优选_27",
+        "HEL_1",
+        "SG_9",
+        "ICN_19",
+        "AMS_4",
+        "LAX_18",
+        "LAX_19",
+        "PL_3",
+        "AMS_5",
+        "FRA_6",
+        "FRA_7",
+        "官方优选_28",
+        "LAX_20",
+        "SG_10",
+        "IAD_10",
+        "JP_5",
+        "US_11",
+        "JP_6",
+        "FRA_8",
+        "IAD_11",
+        "JP_7",
+        "HK_14",
+        "IAD_12",
+        "WAW_1",
+        "LAX_21",
+        "US_12",
+        "FRA_9",
+        "AMS_6",
+        "LED_3",
+        "AMS_7",
+        "HEL_2",
+        "HK_15",
+        "JP_8",
+        "SEA_2",
+        "LAX_22",
+        "JP_9",
+        "US_13",
+        "HEL_3",
+        "WAW_2",
+        "SEA_3",
+        "IAD_13",
+        "AMS_8",
+        "VNO_1",
+        "VNO_2",
+        "epeius_2",
+        "ICN_20",
+        "IAD_14",
+        "ICN_21",
+        "AMS_9",
+        "HEL_4",
+        "SEA_4",
+        "ORD",
+        "LAX_23",
+        "ICN_22"
+      ]
+    },
+    {
+      "tag": "urltest",
+      "type": "urltest",
+      "outbounds": [
+        "HKG_1",
+        "HK_1",
+        "HK_2",
+        "HK_3",
+        "HK_4",
+        "HK_5",
+        "HK_6",
+        "HK_7",
+        "HKG_2",
+        "HK_8",
+        "HK_9",
+        "SG_1",
+        "NRT",
+        "SIN",
+        "HK_10",
+        "SG_2",
+        "SG_3",
+        "JP_1",
+        "HKG_3",
+        "ICN_1",
+        "ICN_2",
+        "JP_2",
+        "KR_1",
+        "IAD_1",
+        "IAD_2",
+        "IAD_3",
+        "IAD_4",
+        "FRA_1",
+        "US_1",
+        "US_2",
+        "IAD_5",
+        "FRA_2",
+        "IAD_6",
+        "LED_1",
+        "IAD_7",
+        "LED_2",
+        "LAX_1",
+        "LAX_2",
+        "LAX_3",
+        "LAX_4",
+        "US_3",
+        "CDG",
+        "SG_4",
+        "JP_3",
+        "US_4",
+        "LAX_5",
+        "HKG_4",
+        "HKG_5",
+        "HK_11",
+        "LAX_6",
+        "HK_12",
+        "官方优选_1",
+        "AMS_1",
+        "KR_2",
+        "AMS_2",
+        "官方优选_2",
+        "SG_5",
+        "ICN_3",
+        "官方优选_3",
+        "US_5",
+        "JP_4",
+        "官方优选_4",
+        "官方优选_5",
+        "LAX_7",
+        "HK_13",
+        "SEA_1",
+        "KR_3",
+        "edgetunnel",
+        "LAX_8",
+        "官方优选_6",
+        "ICN_4",
+        "LAX_9",
+        "IAD_8",
+        "官方优选_7",
+        "KR_4",
+        "ICN_5",
+        "ICN_6",
+        "ICN_7",
+        "HKG_6",
+        "ICN_8",
+        "ICN_9",
+        "ICN_10",
+        "PL_1",
+        "SG_6",
+        "KR_5",
+        "ICN_11",
+        "ICN_12",
+        "FRA_3",
+        "ICN_13",
+        "KR_6",
+        "AMS_3",
+        "官方优选_8",
+        "KR_7",
+        "US_6",
+        "ICN_14",
+        "KR_8",
+        "官方优选_9",
+        "ICN_15",
+        "PL_2",
+        "KR_9",
+        "官方优选_10",
+        "ICN_16",
+        "epeius_1",
+        "LAX_10",
+        "官方优选_11",
+        "官方优选_12",
+        "FRA_4",
+        "LAX_11",
+        "ICN_17",
+        "官方优选_13",
+        "官方优选_14",
+        "PDX",
+        "SG_7",
+        "IAD_9",
+        "US_7",
+        "KR_10",
+        "官方优选_15",
+        "官方优选_16",
+        "官方优选_17",
+        "官方优选_18",
+        "LAX_12",
+        "FRA_5",
+        "官方优选_19",
+        "官方优选_20",
+        "LAX_13",
+        "官方优选_21",
+        "官方优选_22",
+        "LAX_14",
+        "官方优选_23",
+        "官方优选_24",
+        "官方优选_25",
+        "官方优选_26",
+        "ICN_18",
+        "LAX_15",
+        "TW_1",
+        "LAX_16",
+        "US_8",
+        "US_9",
+        "US_10",
+        "LAX_17",
+        "SG_8",
+        "TW_2",
+        "官方优选_27",
+        "HEL_1",
+        "SG_9",
+        "ICN_19",
+        "AMS_4",
+        "LAX_18",
+        "LAX_19",
+        "PL_3",
+        "AMS_5",
+        "FRA_6",
+        "FRA_7",
+        "官方优选_28",
+        "LAX_20",
+        "SG_10",
+        "IAD_10",
+        "JP_5",
+        "US_11",
+        "JP_6",
+        "FRA_8",
+        "IAD_11",
+        "JP_7",
+        "HK_14",
+        "IAD_12",
+        "WAW_1",
+        "LAX_21",
+        "US_12",
+        "FRA_9",
+        "AMS_6",
+        "LED_3",
+        "AMS_7",
+        "HEL_2",
+        "HK_15",
+        "JP_8",
+        "SEA_2",
+        "LAX_22",
+        "JP_9",
+        "US_13",
+        "HEL_3",
+        "WAW_2",
+        "SEA_3",
+        "IAD_13",
+        "AMS_8",
+        "VNO_1",
+        "VNO_2",
+        "epeius_2",
+        "ICN_20",
+        "IAD_14",
+        "ICN_21",
+        "AMS_9",
+        "HEL_4",
+        "SEA_4",
+        "ORD",
+        "LAX_23",
+        "ICN_22"
+      ]
+    },
+    {
+      "tag": "chatgpt",
+      "type": "selector",
+      "outbounds": [
+        "HKG_1",
+        "HK_1",
+        "HK_2",
+        "HK_3",
+        "HK_4",
+        "HK_5",
+        "HK_6",
+        "HK_7",
+        "HKG_2",
+        "HK_8",
+        "HK_9",
+        "SG_1",
+        "NRT",
+        "SIN",
+        "HK_10",
+        "SG_2",
+        "SG_3",
+        "JP_1",
+        "HKG_3",
+        "ICN_1",
+        "ICN_2",
+        "JP_2",
+        "KR_1",
+        "IAD_1",
+        "IAD_2",
+        "IAD_3",
+        "IAD_4",
+        "FRA_1",
+        "US_1",
+        "US_2",
+        "IAD_5",
+        "FRA_2",
+        "IAD_6",
+        "LED_1",
+        "IAD_7",
+        "LED_2",
+        "LAX_1",
+        "LAX_2",
+        "LAX_3",
+        "LAX_4",
+        "US_3",
+        "CDG",
+        "SG_4",
+        "JP_3",
+        "US_4",
+        "LAX_5",
+        "HKG_4",
+        "HKG_5",
+        "HK_11",
+        "LAX_6",
+        "HK_12",
+        "官方优选_1",
+        "AMS_1",
+        "KR_2",
+        "AMS_2",
+        "官方优选_2",
+        "SG_5",
+        "ICN_3",
+        "官方优选_3",
+        "US_5",
+        "JP_4",
+        "官方优选_4",
+        "官方优选_5",
+        "LAX_7",
+        "HK_13",
+        "SEA_1",
+        "KR_3",
+        "edgetunnel",
+        "LAX_8",
+        "官方优选_6",
+        "ICN_4",
+        "LAX_9",
+        "IAD_8",
+        "官方优选_7",
+        "KR_4",
+        "ICN_5",
+        "ICN_6",
+        "ICN_7",
+        "HKG_6",
+        "ICN_8",
+        "ICN_9",
+        "ICN_10",
+        "PL_1",
+        "SG_6",
+        "KR_5",
+        "ICN_11",
+        "ICN_12",
+        "FRA_3",
+        "ICN_13",
+        "KR_6",
+        "AMS_3",
+        "官方优选_8",
+        "KR_7",
+        "US_6",
+        "ICN_14",
+        "KR_8",
+        "官方优选_9",
+        "ICN_15",
+        "PL_2",
+        "KR_9",
+        "官方优选_10",
+        "ICN_16",
+        "epeius_1",
+        "LAX_10",
+        "官方优选_11",
+        "官方优选_12",
+        "FRA_4",
+        "LAX_11",
+        "ICN_17",
+        "官方优选_13",
+        "官方优选_14",
+        "PDX",
+        "SG_7",
+        "IAD_9",
+        "US_7",
+        "KR_10",
+        "官方优选_15",
+        "官方优选_16",
+        "官方优选_17",
+        "官方优选_18",
+        "LAX_12",
+        "FRA_5",
+        "官方优选_19",
+        "官方优选_20",
+        "LAX_13",
+        "官方优选_21",
+        "官方优选_22",
+        "LAX_14",
+        "官方优选_23",
+        "官方优选_24",
+        "官方优选_25",
+        "官方优选_26",
+        "ICN_18",
+        "LAX_15",
+        "TW_1",
+        "LAX_16",
+        "US_8",
+        "US_9",
+        "US_10",
+        "LAX_17",
+        "SG_8",
+        "TW_2",
+        "官方优选_27",
+        "HEL_1",
+        "SG_9",
+        "ICN_19",
+        "AMS_4",
+        "LAX_18",
+        "LAX_19",
+        "PL_3",
+        "AMS_5",
+        "FRA_6",
+        "FRA_7",
+        "官方优选_28",
+        "LAX_20",
+        "SG_10",
+        "IAD_10",
+        "JP_5",
+        "US_11",
+        "JP_6",
+        "FRA_8",
+        "IAD_11",
+        "JP_7",
+        "HK_14",
+        "IAD_12",
+        "WAW_1",
+        "LAX_21",
+        "US_12",
+        "FRA_9",
+        "AMS_6",
+        "LED_3",
+        "AMS_7",
+        "HEL_2",
+        "HK_15",
+        "JP_8",
+        "SEA_2",
+        "LAX_22",
+        "JP_9",
+        "US_13",
+        "HEL_3",
+        "WAW_2",
+        "SEA_3",
+        "IAD_13",
+        "AMS_8",
+        "VNO_1",
+        "VNO_2",
+        "epeius_2",
+        "ICN_20",
+        "IAD_14",
+        "ICN_21",
+        "AMS_9",
+        "HEL_4",
+        "SEA_4",
+        "ORD",
+        "LAX_23",
+        "ICN_22"
+      ]
+    },
+    {
+      "tag": "direct",
+      "type": "direct"
+    }
+  ],
+  "route": {
+    "rules": [
+      {
+        "action": "sniff"
+      },
+      {
+        "protocol": "dns",
+        "action": "hijack-dns"
+      },
+      {
+        "action": "resolve",
+        "strategy": "prefer_ipv4"
+      },
+      {
+        "clash_mode": "Direct",
+        "outbound": "direct"
+      },
+      {
+        "clash_mode": "Global",
+        "outbound": "select"
+      },
+      {
+        "ip_is_private": true,
+        "outbound": "direct"
+      },
+      {
+        "package_name": "com.openai.chatgpt",
+        "outbound": "chatgpt"
+      },
+      {
+        "domain_suffix": [
+          "proactivebackend-pa.googleapis.com",
+          "bing.com",
+          "bing.net",
+          "bingapis.com"
+        ],
+        "outbound": "chatgpt"
+      },
+      {
+        "domain_keyword": [
+          "qq.com"
+        ],
+        "outbound": "direct"
+      },
+      {
+        "domain_suffix": [
+          "ushd.xmsl.org",
+          "cf.gtlx.org"
+        ],
+        "outbound": "direct"
+      },
+      {
+        "port": [
+          23301,
+          22101,
+          22102,
+          20501
+        ],
+        "outbound": "direct"
+      },
+      {
+        "rule_set": "geoip-cn",
+        "outbound": "direct"
+      }
+    ],
+    "rule_set": [
+      {
+        "type": "remote",
+        "tag": "geoip-cn",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/SagerNet/sing-geoip/rule-set/geoip-cn.srs",
+        "download_detour": "select"
+      },
+      {
+        "type": "remote",
+        "tag": "geosite-cn",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/xmdhs/sing-geosite/rule-set-Loyalsoldier/geosite-geolocation-cn.srs",
+        "download_detour": "select"
+      },
+      {
+        "type": "remote",
+        "tag": "AdGuardSDNSFilter",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/xmdhs/sing-box-ruleset/rule-set/AdGuardSDNSFilterSingBox.srs",
+        "download_detour": "select"
+      },
+      {
+        "type": "remote",
+        "tag": "chrome-doh",
+        "format": "source",
+        "url": "https://gist.githubusercontent.com/xmdhs/71fc5ff6ef29f5ecaf2c52b8de5c3172/raw/chrome-doh.json",
+        "download_detour": "select"
+      }
+    ],
+    "default_domain_resolver": "dns_direct",
+    "final": "select",
+    "auto_detect_interface": true
+  },
+  "experimental": {
+    "cache_file": {
+      "enabled": true
+    },
+    "clash_api": {
+      "external_controller": "127.0.0.1:9090"
+    }
+  }
+}
