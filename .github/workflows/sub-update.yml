@@ -2,10 +2,6 @@ name: SubAutoUpdate
 
 on:
   workflow_dispatch:
-  push:
-    branches:
-      - master
-      - branch1
   schedule:
     - cron: "0 * * * *"
 
