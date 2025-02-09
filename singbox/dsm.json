@@ -81,122 +81,111 @@
   ],
   "outbounds": [
     {
-      "packet_encoding": "xudp",
       "server": "dl1zsds.853782.xyz",
       "server_port": 2086,
       "tag": "新加坡Singapore",
       "transport": {
-        "early_data_header_name": "Sec-WebSocket-Protocol",
         "headers": {
           "Host": [
             "sg22xz.6128888.xyz"
           ]
         },
-        "max_early_data": 2048,
         "path": "/sssddd",
         "type": "ws"
       },
       "type": "vless",
-      "uuid": "8115d55d-98cd-41f2-90e3-0d8b40adbd6a"
+      "uuid": "8115d55d-98cd-41f2-90e3-0d8b40adbd6a",
+      "packet_encoding": "xudp"
     },
     {
-      "flow": "xtls-rprx-vision",
-      "packet_encoding": "xudp",
       "server": "hk.7896543.xyz",
       "server_port": 8080,
       "tag": "香港Hongkong 1",
       "tls": {
         "enabled": true,
-        "insecure": false,
+        "server_name": "www.microsoft.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
+        },
         "reality": {
           "enabled": true,
           "public_key": "Tcg-C3_84fPaTzWyYZIdS1-6wtWX4k99aARBafG7zRA",
           "short_id": "56db6421"
-        },
-        "server_name": "www.microsoft.com",
-        "utls": {
-          "enabled": true,
-          "fingerprint": "safari"
         }
       },
       "type": "vless",
-      "uuid": "8115d55d-98cd-41f2-90e3-0d8b40adbd6a"
+      "uuid": "8115d55d-98cd-41f2-90e3-0d8b40adbd6a",
+      "flow": "xtls-rprx-vision",
+      "packet_encoding": "xudp"
     },
     {
-      "packet_encoding": "xudp",
       "server": "dl1zsds.853782.xyz",
       "server_port": 2086,
       "tag": "香港Hongkong 2",
       "transport": {
-        "early_data_header_name": "Sec-WebSocket-Protocol",
         "headers": {
           "Host": [
             "hk1bascxz.7896543.xyz"
           ]
         },
-        "max_early_data": 2048,
         "path": "/sssddd",
         "type": "ws"
       },
       "type": "vless",
-      "uuid": "8115d55d-98cd-41f2-90e3-0d8b40adbd6a"
+      "uuid": "8115d55d-98cd-41f2-90e3-0d8b40adbd6a",
+      "packet_encoding": "xudp"
     },
     {
-      "packet_encoding": "xudp",
       "server": "dl1zsds.853782.xyz",
       "server_port": 2086,
       "tag": "香港Hongkong 3",
       "transport": {
-        "early_data_header_name": "Sec-WebSocket-Protocol",
         "headers": {
           "Host": [
             "hk33b.6128888.xyz"
           ]
         },
-        "max_early_data": 2048,
         "path": "/sssddd",
         "type": "ws"
       },
       "type": "vless",
-      "uuid": "8115d55d-98cd-41f2-90e3-0d8b40adbd6a"
+      "uuid": "8115d55d-98cd-41f2-90e3-0d8b40adbd6a",
+      "packet_encoding": "xudp"
     },
     {
-      "packet_encoding": "xudp",
       "server": "dl1zsds.853782.xyz",
       "server_port": 2086,
       "tag": "日本Japan 1",
       "transport": {
-        "early_data_header_name": "Sec-WebSocket-Protocol",
         "headers": {
           "Host": [
             "jp1zqqyuz.6128888.xyz"
           ]
         },
-        "max_early_data": 2048,
         "path": "/sssddd",
         "type": "ws"
       },
       "type": "vless",
-      "uuid": "8115d55d-98cd-41f2-90e3-0d8b40adbd6a"
+      "uuid": "8115d55d-98cd-41f2-90e3-0d8b40adbd6a",
+      "packet_encoding": "xudp"
     },
     {
-      "packet_encoding": "xudp",
       "server": "dl1zsds.853782.xyz",
       "server_port": 2086,
       "tag": "日本Japan 2",
       "transport": {
-        "early_data_header_name": "Sec-WebSocket-Protocol",
         "headers": {
           "Host": [
             "jp22tzt.6128888.xyz"
           ]
         },
-        "max_early_data": 2048,
         "path": "/sssddd",
         "type": "ws"
       },
       "type": "vless",
-      "uuid": "8115d55d-98cd-41f2-90e3-0d8b40adbd6a"
+      "uuid": "8115d55d-98cd-41f2-90e3-0d8b40adbd6a",
+      "packet_encoding": "xudp"
     },
     {
       "password": "8115d55d-98cd-41f2-90e3-0d8b40adbd6a",
@@ -205,10 +194,11 @@
       "tag": "日本Japan 3",
       "tls": {
         "enabled": true,
-        "insecure": false,
         "server_name": "jp3dou.6128888.xyz"
       },
-      "type": "hysteria2"
+      "type": "hysteria2",
+      "down_mbps": 500,
+      "up_mbps": 500
     },
     {
       "password": "8115d55d-98cd-41f2-90e3-0d8b40adbd6a",
@@ -217,231 +207,211 @@
       "tag": "美国America 1",
       "tls": {
         "enabled": true,
-        "insecure": false,
         "server_name": "us2.473221.xyz"
       },
-      "type": "hysteria2"
+      "type": "hysteria2",
+      "down_mbps": 200,
+      "up_mbps": 200
     },
     {
-      "packet_encoding": "xudp",
       "server": "dl1zsds.853782.xyz",
       "server_port": 2095,
       "tag": "美国America 2",
       "transport": {
-        "early_data_header_name": "Sec-WebSocket-Protocol",
         "headers": {
           "Host": [
             "dlsx.473221.xyz"
           ]
         },
-        "max_early_data": 2048,
         "path": "/sssddd",
         "type": "ws"
       },
       "type": "vless",
-      "uuid": "8115d55d-98cd-41f2-90e3-0d8b40adbd6a"
+      "uuid": "8115d55d-98cd-41f2-90e3-0d8b40adbd6a",
+      "packet_encoding": "xudp"
     },
     {
-      "packet_encoding": "xudp",
       "server": "dl1zsds.853782.xyz",
       "server_port": 2095,
       "tag": "韩国Korea",
       "transport": {
-        "early_data_header_name": "Sec-WebSocket-Protocol",
         "headers": {
           "Host": [
             "kr1iuqgz.6128888.xyz"
           ]
         },
-        "max_early_data": 2048,
         "path": "/sssddd",
         "type": "ws"
       },
       "type": "vless",
-      "uuid": "8115d55d-98cd-41f2-90e3-0d8b40adbd6a"
+      "uuid": "8115d55d-98cd-41f2-90e3-0d8b40adbd6a",
+      "packet_encoding": "xudp"
     },
     {
-      "flow": "xtls-rprx-vision",
-      "packet_encoding": "xudp",
       "server": "twm1.473221.xyz",
       "server_port": 23939,
       "tag": "台湾Taiwan",
       "tls": {
         "enabled": true,
-        "insecure": false,
+        "server_name": "jellyfin.illya.tw",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
         "reality": {
           "enabled": true,
           "public_key": "AOHmawSiLh6-ZH0jfvPY9qipZcsLNcdLtKqWDrKY6Uk",
           "short_id": "836ef7bc"
-        },
-        "server_name": "jellyfin.illya.tw",
-        "utls": {
-          "enabled": true,
-          "fingerprint": "qq"
         }
       },
       "type": "vless",
-      "uuid": "8115d55d-98cd-41f2-90e3-0d8b40adbd6a"
+      "uuid": "8115d55d-98cd-41f2-90e3-0d8b40adbd6a",
+      "flow": "xtls-rprx-vision",
+      "packet_encoding": "xudp"
     },
     {
-      "packet_encoding": "xudp",
       "server": "dl1zsds.853782.xyz",
       "server_port": 2095,
       "tag": "德国Germany 1",
       "transport": {
-        "early_data_header_name": "Sec-WebSocket-Protocol",
         "headers": {
           "Host": [
             "de1z.7896543.xyz"
           ]
         },
-        "max_early_data": 2048,
         "path": "/sssddd",
         "type": "ws"
       },
       "type": "vless",
-      "uuid": "8115d55d-98cd-41f2-90e3-0d8b40adbd6a"
+      "uuid": "8115d55d-98cd-41f2-90e3-0d8b40adbd6a",
+      "packet_encoding": "xudp"
     },
     {
-      "packet_encoding": "xudp",
       "server": "dl1zsds.853782.xyz",
       "server_port": 2095,
       "tag": "德国Germany 2",
       "transport": {
-        "early_data_header_name": "Sec-WebSocket-Protocol",
         "headers": {
           "Host": [
             "de2z.7896543.xyz"
           ]
         },
-        "max_early_data": 2048,
         "path": "/sssddd",
         "type": "ws"
       },
       "type": "vless",
-      "uuid": "8115d55d-98cd-41f2-90e3-0d8b40adbd6a"
+      "uuid": "8115d55d-98cd-41f2-90e3-0d8b40adbd6a",
+      "packet_encoding": "xudp"
     },
     {
-      "packet_encoding": "xudp",
       "server": "dl1zsds.853782.xyz",
       "server_port": 2086,
       "tag": "巴西Brazil",
       "transport": {
-        "early_data_header_name": "Sec-WebSocket-Protocol",
         "headers": {
           "Host": [
             "bx.7896543.xyz"
           ]
         },
-        "max_early_data": 2048,
         "path": "/sssddd",
         "type": "ws"
       },
       "type": "vless",
-      "uuid": "8115d55d-98cd-41f2-90e3-0d8b40adbd6a"
+      "uuid": "8115d55d-98cd-41f2-90e3-0d8b40adbd6a",
+      "packet_encoding": "xudp"
     },
     {
-      "packet_encoding": "xudp",
       "server": "dl1zsds.853782.xyz",
       "server_port": 2086,
       "tag": "澳大利亚Australia",
       "transport": {
-        "early_data_header_name": "Sec-WebSocket-Protocol",
         "headers": {
           "Host": [
             "aubbz.6128888.xyz"
           ]
         },
-        "max_early_data": 2048,
         "path": "/sssddd",
         "type": "ws"
       },
       "type": "vless",
-      "uuid": "8115d55d-98cd-41f2-90e3-0d8b40adbd6a"
+      "uuid": "8115d55d-98cd-41f2-90e3-0d8b40adbd6a",
+      "packet_encoding": "xudp"
     },
     {
-      "packet_encoding": "xudp",
       "server": "dl1zsds.853782.xyz",
       "server_port": 2086,
       "tag": "法国France 1",
       "transport": {
-        "early_data_header_name": "Sec-WebSocket-Protocol",
         "headers": {
           "Host": [
             "frqtqgz.6128888.xyz"
           ]
         },
-        "max_early_data": 2048,
         "path": "/sssddd",
         "type": "ws"
       },
       "type": "vless",
-      "uuid": "8115d55d-98cd-41f2-90e3-0d8b40adbd6a"
+      "uuid": "8115d55d-98cd-41f2-90e3-0d8b40adbd6a",
+      "packet_encoding": "xudp"
     },
     {
-      "packet_encoding": "xudp",
       "server": "dl1zsds.853782.xyz",
       "server_port": 2095,
       "tag": "法国France 2",
       "transport": {
-        "early_data_header_name": "Sec-WebSocket-Protocol",
         "headers": {
           "Host": [
             "fr22bb.6128888.xyz"
           ]
         },
-        "max_early_data": 2048,
         "path": "/sssddd",
         "type": "ws"
       },
       "type": "vless",
-      "uuid": "8115d55d-98cd-41f2-90e3-0d8b40adbd6a"
+      "uuid": "8115d55d-98cd-41f2-90e3-0d8b40adbd6a",
+      "packet_encoding": "xudp"
     },
     {
-      "packet_encoding": "xudp",
       "server": "dl1zsds.853782.xyz",
       "server_port": 2086,
       "tag": "荷兰Netherlands",
       "transport": {
-        "early_data_header_name": "Sec-WebSocket-Protocol",
         "headers": {
           "Host": [
             "nlxxz.473221.xyz"
           ]
         },
-        "max_early_data": 2048,
         "path": "/sssddd",
         "type": "ws"
       },
       "type": "vless",
-      "uuid": "8115d55d-98cd-41f2-90e3-0d8b40adbd6a"
+      "uuid": "8115d55d-98cd-41f2-90e3-0d8b40adbd6a",
+      "packet_encoding": "xudp"
     },
     {
-      "packet_encoding": "xudp",
       "server": "dl1zsds.853782.xyz",
       "server_port": 2095,
       "tag": "摩尔多瓦Moldova",
       "transport": {
-        "early_data_header_name": "Sec-WebSocket-Protocol",
         "headers": {
           "Host": [
             "medwbtb.473221.xyz"
           ]
         },
-        "max_early_data": 2048,
         "path": "/sssddd",
         "type": "ws"
       },
       "type": "vless",
-      "uuid": "8115d55d-98cd-41f2-90e3-0d8b40adbd6a"
+      "uuid": "8115d55d-98cd-41f2-90e3-0d8b40adbd6a",
+      "packet_encoding": "xudp"
     },
     {
-      "packet_encoding": "xudp",
       "server": "rd.6128888.xyz",
       "server_port": 10010,
       "tag": "瑞典Sweden（IPV6）",
       "type": "vless",
-      "uuid": "8115d55d-98cd-41f2-90e3-0d8b40adbd6a"
+      "uuid": "8115d55d-98cd-41f2-90e3-0d8b40adbd6a",
+      "packet_encoding": "xudp"
     },
     {
       "tag": "select",

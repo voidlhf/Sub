@@ -1,0 +1,519 @@
+{
+  "log": {},
+  "dns": {
+    "servers": [
+      {
+        "tag": "dns_proxy",
+        "type": "https",
+        "server": "8.8.8.8",
+        "detour": "select"
+      },
+      {
+        "tag": "dns_direct",
+        "type": "https",
+        "server": "223.5.5.5",
+        "detour": "direct"
+      },
+      {
+        "tag": "dns_fakeip",
+        "type": "fakeip",
+        "inet4_range": "198.18.0.0/15",
+        "inet6_range": "fc00::/18"
+      }
+    ],
+    "rules": [
+      {
+        "rule_set": [
+          "AdGuardSDNSFilter",
+          "chrome-doh"
+        ],
+        "action": "reject",
+        "method": "default"
+      },
+      {
+        "query_type": [
+          "A",
+          "AAAA"
+        ],
+        "server": "dns_fakeip",
+        "rewrite_ttl": 1
+      },
+      {
+        "clash_mode": "Global",
+        "server": "dns_proxy"
+      },
+      {
+        "clash_mode": "Direct",
+        "server": "dns_direct"
+      },
+      {
+        "rule_set": "geosite-cn",
+        "server": "dns_direct"
+      }
+    ],
+    "strategy": "prefer_ipv4",
+    "independent_cache": true
+  },
+  "inbounds": [
+    {
+      "type": "tun",
+      "mtu": 9000,
+      "address": [
+        "172.18.0.1/30",
+        "fdfe:dcba:9876::1/126"
+      ],
+      "auto_route": true,
+      "strict_route": true,
+      "endpoint_independent_nat": true
+    },
+    {
+      "type": "socks",
+      "tag": "socks-in",
+      "listen": "127.0.0.1",
+      "listen_port": 2333
+    },
+    {
+      "type": "mixed",
+      "tag": "mixed-in",
+      "listen": "127.0.0.1",
+      "listen_port": 2334
+    }
+  ],
+  "outbounds": [
+    {
+      "password": "3a4db0c1-5eee-4a5c-bcab-1bcbc7c5e8b5",
+      "server": "sanyuandian-us.sanguayun.com",
+      "server_port": 12420,
+      "tag": "剩余流量：499.96 GB",
+      "tls": {
+        "enabled": true,
+        "server_name": "sanyuandian-us.sanguayun.com"
+      },
+      "type": "hysteria2",
+      "down_mbps": 1000,
+      "up_mbps": 1000
+    },
+    {
+      "password": "3a4db0c1-5eee-4a5c-bcab-1bcbc7c5e8b5",
+      "server": "sanyuandian-us.sanguayun.com",
+      "server_port": 12292,
+      "tag": "距离下次重置剩余：18 天",
+      "tls": {
+        "enabled": true,
+        "server_name": "sanyuandian-us.sanguayun.com"
+      },
+      "type": "hysteria2",
+      "down_mbps": 1000,
+      "up_mbps": 1000
+    },
+    {
+      "password": "3a4db0c1-5eee-4a5c-bcab-1bcbc7c5e8b5",
+      "server": "sanyuandian-us.sanguayun.com",
+      "server_port": 12425,
+      "tag": "套餐到期：2025-03-09",
+      "tls": {
+        "enabled": true,
+        "server_name": "sanyuandian-us.sanguayun.com"
+      },
+      "type": "hysteria2",
+      "down_mbps": 1000,
+      "up_mbps": 1000
+    },
+    {
+      "password": "3a4db0c1-5eee-4a5c-bcab-1bcbc7c5e8b5",
+      "server": "sanyuandian-us.sanguayun.com",
+      "server_port": 12770,
+      "tag": "🇺🇸 美国1",
+      "tls": {
+        "enabled": true,
+        "server_name": "sanyuandian-us.sanguayun.com"
+      },
+      "type": "hysteria2",
+      "down_mbps": 1000,
+      "up_mbps": 1000
+    },
+    {
+      "password": "3a4db0c1-5eee-4a5c-bcab-1bcbc7c5e8b5",
+      "server": "sanyuandian-us.sanguayun.com",
+      "server_port": 12965,
+      "tag": "🇺🇸 美国2",
+      "tls": {
+        "enabled": true,
+        "server_name": "sanyuandian-us.sanguayun.com"
+      },
+      "type": "hysteria2",
+      "down_mbps": 1000,
+      "up_mbps": 1000
+    },
+    {
+      "password": "3a4db0c1-5eee-4a5c-bcab-1bcbc7c5e8b5",
+      "server": "sanyuandian-us.sanguayun.com",
+      "server_port": 12997,
+      "tag": "🇺🇸 美国3",
+      "tls": {
+        "enabled": true,
+        "server_name": "sanyuandian-us.sanguayun.com"
+      },
+      "type": "hysteria2",
+      "down_mbps": 1000,
+      "up_mbps": 1000
+    },
+    {
+      "password": "3a4db0c1-5eee-4a5c-bcab-1bcbc7c5e8b5",
+      "server": "sanyuandian-us.sanguayun.com",
+      "server_port": 12110,
+      "tag": "🇺🇸 美国4",
+      "tls": {
+        "enabled": true,
+        "server_name": "sanyuandian-us.sanguayun.com"
+      },
+      "type": "hysteria2",
+      "down_mbps": 1000,
+      "up_mbps": 1000
+    },
+    {
+      "password": "3a4db0c1-5eee-4a5c-bcab-1bcbc7c5e8b5",
+      "server": "sanyuandian-hk.sanguayun.com",
+      "server_port": 12868,
+      "tag": "🇭🇰 香港1",
+      "tls": {
+        "enabled": true,
+        "server_name": "sanyuandian-hk.sanguayun.com"
+      },
+      "type": "hysteria2",
+      "down_mbps": 1000,
+      "up_mbps": 1000
+    },
+    {
+      "password": "3a4db0c1-5eee-4a5c-bcab-1bcbc7c5e8b5",
+      "server": "sanyuandian-hk.sanguayun.com",
+      "server_port": 12365,
+      "tag": "🇭🇰 香港2",
+      "tls": {
+        "enabled": true,
+        "server_name": "sanyuandian-hk.sanguayun.com"
+      },
+      "type": "hysteria2",
+      "down_mbps": 1000,
+      "up_mbps": 1000
+    },
+    {
+      "password": "3a4db0c1-5eee-4a5c-bcab-1bcbc7c5e8b5",
+      "server": "sanyuandian-hk.sanguayun.com",
+      "server_port": 12169,
+      "tag": "🇭🇰 香港3",
+      "tls": {
+        "enabled": true,
+        "server_name": "sanyuandian-hk.sanguayun.com"
+      },
+      "type": "hysteria2",
+      "down_mbps": 1000,
+      "up_mbps": 1000
+    },
+    {
+      "password": "3a4db0c1-5eee-4a5c-bcab-1bcbc7c5e8b5",
+      "server": "sanyuandian-hk.sanguayun.com",
+      "server_port": 12431,
+      "tag": "🇭🇰 香港4",
+      "tls": {
+        "enabled": true,
+        "server_name": "sanyuandian-hk.sanguayun.com"
+      },
+      "type": "hysteria2",
+      "down_mbps": 1000,
+      "up_mbps": 1000
+    },
+    {
+      "password": "3a4db0c1-5eee-4a5c-bcab-1bcbc7c5e8b5",
+      "server": "sanyuandian-jp.sanguayun.com",
+      "server_port": 12158,
+      "tag": "🇯🇵 日本1",
+      "tls": {
+        "enabled": true,
+        "server_name": "sanyuandian-jp.sanguayun.com"
+      },
+      "type": "hysteria2",
+      "down_mbps": 1000,
+      "up_mbps": 1000
+    },
+    {
+      "password": "3a4db0c1-5eee-4a5c-bcab-1bcbc7c5e8b5",
+      "server": "sanyuandian-jp.sanguayun.com",
+      "server_port": 12444,
+      "tag": "🇯🇵 日本2",
+      "tls": {
+        "enabled": true,
+        "server_name": "sanyuandian-jp.sanguayun.com"
+      },
+      "type": "hysteria2",
+      "down_mbps": 1000,
+      "up_mbps": 1000
+    },
+    {
+      "password": "3a4db0c1-5eee-4a5c-bcab-1bcbc7c5e8b5",
+      "server": "sanyuandian-jp.sanguayun.com",
+      "server_port": 12785,
+      "tag": "🇯🇵 日本3",
+      "tls": {
+        "enabled": true,
+        "server_name": "sanyuandian-jp.sanguayun.com"
+      },
+      "type": "hysteria2",
+      "down_mbps": 1000,
+      "up_mbps": 1000
+    },
+    {
+      "password": "3a4db0c1-5eee-4a5c-bcab-1bcbc7c5e8b5",
+      "server": "sanyuandian-jp.sanguayun.com",
+      "server_port": 12143,
+      "tag": "🇯🇵 日本4",
+      "tls": {
+        "enabled": true,
+        "server_name": "sanyuandian-jp.sanguayun.com"
+      },
+      "type": "hysteria2",
+      "down_mbps": 1000,
+      "up_mbps": 1000
+    },
+    {
+      "password": "3a4db0c1-5eee-4a5c-bcab-1bcbc7c5e8b5",
+      "server": "sanyuandian-nl.sanguayun.com",
+      "server_port": 12326,
+      "tag": "🇳🇱 荷兰1",
+      "tls": {
+        "enabled": true,
+        "server_name": "sanyuandian-nl.sanguayun.com"
+      },
+      "type": "hysteria2",
+      "down_mbps": 1000,
+      "up_mbps": 1000
+    },
+    {
+      "password": "3a4db0c1-5eee-4a5c-bcab-1bcbc7c5e8b5",
+      "server": "sanyuandian-nl.sanguayun.com",
+      "server_port": 12086,
+      "tag": "🇳🇱 荷兰2",
+      "tls": {
+        "enabled": true,
+        "server_name": "sanyuandian-nl.sanguayun.com"
+      },
+      "type": "hysteria2",
+      "down_mbps": 1000,
+      "up_mbps": 1000
+    },
+    {
+      "password": "3a4db0c1-5eee-4a5c-bcab-1bcbc7c5e8b5",
+      "server": "sanyuandian-nl.sanguayun.com",
+      "server_port": 12405,
+      "tag": "🇳🇱 荷兰3",
+      "tls": {
+        "enabled": true,
+        "server_name": "sanyuandian-nl.sanguayun.com"
+      },
+      "type": "hysteria2",
+      "down_mbps": 1000,
+      "up_mbps": 1000
+    },
+    {
+      "password": "3a4db0c1-5eee-4a5c-bcab-1bcbc7c5e8b5",
+      "server": "sanyuandian-nl.sanguayun.com",
+      "server_port": 12844,
+      "tag": "🇳🇱 荷兰4",
+      "tls": {
+        "enabled": true,
+        "server_name": "sanyuandian-nl.sanguayun.com"
+      },
+      "type": "hysteria2",
+      "down_mbps": 1000,
+      "up_mbps": 1000
+    },
+    {
+      "tag": "select",
+      "type": "selector",
+      "default": "urltest",
+      "outbounds": [
+        "urltest",
+        "剩余流量：499.96 GB",
+        "距离下次重置剩余：18 天",
+        "套餐到期：2025-03-09",
+        "🇺🇸 美国1",
+        "🇺🇸 美国2",
+        "🇺🇸 美国3",
+        "🇺🇸 美国4",
+        "🇭🇰 香港1",
+        "🇭🇰 香港2",
+        "🇭🇰 香港3",
+        "🇭🇰 香港4",
+        "🇯🇵 日本1",
+        "🇯🇵 日本2",
+        "🇯🇵 日本3",
+        "🇯🇵 日本4",
+        "🇳🇱 荷兰1",
+        "🇳🇱 荷兰2",
+        "🇳🇱 荷兰3",
+        "🇳🇱 荷兰4"
+      ]
+    },
+    {
+      "tag": "urltest",
+      "type": "urltest",
+      "outbounds": [
+        "剩余流量：499.96 GB",
+        "距离下次重置剩余：18 天",
+        "套餐到期：2025-03-09",
+        "🇺🇸 美国1",
+        "🇺🇸 美国2",
+        "🇺🇸 美国3",
+        "🇺🇸 美国4",
+        "🇭🇰 香港1",
+        "🇭🇰 香港2",
+        "🇭🇰 香港3",
+        "🇭🇰 香港4",
+        "🇯🇵 日本1",
+        "🇯🇵 日本2",
+        "🇯🇵 日本3",
+        "🇯🇵 日本4",
+        "🇳🇱 荷兰1",
+        "🇳🇱 荷兰2",
+        "🇳🇱 荷兰3",
+        "🇳🇱 荷兰4"
+      ]
+    },
+    {
+      "tag": "chatgpt",
+      "type": "selector",
+      "outbounds": [
+        "剩余流量：499.96 GB",
+        "距离下次重置剩余：18 天",
+        "套餐到期：2025-03-09",
+        "🇺🇸 美国1",
+        "🇺🇸 美国2",
+        "🇺🇸 美国3",
+        "🇺🇸 美国4",
+        "🇭🇰 香港1",
+        "🇭🇰 香港2",
+        "🇭🇰 香港3",
+        "🇭🇰 香港4",
+        "🇯🇵 日本1",
+        "🇯🇵 日本2",
+        "🇯🇵 日本3",
+        "🇯🇵 日本4",
+        "🇳🇱 荷兰1",
+        "🇳🇱 荷兰2",
+        "🇳🇱 荷兰3",
+        "🇳🇱 荷兰4"
+      ]
+    },
+    {
+      "tag": "direct",
+      "type": "direct"
+    }
+  ],
+  "route": {
+    "rules": [
+      {
+        "action": "sniff"
+      },
+      {
+        "protocol": "dns",
+        "action": "hijack-dns"
+      },
+      {
+        "action": "resolve",
+        "strategy": "prefer_ipv4"
+      },
+      {
+        "clash_mode": "Direct",
+        "outbound": "direct"
+      },
+      {
+        "clash_mode": "Global",
+        "outbound": "select"
+      },
+      {
+        "ip_is_private": true,
+        "outbound": "direct"
+      },
+      {
+        "package_name": "com.openai.chatgpt",
+        "outbound": "chatgpt"
+      },
+      {
+        "domain_suffix": [
+          "proactivebackend-pa.googleapis.com",
+          "bing.com",
+          "bing.net",
+          "bingapis.com"
+        ],
+        "outbound": "chatgpt"
+      },
+      {
+        "domain_keyword": [
+          "qq.com"
+        ],
+        "outbound": "direct"
+      },
+      {
+        "domain_suffix": [
+          "ushd.xmsl.org",
+          "cf.gtlx.org"
+        ],
+        "outbound": "direct"
+      },
+      {
+        "port": [
+          23301,
+          22101,
+          22102,
+          20501
+        ],
+        "outbound": "direct"
+      },
+      {
+        "rule_set": "geoip-cn",
+        "outbound": "direct"
+      }
+    ],
+    "rule_set": [
+      {
+        "type": "remote",
+        "tag": "geoip-cn",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/SagerNet/sing-geoip/rule-set/geoip-cn.srs",
+        "download_detour": "select"
+      },
+      {
+        "type": "remote",
+        "tag": "geosite-cn",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/xmdhs/sing-geosite/rule-set-Loyalsoldier/geosite-geolocation-cn.srs",
+        "download_detour": "select"
+      },
+      {
+        "type": "remote",
+        "tag": "AdGuardSDNSFilter",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/xmdhs/sing-box-ruleset/rule-set/AdGuardSDNSFilterSingBox.srs",
+        "download_detour": "select"
+      },
+      {
+        "type": "remote",
+        "tag": "chrome-doh",
+        "format": "source",
+        "url": "https://gist.githubusercontent.com/xmdhs/71fc5ff6ef29f5ecaf2c52b8de5c3172/raw/chrome-doh.json",
+        "download_detour": "select"
+      }
+    ],
+    "default_domain_resolver": "dns_direct",
+    "final": "select",
+    "auto_detect_interface": true
+  },
+  "experimental": {
+    "cache_file": {
+      "enabled": true
+    },
+    "clash_api": {
+      "external_controller": "127.0.0.1:9090"
+    }
+  }
+}
