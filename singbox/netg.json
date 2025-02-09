@@ -1,0 +1,501 @@
+{
+  "log": {},
+  "dns": {
+    "servers": [
+      {
+        "tag": "dns_proxy",
+        "type": "https",
+        "server": "8.8.8.8",
+        "detour": "select"
+      },
+      {
+        "tag": "dns_direct",
+        "type": "https",
+        "server": "223.5.5.5",
+        "detour": "direct"
+      },
+      {
+        "tag": "dns_fakeip",
+        "type": "fakeip",
+        "inet4_range": "198.18.0.0/15",
+        "inet6_range": "fc00::/18"
+      }
+    ],
+    "rules": [
+      {
+        "rule_set": [
+          "AdGuardSDNSFilter",
+          "chrome-doh"
+        ],
+        "action": "reject",
+        "method": "default"
+      },
+      {
+        "query_type": [
+          "A",
+          "AAAA"
+        ],
+        "server": "dns_fakeip",
+        "rewrite_ttl": 1
+      },
+      {
+        "clash_mode": "Global",
+        "server": "dns_proxy"
+      },
+      {
+        "clash_mode": "Direct",
+        "server": "dns_direct"
+      },
+      {
+        "rule_set": "geosite-cn",
+        "server": "dns_direct"
+      }
+    ],
+    "strategy": "prefer_ipv4",
+    "independent_cache": true
+  },
+  "inbounds": [
+    {
+      "type": "tun",
+      "mtu": 9000,
+      "address": [
+        "172.18.0.1/30",
+        "fdfe:dcba:9876::1/126"
+      ],
+      "auto_route": true,
+      "strict_route": true,
+      "endpoint_independent_nat": true
+    },
+    {
+      "type": "socks",
+      "tag": "socks-in",
+      "listen": "127.0.0.1",
+      "listen_port": 2333
+    },
+    {
+      "type": "mixed",
+      "tag": "mixed-in",
+      "listen": "127.0.0.1",
+      "listen_port": 2334
+    }
+  ],
+  "outbounds": [
+    {
+      "alter_id": 0,
+      "security": "auto",
+      "server": "77.90.52.163",
+      "server_port": 16899,
+      "tag": "剩余流量：42.73 GB",
+      "transport": [],
+      "type": "vmess",
+      "uuid": "a763c104-e8dd-472d-add2-dca4e6fc183e"
+    },
+    {
+      "alter_id": 0,
+      "security": "auto",
+      "server": "77.90.52.163",
+      "server_port": 16899,
+      "tag": "距离下次重置剩余：25 天",
+      "transport": [],
+      "type": "vmess",
+      "uuid": "a763c104-e8dd-472d-add2-dca4e6fc183e"
+    },
+    {
+      "alter_id": 0,
+      "security": "auto",
+      "server": "77.90.52.163",
+      "server_port": 16899,
+      "tag": "套餐到期：2025-03-06",
+      "transport": [],
+      "type": "vmess",
+      "uuid": "a763c104-e8dd-472d-add2-dca4e6fc183e"
+    },
+    {
+      "alter_id": 0,
+      "security": "auto",
+      "server": "77.90.52.163",
+      "server_port": 16899,
+      "tag": "流量合理使用可发工单重置，有部分ipv6-only节点，请确认您的软件和环境是否支持",
+      "transport": [],
+      "type": "vmess",
+      "uuid": "a763c104-e8dd-472d-add2-dca4e6fc183e"
+    },
+    {
+      "flow": "",
+      "packet_encoding": "xudp",
+      "server": "backus2.ip05.shop",
+      "server_port": 443,
+      "tag": "🇺🇲US-1Gbps-下载专用0.7倍率",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "backus2.ip05.shop",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
+        }
+      },
+      "transport": {
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "headers": {
+          "Host": [
+            "backus2.ip05.shop"
+          ]
+        },
+        "max_early_data": 2560,
+        "path": "/nanliang",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "a763c104-e8dd-472d-add2-dca4e6fc183e"
+    },
+    {
+      "flow": "",
+      "packet_encoding": "xudp",
+      "server": "backhaxus.ip04.shop",
+      "server_port": 443,
+      "tag": "🇺🇲US-让HAX后悔-0.1倍率",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "backhaxus.ip04.shop",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
+        }
+      },
+      "transport": {
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "headers": {
+          "Host": [
+            "backhaxus.ip04.shop"
+          ]
+        },
+        "max_early_data": 2560,
+        "path": "/nanliang",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "a763c104-e8dd-472d-add2-dca4e6fc183e"
+    },
+    {
+      "flow": "",
+      "packet_encoding": "xudp",
+      "server": "back-hk2.uni-verse.top",
+      "server_port": 443,
+      "tag": "🇹🇼TW-1Gbps",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "back-hk2.uni-verse.top",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "headers": {
+          "Host": [
+            "back-hk2.uni-verse.top"
+          ]
+        },
+        "max_early_data": 2560,
+        "path": "/go",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "a763c104-e8dd-472d-add2-dca4e6fc183e"
+    },
+    {
+      "flow": "",
+      "packet_encoding": "xudp",
+      "server": "back-ca1.uni-verse.top",
+      "server_port": 443,
+      "tag": "🇨🇦CA-100Mbps",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "back-ca1.uni-verse.top",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "ios"
+        }
+      },
+      "transport": {
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "headers": {
+          "Host": [
+            "back-ca1.uni-verse.top"
+          ]
+        },
+        "max_early_data": 2560,
+        "path": "/fuck",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "a763c104-e8dd-472d-add2-dca4e6fc183e"
+    },
+    {
+      "flow": "",
+      "packet_encoding": "xudp",
+      "server": "back-bg1.uni-verse.top",
+      "server_port": 443,
+      "tag": "🇧🇬BG-300Mbps",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "back-bg1.uni-verse.top",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "ios"
+        }
+      },
+      "transport": {
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "headers": {
+          "Host": [
+            "back-bg1.uni-verse.top"
+          ]
+        },
+        "max_early_data": 2560,
+        "path": "/nan",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "a763c104-e8dd-472d-add2-dca4e6fc183e"
+    },
+    {
+      "flow": "",
+      "packet_encoding": "xudp",
+      "server": "back-ru1.uni-verse.top",
+      "server_port": 443,
+      "tag": "🇷🇺RU-下载专用-0.5倍率",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "back-ru1.uni-verse.top",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "edge"
+        }
+      },
+      "transport": {
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "headers": {
+          "Host": [
+            "back-ru1.uni-verse.top"
+          ]
+        },
+        "max_early_data": 2560,
+        "path": "/nanliang",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "a763c104-e8dd-472d-add2-dca4e6fc183e"
+    },
+    {
+      "down_mbps": 200,
+      "obfs": {
+        "password": "ZWE5NThmNzJmMTkwNDE5Yg==",
+        "type": "salamander"
+      },
+      "password": "a763c104-e8dd-472d-add2-dca4e6fc183e",
+      "server": "2a0f:7803:fac0:6b2a:0011:0000:0000:0001",
+      "server_port": 40057,
+      "tag": "🇦🇶AQ-IPv6-Only-1Gbps",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "back-hk2.ip03.shop"
+      },
+      "type": "hysteria2",
+      "up_mbps": 200
+    },
+    {
+      "down_mbps": 20,
+      "obfs": {
+        "password": "MmZjNThlNzE5OThiNDY4ZA==",
+        "type": "salamander"
+      },
+      "password": "a763c104-e8dd-472d-add2-dca4e6fc183e",
+      "server": "2a0f:7803:fac0:6b2a:0001:0000:0000:0001",
+      "server_port": 17484,
+      "tag": "国际BGP中转🇭🇰HK->🇷🇺RU-ipv6-only",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "aa.ac"
+      },
+      "type": "hysteria2",
+      "up_mbps": 200
+    },
+    {
+      "tag": "select",
+      "type": "selector",
+      "default": "urltest",
+      "outbounds": [
+        "urltest",
+        "剩余流量：42.73 GB",
+        "距离下次重置剩余：25 天",
+        "套餐到期：2025-03-06",
+        "流量合理使用可发工单重置，有部分ipv6-only节点，请确认您的软件和环境是否支持",
+        "🇺🇲US-1Gbps-下载专用0.7倍率",
+        "🇺🇲US-让HAX后悔-0.1倍率",
+        "🇹🇼TW-1Gbps",
+        "🇨🇦CA-100Mbps",
+        "🇧🇬BG-300Mbps",
+        "🇷🇺RU-下载专用-0.5倍率",
+        "🇦🇶AQ-IPv6-Only-1Gbps",
+        "国际BGP中转🇭🇰HK->🇷🇺RU-ipv6-only"
+      ]
+    },
+    {
+      "tag": "urltest",
+      "type": "urltest",
+      "outbounds": [
+        "剩余流量：42.73 GB",
+        "距离下次重置剩余：25 天",
+        "套餐到期：2025-03-06",
+        "流量合理使用可发工单重置，有部分ipv6-only节点，请确认您的软件和环境是否支持",
+        "🇺🇲US-1Gbps-下载专用0.7倍率",
+        "🇺🇲US-让HAX后悔-0.1倍率",
+        "🇹🇼TW-1Gbps",
+        "🇨🇦CA-100Mbps",
+        "🇧🇬BG-300Mbps",
+        "🇷🇺RU-下载专用-0.5倍率",
+        "🇦🇶AQ-IPv6-Only-1Gbps",
+        "国际BGP中转🇭🇰HK->🇷🇺RU-ipv6-only"
+      ]
+    },
+    {
+      "tag": "chatgpt",
+      "type": "selector",
+      "outbounds": [
+        "剩余流量：42.73 GB",
+        "距离下次重置剩余：25 天",
+        "套餐到期：2025-03-06",
+        "流量合理使用可发工单重置，有部分ipv6-only节点，请确认您的软件和环境是否支持",
+        "🇺🇲US-1Gbps-下载专用0.7倍率",
+        "🇺🇲US-让HAX后悔-0.1倍率",
+        "🇹🇼TW-1Gbps",
+        "🇨🇦CA-100Mbps",
+        "🇧🇬BG-300Mbps",
+        "🇷🇺RU-下载专用-0.5倍率",
+        "🇦🇶AQ-IPv6-Only-1Gbps",
+        "国际BGP中转🇭🇰HK->🇷🇺RU-ipv6-only"
+      ]
+    },
+    {
+      "tag": "direct",
+      "type": "direct"
+    }
+  ],
+  "route": {
+    "rules": [
+      {
+        "action": "sniff"
+      },
+      {
+        "protocol": "dns",
+        "action": "hijack-dns"
+      },
+      {
+        "action": "resolve",
+        "strategy": "prefer_ipv4"
+      },
+      {
+        "clash_mode": "Direct",
+        "outbound": "direct"
+      },
+      {
+        "clash_mode": "Global",
+        "outbound": "select"
+      },
+      {
+        "ip_is_private": true,
+        "outbound": "direct"
+      },
+      {
+        "package_name": "com.openai.chatgpt",
+        "outbound": "chatgpt"
+      },
+      {
+        "domain_suffix": [
+          "proactivebackend-pa.googleapis.com",
+          "bing.com",
+          "bing.net",
+          "bingapis.com"
+        ],
+        "outbound": "chatgpt"
+      },
+      {
+        "domain_keyword": [
+          "qq.com"
+        ],
+        "outbound": "direct"
+      },
+      {
+        "domain_suffix": [
+          "ushd.xmsl.org",
+          "cf.gtlx.org"
+        ],
+        "outbound": "direct"
+      },
+      {
+        "port": [
+          23301,
+          22101,
+          22102,
+          20501
+        ],
+        "outbound": "direct"
+      },
+      {
+        "rule_set": "geoip-cn",
+        "outbound": "direct"
+      }
+    ],
+    "rule_set": [
+      {
+        "type": "remote",
+        "tag": "geoip-cn",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/SagerNet/sing-geoip/rule-set/geoip-cn.srs",
+        "download_detour": "select"
+      },
+      {
+        "type": "remote",
+        "tag": "geosite-cn",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/xmdhs/sing-geosite/rule-set-Loyalsoldier/geosite-geolocation-cn.srs",
+        "download_detour": "select"
+      },
+      {
+        "type": "remote",
+        "tag": "AdGuardSDNSFilter",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/xmdhs/sing-box-ruleset/rule-set/AdGuardSDNSFilterSingBox.srs",
+        "download_detour": "select"
+      },
+      {
+        "type": "remote",
+        "tag": "chrome-doh",
+        "format": "source",
+        "url": "https://gist.githubusercontent.com/xmdhs/71fc5ff6ef29f5ecaf2c52b8de5c3172/raw/chrome-doh.json",
+        "download_detour": "select"
+      }
+    ],
+    "default_domain_resolver": "dns_direct",
+    "final": "select",
+    "auto_detect_interface": true
+  },
+  "experimental": {
+    "cache_file": {
+      "enabled": true
+    },
+    "clash_api": {
+      "external_controller": "127.0.0.1:9090"
+    }
+  }
+}
