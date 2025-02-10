@@ -17,6 +17,20 @@ hosts:
   alt7-mtalk.google.com: "173.194.219.188"
   alt8-mtalk.google.com: "142.250.112.188"
 proxies:
+- name: "RN SJC"
+  type: "vless"
+  server: "107.174.176.106"
+  port: 19173
+  uuid: "a6b5fea3-b54c-45bf-d788-be93f612a715"
+  tls: true
+  client-fingerprint: "chrome"
+  servername: "www.lovelive-anime.jp"
+  network: "tcp"
+  reality-opts:
+    public-key: "S-g0oP36DShii1uPOnZDSEhp_wQghX6h68PgMivOmD4"
+  tfo: false
+  skip-cert-verify: false
+  flow: "xtls-rprx-vision"
 - name: "公益_波兰01"
   type: "hysteria2"
   server: "serv01.trevely.us.kg"
@@ -137,100 +151,7 @@ proxies:
   password: "da85e2f4-acfc-4e7c-8512-ded015105fef"
   auth: "da85e2f4-acfc-4e7c-8512-ded015105fef"
   skip-cert-verify: true
-- name: "以上为serv00节点！！！"
-  type: "vless"
-  server: "1"
-  port: 443
-  uuid: "e7735103-27be-434c-8428-8bffe2a96302"
-  tls: true
-  client-fingerprint: "chrome"
-  servername: "hj-dbl.pages.dev"
-  network: "ws"
-  ws-opts:
-    path: "/?ed=2560"
-    headers:
-      host: "hj-dbl.pages.dev"
-  tfo: false
-  skip-cert-verify: false
-- name: "请不要进行速度测试！！！测试延迟即可！！！"
-  type: "vless"
-  server: "1"
-  port: 443
-  uuid: "e7735103-27be-434c-8428-8bffe2a96302"
-  tls: true
-  client-fingerprint: "chrome"
-  servername: "hj-dbl.pages.dev"
-  network: "ws"
-  ws-opts:
-    path: "/?ed=2560"
-    headers:
-      host: "hj-dbl.pages.dev"
-  tfo: false
-  skip-cert-verify: false
-- name: "内置多节点！！！"
-  type: "vless"
-  server: "1"
-  port: 443
-  uuid: "e7735103-27be-434c-8428-8bffe2a96302"
-  tls: true
-  client-fingerprint: "chrome"
-  servername: "hj-dbl.pages.dev"
-  network: "ws"
-  ws-opts:
-    path: "/?ed=2560"
-    headers:
-      host: "hj-dbl.pages.dev"
-  tfo: false
-  skip-cert-verify: false
-- name: "内置多位大佬优选！！！"
-  type: "vless"
-  server: "1"
-  port: 443
-  uuid: "e7735103-27be-434c-8428-8bffe2a96302"
-  tls: true
-  client-fingerprint: "chrome"
-  servername: "hj-dbl.pages.dev"
-  network: "ws"
-  ws-opts:
-    path: "/?ed=2560"
-    headers:
-      host: "hj-dbl.pages.dev"
-  tfo: false
-  skip-cert-verify: false
-- name: "有防失联serv00节点！！！nano维护！！！"
-  type: "vless"
-  server: "1"
-  port: 443
-  uuid: "e7735103-27be-434c-8428-8bffe2a96302"
-  tls: true
-  client-fingerprint: "chrome"
-  servername: "hj-dbl.pages.dev"
-  network: "ws"
-  ws-opts:
-    path: "/?ed=2560"
-    headers:
-      host: "hj-dbl.pages.dev"
-  tfo: false
-  skip-cert-verify: false
 - name: "超时节点套代理链即可！"
-  type: "trojan"
-  server: "probable-drum.treefrog761.one"
-  port: 443
-  password: "3747000103274291200"
-  tls: false
-  sni: ""
-  network: "tcp"
-  tfo: false
-- name: "🇸🇬新城 - 01"
-  type: "trojan"
-  server: "probable-drum.treefrog761.one"
-  port: 443
-  password: "3747000103274291200"
-  tls: false
-  sni: ""
-  network: "tcp"
-  tfo: false
-- name: "🇸🇬新城 - 02"
   type: "trojan"
   server: "guiding-raven.treefrog761.one"
   port: 443
@@ -239,9 +160,27 @@ proxies:
   sni: ""
   network: "tcp"
   tfo: false
+- name: "🇸🇬新城 - 01"
+  type: "trojan"
+  server: "guiding-raven.treefrog761.one"
+  port: 443
+  password: "3747000103274291200"
+  tls: false
+  sni: ""
+  network: "tcp"
+  tfo: false
+- name: "🇸🇬新城 - 02"
+  type: "trojan"
+  server: "probable-drum.treefrog761.one"
+  port: 443
+  password: "3747000103274291200"
+  tls: false
+  sni: ""
+  network: "tcp"
+  tfo: false
 - name: "🇸🇬新城 - 03"
   type: "trojan"
-  server: "exotic-bengal.treefrog761.one"
+  server: "amazed-gobbler.treefrog761.one"
   port: 443
   password: "3747000103274291200"
   tls: false
@@ -250,7 +189,7 @@ proxies:
   tfo: false
 - name: "🇸🇬新城 - 04"
   type: "trojan"
-  server: "flying-tuna.treefrog761.one"
+  server: "exotic-bengal.treefrog761.one"
   port: 443
   password: "3747000103274291200"
   tls: false
@@ -259,7 +198,7 @@ proxies:
   tfo: false
 - name: "🇸🇬新城 - 05"
   type: "trojan"
-  server: "amazed-gobbler.treefrog761.one"
+  server: "flying-tuna.treefrog761.one"
   port: 443
   password: "3747000103274291200"
   tls: false
@@ -277,7 +216,7 @@ proxies:
   tfo: false
 - name: "🇯🇵日本 - 02"
   type: "trojan"
-  server: "open-maggot.pigeon031.one"
+  server: "settling-trout.pigeon031.one"
   port: 443
   password: "3747000103274291200"
   tls: false
@@ -286,7 +225,7 @@ proxies:
   tfo: false
 - name: "🇯🇵日本 - 03"
   type: "trojan"
-  server: "equipped-parakeet.pigeon031.one"
+  server: "sweeping-cat.pigeon031.one"
   port: 443
   password: "3747000103274291200"
   tls: false
@@ -304,7 +243,7 @@ proxies:
   tfo: false
 - name: "🇯🇵日本 - 05"
   type: "trojan"
-  server: "sure-phoenix.treefrog761.one"
+  server: "equipped-parakeet.pigeon031.one"
   port: 443
   password: "3747000103274291200"
   tls: false
@@ -313,7 +252,7 @@ proxies:
   tfo: false
 - name: "🇯🇵日本 - 06"
   type: "trojan"
-  server: "sweeping-cat.pigeon031.one"
+  server: "open-maggot.pigeon031.one"
   port: 443
   password: "3747000103274291200"
   tls: false
@@ -331,7 +270,7 @@ proxies:
   tfo: false
 - name: "🇯🇵日本 - 08"
   type: "trojan"
-  server: "settling-trout.pigeon031.one"
+  server: "sure-phoenix.treefrog761.one"
   port: 443
   password: "3747000103274291200"
   tls: false
@@ -340,7 +279,7 @@ proxies:
   tfo: false
 - name: "🇰🇷韩国 - 01"
   type: "trojan"
-  server: "funky-poodle.pigeon031.one"
+  server: "novel-seal.pigeon031.one"
   port: 443
   password: "3747000103274291200"
   tls: false
@@ -349,7 +288,7 @@ proxies:
   tfo: false
 - name: "🇰🇷韩国 - 02"
   type: "trojan"
-  server: "notable-dingo.pigeon031.one"
+  server: "funky-poodle.pigeon031.one"
   port: 443
   password: "3747000103274291200"
   tls: false
@@ -358,7 +297,7 @@ proxies:
   tfo: false
 - name: "🇰🇷韩国 - 03"
   type: "trojan"
-  server: "novel-seal.pigeon031.one"
+  server: "notable-dingo.pigeon031.one"
   port: 443
   password: "3747000103274291200"
   tls: false
@@ -367,7 +306,7 @@ proxies:
   tfo: false
 - name: "🇺🇸美国 - 01"
   type: "trojan"
-  server: "sterling-marmot.treefrog761.one"
+  server: "capable-jaybird.pigeon031.one"
   port: 443
   password: "3747000103274291200"
   tls: false
@@ -376,7 +315,7 @@ proxies:
   tfo: false
 - name: "🇺🇸美国 - 02"
   type: "trojan"
-  server: "capable-jaybird.pigeon031.one"
+  server: "engaging-redbird.pigeon031.one"
   port: 443
   password: "3747000103274291200"
   tls: false
@@ -385,7 +324,7 @@ proxies:
   tfo: false
 - name: "🇺🇸美国 - 03"
   type: "trojan"
-  server: "engaging-redbird.pigeon031.one"
+  server: "darling-goshawk.pigeon031.one"
   port: 443
   password: "3747000103274291200"
   tls: false
@@ -394,7 +333,7 @@ proxies:
   tfo: false
 - name: "🇺🇸美国 - 04"
   type: "trojan"
-  server: "darling-ox.pigeon031.one"
+  server: "welcomed-clam.pigeon031.one"
   port: 443
   password: "3747000103274291200"
   tls: false
@@ -403,7 +342,7 @@ proxies:
   tfo: false
 - name: "🇺🇸美国 - 05"
   type: "trojan"
-  server: "darling-goshawk.pigeon031.one"
+  server: "caring-jackal.pigeon031.one"
   port: 443
   password: "3747000103274291200"
   tls: false
@@ -412,7 +351,7 @@ proxies:
   tfo: false
 - name: "🇺🇸美国 - 06"
   type: "trojan"
-  server: "content-shrimp.pigeon031.one"
+  server: "darling-ox.pigeon031.one"
   port: 443
   password: "3747000103274291200"
   tls: false
@@ -421,7 +360,7 @@ proxies:
   tfo: false
 - name: "🇺🇸美国 - 07"
   type: "trojan"
-  server: "caring-jackal.pigeon031.one"
+  server: "relaxing-narwhal.pigeon031.one"
   port: 443
   password: "3747000103274291200"
   tls: false
@@ -430,7 +369,7 @@ proxies:
   tfo: false
 - name: "🇺🇸美国 - 08"
   type: "trojan"
-  server: "welcomed-clam.pigeon031.one"
+  server: "content-shrimp.pigeon031.one"
   port: 443
   password: "3747000103274291200"
   tls: false
@@ -439,7 +378,7 @@ proxies:
   tfo: false
 - name: "🇺🇸美国 - 09"
   type: "trojan"
-  server: "relaxing-narwhal.pigeon031.one"
+  server: "sterling-marmot.treefrog761.one"
   port: 443
   password: "3747000103274291200"
   tls: false
@@ -448,7 +387,7 @@ proxies:
   tfo: false
 - name: "🇳🇱荷兰 - 01"
   type: "trojan"
-  server: "eternal-sole.insect388.motorcycles"
+  server: "inspired-cardinal.insect388.motorcycles"
   port: 443
   password: "3747000103274291200"
   tls: false
@@ -466,7 +405,7 @@ proxies:
   tfo: false
 - name: "🇳🇱荷兰 - 03"
   type: "trojan"
-  server: "inspired-cardinal.insect388.motorcycles"
+  server: "epic-weasel.treefrog761.one"
   port: 443
   password: "3747000103274291200"
   tls: false
@@ -475,7 +414,7 @@ proxies:
   tfo: false
 - name: "🇳🇱荷兰 - 04"
   type: "trojan"
-  server: "modest-bulldog.goat627.mom"
+  server: "sunny-jackal.insect388.motorcycles"
   port: 443
   password: "3747000103274291200"
   tls: false
@@ -484,7 +423,7 @@ proxies:
   tfo: false
 - name: "🇳🇱荷兰 - 05"
   type: "trojan"
-  server: "epic-weasel.treefrog761.one"
+  server: "modest-bulldog.goat627.mom"
   port: 443
   password: "3747000103274291200"
   tls: false
@@ -493,7 +432,7 @@ proxies:
   tfo: false
 - name: "🇳🇱荷兰 - 06"
   type: "trojan"
-  server: "sunny-jackal.insect388.motorcycles"
+  server: "eternal-sole.insect388.motorcycles"
   port: 443
   password: "3747000103274291200"
   tls: false
@@ -511,7 +450,7 @@ proxies:
   tfo: false
 - name: "🇩🇪德国 - 01"
   type: "trojan"
-  server: "destined-bulldog.pigeon031.one"
+  server: "cuddly-bengal.pigeon031.one"
   port: 443
   password: "3747000103274291200"
   tls: false
@@ -520,7 +459,7 @@ proxies:
   tfo: false
 - name: "🇩🇪德国 - 02"
   type: "trojan"
-  server: "main-labrador.pigeon031.one"
+  server: "mighty-clam.pigeon031.one"
   port: 443
   password: "3747000103274291200"
   tls: false
@@ -529,7 +468,7 @@ proxies:
   tfo: false
 - name: "🇩🇪德国 - 03"
   type: "trojan"
-  server: "mighty-clam.pigeon031.one"
+  server: "needed-firefly.pigeon031.one"
   port: 443
   password: "3747000103274291200"
   tls: false
@@ -538,7 +477,7 @@ proxies:
   tfo: false
 - name: "🇩🇪德国 - 04"
   type: "trojan"
-  server: "needed-firefly.pigeon031.one"
+  server: "trusted-stallion.pigeon031.one"
   port: 443
   password: "3747000103274291200"
   tls: false
@@ -547,7 +486,7 @@ proxies:
   tfo: false
 - name: "🇩🇪德国 - 05"
   type: "trojan"
-  server: "cuddly-bengal.pigeon031.one"
+  server: "talented-egret.pigeon031.one"
   port: 443
   password: "3747000103274291200"
   tls: false
@@ -556,7 +495,7 @@ proxies:
   tfo: false
 - name: "🇩🇪德国 - 06"
   type: "trojan"
-  server: "united-puma.pigeon031.one"
+  server: "destined-bulldog.pigeon031.one"
   port: 443
   password: "3747000103274291200"
   tls: false
@@ -565,7 +504,7 @@ proxies:
   tfo: false
 - name: "🇩🇪德国 - 07"
   type: "trojan"
-  server: "talented-egret.pigeon031.one"
+  server: "main-labrador.pigeon031.one"
   port: 443
   password: "3747000103274291200"
   tls: false
@@ -574,7 +513,7 @@ proxies:
   tfo: false
 - name: "🇩🇪德国 - 08"
   type: "trojan"
-  server: "comic-possum.pigeon031.one"
+  server: "united-puma.pigeon031.one"
   port: 443
   password: "3747000103274291200"
   tls: false
@@ -583,7 +522,7 @@ proxies:
   tfo: false
 - name: "🇩🇪德国 - 09"
   type: "trojan"
-  server: "trusted-stallion.pigeon031.one"
+  server: "comic-possum.pigeon031.one"
   port: 443
   password: "3747000103274291200"
   tls: false
@@ -610,7 +549,7 @@ proxies:
   tfo: false
 - name: "🇬🇧伦敦 - 01"
   type: "trojan"
-  server: "key-sheep.pigeon031.one"
+  server: "saved-shark.pigeon031.one"
   port: 443
   password: "3747000103274291200"
   tls: false
@@ -619,7 +558,7 @@ proxies:
   tfo: false
 - name: "🇬🇧伦敦 - 02"
   type: "trojan"
-  server: "saved-shark.pigeon031.one"
+  server: "primary-gannet.pigeon031.one"
   port: 443
   password: "3747000103274291200"
   tls: false
@@ -637,7 +576,7 @@ proxies:
   tfo: false
 - name: "🇬🇧伦敦 - 04"
   type: "trojan"
-  server: "mutual-flea.pigeon031.one"
+  server: "classic-akita.pigeon031.one"
   port: 443
   password: "3747000103274291200"
   tls: false
@@ -646,7 +585,7 @@ proxies:
   tfo: false
 - name: "🇬🇧伦敦 - 05"
   type: "trojan"
-  server: "primary-gannet.pigeon031.one"
+  server: "key-sheep.pigeon031.one"
   port: 443
   password: "3747000103274291200"
   tls: false
@@ -655,7 +594,7 @@ proxies:
   tfo: false
 - name: "🇬🇧伦敦 - 06"
   type: "trojan"
-  server: "classic-akita.pigeon031.one"
+  server: "choice-longhorn.insect388.motorcycles"
   port: 443
   password: "3747000103274291200"
   tls: false
@@ -664,7 +603,7 @@ proxies:
   tfo: false
 - name: "🇬🇧伦敦 - 07"
   type: "trojan"
-  server: "choice-longhorn.insect388.motorcycles"
+  server: "mutual-flea.pigeon031.one"
   port: 443
   password: "3747000103274291200"
   tls: false
@@ -700,7 +639,7 @@ proxies:
   tfo: false
 - name: "🇮🇳印度 - 01"
   type: "trojan"
-  server: "smiling-pony.pigeon031.one"
+  server: "quality-cicada.pigeon031.one"
   port: 443
   password: "3747000103274291200"
   tls: false
@@ -709,7 +648,7 @@ proxies:
   tfo: false
 - name: "🇮🇳印度 - 02"
   type: "trojan"
-  server: "quality-cicada.pigeon031.one"
+  server: "smiling-pony.pigeon031.one"
   port: 443
   password: "3747000103274291200"
   tls: false
@@ -736,7 +675,7 @@ proxies:
   tfo: false
 - name: "🇮🇳印度 - 05"
   type: "trojan"
-  server: "deciding-mantis.treefrog761.one"
+  server: "noted-dane.pigeon031.one"
   port: 443
   password: "3747000103274291200"
   tls: false
@@ -745,7 +684,7 @@ proxies:
   tfo: false
 - name: "🇮🇳印度 - 06"
   type: "trojan"
-  server: "noted-dane.pigeon031.one"
+  server: "deciding-mantis.treefrog761.one"
   port: 443
   password: "3747000103274291200"
   tls: false
@@ -959,12 +898,24 @@ proxies:
   sni: ""
   network: "tcp"
   tfo: false
+- name: "异常订阅 hj-dbl.pages.dev"
+  type: "trojan"
+  server: "127.0.0.1"
+  port: 8888
+  password: "CMLiussss"
+  tls: true
+  client-fingerprint: "chrome"
+  sni: ""
+  network: "tcp"
+  tfo: false
+  skip-cert-verify: false
 proxy-groups:
 - name: "🚀 节点选择"
   type: "select"
   proxies:
   - "♻️ 自动选择"
   - "DIRECT"
+  - "RN SJC"
   - "公益_波兰01"
   - "公益_波兰05"
   - "公益_波兰08"
@@ -980,11 +931,6 @@ proxy-groups:
   - "公益_香港 RAY"
   - "公益_香港 HYT"
   - "FR-serv00-s16-hysteria2"
-  - "以上为serv00节点！！！"
-  - "请不要进行速度测试！！！测试延迟即可！！！"
-  - "内置多节点！！！"
-  - "内置多位大佬优选！！！"
-  - "有防失联serv00节点！！！nano维护！！！"
   - "超时节点套代理链即可！"
   - "🇸🇬新城 - 01"
   - "🇸🇬新城 - 02"
@@ -1068,12 +1014,14 @@ proxy-groups:
   - "🇱🇻拉脱维亚 - 01"
   - "🇵🇰巴基斯坦 - 01"
   - "🇲🇾马来西亚 - 01"
+  - "异常订阅 hj-dbl.pages.dev"
 - name: "♻️ 自动选择"
   type: "url-test"
   url: "http://www.gstatic.com/generate_204"
   interval: 300
   tolerance: 50
   proxies:
+  - "RN SJC"
   - "公益_波兰01"
   - "公益_波兰05"
   - "公益_波兰08"
@@ -1089,11 +1037,6 @@ proxy-groups:
   - "公益_香港 RAY"
   - "公益_香港 HYT"
   - "FR-serv00-s16-hysteria2"
-  - "以上为serv00节点！！！"
-  - "请不要进行速度测试！！！测试延迟即可！！！"
-  - "内置多节点！！！"
-  - "内置多位大佬优选！！！"
-  - "有防失联serv00节点！！！nano维护！！！"
   - "超时节点套代理链即可！"
   - "🇸🇬新城 - 01"
   - "🇸🇬新城 - 02"
@@ -1177,12 +1120,14 @@ proxy-groups:
   - "🇱🇻拉脱维亚 - 01"
   - "🇵🇰巴基斯坦 - 01"
   - "🇲🇾马来西亚 - 01"
+  - "异常订阅 hj-dbl.pages.dev"
 - name: "🌍 国外媒体"
   type: "select"
   proxies:
   - "🚀 节点选择"
   - "♻️ 自动选择"
   - "🎯 全球直连"
+  - "RN SJC"
   - "公益_波兰01"
   - "公益_波兰05"
   - "公益_波兰08"
@@ -1198,11 +1143,6 @@ proxy-groups:
   - "公益_香港 RAY"
   - "公益_香港 HYT"
   - "FR-serv00-s16-hysteria2"
-  - "以上为serv00节点！！！"
-  - "请不要进行速度测试！！！测试延迟即可！！！"
-  - "内置多节点！！！"
-  - "内置多位大佬优选！！！"
-  - "有防失联serv00节点！！！nano维护！！！"
   - "超时节点套代理链即可！"
   - "🇸🇬新城 - 01"
   - "🇸🇬新城 - 02"
@@ -1286,11 +1226,13 @@ proxy-groups:
   - "🇱🇻拉脱维亚 - 01"
   - "🇵🇰巴基斯坦 - 01"
   - "🇲🇾马来西亚 - 01"
+  - "异常订阅 hj-dbl.pages.dev"
 - name: "📲 电报信息"
   type: "select"
   proxies:
   - "🚀 节点选择"
   - "🎯 全球直连"
+  - "RN SJC"
   - "公益_波兰01"
   - "公益_波兰05"
   - "公益_波兰08"
@@ -1306,11 +1248,6 @@ proxy-groups:
   - "公益_香港 RAY"
   - "公益_香港 HYT"
   - "FR-serv00-s16-hysteria2"
-  - "以上为serv00节点！！！"
-  - "请不要进行速度测试！！！测试延迟即可！！！"
-  - "内置多节点！！！"
-  - "内置多位大佬优选！！！"
-  - "有防失联serv00节点！！！nano维护！！！"
   - "超时节点套代理链即可！"
   - "🇸🇬新城 - 01"
   - "🇸🇬新城 - 02"
@@ -1394,11 +1331,13 @@ proxy-groups:
   - "🇱🇻拉脱维亚 - 01"
   - "🇵🇰巴基斯坦 - 01"
   - "🇲🇾马来西亚 - 01"
+  - "异常订阅 hj-dbl.pages.dev"
 - name: "Ⓜ️ 微软服务"
   type: "select"
   proxies:
   - "🚀 节点选择"
   - "🎯 全球直连"
+  - "RN SJC"
   - "公益_波兰01"
   - "公益_波兰05"
   - "公益_波兰08"
@@ -1414,11 +1353,6 @@ proxy-groups:
   - "公益_香港 RAY"
   - "公益_香港 HYT"
   - "FR-serv00-s16-hysteria2"
-  - "以上为serv00节点！！！"
-  - "请不要进行速度测试！！！测试延迟即可！！！"
-  - "内置多节点！！！"
-  - "内置多位大佬优选！！！"
-  - "有防失联serv00节点！！！nano维护！！！"
   - "超时节点套代理链即可！"
   - "🇸🇬新城 - 01"
   - "🇸🇬新城 - 02"
@@ -1502,11 +1436,13 @@ proxy-groups:
   - "🇱🇻拉脱维亚 - 01"
   - "🇵🇰巴基斯坦 - 01"
   - "🇲🇾马来西亚 - 01"
+  - "异常订阅 hj-dbl.pages.dev"
 - name: "🍎 苹果服务"
   type: "select"
   proxies:
   - "🚀 节点选择"
   - "🎯 全球直连"
+  - "RN SJC"
   - "公益_波兰01"
   - "公益_波兰05"
   - "公益_波兰08"
@@ -1522,11 +1458,6 @@ proxy-groups:
   - "公益_香港 RAY"
   - "公益_香港 HYT"
   - "FR-serv00-s16-hysteria2"
-  - "以上为serv00节点！！！"
-  - "请不要进行速度测试！！！测试延迟即可！！！"
-  - "内置多节点！！！"
-  - "内置多位大佬优选！！！"
-  - "有防失联serv00节点！！！nano维护！！！"
   - "超时节点套代理链即可！"
   - "🇸🇬新城 - 01"
   - "🇸🇬新城 - 02"
@@ -1610,12 +1541,14 @@ proxy-groups:
   - "🇱🇻拉脱维亚 - 01"
   - "🇵🇰巴基斯坦 - 01"
   - "🇲🇾马来西亚 - 01"
+  - "异常订阅 hj-dbl.pages.dev"
 - name: "📢 谷歌FCM"
   type: "select"
   proxies:
   - "🎯 全球直连"
   - "🚀 节点选择"
   - "♻️ 自动选择"
+  - "RN SJC"
   - "公益_波兰01"
   - "公益_波兰05"
   - "公益_波兰08"
@@ -1631,11 +1564,6 @@ proxy-groups:
   - "公益_香港 RAY"
   - "公益_香港 HYT"
   - "FR-serv00-s16-hysteria2"
-  - "以上为serv00节点！！！"
-  - "请不要进行速度测试！！！测试延迟即可！！！"
-  - "内置多节点！！！"
-  - "内置多位大佬优选！！！"
-  - "有防失联serv00节点！！！nano维护！！！"
   - "超时节点套代理链即可！"
   - "🇸🇬新城 - 01"
   - "🇸🇬新城 - 02"
@@ -1719,6 +1647,7 @@ proxy-groups:
   - "🇱🇻拉脱维亚 - 01"
   - "🇵🇰巴基斯坦 - 01"
   - "🇲🇾马来西亚 - 01"
+  - "异常订阅 hj-dbl.pages.dev"
 - name: "🎯 全球直连"
   type: "select"
   proxies:
@@ -1741,6 +1670,7 @@ proxy-groups:
   - "🚀 节点选择"
   - "🎯 全球直连"
   - "♻️ 自动选择"
+  - "RN SJC"
   - "公益_波兰01"
   - "公益_波兰05"
   - "公益_波兰08"
@@ -1756,11 +1686,6 @@ proxy-groups:
   - "公益_香港 RAY"
   - "公益_香港 HYT"
   - "FR-serv00-s16-hysteria2"
-  - "以上为serv00节点！！！"
-  - "请不要进行速度测试！！！测试延迟即可！！！"
-  - "内置多节点！！！"
-  - "内置多位大佬优选！！！"
-  - "有防失联serv00节点！！！nano维护！！！"
   - "超时节点套代理链即可！"
   - "🇸🇬新城 - 01"
   - "🇸🇬新城 - 02"
@@ -1844,6 +1769,7 @@ proxy-groups:
   - "🇱🇻拉脱维亚 - 01"
   - "🇵🇰巴基斯坦 - 01"
   - "🇲🇾马来西亚 - 01"
+  - "异常订阅 hj-dbl.pages.dev"
 rules:
 - "DOMAIN-SUFFIX,ushd.xmsl.org,🎯 全球直连"
 - "DOMAIN-SUFFIX,cf.gtlx.org,🎯 全球直连"
