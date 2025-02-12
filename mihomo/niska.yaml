@@ -16,46 +16,102 @@ hosts:
   alt6-mtalk.google.com: "173.194.77.188"
   alt7-mtalk.google.com: "173.194.219.188"
   alt8-mtalk.google.com: "142.250.112.188"
-proxies: []
+proxies:
+- {name: "🇯🇵 日本", server: "104.18.149.75", port: 443, client-fingerprint: "chrome", type: "vmess", uuid: "cae97b1c-35e8-4cf2-dc1b-52032c3d3fa7", alterId: 0, cipher: "auto", tls: true, tfo: false, skip-cert-verify: true, servername: "jp.insbot.filegear-sg.me", network: "ws", ws-opts: {path: "/aa", headers: {Host: "jp.insbot.filegear-sg.me"}}}
+- {name: "🇺🇸 美国", server: "104.18.149.75", port: 443, client-fingerprint: "chrome", type: "vmess", uuid: "de94cc0a-0592-4969-b1fc-97ea8f0ea0b3", alterId: 0, cipher: "auto", tls: true, tfo: false, skip-cert-verify: true, servername: "us.insbot.filegear-sg.me", network: "ws", ws-opts: {path: "/aa", headers: {Host: "us.insbot.filegear-sg.me"}}}
+- {name: "🇬🇧 英国", server: "104.18.149.75", port: 443, client-fingerprint: "chrome", type: "vmess", uuid: "6218c654-ff61-4570-8c1f-dc972d15d1c3", alterId: 0, cipher: "auto", tls: true, tfo: false, skip-cert-verify: true, servername: "uk.insbot.filegear-sg.me", network: "ws", ws-opts: {path: "/aa", headers: {Host: "uk.insbot.filegear-sg.me"}}}
+- {name: "🇭🇰 香港", server: "104.18.149.75", port: 443, client-fingerprint: "chrome", type: "vmess", uuid: "47eab0de-97f9-49be-f2f3-2e4eb17268e6", alterId: 0, cipher: "auto", tls: true, tfo: false, skip-cert-verify: true, servername: "hk.insbot.filegear-sg.me", network: "ws", ws-opts: {path: "/aa", headers: {Host: "hk.insbot.filegear-sg.me"}}}
+- {name: "🇸🇬 新加坡", server: "104.18.149.75", port: 443, client-fingerprint: "chrome", type: "vmess", uuid: "506b46ce-568f-47a7-f0dd-0864fb7f8040", alterId: 0, cipher: "auto", tls: true, tfo: false, skip-cert-verify: true, servername: "sg.insbot.filegear-sg.me", network: "ws", ws-opts: {path: "/aa", headers: {Host: "sg.insbot.filegear-sg.me"}}}
+- {name: "🇰🇷 韩国", server: "104.18.149.75", port: 443, client-fingerprint: "chrome", type: "vmess", uuid: "6dde1f95-16eb-4a76-b7c2-de8f282cf70b", alterId: 0, cipher: "auto", tls: true, tfo: false, skip-cert-verify: true, servername: "kr.insbot.filegear-sg.me", network: "ws", ws-opts: {path: "/kr", headers: {Host: "kr.insbot.filegear-sg.me"}}}
+- {name: "🇹🇼 台湾", server: "104.18.149.75", port: 443, client-fingerprint: "chrome", type: "vmess", uuid: "56529ad8-61d2-4bfa-aa0b-a800719cb5fe", alterId: 0, cipher: "auto", tls: true, tfo: false, skip-cert-verify: true, servername: "tw.insbot.filegear-sg.me", network: "ws", ws-opts: {path: "/aa", headers: {Host: "tw.insbot.filegear-sg.me"}}}
 proxy-groups:
 - name: "🚀 节点选择"
   type: "select"
   proxies:
   - "♻️ 自动选择"
   - "DIRECT"
+  - "🇯🇵 日本"
+  - "🇺🇸 美国"
+  - "🇬🇧 英国"
+  - "🇭🇰 香港"
+  - "🇸🇬 新加坡"
+  - "🇰🇷 韩国"
+  - "🇹🇼 台湾"
 - name: "♻️ 自动选择"
   type: "url-test"
   url: "http://www.gstatic.com/generate_204"
   interval: 300
   tolerance: 50
-  proxies: []
+  proxies:
+  - "🇯🇵 日本"
+  - "🇺🇸 美国"
+  - "🇬🇧 英国"
+  - "🇭🇰 香港"
+  - "🇸🇬 新加坡"
+  - "🇰🇷 韩国"
+  - "🇹🇼 台湾"
 - name: "🌍 国外媒体"
   type: "select"
   proxies:
   - "🚀 节点选择"
   - "♻️ 自动选择"
   - "🎯 全球直连"
+  - "🇯🇵 日本"
+  - "🇺🇸 美国"
+  - "🇬🇧 英国"
+  - "🇭🇰 香港"
+  - "🇸🇬 新加坡"
+  - "🇰🇷 韩国"
+  - "🇹🇼 台湾"
 - name: "📲 电报信息"
   type: "select"
   proxies:
   - "🚀 节点选择"
   - "🎯 全球直连"
+  - "🇯🇵 日本"
+  - "🇺🇸 美国"
+  - "🇬🇧 英国"
+  - "🇭🇰 香港"
+  - "🇸🇬 新加坡"
+  - "🇰🇷 韩国"
+  - "🇹🇼 台湾"
 - name: "Ⓜ️ 微软服务"
   type: "select"
   proxies:
   - "🚀 节点选择"
   - "🎯 全球直连"
+  - "🇯🇵 日本"
+  - "🇺🇸 美国"
+  - "🇬🇧 英国"
+  - "🇭🇰 香港"
+  - "🇸🇬 新加坡"
+  - "🇰🇷 韩国"
+  - "🇹🇼 台湾"
 - name: "🍎 苹果服务"
   type: "select"
   proxies:
   - "🚀 节点选择"
   - "🎯 全球直连"
+  - "🇯🇵 日本"
+  - "🇺🇸 美国"
+  - "🇬🇧 英国"
+  - "🇭🇰 香港"
+  - "🇸🇬 新加坡"
+  - "🇰🇷 韩国"
+  - "🇹🇼 台湾"
 - name: "📢 谷歌FCM"
   type: "select"
   proxies:
   - "🎯 全球直连"
   - "🚀 节点选择"
   - "♻️ 自动选择"
+  - "🇯🇵 日本"
+  - "🇺🇸 美国"
+  - "🇬🇧 英国"
+  - "🇭🇰 香港"
+  - "🇸🇬 新加坡"
+  - "🇰🇷 韩国"
+  - "🇹🇼 台湾"
 - name: "🎯 全球直连"
   type: "select"
   proxies:
@@ -78,6 +134,13 @@ proxy-groups:
   - "🚀 节点选择"
   - "🎯 全球直连"
   - "♻️ 自动选择"
+  - "🇯🇵 日本"
+  - "🇺🇸 美国"
+  - "🇬🇧 英国"
+  - "🇭🇰 香港"
+  - "🇸🇬 新加坡"
+  - "🇰🇷 韩国"
+  - "🇹🇼 台湾"
 rules:
 - "DOMAIN-SUFFIX,ushd.xmsl.org,🎯 全球直连"
 - "DOMAIN-SUFFIX,cf.gtlx.org,🎯 全球直连"

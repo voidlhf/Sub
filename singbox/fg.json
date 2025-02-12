@@ -1,0 +1,949 @@
+{
+  "log": {},
+  "dns": {
+    "servers": [
+      {
+        "tag": "dns_proxy",
+        "type": "https",
+        "server": "8.8.8.8",
+        "detour": "select"
+      },
+      {
+        "tag": "dns_direct",
+        "type": "https",
+        "server": "223.5.5.5",
+        "detour": "direct"
+      },
+      {
+        "tag": "dns_fakeip",
+        "type": "fakeip",
+        "inet4_range": "198.18.0.0/15",
+        "inet6_range": "fc00::/18"
+      }
+    ],
+    "rules": [
+      {
+        "rule_set": [
+          "AdGuardSDNSFilter",
+          "chrome-doh"
+        ],
+        "action": "reject",
+        "method": "default"
+      },
+      {
+        "query_type": [
+          "A",
+          "AAAA"
+        ],
+        "server": "dns_fakeip",
+        "rewrite_ttl": 1
+      },
+      {
+        "clash_mode": "Global",
+        "server": "dns_proxy"
+      },
+      {
+        "clash_mode": "Direct",
+        "server": "dns_direct"
+      },
+      {
+        "rule_set": "geosite-cn",
+        "server": "dns_direct"
+      }
+    ],
+    "strategy": "prefer_ipv4",
+    "independent_cache": true
+  },
+  "inbounds": [
+    {
+      "type": "tun",
+      "mtu": 9000,
+      "address": [
+        "172.18.0.1/30",
+        "fdfe:dcba:9876::1/126"
+      ],
+      "auto_route": true,
+      "strict_route": true,
+      "endpoint_independent_nat": true
+    },
+    {
+      "type": "socks",
+      "tag": "socks-in",
+      "listen": "127.0.0.1",
+      "listen_port": 2333
+    },
+    {
+      "type": "mixed",
+      "tag": "mixed-in",
+      "listen": "127.0.0.1",
+      "listen_port": 2334
+    }
+  ],
+  "outbounds": [
+    {
+      "method": "chacha20-ietf-poly1305",
+      "password": "bc925f36-c9cb-4eb8-8a4f-64de27c39af5",
+      "server": "hk.fgmcx.top",
+      "server_port": 41051,
+      "tag": "剩余流量：431.48 GB",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "chacha20-ietf-poly1305",
+      "password": "bc925f36-c9cb-4eb8-8a4f-64de27c39af5",
+      "server": "hk.fgmcx.top",
+      "server_port": 41051,
+      "tag": "距离下次重置剩余：26 天",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "chacha20-ietf-poly1305",
+      "password": "bc925f36-c9cb-4eb8-8a4f-64de27c39af5",
+      "server": "hk.fgmcx.top",
+      "server_port": 41051,
+      "tag": "套餐到期：2025-03-11",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "chacha20-ietf-poly1305",
+      "password": "bc925f36-c9cb-4eb8-8a4f-64de27c39af5",
+      "server": "hk.fgmcx.top",
+      "server_port": 41051,
+      "tag": "🇭🇰 HK 中转 01",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "chacha20-ietf-poly1305",
+      "password": "bc925f36-c9cb-4eb8-8a4f-64de27c39af5",
+      "server": "hk2.fgmcx.top",
+      "server_port": 41052,
+      "tag": "🇭🇰 HK 中转 02",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "2022-blake3-aes-128-gcm",
+      "password": "MjMxZjQwMzNiNjQ5NTQ4ZQ==:YmM5MjVmMzYtYzljYi00ZQ==",
+      "server": "hk.fgmcx.top",
+      "server_port": 41053,
+      "tag": "🇭🇰 HK 中转 03",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "chacha20-ietf-poly1305",
+      "password": "bc925f36-c9cb-4eb8-8a4f-64de27c39af5",
+      "server": "hk2.fgmcx.top",
+      "server_port": 41054,
+      "tag": "🇭🇰 HK 中转 04",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "chacha20-ietf-poly1305",
+      "password": "bc925f36-c9cb-4eb8-8a4f-64de27c39af5",
+      "server": "hk.fgmcx.top",
+      "server_port": 41050,
+      "tag": "🇭🇰 HK 中转 05",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "chacha20-ietf-poly1305",
+      "password": "bc925f36-c9cb-4eb8-8a4f-64de27c39af5",
+      "server": "hk2.fgmcx.top",
+      "server_port": 41049,
+      "tag": "🇭🇰 HK 中转 06",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "chacha20-ietf-poly1305",
+      "password": "bc925f36-c9cb-4eb8-8a4f-64de27c39af5",
+      "server": "hk.fgmcx.top",
+      "server_port": 41057,
+      "tag": "🇭🇰 HK 中转 07",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "2022-blake3-aes-128-gcm",
+      "password": "MjMxZjQwMzNiNjQ5NTQ4ZQ==:YmM5MjVmMzYtYzljYi00ZQ==",
+      "server": "hk2.fgmcx.top",
+      "server_port": 41059,
+      "tag": "🇭🇰 HK 中转 08",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "chacha20-ietf-poly1305",
+      "password": "bc925f36-c9cb-4eb8-8a4f-64de27c39af5",
+      "server": "zz33.fgmcx.top",
+      "server_port": 41055,
+      "tag": "🇨🇳 TW 中转 01",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "chacha20-ietf-poly1305",
+      "password": "bc925f36-c9cb-4eb8-8a4f-64de27c39af5",
+      "server": "zz33.fgmcx.top",
+      "server_port": 41056,
+      "tag": "🇨🇳 TW 中转 02",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "chacha20-ietf-poly1305",
+      "password": "bc925f36-c9cb-4eb8-8a4f-64de27c39af5",
+      "server": "zz3.fgmcx.top",
+      "server_port": 41057,
+      "tag": "🇨🇳 TW 中转 03",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "2022-blake3-aes-128-gcm",
+      "password": "MjMxZjQwMzNiNjQ5NTQ4ZQ==:YmM5MjVmMzYtYzljYi00ZQ==",
+      "server": "zz3.fgmcx.top",
+      "server_port": 41069,
+      "tag": "🇨🇳 TW 中转 04",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "chacha20-ietf-poly1305",
+      "password": "bc925f36-c9cb-4eb8-8a4f-64de27c39af5",
+      "server": "zz5.fgmcx.top",
+      "server_port": 41029,
+      "tag": "🇯🇵 JP 中转  01",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "chacha20-ietf-poly1305",
+      "password": "bc925f36-c9cb-4eb8-8a4f-64de27c39af5",
+      "server": "zz5.fgmcx.top",
+      "server_port": 41030,
+      "tag": "🇯🇵 JP 中转 02",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "chacha20-ietf-poly1305",
+      "password": "bc925f36-c9cb-4eb8-8a4f-64de27c39af5",
+      "server": "zz33.fgmcx.top",
+      "server_port": 40223,
+      "tag": "🇯🇵 JP 中转 03",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "chacha20-ietf-poly1305",
+      "password": "bc925f36-c9cb-4eb8-8a4f-64de27c39af5",
+      "server": "zz33.fgmcx.top",
+      "server_port": 40226,
+      "tag": "🇯🇵 JP 中转 04",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "chacha20-ietf-poly1305",
+      "password": "bc925f36-c9cb-4eb8-8a4f-64de27c39af5",
+      "server": "fgsg1.fgmcx.top",
+      "server_port": 41043,
+      "tag": "🇸🇬 SG 中转 01",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "chacha20-ietf-poly1305",
+      "password": "bc925f36-c9cb-4eb8-8a4f-64de27c39af5",
+      "server": "fgsg2.fgmcx.top",
+      "server_port": 41059,
+      "tag": "🇸🇬 SG 中转 02",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "chacha20-ietf-poly1305",
+      "password": "bc925f36-c9cb-4eb8-8a4f-64de27c39af5",
+      "server": "fgsg1.fgmcx.top",
+      "server_port": 41047,
+      "tag": "🇸🇬 SG 中转 03",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "chacha20-ietf-poly1305",
+      "password": "bc925f36-c9cb-4eb8-8a4f-64de27c39af5",
+      "server": "zz3.fgmcx.top",
+      "server_port": 41066,
+      "tag": "🇺🇸 USA 中转 01",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "chacha20-ietf-poly1305",
+      "password": "bc925f36-c9cb-4eb8-8a4f-64de27c39af5",
+      "server": "zz33.fgmcx.top",
+      "server_port": 41061,
+      "tag": "🇺🇸 USA 中转 02",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "chacha20-ietf-poly1305",
+      "password": "bc925f36-c9cb-4eb8-8a4f-64de27c39af5",
+      "server": "zz3.fgmcx.top",
+      "server_port": 41062,
+      "tag": "🇺🇸 USA 中转 03",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "chacha20-ietf-poly1305",
+      "password": "bc925f36-c9cb-4eb8-8a4f-64de27c39af5",
+      "server": "zz33.fgmcx.top",
+      "server_port": 41063,
+      "tag": "🇺🇸 USA 中转 04",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "chacha20-ietf-poly1305",
+      "password": "bc925f36-c9cb-4eb8-8a4f-64de27c39af5",
+      "server": "zz3.fgmcx.top",
+      "server_port": 41065,
+      "tag": "🇺🇸 USA 中转 05",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "chacha20-ietf-poly1305",
+      "password": "bc925f36-c9cb-4eb8-8a4f-64de27c39af5",
+      "server": "zz33.fgmcx.top",
+      "server_port": 41067,
+      "tag": "🇺🇸 USA 中转 06",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "chacha20-ietf-poly1305",
+      "password": "bc925f36-c9cb-4eb8-8a4f-64de27c39af5",
+      "server": "zz5.fgmcx.top",
+      "server_port": 41039,
+      "tag": "🇩🇪 DE 中转",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "chacha20-ietf-poly1305",
+      "password": "bc925f36-c9cb-4eb8-8a4f-64de27c39af5",
+      "server": "zz5.fgmcx.top",
+      "server_port": 41040,
+      "tag": "🇰🇷 KR 中转",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "chacha20-ietf-poly1305",
+      "password": "bc925f36-c9cb-4eb8-8a4f-64de27c39af5",
+      "server": "zz5.fgmcx.top",
+      "server_port": 41042,
+      "tag": "🇲🇽 MXC 中转",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "chacha20-ietf-poly1305",
+      "password": "bc925f36-c9cb-4eb8-8a4f-64de27c39af5",
+      "server": "zz5.fgmcx.top",
+      "server_port": 41044,
+      "tag": "🇱🇺 LU 中转",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "chacha20-ietf-poly1305",
+      "password": "bc925f36-c9cb-4eb8-8a4f-64de27c39af5",
+      "server": "zz5.fgmcx.top",
+      "server_port": 41073,
+      "tag": "🇮🇱 以色列 中转",
+      "type": "shadowsocks"
+    },
+    {
+      "password": "bc925f36-c9cb-4eb8-8a4f-64de27c39af5",
+      "server": "akusum.mmaccc.top",
+      "server_port": 42629,
+      "tag": "🇺🇸 USA 01-Hy2",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "akusum.mmaccc.top"
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "bc925f36-c9cb-4eb8-8a4f-64de27c39af5",
+      "server": "akuslax90.mmaccc.top",
+      "server_port": 21124,
+      "tag": "🇺🇸 USA 02-Hy2",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "akuslax90.mmaccc.top"
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "bc925f36-c9cb-4eb8-8a4f-64de27c39af5",
+      "server": "buylas.mmaccc.top",
+      "server_port": 38471,
+      "tag": "🇺🇸 USA 03-Hy2",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "buylas.mmaccc.top"
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "bc925f36-c9cb-4eb8-8a4f-64de27c39af5",
+      "server": "akjp1um.mmaccc.top",
+      "server_port": 35563,
+      "tag": "🇯🇵 JP日本-Hy2",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "akjp1um.mmaccc.top"
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "bc925f36-c9cb-4eb8-8a4f-64de27c39af5",
+      "server": "jgwkr.mmaccc.top",
+      "server_port": 29031,
+      "tag": "🇰🇷 Oracle  首尔-Hy2",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "jgwkr.mmaccc.top"
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "bc925f36-c9cb-4eb8-8a4f-64de27c39af5",
+      "server": "oracle-de.mmaccc.top",
+      "server_port": 32011,
+      "tag": "🇩🇪 Oracle 德国-Hy2",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "oracle-de.mmaccc.top"
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "bc925f36-c9cb-4eb8-8a4f-64de27c39af5",
+      "server": "oracle-in.mmaccc.top",
+      "server_port": 32012,
+      "tag": "🇮🇳 Oracle 印度-Hy2",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "oracle-in.mmaccc.top"
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "bc925f36-c9cb-4eb8-8a4f-64de27c39af5",
+      "server": "oracle-it.mmaccc.top",
+      "server_port": 33014,
+      "tag": "🇮🇹 Oracle 米兰-Hy2",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "oracle-it.mmaccc.top"
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "bc925f36-c9cb-4eb8-8a4f-64de27c39af5",
+      "server": "oracle-br.mmaccc.top",
+      "server_port": 33017,
+      "tag": "🇧🇷 Oracle 圣保罗-Hy2",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "oracle-br.mmaccc.top"
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "bc925f36-c9cb-4eb8-8a4f-64de27c39af5",
+      "server": "oracle-ca.mmaccc.top",
+      "server_port": 33019,
+      "tag": "🇨🇦 Oracle 多伦多-Hy2",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "oracle-ca.mmaccc.top"
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "bc925f36-c9cb-4eb8-8a4f-64de27c39af5",
+      "server": "lxbhy2.mmaccc.top",
+      "server_port": 33285,
+      "tag": "🇱🇺 卢森堡-Hy2",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "lxbhy2.mmaccc.top"
+      },
+      "type": "hysteria2"
+    },
+    {
+      "alter_id": 0,
+      "security": "auto",
+      "server": "usz1.fgmcx.top",
+      "server_port": 23901,
+      "tag": "🇺🇸 USA 美国 01",
+      "transport": {
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "headers": {
+          "Host": [
+            "buylas.mmaccc.top"
+          ]
+        },
+        "max_early_data": 2048,
+        "path": "/?ed=2048",
+        "type": "ws"
+      },
+      "type": "vmess",
+      "uuid": "bc925f36-c9cb-4eb8-8a4f-64de27c39af5"
+    },
+    {
+      "alter_id": 0,
+      "security": "auto",
+      "server": "usz1.fgmcx.top",
+      "server_port": 23916,
+      "tag": "🇺🇸 USA 美国 02",
+      "transport": {
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "headers": {
+          "Host": [
+            "akusum.mmaccc.top"
+          ]
+        },
+        "max_early_data": 2048,
+        "path": "/?ed=2048",
+        "type": "ws"
+      },
+      "type": "vmess",
+      "uuid": "bc925f36-c9cb-4eb8-8a4f-64de27c39af5"
+    },
+    {
+      "alter_id": 0,
+      "security": "auto",
+      "server": "usz1.fgmcx.top",
+      "server_port": 23903,
+      "tag": "🇺🇸 USA 美国 03",
+      "transport": [],
+      "type": "vmess",
+      "uuid": "bc925f36-c9cb-4eb8-8a4f-64de27c39af5"
+    },
+    {
+      "alter_id": 0,
+      "security": "auto",
+      "server": "usz1.fgmcx.top",
+      "server_port": 23915,
+      "tag": "🇺🇸 USA 美国 04",
+      "transport": {
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "headers": {
+          "Host": [
+            "akuslaxb.mmaccc.top"
+          ]
+        },
+        "max_early_data": 2048,
+        "path": "/?ed=2048",
+        "type": "ws"
+      },
+      "type": "vmess",
+      "uuid": "bc925f36-c9cb-4eb8-8a4f-64de27c39af5"
+    },
+    {
+      "alter_id": 0,
+      "security": "auto",
+      "server": "hkz1.fgmcx.top",
+      "server_port": 23913,
+      "tag": "🇭🇰 HK 香港 01",
+      "transport": [],
+      "type": "vmess",
+      "uuid": "bc925f36-c9cb-4eb8-8a4f-64de27c39af5"
+    },
+    {
+      "alter_id": 0,
+      "security": "auto",
+      "server": "hkz1.fgmcx.top",
+      "server_port": 20521,
+      "tag": "🇭🇰 HK 香港 02",
+      "transport": [],
+      "type": "vmess",
+      "uuid": "bc925f36-c9cb-4eb8-8a4f-64de27c39af5"
+    },
+    {
+      "alter_id": 0,
+      "security": "auto",
+      "server": "hzz9.fgmcx.top",
+      "server_port": 23921,
+      "tag": "🇨🇳  TW 台湾 01",
+      "transport": [],
+      "type": "vmess",
+      "uuid": "bc925f36-c9cb-4eb8-8a4f-64de27c39af5"
+    },
+    {
+      "alter_id": 0,
+      "security": "auto",
+      "server": "hzz9.fgmcx.top",
+      "server_port": 23923,
+      "tag": "🇨🇳 TW 台湾 02",
+      "transport": [],
+      "type": "vmess",
+      "uuid": "bc925f36-c9cb-4eb8-8a4f-64de27c39af5"
+    },
+    {
+      "alter_id": 0,
+      "security": "auto",
+      "server": "hzz9.fgmcx.top",
+      "server_port": 23908,
+      "tag": "🇯🇵 JP 日本 01",
+      "transport": [],
+      "type": "vmess",
+      "uuid": "bc925f36-c9cb-4eb8-8a4f-64de27c39af5"
+    },
+    {
+      "alter_id": 0,
+      "security": "auto",
+      "server": "hzz9.fgmcx.top",
+      "server_port": 23919,
+      "tag": "🇯🇵 JP 日本 02",
+      "transport": [],
+      "type": "vmess",
+      "uuid": "bc925f36-c9cb-4eb8-8a4f-64de27c39af5"
+    },
+    {
+      "alter_id": 0,
+      "security": "auto",
+      "server": "hzz9.fgmcx.top",
+      "server_port": 23909,
+      "tag": "🇸🇬  SG 新加坡 01",
+      "transport": {
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "headers": {
+          "Host": [
+            "szsg.mmaccc.top"
+          ]
+        },
+        "max_early_data": 2048,
+        "path": "/?ed=2048",
+        "type": "ws"
+      },
+      "type": "vmess",
+      "uuid": "bc925f36-c9cb-4eb8-8a4f-64de27c39af5"
+    },
+    {
+      "alter_id": 0,
+      "security": "auto",
+      "server": "hzz9.fgmcx.top",
+      "server_port": 23910,
+      "tag": "🇸🇬  SG 新加坡 02",
+      "transport": {
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "headers": {
+          "Host": [
+            "szsg.mmaccc.top"
+          ]
+        },
+        "max_early_data": 2048,
+        "path": "/?ed=2048",
+        "type": "ws"
+      },
+      "type": "vmess",
+      "uuid": "bc925f36-c9cb-4eb8-8a4f-64de27c39af5"
+    },
+    {
+      "tag": "select",
+      "type": "selector",
+      "default": "urltest",
+      "outbounds": [
+        "urltest",
+        "剩余流量：431.48 GB",
+        "距离下次重置剩余：26 天",
+        "套餐到期：2025-03-11",
+        "🇭🇰 HK 中转 01",
+        "🇭🇰 HK 中转 02",
+        "🇭🇰 HK 中转 03",
+        "🇭🇰 HK 中转 04",
+        "🇭🇰 HK 中转 05",
+        "🇭🇰 HK 中转 06",
+        "🇭🇰 HK 中转 07",
+        "🇭🇰 HK 中转 08",
+        "🇨🇳 TW 中转 01",
+        "🇨🇳 TW 中转 02",
+        "🇨🇳 TW 中转 03",
+        "🇨🇳 TW 中转 04",
+        "🇯🇵 JP 中转  01",
+        "🇯🇵 JP 中转 02",
+        "🇯🇵 JP 中转 03",
+        "🇯🇵 JP 中转 04",
+        "🇸🇬 SG 中转 01",
+        "🇸🇬 SG 中转 02",
+        "🇸🇬 SG 中转 03",
+        "🇺🇸 USA 中转 01",
+        "🇺🇸 USA 中转 02",
+        "🇺🇸 USA 中转 03",
+        "🇺🇸 USA 中转 04",
+        "🇺🇸 USA 中转 05",
+        "🇺🇸 USA 中转 06",
+        "🇩🇪 DE 中转",
+        "🇰🇷 KR 中转",
+        "🇲🇽 MXC 中转",
+        "🇱🇺 LU 中转",
+        "🇮🇱 以色列 中转",
+        "🇺🇸 USA 01-Hy2",
+        "🇺🇸 USA 02-Hy2",
+        "🇺🇸 USA 03-Hy2",
+        "🇯🇵 JP日本-Hy2",
+        "🇰🇷 Oracle  首尔-Hy2",
+        "🇩🇪 Oracle 德国-Hy2",
+        "🇮🇳 Oracle 印度-Hy2",
+        "🇮🇹 Oracle 米兰-Hy2",
+        "🇧🇷 Oracle 圣保罗-Hy2",
+        "🇨🇦 Oracle 多伦多-Hy2",
+        "🇱🇺 卢森堡-Hy2",
+        "🇺🇸 USA 美国 01",
+        "🇺🇸 USA 美国 02",
+        "🇺🇸 USA 美国 03",
+        "🇺🇸 USA 美国 04",
+        "🇭🇰 HK 香港 01",
+        "🇭🇰 HK 香港 02",
+        "🇨🇳  TW 台湾 01",
+        "🇨🇳 TW 台湾 02",
+        "🇯🇵 JP 日本 01",
+        "🇯🇵 JP 日本 02",
+        "🇸🇬  SG 新加坡 01",
+        "🇸🇬  SG 新加坡 02"
+      ]
+    },
+    {
+      "tag": "urltest",
+      "type": "urltest",
+      "outbounds": [
+        "剩余流量：431.48 GB",
+        "距离下次重置剩余：26 天",
+        "套餐到期：2025-03-11",
+        "🇭🇰 HK 中转 01",
+        "🇭🇰 HK 中转 02",
+        "🇭🇰 HK 中转 03",
+        "🇭🇰 HK 中转 04",
+        "🇭🇰 HK 中转 05",
+        "🇭🇰 HK 中转 06",
+        "🇭🇰 HK 中转 07",
+        "🇭🇰 HK 中转 08",
+        "🇨🇳 TW 中转 01",
+        "🇨🇳 TW 中转 02",
+        "🇨🇳 TW 中转 03",
+        "🇨🇳 TW 中转 04",
+        "🇯🇵 JP 中转  01",
+        "🇯🇵 JP 中转 02",
+        "🇯🇵 JP 中转 03",
+        "🇯🇵 JP 中转 04",
+        "🇸🇬 SG 中转 01",
+        "🇸🇬 SG 中转 02",
+        "🇸🇬 SG 中转 03",
+        "🇺🇸 USA 中转 01",
+        "🇺🇸 USA 中转 02",
+        "🇺🇸 USA 中转 03",
+        "🇺🇸 USA 中转 04",
+        "🇺🇸 USA 中转 05",
+        "🇺🇸 USA 中转 06",
+        "🇩🇪 DE 中转",
+        "🇰🇷 KR 中转",
+        "🇲🇽 MXC 中转",
+        "🇱🇺 LU 中转",
+        "🇮🇱 以色列 中转",
+        "🇺🇸 USA 01-Hy2",
+        "🇺🇸 USA 02-Hy2",
+        "🇺🇸 USA 03-Hy2",
+        "🇯🇵 JP日本-Hy2",
+        "🇰🇷 Oracle  首尔-Hy2",
+        "🇩🇪 Oracle 德国-Hy2",
+        "🇮🇳 Oracle 印度-Hy2",
+        "🇮🇹 Oracle 米兰-Hy2",
+        "🇧🇷 Oracle 圣保罗-Hy2",
+        "🇨🇦 Oracle 多伦多-Hy2",
+        "🇱🇺 卢森堡-Hy2",
+        "🇺🇸 USA 美国 01",
+        "🇺🇸 USA 美国 02",
+        "🇺🇸 USA 美国 03",
+        "🇺🇸 USA 美国 04",
+        "🇭🇰 HK 香港 01",
+        "🇭🇰 HK 香港 02",
+        "🇨🇳  TW 台湾 01",
+        "🇨🇳 TW 台湾 02",
+        "🇯🇵 JP 日本 01",
+        "🇯🇵 JP 日本 02",
+        "🇸🇬  SG 新加坡 01",
+        "🇸🇬  SG 新加坡 02"
+      ]
+    },
+    {
+      "tag": "chatgpt",
+      "type": "selector",
+      "outbounds": [
+        "剩余流量：431.48 GB",
+        "距离下次重置剩余：26 天",
+        "套餐到期：2025-03-11",
+        "🇭🇰 HK 中转 01",
+        "🇭🇰 HK 中转 02",
+        "🇭🇰 HK 中转 03",
+        "🇭🇰 HK 中转 04",
+        "🇭🇰 HK 中转 05",
+        "🇭🇰 HK 中转 06",
+        "🇭🇰 HK 中转 07",
+        "🇭🇰 HK 中转 08",
+        "🇨🇳 TW 中转 01",
+        "🇨🇳 TW 中转 02",
+        "🇨🇳 TW 中转 03",
+        "🇨🇳 TW 中转 04",
+        "🇯🇵 JP 中转  01",
+        "🇯🇵 JP 中转 02",
+        "🇯🇵 JP 中转 03",
+        "🇯🇵 JP 中转 04",
+        "🇸🇬 SG 中转 01",
+        "🇸🇬 SG 中转 02",
+        "🇸🇬 SG 中转 03",
+        "🇺🇸 USA 中转 01",
+        "🇺🇸 USA 中转 02",
+        "🇺🇸 USA 中转 03",
+        "🇺🇸 USA 中转 04",
+        "🇺🇸 USA 中转 05",
+        "🇺🇸 USA 中转 06",
+        "🇩🇪 DE 中转",
+        "🇰🇷 KR 中转",
+        "🇲🇽 MXC 中转",
+        "🇱🇺 LU 中转",
+        "🇮🇱 以色列 中转",
+        "🇺🇸 USA 01-Hy2",
+        "🇺🇸 USA 02-Hy2",
+        "🇺🇸 USA 03-Hy2",
+        "🇯🇵 JP日本-Hy2",
+        "🇰🇷 Oracle  首尔-Hy2",
+        "🇩🇪 Oracle 德国-Hy2",
+        "🇮🇳 Oracle 印度-Hy2",
+        "🇮🇹 Oracle 米兰-Hy2",
+        "🇧🇷 Oracle 圣保罗-Hy2",
+        "🇨🇦 Oracle 多伦多-Hy2",
+        "🇱🇺 卢森堡-Hy2",
+        "🇺🇸 USA 美国 01",
+        "🇺🇸 USA 美国 02",
+        "🇺🇸 USA 美国 03",
+        "🇺🇸 USA 美国 04",
+        "🇭🇰 HK 香港 01",
+        "🇭🇰 HK 香港 02",
+        "🇨🇳  TW 台湾 01",
+        "🇨🇳 TW 台湾 02",
+        "🇯🇵 JP 日本 01",
+        "🇯🇵 JP 日本 02",
+        "🇸🇬  SG 新加坡 01",
+        "🇸🇬  SG 新加坡 02"
+      ]
+    },
+    {
+      "tag": "direct",
+      "type": "direct"
+    }
+  ],
+  "route": {
+    "rules": [
+      {
+        "action": "sniff"
+      },
+      {
+        "protocol": "dns",
+        "action": "hijack-dns"
+      },
+      {
+        "action": "resolve",
+        "strategy": "prefer_ipv4"
+      },
+      {
+        "clash_mode": "Direct",
+        "outbound": "direct"
+      },
+      {
+        "clash_mode": "Global",
+        "outbound": "select"
+      },
+      {
+        "ip_is_private": true,
+        "outbound": "direct"
+      },
+      {
+        "package_name": "com.openai.chatgpt",
+        "outbound": "chatgpt"
+      },
+      {
+        "domain_suffix": [
+          "proactivebackend-pa.googleapis.com",
+          "bing.com",
+          "bing.net",
+          "bingapis.com"
+        ],
+        "outbound": "chatgpt"
+      },
+      {
+        "domain_keyword": [
+          "qq.com"
+        ],
+        "outbound": "direct"
+      },
+      {
+        "domain_suffix": [
+          "ushd.xmsl.org",
+          "cf.gtlx.org"
+        ],
+        "outbound": "direct"
+      },
+      {
+        "port": [
+          23301,
+          22101,
+          22102,
+          20501
+        ],
+        "outbound": "direct"
+      },
+      {
+        "rule_set": "geoip-cn",
+        "outbound": "direct"
+      }
+    ],
+    "rule_set": [
+      {
+        "type": "remote",
+        "tag": "geoip-cn",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/SagerNet/sing-geoip/rule-set/geoip-cn.srs",
+        "download_detour": "select"
+      },
+      {
+        "type": "remote",
+        "tag": "geosite-cn",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/xmdhs/sing-geosite/rule-set-Loyalsoldier/geosite-geolocation-cn.srs",
+        "download_detour": "select"
+      },
+      {
+        "type": "remote",
+        "tag": "AdGuardSDNSFilter",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/xmdhs/sing-box-ruleset/rule-set/AdGuardSDNSFilterSingBox.srs",
+        "download_detour": "select"
+      },
+      {
+        "type": "remote",
+        "tag": "chrome-doh",
+        "format": "source",
+        "url": "https://gist.githubusercontent.com/xmdhs/71fc5ff6ef29f5ecaf2c52b8de5c3172/raw/chrome-doh.json",
+        "download_detour": "select"
+      }
+    ],
+    "default_domain_resolver": "dns_direct",
+    "final": "select",
+    "auto_detect_interface": true
+  },
+  "experimental": {
+    "cache_file": {
+      "enabled": true
+    },
+    "clash_api": {
+      "external_controller": "127.0.0.1:9090"
+    }
+  }
+}
