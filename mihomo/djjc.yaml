@@ -17,7 +17,7 @@ hosts:
   alt7-mtalk.google.com: "173.194.219.188"
   alt8-mtalk.google.com: "142.250.112.188"
 proxies:
-- {name: "剩余流量：817.14 GB", server: "129.153.71.226", port: 50000, ports: "50000-53000", mport: "50000-53000", udp: true, skip-cert-verify: true, sni: "www.microsoft.com", type: "hysteria2", password: "3b9e0e15-e14e-4f05-986d-2ee265052bae"}
+- {name: "剩余流量：816.68 GB", server: "129.153.71.226", port: 50000, ports: "50000-53000", mport: "50000-53000", udp: true, skip-cert-verify: true, sni: "www.microsoft.com", type: "hysteria2", password: "3b9e0e15-e14e-4f05-986d-2ee265052bae"}
 - {name: "距离下次重置剩余：22 天", server: "129.153.71.226", port: 50000, ports: "50000-53000", mport: "50000-53000", udp: true, skip-cert-verify: true, sni: "www.microsoft.com", type: "hysteria2", password: "3b9e0e15-e14e-4f05-986d-2ee265052bae"}
 - {name: "套餐到期：2025-03-07", server: "129.153.71.226", port: 50000, ports: "50000-53000", mport: "50000-53000", udp: true, skip-cert-verify: true, sni: "www.microsoft.com", type: "hysteria2", password: "3b9e0e15-e14e-4f05-986d-2ee265052bae"}
 - {name: "🇺🇸美国凤凰城1号", server: "129.153.71.226", port: 50000, ports: "50000-53000", mport: "50000-53000", udp: true, skip-cert-verify: true, sni: "www.microsoft.com", type: "hysteria2", password: "3b9e0e15-e14e-4f05-986d-2ee265052bae"}
@@ -49,10 +49,10 @@ proxies:
 - {name: "🇨🇦加拿大多伦多-1.5倍率", server: "40.233.77.86", port: 65535, udp: true, skip-cert-verify: true, sni: "www.microsoft.com", type: "hysteria2", password: "3b9e0e15-e14e-4f05-986d-2ee265052bae"}
 - {name: "🇲🇽墨西哥克雷塔罗", server: "140.84.178.54", port: 50000, ports: "50000-53000", mport: "50000-53000", udp: true, skip-cert-verify: true, sni: "www.microsoft.com", type: "hysteria2", password: "3b9e0e15-e14e-4f05-986d-2ee265052bae"}
 - {name: "🇺🇸美国凤凰城-0.1倍", type: "vless", server: "129.153.90.9", port: 443, uuid: "3b9e0e15-e14e-4f05-986d-2ee265052bae", udp: true, tls: true, skip-cert-verify: false, flow: "xtls-rprx-vision", client-fingerprint: "ios", servername: "dj-download-us.xn--4gq62f52gopi49k.com"}
-- {name: "🇺🇸美国1号-0.1倍", type: "vless", server: "104.18.18.18", port: 443, uuid: "3b9e0e15-e14e-4f05-986d-2ee265052bae", udp: true, tls: true, skip-cert-verify: false, flow: "", client-fingerprint: "chrome", network: "ws", ws-opts: {path: "/djjc/us1", headers: {Host: "k12us1.djjc.sbs"}}}
-- {name: "🇺🇸美国2号-0.1倍", type: "vless", server: "104.18.18.18", port: 443, uuid: "3b9e0e15-e14e-4f05-986d-2ee265052bae", udp: true, tls: true, skip-cert-verify: false, flow: "", client-fingerprint: "safari", network: "ws", ws-opts: {path: "/djjc/us2", headers: {Host: "k4us2.djjc.sbs"}}}
-- {name: "🇺🇸美国3号-0.1倍", type: "vless", server: "104.18.18.18", port: 443, uuid: "3b9e0e15-e14e-4f05-986d-2ee265052bae", udp: true, tls: true, skip-cert-verify: false, flow: "", client-fingerprint: "ios", network: "ws", ws-opts: {path: "/djjc/us3", headers: {Host: "k11us3.djjc.sbs"}}}
-- {name: "🇺🇸美国4号-0.1倍", type: "vless", server: "104.18.18.18", port: 443, uuid: "3b9e0e15-e14e-4f05-986d-2ee265052bae", udp: true, tls: true, skip-cert-verify: false, flow: "", client-fingerprint: "ios", network: "ws", ws-opts: {path: "/djjc/us4", headers: {Host: "kus4.djjc.sbs"}}}
+- {name: "🇺🇸美国1号-0.1倍", type: "vless", server: "104.18.18.18", port: 443, uuid: "3b9e0e15-e14e-4f05-986d-2ee265052bae", udp: true, tls: true, skip-cert-verify: false, flow: "", client-fingerprint: "chrome", servername: "k12us1.djjc.sbs", network: "ws", ws-opts: {path: "/djjc/us1", headers: {Host: "k12us1.djjc.sbs"}}}
+- {name: "🇺🇸美国2号-0.1倍", type: "vless", server: "104.18.18.18", port: 443, uuid: "3b9e0e15-e14e-4f05-986d-2ee265052bae", udp: true, tls: true, skip-cert-verify: false, flow: "", client-fingerprint: "safari", servername: "k4us2.djjc.sbs", network: "ws", ws-opts: {path: "/djjc/us2", headers: {Host: "k4us2.djjc.sbs"}}}
+- {name: "🇺🇸美国3号-0.1倍", type: "vless", server: "104.18.18.18", port: 443, uuid: "3b9e0e15-e14e-4f05-986d-2ee265052bae", udp: true, tls: true, skip-cert-verify: false, flow: "", client-fingerprint: "ios", servername: "k11us3.djjc.sbs", network: "ws", ws-opts: {path: "/djjc/us3", headers: {Host: "k11us3.djjc.sbs"}}}
+- {name: "🇺🇸美国4号-0.1倍", type: "vless", server: "104.18.18.18", port: 443, uuid: "3b9e0e15-e14e-4f05-986d-2ee265052bae", udp: true, tls: true, skip-cert-verify: false, flow: "", client-fingerprint: "ios", servername: "kus4.djjc.sbs", network: "ws", ws-opts: {path: "/djjc/us4", headers: {Host: "kus4.djjc.sbs"}}}
 - {name: "🇯🇵日本-0.1—流媒体", type: "vless", server: "104.18.18.18", port: 443, uuid: "3b9e0e15-e14e-4f05-986d-2ee265052bae", udp: true, tls: true, skip-cert-verify: false, flow: "", client-fingerprint: "safari", servername: "k5jp1.djjc.sbs", network: "ws", ws-opts: {path: "/djjc/jp1", headers: {Host: "k5jp1.djjc.sbs"}}}
 - {name: "🇫🇷法国2", type: "vless", server: "104.18.18.18", port: 443, uuid: "3b9e0e15-e14e-4f05-986d-2ee265052bae", udp: true, tls: true, skip-cert-verify: false, flow: "", client-fingerprint: "safari", servername: "kfr2.djjc.sbs", network: "ws", ws-opts: {path: "/djjc/fr2", headers: {Host: "kfr2.djjc.sbs"}}}
 - {name: "🇩🇪德国", type: "vless", server: "104.18.18.18", port: 443, uuid: "3b9e0e15-e14e-4f05-986d-2ee265052bae", udp: true, tls: true, skip-cert-verify: false, flow: "", client-fingerprint: "ios", servername: "k10de1.djjc.sbs", network: "ws", ws-opts: {path: "/djjc/de1", headers: {Host: "k10de1.djjc.sbs"}}}
@@ -67,7 +67,7 @@ proxy-groups:
   proxies:
   - "♻️ 自动选择"
   - "DIRECT"
-  - "剩余流量：817.14 GB"
+  - "剩余流量：816.68 GB"
   - "距离下次重置剩余：22 天"
   - "套餐到期：2025-03-07"
   - "🇺🇸美国凤凰城1号"
@@ -117,7 +117,7 @@ proxy-groups:
   interval: 300
   tolerance: 50
   proxies:
-  - "剩余流量：817.14 GB"
+  - "剩余流量：816.68 GB"
   - "距离下次重置剩余：22 天"
   - "套餐到期：2025-03-07"
   - "🇺🇸美国凤凰城1号"
@@ -167,7 +167,7 @@ proxy-groups:
   - "🚀 节点选择"
   - "♻️ 自动选择"
   - "🎯 全球直连"
-  - "剩余流量：817.14 GB"
+  - "剩余流量：816.68 GB"
   - "距离下次重置剩余：22 天"
   - "套餐到期：2025-03-07"
   - "🇺🇸美国凤凰城1号"
@@ -216,7 +216,7 @@ proxy-groups:
   proxies:
   - "🚀 节点选择"
   - "🎯 全球直连"
-  - "剩余流量：817.14 GB"
+  - "剩余流量：816.68 GB"
   - "距离下次重置剩余：22 天"
   - "套餐到期：2025-03-07"
   - "🇺🇸美国凤凰城1号"
@@ -265,7 +265,7 @@ proxy-groups:
   proxies:
   - "🚀 节点选择"
   - "🎯 全球直连"
-  - "剩余流量：817.14 GB"
+  - "剩余流量：816.68 GB"
   - "距离下次重置剩余：22 天"
   - "套餐到期：2025-03-07"
   - "🇺🇸美国凤凰城1号"
@@ -314,7 +314,7 @@ proxy-groups:
   proxies:
   - "🚀 节点选择"
   - "🎯 全球直连"
-  - "剩余流量：817.14 GB"
+  - "剩余流量：816.68 GB"
   - "距离下次重置剩余：22 天"
   - "套餐到期：2025-03-07"
   - "🇺🇸美国凤凰城1号"
@@ -364,7 +364,7 @@ proxy-groups:
   - "🎯 全球直连"
   - "🚀 节点选择"
   - "♻️ 自动选择"
-  - "剩余流量：817.14 GB"
+  - "剩余流量：816.68 GB"
   - "距离下次重置剩余：22 天"
   - "套餐到期：2025-03-07"
   - "🇺🇸美国凤凰城1号"
@@ -430,7 +430,7 @@ proxy-groups:
   - "🚀 节点选择"
   - "🎯 全球直连"
   - "♻️ 自动选择"
-  - "剩余流量：817.14 GB"
+  - "剩余流量：816.68 GB"
   - "距离下次重置剩余：22 天"
   - "套餐到期：2025-03-07"
   - "🇺🇸美国凤凰城1号"
