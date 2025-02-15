@@ -1,0 +1,941 @@
+{
+  "log": {},
+  "dns": {
+    "servers": [
+      {
+        "tag": "dns_proxy",
+        "type": "https",
+        "server": "8.8.8.8",
+        "detour": "select"
+      },
+      {
+        "tag": "dns_direct",
+        "type": "https",
+        "server": "223.5.5.5",
+        "detour": "direct"
+      },
+      {
+        "tag": "dns_fakeip",
+        "type": "fakeip",
+        "inet4_range": "198.18.0.0/15",
+        "inet6_range": "fc00::/18"
+      }
+    ],
+    "rules": [
+      {
+        "rule_set": [
+          "AdGuardSDNSFilter",
+          "chrome-doh"
+        ],
+        "action": "reject",
+        "method": "default"
+      },
+      {
+        "query_type": [
+          "A",
+          "AAAA"
+        ],
+        "server": "dns_fakeip",
+        "rewrite_ttl": 1
+      },
+      {
+        "clash_mode": "Global",
+        "server": "dns_proxy"
+      },
+      {
+        "clash_mode": "Direct",
+        "server": "dns_direct"
+      },
+      {
+        "rule_set": "geosite-cn",
+        "server": "dns_direct"
+      }
+    ],
+    "strategy": "prefer_ipv4",
+    "independent_cache": true
+  },
+  "inbounds": [
+    {
+      "type": "tun",
+      "mtu": 9000,
+      "address": [
+        "172.18.0.1/30",
+        "fdfe:dcba:9876::1/126"
+      ],
+      "auto_route": true,
+      "strict_route": true,
+      "endpoint_independent_nat": true
+    },
+    {
+      "type": "socks",
+      "tag": "socks-in",
+      "listen": "127.0.0.1",
+      "listen_port": 2333
+    },
+    {
+      "type": "mixed",
+      "tag": "mixed-in",
+      "listen": "127.0.0.1",
+      "listen_port": 2334
+    }
+  ],
+  "outbounds": [
+    {
+      "password": "hGkQ6915tD",
+      "server": "120.232.81.50",
+      "server_port": 16088,
+      "tag": "中国 - 香港 - 2012 Limited %2F netfront.net - 2",
+      "type": "shadowsocks",
+      "method": "aes-256-cfb",
+      "network": "tcp"
+    },
+    {
+      "password": "43e5eeacbad3032bfe4c25a2f011b6b7",
+      "server": "104.251.227.182",
+      "server_port": 443,
+      "tag": "中国 - 香港 - Prime Security Corp - 1",
+      "tls": {
+        "enabled": true,
+        "server_name": "hezijiasuqi.com",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "f8f7aCzcPKbsF8p3",
+      "server": "176.103.53.105",
+      "server_port": 989,
+      "tag": "乌克兰 - Kyiv - Ivanov Vitaliy Sergeevich - 1",
+      "type": "shadowsocks",
+      "method": "aes-256-cfb",
+      "network": "tcp"
+    },
+    {
+      "password": "MzZjN",
+      "server": "ca1.ssocks.wiki",
+      "server_port": 8388,
+      "tag": "加拿大 - 多伦多 - Tangram Canada Inc. - 1",
+      "type": "shadowsocks",
+      "method": "chacha20-ietf-poly1305",
+      "network": "tcp"
+    },
+    {
+      "password": "ZTFkZ",
+      "server": "uk1.ssocks.wiki",
+      "server_port": 8388,
+      "tag": "土耳其 - 伊兹密尔 - Stark Industries Solutions LTD - 1",
+      "type": "shadowsocks",
+      "method": "chacha20-ietf-poly1305",
+      "network": "tcp"
+    },
+    {
+      "password": "ZTFkZ",
+      "server": "tr1.ssocks.wiki",
+      "server_port": 8388,
+      "tag": "土耳其 - 伊兹密尔 - Stark Industries Solutions LTD - 2",
+      "type": "shadowsocks",
+      "method": "chacha20-ietf-poly1305",
+      "network": "tcp"
+    },
+    {
+      "password": "f8f7aCzcPKbsF8p3",
+      "server": "103.106.229.219",
+      "server_port": 989,
+      "tag": "新加坡 - 新加坡 - BrainStorm Network%2C Inc - 1",
+      "type": "shadowsocks",
+      "method": "aes-256-cfb",
+      "network": "tcp"
+    },
+    {
+      "password": "dongtaiwang.com",
+      "server": "195.154.33.70",
+      "server_port": 13861,
+      "tag": "法国 - 塞纳河畔伊夫里 - Online S.A.S. - 4",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.bing.com",
+        "insecure": true
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "3778399737045327872",
+      "server": "distinct-peacock.adder289.quest",
+      "server_port": 443,
+      "tag": "法国 - 巴黎 - Amazon Technologies Inc. - 2",
+      "tls": {
+        "enabled": true,
+        "server_name": "distinct-peacock.adder289.quest",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "be758973-186d-46fe-8aa4-e017134fa291",
+      "server": "31.186.87.211",
+      "server_port": 4029,
+      "tag": "波兰 - 华沙 - ECO-ATMAN - 2",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.bing.com",
+        "insecure": true
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "3778399750324494336",
+      "server": "musical-baboon.adder289.quest",
+      "server_port": 443,
+      "tag": "瑞典 - 斯德哥尔摩 - Amazon Technologies Inc. - 1",
+      "tls": {
+        "enabled": true,
+        "server_name": "musical-baboon.adder289.quest",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "server": "104.26.12.101",
+      "server_port": 2052,
+      "tag": "美国 - Reston - Cloudflare, Inc. - 5",
+      "transport": {
+        "headers": {
+          "host": [
+            "Yak-Khanda-kUn-eY-gUL.biNG.com.xn--cR8HaaaAaAAAaAaaAaAaAAaAAaaaAAAAAaAaaAaaaAaaaaAAaaAAAaaaaAa.xN--Cr8hAaAaaAaaAAAAAAaaaAAAaAAaaAaAaAAAAAA.TREPAspeEdTEsT.NEtrag.cOm.PX.Com.sh017.IR.XN--Cr8hAaaAaaAaaAaaaAAAaaaAaaAaaaAaAAAaaaA.yek.dDnS-ip.nEt"
+          ]
+        },
+        "path": "/",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "dfc1a9ab-6241-4b73-92f7-b299fc6b7751",
+      "packet_encoding": "xudp"
+    },
+    {
+      "password": "Aimer",
+      "server": "91.149.239.70",
+      "server_port": 443,
+      "tag": "美国 - 东洛杉矶 - Cloudflare, Inc. - 12",
+      "tls": {
+        "enabled": true,
+        "server_name": "agepq.ambercc.filegear-sg.me"
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "agepq.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/",
+        "type": "ws"
+      },
+      "type": "trojan"
+    },
+    {
+      "server": "104.16.178.238",
+      "server_port": 80,
+      "tag": "美国 - 聖荷西 - Cloudflare, Inc. - 11",
+      "transport": {
+        "headers": {
+          "host": [
+            "little-bird-a235-ppal03.fosawaw121.workers.dev"
+          ]
+        },
+        "path": "/",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "d4eddaf9-a660-4905-b835-cad98677b380",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "66.235.200.191",
+      "server_port": 80,
+      "tag": "美国 - 聖荷西 - Cloudflare, Inc. - 6",
+      "transport": {
+        "headers": {
+          "host": [
+            "pormang.webhost99.workers.dev"
+          ]
+        },
+        "path": "/@AZARBAYJAB1@AZARBAYJAB1@AZARBAYJAB1",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "e497da22-d020-40fb-a1fa-bc294066a2d2",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "185.174.138.194",
+      "server_port": 80,
+      "tag": "美国 - 聖荷西 - Cloudflare, Inc. - 7",
+      "transport": {
+        "headers": {
+          "host": [
+            "pormang.webhost99.workers.dev"
+          ]
+        },
+        "path": "/@AZARBAYJAB1@AZARBAYJAB1@AZARBAYJAB1",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "e497da22-d020-40fb-a1fa-bc294066a2d2",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "66.235.200.58",
+      "server_port": 80,
+      "tag": "美国 - 聖荷西 - Cloudflare, Inc. - 8",
+      "transport": {
+        "headers": {
+          "host": [
+            "pormang.webhost99.workers.dev"
+          ]
+        },
+        "path": "/@AZARBAYJAB1@AZARBAYJAB1@AZARBAYJAB1",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "e497da22-d020-40fb-a1fa-bc294066a2d2",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "45.149.12.128",
+      "server_port": 80,
+      "tag": "美国 - 聖荷西 - Cloudflare, Inc. - 9",
+      "transport": {
+        "headers": {
+          "host": [
+            "pormang.webhost99.workers.dev"
+          ]
+        },
+        "path": "/@AZARBAYJAB1@AZARBAYJAB1@AZARBAYJAB1",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "e497da22-d020-40fb-a1fa-bc294066a2d2",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "65.108.146.181",
+      "server_port": 8443,
+      "tag": "芬兰 - 赫尔辛基 - Hetzner Online GmbH - 2",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.zhaket.com",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "aS9Q3_GA07uwvSi0YeQH6AZ0pCgwjG0VuG9LOQlBDn4",
+          "short_id": "0b09959f49ce3061"
+        }
+      },
+      "type": "vless",
+      "uuid": "0a5b31cf-26eb-4db7-9fa1-3563a5143a00",
+      "packet_encoding": "xudp"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "integral-malamute.adder289.quest",
+      "server_port": 443,
+      "tag": "英国 - 尼斯登 - G-Core Labs S.A. - 2",
+      "tls": {
+        "enabled": true,
+        "server_name": "integral-malamute.adder289.quest",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3778399737045327872",
+      "server": "divine-slug.adder289.quest",
+      "server_port": 443,
+      "tag": "英国 - 尼斯登 - G-Core Labs S.A. - 8",
+      "tls": {
+        "enabled": true,
+        "server_name": "divine-slug.adder289.quest",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "server": "104.21.69.44",
+      "server_port": 80,
+      "tag": "英国 - 豪恩斯洛 - Cloudflare, Inc. - 10",
+      "transport": {
+        "headers": {
+          "host": [
+            "a.xn--i-sx6a60i.us.kg."
+          ]
+        },
+        "path": "/tmevpnAndroid2/",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "d342d11e-d424-4583-b36e-524ab1f0afa4",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "172.67.204.84",
+      "server_port": 80,
+      "tag": "英国 - 豪恩斯洛 - Cloudflare, Inc. - 11",
+      "transport": {
+        "headers": {
+          "host": [
+            "a.xn--i-sx6a60i.us.kg."
+          ]
+        },
+        "path": "/t.mevpnAndroid2/",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "d342d11e-d424-4583-b36e-524ab1f0afa4",
+      "packet_encoding": "xudp"
+    },
+    {
+      "password": "shadowsocks",
+      "server": "149.34.244.82",
+      "server_port": 443,
+      "tag": "荷兰 - 阿姆斯特丹 - Datacamp Limited - 2",
+      "type": "shadowsocks",
+      "method": "aes-128-gcm",
+      "network": "tcp"
+    },
+    {
+      "password": "3747000103274291200",
+      "server": "89.39.70.207",
+      "server_port": 443,
+      "tag": "荷兰 - 阿姆斯特丹 - G-Core Labs S.A. - 3",
+      "tls": {
+        "enabled": true,
+        "server_name": "sunny-jackal.insect388.motorcycles",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "3778399737045327872",
+      "server": "sunny-jackal.insect388.motorcycles",
+      "server_port": 443,
+      "tag": "荷兰 - 阿姆斯特丹 - G-Core Labs S.A. - 4",
+      "tls": {
+        "enabled": true,
+        "server_name": "sunny-jackal.insect388.motorcycles",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "f8f7aCzcPKbsF8p3",
+      "server": "185.231.233.173",
+      "server_port": 989,
+      "tag": "葡萄牙 - 里斯本 - BrainStorm Network%2C Inc - 1",
+      "type": "shadowsocks",
+      "method": "aes-256-cfb",
+      "network": "tcp"
+    },
+    {
+      "password": "Aimer",
+      "server": "220.121.230.236",
+      "server_port": 21325,
+      "tag": "韩国 - Yeongdong-gun - Cloudflare, Inc. - 11",
+      "tls": {
+        "enabled": true,
+        "server_name": "agepq.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "agepq.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/",
+        "type": "ws"
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "Aimer",
+      "server": "121.184.10.253",
+      "server_port": 50000,
+      "tag": "韩国 - Yeongdong-gun - Cloudflare, Inc. - 12",
+      "tls": {
+        "enabled": true,
+        "server_name": "agepq.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "agepq.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/",
+        "type": "ws"
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "Aimer",
+      "server": "125.138.28.68",
+      "server_port": 12542,
+      "tag": "韩国 - Yeongdong-gun - Cloudflare, Inc. - 9",
+      "tls": {
+        "enabled": true,
+        "server_name": "agepq.ambercc.filegear-sg.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "agepq.ambercc.filegear-sg.me"
+          ]
+        },
+        "path": "/",
+        "type": "ws"
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "qwerREWQ",
+      "server": "@@211.178.105.134",
+      "server_port": 51633,
+      "tag": "韩国 - Yongin-si - SK Broadband Co Ltd - 3",
+      "type": "shadowsocks",
+      "method": "aes-256-cfb",
+      "network": "tcp"
+    },
+    {
+      "password": "amazonskr05",
+      "server": "3.36.73.26",
+      "server_port": 443,
+      "tag": "韩国 - 首尔特别市 - Amazon.com%2C Inc. - 6",
+      "type": "shadowsocks",
+      "method": "aes-256-cfb",
+      "network": "tcp"
+    },
+    {
+      "server": "94.250.246.200",
+      "server_port": 8080,
+      "tag": "IN",
+      "tls": {
+        "enabled": true,
+        "server_name": "a.mifeng.us.kg",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "a.mifeng.us.kg"
+          ]
+        },
+        "path": "/",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "d342d11e-d424-4583-b36e-524ab1f0afa4",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "104.20.129.2",
+      "server_port": 80,
+      "tag": " US-9",
+      "transport": {
+        "headers": {
+          "host": [
+            "pormang.webhost99.workers.dev"
+          ]
+        },
+        "path": "/",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "e497da22-d020-40fb-a1fa-bc294066a2d2",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "104.17.147.22",
+      "server_port": 80,
+      "tag": " US-8",
+      "transport": {
+        "headers": {
+          "host": [
+            "redw.pooriam.ir"
+          ]
+        },
+        "path": "/",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "53fa8faf-ba4b-4322-9c69-a3e5b1555049",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "172.66.168.197",
+      "server_port": 443,
+      "tag": " US-20",
+      "tls": {
+        "enabled": true,
+        "server_name": "Nl2-FulL.PrIvAteiP.NeT",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "Nl2-FulL.PrIvAteiP.NeT"
+          ]
+        },
+        "path": "/VLESS",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "054d503d-4748-47a6-8118-71a96c51f2d9",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "www.speedtest.net",
+      "server_port": 80,
+      "tag": " US-2",
+      "transport": {
+        "headers": {
+          "host": [
+            "redw.pooriam.ir"
+          ]
+        },
+        "path": "/",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "53fa8faf-ba4b-4322-9c69-a3e5b1555049",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "104.26.15.85",
+      "server_port": 80,
+      "tag": " US-161",
+      "transport": {
+        "headers": {
+          "host": [
+            "a.xn--i-sx6a60i.us.kg."
+          ]
+        },
+        "path": "/",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "d342d11e-d424-4583-b36e-524ab1f0afa4",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "tgju.org",
+      "server_port": 80,
+      "tag": " US-106",
+      "transport": {
+        "headers": {
+          "host": [
+            "a.xn--i-sx6a60i.us.kg."
+          ]
+        },
+        "path": "/",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "d342d11e-d424-4583-b36e-524ab1f0afa4",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "46.232.61.55",
+      "server_port": 55555,
+      "tag": "公益_香港 RAY",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.apple.com",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "AXB2ZGR0hIpkteupFvadjVnXtlmcFBjvBRYpLvTyX18",
+          "short_id": "c3ee58e1ec207953"
+        }
+      },
+      "type": "vless",
+      "uuid": "e9f3977b-7331-4e01-866b-7b196478cd9d",
+      "flow": "xtls-rprx-vision",
+      "packet_encoding": "xudp"
+    },
+    {
+      "password": "f5ce5e0d-f739-4a13-bbe9-054f7c1b1a58",
+      "server": "46.232.61.55",
+      "server_port": 59350,
+      "tag": "公益_香港 HYT",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.bing.com",
+        "insecure": true
+      },
+      "type": "hysteria2"
+    },
+    {
+      "tag": "select",
+      "type": "selector",
+      "default": "urltest",
+      "outbounds": [
+        "urltest",
+        "中国 - 香港 - 2012 Limited %2F netfront.net - 2",
+        "中国 - 香港 - Prime Security Corp - 1",
+        "乌克兰 - Kyiv - Ivanov Vitaliy Sergeevich - 1",
+        "加拿大 - 多伦多 - Tangram Canada Inc. - 1",
+        "土耳其 - 伊兹密尔 - Stark Industries Solutions LTD - 1",
+        "土耳其 - 伊兹密尔 - Stark Industries Solutions LTD - 2",
+        "新加坡 - 新加坡 - BrainStorm Network%2C Inc - 1",
+        "法国 - 塞纳河畔伊夫里 - Online S.A.S. - 4",
+        "法国 - 巴黎 - Amazon Technologies Inc. - 2",
+        "波兰 - 华沙 - ECO-ATMAN - 2",
+        "瑞典 - 斯德哥尔摩 - Amazon Technologies Inc. - 1",
+        "美国 - Reston - Cloudflare, Inc. - 5",
+        "美国 - 东洛杉矶 - Cloudflare, Inc. - 12",
+        "美国 - 聖荷西 - Cloudflare, Inc. - 11",
+        "美国 - 聖荷西 - Cloudflare, Inc. - 6",
+        "美国 - 聖荷西 - Cloudflare, Inc. - 7",
+        "美国 - 聖荷西 - Cloudflare, Inc. - 8",
+        "美国 - 聖荷西 - Cloudflare, Inc. - 9",
+        "芬兰 - 赫尔辛基 - Hetzner Online GmbH - 2",
+        "英国 - 尼斯登 - G-Core Labs S.A. - 2",
+        "英国 - 尼斯登 - G-Core Labs S.A. - 8",
+        "英国 - 豪恩斯洛 - Cloudflare, Inc. - 10",
+        "英国 - 豪恩斯洛 - Cloudflare, Inc. - 11",
+        "荷兰 - 阿姆斯特丹 - Datacamp Limited - 2",
+        "荷兰 - 阿姆斯特丹 - G-Core Labs S.A. - 3",
+        "荷兰 - 阿姆斯特丹 - G-Core Labs S.A. - 4",
+        "葡萄牙 - 里斯本 - BrainStorm Network%2C Inc - 1",
+        "韩国 - Yeongdong-gun - Cloudflare, Inc. - 11",
+        "韩国 - Yeongdong-gun - Cloudflare, Inc. - 12",
+        "韩国 - Yeongdong-gun - Cloudflare, Inc. - 9",
+        "韩国 - Yongin-si - SK Broadband Co Ltd - 3",
+        "韩国 - 首尔特别市 - Amazon.com%2C Inc. - 6",
+        "IN",
+        " US-9",
+        " US-8",
+        " US-20",
+        " US-2",
+        " US-161",
+        " US-106",
+        "公益_香港 RAY",
+        "公益_香港 HYT"
+      ]
+    },
+    {
+      "tag": "urltest",
+      "type": "urltest",
+      "outbounds": [
+        "中国 - 香港 - 2012 Limited %2F netfront.net - 2",
+        "中国 - 香港 - Prime Security Corp - 1",
+        "乌克兰 - Kyiv - Ivanov Vitaliy Sergeevich - 1",
+        "加拿大 - 多伦多 - Tangram Canada Inc. - 1",
+        "土耳其 - 伊兹密尔 - Stark Industries Solutions LTD - 1",
+        "土耳其 - 伊兹密尔 - Stark Industries Solutions LTD - 2",
+        "新加坡 - 新加坡 - BrainStorm Network%2C Inc - 1",
+        "法国 - 塞纳河畔伊夫里 - Online S.A.S. - 4",
+        "法国 - 巴黎 - Amazon Technologies Inc. - 2",
+        "波兰 - 华沙 - ECO-ATMAN - 2",
+        "瑞典 - 斯德哥尔摩 - Amazon Technologies Inc. - 1",
+        "美国 - Reston - Cloudflare, Inc. - 5",
+        "美国 - 东洛杉矶 - Cloudflare, Inc. - 12",
+        "美国 - 聖荷西 - Cloudflare, Inc. - 11",
+        "美国 - 聖荷西 - Cloudflare, Inc. - 6",
+        "美国 - 聖荷西 - Cloudflare, Inc. - 7",
+        "美国 - 聖荷西 - Cloudflare, Inc. - 8",
+        "美国 - 聖荷西 - Cloudflare, Inc. - 9",
+        "芬兰 - 赫尔辛基 - Hetzner Online GmbH - 2",
+        "英国 - 尼斯登 - G-Core Labs S.A. - 2",
+        "英国 - 尼斯登 - G-Core Labs S.A. - 8",
+        "英国 - 豪恩斯洛 - Cloudflare, Inc. - 10",
+        "英国 - 豪恩斯洛 - Cloudflare, Inc. - 11",
+        "荷兰 - 阿姆斯特丹 - Datacamp Limited - 2",
+        "荷兰 - 阿姆斯特丹 - G-Core Labs S.A. - 3",
+        "荷兰 - 阿姆斯特丹 - G-Core Labs S.A. - 4",
+        "葡萄牙 - 里斯本 - BrainStorm Network%2C Inc - 1",
+        "韩国 - Yeongdong-gun - Cloudflare, Inc. - 11",
+        "韩国 - Yeongdong-gun - Cloudflare, Inc. - 12",
+        "韩国 - Yeongdong-gun - Cloudflare, Inc. - 9",
+        "韩国 - Yongin-si - SK Broadband Co Ltd - 3",
+        "韩国 - 首尔特别市 - Amazon.com%2C Inc. - 6",
+        "IN",
+        " US-9",
+        " US-8",
+        " US-20",
+        " US-2",
+        " US-161",
+        " US-106",
+        "公益_香港 RAY",
+        "公益_香港 HYT"
+      ]
+    },
+    {
+      "tag": "chatgpt",
+      "type": "selector",
+      "outbounds": [
+        "中国 - 香港 - 2012 Limited %2F netfront.net - 2",
+        "中国 - 香港 - Prime Security Corp - 1",
+        "乌克兰 - Kyiv - Ivanov Vitaliy Sergeevich - 1",
+        "加拿大 - 多伦多 - Tangram Canada Inc. - 1",
+        "土耳其 - 伊兹密尔 - Stark Industries Solutions LTD - 1",
+        "土耳其 - 伊兹密尔 - Stark Industries Solutions LTD - 2",
+        "新加坡 - 新加坡 - BrainStorm Network%2C Inc - 1",
+        "法国 - 塞纳河畔伊夫里 - Online S.A.S. - 4",
+        "法国 - 巴黎 - Amazon Technologies Inc. - 2",
+        "波兰 - 华沙 - ECO-ATMAN - 2",
+        "瑞典 - 斯德哥尔摩 - Amazon Technologies Inc. - 1",
+        "美国 - Reston - Cloudflare, Inc. - 5",
+        "美国 - 东洛杉矶 - Cloudflare, Inc. - 12",
+        "美国 - 聖荷西 - Cloudflare, Inc. - 11",
+        "美国 - 聖荷西 - Cloudflare, Inc. - 6",
+        "美国 - 聖荷西 - Cloudflare, Inc. - 7",
+        "美国 - 聖荷西 - Cloudflare, Inc. - 8",
+        "美国 - 聖荷西 - Cloudflare, Inc. - 9",
+        "芬兰 - 赫尔辛基 - Hetzner Online GmbH - 2",
+        "英国 - 尼斯登 - G-Core Labs S.A. - 2",
+        "英国 - 尼斯登 - G-Core Labs S.A. - 8",
+        "英国 - 豪恩斯洛 - Cloudflare, Inc. - 10",
+        "英国 - 豪恩斯洛 - Cloudflare, Inc. - 11",
+        "荷兰 - 阿姆斯特丹 - Datacamp Limited - 2",
+        "荷兰 - 阿姆斯特丹 - G-Core Labs S.A. - 3",
+        "荷兰 - 阿姆斯特丹 - G-Core Labs S.A. - 4",
+        "葡萄牙 - 里斯本 - BrainStorm Network%2C Inc - 1",
+        "韩国 - Yeongdong-gun - Cloudflare, Inc. - 11",
+        "韩国 - Yeongdong-gun - Cloudflare, Inc. - 12",
+        "韩国 - Yeongdong-gun - Cloudflare, Inc. - 9",
+        "韩国 - Yongin-si - SK Broadband Co Ltd - 3",
+        "韩国 - 首尔特别市 - Amazon.com%2C Inc. - 6",
+        "IN",
+        " US-9",
+        " US-8",
+        " US-20",
+        " US-2",
+        " US-161",
+        " US-106",
+        "公益_香港 RAY",
+        "公益_香港 HYT"
+      ]
+    },
+    {
+      "tag": "direct",
+      "type": "direct"
+    }
+  ],
+  "route": {
+    "rules": [
+      {
+        "action": "sniff"
+      },
+      {
+        "protocol": "dns",
+        "action": "hijack-dns"
+      },
+      {
+        "action": "resolve",
+        "strategy": "prefer_ipv4"
+      },
+      {
+        "clash_mode": "Direct",
+        "outbound": "direct"
+      },
+      {
+        "clash_mode": "Global",
+        "outbound": "select"
+      },
+      {
+        "ip_is_private": true,
+        "outbound": "direct"
+      },
+      {
+        "package_name": "com.openai.chatgpt",
+        "outbound": "chatgpt"
+      },
+      {
+        "domain_suffix": [
+          "proactivebackend-pa.googleapis.com",
+          "bing.com",
+          "bing.net",
+          "bingapis.com"
+        ],
+        "outbound": "chatgpt"
+      },
+      {
+        "domain_keyword": [
+          "qq.com"
+        ],
+        "outbound": "direct"
+      },
+      {
+        "domain_suffix": [
+          "ushd.xmsl.org",
+          "cf.gtlx.org"
+        ],
+        "outbound": "direct"
+      },
+      {
+        "port": [
+          23301,
+          22101,
+          22102,
+          20501
+        ],
+        "outbound": "direct"
+      },
+      {
+        "rule_set": "geoip-cn",
+        "outbound": "direct"
+      }
+    ],
+    "rule_set": [
+      {
+        "type": "remote",
+        "tag": "geoip-cn",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/SagerNet/sing-geoip/rule-set/geoip-cn.srs",
+        "download_detour": "select"
+      },
+      {
+        "type": "remote",
+        "tag": "geosite-cn",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/xmdhs/sing-geosite/rule-set-Loyalsoldier/geosite-geolocation-cn.srs",
+        "download_detour": "select"
+      },
+      {
+        "type": "remote",
+        "tag": "AdGuardSDNSFilter",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/xmdhs/sing-box-ruleset/rule-set/AdGuardSDNSFilterSingBox.srs",
+        "download_detour": "select"
+      },
+      {
+        "type": "remote",
+        "tag": "chrome-doh",
+        "format": "source",
+        "url": "https://gist.githubusercontent.com/xmdhs/71fc5ff6ef29f5ecaf2c52b8de5c3172/raw/chrome-doh.json",
+        "download_detour": "select"
+      }
+    ],
+    "default_domain_resolver": "dns_direct",
+    "final": "select",
+    "auto_detect_interface": true
+  },
+  "experimental": {
+    "cache_file": {
+      "enabled": true
+    },
+    "clash_api": {
+      "external_controller": "127.0.0.1:9090"
+    }
+  }
+}
