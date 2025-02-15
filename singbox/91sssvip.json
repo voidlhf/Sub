@@ -1,0 +1,1539 @@
+{
+  "log": {},
+  "dns": {
+    "servers": [
+      {
+        "tag": "dns_proxy",
+        "type": "https",
+        "server": "8.8.8.8",
+        "detour": "select"
+      },
+      {
+        "tag": "dns_direct",
+        "type": "https",
+        "server": "223.5.5.5",
+        "detour": "direct"
+      },
+      {
+        "tag": "dns_fakeip",
+        "type": "fakeip",
+        "inet4_range": "198.18.0.0/15",
+        "inet6_range": "fc00::/18"
+      }
+    ],
+    "rules": [
+      {
+        "rule_set": [
+          "AdGuardSDNSFilter",
+          "chrome-doh"
+        ],
+        "action": "reject",
+        "method": "default"
+      },
+      {
+        "query_type": [
+          "A",
+          "AAAA"
+        ],
+        "server": "dns_fakeip",
+        "rewrite_ttl": 1
+      },
+      {
+        "clash_mode": "Global",
+        "server": "dns_proxy"
+      },
+      {
+        "clash_mode": "Direct",
+        "server": "dns_direct"
+      },
+      {
+        "rule_set": "geosite-cn",
+        "server": "dns_direct"
+      }
+    ],
+    "strategy": "prefer_ipv4",
+    "independent_cache": true
+  },
+  "inbounds": [
+    {
+      "type": "tun",
+      "mtu": 9000,
+      "address": [
+        "172.18.0.1/30",
+        "fdfe:dcba:9876::1/126"
+      ],
+      "auto_route": true,
+      "strict_route": true,
+      "endpoint_independent_nat": true
+    },
+    {
+      "type": "socks",
+      "tag": "socks-in",
+      "listen": "127.0.0.1",
+      "listen_port": 2333
+    },
+    {
+      "type": "mixed",
+      "tag": "mixed-in",
+      "listen": "127.0.0.1",
+      "listen_port": 2334
+    }
+  ],
+  "outbounds": [
+    {
+      "server": "128.204.223.101",
+      "server_port": 12415,
+      "tag": "PL-s6-reality",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.speedtest.net",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "SDlAerkNyCDMSE6qRxK6DeH5fvVEz28ITZlwe1l0eWU"
+        }
+      },
+      "type": "vless",
+      "uuid": "e4bf3465-e914-46fe-8825-5250f171a3da",
+      "flow": "xtls-rprx-vision",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "128.204.223.101",
+      "server_port": 24115,
+      "tag": "PL-s6-vmess-ws",
+      "transport": {
+        "headers": {
+          "Host": [
+            ""
+          ]
+        },
+        "path": "/e4bf3465-e914-46fe-8825-5250f171a3da-vm?ed=2048",
+        "type": "ws"
+      },
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "e4bf3465-e914-46fe-8825-5250f171a3da"
+    },
+    {
+      "server": "icook.hk",
+      "server_port": 8443,
+      "tag": "PL-s6-vmess-ws-tls-argo",
+      "tls": {
+        "enabled": true,
+        "server_name": "kevin-lectures-cheque-abu.trycloudflare.com"
+      },
+      "transport": {
+        "headers": {
+          "Host": [
+            "kevin-lectures-cheque-abu.trycloudflare.com"
+          ]
+        },
+        "path": "/e4bf3465-e914-46fe-8825-5250f171a3da-vm?ed=2048",
+        "type": "ws"
+      },
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "e4bf3465-e914-46fe-8825-5250f171a3da"
+    },
+    {
+      "server": "icook.hk",
+      "server_port": 8880,
+      "tag": "PL-s6-vmess-ws-argo",
+      "transport": {
+        "headers": {
+          "Host": [
+            "kevin-lectures-cheque-abu.trycloudflare.com"
+          ]
+        },
+        "path": "/e4bf3465-e914-46fe-8825-5250f171a3da-vm?ed=2048",
+        "type": "ws"
+      },
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "e4bf3465-e914-46fe-8825-5250f171a3da"
+    },
+    {
+      "password": "e4bf3465-e914-46fe-8825-5250f171a3da",
+      "server": "128.204.223.101",
+      "server_port": 2281,
+      "tag": "PL-s6-hy2",
+      "tls": {
+        "enabled": true,
+        "server_name": "128.204.223.101",
+        "insecure": true
+      },
+      "type": "hysteria2"
+    },
+    {
+      "server": "128.204.223.119",
+      "server_port": 20839,
+      "tag": "PL-s7-reality",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.speedtest.net",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "Ih574fLiz9Z0k9bWckYgBKBHcmg1Cu5XWD3xTRCL5zw"
+        }
+      },
+      "type": "vless",
+      "uuid": "4e10c051-2495-427b-a8ed-a627d88b59ee",
+      "flow": "xtls-rprx-vision",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "128.204.223.119",
+      "server_port": 28582,
+      "tag": "PL-s7-vmess-ws",
+      "transport": {
+        "headers": {
+          "Host": [
+            ""
+          ]
+        },
+        "path": "/4e10c051-2495-427b-a8ed-a627d88b59ee-vm?ed=2048",
+        "type": "ws"
+      },
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "4e10c051-2495-427b-a8ed-a627d88b59ee"
+    },
+    {
+      "server": "icook.hk",
+      "server_port": 8443,
+      "tag": "PL-s7-vmess-ws-tls-argo",
+      "tls": {
+        "enabled": true,
+        "server_name": "mlb-brilliant-synthesis-finder.trycloudflare.com"
+      },
+      "transport": {
+        "headers": {
+          "Host": [
+            "mlb-brilliant-synthesis-finder.trycloudflare.com"
+          ]
+        },
+        "path": "/4e10c051-2495-427b-a8ed-a627d88b59ee-vm?ed=2048",
+        "type": "ws"
+      },
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "4e10c051-2495-427b-a8ed-a627d88b59ee"
+    },
+    {
+      "server": "icook.hk",
+      "server_port": 8880,
+      "tag": "PL-s7-vmess-ws-argo",
+      "transport": {
+        "headers": {
+          "Host": [
+            "mlb-brilliant-synthesis-finder.trycloudflare.com"
+          ]
+        },
+        "path": "/4e10c051-2495-427b-a8ed-a627d88b59ee-vm?ed=2048",
+        "type": "ws"
+      },
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "4e10c051-2495-427b-a8ed-a627d88b59ee"
+    },
+    {
+      "password": "4e10c051-2495-427b-a8ed-a627d88b59ee",
+      "server": "128.204.223.119",
+      "server_port": 31233,
+      "tag": "PL-s7-hy2",
+      "tls": {
+        "enabled": true,
+        "server_name": "128.204.223.119",
+        "insecure": true
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "admin123",
+      "server": "213.136.83.240",
+      "server_port": 2939,
+      "tag": "FR-s16-tuic",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.bing.com",
+        "alpn": [
+          "h3"
+        ],
+        "insecure": true
+      },
+      "type": "tuic",
+      "uuid": "bc97f674-c578-4940-9234-0a1da46041b0",
+      "udp_relay_mode": "native",
+      "heartbeat": "0ms"
+    },
+    {
+      "server": "207.180.248.6",
+      "server_port": 59974,
+      "tag": "FR-s16-vmss",
+      "transport": {
+        "headers": {
+          "Host": [
+            ""
+          ]
+        },
+        "path": "/vmess-argo?ed=2048",
+        "type": "ws"
+      },
+      "type": "vmess",
+      "security": "none",
+      "uuid": "bc97f674-c578-4940-9234-0a1da46041b0"
+    },
+    {
+      "server": "www.visa.com.tw",
+      "server_port": 443,
+      "tag": "FR-s16-vmss-argo",
+      "tls": {
+        "enabled": true,
+        "server_name": "maintenance-possess-atlanta-mhz.trycloudflare.com"
+      },
+      "transport": {
+        "headers": {
+          "Host": [
+            "maintenance-possess-atlanta-mhz.trycloudflare.com"
+          ]
+        },
+        "path": "/vmess-argo?ed=2048",
+        "type": "ws"
+      },
+      "type": "vmess",
+      "security": "none",
+      "uuid": "bc97f674-c578-4940-9234-0a1da46041b0"
+    },
+    {
+      "password": "bc97f674-c578-4940-9234-0a1da46041b0",
+      "server": "207.180.248.6",
+      "server_port": 56067,
+      "tag": "FR-s16-hy2",
+      "tls": {
+        "enabled": true,
+        "server_name": "207.180.248.6",
+        "insecure": true
+      },
+      "type": "hysteria2"
+    },
+    {
+      "server": "207.180.248.6",
+      "server_port": 22328,
+      "tag": "FR-s16-vmess",
+      "transport": {
+        "headers": {
+          "Host": [
+            ""
+          ]
+        },
+        "path": "/vmess-argo?ed=2048",
+        "type": "ws"
+      },
+      "type": "vmess",
+      "security": "none",
+      "uuid": "c74de759-10d7-4b75-9363-7d26ed323d47"
+    },
+    {
+      "server": "www.visa.com.tw",
+      "server_port": 443,
+      "tag": "FR-s16-vmess-argo",
+      "tls": {
+        "enabled": true,
+        "server_name": "careers-external-x-mistake.trycloudflare.com"
+      },
+      "transport": {
+        "headers": {
+          "Host": [
+            "careers-external-x-mistake.trycloudflare.com"
+          ]
+        },
+        "path": "/vmess-argo?ed=2048",
+        "type": "ws"
+      },
+      "type": "vmess",
+      "security": "none",
+      "uuid": "c74de759-10d7-4b75-9363-7d26ed323d47"
+    },
+    {
+      "password": "c74de759-10d7-4b75-9363-7d26ed323d47",
+      "server": "207.180.248.6",
+      "server_port": 61150,
+      "tag": "FR-s16-hysteria2",
+      "tls": {
+        "enabled": true,
+        "server_name": "207.180.248.6",
+        "insecure": true
+      },
+      "type": "hysteria2"
+    },
+    {
+      "server": "31.186.86.47",
+      "server_port": 2033,
+      "tag": "PL-s2-vmss",
+      "transport": {
+        "headers": {
+          "Host": [
+            ""
+          ]
+        },
+        "path": "/vmess-argo?ed=2048",
+        "type": "ws"
+      },
+      "type": "vmess",
+      "security": "none",
+      "uuid": "301fad67-1288-47a9-b3ca-22b823e4e789"
+    },
+    {
+      "server": "www.visa.com.tw",
+      "server_port": 443,
+      "tag": "PL-s2-vmss-argo",
+      "tls": {
+        "enabled": true,
+        "server_name": "s2.2go.us.kg"
+      },
+      "transport": {
+        "headers": {
+          "Host": [
+            "s2.2go.us.kg"
+          ]
+        },
+        "path": "/vmess-argo?ed=2048",
+        "type": "ws"
+      },
+      "type": "vmess",
+      "security": "none",
+      "uuid": "301fad67-1288-47a9-b3ca-22b823e4e789"
+    },
+    {
+      "password": "301fad67-1288-47a9-b3ca-22b823e4e789",
+      "server": "31.186.86.47",
+      "server_port": 2036,
+      "tag": "PL-s2-hy2",
+      "tls": {
+        "enabled": true,
+        "server_name": "31.186.86.47",
+        "insecure": true
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "admin123",
+      "server": "31.186.86.47",
+      "server_port": 2035,
+      "tag": "PL-s2-tuic",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.bing.com",
+        "alpn": [
+          "h3"
+        ],
+        "insecure": true
+      },
+      "type": "tuic",
+      "uuid": "301fad67-1288-47a9-b3ca-22b823e4e789",
+      "udp_relay_mode": "native",
+      "heartbeat": "0ms"
+    },
+    {
+      "password": "53xfGdxKPhVc",
+      "server": "188.68.248.8",
+      "server_port": 1304,
+      "tag": "s15",
+      "tls": {
+        "enabled": true,
+        "server_name": "188.68.248.8",
+        "insecure": true
+      },
+      "type": "hysteria2",
+      "obfs": {
+        "password": "rzm2DlWVO5p6",
+        "type": "salamander"
+      }
+    },
+    {
+      "password": "53xfGdxKPhVc",
+      "server": "188.68.248.8",
+      "server_port": 2670,
+      "tag": "s15-warp",
+      "tls": {
+        "enabled": true,
+        "server_name": "188.68.248.8",
+        "insecure": true
+      },
+      "type": "hysteria2",
+      "obfs": {
+        "password": "rzm2DlWVO5p6",
+        "type": "salamander"
+      }
+    },
+    {
+      "password": "qEMuk0TvaVKT",
+      "server": "207.180.248.6",
+      "server_port": 5709,
+      "tag": "s16",
+      "tls": {
+        "enabled": true,
+        "server_name": "207.180.248.6",
+        "insecure": true
+      },
+      "type": "hysteria2",
+      "obfs": {
+        "password": "wReNJ2BpZr8w",
+        "type": "salamander"
+      }
+    },
+    {
+      "password": "qEMuk0TvaVKT",
+      "server": "207.180.248.6",
+      "server_port": 8552,
+      "tag": "s16-warp",
+      "tls": {
+        "enabled": true,
+        "server_name": "207.180.248.6",
+        "insecure": true
+      },
+      "type": "hysteria2",
+      "obfs": {
+        "password": "wReNJ2BpZr8w",
+        "type": "salamander"
+      }
+    },
+    {
+      "password": "AZ6dyz60PGFM",
+      "server": "91.185.190.159",
+      "server_port": 2580,
+      "tag": "s10",
+      "tls": {
+        "enabled": true,
+        "server_name": "91.185.190.159",
+        "insecure": true
+      },
+      "type": "hysteria2",
+      "obfs": {
+        "password": "tRw2QmK3QyEL",
+        "type": "salamander"
+      }
+    },
+    {
+      "password": "AZ6dyz60PGFM",
+      "server": "91.185.190.159",
+      "server_port": 5509,
+      "tag": "s10-warp",
+      "tls": {
+        "enabled": true,
+        "server_name": "91.185.190.159",
+        "insecure": true
+      },
+      "type": "hysteria2",
+      "obfs": {
+        "password": "tRw2QmK3QyEL",
+        "type": "salamander"
+      }
+    },
+    {
+      "password": "mg6M4FFo5OTc",
+      "server": "31.186.87.205",
+      "server_port": 2030,
+      "tag": "s11",
+      "tls": {
+        "enabled": true,
+        "server_name": "31.186.87.205",
+        "insecure": true
+      },
+      "type": "hysteria2",
+      "obfs": {
+        "password": "Ttl1REugioLM",
+        "type": "salamander"
+      }
+    },
+    {
+      "password": "mg6M4FFo5OTc",
+      "server": "31.186.87.205",
+      "server_port": 6925,
+      "tag": "s11-warp",
+      "tls": {
+        "enabled": true,
+        "server_name": "31.186.87.205",
+        "insecure": true
+      },
+      "type": "hysteria2",
+      "obfs": {
+        "password": "Ttl1REugioLM",
+        "type": "salamander"
+      }
+    },
+    {
+      "password": "o0GTTmg8enEi",
+      "server": "85.194.246.69",
+      "server_port": 4976,
+      "tag": "s12",
+      "tls": {
+        "enabled": true,
+        "server_name": "85.194.246.69",
+        "insecure": true
+      },
+      "type": "hysteria2",
+      "obfs": {
+        "password": "rmp5PHAZoBUb",
+        "type": "salamander"
+      }
+    },
+    {
+      "password": "o0GTTmg8enEi",
+      "server": "85.194.246.69",
+      "server_port": 9278,
+      "tag": "s12-warp",
+      "tls": {
+        "enabled": true,
+        "server_name": "85.194.246.69",
+        "insecure": true
+      },
+      "type": "hysteria2",
+      "obfs": {
+        "password": "rmp5PHAZoBUb",
+        "type": "salamander"
+      }
+    },
+    {
+      "password": "7768mSX1jj8G",
+      "server": "31.186.87.211",
+      "server_port": 6200,
+      "tag": "s13",
+      "tls": {
+        "enabled": true,
+        "server_name": "31.186.87.211",
+        "insecure": true
+      },
+      "type": "hysteria2",
+      "obfs": {
+        "password": "0jTO3fZKee78",
+        "type": "salamander"
+      }
+    },
+    {
+      "password": "7768mSX1jj8G",
+      "server": "31.186.87.211",
+      "server_port": 6683,
+      "tag": "s13-warp",
+      "tls": {
+        "enabled": true,
+        "server_name": "31.186.87.211",
+        "insecure": true
+      },
+      "type": "hysteria2",
+      "obfs": {
+        "password": "0jTO3fZKee78",
+        "type": "salamander"
+      }
+    },
+    {
+      "password": "HlSLanszJieh",
+      "server": "188.68.234.53",
+      "server_port": 6478,
+      "tag": "s14",
+      "tls": {
+        "enabled": true,
+        "server_name": "188.68.234.53",
+        "insecure": true
+      },
+      "type": "hysteria2",
+      "obfs": {
+        "password": "o9dI0T7VqpA1",
+        "type": "salamander"
+      }
+    },
+    {
+      "password": "HlSLanszJieh",
+      "server": "188.68.234.53",
+      "server_port": 9751,
+      "tag": "s14-warp",
+      "tls": {
+        "enabled": true,
+        "server_name": "188.68.234.53",
+        "insecure": true
+      },
+      "type": "hysteria2",
+      "obfs": {
+        "password": "o9dI0T7VqpA1",
+        "type": "salamander"
+      }
+    },
+    {
+      "server": "0",
+      "tag": "【不是节点】srveoo 点点，维护 by nano",
+      "type": "vless",
+      "uuid": "00000000-0000-0000-0000-000000000000",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "0",
+      "tag": "【不是节点】( 2 种落地 ) https",
+      "type": "vless",
+      "uuid": "00000000-0000-0000-0000-000000000000",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "0",
+      "tag": "【不是节点】( 4 种落地 ) https",
+      "type": "vless",
+      "uuid": "00000000-0000-0000-0000-000000000000",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "0",
+      "tag": "【不是节点】流量统计 s10 ⇧306.41 MB ⇩7.00 GB",
+      "type": "vless",
+      "uuid": "00000000-0000-0000-0000-000000000000",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "0",
+      "tag": "【不是节点】流量统计 s11 ⇧233.64 MB ⇩13.97 GB",
+      "type": "vless",
+      "uuid": "00000000-0000-0000-0000-000000000000",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "0",
+      "tag": "【不是节点】流量统计 s12 ⇧25.92 MB ⇩2.14 GB",
+      "type": "vless",
+      "uuid": "00000000-0000-0000-0000-000000000000",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "0",
+      "tag": "【不是节点】流量统计 s13 ⇧397.89 MB ⇩31.39 GB",
+      "type": "vless",
+      "uuid": "00000000-0000-0000-0000-000000000000",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "0",
+      "tag": "【不是节点】流量统计 s14 ⇧120.37 MB ⇩2.33 GB",
+      "type": "vless",
+      "uuid": "00000000-0000-0000-0000-000000000000",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "0",
+      "tag": "【不是节点】流量统计 s15 ⇧81.77 MB ⇩13.62 GB",
+      "type": "vless",
+      "uuid": "00000000-0000-0000-0000-000000000000",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "0",
+      "tag": "【不是节点】流量统计 s16 ⇧509.70 MB ⇩59.64 GB",
+      "type": "vless",
+      "uuid": "00000000-0000-0000-0000-000000000000",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "104.18.149.75",
+      "server_port": 443,
+      "tag": "日本",
+      "tls": {
+        "enabled": true,
+        "server_name": "jp.insbot.filegear-sg.me"
+      },
+      "transport": {
+        "headers": {
+          "Host": [
+            "jp.insbot.filegear-sg.me"
+          ]
+        },
+        "path": "/aa",
+        "type": "ws"
+      },
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "cae97b1c-35e8-4cf2-dc1b-52032c3d3fa7"
+    },
+    {
+      "server": "104.18.149.75",
+      "server_port": 443,
+      "tag": "美国",
+      "tls": {
+        "enabled": true,
+        "server_name": "us.insbot.filegear-sg.me"
+      },
+      "transport": {
+        "headers": {
+          "Host": [
+            "us.insbot.filegear-sg.me"
+          ]
+        },
+        "path": "/aa",
+        "type": "ws"
+      },
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "de94cc0a-0592-4969-b1fc-97ea8f0ea0b3"
+    },
+    {
+      "server": "104.18.149.75",
+      "server_port": 443,
+      "tag": "英国",
+      "tls": {
+        "enabled": true,
+        "server_name": "uk.insbot.filegear-sg.me"
+      },
+      "transport": {
+        "headers": {
+          "Host": [
+            "uk.insbot.filegear-sg.me"
+          ]
+        },
+        "path": "/aa",
+        "type": "ws"
+      },
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "6218c654-ff61-4570-8c1f-dc972d15d1c3"
+    },
+    {
+      "server": "104.18.149.75",
+      "server_port": 443,
+      "tag": "香港",
+      "tls": {
+        "enabled": true,
+        "server_name": "hk.insbot.filegear-sg.me"
+      },
+      "transport": {
+        "headers": {
+          "Host": [
+            "hk.insbot.filegear-sg.me"
+          ]
+        },
+        "path": "/aa",
+        "type": "ws"
+      },
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "47eab0de-97f9-49be-f2f3-2e4eb17268e6"
+    },
+    {
+      "server": "104.18.149.75",
+      "server_port": 443,
+      "tag": "新加坡",
+      "tls": {
+        "enabled": true,
+        "server_name": "sg.insbot.filegear-sg.me"
+      },
+      "transport": {
+        "headers": {
+          "Host": [
+            "sg.insbot.filegear-sg.me"
+          ]
+        },
+        "path": "/aa",
+        "type": "ws"
+      },
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "506b46ce-568f-47a7-f0dd-0864fb7f8040"
+    },
+    {
+      "server": "104.18.149.75",
+      "server_port": 443,
+      "tag": "韩国",
+      "tls": {
+        "enabled": true,
+        "server_name": "kr.insbot.filegear-sg.me"
+      },
+      "transport": {
+        "headers": {
+          "Host": [
+            "kr.insbot.filegear-sg.me"
+          ]
+        },
+        "path": "/kr",
+        "type": "ws"
+      },
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "6dde1f95-16eb-4a76-b7c2-de8f282cf70b"
+    },
+    {
+      "server": "104.18.149.75",
+      "server_port": 443,
+      "tag": "台湾",
+      "tls": {
+        "enabled": true,
+        "server_name": "tw.insbot.filegear-sg.me"
+      },
+      "transport": {
+        "headers": {
+          "Host": [
+            "tw.insbot.filegear-sg.me"
+          ]
+        },
+        "path": "/aa",
+        "type": "ws"
+      },
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "56529ad8-61d2-4bfa-aa0b-a800719cb5fe"
+    },
+    {
+      "password": "f988a84a-236a-4aae-8823-b84757769ea7",
+      "server": "serv01.trevely.us.kg",
+      "server_port": 59350,
+      "tag": "FREE_Serv01",
+      "tls": {
+        "enabled": true,
+        "server_name": "serv01.trevely.us.kg",
+        "insecure": true
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "fc10a4d6-f946-478f-a3db-57f73cdb0407",
+      "server": "serv05.trevely.us.kg",
+      "server_port": 59350,
+      "tag": "FREE_Serv05",
+      "tls": {
+        "enabled": true,
+        "server_name": "serv05.trevely.us.kg",
+        "insecure": true
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "f00dd1c7-1636-4090-9f47-8448256386cc",
+      "server": "serv08.trevely.us.kg",
+      "server_port": 59350,
+      "tag": "FREE_Serv08",
+      "tls": {
+        "enabled": true,
+        "server_name": "serv08.trevely.us.kg",
+        "insecure": true
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "f7d948ae-80c9-478c-894a-5da2b1534189",
+      "server": "serv09.trevely.us.kg",
+      "server_port": 59350,
+      "tag": "FREE_Serv09",
+      "tls": {
+        "enabled": true,
+        "server_name": "serv09.trevely.us.kg",
+        "insecure": true
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "f7cf4765-5745-490b-8f8c-9f865901f971",
+      "server": "serv10.trevely.us.kg",
+      "server_port": 59350,
+      "tag": "FREE_Serv10",
+      "tls": {
+        "enabled": true,
+        "server_name": "serv10.trevely.us.kg",
+        "insecure": true
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "fa8a0187-6011-4f1f-bdf4-bbf928259000",
+      "server": "serv11.trevely.us.kg",
+      "server_port": 59350,
+      "tag": "FREE_Serv11",
+      "tls": {
+        "enabled": true,
+        "server_name": "serv11.trevely.us.kg",
+        "insecure": true
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "fb508d86-1679-4b22-8c09-0cd4cdbb887d",
+      "server": "serv12.trevely.us.kg",
+      "server_port": 59350,
+      "tag": "FREE_Serv12",
+      "tls": {
+        "enabled": true,
+        "server_name": "serv12.trevely.us.kg",
+        "insecure": true
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "f6f404b3-62f6-47aa-b4d8-93c5cdae1a0a",
+      "server": "serv13.trevely.us.kg",
+      "server_port": 59350,
+      "tag": "FREE_Serv13",
+      "tls": {
+        "enabled": true,
+        "server_name": "serv13.trevely.us.kg",
+        "insecure": true
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "fb765045-55d6-4b12-bfe6-3639fab3412f",
+      "server": "serv14.trevely.us.kg",
+      "server_port": 59355,
+      "tag": "FREE_Serv14",
+      "tls": {
+        "enabled": true,
+        "server_name": "serv14.trevely.us.kg",
+        "insecure": true
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "339ecd0d-b713-40d4-acee-6532d9f3f1f2",
+      "server": "serv15.trevely.us.kg",
+      "server_port": 59350,
+      "tag": "FREE_Ser151",
+      "tls": {
+        "enabled": true,
+        "server_name": "serv15.trevely.us.kg",
+        "insecure": true
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "f1243102-9c1e-4bf8-b3d6-abf773f49154",
+      "server": "serv15.trevely.us.kg",
+      "server_port": 59355,
+      "tag": "FREE_Ser152",
+      "tls": {
+        "enabled": true,
+        "server_name": "serv15.trevely.us.kg",
+        "insecure": true
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "fbf891bc-a94a-447d-8417-c637ca11c361",
+      "server": "serv16.trevely.us.kg",
+      "server_port": 59350,
+      "tag": "FREE_Serv16",
+      "tls": {
+        "enabled": true,
+        "server_name": "serv16.trevely.us.kg",
+        "insecure": true
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "Trevely",
+      "server": "duke.ns.cloudflare.com",
+      "server_port": 443,
+      "tag": "FREE_FR",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojanfr.trevely.us.kg",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "trojanfr.trevely.us.kg"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "Trevely",
+      "server": "fred.ns.cloudflare.com",
+      "server_port": 443,
+      "tag": "FREE_JP",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojanjp.trevely.us.kg",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "trojanjp.trevely.us.kg"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "Trevely",
+      "server": "hugh.ns.cloudflare.com",
+      "server_port": 443,
+      "tag": "FREE_KR",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojankr.trevely.us.kg",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "trojankr.trevely.us.kg"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "Trevely",
+      "server": "theo.ns.cloudflare.com",
+      "server_port": 443,
+      "tag": "FREE_US 01",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojanus01.trevely.us.kg",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "trojanus01.trevely.us.kg"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "Trevely",
+      "server": "lynn.ns.cloudflare.com",
+      "server_port": 443,
+      "tag": "FREE_US 02",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojanus02.trevely.us.kg",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "headers": {
+          "host": [
+            "trojanus02.trevely.us.kg"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "trojan"
+    },
+    {
+      "server": "0",
+      "tag": "【不是节点】流量统计 s10 ⇧306.44 MB ⇩7.00 GB",
+      "type": "vless",
+      "uuid": "00000000-0000-0000-0000-000000000000",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "0",
+      "tag": "【不是节点】流量统计 s10 ⇧306.46 MB ⇩7.00 GB",
+      "type": "vless",
+      "uuid": "00000000-0000-0000-0000-000000000000",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "0",
+      "tag": "【不是节点】流量统计 s16 ⇧509.71 MB ⇩59.64 GB",
+      "type": "vless",
+      "uuid": "00000000-0000-0000-0000-000000000000",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "0",
+      "tag": "【不是节点】流量统计 s10 ⇧306.47 MB ⇩7.00 GB",
+      "type": "vless",
+      "uuid": "00000000-0000-0000-0000-000000000000",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "0",
+      "tag": "【不是节点】流量统计 s16 ⇧0.00 B ⇩0.00 B",
+      "type": "vless",
+      "uuid": "00000000-0000-0000-0000-000000000000",
+      "packet_encoding": "xudp"
+    },
+    {
+      "tag": "select",
+      "type": "selector",
+      "default": "urltest",
+      "outbounds": [
+        "urltest",
+        "PL-s6-reality",
+        "PL-s6-vmess-ws",
+        "PL-s6-vmess-ws-tls-argo",
+        "PL-s6-vmess-ws-argo",
+        "PL-s6-hy2",
+        "PL-s7-reality",
+        "PL-s7-vmess-ws",
+        "PL-s7-vmess-ws-tls-argo",
+        "PL-s7-vmess-ws-argo",
+        "PL-s7-hy2",
+        "FR-s16-tuic",
+        "FR-s16-vmss",
+        "FR-s16-vmss-argo",
+        "FR-s16-hy2",
+        "FR-s16-vmess",
+        "FR-s16-vmess-argo",
+        "FR-s16-hysteria2",
+        "PL-s2-vmss",
+        "PL-s2-vmss-argo",
+        "PL-s2-hy2",
+        "PL-s2-tuic",
+        "s15",
+        "s15-warp",
+        "s16",
+        "s16-warp",
+        "s10",
+        "s10-warp",
+        "s11",
+        "s11-warp",
+        "s12",
+        "s12-warp",
+        "s13",
+        "s13-warp",
+        "s14",
+        "s14-warp",
+        "【不是节点】srveoo 点点，维护 by nano",
+        "【不是节点】( 2 种落地 ) https",
+        "【不是节点】( 4 种落地 ) https",
+        "【不是节点】流量统计 s10 ⇧306.41 MB ⇩7.00 GB",
+        "【不是节点】流量统计 s11 ⇧233.64 MB ⇩13.97 GB",
+        "【不是节点】流量统计 s12 ⇧25.92 MB ⇩2.14 GB",
+        "【不是节点】流量统计 s13 ⇧397.89 MB ⇩31.39 GB",
+        "【不是节点】流量统计 s14 ⇧120.37 MB ⇩2.33 GB",
+        "【不是节点】流量统计 s15 ⇧81.77 MB ⇩13.62 GB",
+        "【不是节点】流量统计 s16 ⇧509.70 MB ⇩59.64 GB",
+        "日本",
+        "美国",
+        "英国",
+        "香港",
+        "新加坡",
+        "韩国",
+        "台湾",
+        "FREE_Serv01",
+        "FREE_Serv05",
+        "FREE_Serv08",
+        "FREE_Serv09",
+        "FREE_Serv10",
+        "FREE_Serv11",
+        "FREE_Serv12",
+        "FREE_Serv13",
+        "FREE_Serv14",
+        "FREE_Ser151",
+        "FREE_Ser152",
+        "FREE_Serv16",
+        "FREE_FR",
+        "FREE_JP",
+        "FREE_KR",
+        "FREE_US 01",
+        "FREE_US 02",
+        "【不是节点】流量统计 s10 ⇧306.44 MB ⇩7.00 GB",
+        "【不是节点】流量统计 s10 ⇧306.46 MB ⇩7.00 GB",
+        "【不是节点】流量统计 s16 ⇧509.71 MB ⇩59.64 GB",
+        "【不是节点】流量统计 s10 ⇧306.47 MB ⇩7.00 GB",
+        "【不是节点】流量统计 s16 ⇧0.00 B ⇩0.00 B"
+      ]
+    },
+    {
+      "tag": "urltest",
+      "type": "urltest",
+      "outbounds": [
+        "PL-s6-reality",
+        "PL-s6-vmess-ws",
+        "PL-s6-vmess-ws-tls-argo",
+        "PL-s6-vmess-ws-argo",
+        "PL-s6-hy2",
+        "PL-s7-reality",
+        "PL-s7-vmess-ws",
+        "PL-s7-vmess-ws-tls-argo",
+        "PL-s7-vmess-ws-argo",
+        "PL-s7-hy2",
+        "FR-s16-tuic",
+        "FR-s16-vmss",
+        "FR-s16-vmss-argo",
+        "FR-s16-hy2",
+        "FR-s16-vmess",
+        "FR-s16-vmess-argo",
+        "FR-s16-hysteria2",
+        "PL-s2-vmss",
+        "PL-s2-vmss-argo",
+        "PL-s2-hy2",
+        "PL-s2-tuic",
+        "s15",
+        "s15-warp",
+        "s16",
+        "s16-warp",
+        "s10",
+        "s10-warp",
+        "s11",
+        "s11-warp",
+        "s12",
+        "s12-warp",
+        "s13",
+        "s13-warp",
+        "s14",
+        "s14-warp",
+        "【不是节点】srveoo 点点，维护 by nano",
+        "【不是节点】( 2 种落地 ) https",
+        "【不是节点】( 4 种落地 ) https",
+        "【不是节点】流量统计 s10 ⇧306.41 MB ⇩7.00 GB",
+        "【不是节点】流量统计 s11 ⇧233.64 MB ⇩13.97 GB",
+        "【不是节点】流量统计 s12 ⇧25.92 MB ⇩2.14 GB",
+        "【不是节点】流量统计 s13 ⇧397.89 MB ⇩31.39 GB",
+        "【不是节点】流量统计 s14 ⇧120.37 MB ⇩2.33 GB",
+        "【不是节点】流量统计 s15 ⇧81.77 MB ⇩13.62 GB",
+        "【不是节点】流量统计 s16 ⇧509.70 MB ⇩59.64 GB",
+        "日本",
+        "美国",
+        "英国",
+        "香港",
+        "新加坡",
+        "韩国",
+        "台湾",
+        "FREE_Serv01",
+        "FREE_Serv05",
+        "FREE_Serv08",
+        "FREE_Serv09",
+        "FREE_Serv10",
+        "FREE_Serv11",
+        "FREE_Serv12",
+        "FREE_Serv13",
+        "FREE_Serv14",
+        "FREE_Ser151",
+        "FREE_Ser152",
+        "FREE_Serv16",
+        "FREE_FR",
+        "FREE_JP",
+        "FREE_KR",
+        "FREE_US 01",
+        "FREE_US 02",
+        "【不是节点】流量统计 s10 ⇧306.44 MB ⇩7.00 GB",
+        "【不是节点】流量统计 s10 ⇧306.46 MB ⇩7.00 GB",
+        "【不是节点】流量统计 s16 ⇧509.71 MB ⇩59.64 GB",
+        "【不是节点】流量统计 s10 ⇧306.47 MB ⇩7.00 GB",
+        "【不是节点】流量统计 s16 ⇧0.00 B ⇩0.00 B"
+      ]
+    },
+    {
+      "tag": "chatgpt",
+      "type": "selector",
+      "outbounds": [
+        "PL-s6-reality",
+        "PL-s6-vmess-ws",
+        "PL-s6-vmess-ws-tls-argo",
+        "PL-s6-vmess-ws-argo",
+        "PL-s6-hy2",
+        "PL-s7-reality",
+        "PL-s7-vmess-ws",
+        "PL-s7-vmess-ws-tls-argo",
+        "PL-s7-vmess-ws-argo",
+        "PL-s7-hy2",
+        "FR-s16-tuic",
+        "FR-s16-vmss",
+        "FR-s16-vmss-argo",
+        "FR-s16-hy2",
+        "FR-s16-vmess",
+        "FR-s16-vmess-argo",
+        "FR-s16-hysteria2",
+        "PL-s2-vmss",
+        "PL-s2-vmss-argo",
+        "PL-s2-hy2",
+        "PL-s2-tuic",
+        "s15",
+        "s15-warp",
+        "s16",
+        "s16-warp",
+        "s10",
+        "s10-warp",
+        "s11",
+        "s11-warp",
+        "s12",
+        "s12-warp",
+        "s13",
+        "s13-warp",
+        "s14",
+        "s14-warp",
+        "【不是节点】srveoo 点点，维护 by nano",
+        "【不是节点】( 2 种落地 ) https",
+        "【不是节点】( 4 种落地 ) https",
+        "【不是节点】流量统计 s10 ⇧306.41 MB ⇩7.00 GB",
+        "【不是节点】流量统计 s11 ⇧233.64 MB ⇩13.97 GB",
+        "【不是节点】流量统计 s12 ⇧25.92 MB ⇩2.14 GB",
+        "【不是节点】流量统计 s13 ⇧397.89 MB ⇩31.39 GB",
+        "【不是节点】流量统计 s14 ⇧120.37 MB ⇩2.33 GB",
+        "【不是节点】流量统计 s15 ⇧81.77 MB ⇩13.62 GB",
+        "【不是节点】流量统计 s16 ⇧509.70 MB ⇩59.64 GB",
+        "日本",
+        "美国",
+        "英国",
+        "香港",
+        "新加坡",
+        "韩国",
+        "台湾",
+        "FREE_Serv01",
+        "FREE_Serv05",
+        "FREE_Serv08",
+        "FREE_Serv09",
+        "FREE_Serv10",
+        "FREE_Serv11",
+        "FREE_Serv12",
+        "FREE_Serv13",
+        "FREE_Serv14",
+        "FREE_Ser151",
+        "FREE_Ser152",
+        "FREE_Serv16",
+        "FREE_FR",
+        "FREE_JP",
+        "FREE_KR",
+        "FREE_US 01",
+        "FREE_US 02",
+        "【不是节点】流量统计 s10 ⇧306.44 MB ⇩7.00 GB",
+        "【不是节点】流量统计 s10 ⇧306.46 MB ⇩7.00 GB",
+        "【不是节点】流量统计 s16 ⇧509.71 MB ⇩59.64 GB",
+        "【不是节点】流量统计 s10 ⇧306.47 MB ⇩7.00 GB",
+        "【不是节点】流量统计 s16 ⇧0.00 B ⇩0.00 B"
+      ]
+    },
+    {
+      "tag": "direct",
+      "type": "direct"
+    }
+  ],
+  "route": {
+    "rules": [
+      {
+        "action": "sniff"
+      },
+      {
+        "protocol": "dns",
+        "action": "hijack-dns"
+      },
+      {
+        "action": "resolve",
+        "strategy": "prefer_ipv4"
+      },
+      {
+        "clash_mode": "Direct",
+        "outbound": "direct"
+      },
+      {
+        "clash_mode": "Global",
+        "outbound": "select"
+      },
+      {
+        "ip_is_private": true,
+        "outbound": "direct"
+      },
+      {
+        "package_name": "com.openai.chatgpt",
+        "outbound": "chatgpt"
+      },
+      {
+        "domain_suffix": [
+          "proactivebackend-pa.googleapis.com",
+          "bing.com",
+          "bing.net",
+          "bingapis.com"
+        ],
+        "outbound": "chatgpt"
+      },
+      {
+        "domain_keyword": [
+          "qq.com"
+        ],
+        "outbound": "direct"
+      },
+      {
+        "domain_suffix": [
+          "ushd.xmsl.org",
+          "cf.gtlx.org"
+        ],
+        "outbound": "direct"
+      },
+      {
+        "port": [
+          23301,
+          22101,
+          22102,
+          20501
+        ],
+        "outbound": "direct"
+      },
+      {
+        "rule_set": "geoip-cn",
+        "outbound": "direct"
+      }
+    ],
+    "rule_set": [
+      {
+        "type": "remote",
+        "tag": "geoip-cn",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/SagerNet/sing-geoip/rule-set/geoip-cn.srs",
+        "download_detour": "select"
+      },
+      {
+        "type": "remote",
+        "tag": "geosite-cn",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/xmdhs/sing-geosite/rule-set-Loyalsoldier/geosite-geolocation-cn.srs",
+        "download_detour": "select"
+      },
+      {
+        "type": "remote",
+        "tag": "AdGuardSDNSFilter",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/xmdhs/sing-box-ruleset/rule-set/AdGuardSDNSFilterSingBox.srs",
+        "download_detour": "select"
+      },
+      {
+        "type": "remote",
+        "tag": "chrome-doh",
+        "format": "source",
+        "url": "https://gist.githubusercontent.com/xmdhs/71fc5ff6ef29f5ecaf2c52b8de5c3172/raw/chrome-doh.json",
+        "download_detour": "select"
+      }
+    ],
+    "default_domain_resolver": "dns_direct",
+    "final": "select",
+    "auto_detect_interface": true
+  },
+  "experimental": {
+    "cache_file": {
+      "enabled": true
+    },
+    "clash_api": {
+      "external_controller": "127.0.0.1:9090"
+    }
+  }
+}
