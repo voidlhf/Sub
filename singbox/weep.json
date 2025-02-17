@@ -81,182 +81,52 @@
   ],
   "outbounds": [
     {
-      "server": "yueg2.tifa.pro",
-      "server_port": 53236,
-      "tag": "🇭🇰|2-16🫕@xkmfjd|香港|01",
-      "transport": {
-        "headers": {
-          "Host": [
-            "bn1.hk.tifa.pro"
-          ]
+      "server": "85.232.241.109",
+      "server_port": 50281,
+      "tag": "🇵🇱|2-17🍕@xkmfjd|波兰|01",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.visa.com.hk",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
         },
-        "path": "/windows10",
-        "type": "ws"
+        "reality": {
+          "enabled": true,
+          "public_key": "NW64mcELRyheUlhYuJMEVFgGZOgq4tU1Y2xbCt-piCU"
+        }
       },
-      "type": "vmess",
-      "alter_id": 2,
-      "security": "auto",
-      "uuid": "d8e6f12b-6582-3efa-88cc-992b13fee5aa"
+      "type": "vless",
+      "uuid": "862e90e1-2f26-4506-b8b9-0adf20da05fc",
+      "flow": "xtls-rprx-vision",
+      "packet_encoding": "xudp"
     },
     {
-      "password": "3FB23A19-9424-40C7-9139-3540228283FA",
-      "server": "hk.fastsoonlink.com",
-      "server_port": 40000,
-      "tag": "🇭🇰|2-16🫕@xkmfjd|香港|02",
-      "type": "shadowsocks",
-      "method": "chacha20-ietf-poly1305",
-      "network": "tcp"
-    },
-    {
-      "password": "amazonskr05",
-      "server": "43.202.60.105",
-      "server_port": 443,
-      "tag": "🇨🇳|2-16🫕@xkmfjd|台湾|01",
-      "type": "shadowsocks",
-      "method": "aes-256-cfb",
-      "network": "tcp"
-    },
-    {
-      "password": "amazonskr05",
-      "server": "43.202.60.105",
-      "server_port": 443,
-      "tag": "🇨🇳|2-16🫕@xkmfjd|台湾|02",
-      "type": "shadowsocks",
-      "method": "aes-256-cfb",
-      "network": "tcp"
-    },
-    {
-      "server": "hk3.lrzdx.uk",
-      "server_port": 23279,
-      "tag": "2-16🫕@xkmfjd|hk-free|01",
+      "server": "85.232.241.109",
+      "server_port": 50281,
+      "tag": "🇵🇱|2-17🍕@xkmfjd|波兰|02",
       "tls": {
         "enabled": true,
-        "server_name": "hk3.lrzdx.uk"
+        "server_name": "www.visa.com.hk",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "NW64mcELRyheUlhYuJMEVFgGZOgq4tU1Y2xbCt-piCU"
+        }
       },
-      "transport": {
-        "path": "/161a2ffc-2279-4f35-fa76-b75ae1fcfa54",
-        "type": "ws"
-      },
-      "type": "vmess",
-      "security": "auto",
-      "uuid": "161a2ffc-2279-4f35-fa76-b75ae1fcfa54"
-    },
-    {
-      "password": "91df716a-1592-4fdd-a376-26252f86e0c5",
-      "server": "gy1.mlshu.top",
-      "server_port": 30001,
-      "tag": "🇺🇸|2-16🫕@xkmfjd|美国|01",
-      "tls": {
-        "enabled": true,
-        "server_name": "gy1.mlshu.top",
-        "insecure": true
-      },
-      "type": "hysteria2"
-    },
-    {
-      "password": "amazonskr05",
-      "server": "34.216.193.190",
-      "server_port": 443,
-      "tag": "🇺🇸|2-16🫕@xkmfjd|美国|02",
-      "type": "shadowsocks",
-      "method": "aes-256-cfb",
-      "network": "tcp"
-    },
-    {
-      "password": "MyHy2+3313033",
-      "server": "rn.870710.xyz",
-      "server_port": 38788,
-      "tag": "🇺🇸|2-16🫕@xkmfjd|美国|03",
-      "tls": {
-        "enabled": true,
-        "server_name": "www.bing.com",
-        "insecure": true
-      },
-      "type": "hysteria2"
-    },
-    {
-      "password": "amazonskr05",
-      "server": "34.220.100.94",
-      "server_port": 443,
-      "tag": "🇺🇸|2-16🫕@xkmfjd|美国|04",
-      "type": "shadowsocks",
-      "method": "aes-256-cfb",
-      "network": "tcp"
-    },
-    {
-      "password": "amazonskr05",
-      "server": "34.220.100.94",
-      "server_port": 443,
-      "tag": "🇺🇸|2-16🫕@xkmfjd|美国|05",
-      "type": "shadowsocks",
-      "method": "aes-256-cfb",
-      "network": "tcp"
-    },
-    {
-      "password": "d839f04d-3879-46f5-82fa-feb8b4162f9f",
-      "server": "ae2.bethebest.eu.org",
-      "server_port": 30102,
-      "tag": "🇦🇪|2-16🫕@xkmfjd|阿联酋|01",
-      "tls": {
-        "enabled": true,
-        "server_name": "du.wish.ml",
-        "insecure": true
-      },
-      "type": "hysteria2"
-    },
-    {
-      "password": "fc10a4d6-f946-478f-a3db-57f73cdb0407",
-      "server": "serv05.trevely.us.kg",
-      "server_port": 59350,
-      "tag": "2-16🫕@xkmfjd|Hysteria2 serv05.trevely.us.kg:59350|01",
-      "tls": {
-        "enabled": true,
-        "server_name": "www.bing.com",
-        "insecure": true
-      },
-      "type": "hysteria2"
-    },
-    {
-      "password": "f7cf4765-5745-490b-8f8c-9f865901f971",
-      "server": "serv10.trevely.us.kg",
-      "server_port": 59350,
-      "tag": "2-16🫕@xkmfjd|Hysteria2 serv10.trevely.us.kg:59350|01",
-      "tls": {
-        "enabled": true,
-        "server_name": "www.bing.com",
-        "insecure": true
-      },
-      "type": "hysteria2"
-    },
-    {
-      "password": "f0ae7bec-c14c-4447-91e5-d636265092d4",
-      "server": "213.189.54.126",
-      "server_port": 31651,
-      "tag": "🇵🇱|2-16🫕@xkmfjd|波兰|01",
-      "tls": {
-        "enabled": true,
-        "server_name": "www.bing.com",
-        "insecure": true
-      },
-      "type": "hysteria2"
-    },
-    {
-      "password": "4a07ca91-69e2-4b48-a592-5308c7ff55ad",
-      "server": "128.204.218.63",
-      "server_port": 35942,
-      "tag": "🇵🇱|2-16🫕@xkmfjd|波兰|02",
-      "tls": {
-        "enabled": true,
-        "server_name": "www.bing.com",
-        "insecure": true
-      },
-      "type": "hysteria2"
+      "type": "vless",
+      "uuid": "862e90e1-2f26-4506-b8b9-0adf20da05fc",
+      "flow": "xtls-rprx-vision",
+      "packet_encoding": "xudp"
     },
     {
       "password": "862e90e1-2f26-4506-b8b9-0adf20da05fc",
       "server": "85.232.241.109",
       "server_port": 50280,
-      "tag": "🇵🇱|2-16🫕@xkmfjd|波兰|03",
+      "tag": "🇵🇱|2-17🍕@xkmfjd|波兰|03",
       "tls": {
         "enabled": true,
         "server_name": "www.bing.com",
@@ -265,28 +135,300 @@
       "type": "hysteria2"
     },
     {
-      "password": "be758973-186d-46fe-8aa4-e017134fa291",
-      "server": "31.186.87.211",
-      "server_port": 4029,
-      "tag": "🇵🇱|2-16🫕@xkmfjd|波兰|04",
+      "server": "icook.hk",
+      "server_port": 8443,
+      "tag": "🇵🇱|2-17🍕@xkmfjd|波兰|04",
       "tls": {
         "enabled": true,
-        "server_name": "www.bing.com",
+        "server_name": "argo.lamkan.eu.org"
+      },
+      "transport": {
+        "headers": {
+          "Host": [
+            "argo.lamkan.eu.org"
+          ]
+        },
+        "path": "/862e90e1-2f26-4506-b8b9-0adf20da05fc-vm",
+        "type": "ws"
+      },
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "862e90e1-2f26-4506-b8b9-0adf20da05fc"
+    },
+    {
+      "server": "40.233.88.228",
+      "server_port": 42557,
+      "tag": "2-17🍕@xkmfjd|1-arm-reality|01",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.yahoo.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "9pG_yCinyMylCDQVtADAZELH1vlb5PGz_MZw8dmYZxY",
+          "short_id": "3139a260"
+        }
+      },
+      "type": "vless",
+      "uuid": "2429bee3-e0c1-47dd-b420-75e6512b184b",
+      "flow": "xtls-rprx-vision",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "47.97.82.13",
+      "server_port": 11126,
+      "tag": "🇦🇱|2-17🍕@xkmfjd|阿尔巴尼亚|01",
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "d09cbc30-d3ac-4fd3-8de5-c5c10455fb40"
+    },
+    {
+      "server": "155.248.218.19",
+      "server_port": 59303,
+      "tag": "2-17🍕@xkmfjd|ca-加密-reality|01",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.yahoo.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "PCNS9OoyEiWCjEshEAq0nBb5rjaRwcxNJD6O6KV1dTY",
+          "short_id": "6f059416"
+        }
+      },
+      "type": "vless",
+      "uuid": "862e90e1-2f26-4506-b8b9-0adf20da05fc",
+      "flow": "xtls-rprx-vision",
+      "packet_encoding": "xudp"
+    },
+    {
+      "password": "2429bee3-e0c1-47dd-b420-75e6512b184b",
+      "server": "arm.lqiang.us.kg",
+      "server_port": 30300,
+      "tag": "2-17🍕@xkmfjd|armhy2|01",
+      "tls": {
+        "enabled": true,
+        "server_name": "arm.lqiang.us.kg",
         "insecure": true
       },
       "type": "hysteria2"
     },
     {
-      "password": "d839f04d-3879-46f5-82fa-feb8b4162f9f",
-      "server": "ca12.bethebest.eu.org",
-      "server_port": 30102,
-      "tag": "🇨🇦|2-16🫕@xkmfjd|加拿大|01",
+      "server": "40.233.88.228",
+      "server_port": 42557,
+      "tag": "2-17🍕@xkmfjd|2-arm-reality|01",
       "tls": {
         "enabled": true,
-        "server_name": "du.wish.ml",
-        "insecure": true
+        "server_name": "www.yahoo.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "9pG_yCinyMylCDQVtADAZELH1vlb5PGz_MZw8dmYZxY",
+          "short_id": "3139a260"
+        }
       },
-      "type": "hysteria2"
+      "type": "vless",
+      "uuid": "2429bee3-e0c1-47dd-b420-75e6512b184b",
+      "flow": "xtls-rprx-vision",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "212.50.248.219",
+      "server_port": 19037,
+      "tag": "2-17🍕@xkmfjd|1-|01",
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "83230feb-2da2-4af5-b405-1061c70e975b"
+    },
+    {
+      "server": "23.83.236.224",
+      "server_port": 19037,
+      "tag": "2-17🍕@xkmfjd|2-|01",
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "83230feb-2da2-4af5-b405-1061c70e975b"
+    },
+    {
+      "password": "XCM7KLQzD26ge5jJ",
+      "server": "97.64.22.58",
+      "server_port": 19037,
+      "tag": "2-17🍕@xkmfjd|1-undefined|01",
+      "type": "shadowsocks",
+      "method": "aes-256-gcm",
+      "network": "tcp"
+    },
+    {
+      "password": "XCM7KLQzD26ge5jJ",
+      "server": "199.115.228.15",
+      "server_port": 19037,
+      "tag": "2-17🍕@xkmfjd|2-undefined|01",
+      "type": "shadowsocks",
+      "method": "aes-256-gcm",
+      "network": "tcp"
+    },
+    {
+      "server": "198.181.42.202",
+      "server_port": 19037,
+      "tag": "2-17🍕@xkmfjd|3-|01",
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "83230feb-2da2-4af5-b405-1061c70e975b"
+    },
+    {
+      "server": "162.248.73.168",
+      "server_port": 19037,
+      "tag": "2-17🍕@xkmfjd|4-|01",
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "83230feb-2da2-4af5-b405-1061c70e975b"
+    },
+    {
+      "password": "RXAFZIPxwa97u0QU",
+      "server": "iepl.ultra.7553.0tk8a3a1q4t94dler.com",
+      "server_port": 20639,
+      "tag": "🇭🇰|2-17🍕@xkmfjd|香港|01",
+      "type": "shadowsocks",
+      "method": "aes-256-gcm",
+      "network": "tcp"
+    },
+    {
+      "password": "RXAFZIPxwa97u0QU",
+      "server": "hk-1.ac.0tk8a3a1q4t94dler.com",
+      "server_port": 20639,
+      "tag": "🇭🇰|2-17🍕@xkmfjd|香港|02",
+      "type": "shadowsocks",
+      "method": "aes-256-gcm",
+      "network": "tcp"
+    },
+    {
+      "password": "RXAFZIPxwa97u0QU",
+      "server": "hk-4.ac.0tk8a3a1q4t94dler.com",
+      "server_port": 20639,
+      "tag": "🇭🇰|2-17🍕@xkmfjd|香港|03",
+      "type": "shadowsocks",
+      "method": "aes-256-gcm",
+      "network": "tcp"
+    },
+    {
+      "password": "RXAFZIPxwa97u0QU",
+      "server": "iepl.ultra.1634.0tk8a3a1q4t94dler.com",
+      "server_port": 20639,
+      "tag": "🇭🇰|2-17🍕@xkmfjd|香港|04",
+      "type": "shadowsocks",
+      "method": "aes-256-gcm",
+      "network": "tcp"
+    },
+    {
+      "password": "RXAFZIPxwa97u0QU",
+      "server": "ha.hk.2.0tk8a3a1q4t94dler.com",
+      "server_port": 20639,
+      "tag": "🇭🇰|2-17🍕@xkmfjd|香港|05",
+      "type": "shadowsocks",
+      "method": "aes-256-gcm",
+      "network": "tcp"
+    },
+    {
+      "password": "RXAFZIPxwa97u0QU",
+      "server": "hk-2.ac.0tk8a3a1q4t94dler.com",
+      "server_port": 20639,
+      "tag": "🇭🇰|2-17🍕@xkmfjd|香港|06",
+      "type": "shadowsocks",
+      "method": "aes-256-gcm",
+      "network": "tcp"
+    },
+    {
+      "password": "RXAFZIPxwa97u0QU",
+      "server": "hk-3.ac.0tk8a3a1q4t94dler.com",
+      "server_port": 20639,
+      "tag": "🇭🇰|2-17🍕@xkmfjd|香港|07",
+      "type": "shadowsocks",
+      "method": "aes-256-gcm",
+      "network": "tcp"
+    },
+    {
+      "password": "RXAFZIPxwa97u0QU",
+      "server": "ha.hk.1.0tk8a3a1q4t94dler.com",
+      "server_port": 20639,
+      "tag": "🇭🇰|2-17🍕@xkmfjd|香港|08",
+      "type": "shadowsocks",
+      "method": "aes-256-gcm",
+      "network": "tcp"
+    },
+    {
+      "password": "7d858e5a-664e-419f-b6a1-c3bceb8ac208",
+      "server": "aafrtpfxr.hkl01i9zjfegelp.5xfsur8v62.gosdk.xyz",
+      "server_port": 27101,
+      "tag": "🇭🇰|2-17🍕@xkmfjd|香港|09",
+      "tls": {
+        "enabled": true,
+        "server_name": "q08m.vgraxiw73s.hasyaf.cn"
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "VXPipi29nxMO",
+      "server": "pop.air.6432.0tk8a3a1q4t94dler.com",
+      "server_port": 1052,
+      "tag": "🇭🇰|2-17🍕@xkmfjd|香港|10",
+      "type": "shadowsocks",
+      "method": "aes-128-gcm",
+      "network": "tcp",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=b77318c3a134263011dd0e47c5ed357c70987.taobao.com"
+    },
+    {
+      "password": "RXAFZIPxwa97u0QU",
+      "server": "iepl.pro.7353.0tk8a3a1q4t94dler.com",
+      "server_port": 20639,
+      "tag": "🇭🇰|2-17🍕@xkmfjd|香港|11",
+      "type": "shadowsocks",
+      "method": "aes-256-gcm",
+      "network": "tcp"
+    },
+    {
+      "password": "RXAFZIPxwa97u0QU",
+      "server": "iepl.ultra.7683.0tk8a3a1q4t94dler.com",
+      "server_port": 20639,
+      "tag": "🇨🇳|2-17🍕@xkmfjd|台湾|01",
+      "type": "shadowsocks",
+      "method": "aes-256-gcm",
+      "network": "tcp"
+    },
+    {
+      "password": "RXAFZIPxwa97u0QU",
+      "server": "tw-1.ac.0tk8a3a1q4t94dler.com",
+      "server_port": 20639,
+      "tag": "🇨🇳|2-17🍕@xkmfjd|台湾|02",
+      "type": "shadowsocks",
+      "method": "aes-256-gcm",
+      "network": "tcp"
+    },
+    {
+      "password": "RXAFZIPxwa97u0QU",
+      "server": "iepl.ultra.6981.0tk8a3a1q4t94dler.com",
+      "server_port": 20639,
+      "tag": "🇸🇬|2-17🍕@xkmfjd|新加坡|01",
+      "type": "shadowsocks",
+      "method": "aes-256-gcm",
+      "network": "tcp"
+    },
+    {
+      "password": "RXAFZIPxwa97u0QU",
+      "server": "sg-1.ac.0tk8a3a1q4t94dler.com",
+      "server_port": 20639,
+      "tag": "🇸🇬|2-17🍕@xkmfjd|新加坡|02",
+      "type": "shadowsocks",
+      "method": "aes-256-gcm",
+      "network": "tcp"
     },
     {
       "tag": "select",
@@ -294,72 +436,108 @@
       "default": "urltest",
       "outbounds": [
         "urltest",
-        "🇭🇰|2-16🫕@xkmfjd|香港|01",
-        "🇭🇰|2-16🫕@xkmfjd|香港|02",
-        "🇨🇳|2-16🫕@xkmfjd|台湾|01",
-        "🇨🇳|2-16🫕@xkmfjd|台湾|02",
-        "2-16🫕@xkmfjd|hk-free|01",
-        "🇺🇸|2-16🫕@xkmfjd|美国|01",
-        "🇺🇸|2-16🫕@xkmfjd|美国|02",
-        "🇺🇸|2-16🫕@xkmfjd|美国|03",
-        "🇺🇸|2-16🫕@xkmfjd|美国|04",
-        "🇺🇸|2-16🫕@xkmfjd|美国|05",
-        "🇦🇪|2-16🫕@xkmfjd|阿联酋|01",
-        "2-16🫕@xkmfjd|Hysteria2 serv05.trevely.us.kg:59350|01",
-        "2-16🫕@xkmfjd|Hysteria2 serv10.trevely.us.kg:59350|01",
-        "🇵🇱|2-16🫕@xkmfjd|波兰|01",
-        "🇵🇱|2-16🫕@xkmfjd|波兰|02",
-        "🇵🇱|2-16🫕@xkmfjd|波兰|03",
-        "🇵🇱|2-16🫕@xkmfjd|波兰|04",
-        "🇨🇦|2-16🫕@xkmfjd|加拿大|01"
+        "🇵🇱|2-17🍕@xkmfjd|波兰|01",
+        "🇵🇱|2-17🍕@xkmfjd|波兰|02",
+        "🇵🇱|2-17🍕@xkmfjd|波兰|03",
+        "🇵🇱|2-17🍕@xkmfjd|波兰|04",
+        "2-17🍕@xkmfjd|1-arm-reality|01",
+        "🇦🇱|2-17🍕@xkmfjd|阿尔巴尼亚|01",
+        "2-17🍕@xkmfjd|ca-加密-reality|01",
+        "2-17🍕@xkmfjd|armhy2|01",
+        "2-17🍕@xkmfjd|2-arm-reality|01",
+        "2-17🍕@xkmfjd|1-|01",
+        "2-17🍕@xkmfjd|2-|01",
+        "2-17🍕@xkmfjd|1-undefined|01",
+        "2-17🍕@xkmfjd|2-undefined|01",
+        "2-17🍕@xkmfjd|3-|01",
+        "2-17🍕@xkmfjd|4-|01",
+        "🇭🇰|2-17🍕@xkmfjd|香港|01",
+        "🇭🇰|2-17🍕@xkmfjd|香港|02",
+        "🇭🇰|2-17🍕@xkmfjd|香港|03",
+        "🇭🇰|2-17🍕@xkmfjd|香港|04",
+        "🇭🇰|2-17🍕@xkmfjd|香港|05",
+        "🇭🇰|2-17🍕@xkmfjd|香港|06",
+        "🇭🇰|2-17🍕@xkmfjd|香港|07",
+        "🇭🇰|2-17🍕@xkmfjd|香港|08",
+        "🇭🇰|2-17🍕@xkmfjd|香港|09",
+        "🇭🇰|2-17🍕@xkmfjd|香港|10",
+        "🇭🇰|2-17🍕@xkmfjd|香港|11",
+        "🇨🇳|2-17🍕@xkmfjd|台湾|01",
+        "🇨🇳|2-17🍕@xkmfjd|台湾|02",
+        "🇸🇬|2-17🍕@xkmfjd|新加坡|01",
+        "🇸🇬|2-17🍕@xkmfjd|新加坡|02"
       ]
     },
     {
       "tag": "urltest",
       "type": "urltest",
       "outbounds": [
-        "🇭🇰|2-16🫕@xkmfjd|香港|01",
-        "🇭🇰|2-16🫕@xkmfjd|香港|02",
-        "🇨🇳|2-16🫕@xkmfjd|台湾|01",
-        "🇨🇳|2-16🫕@xkmfjd|台湾|02",
-        "2-16🫕@xkmfjd|hk-free|01",
-        "🇺🇸|2-16🫕@xkmfjd|美国|01",
-        "🇺🇸|2-16🫕@xkmfjd|美国|02",
-        "🇺🇸|2-16🫕@xkmfjd|美国|03",
-        "🇺🇸|2-16🫕@xkmfjd|美国|04",
-        "🇺🇸|2-16🫕@xkmfjd|美国|05",
-        "🇦🇪|2-16🫕@xkmfjd|阿联酋|01",
-        "2-16🫕@xkmfjd|Hysteria2 serv05.trevely.us.kg:59350|01",
-        "2-16🫕@xkmfjd|Hysteria2 serv10.trevely.us.kg:59350|01",
-        "🇵🇱|2-16🫕@xkmfjd|波兰|01",
-        "🇵🇱|2-16🫕@xkmfjd|波兰|02",
-        "🇵🇱|2-16🫕@xkmfjd|波兰|03",
-        "🇵🇱|2-16🫕@xkmfjd|波兰|04",
-        "🇨🇦|2-16🫕@xkmfjd|加拿大|01"
+        "🇵🇱|2-17🍕@xkmfjd|波兰|01",
+        "🇵🇱|2-17🍕@xkmfjd|波兰|02",
+        "🇵🇱|2-17🍕@xkmfjd|波兰|03",
+        "🇵🇱|2-17🍕@xkmfjd|波兰|04",
+        "2-17🍕@xkmfjd|1-arm-reality|01",
+        "🇦🇱|2-17🍕@xkmfjd|阿尔巴尼亚|01",
+        "2-17🍕@xkmfjd|ca-加密-reality|01",
+        "2-17🍕@xkmfjd|armhy2|01",
+        "2-17🍕@xkmfjd|2-arm-reality|01",
+        "2-17🍕@xkmfjd|1-|01",
+        "2-17🍕@xkmfjd|2-|01",
+        "2-17🍕@xkmfjd|1-undefined|01",
+        "2-17🍕@xkmfjd|2-undefined|01",
+        "2-17🍕@xkmfjd|3-|01",
+        "2-17🍕@xkmfjd|4-|01",
+        "🇭🇰|2-17🍕@xkmfjd|香港|01",
+        "🇭🇰|2-17🍕@xkmfjd|香港|02",
+        "🇭🇰|2-17🍕@xkmfjd|香港|03",
+        "🇭🇰|2-17🍕@xkmfjd|香港|04",
+        "🇭🇰|2-17🍕@xkmfjd|香港|05",
+        "🇭🇰|2-17🍕@xkmfjd|香港|06",
+        "🇭🇰|2-17🍕@xkmfjd|香港|07",
+        "🇭🇰|2-17🍕@xkmfjd|香港|08",
+        "🇭🇰|2-17🍕@xkmfjd|香港|09",
+        "🇭🇰|2-17🍕@xkmfjd|香港|10",
+        "🇭🇰|2-17🍕@xkmfjd|香港|11",
+        "🇨🇳|2-17🍕@xkmfjd|台湾|01",
+        "🇨🇳|2-17🍕@xkmfjd|台湾|02",
+        "🇸🇬|2-17🍕@xkmfjd|新加坡|01",
+        "🇸🇬|2-17🍕@xkmfjd|新加坡|02"
       ]
     },
     {
       "tag": "chatgpt",
       "type": "selector",
       "outbounds": [
-        "🇭🇰|2-16🫕@xkmfjd|香港|01",
-        "🇭🇰|2-16🫕@xkmfjd|香港|02",
-        "🇨🇳|2-16🫕@xkmfjd|台湾|01",
-        "🇨🇳|2-16🫕@xkmfjd|台湾|02",
-        "2-16🫕@xkmfjd|hk-free|01",
-        "🇺🇸|2-16🫕@xkmfjd|美国|01",
-        "🇺🇸|2-16🫕@xkmfjd|美国|02",
-        "🇺🇸|2-16🫕@xkmfjd|美国|03",
-        "🇺🇸|2-16🫕@xkmfjd|美国|04",
-        "🇺🇸|2-16🫕@xkmfjd|美国|05",
-        "🇦🇪|2-16🫕@xkmfjd|阿联酋|01",
-        "2-16🫕@xkmfjd|Hysteria2 serv05.trevely.us.kg:59350|01",
-        "2-16🫕@xkmfjd|Hysteria2 serv10.trevely.us.kg:59350|01",
-        "🇵🇱|2-16🫕@xkmfjd|波兰|01",
-        "🇵🇱|2-16🫕@xkmfjd|波兰|02",
-        "🇵🇱|2-16🫕@xkmfjd|波兰|03",
-        "🇵🇱|2-16🫕@xkmfjd|波兰|04",
-        "🇨🇦|2-16🫕@xkmfjd|加拿大|01"
+        "🇵🇱|2-17🍕@xkmfjd|波兰|01",
+        "🇵🇱|2-17🍕@xkmfjd|波兰|02",
+        "🇵🇱|2-17🍕@xkmfjd|波兰|03",
+        "🇵🇱|2-17🍕@xkmfjd|波兰|04",
+        "2-17🍕@xkmfjd|1-arm-reality|01",
+        "🇦🇱|2-17🍕@xkmfjd|阿尔巴尼亚|01",
+        "2-17🍕@xkmfjd|ca-加密-reality|01",
+        "2-17🍕@xkmfjd|armhy2|01",
+        "2-17🍕@xkmfjd|2-arm-reality|01",
+        "2-17🍕@xkmfjd|1-|01",
+        "2-17🍕@xkmfjd|2-|01",
+        "2-17🍕@xkmfjd|1-undefined|01",
+        "2-17🍕@xkmfjd|2-undefined|01",
+        "2-17🍕@xkmfjd|3-|01",
+        "2-17🍕@xkmfjd|4-|01",
+        "🇭🇰|2-17🍕@xkmfjd|香港|01",
+        "🇭🇰|2-17🍕@xkmfjd|香港|02",
+        "🇭🇰|2-17🍕@xkmfjd|香港|03",
+        "🇭🇰|2-17🍕@xkmfjd|香港|04",
+        "🇭🇰|2-17🍕@xkmfjd|香港|05",
+        "🇭🇰|2-17🍕@xkmfjd|香港|06",
+        "🇭🇰|2-17🍕@xkmfjd|香港|07",
+        "🇭🇰|2-17🍕@xkmfjd|香港|08",
+        "🇭🇰|2-17🍕@xkmfjd|香港|09",
+        "🇭🇰|2-17🍕@xkmfjd|香港|10",
+        "🇭🇰|2-17🍕@xkmfjd|香港|11",
+        "🇨🇳|2-17🍕@xkmfjd|台湾|01",
+        "🇨🇳|2-17🍕@xkmfjd|台湾|02",
+        "🇸🇬|2-17🍕@xkmfjd|新加坡|01",
+        "🇸🇬|2-17🍕@xkmfjd|新加坡|02"
       ]
     },
     {
