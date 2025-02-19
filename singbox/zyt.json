@@ -81,58 +81,36 @@
   ],
   "outbounds": [
     {
-      "flow": "",
-      "packet_encoding": "xudp",
-      "server": "r318.zongyunti.site",
-      "server_port": 35590,
-      "tag": "[vless]剩余流量：470.58 GB",
-      "tls": {
-        "enabled": true,
-        "insecure": true,
-        "server_name": "min.zongyunti.site",
-        "utls": {
-          "enabled": true,
-          "fingerprint": "firefox"
-        }
-      },
-      "type": "vless",
-      "uuid": "7183ecdc-b8ea-4f9e-8620-103f2321104b"
+      "method": "chacha20-ietf-poly1305",
+      "password": "7183ecdc-b8ea-4f9e-8620-103f2321104b",
+      "server": "1.1.1.1",
+      "server_port": 443,
+      "tag": "[ss]剩余流量：470.58 GB",
+      "type": "shadowsocks"
     },
     {
-      "flow": "",
-      "packet_encoding": "xudp",
-      "server": "r318.zongyunti.site",
-      "server_port": 35590,
-      "tag": "[vless]距离下次重置剩余：9 天",
-      "tls": {
-        "enabled": true,
-        "insecure": true,
-        "server_name": "min.zongyunti.site",
-        "utls": {
-          "enabled": true,
-          "fingerprint": "qq"
-        }
-      },
-      "type": "vless",
-      "uuid": "7183ecdc-b8ea-4f9e-8620-103f2321104b"
+      "method": "chacha20-ietf-poly1305",
+      "password": "7183ecdc-b8ea-4f9e-8620-103f2321104b",
+      "server": "1.1.1.1",
+      "server_port": 443,
+      "tag": "[ss]距离下次重置剩余：9 天",
+      "type": "shadowsocks"
     },
     {
-      "flow": "",
-      "packet_encoding": "xudp",
-      "server": "r318.zongyunti.site",
-      "server_port": 35590,
-      "tag": "[vless]套餐到期：2036-07-12",
-      "tls": {
-        "enabled": true,
-        "insecure": true,
-        "server_name": "min.zongyunti.site",
-        "utls": {
-          "enabled": true,
-          "fingerprint": "safari"
-        }
-      },
-      "type": "vless",
-      "uuid": "7183ecdc-b8ea-4f9e-8620-103f2321104b"
+      "method": "chacha20-ietf-poly1305",
+      "password": "7183ecdc-b8ea-4f9e-8620-103f2321104b",
+      "server": "1.1.1.1",
+      "server_port": 443,
+      "tag": "[ss]套餐到期：2036-07-12",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "chacha20-ietf-poly1305",
+      "password": "7183ecdc-b8ea-4f9e-8620-103f2321104b",
+      "server": "1.1.1.1",
+      "server_port": 443,
+      "tag": "[ss]官网zongyunti.site 注册就有永久套餐",
+      "type": "shadowsocks"
     },
     {
       "flow": "",
@@ -146,7 +124,7 @@
         "server_name": "min.zongyunti.site",
         "utls": {
           "enabled": true,
-          "fingerprint": "qq"
+          "fingerprint": "edge"
         }
       },
       "type": "vless",
@@ -164,7 +142,7 @@
         "server_name": "min.zongyunti.site",
         "utls": {
           "enabled": true,
-          "fingerprint": "firefox"
+          "fingerprint": "safari"
         }
       },
       "type": "vless",
@@ -182,7 +160,7 @@
         "server_name": "min.zongyunti.site",
         "utls": {
           "enabled": true,
-          "fingerprint": "edge"
+          "fingerprint": "ios"
         }
       },
       "type": "vless",
@@ -200,7 +178,7 @@
         "server_name": "min.zongyunti.site",
         "utls": {
           "enabled": true,
-          "fingerprint": "safari"
+          "fingerprint": "qq"
         }
       },
       "type": "vless",
@@ -436,9 +414,10 @@
       "default": "urltest",
       "outbounds": [
         "urltest",
-        "[vless]剩余流量：470.58 GB",
-        "[vless]距离下次重置剩余：9 天",
-        "[vless]套餐到期：2036-07-12",
+        "[ss]剩余流量：470.58 GB",
+        "[ss]距离下次重置剩余：9 天",
+        "[ss]套餐到期：2036-07-12",
+        "[ss]官网zongyunti.site 注册就有永久套餐",
         "[vless]台湾01",
         "[vless]香港01",
         "[vless]香港02",
@@ -465,9 +444,10 @@
       "tag": "urltest",
       "type": "urltest",
       "outbounds": [
-        "[vless]剩余流量：470.58 GB",
-        "[vless]距离下次重置剩余：9 天",
-        "[vless]套餐到期：2036-07-12",
+        "[ss]剩余流量：470.58 GB",
+        "[ss]距离下次重置剩余：9 天",
+        "[ss]套餐到期：2036-07-12",
+        "[ss]官网zongyunti.site 注册就有永久套餐",
         "[vless]台湾01",
         "[vless]香港01",
         "[vless]香港02",
@@ -494,9 +474,10 @@
       "tag": "chatgpt",
       "type": "selector",
       "outbounds": [
-        "[vless]剩余流量：470.58 GB",
-        "[vless]距离下次重置剩余：9 天",
-        "[vless]套餐到期：2036-07-12",
+        "[ss]剩余流量：470.58 GB",
+        "[ss]距离下次重置剩余：9 天",
+        "[ss]套餐到期：2036-07-12",
+        "[ss]官网zongyunti.site 注册就有永久套餐",
         "[vless]台湾01",
         "[vless]香港01",
         "[vless]香港02",
