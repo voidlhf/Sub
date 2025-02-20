@@ -85,7 +85,7 @@
       "password": "7183ecdc-b8ea-4f9e-8620-103f2321104b",
       "server": "1.1.1.1",
       "server_port": 443,
-      "tag": "[ss]剩余流量：466.86 GB",
+      "tag": "[ss]剩余流量：466.82 GB",
       "type": "shadowsocks"
     },
     {
@@ -124,7 +124,7 @@
         "server_name": "min.zongyunti.site",
         "utls": {
           "enabled": true,
-          "fingerprint": "qq"
+          "fingerprint": "edge"
         }
       },
       "type": "vless",
@@ -142,7 +142,7 @@
         "server_name": "min.zongyunti.site",
         "utls": {
           "enabled": true,
-          "fingerprint": "safari"
+          "fingerprint": "edge"
         }
       },
       "type": "vless",
@@ -160,7 +160,7 @@
         "server_name": "min.zongyunti.site",
         "utls": {
           "enabled": true,
-          "fingerprint": "safari"
+          "fingerprint": "edge"
         }
       },
       "type": "vless",
@@ -178,7 +178,7 @@
         "server_name": "min.zongyunti.site",
         "utls": {
           "enabled": true,
-          "fingerprint": "ios"
+          "fingerprint": "edge"
         }
       },
       "type": "vless",
@@ -409,12 +409,26 @@
       "up_mbps": 300
     },
     {
+      "down_mbps": 300,
+      "password": "7183ecdc-b8ea-4f9e-8620-103f2321104b",
+      "server": "r333.zongyunti.site",
+      "server_port": 29118,
+      "tag": "[Hy2]日本03",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "min.zongyunti.site"
+      },
+      "type": "hysteria2",
+      "up_mbps": 300
+    },
+    {
       "tag": "select",
       "type": "selector",
       "default": "urltest",
       "outbounds": [
         "urltest",
-        "[ss]剩余流量：466.86 GB",
+        "[ss]剩余流量：466.82 GB",
         "[ss]距离下次重置剩余：8 天",
         "[ss]套餐到期：2036-07-12",
         "[ss]官网zongyunti.site 注册就有永久套餐",
@@ -437,14 +451,15 @@
         "[Hy2]新加坡03",
         "[Hy2]新加坡04",
         "[Hy2]日本01",
-        "[Hy2]日本02"
+        "[Hy2]日本02",
+        "[Hy2]日本03"
       ]
     },
     {
       "tag": "urltest",
       "type": "urltest",
       "outbounds": [
-        "[ss]剩余流量：466.86 GB",
+        "[ss]剩余流量：466.82 GB",
         "[ss]距离下次重置剩余：8 天",
         "[ss]套餐到期：2036-07-12",
         "[ss]官网zongyunti.site 注册就有永久套餐",
@@ -467,14 +482,15 @@
         "[Hy2]新加坡03",
         "[Hy2]新加坡04",
         "[Hy2]日本01",
-        "[Hy2]日本02"
+        "[Hy2]日本02",
+        "[Hy2]日本03"
       ]
     },
     {
       "tag": "chatgpt",
       "type": "selector",
       "outbounds": [
-        "[ss]剩余流量：466.86 GB",
+        "[ss]剩余流量：466.82 GB",
         "[ss]距离下次重置剩余：8 天",
         "[ss]套餐到期：2036-07-12",
         "[ss]官网zongyunti.site 注册就有永久套餐",
@@ -497,7 +513,8 @@
         "[Hy2]新加坡03",
         "[Hy2]新加坡04",
         "[Hy2]日本01",
-        "[Hy2]日本02"
+        "[Hy2]日本02",
+        "[Hy2]日本03"
       ]
     },
     {

@@ -17,7 +17,7 @@ hosts:
   alt7-mtalk.google.com: "173.194.219.188"
   alt8-mtalk.google.com: "142.250.112.188"
 proxies:
-- {name: "[ss]剩余流量：466.86 GB", type: "ss", server: "1.1.1.1", port: 443, cipher: "chacha20-ietf-poly1305", password: "7183ecdc-b8ea-4f9e-8620-103f2321104b", udp: true}
+- {name: "[ss]剩余流量：466.82 GB", type: "ss", server: "1.1.1.1", port: 443, cipher: "chacha20-ietf-poly1305", password: "7183ecdc-b8ea-4f9e-8620-103f2321104b", udp: true}
 - {name: "[ss]距离下次重置剩余：8 天", type: "ss", server: "1.1.1.1", port: 443, cipher: "chacha20-ietf-poly1305", password: "7183ecdc-b8ea-4f9e-8620-103f2321104b", udp: true}
 - {name: "[ss]套餐到期：2036-07-12", type: "ss", server: "1.1.1.1", port: 443, cipher: "chacha20-ietf-poly1305", password: "7183ecdc-b8ea-4f9e-8620-103f2321104b", udp: true}
 - {name: "[ss]官网zongyunti.site 注册就有永久套餐", type: "ss", server: "1.1.1.1", port: 443, cipher: "chacha20-ietf-poly1305", password: "7183ecdc-b8ea-4f9e-8620-103f2321104b", udp: true}
@@ -41,13 +41,14 @@ proxies:
 - {name: "[Hy2]新加坡04", server: "r321.zongyunti.site", port: 29118, sni: "min.zongyunti.site", up: 300, down: 300, skip-cert-verify: true, type: "hysteria2", password: "7183ecdc-b8ea-4f9e-8620-103f2321104b"}
 - {name: "[Hy2]日本01", server: "r323.zongyunti.site", port: 29120, sni: "min.zongyunti.site", up: 300, down: 300, skip-cert-verify: true, type: "hysteria2", password: "7183ecdc-b8ea-4f9e-8620-103f2321104b"}
 - {name: "[Hy2]日本02", server: "r323.zongyunti.site", port: 29121, sni: "min.zongyunti.site", up: 300, down: 300, skip-cert-verify: true, type: "hysteria2", password: "7183ecdc-b8ea-4f9e-8620-103f2321104b"}
+- {name: "[Hy2]日本03", server: "r333.zongyunti.site", port: 29118, sni: "min.zongyunti.site", up: 300, down: 300, skip-cert-verify: true, type: "hysteria2", password: "7183ecdc-b8ea-4f9e-8620-103f2321104b"}
 proxy-groups:
 - name: "🚀 节点选择"
   type: "select"
   proxies:
   - "♻️ 自动选择"
   - "DIRECT"
-  - "[ss]剩余流量：466.86 GB"
+  - "[ss]剩余流量：466.82 GB"
   - "[ss]距离下次重置剩余：8 天"
   - "[ss]套餐到期：2036-07-12"
   - "[ss]官网zongyunti.site 注册就有永久套餐"
@@ -71,13 +72,14 @@ proxy-groups:
   - "[Hy2]新加坡04"
   - "[Hy2]日本01"
   - "[Hy2]日本02"
+  - "[Hy2]日本03"
 - name: "♻️ 自动选择"
   type: "url-test"
   url: "http://www.gstatic.com/generate_204"
   interval: 300
   tolerance: 50
   proxies:
-  - "[ss]剩余流量：466.86 GB"
+  - "[ss]剩余流量：466.82 GB"
   - "[ss]距离下次重置剩余：8 天"
   - "[ss]套餐到期：2036-07-12"
   - "[ss]官网zongyunti.site 注册就有永久套餐"
@@ -101,13 +103,14 @@ proxy-groups:
   - "[Hy2]新加坡04"
   - "[Hy2]日本01"
   - "[Hy2]日本02"
+  - "[Hy2]日本03"
 - name: "🌍 国外媒体"
   type: "select"
   proxies:
   - "🚀 节点选择"
   - "♻️ 自动选择"
   - "🎯 全球直连"
-  - "[ss]剩余流量：466.86 GB"
+  - "[ss]剩余流量：466.82 GB"
   - "[ss]距离下次重置剩余：8 天"
   - "[ss]套餐到期：2036-07-12"
   - "[ss]官网zongyunti.site 注册就有永久套餐"
@@ -131,12 +134,13 @@ proxy-groups:
   - "[Hy2]新加坡04"
   - "[Hy2]日本01"
   - "[Hy2]日本02"
+  - "[Hy2]日本03"
 - name: "📲 电报信息"
   type: "select"
   proxies:
   - "🚀 节点选择"
   - "🎯 全球直连"
-  - "[ss]剩余流量：466.86 GB"
+  - "[ss]剩余流量：466.82 GB"
   - "[ss]距离下次重置剩余：8 天"
   - "[ss]套餐到期：2036-07-12"
   - "[ss]官网zongyunti.site 注册就有永久套餐"
@@ -160,12 +164,13 @@ proxy-groups:
   - "[Hy2]新加坡04"
   - "[Hy2]日本01"
   - "[Hy2]日本02"
+  - "[Hy2]日本03"
 - name: "Ⓜ️ 微软服务"
   type: "select"
   proxies:
   - "🚀 节点选择"
   - "🎯 全球直连"
-  - "[ss]剩余流量：466.86 GB"
+  - "[ss]剩余流量：466.82 GB"
   - "[ss]距离下次重置剩余：8 天"
   - "[ss]套餐到期：2036-07-12"
   - "[ss]官网zongyunti.site 注册就有永久套餐"
@@ -189,12 +194,13 @@ proxy-groups:
   - "[Hy2]新加坡04"
   - "[Hy2]日本01"
   - "[Hy2]日本02"
+  - "[Hy2]日本03"
 - name: "🍎 苹果服务"
   type: "select"
   proxies:
   - "🚀 节点选择"
   - "🎯 全球直连"
-  - "[ss]剩余流量：466.86 GB"
+  - "[ss]剩余流量：466.82 GB"
   - "[ss]距离下次重置剩余：8 天"
   - "[ss]套餐到期：2036-07-12"
   - "[ss]官网zongyunti.site 注册就有永久套餐"
@@ -218,13 +224,14 @@ proxy-groups:
   - "[Hy2]新加坡04"
   - "[Hy2]日本01"
   - "[Hy2]日本02"
+  - "[Hy2]日本03"
 - name: "📢 谷歌FCM"
   type: "select"
   proxies:
   - "🎯 全球直连"
   - "🚀 节点选择"
   - "♻️ 自动选择"
-  - "[ss]剩余流量：466.86 GB"
+  - "[ss]剩余流量：466.82 GB"
   - "[ss]距离下次重置剩余：8 天"
   - "[ss]套餐到期：2036-07-12"
   - "[ss]官网zongyunti.site 注册就有永久套餐"
@@ -248,6 +255,7 @@ proxy-groups:
   - "[Hy2]新加坡04"
   - "[Hy2]日本01"
   - "[Hy2]日本02"
+  - "[Hy2]日本03"
 - name: "🎯 全球直连"
   type: "select"
   proxies:
@@ -270,7 +278,7 @@ proxy-groups:
   - "🚀 节点选择"
   - "🎯 全球直连"
   - "♻️ 自动选择"
-  - "[ss]剩余流量：466.86 GB"
+  - "[ss]剩余流量：466.82 GB"
   - "[ss]距离下次重置剩余：8 天"
   - "[ss]套餐到期：2036-07-12"
   - "[ss]官网zongyunti.site 注册就有永久套餐"
@@ -294,6 +302,7 @@ proxy-groups:
   - "[Hy2]新加坡04"
   - "[Hy2]日本01"
   - "[Hy2]日本02"
+  - "[Hy2]日本03"
 rules:
 - "DOMAIN-SUFFIX,ushd.xmsl.org,🎯 全球直连"
 - "DOMAIN-SUFFIX,cf.gtlx.org,🎯 全球直连"
