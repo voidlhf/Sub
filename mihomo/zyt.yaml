@@ -17,7 +17,7 @@ hosts:
   alt7-mtalk.google.com: "173.194.219.188"
   alt8-mtalk.google.com: "142.250.112.188"
 proxies:
-- {name: "[Hy2]剩余流量：438.05 GB", server: "45.147.200.61", port: 29015, sni: "min.zongyunti.site", up: 300, down: 300, skip-cert-verify: true, type: "hysteria2", password: "7183ecdc-b8ea-4f9e-8620-103f2321104b"}
+- {name: "[Hy2]剩余流量：437.87 GB", server: "45.147.200.61", port: 29015, sni: "min.zongyunti.site", up: 300, down: 300, skip-cert-verify: true, type: "hysteria2", password: "7183ecdc-b8ea-4f9e-8620-103f2321104b"}
 - {name: "[Hy2]距离下次重置剩余：4 天", server: "45.147.200.61", port: 29015, sni: "min.zongyunti.site", up: 300, down: 300, skip-cert-verify: true, type: "hysteria2", password: "7183ecdc-b8ea-4f9e-8620-103f2321104b"}
 - {name: "[Hy2]套餐到期：2036-07-12", server: "45.147.200.61", port: 29015, sni: "min.zongyunti.site", up: 300, down: 300, skip-cert-verify: true, type: "hysteria2", password: "7183ecdc-b8ea-4f9e-8620-103f2321104b"}
 - {name: "[Hy2]俄罗斯01", server: "45.147.200.61", port: 29015, sni: "min.zongyunti.site", up: 300, down: 300, skip-cert-verify: true, type: "hysteria2", password: "7183ecdc-b8ea-4f9e-8620-103f2321104b"}
@@ -28,13 +28,14 @@ proxies:
 - {name: "[Hy2]美国02", server: "r316.zongyunti.site", port: 29115, sni: "min.zongyunti.site", up: 300, down: 300, skip-cert-verify: true, type: "hysteria2", password: "7183ecdc-b8ea-4f9e-8620-103f2321104b"}
 - {name: "[Hy2]美国03", server: "r316.zongyunti.site", port: 29116, sni: "min.zongyunti.site", up: 300, down: 300, skip-cert-verify: true, type: "hysteria2", password: "7183ecdc-b8ea-4f9e-8620-103f2321104b"}
 - {name: "[Hy2]美国04", server: "46.17.44.136", port: 29116, sni: "min.zongyunti.site", up: 300, down: 300, skip-cert-verify: true, type: "hysteria2", password: "7183ecdc-b8ea-4f9e-8620-103f2321104b"}
+- {name: "[Hy2]日本04", server: "147.78.247.19", port: 29118, sni: "min.zongyunti.site", up: 300, down: 300, skip-cert-verify: true, type: "hysteria2", password: "7183ecdc-b8ea-4f9e-8620-103f2321104b"}
 proxy-groups:
 - name: "🚀 节点选择"
   type: "select"
   proxies:
   - "♻️ 自动选择"
   - "DIRECT"
-  - "[Hy2]剩余流量：438.05 GB"
+  - "[Hy2]剩余流量：437.87 GB"
   - "[Hy2]距离下次重置剩余：4 天"
   - "[Hy2]套餐到期：2036-07-12"
   - "[Hy2]俄罗斯01"
@@ -45,13 +46,14 @@ proxy-groups:
   - "[Hy2]美国02"
   - "[Hy2]美国03"
   - "[Hy2]美国04"
+  - "[Hy2]日本04"
 - name: "♻️ 自动选择"
   type: "url-test"
   url: "http://www.gstatic.com/generate_204"
   interval: 300
   tolerance: 50
   proxies:
-  - "[Hy2]剩余流量：438.05 GB"
+  - "[Hy2]剩余流量：437.87 GB"
   - "[Hy2]距离下次重置剩余：4 天"
   - "[Hy2]套餐到期：2036-07-12"
   - "[Hy2]俄罗斯01"
@@ -62,13 +64,14 @@ proxy-groups:
   - "[Hy2]美国02"
   - "[Hy2]美国03"
   - "[Hy2]美国04"
+  - "[Hy2]日本04"
 - name: "🌍 国外媒体"
   type: "select"
   proxies:
   - "🚀 节点选择"
   - "♻️ 自动选择"
   - "🎯 全球直连"
-  - "[Hy2]剩余流量：438.05 GB"
+  - "[Hy2]剩余流量：437.87 GB"
   - "[Hy2]距离下次重置剩余：4 天"
   - "[Hy2]套餐到期：2036-07-12"
   - "[Hy2]俄罗斯01"
@@ -79,12 +82,13 @@ proxy-groups:
   - "[Hy2]美国02"
   - "[Hy2]美国03"
   - "[Hy2]美国04"
+  - "[Hy2]日本04"
 - name: "📲 电报信息"
   type: "select"
   proxies:
   - "🚀 节点选择"
   - "🎯 全球直连"
-  - "[Hy2]剩余流量：438.05 GB"
+  - "[Hy2]剩余流量：437.87 GB"
   - "[Hy2]距离下次重置剩余：4 天"
   - "[Hy2]套餐到期：2036-07-12"
   - "[Hy2]俄罗斯01"
@@ -95,12 +99,13 @@ proxy-groups:
   - "[Hy2]美国02"
   - "[Hy2]美国03"
   - "[Hy2]美国04"
+  - "[Hy2]日本04"
 - name: "Ⓜ️ 微软服务"
   type: "select"
   proxies:
   - "🚀 节点选择"
   - "🎯 全球直连"
-  - "[Hy2]剩余流量：438.05 GB"
+  - "[Hy2]剩余流量：437.87 GB"
   - "[Hy2]距离下次重置剩余：4 天"
   - "[Hy2]套餐到期：2036-07-12"
   - "[Hy2]俄罗斯01"
@@ -111,12 +116,13 @@ proxy-groups:
   - "[Hy2]美国02"
   - "[Hy2]美国03"
   - "[Hy2]美国04"
+  - "[Hy2]日本04"
 - name: "🍎 苹果服务"
   type: "select"
   proxies:
   - "🚀 节点选择"
   - "🎯 全球直连"
-  - "[Hy2]剩余流量：438.05 GB"
+  - "[Hy2]剩余流量：437.87 GB"
   - "[Hy2]距离下次重置剩余：4 天"
   - "[Hy2]套餐到期：2036-07-12"
   - "[Hy2]俄罗斯01"
@@ -127,13 +133,14 @@ proxy-groups:
   - "[Hy2]美国02"
   - "[Hy2]美国03"
   - "[Hy2]美国04"
+  - "[Hy2]日本04"
 - name: "📢 谷歌FCM"
   type: "select"
   proxies:
   - "🎯 全球直连"
   - "🚀 节点选择"
   - "♻️ 自动选择"
-  - "[Hy2]剩余流量：438.05 GB"
+  - "[Hy2]剩余流量：437.87 GB"
   - "[Hy2]距离下次重置剩余：4 天"
   - "[Hy2]套餐到期：2036-07-12"
   - "[Hy2]俄罗斯01"
@@ -144,6 +151,7 @@ proxy-groups:
   - "[Hy2]美国02"
   - "[Hy2]美国03"
   - "[Hy2]美国04"
+  - "[Hy2]日本04"
 - name: "🎯 全球直连"
   type: "select"
   proxies:
@@ -166,7 +174,7 @@ proxy-groups:
   - "🚀 节点选择"
   - "🎯 全球直连"
   - "♻️ 自动选择"
-  - "[Hy2]剩余流量：438.05 GB"
+  - "[Hy2]剩余流量：437.87 GB"
   - "[Hy2]距离下次重置剩余：4 天"
   - "[Hy2]套餐到期：2036-07-12"
   - "[Hy2]俄罗斯01"
@@ -177,6 +185,7 @@ proxy-groups:
   - "[Hy2]美国02"
   - "[Hy2]美国03"
   - "[Hy2]美国04"
+  - "[Hy2]日本04"
 rules:
 - "DOMAIN-SUFFIX,ushd.xmsl.org,🎯 全球直连"
 - "DOMAIN-SUFFIX,cf.gtlx.org,🎯 全球直连"
