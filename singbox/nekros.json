@@ -1,0 +1,468 @@
+{
+  "log": {},
+  "dns": {
+    "servers": [
+      {
+        "tag": "dns_proxy",
+        "type": "https",
+        "server": "8.8.8.8",
+        "detour": "select"
+      },
+      {
+        "tag": "dns_direct",
+        "type": "https",
+        "server": "223.5.5.5",
+        "detour": "direct"
+      },
+      {
+        "tag": "dns_fakeip",
+        "type": "fakeip",
+        "inet4_range": "198.18.0.0/15",
+        "inet6_range": "fc00::/18"
+      }
+    ],
+    "rules": [
+      {
+        "rule_set": [
+          "AdGuardSDNSFilter",
+          "chrome-doh"
+        ],
+        "action": "reject",
+        "method": "default"
+      },
+      {
+        "query_type": [
+          "A",
+          "AAAA"
+        ],
+        "server": "dns_fakeip",
+        "rewrite_ttl": 1
+      },
+      {
+        "clash_mode": "Global",
+        "server": "dns_proxy"
+      },
+      {
+        "clash_mode": "Direct",
+        "server": "dns_direct"
+      },
+      {
+        "rule_set": "geosite-cn",
+        "server": "dns_direct"
+      }
+    ],
+    "strategy": "prefer_ipv4",
+    "independent_cache": true
+  },
+  "inbounds": [
+    {
+      "type": "tun",
+      "mtu": 9000,
+      "address": [
+        "172.18.0.1/30",
+        "fdfe:dcba:9876::1/126"
+      ],
+      "auto_route": true,
+      "strict_route": true,
+      "endpoint_independent_nat": true
+    },
+    {
+      "type": "socks",
+      "tag": "socks-in",
+      "listen": "127.0.0.1",
+      "listen_port": 2333
+    },
+    {
+      "type": "mixed",
+      "tag": "mixed-in",
+      "listen": "127.0.0.1",
+      "listen_port": 2334
+    }
+  ],
+  "outbounds": [
+    {
+      "method": "chacha20-ietf-poly1305",
+      "password": "758b9c47-4275-4275-8d61-5fa634fa2267",
+      "server": "fdydgz.nekors.3406xyz.xyz",
+      "server_port": 54259,
+      "tag": "剩余流量：25.4 GB",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "chacha20-ietf-poly1305",
+      "password": "758b9c47-4275-4275-8d61-5fa634fa2267",
+      "server": "fdydgz.nekors.3406xyz.xyz",
+      "server_port": 54259,
+      "tag": "套餐到期：2025-03-25",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "chacha20-ietf-poly1305",
+      "password": "758b9c47-4275-4275-8d61-5fa634fa2267",
+      "server": "fdydgz.nekors.3406xyz.xyz",
+      "server_port": 54259,
+      "tag": "HK香港-01",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "chacha20-ietf-poly1305",
+      "password": "758b9c47-4275-4275-8d61-5fa634fa2267",
+      "server": "fdyd500nn.nekros.3406xyz.xyz",
+      "server_port": 56853,
+      "tag": "HK香港-02",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "chacha20-ietf-poly1305",
+      "password": "758b9c47-4275-4275-8d61-5fa634fa2267",
+      "server": "fdydgz.nekors.3406xyz.xyz",
+      "server_port": 30303,
+      "tag": "HK香港-03",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "chacha20-ietf-poly1305",
+      "password": "758b9c47-4275-4275-8d61-5fa634fa2267",
+      "server": "fdyd500nn.nekros.3406xyz.xyz",
+      "server_port": 30154,
+      "tag": "HK香港-04",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "chacha20-ietf-poly1305",
+      "password": "758b9c47-4275-4275-8d61-5fa634fa2267",
+      "server": "fdydgz.nekors.3406xyz.xyz",
+      "server_port": 41671,
+      "tag": "US美国-01",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "chacha20-ietf-poly1305",
+      "password": "758b9c47-4275-4275-8d61-5fa634fa2267",
+      "server": "fdyd500nn.nekros.3406xyz.xyz",
+      "server_port": 12947,
+      "tag": "US美国-02",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "chacha20-ietf-poly1305",
+      "password": "758b9c47-4275-4275-8d61-5fa634fa2267",
+      "server": "fdydgz.nekors.3406xyz.xyz",
+      "server_port": 50203,
+      "tag": "US美国-03",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "chacha20-ietf-poly1305",
+      "password": "758b9c47-4275-4275-8d61-5fa634fa2267",
+      "server": "fdyd500nn.nekros.3406xyz.xyz",
+      "server_port": 52110,
+      "tag": "US美国-04",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "chacha20-ietf-poly1305",
+      "password": "758b9c47-4275-4275-8d61-5fa634fa2267",
+      "server": "fdydgz.nekors.3406xyz.xyz",
+      "server_port": 53933,
+      "tag": "JP日本-01",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "chacha20-ietf-poly1305",
+      "password": "758b9c47-4275-4275-8d61-5fa634fa2267",
+      "server": "fdyd500nn.nekros.3406xyz.xyz",
+      "server_port": 40208,
+      "tag": "JP日本-02",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "chacha20-ietf-poly1305",
+      "password": "758b9c47-4275-4275-8d61-5fa634fa2267",
+      "server": "fdydgz.nekors.3406xyz.xyz",
+      "server_port": 34052,
+      "tag": "JP日本-03",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "chacha20-ietf-poly1305",
+      "password": "758b9c47-4275-4275-8d61-5fa634fa2267",
+      "server": "fdyd500nn.nekros.3406xyz.xyz",
+      "server_port": 54382,
+      "tag": "JP日本-04",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "chacha20-ietf-poly1305",
+      "password": "758b9c47-4275-4275-8d61-5fa634fa2267",
+      "server": "fdydgz.nekors.3406xyz.xyz",
+      "server_port": 50349,
+      "tag": "SG新加坡-01",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "chacha20-ietf-poly1305",
+      "password": "758b9c47-4275-4275-8d61-5fa634fa2267",
+      "server": "fdyd500nn.nekros.3406xyz.xyz",
+      "server_port": 21781,
+      "tag": "SG新加坡-02",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "chacha20-ietf-poly1305",
+      "password": "758b9c47-4275-4275-8d61-5fa634fa2267",
+      "server": "fdydgz.nekors.3406xyz.xyz",
+      "server_port": 34823,
+      "tag": "SG新加坡-03",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "chacha20-ietf-poly1305",
+      "password": "758b9c47-4275-4275-8d61-5fa634fa2267",
+      "server": "fdyd500nn.nekros.3406xyz.xyz",
+      "server_port": 59982,
+      "tag": "SG新加坡-04",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "aes-128-gcm",
+      "password": "758b9c47-4275-4275-8d61-5fa634fa2267",
+      "server": "fdydgz.nekors.3406xyz.xyz",
+      "server_port": 19639,
+      "tag": "DE德国-住宅",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "chacha20-ietf-poly1305",
+      "password": "758b9c47-4275-4275-8d61-5fa634fa2267",
+      "server": "fdydgz.nekors.3406xyz.xyz",
+      "server_port": 20380,
+      "tag": "FR法国",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "aes-128-gcm",
+      "password": "758b9c47-4275-4275-8d61-5fa634fa2267",
+      "server": "fdydgz.nekors.3406xyz.xyz",
+      "server_port": 58820,
+      "tag": "IT意大利",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "chacha20-ietf-poly1305",
+      "password": "758b9c47-4275-4275-8d61-5fa634fa2267",
+      "server": "fdydgz.nekors.3406xyz.xyz",
+      "server_port": 42933,
+      "tag": "HL荷兰",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "aes-128-gcm",
+      "password": "758b9c47-4275-4275-8d61-5fa634fa2267",
+      "server": "fdydgz.nekors.3406xyz.xyz",
+      "server_port": 27401,
+      "tag": "IS冰岛",
+      "type": "shadowsocks"
+    },
+    {
+      "tag": "select",
+      "type": "selector",
+      "default": "urltest",
+      "outbounds": [
+        "urltest",
+        "剩余流量：25.4 GB",
+        "套餐到期：2025-03-25",
+        "HK香港-01",
+        "HK香港-02",
+        "HK香港-03",
+        "HK香港-04",
+        "US美国-01",
+        "US美国-02",
+        "US美国-03",
+        "US美国-04",
+        "JP日本-01",
+        "JP日本-02",
+        "JP日本-03",
+        "JP日本-04",
+        "SG新加坡-01",
+        "SG新加坡-02",
+        "SG新加坡-03",
+        "SG新加坡-04",
+        "DE德国-住宅",
+        "FR法国",
+        "IT意大利",
+        "HL荷兰",
+        "IS冰岛"
+      ]
+    },
+    {
+      "tag": "urltest",
+      "type": "urltest",
+      "outbounds": [
+        "剩余流量：25.4 GB",
+        "套餐到期：2025-03-25",
+        "HK香港-01",
+        "HK香港-02",
+        "HK香港-03",
+        "HK香港-04",
+        "US美国-01",
+        "US美国-02",
+        "US美国-03",
+        "US美国-04",
+        "JP日本-01",
+        "JP日本-02",
+        "JP日本-03",
+        "JP日本-04",
+        "SG新加坡-01",
+        "SG新加坡-02",
+        "SG新加坡-03",
+        "SG新加坡-04",
+        "DE德国-住宅",
+        "FR法国",
+        "IT意大利",
+        "HL荷兰",
+        "IS冰岛"
+      ]
+    },
+    {
+      "tag": "chatgpt",
+      "type": "selector",
+      "outbounds": [
+        "剩余流量：25.4 GB",
+        "套餐到期：2025-03-25",
+        "HK香港-01",
+        "HK香港-02",
+        "HK香港-03",
+        "HK香港-04",
+        "US美国-01",
+        "US美国-02",
+        "US美国-03",
+        "US美国-04",
+        "JP日本-01",
+        "JP日本-02",
+        "JP日本-03",
+        "JP日本-04",
+        "SG新加坡-01",
+        "SG新加坡-02",
+        "SG新加坡-03",
+        "SG新加坡-04",
+        "DE德国-住宅",
+        "FR法国",
+        "IT意大利",
+        "HL荷兰",
+        "IS冰岛"
+      ]
+    },
+    {
+      "tag": "direct",
+      "type": "direct"
+    }
+  ],
+  "route": {
+    "rules": [
+      {
+        "action": "sniff"
+      },
+      {
+        "protocol": "dns",
+        "action": "hijack-dns"
+      },
+      {
+        "action": "resolve",
+        "strategy": "prefer_ipv4"
+      },
+      {
+        "clash_mode": "Direct",
+        "outbound": "direct"
+      },
+      {
+        "clash_mode": "Global",
+        "outbound": "select"
+      },
+      {
+        "ip_is_private": true,
+        "outbound": "direct"
+      },
+      {
+        "package_name": "com.openai.chatgpt",
+        "outbound": "chatgpt"
+      },
+      {
+        "domain_suffix": [
+          "proactivebackend-pa.googleapis.com",
+          "bing.com",
+          "bing.net",
+          "bingapis.com"
+        ],
+        "outbound": "chatgpt"
+      },
+      {
+        "domain_keyword": [
+          "qq.com"
+        ],
+        "outbound": "direct"
+      },
+      {
+        "domain_suffix": [
+          "ushd.xmsl.org",
+          "cf.gtlx.org"
+        ],
+        "outbound": "direct"
+      },
+      {
+        "port": [
+          23301,
+          22101,
+          22102,
+          20501
+        ],
+        "outbound": "direct"
+      },
+      {
+        "rule_set": "geoip-cn",
+        "outbound": "direct"
+      }
+    ],
+    "rule_set": [
+      {
+        "type": "remote",
+        "tag": "geoip-cn",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/SagerNet/sing-geoip/rule-set/geoip-cn.srs",
+        "download_detour": "select"
+      },
+      {
+        "type": "remote",
+        "tag": "geosite-cn",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/xmdhs/sing-geosite/rule-set-Loyalsoldier/geosite-geolocation-cn.srs",
+        "download_detour": "select"
+      },
+      {
+        "type": "remote",
+        "tag": "AdGuardSDNSFilter",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/xmdhs/sing-box-ruleset/rule-set/AdGuardSDNSFilterSingBox.srs",
+        "download_detour": "select"
+      },
+      {
+        "type": "remote",
+        "tag": "chrome-doh",
+        "format": "source",
+        "url": "https://gist.githubusercontent.com/xmdhs/71fc5ff6ef29f5ecaf2c52b8de5c3172/raw/chrome-doh.json",
+        "download_detour": "select"
+      }
+    ],
+    "default_domain_resolver": "dns_direct",
+    "final": "select",
+    "auto_detect_interface": true
+  },
+  "experimental": {
+    "cache_file": {
+      "enabled": true
+    },
+    "clash_api": {
+      "external_controller": "127.0.0.1:9090"
+    }
+  }
+}
