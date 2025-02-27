@@ -1228,25 +1228,47 @@ proxies:
 - {name: "🇧🇬BG-300Mbps [netg]", type: "vless", server: "back-bg1.uni-verse.top", port: 443, uuid: "a763c104-e8dd-472d-add2-dca4e6fc183e", udp: true, tls: true, servername: "back-bg1.uni-verse.top", network: "ws", ws-opts: {path: "/nan", headers: {Host: "back-bg1.uni-verse.top"}, max-early-data: 2560, early-data-header-name: "Sec-WebSocket-Protocol"}}
 - {name: "🇷🇺RU-下载专用-0.5倍率 [netg]", type: "vless", server: "back-ru1.uni-verse.top", port: 443, uuid: "a763c104-e8dd-472d-add2-dca4e6fc183e", udp: true, tls: true, servername: "back-ru1.uni-verse.top", network: "ws", ws-opts: {path: "/nanliang", headers: {Host: "back-ru1.uni-verse.top"}, max-early-data: 2560, early-data-header-name: "Sec-WebSocket-Protocol"}}
 - {name: "🇩🇪DE1 [netg]", type: "vmess", server: "179.61.253.58", port: 21299, uuid: "a763c104-e8dd-472d-add2-dca4e6fc183e", alterId: 0, cipher: "auto", udp: true, network: "grpc", grpc-opts: {grpc-service-name: "nanliangfuckyou"}}
-- {name: "🇦🇶AQ-IPv6-Only-1Gbps [netg]", server: "2a0f:7803:fac0:6b2a:0011:0000:0000:0001", port: 58865, sni: "back-hk2.ip03.shop", up: 200, down: 200, skip-cert-verify: true, type: "hysteria2", password: "a763c104-e8dd-472d-add2-dca4e6fc183e", obfs: "salamander", obfs-password: "ZWE5NThmNzJmMTkwNDE5Yg==", ports: "30000-60000"}
-- {name: "🇿🇼ZW1 [netg]", server: "41.190.32.25", port: 55038, sni: "back-hk2.ip03.shop", up: 200, down: 200, skip-cert-verify: true, type: "hysteria2", password: "a763c104-e8dd-472d-add2-dca4e6fc183e", obfs: "salamander", obfs-password: "ZWE5NThmNzJmMTkwNDE5Yg==", ports: "55005-55045"}
-- {name: "国际BGP中转🇭🇰HK->🇷🇺RU-ipv6-only [netg]", server: "2a0f:7803:fac0:6b2a:0001:0000:0000:0001", port: 12731, sni: "aa.ac", up: 20, down: 200, skip-cert-verify: true, type: "hysteria2", password: "a763c104-e8dd-472d-add2-dca4e6fc183e", obfs: "salamander", obfs-password: "MmZjNThlNzE5OThiNDY4ZA==", ports: "10000-20000"}
-- {name: "🇺🇸 美国1 [syd]", server: "sanyuandian-us.sanguayun.com", port: 12792, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "12001-12999", type: "hysteria2", password: "3a4db0c1-5eee-4a5c-bcab-1bcbc7c5e8b5"}
-- {name: "🇺🇸 美国2 [syd]", server: "sanyuandian-us.sanguayun.com", port: 12279, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "12001-12999", type: "hysteria2", password: "3a4db0c1-5eee-4a5c-bcab-1bcbc7c5e8b5"}
-- {name: "🇺🇸 美国3 [syd]", server: "sanyuandian-us.sanguayun.com", port: 12526, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "12001-12999", type: "hysteria2", password: "3a4db0c1-5eee-4a5c-bcab-1bcbc7c5e8b5"}
-- {name: "🇺🇸 美国4 [syd]", server: "sanyuandian-us.sanguayun.com", port: 12347, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "12001-12999", type: "hysteria2", password: "3a4db0c1-5eee-4a5c-bcab-1bcbc7c5e8b5"}
-- {name: "🇭🇰 香港1 [syd]", server: "sanyuandian-hk.sanguayun.com", port: 12918, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "12001-12999", type: "hysteria2", password: "3a4db0c1-5eee-4a5c-bcab-1bcbc7c5e8b5"}
-- {name: "🇭🇰 香港2 [syd]", server: "sanyuandian-hk.sanguayun.com", port: 12476, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "12001-12999", type: "hysteria2", password: "3a4db0c1-5eee-4a5c-bcab-1bcbc7c5e8b5"}
-- {name: "🇭🇰 香港3 [syd]", server: "sanyuandian-hk.sanguayun.com", port: 12965, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "12001-12999", type: "hysteria2", password: "3a4db0c1-5eee-4a5c-bcab-1bcbc7c5e8b5"}
-- {name: "🇭🇰 香港4 [syd]", server: "sanyuandian-hk.sanguayun.com", port: 12630, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "12001-12999", type: "hysteria2", password: "3a4db0c1-5eee-4a5c-bcab-1bcbc7c5e8b5"}
-- {name: "🇯🇵 日本1 [syd]", server: "sanyuandian-jp.sanguayun.com", port: 12240, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "12001-12999", type: "hysteria2", password: "3a4db0c1-5eee-4a5c-bcab-1bcbc7c5e8b5"}
-- {name: "🇯🇵 日本2 [syd]", server: "sanyuandian-jp.sanguayun.com", port: 12341, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "12001-12999", type: "hysteria2", password: "3a4db0c1-5eee-4a5c-bcab-1bcbc7c5e8b5"}
-- {name: "🇯🇵 日本3 [syd]", server: "sanyuandian-jp.sanguayun.com", port: 12433, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "12001-12999", type: "hysteria2", password: "3a4db0c1-5eee-4a5c-bcab-1bcbc7c5e8b5"}
-- {name: "🇯🇵 日本4 [syd]", server: "sanyuandian-jp.sanguayun.com", port: 12354, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "12001-12999", type: "hysteria2", password: "3a4db0c1-5eee-4a5c-bcab-1bcbc7c5e8b5"}
-- {name: "🇳🇱 荷兰1 [syd]", server: "sanyuandian-nl.sanguayun.com", port: 12928, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "12001-12999", type: "hysteria2", password: "3a4db0c1-5eee-4a5c-bcab-1bcbc7c5e8b5"}
-- {name: "🇳🇱 荷兰2 [syd]", server: "sanyuandian-nl.sanguayun.com", port: 12400, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "12001-12999", type: "hysteria2", password: "3a4db0c1-5eee-4a5c-bcab-1bcbc7c5e8b5"}
-- {name: "🇳🇱 荷兰3 [syd]", server: "sanyuandian-nl.sanguayun.com", port: 12619, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "12001-12999", type: "hysteria2", password: "3a4db0c1-5eee-4a5c-bcab-1bcbc7c5e8b5"}
-- {name: "🇳🇱 荷兰4 [syd]", server: "sanyuandian-nl.sanguayun.com", port: 12791, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "12001-12999", type: "hysteria2", password: "3a4db0c1-5eee-4a5c-bcab-1bcbc7c5e8b5"}
+- {name: "🇦🇶AQ-IPv6-Only-1Gbps [netg]", server: "2a0f:7803:fac0:6b2a:0011:0000:0000:0001", port: 58288, sni: "back-hk2.ip03.shop", up: 200, down: 200, skip-cert-verify: true, type: "hysteria2", password: "a763c104-e8dd-472d-add2-dca4e6fc183e", obfs: "salamander", obfs-password: "ZWE5NThmNzJmMTkwNDE5Yg==", ports: "30000-60000"}
+- {name: "🇿🇼ZW1 [netg]", server: "41.190.32.25", port: 55017, sni: "back-hk2.ip03.shop", up: 200, down: 200, skip-cert-verify: true, type: "hysteria2", password: "a763c104-e8dd-472d-add2-dca4e6fc183e", obfs: "salamander", obfs-password: "ZWE5NThmNzJmMTkwNDE5Yg==", ports: "55005-55045"}
+- {name: "国际BGP中转🇭🇰HK->🇷🇺RU-ipv6-only [netg]", server: "2a0f:7803:fac0:6b2a:0001:0000:0000:0001", port: 13700, sni: "aa.ac", up: 20, down: 200, skip-cert-verify: true, type: "hysteria2", password: "a763c104-e8dd-472d-add2-dca4e6fc183e", obfs: "salamander", obfs-password: "MmZjNThlNzE5OThiNDY4ZA==", ports: "10000-20000"}
+- {name: "新加坡01|流媒体 [tjjc]", type: "vless", server: "sg001.421421.xyz", port: 20230, uuid: "644a11df-a74a-49d7-a31e-8bf42e77eb47", udp: true, tls: true, skip-cert-verify: false, flow: "xtls-rprx-vision", client-fingerprint: "chrome", servername: "www.alibaba.com", reality-opts: {public-key: "gKQ1iax36vjbOYLKLveiSn_OnlBVAf3ecHLpQnrC4jw", short-id: "a7464bff"}}
+- {name: "新加坡02|流媒体 [tjjc]", type: "vless", server: "sg002.421421.xyz", port: 20230, uuid: "644a11df-a74a-49d7-a31e-8bf42e77eb47", udp: true, tls: true, skip-cert-verify: false, flow: "xtls-rprx-vision", client-fingerprint: "chrome", servername: "www.alibaba.com", reality-opts: {public-key: "gKQ1iax36vjbOYLKLveiSn_OnlBVAf3ecHLpQnrC4jw", short-id: "a7464bff"}}
+- {name: "新加坡03|流媒体 [tjjc]", type: "vless", server: "sg003.421421.xyz", port: 20230, uuid: "644a11df-a74a-49d7-a31e-8bf42e77eb47", udp: true, tls: true, skip-cert-verify: false, flow: "xtls-rprx-vision", client-fingerprint: "chrome", servername: "www.alibaba.com", reality-opts: {public-key: "gKQ1iax36vjbOYLKLveiSn_OnlBVAf3ecHLpQnrC4jw", short-id: "a7464bff"}}
+- {name: "新加坡04|流媒体 [tjjc]", type: "vless", server: "sg004.421421.xyz", port: 20230, uuid: "644a11df-a74a-49d7-a31e-8bf42e77eb47", udp: true, tls: true, skip-cert-verify: false, flow: "xtls-rprx-vision", client-fingerprint: "chrome", servername: "www.alibaba.com", reality-opts: {public-key: "gKQ1iax36vjbOYLKLveiSn_OnlBVAf3ecHLpQnrC4jw", short-id: "a7464bff"}}
+- {name: "日本01 [tjjc]", type: "vless", server: "jp001.421421.xyz", port: 20230, uuid: "644a11df-a74a-49d7-a31e-8bf42e77eb47", udp: true, tls: true, skip-cert-verify: false, flow: "xtls-rprx-vision", client-fingerprint: "chrome", servername: "www.alibaba.com", reality-opts: {public-key: "gKQ1iax36vjbOYLKLveiSn_OnlBVAf3ecHLpQnrC4jw", short-id: "a7464bff"}}
+- {name: "日本02 [tjjc]", type: "vless", server: "jp002.421421.xyz", port: 20230, uuid: "644a11df-a74a-49d7-a31e-8bf42e77eb47", udp: true, tls: true, skip-cert-verify: false, flow: "xtls-rprx-vision", client-fingerprint: "chrome", servername: "www.alibaba.com", reality-opts: {public-key: "gKQ1iax36vjbOYLKLveiSn_OnlBVAf3ecHLpQnrC4jw", short-id: "a7464bff"}}
+- {name: "日本03 [tjjc]", type: "vless", server: "jp003.421421.xyz", port: 20230, uuid: "644a11df-a74a-49d7-a31e-8bf42e77eb47", udp: true, tls: true, skip-cert-verify: false, flow: "xtls-rprx-vision", client-fingerprint: "chrome", servername: "www.alibaba.com", reality-opts: {public-key: "gKQ1iax36vjbOYLKLveiSn_OnlBVAf3ecHLpQnrC4jw", short-id: "a7464bff"}}
+- {name: "日本04 [tjjc]", type: "vless", server: "jp004.421421.xyz", port: 20230, uuid: "644a11df-a74a-49d7-a31e-8bf42e77eb47", udp: true, tls: true, skip-cert-verify: false, flow: "xtls-rprx-vision", client-fingerprint: "chrome", servername: "www.alibaba.com", reality-opts: {public-key: "gKQ1iax36vjbOYLKLveiSn_OnlBVAf3ecHLpQnrC4jw", short-id: "a7464bff"}}
+- {name: "美国01 [tjjc]", type: "vless", server: "us001.421421.xyz", port: 20230, uuid: "644a11df-a74a-49d7-a31e-8bf42e77eb47", udp: true, tls: true, skip-cert-verify: false, flow: "xtls-rprx-vision", client-fingerprint: "chrome", servername: "www.alibaba.com", reality-opts: {public-key: "gKQ1iax36vjbOYLKLveiSn_OnlBVAf3ecHLpQnrC4jw", short-id: "a7464bff"}}
+- {name: "美国02 [tjjc]", type: "vless", server: "us002.421421.xyz", port: 20230, uuid: "644a11df-a74a-49d7-a31e-8bf42e77eb47", udp: true, tls: true, skip-cert-verify: false, flow: "xtls-rprx-vision", client-fingerprint: "chrome", servername: "www.alibaba.com", reality-opts: {public-key: "gKQ1iax36vjbOYLKLveiSn_OnlBVAf3ecHLpQnrC4jw", short-id: "a7464bff"}}
+- {name: "新加坡05|流媒体 [tjjc]", type: "trojan", server: "sg005.421421.xyz", port: 20230, password: "644a11df-a74a-49d7-a31e-8bf42e77eb47", udp: true, sni: "421421.xyz", skip-cert-verify: true}
+- {name: "新加坡06|流媒体 [tjjc]", type: "trojan", server: "sg006.421421.xyz", port: 20230, password: "644a11df-a74a-49d7-a31e-8bf42e77eb47", udp: true, network: "ws", sni: "421421.xyz", skip-cert-verify: true}
+- {name: "新加坡07|流媒体 [tjjc]", type: "trojan", server: "sg007.421421.xyz", port: 20230, password: "644a11df-a74a-49d7-a31e-8bf42e77eb47", udp: true, sni: "421421.xyz", skip-cert-verify: true}
+- {name: "新加坡08|流媒体 [tjjc]", type: "trojan", server: "sg008.421421.xyz", port: 20230, password: "644a11df-a74a-49d7-a31e-8bf42e77eb47", udp: true, sni: "421421.xyz", skip-cert-verify: true}
+- {name: "日本05 [tjjc]", type: "trojan", server: "jp005.421421.xyz", port: 20230, password: "644a11df-a74a-49d7-a31e-8bf42e77eb47", udp: true, sni: "421421.xyz", skip-cert-verify: true}
+- {name: "日本06 [tjjc]", type: "trojan", server: "jp006.421421.xyz", port: 20230, password: "644a11df-a74a-49d7-a31e-8bf42e77eb47", udp: true, sni: "421421.xyz", skip-cert-verify: true}
+- {name: "日本07 [tjjc]", type: "trojan", server: "jp007.421421.xyz", port: 20230, password: "644a11df-a74a-49d7-a31e-8bf42e77eb47", udp: true, sni: "421421.xyz", skip-cert-verify: true}
+- {name: "日本08 [tjjc]", type: "trojan", server: "jp008.421421.xyz", port: 20230, password: "644a11df-a74a-49d7-a31e-8bf42e77eb47", udp: true, sni: "421421.xyz", skip-cert-verify: true}
+- {name: "美国03 [tjjc]", type: "trojan", server: "us003.421421.xyz", port: 20230, password: "644a11df-a74a-49d7-a31e-8bf42e77eb47", udp: true, sni: "421421.xyz", skip-cert-verify: true}
+- {name: "美国04 [tjjc]", type: "trojan", server: "us004.421421.xyz", port: 20230, password: "644a11df-a74a-49d7-a31e-8bf42e77eb47", udp: true, sni: "421421.xyz", skip-cert-verify: true}
+- {name: "tg群组: https://t.me/tjiajc1 [tjjc]", type: "trojan", server: "sg001.421421.xyz", port: 20230, password: "644a11df-a74a-49d7-a31e-8bf42e77eb47", udp: true, sni: "421421.xyz", skip-cert-verify: true}
+- {name: "官网：tejiajichang.com [tjjc]", type: "trojan", server: "sg1.421421.xyz", port: 20230, password: "644a11df-a74a-49d7-a31e-8bf42e77eb47", udp: true, sni: "421421.xyz", skip-cert-verify: true}
+- {name: "🇺🇸 美国1 [syd]", server: "sanyuandian-us.sanguayun.com", port: 12944, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "12001-12999", type: "hysteria2", password: "3a4db0c1-5eee-4a5c-bcab-1bcbc7c5e8b5"}
+- {name: "🇺🇸 美国2 [syd]", server: "sanyuandian-us.sanguayun.com", port: 12307, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "12001-12999", type: "hysteria2", password: "3a4db0c1-5eee-4a5c-bcab-1bcbc7c5e8b5"}
+- {name: "🇺🇸 美国3 [syd]", server: "sanyuandian-us.sanguayun.com", port: 12670, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "12001-12999", type: "hysteria2", password: "3a4db0c1-5eee-4a5c-bcab-1bcbc7c5e8b5"}
+- {name: "🇺🇸 美国4 [syd]", server: "sanyuandian-us.sanguayun.com", port: 12705, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "12001-12999", type: "hysteria2", password: "3a4db0c1-5eee-4a5c-bcab-1bcbc7c5e8b5"}
+- {name: "🇭🇰 香港1 [syd]", server: "sanyuandian-hk.sanguayun.com", port: 12780, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "12001-12999", type: "hysteria2", password: "3a4db0c1-5eee-4a5c-bcab-1bcbc7c5e8b5"}
+- {name: "🇭🇰 香港2 [syd]", server: "sanyuandian-hk.sanguayun.com", port: 12232, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "12001-12999", type: "hysteria2", password: "3a4db0c1-5eee-4a5c-bcab-1bcbc7c5e8b5"}
+- {name: "🇭🇰 香港3 [syd]", server: "sanyuandian-hk.sanguayun.com", port: 12204, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "12001-12999", type: "hysteria2", password: "3a4db0c1-5eee-4a5c-bcab-1bcbc7c5e8b5"}
+- {name: "🇭🇰 香港4 [syd]", server: "sanyuandian-hk.sanguayun.com", port: 12104, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "12001-12999", type: "hysteria2", password: "3a4db0c1-5eee-4a5c-bcab-1bcbc7c5e8b5"}
+- {name: "🇯🇵 日本1 [syd]", server: "sanyuandian-jp.sanguayun.com", port: 12594, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "12001-12999", type: "hysteria2", password: "3a4db0c1-5eee-4a5c-bcab-1bcbc7c5e8b5"}
+- {name: "🇯🇵 日本2 [syd]", server: "sanyuandian-jp.sanguayun.com", port: 12247, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "12001-12999", type: "hysteria2", password: "3a4db0c1-5eee-4a5c-bcab-1bcbc7c5e8b5"}
+- {name: "🇯🇵 日本3 [syd]", server: "sanyuandian-jp.sanguayun.com", port: 12751, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "12001-12999", type: "hysteria2", password: "3a4db0c1-5eee-4a5c-bcab-1bcbc7c5e8b5"}
+- {name: "🇯🇵 日本4 [syd]", server: "sanyuandian-jp.sanguayun.com", port: 12579, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "12001-12999", type: "hysteria2", password: "3a4db0c1-5eee-4a5c-bcab-1bcbc7c5e8b5"}
+- {name: "🇳🇱 荷兰1 [syd]", server: "sanyuandian-nl.sanguayun.com", port: 12058, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "12001-12999", type: "hysteria2", password: "3a4db0c1-5eee-4a5c-bcab-1bcbc7c5e8b5"}
+- {name: "🇳🇱 荷兰2 [syd]", server: "sanyuandian-nl.sanguayun.com", port: 12970, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "12001-12999", type: "hysteria2", password: "3a4db0c1-5eee-4a5c-bcab-1bcbc7c5e8b5"}
+- {name: "🇳🇱 荷兰3 [syd]", server: "sanyuandian-nl.sanguayun.com", port: 12095, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "12001-12999", type: "hysteria2", password: "3a4db0c1-5eee-4a5c-bcab-1bcbc7c5e8b5"}
+- {name: "🇳🇱 荷兰4 [syd]", server: "sanyuandian-nl.sanguayun.com", port: 12790, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "12001-12999", type: "hysteria2", password: "3a4db0c1-5eee-4a5c-bcab-1bcbc7c5e8b5"}
 - {name: "🇺🇸美国凤凰城1号 [djjc]", server: "129.153.71.226", port: 50000, ports: "50000-53000", mport: "50000-53000", udp: true, skip-cert-verify: true, sni: "www.microsoft.com", type: "hysteria2", password: "3b9e0e15-e14e-4f05-986d-2ee265052bae"}
 - {name: "🇺🇸美国凤凰城2号 [djjc]", server: "144.24.16.24", port: 50000, ports: "50000-53000", mport: "50000-53000", udp: true, skip-cert-verify: true, sni: "www.bing.com", type: "hysteria2", password: "3b9e0e15-e14e-4f05-986d-2ee265052bae"}
 - {name: "🇺🇸美国凤凰城3号 [djjc]", server: "132.226.30.123", port: 50000, ports: "50000-53000", mport: "50000-53000", udp: true, skip-cert-verify: true, sni: "www.bing.com", type: "hysteria2", password: "3b9e0e15-e14e-4f05-986d-2ee265052bae"}
@@ -1309,8 +1331,8 @@ proxies:
 - {name: "IT意大利 [nekros]", type: "ss", server: "fdydgz.nekors.3406xyz.xyz", port: 58820, cipher: "aes-128-gcm", password: "758b9c47-4275-4275-8d61-5fa634fa2267", udp: true}
 - {name: "HL荷兰 [nekros]", type: "ss", server: "fdydgz.nekors.3406xyz.xyz", port: 42933, cipher: "chacha20-ietf-poly1305", password: "758b9c47-4275-4275-8d61-5fa634fa2267", udp: true}
 - {name: "IS冰岛 [nekros]", type: "ss", server: "fdydgz.nekors.3406xyz.xyz", port: 27401, cipher: "aes-128-gcm", password: "758b9c47-4275-4275-8d61-5fa634fa2267", udp: true}
-- {name: "官网地址：www.niao.icu [yn]", type: "vmess", server: "yx1.niaoba.top", port: 2052, uuid: "e33c6a28-d114-4dfe-b6ca-80cecc2d2d5e", alterId: 0, cipher: "auto", udp: true, network: "ws", ws-opts: {path: "/", headers: {Host: "117659207.vmus6.taobao.yyds.niaoba.top"}}}
-- {name: "🇩🇪德国-01|1.0x [yn]", type: "vmess", server: "yx2.niaoba.top", port: 2052, uuid: "e33c6a28-d114-4dfe-b6ca-80cecc2d2d5e", alterId: 0, cipher: "auto", udp: true, network: "ws", ws-opts: {path: "/", headers: {Host: "117659207.vmde.taobao.yyds.niaoba.top"}}}
+- {name: "官网地址：www.niao.icu [yn]", type: "vmess", server: "yx1.niaoba.top", port: 2052, uuid: "e33c6a28-d114-4dfe-b6ca-80cecc2d2d5e", alterId: 0, cipher: "auto", udp: true, network: "ws", ws-opts: {path: "/", headers: {Host: "117659984.vmus6.taobao.yyds.niaoba.top"}}}
+- {name: "🇩🇪德国-01|1.0x [yn]", type: "vmess", server: "yx2.niaoba.top", port: 2052, uuid: "e33c6a28-d114-4dfe-b6ca-80cecc2d2d5e", alterId: 0, cipher: "auto", udp: true, network: "ws", ws-opts: {path: "/", headers: {Host: "117659984.vmde.taobao.yyds.niaoba.top"}}}
 - {name: "🇺🇸美国HY2-06|1.0X [yn]", server: "107.175.185.55", port: 44001, udp: true, skip-cert-verify: true, sni: "www.bing.com", type: "hysteria2", password: "e33c6a28-d114-4dfe-b6ca-80cecc2d2d5e"}
 - {name: "🇩🇪德国HY2-01|1.0X [yn]", server: "141.147.48.166", port: 44001, udp: true, skip-cert-verify: true, type: "hysteria2", password: "e33c6a28-d114-4dfe-b6ca-80cecc2d2d5e"}
 - {name: "🇬🇧英国HY2-01|1.0X [yn]", server: "185.168.194.111", port: 44001, udp: true, skip-cert-verify: true, sni: "www.bing.com", type: "hysteria2", password: "e33c6a28-d114-4dfe-b6ca-80cecc2d2d5e"}
@@ -1352,41 +1374,42 @@ proxies:
 - {name: "香港002丨优选 [wmjc]", type: "vmess", server: "cfyx.sbjc.shop", port: 8443, uuid: "4cb815d5-804d-4ef3-8a10-d7fd8f0d5f76", alterId: 0, cipher: "auto", udp: true, tls: true, servername: "hk1.013888.xyz", network: "ws", ws-opts: {path: "/SQqqeeer", headers: {Host: "hk1.013888.xyz"}}, ws-path: "/SQqqeeer", ws-headers: {Host: "hk1.013888.xyz"}}
 - {name: "美国1-hy2 [wmjc]", server: "159.223.199.55", port: 55555, sni: "tv.apple.com", up: 1000, down: 1000, skip-cert-verify: true, type: "hysteria2", password: "4cb815d5-804d-4ef3-8a10-d7fd8f0d5f76"}
 - {name: "美国2-hy2 [wmjc]", server: "107.173.230.12", port: 55555, sni: "tv.apple.com", up: 1000, down: 1000, skip-cert-verify: true, type: "hysteria2", password: "4cb815d5-804d-4ef3-8a10-d7fd8f0d5f76"}
-- {name: "🇺🇸 美国1 [xhj]", server: "xiaohuojian-us.sanguayun.com", port: 15991, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "15001-15999", type: "hysteria2", password: "08d08c1e-0722-4814-9289-e314f25951a3"}
-- {name: "🇺🇸 美国2 [xhj]", server: "xiaohuojian-us.sanguayun.com", port: 15062, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "15001-15999", type: "hysteria2", password: "08d08c1e-0722-4814-9289-e314f25951a3"}
-- {name: "🇺🇸 美国3 [xhj]", server: "xiaohuojian-us.sanguayun.com", port: 15880, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "15001-15999", type: "hysteria2", password: "08d08c1e-0722-4814-9289-e314f25951a3"}
-- {name: "🇺🇸 美国4 [xhj]", server: "xiaohuojian-us.sanguayun.com", port: 15802, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "15001-15999", type: "hysteria2", password: "08d08c1e-0722-4814-9289-e314f25951a3"}
-- {name: "🇭🇰 香港1 [xhj]", server: "xiaohuojian-hk.sanguayun.com", port: 15465, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "15001-15999", type: "hysteria2", password: "08d08c1e-0722-4814-9289-e314f25951a3"}
-- {name: "🇭🇰 香港2 [xhj]", server: "xiaohuojian-hk.sanguayun.com", port: 15330, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "15001-15999", type: "hysteria2", password: "08d08c1e-0722-4814-9289-e314f25951a3"}
-- {name: "🇭🇰 香港3 [xhj]", server: "xiaohuojian-hk.sanguayun.com", port: 15282, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "15001-15999", type: "hysteria2", password: "08d08c1e-0722-4814-9289-e314f25951a3"}
-- {name: "🇭🇰 香港4 [xhj]", server: "xiaohuojian-hk.sanguayun.com", port: 15777, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "15001-15999", type: "hysteria2", password: "08d08c1e-0722-4814-9289-e314f25951a3"}
-- {name: "🇯🇵 日本1 [xhj]", server: "xiaohuojian-jp.sanguayun.com", port: 15356, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "15001-15999", type: "hysteria2", password: "08d08c1e-0722-4814-9289-e314f25951a3"}
-- {name: "🇯🇵 日本2 [xhj]", server: "xiaohuojian-jp.sanguayun.com", port: 15628, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "15001-15999", type: "hysteria2", password: "08d08c1e-0722-4814-9289-e314f25951a3"}
-- {name: "🇯🇵 日本3 [xhj]", server: "xiaohuojian-jp.sanguayun.com", port: 15906, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "15001-15999", type: "hysteria2", password: "08d08c1e-0722-4814-9289-e314f25951a3"}
-- {name: "🇯🇵 日本4 [xhj]", server: "xiaohuojian-jp.sanguayun.com", port: 15397, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "15001-15999", type: "hysteria2", password: "08d08c1e-0722-4814-9289-e314f25951a3"}
-- {name: "🇳🇱 荷兰1 [xhj]", server: "xiaohuojian-nl.sanguayun.com", port: 15645, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "15001-15999", type: "hysteria2", password: "08d08c1e-0722-4814-9289-e314f25951a3"}
-- {name: "🇳🇱 荷兰2 [xhj]", server: "xiaohuojian-nl.sanguayun.com", port: 15373, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "15001-15999", type: "hysteria2", password: "08d08c1e-0722-4814-9289-e314f25951a3"}
-- {name: "🇳🇱 荷兰3 [xhj]", server: "xiaohuojian-nl.sanguayun.com", port: 15750, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "15001-15999", type: "hysteria2", password: "08d08c1e-0722-4814-9289-e314f25951a3"}
-- {name: "🇳🇱 荷兰4 [xhj]", server: "xiaohuojian-nl.sanguayun.com", port: 15933, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "15001-15999", type: "hysteria2", password: "08d08c1e-0722-4814-9289-e314f25951a3"}
+- {name: "🇺🇸 美国1 [xhj]", server: "xiaohuojian-us.sanguayun.com", port: 15209, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "15001-15999", type: "hysteria2", password: "08d08c1e-0722-4814-9289-e314f25951a3"}
+- {name: "🇺🇸 美国2 [xhj]", server: "xiaohuojian-us.sanguayun.com", port: 15804, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "15001-15999", type: "hysteria2", password: "08d08c1e-0722-4814-9289-e314f25951a3"}
+- {name: "🇺🇸 美国3 [xhj]", server: "xiaohuojian-us.sanguayun.com", port: 15504, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "15001-15999", type: "hysteria2", password: "08d08c1e-0722-4814-9289-e314f25951a3"}
+- {name: "🇺🇸 美国4 [xhj]", server: "xiaohuojian-us.sanguayun.com", port: 15721, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "15001-15999", type: "hysteria2", password: "08d08c1e-0722-4814-9289-e314f25951a3"}
+- {name: "🇭🇰 香港1 [xhj]", server: "xiaohuojian-hk.sanguayun.com", port: 15243, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "15001-15999", type: "hysteria2", password: "08d08c1e-0722-4814-9289-e314f25951a3"}
+- {name: "🇭🇰 香港2 [xhj]", server: "xiaohuojian-hk.sanguayun.com", port: 15302, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "15001-15999", type: "hysteria2", password: "08d08c1e-0722-4814-9289-e314f25951a3"}
+- {name: "🇭🇰 香港3 [xhj]", server: "xiaohuojian-hk.sanguayun.com", port: 15364, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "15001-15999", type: "hysteria2", password: "08d08c1e-0722-4814-9289-e314f25951a3"}
+- {name: "🇭🇰 香港4 [xhj]", server: "xiaohuojian-hk.sanguayun.com", port: 15922, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "15001-15999", type: "hysteria2", password: "08d08c1e-0722-4814-9289-e314f25951a3"}
+- {name: "🇯🇵 日本1 [xhj]", server: "xiaohuojian-jp.sanguayun.com", port: 15907, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "15001-15999", type: "hysteria2", password: "08d08c1e-0722-4814-9289-e314f25951a3"}
+- {name: "🇯🇵 日本2 [xhj]", server: "xiaohuojian-jp.sanguayun.com", port: 15590, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "15001-15999", type: "hysteria2", password: "08d08c1e-0722-4814-9289-e314f25951a3"}
+- {name: "🇯🇵 日本3 [xhj]", server: "xiaohuojian-jp.sanguayun.com", port: 15004, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "15001-15999", type: "hysteria2", password: "08d08c1e-0722-4814-9289-e314f25951a3"}
+- {name: "🇯🇵 日本4 [xhj]", server: "xiaohuojian-jp.sanguayun.com", port: 15018, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "15001-15999", type: "hysteria2", password: "08d08c1e-0722-4814-9289-e314f25951a3"}
+- {name: "🇳🇱 荷兰1 [xhj]", server: "xiaohuojian-nl.sanguayun.com", port: 15680, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "15001-15999", type: "hysteria2", password: "08d08c1e-0722-4814-9289-e314f25951a3"}
+- {name: "🇳🇱 荷兰2 [xhj]", server: "xiaohuojian-nl.sanguayun.com", port: 15470, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "15001-15999", type: "hysteria2", password: "08d08c1e-0722-4814-9289-e314f25951a3"}
+- {name: "🇳🇱 荷兰3 [xhj]", server: "xiaohuojian-nl.sanguayun.com", port: 15903, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "15001-15999", type: "hysteria2", password: "08d08c1e-0722-4814-9289-e314f25951a3"}
+- {name: "🇳🇱 荷兰4 [xhj]", server: "xiaohuojian-nl.sanguayun.com", port: 15735, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "15001-15999", type: "hysteria2", password: "08d08c1e-0722-4814-9289-e314f25951a3"}
 - {name: "香港1 [pyjc]", server: "pianyi-hk.jiumaojiu.org", port: 20142, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "20101-20199", type: "hysteria2", password: "380d4679-8595-4349-8f26-5fdc5755b7b1"}
-- {name: "香港2 [pyjc]", server: "pianyi-hk.jiumaojiu.org", port: 20124, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "20101-20199", type: "hysteria2", password: "380d4679-8595-4349-8f26-5fdc5755b7b1"}
-- {name: "香港3 [pyjc]", server: "pianyi-hk.jiumaojiu.org", port: 20126, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "20101-20199", type: "hysteria2", password: "380d4679-8595-4349-8f26-5fdc5755b7b1"}
-- {name: "香港4 [pyjc]", server: "pianyi-hk.jiumaojiu.org", port: 20106, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "20101-20199", type: "hysteria2", password: "380d4679-8595-4349-8f26-5fdc5755b7b1"}
-- {name: "美国1 [pyjc]", server: "pianyi-us.jiumaojiu.org", port: 20166, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "20101-20199", type: "hysteria2", password: "380d4679-8595-4349-8f26-5fdc5755b7b1"}
+- {name: "香港2 [pyjc]", server: "pianyi-hk.jiumaojiu.org", port: 20156, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "20101-20199", type: "hysteria2", password: "380d4679-8595-4349-8f26-5fdc5755b7b1"}
+- {name: "香港3 [pyjc]", server: "pianyi-hk.jiumaojiu.org", port: 20148, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "20101-20199", type: "hysteria2", password: "380d4679-8595-4349-8f26-5fdc5755b7b1"}
+- {name: "香港4 [pyjc]", server: "pianyi-hk.jiumaojiu.org", port: 20123, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "20101-20199", type: "hysteria2", password: "380d4679-8595-4349-8f26-5fdc5755b7b1"}
+- {name: "美国1 [pyjc]", server: "pianyi-us.jiumaojiu.org", port: 20149, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "20101-20199", type: "hysteria2", password: "380d4679-8595-4349-8f26-5fdc5755b7b1"}
 - {name: "美国2 [pyjc]", server: "pianyi-us.jiumaojiu.org", port: 20118, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "20101-20199", type: "hysteria2", password: "380d4679-8595-4349-8f26-5fdc5755b7b1"}
-- {name: "美国3 [pyjc]", server: "pianyi-us.jiumaojiu.org", port: 20177, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "20101-20199", type: "hysteria2", password: "380d4679-8595-4349-8f26-5fdc5755b7b1"}
-- {name: "美国4 [pyjc]", server: "pianyi-us.jiumaojiu.org", port: 20169, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "20101-20199", type: "hysteria2", password: "380d4679-8595-4349-8f26-5fdc5755b7b1"}
-- {name: "日本3 [pyjc]", server: "pianyi-jp.jiumaojiu.org", port: 20131, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "20101-20199", type: "hysteria2", password: "380d4679-8595-4349-8f26-5fdc5755b7b1"}
-- {name: "日本2 [pyjc]", server: "pianyi-jp.jiumaojiu.org", port: 20188, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "20101-20199", type: "hysteria2", password: "380d4679-8595-4349-8f26-5fdc5755b7b1"}
-- {name: "日本4 [pyjc]", server: "pianyi-jp.jiumaojiu.org", port: 20161, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "20101-20199", type: "hysteria2", password: "380d4679-8595-4349-8f26-5fdc5755b7b1"}
-- {name: "新加坡1 [pyjc]", server: "pianyi-sg.jiumaojiu.org", port: 20140, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "20101-20199", type: "hysteria2", password: "380d4679-8595-4349-8f26-5fdc5755b7b1"}
-- {name: "新加坡2 [pyjc]", server: "pianyi-sg.jiumaojiu.org", port: 20147, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "20101-20199", type: "hysteria2", password: "380d4679-8595-4349-8f26-5fdc5755b7b1"}
-- {name: "新加坡3 [pyjc]", server: "pianyi-sg.jiumaojiu.org", port: 20193, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "20101-20199", type: "hysteria2", password: "380d4679-8595-4349-8f26-5fdc5755b7b1"}
-- {name: "新加坡4 [pyjc]", server: "pianyi-sg.jiumaojiu.org", port: 20172, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "20101-20199", type: "hysteria2", password: "380d4679-8595-4349-8f26-5fdc5755b7b1"}
-- {name: "卢森堡1 [pyjc]", server: "pianyi-lu.jiumaojiu.org", port: 20137, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "20101-20199", type: "hysteria2", password: "380d4679-8595-4349-8f26-5fdc5755b7b1"}
-- {name: "卢森堡2 [pyjc]", server: "pianyi-lu.jiumaojiu.org", port: 20171, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "20101-20199", type: "hysteria2", password: "380d4679-8595-4349-8f26-5fdc5755b7b1"}
-- {name: "卢森堡3 [pyjc]", server: "pianyi-lu.jiumaojiu.org", port: 20178, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "20101-20199", type: "hysteria2", password: "380d4679-8595-4349-8f26-5fdc5755b7b1"}
-- {name: "卢森堡4 [pyjc]", server: "pianyi-lu.jiumaojiu.org", port: 20176, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "20101-20199", type: "hysteria2", password: "380d4679-8595-4349-8f26-5fdc5755b7b1"}
+- {name: "美国3 [pyjc]", server: "pianyi-us.jiumaojiu.org", port: 20146, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "20101-20199", type: "hysteria2", password: "380d4679-8595-4349-8f26-5fdc5755b7b1"}
+- {name: "美国4 [pyjc]", server: "pianyi-us.jiumaojiu.org", port: 20173, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "20101-20199", type: "hysteria2", password: "380d4679-8595-4349-8f26-5fdc5755b7b1"}
+- {name: "日本1 [pyjc]", server: "pianyi-jp.jiumaojiu.org", port: 20165, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "20101-20199", type: "hysteria2", password: "380d4679-8595-4349-8f26-5fdc5755b7b1"}
+- {name: "日本2 [pyjc]", server: "pianyi-jp.jiumaojiu.org", port: 20169, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "20101-20199", type: "hysteria2", password: "380d4679-8595-4349-8f26-5fdc5755b7b1"}
+- {name: "日本3 [pyjc]", server: "pianyi-jp.jiumaojiu.org", port: 20137, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "20101-20199", type: "hysteria2", password: "380d4679-8595-4349-8f26-5fdc5755b7b1"}
+- {name: "日本4 [pyjc]", server: "pianyi-jp.jiumaojiu.org", port: 20164, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "20101-20199", type: "hysteria2", password: "380d4679-8595-4349-8f26-5fdc5755b7b1"}
+- {name: "新加坡1 [pyjc]", server: "pianyi-sg.jiumaojiu.org", port: 20135, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "20101-20199", type: "hysteria2", password: "380d4679-8595-4349-8f26-5fdc5755b7b1"}
+- {name: "新加坡2 [pyjc]", server: "pianyi-sg.jiumaojiu.org", port: 20186, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "20101-20199", type: "hysteria2", password: "380d4679-8595-4349-8f26-5fdc5755b7b1"}
+- {name: "新加坡3 [pyjc]", server: "pianyi-sg.jiumaojiu.org", port: 20180, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "20101-20199", type: "hysteria2", password: "380d4679-8595-4349-8f26-5fdc5755b7b1"}
+- {name: "新加坡4 [pyjc]", server: "pianyi-sg.jiumaojiu.org", port: 20151, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "20101-20199", type: "hysteria2", password: "380d4679-8595-4349-8f26-5fdc5755b7b1"}
+- {name: "卢森堡1 [pyjc]", server: "pianyi-lu.jiumaojiu.org", port: 20167, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "20101-20199", type: "hysteria2", password: "380d4679-8595-4349-8f26-5fdc5755b7b1"}
+- {name: "卢森堡2 [pyjc]", server: "pianyi-lu.jiumaojiu.org", port: 20127, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "20101-20199", type: "hysteria2", password: "380d4679-8595-4349-8f26-5fdc5755b7b1"}
+- {name: "卢森堡3 [pyjc]", server: "pianyi-lu.jiumaojiu.org", port: 20182, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "20101-20199", type: "hysteria2", password: "380d4679-8595-4349-8f26-5fdc5755b7b1"}
+- {name: "卢森堡4 [pyjc]", server: "pianyi-lu.jiumaojiu.org", port: 20153, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "20101-20199", type: "hysteria2", password: "380d4679-8595-4349-8f26-5fdc5755b7b1"}
 - type: "hysteria2"
   name: "🇵🇱|1-2|波兰|01 [FILE]"
   server: "31.186.87.211"
@@ -1883,6 +1906,28 @@ proxy-groups:
   - "🇦🇶AQ-IPv6-Only-1Gbps [netg]"
   - "🇿🇼ZW1 [netg]"
   - "国际BGP中转🇭🇰HK->🇷🇺RU-ipv6-only [netg]"
+  - "新加坡01|流媒体 [tjjc]"
+  - "新加坡02|流媒体 [tjjc]"
+  - "新加坡03|流媒体 [tjjc]"
+  - "新加坡04|流媒体 [tjjc]"
+  - "日本01 [tjjc]"
+  - "日本02 [tjjc]"
+  - "日本03 [tjjc]"
+  - "日本04 [tjjc]"
+  - "美国01 [tjjc]"
+  - "美国02 [tjjc]"
+  - "新加坡05|流媒体 [tjjc]"
+  - "新加坡06|流媒体 [tjjc]"
+  - "新加坡07|流媒体 [tjjc]"
+  - "新加坡08|流媒体 [tjjc]"
+  - "日本05 [tjjc]"
+  - "日本06 [tjjc]"
+  - "日本07 [tjjc]"
+  - "日本08 [tjjc]"
+  - "美国03 [tjjc]"
+  - "美国04 [tjjc]"
+  - "tg群组: https://t.me/tjiajc1 [tjjc]"
+  - "官网：tejiajichang.com [tjjc]"
   - "🇺🇸 美国1 [syd]"
   - "🇺🇸 美国2 [syd]"
   - "🇺🇸 美国3 [syd]"
@@ -2028,8 +2073,9 @@ proxy-groups:
   - "美国2 [pyjc]"
   - "美国3 [pyjc]"
   - "美国4 [pyjc]"
-  - "日本3 [pyjc]"
+  - "日本1 [pyjc]"
   - "日本2 [pyjc]"
+  - "日本3 [pyjc]"
   - "日本4 [pyjc]"
   - "新加坡1 [pyjc]"
   - "新加坡2 [pyjc]"
@@ -2490,6 +2536,28 @@ proxy-groups:
   - "🇦🇶AQ-IPv6-Only-1Gbps [netg]"
   - "🇿🇼ZW1 [netg]"
   - "国际BGP中转🇭🇰HK->🇷🇺RU-ipv6-only [netg]"
+  - "新加坡01|流媒体 [tjjc]"
+  - "新加坡02|流媒体 [tjjc]"
+  - "新加坡03|流媒体 [tjjc]"
+  - "新加坡04|流媒体 [tjjc]"
+  - "日本01 [tjjc]"
+  - "日本02 [tjjc]"
+  - "日本03 [tjjc]"
+  - "日本04 [tjjc]"
+  - "美国01 [tjjc]"
+  - "美国02 [tjjc]"
+  - "新加坡05|流媒体 [tjjc]"
+  - "新加坡06|流媒体 [tjjc]"
+  - "新加坡07|流媒体 [tjjc]"
+  - "新加坡08|流媒体 [tjjc]"
+  - "日本05 [tjjc]"
+  - "日本06 [tjjc]"
+  - "日本07 [tjjc]"
+  - "日本08 [tjjc]"
+  - "美国03 [tjjc]"
+  - "美国04 [tjjc]"
+  - "tg群组: https://t.me/tjiajc1 [tjjc]"
+  - "官网：tejiajichang.com [tjjc]"
   - "🇺🇸 美国1 [syd]"
   - "🇺🇸 美国2 [syd]"
   - "🇺🇸 美国3 [syd]"
@@ -2635,8 +2703,9 @@ proxy-groups:
   - "美国2 [pyjc]"
   - "美国3 [pyjc]"
   - "美国4 [pyjc]"
-  - "日本3 [pyjc]"
+  - "日本1 [pyjc]"
   - "日本2 [pyjc]"
+  - "日本3 [pyjc]"
   - "日本4 [pyjc]"
   - "新加坡1 [pyjc]"
   - "新加坡2 [pyjc]"
@@ -3097,6 +3166,28 @@ proxy-groups:
   - "🇦🇶AQ-IPv6-Only-1Gbps [netg]"
   - "🇿🇼ZW1 [netg]"
   - "国际BGP中转🇭🇰HK->🇷🇺RU-ipv6-only [netg]"
+  - "新加坡01|流媒体 [tjjc]"
+  - "新加坡02|流媒体 [tjjc]"
+  - "新加坡03|流媒体 [tjjc]"
+  - "新加坡04|流媒体 [tjjc]"
+  - "日本01 [tjjc]"
+  - "日本02 [tjjc]"
+  - "日本03 [tjjc]"
+  - "日本04 [tjjc]"
+  - "美国01 [tjjc]"
+  - "美国02 [tjjc]"
+  - "新加坡05|流媒体 [tjjc]"
+  - "新加坡06|流媒体 [tjjc]"
+  - "新加坡07|流媒体 [tjjc]"
+  - "新加坡08|流媒体 [tjjc]"
+  - "日本05 [tjjc]"
+  - "日本06 [tjjc]"
+  - "日本07 [tjjc]"
+  - "日本08 [tjjc]"
+  - "美国03 [tjjc]"
+  - "美国04 [tjjc]"
+  - "tg群组: https://t.me/tjiajc1 [tjjc]"
+  - "官网：tejiajichang.com [tjjc]"
   - "🇺🇸 美国1 [syd]"
   - "🇺🇸 美国2 [syd]"
   - "🇺🇸 美国3 [syd]"
@@ -3242,8 +3333,9 @@ proxy-groups:
   - "美国2 [pyjc]"
   - "美国3 [pyjc]"
   - "美国4 [pyjc]"
-  - "日本3 [pyjc]"
+  - "日本1 [pyjc]"
   - "日本2 [pyjc]"
+  - "日本3 [pyjc]"
   - "日本4 [pyjc]"
   - "新加坡1 [pyjc]"
   - "新加坡2 [pyjc]"
@@ -3703,6 +3795,28 @@ proxy-groups:
   - "🇦🇶AQ-IPv6-Only-1Gbps [netg]"
   - "🇿🇼ZW1 [netg]"
   - "国际BGP中转🇭🇰HK->🇷🇺RU-ipv6-only [netg]"
+  - "新加坡01|流媒体 [tjjc]"
+  - "新加坡02|流媒体 [tjjc]"
+  - "新加坡03|流媒体 [tjjc]"
+  - "新加坡04|流媒体 [tjjc]"
+  - "日本01 [tjjc]"
+  - "日本02 [tjjc]"
+  - "日本03 [tjjc]"
+  - "日本04 [tjjc]"
+  - "美国01 [tjjc]"
+  - "美国02 [tjjc]"
+  - "新加坡05|流媒体 [tjjc]"
+  - "新加坡06|流媒体 [tjjc]"
+  - "新加坡07|流媒体 [tjjc]"
+  - "新加坡08|流媒体 [tjjc]"
+  - "日本05 [tjjc]"
+  - "日本06 [tjjc]"
+  - "日本07 [tjjc]"
+  - "日本08 [tjjc]"
+  - "美国03 [tjjc]"
+  - "美国04 [tjjc]"
+  - "tg群组: https://t.me/tjiajc1 [tjjc]"
+  - "官网：tejiajichang.com [tjjc]"
   - "🇺🇸 美国1 [syd]"
   - "🇺🇸 美国2 [syd]"
   - "🇺🇸 美国3 [syd]"
@@ -3848,8 +3962,9 @@ proxy-groups:
   - "美国2 [pyjc]"
   - "美国3 [pyjc]"
   - "美国4 [pyjc]"
-  - "日本3 [pyjc]"
+  - "日本1 [pyjc]"
   - "日本2 [pyjc]"
+  - "日本3 [pyjc]"
   - "日本4 [pyjc]"
   - "新加坡1 [pyjc]"
   - "新加坡2 [pyjc]"
@@ -4309,6 +4424,28 @@ proxy-groups:
   - "🇦🇶AQ-IPv6-Only-1Gbps [netg]"
   - "🇿🇼ZW1 [netg]"
   - "国际BGP中转🇭🇰HK->🇷🇺RU-ipv6-only [netg]"
+  - "新加坡01|流媒体 [tjjc]"
+  - "新加坡02|流媒体 [tjjc]"
+  - "新加坡03|流媒体 [tjjc]"
+  - "新加坡04|流媒体 [tjjc]"
+  - "日本01 [tjjc]"
+  - "日本02 [tjjc]"
+  - "日本03 [tjjc]"
+  - "日本04 [tjjc]"
+  - "美国01 [tjjc]"
+  - "美国02 [tjjc]"
+  - "新加坡05|流媒体 [tjjc]"
+  - "新加坡06|流媒体 [tjjc]"
+  - "新加坡07|流媒体 [tjjc]"
+  - "新加坡08|流媒体 [tjjc]"
+  - "日本05 [tjjc]"
+  - "日本06 [tjjc]"
+  - "日本07 [tjjc]"
+  - "日本08 [tjjc]"
+  - "美国03 [tjjc]"
+  - "美国04 [tjjc]"
+  - "tg群组: https://t.me/tjiajc1 [tjjc]"
+  - "官网：tejiajichang.com [tjjc]"
   - "🇺🇸 美国1 [syd]"
   - "🇺🇸 美国2 [syd]"
   - "🇺🇸 美国3 [syd]"
@@ -4454,8 +4591,9 @@ proxy-groups:
   - "美国2 [pyjc]"
   - "美国3 [pyjc]"
   - "美国4 [pyjc]"
-  - "日本3 [pyjc]"
+  - "日本1 [pyjc]"
   - "日本2 [pyjc]"
+  - "日本3 [pyjc]"
   - "日本4 [pyjc]"
   - "新加坡1 [pyjc]"
   - "新加坡2 [pyjc]"
@@ -4915,6 +5053,28 @@ proxy-groups:
   - "🇦🇶AQ-IPv6-Only-1Gbps [netg]"
   - "🇿🇼ZW1 [netg]"
   - "国际BGP中转🇭🇰HK->🇷🇺RU-ipv6-only [netg]"
+  - "新加坡01|流媒体 [tjjc]"
+  - "新加坡02|流媒体 [tjjc]"
+  - "新加坡03|流媒体 [tjjc]"
+  - "新加坡04|流媒体 [tjjc]"
+  - "日本01 [tjjc]"
+  - "日本02 [tjjc]"
+  - "日本03 [tjjc]"
+  - "日本04 [tjjc]"
+  - "美国01 [tjjc]"
+  - "美国02 [tjjc]"
+  - "新加坡05|流媒体 [tjjc]"
+  - "新加坡06|流媒体 [tjjc]"
+  - "新加坡07|流媒体 [tjjc]"
+  - "新加坡08|流媒体 [tjjc]"
+  - "日本05 [tjjc]"
+  - "日本06 [tjjc]"
+  - "日本07 [tjjc]"
+  - "日本08 [tjjc]"
+  - "美国03 [tjjc]"
+  - "美国04 [tjjc]"
+  - "tg群组: https://t.me/tjiajc1 [tjjc]"
+  - "官网：tejiajichang.com [tjjc]"
   - "🇺🇸 美国1 [syd]"
   - "🇺🇸 美国2 [syd]"
   - "🇺🇸 美国3 [syd]"
@@ -5060,8 +5220,9 @@ proxy-groups:
   - "美国2 [pyjc]"
   - "美国3 [pyjc]"
   - "美国4 [pyjc]"
-  - "日本3 [pyjc]"
+  - "日本1 [pyjc]"
   - "日本2 [pyjc]"
+  - "日本3 [pyjc]"
   - "日本4 [pyjc]"
   - "新加坡1 [pyjc]"
   - "新加坡2 [pyjc]"
@@ -5522,6 +5683,28 @@ proxy-groups:
   - "🇦🇶AQ-IPv6-Only-1Gbps [netg]"
   - "🇿🇼ZW1 [netg]"
   - "国际BGP中转🇭🇰HK->🇷🇺RU-ipv6-only [netg]"
+  - "新加坡01|流媒体 [tjjc]"
+  - "新加坡02|流媒体 [tjjc]"
+  - "新加坡03|流媒体 [tjjc]"
+  - "新加坡04|流媒体 [tjjc]"
+  - "日本01 [tjjc]"
+  - "日本02 [tjjc]"
+  - "日本03 [tjjc]"
+  - "日本04 [tjjc]"
+  - "美国01 [tjjc]"
+  - "美国02 [tjjc]"
+  - "新加坡05|流媒体 [tjjc]"
+  - "新加坡06|流媒体 [tjjc]"
+  - "新加坡07|流媒体 [tjjc]"
+  - "新加坡08|流媒体 [tjjc]"
+  - "日本05 [tjjc]"
+  - "日本06 [tjjc]"
+  - "日本07 [tjjc]"
+  - "日本08 [tjjc]"
+  - "美国03 [tjjc]"
+  - "美国04 [tjjc]"
+  - "tg群组: https://t.me/tjiajc1 [tjjc]"
+  - "官网：tejiajichang.com [tjjc]"
   - "🇺🇸 美国1 [syd]"
   - "🇺🇸 美国2 [syd]"
   - "🇺🇸 美国3 [syd]"
@@ -5667,8 +5850,9 @@ proxy-groups:
   - "美国2 [pyjc]"
   - "美国3 [pyjc]"
   - "美国4 [pyjc]"
-  - "日本3 [pyjc]"
+  - "日本1 [pyjc]"
   - "日本2 [pyjc]"
+  - "日本3 [pyjc]"
   - "日本4 [pyjc]"
   - "新加坡1 [pyjc]"
   - "新加坡2 [pyjc]"
@@ -6145,6 +6329,28 @@ proxy-groups:
   - "🇦🇶AQ-IPv6-Only-1Gbps [netg]"
   - "🇿🇼ZW1 [netg]"
   - "国际BGP中转🇭🇰HK->🇷🇺RU-ipv6-only [netg]"
+  - "新加坡01|流媒体 [tjjc]"
+  - "新加坡02|流媒体 [tjjc]"
+  - "新加坡03|流媒体 [tjjc]"
+  - "新加坡04|流媒体 [tjjc]"
+  - "日本01 [tjjc]"
+  - "日本02 [tjjc]"
+  - "日本03 [tjjc]"
+  - "日本04 [tjjc]"
+  - "美国01 [tjjc]"
+  - "美国02 [tjjc]"
+  - "新加坡05|流媒体 [tjjc]"
+  - "新加坡06|流媒体 [tjjc]"
+  - "新加坡07|流媒体 [tjjc]"
+  - "新加坡08|流媒体 [tjjc]"
+  - "日本05 [tjjc]"
+  - "日本06 [tjjc]"
+  - "日本07 [tjjc]"
+  - "日本08 [tjjc]"
+  - "美国03 [tjjc]"
+  - "美国04 [tjjc]"
+  - "tg群组: https://t.me/tjiajc1 [tjjc]"
+  - "官网：tejiajichang.com [tjjc]"
   - "🇺🇸 美国1 [syd]"
   - "🇺🇸 美国2 [syd]"
   - "🇺🇸 美国3 [syd]"
@@ -6290,8 +6496,9 @@ proxy-groups:
   - "美国2 [pyjc]"
   - "美国3 [pyjc]"
   - "美国4 [pyjc]"
-  - "日本3 [pyjc]"
+  - "日本1 [pyjc]"
   - "日本2 [pyjc]"
+  - "日本3 [pyjc]"
   - "日本4 [pyjc]"
   - "新加坡1 [pyjc]"
   - "新加坡2 [pyjc]"
