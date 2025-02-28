@@ -17,7 +17,7 @@ hosts:
   alt7-mtalk.google.com: "173.194.219.188"
   alt8-mtalk.google.com: "142.250.112.188"
 proxies:
-- {name: "剩余流量：12.63 GB", type: "ss", server: "fdydgz.nekors.3406xyz.xyz", port: 54259, cipher: "chacha20-ietf-poly1305", password: "758b9c47-4275-4275-8d61-5fa634fa2267", udp: true}
+- {name: "剩余流量：12.54 GB", type: "ss", server: "fdydgz.nekors.3406xyz.xyz", port: 54259, cipher: "chacha20-ietf-poly1305", password: "758b9c47-4275-4275-8d61-5fa634fa2267", udp: true}
 - {name: "套餐到期：2025-03-25", type: "ss", server: "fdydgz.nekors.3406xyz.xyz", port: 54259, cipher: "chacha20-ietf-poly1305", password: "758b9c47-4275-4275-8d61-5fa634fa2267", udp: true}
 - {name: "HK香港-01", type: "ss", server: "fdydgz.nekors.3406xyz.xyz", port: 54259, cipher: "chacha20-ietf-poly1305", password: "758b9c47-4275-4275-8d61-5fa634fa2267", udp: true}
 - {name: "HK香港-02", type: "ss", server: "fdyd500nn.nekros.3406xyz.xyz", port: 56853, cipher: "chacha20-ietf-poly1305", password: "758b9c47-4275-4275-8d61-5fa634fa2267", udp: true}
@@ -36,17 +36,17 @@ proxies:
 - {name: "SG新加坡-03", type: "ss", server: "fdydgz.nekors.3406xyz.xyz", port: 34823, cipher: "chacha20-ietf-poly1305", password: "758b9c47-4275-4275-8d61-5fa634fa2267", udp: true}
 - {name: "SG新加坡-04", type: "ss", server: "fdyd500nn.nekros.3406xyz.xyz", port: 59982, cipher: "chacha20-ietf-poly1305", password: "758b9c47-4275-4275-8d61-5fa634fa2267", udp: true}
 - {name: "DE德国-住宅", type: "ss", server: "fdydgz.nekors.3406xyz.xyz", port: 19639, cipher: "aes-128-gcm", password: "758b9c47-4275-4275-8d61-5fa634fa2267", udp: true}
-- {name: "FR法国", type: "ss", server: "fdydgz.nekors.3406xyz.xyz", port: 20380, cipher: "chacha20-ietf-poly1305", password: "758b9c47-4275-4275-8d61-5fa634fa2267", udp: true}
-- {name: "IT意大利", type: "ss", server: "fdydgz.nekors.3406xyz.xyz", port: 58820, cipher: "aes-128-gcm", password: "758b9c47-4275-4275-8d61-5fa634fa2267", udp: true}
 - {name: "HL荷兰", type: "ss", server: "fdydgz.nekors.3406xyz.xyz", port: 42933, cipher: "chacha20-ietf-poly1305", password: "758b9c47-4275-4275-8d61-5fa634fa2267", udp: true}
 - {name: "IS冰岛", type: "ss", server: "fdydgz.nekors.3406xyz.xyz", port: 27401, cipher: "aes-128-gcm", password: "758b9c47-4275-4275-8d61-5fa634fa2267", udp: true}
+- {name: "FR法国", type: "ss", server: "fdydgz.nekors.3406xyz.xyz", port: 20380, cipher: "chacha20-ietf-poly1305", password: "758b9c47-4275-4275-8d61-5fa634fa2267", udp: true}
+- {name: "IT意大利", type: "ss", server: "fdydgz.nekors.3406xyz.xyz", port: 58820, cipher: "aes-128-gcm", password: "758b9c47-4275-4275-8d61-5fa634fa2267", udp: true}
 proxy-groups:
 - name: "🚀 节点选择"
   type: "select"
   proxies:
   - "♻️ 自动选择"
   - "DIRECT"
-  - "剩余流量：12.63 GB"
+  - "剩余流量：12.54 GB"
   - "套餐到期：2025-03-25"
   - "HK香港-01"
   - "HK香港-02"
@@ -65,17 +65,17 @@ proxy-groups:
   - "SG新加坡-03"
   - "SG新加坡-04"
   - "DE德国-住宅"
-  - "FR法国"
-  - "IT意大利"
   - "HL荷兰"
   - "IS冰岛"
+  - "FR法国"
+  - "IT意大利"
 - name: "♻️ 自动选择"
   type: "url-test"
   url: "http://www.gstatic.com/generate_204"
   interval: 300
   tolerance: 50
   proxies:
-  - "剩余流量：12.63 GB"
+  - "剩余流量：12.54 GB"
   - "套餐到期：2025-03-25"
   - "HK香港-01"
   - "HK香港-02"
@@ -94,17 +94,17 @@ proxy-groups:
   - "SG新加坡-03"
   - "SG新加坡-04"
   - "DE德国-住宅"
-  - "FR法国"
-  - "IT意大利"
   - "HL荷兰"
   - "IS冰岛"
+  - "FR法国"
+  - "IT意大利"
 - name: "🌍 国外媒体"
   type: "select"
   proxies:
   - "🚀 节点选择"
   - "♻️ 自动选择"
   - "🎯 全球直连"
-  - "剩余流量：12.63 GB"
+  - "剩余流量：12.54 GB"
   - "套餐到期：2025-03-25"
   - "HK香港-01"
   - "HK香港-02"
@@ -123,16 +123,16 @@ proxy-groups:
   - "SG新加坡-03"
   - "SG新加坡-04"
   - "DE德国-住宅"
-  - "FR法国"
-  - "IT意大利"
   - "HL荷兰"
   - "IS冰岛"
+  - "FR法国"
+  - "IT意大利"
 - name: "📲 电报信息"
   type: "select"
   proxies:
   - "🚀 节点选择"
   - "🎯 全球直连"
-  - "剩余流量：12.63 GB"
+  - "剩余流量：12.54 GB"
   - "套餐到期：2025-03-25"
   - "HK香港-01"
   - "HK香港-02"
@@ -151,16 +151,16 @@ proxy-groups:
   - "SG新加坡-03"
   - "SG新加坡-04"
   - "DE德国-住宅"
-  - "FR法国"
-  - "IT意大利"
   - "HL荷兰"
   - "IS冰岛"
+  - "FR法国"
+  - "IT意大利"
 - name: "Ⓜ️ 微软服务"
   type: "select"
   proxies:
   - "🚀 节点选择"
   - "🎯 全球直连"
-  - "剩余流量：12.63 GB"
+  - "剩余流量：12.54 GB"
   - "套餐到期：2025-03-25"
   - "HK香港-01"
   - "HK香港-02"
@@ -179,16 +179,16 @@ proxy-groups:
   - "SG新加坡-03"
   - "SG新加坡-04"
   - "DE德国-住宅"
-  - "FR法国"
-  - "IT意大利"
   - "HL荷兰"
   - "IS冰岛"
+  - "FR法国"
+  - "IT意大利"
 - name: "🍎 苹果服务"
   type: "select"
   proxies:
   - "🚀 节点选择"
   - "🎯 全球直连"
-  - "剩余流量：12.63 GB"
+  - "剩余流量：12.54 GB"
   - "套餐到期：2025-03-25"
   - "HK香港-01"
   - "HK香港-02"
@@ -207,17 +207,17 @@ proxy-groups:
   - "SG新加坡-03"
   - "SG新加坡-04"
   - "DE德国-住宅"
-  - "FR法国"
-  - "IT意大利"
   - "HL荷兰"
   - "IS冰岛"
+  - "FR法国"
+  - "IT意大利"
 - name: "📢 谷歌FCM"
   type: "select"
   proxies:
   - "🎯 全球直连"
   - "🚀 节点选择"
   - "♻️ 自动选择"
-  - "剩余流量：12.63 GB"
+  - "剩余流量：12.54 GB"
   - "套餐到期：2025-03-25"
   - "HK香港-01"
   - "HK香港-02"
@@ -236,10 +236,10 @@ proxy-groups:
   - "SG新加坡-03"
   - "SG新加坡-04"
   - "DE德国-住宅"
-  - "FR法国"
-  - "IT意大利"
   - "HL荷兰"
   - "IS冰岛"
+  - "FR法国"
+  - "IT意大利"
 - name: "🎯 全球直连"
   type: "select"
   proxies:
@@ -262,7 +262,7 @@ proxy-groups:
   - "🚀 节点选择"
   - "🎯 全球直连"
   - "♻️ 自动选择"
-  - "剩余流量：12.63 GB"
+  - "剩余流量：12.54 GB"
   - "套餐到期：2025-03-25"
   - "HK香港-01"
   - "HK香港-02"
@@ -281,10 +281,10 @@ proxy-groups:
   - "SG新加坡-03"
   - "SG新加坡-04"
   - "DE德国-住宅"
-  - "FR法国"
-  - "IT意大利"
   - "HL荷兰"
   - "IS冰岛"
+  - "FR法国"
+  - "IT意大利"
 rules:
 - "DOMAIN-SUFFIX,ushd.xmsl.org,🎯 全球直连"
 - "DOMAIN-SUFFIX,cf.gtlx.org,🎯 全球直连"
