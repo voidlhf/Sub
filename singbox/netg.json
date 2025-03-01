@@ -161,7 +161,7 @@
         "server_name": "back-zw3.uni-verse.top",
         "utls": {
           "enabled": true,
-          "fingerprint": "safari"
+          "fingerprint": "edge"
         }
       },
       "transport": {
@@ -219,7 +219,7 @@
         "server_name": "backdciaq.dh04.shop",
         "utls": {
           "enabled": true,
-          "fingerprint": "edge"
+          "fingerprint": "qq"
         }
       },
       "transport": {
@@ -248,7 +248,7 @@
         "server_name": "back-hk3.uni-verse.top",
         "utls": {
           "enabled": true,
-          "fingerprint": "safari"
+          "fingerprint": "firefox"
         }
       },
       "transport": {
@@ -268,6 +268,35 @@
     {
       "flow": "",
       "packet_encoding": "xudp",
+      "server": "back-hk2.uni-verse.top",
+      "server_port": 443,
+      "tag": "🇯🇵JP-1Gbps",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "back-hk2.uni-verse.top",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "ios"
+        }
+      },
+      "transport": {
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "headers": {
+          "Host": [
+            "back-hk2.uni-verse.top"
+          ]
+        },
+        "max_early_data": 2560,
+        "path": "/go",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "a763c104-e8dd-472d-add2-dca4e6fc183e"
+    },
+    {
+      "flow": "",
+      "packet_encoding": "xudp",
       "server": "back-ca1.uni-verse.top",
       "server_port": 443,
       "tag": "🇨🇦CA-100Mbps",
@@ -277,7 +306,7 @@
         "server_name": "back-ca1.uni-verse.top",
         "utls": {
           "enabled": true,
-          "fingerprint": "qq"
+          "fingerprint": "firefox"
         }
       },
       "transport": {
@@ -306,7 +335,7 @@
         "server_name": "back-bg1.uni-verse.top",
         "utls": {
           "enabled": true,
-          "fingerprint": "edge"
+          "fingerprint": "safari"
         }
       },
       "transport": {
@@ -318,35 +347,6 @@
         },
         "max_early_data": 2560,
         "path": "/nan",
-        "type": "ws"
-      },
-      "type": "vless",
-      "uuid": "a763c104-e8dd-472d-add2-dca4e6fc183e"
-    },
-    {
-      "flow": "",
-      "packet_encoding": "xudp",
-      "server": "back-ru1.uni-verse.top",
-      "server_port": 443,
-      "tag": "🇷🇺RU-下载专用-0.5倍率",
-      "tls": {
-        "enabled": true,
-        "insecure": false,
-        "server_name": "back-ru1.uni-verse.top",
-        "utls": {
-          "enabled": true,
-          "fingerprint": "ios"
-        }
-      },
-      "transport": {
-        "early_data_header_name": "Sec-WebSocket-Protocol",
-        "headers": {
-          "Host": [
-            "back-ru1.uni-verse.top"
-          ]
-        },
-        "max_early_data": 2560,
-        "path": "/nanliang",
         "type": "ws"
       },
       "type": "vless",
@@ -373,7 +373,7 @@
       },
       "password": "a763c104-e8dd-472d-add2-dca4e6fc183e",
       "server": "2a0f:7803:fac0:6b2a:0011:0000:0000:0001",
-      "server_port": 30628,
+      "server_port": 50779,
       "tag": "🇦🇶AQ-IPv6-Only-1Gbps",
       "tls": {
         "enabled": true,
@@ -391,30 +391,12 @@
       },
       "password": "a763c104-e8dd-472d-add2-dca4e6fc183e",
       "server": "41.190.32.25",
-      "server_port": 55027,
+      "server_port": 55009,
       "tag": "🇿🇼ZW1",
       "tls": {
         "enabled": true,
         "insecure": true,
         "server_name": "back-hk2.ip03.shop"
-      },
-      "type": "hysteria2",
-      "up_mbps": 200
-    },
-    {
-      "down_mbps": 20,
-      "obfs": {
-        "password": "MmZjNThlNzE5OThiNDY4ZA==",
-        "type": "salamander"
-      },
-      "password": "a763c104-e8dd-472d-add2-dca4e6fc183e",
-      "server": "2a0f:7803:fac0:6b2a:0001:0000:0000:0001",
-      "server_port": 17669,
-      "tag": "国际BGP中转🇭🇰HK->🇷🇺RU-ipv6-only",
-      "tls": {
-        "enabled": true,
-        "insecure": true,
-        "server_name": "aa.ac"
       },
       "type": "hysteria2",
       "up_mbps": 200
@@ -434,13 +416,12 @@
         "🇺🇲US-让HAX后悔-0.1倍率",
         "🇦🇶AQ-1Gbps",
         "HK-bv-500Mbps",
+        "🇯🇵JP-1Gbps",
         "🇨🇦CA-100Mbps",
         "🇧🇬BG-300Mbps",
-        "🇷🇺RU-下载专用-0.5倍率",
         "🇩🇪DE1",
         "🇦🇶AQ-IPv6-Only-1Gbps",
-        "🇿🇼ZW1",
-        "国际BGP中转🇭🇰HK->🇷🇺RU-ipv6-only"
+        "🇿🇼ZW1"
       ]
     },
     {
@@ -456,13 +437,12 @@
         "🇺🇲US-让HAX后悔-0.1倍率",
         "🇦🇶AQ-1Gbps",
         "HK-bv-500Mbps",
+        "🇯🇵JP-1Gbps",
         "🇨🇦CA-100Mbps",
         "🇧🇬BG-300Mbps",
-        "🇷🇺RU-下载专用-0.5倍率",
         "🇩🇪DE1",
         "🇦🇶AQ-IPv6-Only-1Gbps",
-        "🇿🇼ZW1",
-        "国际BGP中转🇭🇰HK->🇷🇺RU-ipv6-only"
+        "🇿🇼ZW1"
       ]
     },
     {
@@ -478,13 +458,12 @@
         "🇺🇲US-让HAX后悔-0.1倍率",
         "🇦🇶AQ-1Gbps",
         "HK-bv-500Mbps",
+        "🇯🇵JP-1Gbps",
         "🇨🇦CA-100Mbps",
         "🇧🇬BG-300Mbps",
-        "🇷🇺RU-下载专用-0.5倍率",
         "🇩🇪DE1",
         "🇦🇶AQ-IPv6-Only-1Gbps",
-        "🇿🇼ZW1",
-        "国际BGP中转🇭🇰HK->🇷🇺RU-ipv6-only"
+        "🇿🇼ZW1"
       ]
     },
     {
