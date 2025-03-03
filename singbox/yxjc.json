@@ -1,0 +1,889 @@
+{
+  "log": {},
+  "dns": {
+    "servers": [
+      {
+        "tag": "dns_proxy",
+        "type": "https",
+        "server": "8.8.8.8",
+        "detour": "select"
+      },
+      {
+        "tag": "dns_direct",
+        "type": "https",
+        "server": "223.5.5.5",
+        "detour": "direct"
+      },
+      {
+        "tag": "dns_fakeip",
+        "type": "fakeip",
+        "inet4_range": "198.18.0.0/15",
+        "inet6_range": "fc00::/18"
+      }
+    ],
+    "rules": [
+      {
+        "rule_set": [
+          "AdGuardSDNSFilter",
+          "chrome-doh"
+        ],
+        "action": "reject",
+        "method": "default"
+      },
+      {
+        "query_type": [
+          "A",
+          "AAAA"
+        ],
+        "server": "dns_fakeip",
+        "rewrite_ttl": 1
+      },
+      {
+        "clash_mode": "Global",
+        "server": "dns_proxy"
+      },
+      {
+        "clash_mode": "Direct",
+        "server": "dns_direct"
+      },
+      {
+        "rule_set": "geosite-cn",
+        "server": "dns_direct"
+      }
+    ],
+    "strategy": "prefer_ipv4",
+    "independent_cache": true
+  },
+  "inbounds": [
+    {
+      "type": "tun",
+      "mtu": 9000,
+      "address": [
+        "172.18.0.1/30",
+        "fdfe:dcba:9876::1/126"
+      ],
+      "auto_route": true,
+      "strict_route": true,
+      "endpoint_independent_nat": true
+    },
+    {
+      "type": "socks",
+      "tag": "socks-in",
+      "listen": "127.0.0.1",
+      "listen_port": 2333
+    },
+    {
+      "type": "mixed",
+      "tag": "mixed-in",
+      "listen": "127.0.0.1",
+      "listen_port": 2334
+    }
+  ],
+  "outbounds": [
+    {
+      "packet_encoding": "xudp",
+      "server": "qrzv.youxuan.wiki",
+      "server_port": 2086,
+      "tag": "🇸🇬永久官网 lost.youxuan.wiki",
+      "transport": {
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "headers": {
+          "Host": [
+            "sg4.youxuan.wiki"
+          ]
+        },
+        "max_early_data": 2048,
+        "path": "/youxuan",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "4c0109f7-e002-410a-b37d-a56b391237a5"
+    },
+    {
+      "packet_encoding": "xudp",
+      "server": "qrzv.youxuan.wiki",
+      "server_port": 2086,
+      "tag": "🇸🇬 tg频道：@youxuanjichang",
+      "transport": {
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "headers": {
+          "Host": [
+            "sg2.youxuan.wiki"
+          ]
+        },
+        "max_early_data": 2048,
+        "path": "/youxuan",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "4c0109f7-e002-410a-b37d-a56b391237a5"
+    },
+    {
+      "packet_encoding": "xudp",
+      "server": "qrzv.youxuan.wiki",
+      "server_port": 2086,
+      "tag": "请保持经常更新订阅的习惯",
+      "transport": {
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "headers": {
+          "Host": [
+            "sg3.youxuan.wiki"
+          ]
+        },
+        "max_early_data": 2048,
+        "path": "/youxuan",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "4c0109f7-e002-410a-b37d-a56b391237a5"
+    },
+    {
+      "packet_encoding": "xudp",
+      "server": "qrzv.youxuan.wiki",
+      "server_port": 2086,
+      "tag": "🇸🇬新加坡 1",
+      "transport": {
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "headers": {
+          "Host": [
+            "sg1.youxuan.wiki"
+          ]
+        },
+        "max_early_data": 2048,
+        "path": "/youxuan",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "4c0109f7-e002-410a-b37d-a56b391237a5"
+    },
+    {
+      "flow": "",
+      "packet_encoding": "xudp",
+      "server": "sg6.youxuan.wiki",
+      "server_port": 33155,
+      "tag": "🇸🇬新加坡 2",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "reality": {
+          "enabled": true,
+          "public_key": "OstL8i2vDibAu1T4j1I9UnySmrG-wloKWBVC-MhPUDw",
+          "short_id": "42241206"
+        },
+        "server_name": "www.microsoft.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
+        }
+      },
+      "type": "vless",
+      "uuid": "4c0109f7-e002-410a-b37d-a56b391237a5"
+    },
+    {
+      "password": "4c0109f7-e002-410a-b37d-a56b391237a5",
+      "server": "hkh1.youxuan.wiki",
+      "server_port": 8080,
+      "tag": "🇭🇰香港 1",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "hkh1.youxuan.wiki"
+      },
+      "type": "hysteria2"
+    },
+    {
+      "packet_encoding": "xudp",
+      "server": "qrzv.youxuan.wiki",
+      "server_port": 2095,
+      "tag": "🇭🇰香港 2",
+      "transport": {
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "headers": {
+          "Host": [
+            "hk1.youxuan.wiki"
+          ]
+        },
+        "max_early_data": 2048,
+        "path": "/sssddd",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "4c0109f7-e002-410a-b37d-a56b391237a5"
+    },
+    {
+      "password": "4c0109f7-e002-410a-b37d-a56b391237a5",
+      "server": "hk2bbz.youxuan.wiki",
+      "server_port": 8080,
+      "tag": "🇭🇰香港 3",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "hk2bbz.youxuan.wiki"
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "4c0109f7-e002-410a-b37d-a56b391237a5",
+      "server": "hkh4.youxuan.wiki",
+      "server_port": 8080,
+      "tag": "🇭🇰香港 4",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "hkh4.youxuan.wiki"
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "4c0109f7-e002-410a-b37d-a56b391237a5",
+      "server": "hk5.youxuan.wiki",
+      "server_port": 8080,
+      "tag": "🇭🇰香港 5",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "hk5.youxuan.wiki"
+      },
+      "type": "hysteria2"
+    },
+    {
+      "packet_encoding": "xudp",
+      "server": "qrzv.youxuan.wiki",
+      "server_port": 2086,
+      "tag": "🇭🇰香港 6",
+      "transport": {
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "headers": {
+          "Host": [
+            "hk3.youxuan.wiki"
+          ]
+        },
+        "max_early_data": 2048,
+        "path": "/youxuan",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "4c0109f7-e002-410a-b37d-a56b391237a5"
+    },
+    {
+      "password": "4c0109f7-e002-410a-b37d-a56b391237a5",
+      "server": "jph1.youxuan.wiki",
+      "server_port": 33251,
+      "tag": "🇯🇵日本 1",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "jph1.youxuan.wiki"
+      },
+      "type": "hysteria2"
+    },
+    {
+      "packet_encoding": "xudp",
+      "server": "qrzv.youxuan.wiki",
+      "server_port": 2086,
+      "tag": "🇯🇵日本 2",
+      "transport": {
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "headers": {
+          "Host": [
+            "jp2.7896543.xyz"
+          ]
+        },
+        "max_early_data": 2048,
+        "path": "/youxuan",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "4c0109f7-e002-410a-b37d-a56b391237a5"
+    },
+    {
+      "packet_encoding": "xudp",
+      "server": "qrzv.youxuan.wiki",
+      "server_port": 2086,
+      "tag": "🇯🇵日本 3",
+      "transport": {
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "headers": {
+          "Host": [
+            "jp3.youxuan.wiki"
+          ]
+        },
+        "max_early_data": 2048,
+        "path": "/youxuan",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "4c0109f7-e002-410a-b37d-a56b391237a5"
+    },
+    {
+      "alter_id": 0,
+      "security": "auto",
+      "server": "tw.youxuan.wiki",
+      "server_port": 20530,
+      "tag": "🇹🇼台湾 1",
+      "transport": [],
+      "type": "vmess",
+      "uuid": "4c0109f7-e002-410a-b37d-a56b391237a5"
+    },
+    {
+      "flow": "xtls-rprx-vision",
+      "packet_encoding": "xudp",
+      "server": "tw2s.youxuan.wiki",
+      "server_port": 30182,
+      "tag": "🇹🇼台湾 2",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "reality": {
+          "enabled": true,
+          "public_key": "P_PUED_zdQkKxnhk2u32O78SEfSmhyJaTK4kG5rspkA",
+          "short_id": "af9cdf47"
+        },
+        "server_name": "www.microsoft.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "edge"
+        }
+      },
+      "type": "vless",
+      "uuid": "4c0109f7-e002-410a-b37d-a56b391237a5"
+    },
+    {
+      "packet_encoding": "xudp",
+      "server": "qrzv.youxuan.wiki",
+      "server_port": 2086,
+      "tag": "🇹🇼台湾 4",
+      "transport": {
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "headers": {
+          "Host": [
+            "tw3c.youxuan.wiki"
+          ]
+        },
+        "max_early_data": 2048,
+        "path": "/youxuan",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "4c0109f7-e002-410a-b37d-a56b391237a5"
+    },
+    {
+      "packet_encoding": "xudp",
+      "server": "qrzv.youxuan.wiki",
+      "server_port": 2086,
+      "tag": "🇰🇷韩国 1",
+      "transport": {
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "headers": {
+          "Host": [
+            "kr1.youxuan.wiki"
+          ]
+        },
+        "max_early_data": 2048,
+        "path": "/youxuan",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "4c0109f7-e002-410a-b37d-a56b391237a5"
+    },
+    {
+      "packet_encoding": "xudp",
+      "server": "qrzv.youxuan.wiki",
+      "server_port": 2086,
+      "tag": "🇺🇸美国 1",
+      "transport": {
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "headers": {
+          "Host": [
+            "us1.youxuan.wiki"
+          ]
+        },
+        "max_early_data": 2048,
+        "path": "/youxuan",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "4c0109f7-e002-410a-b37d-a56b391237a5"
+    },
+    {
+      "password": "4c0109f7-e002-410a-b37d-a56b391237a5",
+      "server": "ush2.youxuan.wiki",
+      "server_port": 8080,
+      "tag": "🇺🇸美国 2",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "ush2.youxuan.wiki"
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "4c0109f7-e002-410a-b37d-a56b391237a5",
+      "server": "us4.youxuan.wiki",
+      "server_port": 8080,
+      "tag": "🇺🇸美国 3",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "us4.youxuan.wiki"
+      },
+      "type": "hysteria2"
+    },
+    {
+      "packet_encoding": "xudp",
+      "server": "qrzv.youxuan.wiki",
+      "server_port": 2086,
+      "tag": "🇺🇸美国 4",
+      "transport": {
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "headers": {
+          "Host": [
+            "us3.youxuan.wiki"
+          ]
+        },
+        "max_early_data": 2048,
+        "path": "/youxuan",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "4c0109f7-e002-410a-b37d-a56b391237a5"
+    },
+    {
+      "packet_encoding": "xudp",
+      "server": "elsxxx.youxuan.wiki",
+      "server_port": 8080,
+      "tag": "🇷🇺俄罗斯（IPV6节点）",
+      "type": "vless",
+      "uuid": "4c0109f7-e002-410a-b37d-a56b391237a5"
+    },
+    {
+      "packet_encoding": "xudp",
+      "server": "qrzv.youxuan.wiki",
+      "server_port": 2086,
+      "tag": "🇲🇽墨西哥",
+      "transport": {
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "headers": {
+          "Host": [
+            "mx1.youxuan.wiki"
+          ]
+        },
+        "max_early_data": 2048,
+        "path": "/youxuan",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "4c0109f7-e002-410a-b37d-a56b391237a5"
+    },
+    {
+      "packet_encoding": "xudp",
+      "server": "qrzv.youxuan.wiki",
+      "server_port": 2086,
+      "tag": "🇩🇪德国",
+      "transport": {
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "headers": {
+          "Host": [
+            "de.youxuan.wiki"
+          ]
+        },
+        "max_early_data": 2048,
+        "path": "/youxuan",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "4c0109f7-e002-410a-b37d-a56b391237a5"
+    },
+    {
+      "packet_encoding": "xudp",
+      "server": "qrzv.youxuan.wiki",
+      "server_port": 2086,
+      "tag": "🇮🇱以色列",
+      "transport": {
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "headers": {
+          "Host": [
+            "ysl.youxuan.wiki"
+          ]
+        },
+        "max_early_data": 2048,
+        "path": "/youxuan",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "4c0109f7-e002-410a-b37d-a56b391237a5"
+    },
+    {
+      "packet_encoding": "xudp",
+      "server": "qrzv.youxuan.wiki",
+      "server_port": 2086,
+      "tag": "🇸🇪瑞典",
+      "transport": {
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "headers": {
+          "Host": [
+            "rd1.youxuan.wiki"
+          ]
+        },
+        "max_early_data": 2048,
+        "path": "/youxuan",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "4c0109f7-e002-410a-b37d-a56b391237a5"
+    },
+    {
+      "password": "4c0109f7-e002-410a-b37d-a56b391237a5",
+      "server": "nl.youxuan.wiki",
+      "server_port": 11401,
+      "tag": "🇳🇱荷兰",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "nl.youxuan.wiki"
+      },
+      "type": "hysteria2"
+    },
+    {
+      "packet_encoding": "xudp",
+      "server": "qrzv.youxuan.wiki",
+      "server_port": 2086,
+      "tag": "🇮🇳印度",
+      "transport": {
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "headers": {
+          "Host": [
+            "in.youxuan.wiki"
+          ]
+        },
+        "max_early_data": 2048,
+        "path": "/youxuan",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "4c0109f7-e002-410a-b37d-a56b391237a5"
+    },
+    {
+      "packet_encoding": "xudp",
+      "server": "qrzv.youxuan.wiki",
+      "server_port": 2086,
+      "tag": "🇹🇷土耳其",
+      "transport": {
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "headers": {
+          "Host": [
+            "tr1.youxuan.wiki"
+          ]
+        },
+        "max_early_data": 2048,
+        "path": "/youxuan",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "4c0109f7-e002-410a-b37d-a56b391237a5"
+    },
+    {
+      "packet_encoding": "xudp",
+      "server": "qrzv.youxuan.wiki",
+      "server_port": 2086,
+      "tag": "🇫🇷法国 1",
+      "transport": {
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "headers": {
+          "Host": [
+            "fr1.youxuan.wiki"
+          ]
+        },
+        "max_early_data": 2048,
+        "path": "/youxuan",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "4c0109f7-e002-410a-b37d-a56b391237a5"
+    },
+    {
+      "packet_encoding": "xudp",
+      "server": "qrzv.youxuan.wiki",
+      "server_port": 2086,
+      "tag": "🇨🇭瑞士",
+      "transport": {
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "headers": {
+          "Host": [
+            "rs1.youxuan.wiki"
+          ]
+        },
+        "max_early_data": 2048,
+        "path": "/youxuan",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "4c0109f7-e002-410a-b37d-a56b391237a5"
+    },
+    {
+      "packet_encoding": "xudp",
+      "server": "qrzv.youxuan.wiki",
+      "server_port": 2086,
+      "tag": "🇬🇧英国 1",
+      "transport": {
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "headers": {
+          "Host": [
+            "uk1.youxuan.wiki"
+          ]
+        },
+        "max_early_data": 2048,
+        "path": "/youxuan",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "4c0109f7-e002-410a-b37d-a56b391237a5"
+    },
+    {
+      "password": "4c0109f7-e002-410a-b37d-a56b391237a5",
+      "server": "br.youxuan.wiki",
+      "server_port": 33251,
+      "tag": "🇧🇷巴西",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "br.youxuan.wiki"
+      },
+      "type": "hysteria2"
+    },
+    {
+      "tag": "select",
+      "type": "selector",
+      "default": "urltest",
+      "outbounds": [
+        "urltest",
+        "🇸🇬永久官网 lost.youxuan.wiki",
+        "🇸🇬 tg频道：@youxuanjichang",
+        "请保持经常更新订阅的习惯",
+        "🇸🇬新加坡 1",
+        "🇸🇬新加坡 2",
+        "🇭🇰香港 1",
+        "🇭🇰香港 2",
+        "🇭🇰香港 3",
+        "🇭🇰香港 4",
+        "🇭🇰香港 5",
+        "🇭🇰香港 6",
+        "🇯🇵日本 1",
+        "🇯🇵日本 2",
+        "🇯🇵日本 3",
+        "🇹🇼台湾 1",
+        "🇹🇼台湾 2",
+        "🇹🇼台湾 4",
+        "🇰🇷韩国 1",
+        "🇺🇸美国 1",
+        "🇺🇸美国 2",
+        "🇺🇸美国 3",
+        "🇺🇸美国 4",
+        "🇷🇺俄罗斯（IPV6节点）",
+        "🇲🇽墨西哥",
+        "🇩🇪德国",
+        "🇮🇱以色列",
+        "🇸🇪瑞典",
+        "🇳🇱荷兰",
+        "🇮🇳印度",
+        "🇹🇷土耳其",
+        "🇫🇷法国 1",
+        "🇨🇭瑞士",
+        "🇬🇧英国 1",
+        "🇧🇷巴西"
+      ]
+    },
+    {
+      "tag": "urltest",
+      "type": "urltest",
+      "outbounds": [
+        "🇸🇬永久官网 lost.youxuan.wiki",
+        "🇸🇬 tg频道：@youxuanjichang",
+        "请保持经常更新订阅的习惯",
+        "🇸🇬新加坡 1",
+        "🇸🇬新加坡 2",
+        "🇭🇰香港 1",
+        "🇭🇰香港 2",
+        "🇭🇰香港 3",
+        "🇭🇰香港 4",
+        "🇭🇰香港 5",
+        "🇭🇰香港 6",
+        "🇯🇵日本 1",
+        "🇯🇵日本 2",
+        "🇯🇵日本 3",
+        "🇹🇼台湾 1",
+        "🇹🇼台湾 2",
+        "🇹🇼台湾 4",
+        "🇰🇷韩国 1",
+        "🇺🇸美国 1",
+        "🇺🇸美国 2",
+        "🇺🇸美国 3",
+        "🇺🇸美国 4",
+        "🇷🇺俄罗斯（IPV6节点）",
+        "🇲🇽墨西哥",
+        "🇩🇪德国",
+        "🇮🇱以色列",
+        "🇸🇪瑞典",
+        "🇳🇱荷兰",
+        "🇮🇳印度",
+        "🇹🇷土耳其",
+        "🇫🇷法国 1",
+        "🇨🇭瑞士",
+        "🇬🇧英国 1",
+        "🇧🇷巴西"
+      ]
+    },
+    {
+      "tag": "chatgpt",
+      "type": "selector",
+      "outbounds": [
+        "🇸🇬永久官网 lost.youxuan.wiki",
+        "🇸🇬 tg频道：@youxuanjichang",
+        "请保持经常更新订阅的习惯",
+        "🇸🇬新加坡 1",
+        "🇸🇬新加坡 2",
+        "🇭🇰香港 1",
+        "🇭🇰香港 2",
+        "🇭🇰香港 3",
+        "🇭🇰香港 4",
+        "🇭🇰香港 5",
+        "🇭🇰香港 6",
+        "🇯🇵日本 1",
+        "🇯🇵日本 2",
+        "🇯🇵日本 3",
+        "🇹🇼台湾 1",
+        "🇹🇼台湾 2",
+        "🇹🇼台湾 4",
+        "🇰🇷韩国 1",
+        "🇺🇸美国 1",
+        "🇺🇸美国 2",
+        "🇺🇸美国 3",
+        "🇺🇸美国 4",
+        "🇷🇺俄罗斯（IPV6节点）",
+        "🇲🇽墨西哥",
+        "🇩🇪德国",
+        "🇮🇱以色列",
+        "🇸🇪瑞典",
+        "🇳🇱荷兰",
+        "🇮🇳印度",
+        "🇹🇷土耳其",
+        "🇫🇷法国 1",
+        "🇨🇭瑞士",
+        "🇬🇧英国 1",
+        "🇧🇷巴西"
+      ]
+    },
+    {
+      "tag": "direct",
+      "type": "direct"
+    }
+  ],
+  "route": {
+    "rules": [
+      {
+        "action": "sniff"
+      },
+      {
+        "protocol": "dns",
+        "action": "hijack-dns"
+      },
+      {
+        "action": "resolve",
+        "strategy": "prefer_ipv4"
+      },
+      {
+        "clash_mode": "Direct",
+        "outbound": "direct"
+      },
+      {
+        "clash_mode": "Global",
+        "outbound": "select"
+      },
+      {
+        "ip_is_private": true,
+        "outbound": "direct"
+      },
+      {
+        "package_name": "com.openai.chatgpt",
+        "outbound": "chatgpt"
+      },
+      {
+        "domain_suffix": [
+          "gemini.google.com",
+          "proactivebackend-pa.googleapis.com",
+          "bing.com",
+          "bing.net",
+          "bingapis.com"
+        ],
+        "outbound": "chatgpt"
+      },
+      {
+        "domain_keyword": [
+          "qq.com"
+        ],
+        "outbound": "direct"
+      },
+      {
+        "domain_suffix": [
+          "ushd.xmsl.org",
+          "cf.gtlx.org"
+        ],
+        "outbound": "direct"
+      },
+      {
+        "port": [
+          23301,
+          22101,
+          22102,
+          20501
+        ],
+        "outbound": "direct"
+      },
+      {
+        "rule_set": "geoip-cn",
+        "outbound": "direct"
+      }
+    ],
+    "rule_set": [
+      {
+        "type": "remote",
+        "tag": "geoip-cn",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/SagerNet/sing-geoip/rule-set/geoip-cn.srs",
+        "download_detour": "select"
+      },
+      {
+        "type": "remote",
+        "tag": "geosite-cn",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/xmdhs/sing-geosite/rule-set-Loyalsoldier/geosite-geolocation-cn.srs",
+        "download_detour": "select"
+      },
+      {
+        "type": "remote",
+        "tag": "AdGuardSDNSFilter",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/xmdhs/sing-box-ruleset/rule-set/AdGuardSDNSFilterSingBox.srs",
+        "download_detour": "select"
+      },
+      {
+        "type": "remote",
+        "tag": "chrome-doh",
+        "format": "source",
+        "url": "https://gist.githubusercontent.com/xmdhs/71fc5ff6ef29f5ecaf2c52b8de5c3172/raw/chrome-doh.json",
+        "download_detour": "select"
+      }
+    ],
+    "default_domain_resolver": "dns_direct",
+    "final": "select",
+    "auto_detect_interface": true
+  },
+  "experimental": {
+    "cache_file": {
+      "enabled": true
+    },
+    "clash_api": {
+      "external_controller": "127.0.0.1:9090"
+    }
+  }
+}
