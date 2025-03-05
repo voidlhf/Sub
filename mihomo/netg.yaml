@@ -17,7 +17,7 @@ hosts:
   alt7-mtalk.google.com: "173.194.219.188"
   alt8-mtalk.google.com: "142.250.112.188"
 proxies:
-- {name: "剩余流量：37.33 GB", type: "vmess", server: "77.90.52.163", port: 16899, uuid: "a763c104-e8dd-472d-add2-dca4e6fc183e", alterId: 0, cipher: "auto", udp: true}
+- {name: "剩余流量：37.27 GB", type: "vmess", server: "77.90.52.163", port: 16899, uuid: "a763c104-e8dd-472d-add2-dca4e6fc183e", alterId: 0, cipher: "auto", udp: true}
 - {name: "距离下次重置剩余：1 天", type: "vmess", server: "77.90.52.163", port: 16899, uuid: "a763c104-e8dd-472d-add2-dca4e6fc183e", alterId: 0, cipher: "auto", udp: true}
 - {name: "套餐到期：2025-03-06", type: "vmess", server: "77.90.52.163", port: 16899, uuid: "a763c104-e8dd-472d-add2-dca4e6fc183e", alterId: 0, cipher: "auto", udp: true}
 - {name: "流量合理使用可发工单重置，有部分ipv6-only节点，请确认您的软件和环境是否支持", type: "vmess", server: "77.90.52.163", port: 16899, uuid: "a763c104-e8dd-472d-add2-dca4e6fc183e", alterId: 0, cipher: "auto", udp: true}
@@ -30,15 +30,15 @@ proxies:
 - {name: "🇨🇦CA-100Mbps", type: "vless", server: "back-ca1.uni-verse.top", port: 443, uuid: "a763c104-e8dd-472d-add2-dca4e6fc183e", udp: true, tls: true, servername: "back-ca1.uni-verse.top", network: "ws", ws-opts: {path: "/fuck", headers: {Host: "back-ca1.uni-verse.top"}, max-early-data: 2560, early-data-header-name: "Sec-WebSocket-Protocol"}}
 - {name: "🇧🇬BG-300Mbps", type: "vless", server: "back-bg1.uni-verse.top", port: 443, uuid: "a763c104-e8dd-472d-add2-dca4e6fc183e", udp: true, tls: true, servername: "back-bg1.uni-verse.top", network: "ws", ws-opts: {path: "/nan", headers: {Host: "back-bg1.uni-verse.top"}, max-early-data: 2560, early-data-header-name: "Sec-WebSocket-Protocol"}}
 - {name: "🇩🇪DE1", type: "vmess", server: "179.61.253.58", port: 21299, uuid: "a763c104-e8dd-472d-add2-dca4e6fc183e", alterId: 0, cipher: "auto", udp: true, network: "grpc", grpc-opts: {grpc-service-name: "nanliangfuckyou"}}
-- {name: "🇦🇶AQ-IPv6-Only-1Gbps", server: "2a0f:7803:fac0:6b2a:0001:0000:0000:0001", port: 57061, sni: "back-hk2.ip03.shop", up: 200, down: 200, skip-cert-verify: true, type: "hysteria2", password: "a763c104-e8dd-472d-add2-dca4e6fc183e", obfs: "salamander", obfs-password: "ZWE5NThmNzJmMTkwNDE5Yg==", ports: "30000-60000"}
-- {name: "🇿🇼ZW1", server: "41.190.32.25", port: 55031, sni: "back-hk2.ip03.shop", up: 200, down: 200, skip-cert-verify: true, type: "hysteria2", password: "a763c104-e8dd-472d-add2-dca4e6fc183e", obfs: "salamander", obfs-password: "ZWE5NThmNzJmMTkwNDE5Yg==", ports: "55005-55045"}
+- {name: "🇦🇶AQ-IPv6-Only-1Gbps", server: "2a0f:7803:fac0:6b2a:0001:0000:0000:0001", port: 41833, sni: "back-hk2.ip03.shop", up: 200, down: 200, skip-cert-verify: true, type: "hysteria2", password: "a763c104-e8dd-472d-add2-dca4e6fc183e", obfs: "salamander", obfs-password: "ZWE5NThmNzJmMTkwNDE5Yg==", ports: "30000-60000"}
+- {name: "🇿🇼ZW1", server: "41.190.32.25", port: 55030, sni: "back-hk2.ip03.shop", up: 200, down: 200, skip-cert-verify: true, type: "hysteria2", password: "a763c104-e8dd-472d-add2-dca4e6fc183e", obfs: "salamander", obfs-password: "ZWE5NThmNzJmMTkwNDE5Yg==", ports: "55005-55045"}
 proxy-groups:
 - name: "🚀 节点选择"
   type: "select"
   proxies:
   - "♻️ 自动选择"
   - "DIRECT"
-  - "剩余流量：37.33 GB"
+  - "剩余流量：37.27 GB"
   - "距离下次重置剩余：1 天"
   - "套餐到期：2025-03-06"
   - "流量合理使用可发工单重置，有部分ipv6-only节点，请确认您的软件和环境是否支持"
@@ -59,7 +59,7 @@ proxy-groups:
   interval: 300
   tolerance: 50
   proxies:
-  - "剩余流量：37.33 GB"
+  - "剩余流量：37.27 GB"
   - "距离下次重置剩余：1 天"
   - "套餐到期：2025-03-06"
   - "流量合理使用可发工单重置，有部分ipv6-only节点，请确认您的软件和环境是否支持"
@@ -80,7 +80,7 @@ proxy-groups:
   - "🚀 节点选择"
   - "♻️ 自动选择"
   - "🎯 全球直连"
-  - "剩余流量：37.33 GB"
+  - "剩余流量：37.27 GB"
   - "距离下次重置剩余：1 天"
   - "套餐到期：2025-03-06"
   - "流量合理使用可发工单重置，有部分ipv6-only节点，请确认您的软件和环境是否支持"
@@ -100,7 +100,7 @@ proxy-groups:
   proxies:
   - "🚀 节点选择"
   - "🎯 全球直连"
-  - "剩余流量：37.33 GB"
+  - "剩余流量：37.27 GB"
   - "距离下次重置剩余：1 天"
   - "套餐到期：2025-03-06"
   - "流量合理使用可发工单重置，有部分ipv6-only节点，请确认您的软件和环境是否支持"
@@ -120,7 +120,7 @@ proxy-groups:
   proxies:
   - "🚀 节点选择"
   - "🎯 全球直连"
-  - "剩余流量：37.33 GB"
+  - "剩余流量：37.27 GB"
   - "距离下次重置剩余：1 天"
   - "套餐到期：2025-03-06"
   - "流量合理使用可发工单重置，有部分ipv6-only节点，请确认您的软件和环境是否支持"
@@ -140,7 +140,7 @@ proxy-groups:
   proxies:
   - "🚀 节点选择"
   - "🎯 全球直连"
-  - "剩余流量：37.33 GB"
+  - "剩余流量：37.27 GB"
   - "距离下次重置剩余：1 天"
   - "套餐到期：2025-03-06"
   - "流量合理使用可发工单重置，有部分ipv6-only节点，请确认您的软件和环境是否支持"
@@ -161,7 +161,7 @@ proxy-groups:
   - "🎯 全球直连"
   - "🚀 节点选择"
   - "♻️ 自动选择"
-  - "剩余流量：37.33 GB"
+  - "剩余流量：37.27 GB"
   - "距离下次重置剩余：1 天"
   - "套餐到期：2025-03-06"
   - "流量合理使用可发工单重置，有部分ipv6-only节点，请确认您的软件和环境是否支持"
@@ -198,7 +198,7 @@ proxy-groups:
   - "🚀 节点选择"
   - "🎯 全球直连"
   - "♻️ 自动选择"
-  - "剩余流量：37.33 GB"
+  - "剩余流量：37.27 GB"
   - "距离下次重置剩余：1 天"
   - "套餐到期：2025-03-06"
   - "流量合理使用可发工单重置，有部分ipv6-only节点，请确认您的软件和环境是否支持"
