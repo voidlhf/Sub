@@ -81,33 +81,60 @@
   ],
   "outbounds": [
     {
-      "server": "47.104.186.133",
-      "server_port": 50002,
+      "password": "asd123456",
+      "server": "103.36.90.195",
+      "server_port": 8388,
       "tag": "❓ 未知_1",
-      "type": "vmess",
-      "security": "auto",
-      "uuid": "418048af-a293-4b99-9b0c-98ca3580dd24"
+      "type": "shadowsocks",
+      "method": "chacha20-ietf",
+      "network": "tcp"
     },
     {
-      "server": "112.132.212.19",
-      "server_port": 50004,
+      "server": "47.104.186.133",
+      "server_port": 50002,
       "tag": "🇨🇳 中国_1",
       "type": "vmess",
       "security": "auto",
       "uuid": "418048af-a293-4b99-9b0c-98ca3580dd24"
     },
     {
-      "password": "amazonskr05",
-      "server": "18.143.186.182",
-      "server_port": 443,
-      "tag": "❓ 未知_2",
+      "password": "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv",
+      "server": "125.227.86.44",
+      "server_port": 2377,
+      "tag": "🇹🇼 台湾",
       "type": "shadowsocks",
-      "method": "aes-256-cfb",
-      "network": "tcp"
+      "method": "chacha20-ietf-poly1305",
+      "network": "tcp",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=tls;obfs-host=86e8c33.dl.microsoft.eu:61496"
+    },
+    {
+      "server": "120.26.55.225",
+      "server_port": 50002,
+      "tag": "🇨🇳 中国_2",
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "418048af-a293-4b99-9b0c-98ca3580dd24"
+    },
+    {
+      "password": "90c0bc87-d7dd-4233-9b1a-cc9e7cf30649",
+      "server": "36.151.251.12",
+      "server_port": 12003,
+      "tag": "❓ 未知_2",
+      "tls": {
+        "enabled": true,
+        "server_name": "36.151.251.12",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "type": "trojan"
     },
     {
       "password": "amazonskr05",
-      "server": "13.229.110.23",
+      "server": "13.250.31.57",
       "server_port": 443,
       "tag": "❓ 未知_3",
       "type": "shadowsocks",
@@ -115,45 +142,77 @@
       "network": "tcp"
     },
     {
-      "password": "iMqY3uG_5pgEj3hCfyHB-0vB",
-      "server": "143.198.235.49",
-      "server_port": 443,
-      "tag": "🇺🇸 美国_1",
+      "server": "160.16.148.100",
+      "server_port": 31738,
+      "tag": "🇯🇵 日本",
       "tls": {
         "enabled": true,
-        "server_name": "143.198.235.49",
-        "insecure": true
+        "server_name": "apple.com",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "aMur4VIL6x4K12L7FRxqcrqjLbhmu9viYfssGXS8gEI",
+          "short_id": "ee"
+        }
       },
-      "type": "hysteria2"
+      "type": "vless",
+      "uuid": "5d711a41-6fe4-4ced-9eb2-e86474c17906",
+      "flow": "xtls-rprx-vision",
+      "packet_encoding": "xudp"
+    },
+    {
+      "password": "asd123456",
+      "server": "103.149.183.61",
+      "server_port": 8388,
+      "tag": "❓ 未知_4",
+      "type": "shadowsocks",
+      "method": "chacha20-ietf",
+      "network": "tcp"
     },
     {
       "server": "183.236.51.36",
       "server_port": 59003,
-      "tag": "🇨🇳 中国_2",
+      "tag": "🇨🇳 中国_3",
       "type": "vmess",
       "security": "auto",
       "uuid": "418048af-a293-4b99-9b0c-98ca3580dd24"
     },
     {
-      "server": "59.149.204.218",
-      "server_port": 54321,
-      "tag": "❓ 未知_4",
+      "password": "amazonskr05",
+      "server": "13.250.96.5",
+      "server_port": 443,
+      "tag": "❓ 未知_5",
+      "type": "shadowsocks",
+      "method": "aes-256-cfb",
+      "network": "tcp"
+    },
+    {
+      "server": "157.90.118.187",
+      "server_port": 443,
+      "tag": "🇩🇪 德国_1",
       "tls": {
         "enabled": true,
-        "server_name": "c01.ylkszy.eu.org",
-        "insecure": true
+        "server_name": "www.cdn77.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "32v2F8Ymo35CC3Q9D-T0uUMCoz-bvtvl5aMYQ-kvCV8",
+          "short_id": "33a68471e114bb72"
+        }
       },
       "transport": {
-        "headers": {
-          "Host": [
-            "c01.ylkszy.eu.org"
-          ]
-        },
-        "path": "/?ed=2560",
-        "type": "ws"
+        "type": "grpc",
+        "service_name": "Telegram-ipV2Ray-Telegram-ipV2Ray-Telegram-ipV2Ray-Telegram-ipV2Ray-Telegram-ipV2Ray"
       },
       "type": "vless",
-      "uuid": "06e4425e-a8cb-4b63-929f-2105604ab0a9",
+      "uuid": "bde33c35-9aea-41db-be04-a7b756b93fe1",
       "packet_encoding": "xudp"
     },
     {
@@ -173,105 +232,45 @@
       "type": "hysteria2"
     },
     {
-      "server": "175.213.146.92",
-      "server_port": 12020,
-      "tag": "🇯🇵 日本_1",
+      "password": "4a48871d49c3f20fd93d365c49e45f78",
+      "server": "v.ccs.vaala.cat",
+      "server_port": 443,
+      "tag": "🇺🇸 美国_1",
       "tls": {
         "enabled": true,
-        "server_name": "c01.ylkszy.eu.org",
-        "insecure": true
+        "server_name": "v.ccs.vaala.cat"
       },
-      "transport": {
-        "headers": {
-          "Host": [
-            "c01.ylkszy.eu.org"
-          ]
-        },
-        "path": "/?ed=2560",
-        "type": "ws"
-      },
-      "type": "vless",
-      "uuid": "06e4425e-a8cb-4b63-929f-2105604ab0a9",
-      "packet_encoding": "xudp"
-    },
-    {
-      "password": "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv",
-      "server": "221.215.48.118",
-      "server_port": 2377,
-      "tag": "🇹🇼 台湾",
-      "type": "shadowsocks",
-      "method": "chacha20-ietf-poly1305",
-      "network": "tcp",
-      "plugin": "obfs-local",
-      "plugin_opts": "obfs=tls;obfs-host=d6cb3d6.dl.microsoft.lt:47299"
+      "type": "hysteria2"
     },
     {
       "password": "amazonskr05",
-      "server": "13.125.1.224",
+      "server": "3.38.190.30",
       "server_port": 443,
-      "tag": "❓ 未知_5",
-      "type": "shadowsocks",
-      "method": "aes-256-cfb"
-    },
-    {
-      "password": "f8f7aCzcPKbsF8p3",
-      "server": "84.17.53.160",
-      "server_port": 989,
       "tag": "❓ 未知_6",
-      "type": "shadowsocks",
-      "method": "aes-256-cfb"
-    },
-    {
-      "server": "220.86.175.229",
-      "server_port": 30001,
-      "tag": "❓ 未知_7",
-      "tls": {
-        "enabled": true,
-        "server_name": "c01.ylkszy.eu.org",
-        "insecure": true
-      },
-      "transport": {
-        "headers": {
-          "Host": [
-            "c01.ylkszy.eu.org"
-          ]
-        },
-        "path": "/?ed=2560",
-        "type": "ws"
-      },
-      "type": "vless",
-      "uuid": "06e4425e-a8cb-4b63-929f-2105604ab0a9",
-      "packet_encoding": "xudp"
-    },
-    {
-      "server": "join.E-L-i-V-2-R-A-Y.fastly80-3.hosting-ip.com",
-      "server_port": 80,
-      "tag": "❓ 未知_8",
-      "transport": {
-        "headers": {
-          "Host": [
-            "Join--E-L-i-V-2-R-A-Y.net"
-          ]
-        },
-        "path": "/channel,ELiV2RAY-channel,ELiV2RAY-channel,ELiV2RAY?edfp",
-        "type": "ws"
-      },
-      "type": "vless",
-      "uuid": "53fa8faf-ba4b-4322-9c69-a3e5b1555049",
-      "packet_encoding": "xudp"
-    },
-    {
-      "password": "amazonskr05",
-      "server": "13.115.246.98",
-      "server_port": 443,
-      "tag": "❓ 未知_9",
       "type": "shadowsocks",
       "method": "aes-256-cfb",
       "network": "tcp"
     },
     {
+      "server": "198.41.199.226",
+      "server_port": 80,
+      "tag": "❓ 未知_7",
+      "transport": {
+        "headers": {
+          "Host": [
+            "a.mifeng.us.kg"
+          ]
+        },
+        "path": "/telegram-_-_-_-_-__-free_shekan-_-_-_-/?ed=2048",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "d342d11e-d424-4583-b36e-524ab1f0afa4",
+      "packet_encoding": "xudp"
+    },
+    {
       "server": "185.22.155.71",
-      "server_port": 49615,
+      "server_port": 40075,
       "tag": "🇷🇺 俄罗斯_2",
       "tls": {
         "enabled": true,
@@ -292,21 +291,64 @@
       "obfs": "dongtaiwang.com"
     },
     {
-      "server": "104.16.49.221",
+      "password": "amazonskr05",
+      "server": "43.201.0.67",
+      "server_port": 443,
+      "tag": "❓ 未知_8",
+      "type": "shadowsocks",
+      "method": "aes-256-cfb"
+    },
+    {
+      "server": "209.227.230.243",
+      "server_port": 443,
+      "tag": "🇮🇹 意大利",
+      "tls": {
+        "enabled": true,
+        "server_name": "wordpress.org",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "gH_h3-mo0stXouQX61J22W14N9-RlRjwo6BQgAcUay4",
+          "short_id": "c5508bd7"
+        }
+      },
+      "transport": {
+        "type": "grpc",
+        "service_name": "vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl"
+      },
+      "type": "vless",
+      "uuid": "253f59da-b708-4404-cebe-3854aad88880",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "141.101.121.87",
       "server_port": 80,
-      "tag": "❓ 未知_10",
+      "tag": "❓ 未知_9",
       "transport": {
         "headers": {
           "Host": [
-            "holy-bush-cbc8-ppal03.rawej75976.workers.dev"
+            "a.mifeng.us.kg"
           ]
         },
-        "path": "/?ed=2560",
+        "path": "/telegram-_-_-_-_-__-free_shekan-_-_-_-/?ed=2048",
         "type": "ws"
       },
       "type": "vless",
-      "uuid": "9970aa48-37ce-4217-b525-579e61ab9cfa",
+      "uuid": "d342d11e-d424-4583-b36e-524ab1f0afa4",
       "packet_encoding": "xudp"
+    },
+    {
+      "password": "amazonskr05",
+      "server": "57.180.54.251",
+      "server_port": 443,
+      "tag": "❓ 未知_10",
+      "type": "shadowsocks",
+      "method": "aes-256-cfb",
+      "network": "tcp"
     },
     {
       "password": "88430607-f080-4816-b2e5-1a47e193a057",
@@ -318,50 +360,16 @@
       "network": "tcp"
     },
     {
-      "password": "amazonskr05",
-      "server": "18.183.221.195",
-      "server_port": 443,
-      "tag": "❓ 未知_13",
-      "type": "shadowsocks",
-      "method": "aes-256-cfb",
-      "network": "tcp"
-    },
-    {
-      "password": "amazonskr05",
-      "server": "34.219.164.232",
-      "server_port": 443,
-      "tag": "❓ 未知_14",
-      "type": "shadowsocks",
-      "method": "aes-256-cfb"
-    },
-    {
-      "server": "104.16.132.187",
+      "server": "104.21.56.44",
       "server_port": 80,
-      "tag": "❓ 未知_15",
+      "tag": "❓ 未知_12",
       "transport": {
         "headers": {
           "Host": [
-            "icy-cherry-b8af-ppal03.givay59005.workers.dev"
+            "redw.pooriam.ir"
           ]
         },
-        "path": "/?ed=2560",
-        "type": "ws"
-      },
-      "type": "vless",
-      "uuid": "80d32ddd-c0ac-4eb6-8a2a-3b27b23f32b4",
-      "packet_encoding": "xudp"
-    },
-    {
-      "server": "join.e-l-i-v-2-r-a-y.fastly80-3.hosting-ip.com",
-      "server_port": 80,
-      "tag": "❓ 未知_16",
-      "transport": {
-        "headers": {
-          "Host": [
-            "Join--E-L-i-V-2-R-A-Y.net"
-          ]
-        },
-        "path": "/channel,ELiV2RAY-channel,ELiV2RAY-channel,ELiV2RAY?ed",
+        "path": "/telegram@-----------------------WedBaZ-------------------------WedBaZ---------------------/?ed=2048",
         "type": "ws"
       },
       "type": "vless",
@@ -369,144 +377,34 @@
       "packet_encoding": "xudp"
     },
     {
-      "server": "132.145.124.43",
-      "server_port": 12509,
-      "tag": "❓ 未知_17",
-      "tls": {
-        "enabled": true,
-        "server_name": "c01.ylkszy.eu.org",
-        "insecure": true
-      },
-      "transport": {
-        "headers": {
-          "Host": [
-            "c01.ylkszy.eu.org"
-          ]
-        },
-        "path": "/?ed=2560",
-        "type": "ws"
-      },
-      "type": "vless",
-      "uuid": "06e4425e-a8cb-4b63-929f-2105604ab0a9",
-      "packet_encoding": "xudp"
-    },
-    {
-      "server": "185.133.35.103",
-      "server_port": 443,
-      "tag": "❓ 未知_18",
-      "tls": {
-        "enabled": true,
-        "server_name": "c01.ylkszy.eu.org",
-        "insecure": true
-      },
-      "transport": {
-        "headers": {
-          "Host": [
-            "c01.ylkszy.eu.org"
-          ]
-        },
-        "path": "/?ed=2560",
-        "type": "ws"
-      },
-      "type": "vless",
-      "uuid": "06e4425e-a8cb-4b63-929f-2105604ab0a9",
-      "packet_encoding": "xudp"
-    },
-    {
-      "server": "www.glassdoor.com",
-      "server_port": 443,
-      "tag": "❓ 未知_19",
-      "tls": {
-        "enabled": true,
-        "server_name": "c01.ylkszy.eu.org",
-        "insecure": true
-      },
-      "transport": {
-        "headers": {
-          "Host": [
-            "c01.ylkszy.eu.org"
-          ]
-        },
-        "path": "/?ed=2560",
-        "type": "ws"
-      },
-      "type": "vless",
-      "uuid": "06e4425e-a8cb-4b63-929f-2105604ab0a9",
-      "packet_encoding": "xudp"
-    },
-    {
-      "password": "1cc59a3a-9625-40f7-b0e6-e233286ae82d",
-      "server": "45.144.174.12",
-      "server_port": 31651,
-      "tag": "🇭🇰 香港",
-      "tls": {
-        "enabled": true,
-        "server_name": "45.144.174.12",
-        "insecure": true
-      },
-      "type": "hysteria2",
-      "down_mbps": 1,
-      "up_mbps": 1,
-      "obfs": {
-        "password": "M2UyNTc5OWUwYjkyM2Q2OQ==",
-        "type": "salamander"
-      }
-    },
-    {
-      "server": "104.18.32.69",
-      "server_port": 2095,
-      "tag": "❓ 未知_20",
-      "transport": {
-        "headers": {
-          "Host": [
-            "21tg.459tj345.workers.dev"
-          ]
-        },
-        "path": "/?ed=2560",
-        "type": "ws"
-      },
-      "type": "vless",
-      "uuid": "33039dbe-8889-42f1-9aeb-ecfbfa2a1640",
-      "packet_encoding": "xudp"
-    },
-    {
-      "server": "172.67.190.221",
-      "server_port": 2082,
-      "tag": "❓ 未知_21",
-      "transport": {
-        "headers": {
-          "Host": [
-            "bLaCk-trutH-63Bc.DoviF72324.WoRKeRs.dev"
-          ]
-        },
-        "path": "/?ed=2560",
-        "type": "ws"
-      },
-      "type": "vless",
-      "uuid": "54b3cbba-e6ac-485a-9481-976a0873eab9",
-      "packet_encoding": "xudp"
-    },
-    {
-      "server": "188.114.96.3",
+      "server": "172.67.168.60",
       "server_port": 80,
-      "tag": "❓ 未知_22",
+      "tag": "❓ 未知_13",
       "transport": {
         "headers": {
           "Host": [
-            "sHAhRamConfIGWorKERCJsa9898.coNFiGSHahrAMCOnFiG.wOrkErS.DeV"
+            "workerr.johnstoner.workers.dev"
           ]
         },
-        "path": "/pgLUAo7mya6xC60a?ed=2560",
+        "path": "/Telegram@V2ray_Alpha/?ed=2048",
         "type": "ws"
       },
       "type": "vless",
-      "uuid": "260c4900-69a9-465c-8c3a-272eb1b4ec00",
+      "uuid": "5335d16e-7e42-4c9b-93a3-9e83bfd3073d",
       "packet_encoding": "xudp"
+    },
+    {
+      "password": "asd123456",
+      "server": "202.162.109.169",
+      "server_port": 8388,
+      "tag": "❓ 未知_14",
+      "type": "shadowsocks",
+      "method": "chacha20-ietf"
     },
     {
       "server": "104.18.28.181",
       "server_port": 8080,
-      "tag": "❓ 未知_23",
+      "tag": "❓ 未知_15",
       "transport": {
         "headers": {
           "Host": [
@@ -521,47 +419,87 @@
       "packet_encoding": "xudp"
     },
     {
-      "server": "172.67.135.195",
-      "server_port": 2052,
-      "tag": "❓ 未知_24",
-      "transport": {
-        "headers": {
-          "Host": [
-            "sWEeT-DIsK-b69d.TUdTudtrUHtRU.wOrkERS.dev"
-          ],
-          "User-Agent": [
-            "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.63 Safari/537.36"
-          ]
-        },
-        "path": "/J61hhknxUXEwJZLq/MTU5LjY5LjE1My4xMTQ=?ed=2560",
-        "type": "ws"
-      },
-      "type": "vless",
-      "uuid": "0d710c53-876d-401f-97f0-6bd1a8db941a",
-      "packet_encoding": "xudp"
+      "server": "120.232.153.41",
+      "server_port": 32077,
+      "tag": "🇺🇸 美国_3",
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "418048af-a293-4b99-9b0c-98ca3580dd24"
     },
     {
-      "server": "104.21.59.165",
+      "server": "154.83.2.228",
       "server_port": 8880,
-      "tag": "❓ 未知_25",
+      "tag": "🇳🇱 荷兰_1",
       "transport": {
         "headers": {
           "Host": [
-            "falcunargo.c2259d7c10.workers.dev"
+            "redw.pooriam.ir"
           ]
         },
-        "path": "/@TELEGRAM-MARAMBASHI/?ed=2048",
+        "path": "/@AZARBAYJAB1@AZARBAYJAB1@AZARBAYJAB1@AZARBAYJAB1@AZARBAYJAB1@AZARBAYJAB1?ed",
         "type": "ws"
       },
       "type": "vless",
-      "uuid": "51d3d249-9095-4cbd-8fd2-3e6c1039cab4",
+      "uuid": "53fa8faf-ba4b-4322-9c69-a3e5b1555049",
       "packet_encoding": "xudp"
     },
     {
       "password": "telegram-id-privatevpns",
-      "server": "13.53.219.38",
+      "server": "3.78.108.122",
       "server_port": 22222,
-      "tag": "❓ 未知_26",
+      "tag": "❓ 未知_16",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojan.burgerip.co.uk",
+        "alpn": [
+          "http/1.1"
+        ]
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "WVU27LquAMOeXmYeStI897",
+      "server": "188.126.83.62",
+      "server_port": 32448,
+      "tag": "❓ 未知_17",
+      "type": "shadowsocks",
+      "method": "chacha20-ietf-poly1305",
+      "network": "tcp"
+    },
+    {
+      "server": "37.156.47.137",
+      "server_port": 1003,
+      "tag": "🇨🇭 瑞士",
+      "tls": {
+        "enabled": true,
+        "server_name": "astartap-abr.ir",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "ZR-m-ptbkHU71ZoH-jRM8L1NqSN1rzW738PsSHFwkik"
+        }
+      },
+      "type": "vless",
+      "uuid": "7de5b9f2-430a-4f2c-89b8-88e04a3ba179",
+      "packet_encoding": "xudp"
+    },
+    {
+      "password": "ntdLR5vHEjmZ1fsVrur4CT",
+      "server": "45.140.147.63",
+      "server_port": 7541,
+      "tag": "🇳🇱 荷兰_2",
+      "type": "shadowsocks",
+      "method": "chacha20-ietf-poly1305",
+      "network": "tcp"
+    },
+    {
+      "password": "telegram-id-privatevpns",
+      "server": "3.124.150.215",
+      "server_port": 22222,
+      "tag": "❓ 未知_18",
       "tls": {
         "enabled": true,
         "server_name": "trojan.burgerip.co.uk"
@@ -569,437 +507,244 @@
       "type": "trojan"
     },
     {
-      "server": "www.pcmag.com",
-      "server_port": 443,
-      "tag": "❓ 未知_27",
-      "tls": {
-        "enabled": true,
-        "server_name": "c01.ylkszy.eu.org",
-        "insecure": true
-      },
-      "transport": {
-        "headers": {
-          "Host": [
-            "c01.ylkszy.eu.org"
-          ]
-        },
-        "path": "/?ed=2560",
-        "type": "ws"
-      },
-      "type": "vless",
-      "uuid": "06e4425e-a8cb-4b63-929f-2105604ab0a9",
-      "packet_encoding": "xudp"
-    },
-    {
-      "password": "asd123456",
-      "server": "202.162.109.169",
-      "server_port": 8388,
-      "tag": "❓ 未知_28",
-      "type": "shadowsocks",
-      "method": "chacha20-ietf"
-    },
-    {
-      "server": "192.18.134.22",
-      "server_port": 443,
-      "tag": "❓ 未知_29",
-      "tls": {
-        "enabled": true,
-        "server_name": "c01.ylkszy.eu.org",
-        "insecure": true
-      },
-      "transport": {
-        "headers": {
-          "Host": [
-            "c01.ylkszy.eu.org"
-          ]
-        },
-        "path": "/?ed=2560",
-        "type": "ws"
-      },
-      "type": "vless",
-      "uuid": "06e4425e-a8cb-4b63-929f-2105604ab0a9",
-      "packet_encoding": "xudp"
-    },
-    {
-      "server": "66.235.200.94",
+      "server": "185.146.173.112",
       "server_port": 8880,
-      "tag": "❓ 未知_30",
+      "tag": "🇸🇬 新加坡",
       "transport": {
         "headers": {
           "Host": [
-            "channel-falcunargo.efa180b5d7.workers.Dev"
+            "photographipictureai.ir"
           ]
         },
-        "path": "/✦❰+𝗝𝗼𝗶𝗻+➪+",
+        "path": "/Telegram@Azarbayjab1@Azarbayjab1@Azarbayjab1/?ed=2560",
         "type": "ws"
       },
       "type": "vless",
-      "uuid": "5faa94c6-ea27-4ea0-9e39-2de3d6ea9be1",
+      "uuid": "f6bd2c47-99da-4bca-bf70-7186aa9e7e06",
       "packet_encoding": "xudp"
     },
     {
-      "server": "154.83.2.230",
-      "server_port": 8880,
-      "tag": "🇺🇸 美国_3",
-      "transport": {
-        "headers": {
-          "Host": [
-            "redw.pooriam.ir"
-          ]
-        },
-        "path": "/@AZARBAYJAB1@AZARBAYJAB1@AZARBAYJAB1@AZARBAYJAB1@AZARBAYJAB1@AZARBAYJAB1?ed",
-        "type": "ws"
-      },
-      "type": "vless",
-      "uuid": "53fa8faf-ba4b-4322-9c69-a3e5b1555049",
-      "packet_encoding": "xudp"
-    },
-    {
-      "server": "185.174.138.197",
-      "server_port": 8080,
-      "tag": "❓ 未知_31",
-      "transport": {
-        "headers": {
-          "Host": [
-            "a.xn--i-sx6a60i.us.kg."
-          ]
-        },
-        "path": "/",
-        "type": "ws"
-      },
-      "type": "vless",
-      "uuid": "d342d11e-d424-4583-b36e-524ab1f0afa4",
-      "packet_encoding": "xudp"
-    },
-    {
-      "server": "104.24.37.192",
-      "server_port": 80,
-      "tag": "❓ 未知_32",
-      "transport": {
-        "headers": {
-          "Host": [
-            "ppal03.dolobe7975.workers.dev"
-          ]
-        },
-        "path": "/?ed=2560",
-        "type": "ws"
-      },
-      "type": "vless",
-      "uuid": "9a2680ff-c5d5-410a-9108-8d6b10e4ea1e",
-      "packet_encoding": "xudp"
-    },
-    {
-      "server": "104.18.32.69",
-      "server_port": 2052,
-      "tag": "❓ 未知_33",
-      "transport": {
-        "headers": {
-          "Host": [
-            "21tg.459tj345.workers.dev"
-          ]
-        },
-        "path": "/?ed=2560",
-        "type": "ws"
-      },
-      "type": "vless",
-      "uuid": "33039dbe-8889-42f1-9aeb-ecfbfa2a1640",
-      "packet_encoding": "xudp"
-    },
-    {
-      "server": "198.62.62.4",
-      "server_port": 443,
-      "tag": "❓ 未知_34",
-      "tls": {
-        "enabled": true,
-        "server_name": "c01.ylkszy.eu.org",
-        "insecure": true
-      },
-      "transport": {
-        "headers": {
-          "Host": [
-            "c01.ylkszy.eu.org"
-          ]
-        },
-        "path": "/?ed=2560",
-        "type": "ws"
-      },
-      "type": "vless",
-      "uuid": "06e4425e-a8cb-4b63-929f-2105604ab0a9",
-      "packet_encoding": "xudp"
-    },
-    {
-      "server": "otto.ns.cloudflare.com",
-      "server_port": 443,
-      "tag": "❓ 未知_35",
-      "tls": {
-        "enabled": true,
-        "server_name": "c01.ylkszy.eu.org",
-        "insecure": true
-      },
-      "transport": {
-        "headers": {
-          "Host": [
-            "c01.ylkszy.eu.org"
-          ]
-        },
-        "path": "/?ed=2560",
-        "type": "ws"
-      },
-      "type": "vless",
-      "uuid": "06e4425e-a8cb-4b63-929f-2105604ab0a9",
-      "packet_encoding": "xudp"
-    },
-    {
-      "server": "decker.ns.cloudflare.com",
-      "server_port": 443,
-      "tag": "❓ 未知_36",
-      "tls": {
-        "enabled": true,
-        "server_name": "c01.ylkszy.eu.org",
-        "insecure": true
-      },
-      "transport": {
-        "headers": {
-          "Host": [
-            "c01.ylkszy.eu.org"
-          ]
-        },
-        "path": "/?ed=2560",
-        "type": "ws"
-      },
-      "type": "vless",
-      "uuid": "06e4425e-a8cb-4b63-929f-2105604ab0a9",
-      "packet_encoding": "xudp"
-    },
-    {
-      "server": "217.163.76.99",
-      "server_port": 443,
-      "tag": "❓ 未知_37",
-      "tls": {
-        "enabled": true,
-        "server_name": "c01.ylkszy.eu.org",
-        "insecure": true
-      },
-      "transport": {
-        "headers": {
-          "Host": [
-            "c01.ylkszy.eu.org"
-          ]
-        },
-        "path": "/?ed=2560",
-        "type": "ws"
-      },
-      "type": "vless",
-      "uuid": "06e4425e-a8cb-4b63-929f-2105604ab0a9",
-      "packet_encoding": "xudp"
-    },
-    {
-      "server": "104.16.140.135",
-      "server_port": 2086,
-      "tag": "❓ 未知_38",
-      "transport": {
-        "headers": {
-          "Host": [
-            "b4f0b859-super-smoke-7916.bouncy-vulture1054.workers.dev"
-          ]
-        },
-        "path": "/tsgg0FHbT55sIEXC?ed=2560",
-        "type": "ws"
-      },
-      "type": "vless",
-      "uuid": "31348b17-4ab2-40c0-b79e-c81032331d30",
-      "packet_encoding": "xudp"
-    },
-    {
-      "server": "uriah.ns.cloudflare.com",
-      "server_port": 443,
-      "tag": "❓ 未知_39",
-      "tls": {
-        "enabled": true,
-        "server_name": "c01.ylkszy.eu.org",
-        "insecure": true
-      },
-      "transport": {
-        "headers": {
-          "Host": [
-            "c01.ylkszy.eu.org"
-          ]
-        },
-        "path": "/?ed=2560",
-        "type": "ws"
-      },
-      "type": "vless",
-      "uuid": "06e4425e-a8cb-4b63-929f-2105604ab0a9",
-      "packet_encoding": "xudp"
-    },
-    {
-      "server": "104.21.69.44",
-      "server_port": 80,
-      "tag": "❓ 未知_40",
-      "transport": {
-        "headers": {
-          "Host": [
-            "a.xn--i-sx6a60i.us.kg."
-          ]
-        },
-        "path": "/tmevpnAndroid2/?ed=2560",
-        "type": "ws"
-      },
-      "type": "vless",
-      "uuid": "d342d11e-d424-4583-b36e-524ab1f0afa4",
-      "packet_encoding": "xudp"
-    },
-    {
-      "server": "183.236.51.38",
-      "server_port": 59104,
-      "tag": "❓ 未知_41",
+      "server": "120.198.71.219",
+      "server_port": 44014,
+      "tag": "🇺🇸 美国_4",
       "type": "vmess",
       "security": "auto",
       "uuid": "418048af-a293-4b99-9b0c-98ca3580dd24"
     },
     {
-      "server": "ashton.ns.cloudflare.com",
-      "server_port": 443,
-      "tag": "❓ 未知_42",
-      "tls": {
-        "enabled": true,
-        "server_name": "c01.ylkszy.eu.org",
-        "insecure": true
-      },
-      "transport": {
-        "headers": {
-          "Host": [
-            "c01.ylkszy.eu.org"
-          ]
-        },
-        "path": "/?ed=2560",
-        "type": "ws"
-      },
-      "type": "vless",
-      "uuid": "06e4425e-a8cb-4b63-929f-2105604ab0a9",
-      "packet_encoding": "xudp"
-    },
-    {
-      "server": "45.149.12.183",
-      "server_port": 2052,
-      "tag": "🇯🇵 日本_2",
-      "transport": {
-        "headers": {
-          "Host": [
-            "redw.pooriam.ir"
-          ]
-        },
-        "path": "/TABRIZ.NET@AZARBAYJAB1@AZARBAYJAB1@AZARBAYJAB1?ed",
-        "type": "ws"
-      },
-      "type": "vless",
-      "uuid": "53fa8faf-ba4b-4322-9c69-a3e5b1555049",
-      "packet_encoding": "xudp"
-    },
-    {
-      "server": "craig.ns.cloudflare.com",
-      "server_port": 443,
-      "tag": "❓ 未知_43",
-      "tls": {
-        "enabled": true,
-        "server_name": "c01.ylkszy.eu.org",
-        "insecure": true
-      },
-      "transport": {
-        "headers": {
-          "Host": [
-            "c01.ylkszy.eu.org"
-          ]
-        },
-        "path": "/?ed=2560",
-        "type": "ws"
-      },
-      "type": "vless",
-      "uuid": "06e4425e-a8cb-4b63-929f-2105604ab0a9",
-      "packet_encoding": "xudp"
-    },
-    {
-      "server": "104.18.21.69",
-      "server_port": 2095,
-      "tag": "❓ 未知_44",
-      "transport": {
-        "headers": {
-          "Host": [
-            "fuckingxijinping.xijinpingbigsb.workers.dev"
-          ]
-        },
-        "path": "/?ed=2560",
-        "type": "ws"
-      },
-      "type": "vless",
-      "uuid": "d342d11e-d424-4583-b36e-524ab1f0afa4",
-      "packet_encoding": "xudp"
-    },
-    {
-      "server": "104.17.68.85",
-      "server_port": 443,
-      "tag": "❓ 未知_45",
-      "tls": {
-        "enabled": true,
-        "server_name": "c01.ylkszy.eu.org",
-        "insecure": true
-      },
-      "transport": {
-        "headers": {
-          "Host": [
-            "c01.ylkszy.eu.org"
-          ]
-        },
-        "path": "/?ed=2560",
-        "type": "ws"
-      },
-      "type": "vless",
-      "uuid": "06e4425e-a8cb-4b63-929f-2105604ab0a9",
-      "packet_encoding": "xudp"
-    },
-    {
-      "server": "45.67.215.117",
-      "server_port": 443,
-      "tag": "❓ 未知_46",
-      "tls": {
-        "enabled": true,
-        "server_name": "c01.ylkszy.eu.org",
-        "insecure": true
-      },
-      "transport": {
-        "headers": {
-          "Host": [
-            "c01.ylkszy.eu.org"
-          ]
-        },
-        "path": "/?ed=2560",
-        "type": "ws"
-      },
-      "type": "vless",
-      "uuid": "06e4425e-a8cb-4b63-929f-2105604ab0a9",
-      "packet_encoding": "xudp"
-    },
-    {
-      "server": "104.24.158.124",
-      "server_port": 80,
-      "tag": "❓ 未知_47",
-      "transport": {
-        "headers": {
-          "Host": [
-            "divine-limit-e9df-ppal03.jorekon645.workers.dev"
-          ]
-        },
-        "path": "/?ed=2560",
-        "type": "ws"
-      },
-      "type": "vless",
-      "uuid": "bf73e6e5-0336-40d5-995c-283de50646d2",
-      "packet_encoding": "xudp"
-    },
-    {
-      "server": "154.83.2.228",
+      "server": "s4.db-link01.top",
       "server_port": 8880,
-      "tag": "🇸🇪 瑞典",
+      "tag": "❓ 未知_19",
+      "transport": {
+        "headers": {
+          "Host": [
+            "100-44-229-26.s4.db-link01.top"
+          ]
+        },
+        "path": "/dabai.in172.67.5.70",
+        "type": "ws"
+      },
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "4b36625c-b9d9-3ea6-aed5-86d62c70e16d"
+    },
+    {
+      "server": "104.24.132.5",
+      "server_port": 80,
+      "tag": "❓ 未知_20",
+      "transport": {
+        "headers": {
+          "Host": [
+            "nameless-silence-3ddd-ppal03.gecob30535.workers.dev"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "946b3994-cbcc-402c-bd93-c7f9df4d1c3b",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "217.163.76.117",
+      "server_port": 2052,
+      "tag": "❓ 未知_21",
+      "transport": {
+        "headers": {
+          "Host": [
+            "workerr.aasihmin.workers.dev"
+          ]
+        },
+        "path": "/@AZARBAYJAB1@AZARBAYJAB1@AZARBAYJAB1@AZARBAYJAB1@AZARBAYJAB1@AZARBAYJAB1?ed=2560",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "dc00f1f8-05b2-4bc0-b851-d4dfe5089329",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "188.245.253.120",
+      "server_port": 2000,
+      "tag": "🇩🇪 德国_2",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.speedtest.net",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "iws_yHy0oQ6AHxO9gMzy3jvarB1WH8C5m7VB0pva30g",
+          "short_id": "69"
+        }
+      },
+      "type": "vless",
+      "uuid": "313ff0e9-6895-4481-e341-144fa6ea98e3",
+      "packet_encoding": "xudp"
+    },
+    {
+      "password": "telegram-id-directvpn",
+      "server": "51.21.21.92",
+      "server_port": 22222,
+      "tag": "❓ 未知_22",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojan.burgerip.co.uk",
+        "alpn": [
+          "http/1.1"
+        ]
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "telegram-id-directvpn",
+      "server": "63.177.44.5",
+      "server_port": 22222,
+      "tag": "❓ 未知_23",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojan.burgerip.co.uk",
+        "alpn": [
+          "http/1.1"
+        ]
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "90c0bc87-d7dd-4233-9b1a-cc9e7cf30649",
+      "server": "120.241.29.110",
+      "server_port": 22008,
+      "tag": "❓ 未知_24",
+      "type": "shadowsocks",
+      "method": "aes-128-gcm",
+      "network": "tcp"
+    },
+    {
+      "server": "104.16.65.193",
+      "server_port": 80,
+      "tag": "❓ 未知_25",
+      "transport": {
+        "headers": {
+          "Host": [
+            "dawn-mountain-d79f-ppal03.doniji1519.workers.dev"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "c09d51b8-25c5-4eaf-98bc-ef40c807de84",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "183.236.51.38",
+      "server_port": 42120,
+      "tag": "🇨🇳 中国_4",
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "418048af-a293-4b99-9b0c-98ca3580dd24"
+    },
+    {
+      "server": "104.24.247.189",
+      "server_port": 80,
+      "tag": "❓ 未知_26",
+      "transport": {
+        "headers": {
+          "Host": [
+            "rapid-mountain-e6a9-ppal03.rahog30057.workers.dev"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "a1311ab3-0498-4cfd-b2c9-b5a4ba7d2999",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "94.154.34.112",
+      "server_port": 443,
+      "tag": "❓ 未知_27",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.speedtest.net",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "Sx5gCel0sEdt1jvh7UWiQeff-jkqOAoq6yoWJvi-SSY",
+          "short_id": "2ef4b569e4"
+        }
+      },
+      "type": "vless",
+      "uuid": "dbe17297-3c29-5348-33c6-fae3d706d9e7",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "172.67.2.238",
+      "server_port": 8880,
+      "tag": "❓ 未知_28",
+      "transport": {
+        "headers": {
+          "Host": [
+            "hamedan.hiven33959.workers.dev"
+          ]
+        },
+        "path": "/?ed=2048",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "96494ca5-6dcf-4d33-b94f-5c3485586095",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "3.123.136.105",
+      "server_port": 22222,
+      "tag": "❓ 未知_29",
+      "tls": {
+        "enabled": true,
+        "server_name": "telegram-channel-vlessconfig.sohala.uk"
+      },
+      "transport": {
+        "headers": {
+          "Host": [
+            "telegram-channel-vlessconfig.sohala.uk"
+          ]
+        },
+        "path": "/telegram-channel-vlessconfig-ws",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "05519058-d2ac-4f28-9e4a-2b2a1386749e",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "154.83.2.230",
+      "server_port": 8880,
+      "tag": "🇬🇧 英国_1",
       "transport": {
         "headers": {
           "Host": [
@@ -1014,75 +759,97 @@
       "packet_encoding": "xudp"
     },
     {
-      "server": "212.183.88.200",
-      "server_port": 443,
-      "tag": "❓ 未知_48",
-      "tls": {
-        "enabled": true,
-        "server_name": "c01.ylkszy.eu.org",
-        "insecure": true
-      },
+      "server": "188.42.89.68",
+      "server_port": 8880,
+      "tag": "❓ 未知_30",
       "transport": {
         "headers": {
           "Host": [
-            "c01.ylkszy.eu.org"
+            "a.xn--i-sx6a60i.us.kg."
           ]
         },
-        "path": "/?ed=2560",
+        "path": "/Telegram@AZARBAYJAB1@AZARBAYJAB1@AZARBAYJAB1?ed=2560",
         "type": "ws"
       },
       "type": "vless",
-      "uuid": "06e4425e-a8cb-4b63-929f-2105604ab0a9",
+      "uuid": "d342d11e-d424-4583-b36e-524ab1f0afa4",
       "packet_encoding": "xudp"
     },
     {
-      "server": "104.17.128.1",
-      "server_port": 2096,
-      "tag": "❓ 未知_49",
-      "tls": {
-        "enabled": true,
-        "server_name": "c01.ylkszy.eu.org",
-        "insecure": true
-      },
+      "server": "195.85.59.95",
+      "server_port": 2086,
+      "tag": "❓ 未知_31",
       "transport": {
         "headers": {
           "Host": [
-            "c01.ylkszy.eu.org"
+            "0210.uous1wog.workers.dev"
           ]
         },
         "path": "/?ed=2560",
         "type": "ws"
       },
       "type": "vless",
-      "uuid": "06e4425e-a8cb-4b63-929f-2105604ab0a9",
+      "uuid": "a3f9d9b6-3ae4-4c47-9dbf-33b0a5c7f1a5",
       "packet_encoding": "xudp"
     },
     {
-      "server": "212.183.88.231",
-      "server_port": 443,
-      "tag": "❓ 未知_50",
-      "tls": {
-        "enabled": true,
-        "server_name": "c01.ylkszy.eu.org",
-        "insecure": true
-      },
+      "server": "212.183.88.84",
+      "server_port": 2086,
+      "tag": "❓ 未知_32",
       "transport": {
         "headers": {
           "Host": [
-            "c01.ylkszy.eu.org"
+            "redw.pooriam.ir"
           ]
         },
-        "path": "/?ed=2560",
+        "path": "/TABRIZ.NET, TABRIZ.NET, TABRIZ.NET, TABRIZ.NET, TABRIZ.NET, TABRIZ.NET/?ed=2048",
         "type": "ws"
       },
       "type": "vless",
-      "uuid": "06e4425e-a8cb-4b63-929f-2105604ab0a9",
+      "uuid": "53fa8faf-ba4b-4322-9c69-a3e5b1555049",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "3.96.211.184",
+      "server_port": 8443,
+      "tag": "❓ 未知_33",
+      "tls": {
+        "enabled": true,
+        "server_name": "zula.ir",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc"
+        }
+      },
+      "type": "vless",
+      "uuid": "73c732f2-d435-4197-9f33-0d7c1f47d3a9",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "195.85.59.155",
+      "server_port": 8880,
+      "tag": "❓ 未知_34",
+      "transport": {
+        "headers": {
+          "Host": [
+            "photographipictureai.ir"
+          ]
+        },
+        "path": "/Telegram@Azarbayjab1@Azarbayjab1@Azarbayjab1/?ed=2560",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "f6bd2c47-99da-4bca-bf70-7186aa9e7e06",
       "packet_encoding": "xudp"
     },
     {
       "server": "216.24.57.130",
       "server_port": 8880,
-      "tag": "❓ 未知_51",
+      "tag": "❓ 未知_35",
       "transport": {
         "headers": {
           "Host": [
@@ -1097,328 +864,84 @@
       "packet_encoding": "xudp"
     },
     {
-      "server": "104.16.146.187",
-      "server_port": 443,
-      "tag": "❓ 未知_52",
+      "server": "37.27.251.224",
+      "server_port": 2089,
+      "tag": "🇫🇮 芬兰",
       "tls": {
         "enabled": true,
-        "server_name": "c01.ylkszy.eu.org",
-        "insecure": true
-      },
-      "transport": {
-        "headers": {
-          "Host": [
-            "c01.ylkszy.eu.org"
-          ]
-        },
-        "path": "/?ed=2560",
-        "type": "ws"
-      },
-      "type": "vless",
-      "uuid": "06e4425e-a8cb-4b63-929f-2105604ab0a9",
-      "packet_encoding": "xudp"
-    },
-    {
-      "server": "140.238.158.238",
-      "server_port": 443,
-      "tag": "❓ 未知_53",
-      "tls": {
-        "enabled": true,
-        "server_name": "c01.ylkszy.eu.org",
-        "insecure": true,
+        "server_name": "refersion.com",
         "utls": {
           "enabled": true,
           "fingerprint": "chrome"
-        }
-      },
-      "transport": {
-        "headers": {
-          "Host": [
-            "c01.ylkszy.eu.org"
-          ]
         },
-        "path": "/?ed=2560",
-        "type": "ws"
-      },
-      "type": "vless",
-      "uuid": "06e4425e-a8cb-4b63-929f-2105604ab0a9",
-      "packet_encoding": "xudp"
-    },
-    {
-      "server": "63.141.128.193",
-      "server_port": 443,
-      "tag": "❓ 未知_54",
-      "tls": {
-        "enabled": true,
-        "server_name": "c01.ylkszy.eu.org",
-        "insecure": true
-      },
-      "transport": {
-        "headers": {
-          "Host": [
-            "c01.ylkszy.eu.org"
-          ]
-        },
-        "path": "/?ed=2560",
-        "type": "ws"
-      },
-      "type": "vless",
-      "uuid": "06e4425e-a8cb-4b63-929f-2105604ab0a9",
-      "packet_encoding": "xudp"
-    },
-    {
-      "password": "4a8973a9-6d7e-4996-b05a-7df3374c083a",
-      "server": "165.227.229.34",
-      "server_port": 443,
-      "tag": "❓ 未知_55",
-      "tls": {
-        "enabled": true,
-        "server_name": "165.227.229.34",
-        "insecure": true
-      },
-      "type": "trojan"
-    },
-    {
-      "server": "150.136.87.192",
-      "server_port": 443,
-      "tag": "❓ 未知_56",
-      "tls": {
-        "enabled": true,
-        "server_name": "c01.ylkszy.eu.org",
-        "insecure": true
-      },
-      "transport": {
-        "headers": {
-          "Host": [
-            "c01.ylkszy.eu.org"
-          ]
-        },
-        "path": "/?ed=2560",
-        "type": "ws"
-      },
-      "type": "vless",
-      "uuid": "06e4425e-a8cb-4b63-929f-2105604ab0a9",
-      "packet_encoding": "xudp"
-    },
-    {
-      "server": "185.133.35.237",
-      "server_port": 443,
-      "tag": "❓ 未知_57",
-      "tls": {
-        "enabled": true,
-        "server_name": "c01.ylkszy.eu.org",
-        "insecure": true
-      },
-      "transport": {
-        "headers": {
-          "Host": [
-            "c01.ylkszy.eu.org"
-          ]
-        },
-        "path": "/?ed=2560",
-        "type": "ws"
-      },
-      "type": "vless",
-      "uuid": "06e4425e-a8cb-4b63-929f-2105604ab0a9",
-      "packet_encoding": "xudp"
-    },
-    {
-      "server": "63.141.128.94",
-      "server_port": 443,
-      "tag": "❓ 未知_58",
-      "tls": {
-        "enabled": true,
-        "server_name": "c01.ylkszy.eu.org",
-        "insecure": true
-      },
-      "transport": {
-        "headers": {
-          "Host": [
-            "c01.ylkszy.eu.org"
-          ]
-        },
-        "path": "/?ed=2560",
-        "type": "ws"
-      },
-      "type": "vless",
-      "uuid": "06e4425e-a8cb-4b63-929f-2105604ab0a9",
-      "packet_encoding": "xudp"
-    },
-    {
-      "server": "129.151.225.228",
-      "server_port": 8443,
-      "tag": "❓ 未知_59",
-      "tls": {
-        "enabled": true,
-        "server_name": "c01.ylkszy.eu.org",
-        "insecure": true,
-        "utls": {
+        "reality": {
           "enabled": true,
-          "fingerprint": "chrome"
+          "public_key": "XAsXZH4n6RP54ieBFHOfTYpJ4RUMjgsa_FhUA2kZWig",
+          "short_id": "b2058a43fe"
         }
       },
+      "type": "vless",
+      "uuid": "76cbbc98-1adc-4017-9689-8a13969a90e3",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "94.250.246.200",
+      "server_port": 8080,
+      "tag": "❓ 未知_36",
+      "tls": {
+        "enabled": true,
+        "server_name": "a.mifeng.us.kg"
+      },
       "transport": {
         "headers": {
           "Host": [
-            "c01.ylkszy.eu.org"
+            "a.mifeng.us.kg"
           ]
         },
         "path": "/?ed=2560",
         "type": "ws"
       },
       "type": "vless",
-      "uuid": "06e4425e-a8cb-4b63-929f-2105604ab0a9",
+      "uuid": "d342d11e-d424-4583-b36e-524ab1f0afa4",
       "packet_encoding": "xudp"
     },
     {
-      "server": "140.238.212.95",
-      "server_port": 443,
-      "tag": "❓ 未知_60",
-      "tls": {
-        "enabled": true,
-        "server_name": "c01.ylkszy.eu.org",
-        "insecure": true
-      },
-      "transport": {
-        "headers": {
-          "Host": [
-            "c01.ylkszy.eu.org"
-          ]
-        },
-        "path": "/?ed=2560",
-        "type": "ws"
-      },
-      "type": "vless",
-      "uuid": "06e4425e-a8cb-4b63-929f-2105604ab0a9",
-      "packet_encoding": "xudp"
-    },
-    {
-      "server": "35.212.182.176",
-      "server_port": 54321,
-      "tag": "❓ 未知_61",
-      "tls": {
-        "enabled": true,
-        "server_name": "c01.ylkszy.eu.org",
-        "insecure": true
-      },
-      "transport": {
-        "headers": {
-          "Host": [
-            "c01.ylkszy.eu.org"
-          ]
-        },
-        "path": "/?ed=2560",
-        "type": "ws"
-      },
-      "type": "vless",
-      "uuid": "06e4425e-a8cb-4b63-929f-2105604ab0a9",
-      "packet_encoding": "xudp"
-    },
-    {
-      "server": "104.21.92.162",
-      "server_port": 8880,
-      "tag": "❓ 未知_62",
-      "transport": {
-        "headers": {
-          "Host": [
-            "falcunargo-bia-zod.8fcd549b6a.workers.Dev"
-          ]
-        },
-        "path": "/",
-        "type": "ws"
-      },
-      "type": "vless",
-      "uuid": "e9b29a36-f8dc-48ee-b5f9-e0e5be701d03",
-      "packet_encoding": "xudp"
-    },
-    {
-      "server": "188.114.97.171",
-      "server_port": 80,
-      "tag": "❓ 未知_63",
-      "transport": {
-        "headers": {
-          "Host": [
-            "ooao14004.74gwenneth.workers.dev"
-          ]
-        },
-        "path": "/",
-        "type": "ws"
-      },
-      "type": "vless",
-      "uuid": "35323594-9ee2-4f06-ae14-3148b6950621",
-      "packet_encoding": "xudp"
-    },
-    {
-      "password": "2cba4104747d49d18319e5ade1b93ab5",
-      "server": "yourjobnavigator.online",
-      "server_port": 443,
-      "tag": "🇬🇧 英国_1",
-      "tls": {
-        "enabled": true,
-        "server_name": "yourjobnavigator.online",
-        "insecure": true
-      },
-      "type": "trojan"
-    },
-    {
-      "server": "tasteatlas.com",
-      "server_port": 443,
-      "tag": "🇦🇪 阿联酋",
-      "tls": {
-        "enabled": true,
-        "server_name": "c01.ylkszy.eu.org",
-        "insecure": true
-      },
-      "transport": {
-        "headers": {
-          "Host": [
-            "c01.ylkszy.eu.org"
-          ]
-        },
-        "path": "/?ed=2560",
-        "type": "ws"
-      },
-      "type": "vless",
-      "uuid": "06e4425e-a8cb-4b63-929f-2105604ab0a9",
-      "packet_encoding": "xudp"
-    },
-    {
-      "password": "2cba4104747d49d18319e5ade1b93ab5",
-      "server": "161.35.34.48",
-      "server_port": 443,
+      "password": "63083ab4-5ef8-46d7-a3a0-1588a2b01b0a",
+      "server": "lm.kaiqsz.com",
+      "server_port": 59358,
       "tag": "🇬🇧 英国_2",
       "tls": {
         "enabled": true,
-        "server_name": "yourjobnavigator.online",
+        "server_name": "mmbiz11.redapricotcloud.com",
         "insecure": true
       },
       "type": "trojan"
     },
     {
-      "password": "RexnBgU7EV5ADxG",
-      "server": "38.68.134.23",
-      "server_port": 7002,
-      "tag": "❓ 未知_64",
-      "type": "shadowsocks",
-      "method": "aes-256-gcm",
-      "network": "tcp"
-    },
-    {
-      "server": "172.66.44.135",
+      "server": "198.41.209.27",
       "server_port": 80,
-      "tag": "❓ 未知_65",
+      "tag": "❓ 未知_37",
       "transport": {
         "headers": {
           "Host": [
-            "v2ra1.ecrgpk.workers.dev"
+            "a.mifeng.us.kg"
           ]
         },
-        "path": "/",
+        "path": "/telegram-_-_-_-_-__-free_shekan-_-_-_-/?ed=2048",
         "type": "ws"
       },
       "type": "vless",
-      "uuid": "5df7962e-f9fe-41e6-ab49-ed96ccb856a7",
+      "uuid": "d342d11e-d424-4583-b36e-524ab1f0afa4",
       "packet_encoding": "xudp"
+    },
+    {
+      "password": "f8f7aCzcPKbsF8p3",
+      "server": "185.231.233.112",
+      "server_port": 989,
+      "tag": "❓ 未知_38",
+      "type": "shadowsocks",
+      "method": "aes-256-cfb",
+      "network": "tcp"
     },
     {
       "tag": "select",
@@ -1428,82 +951,63 @@
         "urltest",
         "❓ 未知_1",
         "🇨🇳 中国_1",
+        "🇹🇼 台湾",
+        "🇨🇳 中国_2",
         "❓ 未知_2",
         "❓ 未知_3",
-        "🇺🇸 美国_1",
-        "🇨🇳 中国_2",
+        "🇯🇵 日本",
         "❓ 未知_4",
-        "🇷🇺 俄罗斯_1",
-        "🇯🇵 日本_1",
-        "🇹🇼 台湾",
+        "🇨🇳 中国_3",
         "❓ 未知_5",
+        "🇩🇪 德国_1",
+        "🇷🇺 俄罗斯_1",
+        "🇺🇸 美国_1",
         "❓ 未知_6",
         "❓ 未知_7",
-        "❓ 未知_8",
-        "❓ 未知_9",
         "🇷🇺 俄罗斯_2",
+        "❓ 未知_8",
+        "🇮🇹 意大利",
+        "❓ 未知_9",
         "❓ 未知_10",
         "❓ 未知_11",
+        "❓ 未知_12",
         "❓ 未知_13",
         "❓ 未知_14",
         "❓ 未知_15",
+        "🇺🇸 美国_3",
+        "🇳🇱 荷兰_1",
         "❓ 未知_16",
         "❓ 未知_17",
+        "🇨🇭 瑞士",
+        "🇳🇱 荷兰_2",
         "❓ 未知_18",
+        "🇸🇬 新加坡",
+        "🇺🇸 美国_4",
         "❓ 未知_19",
-        "🇭🇰 香港",
         "❓ 未知_20",
         "❓ 未知_21",
+        "🇩🇪 德国_2",
         "❓ 未知_22",
         "❓ 未知_23",
         "❓ 未知_24",
         "❓ 未知_25",
+        "🇨🇳 中国_4",
         "❓ 未知_26",
         "❓ 未知_27",
         "❓ 未知_28",
         "❓ 未知_29",
+        "🇬🇧 英国_1",
         "❓ 未知_30",
-        "🇺🇸 美国_3",
         "❓ 未知_31",
         "❓ 未知_32",
         "❓ 未知_33",
         "❓ 未知_34",
         "❓ 未知_35",
+        "🇫🇮 芬兰",
         "❓ 未知_36",
-        "❓ 未知_37",
-        "❓ 未知_38",
-        "❓ 未知_39",
-        "❓ 未知_40",
-        "❓ 未知_41",
-        "❓ 未知_42",
-        "🇯🇵 日本_2",
-        "❓ 未知_43",
-        "❓ 未知_44",
-        "❓ 未知_45",
-        "❓ 未知_46",
-        "❓ 未知_47",
-        "🇸🇪 瑞典",
-        "❓ 未知_48",
-        "❓ 未知_49",
-        "❓ 未知_50",
-        "❓ 未知_51",
-        "❓ 未知_52",
-        "❓ 未知_53",
-        "❓ 未知_54",
-        "❓ 未知_55",
-        "❓ 未知_56",
-        "❓ 未知_57",
-        "❓ 未知_58",
-        "❓ 未知_59",
-        "❓ 未知_60",
-        "❓ 未知_61",
-        "❓ 未知_62",
-        "❓ 未知_63",
-        "🇬🇧 英国_1",
-        "🇦🇪 阿联酋",
         "🇬🇧 英国_2",
-        "❓ 未知_64",
-        "❓ 未知_65"
+        "❓ 未知_37",
+        "❓ 未知_38"
       ]
     },
     {
@@ -1512,82 +1016,63 @@
       "outbounds": [
         "❓ 未知_1",
         "🇨🇳 中国_1",
+        "🇹🇼 台湾",
+        "🇨🇳 中国_2",
         "❓ 未知_2",
         "❓ 未知_3",
-        "🇺🇸 美国_1",
-        "🇨🇳 中国_2",
+        "🇯🇵 日本",
         "❓ 未知_4",
-        "🇷🇺 俄罗斯_1",
-        "🇯🇵 日本_1",
-        "🇹🇼 台湾",
+        "🇨🇳 中国_3",
         "❓ 未知_5",
+        "🇩🇪 德国_1",
+        "🇷🇺 俄罗斯_1",
+        "🇺🇸 美国_1",
         "❓ 未知_6",
         "❓ 未知_7",
-        "❓ 未知_8",
-        "❓ 未知_9",
         "🇷🇺 俄罗斯_2",
+        "❓ 未知_8",
+        "🇮🇹 意大利",
+        "❓ 未知_9",
         "❓ 未知_10",
         "❓ 未知_11",
+        "❓ 未知_12",
         "❓ 未知_13",
         "❓ 未知_14",
         "❓ 未知_15",
+        "🇺🇸 美国_3",
+        "🇳🇱 荷兰_1",
         "❓ 未知_16",
         "❓ 未知_17",
+        "🇨🇭 瑞士",
+        "🇳🇱 荷兰_2",
         "❓ 未知_18",
+        "🇸🇬 新加坡",
+        "🇺🇸 美国_4",
         "❓ 未知_19",
-        "🇭🇰 香港",
         "❓ 未知_20",
         "❓ 未知_21",
+        "🇩🇪 德国_2",
         "❓ 未知_22",
         "❓ 未知_23",
         "❓ 未知_24",
         "❓ 未知_25",
+        "🇨🇳 中国_4",
         "❓ 未知_26",
         "❓ 未知_27",
         "❓ 未知_28",
         "❓ 未知_29",
+        "🇬🇧 英国_1",
         "❓ 未知_30",
-        "🇺🇸 美国_3",
         "❓ 未知_31",
         "❓ 未知_32",
         "❓ 未知_33",
         "❓ 未知_34",
         "❓ 未知_35",
+        "🇫🇮 芬兰",
         "❓ 未知_36",
-        "❓ 未知_37",
-        "❓ 未知_38",
-        "❓ 未知_39",
-        "❓ 未知_40",
-        "❓ 未知_41",
-        "❓ 未知_42",
-        "🇯🇵 日本_2",
-        "❓ 未知_43",
-        "❓ 未知_44",
-        "❓ 未知_45",
-        "❓ 未知_46",
-        "❓ 未知_47",
-        "🇸🇪 瑞典",
-        "❓ 未知_48",
-        "❓ 未知_49",
-        "❓ 未知_50",
-        "❓ 未知_51",
-        "❓ 未知_52",
-        "❓ 未知_53",
-        "❓ 未知_54",
-        "❓ 未知_55",
-        "❓ 未知_56",
-        "❓ 未知_57",
-        "❓ 未知_58",
-        "❓ 未知_59",
-        "❓ 未知_60",
-        "❓ 未知_61",
-        "❓ 未知_62",
-        "❓ 未知_63",
-        "🇬🇧 英国_1",
-        "🇦🇪 阿联酋",
         "🇬🇧 英国_2",
-        "❓ 未知_64",
-        "❓ 未知_65"
+        "❓ 未知_37",
+        "❓ 未知_38"
       ]
     },
     {
@@ -1596,82 +1081,63 @@
       "outbounds": [
         "❓ 未知_1",
         "🇨🇳 中国_1",
+        "🇹🇼 台湾",
+        "🇨🇳 中国_2",
         "❓ 未知_2",
         "❓ 未知_3",
-        "🇺🇸 美国_1",
-        "🇨🇳 中国_2",
+        "🇯🇵 日本",
         "❓ 未知_4",
-        "🇷🇺 俄罗斯_1",
-        "🇯🇵 日本_1",
-        "🇹🇼 台湾",
+        "🇨🇳 中国_3",
         "❓ 未知_5",
+        "🇩🇪 德国_1",
+        "🇷🇺 俄罗斯_1",
+        "🇺🇸 美国_1",
         "❓ 未知_6",
         "❓ 未知_7",
-        "❓ 未知_8",
-        "❓ 未知_9",
         "🇷🇺 俄罗斯_2",
+        "❓ 未知_8",
+        "🇮🇹 意大利",
+        "❓ 未知_9",
         "❓ 未知_10",
         "❓ 未知_11",
+        "❓ 未知_12",
         "❓ 未知_13",
         "❓ 未知_14",
         "❓ 未知_15",
+        "🇺🇸 美国_3",
+        "🇳🇱 荷兰_1",
         "❓ 未知_16",
         "❓ 未知_17",
+        "🇨🇭 瑞士",
+        "🇳🇱 荷兰_2",
         "❓ 未知_18",
+        "🇸🇬 新加坡",
+        "🇺🇸 美国_4",
         "❓ 未知_19",
-        "🇭🇰 香港",
         "❓ 未知_20",
         "❓ 未知_21",
+        "🇩🇪 德国_2",
         "❓ 未知_22",
         "❓ 未知_23",
         "❓ 未知_24",
         "❓ 未知_25",
+        "🇨🇳 中国_4",
         "❓ 未知_26",
         "❓ 未知_27",
         "❓ 未知_28",
         "❓ 未知_29",
+        "🇬🇧 英国_1",
         "❓ 未知_30",
-        "🇺🇸 美国_3",
         "❓ 未知_31",
         "❓ 未知_32",
         "❓ 未知_33",
         "❓ 未知_34",
         "❓ 未知_35",
+        "🇫🇮 芬兰",
         "❓ 未知_36",
-        "❓ 未知_37",
-        "❓ 未知_38",
-        "❓ 未知_39",
-        "❓ 未知_40",
-        "❓ 未知_41",
-        "❓ 未知_42",
-        "🇯🇵 日本_2",
-        "❓ 未知_43",
-        "❓ 未知_44",
-        "❓ 未知_45",
-        "❓ 未知_46",
-        "❓ 未知_47",
-        "🇸🇪 瑞典",
-        "❓ 未知_48",
-        "❓ 未知_49",
-        "❓ 未知_50",
-        "❓ 未知_51",
-        "❓ 未知_52",
-        "❓ 未知_53",
-        "❓ 未知_54",
-        "❓ 未知_55",
-        "❓ 未知_56",
-        "❓ 未知_57",
-        "❓ 未知_58",
-        "❓ 未知_59",
-        "❓ 未知_60",
-        "❓ 未知_61",
-        "❓ 未知_62",
-        "❓ 未知_63",
-        "🇬🇧 英国_1",
-        "🇦🇪 阿联酋",
         "🇬🇧 英国_2",
-        "❓ 未知_64",
-        "❓ 未知_65"
+        "❓ 未知_37",
+        "❓ 未知_38"
       ]
     },
     {
