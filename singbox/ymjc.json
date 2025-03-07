@@ -1,0 +1,528 @@
+{
+  "log": {},
+  "dns": {
+    "servers": [
+      {
+        "tag": "dns_proxy",
+        "type": "https",
+        "server": "8.8.8.8",
+        "detour": "select"
+      },
+      {
+        "tag": "dns_direct",
+        "type": "https",
+        "server": "223.5.5.5",
+        "detour": "direct"
+      },
+      {
+        "tag": "dns_fakeip",
+        "type": "fakeip",
+        "inet4_range": "198.18.0.0/15",
+        "inet6_range": "fc00::/18"
+      }
+    ],
+    "rules": [
+      {
+        "rule_set": [
+          "AdGuardSDNSFilter",
+          "chrome-doh"
+        ],
+        "action": "reject",
+        "method": "default"
+      },
+      {
+        "query_type": [
+          "A",
+          "AAAA"
+        ],
+        "server": "dns_fakeip",
+        "rewrite_ttl": 1
+      },
+      {
+        "clash_mode": "Global",
+        "server": "dns_proxy"
+      },
+      {
+        "clash_mode": "Direct",
+        "server": "dns_direct"
+      },
+      {
+        "rule_set": "geosite-cn",
+        "server": "dns_direct"
+      }
+    ],
+    "strategy": "prefer_ipv4",
+    "independent_cache": true
+  },
+  "inbounds": [
+    {
+      "type": "tun",
+      "mtu": 9000,
+      "address": [
+        "172.18.0.1/30",
+        "fdfe:dcba:9876::1/126"
+      ],
+      "auto_route": true,
+      "strict_route": true,
+      "endpoint_independent_nat": true
+    },
+    {
+      "type": "socks",
+      "tag": "socks-in",
+      "listen": "127.0.0.1",
+      "listen_port": 2333
+    },
+    {
+      "type": "mixed",
+      "tag": "mixed-in",
+      "listen": "127.0.0.1",
+      "listen_port": 2334
+    }
+  ],
+  "outbounds": [
+    {
+      "password": "1ad32244-155a-49bd-a37a-74959fdaac77",
+      "server": "129.159.97.206",
+      "server_port": 51000,
+      "tag": "🇺🇸美国专线01",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "cn.cremedelamer.com"
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "1ad32244-155a-49bd-a37a-74959fdaac77",
+      "server": "129.146.215.233",
+      "server_port": 51000,
+      "tag": "🇺🇸美国专线02",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "cn.cremedelamer.com"
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "1ad32244-155a-49bd-a37a-74959fdaac77",
+      "server": "192.9.165.40",
+      "server_port": 51000,
+      "tag": "🇦🇺澳大利亚专线01",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "cn.cremedelamer.com"
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "1ad32244-155a-49bd-a37a-74959fdaac77",
+      "server": "192.9.179.140",
+      "server_port": 51000,
+      "tag": "🇦🇺澳大利亚专线02",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "cn.cremedelamer.com"
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "1ad32244-155a-49bd-a37a-74959fdaac77",
+      "server": "140.245.27.220",
+      "server_port": 51000,
+      "tag": "🇮🇳印度专线01",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "cn.cremedelamer.com"
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "1ad32244-155a-49bd-a37a-74959fdaac77",
+      "server": "141.148.222.181",
+      "server_port": 51000,
+      "tag": "🇮🇳印度专线02",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "cn.cremedelamer.com"
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "1ad32244-155a-49bd-a37a-74959fdaac77",
+      "server": "168.75.68.172",
+      "server_port": 51000,
+      "tag": "🇧🇷巴西专线01",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "cn.cremedelamer.com"
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "1ad32244-155a-49bd-a37a-74959fdaac77",
+      "server": "144.22.197.28",
+      "server_port": 51000,
+      "tag": "🇧🇷巴西专线02",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "cn.cremedelamer.com"
+      },
+      "type": "hysteria2"
+    },
+    {
+      "flow": "",
+      "packet_encoding": "xudp",
+      "server": "104.17.186.73",
+      "server_port": 443,
+      "tag": "🇺🇸美国高速01",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": null,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "headers": {
+          "Host": [
+            "us1.xn--mirrors-oj8km52txc7d.com"
+          ]
+        },
+        "max_early_data": 2048,
+        "path": "/ym/us1",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "1ad32244-155a-49bd-a37a-74959fdaac77"
+    },
+    {
+      "flow": "",
+      "packet_encoding": "xudp",
+      "server": "104.17.186.73",
+      "server_port": 443,
+      "tag": "🇺🇸美国高速02",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": null,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "headers": {
+          "Host": [
+            "us2.xn--mirrors-oj8km52txc7d.com"
+          ]
+        },
+        "max_early_data": 2048,
+        "path": "/ym/us2",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "1ad32244-155a-49bd-a37a-74959fdaac77"
+    },
+    {
+      "flow": "",
+      "packet_encoding": "xudp",
+      "server": "104.17.186.73",
+      "server_port": 443,
+      "tag": "🇮🇳印度高速01",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": null,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "headers": {
+          "Host": [
+            "in1.xn--mirrors-oj8km52txc7d.com"
+          ]
+        },
+        "max_early_data": 2048,
+        "path": "/ym/in1",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "1ad32244-155a-49bd-a37a-74959fdaac77"
+    },
+    {
+      "flow": "",
+      "packet_encoding": "xudp",
+      "server": "104.17.186.73",
+      "server_port": 443,
+      "tag": "🇦🇺澳大利亚高速01",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": null,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "headers": {
+          "Host": [
+            "au1.xn--mirrors-oj8km52txc7d.com"
+          ]
+        },
+        "max_early_data": 2048,
+        "path": "/ym/au1",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "1ad32244-155a-49bd-a37a-74959fdaac77"
+    },
+    {
+      "flow": "",
+      "packet_encoding": "xudp",
+      "server": "104.17.186.73",
+      "server_port": 443,
+      "tag": "🇦🇺澳大利亚高速02",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": null,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "headers": {
+          "Host": [
+            "au2.xn--mirrors-oj8km52txc7d.com"
+          ]
+        },
+        "max_early_data": 2048,
+        "path": "/ym/au2",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "1ad32244-155a-49bd-a37a-74959fdaac77"
+    },
+    {
+      "flow": "",
+      "packet_encoding": "xudp",
+      "server": "104.17.186.73",
+      "server_port": 443,
+      "tag": "🇫🇷法国高速01",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": null,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "headers": {
+          "Host": [
+            "fr1.xn--mirrors-oj8km52txc7d.com"
+          ]
+        },
+        "max_early_data": 2048,
+        "path": "/ym/fr1",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "1ad32244-155a-49bd-a37a-74959fdaac77"
+    },
+    {
+      "tag": "select",
+      "type": "selector",
+      "default": "urltest",
+      "outbounds": [
+        "urltest",
+        "🇺🇸美国专线01",
+        "🇺🇸美国专线02",
+        "🇦🇺澳大利亚专线01",
+        "🇦🇺澳大利亚专线02",
+        "🇮🇳印度专线01",
+        "🇮🇳印度专线02",
+        "🇧🇷巴西专线01",
+        "🇧🇷巴西专线02",
+        "🇺🇸美国高速01",
+        "🇺🇸美国高速02",
+        "🇮🇳印度高速01",
+        "🇦🇺澳大利亚高速01",
+        "🇦🇺澳大利亚高速02",
+        "🇫🇷法国高速01"
+      ]
+    },
+    {
+      "tag": "urltest",
+      "type": "urltest",
+      "outbounds": [
+        "🇺🇸美国专线01",
+        "🇺🇸美国专线02",
+        "🇦🇺澳大利亚专线01",
+        "🇦🇺澳大利亚专线02",
+        "🇮🇳印度专线01",
+        "🇮🇳印度专线02",
+        "🇧🇷巴西专线01",
+        "🇧🇷巴西专线02",
+        "🇺🇸美国高速01",
+        "🇺🇸美国高速02",
+        "🇮🇳印度高速01",
+        "🇦🇺澳大利亚高速01",
+        "🇦🇺澳大利亚高速02",
+        "🇫🇷法国高速01"
+      ]
+    },
+    {
+      "tag": "chatgpt",
+      "type": "selector",
+      "outbounds": [
+        "🇺🇸美国专线01",
+        "🇺🇸美国专线02",
+        "🇦🇺澳大利亚专线01",
+        "🇦🇺澳大利亚专线02",
+        "🇮🇳印度专线01",
+        "🇮🇳印度专线02",
+        "🇧🇷巴西专线01",
+        "🇧🇷巴西专线02",
+        "🇺🇸美国高速01",
+        "🇺🇸美国高速02",
+        "🇮🇳印度高速01",
+        "🇦🇺澳大利亚高速01",
+        "🇦🇺澳大利亚高速02",
+        "🇫🇷法国高速01"
+      ]
+    },
+    {
+      "tag": "direct",
+      "type": "direct"
+    }
+  ],
+  "route": {
+    "rules": [
+      {
+        "action": "sniff"
+      },
+      {
+        "protocol": "dns",
+        "action": "hijack-dns"
+      },
+      {
+        "action": "resolve",
+        "strategy": "prefer_ipv4"
+      },
+      {
+        "clash_mode": "Direct",
+        "outbound": "direct"
+      },
+      {
+        "clash_mode": "Global",
+        "outbound": "select"
+      },
+      {
+        "ip_is_private": true,
+        "outbound": "direct"
+      },
+      {
+        "package_name": "com.openai.chatgpt",
+        "outbound": "chatgpt"
+      },
+      {
+        "domain_suffix": [
+          "gemini.google.com",
+          "proactivebackend-pa.googleapis.com",
+          "bing.com",
+          "bing.net",
+          "bingapis.com"
+        ],
+        "outbound": "chatgpt"
+      },
+      {
+        "domain_keyword": [
+          "qq.com"
+        ],
+        "outbound": "direct"
+      },
+      {
+        "domain_suffix": [
+          "ushd.xmsl.org",
+          "cf.gtlx.org"
+        ],
+        "outbound": "direct"
+      },
+      {
+        "port": [
+          23301,
+          22101,
+          22102,
+          20501
+        ],
+        "outbound": "direct"
+      },
+      {
+        "rule_set": "geoip-cn",
+        "outbound": "direct"
+      }
+    ],
+    "rule_set": [
+      {
+        "type": "remote",
+        "tag": "geoip-cn",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/SagerNet/sing-geoip/rule-set/geoip-cn.srs",
+        "download_detour": "select"
+      },
+      {
+        "type": "remote",
+        "tag": "geosite-cn",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/xmdhs/sing-geosite/rule-set-Loyalsoldier/geosite-geolocation-cn.srs",
+        "download_detour": "select"
+      },
+      {
+        "type": "remote",
+        "tag": "AdGuardSDNSFilter",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/xmdhs/sing-box-ruleset/rule-set/AdGuardSDNSFilterSingBox.srs",
+        "download_detour": "select"
+      },
+      {
+        "type": "remote",
+        "tag": "chrome-doh",
+        "format": "source",
+        "url": "https://gist.githubusercontent.com/xmdhs/71fc5ff6ef29f5ecaf2c52b8de5c3172/raw/chrome-doh.json",
+        "download_detour": "select"
+      }
+    ],
+    "default_domain_resolver": "dns_direct",
+    "final": "select",
+    "auto_detect_interface": true
+  },
+  "experimental": {
+    "cache_file": {
+      "enabled": true
+    },
+    "clash_api": {
+      "external_controller": "127.0.0.1:9090"
+    }
+  }
+}

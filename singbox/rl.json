@@ -1,0 +1,552 @@
+{
+  "log": {},
+  "dns": {
+    "servers": [
+      {
+        "tag": "dns_proxy",
+        "type": "https",
+        "server": "8.8.8.8",
+        "detour": "select"
+      },
+      {
+        "tag": "dns_direct",
+        "type": "https",
+        "server": "223.5.5.5",
+        "detour": "direct"
+      },
+      {
+        "tag": "dns_fakeip",
+        "type": "fakeip",
+        "inet4_range": "198.18.0.0/15",
+        "inet6_range": "fc00::/18"
+      }
+    ],
+    "rules": [
+      {
+        "rule_set": [
+          "AdGuardSDNSFilter",
+          "chrome-doh"
+        ],
+        "action": "reject",
+        "method": "default"
+      },
+      {
+        "query_type": [
+          "A",
+          "AAAA"
+        ],
+        "server": "dns_fakeip",
+        "rewrite_ttl": 1
+      },
+      {
+        "clash_mode": "Global",
+        "server": "dns_proxy"
+      },
+      {
+        "clash_mode": "Direct",
+        "server": "dns_direct"
+      },
+      {
+        "rule_set": "geosite-cn",
+        "server": "dns_direct"
+      }
+    ],
+    "strategy": "prefer_ipv4",
+    "independent_cache": true
+  },
+  "inbounds": [
+    {
+      "type": "tun",
+      "mtu": 9000,
+      "address": [
+        "172.18.0.1/30",
+        "fdfe:dcba:9876::1/126"
+      ],
+      "auto_route": true,
+      "strict_route": true,
+      "endpoint_independent_nat": true
+    },
+    {
+      "type": "socks",
+      "tag": "socks-in",
+      "listen": "127.0.0.1",
+      "listen_port": 2333
+    },
+    {
+      "type": "mixed",
+      "tag": "mixed-in",
+      "listen": "127.0.0.1",
+      "listen_port": 2334
+    }
+  ],
+  "outbounds": [
+    {
+      "domain_resolver": "local",
+      "method": "aes-128-gcm",
+      "password": "93c11a6f-0c8f-4c32-adb7-f03994e80d74",
+      "server": "120.241.45.46",
+      "server_port": 59541,
+      "tag": "香港01",
+      "type": "shadowsocks"
+    },
+    {
+      "domain_resolver": "local",
+      "method": "aes-128-gcm",
+      "password": "93c11a6f-0c8f-4c32-adb7-f03994e80d74",
+      "server": "120.241.45.46",
+      "server_port": 20356,
+      "tag": "香港02",
+      "type": "shadowsocks"
+    },
+    {
+      "domain_resolver": "local",
+      "method": "aes-128-gcm",
+      "password": "93c11a6f-0c8f-4c32-adb7-f03994e80d74",
+      "server": "120.241.45.46",
+      "server_port": 45873,
+      "tag": "香港03",
+      "type": "shadowsocks"
+    },
+    {
+      "domain_resolver": "local",
+      "method": "aes-128-gcm",
+      "password": "93c11a6f-0c8f-4c32-adb7-f03994e80d74",
+      "server": "120.241.45.46",
+      "server_port": 20954,
+      "tag": "香港04",
+      "type": "shadowsocks"
+    },
+    {
+      "domain_resolver": "local",
+      "method": "aes-128-gcm",
+      "password": "93c11a6f-0c8f-4c32-adb7-f03994e80d74",
+      "server": "120.241.45.46",
+      "server_port": 39817,
+      "tag": "香港05",
+      "type": "shadowsocks"
+    },
+    {
+      "domain_resolver": "local",
+      "method": "aes-128-gcm",
+      "password": "93c11a6f-0c8f-4c32-adb7-f03994e80d74",
+      "server": "120.241.45.46",
+      "server_port": 43300,
+      "tag": "香港06",
+      "type": "shadowsocks"
+    },
+    {
+      "domain_resolver": "local",
+      "method": "aes-128-gcm",
+      "password": "93c11a6f-0c8f-4c32-adb7-f03994e80d74",
+      "server": "120.241.45.46",
+      "server_port": 62721,
+      "tag": "香港07",
+      "type": "shadowsocks"
+    },
+    {
+      "domain_resolver": "local",
+      "method": "aes-128-gcm",
+      "password": "93c11a6f-0c8f-4c32-adb7-f03994e80d74",
+      "server": "120.241.45.46",
+      "server_port": 58126,
+      "tag": "香港08",
+      "type": "shadowsocks"
+    },
+    {
+      "domain_resolver": "local",
+      "method": "aes-128-gcm",
+      "password": "93c11a6f-0c8f-4c32-adb7-f03994e80d74",
+      "server": "120.241.45.46",
+      "server_port": 53727,
+      "tag": "香港09",
+      "type": "shadowsocks"
+    },
+    {
+      "domain_resolver": "local",
+      "method": "aes-128-gcm",
+      "password": "93c11a6f-0c8f-4c32-adb7-f03994e80d74",
+      "server": "120.241.45.46",
+      "server_port": 14519,
+      "tag": "香港10",
+      "type": "shadowsocks"
+    },
+    {
+      "domain_resolver": "local",
+      "method": "aes-128-gcm",
+      "password": "93c11a6f-0c8f-4c32-adb7-f03994e80d74",
+      "server": "120.241.45.46",
+      "server_port": 5657,
+      "tag": "台湾01",
+      "type": "shadowsocks"
+    },
+    {
+      "domain_resolver": "local",
+      "method": "aes-128-gcm",
+      "password": "93c11a6f-0c8f-4c32-adb7-f03994e80d74",
+      "server": "120.241.45.46",
+      "server_port": 59497,
+      "tag": "台湾02",
+      "type": "shadowsocks"
+    },
+    {
+      "domain_resolver": "local",
+      "method": "aes-128-gcm",
+      "password": "93c11a6f-0c8f-4c32-adb7-f03994e80d74",
+      "server": "120.241.45.46",
+      "server_port": 24732,
+      "tag": "日本01",
+      "type": "shadowsocks"
+    },
+    {
+      "domain_resolver": "local",
+      "method": "aes-128-gcm",
+      "password": "93c11a6f-0c8f-4c32-adb7-f03994e80d74",
+      "server": "120.241.45.46",
+      "server_port": 11612,
+      "tag": "日本02",
+      "type": "shadowsocks"
+    },
+    {
+      "domain_resolver": "local",
+      "method": "aes-128-gcm",
+      "password": "93c11a6f-0c8f-4c32-adb7-f03994e80d74",
+      "server": "120.241.45.46",
+      "server_port": 47378,
+      "tag": "日本03",
+      "type": "shadowsocks"
+    },
+    {
+      "domain_resolver": "local",
+      "method": "aes-128-gcm",
+      "password": "93c11a6f-0c8f-4c32-adb7-f03994e80d74",
+      "server": "120.241.45.46",
+      "server_port": 36488,
+      "tag": "日本04",
+      "type": "shadowsocks"
+    },
+    {
+      "domain_resolver": "local",
+      "method": "aes-128-gcm",
+      "password": "93c11a6f-0c8f-4c32-adb7-f03994e80d74",
+      "server": "120.241.45.46",
+      "server_port": 53257,
+      "tag": "日本05",
+      "type": "shadowsocks"
+    },
+    {
+      "domain_resolver": "local",
+      "method": "aes-128-gcm",
+      "password": "93c11a6f-0c8f-4c32-adb7-f03994e80d74",
+      "server": "120.241.45.46",
+      "server_port": 9474,
+      "tag": "日本06",
+      "type": "shadowsocks"
+    },
+    {
+      "domain_resolver": "local",
+      "method": "aes-128-gcm",
+      "password": "93c11a6f-0c8f-4c32-adb7-f03994e80d74",
+      "server": "120.241.45.46",
+      "server_port": 27783,
+      "tag": "新加坡01",
+      "type": "shadowsocks"
+    },
+    {
+      "domain_resolver": "local",
+      "method": "aes-128-gcm",
+      "password": "93c11a6f-0c8f-4c32-adb7-f03994e80d74",
+      "server": "120.241.45.46",
+      "server_port": 36506,
+      "tag": "新加坡02",
+      "type": "shadowsocks"
+    },
+    {
+      "domain_resolver": "local",
+      "method": "aes-128-gcm",
+      "password": "93c11a6f-0c8f-4c32-adb7-f03994e80d74",
+      "server": "120.241.45.46",
+      "server_port": 40599,
+      "tag": "新加坡03",
+      "type": "shadowsocks"
+    },
+    {
+      "domain_resolver": "local",
+      "method": "aes-128-gcm",
+      "password": "93c11a6f-0c8f-4c32-adb7-f03994e80d74",
+      "server": "120.241.45.46",
+      "server_port": 2917,
+      "tag": "美国01",
+      "type": "shadowsocks"
+    },
+    {
+      "domain_resolver": "local",
+      "method": "aes-128-gcm",
+      "password": "93c11a6f-0c8f-4c32-adb7-f03994e80d74",
+      "server": "120.241.45.46",
+      "server_port": 24306,
+      "tag": "美国02",
+      "type": "shadowsocks"
+    },
+    {
+      "domain_resolver": "local",
+      "method": "aes-128-gcm",
+      "password": "93c11a6f-0c8f-4c32-adb7-f03994e80d74",
+      "server": "120.241.45.46",
+      "server_port": 12514,
+      "tag": "美国03",
+      "type": "shadowsocks"
+    },
+    {
+      "domain_resolver": "local",
+      "method": "aes-128-gcm",
+      "password": "93c11a6f-0c8f-4c32-adb7-f03994e80d74",
+      "server": "120.241.45.46",
+      "server_port": 13924,
+      "tag": "美国04",
+      "type": "shadowsocks"
+    },
+    {
+      "domain_resolver": "local",
+      "method": "aes-128-gcm",
+      "password": "93c11a6f-0c8f-4c32-adb7-f03994e80d74",
+      "server": "120.241.45.46",
+      "server_port": 3234,
+      "tag": "加拿大",
+      "type": "shadowsocks"
+    },
+    {
+      "domain_resolver": "local",
+      "method": "aes-128-gcm",
+      "password": "93c11a6f-0c8f-4c32-adb7-f03994e80d74",
+      "server": "120.241.45.46",
+      "server_port": 3857,
+      "tag": "阿根廷",
+      "type": "shadowsocks"
+    },
+    {
+      "domain_resolver": "local",
+      "method": "aes-128-gcm",
+      "password": "93c11a6f-0c8f-4c32-adb7-f03994e80d74",
+      "server": "120.241.45.46",
+      "server_port": 61076,
+      "tag": "巴西",
+      "type": "shadowsocks"
+    },
+    {
+      "tag": "select",
+      "type": "selector",
+      "default": "urltest",
+      "outbounds": [
+        "urltest",
+        "香港01",
+        "香港02",
+        "香港03",
+        "香港04",
+        "香港05",
+        "香港06",
+        "香港07",
+        "香港08",
+        "香港09",
+        "香港10",
+        "台湾01",
+        "台湾02",
+        "日本01",
+        "日本02",
+        "日本03",
+        "日本04",
+        "日本05",
+        "日本06",
+        "新加坡01",
+        "新加坡02",
+        "新加坡03",
+        "美国01",
+        "美国02",
+        "美国03",
+        "美国04",
+        "加拿大",
+        "阿根廷",
+        "巴西"
+      ]
+    },
+    {
+      "tag": "urltest",
+      "type": "urltest",
+      "outbounds": [
+        "香港01",
+        "香港02",
+        "香港03",
+        "香港04",
+        "香港05",
+        "香港06",
+        "香港07",
+        "香港08",
+        "香港09",
+        "香港10",
+        "台湾01",
+        "台湾02",
+        "日本01",
+        "日本02",
+        "日本03",
+        "日本04",
+        "日本05",
+        "日本06",
+        "新加坡01",
+        "新加坡02",
+        "新加坡03",
+        "美国01",
+        "美国02",
+        "美国03",
+        "美国04",
+        "加拿大",
+        "阿根廷",
+        "巴西"
+      ]
+    },
+    {
+      "tag": "chatgpt",
+      "type": "selector",
+      "outbounds": [
+        "香港01",
+        "香港02",
+        "香港03",
+        "香港04",
+        "香港05",
+        "香港06",
+        "香港07",
+        "香港08",
+        "香港09",
+        "香港10",
+        "台湾01",
+        "台湾02",
+        "日本01",
+        "日本02",
+        "日本03",
+        "日本04",
+        "日本05",
+        "日本06",
+        "新加坡01",
+        "新加坡02",
+        "新加坡03",
+        "美国01",
+        "美国02",
+        "美国03",
+        "美国04",
+        "加拿大",
+        "阿根廷",
+        "巴西"
+      ]
+    },
+    {
+      "tag": "direct",
+      "type": "direct"
+    }
+  ],
+  "route": {
+    "rules": [
+      {
+        "action": "sniff"
+      },
+      {
+        "protocol": "dns",
+        "action": "hijack-dns"
+      },
+      {
+        "action": "resolve",
+        "strategy": "prefer_ipv4"
+      },
+      {
+        "clash_mode": "Direct",
+        "outbound": "direct"
+      },
+      {
+        "clash_mode": "Global",
+        "outbound": "select"
+      },
+      {
+        "ip_is_private": true,
+        "outbound": "direct"
+      },
+      {
+        "package_name": "com.openai.chatgpt",
+        "outbound": "chatgpt"
+      },
+      {
+        "domain_suffix": [
+          "gemini.google.com",
+          "proactivebackend-pa.googleapis.com",
+          "bing.com",
+          "bing.net",
+          "bingapis.com"
+        ],
+        "outbound": "chatgpt"
+      },
+      {
+        "domain_keyword": [
+          "qq.com"
+        ],
+        "outbound": "direct"
+      },
+      {
+        "domain_suffix": [
+          "ushd.xmsl.org",
+          "cf.gtlx.org"
+        ],
+        "outbound": "direct"
+      },
+      {
+        "port": [
+          23301,
+          22101,
+          22102,
+          20501
+        ],
+        "outbound": "direct"
+      },
+      {
+        "rule_set": "geoip-cn",
+        "outbound": "direct"
+      }
+    ],
+    "rule_set": [
+      {
+        "type": "remote",
+        "tag": "geoip-cn",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/SagerNet/sing-geoip/rule-set/geoip-cn.srs",
+        "download_detour": "select"
+      },
+      {
+        "type": "remote",
+        "tag": "geosite-cn",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/xmdhs/sing-geosite/rule-set-Loyalsoldier/geosite-geolocation-cn.srs",
+        "download_detour": "select"
+      },
+      {
+        "type": "remote",
+        "tag": "AdGuardSDNSFilter",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/xmdhs/sing-box-ruleset/rule-set/AdGuardSDNSFilterSingBox.srs",
+        "download_detour": "select"
+      },
+      {
+        "type": "remote",
+        "tag": "chrome-doh",
+        "format": "source",
+        "url": "https://gist.githubusercontent.com/xmdhs/71fc5ff6ef29f5ecaf2c52b8de5c3172/raw/chrome-doh.json",
+        "download_detour": "select"
+      }
+    ],
+    "default_domain_resolver": "dns_direct",
+    "final": "select",
+    "auto_detect_interface": true
+  },
+  "experimental": {
+    "cache_file": {
+      "enabled": true
+    },
+    "clash_api": {
+      "external_controller": "127.0.0.1:9090"
+    }
+  }
+}

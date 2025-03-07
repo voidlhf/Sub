@@ -1,0 +1,1086 @@
+{
+  "log": {},
+  "dns": {
+    "servers": [
+      {
+        "tag": "dns_proxy",
+        "type": "https",
+        "server": "8.8.8.8",
+        "detour": "select"
+      },
+      {
+        "tag": "dns_direct",
+        "type": "https",
+        "server": "223.5.5.5",
+        "detour": "direct"
+      },
+      {
+        "tag": "dns_fakeip",
+        "type": "fakeip",
+        "inet4_range": "198.18.0.0/15",
+        "inet6_range": "fc00::/18"
+      }
+    ],
+    "rules": [
+      {
+        "rule_set": [
+          "AdGuardSDNSFilter",
+          "chrome-doh"
+        ],
+        "action": "reject",
+        "method": "default"
+      },
+      {
+        "query_type": [
+          "A",
+          "AAAA"
+        ],
+        "server": "dns_fakeip",
+        "rewrite_ttl": 1
+      },
+      {
+        "clash_mode": "Global",
+        "server": "dns_proxy"
+      },
+      {
+        "clash_mode": "Direct",
+        "server": "dns_direct"
+      },
+      {
+        "rule_set": "geosite-cn",
+        "server": "dns_direct"
+      }
+    ],
+    "strategy": "prefer_ipv4",
+    "independent_cache": true
+  },
+  "inbounds": [
+    {
+      "type": "tun",
+      "mtu": 9000,
+      "address": [
+        "172.18.0.1/30",
+        "fdfe:dcba:9876::1/126"
+      ],
+      "auto_route": true,
+      "strict_route": true,
+      "endpoint_independent_nat": true
+    },
+    {
+      "type": "socks",
+      "tag": "socks-in",
+      "listen": "127.0.0.1",
+      "listen_port": 2333
+    },
+    {
+      "type": "mixed",
+      "tag": "mixed-in",
+      "listen": "127.0.0.1",
+      "listen_port": 2334
+    }
+  ],
+  "outbounds": [
+    {
+      "password": "2c699fc7-cc37-4ca3-a7fe-c7ab9355a248",
+      "server": "108.181.22.153",
+      "server_port": 20000,
+      "tag": "🇺🇸美国洛杉矶专线",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "www.bing.com"
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "2c699fc7-cc37-4ca3-a7fe-c7ab9355a248",
+      "server": "108.181.23.241",
+      "server_port": 20000,
+      "tag": "🇺🇸美国洛杉矶专线2",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "www.bing.com"
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "2c699fc7-cc37-4ca3-a7fe-c7ab9355a248",
+      "server": "108.181.23.249",
+      "server_port": 20000,
+      "tag": "🇺🇸美国洛杉矶专线3",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "www.bing.com"
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "2c699fc7-cc37-4ca3-a7fe-c7ab9355a248",
+      "server": "108.181.23.255",
+      "server_port": 20000,
+      "tag": "🇺🇸美国洛杉矶专线4",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "www.bing.com"
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "2c699fc7-cc37-4ca3-a7fe-c7ab9355a248",
+      "server": "192.9.181.38",
+      "server_port": 20000,
+      "tag": "🇦🇺澳大利亚悉尼",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "www.bing.com"
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "2c699fc7-cc37-4ca3-a7fe-c7ab9355a248",
+      "server": "192.9.176.249",
+      "server_port": 20000,
+      "tag": "🇦🇺澳大利亚悉尼2",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "www.bing.com"
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "2c699fc7-cc37-4ca3-a7fe-c7ab9355a248",
+      "server": "204.10.194.86",
+      "server_port": 20000,
+      "tag": "🇳🇱荷兰专线",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "www.bing.com"
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "2c699fc7-cc37-4ca3-a7fe-c7ab9355a248",
+      "server": "138.2.2.120",
+      "server_port": 20000,
+      "tag": "🇯🇵日本专线",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "www.bing.com"
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "2c699fc7-cc37-4ca3-a7fe-c7ab9355a248",
+      "server": "138.2.31.176",
+      "server_port": 20000,
+      "tag": "🇯🇵日本专线3",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "www.bing.com"
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "2c699fc7-cc37-4ca3-a7fe-c7ab9355a248",
+      "server": "138.3.208.201",
+      "server_port": 20000,
+      "tag": "🇯🇵日本专线4",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "www.bing.com"
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "2c699fc7-cc37-4ca3-a7fe-c7ab9355a248",
+      "server": "168.138.184.187",
+      "server_port": 20000,
+      "tag": "🇸🇬新加坡专线",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "www.bing.com"
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "2c699fc7-cc37-4ca3-a7fe-c7ab9355a248",
+      "server": "132.226.235.134",
+      "server_port": 20000,
+      "tag": "🇰🇷韩国三网专线",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "www.bing.com"
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "2c699fc7-cc37-4ca3-a7fe-c7ab9355a248",
+      "server": "152.70.234.101",
+      "server_port": 20000,
+      "tag": "🇰🇷韩国三网专线2",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "www.bing.com"
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "2c699fc7-cc37-4ca3-a7fe-c7ab9355a248",
+      "server": "193.122.106.44",
+      "server_port": 20000,
+      "tag": "🇰🇷韩国三网专线3",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "www.bing.com"
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "2c699fc7-cc37-4ca3-a7fe-c7ab9355a248",
+      "server": "158.179.164.122",
+      "server_port": 20000,
+      "tag": "🇰🇷韩国专线2",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "www.bing.com"
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "2c699fc7-cc37-4ca3-a7fe-c7ab9355a248",
+      "server": "129.148.39.249",
+      "server_port": 20000,
+      "tag": "🇧🇷巴西专线",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "www.bing.com"
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "2c699fc7-cc37-4ca3-a7fe-c7ab9355a248",
+      "server": "54.179.4.150",
+      "server_port": 20000,
+      "tag": "🇸🇬亚马逊新加坡",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "www.bing.com"
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "2c699fc7-cc37-4ca3-a7fe-c7ab9355a248",
+      "server": "129.154.237.229",
+      "server_port": 20000,
+      "tag": "🇮🇳印度孟买专线",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "www.bing.com"
+      },
+      "type": "hysteria2"
+    },
+    {
+      "flow": "xtls-rprx-vision",
+      "packet_encoding": "xudp",
+      "server": "3bd9.55dca.e048.f1-fef1f.yfjcs.com",
+      "server_port": 443,
+      "tag": "🇯🇵亚马逊日本1号",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "yfjp.xn--4gq62f52gppi29k.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "type": "vless",
+      "uuid": "2c699fc7-cc37-4ca3-a7fe-c7ab9355a248"
+    },
+    {
+      "flow": "xtls-rprx-vision",
+      "packet_encoding": "xudp",
+      "server": "3bd9.55dca.e048.f2-fef1f.yfjcs.com",
+      "server_port": 443,
+      "tag": "🇯🇵亚马逊日本2号",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "yfjp.xn--4gq62f52gppi29k.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "type": "vless",
+      "uuid": "2c699fc7-cc37-4ca3-a7fe-c7ab9355a248"
+    },
+    {
+      "flow": "xtls-rprx-vision",
+      "packet_encoding": "xudp",
+      "server": "3bd9.55dca.e048.f3-fef1f.yfjcs.com",
+      "server_port": 443,
+      "tag": "🇯🇵亚马逊日本3号",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "yfjp.xn--4gq62f52gppi29k.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "safari"
+        }
+      },
+      "type": "vless",
+      "uuid": "2c699fc7-cc37-4ca3-a7fe-c7ab9355a248"
+    },
+    {
+      "flow": "xtls-rprx-vision",
+      "packet_encoding": "xudp",
+      "server": "3bd9.55dca.e048.f4-fef1f.yfjcs.com",
+      "server_port": 443,
+      "tag": "🇸🇬亚马逊新加坡1号",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "b295-23ap29-6bh.xn--4gq62f52gppi29k.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "ios"
+        }
+      },
+      "type": "vless",
+      "uuid": "2c699fc7-cc37-4ca3-a7fe-c7ab9355a248"
+    },
+    {
+      "flow": "xtls-rprx-vision",
+      "packet_encoding": "xudp",
+      "server": "3bd9.55dca.e048.f5-fef1f.yfjcs.com",
+      "server_port": 443,
+      "tag": "🇸🇬亚马逊新加坡2号",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "b295-23ap29-6bh.xn--4gq62f52gppi29k.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "type": "vless",
+      "uuid": "2c699fc7-cc37-4ca3-a7fe-c7ab9355a248"
+    },
+    {
+      "flow": "xtls-rprx-vision",
+      "packet_encoding": "xudp",
+      "server": "3bd9.55dca.e048.f6-fef1f.yfjcs.com",
+      "server_port": 443,
+      "tag": "🇸🇬亚马逊新加坡3号",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "b295-23ap29-6bh.xn--4gq62f52gppi29k.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "ios"
+        }
+      },
+      "type": "vless",
+      "uuid": "2c699fc7-cc37-4ca3-a7fe-c7ab9355a248"
+    },
+    {
+      "flow": "xtls-rprx-vision",
+      "packet_encoding": "xudp",
+      "server": "3bd9.55dca.e048.f61-fef1f.yfjcs.com",
+      "server_port": 443,
+      "tag": "🇭🇰香港1号",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "yfhk1.xn--4gq62f52gppi29k.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "safari"
+        }
+      },
+      "type": "vless",
+      "uuid": "2c699fc7-cc37-4ca3-a7fe-c7ab9355a248"
+    },
+    {
+      "flow": "xtls-rprx-vision",
+      "packet_encoding": "xudp",
+      "server": "3bd9.55dca.e048.f62-fef1f.yfjcs.com",
+      "server_port": 443,
+      "tag": "🇭🇰香港2号",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "yfhk1.xn--4gq62f52gppi29k.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
+        }
+      },
+      "type": "vless",
+      "uuid": "2c699fc7-cc37-4ca3-a7fe-c7ab9355a248"
+    },
+    {
+      "flow": "xtls-rprx-vision",
+      "packet_encoding": "xudp",
+      "server": "3bd9.55dca.e048.f63-fef1f.yfjcs.com",
+      "server_port": 443,
+      "tag": "🇭🇰香港3号",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "yfhk2.xn--4gq62f52gppi29k.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "type": "vless",
+      "uuid": "2c699fc7-cc37-4ca3-a7fe-c7ab9355a248"
+    },
+    {
+      "flow": "xtls-rprx-vision",
+      "packet_encoding": "xudp",
+      "server": "3bd9.55dca.e048.f64-fef1f.yfjcs.com",
+      "server_port": 443,
+      "tag": "🇭🇰香港4号",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "yfhk2.xn--4gq62f52gppi29k.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "type": "vless",
+      "uuid": "2c699fc7-cc37-4ca3-a7fe-c7ab9355a248"
+    },
+    {
+      "flow": "xtls-rprx-vision",
+      "packet_encoding": "xudp",
+      "server": "204.10.194.78",
+      "server_port": 443,
+      "tag": "🇳🇱荷兰| BT下载-0.1倍率",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "yfnl1.xn--4gq62f52gppi29k.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "safari"
+        }
+      },
+      "type": "vless",
+      "uuid": "2c699fc7-cc37-4ca3-a7fe-c7ab9355a248"
+    },
+    {
+      "flow": "",
+      "packet_encoding": "xudp",
+      "server": "104.18.22.235",
+      "server_port": 443,
+      "tag": "🇳🇱荷兰2 | BT下载-0.1倍率",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "nl1.yfjc.sbs",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "ios"
+        }
+      },
+      "transport": {
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "headers": {
+          "Host": [
+            "nl1.yfjc.sbs"
+          ]
+        },
+        "max_early_data": 2048,
+        "path": "/yfjc/knl1",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "2c699fc7-cc37-4ca3-a7fe-c7ab9355a248"
+    },
+    {
+      "flow": "xtls-rprx-vision",
+      "packet_encoding": "xudp",
+      "server": "3bd9.55dba.e048.f65-fef1f.yfjcs.com",
+      "server_port": 443,
+      "tag": "🇹🇼台湾",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "tw.xn--4gq62f52gppi29k.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "type": "vless",
+      "uuid": "2c699fc7-cc37-4ca3-a7fe-c7ab9355a248"
+    },
+    {
+      "flow": "xtls-rprx-vision",
+      "packet_encoding": "xudp",
+      "server": "141.253.124.138",
+      "server_port": 443,
+      "tag": "🇫🇷法国巴黎2",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "b2-9fr2329-6bh.xn--4gq62f52gppi29k.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "type": "vless",
+      "uuid": "2c699fc7-cc37-4ca3-a7fe-c7ab9355a248"
+    },
+    {
+      "flow": "xtls-rprx-vision",
+      "packet_encoding": "xudp",
+      "server": "144.24.206.147",
+      "server_port": 443,
+      "tag": "🇫🇷法国马赛",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "b2-9fr5232-96bh.xn--4gq62f52gppi29k.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "type": "vless",
+      "uuid": "2c699fc7-cc37-4ca3-a7fe-c7ab9355a248"
+    },
+    {
+      "flow": "xtls-rprx-vision",
+      "packet_encoding": "xudp",
+      "server": "158.101.195.118",
+      "server_port": 443,
+      "tag": "🇳🇱荷兰阿姆斯特丹",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "b295-23nl29-6bh.xn--4gq62f52gppi29k.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "type": "vless",
+      "uuid": "2c699fc7-cc37-4ca3-a7fe-c7ab9355a248"
+    },
+    {
+      "flow": "xtls-rprx-vision",
+      "packet_encoding": "xudp",
+      "server": "146.235.213.36",
+      "server_port": 443,
+      "tag": "🇺🇸美国圣何塞",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "b295-23ae29-6bh.xn--4gq62f52gppi29k.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "type": "vless",
+      "uuid": "2c699fc7-cc37-4ca3-a7fe-c7ab9355a248"
+    },
+    {
+      "flow": "xtls-rprx-vision",
+      "packet_encoding": "xudp",
+      "server": "192.9.247.127",
+      "server_port": 443,
+      "tag": "🇺🇸美国圣何塞2",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "b295-23ae29-6bh.xn--4gq62f52gppi29k.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "type": "vless",
+      "uuid": "2c699fc7-cc37-4ca3-a7fe-c7ab9355a248"
+    },
+    {
+      "flow": "xtls-rprx-vision",
+      "packet_encoding": "xudp",
+      "server": "64.181.255.250",
+      "server_port": 443,
+      "tag": "🇺🇸美国圣何塞3",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "b295-23ae29-6bh.xn--4gq62f52gppi29k.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "safari"
+        }
+      },
+      "type": "vless",
+      "uuid": "2c699fc7-cc37-4ca3-a7fe-c7ab9355a248"
+    },
+    {
+      "flow": "xtls-rprx-vision",
+      "packet_encoding": "xudp",
+      "server": "192.9.142.185",
+      "server_port": 443,
+      "tag": "🇺🇸美国圣何塞4",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "b295-23ae29-6bh.xn--4gq62f52gppi29k.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
+        }
+      },
+      "type": "vless",
+      "uuid": "2c699fc7-cc37-4ca3-a7fe-c7ab9355a248"
+    },
+    {
+      "flow": "xtls-rprx-vision",
+      "packet_encoding": "xudp",
+      "server": "165.1.68.155",
+      "server_port": 443,
+      "tag": "🇺🇸美国圣何塞5",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "767w1-38dc0-9ocf2.xn--4gq62f52gppi29k.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "safari"
+        }
+      },
+      "type": "vless",
+      "uuid": "2c699fc7-cc37-4ca3-a7fe-c7ab9355a248"
+    },
+    {
+      "flow": "xtls-rprx-vision",
+      "packet_encoding": "xudp",
+      "server": "140.238.101.15",
+      "server_port": 443,
+      "tag": "🇬🇧英国伦敦",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "767w1-38dc0-9icf2.xn--4gq62f52gppi29k.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "safari"
+        }
+      },
+      "type": "vless",
+      "uuid": "2c699fc7-cc37-4ca3-a7fe-c7ab9355a248"
+    },
+    {
+      "flow": "xtls-rprx-vision",
+      "packet_encoding": "xudp",
+      "server": "193.123.187.39",
+      "server_port": 443,
+      "tag": "🇬🇧英国伦敦2",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "767w1-38dc0-9kcf2.xn--4gq62f52gppi29k.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "ios"
+        }
+      },
+      "type": "vless",
+      "uuid": "2c699fc7-cc37-4ca3-a7fe-c7ab9355a248"
+    },
+    {
+      "flow": "xtls-rprx-vision",
+      "packet_encoding": "xudp",
+      "server": "129.159.227.221",
+      "server_port": 443,
+      "tag": "🇮🇳印度海得拉巴",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "767w1-7kjd0-9kcf2.xn--4gq62f52gppi29k.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "safari"
+        }
+      },
+      "type": "vless",
+      "uuid": "2c699fc7-cc37-4ca3-a7fe-c7ab9355a248"
+    },
+    {
+      "flow": "xtls-rprx-vision",
+      "packet_encoding": "xudp",
+      "server": "141.147.33.180",
+      "server_port": 443,
+      "tag": "🇩🇪德国法兰克福",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "767w1-85dc0-9yjd.xn--4gq62f52gppi29k.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "safari"
+        }
+      },
+      "type": "vless",
+      "uuid": "2c699fc7-cc37-4ca3-a7fe-c7ab9355a248"
+    },
+    {
+      "flow": "",
+      "packet_encoding": "xudp",
+      "server": "104.18.22.235",
+      "server_port": 443,
+      "tag": "🇯🇵日本",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "yfjcjp1.yfjc.sbs",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "headers": {
+          "Host": [
+            "yfjcjp1.yfjc.sbs"
+          ]
+        },
+        "max_early_data": 2048,
+        "path": "/yfjc/jp1",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "2c699fc7-cc37-4ca3-a7fe-c7ab9355a248"
+    },
+    {
+      "flow": "",
+      "packet_encoding": "xudp",
+      "server": "104.18.22.235",
+      "server_port": 443,
+      "tag": "🇯🇵日本2",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "yfjcjp2.yfjc.sbs",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "headers": {
+          "Host": [
+            "yfjcjp2.yfjc.sbs"
+          ]
+        },
+        "max_early_data": 2048,
+        "path": "/yfjc/jp1",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "2c699fc7-cc37-4ca3-a7fe-c7ab9355a248"
+    },
+    {
+      "tag": "select",
+      "type": "selector",
+      "default": "urltest",
+      "outbounds": [
+        "urltest",
+        "🇺🇸美国洛杉矶专线",
+        "🇺🇸美国洛杉矶专线2",
+        "🇺🇸美国洛杉矶专线3",
+        "🇺🇸美国洛杉矶专线4",
+        "🇦🇺澳大利亚悉尼",
+        "🇦🇺澳大利亚悉尼2",
+        "🇳🇱荷兰专线",
+        "🇯🇵日本专线",
+        "🇯🇵日本专线3",
+        "🇯🇵日本专线4",
+        "🇸🇬新加坡专线",
+        "🇰🇷韩国三网专线",
+        "🇰🇷韩国三网专线2",
+        "🇰🇷韩国三网专线3",
+        "🇰🇷韩国专线2",
+        "🇧🇷巴西专线",
+        "🇸🇬亚马逊新加坡",
+        "🇮🇳印度孟买专线",
+        "🇯🇵亚马逊日本1号",
+        "🇯🇵亚马逊日本2号",
+        "🇯🇵亚马逊日本3号",
+        "🇸🇬亚马逊新加坡1号",
+        "🇸🇬亚马逊新加坡2号",
+        "🇸🇬亚马逊新加坡3号",
+        "🇭🇰香港1号",
+        "🇭🇰香港2号",
+        "🇭🇰香港3号",
+        "🇭🇰香港4号",
+        "🇳🇱荷兰| BT下载-0.1倍率",
+        "🇳🇱荷兰2 | BT下载-0.1倍率",
+        "🇹🇼台湾",
+        "🇫🇷法国巴黎2",
+        "🇫🇷法国马赛",
+        "🇳🇱荷兰阿姆斯特丹",
+        "🇺🇸美国圣何塞",
+        "🇺🇸美国圣何塞2",
+        "🇺🇸美国圣何塞3",
+        "🇺🇸美国圣何塞4",
+        "🇺🇸美国圣何塞5",
+        "🇬🇧英国伦敦",
+        "🇬🇧英国伦敦2",
+        "🇮🇳印度海得拉巴",
+        "🇩🇪德国法兰克福",
+        "🇯🇵日本",
+        "🇯🇵日本2"
+      ]
+    },
+    {
+      "tag": "urltest",
+      "type": "urltest",
+      "outbounds": [
+        "🇺🇸美国洛杉矶专线",
+        "🇺🇸美国洛杉矶专线2",
+        "🇺🇸美国洛杉矶专线3",
+        "🇺🇸美国洛杉矶专线4",
+        "🇦🇺澳大利亚悉尼",
+        "🇦🇺澳大利亚悉尼2",
+        "🇳🇱荷兰专线",
+        "🇯🇵日本专线",
+        "🇯🇵日本专线3",
+        "🇯🇵日本专线4",
+        "🇸🇬新加坡专线",
+        "🇰🇷韩国三网专线",
+        "🇰🇷韩国三网专线2",
+        "🇰🇷韩国三网专线3",
+        "🇰🇷韩国专线2",
+        "🇧🇷巴西专线",
+        "🇸🇬亚马逊新加坡",
+        "🇮🇳印度孟买专线",
+        "🇯🇵亚马逊日本1号",
+        "🇯🇵亚马逊日本2号",
+        "🇯🇵亚马逊日本3号",
+        "🇸🇬亚马逊新加坡1号",
+        "🇸🇬亚马逊新加坡2号",
+        "🇸🇬亚马逊新加坡3号",
+        "🇭🇰香港1号",
+        "🇭🇰香港2号",
+        "🇭🇰香港3号",
+        "🇭🇰香港4号",
+        "🇳🇱荷兰| BT下载-0.1倍率",
+        "🇳🇱荷兰2 | BT下载-0.1倍率",
+        "🇹🇼台湾",
+        "🇫🇷法国巴黎2",
+        "🇫🇷法国马赛",
+        "🇳🇱荷兰阿姆斯特丹",
+        "🇺🇸美国圣何塞",
+        "🇺🇸美国圣何塞2",
+        "🇺🇸美国圣何塞3",
+        "🇺🇸美国圣何塞4",
+        "🇺🇸美国圣何塞5",
+        "🇬🇧英国伦敦",
+        "🇬🇧英国伦敦2",
+        "🇮🇳印度海得拉巴",
+        "🇩🇪德国法兰克福",
+        "🇯🇵日本",
+        "🇯🇵日本2"
+      ]
+    },
+    {
+      "tag": "chatgpt",
+      "type": "selector",
+      "outbounds": [
+        "🇺🇸美国洛杉矶专线",
+        "🇺🇸美国洛杉矶专线2",
+        "🇺🇸美国洛杉矶专线3",
+        "🇺🇸美国洛杉矶专线4",
+        "🇦🇺澳大利亚悉尼",
+        "🇦🇺澳大利亚悉尼2",
+        "🇳🇱荷兰专线",
+        "🇯🇵日本专线",
+        "🇯🇵日本专线3",
+        "🇯🇵日本专线4",
+        "🇸🇬新加坡专线",
+        "🇰🇷韩国三网专线",
+        "🇰🇷韩国三网专线2",
+        "🇰🇷韩国三网专线3",
+        "🇰🇷韩国专线2",
+        "🇧🇷巴西专线",
+        "🇸🇬亚马逊新加坡",
+        "🇮🇳印度孟买专线",
+        "🇯🇵亚马逊日本1号",
+        "🇯🇵亚马逊日本2号",
+        "🇯🇵亚马逊日本3号",
+        "🇸🇬亚马逊新加坡1号",
+        "🇸🇬亚马逊新加坡2号",
+        "🇸🇬亚马逊新加坡3号",
+        "🇭🇰香港1号",
+        "🇭🇰香港2号",
+        "🇭🇰香港3号",
+        "🇭🇰香港4号",
+        "🇳🇱荷兰| BT下载-0.1倍率",
+        "🇳🇱荷兰2 | BT下载-0.1倍率",
+        "🇹🇼台湾",
+        "🇫🇷法国巴黎2",
+        "🇫🇷法国马赛",
+        "🇳🇱荷兰阿姆斯特丹",
+        "🇺🇸美国圣何塞",
+        "🇺🇸美国圣何塞2",
+        "🇺🇸美国圣何塞3",
+        "🇺🇸美国圣何塞4",
+        "🇺🇸美国圣何塞5",
+        "🇬🇧英国伦敦",
+        "🇬🇧英国伦敦2",
+        "🇮🇳印度海得拉巴",
+        "🇩🇪德国法兰克福",
+        "🇯🇵日本",
+        "🇯🇵日本2"
+      ]
+    },
+    {
+      "tag": "direct",
+      "type": "direct"
+    }
+  ],
+  "route": {
+    "rules": [
+      {
+        "action": "sniff"
+      },
+      {
+        "protocol": "dns",
+        "action": "hijack-dns"
+      },
+      {
+        "action": "resolve",
+        "strategy": "prefer_ipv4"
+      },
+      {
+        "clash_mode": "Direct",
+        "outbound": "direct"
+      },
+      {
+        "clash_mode": "Global",
+        "outbound": "select"
+      },
+      {
+        "ip_is_private": true,
+        "outbound": "direct"
+      },
+      {
+        "package_name": "com.openai.chatgpt",
+        "outbound": "chatgpt"
+      },
+      {
+        "domain_suffix": [
+          "gemini.google.com",
+          "proactivebackend-pa.googleapis.com",
+          "bing.com",
+          "bing.net",
+          "bingapis.com"
+        ],
+        "outbound": "chatgpt"
+      },
+      {
+        "domain_keyword": [
+          "qq.com"
+        ],
+        "outbound": "direct"
+      },
+      {
+        "domain_suffix": [
+          "ushd.xmsl.org",
+          "cf.gtlx.org"
+        ],
+        "outbound": "direct"
+      },
+      {
+        "port": [
+          23301,
+          22101,
+          22102,
+          20501
+        ],
+        "outbound": "direct"
+      },
+      {
+        "rule_set": "geoip-cn",
+        "outbound": "direct"
+      }
+    ],
+    "rule_set": [
+      {
+        "type": "remote",
+        "tag": "geoip-cn",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/SagerNet/sing-geoip/rule-set/geoip-cn.srs",
+        "download_detour": "select"
+      },
+      {
+        "type": "remote",
+        "tag": "geosite-cn",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/xmdhs/sing-geosite/rule-set-Loyalsoldier/geosite-geolocation-cn.srs",
+        "download_detour": "select"
+      },
+      {
+        "type": "remote",
+        "tag": "AdGuardSDNSFilter",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/xmdhs/sing-box-ruleset/rule-set/AdGuardSDNSFilterSingBox.srs",
+        "download_detour": "select"
+      },
+      {
+        "type": "remote",
+        "tag": "chrome-doh",
+        "format": "source",
+        "url": "https://gist.githubusercontent.com/xmdhs/71fc5ff6ef29f5ecaf2c52b8de5c3172/raw/chrome-doh.json",
+        "download_detour": "select"
+      }
+    ],
+    "default_domain_resolver": "dns_direct",
+    "final": "select",
+    "auto_detect_interface": true
+  },
+  "experimental": {
+    "cache_file": {
+      "enabled": true
+    },
+    "clash_api": {
+      "external_controller": "127.0.0.1:9090"
+    }
+  }
+}

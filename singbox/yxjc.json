@@ -1,0 +1,552 @@
+{
+  "log": {},
+  "dns": {
+    "servers": [
+      {
+        "tag": "dns_proxy",
+        "type": "https",
+        "server": "8.8.8.8",
+        "detour": "select"
+      },
+      {
+        "tag": "dns_direct",
+        "type": "https",
+        "server": "223.5.5.5",
+        "detour": "direct"
+      },
+      {
+        "tag": "dns_fakeip",
+        "type": "fakeip",
+        "inet4_range": "198.18.0.0/15",
+        "inet6_range": "fc00::/18"
+      }
+    ],
+    "rules": [
+      {
+        "rule_set": [
+          "AdGuardSDNSFilter",
+          "chrome-doh"
+        ],
+        "action": "reject",
+        "method": "default"
+      },
+      {
+        "query_type": [
+          "A",
+          "AAAA"
+        ],
+        "server": "dns_fakeip",
+        "rewrite_ttl": 1
+      },
+      {
+        "clash_mode": "Global",
+        "server": "dns_proxy"
+      },
+      {
+        "clash_mode": "Direct",
+        "server": "dns_direct"
+      },
+      {
+        "rule_set": "geosite-cn",
+        "server": "dns_direct"
+      }
+    ],
+    "strategy": "prefer_ipv4",
+    "independent_cache": true
+  },
+  "inbounds": [
+    {
+      "type": "tun",
+      "mtu": 9000,
+      "address": [
+        "172.18.0.1/30",
+        "fdfe:dcba:9876::1/126"
+      ],
+      "auto_route": true,
+      "strict_route": true,
+      "endpoint_independent_nat": true
+    },
+    {
+      "type": "socks",
+      "tag": "socks-in",
+      "listen": "127.0.0.1",
+      "listen_port": 2333
+    },
+    {
+      "type": "mixed",
+      "tag": "mixed-in",
+      "listen": "127.0.0.1",
+      "listen_port": 2334
+    }
+  ],
+  "outbounds": [
+    {
+      "alter_id": 0,
+      "security": "auto",
+      "server": "sg-n1.starvm.ltd",
+      "server_port": 22451,
+      "tag": "剩余流量：491.88 GB",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "sg.lilil.eu.org"
+      },
+      "transport": {
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "headers": {
+          "Host": "v2ray.com"
+        },
+        "max_early_data": 2048,
+        "path": "/",
+        "type": "ws"
+      },
+      "type": "vmess",
+      "uuid": "a6316d05-91c6-477e-9d4d-3b8413e9eceb"
+    },
+    {
+      "alter_id": 0,
+      "security": "auto",
+      "server": "sg-n1.starvm.ltd",
+      "server_port": 22451,
+      "tag": "距离下次重置剩余：29 天",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "sg.lilil.eu.org"
+      },
+      "transport": {
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "headers": {
+          "Host": "v2ray.com"
+        },
+        "max_early_data": 2048,
+        "path": "/",
+        "type": "ws"
+      },
+      "type": "vmess",
+      "uuid": "a6316d05-91c6-477e-9d4d-3b8413e9eceb"
+    },
+    {
+      "alter_id": 0,
+      "security": "auto",
+      "server": "sg-n1.starvm.ltd",
+      "server_port": 22451,
+      "tag": "套餐到期：2025-04-05",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "sg.lilil.eu.org"
+      },
+      "transport": {
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "headers": {
+          "Host": "v2ray.com"
+        },
+        "max_early_data": 2048,
+        "path": "/",
+        "type": "ws"
+      },
+      "type": "vmess",
+      "uuid": "a6316d05-91c6-477e-9d4d-3b8413e9eceb"
+    },
+    {
+      "alter_id": 0,
+      "security": "auto",
+      "server": "sg-n1.starvm.ltd",
+      "server_port": 22451,
+      "tag": "新加坡1",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "sg.lilil.eu.org"
+      },
+      "transport": {
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "headers": {
+          "Host": "v2ray.com"
+        },
+        "max_early_data": 2048,
+        "path": "/",
+        "type": "ws"
+      },
+      "type": "vmess",
+      "uuid": "a6316d05-91c6-477e-9d4d-3b8413e9eceb"
+    },
+    {
+      "alter_id": 0,
+      "security": "auto",
+      "server": "sg-n1.starvm.ltd",
+      "server_port": 32545,
+      "tag": "新加坡2",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "sg.lilil.eu.org"
+      },
+      "transport": {
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "headers": {
+          "Host": "v2ray.com"
+        },
+        "max_early_data": 2048,
+        "path": "/",
+        "type": "ws"
+      },
+      "type": "vmess",
+      "uuid": "a6316d05-91c6-477e-9d4d-3b8413e9eceb"
+    },
+    {
+      "alter_id": 0,
+      "security": "auto",
+      "server": "sg-n1.starvm.ltd",
+      "server_port": 55421,
+      "tag": "新加坡3",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "sg.lilil.eu.org"
+      },
+      "transport": {
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "headers": {
+          "Host": "v2ray.com"
+        },
+        "max_early_data": 2048,
+        "path": "/",
+        "type": "ws"
+      },
+      "type": "vmess",
+      "uuid": "a6316d05-91c6-477e-9d4d-3b8413e9eceb"
+    },
+    {
+      "alter_id": 0,
+      "security": "auto",
+      "server": "154.222.21.105",
+      "server_port": 11478,
+      "tag": "香港低延迟1",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "hk50.lilil.eu.org"
+      },
+      "transport": {
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "headers": {
+          "Host": "v2ray.com"
+        },
+        "max_early_data": 2048,
+        "path": "/",
+        "type": "ws"
+      },
+      "type": "vmess",
+      "uuid": "a6316d05-91c6-477e-9d4d-3b8413e9eceb"
+    },
+    {
+      "alter_id": 0,
+      "security": "auto",
+      "server": "154.222.21.105",
+      "server_port": 43256,
+      "tag": "香港低延迟2",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "hk50.lilil.eu.org"
+      },
+      "transport": {
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "headers": {
+          "Host": "v2ray.com"
+        },
+        "max_early_data": 2048,
+        "path": "/",
+        "type": "ws"
+      },
+      "type": "vmess",
+      "uuid": "a6316d05-91c6-477e-9d4d-3b8413e9eceb"
+    },
+    {
+      "alter_id": 0,
+      "security": "auto",
+      "server": "154.222.21.105",
+      "server_port": 55421,
+      "tag": "香港低延迟3",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "hk50.lilil.eu.org"
+      },
+      "transport": {
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "headers": {
+          "Host": "v2ray.com"
+        },
+        "max_early_data": 2048,
+        "path": "/",
+        "type": "ws"
+      },
+      "type": "vmess",
+      "uuid": "a6316d05-91c6-477e-9d4d-3b8413e9eceb"
+    },
+    {
+      "down_mbps": null,
+      "obfs": null,
+      "password": "a6316d05-91c6-477e-9d4d-3b8413e9eceb",
+      "server": "164.152.33.5",
+      "server_port": 12454,
+      "tag": "巴西1",
+      "tls": {
+        "enabled": true,
+        "insecure": true
+      },
+      "type": "hysteria2",
+      "up_mbps": null
+    },
+    {
+      "down_mbps": null,
+      "obfs": null,
+      "password": "a6316d05-91c6-477e-9d4d-3b8413e9eceb",
+      "server": "164.152.33.5",
+      "server_port": 43256,
+      "tag": "巴西2",
+      "tls": {
+        "enabled": true,
+        "insecure": true
+      },
+      "type": "hysteria2",
+      "up_mbps": null
+    },
+    {
+      "down_mbps": null,
+      "obfs": null,
+      "password": "a6316d05-91c6-477e-9d4d-3b8413e9eceb",
+      "server": "164.152.33.5",
+      "server_port": 33254,
+      "tag": "巴西3",
+      "tls": {
+        "enabled": true,
+        "insecure": true
+      },
+      "type": "hysteria2",
+      "up_mbps": null
+    },
+    {
+      "down_mbps": null,
+      "obfs": null,
+      "password": "a6316d05-91c6-477e-9d4d-3b8413e9eceb",
+      "server": "154.23.163.93",
+      "server_port": 22415,
+      "tag": "美国1",
+      "tls": {
+        "enabled": true,
+        "insecure": true
+      },
+      "type": "hysteria2",
+      "up_mbps": null
+    },
+    {
+      "down_mbps": null,
+      "obfs": null,
+      "password": "a6316d05-91c6-477e-9d4d-3b8413e9eceb",
+      "server": "154.23.163.93",
+      "server_port": 33216,
+      "tag": "美国2",
+      "tls": {
+        "enabled": true,
+        "insecure": true
+      },
+      "type": "hysteria2",
+      "up_mbps": null
+    },
+    {
+      "down_mbps": null,
+      "obfs": null,
+      "password": "a6316d05-91c6-477e-9d4d-3b8413e9eceb",
+      "server": "154.23.163.93",
+      "server_port": 55213,
+      "tag": "美国3",
+      "tls": {
+        "enabled": true,
+        "insecure": true
+      },
+      "type": "hysteria2",
+      "up_mbps": null
+    },
+    {
+      "tag": "select",
+      "type": "selector",
+      "default": "urltest",
+      "outbounds": [
+        "urltest",
+        "剩余流量：491.88 GB",
+        "距离下次重置剩余：29 天",
+        "套餐到期：2025-04-05",
+        "新加坡1",
+        "新加坡2",
+        "新加坡3",
+        "香港低延迟1",
+        "香港低延迟2",
+        "香港低延迟3",
+        "巴西1",
+        "巴西2",
+        "巴西3",
+        "美国1",
+        "美国2",
+        "美国3"
+      ]
+    },
+    {
+      "tag": "urltest",
+      "type": "urltest",
+      "outbounds": [
+        "剩余流量：491.88 GB",
+        "距离下次重置剩余：29 天",
+        "套餐到期：2025-04-05",
+        "新加坡1",
+        "新加坡2",
+        "新加坡3",
+        "香港低延迟1",
+        "香港低延迟2",
+        "香港低延迟3",
+        "巴西1",
+        "巴西2",
+        "巴西3",
+        "美国1",
+        "美国2",
+        "美国3"
+      ]
+    },
+    {
+      "tag": "chatgpt",
+      "type": "selector",
+      "outbounds": [
+        "剩余流量：491.88 GB",
+        "距离下次重置剩余：29 天",
+        "套餐到期：2025-04-05",
+        "新加坡1",
+        "新加坡2",
+        "新加坡3",
+        "香港低延迟1",
+        "香港低延迟2",
+        "香港低延迟3",
+        "巴西1",
+        "巴西2",
+        "巴西3",
+        "美国1",
+        "美国2",
+        "美国3"
+      ]
+    },
+    {
+      "tag": "direct",
+      "type": "direct"
+    }
+  ],
+  "route": {
+    "rules": [
+      {
+        "action": "sniff"
+      },
+      {
+        "protocol": "dns",
+        "action": "hijack-dns"
+      },
+      {
+        "action": "resolve",
+        "strategy": "prefer_ipv4"
+      },
+      {
+        "clash_mode": "Direct",
+        "outbound": "direct"
+      },
+      {
+        "clash_mode": "Global",
+        "outbound": "select"
+      },
+      {
+        "ip_is_private": true,
+        "outbound": "direct"
+      },
+      {
+        "package_name": "com.openai.chatgpt",
+        "outbound": "chatgpt"
+      },
+      {
+        "domain_suffix": [
+          "gemini.google.com",
+          "proactivebackend-pa.googleapis.com",
+          "bing.com",
+          "bing.net",
+          "bingapis.com"
+        ],
+        "outbound": "chatgpt"
+      },
+      {
+        "domain_keyword": [
+          "qq.com"
+        ],
+        "outbound": "direct"
+      },
+      {
+        "domain_suffix": [
+          "ushd.xmsl.org",
+          "cf.gtlx.org"
+        ],
+        "outbound": "direct"
+      },
+      {
+        "port": [
+          23301,
+          22101,
+          22102,
+          20501
+        ],
+        "outbound": "direct"
+      },
+      {
+        "rule_set": "geoip-cn",
+        "outbound": "direct"
+      }
+    ],
+    "rule_set": [
+      {
+        "type": "remote",
+        "tag": "geoip-cn",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/SagerNet/sing-geoip/rule-set/geoip-cn.srs",
+        "download_detour": "select"
+      },
+      {
+        "type": "remote",
+        "tag": "geosite-cn",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/xmdhs/sing-geosite/rule-set-Loyalsoldier/geosite-geolocation-cn.srs",
+        "download_detour": "select"
+      },
+      {
+        "type": "remote",
+        "tag": "AdGuardSDNSFilter",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/xmdhs/sing-box-ruleset/rule-set/AdGuardSDNSFilterSingBox.srs",
+        "download_detour": "select"
+      },
+      {
+        "type": "remote",
+        "tag": "chrome-doh",
+        "format": "source",
+        "url": "https://gist.githubusercontent.com/xmdhs/71fc5ff6ef29f5ecaf2c52b8de5c3172/raw/chrome-doh.json",
+        "download_detour": "select"
+      }
+    ],
+    "default_domain_resolver": "dns_direct",
+    "final": "select",
+    "auto_detect_interface": true
+  },
+  "experimental": {
+    "cache_file": {
+      "enabled": true
+    },
+    "clash_api": {
+      "external_controller": "127.0.0.1:9090"
+    }
+  }
+}

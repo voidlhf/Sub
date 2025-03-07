@@ -1,0 +1,607 @@
+{
+  "log": {},
+  "dns": {
+    "servers": [
+      {
+        "tag": "dns_proxy",
+        "type": "https",
+        "server": "8.8.8.8",
+        "detour": "select"
+      },
+      {
+        "tag": "dns_direct",
+        "type": "https",
+        "server": "223.5.5.5",
+        "detour": "direct"
+      },
+      {
+        "tag": "dns_fakeip",
+        "type": "fakeip",
+        "inet4_range": "198.18.0.0/15",
+        "inet6_range": "fc00::/18"
+      }
+    ],
+    "rules": [
+      {
+        "rule_set": [
+          "AdGuardSDNSFilter",
+          "chrome-doh"
+        ],
+        "action": "reject",
+        "method": "default"
+      },
+      {
+        "query_type": [
+          "A",
+          "AAAA"
+        ],
+        "server": "dns_fakeip",
+        "rewrite_ttl": 1
+      },
+      {
+        "clash_mode": "Global",
+        "server": "dns_proxy"
+      },
+      {
+        "clash_mode": "Direct",
+        "server": "dns_direct"
+      },
+      {
+        "rule_set": "geosite-cn",
+        "server": "dns_direct"
+      }
+    ],
+    "strategy": "prefer_ipv4",
+    "independent_cache": true
+  },
+  "inbounds": [
+    {
+      "type": "tun",
+      "mtu": 9000,
+      "address": [
+        "172.18.0.1/30",
+        "fdfe:dcba:9876::1/126"
+      ],
+      "auto_route": true,
+      "strict_route": true,
+      "endpoint_independent_nat": true
+    },
+    {
+      "type": "socks",
+      "tag": "socks-in",
+      "listen": "127.0.0.1",
+      "listen_port": 2333
+    },
+    {
+      "type": "mixed",
+      "tag": "mixed-in",
+      "listen": "127.0.0.1",
+      "listen_port": 2334
+    }
+  ],
+  "outbounds": [
+    {
+      "down_mbps": 1000,
+      "obfs": null,
+      "password": "bdbfc7ff-c2c9-4ef5-8b2e-465ddfe37b60",
+      "server": "pianyi-hk.jiumaojiu.org",
+      "server_port": 20103,
+      "tag": "剩余流量：406.03 GB",
+      "tls": {
+        "enabled": true,
+        "insecure": false
+      },
+      "type": "hysteria2",
+      "up_mbps": 1000
+    },
+    {
+      "down_mbps": 1000,
+      "obfs": null,
+      "password": "bdbfc7ff-c2c9-4ef5-8b2e-465ddfe37b60",
+      "server": "pianyi-hk.jiumaojiu.org",
+      "server_port": 20103,
+      "tag": "距离下次重置剩余：24 天",
+      "tls": {
+        "enabled": true,
+        "insecure": false
+      },
+      "type": "hysteria2",
+      "up_mbps": 1000
+    },
+    {
+      "down_mbps": 1000,
+      "obfs": null,
+      "password": "bdbfc7ff-c2c9-4ef5-8b2e-465ddfe37b60",
+      "server": "pianyi-hk.jiumaojiu.org",
+      "server_port": 20103,
+      "tag": "套餐到期：2027-02-18",
+      "tls": {
+        "enabled": true,
+        "insecure": false
+      },
+      "type": "hysteria2",
+      "up_mbps": 1000
+    },
+    {
+      "down_mbps": 1000,
+      "obfs": null,
+      "password": "bdbfc7ff-c2c9-4ef5-8b2e-465ddfe37b60",
+      "server": "pianyi-hk.jiumaojiu.org",
+      "server_port": 20103,
+      "tag": "香港1",
+      "tls": {
+        "enabled": true,
+        "insecure": false
+      },
+      "type": "hysteria2",
+      "up_mbps": 1000
+    },
+    {
+      "down_mbps": 1000,
+      "obfs": null,
+      "password": "bdbfc7ff-c2c9-4ef5-8b2e-465ddfe37b60",
+      "server": "pianyi-hk.jiumaojiu.org",
+      "server_port": 20142,
+      "tag": "香港2",
+      "tls": {
+        "enabled": true,
+        "insecure": false
+      },
+      "type": "hysteria2",
+      "up_mbps": 1000
+    },
+    {
+      "down_mbps": 1000,
+      "obfs": null,
+      "password": "bdbfc7ff-c2c9-4ef5-8b2e-465ddfe37b60",
+      "server": "pianyi-hk.jiumaojiu.org",
+      "server_port": 20146,
+      "tag": "香港3",
+      "tls": {
+        "enabled": true,
+        "insecure": false
+      },
+      "type": "hysteria2",
+      "up_mbps": 1000
+    },
+    {
+      "down_mbps": 1000,
+      "obfs": null,
+      "password": "bdbfc7ff-c2c9-4ef5-8b2e-465ddfe37b60",
+      "server": "pianyi-hk.jiumaojiu.org",
+      "server_port": 20101,
+      "tag": "香港4",
+      "tls": {
+        "enabled": true,
+        "insecure": false
+      },
+      "type": "hysteria2",
+      "up_mbps": 1000
+    },
+    {
+      "down_mbps": 1000,
+      "obfs": null,
+      "password": "bdbfc7ff-c2c9-4ef5-8b2e-465ddfe37b60",
+      "server": "pianyi-us.jiumaojiu.org",
+      "server_port": 20181,
+      "tag": "美国1",
+      "tls": {
+        "enabled": true,
+        "insecure": false
+      },
+      "type": "hysteria2",
+      "up_mbps": 1000
+    },
+    {
+      "down_mbps": 1000,
+      "obfs": null,
+      "password": "bdbfc7ff-c2c9-4ef5-8b2e-465ddfe37b60",
+      "server": "pianyi-us.jiumaojiu.org",
+      "server_port": 20102,
+      "tag": "美国2",
+      "tls": {
+        "enabled": true,
+        "insecure": false
+      },
+      "type": "hysteria2",
+      "up_mbps": 1000
+    },
+    {
+      "down_mbps": 1000,
+      "obfs": null,
+      "password": "bdbfc7ff-c2c9-4ef5-8b2e-465ddfe37b60",
+      "server": "pianyi-us.jiumaojiu.org",
+      "server_port": 20194,
+      "tag": "美国3",
+      "tls": {
+        "enabled": true,
+        "insecure": false
+      },
+      "type": "hysteria2",
+      "up_mbps": 1000
+    },
+    {
+      "down_mbps": 1000,
+      "obfs": null,
+      "password": "bdbfc7ff-c2c9-4ef5-8b2e-465ddfe37b60",
+      "server": "pianyi-us.jiumaojiu.org",
+      "server_port": 20138,
+      "tag": "美国4",
+      "tls": {
+        "enabled": true,
+        "insecure": false
+      },
+      "type": "hysteria2",
+      "up_mbps": 1000
+    },
+    {
+      "down_mbps": 1000,
+      "obfs": null,
+      "password": "bdbfc7ff-c2c9-4ef5-8b2e-465ddfe37b60",
+      "server": "pianyi-jp.jiumaojiu.org",
+      "server_port": 20139,
+      "tag": "日本1",
+      "tls": {
+        "enabled": true,
+        "insecure": false
+      },
+      "type": "hysteria2",
+      "up_mbps": 1000
+    },
+    {
+      "down_mbps": 1000,
+      "obfs": null,
+      "password": "bdbfc7ff-c2c9-4ef5-8b2e-465ddfe37b60",
+      "server": "pianyi-jp.jiumaojiu.org",
+      "server_port": 20118,
+      "tag": "日本2",
+      "tls": {
+        "enabled": true,
+        "insecure": false
+      },
+      "type": "hysteria2",
+      "up_mbps": 1000
+    },
+    {
+      "down_mbps": 1000,
+      "obfs": null,
+      "password": "bdbfc7ff-c2c9-4ef5-8b2e-465ddfe37b60",
+      "server": "pianyi-jp.jiumaojiu.org",
+      "server_port": 20197,
+      "tag": "日本3",
+      "tls": {
+        "enabled": true,
+        "insecure": false
+      },
+      "type": "hysteria2",
+      "up_mbps": 1000
+    },
+    {
+      "down_mbps": 1000,
+      "obfs": null,
+      "password": "bdbfc7ff-c2c9-4ef5-8b2e-465ddfe37b60",
+      "server": "pianyi-jp.jiumaojiu.org",
+      "server_port": 20174,
+      "tag": "日本4",
+      "tls": {
+        "enabled": true,
+        "insecure": false
+      },
+      "type": "hysteria2",
+      "up_mbps": 1000
+    },
+    {
+      "down_mbps": 1000,
+      "obfs": null,
+      "password": "bdbfc7ff-c2c9-4ef5-8b2e-465ddfe37b60",
+      "server": "pianyi-sg.jiumaojiu.org",
+      "server_port": 20196,
+      "tag": "新加坡1",
+      "tls": {
+        "enabled": true,
+        "insecure": false
+      },
+      "type": "hysteria2",
+      "up_mbps": 1000
+    },
+    {
+      "down_mbps": 1000,
+      "obfs": null,
+      "password": "bdbfc7ff-c2c9-4ef5-8b2e-465ddfe37b60",
+      "server": "pianyi-sg.jiumaojiu.org",
+      "server_port": 20104,
+      "tag": "新加坡2",
+      "tls": {
+        "enabled": true,
+        "insecure": false
+      },
+      "type": "hysteria2",
+      "up_mbps": 1000
+    },
+    {
+      "down_mbps": 1000,
+      "obfs": null,
+      "password": "bdbfc7ff-c2c9-4ef5-8b2e-465ddfe37b60",
+      "server": "pianyi-sg.jiumaojiu.org",
+      "server_port": 20192,
+      "tag": "新加坡3",
+      "tls": {
+        "enabled": true,
+        "insecure": false
+      },
+      "type": "hysteria2",
+      "up_mbps": 1000
+    },
+    {
+      "down_mbps": 1000,
+      "obfs": null,
+      "password": "bdbfc7ff-c2c9-4ef5-8b2e-465ddfe37b60",
+      "server": "pianyi-sg.jiumaojiu.org",
+      "server_port": 20192,
+      "tag": "新加坡4",
+      "tls": {
+        "enabled": true,
+        "insecure": false
+      },
+      "type": "hysteria2",
+      "up_mbps": 1000
+    },
+    {
+      "down_mbps": 1000,
+      "obfs": null,
+      "password": "bdbfc7ff-c2c9-4ef5-8b2e-465ddfe37b60",
+      "server": "pianyi-lu.jiumaojiu.org",
+      "server_port": 20118,
+      "tag": "卢森堡1",
+      "tls": {
+        "enabled": true,
+        "insecure": false
+      },
+      "type": "hysteria2",
+      "up_mbps": 1000
+    },
+    {
+      "down_mbps": 1000,
+      "obfs": null,
+      "password": "bdbfc7ff-c2c9-4ef5-8b2e-465ddfe37b60",
+      "server": "pianyi-lu.jiumaojiu.org",
+      "server_port": 20168,
+      "tag": "卢森堡2",
+      "tls": {
+        "enabled": true,
+        "insecure": false
+      },
+      "type": "hysteria2",
+      "up_mbps": 1000
+    },
+    {
+      "down_mbps": 1000,
+      "obfs": null,
+      "password": "bdbfc7ff-c2c9-4ef5-8b2e-465ddfe37b60",
+      "server": "pianyi-lu.jiumaojiu.org",
+      "server_port": 20137,
+      "tag": "卢森堡3",
+      "tls": {
+        "enabled": true,
+        "insecure": false
+      },
+      "type": "hysteria2",
+      "up_mbps": 1000
+    },
+    {
+      "down_mbps": 1000,
+      "obfs": null,
+      "password": "bdbfc7ff-c2c9-4ef5-8b2e-465ddfe37b60",
+      "server": "pianyi-lu.jiumaojiu.org",
+      "server_port": 20189,
+      "tag": "卢森堡4",
+      "tls": {
+        "enabled": true,
+        "insecure": false
+      },
+      "type": "hysteria2",
+      "up_mbps": 1000
+    },
+    {
+      "tag": "select",
+      "type": "selector",
+      "default": "urltest",
+      "outbounds": [
+        "urltest",
+        "剩余流量：406.03 GB",
+        "距离下次重置剩余：24 天",
+        "套餐到期：2027-02-18",
+        "香港1",
+        "香港2",
+        "香港3",
+        "香港4",
+        "美国1",
+        "美国2",
+        "美国3",
+        "美国4",
+        "日本1",
+        "日本2",
+        "日本3",
+        "日本4",
+        "新加坡1",
+        "新加坡2",
+        "新加坡3",
+        "新加坡4",
+        "卢森堡1",
+        "卢森堡2",
+        "卢森堡3",
+        "卢森堡4"
+      ]
+    },
+    {
+      "tag": "urltest",
+      "type": "urltest",
+      "outbounds": [
+        "剩余流量：406.03 GB",
+        "距离下次重置剩余：24 天",
+        "套餐到期：2027-02-18",
+        "香港1",
+        "香港2",
+        "香港3",
+        "香港4",
+        "美国1",
+        "美国2",
+        "美国3",
+        "美国4",
+        "日本1",
+        "日本2",
+        "日本3",
+        "日本4",
+        "新加坡1",
+        "新加坡2",
+        "新加坡3",
+        "新加坡4",
+        "卢森堡1",
+        "卢森堡2",
+        "卢森堡3",
+        "卢森堡4"
+      ]
+    },
+    {
+      "tag": "chatgpt",
+      "type": "selector",
+      "outbounds": [
+        "剩余流量：406.03 GB",
+        "距离下次重置剩余：24 天",
+        "套餐到期：2027-02-18",
+        "香港1",
+        "香港2",
+        "香港3",
+        "香港4",
+        "美国1",
+        "美国2",
+        "美国3",
+        "美国4",
+        "日本1",
+        "日本2",
+        "日本3",
+        "日本4",
+        "新加坡1",
+        "新加坡2",
+        "新加坡3",
+        "新加坡4",
+        "卢森堡1",
+        "卢森堡2",
+        "卢森堡3",
+        "卢森堡4"
+      ]
+    },
+    {
+      "tag": "direct",
+      "type": "direct"
+    }
+  ],
+  "route": {
+    "rules": [
+      {
+        "action": "sniff"
+      },
+      {
+        "protocol": "dns",
+        "action": "hijack-dns"
+      },
+      {
+        "action": "resolve",
+        "strategy": "prefer_ipv4"
+      },
+      {
+        "clash_mode": "Direct",
+        "outbound": "direct"
+      },
+      {
+        "clash_mode": "Global",
+        "outbound": "select"
+      },
+      {
+        "ip_is_private": true,
+        "outbound": "direct"
+      },
+      {
+        "package_name": "com.openai.chatgpt",
+        "outbound": "chatgpt"
+      },
+      {
+        "domain_suffix": [
+          "gemini.google.com",
+          "proactivebackend-pa.googleapis.com",
+          "bing.com",
+          "bing.net",
+          "bingapis.com"
+        ],
+        "outbound": "chatgpt"
+      },
+      {
+        "domain_keyword": [
+          "qq.com"
+        ],
+        "outbound": "direct"
+      },
+      {
+        "domain_suffix": [
+          "ushd.xmsl.org",
+          "cf.gtlx.org"
+        ],
+        "outbound": "direct"
+      },
+      {
+        "port": [
+          23301,
+          22101,
+          22102,
+          20501
+        ],
+        "outbound": "direct"
+      },
+      {
+        "rule_set": "geoip-cn",
+        "outbound": "direct"
+      }
+    ],
+    "rule_set": [
+      {
+        "type": "remote",
+        "tag": "geoip-cn",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/SagerNet/sing-geoip/rule-set/geoip-cn.srs",
+        "download_detour": "select"
+      },
+      {
+        "type": "remote",
+        "tag": "geosite-cn",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/xmdhs/sing-geosite/rule-set-Loyalsoldier/geosite-geolocation-cn.srs",
+        "download_detour": "select"
+      },
+      {
+        "type": "remote",
+        "tag": "AdGuardSDNSFilter",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/xmdhs/sing-box-ruleset/rule-set/AdGuardSDNSFilterSingBox.srs",
+        "download_detour": "select"
+      },
+      {
+        "type": "remote",
+        "tag": "chrome-doh",
+        "format": "source",
+        "url": "https://gist.githubusercontent.com/xmdhs/71fc5ff6ef29f5ecaf2c52b8de5c3172/raw/chrome-doh.json",
+        "download_detour": "select"
+      }
+    ],
+    "default_domain_resolver": "dns_direct",
+    "final": "select",
+    "auto_detect_interface": true
+  },
+  "experimental": {
+    "cache_file": {
+      "enabled": true
+    },
+    "clash_api": {
+      "external_controller": "127.0.0.1:9090"
+    }
+  }
+}
