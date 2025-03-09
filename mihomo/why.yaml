@@ -27,7 +27,8 @@ proxies:
 - {name: "(0.7*)美国直连6", type: "vless", server: "1741048941.tencentapp.cn", port: 443, uuid: "76936069-5bb1-4760-aa9e-187de3bab19e", alterId: 0, cipher: "auto", udp: true, flow: null, tls: true, skip-cert-verify: false, servername: "node-new-us-1.clashr.us.kg", network: "ws", ws-opts: {path: "/", headers: {Host: "node-new-us-1.clashr.us.kg"}}}
 - {name: "(0.7*)美国直连7", type: "vless", server: "cf-node-us.kcjb.org", port: 443, uuid: "76936069-5bb1-4760-aa9e-187de3bab19e", alterId: 0, cipher: "auto", udp: true, flow: null, tls: true, skip-cert-verify: true, servername: "node-new-us-1.clashr.us.kg", network: "ws", ws-opts: {path: "/", headers: {Host: "node-new-us-1.clashr.us.kg"}}}
 - {name: "(0.7*)美国直连8", type: "vless", server: "cf-node-us-1.kcjb.org", port: 443, uuid: "76936069-5bb1-4760-aa9e-187de3bab19e", alterId: 0, cipher: "auto", udp: true, flow: null, tls: true, skip-cert-verify: true, servername: "node-new-us-1.clashr.us.kg", network: "ws", ws-opts: {path: "/", headers: {Host: "node-new-us-1.clashr.us.kg"}}}
-- {name: "(0.7*)美国直连9", type: "vless", server: "cf-node-hk-1.kcjb.org", port: 443, uuid: "76936069-5bb1-4760-aa9e-187de3bab19e", alterId: 0, cipher: "auto", udp: true, flow: null, tls: true, skip-cert-verify: true, servername: "node-new-us-1.clashr.us.kg", network: "ws", ws-opts: {path: "/", headers: {Host: "node-new-us-1.clashr.us.kg"}}}
+- {name: "(0.7*)美国直连9", type: "vless", server: "cf-node-jp-11.kcjb.org", port: 443, uuid: "76936069-5bb1-4760-aa9e-187de3bab19e", alterId: 0, cipher: "auto", udp: true, flow: null, tls: true, skip-cert-verify: true, servername: "node-new-us-1.clashr.us.kg", network: "ws", ws-opts: {path: "/", headers: {Host: "node-new-us-1.clashr.us.kg"}}}
+- {name: "(0.7*)美国直连10", type: "vless", server: "cf-node-hk-1.kcjb.org", port: 443, uuid: "76936069-5bb1-4760-aa9e-187de3bab19e", alterId: 0, cipher: "auto", udp: true, flow: null, tls: true, skip-cert-verify: true, servername: "node-new-us-1.clashr.us.kg", network: "ws", ws-opts: {path: "/", headers: {Host: "node-new-us-1.clashr.us.kg"}}}
 proxy-groups:
 - name: "🚀 节点选择"
   type: "select"
@@ -45,6 +46,7 @@ proxy-groups:
   - "(0.7*)美国直连7"
   - "(0.7*)美国直连8"
   - "(0.7*)美国直连9"
+  - "(0.7*)美国直连10"
 - name: "♻️ 自动选择"
   type: "url-test"
   url: "http://www.gstatic.com/generate_204"
@@ -62,6 +64,7 @@ proxy-groups:
   - "(0.7*)美国直连7"
   - "(0.7*)美国直连8"
   - "(0.7*)美国直连9"
+  - "(0.7*)美国直连10"
 - name: "🌍 国外媒体"
   type: "select"
   proxies:
@@ -79,6 +82,7 @@ proxy-groups:
   - "(0.7*)美国直连7"
   - "(0.7*)美国直连8"
   - "(0.7*)美国直连9"
+  - "(0.7*)美国直连10"
 - name: "📲 电报信息"
   type: "select"
   proxies:
@@ -95,6 +99,7 @@ proxy-groups:
   - "(0.7*)美国直连7"
   - "(0.7*)美国直连8"
   - "(0.7*)美国直连9"
+  - "(0.7*)美国直连10"
 - name: "Ⓜ️ 微软服务"
   type: "select"
   proxies:
@@ -111,6 +116,7 @@ proxy-groups:
   - "(0.7*)美国直连7"
   - "(0.7*)美国直连8"
   - "(0.7*)美国直连9"
+  - "(0.7*)美国直连10"
 - name: "🍎 苹果服务"
   type: "select"
   proxies:
@@ -127,6 +133,7 @@ proxy-groups:
   - "(0.7*)美国直连7"
   - "(0.7*)美国直连8"
   - "(0.7*)美国直连9"
+  - "(0.7*)美国直连10"
 - name: "📢 谷歌FCM"
   type: "select"
   proxies:
@@ -144,6 +151,7 @@ proxy-groups:
   - "(0.7*)美国直连7"
   - "(0.7*)美国直连8"
   - "(0.7*)美国直连9"
+  - "(0.7*)美国直连10"
 - name: "🎯 全球直连"
   type: "select"
   proxies:
@@ -177,6 +185,7 @@ proxy-groups:
   - "(0.7*)美国直连7"
   - "(0.7*)美国直连8"
   - "(0.7*)美国直连9"
+  - "(0.7*)美国直连10"
 rules:
 - "DOMAIN-SUFFIX,ushd.xmsl.org,🎯 全球直连"
 - "DOMAIN-SUFFIX,cf.gtlx.org,🎯 全球直连"
