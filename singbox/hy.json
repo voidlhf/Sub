@@ -1,0 +1,686 @@
+{
+  "log": {},
+  "dns": {
+    "servers": [
+      {
+        "tag": "dns_proxy",
+        "type": "https",
+        "server": "8.8.8.8",
+        "detour": "select"
+      },
+      {
+        "tag": "dns_direct",
+        "type": "https",
+        "server": "223.5.5.5",
+        "detour": "direct"
+      },
+      {
+        "tag": "dns_fakeip",
+        "type": "fakeip",
+        "inet4_range": "198.18.0.0/15",
+        "inet6_range": "fc00::/18"
+      }
+    ],
+    "rules": [
+      {
+        "rule_set": [
+          "AdGuardSDNSFilter",
+          "chrome-doh"
+        ],
+        "action": "reject",
+        "method": "default"
+      },
+      {
+        "query_type": [
+          "A",
+          "AAAA"
+        ],
+        "server": "dns_fakeip",
+        "rewrite_ttl": 1
+      },
+      {
+        "clash_mode": "Global",
+        "server": "dns_proxy"
+      },
+      {
+        "clash_mode": "Direct",
+        "server": "dns_direct"
+      },
+      {
+        "rule_set": "geosite-cn",
+        "server": "dns_direct"
+      }
+    ],
+    "strategy": "prefer_ipv4",
+    "independent_cache": true
+  },
+  "inbounds": [
+    {
+      "type": "tun",
+      "mtu": 9000,
+      "address": [
+        "172.18.0.1/30",
+        "fdfe:dcba:9876::1/126"
+      ],
+      "auto_route": true,
+      "strict_route": true,
+      "endpoint_independent_nat": true
+    },
+    {
+      "type": "socks",
+      "tag": "socks-in",
+      "listen": "127.0.0.1",
+      "listen_port": 2333
+    },
+    {
+      "type": "mixed",
+      "tag": "mixed-in",
+      "listen": "127.0.0.1",
+      "listen_port": 2334
+    }
+  ],
+  "outbounds": [
+    {
+      "server": "bgp-xdd.blue-bgp.xyz",
+      "server_port": 34011,
+      "tag": "官网:https://www.xn--19zu2m.live",
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "59383c9f-700c-4767-9e5a-6c6e87669c3c"
+    },
+    {
+      "server": "bgp-xdd.blue-bgp.xyz",
+      "server_port": 34011,
+      "tag": "长期有效到期,剩余:23495.85 GB,天后重置",
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "59383c9f-700c-4767-9e5a-6c6e87669c3c"
+    },
+    {
+      "server": "bgp-xdd.blue-bgp.xyz",
+      "server_port": 34011,
+      "tag": "香港01|BGP|EIP",
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "59383c9f-700c-4767-9e5a-6c6e87669c3c"
+    },
+    {
+      "server": "183.2.194.141",
+      "server_port": 34011,
+      "tag": "香港01|IPLC|EIP",
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "59383c9f-700c-4767-9e5a-6c6e87669c3c"
+    },
+    {
+      "server": "bgp-xdd.blue-bgp.xyz",
+      "server_port": 34012,
+      "tag": "香港02|BGP|EIP",
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "59383c9f-700c-4767-9e5a-6c6e87669c3c"
+    },
+    {
+      "server": "183.2.194.141",
+      "server_port": 34012,
+      "tag": "香港02|IPLC|EIP",
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "59383c9f-700c-4767-9e5a-6c6e87669c3c"
+    },
+    {
+      "server": "bgp-xdd.blue-bgp.xyz",
+      "server_port": 34013,
+      "tag": "香港03|BGP|EIP",
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "59383c9f-700c-4767-9e5a-6c6e87669c3c"
+    },
+    {
+      "server": "183.2.194.141",
+      "server_port": 34013,
+      "tag": "香港03|IPLC|EIP",
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "59383c9f-700c-4767-9e5a-6c6e87669c3c"
+    },
+    {
+      "server": "bgp-xdd.blue-bgp.xyz",
+      "server_port": 34014,
+      "tag": "香港04|BGP|EIP",
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "59383c9f-700c-4767-9e5a-6c6e87669c3c"
+    },
+    {
+      "server": "183.2.194.141",
+      "server_port": 34014,
+      "tag": "香港04|IPLC|EIP",
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "59383c9f-700c-4767-9e5a-6c6e87669c3c"
+    },
+    {
+      "server": "bgp-xdd.blue-bgp.xyz",
+      "server_port": 34021,
+      "tag": "台湾01|BGP|EIP",
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "59383c9f-700c-4767-9e5a-6c6e87669c3c"
+    },
+    {
+      "server": "183.2.194.141",
+      "server_port": 34021,
+      "tag": "台湾01|IPLC|EIP",
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "59383c9f-700c-4767-9e5a-6c6e87669c3c"
+    },
+    {
+      "server": "bgp-xdd.blue-bgp.xyz",
+      "server_port": 34022,
+      "tag": "台湾02|BGP|EIP",
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "59383c9f-700c-4767-9e5a-6c6e87669c3c"
+    },
+    {
+      "server": "183.2.194.141",
+      "server_port": 34022,
+      "tag": "台湾02|IPLC|EIP",
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "59383c9f-700c-4767-9e5a-6c6e87669c3c"
+    },
+    {
+      "server": "bgp-xdd.blue-bgp.xyz",
+      "server_port": 34023,
+      "tag": "台湾03|BGP|EIP",
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "59383c9f-700c-4767-9e5a-6c6e87669c3c"
+    },
+    {
+      "server": "183.2.194.141",
+      "server_port": 34023,
+      "tag": "台湾03|IPLC|EIP",
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "59383c9f-700c-4767-9e5a-6c6e87669c3c"
+    },
+    {
+      "server": "bgp-xdd.blue-bgp.xyz",
+      "server_port": 34024,
+      "tag": "台湾04|BGP|EIP",
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "59383c9f-700c-4767-9e5a-6c6e87669c3c"
+    },
+    {
+      "server": "183.2.194.141",
+      "server_port": 34024,
+      "tag": "台湾04|IPLC|EIP",
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "59383c9f-700c-4767-9e5a-6c6e87669c3c"
+    },
+    {
+      "server": "bgp-xdd.blue-bgp.xyz",
+      "server_port": 34031,
+      "tag": "新加坡01|BGP|EIP",
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "59383c9f-700c-4767-9e5a-6c6e87669c3c"
+    },
+    {
+      "server": "183.2.194.141",
+      "server_port": 34031,
+      "tag": "新加坡01|IPLC|EIP",
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "59383c9f-700c-4767-9e5a-6c6e87669c3c"
+    },
+    {
+      "server": "bgp-xdd.blue-bgp.xyz",
+      "server_port": 34032,
+      "tag": "新加坡02|BGP|EIP",
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "59383c9f-700c-4767-9e5a-6c6e87669c3c"
+    },
+    {
+      "server": "183.2.194.141",
+      "server_port": 34032,
+      "tag": "新加坡02|IPLC|EIP",
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "59383c9f-700c-4767-9e5a-6c6e87669c3c"
+    },
+    {
+      "server": "bgp-xdd.blue-bgp.xyz",
+      "server_port": 34033,
+      "tag": "新加坡03|BGP|EIP",
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "59383c9f-700c-4767-9e5a-6c6e87669c3c"
+    },
+    {
+      "server": "183.2.194.141",
+      "server_port": 34033,
+      "tag": "新加坡03|IPLC|EIP",
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "59383c9f-700c-4767-9e5a-6c6e87669c3c"
+    },
+    {
+      "server": "bgp-xdd.blue-bgp.xyz",
+      "server_port": 34034,
+      "tag": "新加坡04|BGP|EIP",
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "59383c9f-700c-4767-9e5a-6c6e87669c3c"
+    },
+    {
+      "server": "183.2.194.141",
+      "server_port": 34034,
+      "tag": "新加坡04|IPLC|EIP",
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "59383c9f-700c-4767-9e5a-6c6e87669c3c"
+    },
+    {
+      "server": "bgp-xdd.blue-bgp.xyz",
+      "server_port": 34041,
+      "tag": "日本01|BGP|EIP",
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "59383c9f-700c-4767-9e5a-6c6e87669c3c"
+    },
+    {
+      "server": "183.2.194.141",
+      "server_port": 34041,
+      "tag": "日本01|IPLC|EIP",
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "59383c9f-700c-4767-9e5a-6c6e87669c3c"
+    },
+    {
+      "server": "bgp-xdd.blue-bgp.xyz",
+      "server_port": 34042,
+      "tag": "日本02|BGP|EIP",
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "59383c9f-700c-4767-9e5a-6c6e87669c3c"
+    },
+    {
+      "server": "183.2.194.141",
+      "server_port": 34042,
+      "tag": "日本02|IPLC|EIP",
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "59383c9f-700c-4767-9e5a-6c6e87669c3c"
+    },
+    {
+      "server": "bgp-xdd.blue-bgp.xyz",
+      "server_port": 34043,
+      "tag": "日本03|BGP|EIP",
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "59383c9f-700c-4767-9e5a-6c6e87669c3c"
+    },
+    {
+      "server": "183.2.194.141",
+      "server_port": 34043,
+      "tag": "日本03|IPLC|EIP",
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "59383c9f-700c-4767-9e5a-6c6e87669c3c"
+    },
+    {
+      "server": "bgp-xdd.blue-bgp.xyz",
+      "server_port": 34044,
+      "tag": "日本04|BGP|EIP",
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "59383c9f-700c-4767-9e5a-6c6e87669c3c"
+    },
+    {
+      "server": "183.2.194.141",
+      "server_port": 34044,
+      "tag": "日本04|IPLC|EIP",
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "59383c9f-700c-4767-9e5a-6c6e87669c3c"
+    },
+    {
+      "server": "bgp-xdd.blue-bgp.xyz",
+      "server_port": 34051,
+      "tag": "美国01|BGP|EIP",
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "59383c9f-700c-4767-9e5a-6c6e87669c3c"
+    },
+    {
+      "server": "183.2.194.141",
+      "server_port": 34051,
+      "tag": "美国01|IPLC|EIP",
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "59383c9f-700c-4767-9e5a-6c6e87669c3c"
+    },
+    {
+      "server": "bgp-xdd.blue-bgp.xyz",
+      "server_port": 34052,
+      "tag": "美国02|BGP|EIP",
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "59383c9f-700c-4767-9e5a-6c6e87669c3c"
+    },
+    {
+      "server": "183.2.194.141",
+      "server_port": 34052,
+      "tag": "美国02|IPLC|EIP",
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "59383c9f-700c-4767-9e5a-6c6e87669c3c"
+    },
+    {
+      "server": "bgp-xdd.blue-bgp.xyz",
+      "server_port": 34053,
+      "tag": "美国03|BGP|EIP",
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "59383c9f-700c-4767-9e5a-6c6e87669c3c"
+    },
+    {
+      "server": "183.2.194.141",
+      "server_port": 34053,
+      "tag": "美国03|IPLC|EIP",
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "59383c9f-700c-4767-9e5a-6c6e87669c3c"
+    },
+    {
+      "server": "bgp-xdd.blue-bgp.xyz",
+      "server_port": 34054,
+      "tag": "美国04|BGP|EIP",
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "59383c9f-700c-4767-9e5a-6c6e87669c3c"
+    },
+    {
+      "server": "183.2.194.141",
+      "server_port": 34054,
+      "tag": "美国04|IPLC|EIP",
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "59383c9f-700c-4767-9e5a-6c6e87669c3c"
+    },
+    {
+      "tag": "select",
+      "type": "selector",
+      "default": "urltest",
+      "outbounds": [
+        "urltest",
+        "官网:https://www.xn--19zu2m.live",
+        "长期有效到期,剩余:23495.85 GB,天后重置",
+        "香港01|BGP|EIP",
+        "香港01|IPLC|EIP",
+        "香港02|BGP|EIP",
+        "香港02|IPLC|EIP",
+        "香港03|BGP|EIP",
+        "香港03|IPLC|EIP",
+        "香港04|BGP|EIP",
+        "香港04|IPLC|EIP",
+        "台湾01|BGP|EIP",
+        "台湾01|IPLC|EIP",
+        "台湾02|BGP|EIP",
+        "台湾02|IPLC|EIP",
+        "台湾03|BGP|EIP",
+        "台湾03|IPLC|EIP",
+        "台湾04|BGP|EIP",
+        "台湾04|IPLC|EIP",
+        "新加坡01|BGP|EIP",
+        "新加坡01|IPLC|EIP",
+        "新加坡02|BGP|EIP",
+        "新加坡02|IPLC|EIP",
+        "新加坡03|BGP|EIP",
+        "新加坡03|IPLC|EIP",
+        "新加坡04|BGP|EIP",
+        "新加坡04|IPLC|EIP",
+        "日本01|BGP|EIP",
+        "日本01|IPLC|EIP",
+        "日本02|BGP|EIP",
+        "日本02|IPLC|EIP",
+        "日本03|BGP|EIP",
+        "日本03|IPLC|EIP",
+        "日本04|BGP|EIP",
+        "日本04|IPLC|EIP",
+        "美国01|BGP|EIP",
+        "美国01|IPLC|EIP",
+        "美国02|BGP|EIP",
+        "美国02|IPLC|EIP",
+        "美国03|BGP|EIP",
+        "美国03|IPLC|EIP",
+        "美国04|BGP|EIP",
+        "美国04|IPLC|EIP"
+      ]
+    },
+    {
+      "tag": "urltest",
+      "type": "urltest",
+      "outbounds": [
+        "官网:https://www.xn--19zu2m.live",
+        "长期有效到期,剩余:23495.85 GB,天后重置",
+        "香港01|BGP|EIP",
+        "香港01|IPLC|EIP",
+        "香港02|BGP|EIP",
+        "香港02|IPLC|EIP",
+        "香港03|BGP|EIP",
+        "香港03|IPLC|EIP",
+        "香港04|BGP|EIP",
+        "香港04|IPLC|EIP",
+        "台湾01|BGP|EIP",
+        "台湾01|IPLC|EIP",
+        "台湾02|BGP|EIP",
+        "台湾02|IPLC|EIP",
+        "台湾03|BGP|EIP",
+        "台湾03|IPLC|EIP",
+        "台湾04|BGP|EIP",
+        "台湾04|IPLC|EIP",
+        "新加坡01|BGP|EIP",
+        "新加坡01|IPLC|EIP",
+        "新加坡02|BGP|EIP",
+        "新加坡02|IPLC|EIP",
+        "新加坡03|BGP|EIP",
+        "新加坡03|IPLC|EIP",
+        "新加坡04|BGP|EIP",
+        "新加坡04|IPLC|EIP",
+        "日本01|BGP|EIP",
+        "日本01|IPLC|EIP",
+        "日本02|BGP|EIP",
+        "日本02|IPLC|EIP",
+        "日本03|BGP|EIP",
+        "日本03|IPLC|EIP",
+        "日本04|BGP|EIP",
+        "日本04|IPLC|EIP",
+        "美国01|BGP|EIP",
+        "美国01|IPLC|EIP",
+        "美国02|BGP|EIP",
+        "美国02|IPLC|EIP",
+        "美国03|BGP|EIP",
+        "美国03|IPLC|EIP",
+        "美国04|BGP|EIP",
+        "美国04|IPLC|EIP"
+      ]
+    },
+    {
+      "tag": "chatgpt",
+      "type": "selector",
+      "outbounds": [
+        "官网:https://www.xn--19zu2m.live",
+        "长期有效到期,剩余:23495.85 GB,天后重置",
+        "香港01|BGP|EIP",
+        "香港01|IPLC|EIP",
+        "香港02|BGP|EIP",
+        "香港02|IPLC|EIP",
+        "香港03|BGP|EIP",
+        "香港03|IPLC|EIP",
+        "香港04|BGP|EIP",
+        "香港04|IPLC|EIP",
+        "台湾01|BGP|EIP",
+        "台湾01|IPLC|EIP",
+        "台湾02|BGP|EIP",
+        "台湾02|IPLC|EIP",
+        "台湾03|BGP|EIP",
+        "台湾03|IPLC|EIP",
+        "台湾04|BGP|EIP",
+        "台湾04|IPLC|EIP",
+        "新加坡01|BGP|EIP",
+        "新加坡01|IPLC|EIP",
+        "新加坡02|BGP|EIP",
+        "新加坡02|IPLC|EIP",
+        "新加坡03|BGP|EIP",
+        "新加坡03|IPLC|EIP",
+        "新加坡04|BGP|EIP",
+        "新加坡04|IPLC|EIP",
+        "日本01|BGP|EIP",
+        "日本01|IPLC|EIP",
+        "日本02|BGP|EIP",
+        "日本02|IPLC|EIP",
+        "日本03|BGP|EIP",
+        "日本03|IPLC|EIP",
+        "日本04|BGP|EIP",
+        "日本04|IPLC|EIP",
+        "美国01|BGP|EIP",
+        "美国01|IPLC|EIP",
+        "美国02|BGP|EIP",
+        "美国02|IPLC|EIP",
+        "美国03|BGP|EIP",
+        "美国03|IPLC|EIP",
+        "美国04|BGP|EIP",
+        "美国04|IPLC|EIP"
+      ]
+    },
+    {
+      "tag": "direct",
+      "type": "direct"
+    }
+  ],
+  "route": {
+    "rules": [
+      {
+        "action": "sniff"
+      },
+      {
+        "protocol": "dns",
+        "action": "hijack-dns"
+      },
+      {
+        "action": "resolve",
+        "strategy": "prefer_ipv4"
+      },
+      {
+        "clash_mode": "Direct",
+        "outbound": "direct"
+      },
+      {
+        "clash_mode": "Global",
+        "outbound": "select"
+      },
+      {
+        "ip_is_private": true,
+        "outbound": "direct"
+      },
+      {
+        "package_name": "com.openai.chatgpt",
+        "outbound": "chatgpt"
+      },
+      {
+        "domain_suffix": [
+          "gemini.google.com",
+          "proactivebackend-pa.googleapis.com",
+          "bing.com",
+          "bing.net",
+          "bingapis.com"
+        ],
+        "outbound": "chatgpt"
+      },
+      {
+        "domain_keyword": [
+          "mtalk.google.com",
+          "qq.com",
+          "aliyundrive.net"
+        ],
+        "outbound": "direct"
+      },
+      {
+        "domain_suffix": [
+          "ushd.xmsl.org",
+          "cf.gtlx.org"
+        ],
+        "outbound": "direct"
+      },
+      {
+        "port": [
+          23301,
+          22101,
+          22102,
+          20501,
+          21601,
+          21602,
+          21603,
+          21604,
+          21605,
+          21606
+        ],
+        "outbound": "direct"
+      },
+      {
+        "rule_set": "geoip-cn",
+        "outbound": "direct"
+      }
+    ],
+    "rule_set": [
+      {
+        "type": "remote",
+        "tag": "geoip-cn",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/SagerNet/sing-geoip/rule-set/geoip-cn.srs",
+        "download_detour": "select"
+      },
+      {
+        "type": "remote",
+        "tag": "geosite-cn",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/xmdhs/sing-geosite/rule-set-Loyalsoldier/geosite-geolocation-cn.srs",
+        "download_detour": "select"
+      },
+      {
+        "type": "remote",
+        "tag": "AdGuardSDNSFilter",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/xmdhs/sing-box-ruleset/rule-set/AdGuardSDNSFilterSingBox.srs",
+        "download_detour": "select"
+      },
+      {
+        "type": "remote",
+        "tag": "chrome-doh",
+        "format": "source",
+        "url": "https://gist.githubusercontent.com/xmdhs/71fc5ff6ef29f5ecaf2c52b8de5c3172/raw/chrome-doh.json",
+        "download_detour": "select"
+      }
+    ],
+    "default_domain_resolver": "dns_direct",
+    "final": "select",
+    "auto_detect_interface": true
+  },
+  "experimental": {
+    "cache_file": {
+      "enabled": true
+    },
+    "clash_api": {
+      "external_controller": "127.0.0.1:9090"
+    }
+  }
+}
