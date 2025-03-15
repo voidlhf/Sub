@@ -23,12 +23,19 @@
     ],
     "rules": [
       {
-        "rule_set": [
-          "AdGuardSDNSFilter",
-          "chrome-doh"
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "query_type": "HTTPS"
+          },
+          {
+            "rule_set": [
+              "AdGuardSDNSFilter"
+            ]
+          }
         ],
-        "action": "reject",
-        "method": "default"
+        "action": "reject"
       },
       {
         "query_type": [
@@ -39,15 +46,26 @@
         "rewrite_ttl": 1
       },
       {
-        "clash_mode": "Global",
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "clash_mode": "Global"
+          }
+        ],
         "server": "dns_proxy"
       },
       {
-        "clash_mode": "Direct",
-        "server": "dns_direct"
-      },
-      {
-        "rule_set": "geosite-cn",
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "clash_mode": "Direct"
+          },
+          {
+            "rule_set": "geosite-cn"
+          }
+        ],
         "server": "dns_direct"
       }
     ],
@@ -99,12 +117,12 @@
       "uuid": "2661b5f8-8062-34a5-9371-a44313a75b6b"
     },
     {
-      "server": "5by7c-g03.jp01-0986-vm0.entry.fr0307a.art",
+      "server": "szi32-g03.jp01-0986-vm0.entry.fr0307a.art",
       "server_port": 21583,
       "tag": "🇯🇵 免费-日本1-Ver.6",
       "tls": {
         "enabled": true,
-        "server_name": "5by7c-g03.jp01-0986-vm0.entry.fr0307a.art",
+        "server_name": "szi32-g03.jp01-0986-vm0.entry.fr0307a.art",
         "insecure": true
       },
       "type": "vmess",
@@ -113,7 +131,7 @@
       "uuid": "1b3d7897-9d28-3ae9-8c9f-9e4a74f1b523"
     },
     {
-      "server": "bdklx-g03.jp02-9a99-vm0.entry.fr0307a.art",
+      "server": "kimyo-g03.jp02-9a99-vm0.entry.fr0307a.art",
       "server_port": 11775,
       "tag": "🇯🇵 免费-日本2-Ver.7",
       "type": "vmess",
@@ -122,12 +140,12 @@
       "uuid": "1b3d7897-9d28-3ae9-8c9f-9e4a74f1b523"
     },
     {
-      "server": "sytcr-g03.jp03-7d22-vm0.entry.fr0307a.art",
+      "server": "tv0j5-g03.jp03-7d22-vm0.entry.fr0307a.art",
       "server_port": 21583,
       "tag": "🇯🇵 免费-日本3-Ver.6",
       "tls": {
         "enabled": true,
-        "server_name": "sytcr-g03.jp03-7d22-vm0.entry.fr0307a.art",
+        "server_name": "tv0j5-g03.jp03-7d22-vm0.entry.fr0307a.art",
         "insecure": true
       },
       "type": "vmess",
@@ -136,7 +154,7 @@
       "uuid": "1b3d7897-9d28-3ae9-8c9f-9e4a74f1b523"
     },
     {
-      "server": "tv6ix-g03.jp04-3771-vm0.entry.fr0307a.art",
+      "server": "cnryh-g03.jp04-3771-vm0.entry.fr0307a.art",
       "server_port": 446,
       "tag": "🇯🇵 免费-日本4-Ver.7",
       "type": "vmess",
@@ -145,7 +163,7 @@
       "uuid": "1b3d7897-9d28-3ae9-8c9f-9e4a74f1b523"
     },
     {
-      "server": "255ot-g03.jp05-6786-vm0.entry.fr0307a.art",
+      "server": "ae7cf-g03.jp05-6786-vm0.entry.fr0307a.art",
       "server_port": 46484,
       "tag": "🇯🇵 免费-日本5-Ver.8",
       "type": "vmess",
@@ -154,12 +172,12 @@
       "uuid": "1b3d7897-9d28-3ae9-8c9f-9e4a74f1b523"
     },
     {
-      "server": "p83bi-g03.jp06-7c5a-vm0.entry.fr0307a.art",
+      "server": "qg50w-g03.jp06-7c5a-vm0.entry.fr0307a.art",
       "server_port": 28785,
       "tag": "🇯🇵 免费-日本6-Ver.7",
       "tls": {
         "enabled": true,
-        "server_name": "p83bi-g03.jp06-7c5a-vm0.entry.fr0307a.art",
+        "server_name": "qg50w-g03.jp06-7c5a-vm0.entry.fr0307a.art",
         "insecure": true
       },
       "type": "vmess",
@@ -168,7 +186,7 @@
       "uuid": "1b3d7897-9d28-3ae9-8c9f-9e4a74f1b523"
     },
     {
-      "server": "govyn-g03.jp07-1f28-vm0.entry.fr0307a.art",
+      "server": "8vspz-g03.jp07-1f28-vm0.entry.fr0307a.art",
       "server_port": 28785,
       "tag": "🇯🇵 免费-日本7-Ver.1",
       "type": "vmess",
@@ -242,63 +260,72 @@
         "strategy": "prefer_ipv4"
       },
       {
-        "clash_mode": "Direct",
-        "outbound": "direct"
-      },
-      {
-        "clash_mode": "Global",
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "clash_mode": "Global"
+          }
+        ],
         "outbound": "select"
       },
       {
-        "ip_is_private": true,
-        "outbound": "direct"
-      },
-      {
-        "package_name": "com.openai.chatgpt",
-        "outbound": "chatgpt"
-      },
-      {
-        "domain_suffix": [
-          "gemini.google.com",
-          "proactivebackend-pa.googleapis.com",
-          "bing.com",
-          "bing.net",
-          "bingapis.com"
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "package_name": "com.openai.chatgpt"
+          },
+          {
+            "domain_suffix": [
+              "gemini.google.com",
+              "proactivebackend-pa.googleapis.com",
+              "bing.com",
+              "bing.net",
+              "bingapis.com"
+            ]
+          }
         ],
         "outbound": "chatgpt"
       },
       {
-        "domain_keyword": [
-          "mtalk.google.com",
-          "qq.com",
-          "aliyundrive.net"
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "clash_mode": "Direct"
+          },
+          {
+            "ip_is_private": true
+          },
+          {
+            "domain_keyword": [
+              "ushd.xmsl.org",
+              "cf.gtlx.org",
+              "mtalk.google.com"
+            ]
+          },
+          {
+            "port": [
+              23301,
+              22101,
+              22102,
+              20501,
+              21601,
+              21602,
+              21603,
+              21604,
+              21605,
+              21606
+            ]
+          },
+          {
+            "rule_set": [
+              "geoip-cn",
+              "geosite-cn"
+            ]
+          }
         ],
-        "outbound": "direct"
-      },
-      {
-        "domain_suffix": [
-          "ushd.xmsl.org",
-          "cf.gtlx.org"
-        ],
-        "outbound": "direct"
-      },
-      {
-        "port": [
-          23301,
-          22101,
-          22102,
-          20501,
-          21601,
-          21602,
-          21603,
-          21604,
-          21605,
-          21606
-        ],
-        "outbound": "direct"
-      },
-      {
-        "rule_set": "geoip-cn",
         "outbound": "direct"
       }
     ],
@@ -314,7 +341,7 @@
         "type": "remote",
         "tag": "geosite-cn",
         "format": "binary",
-        "url": "https://raw.githubusercontent.com/xmdhs/sing-geosite/rule-set-Loyalsoldier/geosite-geolocation-cn.srs",
+        "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs",
         "download_detour": "select"
       },
       {
@@ -322,13 +349,6 @@
         "tag": "AdGuardSDNSFilter",
         "format": "binary",
         "url": "https://raw.githubusercontent.com/xmdhs/sing-box-ruleset/rule-set/AdGuardSDNSFilterSingBox.srs",
-        "download_detour": "select"
-      },
-      {
-        "type": "remote",
-        "tag": "chrome-doh",
-        "format": "source",
-        "url": "https://gist.githubusercontent.com/xmdhs/71fc5ff6ef29f5ecaf2c52b8de5c3172/raw/chrome-doh.json",
         "download_detour": "select"
       }
     ],

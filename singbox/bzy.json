@@ -23,12 +23,19 @@
     ],
     "rules": [
       {
-        "rule_set": [
-          "AdGuardSDNSFilter",
-          "chrome-doh"
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "query_type": "HTTPS"
+          },
+          {
+            "rule_set": [
+              "AdGuardSDNSFilter"
+            ]
+          }
         ],
-        "action": "reject",
-        "method": "default"
+        "action": "reject"
       },
       {
         "query_type": [
@@ -39,15 +46,26 @@
         "rewrite_ttl": 1
       },
       {
-        "clash_mode": "Global",
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "clash_mode": "Global"
+          }
+        ],
         "server": "dns_proxy"
       },
       {
-        "clash_mode": "Direct",
-        "server": "dns_direct"
-      },
-      {
-        "rule_set": "geosite-cn",
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "clash_mode": "Direct"
+          },
+          {
+            "rule_set": "geosite-cn"
+          }
+        ],
         "server": "dns_direct"
       }
     ],
@@ -359,63 +377,72 @@
         "strategy": "prefer_ipv4"
       },
       {
-        "clash_mode": "Direct",
-        "outbound": "direct"
-      },
-      {
-        "clash_mode": "Global",
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "clash_mode": "Global"
+          }
+        ],
         "outbound": "select"
       },
       {
-        "ip_is_private": true,
-        "outbound": "direct"
-      },
-      {
-        "package_name": "com.openai.chatgpt",
-        "outbound": "chatgpt"
-      },
-      {
-        "domain_suffix": [
-          "gemini.google.com",
-          "proactivebackend-pa.googleapis.com",
-          "bing.com",
-          "bing.net",
-          "bingapis.com"
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "package_name": "com.openai.chatgpt"
+          },
+          {
+            "domain_suffix": [
+              "gemini.google.com",
+              "proactivebackend-pa.googleapis.com",
+              "bing.com",
+              "bing.net",
+              "bingapis.com"
+            ]
+          }
         ],
         "outbound": "chatgpt"
       },
       {
-        "domain_keyword": [
-          "mtalk.google.com",
-          "qq.com",
-          "aliyundrive.net"
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "clash_mode": "Direct"
+          },
+          {
+            "ip_is_private": true
+          },
+          {
+            "domain_keyword": [
+              "ushd.xmsl.org",
+              "cf.gtlx.org",
+              "mtalk.google.com"
+            ]
+          },
+          {
+            "port": [
+              23301,
+              22101,
+              22102,
+              20501,
+              21601,
+              21602,
+              21603,
+              21604,
+              21605,
+              21606
+            ]
+          },
+          {
+            "rule_set": [
+              "geoip-cn",
+              "geosite-cn"
+            ]
+          }
         ],
-        "outbound": "direct"
-      },
-      {
-        "domain_suffix": [
-          "ushd.xmsl.org",
-          "cf.gtlx.org"
-        ],
-        "outbound": "direct"
-      },
-      {
-        "port": [
-          23301,
-          22101,
-          22102,
-          20501,
-          21601,
-          21602,
-          21603,
-          21604,
-          21605,
-          21606
-        ],
-        "outbound": "direct"
-      },
-      {
-        "rule_set": "geoip-cn",
         "outbound": "direct"
       }
     ],
@@ -431,7 +458,7 @@
         "type": "remote",
         "tag": "geosite-cn",
         "format": "binary",
-        "url": "https://raw.githubusercontent.com/xmdhs/sing-geosite/rule-set-Loyalsoldier/geosite-geolocation-cn.srs",
+        "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs",
         "download_detour": "select"
       },
       {
@@ -439,13 +466,6 @@
         "tag": "AdGuardSDNSFilter",
         "format": "binary",
         "url": "https://raw.githubusercontent.com/xmdhs/sing-box-ruleset/rule-set/AdGuardSDNSFilterSingBox.srs",
-        "download_detour": "select"
-      },
-      {
-        "type": "remote",
-        "tag": "chrome-doh",
-        "format": "source",
-        "url": "https://gist.githubusercontent.com/xmdhs/71fc5ff6ef29f5ecaf2c52b8de5c3172/raw/chrome-doh.json",
         "download_detour": "select"
       }
     ],

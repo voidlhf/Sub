@@ -23,12 +23,19 @@
     ],
     "rules": [
       {
-        "rule_set": [
-          "AdGuardSDNSFilter",
-          "chrome-doh"
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "query_type": "HTTPS"
+          },
+          {
+            "rule_set": [
+              "AdGuardSDNSFilter"
+            ]
+          }
         ],
-        "action": "reject",
-        "method": "default"
+        "action": "reject"
       },
       {
         "query_type": [
@@ -39,15 +46,26 @@
         "rewrite_ttl": 1
       },
       {
-        "clash_mode": "Global",
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "clash_mode": "Global"
+          }
+        ],
         "server": "dns_proxy"
       },
       {
-        "clash_mode": "Direct",
-        "server": "dns_direct"
-      },
-      {
-        "rule_set": "geosite-cn",
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "clash_mode": "Direct"
+          },
+          {
+            "rule_set": "geosite-cn"
+          }
+        ],
         "server": "dns_direct"
       }
     ],
@@ -85,8 +103,8 @@
       "obfs": null,
       "password": "24a09ae4-5044-4d72-a1ff-f7924a6f618a",
       "server": "xiaonangua-hk.legeth.xyz",
-      "server_port": 24304,
-      "tag": "剩余流量：290.1 GB",
+      "server_port": 24483,
+      "tag": "剩余流量：290.09 GB",
       "tls": {
         "enabled": true,
         "insecure": false
@@ -99,7 +117,7 @@
       "obfs": null,
       "password": "24a09ae4-5044-4d72-a1ff-f7924a6f618a",
       "server": "xiaonangua-hk.legeth.xyz",
-      "server_port": 24304,
+      "server_port": 24483,
       "tag": "距离下次重置剩余：1 天",
       "tls": {
         "enabled": true,
@@ -113,7 +131,7 @@
       "obfs": null,
       "password": "24a09ae4-5044-4d72-a1ff-f7924a6f618a",
       "server": "xiaonangua-hk.legeth.xyz",
-      "server_port": 24304,
+      "server_port": 24483,
       "tag": "套餐到期：2026-02-16",
       "tls": {
         "enabled": true,
@@ -127,7 +145,7 @@
       "obfs": null,
       "password": "24a09ae4-5044-4d72-a1ff-f7924a6f618a",
       "server": "xiaonangua-hk.legeth.xyz",
-      "server_port": 24304,
+      "server_port": 24483,
       "tag": "🇭🇰 HK 龙的秘密 🐉🥮",
       "tls": {
         "enabled": true,
@@ -141,7 +159,7 @@
       "obfs": null,
       "password": "24a09ae4-5044-4d72-a1ff-f7924a6f618a",
       "server": "xiaonangua-hk.legeth.xyz",
-      "server_port": 24075,
+      "server_port": 24082,
       "tag": "🇭🇰 HK 翠岛韵味 🌿🎶",
       "tls": {
         "enabled": true,
@@ -155,7 +173,7 @@
       "obfs": null,
       "password": "24a09ae4-5044-4d72-a1ff-f7924a6f618a",
       "server": "xiaonangua-jp.legeth.xyz",
-      "server_port": 22339,
+      "server_port": 22090,
       "tag": "🇯🇵 JP 武士冷酒 🍶🗼",
       "tls": {
         "enabled": true,
@@ -169,7 +187,7 @@
       "obfs": null,
       "password": "24a09ae4-5044-4d72-a1ff-f7924a6f618a",
       "server": "xiaonangua-jp.legeth.xyz",
-      "server_port": 22488,
+      "server_port": 22371,
       "tag": "🇯🇵 JP 樱花之城 🌸🏯",
       "tls": {
         "enabled": true,
@@ -183,7 +201,7 @@
       "obfs": null,
       "password": "24a09ae4-5044-4d72-a1ff-f7924a6f618a",
       "server": "xiaonangua-kr.legeth.xyz",
-      "server_port": 22570,
+      "server_port": 22939,
       "tag": "🇰🇷 KR 韩流泡菜 🏯🥢",
       "tls": {
         "enabled": true,
@@ -197,7 +215,7 @@
       "obfs": null,
       "password": "24a09ae4-5044-4d72-a1ff-f7924a6f618a",
       "server": "xiaonangua-kr.legeth.xyz",
-      "server_port": 22054,
+      "server_port": 22622,
       "tag": "🇰🇷 KR 首尔炸鸡 🍗🔥",
       "tls": {
         "enabled": true,
@@ -211,7 +229,7 @@
       "obfs": null,
       "password": "24a09ae4-5044-4d72-a1ff-f7924a6f618a",
       "server": "xiaonangua-sg.legeth.xyz",
-      "server_port": 22630,
+      "server_port": 22854,
       "tag": "🇸🇬 SG 狮城冷饮 🦁🥤",
       "tls": {
         "enabled": true,
@@ -225,7 +243,7 @@
       "obfs": null,
       "password": "24a09ae4-5044-4d72-a1ff-f7924a6f618a",
       "server": "xiaonangua-sg.legeth.xyz",
-      "server_port": 22511,
+      "server_port": 22575,
       "tag": "🇸🇬 SG 花园之城 🌺🌴",
       "tls": {
         "enabled": true,
@@ -239,7 +257,7 @@
       "obfs": null,
       "password": "24a09ae4-5044-4d72-a1ff-f7924a6f618a",
       "server": "xiaonangua-us.legeth.xyz",
-      "server_port": 22707,
+      "server_port": 22029,
       "tag": "🇺🇸 US 自由味道 🗽🍔",
       "tls": {
         "enabled": true,
@@ -253,7 +271,7 @@
       "obfs": null,
       "password": "24a09ae4-5044-4d72-a1ff-f7924a6f618a",
       "server": "xiaonangua-us.legeth.xyz",
-      "server_port": 22790,
+      "server_port": 22708,
       "tag": "🇺🇸 US 飞鹰之力 🦅🏈",
       "tls": {
         "enabled": true,
@@ -267,7 +285,7 @@
       "obfs": null,
       "password": "24a09ae4-5044-4d72-a1ff-f7924a6f618a",
       "server": "xiaonangua-uk.legeth.xyz",
-      "server_port": 22480,
+      "server_port": 22498,
       "tag": "🇬🇧 UK 皇家烤饼 🏰🍪",
       "tls": {
         "enabled": true,
@@ -281,7 +299,7 @@
       "obfs": null,
       "password": "24a09ae4-5044-4d72-a1ff-f7924a6f618a",
       "server": "xiaonangua-uk.legeth.xyz",
-      "server_port": 22264,
+      "server_port": 22053,
       "tag": "🇬🇧 UK 伦敦红茶 ☕️🍂",
       "tls": {
         "enabled": true,
@@ -296,7 +314,7 @@
       "default": "urltest",
       "outbounds": [
         "urltest",
-        "剩余流量：290.1 GB",
+        "剩余流量：290.09 GB",
         "距离下次重置剩余：1 天",
         "套餐到期：2026-02-16",
         "🇭🇰 HK 龙的秘密 🐉🥮",
@@ -317,7 +335,7 @@
       "tag": "urltest",
       "type": "urltest",
       "outbounds": [
-        "剩余流量：290.1 GB",
+        "剩余流量：290.09 GB",
         "距离下次重置剩余：1 天",
         "套餐到期：2026-02-16",
         "🇭🇰 HK 龙的秘密 🐉🥮",
@@ -338,7 +356,7 @@
       "tag": "chatgpt",
       "type": "selector",
       "outbounds": [
-        "剩余流量：290.1 GB",
+        "剩余流量：290.09 GB",
         "距离下次重置剩余：1 天",
         "套餐到期：2026-02-16",
         "🇭🇰 HK 龙的秘密 🐉🥮",
@@ -374,63 +392,72 @@
         "strategy": "prefer_ipv4"
       },
       {
-        "clash_mode": "Direct",
-        "outbound": "direct"
-      },
-      {
-        "clash_mode": "Global",
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "clash_mode": "Global"
+          }
+        ],
         "outbound": "select"
       },
       {
-        "ip_is_private": true,
-        "outbound": "direct"
-      },
-      {
-        "package_name": "com.openai.chatgpt",
-        "outbound": "chatgpt"
-      },
-      {
-        "domain_suffix": [
-          "gemini.google.com",
-          "proactivebackend-pa.googleapis.com",
-          "bing.com",
-          "bing.net",
-          "bingapis.com"
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "package_name": "com.openai.chatgpt"
+          },
+          {
+            "domain_suffix": [
+              "gemini.google.com",
+              "proactivebackend-pa.googleapis.com",
+              "bing.com",
+              "bing.net",
+              "bingapis.com"
+            ]
+          }
         ],
         "outbound": "chatgpt"
       },
       {
-        "domain_keyword": [
-          "mtalk.google.com",
-          "qq.com",
-          "aliyundrive.net"
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "clash_mode": "Direct"
+          },
+          {
+            "ip_is_private": true
+          },
+          {
+            "domain_keyword": [
+              "ushd.xmsl.org",
+              "cf.gtlx.org",
+              "mtalk.google.com"
+            ]
+          },
+          {
+            "port": [
+              23301,
+              22101,
+              22102,
+              20501,
+              21601,
+              21602,
+              21603,
+              21604,
+              21605,
+              21606
+            ]
+          },
+          {
+            "rule_set": [
+              "geoip-cn",
+              "geosite-cn"
+            ]
+          }
         ],
-        "outbound": "direct"
-      },
-      {
-        "domain_suffix": [
-          "ushd.xmsl.org",
-          "cf.gtlx.org"
-        ],
-        "outbound": "direct"
-      },
-      {
-        "port": [
-          23301,
-          22101,
-          22102,
-          20501,
-          21601,
-          21602,
-          21603,
-          21604,
-          21605,
-          21606
-        ],
-        "outbound": "direct"
-      },
-      {
-        "rule_set": "geoip-cn",
         "outbound": "direct"
       }
     ],
@@ -446,7 +473,7 @@
         "type": "remote",
         "tag": "geosite-cn",
         "format": "binary",
-        "url": "https://raw.githubusercontent.com/xmdhs/sing-geosite/rule-set-Loyalsoldier/geosite-geolocation-cn.srs",
+        "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs",
         "download_detour": "select"
       },
       {
@@ -454,13 +481,6 @@
         "tag": "AdGuardSDNSFilter",
         "format": "binary",
         "url": "https://raw.githubusercontent.com/xmdhs/sing-box-ruleset/rule-set/AdGuardSDNSFilterSingBox.srs",
-        "download_detour": "select"
-      },
-      {
-        "type": "remote",
-        "tag": "chrome-doh",
-        "format": "source",
-        "url": "https://gist.githubusercontent.com/xmdhs/71fc5ff6ef29f5ecaf2c52b8de5c3172/raw/chrome-doh.json",
         "download_detour": "select"
       }
     ],

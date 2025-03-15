@@ -23,12 +23,19 @@
     ],
     "rules": [
       {
-        "rule_set": [
-          "AdGuardSDNSFilter",
-          "chrome-doh"
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "query_type": "HTTPS"
+          },
+          {
+            "rule_set": [
+              "AdGuardSDNSFilter"
+            ]
+          }
         ],
-        "action": "reject",
-        "method": "default"
+        "action": "reject"
       },
       {
         "query_type": [
@@ -39,15 +46,26 @@
         "rewrite_ttl": 1
       },
       {
-        "clash_mode": "Global",
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "clash_mode": "Global"
+          }
+        ],
         "server": "dns_proxy"
       },
       {
-        "clash_mode": "Direct",
-        "server": "dns_direct"
-      },
-      {
-        "rule_set": "geosite-cn",
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "clash_mode": "Direct"
+          },
+          {
+            "rule_set": "geosite-cn"
+          }
+        ],
         "server": "dns_direct"
       }
     ],
@@ -85,7 +103,7 @@
       "obfs": null,
       "password": "cef53745-597b-4531-a0bf-85ce586b5ec4",
       "server": "hk.xn--2vxn29amga.com",
-      "server_port": 21158,
+      "server_port": 21109,
       "tag": "剩余流量：478.88 GB",
       "tls": {
         "enabled": true,
@@ -99,7 +117,7 @@
       "obfs": null,
       "password": "cef53745-597b-4531-a0bf-85ce586b5ec4",
       "server": "hk.xn--2vxn29amga.com",
-      "server_port": 21158,
+      "server_port": 21109,
       "tag": "距离下次重置剩余：5 天",
       "tls": {
         "enabled": true,
@@ -113,7 +131,7 @@
       "obfs": null,
       "password": "cef53745-597b-4531-a0bf-85ce586b5ec4",
       "server": "hk.xn--2vxn29amga.com",
-      "server_port": 21158,
+      "server_port": 21109,
       "tag": "套餐到期：2025-03-20",
       "tls": {
         "enabled": true,
@@ -127,7 +145,7 @@
       "obfs": null,
       "password": "cef53745-597b-4531-a0bf-85ce586b5ec4",
       "server": "hk.xn--2vxn29amga.com",
-      "server_port": 21158,
+      "server_port": 21109,
       "tag": "🇭🇰香港1",
       "tls": {
         "enabled": true,
@@ -141,7 +159,7 @@
       "obfs": null,
       "password": "cef53745-597b-4531-a0bf-85ce586b5ec4",
       "server": "hk.xn--2vxn29amga.com",
-      "server_port": 21180,
+      "server_port": 21154,
       "tag": "🇭🇰香港2",
       "tls": {
         "enabled": true,
@@ -155,7 +173,7 @@
       "obfs": null,
       "password": "cef53745-597b-4531-a0bf-85ce586b5ec4",
       "server": "hk.xn--2vxn29amga.com",
-      "server_port": 21133,
+      "server_port": 21140,
       "tag": "🇭🇰香港3",
       "tls": {
         "enabled": true,
@@ -169,7 +187,7 @@
       "obfs": null,
       "password": "cef53745-597b-4531-a0bf-85ce586b5ec4",
       "server": "hk.xn--2vxn29amga.com",
-      "server_port": 21187,
+      "server_port": 21182,
       "tag": "🇭🇰香港4",
       "tls": {
         "enabled": true,
@@ -183,7 +201,7 @@
       "obfs": null,
       "password": "cef53745-597b-4531-a0bf-85ce586b5ec4",
       "server": "us.xn--2vxn29amga.com",
-      "server_port": 21123,
+      "server_port": 21198,
       "tag": "🇺🇸美国1",
       "tls": {
         "enabled": true,
@@ -197,7 +215,7 @@
       "obfs": null,
       "password": "cef53745-597b-4531-a0bf-85ce586b5ec4",
       "server": "us.xn--2vxn29amga.com",
-      "server_port": 21155,
+      "server_port": 21115,
       "tag": "🇺🇸美国2",
       "tls": {
         "enabled": true,
@@ -211,7 +229,7 @@
       "obfs": null,
       "password": "cef53745-597b-4531-a0bf-85ce586b5ec4",
       "server": "us.xn--2vxn29amga.com",
-      "server_port": 21146,
+      "server_port": 21169,
       "tag": "🇺🇸美国3",
       "tls": {
         "enabled": true,
@@ -225,7 +243,7 @@
       "obfs": null,
       "password": "cef53745-597b-4531-a0bf-85ce586b5ec4",
       "server": "us.xn--2vxn29amga.com",
-      "server_port": 21105,
+      "server_port": 21160,
       "tag": "🇺🇸美国4",
       "tls": {
         "enabled": true,
@@ -239,7 +257,7 @@
       "obfs": null,
       "password": "cef53745-597b-4531-a0bf-85ce586b5ec4",
       "server": "jp.xn--2vxn29amga.com",
-      "server_port": 21143,
+      "server_port": 21116,
       "tag": "🇯🇵日本1",
       "tls": {
         "enabled": true,
@@ -253,7 +271,7 @@
       "obfs": null,
       "password": "cef53745-597b-4531-a0bf-85ce586b5ec4",
       "server": "jp.xn--2vxn29amga.com",
-      "server_port": 21125,
+      "server_port": 21157,
       "tag": "🇯🇵日本2",
       "tls": {
         "enabled": true,
@@ -267,7 +285,7 @@
       "obfs": null,
       "password": "cef53745-597b-4531-a0bf-85ce586b5ec4",
       "server": "jp.xn--2vxn29amga.com",
-      "server_port": 21113,
+      "server_port": 21123,
       "tag": "🇯🇵日本3",
       "tls": {
         "enabled": true,
@@ -281,7 +299,7 @@
       "obfs": null,
       "password": "cef53745-597b-4531-a0bf-85ce586b5ec4",
       "server": "jp.xn--2vxn29amga.com",
-      "server_port": 21107,
+      "server_port": 21198,
       "tag": "🇯🇵日本4",
       "tls": {
         "enabled": true,
@@ -295,7 +313,7 @@
       "obfs": null,
       "password": "cef53745-597b-4531-a0bf-85ce586b5ec4",
       "server": "sg.xn--2vxn29amga.com",
-      "server_port": 21198,
+      "server_port": 21189,
       "tag": "🇸🇬新加坡1",
       "tls": {
         "enabled": true,
@@ -309,7 +327,7 @@
       "obfs": null,
       "password": "cef53745-597b-4531-a0bf-85ce586b5ec4",
       "server": "sg.xn--2vxn29amga.com",
-      "server_port": 21149,
+      "server_port": 21147,
       "tag": "🇸🇬新加坡2",
       "tls": {
         "enabled": true,
@@ -323,7 +341,7 @@
       "obfs": null,
       "password": "cef53745-597b-4531-a0bf-85ce586b5ec4",
       "server": "sg.xn--2vxn29amga.com",
-      "server_port": 21159,
+      "server_port": 21196,
       "tag": "🇸🇬新加坡3",
       "tls": {
         "enabled": true,
@@ -337,7 +355,7 @@
       "obfs": null,
       "password": "cef53745-597b-4531-a0bf-85ce586b5ec4",
       "server": "sg.xn--2vxn29amga.com",
-      "server_port": 21186,
+      "server_port": 21103,
       "tag": "🇸🇬新加坡4",
       "tls": {
         "enabled": true,
@@ -351,7 +369,7 @@
       "obfs": null,
       "password": "cef53745-597b-4531-a0bf-85ce586b5ec4",
       "server": "lu.xn--2vxn29amga.com",
-      "server_port": 21107,
+      "server_port": 21101,
       "tag": "🇱🇺卢森堡1",
       "tls": {
         "enabled": true,
@@ -365,7 +383,7 @@
       "obfs": null,
       "password": "cef53745-597b-4531-a0bf-85ce586b5ec4",
       "server": "lu.xn--2vxn29amga.com",
-      "server_port": 21182,
+      "server_port": 21172,
       "tag": "🇱🇺卢森堡2",
       "tls": {
         "enabled": true,
@@ -379,7 +397,7 @@
       "obfs": null,
       "password": "cef53745-597b-4531-a0bf-85ce586b5ec4",
       "server": "lu.xn--2vxn29amga.com",
-      "server_port": 21124,
+      "server_port": 21163,
       "tag": "🇱🇺卢森堡3",
       "tls": {
         "enabled": true,
@@ -393,7 +411,7 @@
       "obfs": null,
       "password": "cef53745-597b-4531-a0bf-85ce586b5ec4",
       "server": "lu.xn--2vxn29amga.com",
-      "server_port": 21152,
+      "server_port": 21134,
       "tag": "🇱🇺卢森堡4",
       "tls": {
         "enabled": true,
@@ -510,63 +528,72 @@
         "strategy": "prefer_ipv4"
       },
       {
-        "clash_mode": "Direct",
-        "outbound": "direct"
-      },
-      {
-        "clash_mode": "Global",
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "clash_mode": "Global"
+          }
+        ],
         "outbound": "select"
       },
       {
-        "ip_is_private": true,
-        "outbound": "direct"
-      },
-      {
-        "package_name": "com.openai.chatgpt",
-        "outbound": "chatgpt"
-      },
-      {
-        "domain_suffix": [
-          "gemini.google.com",
-          "proactivebackend-pa.googleapis.com",
-          "bing.com",
-          "bing.net",
-          "bingapis.com"
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "package_name": "com.openai.chatgpt"
+          },
+          {
+            "domain_suffix": [
+              "gemini.google.com",
+              "proactivebackend-pa.googleapis.com",
+              "bing.com",
+              "bing.net",
+              "bingapis.com"
+            ]
+          }
         ],
         "outbound": "chatgpt"
       },
       {
-        "domain_keyword": [
-          "mtalk.google.com",
-          "qq.com",
-          "aliyundrive.net"
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "clash_mode": "Direct"
+          },
+          {
+            "ip_is_private": true
+          },
+          {
+            "domain_keyword": [
+              "ushd.xmsl.org",
+              "cf.gtlx.org",
+              "mtalk.google.com"
+            ]
+          },
+          {
+            "port": [
+              23301,
+              22101,
+              22102,
+              20501,
+              21601,
+              21602,
+              21603,
+              21604,
+              21605,
+              21606
+            ]
+          },
+          {
+            "rule_set": [
+              "geoip-cn",
+              "geosite-cn"
+            ]
+          }
         ],
-        "outbound": "direct"
-      },
-      {
-        "domain_suffix": [
-          "ushd.xmsl.org",
-          "cf.gtlx.org"
-        ],
-        "outbound": "direct"
-      },
-      {
-        "port": [
-          23301,
-          22101,
-          22102,
-          20501,
-          21601,
-          21602,
-          21603,
-          21604,
-          21605,
-          21606
-        ],
-        "outbound": "direct"
-      },
-      {
-        "rule_set": "geoip-cn",
         "outbound": "direct"
       }
     ],
@@ -582,7 +609,7 @@
         "type": "remote",
         "tag": "geosite-cn",
         "format": "binary",
-        "url": "https://raw.githubusercontent.com/xmdhs/sing-geosite/rule-set-Loyalsoldier/geosite-geolocation-cn.srs",
+        "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs",
         "download_detour": "select"
       },
       {
@@ -590,13 +617,6 @@
         "tag": "AdGuardSDNSFilter",
         "format": "binary",
         "url": "https://raw.githubusercontent.com/xmdhs/sing-box-ruleset/rule-set/AdGuardSDNSFilterSingBox.srs",
-        "download_detour": "select"
-      },
-      {
-        "type": "remote",
-        "tag": "chrome-doh",
-        "format": "source",
-        "url": "https://gist.githubusercontent.com/xmdhs/71fc5ff6ef29f5ecaf2c52b8de5c3172/raw/chrome-doh.json",
         "download_detour": "select"
       }
     ],
