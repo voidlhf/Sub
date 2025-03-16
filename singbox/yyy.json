@@ -1,0 +1,621 @@
+{
+  "log": {},
+  "dns": {
+    "servers": [
+      {
+        "tag": "dns_proxy",
+        "type": "https",
+        "server": "1.1.1.1",
+        "detour": "select"
+      },
+      {
+        "tag": "dns_direct",
+        "type": "https",
+        "server": "223.5.5.5",
+        "detour": "direct"
+      },
+      {
+        "tag": "dns_fakeip",
+        "type": "fakeip",
+        "inet4_range": "198.18.0.0/15",
+        "inet6_range": "fc00::/18"
+      }
+    ],
+    "rules": [
+      {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "query_type": "HTTPS"
+          },
+          {
+            "rule_set": [
+              "AdGuardSDNSFilter"
+            ]
+          }
+        ],
+        "action": "reject"
+      },
+      {
+        "query_type": [
+          "A",
+          "AAAA"
+        ],
+        "server": "dns_fakeip",
+        "rewrite_ttl": 1
+      },
+      {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "clash_mode": "Global"
+          }
+        ],
+        "server": "dns_proxy"
+      },
+      {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "clash_mode": "Direct"
+          },
+          {
+            "rule_set": "geosite-cn"
+          }
+        ],
+        "server": "dns_direct"
+      }
+    ],
+    "strategy": "prefer_ipv4",
+    "independent_cache": true
+  },
+  "inbounds": [
+    {
+      "type": "tun",
+      "address": [
+        "172.18.0.1/30",
+        "fdfe:dcba:9876::1/126"
+      ],
+      "auto_route": true,
+      "strict_route": true
+    }
+  ],
+  "outbounds": [
+    {
+      "password": "62478e3a-3a6c-48ba-8f31-2d2764c77f63",
+      "server": "us001.api6666666.top",
+      "server_port": 8443,
+      "tag": "美国｜一元云.com",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": null
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "62478e3a-3a6c-48ba-8f31-2d2764c77f63",
+      "server": "us1.api6666666.top",
+      "server_port": 20000,
+      "tag": "美国｜邀请好友",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "us1.api6666666.top"
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "62478e3a-3a6c-48ba-8f31-2d2764c77f63",
+      "server": "us2.api6666666.top",
+      "server_port": 20000,
+      "tag": "美国｜返利50％",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "us2.api6666666.top"
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "62478e3a-3a6c-48ba-8f31-2d2764c77f63",
+      "server": "mg1.api6666666.top",
+      "server_port": 20000,
+      "tag": "美国｜01 解锁",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "mg1.api6666666.top"
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "62478e3a-3a6c-48ba-8f31-2d2764c77f63",
+      "server": "mg2.api6666666.top",
+      "server_port": 20000,
+      "tag": "美国｜02 解锁",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": null
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "62478e3a-3a6c-48ba-8f31-2d2764c77f63",
+      "server": "mg3.api6666666.top",
+      "server_port": 20000,
+      "tag": "美国｜03 解锁",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "mg3.api6666666.top"
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "62478e3a-3a6c-48ba-8f31-2d2764c77f63",
+      "server": "mg4.api6666666.top",
+      "server_port": 20000,
+      "tag": "美国｜04 解锁",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "mg4.api6666666.top"
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "62478e3a-3a6c-48ba-8f31-2d2764c77f63",
+      "server": "mg5.api6666666.top",
+      "server_port": 20000,
+      "tag": "美国｜05 解锁",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "mg5.api6666666.top"
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "62478e3a-3a6c-48ba-8f31-2d2764c77f63",
+      "server": "mg6.api6666666.top",
+      "server_port": 20000,
+      "tag": "美国｜06 解锁",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "mg6.api6666666.top"
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "62478e3a-3a6c-48ba-8f31-2d2764c77f63",
+      "server": "mg7.api6666666.top",
+      "server_port": 20000,
+      "tag": "美国｜07 解锁",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "mg7.api6666666.top"
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "62478e3a-3a6c-48ba-8f31-2d2764c77f63",
+      "server": "jp1.api6666666.top",
+      "server_port": 20000,
+      "tag": "日本 01｜5倍计费",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "jp1.api6666666.top"
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "62478e3a-3a6c-48ba-8f31-2d2764c77f63",
+      "server": "jp2.api6666666.top",
+      "server_port": 20000,
+      "tag": "日本 02｜5倍计费",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "jp2.api6666666.top"
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "62478e3a-3a6c-48ba-8f31-2d2764c77f63",
+      "server": "jp3.api6666666.top",
+      "server_port": 20000,
+      "tag": "日本 03｜5倍计费",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "jp3.api6666666.top"
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "62478e3a-3a6c-48ba-8f31-2d2764c77f63",
+      "server": "jp4.api6666666.top",
+      "server_port": 20000,
+      "tag": "日本 04｜5倍计费",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "jp4.api6666666.top"
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "62478e3a-3a6c-48ba-8f31-2d2764c77f63",
+      "server": "ru3.api6666666.top",
+      "server_port": 20000,
+      "tag": "俄罗斯｜0.5倍计费",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "ru3.api6666666.top"
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "62478e3a-3a6c-48ba-8f31-2d2764c77f63",
+      "server": "ru4.api6666666.top",
+      "server_port": 20000,
+      "tag": "莫斯科｜0.5倍计费",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "ru4.api6666666.top"
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "62478e3a-3a6c-48ba-8f31-2d2764c77f63",
+      "server": "fg1.api6666666.top",
+      "server_port": 19132,
+      "tag": "法国原生IP",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "fg1.api6666666.top"
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "62478e3a-3a6c-48ba-8f31-2d2764c77f63",
+      "server": "dg1.api6666666.top",
+      "server_port": 20000,
+      "tag": "德国原生IP",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "dg1.api6666666.top"
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "62478e3a-3a6c-48ba-8f31-2d2764c77f63",
+      "server": "tw1.api6666666.top",
+      "server_port": 20000,
+      "tag": "台湾 01｜3倍计费",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "tw1.api6666666.top"
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "62478e3a-3a6c-48ba-8f31-2d2764c77f63",
+      "server": "tw3.api6666666.top",
+      "server_port": 20000,
+      "tag": "台湾 02｜3倍计费",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "tw3.api6666666.top"
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "62478e3a-3a6c-48ba-8f31-2d2764c77f63",
+      "server": "sg1.api6666666.top",
+      "server_port": 20000,
+      "tag": "狮城 01｜4倍计费",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "sg1.api6666666.top"
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "62478e3a-3a6c-48ba-8f31-2d2764c77f63",
+      "server": "sg2.api6666666.top",
+      "server_port": 20000,
+      "tag": "狮城 02｜4倍计费",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "sg2.api6666666.top"
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "62478e3a-3a6c-48ba-8f31-2d2764c77f63",
+      "server": "xg1.api6666666.top",
+      "server_port": 20000,
+      "tag": "香港 01｜5倍计费",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "xg1.api6666666.top"
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "62478e3a-3a6c-48ba-8f31-2d2764c77f63",
+      "server": "hk4.api6666666.top",
+      "server_port": 20000,
+      "tag": "香港 02｜5倍计费",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "hk4.api6666666.top"
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "62478e3a-3a6c-48ba-8f31-2d2764c77f63",
+      "server": "hk1.api6666666.top",
+      "server_port": 2700,
+      "tag": "香港｜25倍计费",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "hk1.api6666666.top"
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "62478e3a-3a6c-48ba-8f31-2d2764c77f63",
+      "server": "sg3.api6666666.top",
+      "server_port": 20000,
+      "tag": "狮城｜25倍计费",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "sg3.api6666666.top"
+      },
+      "type": "hysteria2"
+    },
+    {
+      "tag": "select",
+      "type": "selector",
+      "default": "urltest",
+      "outbounds": [
+        "urltest",
+        "美国｜一元云.com",
+        "美国｜邀请好友",
+        "美国｜返利50％",
+        "美国｜01 解锁",
+        "美国｜02 解锁",
+        "美国｜03 解锁",
+        "美国｜04 解锁",
+        "美国｜05 解锁",
+        "美国｜06 解锁",
+        "美国｜07 解锁",
+        "日本 01｜5倍计费",
+        "日本 02｜5倍计费",
+        "日本 03｜5倍计费",
+        "日本 04｜5倍计费",
+        "俄罗斯｜0.5倍计费",
+        "莫斯科｜0.5倍计费",
+        "法国原生IP",
+        "德国原生IP",
+        "台湾 01｜3倍计费",
+        "台湾 02｜3倍计费",
+        "狮城 01｜4倍计费",
+        "狮城 02｜4倍计费",
+        "香港 01｜5倍计费",
+        "香港 02｜5倍计费",
+        "香港｜25倍计费",
+        "狮城｜25倍计费"
+      ]
+    },
+    {
+      "tag": "urltest",
+      "type": "urltest",
+      "outbounds": [
+        "美国｜一元云.com",
+        "美国｜邀请好友",
+        "美国｜返利50％",
+        "美国｜01 解锁",
+        "美国｜02 解锁",
+        "美国｜03 解锁",
+        "美国｜04 解锁",
+        "美国｜05 解锁",
+        "美国｜06 解锁",
+        "美国｜07 解锁",
+        "日本 01｜5倍计费",
+        "日本 02｜5倍计费",
+        "日本 03｜5倍计费",
+        "日本 04｜5倍计费",
+        "俄罗斯｜0.5倍计费",
+        "莫斯科｜0.5倍计费",
+        "法国原生IP",
+        "德国原生IP",
+        "台湾 01｜3倍计费",
+        "台湾 02｜3倍计费",
+        "狮城 01｜4倍计费",
+        "狮城 02｜4倍计费",
+        "香港 01｜5倍计费",
+        "香港 02｜5倍计费",
+        "香港｜25倍计费",
+        "狮城｜25倍计费"
+      ]
+    },
+    {
+      "tag": "chatgpt",
+      "type": "selector",
+      "outbounds": [
+        "美国｜一元云.com",
+        "美国｜邀请好友",
+        "美国｜返利50％",
+        "美国｜01 解锁",
+        "美国｜02 解锁",
+        "美国｜03 解锁",
+        "美国｜04 解锁",
+        "美国｜05 解锁",
+        "美国｜06 解锁",
+        "美国｜07 解锁",
+        "日本 01｜5倍计费",
+        "日本 02｜5倍计费",
+        "日本 03｜5倍计费",
+        "日本 04｜5倍计费",
+        "俄罗斯｜0.5倍计费",
+        "莫斯科｜0.5倍计费",
+        "法国原生IP",
+        "德国原生IP",
+        "台湾 01｜3倍计费",
+        "台湾 02｜3倍计费",
+        "狮城 01｜4倍计费",
+        "狮城 02｜4倍计费",
+        "香港 01｜5倍计费",
+        "香港 02｜5倍计费",
+        "香港｜25倍计费",
+        "狮城｜25倍计费"
+      ]
+    },
+    {
+      "tag": "direct",
+      "type": "direct"
+    }
+  ],
+  "route": {
+    "rules": [
+      {
+        "action": "sniff"
+      },
+      {
+        "protocol": "dns",
+        "action": "hijack-dns"
+      },
+      {
+        "action": "resolve",
+        "strategy": "prefer_ipv4"
+      },
+      {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "clash_mode": "Global"
+          }
+        ],
+        "outbound": "select"
+      },
+      {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "package_name": "com.openai.chatgpt"
+          },
+          {
+            "domain_suffix": [
+              "gemini.google.com",
+              "proactivebackend-pa.googleapis.com",
+              "bing.com",
+              "bing.net",
+              "bingapis.com"
+            ]
+          }
+        ],
+        "outbound": "chatgpt"
+      },
+      {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "clash_mode": "Direct"
+          },
+          {
+            "ip_is_private": true
+          },
+          {
+            "domain_keyword": [
+              "ushd.xmsl.org",
+              "cf.gtlx.org",
+              "mtalk.google.com"
+            ]
+          },
+          {
+            "port": [
+              23301,
+              22101,
+              22102,
+              20501,
+              21601,
+              21602,
+              21603,
+              21604,
+              21605,
+              21606
+            ]
+          },
+          {
+            "rule_set": [
+              "geoip-cn",
+              "geosite-cn"
+            ]
+          }
+        ],
+        "outbound": "direct"
+      }
+    ],
+    "rule_set": [
+      {
+        "type": "remote",
+        "tag": "geoip-cn",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/SagerNet/sing-geoip/rule-set/geoip-cn.srs",
+        "download_detour": "select"
+      },
+      {
+        "type": "remote",
+        "tag": "geosite-cn",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs",
+        "download_detour": "select"
+      },
+      {
+        "type": "remote",
+        "tag": "AdGuardSDNSFilter",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/xmdhs/sing-box-ruleset/rule-set/AdGuardSDNSFilterSingBox.srs",
+        "download_detour": "select"
+      }
+    ],
+    "final": "select",
+    "default_domain_resolver": "dns_direct",
+    "auto_detect_interface": true,
+    "override_android_vpn": true
+  },
+  "experimental": {
+    "cache_file": {
+      "enabled": true
+    },
+    "clash_api": {
+      "external_controller": "127.0.0.1:9090"
+    }
+  }
+}
