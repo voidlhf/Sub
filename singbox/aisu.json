@@ -1,0 +1,1084 @@
+{
+  "log": {},
+  "dns": {
+    "servers": [
+      {
+        "tag": "dns_proxy",
+        "type": "https",
+        "server": "1.1.1.1",
+        "detour": "select"
+      },
+      {
+        "tag": "dns_direct",
+        "type": "https",
+        "server": "223.5.5.5",
+        "detour": "direct"
+      },
+      {
+        "tag": "dns_fakeip",
+        "type": "fakeip",
+        "inet4_range": "198.18.0.0/15",
+        "inet6_range": "fc00::/18"
+      }
+    ],
+    "rules": [
+      {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "query_type": "HTTPS"
+          },
+          {
+            "rule_set": [
+              "AdGuardSDNSFilter"
+            ]
+          }
+        ],
+        "action": "reject"
+      },
+      {
+        "query_type": [
+          "A",
+          "AAAA"
+        ],
+        "server": "dns_fakeip",
+        "rewrite_ttl": 1
+      },
+      {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "clash_mode": "Global"
+          }
+        ],
+        "server": "dns_proxy"
+      },
+      {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "clash_mode": "Direct"
+          },
+          {
+            "rule_set": "geosite-cn"
+          }
+        ],
+        "server": "dns_direct"
+      }
+    ],
+    "strategy": "prefer_ipv4",
+    "independent_cache": true
+  },
+  "inbounds": [
+    {
+      "type": "tun",
+      "address": [
+        "172.18.0.1/30",
+        "fdfe:dcba:9876::1/126"
+      ],
+      "auto_route": true,
+      "strict_route": true
+    }
+  ],
+  "outbounds": [
+    {
+      "down_mbps": 3000,
+      "obfs": null,
+      "password": "8fde89b1-ceb0-4262-8591-82c121317a17",
+      "server": "surfboard-hk.aisu.cyou",
+      "server_port": 12768,
+      "tag": "剩余流量：477.75 GB",
+      "tls": {
+        "enabled": true,
+        "insecure": false
+      },
+      "type": "hysteria2",
+      "up_mbps": 3000
+    },
+    {
+      "down_mbps": 3000,
+      "obfs": null,
+      "password": "8fde89b1-ceb0-4262-8591-82c121317a17",
+      "server": "surfboard-hk.aisu.cyou",
+      "server_port": 12768,
+      "tag": "距离下次重置剩余：11 天",
+      "tls": {
+        "enabled": true,
+        "insecure": false
+      },
+      "type": "hysteria2",
+      "up_mbps": 3000
+    },
+    {
+      "down_mbps": 3000,
+      "obfs": null,
+      "password": "8fde89b1-ceb0-4262-8591-82c121317a17",
+      "server": "surfboard-hk.aisu.cyou",
+      "server_port": 12768,
+      "tag": "套餐到期：2025-03-27",
+      "tls": {
+        "enabled": true,
+        "insecure": false
+      },
+      "type": "hysteria2",
+      "up_mbps": 3000
+    },
+    {
+      "down_mbps": 3000,
+      "obfs": null,
+      "password": "8fde89b1-ceb0-4262-8591-82c121317a17",
+      "server": "surfboard-hk.aisu.cyou",
+      "server_port": 12768,
+      "tag": "官网：aisu.me",
+      "tls": {
+        "enabled": true,
+        "insecure": false
+      },
+      "type": "hysteria2",
+      "up_mbps": 3000
+    },
+    {
+      "down_mbps": 3000,
+      "obfs": null,
+      "password": "8fde89b1-ceb0-4262-8591-82c121317a17",
+      "server": "surfboard-hk.aisu.cyou",
+      "server_port": 12341,
+      "tag": "群组：@aisuchat",
+      "tls": {
+        "enabled": true,
+        "insecure": false
+      },
+      "type": "hysteria2",
+      "up_mbps": 3000
+    },
+    {
+      "method": "2022-blake3-aes-256-gcm",
+      "password": "NzNlYjgyNDI1NDdhMDMwZTFiOGEyZjZmNGY3MmFiMDU=:OGZkZTg5YjEtY2ViMC00MjYyLTg1OTEtODJjMTIxMzE=",
+      "server": "surfboard-hk.aisu.cyou",
+      "server_port": 11305,
+      "tag": "🇭🇰 香港1 原生ip",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "2022-blake3-aes-256-gcm",
+      "password": "NzNlYjgyNDI1NDdhMDMwZTFiOGEyZjZmNGY3MmFiMDU=:OGZkZTg5YjEtY2ViMC00MjYyLTg1OTEtODJjMTIxMzE=",
+      "server": "surfboard-hk.aisu.cyou",
+      "server_port": 11832,
+      "tag": "🇭🇰 香港2 解锁流媒体",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "2022-blake3-aes-256-gcm",
+      "password": "NzNlYjgyNDI1NDdhMDMwZTFiOGEyZjZmNGY3MmFiMDU=:OGZkZTg5YjEtY2ViMC00MjYyLTg1OTEtODJjMTIxMzE=",
+      "server": "surfboard-hk.aisu.cyou",
+      "server_port": 11822,
+      "tag": "🇭🇰 香港3 原生ip",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "2022-blake3-aes-256-gcm",
+      "password": "NzNlYjgyNDI1NDdhMDMwZTFiOGEyZjZmNGY3MmFiMDU=:OGZkZTg5YjEtY2ViMC00MjYyLTg1OTEtODJjMTIxMzE=",
+      "server": "surfboard-hk.aisu.cyou",
+      "server_port": 11617,
+      "tag": "🇭🇰 香港4 解锁流媒体",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "2022-blake3-aes-256-gcm",
+      "password": "NzNlYjgyNDI1NDdhMDMwZTFiOGEyZjZmNGY3MmFiMDU=:OGZkZTg5YjEtY2ViMC00MjYyLTg1OTEtODJjMTIxMzE=",
+      "server": "surfboard-tw.aisu.cyou",
+      "server_port": 11717,
+      "tag": "🇹🇼 台湾1 原生ip",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "2022-blake3-aes-256-gcm",
+      "password": "NzNlYjgyNDI1NDdhMDMwZTFiOGEyZjZmNGY3MmFiMDU=:OGZkZTg5YjEtY2ViMC00MjYyLTg1OTEtODJjMTIxMzE=",
+      "server": "surfboard-tw.aisu.cyou",
+      "server_port": 11044,
+      "tag": "🇹🇼 台湾2 解锁流媒体",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "2022-blake3-aes-256-gcm",
+      "password": "NzNlYjgyNDI1NDdhMDMwZTFiOGEyZjZmNGY3MmFiMDU=:OGZkZTg5YjEtY2ViMC00MjYyLTg1OTEtODJjMTIxMzE=",
+      "server": "surfboard-tw.aisu.cyou",
+      "server_port": 11291,
+      "tag": "🇹🇼 台湾3 原生ip",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "2022-blake3-aes-256-gcm",
+      "password": "NzNlYjgyNDI1NDdhMDMwZTFiOGEyZjZmNGY3MmFiMDU=:OGZkZTg5YjEtY2ViMC00MjYyLTg1OTEtODJjMTIxMzE=",
+      "server": "surfboard-tw.aisu.cyou",
+      "server_port": 11167,
+      "tag": "🇹🇼 台湾4 解锁流媒体",
+      "type": "shadowsocks"
+    },
+    {
+      "down_mbps": 3000,
+      "obfs": null,
+      "password": "8fde89b1-ceb0-4262-8591-82c121317a17",
+      "server": "surfboard-hk.aisu.cyou",
+      "server_port": 12564,
+      "tag": "🇭🇰 香港1 HKT家宽",
+      "tls": {
+        "enabled": true,
+        "insecure": false
+      },
+      "type": "hysteria2",
+      "up_mbps": 3000
+    },
+    {
+      "down_mbps": 3000,
+      "obfs": null,
+      "password": "8fde89b1-ceb0-4262-8591-82c121317a17",
+      "server": "surfboard-hk.aisu.cyou",
+      "server_port": 12115,
+      "tag": "🇭🇰 香港2 HKT家宽",
+      "tls": {
+        "enabled": true,
+        "insecure": false
+      },
+      "type": "hysteria2",
+      "up_mbps": 3000
+    },
+    {
+      "down_mbps": null,
+      "obfs": null,
+      "password": "8fde89b1-ceb0-4262-8591-82c121317a17",
+      "server": "surfboard-hk.aisu.cyou",
+      "server_port": 12313,
+      "tag": "🇭🇰 香港3 HKT家宽",
+      "tls": {
+        "enabled": true,
+        "insecure": false
+      },
+      "type": "hysteria2",
+      "up_mbps": null
+    },
+    {
+      "down_mbps": 3000,
+      "obfs": null,
+      "password": "8fde89b1-ceb0-4262-8591-82c121317a17",
+      "server": "surfboard-hk.aisu.cyou",
+      "server_port": 12752,
+      "tag": "🇭🇰 香港4 HKT家宽",
+      "tls": {
+        "enabled": true,
+        "insecure": false
+      },
+      "type": "hysteria2",
+      "up_mbps": 3000
+    },
+    {
+      "down_mbps": 3000,
+      "obfs": null,
+      "password": "8fde89b1-ceb0-4262-8591-82c121317a17",
+      "server": "surfboard-tw.aisu.cyou",
+      "server_port": 12332,
+      "tag": "🇹🇼 台湾1 Hinet家宽",
+      "tls": {
+        "enabled": true,
+        "insecure": false
+      },
+      "type": "hysteria2",
+      "up_mbps": 3000
+    },
+    {
+      "down_mbps": 3000,
+      "obfs": null,
+      "password": "8fde89b1-ceb0-4262-8591-82c121317a17",
+      "server": "surfboard-tw.aisu.cyou",
+      "server_port": 12037,
+      "tag": "🇹🇼 台湾2 Hinet家宽",
+      "tls": {
+        "enabled": true,
+        "insecure": false
+      },
+      "type": "hysteria2",
+      "up_mbps": 3000
+    },
+    {
+      "down_mbps": 3000,
+      "obfs": null,
+      "password": "8fde89b1-ceb0-4262-8591-82c121317a17",
+      "server": "surfboard-tw.aisu.cyou",
+      "server_port": 12764,
+      "tag": "🇹🇼 台湾3 Hinet家宽",
+      "tls": {
+        "enabled": true,
+        "insecure": false
+      },
+      "type": "hysteria2",
+      "up_mbps": 3000
+    },
+    {
+      "down_mbps": 3000,
+      "obfs": null,
+      "password": "8fde89b1-ceb0-4262-8591-82c121317a17",
+      "server": "surfboard-tw.aisu.cyou",
+      "server_port": 12007,
+      "tag": "🇹🇼 台湾4 Hinet家宽",
+      "tls": {
+        "enabled": true,
+        "insecure": false
+      },
+      "type": "hysteria2",
+      "up_mbps": 3000
+    },
+    {
+      "down_mbps": 3000,
+      "obfs": null,
+      "password": "8fde89b1-ceb0-4262-8591-82c121317a17",
+      "server": "surfboard-jp.aisu.cyou",
+      "server_port": 12117,
+      "tag": "🇯🇵 日本1 三网优化",
+      "tls": {
+        "enabled": true,
+        "insecure": false
+      },
+      "type": "hysteria2",
+      "up_mbps": 3000
+    },
+    {
+      "down_mbps": 3000,
+      "obfs": null,
+      "password": "8fde89b1-ceb0-4262-8591-82c121317a17",
+      "server": "surfboard-jp.aisu.cyou",
+      "server_port": 12205,
+      "tag": "🇯🇵 日本2 三网优化",
+      "tls": {
+        "enabled": true,
+        "insecure": false
+      },
+      "type": "hysteria2",
+      "up_mbps": 3000
+    },
+    {
+      "down_mbps": 3000,
+      "obfs": null,
+      "password": "8fde89b1-ceb0-4262-8591-82c121317a17",
+      "server": "surfboard-jp.aisu.cyou",
+      "server_port": 12026,
+      "tag": "🇯🇵 日本3 三网优化",
+      "tls": {
+        "enabled": true,
+        "insecure": false
+      },
+      "type": "hysteria2",
+      "up_mbps": 3000
+    },
+    {
+      "down_mbps": 3000,
+      "obfs": null,
+      "password": "8fde89b1-ceb0-4262-8591-82c121317a17",
+      "server": "surfboard-jp.aisu.cyou",
+      "server_port": 12626,
+      "tag": "🇯🇵 日本4 三网优化",
+      "tls": {
+        "enabled": true,
+        "insecure": false
+      },
+      "type": "hysteria2",
+      "up_mbps": 3000
+    },
+    {
+      "down_mbps": 3000,
+      "obfs": null,
+      "password": "8fde89b1-ceb0-4262-8591-82c121317a17",
+      "server": "surfboard-kr.aisu.cyou",
+      "server_port": 12098,
+      "tag": "🇰🇷 韩国1 三网优化",
+      "tls": {
+        "enabled": true,
+        "insecure": false
+      },
+      "type": "hysteria2",
+      "up_mbps": 3000
+    },
+    {
+      "down_mbps": 3000,
+      "obfs": null,
+      "password": "8fde89b1-ceb0-4262-8591-82c121317a17",
+      "server": "surfboard-kr.aisu.cyou",
+      "server_port": 12656,
+      "tag": "🇰🇷 韩国2 三网优化",
+      "tls": {
+        "enabled": true,
+        "insecure": false
+      },
+      "type": "hysteria2",
+      "up_mbps": 3000
+    },
+    {
+      "down_mbps": 3000,
+      "obfs": null,
+      "password": "8fde89b1-ceb0-4262-8591-82c121317a17",
+      "server": "surfboard-kr.aisu.cyou",
+      "server_port": 12107,
+      "tag": "🇰🇷 韩国3 三网优化",
+      "tls": {
+        "enabled": true,
+        "insecure": false
+      },
+      "type": "hysteria2",
+      "up_mbps": 3000
+    },
+    {
+      "down_mbps": 3000,
+      "obfs": null,
+      "password": "8fde89b1-ceb0-4262-8591-82c121317a17",
+      "server": "surfboard-kr.aisu.cyou",
+      "server_port": 12127,
+      "tag": "🇰🇷 韩国4 三网优化",
+      "tls": {
+        "enabled": true,
+        "insecure": false
+      },
+      "type": "hysteria2",
+      "up_mbps": 3000
+    },
+    {
+      "down_mbps": 3000,
+      "obfs": null,
+      "password": "8fde89b1-ceb0-4262-8591-82c121317a17",
+      "server": "surfboard-sg.aisu.cyou",
+      "server_port": 12219,
+      "tag": "🇸🇬 新加坡1 三网优化",
+      "tls": {
+        "enabled": true,
+        "insecure": false
+      },
+      "type": "hysteria2",
+      "up_mbps": 3000
+    },
+    {
+      "down_mbps": 3000,
+      "obfs": null,
+      "password": "8fde89b1-ceb0-4262-8591-82c121317a17",
+      "server": "surfboard-sg.aisu.cyou",
+      "server_port": 12938,
+      "tag": "🇸🇬 新加坡2 三网优化",
+      "tls": {
+        "enabled": true,
+        "insecure": false
+      },
+      "type": "hysteria2",
+      "up_mbps": 3000
+    },
+    {
+      "down_mbps": 3000,
+      "obfs": null,
+      "password": "8fde89b1-ceb0-4262-8591-82c121317a17",
+      "server": "surfboard-sg.aisu.cyou",
+      "server_port": 12685,
+      "tag": "🇸🇬 新加坡3 三网优化",
+      "tls": {
+        "enabled": true,
+        "insecure": false
+      },
+      "type": "hysteria2",
+      "up_mbps": 3000
+    },
+    {
+      "down_mbps": 3000,
+      "obfs": null,
+      "password": "8fde89b1-ceb0-4262-8591-82c121317a17",
+      "server": "surfboard-sg.aisu.cyou",
+      "server_port": 12586,
+      "tag": "🇸🇬 新加坡4 三网优化",
+      "tls": {
+        "enabled": true,
+        "insecure": false
+      },
+      "type": "hysteria2",
+      "up_mbps": 3000
+    },
+    {
+      "down_mbps": 3000,
+      "obfs": null,
+      "password": "8fde89b1-ceb0-4262-8591-82c121317a17",
+      "server": "surfboard-us.aisu.cyou",
+      "server_port": 12988,
+      "tag": "🇺🇸 美国1 三网优化",
+      "tls": {
+        "enabled": true,
+        "insecure": false
+      },
+      "type": "hysteria2",
+      "up_mbps": 3000
+    },
+    {
+      "down_mbps": 3000,
+      "obfs": null,
+      "password": "8fde89b1-ceb0-4262-8591-82c121317a17",
+      "server": "surfboard-us.aisu.cyou",
+      "server_port": 12059,
+      "tag": "🇺🇸 美国2 三网优化",
+      "tls": {
+        "enabled": true,
+        "insecure": false
+      },
+      "type": "hysteria2",
+      "up_mbps": 3000
+    },
+    {
+      "down_mbps": 3000,
+      "obfs": null,
+      "password": "8fde89b1-ceb0-4262-8591-82c121317a17",
+      "server": "surfboard-us.aisu.cyou",
+      "server_port": 12720,
+      "tag": "🇺🇸 美国3 三网优化",
+      "tls": {
+        "enabled": true,
+        "insecure": false
+      },
+      "type": "hysteria2",
+      "up_mbps": 3000
+    },
+    {
+      "down_mbps": 3000,
+      "obfs": null,
+      "password": "8fde89b1-ceb0-4262-8591-82c121317a17",
+      "server": "surfboard-us.aisu.cyou",
+      "server_port": 12470,
+      "tag": "🇺🇸 美国4 三网优化",
+      "tls": {
+        "enabled": true,
+        "insecure": false
+      },
+      "type": "hysteria2",
+      "up_mbps": 3000
+    },
+    {
+      "down_mbps": 3000,
+      "obfs": null,
+      "password": "8fde89b1-ceb0-4262-8591-82c121317a17",
+      "server": "surfboard-ca.aisu.cyou",
+      "server_port": 12626,
+      "tag": "🇨🇦 加拿大1 三网优化",
+      "tls": {
+        "enabled": true,
+        "insecure": false
+      },
+      "type": "hysteria2",
+      "up_mbps": 3000
+    },
+    {
+      "down_mbps": 3000,
+      "obfs": null,
+      "password": "8fde89b1-ceb0-4262-8591-82c121317a17",
+      "server": "surfboard-ca.aisu.cyou",
+      "server_port": 12583,
+      "tag": "🇨🇦 加拿大2 三网优化",
+      "tls": {
+        "enabled": true,
+        "insecure": false
+      },
+      "type": "hysteria2",
+      "up_mbps": 3000
+    },
+    {
+      "down_mbps": 3000,
+      "obfs": null,
+      "password": "8fde89b1-ceb0-4262-8591-82c121317a17",
+      "server": "surfboard-ca.aisu.cyou",
+      "server_port": 12256,
+      "tag": "🇨🇦 加拿大3 三网优化",
+      "tls": {
+        "enabled": true,
+        "insecure": false
+      },
+      "type": "hysteria2",
+      "up_mbps": 3000
+    },
+    {
+      "down_mbps": 3000,
+      "obfs": null,
+      "password": "8fde89b1-ceb0-4262-8591-82c121317a17",
+      "server": "surfboard-ca.aisu.cyou",
+      "server_port": 12723,
+      "tag": "🇨🇦 加拿大4 三网优化",
+      "tls": {
+        "enabled": true,
+        "insecure": false
+      },
+      "type": "hysteria2",
+      "up_mbps": 3000
+    },
+    {
+      "down_mbps": 3000,
+      "obfs": null,
+      "password": "8fde89b1-ceb0-4262-8591-82c121317a17",
+      "server": "surfboard-uk.aisu.cyou",
+      "server_port": 12097,
+      "tag": "🇬🇧 英国1 三网优化",
+      "tls": {
+        "enabled": true,
+        "insecure": false
+      },
+      "type": "hysteria2",
+      "up_mbps": 3000
+    },
+    {
+      "down_mbps": 3000,
+      "obfs": null,
+      "password": "8fde89b1-ceb0-4262-8591-82c121317a17",
+      "server": "surfboard-uk.aisu.cyou",
+      "server_port": 12733,
+      "tag": "🇬🇧 英国2 三网优化",
+      "tls": {
+        "enabled": true,
+        "insecure": false
+      },
+      "type": "hysteria2",
+      "up_mbps": 3000
+    },
+    {
+      "down_mbps": 3000,
+      "obfs": null,
+      "password": "8fde89b1-ceb0-4262-8591-82c121317a17",
+      "server": "surfboard-uk.aisu.cyou",
+      "server_port": 12849,
+      "tag": "🇬🇧 英国3 三网优化",
+      "tls": {
+        "enabled": true,
+        "insecure": false
+      },
+      "type": "hysteria2",
+      "up_mbps": 3000
+    },
+    {
+      "down_mbps": 3000,
+      "obfs": null,
+      "password": "8fde89b1-ceb0-4262-8591-82c121317a17",
+      "server": "surfboard-uk.aisu.cyou",
+      "server_port": 12529,
+      "tag": "🇬🇧 英国4 三网优化",
+      "tls": {
+        "enabled": true,
+        "insecure": false
+      },
+      "type": "hysteria2",
+      "up_mbps": 3000
+    },
+    {
+      "down_mbps": 3000,
+      "obfs": null,
+      "password": "8fde89b1-ceb0-4262-8591-82c121317a17",
+      "server": "surfboard-fr.aisu.cyou",
+      "server_port": 12273,
+      "tag": "🇫🇷 法国1 三网优化",
+      "tls": {
+        "enabled": true,
+        "insecure": false
+      },
+      "type": "hysteria2",
+      "up_mbps": 3000
+    },
+    {
+      "down_mbps": 3000,
+      "obfs": null,
+      "password": "8fde89b1-ceb0-4262-8591-82c121317a17",
+      "server": "surfboard-fr.aisu.cyou",
+      "server_port": 12279,
+      "tag": "🇫🇷 法国2 三网优化",
+      "tls": {
+        "enabled": true,
+        "insecure": false
+      },
+      "type": "hysteria2",
+      "up_mbps": 3000
+    },
+    {
+      "down_mbps": 3000,
+      "obfs": null,
+      "password": "8fde89b1-ceb0-4262-8591-82c121317a17",
+      "server": "surfboard-fr.aisu.cyou",
+      "server_port": 12638,
+      "tag": "🇫🇷 法国3 三网优化",
+      "tls": {
+        "enabled": true,
+        "insecure": false
+      },
+      "type": "hysteria2",
+      "up_mbps": 3000
+    },
+    {
+      "down_mbps": 3000,
+      "obfs": null,
+      "password": "8fde89b1-ceb0-4262-8591-82c121317a17",
+      "server": "surfboard-fr.aisu.cyou",
+      "server_port": 12357,
+      "tag": "🇫🇷 法国4 三网优化",
+      "tls": {
+        "enabled": true,
+        "insecure": false
+      },
+      "type": "hysteria2",
+      "up_mbps": 3000
+    },
+    {
+      "down_mbps": 3000,
+      "obfs": null,
+      "password": "8fde89b1-ceb0-4262-8591-82c121317a17",
+      "server": "surfboard-de.aisu.cyou",
+      "server_port": 12817,
+      "tag": "🇩🇪 德国1 三网优化",
+      "tls": {
+        "enabled": true,
+        "insecure": false
+      },
+      "type": "hysteria2",
+      "up_mbps": 3000
+    },
+    {
+      "down_mbps": 3000,
+      "obfs": null,
+      "password": "8fde89b1-ceb0-4262-8591-82c121317a17",
+      "server": "surfboard-de.aisu.cyou",
+      "server_port": 12558,
+      "tag": "🇩🇪 德国2 三网优化",
+      "tls": {
+        "enabled": true,
+        "insecure": false
+      },
+      "type": "hysteria2",
+      "up_mbps": 3000
+    },
+    {
+      "down_mbps": 3000,
+      "obfs": null,
+      "password": "8fde89b1-ceb0-4262-8591-82c121317a17",
+      "server": "surfboard-de.aisu.cyou",
+      "server_port": 12006,
+      "tag": "🇩🇪 德国3 三网优化",
+      "tls": {
+        "enabled": true,
+        "insecure": false
+      },
+      "type": "hysteria2",
+      "up_mbps": 3000
+    },
+    {
+      "down_mbps": 3000,
+      "obfs": null,
+      "password": "8fde89b1-ceb0-4262-8591-82c121317a17",
+      "server": "surfboard-de.aisu.cyou",
+      "server_port": 12238,
+      "tag": "🇩🇪 德国4 三网优化",
+      "tls": {
+        "enabled": true,
+        "insecure": false
+      },
+      "type": "hysteria2",
+      "up_mbps": 3000
+    },
+    {
+      "tag": "select",
+      "type": "selector",
+      "default": "urltest",
+      "outbounds": [
+        "urltest",
+        "剩余流量：477.75 GB",
+        "距离下次重置剩余：11 天",
+        "套餐到期：2025-03-27",
+        "官网：aisu.me",
+        "群组：@aisuchat",
+        "🇭🇰 香港1 原生ip",
+        "🇭🇰 香港2 解锁流媒体",
+        "🇭🇰 香港3 原生ip",
+        "🇭🇰 香港4 解锁流媒体",
+        "🇹🇼 台湾1 原生ip",
+        "🇹🇼 台湾2 解锁流媒体",
+        "🇹🇼 台湾3 原生ip",
+        "🇹🇼 台湾4 解锁流媒体",
+        "🇭🇰 香港1 HKT家宽",
+        "🇭🇰 香港2 HKT家宽",
+        "🇭🇰 香港3 HKT家宽",
+        "🇭🇰 香港4 HKT家宽",
+        "🇹🇼 台湾1 Hinet家宽",
+        "🇹🇼 台湾2 Hinet家宽",
+        "🇹🇼 台湾3 Hinet家宽",
+        "🇹🇼 台湾4 Hinet家宽",
+        "🇯🇵 日本1 三网优化",
+        "🇯🇵 日本2 三网优化",
+        "🇯🇵 日本3 三网优化",
+        "🇯🇵 日本4 三网优化",
+        "🇰🇷 韩国1 三网优化",
+        "🇰🇷 韩国2 三网优化",
+        "🇰🇷 韩国3 三网优化",
+        "🇰🇷 韩国4 三网优化",
+        "🇸🇬 新加坡1 三网优化",
+        "🇸🇬 新加坡2 三网优化",
+        "🇸🇬 新加坡3 三网优化",
+        "🇸🇬 新加坡4 三网优化",
+        "🇺🇸 美国1 三网优化",
+        "🇺🇸 美国2 三网优化",
+        "🇺🇸 美国3 三网优化",
+        "🇺🇸 美国4 三网优化",
+        "🇨🇦 加拿大1 三网优化",
+        "🇨🇦 加拿大2 三网优化",
+        "🇨🇦 加拿大3 三网优化",
+        "🇨🇦 加拿大4 三网优化",
+        "🇬🇧 英国1 三网优化",
+        "🇬🇧 英国2 三网优化",
+        "🇬🇧 英国3 三网优化",
+        "🇬🇧 英国4 三网优化",
+        "🇫🇷 法国1 三网优化",
+        "🇫🇷 法国2 三网优化",
+        "🇫🇷 法国3 三网优化",
+        "🇫🇷 法国4 三网优化",
+        "🇩🇪 德国1 三网优化",
+        "🇩🇪 德国2 三网优化",
+        "🇩🇪 德国3 三网优化",
+        "🇩🇪 德国4 三网优化"
+      ]
+    },
+    {
+      "tag": "urltest",
+      "type": "urltest",
+      "outbounds": [
+        "剩余流量：477.75 GB",
+        "距离下次重置剩余：11 天",
+        "套餐到期：2025-03-27",
+        "官网：aisu.me",
+        "群组：@aisuchat",
+        "🇭🇰 香港1 原生ip",
+        "🇭🇰 香港2 解锁流媒体",
+        "🇭🇰 香港3 原生ip",
+        "🇭🇰 香港4 解锁流媒体",
+        "🇹🇼 台湾1 原生ip",
+        "🇹🇼 台湾2 解锁流媒体",
+        "🇹🇼 台湾3 原生ip",
+        "🇹🇼 台湾4 解锁流媒体",
+        "🇭🇰 香港1 HKT家宽",
+        "🇭🇰 香港2 HKT家宽",
+        "🇭🇰 香港3 HKT家宽",
+        "🇭🇰 香港4 HKT家宽",
+        "🇹🇼 台湾1 Hinet家宽",
+        "🇹🇼 台湾2 Hinet家宽",
+        "🇹🇼 台湾3 Hinet家宽",
+        "🇹🇼 台湾4 Hinet家宽",
+        "🇯🇵 日本1 三网优化",
+        "🇯🇵 日本2 三网优化",
+        "🇯🇵 日本3 三网优化",
+        "🇯🇵 日本4 三网优化",
+        "🇰🇷 韩国1 三网优化",
+        "🇰🇷 韩国2 三网优化",
+        "🇰🇷 韩国3 三网优化",
+        "🇰🇷 韩国4 三网优化",
+        "🇸🇬 新加坡1 三网优化",
+        "🇸🇬 新加坡2 三网优化",
+        "🇸🇬 新加坡3 三网优化",
+        "🇸🇬 新加坡4 三网优化",
+        "🇺🇸 美国1 三网优化",
+        "🇺🇸 美国2 三网优化",
+        "🇺🇸 美国3 三网优化",
+        "🇺🇸 美国4 三网优化",
+        "🇨🇦 加拿大1 三网优化",
+        "🇨🇦 加拿大2 三网优化",
+        "🇨🇦 加拿大3 三网优化",
+        "🇨🇦 加拿大4 三网优化",
+        "🇬🇧 英国1 三网优化",
+        "🇬🇧 英国2 三网优化",
+        "🇬🇧 英国3 三网优化",
+        "🇬🇧 英国4 三网优化",
+        "🇫🇷 法国1 三网优化",
+        "🇫🇷 法国2 三网优化",
+        "🇫🇷 法国3 三网优化",
+        "🇫🇷 法国4 三网优化",
+        "🇩🇪 德国1 三网优化",
+        "🇩🇪 德国2 三网优化",
+        "🇩🇪 德国3 三网优化",
+        "🇩🇪 德国4 三网优化"
+      ]
+    },
+    {
+      "tag": "chatgpt",
+      "type": "selector",
+      "outbounds": [
+        "剩余流量：477.75 GB",
+        "距离下次重置剩余：11 天",
+        "套餐到期：2025-03-27",
+        "官网：aisu.me",
+        "群组：@aisuchat",
+        "🇭🇰 香港1 原生ip",
+        "🇭🇰 香港2 解锁流媒体",
+        "🇭🇰 香港3 原生ip",
+        "🇭🇰 香港4 解锁流媒体",
+        "🇹🇼 台湾1 原生ip",
+        "🇹🇼 台湾2 解锁流媒体",
+        "🇹🇼 台湾3 原生ip",
+        "🇹🇼 台湾4 解锁流媒体",
+        "🇭🇰 香港1 HKT家宽",
+        "🇭🇰 香港2 HKT家宽",
+        "🇭🇰 香港3 HKT家宽",
+        "🇭🇰 香港4 HKT家宽",
+        "🇹🇼 台湾1 Hinet家宽",
+        "🇹🇼 台湾2 Hinet家宽",
+        "🇹🇼 台湾3 Hinet家宽",
+        "🇹🇼 台湾4 Hinet家宽",
+        "🇯🇵 日本1 三网优化",
+        "🇯🇵 日本2 三网优化",
+        "🇯🇵 日本3 三网优化",
+        "🇯🇵 日本4 三网优化",
+        "🇰🇷 韩国1 三网优化",
+        "🇰🇷 韩国2 三网优化",
+        "🇰🇷 韩国3 三网优化",
+        "🇰🇷 韩国4 三网优化",
+        "🇸🇬 新加坡1 三网优化",
+        "🇸🇬 新加坡2 三网优化",
+        "🇸🇬 新加坡3 三网优化",
+        "🇸🇬 新加坡4 三网优化",
+        "🇺🇸 美国1 三网优化",
+        "🇺🇸 美国2 三网优化",
+        "🇺🇸 美国3 三网优化",
+        "🇺🇸 美国4 三网优化",
+        "🇨🇦 加拿大1 三网优化",
+        "🇨🇦 加拿大2 三网优化",
+        "🇨🇦 加拿大3 三网优化",
+        "🇨🇦 加拿大4 三网优化",
+        "🇬🇧 英国1 三网优化",
+        "🇬🇧 英国2 三网优化",
+        "🇬🇧 英国3 三网优化",
+        "🇬🇧 英国4 三网优化",
+        "🇫🇷 法国1 三网优化",
+        "🇫🇷 法国2 三网优化",
+        "🇫🇷 法国3 三网优化",
+        "🇫🇷 法国4 三网优化",
+        "🇩🇪 德国1 三网优化",
+        "🇩🇪 德国2 三网优化",
+        "🇩🇪 德国3 三网优化",
+        "🇩🇪 德国4 三网优化"
+      ]
+    },
+    {
+      "tag": "direct",
+      "type": "direct"
+    }
+  ],
+  "route": {
+    "rules": [
+      {
+        "action": "sniff"
+      },
+      {
+        "protocol": "dns",
+        "action": "hijack-dns"
+      },
+      {
+        "action": "resolve",
+        "strategy": "prefer_ipv4"
+      },
+      {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "clash_mode": "Global"
+          }
+        ],
+        "outbound": "select"
+      },
+      {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "package_name": "com.openai.chatgpt"
+          },
+          {
+            "domain_suffix": [
+              "gemini.google.com",
+              "proactivebackend-pa.googleapis.com",
+              "bing.com",
+              "bing.net",
+              "bingapis.com"
+            ]
+          }
+        ],
+        "outbound": "chatgpt"
+      },
+      {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "clash_mode": "Direct"
+          },
+          {
+            "ip_is_private": true
+          },
+          {
+            "domain_keyword": [
+              "ushd.xmsl.org",
+              "cf.gtlx.org",
+              "mtalk.google.com"
+            ]
+          },
+          {
+            "port": [
+              23301,
+              22101,
+              22102,
+              20501,
+              21601,
+              21602,
+              21603,
+              21604,
+              21605,
+              21606
+            ]
+          },
+          {
+            "rule_set": [
+              "geoip-cn",
+              "geosite-cn"
+            ]
+          }
+        ],
+        "outbound": "direct"
+      }
+    ],
+    "rule_set": [
+      {
+        "type": "remote",
+        "tag": "geoip-cn",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/SagerNet/sing-geoip/rule-set/geoip-cn.srs",
+        "download_detour": "select"
+      },
+      {
+        "type": "remote",
+        "tag": "geosite-cn",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs",
+        "download_detour": "select"
+      },
+      {
+        "type": "remote",
+        "tag": "AdGuardSDNSFilter",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/xmdhs/sing-box-ruleset/rule-set/AdGuardSDNSFilterSingBox.srs",
+        "download_detour": "select"
+      }
+    ],
+    "final": "select",
+    "default_domain_resolver": "dns_direct",
+    "auto_detect_interface": true,
+    "override_android_vpn": true
+  },
+  "experimental": {
+    "cache_file": {
+      "enabled": true
+    },
+    "clash_api": {
+      "external_controller": "127.0.0.1:9090"
+    }
+  }
+}
