@@ -75,8 +75,6 @@
   "inbounds": [
     {
       "type": "tun",
-      "tag": "tun-in",
-      "mtu": 9000,
       "address": [
         "172.18.0.1/30",
         "fdfe:dcba:9876::1/126"
@@ -678,7 +676,7 @@
       }
     ],
     "final": "select",
-    "default_domain_resolver": "dns_proxy",
+    "default_domain_resolver": "dns_direct",
     "auto_detect_interface": true,
     "override_android_vpn": true
   },
