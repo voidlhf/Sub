@@ -75,26 +75,14 @@
   "inbounds": [
     {
       "type": "tun",
+      "tag": "tun-in",
       "mtu": 9000,
       "address": [
         "172.18.0.1/30",
         "fdfe:dcba:9876::1/126"
       ],
       "auto_route": true,
-      "strict_route": true,
-      "endpoint_independent_nat": true
-    },
-    {
-      "type": "socks",
-      "tag": "socks-in",
-      "listen": "127.0.0.1",
-      "listen_port": 2333
-    },
-    {
-      "type": "mixed",
-      "tag": "mixed-in",
-      "listen": "127.0.0.1",
-      "listen_port": 2334
+      "strict_route": true
     }
   ],
   "outbounds": [
@@ -103,7 +91,7 @@
       "obfs": null,
       "password": "cef53745-597b-4531-a0bf-85ce586b5ec4",
       "server": "hk.xn--2vxn29amga.com",
-      "server_port": 21151,
+      "server_port": 21159,
       "tag": "剩余流量：478.15 GB",
       "tls": {
         "enabled": true,
@@ -117,7 +105,7 @@
       "obfs": null,
       "password": "cef53745-597b-4531-a0bf-85ce586b5ec4",
       "server": "hk.xn--2vxn29amga.com",
-      "server_port": 21151,
+      "server_port": 21159,
       "tag": "距离下次重置剩余：4 天",
       "tls": {
         "enabled": true,
@@ -131,7 +119,7 @@
       "obfs": null,
       "password": "cef53745-597b-4531-a0bf-85ce586b5ec4",
       "server": "hk.xn--2vxn29amga.com",
-      "server_port": 21151,
+      "server_port": 21159,
       "tag": "套餐到期：2025-03-20",
       "tls": {
         "enabled": true,
@@ -145,7 +133,7 @@
       "obfs": null,
       "password": "cef53745-597b-4531-a0bf-85ce586b5ec4",
       "server": "hk.xn--2vxn29amga.com",
-      "server_port": 21151,
+      "server_port": 21159,
       "tag": "🇭🇰香港1",
       "tls": {
         "enabled": true,
@@ -159,7 +147,7 @@
       "obfs": null,
       "password": "cef53745-597b-4531-a0bf-85ce586b5ec4",
       "server": "hk.xn--2vxn29amga.com",
-      "server_port": 21165,
+      "server_port": 21188,
       "tag": "🇭🇰香港2",
       "tls": {
         "enabled": true,
@@ -173,7 +161,7 @@
       "obfs": null,
       "password": "cef53745-597b-4531-a0bf-85ce586b5ec4",
       "server": "hk.xn--2vxn29amga.com",
-      "server_port": 21174,
+      "server_port": 21199,
       "tag": "🇭🇰香港3",
       "tls": {
         "enabled": true,
@@ -187,7 +175,7 @@
       "obfs": null,
       "password": "cef53745-597b-4531-a0bf-85ce586b5ec4",
       "server": "hk.xn--2vxn29amga.com",
-      "server_port": 21181,
+      "server_port": 21190,
       "tag": "🇭🇰香港4",
       "tls": {
         "enabled": true,
@@ -201,7 +189,7 @@
       "obfs": null,
       "password": "cef53745-597b-4531-a0bf-85ce586b5ec4",
       "server": "us.xn--2vxn29amga.com",
-      "server_port": 21169,
+      "server_port": 21109,
       "tag": "🇺🇸美国1",
       "tls": {
         "enabled": true,
@@ -215,7 +203,7 @@
       "obfs": null,
       "password": "cef53745-597b-4531-a0bf-85ce586b5ec4",
       "server": "us.xn--2vxn29amga.com",
-      "server_port": 21161,
+      "server_port": 21180,
       "tag": "🇺🇸美国2",
       "tls": {
         "enabled": true,
@@ -229,7 +217,7 @@
       "obfs": null,
       "password": "cef53745-597b-4531-a0bf-85ce586b5ec4",
       "server": "us.xn--2vxn29amga.com",
-      "server_port": 21130,
+      "server_port": 21109,
       "tag": "🇺🇸美国3",
       "tls": {
         "enabled": true,
@@ -243,7 +231,7 @@
       "obfs": null,
       "password": "cef53745-597b-4531-a0bf-85ce586b5ec4",
       "server": "us.xn--2vxn29amga.com",
-      "server_port": 21140,
+      "server_port": 21187,
       "tag": "🇺🇸美国4",
       "tls": {
         "enabled": true,
@@ -257,7 +245,7 @@
       "obfs": null,
       "password": "cef53745-597b-4531-a0bf-85ce586b5ec4",
       "server": "jp.xn--2vxn29amga.com",
-      "server_port": 21178,
+      "server_port": 21186,
       "tag": "🇯🇵日本1",
       "tls": {
         "enabled": true,
@@ -271,7 +259,7 @@
       "obfs": null,
       "password": "cef53745-597b-4531-a0bf-85ce586b5ec4",
       "server": "jp.xn--2vxn29amga.com",
-      "server_port": 21127,
+      "server_port": 21155,
       "tag": "🇯🇵日本2",
       "tls": {
         "enabled": true,
@@ -285,7 +273,7 @@
       "obfs": null,
       "password": "cef53745-597b-4531-a0bf-85ce586b5ec4",
       "server": "jp.xn--2vxn29amga.com",
-      "server_port": 21160,
+      "server_port": 21107,
       "tag": "🇯🇵日本3",
       "tls": {
         "enabled": true,
@@ -299,7 +287,7 @@
       "obfs": null,
       "password": "cef53745-597b-4531-a0bf-85ce586b5ec4",
       "server": "jp.xn--2vxn29amga.com",
-      "server_port": 21180,
+      "server_port": 21193,
       "tag": "🇯🇵日本4",
       "tls": {
         "enabled": true,
@@ -313,7 +301,7 @@
       "obfs": null,
       "password": "cef53745-597b-4531-a0bf-85ce586b5ec4",
       "server": "sg.xn--2vxn29amga.com",
-      "server_port": 21187,
+      "server_port": 21105,
       "tag": "🇸🇬新加坡1",
       "tls": {
         "enabled": true,
@@ -327,7 +315,7 @@
       "obfs": null,
       "password": "cef53745-597b-4531-a0bf-85ce586b5ec4",
       "server": "sg.xn--2vxn29amga.com",
-      "server_port": 21151,
+      "server_port": 21119,
       "tag": "🇸🇬新加坡2",
       "tls": {
         "enabled": true,
@@ -341,7 +329,7 @@
       "obfs": null,
       "password": "cef53745-597b-4531-a0bf-85ce586b5ec4",
       "server": "sg.xn--2vxn29amga.com",
-      "server_port": 21121,
+      "server_port": 21180,
       "tag": "🇸🇬新加坡3",
       "tls": {
         "enabled": true,
@@ -355,7 +343,7 @@
       "obfs": null,
       "password": "cef53745-597b-4531-a0bf-85ce586b5ec4",
       "server": "sg.xn--2vxn29amga.com",
-      "server_port": 21134,
+      "server_port": 21142,
       "tag": "🇸🇬新加坡4",
       "tls": {
         "enabled": true,
@@ -369,7 +357,7 @@
       "obfs": null,
       "password": "cef53745-597b-4531-a0bf-85ce586b5ec4",
       "server": "lu.xn--2vxn29amga.com",
-      "server_port": 21190,
+      "server_port": 21127,
       "tag": "🇱🇺卢森堡1",
       "tls": {
         "enabled": true,
@@ -383,7 +371,7 @@
       "obfs": null,
       "password": "cef53745-597b-4531-a0bf-85ce586b5ec4",
       "server": "lu.xn--2vxn29amga.com",
-      "server_port": 21198,
+      "server_port": 21136,
       "tag": "🇱🇺卢森堡2",
       "tls": {
         "enabled": true,
@@ -397,7 +385,7 @@
       "obfs": null,
       "password": "cef53745-597b-4531-a0bf-85ce586b5ec4",
       "server": "lu.xn--2vxn29amga.com",
-      "server_port": 21133,
+      "server_port": 21141,
       "tag": "🇱🇺卢森堡3",
       "tls": {
         "enabled": true,
@@ -411,7 +399,7 @@
       "obfs": null,
       "password": "cef53745-597b-4531-a0bf-85ce586b5ec4",
       "server": "lu.xn--2vxn29amga.com",
-      "server_port": 21150,
+      "server_port": 21199,
       "tag": "🇱🇺卢森堡4",
       "tls": {
         "enabled": true,
@@ -620,9 +608,10 @@
         "download_detour": "select"
       }
     ],
-    "default_domain_resolver": "dns_direct",
     "final": "select",
-    "auto_detect_interface": true
+    "default_domain_resolver": "dns_proxy",
+    "auto_detect_interface": true,
+    "override_android_vpn": true
   },
   "experimental": {
     "cache_file": {

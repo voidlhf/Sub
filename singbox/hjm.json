@@ -75,26 +75,14 @@
   "inbounds": [
     {
       "type": "tun",
+      "tag": "tun-in",
       "mtu": 9000,
       "address": [
         "172.18.0.1/30",
         "fdfe:dcba:9876::1/126"
       ],
       "auto_route": true,
-      "strict_route": true,
-      "endpoint_independent_nat": true
-    },
-    {
-      "type": "socks",
-      "tag": "socks-in",
-      "listen": "127.0.0.1",
-      "listen_port": 2333
-    },
-    {
-      "type": "mixed",
-      "tag": "mixed-in",
-      "listen": "127.0.0.1",
-      "listen_port": 2334
+      "strict_route": true
     }
   ],
   "outbounds": [
@@ -102,57 +90,6 @@
       "server": "ffb1b1.c9d5a93f-a8bd-55d5.buzz",
       "server_port": 80,
       "tag": "官网：hajimi.icu",
-      "transport": {
-        "headers": {
-          "Host": [
-            "us01s.c9d5a93f-a8bd-55d5.buzz"
-          ]
-        },
-        "path": "/",
-        "type": "ws"
-      },
-      "type": "vmess",
-      "security": "auto",
-      "uuid": "53598401-31e1-4ce3-bb2e-6c00a8fc3e01"
-    },
-    {
-      "server": "ffb1b1.c9d5a93f-a8bd-55d5.buzz",
-      "server_port": 80,
-      "tag": "TG群组：@hajimigroup",
-      "transport": {
-        "headers": {
-          "Host": [
-            "us03s.c9d5a93f-a8bd-55d5.buzz"
-          ]
-        },
-        "path": "/",
-        "type": "ws"
-      },
-      "type": "vmess",
-      "security": "auto",
-      "uuid": "53598401-31e1-4ce3-bb2e-6c00a8fc3e01"
-    },
-    {
-      "server": "ffb1b1.c9d5a93f-a8bd-55d5.buzz",
-      "server_port": 80,
-      "tag": "节点全红检查是否流量已用完",
-      "transport": {
-        "headers": {
-          "Host": [
-            "jp04s.c9d5a93f-a8bd-55d5.buzz"
-          ]
-        },
-        "path": "/",
-        "type": "ws"
-      },
-      "type": "vmess",
-      "security": "auto",
-      "uuid": "53598401-31e1-4ce3-bb2e-6c00a8fc3e01"
-    },
-    {
-      "server": "ffb1b1.c9d5a93f-a8bd-55d5.buzz",
-      "server_port": 80,
-      "tag": "直连订阅每日早更，注意更新你的本地订阅",
       "transport": {
         "headers": {
           "Host": [
@@ -169,11 +106,62 @@
     {
       "server": "ffb1b1.c9d5a93f-a8bd-55d5.buzz",
       "server_port": 80,
-      "tag": "剩余流量：1976.92 GB",
+      "tag": "TG群组：@hajimigroup",
       "transport": {
         "headers": {
           "Host": [
-            "jp04s.c9d5a93f-a8bd-55d5.buzz"
+            "hk02s.c9d5a93f-a8bd-55d5.buzz"
+          ]
+        },
+        "path": "/",
+        "type": "ws"
+      },
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "53598401-31e1-4ce3-bb2e-6c00a8fc3e01"
+    },
+    {
+      "server": "ffb1b1.c9d5a93f-a8bd-55d5.buzz",
+      "server_port": 80,
+      "tag": "节点全红检查是否流量已用完",
+      "transport": {
+        "headers": {
+          "Host": [
+            "hk01s.c9d5a93f-a8bd-55d5.buzz"
+          ]
+        },
+        "path": "/",
+        "type": "ws"
+      },
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "53598401-31e1-4ce3-bb2e-6c00a8fc3e01"
+    },
+    {
+      "server": "ffb1b1.c9d5a93f-a8bd-55d5.buzz",
+      "server_port": 80,
+      "tag": "直连订阅每日早更，注意更新你的本地订阅",
+      "transport": {
+        "headers": {
+          "Host": [
+            "sg03s.c9d5a93f-a8bd-55d5.buzz"
+          ]
+        },
+        "path": "/",
+        "type": "ws"
+      },
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "53598401-31e1-4ce3-bb2e-6c00a8fc3e01"
+    },
+    {
+      "server": "ffb1b1.c9d5a93f-a8bd-55d5.buzz",
+      "server_port": 80,
+      "tag": "剩余流量：1969.21 GB",
+      "transport": {
+        "headers": {
+          "Host": [
+            "hk04s.c9d5a93f-a8bd-55d5.buzz"
           ]
         },
         "path": "/",
@@ -190,7 +178,7 @@
       "transport": {
         "headers": {
           "Host": [
-            "sg03s.c9d5a93f-a8bd-55d5.buzz"
+            "kr01s.c9d5a93f-a8bd-55d5.buzz"
           ]
         },
         "path": "/",
@@ -550,7 +538,7 @@
         "TG群组：@hajimigroup",
         "节点全红检查是否流量已用完",
         "直连订阅每日早更，注意更新你的本地订阅",
-        "剩余流量：1976.92 GB",
+        "剩余流量：1969.21 GB",
         "订阅到期：2124-06-09",
         "?? 香港 - 1",
         "?? 新加坡 - 1",
@@ -582,7 +570,7 @@
         "TG群组：@hajimigroup",
         "节点全红检查是否流量已用完",
         "直连订阅每日早更，注意更新你的本地订阅",
-        "剩余流量：1976.92 GB",
+        "剩余流量：1969.21 GB",
         "订阅到期：2124-06-09",
         "?? 香港 - 1",
         "?? 新加坡 - 1",
@@ -614,7 +602,7 @@
         "TG群组：@hajimigroup",
         "节点全红检查是否流量已用完",
         "直连订阅每日早更，注意更新你的本地订阅",
-        "剩余流量：1976.92 GB",
+        "剩余流量：1969.21 GB",
         "订阅到期：2124-06-09",
         "?? 香港 - 1",
         "?? 新加坡 - 1",
@@ -749,9 +737,10 @@
         "download_detour": "select"
       }
     ],
-    "default_domain_resolver": "dns_direct",
     "final": "select",
-    "auto_detect_interface": true
+    "default_domain_resolver": "dns_proxy",
+    "auto_detect_interface": true,
+    "override_android_vpn": true
   },
   "experimental": {
     "cache_file": {

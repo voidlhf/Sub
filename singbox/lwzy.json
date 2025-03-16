@@ -75,26 +75,14 @@
   "inbounds": [
     {
       "type": "tun",
+      "tag": "tun-in",
       "mtu": 9000,
       "address": [
         "172.18.0.1/30",
         "fdfe:dcba:9876::1/126"
       ],
       "auto_route": true,
-      "strict_route": true,
-      "endpoint_independent_nat": true
-    },
-    {
-      "type": "socks",
-      "tag": "socks-in",
-      "listen": "127.0.0.1",
-      "listen_port": 2333
-    },
-    {
-      "type": "mixed",
-      "tag": "mixed-in",
-      "listen": "127.0.0.1",
-      "listen_port": 2334
+      "strict_route": true
     }
   ],
   "outbounds": [
@@ -103,7 +91,7 @@
       "security": "auto",
       "server": "5.39.252.72",
       "server_port": 20015,
-      "tag": "剩余流量：958.28 GB",
+      "tag": "剩余流量：958.2 GB",
       "transport": {
         "type": "ws"
       },
@@ -485,7 +473,7 @@
       "default": "urltest",
       "outbounds": [
         "urltest",
-        "剩余流量：958.28 GB",
+        "剩余流量：958.2 GB",
         "距离下次重置剩余：15 天",
         "套餐到期：2025-03-21",
         "德国-法兰克福-001",
@@ -517,7 +505,7 @@
       "tag": "urltest",
       "type": "urltest",
       "outbounds": [
-        "剩余流量：958.28 GB",
+        "剩余流量：958.2 GB",
         "距离下次重置剩余：15 天",
         "套餐到期：2025-03-21",
         "德国-法兰克福-001",
@@ -549,7 +537,7 @@
       "tag": "chatgpt",
       "type": "selector",
       "outbounds": [
-        "剩余流量：958.28 GB",
+        "剩余流量：958.2 GB",
         "距离下次重置剩余：15 天",
         "套餐到期：2025-03-21",
         "德国-法兰克福-001",
@@ -688,9 +676,10 @@
         "download_detour": "select"
       }
     ],
-    "default_domain_resolver": "dns_direct",
     "final": "select",
-    "auto_detect_interface": true
+    "default_domain_resolver": "dns_proxy",
+    "auto_detect_interface": true,
+    "override_android_vpn": true
   },
   "experimental": {
     "cache_file": {

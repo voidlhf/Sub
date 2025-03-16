@@ -75,26 +75,14 @@
   "inbounds": [
     {
       "type": "tun",
+      "tag": "tun-in",
       "mtu": 9000,
       "address": [
         "172.18.0.1/30",
         "fdfe:dcba:9876::1/126"
       ],
       "auto_route": true,
-      "strict_route": true,
-      "endpoint_independent_nat": true
-    },
-    {
-      "type": "socks",
-      "tag": "socks-in",
-      "listen": "127.0.0.1",
-      "listen_port": 2333
-    },
-    {
-      "type": "mixed",
-      "tag": "mixed-in",
-      "listen": "127.0.0.1",
-      "listen_port": 2334
+      "strict_route": true
     }
   ],
   "outbounds": [
@@ -103,7 +91,7 @@
       "obfs": null,
       "password": "930a68cb-7b5f-4859-a992-df447d1bbb53",
       "server": "xiaofeiji-us.sanguayun.com",
-      "server_port": 14012,
+      "server_port": 14665,
       "tag": "剩余流量：0",
       "tls": {
         "enabled": true,
@@ -117,7 +105,7 @@
       "obfs": null,
       "password": "930a68cb-7b5f-4859-a992-df447d1bbb53",
       "server": "xiaofeiji-us.sanguayun.com",
-      "server_port": 14012,
+      "server_port": 14665,
       "tag": "距离下次重置剩余：6 天",
       "tls": {
         "enabled": true,
@@ -131,7 +119,7 @@
       "obfs": null,
       "password": "930a68cb-7b5f-4859-a992-df447d1bbb53",
       "server": "xiaofeiji-us.sanguayun.com",
-      "server_port": 14012,
+      "server_port": 14665,
       "tag": "套餐到期：2025-03-22",
       "tls": {
         "enabled": true,
@@ -145,7 +133,7 @@
       "obfs": null,
       "password": "930a68cb-7b5f-4859-a992-df447d1bbb53",
       "server": "xiaofeiji-us.sanguayun.com",
-      "server_port": 14012,
+      "server_port": 14665,
       "tag": "🇺🇸 美国1",
       "tls": {
         "enabled": true,
@@ -159,7 +147,7 @@
       "obfs": null,
       "password": "930a68cb-7b5f-4859-a992-df447d1bbb53",
       "server": "xiaofeiji-us.sanguayun.com",
-      "server_port": 14167,
+      "server_port": 14498,
       "tag": "🇺🇸 美国2",
       "tls": {
         "enabled": true,
@@ -173,7 +161,7 @@
       "obfs": null,
       "password": "930a68cb-7b5f-4859-a992-df447d1bbb53",
       "server": "xiaofeiji-us.sanguayun.com",
-      "server_port": 14899,
+      "server_port": 14994,
       "tag": "🇺🇸 美国3",
       "tls": {
         "enabled": true,
@@ -187,7 +175,7 @@
       "obfs": null,
       "password": "930a68cb-7b5f-4859-a992-df447d1bbb53",
       "server": "xiaofeiji-us.sanguayun.com",
-      "server_port": 14537,
+      "server_port": 14753,
       "tag": "🇺🇸 美国4",
       "tls": {
         "enabled": true,
@@ -201,7 +189,7 @@
       "obfs": null,
       "password": "930a68cb-7b5f-4859-a992-df447d1bbb53",
       "server": "xiaofeiji-hk.sanguayun.com",
-      "server_port": 14130,
+      "server_port": 14776,
       "tag": "🇭🇰 香港1",
       "tls": {
         "enabled": true,
@@ -215,7 +203,7 @@
       "obfs": null,
       "password": "930a68cb-7b5f-4859-a992-df447d1bbb53",
       "server": "xiaofeiji-hk.sanguayun.com",
-      "server_port": 14800,
+      "server_port": 14146,
       "tag": "🇭🇰 香港2",
       "tls": {
         "enabled": true,
@@ -229,7 +217,7 @@
       "obfs": null,
       "password": "930a68cb-7b5f-4859-a992-df447d1bbb53",
       "server": "xiaofeiji-hk.sanguayun.com",
-      "server_port": 14064,
+      "server_port": 14754,
       "tag": "🇭🇰 香港3",
       "tls": {
         "enabled": true,
@@ -243,7 +231,7 @@
       "obfs": null,
       "password": "930a68cb-7b5f-4859-a992-df447d1bbb53",
       "server": "xiaofeiji-hk.sanguayun.com",
-      "server_port": 14241,
+      "server_port": 14374,
       "tag": "🇭🇰 香港4",
       "tls": {
         "enabled": true,
@@ -257,7 +245,7 @@
       "obfs": null,
       "password": "930a68cb-7b5f-4859-a992-df447d1bbb53",
       "server": "xiaofeiji-jp.sanguayun.com",
-      "server_port": 14462,
+      "server_port": 14858,
       "tag": "🇯🇵 日本1",
       "tls": {
         "enabled": true,
@@ -271,7 +259,7 @@
       "obfs": null,
       "password": "930a68cb-7b5f-4859-a992-df447d1bbb53",
       "server": "xiaofeiji-jp.sanguayun.com",
-      "server_port": 14379,
+      "server_port": 14767,
       "tag": "🇯🇵 日本2",
       "tls": {
         "enabled": true,
@@ -285,7 +273,7 @@
       "obfs": null,
       "password": "930a68cb-7b5f-4859-a992-df447d1bbb53",
       "server": "xiaofeiji-jp.sanguayun.com",
-      "server_port": 14126,
+      "server_port": 14102,
       "tag": "🇯🇵 日本3",
       "tls": {
         "enabled": true,
@@ -299,7 +287,7 @@
       "obfs": null,
       "password": "930a68cb-7b5f-4859-a992-df447d1bbb53",
       "server": "xiaofeiji-jp.sanguayun.com",
-      "server_port": 14469,
+      "server_port": 14546,
       "tag": "🇯🇵 日本4",
       "tls": {
         "enabled": true,
@@ -313,7 +301,7 @@
       "obfs": null,
       "password": "930a68cb-7b5f-4859-a992-df447d1bbb53",
       "server": "xiaofeiji-nl.sanguayun.com",
-      "server_port": 14084,
+      "server_port": 14630,
       "tag": "🇳🇱 荷兰1",
       "tls": {
         "enabled": true,
@@ -327,7 +315,7 @@
       "obfs": null,
       "password": "930a68cb-7b5f-4859-a992-df447d1bbb53",
       "server": "xiaofeiji-nl.sanguayun.com",
-      "server_port": 14832,
+      "server_port": 14814,
       "tag": "🇳🇱 荷兰2",
       "tls": {
         "enabled": true,
@@ -341,7 +329,7 @@
       "obfs": null,
       "password": "930a68cb-7b5f-4859-a992-df447d1bbb53",
       "server": "xiaofeiji-nl.sanguayun.com",
-      "server_port": 14889,
+      "server_port": 14787,
       "tag": "🇳🇱 荷兰3",
       "tls": {
         "enabled": true,
@@ -355,7 +343,7 @@
       "obfs": null,
       "password": "930a68cb-7b5f-4859-a992-df447d1bbb53",
       "server": "xiaofeiji-nl.sanguayun.com",
-      "server_port": 14394,
+      "server_port": 14381,
       "tag": "🇳🇱 荷兰4",
       "tls": {
         "enabled": true,
@@ -552,9 +540,10 @@
         "download_detour": "select"
       }
     ],
-    "default_domain_resolver": "dns_direct",
     "final": "select",
-    "auto_detect_interface": true
+    "default_domain_resolver": "dns_proxy",
+    "auto_detect_interface": true,
+    "override_android_vpn": true
   },
   "experimental": {
     "cache_file": {

@@ -75,26 +75,14 @@
   "inbounds": [
     {
       "type": "tun",
+      "tag": "tun-in",
       "mtu": 9000,
       "address": [
         "172.18.0.1/30",
         "fdfe:dcba:9876::1/126"
       ],
       "auto_route": true,
-      "strict_route": true,
-      "endpoint_independent_nat": true
-    },
-    {
-      "type": "socks",
-      "tag": "socks-in",
-      "listen": "127.0.0.1",
-      "listen_port": 2333
-    },
-    {
-      "type": "mixed",
-      "tag": "mixed-in",
-      "listen": "127.0.0.1",
-      "listen_port": 2334
+      "strict_route": true
     }
   ],
   "outbounds": [
@@ -896,9 +884,10 @@
         "download_detour": "select"
       }
     ],
-    "default_domain_resolver": "dns_direct",
     "final": "select",
-    "auto_detect_interface": true
+    "default_domain_resolver": "dns_proxy",
+    "auto_detect_interface": true,
+    "override_android_vpn": true
   },
   "experimental": {
     "cache_file": {
