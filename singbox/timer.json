@@ -1,0 +1,1132 @@
+{
+  "log": {},
+  "dns": {
+    "servers": [
+      {
+        "tag": "dns_proxy",
+        "type": "https",
+        "server": "1.1.1.1",
+        "detour": "select"
+      },
+      {
+        "tag": "dns_direct",
+        "type": "https",
+        "server": "223.5.5.5",
+        "detour": "direct"
+      },
+      {
+        "tag": "dns_fakeip",
+        "type": "fakeip",
+        "inet4_range": "198.18.0.0/15",
+        "inet6_range": "fc00::/18"
+      }
+    ],
+    "rules": [
+      {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "query_type": "HTTPS"
+          },
+          {
+            "rule_set": [
+              "AdGuardSDNSFilter"
+            ]
+          }
+        ],
+        "action": "reject"
+      },
+      {
+        "query_type": [
+          "A",
+          "AAAA"
+        ],
+        "server": "dns_fakeip",
+        "rewrite_ttl": 1
+      },
+      {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "clash_mode": "Global"
+          }
+        ],
+        "server": "dns_proxy"
+      },
+      {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "clash_mode": "Direct"
+          },
+          {
+            "rule_set": "geosite-cn"
+          }
+        ],
+        "server": "dns_direct"
+      }
+    ],
+    "strategy": "prefer_ipv4",
+    "independent_cache": true
+  },
+  "inbounds": [
+    {
+      "type": "tun",
+      "address": [
+        "172.18.0.1/30",
+        "fdfe:dcba:9876::1/126"
+      ],
+      "auto_route": true,
+      "strict_route": true
+    }
+  ],
+  "outbounds": [
+    {
+      "tag": "🇦🇺 澳大利亚1 | ⬇️ 1.0MB/s",
+      "type": "vless",
+      "server": "45.149.12.183",
+      "server_port": 2052,
+      "uuid": "53fa8faf-ba4b-4322-9c69-a3e5b1555049",
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "redw.pooriam.ir"
+        },
+        "path": "/TABRIZ.NET@AZARBAYJAB1@AZARBAYJAB1@AZARBAYJAB1",
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇧🇷 巴西1 | ⬇️ 14.6MB/s",
+      "type": "vless",
+      "server": "45.131.4.33",
+      "server_port": 8880,
+      "uuid": "f6bd2c47-99da-4bca-bf70-7186aa9e7e06",
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "photographipictureai.ir"
+        },
+        "path": "/Telegram@V2ray_Alpha/",
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇩🇪 德国4 | ⬇️ 10.3MB/s",
+      "type": "vless",
+      "server": "154.83.2.230",
+      "server_port": 8880,
+      "uuid": "53fa8faf-ba4b-4322-9c69-a3e5b1555049",
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "redw.pooriam.ir"
+        },
+        "path": "/@AZARBAYJAB1@AZARBAYJAB1@AZARBAYJAB1@AZARBAYJAB1@AZARBAYJAB1@AZARBAYJAB1",
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇭🇰 HK-012",
+      "type": "shadowsocks",
+      "server": "8tv68qhq.slashdevslashnetslashtun.net",
+      "server_port": 15013,
+      "method": "aes-256-gcm",
+      "password": "R3FYI7545URTZITK"
+    },
+    {
+      "tag": "🇭🇰 HK-014",
+      "type": "shadowsocks",
+      "server": "qh62onjn.slashdevslashnetslashtun.net",
+      "server_port": 15015,
+      "method": "aes-256-gcm",
+      "password": "TKY51QYEBHOTE1B4"
+    },
+    {
+      "tag": "🇭🇰 HK-015",
+      "type": "shadowsocks",
+      "server": "w72tapyb.slashdevslashnetslashtun.net",
+      "server_port": 15016,
+      "method": "aes-256-gcm",
+      "password": "400UNOMLHAHBDXYY"
+    },
+    {
+      "tag": "🇭🇰 HK-02",
+      "type": "shadowsocks",
+      "server": "8tv68qhq.slashdevslashnetslashtun.net",
+      "server_port": 15003,
+      "method": "aes-256-gcm",
+      "password": "40H6T3FVQPRRPZZJ"
+    },
+    {
+      "tag": "🇭🇰 HK-03",
+      "type": "shadowsocks",
+      "server": "w72tapyb.slashdevslashnetslashtun.net",
+      "server_port": 15004,
+      "method": "aes-256-gcm",
+      "password": "ILY5LWDRY57J5T1O"
+    },
+    {
+      "tag": "🇭🇰 HK-04",
+      "type": "shadowsocks",
+      "server": "8tv68qhq.slashdevslashnetslashtun.net",
+      "server_port": 15005,
+      "method": "aes-256-gcm",
+      "password": "MRJJ0CT681FCUEY3"
+    },
+    {
+      "tag": "🇭🇰 HK-06",
+      "type": "shadowsocks",
+      "server": "8tv68qhq.slashdevslashnetslashtun.net",
+      "server_port": 15007,
+      "method": "aes-256-gcm",
+      "password": "7380DLD5A7Y244GZ"
+    },
+    {
+      "tag": "🇭🇰 HK-07",
+      "type": "shadowsocks",
+      "server": "w72tapyb.slashdevslashnetslashtun.net",
+      "server_port": 15008,
+      "method": "aes-256-gcm",
+      "password": "VKAI0P5GJV4GMTAM"
+    },
+    {
+      "tag": "🇭🇰 HK-09",
+      "type": "shadowsocks",
+      "server": "8tv68qhq.slashdevslashnetslashtun.net",
+      "server_port": 15010,
+      "method": "aes-256-gcm",
+      "password": "33LNT1PHVSKR8DZ8"
+    },
+    {
+      "tag": "🇷🇺 0|3 |  5.6MB/s | ⬇️ 3.6MB/s",
+      "type": "hysteria2",
+      "server": "46.29.163.171",
+      "server_port": 18626,
+      "password": "dongtaiwang.com",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.bing.com",
+        "insecure": true
+      }
+    },
+    {
+      "tag": "🇺🇸 +美国 | ⬇️ 1.0MB/s",
+      "type": "vless",
+      "server": "www.csgo.com",
+      "server_port": 8880,
+      "uuid": "53fa8faf-ba4b-4322-9c69-a3e5b1555049",
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "redw.pooriam.ir"
+        },
+        "path": "/@ShadowProxy66",
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇺🇸 2美国 TG@WFVPN",
+      "type": "vless",
+      "server": "185.174.138.197",
+      "server_port": 8080,
+      "uuid": "d342d11e-d424-4583-b36e-524ab1f0afa4",
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "a.xn--i-sx6a60i.us.kg."
+        },
+        "path": "/Telegram@WFVPN"
+      }
+    },
+    {
+      "tag": "🇺🇸 5美国 傻逼节点",
+      "type": "vless",
+      "server": "185.146.173.112",
+      "server_port": 8880,
+      "uuid": "f6bd2c47-99da-4bca-bf70-7186aa9e7e06",
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "photographipictureai.ir"
+        },
+        "path": "/Telegram@WFVPN"
+      }
+    },
+    {
+      "tag": "🇺🇸 7美国 TG@WFVPN",
+      "type": "vless",
+      "server": "154.83.2.228",
+      "server_port": 8880,
+      "uuid": "53fa8faf-ba4b-4322-9c69-a3e5b1555049",
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "redw.pooriam.ir"
+        },
+        "path": "/Telegram@WFVPN"
+      }
+    },
+    {
+      "tag": "🇺🇸 SJC-01",
+      "type": "trojan",
+      "server": "46.254.93.134",
+      "server_port": 2087,
+      "password": "Aimer",
+      "tls": {
+        "enabled": true,
+        "server_name": "ageph.ambercc.filegear-sg.me",
+        "insecure": false,
+        "alpn": [
+          "http/1.1"
+        ],
+        "utls": {
+          "enabled": true,
+          "fingerprint": "randomized"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "ageph.ambercc.filegear-sg.me"
+        },
+        "path": "/",
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇺🇸 SJC-02",
+      "type": "trojan",
+      "server": "154.197.64.132",
+      "server_port": 2053,
+      "password": "Aimer",
+      "tls": {
+        "enabled": true,
+        "server_name": "ageph.ambercc.filegear-sg.me",
+        "insecure": false,
+        "alpn": [
+          "http/1.1"
+        ],
+        "utls": {
+          "enabled": true,
+          "fingerprint": "randomized"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "ageph.ambercc.filegear-sg.me"
+        },
+        "path": "/",
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇺🇸 SJC-03",
+      "type": "trojan",
+      "server": "216.24.57.186",
+      "server_port": 443,
+      "password": "Aimer",
+      "tls": {
+        "enabled": true,
+        "server_name": "ageph.ambercc.filegear-sg.me",
+        "insecure": false,
+        "alpn": [
+          "http/1.1"
+        ],
+        "utls": {
+          "enabled": true,
+          "fingerprint": "randomized"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "ageph.ambercc.filegear-sg.me"
+        },
+        "path": "/",
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇺🇸 SJC-04",
+      "type": "trojan",
+      "server": "5.182.84.9",
+      "server_port": 2087,
+      "password": "Aimer",
+      "tls": {
+        "enabled": true,
+        "server_name": "ageph.ambercc.filegear-sg.me",
+        "insecure": false,
+        "alpn": [
+          "http/1.1"
+        ],
+        "utls": {
+          "enabled": true,
+          "fingerprint": "randomized"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "ageph.ambercc.filegear-sg.me"
+        },
+        "path": "/",
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇺🇸 SJC-05",
+      "type": "trojan",
+      "server": "45.153.7.216",
+      "server_port": 2053,
+      "password": "Aimer",
+      "tls": {
+        "enabled": true,
+        "server_name": "ageph.ambercc.filegear-sg.me",
+        "insecure": false,
+        "alpn": [
+          "http/1.1"
+        ],
+        "utls": {
+          "enabled": true,
+          "fingerprint": "randomized"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "ageph.ambercc.filegear-sg.me"
+        },
+        "path": "/",
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇺🇸 SJC-06",
+      "type": "trojan",
+      "server": "188.164.159.234",
+      "server_port": 2083,
+      "password": "Aimer",
+      "tls": {
+        "enabled": true,
+        "server_name": "ageph.ambercc.filegear-sg.me",
+        "insecure": false,
+        "alpn": [
+          "http/1.1"
+        ],
+        "utls": {
+          "enabled": true,
+          "fingerprint": "randomized"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "ageph.ambercc.filegear-sg.me"
+        },
+        "path": "/",
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇺🇸 SJC-07",
+      "type": "trojan",
+      "server": "135.84.74.27",
+      "server_port": 8443,
+      "password": "Aimer",
+      "tls": {
+        "enabled": true,
+        "server_name": "ageph.ambercc.filegear-sg.me",
+        "insecure": false,
+        "alpn": [
+          "http/1.1"
+        ],
+        "utls": {
+          "enabled": true,
+          "fingerprint": "randomized"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "ageph.ambercc.filegear-sg.me"
+        },
+        "path": "/",
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇺🇸 SJC-08",
+      "type": "trojan",
+      "server": "167.68.4.131",
+      "server_port": 8443,
+      "password": "Aimer",
+      "tls": {
+        "enabled": true,
+        "server_name": "ageph.ambercc.filegear-sg.me",
+        "insecure": false,
+        "alpn": [
+          "http/1.1"
+        ],
+        "utls": {
+          "enabled": true,
+          "fingerprint": "randomized"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "ageph.ambercc.filegear-sg.me"
+        },
+        "path": "/",
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇺🇸 SJC-09",
+      "type": "trojan",
+      "server": "5.182.84.229",
+      "server_port": 2087,
+      "password": "Aimer",
+      "tls": {
+        "enabled": true,
+        "server_name": "ageph.ambercc.filegear-sg.me",
+        "insecure": false,
+        "alpn": [
+          "http/1.1"
+        ],
+        "utls": {
+          "enabled": true,
+          "fingerprint": "randomized"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "ageph.ambercc.filegear-sg.me"
+        },
+        "path": "/",
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇺🇸 SJC-10",
+      "type": "trojan",
+      "server": "77.232.140.7",
+      "server_port": 443,
+      "password": "Aimer",
+      "tls": {
+        "enabled": true,
+        "server_name": "ageph.ambercc.filegear-sg.me",
+        "insecure": false,
+        "alpn": [
+          "http/1.1"
+        ],
+        "utls": {
+          "enabled": true,
+          "fingerprint": "randomized"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "ageph.ambercc.filegear-sg.me"
+        },
+        "path": "/",
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇺🇸 SJC-11",
+      "type": "trojan",
+      "server": "188.164.159.175",
+      "server_port": 8443,
+      "password": "Aimer",
+      "tls": {
+        "enabled": true,
+        "server_name": "ageph.ambercc.filegear-sg.me",
+        "insecure": false,
+        "alpn": [
+          "http/1.1"
+        ],
+        "utls": {
+          "enabled": true,
+          "fingerprint": "randomized"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "ageph.ambercc.filegear-sg.me"
+        },
+        "path": "/",
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇺🇸 SJC-12",
+      "type": "trojan",
+      "server": "161.145.150.14",
+      "server_port": 443,
+      "password": "Aimer",
+      "tls": {
+        "enabled": true,
+        "server_name": "ageph.ambercc.filegear-sg.me",
+        "insecure": false,
+        "alpn": [
+          "http/1.1"
+        ],
+        "utls": {
+          "enabled": true,
+          "fingerprint": "randomized"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "ageph.ambercc.filegear-sg.me"
+        },
+        "path": "/",
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇺🇸 US-01",
+      "type": "shadowsocks",
+      "server": "ti3hyra4.slashdevslashnetslashtun.net",
+      "server_port": 17001,
+      "method": "aes-256-gcm",
+      "password": "54SY1SP5HU73E00Z"
+    },
+    {
+      "tag": "🇺🇸 US-03",
+      "type": "shadowsocks",
+      "server": "ti3hyra4.slashdevslashnetslashtun.net",
+      "server_port": 17003,
+      "method": "aes-256-gcm",
+      "password": "T0YUT35OFEW8BFL6"
+    },
+    {
+      "tag": "🇺🇸 US-04",
+      "type": "shadowsocks",
+      "server": "ti3hyra4.slashdevslashnetslashtun.net",
+      "server_port": 17004,
+      "method": "aes-256-gcm",
+      "password": "QRG3BYD40QDQPPIP"
+    },
+    {
+      "tag": "🇺🇸 US-05",
+      "type": "shadowsocks",
+      "server": "ti3hyra4.slashdevslashnetslashtun.net",
+      "server_port": 17005,
+      "method": "aes-256-gcm",
+      "password": "E1SCB7Q1P7HFR8K8"
+    },
+    {
+      "tag": "🇺🇸 US-06",
+      "type": "shadowsocks",
+      "server": "ti3hyra4.slashdevslashnetslashtun.net",
+      "server_port": 17006,
+      "method": "aes-256-gcm",
+      "password": "WRBKSOT4V1VFG7ZG"
+    },
+    {
+      "tag": "🇺🇸 US-07",
+      "type": "shadowsocks",
+      "server": "ti3hyra4.slashdevslashnetslashtun.net",
+      "server_port": 17007,
+      "method": "aes-256-gcm",
+      "password": "LHMBLYE07HFWWS3P"
+    },
+    {
+      "tag": "🇺🇸 US-08",
+      "type": "shadowsocks",
+      "server": "ti3hyra4.slashdevslashnetslashtun.net",
+      "server_port": 17008,
+      "method": "aes-256-gcm",
+      "password": "TYM1N812T1QGEUE8"
+    },
+    {
+      "tag": "🇺🇸 US94",
+      "type": "vless",
+      "server": "104.26.12.101",
+      "server_port": 2052,
+      "uuid": "dfc1a9ab-6241-4b73-92f7-b299fc6b7751",
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "Yak-Khanda-kUn-eY-gUL.biNG.com.xn--cR8HaaaAaAAAaAaaAaAaAAaAAaaaAAAAAaAaaAaaaAaaaaAAaaAAAaaaaAa.xN--Cr8hAaAaaAaaAAAAAAaaaAAAaAAaaAaAaAAAAAA.TREPAspeEdTEsT.NEtrag.cOm.PX.Com.sh017.IR.XN--Cr8hAaaAaaAaaAaaaAAAaaaAaaAaaaAaAAAaaaA.yek.dDnS-ip.nEt"
+        },
+        "path": "/",
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 1080
+      }
+    },
+    {
+      "tag": "🇺🇸 美国33 | ⬇️ 16.5MB/s",
+      "type": "vless",
+      "server": "212.183.88.84",
+      "server_port": 2086,
+      "uuid": "53fa8faf-ba4b-4322-9c69-a3e5b1555049",
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "redw.pooriam.ir"
+        },
+        "path": "/TABRIZ.NET, TABRIZ.NET, TABRIZ.NET, TABRIZ.NET, TABRIZ.NET, TABRIZ.NET/",
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2048
+      }
+    },
+    {
+      "tag": "🇺🇸 美国51 | ⬇️ 18.3MB/s",
+      "type": "vless",
+      "server": "154.83.2.228",
+      "server_port": 8880,
+      "uuid": "53fa8faf-ba4b-4322-9c69-a3e5b1555049",
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "redw.pooriam.ir"
+        },
+        "path": "/"
+      }
+    },
+    {
+      "tag": "🇺🇸 美国7 | ⬇️ 17.3MB/s",
+      "type": "vless",
+      "server": "185.146.173.112",
+      "server_port": 8880,
+      "uuid": "f6bd2c47-99da-4bca-bf70-7186aa9e7e06",
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "photographipictureai.ir"
+        },
+        "path": "/Telegram"
+      }
+    },
+    {
+      "tag": "🏴‍☠️ in－",
+      "type": "vless",
+      "server": "152.67.172.185",
+      "server_port": 443,
+      "uuid": "a217664a-7bc0-436b-89f6-d9c4955770a6",
+      "tls": {
+        "enabled": true,
+        "server_name": "freecloud-in1.windowsupdatea.com",
+        "insecure": false,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "flow": "xtls-rprx-vision"
+    },
+    {
+      "tag": "🏴‍☠️ 傻逼节点 | ⬇️ 2.9MB/s",
+      "type": "vless",
+      "server": "156.238.18.95",
+      "server_port": 2095,
+      "uuid": "53fa8faf-ba4b-4322-9c69-a3e5b1555049",
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "redw.pooriam.ir"
+        },
+        "path": "/TM-AZARBAYJAB1TM-AZARBAYJAB1TM-AZARBAYJAB1@AZARBAYJAB1@AZARBAYJAB1@AZARBAYJAB1",
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2048
+      }
+    },
+    {
+      "tag": "🏴‍☠️ 傻逼节点-01",
+      "type": "vless",
+      "server": "212.183.88.84",
+      "server_port": 2086,
+      "uuid": "53fa8faf-ba4b-4322-9c69-a3e5b1555049",
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "redw.pooriam.ir"
+        },
+        "path": "/Telegram@WFVPN"
+      }
+    },
+    {
+      "tag": "🏴‍☠️ 傻逼节点-02",
+      "type": "vless",
+      "server": "154.83.2.230",
+      "server_port": 8880,
+      "uuid": "53fa8faf-ba4b-4322-9c69-a3e5b1555049",
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "redw.pooriam.ir"
+        },
+        "path": "/Telegram@WFVPN"
+      }
+    },
+    {
+      "tag": "🏴‍☠️ 傻逼节点-03",
+      "type": "vless",
+      "server": "156.238.18.163",
+      "server_port": 2095,
+      "uuid": "53fa8faf-ba4b-4322-9c69-a3e5b1555049",
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "redw.pooriam.ir"
+        },
+        "path": "/Telegram@WFVPN"
+      }
+    },
+    {
+      "tag": "🏴‍☠️ 傻逼节点-04",
+      "type": "hysteria2",
+      "server": "46.17.41.217",
+      "server_port": 37481,
+      "password": "dongtaiwang.com",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.bing.com",
+        "insecure": true
+      }
+    },
+    {
+      "tag": "🏴‍☠️ 傻逼节点| ⬇️ 5.5MB/s",
+      "type": "vless",
+      "server": "156.238.18.246",
+      "server_port": 2095,
+      "uuid": "53fa8faf-ba4b-4322-9c69-a3e5b1555049",
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "redw.pooriam.ir"
+        },
+        "path": "/"
+      }
+    },
+    {
+      "tag": "🏴‍☠️ 大盘鸡",
+      "type": "vmess",
+      "server": "161.129.68.142",
+      "server_port": 51523,
+      "uuid": "5f64bebd-bf06-43f0-e091-4404a0103dae",
+      "security": "auto",
+      "alter_id": 0,
+      "transport": {
+        "type": "ws",
+        "headers": {},
+        "path": "/"
+      }
+    },
+    {
+      "tag": "select",
+      "type": "selector",
+      "default": "urltest",
+      "outbounds": [
+        "urltest",
+        "🇦🇺 澳大利亚1 | ⬇️ 1.0MB/s",
+        "🇧🇷 巴西1 | ⬇️ 14.6MB/s",
+        "🇩🇪 德国4 | ⬇️ 10.3MB/s",
+        "🇭🇰 HK-012",
+        "🇭🇰 HK-014",
+        "🇭🇰 HK-015",
+        "🇭🇰 HK-02",
+        "🇭🇰 HK-03",
+        "🇭🇰 HK-04",
+        "🇭🇰 HK-06",
+        "🇭🇰 HK-07",
+        "🇭🇰 HK-09",
+        "🇷🇺 0|3 |  5.6MB/s | ⬇️ 3.6MB/s",
+        "🇺🇸 +美国 | ⬇️ 1.0MB/s",
+        "🇺🇸 2美国 TG@WFVPN",
+        "🇺🇸 5美国 傻逼节点",
+        "🇺🇸 7美国 TG@WFVPN",
+        "🇺🇸 SJC-01",
+        "🇺🇸 SJC-02",
+        "🇺🇸 SJC-03",
+        "🇺🇸 SJC-04",
+        "🇺🇸 SJC-05",
+        "🇺🇸 SJC-06",
+        "🇺🇸 SJC-07",
+        "🇺🇸 SJC-08",
+        "🇺🇸 SJC-09",
+        "🇺🇸 SJC-10",
+        "🇺🇸 SJC-11",
+        "🇺🇸 SJC-12",
+        "🇺🇸 US-01",
+        "🇺🇸 US-03",
+        "🇺🇸 US-04",
+        "🇺🇸 US-05",
+        "🇺🇸 US-06",
+        "🇺🇸 US-07",
+        "🇺🇸 US-08",
+        "🇺🇸 US94",
+        "🇺🇸 美国33 | ⬇️ 16.5MB/s",
+        "🇺🇸 美国51 | ⬇️ 18.3MB/s",
+        "🇺🇸 美国7 | ⬇️ 17.3MB/s",
+        "🏴‍☠️ in－",
+        "🏴‍☠️ 傻逼节点 | ⬇️ 2.9MB/s",
+        "🏴‍☠️ 傻逼节点-01",
+        "🏴‍☠️ 傻逼节点-02",
+        "🏴‍☠️ 傻逼节点-03",
+        "🏴‍☠️ 傻逼节点-04",
+        "🏴‍☠️ 傻逼节点| ⬇️ 5.5MB/s",
+        "🏴‍☠️ 大盘鸡"
+      ]
+    },
+    {
+      "tag": "urltest",
+      "type": "urltest",
+      "outbounds": [
+        "🇦🇺 澳大利亚1 | ⬇️ 1.0MB/s",
+        "🇧🇷 巴西1 | ⬇️ 14.6MB/s",
+        "🇩🇪 德国4 | ⬇️ 10.3MB/s",
+        "🇭🇰 HK-012",
+        "🇭🇰 HK-014",
+        "🇭🇰 HK-015",
+        "🇭🇰 HK-02",
+        "🇭🇰 HK-03",
+        "🇭🇰 HK-04",
+        "🇭🇰 HK-06",
+        "🇭🇰 HK-07",
+        "🇭🇰 HK-09",
+        "🇷🇺 0|3 |  5.6MB/s | ⬇️ 3.6MB/s",
+        "🇺🇸 +美国 | ⬇️ 1.0MB/s",
+        "🇺🇸 2美国 TG@WFVPN",
+        "🇺🇸 5美国 傻逼节点",
+        "🇺🇸 7美国 TG@WFVPN",
+        "🇺🇸 SJC-01",
+        "🇺🇸 SJC-02",
+        "🇺🇸 SJC-03",
+        "🇺🇸 SJC-04",
+        "🇺🇸 SJC-05",
+        "🇺🇸 SJC-06",
+        "🇺🇸 SJC-07",
+        "🇺🇸 SJC-08",
+        "🇺🇸 SJC-09",
+        "🇺🇸 SJC-10",
+        "🇺🇸 SJC-11",
+        "🇺🇸 SJC-12",
+        "🇺🇸 US-01",
+        "🇺🇸 US-03",
+        "🇺🇸 US-04",
+        "🇺🇸 US-05",
+        "🇺🇸 US-06",
+        "🇺🇸 US-07",
+        "🇺🇸 US-08",
+        "🇺🇸 US94",
+        "🇺🇸 美国33 | ⬇️ 16.5MB/s",
+        "🇺🇸 美国51 | ⬇️ 18.3MB/s",
+        "🇺🇸 美国7 | ⬇️ 17.3MB/s",
+        "🏴‍☠️ in－",
+        "🏴‍☠️ 傻逼节点 | ⬇️ 2.9MB/s",
+        "🏴‍☠️ 傻逼节点-01",
+        "🏴‍☠️ 傻逼节点-02",
+        "🏴‍☠️ 傻逼节点-03",
+        "🏴‍☠️ 傻逼节点-04",
+        "🏴‍☠️ 傻逼节点| ⬇️ 5.5MB/s",
+        "🏴‍☠️ 大盘鸡"
+      ]
+    },
+    {
+      "tag": "chatgpt",
+      "type": "selector",
+      "outbounds": [
+        "🇦🇺 澳大利亚1 | ⬇️ 1.0MB/s",
+        "🇧🇷 巴西1 | ⬇️ 14.6MB/s",
+        "🇩🇪 德国4 | ⬇️ 10.3MB/s",
+        "🇭🇰 HK-012",
+        "🇭🇰 HK-014",
+        "🇭🇰 HK-015",
+        "🇭🇰 HK-02",
+        "🇭🇰 HK-03",
+        "🇭🇰 HK-04",
+        "🇭🇰 HK-06",
+        "🇭🇰 HK-07",
+        "🇭🇰 HK-09",
+        "🇷🇺 0|3 |  5.6MB/s | ⬇️ 3.6MB/s",
+        "🇺🇸 +美国 | ⬇️ 1.0MB/s",
+        "🇺🇸 2美国 TG@WFVPN",
+        "🇺🇸 5美国 傻逼节点",
+        "🇺🇸 7美国 TG@WFVPN",
+        "🇺🇸 SJC-01",
+        "🇺🇸 SJC-02",
+        "🇺🇸 SJC-03",
+        "🇺🇸 SJC-04",
+        "🇺🇸 SJC-05",
+        "🇺🇸 SJC-06",
+        "🇺🇸 SJC-07",
+        "🇺🇸 SJC-08",
+        "🇺🇸 SJC-09",
+        "🇺🇸 SJC-10",
+        "🇺🇸 SJC-11",
+        "🇺🇸 SJC-12",
+        "🇺🇸 US-01",
+        "🇺🇸 US-03",
+        "🇺🇸 US-04",
+        "🇺🇸 US-05",
+        "🇺🇸 US-06",
+        "🇺🇸 US-07",
+        "🇺🇸 US-08",
+        "🇺🇸 US94",
+        "🇺🇸 美国33 | ⬇️ 16.5MB/s",
+        "🇺🇸 美国51 | ⬇️ 18.3MB/s",
+        "🇺🇸 美国7 | ⬇️ 17.3MB/s",
+        "🏴‍☠️ in－",
+        "🏴‍☠️ 傻逼节点 | ⬇️ 2.9MB/s",
+        "🏴‍☠️ 傻逼节点-01",
+        "🏴‍☠️ 傻逼节点-02",
+        "🏴‍☠️ 傻逼节点-03",
+        "🏴‍☠️ 傻逼节点-04",
+        "🏴‍☠️ 傻逼节点| ⬇️ 5.5MB/s",
+        "🏴‍☠️ 大盘鸡"
+      ]
+    },
+    {
+      "tag": "direct",
+      "type": "direct"
+    }
+  ],
+  "route": {
+    "rules": [
+      {
+        "action": "sniff"
+      },
+      {
+        "protocol": "dns",
+        "action": "hijack-dns"
+      },
+      {
+        "action": "resolve",
+        "strategy": "prefer_ipv4"
+      },
+      {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "clash_mode": "Global"
+          }
+        ],
+        "outbound": "select"
+      },
+      {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "package_name": "com.openai.chatgpt"
+          },
+          {
+            "domain_suffix": [
+              "gemini.google.com",
+              "proactivebackend-pa.googleapis.com",
+              "bing.com",
+              "bing.net",
+              "bingapis.com"
+            ]
+          }
+        ],
+        "outbound": "chatgpt"
+      },
+      {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "clash_mode": "Direct"
+          },
+          {
+            "ip_is_private": true
+          },
+          {
+            "domain_keyword": [
+              "ushd.xmsl.org",
+              "cf.gtlx.org",
+              "mtalk.google.com"
+            ]
+          },
+          {
+            "port": [
+              23301,
+              22101,
+              22102,
+              20501,
+              21601,
+              21602,
+              21603,
+              21604,
+              21605,
+              21606
+            ]
+          },
+          {
+            "rule_set": [
+              "geoip-cn",
+              "geosite-cn"
+            ]
+          }
+        ],
+        "outbound": "direct"
+      }
+    ],
+    "rule_set": [
+      {
+        "type": "remote",
+        "tag": "geoip-cn",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/SagerNet/sing-geoip/rule-set/geoip-cn.srs",
+        "download_detour": "select"
+      },
+      {
+        "type": "remote",
+        "tag": "geosite-cn",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs",
+        "download_detour": "select"
+      },
+      {
+        "type": "remote",
+        "tag": "AdGuardSDNSFilter",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/xmdhs/sing-box-ruleset/rule-set/AdGuardSDNSFilterSingBox.srs",
+        "download_detour": "select"
+      }
+    ],
+    "final": "select",
+    "default_domain_resolver": "dns_direct",
+    "auto_detect_interface": true,
+    "override_android_vpn": true
+  },
+  "experimental": {
+    "cache_file": {
+      "enabled": true
+    },
+    "clash_api": {
+      "external_controller": "127.0.0.1:9090"
+    }
+  }
+}
