@@ -1,0 +1,407 @@
+{
+  "log": {},
+  "dns": {
+    "servers": [
+      {
+        "tag": "dns_proxy",
+        "type": "https",
+        "server": "1.1.1.1",
+        "detour": "select"
+      },
+      {
+        "tag": "dns_direct",
+        "type": "https",
+        "server": "223.5.5.5",
+        "detour": "direct"
+      },
+      {
+        "tag": "dns_fakeip",
+        "type": "fakeip",
+        "inet4_range": "198.18.0.0/15",
+        "inet6_range": "fc00::/18"
+      }
+    ],
+    "rules": [
+      {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "query_type": "HTTPS"
+          },
+          {
+            "rule_set": [
+              "AdGuardSDNSFilter"
+            ]
+          }
+        ],
+        "action": "reject"
+      },
+      {
+        "query_type": [
+          "A",
+          "AAAA"
+        ],
+        "server": "dns_fakeip",
+        "rewrite_ttl": 1
+      },
+      {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "clash_mode": "Global"
+          }
+        ],
+        "server": "dns_proxy"
+      },
+      {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "clash_mode": "Direct"
+          },
+          {
+            "rule_set": "geosite-cn"
+          }
+        ],
+        "server": "dns_direct"
+      }
+    ],
+    "strategy": "prefer_ipv4",
+    "independent_cache": true
+  },
+  "inbounds": [
+    {
+      "type": "tun",
+      "address": [
+        "172.18.0.1/30",
+        "fdfe:dcba:9876::1/126"
+      ],
+      "auto_route": true,
+      "strict_route": true
+    }
+  ],
+  "outbounds": [
+    {
+      "password": "99301d55-a41f-4919-986b-1435996533aa",
+      "server": "183.233.187.157",
+      "server_port": 20001,
+      "tag": "剩余流量：9600.39 GB",
+      "type": "shadowsocks",
+      "method": "chacha20-ietf-poly1305"
+    },
+    {
+      "password": "99301d55-a41f-4919-986b-1435996533aa",
+      "server": "183.233.187.157",
+      "server_port": 20001,
+      "tag": "距离下次重置剩余：26 天",
+      "type": "shadowsocks",
+      "method": "chacha20-ietf-poly1305"
+    },
+    {
+      "password": "99301d55-a41f-4919-986b-1435996533aa",
+      "server": "183.233.187.157",
+      "server_port": 20001,
+      "tag": "套餐到期：2026-09-13",
+      "type": "shadowsocks",
+      "method": "chacha20-ietf-poly1305"
+    },
+    {
+      "password": "99301d55-a41f-4919-986b-1435996533aa",
+      "server": "183.233.187.157",
+      "server_port": 20001,
+      "tag": "香港一",
+      "type": "shadowsocks",
+      "method": "chacha20-ietf-poly1305"
+    },
+    {
+      "password": "99301d55-a41f-4919-986b-1435996533aa",
+      "server": "183.233.187.157",
+      "server_port": 20001,
+      "tag": "香港二",
+      "type": "shadowsocks",
+      "method": "chacha20-ietf-poly1305"
+    },
+    {
+      "password": "99301d55-a41f-4919-986b-1435996533aa",
+      "server": "183.233.187.157",
+      "server_port": 20009,
+      "tag": "新加坡一",
+      "type": "shadowsocks",
+      "method": "chacha20-ietf-poly1305"
+    },
+    {
+      "password": "99301d55-a41f-4919-986b-1435996533aa",
+      "server": "183.233.187.157",
+      "server_port": 20009,
+      "tag": "新加坡三",
+      "type": "shadowsocks",
+      "method": "chacha20-ietf-poly1305"
+    },
+    {
+      "password": "99301d55-a41f-4919-986b-1435996533aa",
+      "server": "183.233.187.157",
+      "server_port": 20005,
+      "tag": "台湾一",
+      "type": "shadowsocks",
+      "method": "chacha20-ietf-poly1305"
+    },
+    {
+      "password": "99301d55-a41f-4919-986b-1435996533aa",
+      "server": "183.233.187.157",
+      "server_port": 20005,
+      "tag": "台湾二",
+      "type": "shadowsocks",
+      "method": "chacha20-ietf-poly1305"
+    },
+    {
+      "password": "99301d55-a41f-4919-986b-1435996533aa",
+      "server": "183.233.187.157",
+      "server_port": 20003,
+      "tag": "美国一",
+      "type": "shadowsocks",
+      "method": "chacha20-ietf-poly1305"
+    },
+    {
+      "password": "99301d55-a41f-4919-986b-1435996533aa",
+      "server": "183.233.187.157",
+      "server_port": 26670,
+      "tag": "美国二",
+      "type": "shadowsocks",
+      "method": "chacha20-ietf-poly1305"
+    },
+    {
+      "password": "99301d55-a41f-4919-986b-1435996533aa",
+      "server": "183.233.187.157",
+      "server_port": 26669,
+      "tag": "美国三",
+      "type": "shadowsocks",
+      "method": "chacha20-ietf-poly1305"
+    },
+    {
+      "password": "99301d55-a41f-4919-986b-1435996533aa",
+      "server": "183.233.187.157",
+      "server_port": 20007,
+      "tag": "日本一",
+      "type": "shadowsocks",
+      "method": "chacha20-ietf-poly1305"
+    },
+    {
+      "password": "99301d55-a41f-4919-986b-1435996533aa",
+      "server": "183.233.187.157",
+      "server_port": 20007,
+      "tag": "日本二",
+      "type": "shadowsocks",
+      "method": "chacha20-ietf-poly1305"
+    },
+    {
+      "password": "99301d55-a41f-4919-986b-1435996533aa",
+      "server": "183.233.187.157",
+      "server_port": 20007,
+      "tag": "日本三",
+      "type": "shadowsocks",
+      "method": "chacha20-ietf-poly1305"
+    },
+    {
+      "password": "99301d55-a41f-4919-986b-1435996533aa",
+      "server": "183.233.187.157",
+      "server_port": 20007,
+      "tag": "日本四",
+      "type": "shadowsocks",
+      "method": "chacha20-ietf-poly1305"
+    },
+    {
+      "tag": "select",
+      "type": "selector",
+      "default": "urltest",
+      "outbounds": [
+        "urltest",
+        "剩余流量：9600.39 GB",
+        "距离下次重置剩余：26 天",
+        "套餐到期：2026-09-13",
+        "香港一",
+        "香港二",
+        "新加坡一",
+        "新加坡三",
+        "台湾一",
+        "台湾二",
+        "美国一",
+        "美国二",
+        "美国三",
+        "日本一",
+        "日本二",
+        "日本三",
+        "日本四"
+      ]
+    },
+    {
+      "tag": "urltest",
+      "type": "urltest",
+      "outbounds": [
+        "剩余流量：9600.39 GB",
+        "距离下次重置剩余：26 天",
+        "套餐到期：2026-09-13",
+        "香港一",
+        "香港二",
+        "新加坡一",
+        "新加坡三",
+        "台湾一",
+        "台湾二",
+        "美国一",
+        "美国二",
+        "美国三",
+        "日本一",
+        "日本二",
+        "日本三",
+        "日本四"
+      ]
+    },
+    {
+      "tag": "chatgpt",
+      "type": "selector",
+      "outbounds": [
+        "剩余流量：9600.39 GB",
+        "距离下次重置剩余：26 天",
+        "套餐到期：2026-09-13",
+        "香港一",
+        "香港二",
+        "新加坡一",
+        "新加坡三",
+        "台湾一",
+        "台湾二",
+        "美国一",
+        "美国二",
+        "美国三",
+        "日本一",
+        "日本二",
+        "日本三",
+        "日本四"
+      ]
+    },
+    {
+      "tag": "direct",
+      "type": "direct"
+    }
+  ],
+  "route": {
+    "rules": [
+      {
+        "action": "sniff"
+      },
+      {
+        "protocol": "dns",
+        "action": "hijack-dns"
+      },
+      {
+        "action": "resolve",
+        "strategy": "prefer_ipv4"
+      },
+      {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "clash_mode": "Global"
+          }
+        ],
+        "outbound": "select"
+      },
+      {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "package_name": "com.openai.chatgpt"
+          },
+          {
+            "domain_suffix": [
+              "gemini.google.com",
+              "proactivebackend-pa.googleapis.com",
+              "bing.com",
+              "bing.net",
+              "bingapis.com"
+            ]
+          }
+        ],
+        "outbound": "chatgpt"
+      },
+      {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "clash_mode": "Direct"
+          },
+          {
+            "ip_is_private": true
+          },
+          {
+            "domain_keyword": [
+              "ushd.xmsl.org",
+              "cf.gtlx.org",
+              "mtalk.google.com"
+            ]
+          },
+          {
+            "port": [
+              23301,
+              22101,
+              22102,
+              20501,
+              21601,
+              21602,
+              21603,
+              21604,
+              21605,
+              21606
+            ]
+          },
+          {
+            "rule_set": [
+              "geoip-cn",
+              "geosite-cn"
+            ]
+          }
+        ],
+        "outbound": "direct"
+      }
+    ],
+    "rule_set": [
+      {
+        "type": "remote",
+        "tag": "geoip-cn",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/SagerNet/sing-geoip/rule-set/geoip-cn.srs",
+        "download_detour": "select"
+      },
+      {
+        "type": "remote",
+        "tag": "geosite-cn",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs",
+        "download_detour": "select"
+      },
+      {
+        "type": "remote",
+        "tag": "AdGuardSDNSFilter",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/xmdhs/sing-box-ruleset/rule-set/AdGuardSDNSFilterSingBox.srs",
+        "download_detour": "select"
+      }
+    ],
+    "final": "select",
+    "default_domain_resolver": "dns_direct",
+    "auto_detect_interface": true,
+    "override_android_vpn": true
+  },
+  "experimental": {
+    "cache_file": {
+      "enabled": true
+    },
+    "clash_api": {
+      "external_controller": "127.0.0.1:9090"
+    }
+  }
+}
