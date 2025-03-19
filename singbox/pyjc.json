@@ -80,7 +80,11 @@
         "fdfe:dcba:9876::1/126"
       ],
       "auto_route": true,
-      "strict_route": true
+      "strict_route": true,
+      "route_exclude_address": [
+        "192.168.0.0/16",
+        "fc00::/7"
+      ]
     }
   ],
   "outbounds": [
@@ -89,8 +93,8 @@
       "obfs": null,
       "password": "99c6ebdd-0ac5-49ba-ad29-6585395fe53e",
       "server": "pianyi-hk.jiumaojiu.org",
-      "server_port": 20163,
-      "tag": "剩余流量：481.71 GB",
+      "server_port": 20133,
+      "tag": "剩余流量：481.69 GB",
       "tls": {
         "enabled": true,
         "insecure": false
@@ -103,7 +107,7 @@
       "obfs": null,
       "password": "99c6ebdd-0ac5-49ba-ad29-6585395fe53e",
       "server": "pianyi-hk.jiumaojiu.org",
-      "server_port": 20163,
+      "server_port": 20133,
       "tag": "距离下次重置剩余：30 天",
       "tls": {
         "enabled": true,
@@ -117,7 +121,7 @@
       "obfs": null,
       "password": "99c6ebdd-0ac5-49ba-ad29-6585395fe53e",
       "server": "pianyi-hk.jiumaojiu.org",
-      "server_port": 20163,
+      "server_port": 20133,
       "tag": "套餐到期：2027-02-18",
       "tls": {
         "enabled": true,
@@ -131,7 +135,7 @@
       "obfs": null,
       "password": "99c6ebdd-0ac5-49ba-ad29-6585395fe53e",
       "server": "pianyi-hk.jiumaojiu.org",
-      "server_port": 20163,
+      "server_port": 20133,
       "tag": "香港1",
       "tls": {
         "enabled": true,
@@ -145,7 +149,7 @@
       "obfs": null,
       "password": "99c6ebdd-0ac5-49ba-ad29-6585395fe53e",
       "server": "pianyi-hk.jiumaojiu.org",
-      "server_port": 20172,
+      "server_port": 20194,
       "tag": "香港2",
       "tls": {
         "enabled": true,
@@ -159,7 +163,7 @@
       "obfs": null,
       "password": "99c6ebdd-0ac5-49ba-ad29-6585395fe53e",
       "server": "pianyi-hk.jiumaojiu.org",
-      "server_port": 20111,
+      "server_port": 20184,
       "tag": "香港3",
       "tls": {
         "enabled": true,
@@ -173,7 +177,7 @@
       "obfs": null,
       "password": "99c6ebdd-0ac5-49ba-ad29-6585395fe53e",
       "server": "pianyi-hk.jiumaojiu.org",
-      "server_port": 20106,
+      "server_port": 20180,
       "tag": "香港4",
       "tls": {
         "enabled": true,
@@ -187,7 +191,7 @@
       "obfs": null,
       "password": "99c6ebdd-0ac5-49ba-ad29-6585395fe53e",
       "server": "pianyi-us.jiumaojiu.org",
-      "server_port": 20188,
+      "server_port": 20118,
       "tag": "美国1",
       "tls": {
         "enabled": true,
@@ -201,7 +205,7 @@
       "obfs": null,
       "password": "99c6ebdd-0ac5-49ba-ad29-6585395fe53e",
       "server": "pianyi-us.jiumaojiu.org",
-      "server_port": 20196,
+      "server_port": 20107,
       "tag": "美国2",
       "tls": {
         "enabled": true,
@@ -215,7 +219,7 @@
       "obfs": null,
       "password": "99c6ebdd-0ac5-49ba-ad29-6585395fe53e",
       "server": "pianyi-us.jiumaojiu.org",
-      "server_port": 20117,
+      "server_port": 20130,
       "tag": "美国3",
       "tls": {
         "enabled": true,
@@ -229,7 +233,7 @@
       "obfs": null,
       "password": "99c6ebdd-0ac5-49ba-ad29-6585395fe53e",
       "server": "pianyi-us.jiumaojiu.org",
-      "server_port": 20131,
+      "server_port": 20116,
       "tag": "美国4",
       "tls": {
         "enabled": true,
@@ -243,7 +247,7 @@
       "obfs": null,
       "password": "99c6ebdd-0ac5-49ba-ad29-6585395fe53e",
       "server": "pianyi-jp.jiumaojiu.org",
-      "server_port": 20172,
+      "server_port": 20189,
       "tag": "日本1",
       "tls": {
         "enabled": true,
@@ -257,7 +261,7 @@
       "obfs": null,
       "password": "99c6ebdd-0ac5-49ba-ad29-6585395fe53e",
       "server": "pianyi-jp.jiumaojiu.org",
-      "server_port": 20123,
+      "server_port": 20105,
       "tag": "日本2",
       "tls": {
         "enabled": true,
@@ -271,7 +275,7 @@
       "obfs": null,
       "password": "99c6ebdd-0ac5-49ba-ad29-6585395fe53e",
       "server": "pianyi-jp.jiumaojiu.org",
-      "server_port": 20141,
+      "server_port": 20115,
       "tag": "日本3",
       "tls": {
         "enabled": true,
@@ -285,7 +289,7 @@
       "obfs": null,
       "password": "99c6ebdd-0ac5-49ba-ad29-6585395fe53e",
       "server": "pianyi-jp.jiumaojiu.org",
-      "server_port": 20199,
+      "server_port": 20101,
       "tag": "日本4",
       "tls": {
         "enabled": true,
@@ -299,7 +303,7 @@
       "obfs": null,
       "password": "99c6ebdd-0ac5-49ba-ad29-6585395fe53e",
       "server": "pianyi-sg.jiumaojiu.org",
-      "server_port": 20190,
+      "server_port": 20140,
       "tag": "新加坡1",
       "tls": {
         "enabled": true,
@@ -313,7 +317,7 @@
       "obfs": null,
       "password": "99c6ebdd-0ac5-49ba-ad29-6585395fe53e",
       "server": "pianyi-sg.jiumaojiu.org",
-      "server_port": 20179,
+      "server_port": 20198,
       "tag": "新加坡2",
       "tls": {
         "enabled": true,
@@ -327,7 +331,7 @@
       "obfs": null,
       "password": "99c6ebdd-0ac5-49ba-ad29-6585395fe53e",
       "server": "pianyi-sg.jiumaojiu.org",
-      "server_port": 20104,
+      "server_port": 20154,
       "tag": "新加坡3",
       "tls": {
         "enabled": true,
@@ -341,7 +345,7 @@
       "obfs": null,
       "password": "99c6ebdd-0ac5-49ba-ad29-6585395fe53e",
       "server": "pianyi-sg.jiumaojiu.org",
-      "server_port": 20121,
+      "server_port": 20189,
       "tag": "新加坡4",
       "tls": {
         "enabled": true,
@@ -355,7 +359,7 @@
       "obfs": null,
       "password": "99c6ebdd-0ac5-49ba-ad29-6585395fe53e",
       "server": "pianyi-lu.jiumaojiu.org",
-      "server_port": 20160,
+      "server_port": 20143,
       "tag": "卢森堡1",
       "tls": {
         "enabled": true,
@@ -369,7 +373,7 @@
       "obfs": null,
       "password": "99c6ebdd-0ac5-49ba-ad29-6585395fe53e",
       "server": "pianyi-lu.jiumaojiu.org",
-      "server_port": 20110,
+      "server_port": 20178,
       "tag": "卢森堡2",
       "tls": {
         "enabled": true,
@@ -383,7 +387,7 @@
       "obfs": null,
       "password": "99c6ebdd-0ac5-49ba-ad29-6585395fe53e",
       "server": "pianyi-lu.jiumaojiu.org",
-      "server_port": 20106,
+      "server_port": 20112,
       "tag": "卢森堡3",
       "tls": {
         "enabled": true,
@@ -397,7 +401,7 @@
       "obfs": null,
       "password": "99c6ebdd-0ac5-49ba-ad29-6585395fe53e",
       "server": "pianyi-lu.jiumaojiu.org",
-      "server_port": 20109,
+      "server_port": 20177,
       "tag": "卢森堡4",
       "tls": {
         "enabled": true,
@@ -412,7 +416,7 @@
       "default": "urltest",
       "outbounds": [
         "urltest",
-        "剩余流量：481.71 GB",
+        "剩余流量：481.69 GB",
         "距离下次重置剩余：30 天",
         "套餐到期：2027-02-18",
         "香港1",
@@ -441,7 +445,7 @@
       "tag": "urltest",
       "type": "urltest",
       "outbounds": [
-        "剩余流量：481.71 GB",
+        "剩余流量：481.69 GB",
         "距离下次重置剩余：30 天",
         "套餐到期：2027-02-18",
         "香港1",
@@ -470,7 +474,7 @@
       "tag": "chatgpt",
       "type": "selector",
       "outbounds": [
-        "剩余流量：481.71 GB",
+        "剩余流量：481.69 GB",
         "距离下次重置剩余：30 天",
         "套餐到期：2027-02-18",
         "香港1",

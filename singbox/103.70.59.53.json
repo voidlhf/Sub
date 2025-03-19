@@ -80,7 +80,11 @@
         "fdfe:dcba:9876::1/126"
       ],
       "auto_route": true,
-      "strict_route": true
+      "strict_route": true,
+      "route_exclude_address": [
+        "192.168.0.0/16",
+        "fc00::/7"
+      ]
     }
   ],
   "outbounds": [
@@ -88,7 +92,7 @@
       "password": "99301d55-a41f-4919-986b-1435996533aa",
       "server": "183.233.187.157",
       "server_port": 20001,
-      "tag": "剩余流量：9530.24 GB",
+      "tag": "剩余流量：9530.23 GB",
       "type": "shadowsocks",
       "method": "chacha20-ietf-poly1305"
     },
@@ -218,7 +222,7 @@
       "default": "urltest",
       "outbounds": [
         "urltest",
-        "剩余流量：9530.24 GB",
+        "剩余流量：9530.23 GB",
         "距离下次重置剩余：25 天",
         "套餐到期：2026-09-13",
         "香港一",
@@ -240,7 +244,7 @@
       "tag": "urltest",
       "type": "urltest",
       "outbounds": [
-        "剩余流量：9530.24 GB",
+        "剩余流量：9530.23 GB",
         "距离下次重置剩余：25 天",
         "套餐到期：2026-09-13",
         "香港一",
@@ -262,7 +266,7 @@
       "tag": "chatgpt",
       "type": "selector",
       "outbounds": [
-        "剩余流量：9530.24 GB",
+        "剩余流量：9530.23 GB",
         "距离下次重置剩余：25 天",
         "套餐到期：2026-09-13",
         "香港一",

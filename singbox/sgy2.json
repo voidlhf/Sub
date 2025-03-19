@@ -80,7 +80,11 @@
         "fdfe:dcba:9876::1/126"
       ],
       "auto_route": true,
-      "strict_route": true
+      "strict_route": true,
+      "route_exclude_address": [
+        "192.168.0.0/16",
+        "fc00::/7"
+      ]
     }
   ],
   "outbounds": [
@@ -89,7 +93,7 @@
       "obfs": null,
       "password": "4a23a299-bbcc-45f5-b981-0ea44569c2d3",
       "server": "youhui-jp.sanguayun.com",
-      "server_port": 53883,
+      "server_port": 53182,
       "tag": "剩余流量：444.61 GB",
       "tls": {
         "enabled": true,
@@ -103,7 +107,7 @@
       "obfs": null,
       "password": "4a23a299-bbcc-45f5-b981-0ea44569c2d3",
       "server": "youhui-jp.sanguayun.com",
-      "server_port": 53883,
+      "server_port": 53182,
       "tag": "距离下次重置剩余：28 天",
       "tls": {
         "enabled": true,
@@ -117,7 +121,7 @@
       "obfs": null,
       "password": "4a23a299-bbcc-45f5-b981-0ea44569c2d3",
       "server": "youhui-jp.sanguayun.com",
-      "server_port": 53883,
+      "server_port": 53182,
       "tag": "套餐到期：2025-04-16",
       "tls": {
         "enabled": true,
@@ -131,7 +135,7 @@
       "obfs": null,
       "password": "4a23a299-bbcc-45f5-b981-0ea44569c2d3",
       "server": "youhui-jp.sanguayun.com",
-      "server_port": 53883,
+      "server_port": 53182,
       "tag": "日本1",
       "tls": {
         "enabled": true,
@@ -145,7 +149,7 @@
       "obfs": null,
       "password": "4a23a299-bbcc-45f5-b981-0ea44569c2d3",
       "server": "youhui-jp.sanguayun.com",
-      "server_port": 57833,
+      "server_port": 57432,
       "tag": "日本2",
       "tls": {
         "enabled": true,
@@ -159,7 +163,7 @@
       "obfs": null,
       "password": "4a23a299-bbcc-45f5-b981-0ea44569c2d3",
       "server": "youhui-jp.sanguayun.com",
-      "server_port": 52202,
+      "server_port": 58528,
       "tag": "日本3",
       "tls": {
         "enabled": true,
@@ -173,7 +177,7 @@
       "obfs": null,
       "password": "4a23a299-bbcc-45f5-b981-0ea44569c2d3",
       "server": "youhui-jp.sanguayun.com",
-      "server_port": 54259,
+      "server_port": 55953,
       "tag": "日本4",
       "tls": {
         "enabled": true,
@@ -187,7 +191,7 @@
       "obfs": null,
       "password": "4a23a299-bbcc-45f5-b981-0ea44569c2d3",
       "server": "youhui-sg.sanguayun.com",
-      "server_port": 52458,
+      "server_port": 56081,
       "tag": "新加坡1",
       "tls": {
         "enabled": true,
@@ -201,7 +205,7 @@
       "obfs": null,
       "password": "4a23a299-bbcc-45f5-b981-0ea44569c2d3",
       "server": "youhui-sg.sanguayun.com",
-      "server_port": 57680,
+      "server_port": 57088,
       "tag": "新加坡2",
       "tls": {
         "enabled": true,
@@ -215,7 +219,7 @@
       "obfs": null,
       "password": "4a23a299-bbcc-45f5-b981-0ea44569c2d3",
       "server": "youhui-sg.sanguayun.com",
-      "server_port": 54546,
+      "server_port": 52850,
       "tag": "新加坡3",
       "tls": {
         "enabled": true,
@@ -229,7 +233,7 @@
       "obfs": null,
       "password": "4a23a299-bbcc-45f5-b981-0ea44569c2d3",
       "server": "youhui-sg.sanguayun.com",
-      "server_port": 59032,
+      "server_port": 55659,
       "tag": "新加坡4",
       "tls": {
         "enabled": true,
@@ -243,7 +247,7 @@
       "obfs": null,
       "password": "4a23a299-bbcc-45f5-b981-0ea44569c2d3",
       "server": "youhui-fr.sanguayun.com",
-      "server_port": 57646,
+      "server_port": 58202,
       "tag": "法国1",
       "tls": {
         "enabled": true,
@@ -257,7 +261,7 @@
       "obfs": null,
       "password": "4a23a299-bbcc-45f5-b981-0ea44569c2d3",
       "server": "youhui-fr.sanguayun.com",
-      "server_port": 54971,
+      "server_port": 50415,
       "tag": "法国2",
       "tls": {
         "enabled": true,
@@ -271,7 +275,7 @@
       "obfs": null,
       "password": "4a23a299-bbcc-45f5-b981-0ea44569c2d3",
       "server": "youhui-fr.sanguayun.com",
-      "server_port": 58566,
+      "server_port": 58016,
       "tag": "法国3",
       "tls": {
         "enabled": true,
@@ -285,7 +289,7 @@
       "obfs": null,
       "password": "4a23a299-bbcc-45f5-b981-0ea44569c2d3",
       "server": "youhui-fr.sanguayun.com",
-      "server_port": 53628,
+      "server_port": 57718,
       "tag": "法国4",
       "tls": {
         "enabled": true,
@@ -299,7 +303,7 @@
       "obfs": null,
       "password": "4a23a299-bbcc-45f5-b981-0ea44569c2d3",
       "server": "youhui-nl.sanguayun.com",
-      "server_port": 58684,
+      "server_port": 55334,
       "tag": "荷兰1",
       "tls": {
         "enabled": true,
@@ -313,7 +317,7 @@
       "obfs": null,
       "password": "4a23a299-bbcc-45f5-b981-0ea44569c2d3",
       "server": "youhui-nl.sanguayun.com",
-      "server_port": 56794,
+      "server_port": 58714,
       "tag": "荷兰2",
       "tls": {
         "enabled": true,
@@ -327,7 +331,7 @@
       "obfs": null,
       "password": "4a23a299-bbcc-45f5-b981-0ea44569c2d3",
       "server": "youhui-nl.sanguayun.com",
-      "server_port": 55459,
+      "server_port": 51618,
       "tag": "荷兰3",
       "tls": {
         "enabled": true,
@@ -341,7 +345,7 @@
       "obfs": null,
       "password": "4a23a299-bbcc-45f5-b981-0ea44569c2d3",
       "server": "youhui-nl.sanguayun.com",
-      "server_port": 57566,
+      "server_port": 57853,
       "tag": "荷兰4",
       "tls": {
         "enabled": true,
@@ -355,7 +359,7 @@
       "obfs": null,
       "password": "4a23a299-bbcc-45f5-b981-0ea44569c2d3",
       "server": "youhui-lu.sanguayun.com",
-      "server_port": 54086,
+      "server_port": 59910,
       "tag": "卢森堡1",
       "tls": {
         "enabled": true,
@@ -369,7 +373,7 @@
       "obfs": null,
       "password": "4a23a299-bbcc-45f5-b981-0ea44569c2d3",
       "server": "youhui-lu.sanguayun.com",
-      "server_port": 59720,
+      "server_port": 54373,
       "tag": "卢森堡2",
       "tls": {
         "enabled": true,
@@ -383,7 +387,7 @@
       "obfs": null,
       "password": "4a23a299-bbcc-45f5-b981-0ea44569c2d3",
       "server": "youhui-lu.sanguayun.com",
-      "server_port": 54154,
+      "server_port": 57600,
       "tag": "卢森堡3",
       "tls": {
         "enabled": true,
@@ -397,7 +401,7 @@
       "obfs": null,
       "password": "4a23a299-bbcc-45f5-b981-0ea44569c2d3",
       "server": "youhui-us.sanguayun.com",
-      "server_port": 54379,
+      "server_port": 57621,
       "tag": "卢森堡4",
       "tls": {
         "enabled": true,
@@ -411,7 +415,7 @@
       "obfs": null,
       "password": "4a23a299-bbcc-45f5-b981-0ea44569c2d3",
       "server": "youhui-ca.sanguayun.com",
-      "server_port": 59669,
+      "server_port": 56189,
       "tag": "加拿大1",
       "tls": {
         "enabled": true,
@@ -425,7 +429,7 @@
       "obfs": null,
       "password": "4a23a299-bbcc-45f5-b981-0ea44569c2d3",
       "server": "youhui-ca.sanguayun.com",
-      "server_port": 50443,
+      "server_port": 56897,
       "tag": "加拿大2",
       "tls": {
         "enabled": true,
@@ -439,7 +443,7 @@
       "obfs": null,
       "password": "4a23a299-bbcc-45f5-b981-0ea44569c2d3",
       "server": "youhui-ca.sanguayun.com",
-      "server_port": 58613,
+      "server_port": 53546,
       "tag": "加拿大3",
       "tls": {
         "enabled": true,
@@ -453,7 +457,7 @@
       "obfs": null,
       "password": "4a23a299-bbcc-45f5-b981-0ea44569c2d3",
       "server": "youhui-ca.sanguayun.com",
-      "server_port": 56857,
+      "server_port": 58223,
       "tag": "加拿大4",
       "tls": {
         "enabled": true,

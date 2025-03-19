@@ -80,7 +80,11 @@
         "fdfe:dcba:9876::1/126"
       ],
       "auto_route": true,
-      "strict_route": true
+      "strict_route": true,
+      "route_exclude_address": [
+        "192.168.0.0/16",
+        "fc00::/7"
+      ]
     }
   ],
   "outbounds": [
@@ -90,7 +94,7 @@
       "password": "2c05bf14-c049-491f-80f1-503c22849ffc",
       "server": "mg1.gywanglug.xyz",
       "server_port": 8443,
-      "tag": "剩余流量：761.89 GB",
+      "tag": "剩余流量：759.64 GB",
       "tls": {
         "enabled": true,
         "insecure": false
@@ -336,7 +340,7 @@
       "default": "urltest",
       "outbounds": [
         "urltest",
-        "剩余流量：761.89 GB",
+        "剩余流量：759.64 GB",
         "距离下次重置剩余：12 天",
         "套餐到期：2025-04-16",
         "最新地址gy777.xyz",
@@ -360,7 +364,7 @@
       "tag": "urltest",
       "type": "urltest",
       "outbounds": [
-        "剩余流量：761.89 GB",
+        "剩余流量：759.64 GB",
         "距离下次重置剩余：12 天",
         "套餐到期：2025-04-16",
         "最新地址gy777.xyz",
@@ -384,7 +388,7 @@
       "tag": "chatgpt",
       "type": "selector",
       "outbounds": [
-        "剩余流量：761.89 GB",
+        "剩余流量：759.64 GB",
         "距离下次重置剩余：12 天",
         "套餐到期：2025-04-16",
         "最新地址gy777.xyz",
