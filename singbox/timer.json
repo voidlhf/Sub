@@ -80,7 +80,11 @@
         "fdfe:dcba:9876::1/126"
       ],
       "auto_route": true,
-      "strict_route": true
+      "strict_route": true,
+      "route_exclude_address": [
+        "192.168.0.0/16",
+        "fc00::/7"
+      ]
     }
   ],
   "outbounds": [
@@ -102,14 +106,6 @@
       "tag": "🇨🇦 CA, Vancouver",
       "type": "shadowsocks",
       "server": "34.211.230.161",
-      "server_port": 443,
-      "method": "aes-256-cfb",
-      "password": "amazonskr05"
-    },
-    {
-      "tag": "🇨🇳 TW, Taipei",
-      "type": "shadowsocks",
-      "server": "13.215.252.57",
       "server_port": 443,
       "method": "aes-256-cfb",
       "password": "amazonskr05"
@@ -137,9 +133,9 @@
       "password": "amazonskr05"
     },
     {
-      "tag": "🇭🇰 HK, New Territories",
+      "tag": "🇯🇵 JP",
       "type": "shadowsocks",
-      "server": "54.179.179.201",
+      "server": "18.179.8.12",
       "server_port": 443,
       "method": "aes-256-cfb",
       "password": "amazonskr05"
@@ -167,6 +163,14 @@
       "server_port": 443,
       "method": "aes-256-cfb",
       "password": "amazonskr05"
+    },
+    {
+      "tag": "🇵🇱 波兰-2.93MB/s",
+      "type": "shadowsocks",
+      "server": "151.115.43.27",
+      "server_port": 11202,
+      "method": "chacha20-ietf-poly1305",
+      "password": "a0665971fb6fd5ed"
     },
     {
       "tag": "🇷🇺 0|3 |  5.6MB/s | ⬇️ 3.6MB/s",
@@ -209,39 +213,9 @@
       }
     },
     {
-      "tag": "🇺🇸 7美国 TG@WFVPN",
-      "type": "vless",
-      "server": "154.83.2.228",
-      "server_port": 8880,
-      "uuid": "53fa8faf-ba4b-4322-9c69-a3e5b1555049",
-      "transport": {
-        "type": "ws",
-        "headers": {
-          "Host": "redw.pooriam.ir"
-        },
-        "path": "/Telegram@WFVPN"
-      }
-    },
-    {
-      "tag": "🇺🇸 HK, Los Angeles",
+      "tag": "🇺🇸 US 2",
       "type": "shadowsocks",
-      "server": "35.86.111.233",
-      "server_port": 443,
-      "method": "aes-256-cfb",
-      "password": "amazonskr05"
-    },
-    {
-      "tag": "🇺🇸 US, Dallas 2",
-      "type": "shadowsocks",
-      "server": "35.87.37.159",
-      "server_port": 443,
-      "method": "aes-256-cfb",
-      "password": "amazonskr05"
-    },
-    {
-      "tag": "🇺🇸 US, Houston",
-      "type": "shadowsocks",
-      "server": "34.210.253.95",
+      "server": "34.219.71.252",
       "server_port": 443,
       "method": "aes-256-cfb",
       "password": "amazonskr05"
@@ -288,6 +262,28 @@
       "flow": "xtls-rprx-vision"
     },
     {
+      "tag": "🏴‍☠️ tew1",
+      "type": "vless",
+      "server": "47.242.11.244",
+      "server_port": 443,
+      "uuid": "ee6774c0-9b19-4ff1-8b30-2da4b71977e2",
+      "tls": {
+        "enabled": true,
+        "server_name": "edfgk.aimercc.filegear-sg.me",
+        "insecure": true,
+        "alpn": [
+          "http/1.1"
+        ]
+      },
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "edfgk.aimercc.filegear-sg.me"
+        },
+        "path": "/"
+      }
+    },
+    {
       "tag": "🏴‍☠️ 傻逼节点 | ⬇️ 2.9MB/s",
       "type": "vless",
       "server": "156.238.18.95",
@@ -328,20 +324,6 @@
       }
     },
     {
-      "tag": "🏴‍☠️ 傻逼节点| ⬇️ 5.5MB/s",
-      "type": "vless",
-      "server": "156.238.18.246",
-      "server_port": 2095,
-      "uuid": "53fa8faf-ba4b-4322-9c69-a3e5b1555049",
-      "transport": {
-        "type": "ws",
-        "headers": {
-          "Host": "redw.pooriam.ir"
-        },
-        "path": "/"
-      }
-    },
-    {
       "tag": "select",
       "type": "selector",
       "default": "urltest",
@@ -349,27 +331,24 @@
         "urltest",
         "🇧🇷 巴西1 | ⬇️ 14.6MB/s",
         "🇨🇦 CA, Vancouver",
-        "🇨🇳 TW, Taipei",
         "🇩🇪 德国4 | ⬇️ 10.3MB/s",
         "🇭🇰 HK, Kowloon",
-        "🇭🇰 HK, New Territories",
+        "🇯🇵 JP",
         "🇯🇵 JP, Tokyo",
         "🇯🇵 JP, Tokyo 2",
         "🇰🇷 KR, Incheon",
+        "🇵🇱 波兰-2.93MB/s",
         "🇷🇺 0|3 |  5.6MB/s | ⬇️ 3.6MB/s",
         "🇺🇸 +美国 | ⬇️ 1.0MB/s",
         "🇺🇸 5美国 傻逼节点",
-        "🇺🇸 7美国 TG@WFVPN",
-        "🇺🇸 HK, Los Angeles",
-        "🇺🇸 US, Dallas 2",
-        "🇺🇸 US, Houston",
+        "🇺🇸 US 2",
         "🇺🇸 US94",
         "🇺🇸 美国33 | ⬇️ 16.5MB/s",
         "🏴‍☠️ in－",
+        "🏴‍☠️ tew1",
         "🏴‍☠️ 傻逼节点 | ⬇️ 2.9MB/s",
         "🏴‍☠️ 傻逼节点-03",
-        "🏴‍☠️ 傻逼节点-04",
-        "🏴‍☠️ 傻逼节点| ⬇️ 5.5MB/s"
+        "🏴‍☠️ 傻逼节点-04"
       ]
     },
     {
@@ -378,27 +357,24 @@
       "outbounds": [
         "🇧🇷 巴西1 | ⬇️ 14.6MB/s",
         "🇨🇦 CA, Vancouver",
-        "🇨🇳 TW, Taipei",
         "🇩🇪 德国4 | ⬇️ 10.3MB/s",
         "🇭🇰 HK, Kowloon",
-        "🇭🇰 HK, New Territories",
+        "🇯🇵 JP",
         "🇯🇵 JP, Tokyo",
         "🇯🇵 JP, Tokyo 2",
         "🇰🇷 KR, Incheon",
+        "🇵🇱 波兰-2.93MB/s",
         "🇷🇺 0|3 |  5.6MB/s | ⬇️ 3.6MB/s",
         "🇺🇸 +美国 | ⬇️ 1.0MB/s",
         "🇺🇸 5美国 傻逼节点",
-        "🇺🇸 7美国 TG@WFVPN",
-        "🇺🇸 HK, Los Angeles",
-        "🇺🇸 US, Dallas 2",
-        "🇺🇸 US, Houston",
+        "🇺🇸 US 2",
         "🇺🇸 US94",
         "🇺🇸 美国33 | ⬇️ 16.5MB/s",
         "🏴‍☠️ in－",
+        "🏴‍☠️ tew1",
         "🏴‍☠️ 傻逼节点 | ⬇️ 2.9MB/s",
         "🏴‍☠️ 傻逼节点-03",
-        "🏴‍☠️ 傻逼节点-04",
-        "🏴‍☠️ 傻逼节点| ⬇️ 5.5MB/s"
+        "🏴‍☠️ 傻逼节点-04"
       ]
     },
     {
@@ -407,27 +383,24 @@
       "outbounds": [
         "🇧🇷 巴西1 | ⬇️ 14.6MB/s",
         "🇨🇦 CA, Vancouver",
-        "🇨🇳 TW, Taipei",
         "🇩🇪 德国4 | ⬇️ 10.3MB/s",
         "🇭🇰 HK, Kowloon",
-        "🇭🇰 HK, New Territories",
+        "🇯🇵 JP",
         "🇯🇵 JP, Tokyo",
         "🇯🇵 JP, Tokyo 2",
         "🇰🇷 KR, Incheon",
+        "🇵🇱 波兰-2.93MB/s",
         "🇷🇺 0|3 |  5.6MB/s | ⬇️ 3.6MB/s",
         "🇺🇸 +美国 | ⬇️ 1.0MB/s",
         "🇺🇸 5美国 傻逼节点",
-        "🇺🇸 7美国 TG@WFVPN",
-        "🇺🇸 HK, Los Angeles",
-        "🇺🇸 US, Dallas 2",
-        "🇺🇸 US, Houston",
+        "🇺🇸 US 2",
         "🇺🇸 US94",
         "🇺🇸 美国33 | ⬇️ 16.5MB/s",
         "🏴‍☠️ in－",
+        "🏴‍☠️ tew1",
         "🏴‍☠️ 傻逼节点 | ⬇️ 2.9MB/s",
         "🏴‍☠️ 傻逼节点-03",
-        "🏴‍☠️ 傻逼节点-04",
-        "🏴‍☠️ 傻逼节点| ⬇️ 5.5MB/s"
+        "🏴‍☠️ 傻逼节点-04"
       ]
     },
     {
