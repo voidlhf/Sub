@@ -30,5 +30,6 @@ process_json() {
   done
 }
 
+process_json "sub-zs.json" "../mihomo" "mihomo"
 process_json "sub.json" "../mihomo" "mihomo"
 process_json "sub.json" "../singbox" "singbox"
