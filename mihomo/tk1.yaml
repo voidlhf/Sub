@@ -17,7 +17,7 @@ hosts:
   alt7-mtalk.google.com: "173.194.219.188"
   alt8-mtalk.google.com: "142.250.112.188"
 proxies:
-- name: "3-21🕷️@xkmfjd_🇷🇺"
+- name: "3-22🦞@xkmfjd_🇷🇺"
   type: "hysteria2"
   server: "46.17.41.217"
   port: 37481
@@ -27,7 +27,7 @@ proxies:
   skip-cert-verify: true
   fast-open: false
   ip-version: "dual"
-- name: "3-21🕷️@xkmfjd_🇷🇺_1"
+- name: "3-22🦞@xkmfjd_🇷🇺_1"
   type: "hysteria2"
   server: "46.29.163.171"
   port: 18626
@@ -37,25 +37,21 @@ proxies:
   skip-cert-verify: true
   fast-open: false
   ip-version: "dual"
-- name: "3-21🕷️@xkmfjd_🇵🇱"
-  type: "hysteria2"
-  server: "85.194.246.115"
-  port: 53252
+- name: "3-22🦞@xkmfjd_🇺🇸_12"
+  type: "trojan"
+  server: "fgh9jkr5.890617.xyz"
+  port: 443
+  network: "ws"
   tls: true
-  password: "c8ed6f77-3a96-46f9-9959-79118f9c1019"
-  sni: "www.bing.com"
-  skip-cert-verify: true
-  fast-open: false
-  ip-version: "dual"
-- name: "3-21🕷️@xkmfjd_🇵🇱_1"
-  type: "hysteria2"
-  server: "85.194.246.115"
-  port: 53252
-  tls: true
-  password: "c8ed6f77-3a96-46f9-9959-79118f9c1019"
-  sni: "www.bing.com"
-  skip-cert-verify: true
-  fast-open: false
+  password: "d67cfeaf-b277-44ac-ab99-9dd02a7c5299"
+  sni: "Fgh9JkR5.890617.xYz"
+  alpn:
+  - "http/1.1"
+  skip-cert-verify: false
+  ws-opts:
+    path: "/lWljHWvIMOj85lz42MdhsCLV"
+    headers:
+      host: "fgh9jkr5.890617.xyz"
   ip-version: "dual"
 proxy-groups:
 - name: "🚀 节点选择"
@@ -63,67 +59,60 @@ proxy-groups:
   proxies:
   - "♻️ 自动选择"
   - "DIRECT"
-  - "3-21🕷️@xkmfjd_🇷🇺"
-  - "3-21🕷️@xkmfjd_🇷🇺_1"
-  - "3-21🕷️@xkmfjd_🇵🇱"
-  - "3-21🕷️@xkmfjd_🇵🇱_1"
+  - "3-22🦞@xkmfjd_🇷🇺"
+  - "3-22🦞@xkmfjd_🇷🇺_1"
+  - "3-22🦞@xkmfjd_🇺🇸_12"
 - name: "♻️ 自动选择"
   type: "url-test"
   url: "http://www.gstatic.com/generate_204"
   interval: 300
   tolerance: 50
   proxies:
-  - "3-21🕷️@xkmfjd_🇷🇺"
-  - "3-21🕷️@xkmfjd_🇷🇺_1"
-  - "3-21🕷️@xkmfjd_🇵🇱"
-  - "3-21🕷️@xkmfjd_🇵🇱_1"
+  - "3-22🦞@xkmfjd_🇷🇺"
+  - "3-22🦞@xkmfjd_🇷🇺_1"
+  - "3-22🦞@xkmfjd_🇺🇸_12"
 - name: "🌍 国外媒体"
   type: "select"
   proxies:
   - "🚀 节点选择"
   - "♻️ 自动选择"
   - "🎯 全球直连"
-  - "3-21🕷️@xkmfjd_🇷🇺"
-  - "3-21🕷️@xkmfjd_🇷🇺_1"
-  - "3-21🕷️@xkmfjd_🇵🇱"
-  - "3-21🕷️@xkmfjd_🇵🇱_1"
+  - "3-22🦞@xkmfjd_🇷🇺"
+  - "3-22🦞@xkmfjd_🇷🇺_1"
+  - "3-22🦞@xkmfjd_🇺🇸_12"
 - name: "📲 电报信息"
   type: "select"
   proxies:
   - "🚀 节点选择"
   - "🎯 全球直连"
-  - "3-21🕷️@xkmfjd_🇷🇺"
-  - "3-21🕷️@xkmfjd_🇷🇺_1"
-  - "3-21🕷️@xkmfjd_🇵🇱"
-  - "3-21🕷️@xkmfjd_🇵🇱_1"
+  - "3-22🦞@xkmfjd_🇷🇺"
+  - "3-22🦞@xkmfjd_🇷🇺_1"
+  - "3-22🦞@xkmfjd_🇺🇸_12"
 - name: "Ⓜ️ 微软服务"
   type: "select"
   proxies:
   - "🚀 节点选择"
   - "🎯 全球直连"
-  - "3-21🕷️@xkmfjd_🇷🇺"
-  - "3-21🕷️@xkmfjd_🇷🇺_1"
-  - "3-21🕷️@xkmfjd_🇵🇱"
-  - "3-21🕷️@xkmfjd_🇵🇱_1"
+  - "3-22🦞@xkmfjd_🇷🇺"
+  - "3-22🦞@xkmfjd_🇷🇺_1"
+  - "3-22🦞@xkmfjd_🇺🇸_12"
 - name: "🍎 苹果服务"
   type: "select"
   proxies:
   - "🚀 节点选择"
   - "🎯 全球直连"
-  - "3-21🕷️@xkmfjd_🇷🇺"
-  - "3-21🕷️@xkmfjd_🇷🇺_1"
-  - "3-21🕷️@xkmfjd_🇵🇱"
-  - "3-21🕷️@xkmfjd_🇵🇱_1"
+  - "3-22🦞@xkmfjd_🇷🇺"
+  - "3-22🦞@xkmfjd_🇷🇺_1"
+  - "3-22🦞@xkmfjd_🇺🇸_12"
 - name: "📢 谷歌FCM"
   type: "select"
   proxies:
   - "🎯 全球直连"
   - "🚀 节点选择"
   - "♻️ 自动选择"
-  - "3-21🕷️@xkmfjd_🇷🇺"
-  - "3-21🕷️@xkmfjd_🇷🇺_1"
-  - "3-21🕷️@xkmfjd_🇵🇱"
-  - "3-21🕷️@xkmfjd_🇵🇱_1"
+  - "3-22🦞@xkmfjd_🇷🇺"
+  - "3-22🦞@xkmfjd_🇷🇺_1"
+  - "3-22🦞@xkmfjd_🇺🇸_12"
 - name: "🎯 全球直连"
   type: "select"
   proxies:
@@ -146,10 +135,9 @@ proxy-groups:
   - "🚀 节点选择"
   - "🎯 全球直连"
   - "♻️ 自动选择"
-  - "3-21🕷️@xkmfjd_🇷🇺"
-  - "3-21🕷️@xkmfjd_🇷🇺_1"
-  - "3-21🕷️@xkmfjd_🇵🇱"
-  - "3-21🕷️@xkmfjd_🇵🇱_1"
+  - "3-22🦞@xkmfjd_🇷🇺"
+  - "3-22🦞@xkmfjd_🇷🇺_1"
+  - "3-22🦞@xkmfjd_🇺🇸_12"
 rules:
 - "DOMAIN-SUFFIX,ushd.xmsl.org,🎯 全球直连"
 - "DOMAIN-SUFFIX,cf.gtlx.org,🎯 全球直连"
