@@ -1,0 +1,631 @@
+{
+  "log": {},
+  "dns": {
+    "servers": [
+      {
+        "tag": "dns_proxy",
+        "type": "https",
+        "server": "1.1.1.1",
+        "detour": "select"
+      },
+      {
+        "tag": "dns_direct",
+        "type": "https",
+        "server": "223.5.5.5",
+        "detour": "direct"
+      },
+      {
+        "tag": "dns_fakeip",
+        "type": "fakeip",
+        "inet4_range": "198.18.0.0/15",
+        "inet6_range": "fc00::/18"
+      }
+    ],
+    "rules": [
+      {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "query_type": "HTTPS"
+          },
+          {
+            "rule_set": [
+              "AdGuardSDNSFilter"
+            ]
+          }
+        ],
+        "action": "reject"
+      },
+      {
+        "query_type": [
+          "A",
+          "AAAA"
+        ],
+        "server": "dns_fakeip",
+        "rewrite_ttl": 1
+      },
+      {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "clash_mode": "Global"
+          }
+        ],
+        "server": "dns_proxy"
+      },
+      {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "clash_mode": "Direct"
+          },
+          {
+            "rule_set": "geosite-cn"
+          }
+        ],
+        "server": "dns_direct"
+      }
+    ],
+    "strategy": "prefer_ipv4",
+    "independent_cache": true
+  },
+  "inbounds": [
+    {
+      "type": "tun",
+      "address": [
+        "172.18.0.1/30",
+        "fdfe:dcba:9876::1/126"
+      ],
+      "auto_route": true,
+      "strict_route": true,
+      "route_exclude_address": [
+        "192.168.0.0/16",
+        "fc00::/7"
+      ]
+    }
+  ],
+  "outbounds": [
+    {
+      "domain_resolver": "local",
+      "method": "aes-128-gcm",
+      "password": "144663ac-8b98-47f8-b5fb-db0a192ae1cf",
+      "server": "jg647hf446ghvw.fcbjw.com",
+      "server_port": 43958,
+      "tag": "HK 🇭🇰 香港[01]",
+      "type": "shadowsocks"
+    },
+    {
+      "domain_resolver": "local",
+      "method": "aes-128-gcm",
+      "password": "144663ac-8b98-47f8-b5fb-db0a192ae1cf",
+      "server": "qhk-entrance1.huaweicdn.cloud",
+      "server_port": 43649,
+      "tag": "HK 🇭🇰 香港[02]",
+      "type": "shadowsocks"
+    },
+    {
+      "domain_resolver": "local",
+      "method": "aes-128-gcm",
+      "password": "144663ac-8b98-47f8-b5fb-db0a192ae1cf",
+      "server": "qhk-entrance1.huaweicdn.cloud",
+      "server_port": 48807,
+      "tag": "HK 🇭🇰 香港[03]",
+      "type": "shadowsocks"
+    },
+    {
+      "domain_resolver": "local",
+      "method": "aes-128-gcm",
+      "password": "144663ac-8b98-47f8-b5fb-db0a192ae1cf",
+      "server": "qhk-entrance1.huaweicdn.cloud",
+      "server_port": 16323,
+      "tag": "HK 🇭🇰 香港[04]",
+      "type": "shadowsocks"
+    },
+    {
+      "domain_resolver": "local",
+      "method": "aes-128-gcm",
+      "password": "144663ac-8b98-47f8-b5fb-db0a192ae1cf",
+      "server": "qhk-entrance1.huaweicdn.cloud",
+      "server_port": 37604,
+      "tag": "HK 🇭🇰 香港[05]",
+      "type": "shadowsocks"
+    },
+    {
+      "domain_resolver": "local",
+      "method": "aes-128-gcm",
+      "password": "144663ac-8b98-47f8-b5fb-db0a192ae1cf",
+      "server": "qhk-entrance1.huaweicdn.cloud",
+      "server_port": 30074,
+      "tag": "HK 🇭🇰 香港[06]",
+      "type": "shadowsocks"
+    },
+    {
+      "domain_resolver": "local",
+      "method": "aes-128-gcm",
+      "password": "144663ac-8b98-47f8-b5fb-db0a192ae1cf",
+      "server": "qhk-entrance1.huaweicdn.cloud",
+      "server_port": 34007,
+      "tag": "HK 🇭🇰 香港[07]",
+      "type": "shadowsocks"
+    },
+    {
+      "domain_resolver": "local",
+      "method": "aes-128-gcm",
+      "password": "144663ac-8b98-47f8-b5fb-db0a192ae1cf",
+      "server": "qhk-entrance1.huaweicdn.cloud",
+      "server_port": 31774,
+      "tag": "HK 🇭🇰 香港[08]",
+      "type": "shadowsocks"
+    },
+    {
+      "domain_resolver": "local",
+      "method": "aes-128-gcm",
+      "password": "144663ac-8b98-47f8-b5fb-db0a192ae1cf",
+      "server": "qhk-entrance1.huaweicdn.cloud",
+      "server_port": 18541,
+      "tag": "HK 🇭🇰 香港[09]",
+      "type": "shadowsocks"
+    },
+    {
+      "domain_resolver": "local",
+      "method": "aes-128-gcm",
+      "password": "144663ac-8b98-47f8-b5fb-db0a192ae1cf",
+      "server": "qhk-entrance1.huaweicdn.cloud",
+      "server_port": 31346,
+      "tag": "HK 🇭🇰 香港[10]",
+      "type": "shadowsocks"
+    },
+    {
+      "domain_resolver": "local",
+      "method": "aes-128-gcm",
+      "password": "144663ac-8b98-47f8-b5fb-db0a192ae1cf",
+      "server": "qjp-entrance1.huaweicdn.cloud",
+      "server_port": 48535,
+      "tag": "JP 🇯🇵日本[01]",
+      "type": "shadowsocks"
+    },
+    {
+      "domain_resolver": "local",
+      "method": "aes-128-gcm",
+      "password": "144663ac-8b98-47f8-b5fb-db0a192ae1cf",
+      "server": "qjp-entrance1.huaweicdn.cloud",
+      "server_port": 58356,
+      "tag": "JP 🇯🇵日本[02]",
+      "type": "shadowsocks"
+    },
+    {
+      "domain_resolver": "local",
+      "method": "aes-128-gcm",
+      "password": "144663ac-8b98-47f8-b5fb-db0a192ae1cf",
+      "server": "qjp-entrance1.huaweicdn.cloud",
+      "server_port": 36054,
+      "tag": "JP 🇯🇵日本[03]",
+      "type": "shadowsocks"
+    },
+    {
+      "domain_resolver": "local",
+      "method": "aes-128-gcm",
+      "password": "144663ac-8b98-47f8-b5fb-db0a192ae1cf",
+      "server": "qjp-entrance1.huaweicdn.cloud",
+      "server_port": 20972,
+      "tag": "JP 🇯🇵日本[04]",
+      "type": "shadowsocks"
+    },
+    {
+      "domain_resolver": "local",
+      "method": "aes-128-gcm",
+      "password": "144663ac-8b98-47f8-b5fb-db0a192ae1cf",
+      "server": "qjp-entrance1.huaweicdn.cloud",
+      "server_port": 33344,
+      "tag": "JP 🇯🇵日本[05]",
+      "type": "shadowsocks"
+    },
+    {
+      "domain_resolver": "local",
+      "method": "aes-128-gcm",
+      "password": "144663ac-8b98-47f8-b5fb-db0a192ae1cf",
+      "server": "qjp-entrance1.huaweicdn.cloud",
+      "server_port": 35543,
+      "tag": "JP 🇯🇵日本[07]",
+      "type": "shadowsocks"
+    },
+    {
+      "domain_resolver": "local",
+      "method": "aes-128-gcm",
+      "password": "144663ac-8b98-47f8-b5fb-db0a192ae1cf",
+      "server": "qjp-entrance1.huaweicdn.cloud",
+      "server_port": 51251,
+      "tag": "JP 🇯🇵日本[08]",
+      "type": "shadowsocks"
+    },
+    {
+      "domain_resolver": "local",
+      "method": "aes-128-gcm",
+      "password": "144663ac-8b98-47f8-b5fb-db0a192ae1cf",
+      "server": "qjp-entrance1.huaweicdn.cloud",
+      "server_port": 39403,
+      "tag": "JP 🇯🇵日本[09]",
+      "type": "shadowsocks"
+    },
+    {
+      "domain_resolver": "local",
+      "method": "aes-128-gcm",
+      "password": "144663ac-8b98-47f8-b5fb-db0a192ae1cf",
+      "server": "qjp-entrance1.huaweicdn.cloud",
+      "server_port": 35385,
+      "tag": "JP 🇯🇵日本[10]",
+      "type": "shadowsocks"
+    },
+    {
+      "domain_resolver": "local",
+      "method": "aes-128-gcm",
+      "password": "144663ac-8b98-47f8-b5fb-db0a192ae1cf",
+      "server": "qsg-entrance1.huaweicdn.cloud",
+      "server_port": 42455,
+      "tag": "SG 🇸🇬新加坡[01]",
+      "type": "shadowsocks"
+    },
+    {
+      "domain_resolver": "local",
+      "method": "aes-128-gcm",
+      "password": "144663ac-8b98-47f8-b5fb-db0a192ae1cf",
+      "server": "qsg-entrance1.huaweicdn.cloud",
+      "server_port": 57769,
+      "tag": "SG 🇸🇬新加坡[02]",
+      "type": "shadowsocks"
+    },
+    {
+      "domain_resolver": "local",
+      "method": "aes-128-gcm",
+      "password": "144663ac-8b98-47f8-b5fb-db0a192ae1cf",
+      "server": "qsg-entrance1.huaweicdn.cloud",
+      "server_port": 57478,
+      "tag": "SG 🇸🇬新加坡[03]",
+      "type": "shadowsocks"
+    },
+    {
+      "domain_resolver": "local",
+      "method": "aes-128-gcm",
+      "password": "144663ac-8b98-47f8-b5fb-db0a192ae1cf",
+      "server": "qsg-entrance1.huaweicdn.cloud",
+      "server_port": 15854,
+      "tag": "SG 🇸🇬新加坡[04]",
+      "type": "shadowsocks"
+    },
+    {
+      "domain_resolver": "local",
+      "method": "aes-128-gcm",
+      "password": "144663ac-8b98-47f8-b5fb-db0a192ae1cf",
+      "server": "qtw-entrance1.huaweicdn.cloud",
+      "server_port": 22828,
+      "tag": "TW 🇨🇳 台湾[01]",
+      "type": "shadowsocks"
+    },
+    {
+      "domain_resolver": "local",
+      "method": "aes-128-gcm",
+      "password": "144663ac-8b98-47f8-b5fb-db0a192ae1cf",
+      "server": "qtw-entrance1.huaweicdn.cloud",
+      "server_port": 36761,
+      "tag": "TW 🇨🇳 台湾家宽[02]",
+      "type": "shadowsocks"
+    },
+    {
+      "domain_resolver": "local",
+      "method": "aes-128-gcm",
+      "password": "144663ac-8b98-47f8-b5fb-db0a192ae1cf",
+      "server": "qtw-entrance1.huaweicdn.cloud",
+      "server_port": 24425,
+      "tag": "TW 🇨🇳 台湾家宽[03]",
+      "type": "shadowsocks"
+    },
+    {
+      "domain_resolver": "local",
+      "method": "aes-128-gcm",
+      "password": "144663ac-8b98-47f8-b5fb-db0a192ae1cf",
+      "server": "qtw-entrance1.huaweicdn.cloud",
+      "server_port": 12725,
+      "tag": "TW 🇨🇳 台湾家宽[04]",
+      "type": "shadowsocks"
+    },
+    {
+      "domain_resolver": "local",
+      "method": "aes-128-gcm",
+      "password": "144663ac-8b98-47f8-b5fb-db0a192ae1cf",
+      "server": "qus-entrance1.huaweicdn.cloud",
+      "server_port": 51949,
+      "tag": "US 🇺🇸美国[01]",
+      "type": "shadowsocks"
+    },
+    {
+      "domain_resolver": "local",
+      "method": "aes-128-gcm",
+      "password": "144663ac-8b98-47f8-b5fb-db0a192ae1cf",
+      "server": "qus-entrance2.huaweicdn.cloud",
+      "server_port": 30771,
+      "tag": "US 🇺🇸美国[02]",
+      "type": "shadowsocks"
+    },
+    {
+      "domain_resolver": "local",
+      "method": "aes-128-gcm",
+      "password": "144663ac-8b98-47f8-b5fb-db0a192ae1cf",
+      "server": "qus-entrance1.huaweicdn.cloud",
+      "server_port": 42836,
+      "tag": "US 🇺🇸美国[03]",
+      "type": "shadowsocks"
+    },
+    {
+      "domain_resolver": "local",
+      "method": "aes-128-gcm",
+      "password": "144663ac-8b98-47f8-b5fb-db0a192ae1cf",
+      "server": "qep-entrance2.huaweicdn.cloud",
+      "server_port": 43991,
+      "tag": "GB 🇬🇧 英国[01]",
+      "type": "shadowsocks"
+    },
+    {
+      "domain_resolver": "local",
+      "method": "aes-128-gcm",
+      "password": "144663ac-8b98-47f8-b5fb-db0a192ae1cf",
+      "server": "qep-entrance2.huaweicdn.cloud",
+      "server_port": 17845,
+      "tag": "GB 🇬🇧 英国[02]",
+      "type": "shadowsocks"
+    },
+    {
+      "domain_resolver": "local",
+      "method": "aes-128-gcm",
+      "password": "144663ac-8b98-47f8-b5fb-db0a192ae1cf",
+      "server": "qep-entrance2.huaweicdn.cloud",
+      "server_port": 28481,
+      "tag": "DE 🇩🇪 德国[01]",
+      "type": "shadowsocks"
+    },
+    {
+      "tag": "select",
+      "type": "selector",
+      "default": "urltest",
+      "outbounds": [
+        "urltest",
+        "HK 🇭🇰 香港[01]",
+        "HK 🇭🇰 香港[02]",
+        "HK 🇭🇰 香港[03]",
+        "HK 🇭🇰 香港[04]",
+        "HK 🇭🇰 香港[05]",
+        "HK 🇭🇰 香港[06]",
+        "HK 🇭🇰 香港[07]",
+        "HK 🇭🇰 香港[08]",
+        "HK 🇭🇰 香港[09]",
+        "HK 🇭🇰 香港[10]",
+        "JP 🇯🇵日本[01]",
+        "JP 🇯🇵日本[02]",
+        "JP 🇯🇵日本[03]",
+        "JP 🇯🇵日本[04]",
+        "JP 🇯🇵日本[05]",
+        "JP 🇯🇵日本[07]",
+        "JP 🇯🇵日本[08]",
+        "JP 🇯🇵日本[09]",
+        "JP 🇯🇵日本[10]",
+        "SG 🇸🇬新加坡[01]",
+        "SG 🇸🇬新加坡[02]",
+        "SG 🇸🇬新加坡[03]",
+        "SG 🇸🇬新加坡[04]",
+        "TW 🇨🇳 台湾[01]",
+        "TW 🇨🇳 台湾家宽[02]",
+        "TW 🇨🇳 台湾家宽[03]",
+        "TW 🇨🇳 台湾家宽[04]",
+        "US 🇺🇸美国[01]",
+        "US 🇺🇸美国[02]",
+        "US 🇺🇸美国[03]",
+        "GB 🇬🇧 英国[01]",
+        "GB 🇬🇧 英国[02]",
+        "DE 🇩🇪 德国[01]"
+      ]
+    },
+    {
+      "tag": "urltest",
+      "type": "urltest",
+      "outbounds": [
+        "HK 🇭🇰 香港[01]",
+        "HK 🇭🇰 香港[02]",
+        "HK 🇭🇰 香港[03]",
+        "HK 🇭🇰 香港[04]",
+        "HK 🇭🇰 香港[05]",
+        "HK 🇭🇰 香港[06]",
+        "HK 🇭🇰 香港[07]",
+        "HK 🇭🇰 香港[08]",
+        "HK 🇭🇰 香港[09]",
+        "HK 🇭🇰 香港[10]",
+        "JP 🇯🇵日本[01]",
+        "JP 🇯🇵日本[02]",
+        "JP 🇯🇵日本[03]",
+        "JP 🇯🇵日本[04]",
+        "JP 🇯🇵日本[05]",
+        "JP 🇯🇵日本[07]",
+        "JP 🇯🇵日本[08]",
+        "JP 🇯🇵日本[09]",
+        "JP 🇯🇵日本[10]",
+        "SG 🇸🇬新加坡[01]",
+        "SG 🇸🇬新加坡[02]",
+        "SG 🇸🇬新加坡[03]",
+        "SG 🇸🇬新加坡[04]",
+        "TW 🇨🇳 台湾[01]",
+        "TW 🇨🇳 台湾家宽[02]",
+        "TW 🇨🇳 台湾家宽[03]",
+        "TW 🇨🇳 台湾家宽[04]",
+        "US 🇺🇸美国[01]",
+        "US 🇺🇸美国[02]",
+        "US 🇺🇸美国[03]",
+        "GB 🇬🇧 英国[01]",
+        "GB 🇬🇧 英国[02]",
+        "DE 🇩🇪 德国[01]"
+      ]
+    },
+    {
+      "tag": "chatgpt",
+      "type": "selector",
+      "outbounds": [
+        "HK 🇭🇰 香港[01]",
+        "HK 🇭🇰 香港[02]",
+        "HK 🇭🇰 香港[03]",
+        "HK 🇭🇰 香港[04]",
+        "HK 🇭🇰 香港[05]",
+        "HK 🇭🇰 香港[06]",
+        "HK 🇭🇰 香港[07]",
+        "HK 🇭🇰 香港[08]",
+        "HK 🇭🇰 香港[09]",
+        "HK 🇭🇰 香港[10]",
+        "JP 🇯🇵日本[01]",
+        "JP 🇯🇵日本[02]",
+        "JP 🇯🇵日本[03]",
+        "JP 🇯🇵日本[04]",
+        "JP 🇯🇵日本[05]",
+        "JP 🇯🇵日本[07]",
+        "JP 🇯🇵日本[08]",
+        "JP 🇯🇵日本[09]",
+        "JP 🇯🇵日本[10]",
+        "SG 🇸🇬新加坡[01]",
+        "SG 🇸🇬新加坡[02]",
+        "SG 🇸🇬新加坡[03]",
+        "SG 🇸🇬新加坡[04]",
+        "TW 🇨🇳 台湾[01]",
+        "TW 🇨🇳 台湾家宽[02]",
+        "TW 🇨🇳 台湾家宽[03]",
+        "TW 🇨🇳 台湾家宽[04]",
+        "US 🇺🇸美国[01]",
+        "US 🇺🇸美国[02]",
+        "US 🇺🇸美国[03]",
+        "GB 🇬🇧 英国[01]",
+        "GB 🇬🇧 英国[02]",
+        "DE 🇩🇪 德国[01]"
+      ]
+    },
+    {
+      "tag": "direct",
+      "type": "direct"
+    }
+  ],
+  "route": {
+    "rules": [
+      {
+        "action": "sniff"
+      },
+      {
+        "protocol": "dns",
+        "action": "hijack-dns"
+      },
+      {
+        "action": "resolve",
+        "strategy": "prefer_ipv4"
+      },
+      {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "clash_mode": "Global"
+          }
+        ],
+        "outbound": "select"
+      },
+      {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "package_name": "com.openai.chatgpt"
+          },
+          {
+            "domain_suffix": [
+              "gemini.google.com",
+              "proactivebackend-pa.googleapis.com",
+              "bing.com",
+              "bing.net",
+              "bingapis.com"
+            ]
+          }
+        ],
+        "outbound": "chatgpt"
+      },
+      {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "clash_mode": "Direct"
+          },
+          {
+            "ip_is_private": true
+          },
+          {
+            "domain_keyword": [
+              "ushd.xmsl.org",
+              "cf.gtlx.org",
+              "mtalk.google.com"
+            ]
+          },
+          {
+            "port": [
+              23301,
+              22101,
+              22102,
+              20501,
+              21601,
+              21602,
+              21603,
+              21604,
+              21605,
+              21606
+            ]
+          },
+          {
+            "rule_set": [
+              "geoip-cn",
+              "geosite-cn"
+            ]
+          }
+        ],
+        "outbound": "direct"
+      }
+    ],
+    "rule_set": [
+      {
+        "type": "remote",
+        "tag": "geoip-cn",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/SagerNet/sing-geoip/rule-set/geoip-cn.srs",
+        "download_detour": "select"
+      },
+      {
+        "type": "remote",
+        "tag": "geosite-cn",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs",
+        "download_detour": "select"
+      },
+      {
+        "type": "remote",
+        "tag": "AdGuardSDNSFilter",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/xmdhs/sing-box-ruleset/rule-set/AdGuardSDNSFilterSingBox.srs",
+        "download_detour": "select"
+      }
+    ],
+    "final": "select",
+    "default_domain_resolver": "dns_direct",
+    "auto_detect_interface": true,
+    "override_android_vpn": true
+  },
+  "experimental": {
+    "cache_file": {
+      "enabled": true
+    },
+    "clash_api": {
+      "external_controller": "127.0.0.1:9090"
+    }
+  }
+}

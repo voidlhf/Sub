@@ -1,0 +1,746 @@
+{
+  "log": {},
+  "dns": {
+    "servers": [
+      {
+        "tag": "dns_proxy",
+        "type": "https",
+        "server": "1.1.1.1",
+        "detour": "select"
+      },
+      {
+        "tag": "dns_direct",
+        "type": "https",
+        "server": "223.5.5.5",
+        "detour": "direct"
+      },
+      {
+        "tag": "dns_fakeip",
+        "type": "fakeip",
+        "inet4_range": "198.18.0.0/15",
+        "inet6_range": "fc00::/18"
+      }
+    ],
+    "rules": [
+      {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "query_type": "HTTPS"
+          },
+          {
+            "rule_set": [
+              "AdGuardSDNSFilter"
+            ]
+          }
+        ],
+        "action": "reject"
+      },
+      {
+        "query_type": [
+          "A",
+          "AAAA"
+        ],
+        "server": "dns_fakeip",
+        "rewrite_ttl": 1
+      },
+      {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "clash_mode": "Global"
+          }
+        ],
+        "server": "dns_proxy"
+      },
+      {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "clash_mode": "Direct"
+          },
+          {
+            "rule_set": "geosite-cn"
+          }
+        ],
+        "server": "dns_direct"
+      }
+    ],
+    "strategy": "prefer_ipv4",
+    "independent_cache": true
+  },
+  "inbounds": [
+    {
+      "type": "tun",
+      "address": [
+        "172.18.0.1/30",
+        "fdfe:dcba:9876::1/126"
+      ],
+      "auto_route": true,
+      "strict_route": true,
+      "route_exclude_address": [
+        "192.168.0.0/16",
+        "fc00::/7"
+      ]
+    }
+  ],
+  "outbounds": [
+    {
+      "domain_resolver": "local",
+      "flow": "xtls-rprx-vision",
+      "packet_encoding": "xudp",
+      "server": "152.53.231.109",
+      "server_port": 56701,
+      "tag": "一元百G：https://fscloud.vip",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "reality": {
+          "enabled": true,
+          "public_key": "sW8BfHeovVzmbFuAnr9nH8oJaKYze6shKoKMdek5ai8",
+          "short_id": "792147b8"
+        },
+        "server_name": "addons.mozilla.org",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
+        }
+      },
+      "type": "vless",
+      "uuid": "a31662df-9ef2-43f9-981f-6cb2d0341c17"
+    },
+    {
+      "domain_resolver": "local",
+      "flow": "xtls-rprx-vision",
+      "packet_encoding": "xudp",
+      "server": "152.53.231.109",
+      "server_port": 56701,
+      "tag": "德国vless-1-联通电信",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "reality": {
+          "enabled": true,
+          "public_key": "sW8BfHeovVzmbFuAnr9nH8oJaKYze6shKoKMdek5ai8",
+          "short_id": "792147b8"
+        },
+        "server_name": "addons.mozilla.org",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
+        }
+      },
+      "type": "vless",
+      "uuid": "a31662df-9ef2-43f9-981f-6cb2d0341c17"
+    },
+    {
+      "domain_resolver": "local",
+      "flow": "xtls-rprx-vision",
+      "packet_encoding": "xudp",
+      "server": "107.173.37.43",
+      "server_port": 56701,
+      "tag": "美国vless-3-联通电信",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "reality": {
+          "enabled": true,
+          "public_key": "sW8BfHeovVzmbFuAnr9nH8oJaKYze6shKoKMdek5ai8",
+          "short_id": "792147b8"
+        },
+        "server_name": "addons.mozilla.org",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
+        }
+      },
+      "type": "vless",
+      "uuid": "a31662df-9ef2-43f9-981f-6cb2d0341c17"
+    },
+    {
+      "domain_resolver": "local",
+      "flow": "xtls-rprx-vision",
+      "packet_encoding": "xudp",
+      "server": "sg1.interld123456789.com",
+      "server_port": 56702,
+      "tag": "新加坡vless-1-移动优化",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "reality": {
+          "enabled": true,
+          "public_key": "sW8BfHeovVzmbFuAnr9nH8oJaKYze6shKoKMdek5ai8",
+          "short_id": "792147b8"
+        },
+        "server_name": "addons.mozilla.org",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
+        }
+      },
+      "type": "vless",
+      "uuid": "a31662df-9ef2-43f9-981f-6cb2d0341c17"
+    },
+    {
+      "domain_resolver": "local",
+      "flow": "xtls-rprx-vision",
+      "packet_encoding": "xudp",
+      "server": "sg2.interld123456789.com",
+      "server_port": 56702,
+      "tag": "新加坡vless-2-移动优化",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "reality": {
+          "enabled": true,
+          "public_key": "sW8BfHeovVzmbFuAnr9nH8oJaKYze6shKoKMdek5ai8",
+          "short_id": "792147b8"
+        },
+        "server_name": "addons.mozilla.org",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
+        }
+      },
+      "type": "vless",
+      "uuid": "a31662df-9ef2-43f9-981f-6cb2d0341c17"
+    },
+    {
+      "domain_resolver": "local",
+      "flow": "xtls-rprx-vision",
+      "packet_encoding": "xudp",
+      "server": "sg3.interld123456789.com",
+      "server_port": 56702,
+      "tag": "新加坡vless-3-移动优化",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "reality": {
+          "enabled": true,
+          "public_key": "sW8BfHeovVzmbFuAnr9nH8oJaKYze6shKoKMdek5ai8",
+          "short_id": "792147b8"
+        },
+        "server_name": "addons.mozilla.org",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
+        }
+      },
+      "type": "vless",
+      "uuid": "a31662df-9ef2-43f9-981f-6cb2d0341c17"
+    },
+    {
+      "domain_resolver": "local",
+      "flow": "xtls-rprx-vision",
+      "packet_encoding": "xudp",
+      "server": "jp1.interld123456789.com",
+      "server_port": 56702,
+      "tag": "日本vless-1-移动优化",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "reality": {
+          "enabled": true,
+          "public_key": "sW8BfHeovVzmbFuAnr9nH8oJaKYze6shKoKMdek5ai8",
+          "short_id": "792147b8"
+        },
+        "server_name": "addons.mozilla.org",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
+        }
+      },
+      "type": "vless",
+      "uuid": "a31662df-9ef2-43f9-981f-6cb2d0341c17"
+    },
+    {
+      "domain_resolver": "local",
+      "flow": "xtls-rprx-vision",
+      "packet_encoding": "xudp",
+      "server": "jp2.interld123456789.com",
+      "server_port": 56702,
+      "tag": "日本vless-2-移动优化",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "reality": {
+          "enabled": true,
+          "public_key": "sW8BfHeovVzmbFuAnr9nH8oJaKYze6shKoKMdek5ai8",
+          "short_id": "792147b8"
+        },
+        "server_name": "addons.mozilla.org",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
+        }
+      },
+      "type": "vless",
+      "uuid": "a31662df-9ef2-43f9-981f-6cb2d0341c17"
+    },
+    {
+      "domain_resolver": "local",
+      "flow": "xtls-rprx-vision",
+      "packet_encoding": "xudp",
+      "server": "jp4.interld123456789.com",
+      "server_port": 56702,
+      "tag": "美国vless-1-联通电信",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "reality": {
+          "enabled": true,
+          "public_key": "sW8BfHeovVzmbFuAnr9nH8oJaKYze6shKoKMdek5ai8",
+          "short_id": "792147b8"
+        },
+        "server_name": "addons.mozilla.org",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
+        }
+      },
+      "type": "vless",
+      "uuid": "a31662df-9ef2-43f9-981f-6cb2d0341c17"
+    },
+    {
+      "domain_resolver": "local",
+      "flow": "xtls-rprx-vision",
+      "packet_encoding": "xudp",
+      "server": "jp3.interld123456789.com",
+      "server_port": 56702,
+      "tag": "美国vless-2-联通电信",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "reality": {
+          "enabled": true,
+          "public_key": "sW8BfHeovVzmbFuAnr9nH8oJaKYze6shKoKMdek5ai8",
+          "short_id": "792147b8"
+        },
+        "server_name": "addons.mozilla.org",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
+        }
+      },
+      "type": "vless",
+      "uuid": "a31662df-9ef2-43f9-981f-6cb2d0341c17"
+    },
+    {
+      "domain_resolver": "local",
+      "flow": "xtls-rprx-vision",
+      "packet_encoding": "xudp",
+      "server": "us1do.interld123456789.com",
+      "server_port": 56702,
+      "tag": "美国vless-1-三网优化",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "reality": {
+          "enabled": true,
+          "public_key": "sW8BfHeovVzmbFuAnr9nH8oJaKYze6shKoKMdek5ai8",
+          "short_id": "792147b8"
+        },
+        "server_name": "addons.mozilla.org",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
+        }
+      },
+      "type": "vless",
+      "uuid": "a31662df-9ef2-43f9-981f-6cb2d0341c17"
+    },
+    {
+      "domain_resolver": "local",
+      "flow": "xtls-rprx-vision",
+      "packet_encoding": "xudp",
+      "server": "us2do.interld123456789.com",
+      "server_port": 56702,
+      "tag": "美国vless-2-三网优化",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "reality": {
+          "enabled": true,
+          "public_key": "sW8BfHeovVzmbFuAnr9nH8oJaKYze6shKoKMdek5ai8",
+          "short_id": "792147b8"
+        },
+        "server_name": "addons.mozilla.org",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
+        }
+      },
+      "type": "vless",
+      "uuid": "a31662df-9ef2-43f9-981f-6cb2d0341c17"
+    },
+    {
+      "domain_resolver": "local",
+      "flow": "xtls-rprx-vision",
+      "packet_encoding": "xudp",
+      "server": "us3do.interld123456789.com",
+      "server_port": 56702,
+      "tag": "美国vless-3-三网优化",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "reality": {
+          "enabled": true,
+          "public_key": "sW8BfHeovVzmbFuAnr9nH8oJaKYze6shKoKMdek5ai8",
+          "short_id": "792147b8"
+        },
+        "server_name": "addons.mozilla.org",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
+        }
+      },
+      "type": "vless",
+      "uuid": "a31662df-9ef2-43f9-981f-6cb2d0341c17"
+    },
+    {
+      "domain_resolver": "local",
+      "password": "a31662df-9ef2-43f9-981f-6cb2d0341c17",
+      "server": "sg1.interld123456789.com",
+      "server_port": 32000,
+      "tag": "新加坡hy2-1-移动优化",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "234224.1234567890spcloud.com"
+      },
+      "type": "hysteria2"
+    },
+    {
+      "domain_resolver": "local",
+      "password": "a31662df-9ef2-43f9-981f-6cb2d0341c17",
+      "server": "sg2.interld123456789.com",
+      "server_port": 32000,
+      "tag": "新加坡hy2-2-移动优化",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "234224.1234567890spcloud.com"
+      },
+      "type": "hysteria2"
+    },
+    {
+      "domain_resolver": "local",
+      "password": "a31662df-9ef2-43f9-981f-6cb2d0341c17",
+      "server": "sg3.interld123456789.com",
+      "server_port": 32000,
+      "tag": "新加坡hy2-3-移动优化",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "234224.1234567890spcloud.com"
+      },
+      "type": "hysteria2"
+    },
+    {
+      "domain_resolver": "local",
+      "password": "a31662df-9ef2-43f9-981f-6cb2d0341c17",
+      "server": "jp1.interld123456789.com",
+      "server_port": 32000,
+      "tag": "日本hy2-1-移动优化",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "234224.1234567890spcloud.com"
+      },
+      "type": "hysteria2"
+    },
+    {
+      "domain_resolver": "local",
+      "password": "a31662df-9ef2-43f9-981f-6cb2d0341c17",
+      "server": "jp2.interld123456789.com",
+      "server_port": 32000,
+      "tag": "日本hy2-2-移动优化",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "234224.1234567890spcloud.com"
+      },
+      "type": "hysteria2"
+    },
+    {
+      "domain_resolver": "local",
+      "password": "a31662df-9ef2-43f9-981f-6cb2d0341c17",
+      "server": "jp4.interld123456789.com",
+      "server_port": 32000,
+      "tag": "美国hy2-1-联通电信",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "234224.1234567890spcloud.com"
+      },
+      "type": "hysteria2"
+    },
+    {
+      "domain_resolver": "local",
+      "password": "a31662df-9ef2-43f9-981f-6cb2d0341c17",
+      "server": "jp3.interld123456789.com",
+      "server_port": 32000,
+      "tag": "美国hy2-2-联通电信",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "234224.1234567890spcloud.com"
+      },
+      "type": "hysteria2"
+    },
+    {
+      "domain_resolver": "local",
+      "password": "a31662df-9ef2-43f9-981f-6cb2d0341c17",
+      "server": "us1do.interld123456789.com",
+      "server_port": 32000,
+      "tag": "美国hy2-1-三网优化",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "234224.1234567890spcloud.com"
+      },
+      "type": "hysteria2"
+    },
+    {
+      "domain_resolver": "local",
+      "password": "a31662df-9ef2-43f9-981f-6cb2d0341c17",
+      "server": "us2do.interld123456789.com",
+      "server_port": 32000,
+      "tag": "美国hy2-2-三网优化",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "234224.1234567890spcloud.com"
+      },
+      "type": "hysteria2"
+    },
+    {
+      "domain_resolver": "local",
+      "password": "a31662df-9ef2-43f9-981f-6cb2d0341c17",
+      "server": "us3do.interld123456789.com",
+      "server_port": 32000,
+      "tag": "美国hy2-3-三网优化",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "234224.1234567890spcloud.com"
+      },
+      "type": "hysteria2"
+    },
+    {
+      "tag": "select",
+      "type": "selector",
+      "default": "urltest",
+      "outbounds": [
+        "urltest",
+        "一元百G：https://fscloud.vip",
+        "德国vless-1-联通电信",
+        "美国vless-3-联通电信",
+        "新加坡vless-1-移动优化",
+        "新加坡vless-2-移动优化",
+        "新加坡vless-3-移动优化",
+        "日本vless-1-移动优化",
+        "日本vless-2-移动优化",
+        "美国vless-1-联通电信",
+        "美国vless-2-联通电信",
+        "美国vless-1-三网优化",
+        "美国vless-2-三网优化",
+        "美国vless-3-三网优化",
+        "新加坡hy2-1-移动优化",
+        "新加坡hy2-2-移动优化",
+        "新加坡hy2-3-移动优化",
+        "日本hy2-1-移动优化",
+        "日本hy2-2-移动优化",
+        "美国hy2-1-联通电信",
+        "美国hy2-2-联通电信",
+        "美国hy2-1-三网优化",
+        "美国hy2-2-三网优化",
+        "美国hy2-3-三网优化"
+      ]
+    },
+    {
+      "tag": "urltest",
+      "type": "urltest",
+      "outbounds": [
+        "一元百G：https://fscloud.vip",
+        "德国vless-1-联通电信",
+        "美国vless-3-联通电信",
+        "新加坡vless-1-移动优化",
+        "新加坡vless-2-移动优化",
+        "新加坡vless-3-移动优化",
+        "日本vless-1-移动优化",
+        "日本vless-2-移动优化",
+        "美国vless-1-联通电信",
+        "美国vless-2-联通电信",
+        "美国vless-1-三网优化",
+        "美国vless-2-三网优化",
+        "美国vless-3-三网优化",
+        "新加坡hy2-1-移动优化",
+        "新加坡hy2-2-移动优化",
+        "新加坡hy2-3-移动优化",
+        "日本hy2-1-移动优化",
+        "日本hy2-2-移动优化",
+        "美国hy2-1-联通电信",
+        "美国hy2-2-联通电信",
+        "美国hy2-1-三网优化",
+        "美国hy2-2-三网优化",
+        "美国hy2-3-三网优化"
+      ]
+    },
+    {
+      "tag": "chatgpt",
+      "type": "selector",
+      "outbounds": [
+        "一元百G：https://fscloud.vip",
+        "德国vless-1-联通电信",
+        "美国vless-3-联通电信",
+        "新加坡vless-1-移动优化",
+        "新加坡vless-2-移动优化",
+        "新加坡vless-3-移动优化",
+        "日本vless-1-移动优化",
+        "日本vless-2-移动优化",
+        "美国vless-1-联通电信",
+        "美国vless-2-联通电信",
+        "美国vless-1-三网优化",
+        "美国vless-2-三网优化",
+        "美国vless-3-三网优化",
+        "新加坡hy2-1-移动优化",
+        "新加坡hy2-2-移动优化",
+        "新加坡hy2-3-移动优化",
+        "日本hy2-1-移动优化",
+        "日本hy2-2-移动优化",
+        "美国hy2-1-联通电信",
+        "美国hy2-2-联通电信",
+        "美国hy2-1-三网优化",
+        "美国hy2-2-三网优化",
+        "美国hy2-3-三网优化"
+      ]
+    },
+    {
+      "tag": "direct",
+      "type": "direct"
+    }
+  ],
+  "route": {
+    "rules": [
+      {
+        "action": "sniff"
+      },
+      {
+        "protocol": "dns",
+        "action": "hijack-dns"
+      },
+      {
+        "action": "resolve",
+        "strategy": "prefer_ipv4"
+      },
+      {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "clash_mode": "Global"
+          }
+        ],
+        "outbound": "select"
+      },
+      {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "package_name": "com.openai.chatgpt"
+          },
+          {
+            "domain_suffix": [
+              "gemini.google.com",
+              "proactivebackend-pa.googleapis.com",
+              "bing.com",
+              "bing.net",
+              "bingapis.com"
+            ]
+          }
+        ],
+        "outbound": "chatgpt"
+      },
+      {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "clash_mode": "Direct"
+          },
+          {
+            "ip_is_private": true
+          },
+          {
+            "domain_keyword": [
+              "ushd.xmsl.org",
+              "cf.gtlx.org",
+              "mtalk.google.com"
+            ]
+          },
+          {
+            "port": [
+              23301,
+              22101,
+              22102,
+              20501,
+              21601,
+              21602,
+              21603,
+              21604,
+              21605,
+              21606
+            ]
+          },
+          {
+            "rule_set": [
+              "geoip-cn",
+              "geosite-cn"
+            ]
+          }
+        ],
+        "outbound": "direct"
+      }
+    ],
+    "rule_set": [
+      {
+        "type": "remote",
+        "tag": "geoip-cn",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/SagerNet/sing-geoip/rule-set/geoip-cn.srs",
+        "download_detour": "select"
+      },
+      {
+        "type": "remote",
+        "tag": "geosite-cn",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs",
+        "download_detour": "select"
+      },
+      {
+        "type": "remote",
+        "tag": "AdGuardSDNSFilter",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/xmdhs/sing-box-ruleset/rule-set/AdGuardSDNSFilterSingBox.srs",
+        "download_detour": "select"
+      }
+    ],
+    "final": "select",
+    "default_domain_resolver": "dns_direct",
+    "auto_detect_interface": true,
+    "override_android_vpn": true
+  },
+  "experimental": {
+    "cache_file": {
+      "enabled": true
+    },
+    "clash_api": {
+      "external_controller": "127.0.0.1:9090"
+    }
+  }
+}
