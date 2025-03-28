@@ -27,13 +27,18 @@ proxies:
 - {name: "台湾01｜星连VPN.com", type: "ss", server: "tw01.dns-node.top", port: 45571, cipher: "aes-128-gcm", password: "219097fd-2a4f-4318-8012-67ae0f613005", udp: true}
 - {name: "台湾02｜星连VPN.com", type: "ss", server: "tw02.dns-node.top", port: 45614, cipher: "aes-128-gcm", password: "219097fd-2a4f-4318-8012-67ae0f613005", udp: true}
 - {name: "日本01｜星连VPN.com", type: "ss", server: "jp01.dns-node.top", port: 45612, cipher: "aes-128-gcm", password: "219097fd-2a4f-4318-8012-67ae0f613005", udp: true}
-- {name: "日本02｜星连VPN.com", type: "ss", server: "jp01.dns-node.top", port: 45613, cipher: "aes-128-gcm", password: "219097fd-2a4f-4318-8012-67ae0f613005", udp: true}
+- {name: "日本02｜星连VPN.com", type: "ss", server: "jp02.dns-node.top", port: 45613, cipher: "aes-128-gcm", password: "219097fd-2a4f-4318-8012-67ae0f613005", udp: true}
+- {name: "韩国", type: "ss", server: "jp01.dns-node.top", port: 45572, cipher: "aes-128-gcm", password: "219097fd-2a4f-4318-8012-67ae0f613005", udp: true}
 - {name: "新加坡01｜星连VPN.com", type: "ss", server: "sg04.dns-node.top", port: 45609, cipher: "aes-128-gcm", password: "219097fd-2a4f-4318-8012-67ae0f613005", udp: true}
 - {name: "新加坡02｜星连VPN.com", type: "ss", server: "sg02.dns-node.top", port: 45574, cipher: "aes-128-gcm", password: "219097fd-2a4f-4318-8012-67ae0f613005", udp: true}
 - {name: "新加坡03｜星连VPN.com", type: "ss", server: "sg03.dns-node.top", port: 45606, cipher: "aes-128-gcm", password: "219097fd-2a4f-4318-8012-67ae0f613005", udp: true}
 - {name: "美国01｜星连VPN.com", type: "ss", server: "us01.dns-node.top", port: 45581, cipher: "aes-128-gcm", password: "219097fd-2a4f-4318-8012-67ae0f613005", udp: true}
 - {name: "美国02｜星连VPN.com", type: "ss", server: "us02.dns-node.top", port: 45582, cipher: "aes-128-gcm", password: "219097fd-2a4f-4318-8012-67ae0f613005", udp: true}
 - {name: "英国01｜星连VPN.com", type: "ss", server: "uk01.dns-node.top", port: 45615, cipher: "aes-128-gcm", password: "219097fd-2a4f-4318-8012-67ae0f613005", udp: true}
+- {name: "马来西亚", type: "ss", server: "sg04.dns-node.top", port: 45610, cipher: "aes-128-gcm", password: "219097fd-2a4f-4318-8012-67ae0f613005", udp: true}
+- {name: "印度尼西亚", type: "ss", server: "sg03.dns-node.top", port: 45608, cipher: "aes-128-gcm", password: "219097fd-2a4f-4318-8012-67ae0f613005", udp: true}
+- {name: "新西兰", type: "ss", server: "sg04.dns-node.top", port: 45611, cipher: "aes-128-gcm", password: "219097fd-2a4f-4318-8012-67ae0f613005", udp: true}
+- {name: "澳大利亚", type: "ss", server: "sg03.dns-node.top", port: 45607, cipher: "aes-128-gcm", password: "219097fd-2a4f-4318-8012-67ae0f613005", udp: true}
 proxy-groups:
 - name: "🚀 节点选择"
   type: "select"
@@ -51,12 +56,17 @@ proxy-groups:
   - "台湾02｜星连VPN.com"
   - "日本01｜星连VPN.com"
   - "日本02｜星连VPN.com"
+  - "韩国"
   - "新加坡01｜星连VPN.com"
   - "新加坡02｜星连VPN.com"
   - "新加坡03｜星连VPN.com"
   - "美国01｜星连VPN.com"
   - "美国02｜星连VPN.com"
   - "英国01｜星连VPN.com"
+  - "马来西亚"
+  - "印度尼西亚"
+  - "新西兰"
+  - "澳大利亚"
 - name: "♻️ 自动选择"
   type: "url-test"
   url: "http://www.gstatic.com/generate_204"
@@ -74,12 +84,17 @@ proxy-groups:
   - "台湾02｜星连VPN.com"
   - "日本01｜星连VPN.com"
   - "日本02｜星连VPN.com"
+  - "韩国"
   - "新加坡01｜星连VPN.com"
   - "新加坡02｜星连VPN.com"
   - "新加坡03｜星连VPN.com"
   - "美国01｜星连VPN.com"
   - "美国02｜星连VPN.com"
   - "英国01｜星连VPN.com"
+  - "马来西亚"
+  - "印度尼西亚"
+  - "新西兰"
+  - "澳大利亚"
 - name: "🌍 国外媒体"
   type: "select"
   proxies:
@@ -97,12 +112,17 @@ proxy-groups:
   - "台湾02｜星连VPN.com"
   - "日本01｜星连VPN.com"
   - "日本02｜星连VPN.com"
+  - "韩国"
   - "新加坡01｜星连VPN.com"
   - "新加坡02｜星连VPN.com"
   - "新加坡03｜星连VPN.com"
   - "美国01｜星连VPN.com"
   - "美国02｜星连VPN.com"
   - "英国01｜星连VPN.com"
+  - "马来西亚"
+  - "印度尼西亚"
+  - "新西兰"
+  - "澳大利亚"
 - name: "📲 电报信息"
   type: "select"
   proxies:
@@ -119,12 +139,17 @@ proxy-groups:
   - "台湾02｜星连VPN.com"
   - "日本01｜星连VPN.com"
   - "日本02｜星连VPN.com"
+  - "韩国"
   - "新加坡01｜星连VPN.com"
   - "新加坡02｜星连VPN.com"
   - "新加坡03｜星连VPN.com"
   - "美国01｜星连VPN.com"
   - "美国02｜星连VPN.com"
   - "英国01｜星连VPN.com"
+  - "马来西亚"
+  - "印度尼西亚"
+  - "新西兰"
+  - "澳大利亚"
 - name: "Ⓜ️ 微软服务"
   type: "select"
   proxies:
@@ -141,12 +166,17 @@ proxy-groups:
   - "台湾02｜星连VPN.com"
   - "日本01｜星连VPN.com"
   - "日本02｜星连VPN.com"
+  - "韩国"
   - "新加坡01｜星连VPN.com"
   - "新加坡02｜星连VPN.com"
   - "新加坡03｜星连VPN.com"
   - "美国01｜星连VPN.com"
   - "美国02｜星连VPN.com"
   - "英国01｜星连VPN.com"
+  - "马来西亚"
+  - "印度尼西亚"
+  - "新西兰"
+  - "澳大利亚"
 - name: "🍎 苹果服务"
   type: "select"
   proxies:
@@ -163,12 +193,17 @@ proxy-groups:
   - "台湾02｜星连VPN.com"
   - "日本01｜星连VPN.com"
   - "日本02｜星连VPN.com"
+  - "韩国"
   - "新加坡01｜星连VPN.com"
   - "新加坡02｜星连VPN.com"
   - "新加坡03｜星连VPN.com"
   - "美国01｜星连VPN.com"
   - "美国02｜星连VPN.com"
   - "英国01｜星连VPN.com"
+  - "马来西亚"
+  - "印度尼西亚"
+  - "新西兰"
+  - "澳大利亚"
 - name: "📢 谷歌FCM"
   type: "select"
   proxies:
@@ -186,12 +221,17 @@ proxy-groups:
   - "台湾02｜星连VPN.com"
   - "日本01｜星连VPN.com"
   - "日本02｜星连VPN.com"
+  - "韩国"
   - "新加坡01｜星连VPN.com"
   - "新加坡02｜星连VPN.com"
   - "新加坡03｜星连VPN.com"
   - "美国01｜星连VPN.com"
   - "美国02｜星连VPN.com"
   - "英国01｜星连VPN.com"
+  - "马来西亚"
+  - "印度尼西亚"
+  - "新西兰"
+  - "澳大利亚"
 - name: "🎯 全球直连"
   type: "select"
   proxies:
@@ -225,12 +265,17 @@ proxy-groups:
   - "台湾02｜星连VPN.com"
   - "日本01｜星连VPN.com"
   - "日本02｜星连VPN.com"
+  - "韩国"
   - "新加坡01｜星连VPN.com"
   - "新加坡02｜星连VPN.com"
   - "新加坡03｜星连VPN.com"
   - "美国01｜星连VPN.com"
   - "美国02｜星连VPN.com"
   - "英国01｜星连VPN.com"
+  - "马来西亚"
+  - "印度尼西亚"
+  - "新西兰"
+  - "澳大利亚"
 rules:
 - "DOMAIN-SUFFIX,ushd.xmsl.org,🎯 全球直连"
 - "DOMAIN-SUFFIX,cf.gtlx.org,🎯 全球直连"
