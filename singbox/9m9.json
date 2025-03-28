@@ -37,20 +37,6 @@
         "action": "reject"
       },
       {
-        "type": "logical",
-        "mode": "or",
-        "rules": [
-          {
-            "package_name": [
-              "com.miHoYo.GenshinImpact",
-              "com.HoYoverse.hkrpgoversea",
-              "com.HoYoverse.Nap"
-            ]
-          }
-        ],
-        "server": "dns_proxy"
-      },
-      {
         "query_type": [
           "A",
           "AAAA"
@@ -82,7 +68,7 @@
         "server": "dns_direct"
       }
     ],
-    "strategy": "prefer_ipv4",
+    "strategy": "ipv4_only",
     "independent_cache": true
   },
   "inbounds": [
@@ -106,8 +92,8 @@
       "obfs": null,
       "password": "888385bb-5ad1-4e05-8bac-745b30d738f6",
       "server": "jiumaojiu-us.legeth.xyz",
-      "server_port": 25285,
-      "tag": "剩余流量：1536.76 GB",
+      "server_port": 25808,
+      "tag": "剩余流量：1534.67 GB",
       "tls": {
         "enabled": true,
         "insecure": false
@@ -120,7 +106,7 @@
       "obfs": null,
       "password": "888385bb-5ad1-4e05-8bac-745b30d738f6",
       "server": "jiumaojiu-us.legeth.xyz",
-      "server_port": 25285,
+      "server_port": 25808,
       "tag": "距离下次重置剩余：6 天",
       "tls": {
         "enabled": true,
@@ -134,7 +120,7 @@
       "obfs": null,
       "password": "888385bb-5ad1-4e05-8bac-745b30d738f6",
       "server": "jiumaojiu-us.legeth.xyz",
-      "server_port": 25285,
+      "server_port": 25808,
       "tag": "套餐到期：2025-04-03",
       "tls": {
         "enabled": true,
@@ -148,7 +134,7 @@
       "obfs": null,
       "password": "888385bb-5ad1-4e05-8bac-745b30d738f6",
       "server": "jiumaojiu-us.legeth.xyz",
-      "server_port": 25285,
+      "server_port": 25808,
       "tag": "🇺🇸 美国1",
       "tls": {
         "enabled": true,
@@ -162,7 +148,7 @@
       "obfs": null,
       "password": "888385bb-5ad1-4e05-8bac-745b30d738f6",
       "server": "jiumaojiu-us.legeth.xyz",
-      "server_port": 25068,
+      "server_port": 25738,
       "tag": "🇺🇸 美国2",
       "tls": {
         "enabled": true,
@@ -176,7 +162,7 @@
       "obfs": null,
       "password": "888385bb-5ad1-4e05-8bac-745b30d738f6",
       "server": "jiumaojiu-us.legeth.xyz",
-      "server_port": 25083,
+      "server_port": 25345,
       "tag": "🇺🇸 美国3",
       "tls": {
         "enabled": true,
@@ -190,7 +176,7 @@
       "obfs": null,
       "password": "888385bb-5ad1-4e05-8bac-745b30d738f6",
       "server": "jiumaojiu-us.legeth.xyz",
-      "server_port": 25258,
+      "server_port": 25127,
       "tag": "🇺🇸 美国4",
       "tls": {
         "enabled": true,
@@ -204,7 +190,7 @@
       "obfs": null,
       "password": "888385bb-5ad1-4e05-8bac-745b30d738f6",
       "server": "jiumaojiu-fr.legeth.xyz",
-      "server_port": 25689,
+      "server_port": 25554,
       "tag": "🇫🇷 法国1",
       "tls": {
         "enabled": true,
@@ -218,7 +204,7 @@
       "obfs": null,
       "password": "888385bb-5ad1-4e05-8bac-745b30d738f6",
       "server": "jiumaojiu-fr.legeth.xyz",
-      "server_port": 25548,
+      "server_port": 25711,
       "tag": "🇫🇷 法国2",
       "tls": {
         "enabled": true,
@@ -232,7 +218,7 @@
       "obfs": null,
       "password": "888385bb-5ad1-4e05-8bac-745b30d738f6",
       "server": "jiumaojiu-fr.legeth.xyz",
-      "server_port": 25353,
+      "server_port": 25297,
       "tag": "🇫🇷  法国3",
       "tls": {
         "enabled": true,
@@ -246,7 +232,7 @@
       "obfs": null,
       "password": "888385bb-5ad1-4e05-8bac-745b30d738f6",
       "server": "jiumaojiu-fr.legeth.xyz",
-      "server_port": 25252,
+      "server_port": 25898,
       "tag": "🇫🇷 法国4",
       "tls": {
         "enabled": true,
@@ -260,7 +246,7 @@
       "obfs": null,
       "password": "888385bb-5ad1-4e05-8bac-745b30d738f6",
       "server": "jiumaojiu-ie.legeth.xyz",
-      "server_port": 25328,
+      "server_port": 25346,
       "tag": "🇮🇪 爱尔兰1",
       "tls": {
         "enabled": true,
@@ -274,7 +260,7 @@
       "obfs": null,
       "password": "888385bb-5ad1-4e05-8bac-745b30d738f6",
       "server": "jiumaojiu-ie.legeth.xyz",
-      "server_port": 25015,
+      "server_port": 25635,
       "tag": "🇮🇪 爱尔兰2",
       "tls": {
         "enabled": true,
@@ -288,7 +274,7 @@
       "obfs": null,
       "password": "888385bb-5ad1-4e05-8bac-745b30d738f6",
       "server": "jiumaojiu-ie.legeth.xyz",
-      "server_port": 25480,
+      "server_port": 25108,
       "tag": "🇮🇪 爱尔兰3",
       "tls": {
         "enabled": true,
@@ -302,7 +288,7 @@
       "obfs": null,
       "password": "888385bb-5ad1-4e05-8bac-745b30d738f6",
       "server": "jiumaojiu-ie.legeth.xyz",
-      "server_port": 25707,
+      "server_port": 25365,
       "tag": "🇮🇪 爱尔兰4",
       "tls": {
         "enabled": true,
@@ -316,7 +302,7 @@
       "obfs": null,
       "password": "888385bb-5ad1-4e05-8bac-745b30d738f6",
       "server": "jiumaojiu-ne.legeth.xyz",
-      "server_port": 25268,
+      "server_port": 25218,
       "tag": "🇳🇬 尼日利亚1",
       "tls": {
         "enabled": true,
@@ -330,7 +316,7 @@
       "obfs": null,
       "password": "888385bb-5ad1-4e05-8bac-745b30d738f6",
       "server": "jiumaojiu-ne.legeth.xyz",
-      "server_port": 25791,
+      "server_port": 25459,
       "tag": "🇳🇬 尼日利亚2",
       "tls": {
         "enabled": true,
@@ -344,7 +330,7 @@
       "obfs": null,
       "password": "888385bb-5ad1-4e05-8bac-745b30d738f6",
       "server": "jiumaojiu-tr.legeth.xyz",
-      "server_port": 25225,
+      "server_port": 25588,
       "tag": "🇹🇷 土耳其1",
       "tls": {
         "enabled": true,
@@ -358,7 +344,7 @@
       "obfs": null,
       "password": "888385bb-5ad1-4e05-8bac-745b30d738f6",
       "server": "jiumaojiu-tr.legeth.xyz",
-      "server_port": 25349,
+      "server_port": 25579,
       "tag": "🇹🇷 土耳其2",
       "tls": {
         "enabled": true,
@@ -372,7 +358,7 @@
       "obfs": null,
       "password": "888385bb-5ad1-4e05-8bac-745b30d738f6",
       "server": "jiumaojiu-in.legeth.xyz",
-      "server_port": 25809,
+      "server_port": 25768,
       "tag": "🇮🇳 印度1",
       "tls": {
         "enabled": true,
@@ -386,7 +372,7 @@
       "obfs": null,
       "password": "888385bb-5ad1-4e05-8bac-745b30d738f6",
       "server": "jiumaojiu-in.legeth.xyz",
-      "server_port": 25958,
+      "server_port": 25372,
       "tag": "🇮🇳 印度2",
       "tls": {
         "enabled": true,
@@ -400,7 +386,7 @@
       "obfs": null,
       "password": "888385bb-5ad1-4e05-8bac-745b30d738f6",
       "server": "jiumaojiu-br.legeth.xyz",
-      "server_port": 25045,
+      "server_port": 25260,
       "tag": "🇧🇷 巴西1",
       "tls": {
         "enabled": true,
@@ -414,7 +400,7 @@
       "obfs": null,
       "password": "888385bb-5ad1-4e05-8bac-745b30d738f6",
       "server": "jiumaojiu-br.legeth.xyz",
-      "server_port": 25455,
+      "server_port": 25903,
       "tag": "🇧🇷 巴西2",
       "tls": {
         "enabled": true,
@@ -428,7 +414,7 @@
       "obfs": null,
       "password": "888385bb-5ad1-4e05-8bac-745b30d738f6",
       "server": "jiumaojiu-ae.legeth.xyz",
-      "server_port": 25452,
+      "server_port": 25035,
       "tag": "🇦🇪 阿联酋1",
       "tls": {
         "enabled": true,
@@ -442,7 +428,7 @@
       "obfs": null,
       "password": "888385bb-5ad1-4e05-8bac-745b30d738f6",
       "server": "jiumaojiu-ae.legeth.xyz",
-      "server_port": 25804,
+      "server_port": 25308,
       "tag": "🇦🇪 阿联酋2",
       "tls": {
         "enabled": true,
@@ -456,7 +442,7 @@
       "obfs": null,
       "password": "888385bb-5ad1-4e05-8bac-745b30d738f6",
       "server": "jiumaojiu-ru.legeth.xyz",
-      "server_port": 25686,
+      "server_port": 25848,
       "tag": "🇷🇺 俄罗斯1",
       "tls": {
         "enabled": true,
@@ -470,7 +456,7 @@
       "obfs": null,
       "password": "888385bb-5ad1-4e05-8bac-745b30d738f6",
       "server": "jiumaojiu-ru.legeth.xyz",
-      "server_port": 25893,
+      "server_port": 25135,
       "tag": "🇷🇺 俄罗斯2",
       "tls": {
         "enabled": true,
@@ -484,7 +470,7 @@
       "obfs": null,
       "password": "888385bb-5ad1-4e05-8bac-745b30d738f6",
       "server": "jiumaojiu-pk.legeth.xyz",
-      "server_port": 25414,
+      "server_port": 25399,
       "tag": "🇵🇰 巴基斯坦1",
       "tls": {
         "enabled": true,
@@ -498,7 +484,7 @@
       "obfs": null,
       "password": "888385bb-5ad1-4e05-8bac-745b30d738f6",
       "server": "jiumaojiu-pk.legeth.xyz",
-      "server_port": 25876,
+      "server_port": 25787,
       "tag": "🇵🇰 巴基斯坦2",
       "tls": {
         "enabled": true,
@@ -513,7 +499,7 @@
       "default": "urltest",
       "outbounds": [
         "urltest",
-        "剩余流量：1536.76 GB",
+        "剩余流量：1534.67 GB",
         "距离下次重置剩余：6 天",
         "套餐到期：2025-04-03",
         "🇺🇸 美国1",
@@ -548,7 +534,7 @@
       "tag": "urltest",
       "type": "urltest",
       "outbounds": [
-        "剩余流量：1536.76 GB",
+        "剩余流量：1534.67 GB",
         "距离下次重置剩余：6 天",
         "套餐到期：2025-04-03",
         "🇺🇸 美国1",
@@ -583,7 +569,7 @@
       "tag": "chatgpt",
       "type": "selector",
       "outbounds": [
-        "剩余流量：1536.76 GB",
+        "剩余流量：1534.67 GB",
         "距离下次重置剩余：6 天",
         "套餐到期：2025-04-03",
         "🇺🇸 美国1",
@@ -630,7 +616,7 @@
       },
       {
         "action": "resolve",
-        "strategy": "prefer_ipv4"
+        "strategy": "ipv4_only"
       },
       {
         "type": "logical",
@@ -675,7 +661,10 @@
             "domain_keyword": [
               "ushd.xmsl.org",
               "cf.gtlx.org",
-              "mtalk.google.com"
+              "mtalk.google.com",
+              "public-operation-hkrpg-sg.hoyoverse.com",
+              "public-operation-hk4e-sg.hoyoverse.com",
+              "public-operation-nap-sg.hoyoverse.com"
             ]
           },
           {

@@ -37,20 +37,6 @@
         "action": "reject"
       },
       {
-        "type": "logical",
-        "mode": "or",
-        "rules": [
-          {
-            "package_name": [
-              "com.miHoYo.GenshinImpact",
-              "com.HoYoverse.hkrpgoversea",
-              "com.HoYoverse.Nap"
-            ]
-          }
-        ],
-        "server": "dns_proxy"
-      },
-      {
         "query_type": [
           "A",
           "AAAA"
@@ -82,7 +68,7 @@
         "server": "dns_direct"
       }
     ],
-    "strategy": "prefer_ipv4",
+    "strategy": "ipv4_only",
     "independent_cache": true
   },
   "inbounds": [
@@ -107,7 +93,7 @@
       "tag": "🇸🇬 新加坡1@Marisa_kristi",
       "tls": {
         "enabled": true,
-        "server_name": "etc.mesa.ip-ddns.com",
+        "server_name": "be4.e8d11d.xyz",
         "insecure": true,
         "utls": {
           "enabled": true,
@@ -117,14 +103,14 @@
       "transport": {
         "headers": {
           "Host": [
-            "etc.mesa.ip-ddns.com"
+            "be4.e8d11d.xyz"
           ]
         },
         "path": "/?ed=2560",
         "type": "ws"
       },
       "type": "vless",
-      "uuid": "25910849-a4b0-4937-aa4a-c81e4b58993e",
+      "uuid": "0ae393be-453b-ee8d-11d0-ee1416dad274",
       "packet_encoding": "xudp"
     },
     {
@@ -133,7 +119,7 @@
       "tag": "🇸🇬 新加坡2@Marisa_kristi",
       "tls": {
         "enabled": true,
-        "server_name": "etc.mesa.ip-ddns.com",
+        "server_name": "be4.e8d11d.xyz",
         "insecure": true,
         "utls": {
           "enabled": true,
@@ -143,14 +129,14 @@
       "transport": {
         "headers": {
           "Host": [
-            "etc.mesa.ip-ddns.com"
+            "be4.e8d11d.xyz"
           ]
         },
         "path": "/?ed=2560",
         "type": "ws"
       },
       "type": "vless",
-      "uuid": "25910849-a4b0-4937-aa4a-c81e4b58993e",
+      "uuid": "0ae393be-453b-ee8d-11d0-ee1416dad274",
       "packet_encoding": "xudp"
     },
     {
@@ -159,7 +145,7 @@
       "tag": "🇸🇬 新加坡3@Marisa_kristi",
       "tls": {
         "enabled": true,
-        "server_name": "etc.mesa.ip-ddns.com",
+        "server_name": "be4.e8d11d.xyz",
         "insecure": true,
         "utls": {
           "enabled": true,
@@ -169,14 +155,14 @@
       "transport": {
         "headers": {
           "Host": [
-            "etc.mesa.ip-ddns.com"
+            "be4.e8d11d.xyz"
           ]
         },
         "path": "/?ed=2560",
         "type": "ws"
       },
       "type": "vless",
-      "uuid": "25910849-a4b0-4937-aa4a-c81e4b58993e",
+      "uuid": "0ae393be-453b-ee8d-11d0-ee1416dad274",
       "packet_encoding": "xudp"
     },
     {
@@ -185,7 +171,7 @@
       "tag": "🇸🇬 新加坡4@Marisa_kristi",
       "tls": {
         "enabled": true,
-        "server_name": "etc.mesa.ip-ddns.com",
+        "server_name": "be4.e8d11d.xyz",
         "insecure": true,
         "utls": {
           "enabled": true,
@@ -195,14 +181,14 @@
       "transport": {
         "headers": {
           "Host": [
-            "etc.mesa.ip-ddns.com"
+            "be4.e8d11d.xyz"
           ]
         },
         "path": "/?ed=2560",
         "type": "ws"
       },
       "type": "vless",
-      "uuid": "25910849-a4b0-4937-aa4a-c81e4b58993e",
+      "uuid": "0ae393be-453b-ee8d-11d0-ee1416dad274",
       "packet_encoding": "xudp"
     },
     {
@@ -211,7 +197,7 @@
       "tag": "🇸🇬 新加坡5@Marisa_kristi",
       "tls": {
         "enabled": true,
-        "server_name": "etc.mesa.ip-ddns.com",
+        "server_name": "be4.e8d11d.xyz",
         "insecure": true,
         "utls": {
           "enabled": true,
@@ -221,14 +207,14 @@
       "transport": {
         "headers": {
           "Host": [
-            "etc.mesa.ip-ddns.com"
+            "be4.e8d11d.xyz"
           ]
         },
         "path": "/?ed=2560",
         "type": "ws"
       },
       "type": "vless",
-      "uuid": "25910849-a4b0-4937-aa4a-c81e4b58993e",
+      "uuid": "0ae393be-453b-ee8d-11d0-ee1416dad274",
       "packet_encoding": "xudp"
     },
     {
@@ -237,7 +223,7 @@
       "tag": "🇯🇵 日本1@Marisa_kristi",
       "tls": {
         "enabled": true,
-        "server_name": "etc.mesa.ip-ddns.com",
+        "server_name": "be4.e8d11d.xyz",
         "insecure": true,
         "utls": {
           "enabled": true,
@@ -247,14 +233,14 @@
       "transport": {
         "headers": {
           "Host": [
-            "etc.mesa.ip-ddns.com"
+            "be4.e8d11d.xyz"
           ]
         },
         "path": "/?ed=2560",
         "type": "ws"
       },
       "type": "vless",
-      "uuid": "25910849-a4b0-4937-aa4a-c81e4b58993e",
+      "uuid": "0ae393be-453b-ee8d-11d0-ee1416dad274",
       "packet_encoding": "xudp"
     },
     {
@@ -263,7 +249,7 @@
       "tag": "🇯🇵 日本2@Marisa_kristi",
       "tls": {
         "enabled": true,
-        "server_name": "etc.mesa.ip-ddns.com",
+        "server_name": "be4.e8d11d.xyz",
         "insecure": true,
         "utls": {
           "enabled": true,
@@ -273,14 +259,14 @@
       "transport": {
         "headers": {
           "Host": [
-            "etc.mesa.ip-ddns.com"
+            "be4.e8d11d.xyz"
           ]
         },
         "path": "/?ed=2560",
         "type": "ws"
       },
       "type": "vless",
-      "uuid": "25910849-a4b0-4937-aa4a-c81e4b58993e",
+      "uuid": "0ae393be-453b-ee8d-11d0-ee1416dad274",
       "packet_encoding": "xudp"
     },
     {
@@ -289,7 +275,7 @@
       "tag": "🇯🇵 日本3@Marisa_kristi",
       "tls": {
         "enabled": true,
-        "server_name": "etc.mesa.ip-ddns.com",
+        "server_name": "be4.e8d11d.xyz",
         "insecure": true,
         "utls": {
           "enabled": true,
@@ -299,14 +285,14 @@
       "transport": {
         "headers": {
           "Host": [
-            "etc.mesa.ip-ddns.com"
+            "be4.e8d11d.xyz"
           ]
         },
         "path": "/?ed=2560",
         "type": "ws"
       },
       "type": "vless",
-      "uuid": "25910849-a4b0-4937-aa4a-c81e4b58993e",
+      "uuid": "0ae393be-453b-ee8d-11d0-ee1416dad274",
       "packet_encoding": "xudp"
     },
     {
@@ -315,7 +301,7 @@
       "tag": "🇯🇵 日本4@Marisa_kristi",
       "tls": {
         "enabled": true,
-        "server_name": "etc.mesa.ip-ddns.com",
+        "server_name": "be4.e8d11d.xyz",
         "insecure": true,
         "utls": {
           "enabled": true,
@@ -325,14 +311,14 @@
       "transport": {
         "headers": {
           "Host": [
-            "etc.mesa.ip-ddns.com"
+            "be4.e8d11d.xyz"
           ]
         },
         "path": "/?ed=2560",
         "type": "ws"
       },
       "type": "vless",
-      "uuid": "25910849-a4b0-4937-aa4a-c81e4b58993e",
+      "uuid": "0ae393be-453b-ee8d-11d0-ee1416dad274",
       "packet_encoding": "xudp"
     },
     {
@@ -341,7 +327,7 @@
       "tag": "🇯🇵 日本5@Marisa_kristi",
       "tls": {
         "enabled": true,
-        "server_name": "etc.mesa.ip-ddns.com",
+        "server_name": "be4.e8d11d.xyz",
         "insecure": true,
         "utls": {
           "enabled": true,
@@ -351,14 +337,14 @@
       "transport": {
         "headers": {
           "Host": [
-            "etc.mesa.ip-ddns.com"
+            "be4.e8d11d.xyz"
           ]
         },
         "path": "/?ed=2560",
         "type": "ws"
       },
       "type": "vless",
-      "uuid": "25910849-a4b0-4937-aa4a-c81e4b58993e",
+      "uuid": "0ae393be-453b-ee8d-11d0-ee1416dad274",
       "packet_encoding": "xudp"
     },
     {
@@ -367,7 +353,7 @@
       "tag": "🇫🇮 芬兰1@Marisa_kristi",
       "tls": {
         "enabled": true,
-        "server_name": "etc.mesa.ip-ddns.com",
+        "server_name": "be4.e8d11d.xyz",
         "insecure": true,
         "utls": {
           "enabled": true,
@@ -377,14 +363,14 @@
       "transport": {
         "headers": {
           "Host": [
-            "etc.mesa.ip-ddns.com"
+            "be4.e8d11d.xyz"
           ]
         },
         "path": "/?ed=2560",
         "type": "ws"
       },
       "type": "vless",
-      "uuid": "25910849-a4b0-4937-aa4a-c81e4b58993e",
+      "uuid": "0ae393be-453b-ee8d-11d0-ee1416dad274",
       "packet_encoding": "xudp"
     },
     {
@@ -393,7 +379,7 @@
       "tag": "🇬🇧 英国1@Marisa_kristi",
       "tls": {
         "enabled": true,
-        "server_name": "etc.mesa.ip-ddns.com",
+        "server_name": "be4.e8d11d.xyz",
         "insecure": true,
         "utls": {
           "enabled": true,
@@ -403,14 +389,14 @@
       "transport": {
         "headers": {
           "Host": [
-            "etc.mesa.ip-ddns.com"
+            "be4.e8d11d.xyz"
           ]
         },
         "path": "/?ed=2560",
         "type": "ws"
       },
       "type": "vless",
-      "uuid": "25910849-a4b0-4937-aa4a-c81e4b58993e",
+      "uuid": "0ae393be-453b-ee8d-11d0-ee1416dad274",
       "packet_encoding": "xudp"
     },
     {
@@ -419,7 +405,7 @@
       "tag": "🇬🇧 英国2@Marisa_kristi",
       "tls": {
         "enabled": true,
-        "server_name": "etc.mesa.ip-ddns.com",
+        "server_name": "be4.e8d11d.xyz",
         "insecure": true,
         "utls": {
           "enabled": true,
@@ -429,14 +415,14 @@
       "transport": {
         "headers": {
           "Host": [
-            "etc.mesa.ip-ddns.com"
+            "be4.e8d11d.xyz"
           ]
         },
         "path": "/?ed=2560",
         "type": "ws"
       },
       "type": "vless",
-      "uuid": "25910849-a4b0-4937-aa4a-c81e4b58993e",
+      "uuid": "0ae393be-453b-ee8d-11d0-ee1416dad274",
       "packet_encoding": "xudp"
     },
     {
@@ -445,7 +431,7 @@
       "tag": "🇬🇧 英国3@Marisa_kristi",
       "tls": {
         "enabled": true,
-        "server_name": "etc.mesa.ip-ddns.com",
+        "server_name": "be4.e8d11d.xyz",
         "insecure": true,
         "utls": {
           "enabled": true,
@@ -455,14 +441,14 @@
       "transport": {
         "headers": {
           "Host": [
-            "etc.mesa.ip-ddns.com"
+            "be4.e8d11d.xyz"
           ]
         },
         "path": "/?ed=2560",
         "type": "ws"
       },
       "type": "vless",
-      "uuid": "25910849-a4b0-4937-aa4a-c81e4b58993e",
+      "uuid": "0ae393be-453b-ee8d-11d0-ee1416dad274",
       "packet_encoding": "xudp"
     },
     {
@@ -471,7 +457,7 @@
       "tag": "🇬🇧 英国4@Marisa_kristi",
       "tls": {
         "enabled": true,
-        "server_name": "etc.mesa.ip-ddns.com",
+        "server_name": "be4.e8d11d.xyz",
         "insecure": true,
         "utls": {
           "enabled": true,
@@ -481,14 +467,14 @@
       "transport": {
         "headers": {
           "Host": [
-            "etc.mesa.ip-ddns.com"
+            "be4.e8d11d.xyz"
           ]
         },
         "path": "/?ed=2560",
         "type": "ws"
       },
       "type": "vless",
-      "uuid": "25910849-a4b0-4937-aa4a-c81e4b58993e",
+      "uuid": "0ae393be-453b-ee8d-11d0-ee1416dad274",
       "packet_encoding": "xudp"
     },
     {
@@ -497,7 +483,7 @@
       "tag": "🇬🇧 英国5@Marisa_kristi",
       "tls": {
         "enabled": true,
-        "server_name": "etc.mesa.ip-ddns.com",
+        "server_name": "be4.e8d11d.xyz",
         "insecure": true,
         "utls": {
           "enabled": true,
@@ -507,14 +493,14 @@
       "transport": {
         "headers": {
           "Host": [
-            "etc.mesa.ip-ddns.com"
+            "be4.e8d11d.xyz"
           ]
         },
         "path": "/?ed=2560",
         "type": "ws"
       },
       "type": "vless",
-      "uuid": "25910849-a4b0-4937-aa4a-c81e4b58993e",
+      "uuid": "0ae393be-453b-ee8d-11d0-ee1416dad274",
       "packet_encoding": "xudp"
     },
     {
@@ -523,7 +509,7 @@
       "tag": "🇳🇱 荷兰1@Marisa_kristi",
       "tls": {
         "enabled": true,
-        "server_name": "etc.mesa.ip-ddns.com",
+        "server_name": "be4.e8d11d.xyz",
         "insecure": true,
         "utls": {
           "enabled": true,
@@ -533,14 +519,14 @@
       "transport": {
         "headers": {
           "Host": [
-            "etc.mesa.ip-ddns.com"
+            "be4.e8d11d.xyz"
           ]
         },
         "path": "/?ed=2560",
         "type": "ws"
       },
       "type": "vless",
-      "uuid": "25910849-a4b0-4937-aa4a-c81e4b58993e",
+      "uuid": "0ae393be-453b-ee8d-11d0-ee1416dad274",
       "packet_encoding": "xudp"
     },
     {
@@ -549,7 +535,7 @@
       "tag": "🇳🇱 荷兰2@Marisa_kristi",
       "tls": {
         "enabled": true,
-        "server_name": "etc.mesa.ip-ddns.com",
+        "server_name": "be4.e8d11d.xyz",
         "insecure": true,
         "utls": {
           "enabled": true,
@@ -559,14 +545,14 @@
       "transport": {
         "headers": {
           "Host": [
-            "etc.mesa.ip-ddns.com"
+            "be4.e8d11d.xyz"
           ]
         },
         "path": "/?ed=2560",
         "type": "ws"
       },
       "type": "vless",
-      "uuid": "25910849-a4b0-4937-aa4a-c81e4b58993e",
+      "uuid": "0ae393be-453b-ee8d-11d0-ee1416dad274",
       "packet_encoding": "xudp"
     },
     {
@@ -575,7 +561,7 @@
       "tag": "🇰🇷 韩国1@Marisa_kristi",
       "tls": {
         "enabled": true,
-        "server_name": "etc.mesa.ip-ddns.com",
+        "server_name": "be4.e8d11d.xyz",
         "insecure": true,
         "utls": {
           "enabled": true,
@@ -585,14 +571,14 @@
       "transport": {
         "headers": {
           "Host": [
-            "etc.mesa.ip-ddns.com"
+            "be4.e8d11d.xyz"
           ]
         },
         "path": "/?ed=2560",
         "type": "ws"
       },
       "type": "vless",
-      "uuid": "25910849-a4b0-4937-aa4a-c81e4b58993e",
+      "uuid": "0ae393be-453b-ee8d-11d0-ee1416dad274",
       "packet_encoding": "xudp"
     },
     {
@@ -601,7 +587,7 @@
       "tag": "🇰🇷 韩国2@Marisa_kristi",
       "tls": {
         "enabled": true,
-        "server_name": "etc.mesa.ip-ddns.com",
+        "server_name": "be4.e8d11d.xyz",
         "insecure": true,
         "utls": {
           "enabled": true,
@@ -611,14 +597,14 @@
       "transport": {
         "headers": {
           "Host": [
-            "etc.mesa.ip-ddns.com"
+            "be4.e8d11d.xyz"
           ]
         },
         "path": "/?ed=2560",
         "type": "ws"
       },
       "type": "vless",
-      "uuid": "25910849-a4b0-4937-aa4a-c81e4b58993e",
+      "uuid": "0ae393be-453b-ee8d-11d0-ee1416dad274",
       "packet_encoding": "xudp"
     },
     {
@@ -627,7 +613,7 @@
       "tag": "🇰🇷 韩国3@Marisa_kristi",
       "tls": {
         "enabled": true,
-        "server_name": "etc.mesa.ip-ddns.com",
+        "server_name": "be4.e8d11d.xyz",
         "insecure": true,
         "utls": {
           "enabled": true,
@@ -637,14 +623,14 @@
       "transport": {
         "headers": {
           "Host": [
-            "etc.mesa.ip-ddns.com"
+            "be4.e8d11d.xyz"
           ]
         },
         "path": "/?ed=2560",
         "type": "ws"
       },
       "type": "vless",
-      "uuid": "25910849-a4b0-4937-aa4a-c81e4b58993e",
+      "uuid": "0ae393be-453b-ee8d-11d0-ee1416dad274",
       "packet_encoding": "xudp"
     },
     {
@@ -653,7 +639,7 @@
       "tag": "🇰🇷 韩国4@Marisa_kristi",
       "tls": {
         "enabled": true,
-        "server_name": "etc.mesa.ip-ddns.com",
+        "server_name": "be4.e8d11d.xyz",
         "insecure": true,
         "utls": {
           "enabled": true,
@@ -663,14 +649,14 @@
       "transport": {
         "headers": {
           "Host": [
-            "etc.mesa.ip-ddns.com"
+            "be4.e8d11d.xyz"
           ]
         },
         "path": "/?ed=2560",
         "type": "ws"
       },
       "type": "vless",
-      "uuid": "25910849-a4b0-4937-aa4a-c81e4b58993e",
+      "uuid": "0ae393be-453b-ee8d-11d0-ee1416dad274",
       "packet_encoding": "xudp"
     },
     {
@@ -679,7 +665,7 @@
       "tag": "🇰🇷 韩国5@Marisa_kristi",
       "tls": {
         "enabled": true,
-        "server_name": "etc.mesa.ip-ddns.com",
+        "server_name": "be4.e8d11d.xyz",
         "insecure": true,
         "utls": {
           "enabled": true,
@@ -689,14 +675,14 @@
       "transport": {
         "headers": {
           "Host": [
-            "etc.mesa.ip-ddns.com"
+            "be4.e8d11d.xyz"
           ]
         },
         "path": "/?ed=2560",
         "type": "ws"
       },
       "type": "vless",
-      "uuid": "25910849-a4b0-4937-aa4a-c81e4b58993e",
+      "uuid": "0ae393be-453b-ee8d-11d0-ee1416dad274",
       "packet_encoding": "xudp"
     },
     {
@@ -804,7 +790,7 @@
       },
       {
         "action": "resolve",
-        "strategy": "prefer_ipv4"
+        "strategy": "ipv4_only"
       },
       {
         "type": "logical",
@@ -849,7 +835,10 @@
             "domain_keyword": [
               "ushd.xmsl.org",
               "cf.gtlx.org",
-              "mtalk.google.com"
+              "mtalk.google.com",
+              "public-operation-hkrpg-sg.hoyoverse.com",
+              "public-operation-hk4e-sg.hoyoverse.com",
+              "public-operation-nap-sg.hoyoverse.com"
             ]
           },
           {

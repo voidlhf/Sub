@@ -37,20 +37,6 @@
         "action": "reject"
       },
       {
-        "type": "logical",
-        "mode": "or",
-        "rules": [
-          {
-            "package_name": [
-              "com.miHoYo.GenshinImpact",
-              "com.HoYoverse.hkrpgoversea",
-              "com.HoYoverse.Nap"
-            ]
-          }
-        ],
-        "server": "dns_proxy"
-      },
-      {
         "query_type": [
           "A",
           "AAAA"
@@ -82,7 +68,7 @@
         "server": "dns_direct"
       }
     ],
-    "strategy": "prefer_ipv4",
+    "strategy": "ipv4_only",
     "independent_cache": true
   },
   "inbounds": [
@@ -106,7 +92,7 @@
       "security": "auto",
       "server": "5.39.252.72",
       "server_port": 20033,
-      "tag": "剩余流量：927.7 GB",
+      "tag": "剩余流量：927.62 GB",
       "transport": {
         "type": "ws"
       },
@@ -503,7 +489,7 @@
       "default": "urltest",
       "outbounds": [
         "urltest",
-        "剩余流量：927.7 GB",
+        "剩余流量：927.62 GB",
         "距离下次重置剩余：3 天",
         "套餐到期：2025-04-12",
         "德国-法兰克福-001",
@@ -536,7 +522,7 @@
       "tag": "urltest",
       "type": "urltest",
       "outbounds": [
-        "剩余流量：927.7 GB",
+        "剩余流量：927.62 GB",
         "距离下次重置剩余：3 天",
         "套餐到期：2025-04-12",
         "德国-法兰克福-001",
@@ -569,7 +555,7 @@
       "tag": "chatgpt",
       "type": "selector",
       "outbounds": [
-        "剩余流量：927.7 GB",
+        "剩余流量：927.62 GB",
         "距离下次重置剩余：3 天",
         "套餐到期：2025-04-12",
         "德国-法兰克福-001",
@@ -614,7 +600,7 @@
       },
       {
         "action": "resolve",
-        "strategy": "prefer_ipv4"
+        "strategy": "ipv4_only"
       },
       {
         "type": "logical",
@@ -659,7 +645,10 @@
             "domain_keyword": [
               "ushd.xmsl.org",
               "cf.gtlx.org",
-              "mtalk.google.com"
+              "mtalk.google.com",
+              "public-operation-hkrpg-sg.hoyoverse.com",
+              "public-operation-hk4e-sg.hoyoverse.com",
+              "public-operation-nap-sg.hoyoverse.com"
             ]
           },
           {

@@ -37,20 +37,6 @@
         "action": "reject"
       },
       {
-        "type": "logical",
-        "mode": "or",
-        "rules": [
-          {
-            "package_name": [
-              "com.miHoYo.GenshinImpact",
-              "com.HoYoverse.hkrpgoversea",
-              "com.HoYoverse.Nap"
-            ]
-          }
-        ],
-        "server": "dns_proxy"
-      },
-      {
         "query_type": [
           "A",
           "AAAA"
@@ -82,7 +68,7 @@
         "server": "dns_direct"
       }
     ],
-    "strategy": "prefer_ipv4",
+    "strategy": "ipv4_only",
     "independent_cache": true
   },
   "inbounds": [
@@ -106,8 +92,8 @@
       "obfs": null,
       "password": "d7770de2-16bc-44cd-9414-3d4451fc38f2",
       "server": "sanguayun-jp.legeth.xyz",
-      "server_port": 22899,
-      "tag": "剩余流量：164.97 GB",
+      "server_port": 22255,
+      "tag": "剩余流量：164.92 GB",
       "tls": {
         "enabled": true,
         "insecure": false
@@ -120,7 +106,7 @@
       "obfs": null,
       "password": "d7770de2-16bc-44cd-9414-3d4451fc38f2",
       "server": "sanguayun-jp.legeth.xyz",
-      "server_port": 22899,
+      "server_port": 22255,
       "tag": "距离下次重置剩余：24 天",
       "tls": {
         "enabled": true,
@@ -134,7 +120,7 @@
       "obfs": null,
       "password": "d7770de2-16bc-44cd-9414-3d4451fc38f2",
       "server": "sanguayun-jp.legeth.xyz",
-      "server_port": 22899,
+      "server_port": 22255,
       "tag": "套餐到期：2025-04-21",
       "tls": {
         "enabled": true,
@@ -148,7 +134,7 @@
       "obfs": null,
       "password": "d7770de2-16bc-44cd-9414-3d4451fc38f2",
       "server": "sanguayun-jp.legeth.xyz",
-      "server_port": 22899,
+      "server_port": 22255,
       "tag": "🚀 优质机场就选新狮云",
       "tls": {
         "enabled": true,
@@ -162,7 +148,7 @@
       "obfs": null,
       "password": "d7770de2-16bc-44cd-9414-3d4451fc38f2",
       "server": "sanguayun-jp.legeth.xyz",
-      "server_port": 22487,
+      "server_port": 22420,
       "tag": "🚀 量大管饱就选新狮云",
       "tls": {
         "enabled": true,
@@ -176,7 +162,7 @@
       "obfs": null,
       "password": "d7770de2-16bc-44cd-9414-3d4451fc38f2",
       "server": "sanguayun-jp.legeth.xyz",
-      "server_port": 22746,
+      "server_port": 22850,
       "tag": "🚀 新狮云官网：my.cloudlion.me",
       "tls": {
         "enabled": true,
@@ -190,7 +176,7 @@
       "obfs": null,
       "password": "d7770de2-16bc-44cd-9414-3d4451fc38f2",
       "server": "sanguayun-jp.legeth.xyz",
-      "server_port": 22399,
+      "server_port": 22250,
       "tag": "🚀 新狮云群组：@cloudlion_chat",
       "tls": {
         "enabled": true,
@@ -204,7 +190,7 @@
       "obfs": null,
       "password": "d7770de2-16bc-44cd-9414-3d4451fc38f2",
       "server": "sanguayun-us.legeth.xyz",
-      "server_port": 22890,
+      "server_port": 22337,
       "tag": "波特兰1 三网优化",
       "tls": {
         "enabled": true,
@@ -218,7 +204,7 @@
       "obfs": null,
       "password": "d7770de2-16bc-44cd-9414-3d4451fc38f2",
       "server": "sanguayun-us.legeth.xyz",
-      "server_port": 22857,
+      "server_port": 22142,
       "tag": "波特兰2 三网优化",
       "tls": {
         "enabled": true,
@@ -232,7 +218,7 @@
       "obfs": null,
       "password": "d7770de2-16bc-44cd-9414-3d4451fc38f2",
       "server": "sanguayun-jp.legeth.xyz",
-      "server_port": 22672,
+      "server_port": 22206,
       "tag": "东京1 三网优化",
       "tls": {
         "enabled": true,
@@ -246,7 +232,7 @@
       "obfs": null,
       "password": "d7770de2-16bc-44cd-9414-3d4451fc38f2",
       "server": "sanguayun-jp.legeth.xyz",
-      "server_port": 22615,
+      "server_port": 22549,
       "tag": "东京2 三网优化",
       "tls": {
         "enabled": true,
@@ -260,7 +246,7 @@
       "obfs": null,
       "password": "d7770de2-16bc-44cd-9414-3d4451fc38f2",
       "server": "sanguayun-us2.legeth.xyz",
-      "server_port": 22824,
+      "server_port": 22230,
       "tag": "拉斯维加斯1 三网优化",
       "tls": {
         "enabled": true,
@@ -274,7 +260,7 @@
       "obfs": null,
       "password": "d7770de2-16bc-44cd-9414-3d4451fc38f2",
       "server": "sanguayun-us2.legeth.xyz",
-      "server_port": 22696,
+      "server_port": 22610,
       "tag": "拉斯维加斯2 三网优化",
       "tls": {
         "enabled": true,
@@ -288,7 +274,7 @@
       "obfs": null,
       "password": "d7770de2-16bc-44cd-9414-3d4451fc38f2",
       "server": "sanguayun-lu.legeth.xyz",
-      "server_port": 22150,
+      "server_port": 22765,
       "tag": "卢森堡1 三网优化",
       "tls": {
         "enabled": true,
@@ -302,7 +288,7 @@
       "obfs": null,
       "password": "d7770de2-16bc-44cd-9414-3d4451fc38f2",
       "server": "sanguayun-lu.legeth.xyz",
-      "server_port": 22729,
+      "server_port": 22110,
       "tag": "卢森堡2 三网优化",
       "tls": {
         "enabled": true,
@@ -317,7 +303,7 @@
       "default": "urltest",
       "outbounds": [
         "urltest",
-        "剩余流量：164.97 GB",
+        "剩余流量：164.92 GB",
         "距离下次重置剩余：24 天",
         "套餐到期：2025-04-21",
         "🚀 优质机场就选新狮云",
@@ -338,7 +324,7 @@
       "tag": "urltest",
       "type": "urltest",
       "outbounds": [
-        "剩余流量：164.97 GB",
+        "剩余流量：164.92 GB",
         "距离下次重置剩余：24 天",
         "套餐到期：2025-04-21",
         "🚀 优质机场就选新狮云",
@@ -359,7 +345,7 @@
       "tag": "chatgpt",
       "type": "selector",
       "outbounds": [
-        "剩余流量：164.97 GB",
+        "剩余流量：164.92 GB",
         "距离下次重置剩余：24 天",
         "套餐到期：2025-04-21",
         "🚀 优质机场就选新狮云",
@@ -392,7 +378,7 @@
       },
       {
         "action": "resolve",
-        "strategy": "prefer_ipv4"
+        "strategy": "ipv4_only"
       },
       {
         "type": "logical",
@@ -437,7 +423,10 @@
             "domain_keyword": [
               "ushd.xmsl.org",
               "cf.gtlx.org",
-              "mtalk.google.com"
+              "mtalk.google.com",
+              "public-operation-hkrpg-sg.hoyoverse.com",
+              "public-operation-hk4e-sg.hoyoverse.com",
+              "public-operation-nap-sg.hoyoverse.com"
             ]
           },
           {

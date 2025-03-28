@@ -37,20 +37,6 @@
         "action": "reject"
       },
       {
-        "type": "logical",
-        "mode": "or",
-        "rules": [
-          {
-            "package_name": [
-              "com.miHoYo.GenshinImpact",
-              "com.HoYoverse.hkrpgoversea",
-              "com.HoYoverse.Nap"
-            ]
-          }
-        ],
-        "server": "dns_proxy"
-      },
-      {
         "query_type": [
           "A",
           "AAAA"
@@ -82,7 +68,7 @@
         "server": "dns_direct"
       }
     ],
-    "strategy": "prefer_ipv4",
+    "strategy": "ipv4_only",
     "independent_cache": true
   },
   "inbounds": [
@@ -146,189 +132,7 @@
             "cmjiedian.jsczczc.nyc.mn"
           ]
         },
-        "path": "/?ed=2560&proxyip=proxyip.oracle.cmliussss.net",
-        "type": "ws"
-      },
-      "type": "vless",
-      "uuid": "acb4d776-431c-4701-9868-a41f32c6222c",
-      "packet_encoding": "xudp"
-    },
-    {
-      "server": "138.3.250.120",
-      "server_port": 443,
-      "tag": "🇩🇪 DE",
-      "tls": {
-        "enabled": true,
-        "server_name": "cmjiedian.jsczczc.nyc.mn",
-        "insecure": true,
-        "utls": {
-          "enabled": true,
-          "fingerprint": "random"
-        }
-      },
-      "transport": {
-        "headers": {
-          "Host": [
-            "cmjiedian.jsczczc.nyc.mn"
-          ]
-        },
-        "path": "/?ed=2560&proxyip=138.3.250.120:443",
-        "type": "ws"
-      },
-      "type": "vless",
-      "uuid": "acb4d776-431c-4701-9868-a41f32c6222c",
-      "packet_encoding": "xudp"
-    },
-    {
-      "server": "64.110.81.121",
-      "server_port": 443,
-      "tag": "🇰🇷 KR",
-      "tls": {
-        "enabled": true,
-        "server_name": "cmjiedian.jsczczc.nyc.mn",
-        "insecure": true,
-        "utls": {
-          "enabled": true,
-          "fingerprint": "random"
-        }
-      },
-      "transport": {
-        "headers": {
-          "Host": [
-            "cmjiedian.jsczczc.nyc.mn"
-          ]
-        },
-        "path": "/?ed=2560&proxyip=64.110.81.121:443",
-        "type": "ws"
-      },
-      "type": "vless",
-      "uuid": "acb4d776-431c-4701-9868-a41f32c6222c",
-      "packet_encoding": "xudp"
-    },
-    {
-      "server": "8.222.219.186",
-      "server_port": 443,
-      "tag": "🇸🇬 SG",
-      "tls": {
-        "enabled": true,
-        "server_name": "cmjiedian.jsczczc.nyc.mn",
-        "insecure": true,
-        "utls": {
-          "enabled": true,
-          "fingerprint": "random"
-        }
-      },
-      "transport": {
-        "headers": {
-          "Host": [
-            "cmjiedian.jsczczc.nyc.mn"
-          ]
-        },
-        "path": "/?ed=2560&proxyip=8.222.219.186:443",
-        "type": "ws"
-      },
-      "type": "vless",
-      "uuid": "acb4d776-431c-4701-9868-a41f32c6222c",
-      "packet_encoding": "xudp"
-    },
-    {
-      "server": "141.147.114.60",
-      "server_port": 443,
-      "tag": "🇬🇧 GB",
-      "tls": {
-        "enabled": true,
-        "server_name": "cmjiedian.jsczczc.nyc.mn",
-        "insecure": true,
-        "utls": {
-          "enabled": true,
-          "fingerprint": "random"
-        }
-      },
-      "transport": {
-        "headers": {
-          "Host": [
-            "cmjiedian.jsczczc.nyc.mn"
-          ]
-        },
-        "path": "/?ed=2560&proxyip=141.147.114.60:443",
-        "type": "ws"
-      },
-      "type": "vless",
-      "uuid": "acb4d776-431c-4701-9868-a41f32c6222c",
-      "packet_encoding": "xudp"
-    },
-    {
-      "server": "47.245.105.72",
-      "server_port": 443,
-      "tag": "🇸🇬 SG 2",
-      "tls": {
-        "enabled": true,
-        "server_name": "cmjiedian.jsczczc.nyc.mn",
-        "insecure": true,
-        "utls": {
-          "enabled": true,
-          "fingerprint": "random"
-        }
-      },
-      "transport": {
-        "headers": {
-          "Host": [
-            "cmjiedian.jsczczc.nyc.mn"
-          ]
-        },
-        "path": "/?ed=2560&proxyip=47.245.105.72:443",
-        "type": "ws"
-      },
-      "type": "vless",
-      "uuid": "acb4d776-431c-4701-9868-a41f32c6222c",
-      "packet_encoding": "xudp"
-    },
-    {
-      "server": "193.122.107.38",
-      "server_port": 443,
-      "tag": "🇰🇷 KR 2",
-      "tls": {
-        "enabled": true,
-        "server_name": "cmjiedian.jsczczc.nyc.mn",
-        "insecure": true,
-        "utls": {
-          "enabled": true,
-          "fingerprint": "random"
-        }
-      },
-      "transport": {
-        "headers": {
-          "Host": [
-            "cmjiedian.jsczczc.nyc.mn"
-          ]
-        },
-        "path": "/?ed=2560&proxyip=193.122.107.38:443",
-        "type": "ws"
-      },
-      "type": "vless",
-      "uuid": "acb4d776-431c-4701-9868-a41f32c6222c",
-      "packet_encoding": "xudp"
-    },
-    {
-      "server": "131.186.57.241",
-      "server_port": 443,
-      "tag": "🇯🇵 JP",
-      "tls": {
-        "enabled": true,
-        "server_name": "cmjiedian.jsczczc.nyc.mn",
-        "insecure": true,
-        "utls": {
-          "enabled": true,
-          "fingerprint": "random"
-        }
-      },
-      "transport": {
-        "headers": {
-          "Host": [
-            "cmjiedian.jsczczc.nyc.mn"
-          ]
-        },
-        "path": "/?ed=2560&proxyip=131.186.57.241:443",
+        "path": "/?ed=2560&proxyip=ProxyIP.Oracle.cmliussss.net",
         "type": "ws"
       },
       "type": "vless",
@@ -338,7 +142,7 @@
     {
       "server": "8.222.145.165",
       "server_port": 443,
-      "tag": "🇸🇬 SG 3",
+      "tag": "🇸🇬 SG",
       "tls": {
         "enabled": true,
         "server_name": "cmjiedian.jsczczc.nyc.mn",
@@ -362,9 +166,9 @@
       "packet_encoding": "xudp"
     },
     {
-      "server": "140.238.158.238",
+      "server": "8.222.196.29",
       "server_port": 443,
-      "tag": "🇨🇦 CA",
+      "tag": "🇸🇬 SG 2",
       "tls": {
         "enabled": true,
         "server_name": "cmjiedian.jsczczc.nyc.mn",
@@ -380,7 +184,7 @@
             "cmjiedian.jsczczc.nyc.mn"
           ]
         },
-        "path": "/?ed=2560&proxyip=140.238.158.238:443",
+        "path": "/?ed=2560&proxyip=8.222.196.29:443",
         "type": "ws"
       },
       "type": "vless",
@@ -388,7 +192,59 @@
       "packet_encoding": "xudp"
     },
     {
-      "server": "8.222.158.15",
+      "server": "150.230.200.205",
+      "server_port": 443,
+      "tag": "🇯🇵 JP",
+      "tls": {
+        "enabled": true,
+        "server_name": "cmjiedian.jsczczc.nyc.mn",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "headers": {
+          "Host": [
+            "cmjiedian.jsczczc.nyc.mn"
+          ]
+        },
+        "path": "/?ed=2560&proxyip=150.230.200.205:443",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "acb4d776-431c-4701-9868-a41f32c6222c",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "8.222.250.163",
+      "server_port": 443,
+      "tag": "🇸🇬 SG 3",
+      "tls": {
+        "enabled": true,
+        "server_name": "cmjiedian.jsczczc.nyc.mn",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "headers": {
+          "Host": [
+            "cmjiedian.jsczczc.nyc.mn"
+          ]
+        },
+        "path": "/?ed=2560&proxyip=8.222.250.163:443",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "acb4d776-431c-4701-9868-a41f32c6222c",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "47.74.157.194",
       "server_port": 443,
       "tag": "🇸🇬 SG 4",
       "tls": {
@@ -406,7 +262,7 @@
             "cmjiedian.jsczczc.nyc.mn"
           ]
         },
-        "path": "/?ed=2560&proxyip=8.222.158.15:443",
+        "path": "/?ed=2560&proxyip=47.74.157.194:443",
         "type": "ws"
       },
       "type": "vless",
@@ -414,59 +270,7 @@
       "packet_encoding": "xudp"
     },
     {
-      "server": "141.148.246.56",
-      "server_port": 443,
-      "tag": "🇳🇱 NL",
-      "tls": {
-        "enabled": true,
-        "server_name": "cmjiedian.jsczczc.nyc.mn",
-        "insecure": true,
-        "utls": {
-          "enabled": true,
-          "fingerprint": "random"
-        }
-      },
-      "transport": {
-        "headers": {
-          "Host": [
-            "cmjiedian.jsczczc.nyc.mn"
-          ]
-        },
-        "path": "/?ed=2560&proxyip=141.148.246.56:443",
-        "type": "ws"
-      },
-      "type": "vless",
-      "uuid": "acb4d776-431c-4701-9868-a41f32c6222c",
-      "packet_encoding": "xudp"
-    },
-    {
-      "server": "138.3.251.49",
-      "server_port": 443,
-      "tag": "🇩🇪 DE 2",
-      "tls": {
-        "enabled": true,
-        "server_name": "cmjiedian.jsczczc.nyc.mn",
-        "insecure": true,
-        "utls": {
-          "enabled": true,
-          "fingerprint": "random"
-        }
-      },
-      "transport": {
-        "headers": {
-          "Host": [
-            "cmjiedian.jsczczc.nyc.mn"
-          ]
-        },
-        "path": "/?ed=2560&proxyip=138.3.251.49:443",
-        "type": "ws"
-      },
-      "type": "vless",
-      "uuid": "acb4d776-431c-4701-9868-a41f32c6222c",
-      "packet_encoding": "xudp"
-    },
-    {
-      "server": "152.69.209.132",
+      "server": "8.219.50.73",
       "server_port": 443,
       "tag": "🇸🇬 SG 5",
       "tls": {
@@ -484,7 +288,33 @@
             "cmjiedian.jsczczc.nyc.mn"
           ]
         },
-        "path": "/?ed=2560&proxyip=152.69.209.132:443",
+        "path": "/?ed=2560&proxyip=8.219.50.73:443",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "acb4d776-431c-4701-9868-a41f32c6222c",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "47.240.42.138",
+      "server_port": 443,
+      "tag": "🇭🇰 HK",
+      "tls": {
+        "enabled": true,
+        "server_name": "cmjiedian.jsczczc.nyc.mn",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "headers": {
+          "Host": [
+            "cmjiedian.jsczczc.nyc.mn"
+          ]
+        },
+        "path": "/?ed=2560&proxyip=47.240.42.138:443",
         "type": "ws"
       },
       "type": "vless",
@@ -518,7 +348,7 @@
       "packet_encoding": "xudp"
     },
     {
-      "server": "8.222.137.153",
+      "server": "8.219.69.235",
       "server_port": 443,
       "tag": "🇸🇬 SG 6",
       "tls": {
@@ -536,7 +366,7 @@
             "cmjiedian.jsczczc.nyc.mn"
           ]
         },
-        "path": "/?ed=2560&proxyip=8.222.137.153:443",
+        "path": "/?ed=2560&proxyip=8.219.69.235:443",
         "type": "ws"
       },
       "type": "vless",
@@ -544,8 +374,60 @@
       "packet_encoding": "xudp"
     },
     {
-      "server": "132.145.116.190",
+      "server": "193.122.108.180",
       "server_port": 443,
+      "tag": "🇰🇷 KR",
+      "tls": {
+        "enabled": true,
+        "server_name": "cmjiedian.jsczczc.nyc.mn",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "headers": {
+          "Host": [
+            "cmjiedian.jsczczc.nyc.mn"
+          ]
+        },
+        "path": "/?ed=2560&proxyip=193.122.108.180:443",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "acb4d776-431c-4701-9868-a41f32c6222c",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "129.159.25.127",
+      "server_port": 443,
+      "tag": "🇩🇪 DE",
+      "tls": {
+        "enabled": true,
+        "server_name": "cmjiedian.jsczczc.nyc.mn",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "headers": {
+          "Host": [
+            "cmjiedian.jsczczc.nyc.mn"
+          ]
+        },
+        "path": "/?ed=2560&proxyip=129.159.25.127:443",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "acb4d776-431c-4701-9868-a41f32c6222c",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "140.238.58.181",
+      "server_port": 2053,
       "tag": "🇯🇵 JP 3",
       "tls": {
         "enabled": true,
@@ -562,7 +444,111 @@
             "cmjiedian.jsczczc.nyc.mn"
           ]
         },
-        "path": "/?ed=2560&proxyip=132.145.116.190:443",
+        "path": "/?ed=2560&proxyip=proxyip.jp.cmliussss.net",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "acb4d776-431c-4701-9868-a41f32c6222c",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "129.159.202.83",
+      "server_port": 443,
+      "tag": "🇩🇪 DE 2",
+      "tls": {
+        "enabled": true,
+        "server_name": "cmjiedian.jsczczc.nyc.mn",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "headers": {
+          "Host": [
+            "cmjiedian.jsczczc.nyc.mn"
+          ]
+        },
+        "path": "/?ed=2560&proxyip=129.159.202.83:443",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "acb4d776-431c-4701-9868-a41f32c6222c",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "140.83.39.153",
+      "server_port": 443,
+      "tag": "🇯🇵 JP 4",
+      "tls": {
+        "enabled": true,
+        "server_name": "cmjiedian.jsczczc.nyc.mn",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "headers": {
+          "Host": [
+            "cmjiedian.jsczczc.nyc.mn"
+          ]
+        },
+        "path": "/?ed=2560&proxyip=140.83.39.153:443",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "acb4d776-431c-4701-9868-a41f32c6222c",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "129.150.53.218",
+      "server_port": 443,
+      "tag": "🇸🇬 SG 7",
+      "tls": {
+        "enabled": true,
+        "server_name": "cmjiedian.jsczczc.nyc.mn",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "headers": {
+          "Host": [
+            "cmjiedian.jsczczc.nyc.mn"
+          ]
+        },
+        "path": "/?ed=2560&proxyip=129.150.53.218:443",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "acb4d776-431c-4701-9868-a41f32c6222c",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "138.2.107.107",
+      "server_port": 443,
+      "tag": "🇸🇬 SG 8",
+      "tls": {
+        "enabled": true,
+        "server_name": "cmjiedian.jsczczc.nyc.mn",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "headers": {
+          "Host": [
+            "cmjiedian.jsczczc.nyc.mn"
+          ]
+        },
+        "path": "/?ed=2560&proxyip=138.2.107.107:443",
         "type": "ws"
       },
       "type": "vless",
@@ -572,7 +558,7 @@
     {
       "server": "158.101.154.245",
       "server_port": 47001,
-      "tag": "🇯🇵 JP 4",
+      "tag": "🇯🇵 JP 5",
       "tls": {
         "enabled": true,
         "server_name": "cmjiedian.jsczczc.nyc.mn",
@@ -598,7 +584,7 @@
     {
       "server": "119.229.77.159",
       "server_port": 10002,
-      "tag": "🇯🇵 JP 5",
+      "tag": "🇯🇵 JP 6",
       "tls": {
         "enabled": true,
         "server_name": "cmjiedian.jsczczc.nyc.mn",
@@ -624,7 +610,7 @@
     {
       "server": "45.154.98.100",
       "server_port": 5010,
-      "tag": "🇳🇱 NL 2",
+      "tag": "🇳🇱 NL",
       "tls": {
         "enabled": true,
         "server_name": "cmjiedian.jsczczc.nyc.mn",
@@ -650,7 +636,7 @@
     {
       "server": "45.154.98.230",
       "server_port": 5007,
-      "tag": "🇳🇱 NL 3",
+      "tag": "🇳🇱 NL 2",
       "tls": {
         "enabled": true,
         "server_name": "cmjiedian.jsczczc.nyc.mn",
@@ -676,7 +662,7 @@
     {
       "server": "183.106.162.127",
       "server_port": 18888,
-      "tag": "🇰🇷 KR 3",
+      "tag": "🇰🇷 KR 2",
       "tls": {
         "enabled": true,
         "server_name": "cmjiedian.jsczczc.nyc.mn",
@@ -702,7 +688,7 @@
     {
       "server": "221.162.185.151",
       "server_port": 50000,
-      "tag": "🇰🇷 KR 4",
+      "tag": "🇰🇷 KR 3",
       "tls": {
         "enabled": true,
         "server_name": "cmjiedian.jsczczc.nyc.mn",
@@ -728,7 +714,7 @@
     {
       "server": "146.56.99.22",
       "server_port": 20443,
-      "tag": "🇰🇷 KR 5",
+      "tag": "🇰🇷 KR 4",
       "tls": {
         "enabled": true,
         "server_name": "cmjiedian.jsczczc.nyc.mn",
@@ -754,7 +740,7 @@
     {
       "server": "211.218.223.130",
       "server_port": 30012,
-      "tag": "🇰🇷 KR 6",
+      "tag": "🇰🇷 KR 5",
       "tls": {
         "enabled": true,
         "server_name": "cmjiedian.jsczczc.nyc.mn",
@@ -926,7 +912,7 @@
             "cmjiedian.jsczczc.nyc.mn"
           ]
         },
-        "path": "/?ed=2560&proxyip=proxyip.oracle.cmliussss.net",
+        "path": "/?ed=2560&proxyip=ProxyIP.Oracle.cmliussss.net",
         "type": "ws"
       },
       "type": "vless",
@@ -952,7 +938,7 @@
             "cmjiedian.jsczczc.nyc.mn"
           ]
         },
-        "path": "/?ed=2560&proxyip=proxyip.oracle.cmliussss.net",
+        "path": "/?ed=2560&proxyip=ProxyIP.Oracle.cmliussss.net",
         "type": "ws"
       },
       "type": "vless",
@@ -978,7 +964,7 @@
             "cmjiedian.jsczczc.nyc.mn"
           ]
         },
-        "path": "/?ed=2560&proxyip=proxyip.oracle.cmliussss.net",
+        "path": "/?ed=2560&proxyip=ProxyIP.Oracle.cmliussss.net",
         "type": "ws"
       },
       "type": "vless",
@@ -988,7 +974,7 @@
     {
       "server": "132.145.81.117",
       "server_port": 443,
-      "tag": "🇰🇷 KR 7",
+      "tag": "🇰🇷 KR 6",
       "tls": {
         "enabled": true,
         "server_name": "cmjiedian.jsczczc.nyc.mn",
@@ -1012,35 +998,9 @@
       "packet_encoding": "xudp"
     },
     {
-      "server": "138.2.107.107",
-      "server_port": 443,
-      "tag": "🇸🇬 SG 7",
-      "tls": {
-        "enabled": true,
-        "server_name": "cmjiedian.jsczczc.nyc.mn",
-        "insecure": true,
-        "utls": {
-          "enabled": true,
-          "fingerprint": "random"
-        }
-      },
-      "transport": {
-        "headers": {
-          "Host": [
-            "cmjiedian.jsczczc.nyc.mn"
-          ]
-        },
-        "path": "/?ed=2560&proxyip=138.2.107.107:443",
-        "type": "ws"
-      },
-      "type": "vless",
-      "uuid": "acb4d776-431c-4701-9868-a41f32c6222c",
-      "packet_encoding": "xudp"
-    },
-    {
       "server": "138.2.61.180",
       "server_port": 443,
-      "tag": "🇯🇵 JP 6",
+      "tag": "🇯🇵 JP 7",
       "tls": {
         "enabled": true,
         "server_name": "cmjiedian.jsczczc.nyc.mn",
@@ -1057,6 +1017,32 @@
           ]
         },
         "path": "/?ed=2560&proxyip=138.2.61.180:443",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "acb4d776-431c-4701-9868-a41f32c6222c",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "140.238.158.238",
+      "server_port": 443,
+      "tag": "🇨🇦 CA",
+      "tls": {
+        "enabled": true,
+        "server_name": "cmjiedian.jsczczc.nyc.mn",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "headers": {
+          "Host": [
+            "cmjiedian.jsczczc.nyc.mn"
+          ]
+        },
+        "path": "/?ed=2560&proxyip=140.238.158.238:443",
         "type": "ws"
       },
       "type": "vless",
@@ -1222,7 +1208,7 @@
     {
       "server": "152.70.57.182",
       "server_port": 443,
-      "tag": "🇳🇱 NL 4",
+      "tag": "🇳🇱 NL 3",
       "tls": {
         "enabled": true,
         "server_name": "cmjiedian.jsczczc.nyc.mn",
@@ -1316,7 +1302,7 @@
             "cmjiedian.jsczczc.nyc.mn"
           ]
         },
-        "path": "/?ed=2560&proxyip=proxyip.oracle.cmliussss.net",
+        "path": "/?ed=2560&proxyip=ProxyIP.Oracle.cmliussss.net",
         "type": "ws"
       },
       "type": "vless",
@@ -1456,7 +1442,7 @@
     {
       "server": "8.222.165.104",
       "server_port": 443,
-      "tag": "🇸🇬 SG 8",
+      "tag": "🇸🇬 SG 9",
       "tls": {
         "enabled": true,
         "server_name": "cmjiedian.jsczczc.nyc.mn",
@@ -1480,7 +1466,7 @@
       "packet_encoding": "xudp"
     },
     {
-      "server": "162.159.152.109",
+      "server": "162.159.152.10",
       "server_port": 443,
       "tag": "CT",
       "tls": {
@@ -1498,7 +1484,7 @@
             "cmjiedian.jsczczc.nyc.mn"
           ]
         },
-        "path": "/?ed=2560&proxyip=proxyip.oracle.cmliussss.net",
+        "path": "/?ed=2560&proxyip=ProxyIP.Oracle.cmliussss.net",
         "type": "ws"
       },
       "type": "vless",
@@ -1506,7 +1492,7 @@
       "packet_encoding": "xudp"
     },
     {
-      "server": "162.159.152.10",
+      "server": "162.159.152.138",
       "server_port": 443,
       "tag": "CT 2",
       "tls": {
@@ -1524,7 +1510,7 @@
             "cmjiedian.jsczczc.nyc.mn"
           ]
         },
-        "path": "/?ed=2560&proxyip=proxyip.oracle.cmliussss.net",
+        "path": "/?ed=2560&proxyip=ProxyIP.Oracle.cmliussss.net",
         "type": "ws"
       },
       "type": "vless",
@@ -1532,7 +1518,7 @@
       "packet_encoding": "xudp"
     },
     {
-      "server": "162.159.152.46",
+      "server": "162.159.152.109",
       "server_port": 443,
       "tag": "CT 3",
       "tls": {
@@ -1550,7 +1536,7 @@
             "cmjiedian.jsczczc.nyc.mn"
           ]
         },
-        "path": "/?ed=2560&proxyip=proxyip.oracle.cmliussss.net",
+        "path": "/?ed=2560&proxyip=ProxyIP.Oracle.cmliussss.net",
         "type": "ws"
       },
       "type": "vless",
@@ -1558,7 +1544,7 @@
       "packet_encoding": "xudp"
     },
     {
-      "server": "162.159.152.66",
+      "server": "162.159.152.46",
       "server_port": 443,
       "tag": "CT 4",
       "tls": {
@@ -1576,7 +1562,7 @@
             "cmjiedian.jsczczc.nyc.mn"
           ]
         },
-        "path": "/?ed=2560&proxyip=proxyip.oracle.cmliussss.net",
+        "path": "/?ed=2560&proxyip=ProxyIP.Oracle.cmliussss.net",
         "type": "ws"
       },
       "type": "vless",
@@ -1584,7 +1570,7 @@
       "packet_encoding": "xudp"
     },
     {
-      "server": "162.159.152.138",
+      "server": "162.159.152.66",
       "server_port": 443,
       "tag": "CT 5",
       "tls": {
@@ -1602,7 +1588,7 @@
             "cmjiedian.jsczczc.nyc.mn"
           ]
         },
-        "path": "/?ed=2560&proxyip=proxyip.oracle.cmliussss.net",
+        "path": "/?ed=2560&proxyip=ProxyIP.Oracle.cmliussss.net",
         "type": "ws"
       },
       "type": "vless",
@@ -1628,7 +1614,7 @@
             "cmjiedian.jsczczc.nyc.mn"
           ]
         },
-        "path": "/?ed=2560&proxyip=proxyip.oracle.cmliussss.net",
+        "path": "/?ed=2560&proxyip=ProxyIP.Oracle.cmliussss.net",
         "type": "ws"
       },
       "type": "vless",
@@ -1636,7 +1622,7 @@
       "packet_encoding": "xudp"
     },
     {
-      "server": "104.17.222.172",
+      "server": "104.17.213.147",
       "server_port": 443,
       "tag": "CMCC",
       "tls": {
@@ -1654,7 +1640,7 @@
             "cmjiedian.jsczczc.nyc.mn"
           ]
         },
-        "path": "/?ed=2560&proxyip=proxyip.oracle.cmliussss.net",
+        "path": "/?ed=2560&proxyip=ProxyIP.Oracle.cmliussss.net",
         "type": "ws"
       },
       "type": "vless",
@@ -1662,7 +1648,7 @@
       "packet_encoding": "xudp"
     },
     {
-      "server": "104.19.148.82",
+      "server": "104.19.153.69",
       "server_port": 443,
       "tag": "CMCC 2",
       "tls": {
@@ -1680,7 +1666,7 @@
             "cmjiedian.jsczczc.nyc.mn"
           ]
         },
-        "path": "/?ed=2560&proxyip=proxyip.oracle.cmliussss.net",
+        "path": "/?ed=2560&proxyip=ProxyIP.Oracle.cmliussss.net",
         "type": "ws"
       },
       "type": "vless",
@@ -1688,7 +1674,7 @@
       "packet_encoding": "xudp"
     },
     {
-      "server": "104.17.223.167",
+      "server": "104.16.245.82",
       "server_port": 443,
       "tag": "CMCC 3",
       "tls": {
@@ -1706,7 +1692,7 @@
             "cmjiedian.jsczczc.nyc.mn"
           ]
         },
-        "path": "/?ed=2560&proxyip=proxyip.oracle.cmliussss.net",
+        "path": "/?ed=2560&proxyip=ProxyIP.Oracle.cmliussss.net",
         "type": "ws"
       },
       "type": "vless",
@@ -1714,7 +1700,7 @@
       "packet_encoding": "xudp"
     },
     {
-      "server": "104.18.85.24",
+      "server": "104.17.190.113",
       "server_port": 443,
       "tag": "CMCC 4",
       "tls": {
@@ -1732,7 +1718,7 @@
             "cmjiedian.jsczczc.nyc.mn"
           ]
         },
-        "path": "/?ed=2560&proxyip=proxyip.oracle.cmliussss.net",
+        "path": "/?ed=2560&proxyip=ProxyIP.Oracle.cmliussss.net",
         "type": "ws"
       },
       "type": "vless",
@@ -1740,7 +1726,7 @@
       "packet_encoding": "xudp"
     },
     {
-      "server": "104.17.211.37",
+      "server": "104.19.148.82",
       "server_port": 443,
       "tag": "CMCC 5",
       "tls": {
@@ -1758,7 +1744,7 @@
             "cmjiedian.jsczczc.nyc.mn"
           ]
         },
-        "path": "/?ed=2560&proxyip=proxyip.oracle.cmliussss.net",
+        "path": "/?ed=2560&proxyip=ProxyIP.Oracle.cmliussss.net",
         "type": "ws"
       },
       "type": "vless",
@@ -1766,7 +1752,7 @@
       "packet_encoding": "xudp"
     },
     {
-      "server": "104.16.245.85",
+      "server": "104.18.85.24",
       "server_port": 443,
       "tag": "CMCC 6",
       "tls": {
@@ -1784,7 +1770,7 @@
             "cmjiedian.jsczczc.nyc.mn"
           ]
         },
-        "path": "/?ed=2560&proxyip=proxyip.oracle.cmliussss.net",
+        "path": "/?ed=2560&proxyip=ProxyIP.Oracle.cmliussss.net",
         "type": "ws"
       },
       "type": "vless",
@@ -1792,7 +1778,7 @@
       "packet_encoding": "xudp"
     },
     {
-      "server": "2606:4700:3036::ce:d6ea",
+      "server": "2606:4700:3036:6ed4:ff6e:712c:4953:87a5",
       "server_port": 443,
       "tag": "CMCC-IPV6",
       "tls": {
@@ -1810,7 +1796,7 @@
             "cmjiedian.jsczczc.nyc.mn"
           ]
         },
-        "path": "/?ed=2560&proxyip=proxyip.oracle.cmliussss.net",
+        "path": "/?ed=2560&proxyip=ProxyIP.Oracle.cmliussss.net",
         "type": "ws"
       },
       "type": "vless",
@@ -1818,7 +1804,7 @@
       "packet_encoding": "xudp"
     },
     {
-      "server": "2606:4700:3036:6ed4:ff6e:712c:4953:87a5",
+      "server": "2606:4700:3036:ef:3f32:a9c6:39c4:9ae3",
       "server_port": 443,
       "tag": "CMCC-IPV6 2",
       "tls": {
@@ -1836,7 +1822,7 @@
             "cmjiedian.jsczczc.nyc.mn"
           ]
         },
-        "path": "/?ed=2560&proxyip=proxyip.oracle.cmliussss.net",
+        "path": "/?ed=2560&proxyip=ProxyIP.Oracle.cmliussss.net",
         "type": "ws"
       },
       "type": "vless",
@@ -1844,7 +1830,7 @@
       "packet_encoding": "xudp"
     },
     {
-      "server": "2606:4700:3036:ef:3f32:a9c6:39c4:9ae3",
+      "server": "2606:4700:3036:ef:3f32:9601:b705:e94b",
       "server_port": 443,
       "tag": "CMCC-IPV6 3",
       "tls": {
@@ -1862,7 +1848,7 @@
             "cmjiedian.jsczczc.nyc.mn"
           ]
         },
-        "path": "/?ed=2560&proxyip=proxyip.oracle.cmliussss.net",
+        "path": "/?ed=2560&proxyip=ProxyIP.Oracle.cmliussss.net",
         "type": "ws"
       },
       "type": "vless",
@@ -1870,7 +1856,7 @@
       "packet_encoding": "xudp"
     },
     {
-      "server": "2606:4700:3036:ef:95e:7a29:2ccc:d331",
+      "server": "2606:4700:3036:0:a36a:4af2:65e7:a0d6",
       "server_port": 443,
       "tag": "CMCC-IPV6 4",
       "tls": {
@@ -1888,7 +1874,7 @@
             "cmjiedian.jsczczc.nyc.mn"
           ]
         },
-        "path": "/?ed=2560&proxyip=proxyip.oracle.cmliussss.net",
+        "path": "/?ed=2560&proxyip=ProxyIP.Oracle.cmliussss.net",
         "type": "ws"
       },
       "type": "vless",
@@ -1896,7 +1882,7 @@
       "packet_encoding": "xudp"
     },
     {
-      "server": "2606:4700:3036:0:a36a:3160:b566:8741",
+      "server": "2606:4700:3036:6ed4:e1ed:36:7204:2031",
       "server_port": 443,
       "tag": "CMCC-IPV6 5",
       "tls": {
@@ -1914,7 +1900,7 @@
             "cmjiedian.jsczczc.nyc.mn"
           ]
         },
-        "path": "/?ed=2560&proxyip=proxyip.oracle.cmliussss.net",
+        "path": "/?ed=2560&proxyip=ProxyIP.Oracle.cmliussss.net",
         "type": "ws"
       },
       "type": "vless",
@@ -1922,7 +1908,7 @@
       "packet_encoding": "xudp"
     },
     {
-      "server": "2606:4700:3036:ef:3f32:9601:b705:e94b",
+      "server": "2606:4700:3036:6ed4:ffdf:f2ba:820b:ed5c",
       "server_port": 443,
       "tag": "CMCC-IPV6 6",
       "tls": {
@@ -1940,7 +1926,7 @@
             "cmjiedian.jsczczc.nyc.mn"
           ]
         },
-        "path": "/?ed=2560&proxyip=proxyip.oracle.cmliussss.net",
+        "path": "/?ed=2560&proxyip=ProxyIP.Oracle.cmliussss.net",
         "type": "ws"
       },
       "type": "vless",
@@ -1955,30 +1941,30 @@
         "urltest",
         "加入我的频道t.me/CMLiussss解锁更多优选节点",
         "CFnat",
-        "🇩🇪 DE",
-        "🇰🇷 KR",
         "🇸🇬 SG",
-        "🇬🇧 GB",
         "🇸🇬 SG 2",
-        "🇰🇷 KR 2",
         "🇯🇵 JP",
         "🇸🇬 SG 3",
-        "🇨🇦 CA",
         "🇸🇬 SG 4",
-        "🇳🇱 NL",
-        "🇩🇪 DE 2",
         "🇸🇬 SG 5",
+        "🇭🇰 HK",
         "🇯🇵 JP 2",
         "🇸🇬 SG 6",
+        "🇰🇷 KR",
+        "🇩🇪 DE",
         "🇯🇵 JP 3",
+        "🇩🇪 DE 2",
         "🇯🇵 JP 4",
+        "🇸🇬 SG 7",
+        "🇸🇬 SG 8",
         "🇯🇵 JP 5",
+        "🇯🇵 JP 6",
+        "🇳🇱 NL",
         "🇳🇱 NL 2",
-        "🇳🇱 NL 3",
+        "🇰🇷 KR 2",
         "🇰🇷 KR 3",
         "🇰🇷 KR 4",
         "🇰🇷 KR 5",
-        "🇰🇷 KR 6",
         "🇺🇸 US",
         "🇺🇸 US 2",
         "🇺🇸 US 3",
@@ -1987,16 +1973,16 @@
         "🇫🇷 FR",
         "IL",
         "IL 2",
-        "🇰🇷 KR 7",
-        "🇸🇬 SG 7",
-        "🇯🇵 JP 6",
+        "🇰🇷 KR 6",
+        "🇯🇵 JP 7",
+        "🇨🇦 CA",
         "🇦🇺 AU",
         "CH",
         "🇮🇳 IN",
         "🇮🇳 IN 2",
         "🇺🇸 US 5",
         "🇮🇳 IN 3",
-        "🇳🇱 NL 4",
+        "🇳🇱 NL 3",
         "🇺🇸 US 6",
         "🇨🇳 CN",
         "IT",
@@ -2005,7 +1991,7 @@
         "🇨🇳 TW",
         "🇺🇸 US 7",
         "🇺🇸 US 8",
-        "🇸🇬 SG 8",
+        "🇸🇬 SG 9",
         "CT",
         "CT 2",
         "CT 3",
@@ -2032,30 +2018,30 @@
       "outbounds": [
         "加入我的频道t.me/CMLiussss解锁更多优选节点",
         "CFnat",
-        "🇩🇪 DE",
-        "🇰🇷 KR",
         "🇸🇬 SG",
-        "🇬🇧 GB",
         "🇸🇬 SG 2",
-        "🇰🇷 KR 2",
         "🇯🇵 JP",
         "🇸🇬 SG 3",
-        "🇨🇦 CA",
         "🇸🇬 SG 4",
-        "🇳🇱 NL",
-        "🇩🇪 DE 2",
         "🇸🇬 SG 5",
+        "🇭🇰 HK",
         "🇯🇵 JP 2",
         "🇸🇬 SG 6",
+        "🇰🇷 KR",
+        "🇩🇪 DE",
         "🇯🇵 JP 3",
+        "🇩🇪 DE 2",
         "🇯🇵 JP 4",
+        "🇸🇬 SG 7",
+        "🇸🇬 SG 8",
         "🇯🇵 JP 5",
+        "🇯🇵 JP 6",
+        "🇳🇱 NL",
         "🇳🇱 NL 2",
-        "🇳🇱 NL 3",
+        "🇰🇷 KR 2",
         "🇰🇷 KR 3",
         "🇰🇷 KR 4",
         "🇰🇷 KR 5",
-        "🇰🇷 KR 6",
         "🇺🇸 US",
         "🇺🇸 US 2",
         "🇺🇸 US 3",
@@ -2064,16 +2050,16 @@
         "🇫🇷 FR",
         "IL",
         "IL 2",
-        "🇰🇷 KR 7",
-        "🇸🇬 SG 7",
-        "🇯🇵 JP 6",
+        "🇰🇷 KR 6",
+        "🇯🇵 JP 7",
+        "🇨🇦 CA",
         "🇦🇺 AU",
         "CH",
         "🇮🇳 IN",
         "🇮🇳 IN 2",
         "🇺🇸 US 5",
         "🇮🇳 IN 3",
-        "🇳🇱 NL 4",
+        "🇳🇱 NL 3",
         "🇺🇸 US 6",
         "🇨🇳 CN",
         "IT",
@@ -2082,7 +2068,7 @@
         "🇨🇳 TW",
         "🇺🇸 US 7",
         "🇺🇸 US 8",
-        "🇸🇬 SG 8",
+        "🇸🇬 SG 9",
         "CT",
         "CT 2",
         "CT 3",
@@ -2109,30 +2095,30 @@
       "outbounds": [
         "加入我的频道t.me/CMLiussss解锁更多优选节点",
         "CFnat",
-        "🇩🇪 DE",
-        "🇰🇷 KR",
         "🇸🇬 SG",
-        "🇬🇧 GB",
         "🇸🇬 SG 2",
-        "🇰🇷 KR 2",
         "🇯🇵 JP",
         "🇸🇬 SG 3",
-        "🇨🇦 CA",
         "🇸🇬 SG 4",
-        "🇳🇱 NL",
-        "🇩🇪 DE 2",
         "🇸🇬 SG 5",
+        "🇭🇰 HK",
         "🇯🇵 JP 2",
         "🇸🇬 SG 6",
+        "🇰🇷 KR",
+        "🇩🇪 DE",
         "🇯🇵 JP 3",
+        "🇩🇪 DE 2",
         "🇯🇵 JP 4",
+        "🇸🇬 SG 7",
+        "🇸🇬 SG 8",
         "🇯🇵 JP 5",
+        "🇯🇵 JP 6",
+        "🇳🇱 NL",
         "🇳🇱 NL 2",
-        "🇳🇱 NL 3",
+        "🇰🇷 KR 2",
         "🇰🇷 KR 3",
         "🇰🇷 KR 4",
         "🇰🇷 KR 5",
-        "🇰🇷 KR 6",
         "🇺🇸 US",
         "🇺🇸 US 2",
         "🇺🇸 US 3",
@@ -2141,16 +2127,16 @@
         "🇫🇷 FR",
         "IL",
         "IL 2",
-        "🇰🇷 KR 7",
-        "🇸🇬 SG 7",
-        "🇯🇵 JP 6",
+        "🇰🇷 KR 6",
+        "🇯🇵 JP 7",
+        "🇨🇦 CA",
         "🇦🇺 AU",
         "CH",
         "🇮🇳 IN",
         "🇮🇳 IN 2",
         "🇺🇸 US 5",
         "🇮🇳 IN 3",
-        "🇳🇱 NL 4",
+        "🇳🇱 NL 3",
         "🇺🇸 US 6",
         "🇨🇳 CN",
         "IT",
@@ -2159,7 +2145,7 @@
         "🇨🇳 TW",
         "🇺🇸 US 7",
         "🇺🇸 US 8",
-        "🇸🇬 SG 8",
+        "🇸🇬 SG 9",
         "CT",
         "CT 2",
         "CT 3",
@@ -2196,7 +2182,7 @@
       },
       {
         "action": "resolve",
-        "strategy": "prefer_ipv4"
+        "strategy": "ipv4_only"
       },
       {
         "type": "logical",
@@ -2241,7 +2227,10 @@
             "domain_keyword": [
               "ushd.xmsl.org",
               "cf.gtlx.org",
-              "mtalk.google.com"
+              "mtalk.google.com",
+              "public-operation-hkrpg-sg.hoyoverse.com",
+              "public-operation-hk4e-sg.hoyoverse.com",
+              "public-operation-nap-sg.hoyoverse.com"
             ]
           },
           {

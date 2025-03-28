@@ -37,20 +37,6 @@
         "action": "reject"
       },
       {
-        "type": "logical",
-        "mode": "or",
-        "rules": [
-          {
-            "package_name": [
-              "com.miHoYo.GenshinImpact",
-              "com.HoYoverse.hkrpgoversea",
-              "com.HoYoverse.Nap"
-            ]
-          }
-        ],
-        "server": "dns_proxy"
-      },
-      {
         "query_type": [
           "A",
           "AAAA"
@@ -82,7 +68,7 @@
         "server": "dns_direct"
       }
     ],
-    "strategy": "prefer_ipv4",
+    "strategy": "ipv4_only",
     "independent_cache": true
   },
   "inbounds": [
@@ -345,7 +331,7 @@
       "tls": {
         "enabled": true,
         "insecure": true,
-        "server_name": "r-18wYTIgt3TQjsEEw.sm-node.com",
+        "server_name": "r-lEOrA4ClkFCFE6xv.sm-node.com",
         "utls": {
           "enabled": true,
           "fingerprint": "chrome"
@@ -374,7 +360,7 @@
       "tls": {
         "enabled": true,
         "insecure": true,
-        "server_name": "r-6xAwoIa0TUp7zUfp.sm-node.com",
+        "server_name": "r-tkEd1ydodR9pcR70.sm-node.com",
         "utls": {
           "enabled": true,
           "fingerprint": "chrome"
@@ -403,7 +389,7 @@
       "tls": {
         "enabled": true,
         "insecure": true,
-        "server_name": "r-yB9PAwYP2YldQqCG.sm-node.com",
+        "server_name": "r-myw7jQXTf6LrqTl7.sm-node.com",
         "utls": {
           "enabled": true,
           "fingerprint": "chrome"
@@ -432,7 +418,7 @@
       "tls": {
         "enabled": true,
         "insecure": true,
-        "server_name": "r-wbUQXB34jHGuIrfW.sm-node.com",
+        "server_name": "r-RQQJeTMmJqKqZND6.sm-node.com",
         "utls": {
           "enabled": true,
           "fingerprint": "chrome"
@@ -463,7 +449,7 @@
       "tls": {
         "enabled": true,
         "insecure": true,
-        "server_name": "r-WhImlFjvzUYpSCal.sm-node.com",
+        "server_name": "r-WCeLn9KkyzZLmGZE.sm-node.com",
         "utls": {
           "enabled": true,
           "fingerprint": "chrome"
@@ -494,7 +480,7 @@
       "tls": {
         "enabled": true,
         "insecure": true,
-        "server_name": "r-m4VjQFdZazvfHTWu.sm-node.com",
+        "server_name": "r-s0MhByhNKcsPgp3y.sm-node.com",
         "utls": {
           "enabled": true,
           "fingerprint": "chrome"
@@ -525,7 +511,7 @@
       "tls": {
         "enabled": true,
         "insecure": true,
-        "server_name": "r-ZJEAqzHwA4M9InoH.sm-node.com",
+        "server_name": "r-hxOhgKzK6gTfEWlB.sm-node.com",
         "utls": {
           "enabled": true,
           "fingerprint": "chrome"
@@ -556,7 +542,7 @@
       "tls": {
         "enabled": true,
         "insecure": true,
-        "server_name": "r-QknDua80Say5ct3p.sm-node.com",
+        "server_name": "r-Hf5VEeJPrS5dszOl.sm-node.com",
         "utls": {
           "enabled": true,
           "fingerprint": "chrome"
@@ -587,7 +573,7 @@
       "tls": {
         "enabled": true,
         "insecure": true,
-        "server_name": "3hEEUseE30OfrZ7e.apple.com.akadns.net",
+        "server_name": "fuFzZgjoRugGDfQ4.apple.com.akadns.net",
         "utls": {
           "enabled": true,
           "fingerprint": "chrome"
@@ -606,7 +592,7 @@
       "tls": {
         "enabled": true,
         "insecure": true,
-        "server_name": "iQGeW5r0JIbCUmUJ.apple.com.akadns.net",
+        "server_name": "z26DTTW8nxHd7xQo.apple.com.akadns.net",
         "utls": {
           "enabled": true,
           "fingerprint": "chrome"
@@ -847,7 +833,7 @@
       },
       {
         "action": "resolve",
-        "strategy": "prefer_ipv4"
+        "strategy": "ipv4_only"
       },
       {
         "type": "logical",
@@ -892,7 +878,10 @@
             "domain_keyword": [
               "ushd.xmsl.org",
               "cf.gtlx.org",
-              "mtalk.google.com"
+              "mtalk.google.com",
+              "public-operation-hkrpg-sg.hoyoverse.com",
+              "public-operation-hk4e-sg.hoyoverse.com",
+              "public-operation-nap-sg.hoyoverse.com"
             ]
           },
           {
