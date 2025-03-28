@@ -37,6 +37,20 @@
         "action": "reject"
       },
       {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "package_name": [
+              "com.miHoYo.GenshinImpact",
+              "com.HoYoverse.hkrpgoversea",
+              "com.HoYoverse.Nap"
+            ]
+          }
+        ],
+        "server": "dns_proxy"
+      },
+      {
         "query_type": [
           "A",
           "AAAA"
@@ -91,8 +105,8 @@
       "alter_id": 0,
       "security": "auto",
       "server": "5.39.252.72",
-      "server_port": 20032,
-      "tag": "剩余流量：928.09 GB",
+      "server_port": 20033,
+      "tag": "剩余流量：927.96 GB",
       "transport": {
         "type": "ws"
       },
@@ -103,7 +117,7 @@
       "alter_id": 0,
       "security": "auto",
       "server": "5.39.252.72",
-      "server_port": 20032,
+      "server_port": 20033,
       "tag": "距离下次重置剩余：3 天",
       "transport": {
         "type": "ws"
@@ -115,7 +129,7 @@
       "alter_id": 0,
       "security": "auto",
       "server": "5.39.252.72",
-      "server_port": 20032,
+      "server_port": 20033,
       "tag": "套餐到期：2025-04-12",
       "transport": {
         "type": "ws"
@@ -127,7 +141,7 @@
       "alter_id": 0,
       "security": "auto",
       "server": "5.39.252.72",
-      "server_port": 20032,
+      "server_port": 20033,
       "tag": "德国-法兰克福-001",
       "transport": {
         "type": "ws"
@@ -157,7 +171,7 @@
       "alter_id": 0,
       "security": "auto",
       "server": "212.192.12.56",
-      "server_port": 21031,
+      "server_port": 21032,
       "tag": "中国-香港-F1-001",
       "transport": {
         "type": "ws"
@@ -169,7 +183,7 @@
       "alter_id": 0,
       "security": "auto",
       "server": "212.192.12.73",
-      "server_port": 22031,
+      "server_port": 22032,
       "tag": "中国-香港-F2-001",
       "transport": {
         "type": "ws"
@@ -181,7 +195,7 @@
       "alter_id": 0,
       "security": "auto",
       "server": "212.192.13.68",
-      "server_port": 23031,
+      "server_port": 23032,
       "tag": "中国-香港-F3-001",
       "transport": {
         "type": "ws"
@@ -247,7 +261,7 @@
       "alter_id": 0,
       "security": "auto",
       "server": "141.195.112.33",
-      "server_port": 20032,
+      "server_port": 20033,
       "tag": "加拿大-多伦多-001",
       "transport": {
         "type": "ws"
@@ -329,7 +343,7 @@
       },
       "password": "720d308b-c48a-40c1-a320-cf6b1caa92a5",
       "server": "207.90.238.136",
-      "server_port": 30032,
+      "server_port": 30033,
       "tag": "美国-纽约-HY-001",
       "tls": {
         "enabled": true,
@@ -347,7 +361,7 @@
       },
       "password": "720d308b-c48a-40c1-a320-cf6b1caa92a5",
       "server": "207.90.236.21",
-      "server_port": 33032,
+      "server_port": 33033,
       "tag": "美国-纽约-HY-F1-001",
       "tls": {
         "enabled": true,
@@ -365,7 +379,7 @@
       },
       "password": "720d308b-c48a-40c1-a320-cf6b1caa92a5",
       "server": "207.90.237.179",
-      "server_port": 32032,
+      "server_port": 32033,
       "tag": "美国-纽约-HY-F2-001",
       "tls": {
         "enabled": true,
@@ -383,7 +397,7 @@
       },
       "password": "720d308b-c48a-40c1-a320-cf6b1caa92a5",
       "server": "207.90.237.96",
-      "server_port": 33032,
+      "server_port": 33033,
       "tag": "美国-纽约-HY-F3-001",
       "tls": {
         "enabled": true,
@@ -421,7 +435,7 @@
       "alter_id": 0,
       "security": "auto",
       "server": "195.133.5.127",
-      "server_port": 23031,
+      "server_port": 23032,
       "tag": "俄罗斯-莫斯科-F3-001",
       "transport": {
         "type": "ws"
@@ -484,27 +498,12 @@
       "up_mbps": 1
     },
     {
-      "alter_id": 0,
-      "security": "auto",
-      "server": "biazh.mmzhk.website",
-      "server_port": 443,
-      "tag": "美国-拉斯维加斯-001",
-      "tls": {
-        "enabled": true
-      },
-      "transport": {
-        "type": "ws"
-      },
-      "type": "vmess",
-      "uuid": "720d308b-c48a-40c1-a320-cf6b1caa92a5"
-    },
-    {
       "tag": "select",
       "type": "selector",
       "default": "urltest",
       "outbounds": [
         "urltest",
-        "剩余流量：928.09 GB",
+        "剩余流量：927.96 GB",
         "距离下次重置剩余：3 天",
         "套餐到期：2025-04-12",
         "德国-法兰克福-001",
@@ -530,15 +529,14 @@
         "俄罗斯-莫斯科-F3-001",
         "俄罗斯-莫斯科-HY-F1-001",
         "俄罗斯-莫斯科-HY-F2-001",
-        "俄罗斯-莫斯科-HY-F3-001",
-        "美国-拉斯维加斯-001"
+        "俄罗斯-莫斯科-HY-F3-001"
       ]
     },
     {
       "tag": "urltest",
       "type": "urltest",
       "outbounds": [
-        "剩余流量：928.09 GB",
+        "剩余流量：927.96 GB",
         "距离下次重置剩余：3 天",
         "套餐到期：2025-04-12",
         "德国-法兰克福-001",
@@ -564,15 +562,14 @@
         "俄罗斯-莫斯科-F3-001",
         "俄罗斯-莫斯科-HY-F1-001",
         "俄罗斯-莫斯科-HY-F2-001",
-        "俄罗斯-莫斯科-HY-F3-001",
-        "美国-拉斯维加斯-001"
+        "俄罗斯-莫斯科-HY-F3-001"
       ]
     },
     {
       "tag": "chatgpt",
       "type": "selector",
       "outbounds": [
-        "剩余流量：928.09 GB",
+        "剩余流量：927.96 GB",
         "距离下次重置剩余：3 天",
         "套餐到期：2025-04-12",
         "德国-法兰克福-001",
@@ -598,8 +595,7 @@
         "俄罗斯-莫斯科-F3-001",
         "俄罗斯-莫斯科-HY-F1-001",
         "俄罗斯-莫斯科-HY-F2-001",
-        "俄罗斯-莫斯科-HY-F3-001",
-        "美国-拉斯维加斯-001"
+        "俄罗斯-莫斯科-HY-F3-001"
       ]
     },
     {

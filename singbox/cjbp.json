@@ -37,6 +37,20 @@
         "action": "reject"
       },
       {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "package_name": [
+              "com.miHoYo.GenshinImpact",
+              "com.HoYoverse.hkrpgoversea",
+              "com.HoYoverse.Nap"
+            ]
+          }
+        ],
+        "server": "dns_proxy"
+      },
+      {
         "query_type": [
           "A",
           "AAAA"
