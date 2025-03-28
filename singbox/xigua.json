@@ -1,0 +1,1062 @@
+{
+  "log": {},
+  "dns": {
+    "servers": [
+      {
+        "tag": "dns_proxy",
+        "type": "https",
+        "server": "1.1.1.1",
+        "detour": "select"
+      },
+      {
+        "tag": "dns_direct",
+        "type": "https",
+        "server": "223.5.5.5"
+      },
+      {
+        "tag": "dns_fakeip",
+        "type": "fakeip",
+        "inet4_range": "198.18.0.0/15",
+        "inet6_range": "fc00::/18"
+      }
+    ],
+    "rules": [
+      {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "query_type": "HTTPS"
+          },
+          {
+            "rule_set": [
+              "AdGuardSDNSFilter"
+            ]
+          }
+        ],
+        "action": "reject"
+      },
+      {
+        "query_type": [
+          "A",
+          "AAAA"
+        ],
+        "server": "dns_fakeip",
+        "rewrite_ttl": 1
+      },
+      {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "clash_mode": "Global"
+          }
+        ],
+        "server": "dns_proxy"
+      },
+      {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "clash_mode": "Direct"
+          },
+          {
+            "rule_set": "geosite-cn"
+          }
+        ],
+        "server": "dns_direct"
+      }
+    ],
+    "strategy": "ipv4_only",
+    "independent_cache": true
+  },
+  "inbounds": [
+    {
+      "type": "tun",
+      "address": [
+        "172.18.0.1/30",
+        "fdfe:dcba:9876::1/126"
+      ],
+      "auto_route": true,
+      "strict_route": true,
+      "route_exclude_address": [
+        "192.168.0.0/16",
+        "fc00::/7"
+      ]
+    }
+  ],
+  "outbounds": [
+    {
+      "password": "de8eee7e-5a88-4001-9c46-b42f9e9fd682",
+      "server": "in1.xiguajiasu.xyz",
+      "server_port": 10111,
+      "tag": "剩余流量：1301.14 GB",
+      "tls": {
+        "enabled": true,
+        "server_name": "tt001.yijiasu.xyz",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "de8eee7e-5a88-4001-9c46-b42f9e9fd682",
+      "server": "in1.xiguajiasu.xyz",
+      "server_port": 10111,
+      "tag": "套餐到期：2026-03-20",
+      "tls": {
+        "enabled": true,
+        "server_name": "tt001.yijiasu.xyz",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "de8eee7e-5a88-4001-9c46-b42f9e9fd682",
+      "server": "in1.xiguajiasu.xyz",
+      "server_port": 10111,
+      "tag": "★官网(xiguajiasu2.com)",
+      "tls": {
+        "enabled": true,
+        "server_name": "tt001.yijiasu.xyz",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "de8eee7e-5a88-4001-9c46-b42f9e9fd682",
+      "server": "in1.xiguajiasu.xyz",
+      "server_port": 10014,
+      "tag": "★防丢失网站(xiguajiasu8.com)",
+      "tls": {
+        "enabled": true,
+        "server_name": "tt004.yijiasu.xyz",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "de8eee7e-5a88-4001-9c46-b42f9e9fd682",
+      "server": "in1.xiguajiasu.xyz",
+      "server_port": 10012,
+      "tag": "★↑↑续费打开上面官网(定时更新订阅)↑↑",
+      "tls": {
+        "enabled": true,
+        "server_name": "tt002.yijiasu.xyz",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "de8eee7e-5a88-4001-9c46-b42f9e9fd682",
+      "server": "in1.xiguajiasu.xyz",
+      "server_port": 10013,
+      "tag": "🈴招募合作推广🈴请咨询官网客服",
+      "tls": {
+        "enabled": true,
+        "server_name": "tt003.yijiasu.xyz",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "de8eee7e-5a88-4001-9c46-b42f9e9fd682",
+      "server": "in1.xiguajiasu.xyz",
+      "server_port": 42001,
+      "tag": "V1-新加坡01|流媒体|GPT",
+      "tls": {
+        "enabled": true,
+        "server_name": "sg001.yijiasu.xyz",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "de8eee7e-5a88-4001-9c46-b42f9e9fd682",
+      "server": "in1.xiguajiasu.xyz",
+      "server_port": 42002,
+      "tag": "V1-新加坡02|流媒体|GPT",
+      "tls": {
+        "enabled": true,
+        "server_name": "sg002.yijiasu.xyz",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "de8eee7e-5a88-4001-9c46-b42f9e9fd682",
+      "server": "in1.xiguajiasu.xyz",
+      "server_port": 42003,
+      "tag": "V1-新加坡03|流媒体|GPT",
+      "tls": {
+        "enabled": true,
+        "server_name": "sg003.yijiasu.xyz",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "de8eee7e-5a88-4001-9c46-b42f9e9fd682",
+      "server": "in1.xiguajiasu.xyz",
+      "server_port": 42004,
+      "tag": "V1-新加坡04|流媒体|GPT",
+      "tls": {
+        "enabled": true,
+        "server_name": "sg004.yijiasu.xyz",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "de8eee7e-5a88-4001-9c46-b42f9e9fd682",
+      "server": "in1.xiguajiasu.xyz",
+      "server_port": 42005,
+      "tag": "V2-新加坡05|流媒体|GPT",
+      "tls": {
+        "enabled": true,
+        "server_name": "183.232.204.31",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "de8eee7e-5a88-4001-9c46-b42f9e9fd682",
+      "server": "in1.xiguajiasu.xyz",
+      "server_port": 42006,
+      "tag": "V2-新加坡06|流媒体|GPT",
+      "tls": {
+        "enabled": true,
+        "server_name": "sg006.yijiasu.xyz",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "de8eee7e-5a88-4001-9c46-b42f9e9fd682",
+      "server": "in1.xiguajiasu.xyz",
+      "server_port": 41001,
+      "tag": "V1-日本01|流媒体|GPT",
+      "tls": {
+        "enabled": true,
+        "server_name": "jp001.yijiasu.xyz",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "de8eee7e-5a88-4001-9c46-b42f9e9fd682",
+      "server": "in1.xiguajiasu.xyz",
+      "server_port": 41002,
+      "tag": "V1-日本02|流媒体|GPT",
+      "tls": {
+        "enabled": true,
+        "server_name": "jp002.yijiasu.xyz",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "de8eee7e-5a88-4001-9c46-b42f9e9fd682",
+      "server": "in1.xiguajiasu.xyz",
+      "server_port": 41003,
+      "tag": "V1-日本03|流媒体|GPT",
+      "tls": {
+        "enabled": true,
+        "server_name": "jp003.yijiasu.xyz",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "de8eee7e-5a88-4001-9c46-b42f9e9fd682",
+      "server": "in1.xiguajiasu.xyz",
+      "server_port": 41004,
+      "tag": "V1-日本04|流媒体|GPT",
+      "tls": {
+        "enabled": true,
+        "server_name": "jp004.yijiasu.xyz",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "de8eee7e-5a88-4001-9c46-b42f9e9fd682",
+      "server": "in1.xiguajiasu.xyz",
+      "server_port": 43001,
+      "tag": "V1-香港01",
+      "tls": {
+        "enabled": true,
+        "server_name": "hk001.yijiasu.xyz",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "de8eee7e-5a88-4001-9c46-b42f9e9fd682",
+      "server": "in1.xiguajiasu.xyz",
+      "server_port": 43002,
+      "tag": "V1-香港02",
+      "tls": {
+        "enabled": true,
+        "server_name": "hk002.yijiasu.xyz",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "de8eee7e-5a88-4001-9c46-b42f9e9fd682",
+      "server": "in1.xiguajiasu.xyz",
+      "server_port": 43003,
+      "tag": "V1-香港03",
+      "tls": {
+        "enabled": true,
+        "server_name": "hk003.yijiasu.xyz",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "de8eee7e-5a88-4001-9c46-b42f9e9fd682",
+      "server": "in1.xiguajiasu.xyz",
+      "server_port": 43004,
+      "tag": "V1-香港04",
+      "tls": {
+        "enabled": true,
+        "server_name": "hk004.yijiasu.xyz",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "de8eee7e-5a88-4001-9c46-b42f9e9fd682",
+      "server": "in1.xiguajiasu.xyz",
+      "server_port": 43007,
+      "tag": "V2-香港07",
+      "tls": {
+        "enabled": true,
+        "server_name": "hk007.yijiasu.xyz",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "de8eee7e-5a88-4001-9c46-b42f9e9fd682",
+      "server": "in1.xiguajiasu.xyz",
+      "server_port": 45001,
+      "tag": "V1-韩国01",
+      "tls": {
+        "enabled": true,
+        "server_name": "kr001.yijiasu.xyz",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "de8eee7e-5a88-4001-9c46-b42f9e9fd682",
+      "server": "in1.xiguajiasu.xyz",
+      "server_port": 45002,
+      "tag": "V1-韩国02",
+      "tls": {
+        "enabled": true,
+        "server_name": "kr002.yijiasu.xyz",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "de8eee7e-5a88-4001-9c46-b42f9e9fd682",
+      "server": "in1.xiguajiasu.xyz",
+      "server_port": 45003,
+      "tag": "V2-韩国03",
+      "tls": {
+        "enabled": true,
+        "server_name": "kr003.yijiasu.xyz",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "de8eee7e-5a88-4001-9c46-b42f9e9fd682",
+      "server": "in1.xiguajiasu.xyz",
+      "server_port": 45004,
+      "tag": "V2-韩国04",
+      "tls": {
+        "enabled": true,
+        "server_name": "kr004.yijiasu.xyz",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "de8eee7e-5a88-4001-9c46-b42f9e9fd682",
+      "server": "in1.xiguajiasu.xyz",
+      "server_port": 53001,
+      "tag": "V1-越南01|GPT",
+      "tls": {
+        "enabled": true,
+        "server_name": "vn001.yijiasu.xyz",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "de8eee7e-5a88-4001-9c46-b42f9e9fd682",
+      "server": "in1.xiguajiasu.xyz",
+      "server_port": 53002,
+      "tag": "V1-越南02|GPT",
+      "tls": {
+        "enabled": true,
+        "server_name": "vn002.yijiasu.xyz",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "de8eee7e-5a88-4001-9c46-b42f9e9fd682",
+      "server": "in1.xiguajiasu.xyz",
+      "server_port": 53003,
+      "tag": "V1-越南03|GPT",
+      "tls": {
+        "enabled": true,
+        "server_name": "vn003.yijiasu.xyz",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "de8eee7e-5a88-4001-9c46-b42f9e9fd682",
+      "server": "in1.xiguajiasu.xyz",
+      "server_port": 53004,
+      "tag": "V1-越南04|GPT",
+      "tls": {
+        "enabled": true,
+        "server_name": "vn004.yijiasu.xyz",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "de8eee7e-5a88-4001-9c46-b42f9e9fd682",
+      "server": "in1.xiguajiasu.xyz",
+      "server_port": 53005,
+      "tag": "V1-越南05|GPT",
+      "tls": {
+        "enabled": true,
+        "server_name": "vn005.yijiasu.xyz",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "de8eee7e-5a88-4001-9c46-b42f9e9fd682",
+      "server": "in1.xiguajiasu.xyz",
+      "server_port": 53006,
+      "tag": "V1-越南06|GPT",
+      "tls": {
+        "enabled": true,
+        "server_name": "vn001.yijiasu.xyz",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "de8eee7e-5a88-4001-9c46-b42f9e9fd682",
+      "server": "in1.xiguajiasu.xyz",
+      "server_port": 44001,
+      "tag": "V1-印尼01",
+      "tls": {
+        "enabled": true,
+        "server_name": "id001.yijiasu.xyz",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "de8eee7e-5a88-4001-9c46-b42f9e9fd682",
+      "server": "in1.xiguajiasu.xyz",
+      "server_port": 61001,
+      "tag": "V1-泰国01",
+      "tls": {
+        "enabled": true,
+        "server_name": "tha001.yijiasu.xyz",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "de8eee7e-5a88-4001-9c46-b42f9e9fd682",
+      "server": "in1.xiguajiasu.xyz",
+      "server_port": 62001,
+      "tag": "V1-马来西亚01",
+      "tls": {
+        "enabled": true,
+        "server_name": "mas001.yijiasu.xyz",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "de8eee7e-5a88-4001-9c46-b42f9e9fd682",
+      "server": "in1.xiguajiasu.xyz",
+      "server_port": 46001,
+      "tag": "V1-美国01|流媒体|GPT",
+      "tls": {
+        "enabled": true,
+        "server_name": "us001.yijiasu.xyz",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "de8eee7e-5a88-4001-9c46-b42f9e9fd682",
+      "server": "in1.xiguajiasu.xyz",
+      "server_port": 46002,
+      "tag": "V1-美国02|流媒体|GPT",
+      "tls": {
+        "enabled": true,
+        "server_name": "us002.yijiasu.xyz",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "de8eee7e-5a88-4001-9c46-b42f9e9fd682",
+      "server": "in1.xiguajiasu.xyz",
+      "server_port": 46003,
+      "tag": "V1-美国03|流媒体|GPT",
+      "tls": {
+        "enabled": true,
+        "server_name": "us003.yijiasu.xyz",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "de8eee7e-5a88-4001-9c46-b42f9e9fd682",
+      "server": "in1.xiguajiasu.xyz",
+      "server_port": 46004,
+      "tag": "V1-美国04|流媒体|GPT",
+      "tls": {
+        "enabled": true,
+        "server_name": "us004.yijiasu.xyz",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "de8eee7e-5a88-4001-9c46-b42f9e9fd682",
+      "server": "in1.xiguajiasu.xyz",
+      "server_port": 46005,
+      "tag": "V1-美国05|流媒体|GPT",
+      "tls": {
+        "enabled": true,
+        "server_name": "us005.yijiasu.xyz",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "de8eee7e-5a88-4001-9c46-b42f9e9fd682",
+      "server": "in1.xiguajiasu.xyz",
+      "server_port": 46006,
+      "tag": "V1-美国06|流媒体|GPT",
+      "tls": {
+        "enabled": true,
+        "server_name": "us006.yijiasu.xyz",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "de8eee7e-5a88-4001-9c46-b42f9e9fd682",
+      "server": "in1.xiguajiasu.xyz",
+      "server_port": 46007,
+      "tag": "V1-美国07|流媒体|GPT",
+      "tls": {
+        "enabled": true,
+        "server_name": "us007.yijiasu.xyz",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "de8eee7e-5a88-4001-9c46-b42f9e9fd682",
+      "server": "in1.xiguajiasu.xyz",
+      "server_port": 46008,
+      "tag": "V1-美国08|流媒体|GPT",
+      "tls": {
+        "enabled": true,
+        "server_name": "us008.yijiasu.xyz",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "de8eee7e-5a88-4001-9c46-b42f9e9fd682",
+      "server": "in1.xiguajiasu.xyz",
+      "server_port": 46009,
+      "tag": "V1-美国09|流媒体|GPT",
+      "tls": {
+        "enabled": true,
+        "server_name": "us009.yijiasu.xyz",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "de8eee7e-5a88-4001-9c46-b42f9e9fd682",
+      "server": "in1.xiguajiasu.xyz",
+      "server_port": 46010,
+      "tag": "V1-美国10|流媒体|GPT",
+      "tls": {
+        "enabled": true,
+        "server_name": "us010.yijiasu.xyz",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "de8eee7e-5a88-4001-9c46-b42f9e9fd682",
+      "server": "in1.xiguajiasu.xyz",
+      "server_port": 47001,
+      "tag": "V1-英国01",
+      "tls": {
+        "enabled": true,
+        "server_name": "uk001.yijiasu.xyz",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "de8eee7e-5a88-4001-9c46-b42f9e9fd682",
+      "server": "in1.xiguajiasu.xyz",
+      "server_port": 47002,
+      "tag": "V1-英国02",
+      "tls": {
+        "enabled": true,
+        "server_name": "uk002.yijiasu.xyz",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "de8eee7e-5a88-4001-9c46-b42f9e9fd682",
+      "server": "in1.xiguajiasu.xyz",
+      "server_port": 49001,
+      "tag": "V1-印度01",
+      "tls": {
+        "enabled": true,
+        "server_name": "in001.yijiasu.xyz",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "de8eee7e-5a88-4001-9c46-b42f9e9fd682",
+      "server": "in1.xiguajiasu.xyz",
+      "server_port": 49002,
+      "tag": "V1-印度02",
+      "tls": {
+        "enabled": true,
+        "server_name": "in002.yijiasu.xyz",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "de8eee7e-5a88-4001-9c46-b42f9e9fd682",
+      "server": "in1.xiguajiasu.xyz",
+      "server_port": 51002,
+      "tag": "V1-加拿大02",
+      "tls": {
+        "enabled": true,
+        "server_name": "can002.yijiasu.xyz",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "de8eee7e-5a88-4001-9c46-b42f9e9fd682",
+      "server": "in1.xiguajiasu.xyz",
+      "server_port": 52002,
+      "tag": "V1-德国02",
+      "tls": {
+        "enabled": true,
+        "server_name": "ger002.yijiasu.xyz",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "de8eee7e-5a88-4001-9c46-b42f9e9fd682",
+      "server": "in1.xiguajiasu.xyz",
+      "server_port": 57002,
+      "tag": "V1-巴西02",
+      "tls": {
+        "enabled": true,
+        "server_name": "br002.yijiasu.xyz",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "de8eee7e-5a88-4001-9c46-b42f9e9fd682",
+      "server": "in1.xiguajiasu.xyz",
+      "server_port": 58002,
+      "tag": "V1-阿联酋02",
+      "tls": {
+        "enabled": true,
+        "server_name": "uae002.yijiasu.xyz",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "de8eee7e-5a88-4001-9c46-b42f9e9fd682",
+      "server": "in1.xiguajiasu.xyz",
+      "server_port": 59001,
+      "tag": "V1-台湾省01|流媒体|GPT",
+      "tls": {
+        "enabled": true,
+        "server_name": "tw001.yijiasu.xyz",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "de8eee7e-5a88-4001-9c46-b42f9e9fd682",
+      "server": "in1.xiguajiasu.xyz",
+      "server_port": 56001,
+      "tag": "V1-土耳其01",
+      "tls": {
+        "enabled": true,
+        "server_name": "tur001.yijiasu.xyz",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "de8eee7e-5a88-4001-9c46-b42f9e9fd682",
+      "server": "in1.xiguajiasu.xyz",
+      "server_port": 54001,
+      "tag": "V1-俄罗斯01",
+      "tls": {
+        "enabled": true,
+        "server_name": "rus001.yijiasu.xyz",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "tag": "select",
+      "type": "selector",
+      "default": "urltest",
+      "outbounds": [
+        "urltest",
+        "剩余流量：1301.14 GB",
+        "套餐到期：2026-03-20",
+        "★官网(xiguajiasu2.com)",
+        "★防丢失网站(xiguajiasu8.com)",
+        "★↑↑续费打开上面官网(定时更新订阅)↑↑",
+        "🈴招募合作推广🈴请咨询官网客服",
+        "V1-新加坡01|流媒体|GPT",
+        "V1-新加坡02|流媒体|GPT",
+        "V1-新加坡03|流媒体|GPT",
+        "V1-新加坡04|流媒体|GPT",
+        "V2-新加坡05|流媒体|GPT",
+        "V2-新加坡06|流媒体|GPT",
+        "V1-日本01|流媒体|GPT",
+        "V1-日本02|流媒体|GPT",
+        "V1-日本03|流媒体|GPT",
+        "V1-日本04|流媒体|GPT",
+        "V1-香港01",
+        "V1-香港02",
+        "V1-香港03",
+        "V1-香港04",
+        "V2-香港07",
+        "V1-韩国01",
+        "V1-韩国02",
+        "V2-韩国03",
+        "V2-韩国04",
+        "V1-越南01|GPT",
+        "V1-越南02|GPT",
+        "V1-越南03|GPT",
+        "V1-越南04|GPT",
+        "V1-越南05|GPT",
+        "V1-越南06|GPT",
+        "V1-印尼01",
+        "V1-泰国01",
+        "V1-马来西亚01",
+        "V1-美国01|流媒体|GPT",
+        "V1-美国02|流媒体|GPT",
+        "V1-美国03|流媒体|GPT",
+        "V1-美国04|流媒体|GPT",
+        "V1-美国05|流媒体|GPT",
+        "V1-美国06|流媒体|GPT",
+        "V1-美国07|流媒体|GPT",
+        "V1-美国08|流媒体|GPT",
+        "V1-美国09|流媒体|GPT",
+        "V1-美国10|流媒体|GPT",
+        "V1-英国01",
+        "V1-英国02",
+        "V1-印度01",
+        "V1-印度02",
+        "V1-加拿大02",
+        "V1-德国02",
+        "V1-巴西02",
+        "V1-阿联酋02",
+        "V1-台湾省01|流媒体|GPT",
+        "V1-土耳其01",
+        "V1-俄罗斯01"
+      ]
+    },
+    {
+      "tag": "urltest",
+      "type": "urltest",
+      "outbounds": [
+        "剩余流量：1301.14 GB",
+        "套餐到期：2026-03-20",
+        "★官网(xiguajiasu2.com)",
+        "★防丢失网站(xiguajiasu8.com)",
+        "★↑↑续费打开上面官网(定时更新订阅)↑↑",
+        "🈴招募合作推广🈴请咨询官网客服",
+        "V1-新加坡01|流媒体|GPT",
+        "V1-新加坡02|流媒体|GPT",
+        "V1-新加坡03|流媒体|GPT",
+        "V1-新加坡04|流媒体|GPT",
+        "V2-新加坡05|流媒体|GPT",
+        "V2-新加坡06|流媒体|GPT",
+        "V1-日本01|流媒体|GPT",
+        "V1-日本02|流媒体|GPT",
+        "V1-日本03|流媒体|GPT",
+        "V1-日本04|流媒体|GPT",
+        "V1-香港01",
+        "V1-香港02",
+        "V1-香港03",
+        "V1-香港04",
+        "V2-香港07",
+        "V1-韩国01",
+        "V1-韩国02",
+        "V2-韩国03",
+        "V2-韩国04",
+        "V1-越南01|GPT",
+        "V1-越南02|GPT",
+        "V1-越南03|GPT",
+        "V1-越南04|GPT",
+        "V1-越南05|GPT",
+        "V1-越南06|GPT",
+        "V1-印尼01",
+        "V1-泰国01",
+        "V1-马来西亚01",
+        "V1-美国01|流媒体|GPT",
+        "V1-美国02|流媒体|GPT",
+        "V1-美国03|流媒体|GPT",
+        "V1-美国04|流媒体|GPT",
+        "V1-美国05|流媒体|GPT",
+        "V1-美国06|流媒体|GPT",
+        "V1-美国07|流媒体|GPT",
+        "V1-美国08|流媒体|GPT",
+        "V1-美国09|流媒体|GPT",
+        "V1-美国10|流媒体|GPT",
+        "V1-英国01",
+        "V1-英国02",
+        "V1-印度01",
+        "V1-印度02",
+        "V1-加拿大02",
+        "V1-德国02",
+        "V1-巴西02",
+        "V1-阿联酋02",
+        "V1-台湾省01|流媒体|GPT",
+        "V1-土耳其01",
+        "V1-俄罗斯01"
+      ]
+    },
+    {
+      "tag": "chatgpt",
+      "type": "selector",
+      "outbounds": [
+        "剩余流量：1301.14 GB",
+        "套餐到期：2026-03-20",
+        "★官网(xiguajiasu2.com)",
+        "★防丢失网站(xiguajiasu8.com)",
+        "★↑↑续费打开上面官网(定时更新订阅)↑↑",
+        "🈴招募合作推广🈴请咨询官网客服",
+        "V1-新加坡01|流媒体|GPT",
+        "V1-新加坡02|流媒体|GPT",
+        "V1-新加坡03|流媒体|GPT",
+        "V1-新加坡04|流媒体|GPT",
+        "V2-新加坡05|流媒体|GPT",
+        "V2-新加坡06|流媒体|GPT",
+        "V1-日本01|流媒体|GPT",
+        "V1-日本02|流媒体|GPT",
+        "V1-日本03|流媒体|GPT",
+        "V1-日本04|流媒体|GPT",
+        "V1-香港01",
+        "V1-香港02",
+        "V1-香港03",
+        "V1-香港04",
+        "V2-香港07",
+        "V1-韩国01",
+        "V1-韩国02",
+        "V2-韩国03",
+        "V2-韩国04",
+        "V1-越南01|GPT",
+        "V1-越南02|GPT",
+        "V1-越南03|GPT",
+        "V1-越南04|GPT",
+        "V1-越南05|GPT",
+        "V1-越南06|GPT",
+        "V1-印尼01",
+        "V1-泰国01",
+        "V1-马来西亚01",
+        "V1-美国01|流媒体|GPT",
+        "V1-美国02|流媒体|GPT",
+        "V1-美国03|流媒体|GPT",
+        "V1-美国04|流媒体|GPT",
+        "V1-美国05|流媒体|GPT",
+        "V1-美国06|流媒体|GPT",
+        "V1-美国07|流媒体|GPT",
+        "V1-美国08|流媒体|GPT",
+        "V1-美国09|流媒体|GPT",
+        "V1-美国10|流媒体|GPT",
+        "V1-英国01",
+        "V1-英国02",
+        "V1-印度01",
+        "V1-印度02",
+        "V1-加拿大02",
+        "V1-德国02",
+        "V1-巴西02",
+        "V1-阿联酋02",
+        "V1-台湾省01|流媒体|GPT",
+        "V1-土耳其01",
+        "V1-俄罗斯01"
+      ]
+    },
+    {
+      "tag": "direct",
+      "type": "direct"
+    }
+  ],
+  "route": {
+    "rules": [
+      {
+        "action": "sniff"
+      },
+      {
+        "protocol": "dns",
+        "action": "hijack-dns"
+      },
+      {
+        "action": "resolve",
+        "strategy": "ipv4_only"
+      },
+      {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "clash_mode": "Global"
+          }
+        ],
+        "outbound": "select"
+      },
+      {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "package_name": "com.openai.chatgpt"
+          },
+          {
+            "domain_suffix": [
+              "gemini.google.com",
+              "proactivebackend-pa.googleapis.com",
+              "bing.com",
+              "bing.net",
+              "bingapis.com"
+            ]
+          }
+        ],
+        "outbound": "chatgpt"
+      },
+      {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "clash_mode": "Direct"
+          },
+          {
+            "ip_is_private": true
+          },
+          {
+            "domain_keyword": [
+              "ushd.xmsl.org",
+              "cf.gtlx.org",
+              "mtalk.google.com",
+              "public-operation-hkrpg-sg.hoyoverse.com",
+              "public-operation-hk4e-sg.hoyoverse.com",
+              "public-operation-nap-sg.hoyoverse.com"
+            ]
+          },
+          {
+            "port": [
+              23301,
+              22101,
+              22102,
+              20501,
+              21601,
+              21602,
+              21603,
+              21604,
+              21605,
+              21606
+            ]
+          },
+          {
+            "rule_set": [
+              "geoip-cn",
+              "geosite-cn"
+            ]
+          }
+        ],
+        "outbound": "direct"
+      }
+    ],
+    "rule_set": [
+      {
+        "type": "remote",
+        "tag": "geoip-cn",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/SagerNet/sing-geoip/rule-set/geoip-cn.srs",
+        "download_detour": "select"
+      },
+      {
+        "type": "remote",
+        "tag": "geosite-cn",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs",
+        "download_detour": "select"
+      },
+      {
+        "type": "remote",
+        "tag": "AdGuardSDNSFilter",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/xmdhs/sing-box-ruleset/rule-set/AdGuardSDNSFilterSingBox.srs",
+        "download_detour": "select"
+      }
+    ],
+    "final": "select",
+    "default_domain_resolver": "dns_direct",
+    "auto_detect_interface": true,
+    "override_android_vpn": true
+  },
+  "experimental": {
+    "cache_file": {
+      "enabled": true
+    },
+    "clash_api": {
+      "external_controller": "127.0.0.1:9090"
+    }
+  }
+}
