@@ -17,7 +17,7 @@ hosts:
   alt7-mtalk.google.com: "173.194.219.188"
   alt8-mtalk.google.com: "142.250.112.188"
 proxies:
-- {name: "t.me/freeyule", server: "inconigto.web.id", port: 443, type: "ss", cipher: "none", password: "8d20dd38-0a85-413c-9605-c31e9fff831b"}
+- {name: "t.me/freeyule", server: "shenzhou05.mysynology.net", port: 37809, type: "vless", uuid: "459b4a80-bd61-4ecd-a26b-e9c1809d9e45", tls: true, tfo: false, flow: "xtls-rprx-vision", skip-cert-verify: true, reality-opts: {public-key: "qhTzYYIgBzDLNYR79oxftqdo1kzL-1_hGJKfqrOliCY"}, servername: "www.yahoo.com", client-fingerprint: "chrome", network: "tcp"}
 - {name: "爬虫给我爬爬爬", server: "46.29.163.171", port: 18626, type: "hysteria2", password: "dongtaiwang.com", auth: "dongtaiwang.com", sni: "www.bing.com", skip-cert-verify: true}
 - {name: "快进群快进群", server: "46.17.41.217", port: 37481, type: "hysteria2", password: "dongtaiwang.com", auth: "dongtaiwang.com", sni: "www.bing.com", skip-cert-verify: true}
 - {name: "群里大佬分享更多节点", server: "www.vpslook.com", port: 443, type: "vless", uuid: "70f8697b-f9f3-4692-8e0a-3d1834fd76dc", tls: true, tfo: false, skip-cert-verify: true, servername: "64D78605.Fr-7rB.pageS.dEv", client-fingerprint: "randomized", network: "ws", ws-opts: {path: "/YBa1BBPnrlsvyMZD/MzUuMTgwLjIyOS4x?ed=2560", headers: {Host: "64D78605.Fr-7rB.pageS.dEv"}}}
@@ -42,7 +42,13 @@ proxies:
 - {name: "🇰🇿 哈萨克斯坦｜01｜住宅ip", server: "tw3.akebi.cc", port: 2027, type: "hysteria2", password: "82febca6-8856-41fe-84df-c8bda0b72c7b", auth: "82febca6-8856-41fe-84df-c8bda0b72c7b", sni: "kz.akebi.cc", skip-cert-verify: true}
 - {name: "🇸🇬 新加坡", server: "cm2.xcone.xyz", port: 56138, type: "ssr", cipher: "aes-256-cfb", password: "uiACqrIr", protocol: "origin", obfs: "tls1.2_ticket_auth", protocol-param: "", obfs-param: "sg2-cdn-route.couldflare-cdn.com"}
 - {name: "🇭🇰 HK 高速无限", server: "162.247.5.96", port: 443, type: "vless", uuid: "f3a1807d-67fb-4ab8-fe88-4290ef071768", tls: true, tfo: false, skip-cert-verify: true, servername: "justhk.cayuo.me", network: "ws", ws-opts: {path: "/bing", headers: {Host: "justhk.cayuo.me"}}}
-- {name: "无限", server: "52.36.201.159", port: 25347, type: "hysteria2", password: "fpcwlrmFDkafdqZ0ZSfefuzKJL0", auth: "fpcwlrmFDkafdqZ0ZSfefuzKJL0", sni: "bing.com", skip-cert-verify: true}
+- {name: "🇺🇸 美国04|1x", server: "u-s04.love-art-edu.com", port: 47016, type: "ss", cipher: "chacha20-ietf-poly1305", password: "7ab0589c-9585-4436-84d4-9c9a18dcb64c"}
+- {name: "🇰🇷 韩国01|1x", server: "k-r01.love-art-edu.com", port: 47021, type: "ss", cipher: "chacha20-ietf-poly1305", password: "7ab0589c-9585-4436-84d4-9c9a18dcb64c"}
+- {name: "🇯🇵 日本04|1x", server: "j-p04.love-art-edu.com", port: 47012, type: "ss", cipher: "chacha20-ietf-poly1305", password: "7ab0589c-9585-4436-84d4-9c9a18dcb64c"}
+- {name: "🇸🇬 新加坡01|1x", server: "s-g01.love-art-edu.com", port: 47025, type: "ss", cipher: "chacha20-ietf-poly1305", password: "7ab0589c-9585-4436-84d4-9c9a18dcb64c"}
+- {name: "🇬🇧 英国01|1x", server: "u-k01.love-art-edu.com", port: 47029, type: "ss", cipher: "chacha20-ietf-poly1305", password: "7ab0589c-9585-4436-84d4-9c9a18dcb64c"}
+- {name: "🇨🇳 台湾01|1x", server: "t-wn01.love-art-edu.com", port: 47017, type: "ss", cipher: "chacha20-ietf-poly1305", password: "7ab0589c-9585-4436-84d4-9c9a18dcb64c"}
+- {name: "🇭🇰 香港04|1x", server: "h-k04.love-art-edu.com", port: 47008, type: "ss", cipher: "chacha20-ietf-poly1305", password: "7ab0589c-9585-4436-84d4-9c9a18dcb64c"}
 - {name: "🇻🇳 越南 1Gbps", server: "hyun.cloudflare.182682.xyz", port: 443, type: "vless", uuid: "5cf6bd4f-4318-4eda-e9da-4bbb0103f26a", tls: true, tfo: false, skip-cert-verify: true, servername: "vn.oldcloud.online", network: "ws", ws-opts: {path: "/", headers: {Host: "vn.oldcloud.online"}}}
 - {name: "🇻🇳 越南", server: "arxfw2b78fi2q9hzylhn.freesocks.work", port: 443, type: "ss", cipher: "chacha20-ietf-poly1305", password: "Nk9asglDzHzjktVzTkvhaA"}
 - {name: "🇯🇵 日本", server: "beiyong.dynuddns.net", port: 48121, type: "vless", uuid: "459b4a80-bd61-4ecd-a26b-e9c1809d9e45", tls: true, tfo: false, flow: "xtls-rprx-vision", skip-cert-verify: true, reality-opts: {public-key: "qhTzYYIgBzDLNYR79oxftqdo1kzL-1_hGJKfqrOliCY"}, servername: "www.nvidia.com", client-fingerprint: "chrome", network: "tcp"}
@@ -71,106 +77,159 @@ proxies:
 - {name: "🇨🇦 加拿大", server: "14.18.253.178", port: 8343, type: "ss", cipher: "chacha20", password: "dkYsdgWqegNV"}
 - {name: "🇦🇺 澳大利亚", server: "14.18.253.178", port: 8341, type: "ss", cipher: "chacha20", password: "zWyQvJbQRZaV"}
 - {name: "🇫🇷 法国巴黎", server: "14.18.253.178", port: 8347, type: "ss", cipher: "chacha20", password: "q2kSGp4ayFKB"}
-- {name: "🇧🇷 1巴西圣保罗", server: "104.18.22.235", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "324117417967972025032910573326129.s15.chibaba.filegear-sg.me"}}}
-- {name: "🇧🇷 2巴西圣保罗", server: "104.18.20.69", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "39775780064612025032910573378532.s15.chibaba.filegear-sg.me"}}}
-- {name: "🇧🇷 3巴西圣保罗", server: "104.18.27.94", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "844139639461882025032910573391649.s15.chibaba.filegear-sg.me"}}}
-- {name: "🇧🇷 4巴西圣保罗", server: "104.18.20.69", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "831851099338382025032910573369130.s15.chibaba.filegear-sg.me"}}}
-- {name: "🇧🇷 5巴西圣保罗", server: "104.18.23.74", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "311408005224242025032910573340880.s15.chibaba.filegear-sg.me"}}}
-- {name: "🇧🇷 6巴西圣保罗", server: "172.67.70.92", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "882532594180612025032910573315857.s15.chibaba.filegear-sg.me"}}}
-- {name: "🇧🇷 7巴西圣保罗", server: "104.21.12.116", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "545584563561042025032910573357119.s15.chibaba.filegear-sg.me"}}}
-- {name: "🇧🇷 8巴西圣保罗", server: "104.21.90.210", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "517334892860362025032910573381326.s15.chibaba.filegear-sg.me"}}}
-- {name: "🇧🇷 9巴西圣保罗", server: "104.21.36.190", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "250989617046282025032910573392676.s15.chibaba.filegear-sg.me"}}}
-- {name: "🇧🇷 10巴西圣保罗", server: "172.65.90.53", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "876341872451312025032910573344665.s15.chibaba.filegear-sg.me"}}}
-- {name: "🇧🇷 11巴西圣保罗", server: "104.18.23.66", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "167139134244732025032910573369531.s15.chibaba.filegear-sg.me"}}}
-- {name: "🇧🇷 12巴西圣保罗", server: "104.18.4.250", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "875355718854312025032910573371522.s15.chibaba.filegear-sg.me"}}}
-- {name: "🇧🇷 13巴西圣保罗", server: "104.19.174.68", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "399345442312172025032910573334304.s15.chibaba.filegear-sg.me"}}}
-- {name: "🇧🇷 14巴西圣保罗", server: "172.67.153.253", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "853294659211092025032910573358364.s15.chibaba.filegear-sg.me"}}}
-- {name: "🇧🇷 15巴西圣保罗", server: "104.18.23.66", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "7372764169612025032910573372220.s15.chibaba.filegear-sg.me"}}}
-- {name: "🇧🇷 16巴西圣保罗", server: "104.18.42.163", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "814826452414012025032910573358618.s15.chibaba.filegear-sg.me"}}}
-- {name: "🇧🇷 17巴西圣保罗", server: "172.67.75.172", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "686712339375532025032910573386522.s15.chibaba.filegear-sg.me"}}}
-- {name: "🇧🇷 18巴西圣保罗", server: "104.16.228.229", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "460162970233792025032910573311763.s15.chibaba.filegear-sg.me"}}}
-- {name: "🇧🇷 19巴西圣保罗", server: "104.16.239.254", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "96861479688842025032910573472206.s15.chibaba.filegear-sg.me"}}}
-- {name: "🇧🇷 20巴西圣保罗", server: "172.67.68.157", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "675388299551212025032910573417674.s15.chibaba.filegear-sg.me"}}}
-- {name: "🇧🇷 1巴西圣保罗 2", server: "104.18.23.235", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "569995651358662025032910573397265.s15.chibaba.filegear-sg.me"}}}
-- {name: "🇧🇷 2巴西圣保罗 2", server: "104.18.20.69", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "360786428489442025032910573338578.s15.chibaba.filegear-sg.me"}}}
-- {name: "🇧🇷 3巴西圣保罗 2", server: "104.18.26.94", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "81822183274272025032910573363463.s15.chibaba.filegear-sg.me"}}}
-- {name: "🇧🇷 4巴西圣保罗 2", server: "104.18.21.69", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "370600485400512025032910573398393.s15.chibaba.filegear-sg.me"}}}
-- {name: "🇧🇷 5巴西圣保罗 2", server: "104.18.23.74", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "29389780381682025032910573366340.s15.chibaba.filegear-sg.me"}}}
-- {name: "🇧🇷 6巴西圣保罗 2", server: "104.26.4.60", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "933914059313362025032910573379666.s15.chibaba.filegear-sg.me"}}}
-- {name: "🇧🇷 7巴西圣保罗 2", server: "104.21.12.116", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "272299575811842025032910573362294.s15.chibaba.filegear-sg.me"}}}
-- {name: "🇧🇷 8巴西圣保罗 2", server: "172.67.161.104", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "519369521491792025032910573352039.s15.chibaba.filegear-sg.me"}}}
-- {name: "🇧🇷 9巴西圣保罗 2", server: "172.67.198.192", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "468690908937902025032910573339969.s15.chibaba.filegear-sg.me"}}}
-- {name: "🇧🇷 10巴西圣保罗 2", server: "172.65.90.52", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "455078556433852025032910573323498.s15.chibaba.filegear-sg.me"}}}
-- {name: "🇧🇷 11巴西圣保罗 2", server: "104.18.23.66", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "402090520673392025032910573388269.s15.chibaba.filegear-sg.me"}}}
-- {name: "🇧🇷 12巴西圣保罗 2", server: "104.18.4.250", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "215733949588192025032910573338735.s15.chibaba.filegear-sg.me"}}}
-- {name: "🇧🇷 13巴西圣保罗 2", server: "104.19.173.68", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "814763874697232025032910573383812.s15.chibaba.filegear-sg.me"}}}
-- {name: "🇧🇷 14巴西圣保罗 2", server: "104.21.90.78", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "891090284753892025032910573361253.s15.chibaba.filegear-sg.me"}}}
-- {name: "🇧🇷 15巴西圣保罗 2", server: "104.18.23.66", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "368821369645112025032910573351664.s15.chibaba.filegear-sg.me"}}}
-- {name: "🇧🇷 16巴西圣保罗 2", server: "172.64.145.93", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "928032412892742025032910573364457.s15.chibaba.filegear-sg.me"}}}
-- {name: "🇧🇷 17巴西圣保罗 2", server: "104.26.12.31", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "450527110680212025032910573340352.s15.chibaba.filegear-sg.me"}}}
-- {name: "🇧🇷 18巴西圣保罗 2", server: "104.16.228.229", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "491341171127412025032910573359282.s15.chibaba.filegear-sg.me"}}}
-- {name: "🇧🇷 19巴西圣保罗 2", server: "104.18.160.63", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "91048674306902025032910573342667.s15.chibaba.filegear-sg.me"}}}
-- {name: "🇧🇷 20巴西圣保罗 2", server: "172.67.68.157", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "436111363038442025032910573358592.s15.chibaba.filegear-sg.me"}}}
-- {name: "🇧🇷 1巴西圣保罗 3", server: "104.18.22.235", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "135133015922025032910573392177.s15.chibaba.filegear-sg.me"}}}
-- {name: "🇧🇷 2巴西圣保罗 3", server: "104.18.20.69", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "417299978878872025032910573327339.s15.chibaba.filegear-sg.me"}}}
-- {name: "🇧🇷 3巴西圣保罗 3", server: "104.18.27.94", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "351032279513552025032910573320018.s15.chibaba.filegear-sg.me"}}}
-- {name: "🇧🇷 4巴西圣保罗 3", server: "104.18.21.69", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "209792960073062025032910573317335.s15.chibaba.filegear-sg.me"}}}
-- {name: "🇧🇷 5巴西圣保罗 3", server: "104.18.23.74", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "240705972790952025032910573346219.s15.chibaba.filegear-sg.me"}}}
-- {name: "🇧🇷 6巴西圣保罗 3", server: "104.26.5.60", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "387587756305142025032910573334251.s15.chibaba.filegear-sg.me"}}}
-- {name: "🇧🇷 7巴西圣保罗 3", server: "104.21.12.116", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "150557772093702025032910573390023.s15.chibaba.filegear-sg.me"}}}
-- {name: "🇧🇷 8巴西圣保罗 3", server: "172.67.161.104", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "295630278600782025032910573333164.s15.chibaba.filegear-sg.me"}}}
-- {name: "🇧🇷 9巴西圣保罗 3", server: "104.21.36.190", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "414334843512082025032910573386520.s15.chibaba.filegear-sg.me"}}}
-- {name: "🇧🇷 10巴西圣保罗 3", server: "172.65.90.53", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "255862653345892025032910573380728.s15.chibaba.filegear-sg.me"}}}
-- {name: "🇧🇷 11巴西圣保罗 3", server: "104.18.23.66", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "603459260231442025032910573361722.s15.chibaba.filegear-sg.me"}}}
-- {name: "🇧🇷 12巴西圣保罗 3", server: "104.18.4.250", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "496089215476322025032910573374877.s15.chibaba.filegear-sg.me"}}}
-- {name: "🇧🇷 13巴西圣保罗 3", server: "104.19.173.68", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "680024061245222025032910573399691.s15.chibaba.filegear-sg.me"}}}
-- {name: "🇧🇷 14巴西圣保罗 3", server: "172.67.153.253", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "601076305582342025032910573343433.s15.chibaba.filegear-sg.me"}}}
-- {name: "🇧🇷 15巴西圣保罗 3", server: "104.18.23.66", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "669878475199872025032910573343820.s15.chibaba.filegear-sg.me"}}}
-- {name: "🇧🇷 16巴西圣保罗 3", server: "172.64.145.93", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "535569779316942025032910573397237.s15.chibaba.filegear-sg.me"}}}
-- {name: "🇧🇷 17巴西圣保罗 3", server: "104.26.12.31", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "642451119361242025032910573380511.s15.chibaba.filegear-sg.me"}}}
-- {name: "🇧🇷 18巴西圣保罗 3", server: "104.16.228.229", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "912067262117592025032910573340597.s15.chibaba.filegear-sg.me"}}}
-- {name: "🇧🇷 19巴西圣保罗 3", server: "104.16.239.254", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "10551094232272025032910573315086.s15.chibaba.filegear-sg.me"}}}
-- {name: "🇧🇷 20巴西圣保罗 3", server: "104.26.13.54", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "317373802673302025032910573333663.s15.chibaba.filegear-sg.me"}}}
-- {name: "🇧🇷 1巴西圣保罗 4", server: "104.18.23.235", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "716762030267462025032910573320509.s15.chibaba.filegear-sg.me"}}}
-- {name: "🇧🇷 2巴西圣保罗 4", server: "104.18.20.69", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "248736845780312025032910573359411.s15.chibaba.filegear-sg.me"}}}
-- {name: "🇧🇷 3巴西圣保罗 4", server: "104.18.26.94", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "315185107364682025032910573355606.s15.chibaba.filegear-sg.me"}}}
-- {name: "🇧🇷 4巴西圣保罗 4", server: "104.18.21.69", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "103832194740192025032910573317323.s15.chibaba.filegear-sg.me"}}}
-- {name: "🇧🇷 5巴西圣保罗 4", server: "104.18.23.74", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "435855921930632025032910573336782.s15.chibaba.filegear-sg.me"}}}
-- {name: "🇧🇷 6巴西圣保罗 4", server: "172.67.70.92", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "463832706735452025032910573373390.s15.chibaba.filegear-sg.me"}}}
-- {name: "🇧🇷 7巴西圣保罗 4", server: "104.21.12.116", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "216473145280032025032910573376563.s15.chibaba.filegear-sg.me"}}}
-- {name: "🇧🇷 8巴西圣保罗 4", server: "172.67.161.104", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "250936502061272025032910573346357.s15.chibaba.filegear-sg.me"}}}
-- {name: "🇧🇷 9巴西圣保罗 4", server: "172.67.198.192", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "361645086506752025032910573380557.s15.chibaba.filegear-sg.me"}}}
-- {name: "🇧🇷 10巴西圣保罗 4", server: "172.65.90.53", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "215646017644342025032910573366320.s15.chibaba.filegear-sg.me"}}}
-- {name: "🇧🇷 11巴西圣保罗 4", server: "104.18.23.66", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "998481529567572025032910573383428.s15.chibaba.filegear-sg.me"}}}
-- {name: "🇧🇷 12巴西圣保罗 4", server: "104.18.4.250", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "307400294822022025032910573386615.s15.chibaba.filegear-sg.me"}}}
-- {name: "🇧🇷 13巴西圣保罗 4", server: "104.19.173.68", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "113517050288222025032910573339764.s15.chibaba.filegear-sg.me"}}}
-- {name: "🇧🇷 14巴西圣保罗 4", server: "104.21.90.78", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "416174648647132025032910573321741.s15.chibaba.filegear-sg.me"}}}
-- {name: "🇧🇷 15巴西圣保罗 4", server: "104.18.23.66", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "746208834275982025032910573313468.s15.chibaba.filegear-sg.me"}}}
-- {name: "🇧🇷 16巴西圣保罗 4", server: "104.18.42.163", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "295158547149332025032910573331686.s15.chibaba.filegear-sg.me"}}}
-- {name: "🇧🇷 17巴西圣保罗 4", server: "172.67.75.172", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "926837058204202025032910573348526.s15.chibaba.filegear-sg.me"}}}
-- {name: "🇧🇷 18巴西圣保罗 4", server: "104.16.229.229", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "734819937681672025032910573467409.s15.chibaba.filegear-sg.me"}}}
-- {name: "🇧🇷 19巴西圣保罗 4", server: "104.18.160.63", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "726130703102582025032910573447749.s15.chibaba.filegear-sg.me"}}}
-- {name: "🇧🇷 20巴西圣保罗 4", server: "104.26.13.54", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "856082724431262025032910573486390.s15.chibaba.filegear-sg.me"}}}
-- {name: "🇧🇷 1巴西圣保罗 5", server: "104.18.23.235", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "829220216185102025032910573419268.s15.chibaba.filegear-sg.me"}}}
-- {name: "🇧🇷 2巴西圣保罗 5", server: "104.18.20.69", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "345935941598762025032910573422452.s15.chibaba.filegear-sg.me"}}}
-- {name: "🇧🇷 3巴西圣保罗 5", server: "104.18.27.94", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "82995619887542025032910573475375.s15.chibaba.filegear-sg.me"}}}
-- {name: "🇧🇷 4巴西圣保罗 5", server: "104.18.21.69", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "617305330632025032910573456483.s15.chibaba.filegear-sg.me"}}}
-- {name: "🇧🇷 5巴西圣保罗 5", server: "104.18.23.74", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "164424870853562025032910573439336.s15.chibaba.filegear-sg.me"}}}
-- {name: "🇧🇷 6巴西圣保罗 5", server: "172.67.70.92", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "749735628430582025032910573498075.s15.chibaba.filegear-sg.me"}}}
-- {name: "🇧🇷 7巴西圣保罗 5", server: "172.67.152.71", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "743512983223972025032910573488172.s15.chibaba.filegear-sg.me"}}}
-- {name: "🇧🇷 8巴西圣保罗 5", server: "104.21.90.210", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "462677633209812025032910573480843.s15.chibaba.filegear-sg.me"}}}
-- {name: "🇧🇷 9巴西圣保罗 5", server: "104.21.36.190", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "190466502277512025032910573415916.s15.chibaba.filegear-sg.me"}}}
-- {name: "🇧🇷 10巴西圣保罗 5", server: "172.65.90.52", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "792240552079372025032910573435822.s15.chibaba.filegear-sg.me"}}}
-- {name: "🇧🇷 11巴西圣保罗 5", server: "104.18.23.66", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "919845551676082025032910573484213.s15.chibaba.filegear-sg.me"}}}
-- {name: "🇧🇷 12巴西圣保罗 5", server: "104.18.5.250", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "655917675633652025032910573450574.s15.chibaba.filegear-sg.me"}}}
-- {name: "🇧🇷 13巴西圣保罗 5", server: "104.19.174.68", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "609566718777122025032910573435471.s15.chibaba.filegear-sg.me"}}}
-- {name: "🇧🇷 14巴西圣保罗 5", server: "172.67.153.253", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "41623480039022025032910573414350.s15.chibaba.filegear-sg.me"}}}
-- {name: "🇧🇷 15巴西圣保罗 5", server: "104.18.23.66", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "465175822725962025032910573461569.s15.chibaba.filegear-sg.me"}}}
-- {name: "🇧🇷 16巴西圣保罗 5", server: "172.64.145.93", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "340722698617032025032910573466899.s15.chibaba.filegear-sg.me"}}}
-- {name: "🇧🇷 17巴西圣保罗 5", server: "172.67.75.172", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "19944415130782025032910573463216.s15.chibaba.filegear-sg.me"}}}
-- {name: "🇧🇷 18巴西圣保罗 5", server: "104.16.228.229", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "731880479067062025032910573491363.s15.chibaba.filegear-sg.me"}}}
-- {name: "🇧🇷 19巴西圣保罗 5", server: "104.18.160.63", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "251887097341042025032910573434982.s15.chibaba.filegear-sg.me"}}}
-- {name: "🇧🇷 20巴西圣保罗 5", server: "104.26.12.54", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "741690705456642025032910573471886.s15.chibaba.filegear-sg.me"}}}
+- {name: "🇭🇰 Hongkong 021", server: "console.03.aliyun.aq.kunlunaqs.com", port: 45905, type: "ss", cipher: "aes-128-gcm", password: "777bc05be0dd624959fb", plugin: "obfs", plugin-opts: {mode: "http", host: "215996dd9f1c3db1e54b.microsoft.com"}}
+- {name: "🇭🇰 Hongkong 008", server: "console.02.aliyun.aq.kunlunaqs.com", port: 45936, type: "ss", cipher: "aes-128-gcm", password: "a643f6f3733c9962851d", plugin: "obfs", plugin-opts: {mode: "http", host: "215996dd9f1c3db1e54b.microsoft.com"}}
+- {name: "🇭🇰 Hongkong 077", server: "console.02.aliyun.aq.kunlunaqs.com", port: 45578, type: "ss", cipher: "chacha20-ietf-poly1305", password: "7243745919d6de49a5db", plugin: "obfs", plugin-opts: {mode: "http", host: "215996dd9f1c3db1e54b.microsoft.com"}}
+- {name: "🇭🇰 Hongkong 018", server: "console.01.aliyun.aq.kunlunaqs.com", port: 45902, type: "ss", cipher: "aes-128-gcm", password: "0a74c9e4565e935cf1ac", plugin: "obfs", plugin-opts: {mode: "http", host: "215996dd9f1c3db1e54b.microsoft.com"}}
+- {name: "🇭🇰 Hongkong 016", server: "console.01.aliyun.aq.kunlunaqs.com", port: 45901, type: "ss", cipher: "aes-128-gcm", password: "7338d988d71591d76b3f", plugin: "obfs", plugin-opts: {mode: "http", host: "215996dd9f1c3db1e54b.microsoft.com"}}
+- {name: "🇭🇰 Hongkong 017", server: "console.01.aliyun.aq.kunlunaqs.com", port: 45900, type: "ss", cipher: "aes-128-gcm", password: "51f8c7454c93d0d83c29", plugin: "obfs", plugin-opts: {mode: "http", host: "215996dd9f1c3db1e54b.microsoft.com"}}
+- {name: "🇭🇰 Hongkong 020", server: "console.01.aliyun.aq.kunlunaqs.com", port: 45904, type: "ss", cipher: "aes-128-gcm", password: "6113536135af69e572c6", plugin: "obfs", plugin-opts: {mode: "http", host: "215996dd9f1c3db1e54b.microsoft.com"}}
+- {name: "🇭🇰 Hongkong 019", server: "console.01.aliyun.aq.kunlunaqs.com", port: 45903, type: "ss", cipher: "aes-128-gcm", password: "b16cb18d8992f3b83b7d", plugin: "obfs", plugin-opts: {mode: "http", host: "215996dd9f1c3db1e54b.microsoft.com"}}
+- {name: "to.FlyintPro.om", server: "console.02.aliyun.aq.kunlunaqs.com", port: 45936, type: "ss", cipher: "aes-128-gcm", password: "a643f6f3733c9962851d", plugin: "obfs", plugin-opts: {mode: "http", host: "215996dd9f1c3db1e54b.microsoft.com"}}
+- {name: "🇯🇵 Japan 07", server: "console.02.aliyun.aq.kunlunaqs.com", port: 45572, type: "ss", cipher: "aes-128-gcm", password: "722a54414ae6ee706ac9", plugin: "obfs", plugin-opts: {mode: "http", host: "215996dd9f1c3db1e54b.microsoft.com"}}
+- {name: "🇯🇵 Japan 029", server: "console.02.aliyun.aq.kunlunaqs.com", port: 45913, type: "ss", cipher: "aes-128-gcm", password: "c8960ca4a0add435fc34", plugin: "obfs", plugin-opts: {mode: "http", host: "215996dd9f1c3db1e54b.microsoft.com"}}
+- {name: "🇯🇵 Japan 050", server: "console.02.aliyun.aq.kunlunaqs.com", port: 45939, type: "ss", cipher: "aes-128-gcm", password: "97b53b570db0917935e0", plugin: "obfs", plugin-opts: {mode: "http", host: "215996dd9f1c3db1e54b.microsoft.com"}}
+- {name: "🇯🇵 Japan 028", server: "console.02.aliyun.aq.kunlunaqs.com", port: 45912, type: "ss", cipher: "aes-128-gcm", password: "97998add7bf4fea885ef", plugin: "obfs", plugin-opts: {mode: "http", host: "215996dd9f1c3db1e54b.microsoft.com"}}
+- {name: "🇯🇵 Japan 083", server: "console.02.aliyun.aq.kunlunaqs.com", port: 45581, type: "ss", cipher: "aes-128-gcm", password: "6014caa3a323920c7fd0", plugin: "obfs", plugin-opts: {mode: "http", host: "215996dd9f1c3db1e54b.microsoft.com"}}
+- {name: "🇯🇵 Japan 027", server: "console.02.aliyun.aq.kunlunaqs.com", port: 45911, type: "ss", cipher: "aes-128-gcm", password: "69dc0306f1bfb1af49a5", plugin: "obfs", plugin-opts: {mode: "http", host: "215996dd9f1c3db1e54b.microsoft.com"}}
+- {name: "🇸🇬 Singapore 057", server: "console.03.aliyun.aq.kunlunaqs.com", port: 45937, type: "ss", cipher: "aes-128-gcm", password: "4092a0d31011e2046687", plugin: "obfs", plugin-opts: {mode: "http", host: "215996dd9f1c3db1e54b.microsoft.com"}}
+- {name: "🇸🇬 Singapore 032", server: "console.03.aliyun.aq.kunlunaqs.com", port: 45917, type: "ss", cipher: "aes-128-gcm", password: "f4cd0a554e9d0558c581", plugin: "obfs", plugin-opts: {mode: "http", host: "215996dd9f1c3db1e54b.microsoft.com"}}
+- {name: "🇸🇬 Singapore 078", server: "console.03.aliyun.aq.kunlunaqs.com", port: 45579, type: "ss", cipher: "aes-128-gcm", password: "0722bd4137ff579e6917", plugin: "obfs", plugin-opts: {mode: "http", host: "215996dd9f1c3db1e54b.microsoft.com"}}
+- {name: "有问题请随时联系我们", server: "console.03.aliyun.aq.kunlunaqs.com", port: 45913, type: "ss", cipher: "aes-128-gcm", password: "b74518fb49bd645e6ce7", plugin: "obfs", plugin-opts: {mode: "http", host: "215996dd9f1c3db1e54b.microsoft.com"}}
+- {name: "🇨🇳 Taiwan 065", server: "console.03.aliyun.aq.kunlunaqs.com", port: 45916, type: "ss", cipher: "aes-128-gcm", password: "cfc6f3f75f5ef7b2665c", plugin: "obfs", plugin-opts: {mode: "http", host: "215996dd9f1c3db1e54b.microsoft.com"}}
+- {name: "🇨🇳 Taiwan 031", server: "console.03.aliyun.aq.kunlunaqs.com", port: 45915, type: "ss", cipher: "aes-128-gcm", password: "b74518fb49bd645e6ce7", plugin: "obfs", plugin-opts: {mode: "http", host: "215996dd9f1c3db1e54b.microsoft.com"}}
+- {name: "🇨🇳 Taiwan 030", server: "console.03.aliyun.aq.kunlunaqs.com", port: 45914, type: "ss", cipher: "aes-128-gcm", password: "b270fd77db2ecb7acbc8", plugin: "obfs", plugin-opts: {mode: "http", host: "215996dd9f1c3db1e54b.microsoft.com"}}
+- {name: "🇨🇳 TaiwanDynamicIP", server: "console.03.aliyun.aq.kunlunaqs.com", port: 45573, type: "ss", cipher: "aes-128-gcm", password: "3e26a8cfb09fda219b36", plugin: "obfs", plugin-opts: {mode: "http", host: "215996dd9f1c3db1e54b.microsoft.com"}}
+- {name: "🇰🇷 SouthKorea 037", server: "console.02.aliyun.aq.kunlunaqs.com", port: 45921, type: "ss", cipher: "aes-128-gcm", password: "d7577ca6729babe0790f", plugin: "obfs", plugin-opts: {mode: "http", host: "215996dd9f1c3db1e54b.microsoft.com"}}
+- {name: "🇺🇸 USA 084", server: "console.03.aliyun.aq.kunlunaqs.com", port: 45580, type: "ss", cipher: "chacha20-ietf-poly1305", password: "e6db72e9415e60e35892", plugin: "obfs", plugin-opts: {mode: "http", host: "215996dd9f1c3db1e54b.microsoft.com"}}
+- {name: "🇺🇸 USA 086", server: "console.02.aliyun.aq.kunlunaqs.com", port: 45584, type: "ss", cipher: "chacha20-ietf-poly1305", password: "4605c34b957ab8e1001b", plugin: "obfs", plugin-opts: {mode: "http", host: "215996dd9f1c3db1e54b.microsoft.com"}}
+- {name: "🇺🇸 USA 038", server: "console.03.aliyun.aq.kunlunaqs.com", port: 45922, type: "ss", cipher: "aes-128-gcm", password: "c1ee5895686790a383fb", plugin: "obfs", plugin-opts: {mode: "http", host: "215996dd9f1c3db1e54b.microsoft.com"}}
+- {name: "🇺🇸 USA 039", server: "console.02.aliyun.aq.kunlunaqs.com", port: 45923, type: "ss", cipher: "aes-128-gcm", password: "2b7df6aadc759756b0cd", plugin: "obfs", plugin-opts: {mode: "http", host: "215996dd9f1c3db1e54b.microsoft.com"}}
+- {name: "🇺🇸 USA 040", server: "console.02.aliyun.aq.kunlunaqs.com", port: 45924, type: "ss", cipher: "aes-128-gcm", password: "0a0fb8dbfb8cc2f25f02", plugin: "obfs", plugin-opts: {mode: "http", host: "215996dd9f1c3db1e54b.microsoft.com"}}
+- {name: "🇺🇸 USA 067", server: "console.02.aliyun.aq.kunlunaqs.com", port: 45935, type: "ss", cipher: "aes-128-gcm", password: "8bf642be1622a09558bb", plugin: "obfs", plugin-opts: {mode: "http", host: "215996dd9f1c3db1e54b.microsoft.com"}}
+- {name: "🇺🇸 USA 069", server: "console.02.aliyun.aq.kunlunaqs.com", port: 45938, type: "ss", cipher: "aes-128-gcm", password: "3938bfae997974860251", plugin: "obfs", plugin-opts: {mode: "http", host: "215996dd9f1c3db1e54b.microsoft.com"}}
+- {name: "🇺🇸 USA 026", server: "console.02.aliyun.aq.kunlunaqs.com", port: 45909, type: "ss", cipher: "aes-128-gcm", password: "9d29e58723af34cad8da", plugin: "obfs", plugin-opts: {mode: "http", host: "215996dd9f1c3db1e54b.microsoft.com"}}
+- {name: "🇺🇸 USA 025", server: "console.02.aliyun.aq.kunlunaqs.com", port: 45908, type: "ss", cipher: "aes-128-gcm", password: "97c3cf442df2d7099275", plugin: "obfs", plugin-opts: {mode: "http", host: "215996dd9f1c3db1e54b.microsoft.com"}}
+- {name: "🇫🇷 France 043", server: "console.03.aliyun.aq.kunlunaqs.com", port: 45927, type: "ss", cipher: "aes-128-gcm", password: "8141b20c775ce63fab96", plugin: "obfs", plugin-opts: {mode: "http", host: "215996dd9f1c3db1e54b.microsoft.com"}}
+- {name: "🇮🇹 Italy 091", server: "console.03.aliyun.aq.kunlunaqs.com", port: 45587, type: "ss", cipher: "chacha20-ietf-poly1305", password: "6180d9dc7075e7fe509b", plugin: "obfs", plugin-opts: {mode: "http", host: "215996dd9f1c3db1e54b.microsoft.com"}}
+- {name: "🇰🇿 Kazakhstan 092", server: "console.03.aliyun.aq.kunlunaqs.com", port: 45588, type: "ss", cipher: "chacha20-ietf-poly1305", password: "05ff48fd41178ed790ec", plugin: "obfs", plugin-opts: {mode: "http", host: "215996dd9f1c3db1e54b.microsoft.com"}}
+- {name: "🇧🇷 Brazil 093", server: "console.03.aliyun.aq.kunlunaqs.com", port: 45589, type: "ss", cipher: "chacha20-ietf-poly1305", password: "e3d6f327d91656f89f07", plugin: "obfs", plugin-opts: {mode: "http", host: "215996dd9f1c3db1e54b.microsoft.com"}}
+- {name: "🇮🇩 Indonesia 094", server: "console.03.aliyun.aq.kunlunaqs.com", port: 45590, type: "ss", cipher: "chacha20-ietf-poly1305", password: "b8dd96a81eac14b376c3", plugin: "obfs", plugin-opts: {mode: "http", host: "215996dd9f1c3db1e54b.microsoft.com"}}
+- {name: "🇩🇪 Germany 044", server: "console.03.aliyun.aq.kunlunaqs.com", port: 45928, type: "ss", cipher: "aes-128-gcm", password: "bd62dac6636078647014", plugin: "obfs", plugin-opts: {mode: "http", host: "215996dd9f1c3db1e54b.microsoft.com"}}
+- {name: "Kingdom 045", server: "console.03.aliyun.aq.kunlunaqs.com", port: 45929, type: "ss", cipher: "aes-128-gcm", password: "c8a1d0a69902859d209f", plugin: "obfs", plugin-opts: {mode: "http", host: "215996dd9f1c3db1e54b.microsoft.com"}}
+- {name: "Kingdom 081", server: "console.03.aliyun.aq.kunlunaqs.com", port: 45570, type: "ss", cipher: "aes-128-gcm", password: "b252e75cc98799d5b2d1", plugin: "obfs", plugin-opts: {mode: "http", host: "215996dd9f1c3db1e54b.microsoft.com"}}
+- {name: "🇨🇦 Canada 070", server: "console.03.aliyun.aq.kunlunaqs.com", port: 45910, type: "ss", cipher: "aes-128-gcm", password: "3fb1d360ec0c4c7a5054", plugin: "obfs", plugin-opts: {mode: "http", host: "215996dd9f1c3db1e54b.microsoft.com"}}
+- {name: "🇹🇷 Turkey 042", server: "console.03.aliyun.aq.kunlunaqs.com", port: 45926, type: "ss", cipher: "aes-128-gcm", password: "7452c550383bf60ac9d3", plugin: "obfs", plugin-opts: {mode: "http", host: "215996dd9f1c3db1e54b.microsoft.com"}}
+- {name: "🇵🇰 Pakistan 024", server: "console.03.aliyun.aq.kunlunaqs.com", port: 45907, type: "ss", cipher: "aes-128-gcm", password: "d3a40b9d9b91c1e412c5", plugin: "obfs", plugin-opts: {mode: "http", host: "215996dd9f1c3db1e54b.microsoft.com"}}
+- {name: "🇦🇺 Australia 071", server: "console.03.aliyun.aq.kunlunaqs.com", port: 45934, type: "ss", cipher: "aes-128-gcm", password: "ec39dd066cc142fbb81c", plugin: "obfs", plugin-opts: {mode: "http", host: "215996dd9f1c3db1e54b.microsoft.com"}}
+- {name: "🇨🇭 Switzerland 087", server: "console.03.aliyun.aq.kunlunaqs.com", port: 45582, type: "ss", cipher: "chacha20-ietf-poly1305", password: "c9fa2bcffa379937679e", plugin: "obfs", plugin-opts: {mode: "http", host: "215996dd9f1c3db1e54b.microsoft.com"}}
+- {name: "🇲🇾 Malaysia 075 *1.5", server: "console.03.aliyun.aq.kunlunaqs.com", port: 45576, type: "ss", cipher: "aes-128-gcm", password: "fe51727afe2fca582ebf", plugin: "obfs", plugin-opts: {mode: "http", host: "215996dd9f1c3db1e54b.microsoft.com"}}
+- {name: "🇵🇭 Philippines 05", server: "console.03.aliyun.aq.kunlunaqs.com", port: 45574, type: "ss", cipher: "aes-128-gcm", password: "22046a35aa74890b48f5", plugin: "obfs", plugin-opts: {mode: "http", host: "215996dd9f1c3db1e54b.microsoft.com"}}
+- {name: "🇹🇭 Thailand 041", server: "console.03.aliyun.aq.kunlunaqs.com", port: 45925, type: "ss", cipher: "aes-128-gcm", password: "1a402babc02465f45bea", plugin: "obfs", plugin-opts: {mode: "http", host: "215996dd9f1c3db1e54b.microsoft.com"}}
+- {name: "🇷🇺 Russia 046", server: "console.03.aliyun.aq.kunlunaqs.com", port: 45930, type: "ss", cipher: "aes-128-gcm", password: "11575f448fb4021fc611", plugin: "obfs", plugin-opts: {mode: "http", host: "215996dd9f1c3db1e54b.microsoft.com"}}
+- {name: "🇻🇳 Vietnam 047", server: "console.03.aliyun.aq.kunlunaqs.com", port: 45931, type: "ss", cipher: "aes-128-gcm", password: "3e79196cf9e970671245", plugin: "obfs", plugin-opts: {mode: "http", host: "215996dd9f1c3db1e54b.microsoft.com"}}
+- {name: "🇺🇦 Ukraine 085", server: "console.03.aliyun.aq.kunlunaqs.com", port: 45583, type: "ss", cipher: "chacha20-ietf-poly1305", password: "4f308f8c43ae78a779f5", plugin: "obfs", plugin-opts: {mode: "http", host: "215996dd9f1c3db1e54b.microsoft.com"}}
+- {name: "🇮🇳 India 048", server: "console.03.aliyun.aq.kunlunaqs.com", port: 45932, type: "ss", cipher: "aes-128-gcm", password: "1954df8a5f3876000ea6", plugin: "obfs", plugin-opts: {mode: "http", host: "215996dd9f1c3db1e54b.microsoft.com"}}
+- {name: "🇧🇷 1巴西圣保罗", server: "104.18.23.235", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "365379588841432025032911325864732.s15.chibaba.filegear-sg.me"}}}
+- {name: "🇧🇷 2巴西圣保罗", server: "104.18.21.69", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "25809007374002025032911325810571.s15.chibaba.filegear-sg.me"}}}
+- {name: "🇧🇷 3巴西圣保罗", server: "104.18.27.94", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "322536527281292025032911325833176.s15.chibaba.filegear-sg.me"}}}
+- {name: "🇧🇷 4巴西圣保罗", server: "104.18.21.69", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "612718735297892025032911325844644.s15.chibaba.filegear-sg.me"}}}
+- {name: "🇧🇷 5巴西圣保罗", server: "104.18.23.68", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "375175914186712025032911325872796.s15.chibaba.filegear-sg.me"}}}
+- {name: "🇧🇷 6巴西圣保罗", server: "172.67.70.92", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "77733907702572025032911325848904.s15.chibaba.filegear-sg.me"}}}
+- {name: "🇧🇷 7巴西圣保罗", server: "172.67.152.71", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "407379097355012025032911325823338.s15.chibaba.filegear-sg.me"}}}
+- {name: "🇧🇷 8巴西圣保罗", server: "172.67.161.104", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "261428336495592025032911325876105.s15.chibaba.filegear-sg.me"}}}
+- {name: "🇧🇷 9巴西圣保罗", server: "104.21.36.190", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "758412215184752025032911325865173.s15.chibaba.filegear-sg.me"}}}
+- {name: "🇧🇷 10巴西圣保罗", server: "172.65.90.52", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "499925981779002025032911325876233.s15.chibaba.filegear-sg.me"}}}
+- {name: "🇧🇷 11巴西圣保罗", server: "104.18.23.174", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "302196408931582025032911325818568.s15.chibaba.filegear-sg.me"}}}
+- {name: "🇧🇷 12巴西圣保罗", server: "104.18.4.250", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "649184272028462025032911325823504.s15.chibaba.filegear-sg.me"}}}
+- {name: "🇧🇷 13巴西圣保罗", server: "104.19.174.68", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "676788395124822025032911325851309.s15.chibaba.filegear-sg.me"}}}
+- {name: "🇧🇷 14巴西圣保罗", server: "172.67.153.253", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "606118396514812025032911325813570.s15.chibaba.filegear-sg.me"}}}
+- {name: "🇧🇷 15巴西圣保罗", server: "104.18.23.174", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "488450541506102025032911325862178.s15.chibaba.filegear-sg.me"}}}
+- {name: "🇧🇷 16巴西圣保罗", server: "172.64.145.93", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "257619736967052025032911325858106.s15.chibaba.filegear-sg.me"}}}
+- {name: "🇧🇷 17巴西圣保罗", server: "172.67.75.172", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "899939520505192025032911325842772.s15.chibaba.filegear-sg.me"}}}
+- {name: "🇧🇷 18巴西圣保罗", server: "104.16.228.229", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "221140866257302025032911325864665.s15.chibaba.filegear-sg.me"}}}
+- {name: "🇧🇷 19巴西圣保罗", server: "104.16.239.254", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "702875831641502025032911325894553.s15.chibaba.filegear-sg.me"}}}
+- {name: "🇧🇷 20巴西圣保罗", server: "172.67.68.157", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "686060162032792025032911325859703.s15.chibaba.filegear-sg.me"}}}
+- {name: "🇧🇷 1巴西圣保罗 2", server: "104.18.23.235", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "528176892928552025032911325899706.s15.chibaba.filegear-sg.me"}}}
+- {name: "🇧🇷 2巴西圣保罗 2", server: "104.18.20.69", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "805235774166582025032911325862627.s15.chibaba.filegear-sg.me"}}}
+- {name: "🇧🇷 3巴西圣保罗 2", server: "104.18.27.94", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "107941012315232025032911325849396.s15.chibaba.filegear-sg.me"}}}
+- {name: "🇧🇷 4巴西圣保罗 2", server: "104.18.21.69", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "622957684170532025032911325886426.s15.chibaba.filegear-sg.me"}}}
+- {name: "🇧🇷 5巴西圣保罗 2", server: "104.18.23.68", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "186340995651672025032911325815349.s15.chibaba.filegear-sg.me"}}}
+- {name: "🇧🇷 6巴西圣保罗 2", server: "104.26.4.60", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "24995460304142025032911325891902.s15.chibaba.filegear-sg.me"}}}
+- {name: "🇧🇷 7巴西圣保罗 2", server: "172.67.152.71", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "370063386907152025032911325815938.s15.chibaba.filegear-sg.me"}}}
+- {name: "🇧🇷 8巴西圣保罗 2", server: "172.67.161.104", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "690370045818902025032911325871465.s15.chibaba.filegear-sg.me"}}}
+- {name: "🇧🇷 9巴西圣保罗 2", server: "104.21.36.190", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "36442216430942025032911325872035.s15.chibaba.filegear-sg.me"}}}
+- {name: "🇧🇷 10巴西圣保罗 2", server: "172.65.90.52", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "987023656268822025032911325895050.s15.chibaba.filegear-sg.me"}}}
+- {name: "🇧🇷 11巴西圣保罗 2", server: "104.18.23.174", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "433633356705232025032911325832122.s15.chibaba.filegear-sg.me"}}}
+- {name: "🇧🇷 12巴西圣保罗 2", server: "104.18.4.250", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "86400929972782025032911325825996.s15.chibaba.filegear-sg.me"}}}
+- {name: "🇧🇷 13巴西圣保罗 2", server: "104.19.173.68", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "775710327321282025032911325880967.s15.chibaba.filegear-sg.me"}}}
+- {name: "🇧🇷 14巴西圣保罗 2", server: "104.21.90.78", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "33588726479112025032911325877881.s15.chibaba.filegear-sg.me"}}}
+- {name: "🇧🇷 15巴西圣保罗 2", server: "104.18.23.174", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "383160815939772025032911325811893.s15.chibaba.filegear-sg.me"}}}
+- {name: "🇧🇷 16巴西圣保罗 2", server: "104.18.42.163", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "622287139327322025032911325891971.s15.chibaba.filegear-sg.me"}}}
+- {name: "🇧🇷 17巴西圣保罗 2", server: "104.26.13.31", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "634740030436312025032911325899852.s15.chibaba.filegear-sg.me"}}}
+- {name: "🇧🇷 18巴西圣保罗 2", server: "104.16.229.229", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "247124295647592025032911325863001.s15.chibaba.filegear-sg.me"}}}
+- {name: "🇧🇷 19巴西圣保罗 2", server: "104.16.239.254", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "131486236378302025032911325854548.s15.chibaba.filegear-sg.me"}}}
+- {name: "🇧🇷 20巴西圣保罗 2", server: "172.67.68.157", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "205169637256262025032911325885313.s15.chibaba.filegear-sg.me"}}}
+- {name: "🇧🇷 1巴西圣保罗 3", server: "104.18.23.235", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "414675966019622025032911325884364.s15.chibaba.filegear-sg.me"}}}
+- {name: "🇧🇷 2巴西圣保罗 3", server: "104.18.20.69", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "805236499792802025032911325868179.s15.chibaba.filegear-sg.me"}}}
+- {name: "🇧🇷 3巴西圣保罗 3", server: "104.18.27.94", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "346165276582232025032911325821282.s15.chibaba.filegear-sg.me"}}}
+- {name: "🇧🇷 4巴西圣保罗 3", server: "104.18.21.69", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "410213160484872025032911325887837.s15.chibaba.filegear-sg.me"}}}
+- {name: "🇧🇷 5巴西圣保罗 3", server: "104.18.23.68", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "777490985373462025032911325890529.s15.chibaba.filegear-sg.me"}}}
+- {name: "🇧🇷 6巴西圣保罗 3", server: "172.67.70.92", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "765277746047792025032911325824351.s15.chibaba.filegear-sg.me"}}}
+- {name: "🇧🇷 7巴西圣保罗 3", server: "172.67.152.71", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "563788002025342025032911325879442.s15.chibaba.filegear-sg.me"}}}
+- {name: "🇧🇷 8巴西圣保罗 3", server: "104.21.90.210", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "494162946911912025032911325890989.s15.chibaba.filegear-sg.me"}}}
+- {name: "🇧🇷 9巴西圣保罗 3", server: "172.67.198.192", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "866042028806382025032911325837286.s15.chibaba.filegear-sg.me"}}}
+- {name: "🇧🇷 10巴西圣保罗 3", server: "172.65.90.53", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "999944964706162025032911325854453.s15.chibaba.filegear-sg.me"}}}
+- {name: "🇧🇷 11巴西圣保罗 3", server: "104.18.23.174", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "836613450996812025032911325838352.s15.chibaba.filegear-sg.me"}}}
+- {name: "🇧🇷 12巴西圣保罗 3", server: "104.18.4.250", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "222858141856952025032911325838101.s15.chibaba.filegear-sg.me"}}}
+- {name: "🇧🇷 13巴西圣保罗 3", server: "104.19.174.68", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "905929001008502025032911325888130.s15.chibaba.filegear-sg.me"}}}
+- {name: "🇧🇷 14巴西圣保罗 3", server: "104.21.90.78", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "67418309186952025032911325840509.s15.chibaba.filegear-sg.me"}}}
+- {name: "🇧🇷 15巴西圣保罗 3", server: "104.18.23.174", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "189709482554362025032911325878336.s15.chibaba.filegear-sg.me"}}}
+- {name: "🇧🇷 16巴西圣保罗 3", server: "172.64.145.93", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "376659083328982025032911325849342.s15.chibaba.filegear-sg.me"}}}
+- {name: "🇧🇷 17巴西圣保罗 3", server: "104.26.12.31", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "395280567705322025032911325817001.s15.chibaba.filegear-sg.me"}}}
+- {name: "🇧🇷 18巴西圣保罗 3", server: "104.16.229.229", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "46305330395552025032911325850253.s15.chibaba.filegear-sg.me"}}}
+- {name: "🇧🇷 19巴西圣保罗 3", server: "104.16.239.254", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "127703174087742025032911325895075.s15.chibaba.filegear-sg.me"}}}
+- {name: "🇧🇷 20巴西圣保罗 3", server: "172.67.68.157", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "105314434625922025032911325823877.s15.chibaba.filegear-sg.me"}}}
+- {name: "🇧🇷 1巴西圣保罗 4", server: "104.18.23.235", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "991044476060682025032911325835301.s15.chibaba.filegear-sg.me"}}}
+- {name: "🇧🇷 2巴西圣保罗 4", server: "104.18.20.69", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "526588386253782025032911325889122.s15.chibaba.filegear-sg.me"}}}
+- {name: "🇧🇷 3巴西圣保罗 4", server: "104.18.27.94", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "952288831877482025032911325829762.s15.chibaba.filegear-sg.me"}}}
+- {name: "🇧🇷 4巴西圣保罗 4", server: "104.18.20.69", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "372377432434242025032911325830192.s15.chibaba.filegear-sg.me"}}}
+- {name: "🇧🇷 5巴西圣保罗 4", server: "104.18.23.68", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "420996684380862025032911325851021.s15.chibaba.filegear-sg.me"}}}
+- {name: "🇧🇷 6巴西圣保罗 4", server: "172.67.70.92", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "158126987225032025032911325868116.s15.chibaba.filegear-sg.me"}}}
+- {name: "🇧🇷 7巴西圣保罗 4", server: "104.21.12.116", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "362971470039522025032911325843039.s15.chibaba.filegear-sg.me"}}}
+- {name: "🇧🇷 8巴西圣保罗 4", server: "104.21.90.210", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "889426366966132025032911325852503.s15.chibaba.filegear-sg.me"}}}
+- {name: "🇧🇷 9巴西圣保罗 4", server: "104.21.36.190", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "803581180636202025032911325851164.s15.chibaba.filegear-sg.me"}}}
+- {name: "🇧🇷 10巴西圣保罗 4", server: "172.65.90.53", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "114826624930292025032911325851758.s15.chibaba.filegear-sg.me"}}}
+- {name: "🇧🇷 11巴西圣保罗 4", server: "104.18.23.174", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "528815846272092025032911325888216.s15.chibaba.filegear-sg.me"}}}
+- {name: "🇧🇷 12巴西圣保罗 4", server: "104.18.5.250", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "427221403728812025032911325820530.s15.chibaba.filegear-sg.me"}}}
+- {name: "🇧🇷 13巴西圣保罗 4", server: "104.19.173.68", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "261092354001902025032911325849519.s15.chibaba.filegear-sg.me"}}}
+- {name: "🇧🇷 14巴西圣保罗 4", server: "104.21.90.78", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "11535314275082025032911325862113.s15.chibaba.filegear-sg.me"}}}
+- {name: "🇧🇷 15巴西圣保罗 4", server: "104.18.23.174", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "7141534931882025032911325947103.s15.chibaba.filegear-sg.me"}}}
+- {name: "🇧🇷 16巴西圣保罗 4", server: "172.64.145.93", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "990376700676102025032911325940952.s15.chibaba.filegear-sg.me"}}}
+- {name: "🇧🇷 17巴西圣保罗 4", server: "104.26.13.31", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "791875870197802025032911325920662.s15.chibaba.filegear-sg.me"}}}
+- {name: "🇧🇷 18巴西圣保罗 4", server: "104.16.228.229", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "193304572326042025032911325954049.s15.chibaba.filegear-sg.me"}}}
+- {name: "🇧🇷 19巴西圣保罗 4", server: "104.16.223.254", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "943749025620952025032911325942791.s15.chibaba.filegear-sg.me"}}}
+- {name: "🇧🇷 20巴西圣保罗 4", server: "172.67.68.157", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "365971217017382025032911325932958.s15.chibaba.filegear-sg.me"}}}
+- {name: "🇧🇷 1巴西圣保罗 5", server: "104.18.23.235", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "415852608224952025032911325989254.s15.chibaba.filegear-sg.me"}}}
+- {name: "🇧🇷 2巴西圣保罗 5", server: "104.18.21.69", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "411843965658682025032911330086871.s15.chibaba.filegear-sg.me"}}}
+- {name: "🇧🇷 3巴西圣保罗 5", server: "104.18.26.94", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "478484078734512025032911330091917.s15.chibaba.filegear-sg.me"}}}
+- {name: "🇧🇷 4巴西圣保罗 5", server: "104.18.21.69", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "433802288430332025032911330042303.s15.chibaba.filegear-sg.me"}}}
+- {name: "🇧🇷 5巴西圣保罗 5", server: "104.18.23.68", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "968491898472662025032911330011380.s15.chibaba.filegear-sg.me"}}}
+- {name: "🇧🇷 6巴西圣保罗 5", server: "104.26.4.60", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "393232404573162025032911330028559.s15.chibaba.filegear-sg.me"}}}
+- {name: "🇧🇷 7巴西圣保罗 5", server: "104.21.12.116", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "341734164138162025032911330016275.s15.chibaba.filegear-sg.me"}}}
+- {name: "🇧🇷 8巴西圣保罗 5", server: "172.67.161.104", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "108503078253972025032911330017147.s15.chibaba.filegear-sg.me"}}}
+- {name: "🇧🇷 9巴西圣保罗 5", server: "172.67.198.192", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "418575998383712025032911330031553.s15.chibaba.filegear-sg.me"}}}
+- {name: "🇧🇷 10巴西圣保罗 5", server: "172.65.90.53", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "281710056383162025032911330089940.s15.chibaba.filegear-sg.me"}}}
+- {name: "🇧🇷 11巴西圣保罗 5", server: "104.18.23.174", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "642859341119682025032911330074037.s15.chibaba.filegear-sg.me"}}}
+- {name: "🇧🇷 12巴西圣保罗 5", server: "104.18.4.250", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "208569620602292025032911330060557.s15.chibaba.filegear-sg.me"}}}
+- {name: "🇧🇷 13巴西圣保罗 5", server: "104.19.173.68", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "987512061750252025032911330012557.s15.chibaba.filegear-sg.me"}}}
+- {name: "🇧🇷 14巴西圣保罗 5", server: "104.21.90.78", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "676564832671812025032911330065500.s15.chibaba.filegear-sg.me"}}}
+- {name: "🇧🇷 15巴西圣保罗 5", server: "104.18.23.174", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "222893162803912025032911330015425.s15.chibaba.filegear-sg.me"}}}
+- {name: "🇧🇷 16巴西圣保罗 5", server: "104.18.42.163", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "410616111584642025032911330030585.s15.chibaba.filegear-sg.me"}}}
+- {name: "🇧🇷 17巴西圣保罗 5", server: "172.67.75.172", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "395506288637582025032911330069986.s15.chibaba.filegear-sg.me"}}}
+- {name: "🇧🇷 18巴西圣保罗 5", server: "104.16.229.229", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "623983317708492025032911330082790.s15.chibaba.filegear-sg.me"}}}
+- {name: "🇧🇷 19巴西圣保罗 5", server: "104.16.223.254", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "778714330139272025032911330051553.s15.chibaba.filegear-sg.me"}}}
+- {name: "🇧🇷 20巴西圣保罗 5", server: "104.26.12.54", port: 80, type: "vmess", uuid: "bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/s15.html?ed=2048", headers: {Host: "942734367362302025032911330018392.s15.chibaba.filegear-sg.me"}}}
 proxy-groups:
 - name: "🚀 节点选择"
   type: "select"
@@ -202,7 +261,13 @@ proxy-groups:
   - "🇰🇿 哈萨克斯坦｜01｜住宅ip"
   - "🇸🇬 新加坡"
   - "🇭🇰 HK 高速无限"
-  - "无限"
+  - "🇺🇸 美国04|1x"
+  - "🇰🇷 韩国01|1x"
+  - "🇯🇵 日本04|1x"
+  - "🇸🇬 新加坡01|1x"
+  - "🇬🇧 英国01|1x"
+  - "🇨🇳 台湾01|1x"
+  - "🇭🇰 香港04|1x"
   - "🇻🇳 越南 1Gbps"
   - "🇻🇳 越南"
   - "🇯🇵 日本"
@@ -231,6 +296,59 @@ proxy-groups:
   - "🇨🇦 加拿大"
   - "🇦🇺 澳大利亚"
   - "🇫🇷 法国巴黎"
+  - "🇭🇰 Hongkong 021"
+  - "🇭🇰 Hongkong 008"
+  - "🇭🇰 Hongkong 077"
+  - "🇭🇰 Hongkong 018"
+  - "🇭🇰 Hongkong 016"
+  - "🇭🇰 Hongkong 017"
+  - "🇭🇰 Hongkong 020"
+  - "🇭🇰 Hongkong 019"
+  - "to.FlyintPro.om"
+  - "🇯🇵 Japan 07"
+  - "🇯🇵 Japan 029"
+  - "🇯🇵 Japan 050"
+  - "🇯🇵 Japan 028"
+  - "🇯🇵 Japan 083"
+  - "🇯🇵 Japan 027"
+  - "🇸🇬 Singapore 057"
+  - "🇸🇬 Singapore 032"
+  - "🇸🇬 Singapore 078"
+  - "有问题请随时联系我们"
+  - "🇨🇳 Taiwan 065"
+  - "🇨🇳 Taiwan 031"
+  - "🇨🇳 Taiwan 030"
+  - "🇨🇳 TaiwanDynamicIP"
+  - "🇰🇷 SouthKorea 037"
+  - "🇺🇸 USA 084"
+  - "🇺🇸 USA 086"
+  - "🇺🇸 USA 038"
+  - "🇺🇸 USA 039"
+  - "🇺🇸 USA 040"
+  - "🇺🇸 USA 067"
+  - "🇺🇸 USA 069"
+  - "🇺🇸 USA 026"
+  - "🇺🇸 USA 025"
+  - "🇫🇷 France 043"
+  - "🇮🇹 Italy 091"
+  - "🇰🇿 Kazakhstan 092"
+  - "🇧🇷 Brazil 093"
+  - "🇮🇩 Indonesia 094"
+  - "🇩🇪 Germany 044"
+  - "Kingdom 045"
+  - "Kingdom 081"
+  - "🇨🇦 Canada 070"
+  - "🇹🇷 Turkey 042"
+  - "🇵🇰 Pakistan 024"
+  - "🇦🇺 Australia 071"
+  - "🇨🇭 Switzerland 087"
+  - "🇲🇾 Malaysia 075 *1.5"
+  - "🇵🇭 Philippines 05"
+  - "🇹🇭 Thailand 041"
+  - "🇷🇺 Russia 046"
+  - "🇻🇳 Vietnam 047"
+  - "🇺🇦 Ukraine 085"
+  - "🇮🇳 India 048"
   - "🇧🇷 1巴西圣保罗"
   - "🇧🇷 2巴西圣保罗"
   - "🇧🇷 3巴西圣保罗"
@@ -362,7 +480,13 @@ proxy-groups:
   - "🇰🇿 哈萨克斯坦｜01｜住宅ip"
   - "🇸🇬 新加坡"
   - "🇭🇰 HK 高速无限"
-  - "无限"
+  - "🇺🇸 美国04|1x"
+  - "🇰🇷 韩国01|1x"
+  - "🇯🇵 日本04|1x"
+  - "🇸🇬 新加坡01|1x"
+  - "🇬🇧 英国01|1x"
+  - "🇨🇳 台湾01|1x"
+  - "🇭🇰 香港04|1x"
   - "🇻🇳 越南 1Gbps"
   - "🇻🇳 越南"
   - "🇯🇵 日本"
@@ -391,6 +515,59 @@ proxy-groups:
   - "🇨🇦 加拿大"
   - "🇦🇺 澳大利亚"
   - "🇫🇷 法国巴黎"
+  - "🇭🇰 Hongkong 021"
+  - "🇭🇰 Hongkong 008"
+  - "🇭🇰 Hongkong 077"
+  - "🇭🇰 Hongkong 018"
+  - "🇭🇰 Hongkong 016"
+  - "🇭🇰 Hongkong 017"
+  - "🇭🇰 Hongkong 020"
+  - "🇭🇰 Hongkong 019"
+  - "to.FlyintPro.om"
+  - "🇯🇵 Japan 07"
+  - "🇯🇵 Japan 029"
+  - "🇯🇵 Japan 050"
+  - "🇯🇵 Japan 028"
+  - "🇯🇵 Japan 083"
+  - "🇯🇵 Japan 027"
+  - "🇸🇬 Singapore 057"
+  - "🇸🇬 Singapore 032"
+  - "🇸🇬 Singapore 078"
+  - "有问题请随时联系我们"
+  - "🇨🇳 Taiwan 065"
+  - "🇨🇳 Taiwan 031"
+  - "🇨🇳 Taiwan 030"
+  - "🇨🇳 TaiwanDynamicIP"
+  - "🇰🇷 SouthKorea 037"
+  - "🇺🇸 USA 084"
+  - "🇺🇸 USA 086"
+  - "🇺🇸 USA 038"
+  - "🇺🇸 USA 039"
+  - "🇺🇸 USA 040"
+  - "🇺🇸 USA 067"
+  - "🇺🇸 USA 069"
+  - "🇺🇸 USA 026"
+  - "🇺🇸 USA 025"
+  - "🇫🇷 France 043"
+  - "🇮🇹 Italy 091"
+  - "🇰🇿 Kazakhstan 092"
+  - "🇧🇷 Brazil 093"
+  - "🇮🇩 Indonesia 094"
+  - "🇩🇪 Germany 044"
+  - "Kingdom 045"
+  - "Kingdom 081"
+  - "🇨🇦 Canada 070"
+  - "🇹🇷 Turkey 042"
+  - "🇵🇰 Pakistan 024"
+  - "🇦🇺 Australia 071"
+  - "🇨🇭 Switzerland 087"
+  - "🇲🇾 Malaysia 075 *1.5"
+  - "🇵🇭 Philippines 05"
+  - "🇹🇭 Thailand 041"
+  - "🇷🇺 Russia 046"
+  - "🇻🇳 Vietnam 047"
+  - "🇺🇦 Ukraine 085"
+  - "🇮🇳 India 048"
   - "🇧🇷 1巴西圣保罗"
   - "🇧🇷 2巴西圣保罗"
   - "🇧🇷 3巴西圣保罗"
@@ -522,7 +699,13 @@ proxy-groups:
   - "🇰🇿 哈萨克斯坦｜01｜住宅ip"
   - "🇸🇬 新加坡"
   - "🇭🇰 HK 高速无限"
-  - "无限"
+  - "🇺🇸 美国04|1x"
+  - "🇰🇷 韩国01|1x"
+  - "🇯🇵 日本04|1x"
+  - "🇸🇬 新加坡01|1x"
+  - "🇬🇧 英国01|1x"
+  - "🇨🇳 台湾01|1x"
+  - "🇭🇰 香港04|1x"
   - "🇻🇳 越南 1Gbps"
   - "🇻🇳 越南"
   - "🇯🇵 日本"
@@ -551,6 +734,59 @@ proxy-groups:
   - "🇨🇦 加拿大"
   - "🇦🇺 澳大利亚"
   - "🇫🇷 法国巴黎"
+  - "🇭🇰 Hongkong 021"
+  - "🇭🇰 Hongkong 008"
+  - "🇭🇰 Hongkong 077"
+  - "🇭🇰 Hongkong 018"
+  - "🇭🇰 Hongkong 016"
+  - "🇭🇰 Hongkong 017"
+  - "🇭🇰 Hongkong 020"
+  - "🇭🇰 Hongkong 019"
+  - "to.FlyintPro.om"
+  - "🇯🇵 Japan 07"
+  - "🇯🇵 Japan 029"
+  - "🇯🇵 Japan 050"
+  - "🇯🇵 Japan 028"
+  - "🇯🇵 Japan 083"
+  - "🇯🇵 Japan 027"
+  - "🇸🇬 Singapore 057"
+  - "🇸🇬 Singapore 032"
+  - "🇸🇬 Singapore 078"
+  - "有问题请随时联系我们"
+  - "🇨🇳 Taiwan 065"
+  - "🇨🇳 Taiwan 031"
+  - "🇨🇳 Taiwan 030"
+  - "🇨🇳 TaiwanDynamicIP"
+  - "🇰🇷 SouthKorea 037"
+  - "🇺🇸 USA 084"
+  - "🇺🇸 USA 086"
+  - "🇺🇸 USA 038"
+  - "🇺🇸 USA 039"
+  - "🇺🇸 USA 040"
+  - "🇺🇸 USA 067"
+  - "🇺🇸 USA 069"
+  - "🇺🇸 USA 026"
+  - "🇺🇸 USA 025"
+  - "🇫🇷 France 043"
+  - "🇮🇹 Italy 091"
+  - "🇰🇿 Kazakhstan 092"
+  - "🇧🇷 Brazil 093"
+  - "🇮🇩 Indonesia 094"
+  - "🇩🇪 Germany 044"
+  - "Kingdom 045"
+  - "Kingdom 081"
+  - "🇨🇦 Canada 070"
+  - "🇹🇷 Turkey 042"
+  - "🇵🇰 Pakistan 024"
+  - "🇦🇺 Australia 071"
+  - "🇨🇭 Switzerland 087"
+  - "🇲🇾 Malaysia 075 *1.5"
+  - "🇵🇭 Philippines 05"
+  - "🇹🇭 Thailand 041"
+  - "🇷🇺 Russia 046"
+  - "🇻🇳 Vietnam 047"
+  - "🇺🇦 Ukraine 085"
+  - "🇮🇳 India 048"
   - "🇧🇷 1巴西圣保罗"
   - "🇧🇷 2巴西圣保罗"
   - "🇧🇷 3巴西圣保罗"
@@ -681,7 +917,13 @@ proxy-groups:
   - "🇰🇿 哈萨克斯坦｜01｜住宅ip"
   - "🇸🇬 新加坡"
   - "🇭🇰 HK 高速无限"
-  - "无限"
+  - "🇺🇸 美国04|1x"
+  - "🇰🇷 韩国01|1x"
+  - "🇯🇵 日本04|1x"
+  - "🇸🇬 新加坡01|1x"
+  - "🇬🇧 英国01|1x"
+  - "🇨🇳 台湾01|1x"
+  - "🇭🇰 香港04|1x"
   - "🇻🇳 越南 1Gbps"
   - "🇻🇳 越南"
   - "🇯🇵 日本"
@@ -710,6 +952,59 @@ proxy-groups:
   - "🇨🇦 加拿大"
   - "🇦🇺 澳大利亚"
   - "🇫🇷 法国巴黎"
+  - "🇭🇰 Hongkong 021"
+  - "🇭🇰 Hongkong 008"
+  - "🇭🇰 Hongkong 077"
+  - "🇭🇰 Hongkong 018"
+  - "🇭🇰 Hongkong 016"
+  - "🇭🇰 Hongkong 017"
+  - "🇭🇰 Hongkong 020"
+  - "🇭🇰 Hongkong 019"
+  - "to.FlyintPro.om"
+  - "🇯🇵 Japan 07"
+  - "🇯🇵 Japan 029"
+  - "🇯🇵 Japan 050"
+  - "🇯🇵 Japan 028"
+  - "🇯🇵 Japan 083"
+  - "🇯🇵 Japan 027"
+  - "🇸🇬 Singapore 057"
+  - "🇸🇬 Singapore 032"
+  - "🇸🇬 Singapore 078"
+  - "有问题请随时联系我们"
+  - "🇨🇳 Taiwan 065"
+  - "🇨🇳 Taiwan 031"
+  - "🇨🇳 Taiwan 030"
+  - "🇨🇳 TaiwanDynamicIP"
+  - "🇰🇷 SouthKorea 037"
+  - "🇺🇸 USA 084"
+  - "🇺🇸 USA 086"
+  - "🇺🇸 USA 038"
+  - "🇺🇸 USA 039"
+  - "🇺🇸 USA 040"
+  - "🇺🇸 USA 067"
+  - "🇺🇸 USA 069"
+  - "🇺🇸 USA 026"
+  - "🇺🇸 USA 025"
+  - "🇫🇷 France 043"
+  - "🇮🇹 Italy 091"
+  - "🇰🇿 Kazakhstan 092"
+  - "🇧🇷 Brazil 093"
+  - "🇮🇩 Indonesia 094"
+  - "🇩🇪 Germany 044"
+  - "Kingdom 045"
+  - "Kingdom 081"
+  - "🇨🇦 Canada 070"
+  - "🇹🇷 Turkey 042"
+  - "🇵🇰 Pakistan 024"
+  - "🇦🇺 Australia 071"
+  - "🇨🇭 Switzerland 087"
+  - "🇲🇾 Malaysia 075 *1.5"
+  - "🇵🇭 Philippines 05"
+  - "🇹🇭 Thailand 041"
+  - "🇷🇺 Russia 046"
+  - "🇻🇳 Vietnam 047"
+  - "🇺🇦 Ukraine 085"
+  - "🇮🇳 India 048"
   - "🇧🇷 1巴西圣保罗"
   - "🇧🇷 2巴西圣保罗"
   - "🇧🇷 3巴西圣保罗"
@@ -840,7 +1135,13 @@ proxy-groups:
   - "🇰🇿 哈萨克斯坦｜01｜住宅ip"
   - "🇸🇬 新加坡"
   - "🇭🇰 HK 高速无限"
-  - "无限"
+  - "🇺🇸 美国04|1x"
+  - "🇰🇷 韩国01|1x"
+  - "🇯🇵 日本04|1x"
+  - "🇸🇬 新加坡01|1x"
+  - "🇬🇧 英国01|1x"
+  - "🇨🇳 台湾01|1x"
+  - "🇭🇰 香港04|1x"
   - "🇻🇳 越南 1Gbps"
   - "🇻🇳 越南"
   - "🇯🇵 日本"
@@ -869,6 +1170,59 @@ proxy-groups:
   - "🇨🇦 加拿大"
   - "🇦🇺 澳大利亚"
   - "🇫🇷 法国巴黎"
+  - "🇭🇰 Hongkong 021"
+  - "🇭🇰 Hongkong 008"
+  - "🇭🇰 Hongkong 077"
+  - "🇭🇰 Hongkong 018"
+  - "🇭🇰 Hongkong 016"
+  - "🇭🇰 Hongkong 017"
+  - "🇭🇰 Hongkong 020"
+  - "🇭🇰 Hongkong 019"
+  - "to.FlyintPro.om"
+  - "🇯🇵 Japan 07"
+  - "🇯🇵 Japan 029"
+  - "🇯🇵 Japan 050"
+  - "🇯🇵 Japan 028"
+  - "🇯🇵 Japan 083"
+  - "🇯🇵 Japan 027"
+  - "🇸🇬 Singapore 057"
+  - "🇸🇬 Singapore 032"
+  - "🇸🇬 Singapore 078"
+  - "有问题请随时联系我们"
+  - "🇨🇳 Taiwan 065"
+  - "🇨🇳 Taiwan 031"
+  - "🇨🇳 Taiwan 030"
+  - "🇨🇳 TaiwanDynamicIP"
+  - "🇰🇷 SouthKorea 037"
+  - "🇺🇸 USA 084"
+  - "🇺🇸 USA 086"
+  - "🇺🇸 USA 038"
+  - "🇺🇸 USA 039"
+  - "🇺🇸 USA 040"
+  - "🇺🇸 USA 067"
+  - "🇺🇸 USA 069"
+  - "🇺🇸 USA 026"
+  - "🇺🇸 USA 025"
+  - "🇫🇷 France 043"
+  - "🇮🇹 Italy 091"
+  - "🇰🇿 Kazakhstan 092"
+  - "🇧🇷 Brazil 093"
+  - "🇮🇩 Indonesia 094"
+  - "🇩🇪 Germany 044"
+  - "Kingdom 045"
+  - "Kingdom 081"
+  - "🇨🇦 Canada 070"
+  - "🇹🇷 Turkey 042"
+  - "🇵🇰 Pakistan 024"
+  - "🇦🇺 Australia 071"
+  - "🇨🇭 Switzerland 087"
+  - "🇲🇾 Malaysia 075 *1.5"
+  - "🇵🇭 Philippines 05"
+  - "🇹🇭 Thailand 041"
+  - "🇷🇺 Russia 046"
+  - "🇻🇳 Vietnam 047"
+  - "🇺🇦 Ukraine 085"
+  - "🇮🇳 India 048"
   - "🇧🇷 1巴西圣保罗"
   - "🇧🇷 2巴西圣保罗"
   - "🇧🇷 3巴西圣保罗"
@@ -999,7 +1353,13 @@ proxy-groups:
   - "🇰🇿 哈萨克斯坦｜01｜住宅ip"
   - "🇸🇬 新加坡"
   - "🇭🇰 HK 高速无限"
-  - "无限"
+  - "🇺🇸 美国04|1x"
+  - "🇰🇷 韩国01|1x"
+  - "🇯🇵 日本04|1x"
+  - "🇸🇬 新加坡01|1x"
+  - "🇬🇧 英国01|1x"
+  - "🇨🇳 台湾01|1x"
+  - "🇭🇰 香港04|1x"
   - "🇻🇳 越南 1Gbps"
   - "🇻🇳 越南"
   - "🇯🇵 日本"
@@ -1028,6 +1388,59 @@ proxy-groups:
   - "🇨🇦 加拿大"
   - "🇦🇺 澳大利亚"
   - "🇫🇷 法国巴黎"
+  - "🇭🇰 Hongkong 021"
+  - "🇭🇰 Hongkong 008"
+  - "🇭🇰 Hongkong 077"
+  - "🇭🇰 Hongkong 018"
+  - "🇭🇰 Hongkong 016"
+  - "🇭🇰 Hongkong 017"
+  - "🇭🇰 Hongkong 020"
+  - "🇭🇰 Hongkong 019"
+  - "to.FlyintPro.om"
+  - "🇯🇵 Japan 07"
+  - "🇯🇵 Japan 029"
+  - "🇯🇵 Japan 050"
+  - "🇯🇵 Japan 028"
+  - "🇯🇵 Japan 083"
+  - "🇯🇵 Japan 027"
+  - "🇸🇬 Singapore 057"
+  - "🇸🇬 Singapore 032"
+  - "🇸🇬 Singapore 078"
+  - "有问题请随时联系我们"
+  - "🇨🇳 Taiwan 065"
+  - "🇨🇳 Taiwan 031"
+  - "🇨🇳 Taiwan 030"
+  - "🇨🇳 TaiwanDynamicIP"
+  - "🇰🇷 SouthKorea 037"
+  - "🇺🇸 USA 084"
+  - "🇺🇸 USA 086"
+  - "🇺🇸 USA 038"
+  - "🇺🇸 USA 039"
+  - "🇺🇸 USA 040"
+  - "🇺🇸 USA 067"
+  - "🇺🇸 USA 069"
+  - "🇺🇸 USA 026"
+  - "🇺🇸 USA 025"
+  - "🇫🇷 France 043"
+  - "🇮🇹 Italy 091"
+  - "🇰🇿 Kazakhstan 092"
+  - "🇧🇷 Brazil 093"
+  - "🇮🇩 Indonesia 094"
+  - "🇩🇪 Germany 044"
+  - "Kingdom 045"
+  - "Kingdom 081"
+  - "🇨🇦 Canada 070"
+  - "🇹🇷 Turkey 042"
+  - "🇵🇰 Pakistan 024"
+  - "🇦🇺 Australia 071"
+  - "🇨🇭 Switzerland 087"
+  - "🇲🇾 Malaysia 075 *1.5"
+  - "🇵🇭 Philippines 05"
+  - "🇹🇭 Thailand 041"
+  - "🇷🇺 Russia 046"
+  - "🇻🇳 Vietnam 047"
+  - "🇺🇦 Ukraine 085"
+  - "🇮🇳 India 048"
   - "🇧🇷 1巴西圣保罗"
   - "🇧🇷 2巴西圣保罗"
   - "🇧🇷 3巴西圣保罗"
@@ -1159,7 +1572,13 @@ proxy-groups:
   - "🇰🇿 哈萨克斯坦｜01｜住宅ip"
   - "🇸🇬 新加坡"
   - "🇭🇰 HK 高速无限"
-  - "无限"
+  - "🇺🇸 美国04|1x"
+  - "🇰🇷 韩国01|1x"
+  - "🇯🇵 日本04|1x"
+  - "🇸🇬 新加坡01|1x"
+  - "🇬🇧 英国01|1x"
+  - "🇨🇳 台湾01|1x"
+  - "🇭🇰 香港04|1x"
   - "🇻🇳 越南 1Gbps"
   - "🇻🇳 越南"
   - "🇯🇵 日本"
@@ -1188,6 +1607,59 @@ proxy-groups:
   - "🇨🇦 加拿大"
   - "🇦🇺 澳大利亚"
   - "🇫🇷 法国巴黎"
+  - "🇭🇰 Hongkong 021"
+  - "🇭🇰 Hongkong 008"
+  - "🇭🇰 Hongkong 077"
+  - "🇭🇰 Hongkong 018"
+  - "🇭🇰 Hongkong 016"
+  - "🇭🇰 Hongkong 017"
+  - "🇭🇰 Hongkong 020"
+  - "🇭🇰 Hongkong 019"
+  - "to.FlyintPro.om"
+  - "🇯🇵 Japan 07"
+  - "🇯🇵 Japan 029"
+  - "🇯🇵 Japan 050"
+  - "🇯🇵 Japan 028"
+  - "🇯🇵 Japan 083"
+  - "🇯🇵 Japan 027"
+  - "🇸🇬 Singapore 057"
+  - "🇸🇬 Singapore 032"
+  - "🇸🇬 Singapore 078"
+  - "有问题请随时联系我们"
+  - "🇨🇳 Taiwan 065"
+  - "🇨🇳 Taiwan 031"
+  - "🇨🇳 Taiwan 030"
+  - "🇨🇳 TaiwanDynamicIP"
+  - "🇰🇷 SouthKorea 037"
+  - "🇺🇸 USA 084"
+  - "🇺🇸 USA 086"
+  - "🇺🇸 USA 038"
+  - "🇺🇸 USA 039"
+  - "🇺🇸 USA 040"
+  - "🇺🇸 USA 067"
+  - "🇺🇸 USA 069"
+  - "🇺🇸 USA 026"
+  - "🇺🇸 USA 025"
+  - "🇫🇷 France 043"
+  - "🇮🇹 Italy 091"
+  - "🇰🇿 Kazakhstan 092"
+  - "🇧🇷 Brazil 093"
+  - "🇮🇩 Indonesia 094"
+  - "🇩🇪 Germany 044"
+  - "Kingdom 045"
+  - "Kingdom 081"
+  - "🇨🇦 Canada 070"
+  - "🇹🇷 Turkey 042"
+  - "🇵🇰 Pakistan 024"
+  - "🇦🇺 Australia 071"
+  - "🇨🇭 Switzerland 087"
+  - "🇲🇾 Malaysia 075 *1.5"
+  - "🇵🇭 Philippines 05"
+  - "🇹🇭 Thailand 041"
+  - "🇷🇺 Russia 046"
+  - "🇻🇳 Vietnam 047"
+  - "🇺🇦 Ukraine 085"
+  - "🇮🇳 India 048"
   - "🇧🇷 1巴西圣保罗"
   - "🇧🇷 2巴西圣保罗"
   - "🇧🇷 3巴西圣保罗"
@@ -1335,7 +1807,13 @@ proxy-groups:
   - "🇰🇿 哈萨克斯坦｜01｜住宅ip"
   - "🇸🇬 新加坡"
   - "🇭🇰 HK 高速无限"
-  - "无限"
+  - "🇺🇸 美国04|1x"
+  - "🇰🇷 韩国01|1x"
+  - "🇯🇵 日本04|1x"
+  - "🇸🇬 新加坡01|1x"
+  - "🇬🇧 英国01|1x"
+  - "🇨🇳 台湾01|1x"
+  - "🇭🇰 香港04|1x"
   - "🇻🇳 越南 1Gbps"
   - "🇻🇳 越南"
   - "🇯🇵 日本"
@@ -1364,6 +1842,59 @@ proxy-groups:
   - "🇨🇦 加拿大"
   - "🇦🇺 澳大利亚"
   - "🇫🇷 法国巴黎"
+  - "🇭🇰 Hongkong 021"
+  - "🇭🇰 Hongkong 008"
+  - "🇭🇰 Hongkong 077"
+  - "🇭🇰 Hongkong 018"
+  - "🇭🇰 Hongkong 016"
+  - "🇭🇰 Hongkong 017"
+  - "🇭🇰 Hongkong 020"
+  - "🇭🇰 Hongkong 019"
+  - "to.FlyintPro.om"
+  - "🇯🇵 Japan 07"
+  - "🇯🇵 Japan 029"
+  - "🇯🇵 Japan 050"
+  - "🇯🇵 Japan 028"
+  - "🇯🇵 Japan 083"
+  - "🇯🇵 Japan 027"
+  - "🇸🇬 Singapore 057"
+  - "🇸🇬 Singapore 032"
+  - "🇸🇬 Singapore 078"
+  - "有问题请随时联系我们"
+  - "🇨🇳 Taiwan 065"
+  - "🇨🇳 Taiwan 031"
+  - "🇨🇳 Taiwan 030"
+  - "🇨🇳 TaiwanDynamicIP"
+  - "🇰🇷 SouthKorea 037"
+  - "🇺🇸 USA 084"
+  - "🇺🇸 USA 086"
+  - "🇺🇸 USA 038"
+  - "🇺🇸 USA 039"
+  - "🇺🇸 USA 040"
+  - "🇺🇸 USA 067"
+  - "🇺🇸 USA 069"
+  - "🇺🇸 USA 026"
+  - "🇺🇸 USA 025"
+  - "🇫🇷 France 043"
+  - "🇮🇹 Italy 091"
+  - "🇰🇿 Kazakhstan 092"
+  - "🇧🇷 Brazil 093"
+  - "🇮🇩 Indonesia 094"
+  - "🇩🇪 Germany 044"
+  - "Kingdom 045"
+  - "Kingdom 081"
+  - "🇨🇦 Canada 070"
+  - "🇹🇷 Turkey 042"
+  - "🇵🇰 Pakistan 024"
+  - "🇦🇺 Australia 071"
+  - "🇨🇭 Switzerland 087"
+  - "🇲🇾 Malaysia 075 *1.5"
+  - "🇵🇭 Philippines 05"
+  - "🇹🇭 Thailand 041"
+  - "🇷🇺 Russia 046"
+  - "🇻🇳 Vietnam 047"
+  - "🇺🇦 Ukraine 085"
+  - "🇮🇳 India 048"
   - "🇧🇷 1巴西圣保罗"
   - "🇧🇷 2巴西圣保罗"
   - "🇧🇷 3巴西圣保罗"
