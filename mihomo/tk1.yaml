@@ -17,17 +17,17 @@ hosts:
   alt7-mtalk.google.com: "173.194.219.188"
   alt8-mtalk.google.com: "142.250.112.188"
 proxies:
-- name: "🇯🇵日本1 | ⬇️ 5.3MB/s"
+- name: "🇩🇪德国2 | ⬇️ 5.2MB/s"
   type: "hysteria2"
-  server: "aws-linkhy15.liangxin1.xyz"
-  port: 443
+  server: "136.243.156.104"
+  port: 53338
   tls: true
-  password: "38e2f757-fd05-4b73-b3b4-3b3c8d46af76"
-  sni: "www.teslamotors.cn"
+  password: "d2317a1f-760c-4b62-83f2-3e7f4adaf7a5"
+  sni: "www.bing.com"
   skip-cert-verify: true
   fast-open: false
   ip-version: "dual"
-- name: "🌀其他1-MY | ⬇️ 2.7MB/s"
+- name: "🌀其他1-MY | ⬇️ 10.2MB/s"
   type: "trojan"
   server: "aafrtpfxr.myl01i9zjfegelp.5xfsur8v62.gosdk.xyz"
   port: 43393
@@ -38,59 +38,7 @@ proxies:
   skip-cert-verify: false
   client-fingerprint: "chrome"
   ip-version: "dual"
-- name: "🇭🇰香港1 | ⬇️ 6.1MB/s"
-  type: "hysteria2"
-  server: "aws-linkhy1.liangxin1.xyz"
-  port: 443
-  tls: true
-  password: "38e2f757-fd05-4b73-b3b4-3b3c8d46af76"
-  sni: "www.tesla.cn"
-  skip-cert-verify: true
-  fast-open: false
-  ip-version: "dual"
-- name: "🇸🇬新加坡1 | ⬇️ 5.9MB/s"
-  type: "hysteria2"
-  server: "aws-linkhy11.liangxin1.xyz"
-  port: 443
-  tls: true
-  password: "38e2f757-fd05-4b73-b3b4-3b3c8d46af76"
-  sni: "www.teslaenergy.com"
-  skip-cert-verify: true
-  fast-open: false
-  ip-version: "dual"
-- name: "🇩🇪德国1 | ⬇️ 3.0MB/s"
-  type: "hysteria2"
-  server: "136.243.156.104"
-  port: 53338
-  tls: true
-  password: "d2317a1f-760c-4b62-83f2-3e7f4adaf7a5"
-  sni: "www.bing.com"
-  skip-cert-verify: true
-  fast-open: false
-  ip-version: "dual"
-- name: "🇰🇷韩国1 | ⬇️ 6.5MB/s"
-  type: "hysteria2"
-  server: "aws-linkhy22.liangxin1.xyz"
-  port: 443
-  tls: true
-  password: "38e2f757-fd05-4b73-b3b4-3b3c8d46af76"
-  sni: "www.apple.com"
-  skip-cert-verify: true
-  fast-open: false
-  ip-version: "dual"
-- name: "🇺🇸美国4 | ⬇️ 3.4MB/s"
-  type: "hysteria"
-  server: "108.181.24.77"
-  port: 11512
-  tls: true
-  sni: "apple.com"
-  alpn:
-  - "h3"
-  up: "10"
-  down: "50"
-  skip-cert-verify: true
-  ip-version: "dual"
-- name: "🇫🇷法国1 | ⬇️ 2.3MB/s"
+- name: "🇫🇷法国2 | ⬇️ 4.5MB/s"
   type: "hysteria2"
   server: "51.159.226.1"
   port: 61770
@@ -100,379 +48,152 @@ proxies:
   skip-cert-verify: true
   fast-open: false
   ip-version: "dual"
-- name: "🇯🇵日本3 | ⬇️ 7.2MB/s"
-  type: "hysteria2"
-  server: "aws-linkhy17.liangxin1.xyz"
-  port: 443
+- name: "🌀其他8-MY | ⬇️ 6.8MB/s"
+  type: "trojan"
+  server: "aafrtpfxr.myl02i9zjfegelp.5xfsur8v62.gosdk.xyz"
+  port: 43383
+  network: "tcp"
   tls: true
-  password: "38e2f757-fd05-4b73-b3b4-3b3c8d46af76"
-  sni: "www.apple.com.cn"
-  skip-cert-verify: true
-  fast-open: false
-  ip-version: "dual"
-- name: "🇭🇰香港3 | ⬇️ 2.6MB/s"
-  type: "hysteria2"
-  server: "aws-linkhy3.liangxin1.xyz"
-  port: 443
-  tls: true
-  password: "38e2f757-fd05-4b73-b3b4-3b3c8d46af76"
-  sni: "www.teslamotors.com"
-  skip-cert-verify: true
-  fast-open: false
-  ip-version: "dual"
-- name: "🇫🇷法国4 | ⬇️ 2.4MB/s"
-  type: "hysteria2"
-  server: "195.154.33.70"
-  port: 59967
-  tls: true
-  password: "dongtaiwang.com"
-  sni: "www.bing.com"
-  skip-cert-verify: true
-  fast-open: false
-  ip-version: "dual"
-- name: "🇫🇷法国5 | ⬇️ 1.0MB/s"
-  type: "hysteria2"
-  server: "51.159.226.1"
-  port: 61770
-  tls: true
-  password: "dongtaiwang.com"
-  sni: "www.bing.com"
-  skip-cert-verify: true
-  fast-open: false
-  ip-version: "dual"
-- name: "🇷🇺俄罗斯2 | ⬇️ 1.4MB/s"
-  type: "hysteria2"
-  server: "195.133.5.127"
-  port: 33007
-  tls: false
-  password: "581bb1e0-6b51-4177-b284-7f2f0f8f319b"
-  obfs: "salamander"
-  obfs-password: "NDhhNmY5YTY0MGYzOTgxYQ=="
-  skip-cert-verify: true
-  fast-open: false
-  ip-version: "dual"
-- name: "🇺🇸美国5 | ⬇️ 3.1MB/s"
-  type: "hysteria"
-  server: "208.87.243.151"
-  port: 17549
-  tls: true
-  sni: "www.bing.com"
-  alpn:
-  - "h3"
-  up: "10"
-  down: "50"
-  skip-cert-verify: true
-  ip-version: "dual"
-- name: "🇸🇬新加坡3 | ⬇️ 7.4MB/s"
-  type: "hysteria2"
-  server: "aws-linkhy9.liangxin1.xyz"
-  port: 443
-  tls: true
-  password: "38e2f757-fd05-4b73-b3b4-3b3c8d46af76"
-  sni: "www.teslaautomation.de"
-  skip-cert-verify: true
-  fast-open: false
-  ip-version: "dual"
-- name: "🇷🇺俄罗斯3 | ⬇️ 1.0MB/s"
-  type: "hysteria"
-  server: "185.22.155.71"
-  port: 10803
-  tls: true
-  sni: "www.bing.com"
-  alpn:
-  - "h3"
-  up: "10"
-  down: "50"
-  skip-cert-verify: true
-  ip-version: "dual"
-- name: "🇫🇷法国6 | ⬇️ 3.5MB/s"
-  type: "hysteria2"
-  server: "195.154.33.70"
-  port: 59967
-  tls: true
-  password: "dongtaiwang.com"
-  sni: "www.bing.com"
-  skip-cert-verify: true
-  fast-open: false
-  ip-version: "dual"
-- name: "🇦🇺澳大利亚1 | ⬇️ 2.1MB/s"
-  type: "hysteria2"
-  server: "tw3.akebi.cc"
-  port: 2006
-  tls: true
-  password: "82febca6-8856-41fe-84df-c8bda0b72c7b"
-  sni: "au01.akebi.cc"
+  password: "268f8604-ae22-47ea-a846-121bfa584236"
+  sni: "q08m.vgraxiw73s.hasyaf.cn"
   skip-cert-verify: false
-  fast-open: false
+  client-fingerprint: "chrome"
   ip-version: "dual"
-- name: "🇰🇷韩国2 | ⬇️ 6.8MB/s"
+- name: "🇫🇷法国4 | ⬇️ 3.5MB/s"
   type: "hysteria2"
-  server: "aws-linkhy21.liangxin1.xyz"
-  port: 443
-  tls: true
-  password: "38e2f757-fd05-4b73-b3b4-3b3c8d46af76"
-  sni: "www.apple.com"
-  skip-cert-verify: true
-  fast-open: false
-  ip-version: "dual"
-- name: "🇭🇰香港5 | ⬇️ 7.5MB/s"
-  type: "hysteria2"
-  server: "aws-linkhy2.liangxin1.xyz"
-  port: 443
-  tls: true
-  password: "38e2f757-fd05-4b73-b3b4-3b3c8d46af76"
-  sni: "www.tesla.cn"
-  skip-cert-verify: true
-  fast-open: false
-  ip-version: "dual"
-- name: "🇷🇺俄罗斯4 | ⬇️ 1.1MB/s"
-  type: "hysteria2"
-  server: "46.17.41.5"
-  port: 12904
+  server: "195.154.33.70"
+  port: 59967
   tls: true
   password: "dongtaiwang.com"
-  sni: "apple.com"
+  sni: "www.bing.com"
   skip-cert-verify: true
   fast-open: false
   ip-version: "dual"
-- name: "🇫🇷法国7 | ⬇️ 3.0MB/s"
-  type: "hysteria"
-  server: "195.154.200.178"
-  port: 44557
+- name: "🇬🇧英国3 | ⬇️ 8.2MB/s"
+  type: "trojan"
+  server: "aafrtpfxr.gbl01i9zjfegelp.5xfsur8v62.gosdk.xyz"
+  port: 44397
+  network: "tcp"
+  tls: true
+  password: "268f8604-ae22-47ea-a846-121bfa584236"
+  sni: "q08m.vgraxiw73s.hasyaf.cn"
+  skip-cert-verify: false
+  client-fingerprint: "chrome"
+  ip-version: "dual"
+- name: "🌀其他10-ID | ⬇️ 10.2MB/s"
+  type: "trojan"
+  server: "aafrtpfxr.idl01i9zjfegelp.5xfsur8v62.gosdk.xyz"
+  port: 43394
+  network: "tcp"
+  tls: true
+  password: "268f8604-ae22-47ea-a846-121bfa584236"
+  sni: "q08m.vgraxiw73s.hasyaf.cn"
+  skip-cert-verify: false
+  client-fingerprint: "chrome"
+  ip-version: "dual"
+- name: "🇸🇬新加坡3 | ⬇️ 1.9MB%2Fs"
+  type: "ss"
+  server: "okanc.node-is.green"
+  port: 21114
   tls: false
-  alpn:
-  - "h3"
-  up: "10"
-  down: "50"
-  skip-cert-verify: true
+  password: "9acfc574-acc3-4c2b-ab3b-491d43a6eb83"
   ip-version: "dual"
-- name: "🇯🇵日本8 | ⬇️ 8.2MB/s"
-  type: "hysteria2"
-  server: "aws-linkhy16.liangxin1.xyz"
-  port: 443
-  tls: true
-  password: "38e2f757-fd05-4b73-b3b4-3b3c8d46af76"
-  sni: "www.teslamotors.cn"
-  skip-cert-verify: true
-  fast-open: false
-  ip-version: "dual"
-- name: "🇷🇺俄罗斯5 | ⬇️ 4.6MB/s"
-  type: "hysteria2"
-  server: "46.17.41.5"
-  port: 12904
-  tls: true
-  password: "dongtaiwang.com"
-  sni: "apple.com"
-  skip-cert-verify: true
-  fast-open: false
-  ip-version: "dual"
+  cipher: "aes-256-gcm"
 proxy-groups:
 - name: "🚀 节点选择"
   type: "select"
   proxies:
   - "♻️ 自动选择"
   - "DIRECT"
-  - "🇯🇵日本1 | ⬇️ 5.3MB/s"
-  - "🌀其他1-MY | ⬇️ 2.7MB/s"
-  - "🇭🇰香港1 | ⬇️ 6.1MB/s"
-  - "🇸🇬新加坡1 | ⬇️ 5.9MB/s"
-  - "🇩🇪德国1 | ⬇️ 3.0MB/s"
-  - "🇰🇷韩国1 | ⬇️ 6.5MB/s"
-  - "🇺🇸美国4 | ⬇️ 3.4MB/s"
-  - "🇫🇷法国1 | ⬇️ 2.3MB/s"
-  - "🇯🇵日本3 | ⬇️ 7.2MB/s"
-  - "🇭🇰香港3 | ⬇️ 2.6MB/s"
-  - "🇫🇷法国4 | ⬇️ 2.4MB/s"
-  - "🇫🇷法国5 | ⬇️ 1.0MB/s"
-  - "🇷🇺俄罗斯2 | ⬇️ 1.4MB/s"
-  - "🇺🇸美国5 | ⬇️ 3.1MB/s"
-  - "🇸🇬新加坡3 | ⬇️ 7.4MB/s"
-  - "🇷🇺俄罗斯3 | ⬇️ 1.0MB/s"
-  - "🇫🇷法国6 | ⬇️ 3.5MB/s"
-  - "🇦🇺澳大利亚1 | ⬇️ 2.1MB/s"
-  - "🇰🇷韩国2 | ⬇️ 6.8MB/s"
-  - "🇭🇰香港5 | ⬇️ 7.5MB/s"
-  - "🇷🇺俄罗斯4 | ⬇️ 1.1MB/s"
-  - "🇫🇷法国7 | ⬇️ 3.0MB/s"
-  - "🇯🇵日本8 | ⬇️ 8.2MB/s"
-  - "🇷🇺俄罗斯5 | ⬇️ 4.6MB/s"
+  - "🇩🇪德国2 | ⬇️ 5.2MB/s"
+  - "🌀其他1-MY | ⬇️ 10.2MB/s"
+  - "🇫🇷法国2 | ⬇️ 4.5MB/s"
+  - "🌀其他8-MY | ⬇️ 6.8MB/s"
+  - "🇫🇷法国4 | ⬇️ 3.5MB/s"
+  - "🇬🇧英国3 | ⬇️ 8.2MB/s"
+  - "🌀其他10-ID | ⬇️ 10.2MB/s"
+  - "🇸🇬新加坡3 | ⬇️ 1.9MB%2Fs"
 - name: "♻️ 自动选择"
   type: "url-test"
   url: "http://www.gstatic.com/generate_204"
   interval: 300
   tolerance: 50
   proxies:
-  - "🇯🇵日本1 | ⬇️ 5.3MB/s"
-  - "🌀其他1-MY | ⬇️ 2.7MB/s"
-  - "🇭🇰香港1 | ⬇️ 6.1MB/s"
-  - "🇸🇬新加坡1 | ⬇️ 5.9MB/s"
-  - "🇩🇪德国1 | ⬇️ 3.0MB/s"
-  - "🇰🇷韩国1 | ⬇️ 6.5MB/s"
-  - "🇺🇸美国4 | ⬇️ 3.4MB/s"
-  - "🇫🇷法国1 | ⬇️ 2.3MB/s"
-  - "🇯🇵日本3 | ⬇️ 7.2MB/s"
-  - "🇭🇰香港3 | ⬇️ 2.6MB/s"
-  - "🇫🇷法国4 | ⬇️ 2.4MB/s"
-  - "🇫🇷法国5 | ⬇️ 1.0MB/s"
-  - "🇷🇺俄罗斯2 | ⬇️ 1.4MB/s"
-  - "🇺🇸美国5 | ⬇️ 3.1MB/s"
-  - "🇸🇬新加坡3 | ⬇️ 7.4MB/s"
-  - "🇷🇺俄罗斯3 | ⬇️ 1.0MB/s"
-  - "🇫🇷法国6 | ⬇️ 3.5MB/s"
-  - "🇦🇺澳大利亚1 | ⬇️ 2.1MB/s"
-  - "🇰🇷韩国2 | ⬇️ 6.8MB/s"
-  - "🇭🇰香港5 | ⬇️ 7.5MB/s"
-  - "🇷🇺俄罗斯4 | ⬇️ 1.1MB/s"
-  - "🇫🇷法国7 | ⬇️ 3.0MB/s"
-  - "🇯🇵日本8 | ⬇️ 8.2MB/s"
-  - "🇷🇺俄罗斯5 | ⬇️ 4.6MB/s"
+  - "🇩🇪德国2 | ⬇️ 5.2MB/s"
+  - "🌀其他1-MY | ⬇️ 10.2MB/s"
+  - "🇫🇷法国2 | ⬇️ 4.5MB/s"
+  - "🌀其他8-MY | ⬇️ 6.8MB/s"
+  - "🇫🇷法国4 | ⬇️ 3.5MB/s"
+  - "🇬🇧英国3 | ⬇️ 8.2MB/s"
+  - "🌀其他10-ID | ⬇️ 10.2MB/s"
+  - "🇸🇬新加坡3 | ⬇️ 1.9MB%2Fs"
 - name: "🌍 国外媒体"
   type: "select"
   proxies:
   - "🚀 节点选择"
   - "♻️ 自动选择"
   - "🎯 全球直连"
-  - "🇯🇵日本1 | ⬇️ 5.3MB/s"
-  - "🌀其他1-MY | ⬇️ 2.7MB/s"
-  - "🇭🇰香港1 | ⬇️ 6.1MB/s"
-  - "🇸🇬新加坡1 | ⬇️ 5.9MB/s"
-  - "🇩🇪德国1 | ⬇️ 3.0MB/s"
-  - "🇰🇷韩国1 | ⬇️ 6.5MB/s"
-  - "🇺🇸美国4 | ⬇️ 3.4MB/s"
-  - "🇫🇷法国1 | ⬇️ 2.3MB/s"
-  - "🇯🇵日本3 | ⬇️ 7.2MB/s"
-  - "🇭🇰香港3 | ⬇️ 2.6MB/s"
-  - "🇫🇷法国4 | ⬇️ 2.4MB/s"
-  - "🇫🇷法国5 | ⬇️ 1.0MB/s"
-  - "🇷🇺俄罗斯2 | ⬇️ 1.4MB/s"
-  - "🇺🇸美国5 | ⬇️ 3.1MB/s"
-  - "🇸🇬新加坡3 | ⬇️ 7.4MB/s"
-  - "🇷🇺俄罗斯3 | ⬇️ 1.0MB/s"
-  - "🇫🇷法国6 | ⬇️ 3.5MB/s"
-  - "🇦🇺澳大利亚1 | ⬇️ 2.1MB/s"
-  - "🇰🇷韩国2 | ⬇️ 6.8MB/s"
-  - "🇭🇰香港5 | ⬇️ 7.5MB/s"
-  - "🇷🇺俄罗斯4 | ⬇️ 1.1MB/s"
-  - "🇫🇷法国7 | ⬇️ 3.0MB/s"
-  - "🇯🇵日本8 | ⬇️ 8.2MB/s"
-  - "🇷🇺俄罗斯5 | ⬇️ 4.6MB/s"
+  - "🇩🇪德国2 | ⬇️ 5.2MB/s"
+  - "🌀其他1-MY | ⬇️ 10.2MB/s"
+  - "🇫🇷法国2 | ⬇️ 4.5MB/s"
+  - "🌀其他8-MY | ⬇️ 6.8MB/s"
+  - "🇫🇷法国4 | ⬇️ 3.5MB/s"
+  - "🇬🇧英国3 | ⬇️ 8.2MB/s"
+  - "🌀其他10-ID | ⬇️ 10.2MB/s"
+  - "🇸🇬新加坡3 | ⬇️ 1.9MB%2Fs"
 - name: "📲 电报信息"
   type: "select"
   proxies:
   - "🚀 节点选择"
   - "🎯 全球直连"
-  - "🇯🇵日本1 | ⬇️ 5.3MB/s"
-  - "🌀其他1-MY | ⬇️ 2.7MB/s"
-  - "🇭🇰香港1 | ⬇️ 6.1MB/s"
-  - "🇸🇬新加坡1 | ⬇️ 5.9MB/s"
-  - "🇩🇪德国1 | ⬇️ 3.0MB/s"
-  - "🇰🇷韩国1 | ⬇️ 6.5MB/s"
-  - "🇺🇸美国4 | ⬇️ 3.4MB/s"
-  - "🇫🇷法国1 | ⬇️ 2.3MB/s"
-  - "🇯🇵日本3 | ⬇️ 7.2MB/s"
-  - "🇭🇰香港3 | ⬇️ 2.6MB/s"
-  - "🇫🇷法国4 | ⬇️ 2.4MB/s"
-  - "🇫🇷法国5 | ⬇️ 1.0MB/s"
-  - "🇷🇺俄罗斯2 | ⬇️ 1.4MB/s"
-  - "🇺🇸美国5 | ⬇️ 3.1MB/s"
-  - "🇸🇬新加坡3 | ⬇️ 7.4MB/s"
-  - "🇷🇺俄罗斯3 | ⬇️ 1.0MB/s"
-  - "🇫🇷法国6 | ⬇️ 3.5MB/s"
-  - "🇦🇺澳大利亚1 | ⬇️ 2.1MB/s"
-  - "🇰🇷韩国2 | ⬇️ 6.8MB/s"
-  - "🇭🇰香港5 | ⬇️ 7.5MB/s"
-  - "🇷🇺俄罗斯4 | ⬇️ 1.1MB/s"
-  - "🇫🇷法国7 | ⬇️ 3.0MB/s"
-  - "🇯🇵日本8 | ⬇️ 8.2MB/s"
-  - "🇷🇺俄罗斯5 | ⬇️ 4.6MB/s"
+  - "🇩🇪德国2 | ⬇️ 5.2MB/s"
+  - "🌀其他1-MY | ⬇️ 10.2MB/s"
+  - "🇫🇷法国2 | ⬇️ 4.5MB/s"
+  - "🌀其他8-MY | ⬇️ 6.8MB/s"
+  - "🇫🇷法国4 | ⬇️ 3.5MB/s"
+  - "🇬🇧英国3 | ⬇️ 8.2MB/s"
+  - "🌀其他10-ID | ⬇️ 10.2MB/s"
+  - "🇸🇬新加坡3 | ⬇️ 1.9MB%2Fs"
 - name: "Ⓜ️ 微软服务"
   type: "select"
   proxies:
   - "🚀 节点选择"
   - "🎯 全球直连"
-  - "🇯🇵日本1 | ⬇️ 5.3MB/s"
-  - "🌀其他1-MY | ⬇️ 2.7MB/s"
-  - "🇭🇰香港1 | ⬇️ 6.1MB/s"
-  - "🇸🇬新加坡1 | ⬇️ 5.9MB/s"
-  - "🇩🇪德国1 | ⬇️ 3.0MB/s"
-  - "🇰🇷韩国1 | ⬇️ 6.5MB/s"
-  - "🇺🇸美国4 | ⬇️ 3.4MB/s"
-  - "🇫🇷法国1 | ⬇️ 2.3MB/s"
-  - "🇯🇵日本3 | ⬇️ 7.2MB/s"
-  - "🇭🇰香港3 | ⬇️ 2.6MB/s"
-  - "🇫🇷法国4 | ⬇️ 2.4MB/s"
-  - "🇫🇷法国5 | ⬇️ 1.0MB/s"
-  - "🇷🇺俄罗斯2 | ⬇️ 1.4MB/s"
-  - "🇺🇸美国5 | ⬇️ 3.1MB/s"
-  - "🇸🇬新加坡3 | ⬇️ 7.4MB/s"
-  - "🇷🇺俄罗斯3 | ⬇️ 1.0MB/s"
-  - "🇫🇷法国6 | ⬇️ 3.5MB/s"
-  - "🇦🇺澳大利亚1 | ⬇️ 2.1MB/s"
-  - "🇰🇷韩国2 | ⬇️ 6.8MB/s"
-  - "🇭🇰香港5 | ⬇️ 7.5MB/s"
-  - "🇷🇺俄罗斯4 | ⬇️ 1.1MB/s"
-  - "🇫🇷法国7 | ⬇️ 3.0MB/s"
-  - "🇯🇵日本8 | ⬇️ 8.2MB/s"
-  - "🇷🇺俄罗斯5 | ⬇️ 4.6MB/s"
+  - "🇩🇪德国2 | ⬇️ 5.2MB/s"
+  - "🌀其他1-MY | ⬇️ 10.2MB/s"
+  - "🇫🇷法国2 | ⬇️ 4.5MB/s"
+  - "🌀其他8-MY | ⬇️ 6.8MB/s"
+  - "🇫🇷法国4 | ⬇️ 3.5MB/s"
+  - "🇬🇧英国3 | ⬇️ 8.2MB/s"
+  - "🌀其他10-ID | ⬇️ 10.2MB/s"
+  - "🇸🇬新加坡3 | ⬇️ 1.9MB%2Fs"
 - name: "🍎 苹果服务"
   type: "select"
   proxies:
   - "🚀 节点选择"
   - "🎯 全球直连"
-  - "🇯🇵日本1 | ⬇️ 5.3MB/s"
-  - "🌀其他1-MY | ⬇️ 2.7MB/s"
-  - "🇭🇰香港1 | ⬇️ 6.1MB/s"
-  - "🇸🇬新加坡1 | ⬇️ 5.9MB/s"
-  - "🇩🇪德国1 | ⬇️ 3.0MB/s"
-  - "🇰🇷韩国1 | ⬇️ 6.5MB/s"
-  - "🇺🇸美国4 | ⬇️ 3.4MB/s"
-  - "🇫🇷法国1 | ⬇️ 2.3MB/s"
-  - "🇯🇵日本3 | ⬇️ 7.2MB/s"
-  - "🇭🇰香港3 | ⬇️ 2.6MB/s"
-  - "🇫🇷法国4 | ⬇️ 2.4MB/s"
-  - "🇫🇷法国5 | ⬇️ 1.0MB/s"
-  - "🇷🇺俄罗斯2 | ⬇️ 1.4MB/s"
-  - "🇺🇸美国5 | ⬇️ 3.1MB/s"
-  - "🇸🇬新加坡3 | ⬇️ 7.4MB/s"
-  - "🇷🇺俄罗斯3 | ⬇️ 1.0MB/s"
-  - "🇫🇷法国6 | ⬇️ 3.5MB/s"
-  - "🇦🇺澳大利亚1 | ⬇️ 2.1MB/s"
-  - "🇰🇷韩国2 | ⬇️ 6.8MB/s"
-  - "🇭🇰香港5 | ⬇️ 7.5MB/s"
-  - "🇷🇺俄罗斯4 | ⬇️ 1.1MB/s"
-  - "🇫🇷法国7 | ⬇️ 3.0MB/s"
-  - "🇯🇵日本8 | ⬇️ 8.2MB/s"
-  - "🇷🇺俄罗斯5 | ⬇️ 4.6MB/s"
+  - "🇩🇪德国2 | ⬇️ 5.2MB/s"
+  - "🌀其他1-MY | ⬇️ 10.2MB/s"
+  - "🇫🇷法国2 | ⬇️ 4.5MB/s"
+  - "🌀其他8-MY | ⬇️ 6.8MB/s"
+  - "🇫🇷法国4 | ⬇️ 3.5MB/s"
+  - "🇬🇧英国3 | ⬇️ 8.2MB/s"
+  - "🌀其他10-ID | ⬇️ 10.2MB/s"
+  - "🇸🇬新加坡3 | ⬇️ 1.9MB%2Fs"
 - name: "📢 谷歌FCM"
   type: "select"
   proxies:
   - "🎯 全球直连"
   - "🚀 节点选择"
   - "♻️ 自动选择"
-  - "🇯🇵日本1 | ⬇️ 5.3MB/s"
-  - "🌀其他1-MY | ⬇️ 2.7MB/s"
-  - "🇭🇰香港1 | ⬇️ 6.1MB/s"
-  - "🇸🇬新加坡1 | ⬇️ 5.9MB/s"
-  - "🇩🇪德国1 | ⬇️ 3.0MB/s"
-  - "🇰🇷韩国1 | ⬇️ 6.5MB/s"
-  - "🇺🇸美国4 | ⬇️ 3.4MB/s"
-  - "🇫🇷法国1 | ⬇️ 2.3MB/s"
-  - "🇯🇵日本3 | ⬇️ 7.2MB/s"
-  - "🇭🇰香港3 | ⬇️ 2.6MB/s"
-  - "🇫🇷法国4 | ⬇️ 2.4MB/s"
-  - "🇫🇷法国5 | ⬇️ 1.0MB/s"
-  - "🇷🇺俄罗斯2 | ⬇️ 1.4MB/s"
-  - "🇺🇸美国5 | ⬇️ 3.1MB/s"
-  - "🇸🇬新加坡3 | ⬇️ 7.4MB/s"
-  - "🇷🇺俄罗斯3 | ⬇️ 1.0MB/s"
-  - "🇫🇷法国6 | ⬇️ 3.5MB/s"
-  - "🇦🇺澳大利亚1 | ⬇️ 2.1MB/s"
-  - "🇰🇷韩国2 | ⬇️ 6.8MB/s"
-  - "🇭🇰香港5 | ⬇️ 7.5MB/s"
-  - "🇷🇺俄罗斯4 | ⬇️ 1.1MB/s"
-  - "🇫🇷法国7 | ⬇️ 3.0MB/s"
-  - "🇯🇵日本8 | ⬇️ 8.2MB/s"
-  - "🇷🇺俄罗斯5 | ⬇️ 4.6MB/s"
+  - "🇩🇪德国2 | ⬇️ 5.2MB/s"
+  - "🌀其他1-MY | ⬇️ 10.2MB/s"
+  - "🇫🇷法国2 | ⬇️ 4.5MB/s"
+  - "🌀其他8-MY | ⬇️ 6.8MB/s"
+  - "🇫🇷法国4 | ⬇️ 3.5MB/s"
+  - "🇬🇧英国3 | ⬇️ 8.2MB/s"
+  - "🌀其他10-ID | ⬇️ 10.2MB/s"
+  - "🇸🇬新加坡3 | ⬇️ 1.9MB%2Fs"
 - name: "🎯 全球直连"
   type: "select"
   proxies:
@@ -495,30 +216,14 @@ proxy-groups:
   - "🚀 节点选择"
   - "🎯 全球直连"
   - "♻️ 自动选择"
-  - "🇯🇵日本1 | ⬇️ 5.3MB/s"
-  - "🌀其他1-MY | ⬇️ 2.7MB/s"
-  - "🇭🇰香港1 | ⬇️ 6.1MB/s"
-  - "🇸🇬新加坡1 | ⬇️ 5.9MB/s"
-  - "🇩🇪德国1 | ⬇️ 3.0MB/s"
-  - "🇰🇷韩国1 | ⬇️ 6.5MB/s"
-  - "🇺🇸美国4 | ⬇️ 3.4MB/s"
-  - "🇫🇷法国1 | ⬇️ 2.3MB/s"
-  - "🇯🇵日本3 | ⬇️ 7.2MB/s"
-  - "🇭🇰香港3 | ⬇️ 2.6MB/s"
-  - "🇫🇷法国4 | ⬇️ 2.4MB/s"
-  - "🇫🇷法国5 | ⬇️ 1.0MB/s"
-  - "🇷🇺俄罗斯2 | ⬇️ 1.4MB/s"
-  - "🇺🇸美国5 | ⬇️ 3.1MB/s"
-  - "🇸🇬新加坡3 | ⬇️ 7.4MB/s"
-  - "🇷🇺俄罗斯3 | ⬇️ 1.0MB/s"
-  - "🇫🇷法国6 | ⬇️ 3.5MB/s"
-  - "🇦🇺澳大利亚1 | ⬇️ 2.1MB/s"
-  - "🇰🇷韩国2 | ⬇️ 6.8MB/s"
-  - "🇭🇰香港5 | ⬇️ 7.5MB/s"
-  - "🇷🇺俄罗斯4 | ⬇️ 1.1MB/s"
-  - "🇫🇷法国7 | ⬇️ 3.0MB/s"
-  - "🇯🇵日本8 | ⬇️ 8.2MB/s"
-  - "🇷🇺俄罗斯5 | ⬇️ 4.6MB/s"
+  - "🇩🇪德国2 | ⬇️ 5.2MB/s"
+  - "🌀其他1-MY | ⬇️ 10.2MB/s"
+  - "🇫🇷法国2 | ⬇️ 4.5MB/s"
+  - "🌀其他8-MY | ⬇️ 6.8MB/s"
+  - "🇫🇷法国4 | ⬇️ 3.5MB/s"
+  - "🇬🇧英国3 | ⬇️ 8.2MB/s"
+  - "🌀其他10-ID | ⬇️ 10.2MB/s"
+  - "🇸🇬新加坡3 | ⬇️ 1.9MB%2Fs"
 rules:
 - "DOMAIN-SUFFIX,ushd.xmsl.org,🎯 全球直连"
 - "DOMAIN-SUFFIX,cf.gtlx.org,🎯 全球直连"
