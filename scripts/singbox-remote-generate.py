@@ -27,11 +27,11 @@ def extract_and_generate_new_outbounds(source_data):
             {
                 "tag": "select",
                 "type": "selector",
-                "default": "urltest",
-                "outbounds": ["urltest"] + server_tags,
+                "default": "auto",
+                "outbounds": ["auto"] + server_tags,
             },
-            {"tag": "urltest", "type": "urltest", "outbounds": server_tags},
-            {"tag": "chatgpt", "type": "selector", "outbounds": server_tags},
+            {"tag": "auto", "type": "urltest", "outbounds": server_tags},
+            {"tag": "ai", "type": "selector", "outbounds": server_tags},
         ]
         direct_object = {"tag": "direct", "type": "direct"}
         server_objects.extend(new_objects)

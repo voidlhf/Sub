@@ -127,7 +127,7 @@
             ]
           }
         ],
-        "outbound": "chatgpt"
+        "outbound": "ai"
       },
       {
         "type": "logical",
@@ -143,10 +143,7 @@
             "domain_keyword": [
               "ushd.xmsl.org",
               "cf.gtlx.org",
-              "mtalk.google.com",
-              "public-operation-hkrpg-sg.hoyoverse.com",
-              "public-operation-hk4e-sg.hoyoverse.com",
-              "public-operation-nap-sg.hoyoverse.com"
+              "mtalk.google.com"
             ]
           },
           {
@@ -178,14 +175,14 @@
         "type": "remote",
         "tag": "geoip-cn",
         "format": "binary",
-        "url": "https://raw.githubusercontent.com/SagerNet/sing-geoip/rule-set/geoip-cn.srs",
+        "url": "https://raw.githubusercontent.com/lyc8503/sing-box-rules/rule-set-geoip/geoip-cn.srs",
         "download_detour": "select"
       },
       {
         "type": "remote",
         "tag": "geosite-cn",
         "format": "binary",
-        "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs",
+        "url": "https://raw.githubusercontent.com/lyc8503/sing-box-rules/rule-set-geosite/geosite-cn.srs",
         "download_detour": "select"
       },
       {
