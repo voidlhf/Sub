@@ -1,0 +1,608 @@
+{
+  "log": {},
+  "dns": {
+    "servers": [
+      {
+        "tag": "dns_proxy",
+        "type": "https",
+        "server": "1.1.1.1",
+        "detour": "select"
+      },
+      {
+        "tag": "dns_direct",
+        "type": "https",
+        "server": "223.5.5.5"
+      },
+      {
+        "tag": "dns_fakeip",
+        "type": "fakeip",
+        "inet4_range": "198.18.0.0/15",
+        "inet6_range": "fc00::/18"
+      }
+    ],
+    "rules": [
+      {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "query_type": "HTTPS"
+          },
+          {
+            "rule_set": [
+              "AdGuardSDNSFilter"
+            ]
+          }
+        ],
+        "action": "reject"
+      },
+      {
+        "query_type": [
+          "A",
+          "AAAA"
+        ],
+        "server": "dns_fakeip",
+        "rewrite_ttl": 1
+      },
+      {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "clash_mode": "Global"
+          }
+        ],
+        "server": "dns_proxy"
+      },
+      {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "clash_mode": "Direct"
+          },
+          {
+            "rule_set": "geosite-cn"
+          }
+        ],
+        "server": "dns_direct"
+      }
+    ],
+    "strategy": "ipv4_only",
+    "independent_cache": true
+  },
+  "inbounds": [
+    {
+      "type": "tun",
+      "address": [
+        "172.18.0.1/30",
+        "fdfe:dcba:9876::1/126"
+      ],
+      "auto_route": true,
+      "strict_route": true,
+      "route_exclude_address": [
+        "192.168.0.0/16",
+        "fc00::/7"
+      ]
+    }
+  ],
+  "outbounds": [
+    {
+      "down_mbps": 600,
+      "password": "82febca6-8856-41fe-84df-c8bda0b72c7b",
+      "server": "tw.akebi.cc",
+      "server_port": 30001,
+      "tag": "剩余流量：95402.53 GB",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "tw.akebi.cc"
+      },
+      "type": "hysteria2",
+      "up_mbps": 1000
+    },
+    {
+      "down_mbps": 600,
+      "password": "82febca6-8856-41fe-84df-c8bda0b72c7b",
+      "server": "tw.akebi.cc",
+      "server_port": 30001,
+      "tag": "距离下次重置剩余：6 天",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "tw.akebi.cc"
+      },
+      "type": "hysteria2",
+      "up_mbps": 1000
+    },
+    {
+      "down_mbps": 600,
+      "password": "82febca6-8856-41fe-84df-c8bda0b72c7b",
+      "server": "tw.akebi.cc",
+      "server_port": 30001,
+      "tag": "套餐到期：2026-11-05",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "tw.akebi.cc"
+      },
+      "type": "hysteria2",
+      "up_mbps": 1000
+    },
+    {
+      "down_mbps": 600,
+      "password": "82febca6-8856-41fe-84df-c8bda0b72c7b",
+      "server": "tw.akebi.cc",
+      "server_port": 30001,
+      "tag": "🇹🇼台湾｜01｜原生IP",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "tw.akebi.cc"
+      },
+      "type": "hysteria2",
+      "up_mbps": 1000
+    },
+    {
+      "down_mbps": 600,
+      "password": "82febca6-8856-41fe-84df-c8bda0b72c7b",
+      "server": "tw3.akebi.cc",
+      "server_port": 5006,
+      "tag": "🇹🇼台湾｜03｜原生IP",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "tw3.akebi.cc"
+      },
+      "type": "hysteria2",
+      "up_mbps": 1000
+    },
+    {
+      "down_mbps": 600,
+      "password": "82febca6-8856-41fe-84df-c8bda0b72c7b",
+      "server": "tw3.akebi.cc",
+      "server_port": 9000,
+      "tag": "🇹🇼台湾｜04｜原生IP",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "tw3.akebi.cc"
+      },
+      "type": "hysteria2",
+      "up_mbps": 1000
+    },
+    {
+      "down_mbps": 600,
+      "password": "82febca6-8856-41fe-84df-c8bda0b72c7b",
+      "server": "tw3.akebi.cc",
+      "server_port": 9001,
+      "tag": "🇹🇼台湾｜05｜原生IP",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "tw3.akebi.cc"
+      },
+      "type": "hysteria2",
+      "up_mbps": 1000
+    },
+    {
+      "down_mbps": 600,
+      "password": "82febca6-8856-41fe-84df-c8bda0b72c7b",
+      "server": "tw.akebi.cc",
+      "server_port": 1000,
+      "tag": "🇭🇰香港｜01",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "hk03.akebi.cc"
+      },
+      "type": "hysteria2",
+      "up_mbps": 1000
+    },
+    {
+      "down_mbps": 600,
+      "password": "82febca6-8856-41fe-84df-c8bda0b72c7b",
+      "server": "tw3.akebi.cc",
+      "server_port": 2000,
+      "tag": "🇭🇰香港｜02",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "hk03.akebi.cc"
+      },
+      "type": "hysteria2",
+      "up_mbps": 1000
+    },
+    {
+      "down_mbps": 600,
+      "password": "82febca6-8856-41fe-84df-c8bda0b72c7b",
+      "server": "tw3.akebi.cc",
+      "server_port": 2021,
+      "tag": "🇭🇰香港｜03",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "hk03.akebi.cc"
+      },
+      "type": "hysteria2",
+      "up_mbps": 1000
+    },
+    {
+      "down_mbps": 600,
+      "password": "82febca6-8856-41fe-84df-c8bda0b72c7b",
+      "server": "tw3.akebi.cc",
+      "server_port": 2012,
+      "tag": "🇯🇵日本｜01",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "jp02.akebi.cc"
+      },
+      "type": "hysteria2",
+      "up_mbps": 1000
+    },
+    {
+      "down_mbps": 600,
+      "password": "82febca6-8856-41fe-84df-c8bda0b72c7b",
+      "server": "tw3.akebi.cc",
+      "server_port": 2024,
+      "tag": "🇹🇭泰国丨01｜原生IP",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "th.akebi.cc"
+      },
+      "type": "hysteria2",
+      "up_mbps": 1000
+    },
+    {
+      "down_mbps": 600,
+      "password": "82febca6-8856-41fe-84df-c8bda0b72c7b",
+      "server": "tw3.akebi.cc",
+      "server_port": 2018,
+      "tag": "🇹🇭泰国丨02｜原生IP",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "th.akebi.cc"
+      },
+      "type": "hysteria2",
+      "up_mbps": 1000
+    },
+    {
+      "down_mbps": 600,
+      "password": "82febca6-8856-41fe-84df-c8bda0b72c7b",
+      "server": "tw3.akebi.cc",
+      "server_port": 2019,
+      "tag": "🇧🇩孟加拉｜01｜住宅IP",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "bd.akebi.cc"
+      },
+      "type": "hysteria2",
+      "up_mbps": 1000
+    },
+    {
+      "down_mbps": 600,
+      "password": "82febca6-8856-41fe-84df-c8bda0b72c7b",
+      "server": "tw3.akebi.cc",
+      "server_port": 2025,
+      "tag": "🇧🇩孟加拉｜02｜住宅IP",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "bd.akebi.cc"
+      },
+      "type": "hysteria2",
+      "up_mbps": 1000
+    },
+    {
+      "down_mbps": 600,
+      "password": "82febca6-8856-41fe-84df-c8bda0b72c7b",
+      "server": "tw3.akebi.cc",
+      "server_port": 2023,
+      "tag": "🇰🇭柬埔寨｜01",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "kh01.akebi.cc"
+      },
+      "type": "hysteria2",
+      "up_mbps": 1000
+    },
+    {
+      "down_mbps": 600,
+      "password": "82febca6-8856-41fe-84df-c8bda0b72c7b",
+      "server": "tw3.akebi.cc",
+      "server_port": 2020,
+      "tag": "🇺🇦乌克兰｜01｜原生IP",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "ua01.akebi.cc"
+      },
+      "type": "hysteria2",
+      "up_mbps": 1000
+    },
+    {
+      "down_mbps": 600,
+      "password": "82febca6-8856-41fe-84df-c8bda0b72c7b",
+      "server": "tw3.akebi.cc",
+      "server_port": 2003,
+      "tag": "🇮🇸冰岛｜01",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "is01.akebi.cc"
+      },
+      "type": "hysteria2",
+      "up_mbps": 1000
+    },
+    {
+      "down_mbps": 600,
+      "password": "82febca6-8856-41fe-84df-c8bda0b72c7b",
+      "server": "tw3.akebi.cc",
+      "server_port": 2005,
+      "tag": "🇫🇷法国｜01｜原生IP",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "fr01.akebi.cc"
+      },
+      "type": "hysteria2",
+      "up_mbps": 1000
+    },
+    {
+      "down_mbps": 600,
+      "password": "82febca6-8856-41fe-84df-c8bda0b72c7b",
+      "server": "tw3.akebi.cc",
+      "server_port": 2006,
+      "tag": "🇦🇺澳大利亚｜01｜原生IP",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "au01.akebi.cc"
+      },
+      "type": "hysteria2",
+      "up_mbps": 1000
+    },
+    {
+      "down_mbps": 600,
+      "password": "82febca6-8856-41fe-84df-c8bda0b72c7b",
+      "server": "tw3.akebi.cc",
+      "server_port": 2026,
+      "tag": "🇹🇬多哥｜01｜住宅IP",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "tg.akebi.cc"
+      },
+      "type": "hysteria2",
+      "up_mbps": 1000
+    },
+    {
+      "down_mbps": 600,
+      "password": "82febca6-8856-41fe-84df-c8bda0b72c7b",
+      "server": "tw3.akebi.cc",
+      "server_port": 2027,
+      "tag": "🇰🇿哈萨克斯坦｜01｜住宅ip",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "kz.akebi.cc"
+      },
+      "type": "hysteria2",
+      "up_mbps": 1000
+    },
+    {
+      "tag": "select",
+      "type": "selector",
+      "default": "auto",
+      "outbounds": [
+        "auto",
+        "剩余流量：95402.53 GB",
+        "距离下次重置剩余：6 天",
+        "套餐到期：2026-11-05",
+        "🇹🇼台湾｜01｜原生IP",
+        "🇹🇼台湾｜03｜原生IP",
+        "🇹🇼台湾｜04｜原生IP",
+        "🇹🇼台湾｜05｜原生IP",
+        "🇭🇰香港｜01",
+        "🇭🇰香港｜02",
+        "🇭🇰香港｜03",
+        "🇯🇵日本｜01",
+        "🇹🇭泰国丨01｜原生IP",
+        "🇹🇭泰国丨02｜原生IP",
+        "🇧🇩孟加拉｜01｜住宅IP",
+        "🇧🇩孟加拉｜02｜住宅IP",
+        "🇰🇭柬埔寨｜01",
+        "🇺🇦乌克兰｜01｜原生IP",
+        "🇮🇸冰岛｜01",
+        "🇫🇷法国｜01｜原生IP",
+        "🇦🇺澳大利亚｜01｜原生IP",
+        "🇹🇬多哥｜01｜住宅IP",
+        "🇰🇿哈萨克斯坦｜01｜住宅ip"
+      ]
+    },
+    {
+      "tag": "auto",
+      "type": "urltest",
+      "outbounds": [
+        "剩余流量：95402.53 GB",
+        "距离下次重置剩余：6 天",
+        "套餐到期：2026-11-05",
+        "🇹🇼台湾｜01｜原生IP",
+        "🇹🇼台湾｜03｜原生IP",
+        "🇹🇼台湾｜04｜原生IP",
+        "🇹🇼台湾｜05｜原生IP",
+        "🇭🇰香港｜01",
+        "🇭🇰香港｜02",
+        "🇭🇰香港｜03",
+        "🇯🇵日本｜01",
+        "🇹🇭泰国丨01｜原生IP",
+        "🇹🇭泰国丨02｜原生IP",
+        "🇧🇩孟加拉｜01｜住宅IP",
+        "🇧🇩孟加拉｜02｜住宅IP",
+        "🇰🇭柬埔寨｜01",
+        "🇺🇦乌克兰｜01｜原生IP",
+        "🇮🇸冰岛｜01",
+        "🇫🇷法国｜01｜原生IP",
+        "🇦🇺澳大利亚｜01｜原生IP",
+        "🇹🇬多哥｜01｜住宅IP",
+        "🇰🇿哈萨克斯坦｜01｜住宅ip"
+      ]
+    },
+    {
+      "tag": "ai",
+      "type": "selector",
+      "outbounds": [
+        "剩余流量：95402.53 GB",
+        "距离下次重置剩余：6 天",
+        "套餐到期：2026-11-05",
+        "🇹🇼台湾｜01｜原生IP",
+        "🇹🇼台湾｜03｜原生IP",
+        "🇹🇼台湾｜04｜原生IP",
+        "🇹🇼台湾｜05｜原生IP",
+        "🇭🇰香港｜01",
+        "🇭🇰香港｜02",
+        "🇭🇰香港｜03",
+        "🇯🇵日本｜01",
+        "🇹🇭泰国丨01｜原生IP",
+        "🇹🇭泰国丨02｜原生IP",
+        "🇧🇩孟加拉｜01｜住宅IP",
+        "🇧🇩孟加拉｜02｜住宅IP",
+        "🇰🇭柬埔寨｜01",
+        "🇺🇦乌克兰｜01｜原生IP",
+        "🇮🇸冰岛｜01",
+        "🇫🇷法国｜01｜原生IP",
+        "🇦🇺澳大利亚｜01｜原生IP",
+        "🇹🇬多哥｜01｜住宅IP",
+        "🇰🇿哈萨克斯坦｜01｜住宅ip"
+      ]
+    },
+    {
+      "tag": "direct",
+      "type": "direct"
+    }
+  ],
+  "route": {
+    "rules": [
+      {
+        "action": "sniff"
+      },
+      {
+        "protocol": "dns",
+        "action": "hijack-dns"
+      },
+      {
+        "action": "resolve",
+        "strategy": "ipv4_only"
+      },
+      {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "clash_mode": "Global"
+          }
+        ],
+        "outbound": "select"
+      },
+      {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "package_name": "com.openai.chatgpt"
+          },
+          {
+            "domain_suffix": [
+              "gemini.google.com",
+              "proactivebackend-pa.googleapis.com",
+              "bing.com",
+              "bing.net",
+              "bingapis.com"
+            ]
+          }
+        ],
+        "outbound": "ai"
+      },
+      {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "clash_mode": "Direct"
+          },
+          {
+            "ip_is_private": true
+          },
+          {
+            "domain_keyword": [
+              "ushd.xmsl.org",
+              "cf.gtlx.org",
+              "mtalk.google.com"
+            ]
+          },
+          {
+            "port": [
+              23301,
+              22101,
+              22102,
+              20501,
+              21601,
+              21602,
+              21603,
+              21604,
+              21605,
+              21606
+            ]
+          },
+          {
+            "rule_set": [
+              "geoip-cn",
+              "geosite-cn"
+            ]
+          }
+        ],
+        "outbound": "direct"
+      }
+    ],
+    "rule_set": [
+      {
+        "type": "remote",
+        "tag": "geoip-cn",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/lyc8503/sing-box-rules/rule-set-geoip/geoip-cn.srs",
+        "download_detour": "select"
+      },
+      {
+        "type": "remote",
+        "tag": "geosite-cn",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/lyc8503/sing-box-rules/rule-set-geosite/geosite-cn.srs",
+        "download_detour": "select"
+      },
+      {
+        "type": "remote",
+        "tag": "AdGuardSDNSFilter",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/xmdhs/sing-box-ruleset/rule-set/AdGuardSDNSFilterSingBox.srs",
+        "download_detour": "select"
+      }
+    ],
+    "final": "select",
+    "default_domain_resolver": "dns_direct",
+    "auto_detect_interface": true,
+    "override_android_vpn": true
+  },
+  "experimental": {
+    "cache_file": {
+      "enabled": true
+    },
+    "clash_api": {
+      "external_controller": "127.0.0.1:9090"
+    }
+  }
+}

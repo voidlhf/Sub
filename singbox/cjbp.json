@@ -1,0 +1,1862 @@
+{
+  "log": {},
+  "dns": {
+    "servers": [
+      {
+        "tag": "dns_proxy",
+        "type": "https",
+        "server": "1.1.1.1",
+        "detour": "select"
+      },
+      {
+        "tag": "dns_direct",
+        "type": "https",
+        "server": "223.5.5.5"
+      },
+      {
+        "tag": "dns_fakeip",
+        "type": "fakeip",
+        "inet4_range": "198.18.0.0/15",
+        "inet6_range": "fc00::/18"
+      }
+    ],
+    "rules": [
+      {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "query_type": "HTTPS"
+          },
+          {
+            "rule_set": [
+              "AdGuardSDNSFilter"
+            ]
+          }
+        ],
+        "action": "reject"
+      },
+      {
+        "query_type": [
+          "A",
+          "AAAA"
+        ],
+        "server": "dns_fakeip",
+        "rewrite_ttl": 1
+      },
+      {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "clash_mode": "Global"
+          }
+        ],
+        "server": "dns_proxy"
+      },
+      {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "clash_mode": "Direct"
+          },
+          {
+            "rule_set": "geosite-cn"
+          }
+        ],
+        "server": "dns_direct"
+      }
+    ],
+    "strategy": "ipv4_only",
+    "independent_cache": true
+  },
+  "inbounds": [
+    {
+      "type": "tun",
+      "address": [
+        "172.18.0.1/30",
+        "fdfe:dcba:9876::1/126"
+      ],
+      "auto_route": true,
+      "strict_route": true,
+      "route_exclude_address": [
+        "192.168.0.0/16",
+        "fc00::/7"
+      ]
+    }
+  ],
+  "outbounds": [
+    {
+      "server": "shenzhou05.mysynology.net",
+      "server_port": 37809,
+      "tag": "t.me/freeyule",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.yahoo.com",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "qhTzYYIgBzDLNYR79oxftqdo1kzL-1_hGJKfqrOliCY"
+        }
+      },
+      "type": "vless",
+      "uuid": "459b4a80-bd61-4ecd-a26b-e9c1809d9e45",
+      "flow": "xtls-rprx-vision",
+      "packet_encoding": "xudp"
+    },
+    {
+      "password": "dongtaiwang.com",
+      "server": "46.29.163.171",
+      "server_port": 18626,
+      "tag": "爬虫给我爬爬爬",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.bing.com",
+        "insecure": true
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "dongtaiwang.com",
+      "server": "46.17.41.217",
+      "server_port": 37481,
+      "tag": "快进群快进群",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.bing.com",
+        "insecure": true
+      },
+      "type": "hysteria2"
+    },
+    {
+      "server": "www.vpslook.com",
+      "server_port": 443,
+      "tag": "群里大佬分享更多节点",
+      "tls": {
+        "enabled": true,
+        "server_name": "64D78605.Fr-7rB.pageS.dEv",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "randomized"
+        }
+      },
+      "transport": {
+        "headers": {
+          "Host": [
+            "64D78605.Fr-7rB.pageS.dEv"
+          ]
+        },
+        "path": "/YBa1BBPnrlsvyMZD/MzUuMTgwLjIyOS4x?ed=2560",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "70f8697b-f9f3-4692-8e0a-3d1834fd76dc",
+      "packet_encoding": "xudp"
+    },
+    {
+      "password": "82febca6-8856-41fe-84df-c8bda0b72c7b",
+      "server": "tw.akebi.cc",
+      "server_port": 30001,
+      "tag": "🇨🇳 台湾｜01｜原生IP",
+      "tls": {
+        "enabled": true,
+        "server_name": "tw.akebi.cc",
+        "insecure": true
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "82febca6-8856-41fe-84df-c8bda0b72c7b",
+      "server": "tw3.akebi.cc",
+      "server_port": 5006,
+      "tag": "🇨🇳 台湾｜03｜原生IP",
+      "tls": {
+        "enabled": true,
+        "server_name": "tw3.akebi.cc",
+        "insecure": true
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "82febca6-8856-41fe-84df-c8bda0b72c7b",
+      "server": "tw3.akebi.cc",
+      "server_port": 9000,
+      "tag": "🇨🇳 台湾｜04｜原生IP",
+      "tls": {
+        "enabled": true,
+        "server_name": "tw3.akebi.cc",
+        "insecure": true
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "82febca6-8856-41fe-84df-c8bda0b72c7b",
+      "server": "tw3.akebi.cc",
+      "server_port": 9001,
+      "tag": "🇨🇳 台湾｜05｜原生IP",
+      "tls": {
+        "enabled": true,
+        "server_name": "tw3.akebi.cc",
+        "insecure": true
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "82febca6-8856-41fe-84df-c8bda0b72c7b",
+      "server": "tw.akebi.cc",
+      "server_port": 1000,
+      "tag": "🇭🇰 香港｜01",
+      "tls": {
+        "enabled": true,
+        "server_name": "hk03.akebi.cc",
+        "insecure": true
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "82febca6-8856-41fe-84df-c8bda0b72c7b",
+      "server": "tw3.akebi.cc",
+      "server_port": 2000,
+      "tag": "🇭🇰 香港｜02",
+      "tls": {
+        "enabled": true,
+        "server_name": "hk03.akebi.cc",
+        "insecure": true
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "82febca6-8856-41fe-84df-c8bda0b72c7b",
+      "server": "tw3.akebi.cc",
+      "server_port": 2021,
+      "tag": "🇭🇰 香港｜03",
+      "tls": {
+        "enabled": true,
+        "server_name": "hk03.akebi.cc",
+        "insecure": true
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "82febca6-8856-41fe-84df-c8bda0b72c7b",
+      "server": "tw3.akebi.cc",
+      "server_port": 2012,
+      "tag": "🇯🇵 日本｜01",
+      "tls": {
+        "enabled": true,
+        "server_name": "jp02.akebi.cc",
+        "insecure": true
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "82febca6-8856-41fe-84df-c8bda0b72c7b",
+      "server": "tw3.akebi.cc",
+      "server_port": 2024,
+      "tag": "🇹🇭 泰国丨01｜原生IP",
+      "tls": {
+        "enabled": true,
+        "server_name": "th.akebi.cc",
+        "insecure": true
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "82febca6-8856-41fe-84df-c8bda0b72c7b",
+      "server": "tw3.akebi.cc",
+      "server_port": 2018,
+      "tag": "🇹🇭 泰国丨02｜原生IP",
+      "tls": {
+        "enabled": true,
+        "server_name": "th.akebi.cc",
+        "insecure": true
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "82febca6-8856-41fe-84df-c8bda0b72c7b",
+      "server": "tw3.akebi.cc",
+      "server_port": 2019,
+      "tag": "🇧🇩 孟加拉｜01｜住宅IP",
+      "tls": {
+        "enabled": true,
+        "server_name": "bd.akebi.cc",
+        "insecure": true
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "82febca6-8856-41fe-84df-c8bda0b72c7b",
+      "server": "tw3.akebi.cc",
+      "server_port": 2025,
+      "tag": "🇧🇩 孟加拉｜02｜住宅IP",
+      "tls": {
+        "enabled": true,
+        "server_name": "bd.akebi.cc",
+        "insecure": true
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "82febca6-8856-41fe-84df-c8bda0b72c7b",
+      "server": "tw3.akebi.cc",
+      "server_port": 2023,
+      "tag": "🇰🇭 柬埔寨｜01",
+      "tls": {
+        "enabled": true,
+        "server_name": "kh01.akebi.cc",
+        "insecure": true
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "82febca6-8856-41fe-84df-c8bda0b72c7b",
+      "server": "tw3.akebi.cc",
+      "server_port": 2020,
+      "tag": "🇺🇦 乌克兰｜01｜原生IP",
+      "tls": {
+        "enabled": true,
+        "server_name": "ua01.akebi.cc",
+        "insecure": true
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "82febca6-8856-41fe-84df-c8bda0b72c7b",
+      "server": "tw3.akebi.cc",
+      "server_port": 2003,
+      "tag": "🇮🇸 冰岛｜01",
+      "tls": {
+        "enabled": true,
+        "server_name": "is01.akebi.cc",
+        "insecure": true
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "82febca6-8856-41fe-84df-c8bda0b72c7b",
+      "server": "tw3.akebi.cc",
+      "server_port": 2005,
+      "tag": "🇫🇷 法国｜01｜原生IP",
+      "tls": {
+        "enabled": true,
+        "server_name": "fr01.akebi.cc",
+        "insecure": true
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "82febca6-8856-41fe-84df-c8bda0b72c7b",
+      "server": "tw3.akebi.cc",
+      "server_port": 2006,
+      "tag": "🇦🇺 澳大利亚｜01｜原生IP",
+      "tls": {
+        "enabled": true,
+        "server_name": "au01.akebi.cc",
+        "insecure": true
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "82febca6-8856-41fe-84df-c8bda0b72c7b",
+      "server": "tw3.akebi.cc",
+      "server_port": 2026,
+      "tag": "多哥｜01｜住宅IP",
+      "tls": {
+        "enabled": true,
+        "server_name": "tg.akebi.cc",
+        "insecure": true
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "82febca6-8856-41fe-84df-c8bda0b72c7b",
+      "server": "tw3.akebi.cc",
+      "server_port": 2027,
+      "tag": "🇰🇿 哈萨克斯坦｜01｜住宅ip",
+      "tls": {
+        "enabled": true,
+        "server_name": "kz.akebi.cc",
+        "insecure": true
+      },
+      "type": "hysteria2"
+    },
+    {
+      "server": "162.247.5.96",
+      "server_port": 443,
+      "tag": "🇭🇰 HK 高速无限",
+      "tls": {
+        "enabled": true,
+        "server_name": "justhk.cayuo.me",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "Host": [
+            "justhk.cayuo.me"
+          ]
+        },
+        "path": "/bing",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "f3a1807d-67fb-4ab8-fe88-4290ef071768",
+      "packet_encoding": "xudp"
+    },
+    {
+      "password": "7ab0589c-9585-4436-84d4-9c9a18dcb64c",
+      "server": "u-s04.love-art-edu.com",
+      "server_port": 47016,
+      "tag": "🇺🇸 美国04|1x",
+      "type": "shadowsocks",
+      "method": "chacha20-ietf-poly1305",
+      "network": "tcp"
+    },
+    {
+      "password": "7ab0589c-9585-4436-84d4-9c9a18dcb64c",
+      "server": "k-r01.love-art-edu.com",
+      "server_port": 47021,
+      "tag": "🇰🇷 韩国01|1x",
+      "type": "shadowsocks",
+      "method": "chacha20-ietf-poly1305",
+      "network": "tcp"
+    },
+    {
+      "password": "7ab0589c-9585-4436-84d4-9c9a18dcb64c",
+      "server": "j-p04.love-art-edu.com",
+      "server_port": 47012,
+      "tag": "🇯🇵 日本04|1x",
+      "type": "shadowsocks",
+      "method": "chacha20-ietf-poly1305",
+      "network": "tcp"
+    },
+    {
+      "password": "7ab0589c-9585-4436-84d4-9c9a18dcb64c",
+      "server": "s-g01.love-art-edu.com",
+      "server_port": 47025,
+      "tag": "🇸🇬 新加坡01|1x",
+      "type": "shadowsocks",
+      "method": "chacha20-ietf-poly1305",
+      "network": "tcp"
+    },
+    {
+      "password": "7ab0589c-9585-4436-84d4-9c9a18dcb64c",
+      "server": "u-k01.love-art-edu.com",
+      "server_port": 47029,
+      "tag": "🇬🇧 英国01|1x",
+      "type": "shadowsocks",
+      "method": "chacha20-ietf-poly1305",
+      "network": "tcp"
+    },
+    {
+      "password": "7ab0589c-9585-4436-84d4-9c9a18dcb64c",
+      "server": "t-wn01.love-art-edu.com",
+      "server_port": 47017,
+      "tag": "🇨🇳 台湾01|1x",
+      "type": "shadowsocks",
+      "method": "chacha20-ietf-poly1305",
+      "network": "tcp"
+    },
+    {
+      "password": "7ab0589c-9585-4436-84d4-9c9a18dcb64c",
+      "server": "h-k04.love-art-edu.com",
+      "server_port": 47008,
+      "tag": "🇭🇰 香港04|1x",
+      "type": "shadowsocks",
+      "method": "chacha20-ietf-poly1305",
+      "network": "tcp"
+    },
+    {
+      "server": "hyun.cloudflare.182682.xyz",
+      "server_port": 443,
+      "tag": "🇻🇳 越南 1Gbps",
+      "tls": {
+        "enabled": true,
+        "server_name": "vn.oldcloud.online",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "Host": [
+            "vn.oldcloud.online"
+          ]
+        },
+        "path": "/",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "5cf6bd4f-4318-4eda-e9da-4bbb0103f26a",
+      "packet_encoding": "xudp"
+    },
+    {
+      "password": "Nk9asglDzHzjktVzTkvhaA",
+      "server": "arxfw2b78fi2q9hzylhn.freesocks.work",
+      "server_port": 443,
+      "tag": "🇻🇳 越南",
+      "type": "shadowsocks",
+      "method": "chacha20-ietf-poly1305",
+      "network": "tcp"
+    },
+    {
+      "server": "beiyong.dynuddns.net",
+      "server_port": 48121,
+      "tag": "🇯🇵 日本",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.nvidia.com",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "qhTzYYIgBzDLNYR79oxftqdo1kzL-1_hGJKfqrOliCY"
+        }
+      },
+      "type": "vless",
+      "uuid": "459b4a80-bd61-4ecd-a26b-e9c1809d9e45",
+      "flow": "xtls-rprx-vision",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "test123.zlqhdns.top",
+      "server_port": 11555,
+      "tag": "🇭🇰 香港",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.nvidia.com",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "qhTzYYIgBzDLNYR79oxftqdo1kzL-1_hGJKfqrOliCY"
+        }
+      },
+      "type": "vless",
+      "uuid": "459b4a80-bd61-4ecd-a26b-e9c1809d9e45",
+      "flow": "xtls-rprx-vision",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "beiyong.dynuddns.net",
+      "server_port": 57926,
+      "tag": "🇺🇸 美国",
+      "tls": {
+        "enabled": true,
+        "server_name": "gateway.icloud.com",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "qhTzYYIgBzDLNYR79oxftqdo1kzL-1_hGJKfqrOliCY"
+        }
+      },
+      "type": "vless",
+      "uuid": "459b4a80-bd61-4ecd-a26b-e9c1809d9e45",
+      "flow": "xtls-rprx-vision",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "gy01.hunheiydd.xyz",
+      "server_port": 23657,
+      "tag": "🇭🇰 香港 2",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.nvidia.com",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "qhTzYYIgBzDLNYR79oxftqdo1kzL-1_hGJKfqrOliCY"
+        }
+      },
+      "type": "vless",
+      "uuid": "459b4a80-bd61-4ecd-a26b-e9c1809d9e45",
+      "flow": "xtls-rprx-vision",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "www.vpslook.com",
+      "server_port": 80,
+      "tag": "🇫🇮 芬兰",
+      "transport": {
+        "headers": {
+          "Host": [
+            "fl.likelike.ddns-ip.net"
+          ]
+        },
+        "path": "/",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "e64c466e-912d-4ee9-8d9a-02f560562f2b",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "dxv4.pai50288.uk",
+      "server_port": 14100,
+      "tag": "🇨🇳 节点-CN-50Mbps-100G",
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "f6866b0b-f946-4a03-8df0-c7e0016b55ad"
+    },
+    {
+      "password": "nUthZ7z3VmyV",
+      "server": "14.18.253.178",
+      "server_port": 9001,
+      "tag": "🇭🇰 香港1",
+      "type": "shadowsocks",
+      "method": "chacha20",
+      "network": "tcp"
+    },
+    {
+      "password": "passLUsO2Ktuer77tu",
+      "server": "14.18.253.178",
+      "server_port": 8321,
+      "tag": "🇭🇰 香港 3",
+      "type": "shadowsocks",
+      "method": "chacha20",
+      "network": "tcp"
+    },
+    {
+      "password": "v5aUUtme3jxs",
+      "server": "14.18.253.178",
+      "server_port": 9003,
+      "tag": "🇭🇰 香港3",
+      "type": "shadowsocks",
+      "method": "chacha20",
+      "network": "tcp"
+    },
+    {
+      "password": "PTgFLLrT5pVg",
+      "server": "14.18.253.178",
+      "server_port": 9002,
+      "tag": "🇭🇰 香港2",
+      "type": "shadowsocks",
+      "method": "chacha20",
+      "network": "tcp"
+    },
+    {
+      "password": "s6Zau9ioic",
+      "server": "14.18.253.178",
+      "server_port": 9004,
+      "tag": "🇭🇰 香港4",
+      "type": "shadowsocks",
+      "method": "chacha20",
+      "network": "tcp"
+    },
+    {
+      "password": "sJMdcI7NPj",
+      "server": "14.18.253.178",
+      "server_port": 9005,
+      "tag": "🇭🇰 香港5",
+      "type": "shadowsocks",
+      "method": "chacha20",
+      "network": "tcp"
+    },
+    {
+      "password": "DvPfKa8vsV9K",
+      "server": "14.18.253.178",
+      "server_port": 8334,
+      "tag": "🇸🇬 新加坡 2",
+      "type": "shadowsocks",
+      "method": "chacha20",
+      "network": "tcp"
+    },
+    {
+      "password": "avpBqFFmsYBN",
+      "server": "14.18.253.178",
+      "server_port": 8335,
+      "tag": "🇯🇵 日本1",
+      "type": "shadowsocks",
+      "method": "chacha20",
+      "network": "tcp"
+    },
+    {
+      "password": "GqbcCfh365aT",
+      "server": "14.18.253.178",
+      "server_port": 8331,
+      "tag": "🇯🇵 日本2",
+      "type": "shadowsocks",
+      "method": "chacha20",
+      "network": "tcp"
+    },
+    {
+      "password": "ADZmRQUGHTwX",
+      "server": "14.18.253.178",
+      "server_port": 8339,
+      "tag": "🇰🇷 韩国首尔",
+      "type": "shadowsocks",
+      "method": "chacha20",
+      "network": "tcp"
+    },
+    {
+      "password": "d3baK6NW2HEc",
+      "server": "14.18.253.178",
+      "server_port": 8349,
+      "tag": "🇺🇸 美国纽约",
+      "type": "shadowsocks",
+      "method": "chacha20",
+      "network": "tcp"
+    },
+    {
+      "password": "8BZ5uBrPuUDY",
+      "server": "14.18.253.178",
+      "server_port": 8332,
+      "tag": "🇸🇬 美国洛杉矶新",
+      "type": "shadowsocks",
+      "method": "chacha20",
+      "network": "tcp"
+    },
+    {
+      "password": "wDazHDu63gcg",
+      "server": "14.18.253.178",
+      "server_port": 8344,
+      "tag": "🇺🇸 美国达拉斯",
+      "type": "shadowsocks",
+      "method": "chacha20",
+      "network": "tcp"
+    },
+    {
+      "password": "jrgc64sFSLQM",
+      "server": "14.18.253.178",
+      "server_port": 8333,
+      "tag": "🇩🇪 德国法兰克福",
+      "type": "shadowsocks",
+      "method": "chacha20",
+      "network": "tcp"
+    },
+    {
+      "password": "3fn3CH5Swh2N",
+      "server": "14.18.253.178",
+      "server_port": 8337,
+      "tag": "🇬🇧 英国",
+      "type": "shadowsocks",
+      "method": "chacha20",
+      "network": "tcp"
+    },
+    {
+      "password": "r8jh6ZeykHvB",
+      "server": "14.18.253.178",
+      "server_port": 8342,
+      "tag": "🇺🇸 美国洛杉矶",
+      "type": "shadowsocks",
+      "method": "chacha20",
+      "network": "tcp"
+    },
+    {
+      "password": "N9k4f2PORl14",
+      "server": "14.18.253.178",
+      "server_port": 8348,
+      "tag": "🇮🇱 以色列",
+      "type": "shadowsocks",
+      "method": "chacha20",
+      "network": "tcp"
+    },
+    {
+      "password": "dkYsdgWqegNV",
+      "server": "14.18.253.178",
+      "server_port": 8343,
+      "tag": "🇨🇦 加拿大",
+      "type": "shadowsocks",
+      "method": "chacha20",
+      "network": "tcp"
+    },
+    {
+      "password": "zWyQvJbQRZaV",
+      "server": "14.18.253.178",
+      "server_port": 8341,
+      "tag": "🇦🇺 澳大利亚",
+      "type": "shadowsocks",
+      "method": "chacha20",
+      "network": "tcp"
+    },
+    {
+      "password": "q2kSGp4ayFKB",
+      "server": "14.18.253.178",
+      "server_port": 8347,
+      "tag": "🇫🇷 法国巴黎",
+      "type": "shadowsocks",
+      "method": "chacha20",
+      "network": "tcp"
+    },
+    {
+      "password": "777bc05be0dd624959fb",
+      "server": "console.03.aliyun.aq.kunlunaqs.com",
+      "server_port": 45905,
+      "tag": "🇭🇰 Hongkong 021",
+      "type": "shadowsocks",
+      "method": "aes-128-gcm",
+      "network": "tcp",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=215996dd9f1c3db1e54b.microsoft.com"
+    },
+    {
+      "password": "a643f6f3733c9962851d",
+      "server": "console.02.aliyun.aq.kunlunaqs.com",
+      "server_port": 45936,
+      "tag": "🇭🇰 Hongkong 008",
+      "type": "shadowsocks",
+      "method": "aes-128-gcm",
+      "network": "tcp",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=215996dd9f1c3db1e54b.microsoft.com"
+    },
+    {
+      "password": "7243745919d6de49a5db",
+      "server": "console.02.aliyun.aq.kunlunaqs.com",
+      "server_port": 45578,
+      "tag": "🇭🇰 Hongkong 077",
+      "type": "shadowsocks",
+      "method": "chacha20-ietf-poly1305",
+      "network": "tcp",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=215996dd9f1c3db1e54b.microsoft.com"
+    },
+    {
+      "password": "0a74c9e4565e935cf1ac",
+      "server": "console.01.aliyun.aq.kunlunaqs.com",
+      "server_port": 45902,
+      "tag": "🇭🇰 Hongkong 018",
+      "type": "shadowsocks",
+      "method": "aes-128-gcm",
+      "network": "tcp",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=215996dd9f1c3db1e54b.microsoft.com"
+    },
+    {
+      "password": "7338d988d71591d76b3f",
+      "server": "console.01.aliyun.aq.kunlunaqs.com",
+      "server_port": 45901,
+      "tag": "🇭🇰 Hongkong 016",
+      "type": "shadowsocks",
+      "method": "aes-128-gcm",
+      "network": "tcp",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=215996dd9f1c3db1e54b.microsoft.com"
+    },
+    {
+      "password": "51f8c7454c93d0d83c29",
+      "server": "console.01.aliyun.aq.kunlunaqs.com",
+      "server_port": 45900,
+      "tag": "🇭🇰 Hongkong 017",
+      "type": "shadowsocks",
+      "method": "aes-128-gcm",
+      "network": "tcp",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=215996dd9f1c3db1e54b.microsoft.com"
+    },
+    {
+      "password": "6113536135af69e572c6",
+      "server": "console.01.aliyun.aq.kunlunaqs.com",
+      "server_port": 45904,
+      "tag": "🇭🇰 Hongkong 020",
+      "type": "shadowsocks",
+      "method": "aes-128-gcm",
+      "network": "tcp",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=215996dd9f1c3db1e54b.microsoft.com"
+    },
+    {
+      "password": "b16cb18d8992f3b83b7d",
+      "server": "console.01.aliyun.aq.kunlunaqs.com",
+      "server_port": 45903,
+      "tag": "🇭🇰 Hongkong 019",
+      "type": "shadowsocks",
+      "method": "aes-128-gcm",
+      "network": "tcp",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=215996dd9f1c3db1e54b.microsoft.com"
+    },
+    {
+      "password": "a643f6f3733c9962851d",
+      "server": "console.02.aliyun.aq.kunlunaqs.com",
+      "server_port": 45936,
+      "tag": "to.FlyintPro.om",
+      "type": "shadowsocks",
+      "method": "aes-128-gcm",
+      "network": "tcp",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=215996dd9f1c3db1e54b.microsoft.com"
+    },
+    {
+      "password": "722a54414ae6ee706ac9",
+      "server": "console.02.aliyun.aq.kunlunaqs.com",
+      "server_port": 45572,
+      "tag": "🇯🇵 Japan 07",
+      "type": "shadowsocks",
+      "method": "aes-128-gcm",
+      "network": "tcp",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=215996dd9f1c3db1e54b.microsoft.com"
+    },
+    {
+      "password": "c8960ca4a0add435fc34",
+      "server": "console.02.aliyun.aq.kunlunaqs.com",
+      "server_port": 45913,
+      "tag": "🇯🇵 Japan 029",
+      "type": "shadowsocks",
+      "method": "aes-128-gcm",
+      "network": "tcp",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=215996dd9f1c3db1e54b.microsoft.com"
+    },
+    {
+      "password": "97b53b570db0917935e0",
+      "server": "console.02.aliyun.aq.kunlunaqs.com",
+      "server_port": 45939,
+      "tag": "🇯🇵 Japan 050",
+      "type": "shadowsocks",
+      "method": "aes-128-gcm",
+      "network": "tcp",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=215996dd9f1c3db1e54b.microsoft.com"
+    },
+    {
+      "password": "97998add7bf4fea885ef",
+      "server": "console.02.aliyun.aq.kunlunaqs.com",
+      "server_port": 45912,
+      "tag": "🇯🇵 Japan 028",
+      "type": "shadowsocks",
+      "method": "aes-128-gcm",
+      "network": "tcp",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=215996dd9f1c3db1e54b.microsoft.com"
+    },
+    {
+      "password": "6014caa3a323920c7fd0",
+      "server": "console.02.aliyun.aq.kunlunaqs.com",
+      "server_port": 45581,
+      "tag": "🇯🇵 Japan 083",
+      "type": "shadowsocks",
+      "method": "aes-128-gcm",
+      "network": "tcp",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=215996dd9f1c3db1e54b.microsoft.com"
+    },
+    {
+      "password": "69dc0306f1bfb1af49a5",
+      "server": "console.02.aliyun.aq.kunlunaqs.com",
+      "server_port": 45911,
+      "tag": "🇯🇵 Japan 027",
+      "type": "shadowsocks",
+      "method": "aes-128-gcm",
+      "network": "tcp",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=215996dd9f1c3db1e54b.microsoft.com"
+    },
+    {
+      "password": "4092a0d31011e2046687",
+      "server": "console.03.aliyun.aq.kunlunaqs.com",
+      "server_port": 45937,
+      "tag": "🇸🇬 Singapore 057",
+      "type": "shadowsocks",
+      "method": "aes-128-gcm",
+      "network": "tcp",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=215996dd9f1c3db1e54b.microsoft.com"
+    },
+    {
+      "password": "f4cd0a554e9d0558c581",
+      "server": "console.03.aliyun.aq.kunlunaqs.com",
+      "server_port": 45917,
+      "tag": "🇸🇬 Singapore 032",
+      "type": "shadowsocks",
+      "method": "aes-128-gcm",
+      "network": "tcp",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=215996dd9f1c3db1e54b.microsoft.com"
+    },
+    {
+      "password": "0722bd4137ff579e6917",
+      "server": "console.03.aliyun.aq.kunlunaqs.com",
+      "server_port": 45579,
+      "tag": "🇸🇬 Singapore 078",
+      "type": "shadowsocks",
+      "method": "aes-128-gcm",
+      "network": "tcp",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=215996dd9f1c3db1e54b.microsoft.com"
+    },
+    {
+      "password": "b74518fb49bd645e6ce7",
+      "server": "console.03.aliyun.aq.kunlunaqs.com",
+      "server_port": 45913,
+      "tag": "有问题请随时联系我们",
+      "type": "shadowsocks",
+      "method": "aes-128-gcm",
+      "network": "tcp",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=215996dd9f1c3db1e54b.microsoft.com"
+    },
+    {
+      "password": "cfc6f3f75f5ef7b2665c",
+      "server": "console.03.aliyun.aq.kunlunaqs.com",
+      "server_port": 45916,
+      "tag": "🇨🇳 Taiwan 065",
+      "type": "shadowsocks",
+      "method": "aes-128-gcm",
+      "network": "tcp",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=215996dd9f1c3db1e54b.microsoft.com"
+    },
+    {
+      "password": "b74518fb49bd645e6ce7",
+      "server": "console.03.aliyun.aq.kunlunaqs.com",
+      "server_port": 45915,
+      "tag": "🇨🇳 Taiwan 031",
+      "type": "shadowsocks",
+      "method": "aes-128-gcm",
+      "network": "tcp",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=215996dd9f1c3db1e54b.microsoft.com"
+    },
+    {
+      "password": "b270fd77db2ecb7acbc8",
+      "server": "console.03.aliyun.aq.kunlunaqs.com",
+      "server_port": 45914,
+      "tag": "🇨🇳 Taiwan 030",
+      "type": "shadowsocks",
+      "method": "aes-128-gcm",
+      "network": "tcp",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=215996dd9f1c3db1e54b.microsoft.com"
+    },
+    {
+      "password": "3e26a8cfb09fda219b36",
+      "server": "console.03.aliyun.aq.kunlunaqs.com",
+      "server_port": 45573,
+      "tag": "🇨🇳 TaiwanDynamicIP",
+      "type": "shadowsocks",
+      "method": "aes-128-gcm",
+      "network": "tcp",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=215996dd9f1c3db1e54b.microsoft.com"
+    },
+    {
+      "password": "d7577ca6729babe0790f",
+      "server": "console.02.aliyun.aq.kunlunaqs.com",
+      "server_port": 45921,
+      "tag": "🇰🇷 SouthKorea 037",
+      "type": "shadowsocks",
+      "method": "aes-128-gcm",
+      "network": "tcp",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=215996dd9f1c3db1e54b.microsoft.com"
+    },
+    {
+      "password": "e6db72e9415e60e35892",
+      "server": "console.03.aliyun.aq.kunlunaqs.com",
+      "server_port": 45580,
+      "tag": "🇺🇸 USA 084",
+      "type": "shadowsocks",
+      "method": "chacha20-ietf-poly1305",
+      "network": "tcp",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=215996dd9f1c3db1e54b.microsoft.com"
+    },
+    {
+      "password": "4605c34b957ab8e1001b",
+      "server": "console.02.aliyun.aq.kunlunaqs.com",
+      "server_port": 45584,
+      "tag": "🇺🇸 USA 086",
+      "type": "shadowsocks",
+      "method": "chacha20-ietf-poly1305",
+      "network": "tcp",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=215996dd9f1c3db1e54b.microsoft.com"
+    },
+    {
+      "password": "c1ee5895686790a383fb",
+      "server": "console.03.aliyun.aq.kunlunaqs.com",
+      "server_port": 45922,
+      "tag": "🇺🇸 USA 038",
+      "type": "shadowsocks",
+      "method": "aes-128-gcm",
+      "network": "tcp",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=215996dd9f1c3db1e54b.microsoft.com"
+    },
+    {
+      "password": "2b7df6aadc759756b0cd",
+      "server": "console.02.aliyun.aq.kunlunaqs.com",
+      "server_port": 45923,
+      "tag": "🇺🇸 USA 039",
+      "type": "shadowsocks",
+      "method": "aes-128-gcm",
+      "network": "tcp",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=215996dd9f1c3db1e54b.microsoft.com"
+    },
+    {
+      "password": "0a0fb8dbfb8cc2f25f02",
+      "server": "console.02.aliyun.aq.kunlunaqs.com",
+      "server_port": 45924,
+      "tag": "🇺🇸 USA 040",
+      "type": "shadowsocks",
+      "method": "aes-128-gcm",
+      "network": "tcp",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=215996dd9f1c3db1e54b.microsoft.com"
+    },
+    {
+      "password": "8bf642be1622a09558bb",
+      "server": "console.02.aliyun.aq.kunlunaqs.com",
+      "server_port": 45935,
+      "tag": "🇺🇸 USA 067",
+      "type": "shadowsocks",
+      "method": "aes-128-gcm",
+      "network": "tcp",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=215996dd9f1c3db1e54b.microsoft.com"
+    },
+    {
+      "password": "3938bfae997974860251",
+      "server": "console.02.aliyun.aq.kunlunaqs.com",
+      "server_port": 45938,
+      "tag": "🇺🇸 USA 069",
+      "type": "shadowsocks",
+      "method": "aes-128-gcm",
+      "network": "tcp",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=215996dd9f1c3db1e54b.microsoft.com"
+    },
+    {
+      "password": "9d29e58723af34cad8da",
+      "server": "console.02.aliyun.aq.kunlunaqs.com",
+      "server_port": 45909,
+      "tag": "🇺🇸 USA 026",
+      "type": "shadowsocks",
+      "method": "aes-128-gcm",
+      "network": "tcp",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=215996dd9f1c3db1e54b.microsoft.com"
+    },
+    {
+      "password": "97c3cf442df2d7099275",
+      "server": "console.02.aliyun.aq.kunlunaqs.com",
+      "server_port": 45908,
+      "tag": "🇺🇸 USA 025",
+      "type": "shadowsocks",
+      "method": "aes-128-gcm",
+      "network": "tcp",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=215996dd9f1c3db1e54b.microsoft.com"
+    },
+    {
+      "password": "8141b20c775ce63fab96",
+      "server": "console.03.aliyun.aq.kunlunaqs.com",
+      "server_port": 45927,
+      "tag": "🇫🇷 France 043",
+      "type": "shadowsocks",
+      "method": "aes-128-gcm",
+      "network": "tcp",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=215996dd9f1c3db1e54b.microsoft.com"
+    },
+    {
+      "password": "6180d9dc7075e7fe509b",
+      "server": "console.03.aliyun.aq.kunlunaqs.com",
+      "server_port": 45587,
+      "tag": "🇮🇹 Italy 091",
+      "type": "shadowsocks",
+      "method": "chacha20-ietf-poly1305",
+      "network": "tcp",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=215996dd9f1c3db1e54b.microsoft.com"
+    },
+    {
+      "password": "05ff48fd41178ed790ec",
+      "server": "console.03.aliyun.aq.kunlunaqs.com",
+      "server_port": 45588,
+      "tag": "🇰🇿 Kazakhstan 092",
+      "type": "shadowsocks",
+      "method": "chacha20-ietf-poly1305",
+      "network": "tcp",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=215996dd9f1c3db1e54b.microsoft.com"
+    },
+    {
+      "password": "e3d6f327d91656f89f07",
+      "server": "console.03.aliyun.aq.kunlunaqs.com",
+      "server_port": 45589,
+      "tag": "🇧🇷 Brazil 093",
+      "type": "shadowsocks",
+      "method": "chacha20-ietf-poly1305",
+      "network": "tcp",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=215996dd9f1c3db1e54b.microsoft.com"
+    },
+    {
+      "password": "b8dd96a81eac14b376c3",
+      "server": "console.03.aliyun.aq.kunlunaqs.com",
+      "server_port": 45590,
+      "tag": "🇮🇩 Indonesia 094",
+      "type": "shadowsocks",
+      "method": "chacha20-ietf-poly1305",
+      "network": "tcp",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=215996dd9f1c3db1e54b.microsoft.com"
+    },
+    {
+      "password": "bd62dac6636078647014",
+      "server": "console.03.aliyun.aq.kunlunaqs.com",
+      "server_port": 45928,
+      "tag": "🇩🇪 Germany 044",
+      "type": "shadowsocks",
+      "method": "aes-128-gcm",
+      "network": "tcp",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=215996dd9f1c3db1e54b.microsoft.com"
+    },
+    {
+      "password": "c8a1d0a69902859d209f",
+      "server": "console.03.aliyun.aq.kunlunaqs.com",
+      "server_port": 45929,
+      "tag": "Kingdom 045",
+      "type": "shadowsocks",
+      "method": "aes-128-gcm",
+      "network": "tcp",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=215996dd9f1c3db1e54b.microsoft.com"
+    },
+    {
+      "password": "b252e75cc98799d5b2d1",
+      "server": "console.03.aliyun.aq.kunlunaqs.com",
+      "server_port": 45570,
+      "tag": "Kingdom 081",
+      "type": "shadowsocks",
+      "method": "aes-128-gcm",
+      "network": "tcp",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=215996dd9f1c3db1e54b.microsoft.com"
+    },
+    {
+      "password": "3fb1d360ec0c4c7a5054",
+      "server": "console.03.aliyun.aq.kunlunaqs.com",
+      "server_port": 45910,
+      "tag": "🇨🇦 Canada 070",
+      "type": "shadowsocks",
+      "method": "aes-128-gcm",
+      "network": "tcp",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=215996dd9f1c3db1e54b.microsoft.com"
+    },
+    {
+      "password": "7452c550383bf60ac9d3",
+      "server": "console.03.aliyun.aq.kunlunaqs.com",
+      "server_port": 45926,
+      "tag": "🇹🇷 Turkey 042",
+      "type": "shadowsocks",
+      "method": "aes-128-gcm",
+      "network": "tcp",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=215996dd9f1c3db1e54b.microsoft.com"
+    },
+    {
+      "password": "d3a40b9d9b91c1e412c5",
+      "server": "console.03.aliyun.aq.kunlunaqs.com",
+      "server_port": 45907,
+      "tag": "🇵🇰 Pakistan 024",
+      "type": "shadowsocks",
+      "method": "aes-128-gcm",
+      "network": "tcp",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=215996dd9f1c3db1e54b.microsoft.com"
+    },
+    {
+      "password": "ec39dd066cc142fbb81c",
+      "server": "console.03.aliyun.aq.kunlunaqs.com",
+      "server_port": 45934,
+      "tag": "🇦🇺 Australia 071",
+      "type": "shadowsocks",
+      "method": "aes-128-gcm",
+      "network": "tcp",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=215996dd9f1c3db1e54b.microsoft.com"
+    },
+    {
+      "password": "c9fa2bcffa379937679e",
+      "server": "console.03.aliyun.aq.kunlunaqs.com",
+      "server_port": 45582,
+      "tag": "🇨🇭 Switzerland 087",
+      "type": "shadowsocks",
+      "method": "chacha20-ietf-poly1305",
+      "network": "tcp",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=215996dd9f1c3db1e54b.microsoft.com"
+    },
+    {
+      "password": "fe51727afe2fca582ebf",
+      "server": "console.03.aliyun.aq.kunlunaqs.com",
+      "server_port": 45576,
+      "tag": "🇲🇾 Malaysia 075 *1.5",
+      "type": "shadowsocks",
+      "method": "aes-128-gcm",
+      "network": "tcp",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=215996dd9f1c3db1e54b.microsoft.com"
+    },
+    {
+      "password": "22046a35aa74890b48f5",
+      "server": "console.03.aliyun.aq.kunlunaqs.com",
+      "server_port": 45574,
+      "tag": "🇵🇭 Philippines 05",
+      "type": "shadowsocks",
+      "method": "aes-128-gcm",
+      "network": "tcp",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=215996dd9f1c3db1e54b.microsoft.com"
+    },
+    {
+      "password": "1a402babc02465f45bea",
+      "server": "console.03.aliyun.aq.kunlunaqs.com",
+      "server_port": 45925,
+      "tag": "🇹🇭 Thailand 041",
+      "type": "shadowsocks",
+      "method": "aes-128-gcm",
+      "network": "tcp",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=215996dd9f1c3db1e54b.microsoft.com"
+    },
+    {
+      "password": "11575f448fb4021fc611",
+      "server": "console.03.aliyun.aq.kunlunaqs.com",
+      "server_port": 45930,
+      "tag": "🇷🇺 Russia 046",
+      "type": "shadowsocks",
+      "method": "aes-128-gcm",
+      "network": "tcp",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=215996dd9f1c3db1e54b.microsoft.com"
+    },
+    {
+      "password": "3e79196cf9e970671245",
+      "server": "console.03.aliyun.aq.kunlunaqs.com",
+      "server_port": 45931,
+      "tag": "🇻🇳 Vietnam 047",
+      "type": "shadowsocks",
+      "method": "aes-128-gcm",
+      "network": "tcp",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=215996dd9f1c3db1e54b.microsoft.com"
+    },
+    {
+      "password": "4f308f8c43ae78a779f5",
+      "server": "console.03.aliyun.aq.kunlunaqs.com",
+      "server_port": 45583,
+      "tag": "🇺🇦 Ukraine 085",
+      "type": "shadowsocks",
+      "method": "chacha20-ietf-poly1305",
+      "network": "tcp",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=215996dd9f1c3db1e54b.microsoft.com"
+    },
+    {
+      "password": "1954df8a5f3876000ea6",
+      "server": "console.03.aliyun.aq.kunlunaqs.com",
+      "server_port": 45932,
+      "tag": "🇮🇳 India 048",
+      "type": "shadowsocks",
+      "method": "aes-128-gcm",
+      "network": "tcp",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=215996dd9f1c3db1e54b.microsoft.com"
+    },
+    {
+      "tag": "select",
+      "type": "selector",
+      "default": "auto",
+      "outbounds": [
+        "auto",
+        "t.me/freeyule",
+        "爬虫给我爬爬爬",
+        "快进群快进群",
+        "群里大佬分享更多节点",
+        "🇨🇳 台湾｜01｜原生IP",
+        "🇨🇳 台湾｜03｜原生IP",
+        "🇨🇳 台湾｜04｜原生IP",
+        "🇨🇳 台湾｜05｜原生IP",
+        "🇭🇰 香港｜01",
+        "🇭🇰 香港｜02",
+        "🇭🇰 香港｜03",
+        "🇯🇵 日本｜01",
+        "🇹🇭 泰国丨01｜原生IP",
+        "🇹🇭 泰国丨02｜原生IP",
+        "🇧🇩 孟加拉｜01｜住宅IP",
+        "🇧🇩 孟加拉｜02｜住宅IP",
+        "🇰🇭 柬埔寨｜01",
+        "🇺🇦 乌克兰｜01｜原生IP",
+        "🇮🇸 冰岛｜01",
+        "🇫🇷 法国｜01｜原生IP",
+        "🇦🇺 澳大利亚｜01｜原生IP",
+        "多哥｜01｜住宅IP",
+        "🇰🇿 哈萨克斯坦｜01｜住宅ip",
+        "🇭🇰 HK 高速无限",
+        "🇺🇸 美国04|1x",
+        "🇰🇷 韩国01|1x",
+        "🇯🇵 日本04|1x",
+        "🇸🇬 新加坡01|1x",
+        "🇬🇧 英国01|1x",
+        "🇨🇳 台湾01|1x",
+        "🇭🇰 香港04|1x",
+        "🇻🇳 越南 1Gbps",
+        "🇻🇳 越南",
+        "🇯🇵 日本",
+        "🇭🇰 香港",
+        "🇺🇸 美国",
+        "🇭🇰 香港 2",
+        "🇫🇮 芬兰",
+        "🇨🇳 节点-CN-50Mbps-100G",
+        "🇭🇰 香港1",
+        "🇭🇰 香港 3",
+        "🇭🇰 香港3",
+        "🇭🇰 香港2",
+        "🇭🇰 香港4",
+        "🇭🇰 香港5",
+        "🇸🇬 新加坡 2",
+        "🇯🇵 日本1",
+        "🇯🇵 日本2",
+        "🇰🇷 韩国首尔",
+        "🇺🇸 美国纽约",
+        "🇸🇬 美国洛杉矶新",
+        "🇺🇸 美国达拉斯",
+        "🇩🇪 德国法兰克福",
+        "🇬🇧 英国",
+        "🇺🇸 美国洛杉矶",
+        "🇮🇱 以色列",
+        "🇨🇦 加拿大",
+        "🇦🇺 澳大利亚",
+        "🇫🇷 法国巴黎",
+        "🇭🇰 Hongkong 021",
+        "🇭🇰 Hongkong 008",
+        "🇭🇰 Hongkong 077",
+        "🇭🇰 Hongkong 018",
+        "🇭🇰 Hongkong 016",
+        "🇭🇰 Hongkong 017",
+        "🇭🇰 Hongkong 020",
+        "🇭🇰 Hongkong 019",
+        "to.FlyintPro.om",
+        "🇯🇵 Japan 07",
+        "🇯🇵 Japan 029",
+        "🇯🇵 Japan 050",
+        "🇯🇵 Japan 028",
+        "🇯🇵 Japan 083",
+        "🇯🇵 Japan 027",
+        "🇸🇬 Singapore 057",
+        "🇸🇬 Singapore 032",
+        "🇸🇬 Singapore 078",
+        "有问题请随时联系我们",
+        "🇨🇳 Taiwan 065",
+        "🇨🇳 Taiwan 031",
+        "🇨🇳 Taiwan 030",
+        "🇨🇳 TaiwanDynamicIP",
+        "🇰🇷 SouthKorea 037",
+        "🇺🇸 USA 084",
+        "🇺🇸 USA 086",
+        "🇺🇸 USA 038",
+        "🇺🇸 USA 039",
+        "🇺🇸 USA 040",
+        "🇺🇸 USA 067",
+        "🇺🇸 USA 069",
+        "🇺🇸 USA 026",
+        "🇺🇸 USA 025",
+        "🇫🇷 France 043",
+        "🇮🇹 Italy 091",
+        "🇰🇿 Kazakhstan 092",
+        "🇧🇷 Brazil 093",
+        "🇮🇩 Indonesia 094",
+        "🇩🇪 Germany 044",
+        "Kingdom 045",
+        "Kingdom 081",
+        "🇨🇦 Canada 070",
+        "🇹🇷 Turkey 042",
+        "🇵🇰 Pakistan 024",
+        "🇦🇺 Australia 071",
+        "🇨🇭 Switzerland 087",
+        "🇲🇾 Malaysia 075 *1.5",
+        "🇵🇭 Philippines 05",
+        "🇹🇭 Thailand 041",
+        "🇷🇺 Russia 046",
+        "🇻🇳 Vietnam 047",
+        "🇺🇦 Ukraine 085",
+        "🇮🇳 India 048"
+      ]
+    },
+    {
+      "tag": "auto",
+      "type": "urltest",
+      "outbounds": [
+        "t.me/freeyule",
+        "爬虫给我爬爬爬",
+        "快进群快进群",
+        "群里大佬分享更多节点",
+        "🇨🇳 台湾｜01｜原生IP",
+        "🇨🇳 台湾｜03｜原生IP",
+        "🇨🇳 台湾｜04｜原生IP",
+        "🇨🇳 台湾｜05｜原生IP",
+        "🇭🇰 香港｜01",
+        "🇭🇰 香港｜02",
+        "🇭🇰 香港｜03",
+        "🇯🇵 日本｜01",
+        "🇹🇭 泰国丨01｜原生IP",
+        "🇹🇭 泰国丨02｜原生IP",
+        "🇧🇩 孟加拉｜01｜住宅IP",
+        "🇧🇩 孟加拉｜02｜住宅IP",
+        "🇰🇭 柬埔寨｜01",
+        "🇺🇦 乌克兰｜01｜原生IP",
+        "🇮🇸 冰岛｜01",
+        "🇫🇷 法国｜01｜原生IP",
+        "🇦🇺 澳大利亚｜01｜原生IP",
+        "多哥｜01｜住宅IP",
+        "🇰🇿 哈萨克斯坦｜01｜住宅ip",
+        "🇭🇰 HK 高速无限",
+        "🇺🇸 美国04|1x",
+        "🇰🇷 韩国01|1x",
+        "🇯🇵 日本04|1x",
+        "🇸🇬 新加坡01|1x",
+        "🇬🇧 英国01|1x",
+        "🇨🇳 台湾01|1x",
+        "🇭🇰 香港04|1x",
+        "🇻🇳 越南 1Gbps",
+        "🇻🇳 越南",
+        "🇯🇵 日本",
+        "🇭🇰 香港",
+        "🇺🇸 美国",
+        "🇭🇰 香港 2",
+        "🇫🇮 芬兰",
+        "🇨🇳 节点-CN-50Mbps-100G",
+        "🇭🇰 香港1",
+        "🇭🇰 香港 3",
+        "🇭🇰 香港3",
+        "🇭🇰 香港2",
+        "🇭🇰 香港4",
+        "🇭🇰 香港5",
+        "🇸🇬 新加坡 2",
+        "🇯🇵 日本1",
+        "🇯🇵 日本2",
+        "🇰🇷 韩国首尔",
+        "🇺🇸 美国纽约",
+        "🇸🇬 美国洛杉矶新",
+        "🇺🇸 美国达拉斯",
+        "🇩🇪 德国法兰克福",
+        "🇬🇧 英国",
+        "🇺🇸 美国洛杉矶",
+        "🇮🇱 以色列",
+        "🇨🇦 加拿大",
+        "🇦🇺 澳大利亚",
+        "🇫🇷 法国巴黎",
+        "🇭🇰 Hongkong 021",
+        "🇭🇰 Hongkong 008",
+        "🇭🇰 Hongkong 077",
+        "🇭🇰 Hongkong 018",
+        "🇭🇰 Hongkong 016",
+        "🇭🇰 Hongkong 017",
+        "🇭🇰 Hongkong 020",
+        "🇭🇰 Hongkong 019",
+        "to.FlyintPro.om",
+        "🇯🇵 Japan 07",
+        "🇯🇵 Japan 029",
+        "🇯🇵 Japan 050",
+        "🇯🇵 Japan 028",
+        "🇯🇵 Japan 083",
+        "🇯🇵 Japan 027",
+        "🇸🇬 Singapore 057",
+        "🇸🇬 Singapore 032",
+        "🇸🇬 Singapore 078",
+        "有问题请随时联系我们",
+        "🇨🇳 Taiwan 065",
+        "🇨🇳 Taiwan 031",
+        "🇨🇳 Taiwan 030",
+        "🇨🇳 TaiwanDynamicIP",
+        "🇰🇷 SouthKorea 037",
+        "🇺🇸 USA 084",
+        "🇺🇸 USA 086",
+        "🇺🇸 USA 038",
+        "🇺🇸 USA 039",
+        "🇺🇸 USA 040",
+        "🇺🇸 USA 067",
+        "🇺🇸 USA 069",
+        "🇺🇸 USA 026",
+        "🇺🇸 USA 025",
+        "🇫🇷 France 043",
+        "🇮🇹 Italy 091",
+        "🇰🇿 Kazakhstan 092",
+        "🇧🇷 Brazil 093",
+        "🇮🇩 Indonesia 094",
+        "🇩🇪 Germany 044",
+        "Kingdom 045",
+        "Kingdom 081",
+        "🇨🇦 Canada 070",
+        "🇹🇷 Turkey 042",
+        "🇵🇰 Pakistan 024",
+        "🇦🇺 Australia 071",
+        "🇨🇭 Switzerland 087",
+        "🇲🇾 Malaysia 075 *1.5",
+        "🇵🇭 Philippines 05",
+        "🇹🇭 Thailand 041",
+        "🇷🇺 Russia 046",
+        "🇻🇳 Vietnam 047",
+        "🇺🇦 Ukraine 085",
+        "🇮🇳 India 048"
+      ]
+    },
+    {
+      "tag": "ai",
+      "type": "selector",
+      "outbounds": [
+        "t.me/freeyule",
+        "爬虫给我爬爬爬",
+        "快进群快进群",
+        "群里大佬分享更多节点",
+        "🇨🇳 台湾｜01｜原生IP",
+        "🇨🇳 台湾｜03｜原生IP",
+        "🇨🇳 台湾｜04｜原生IP",
+        "🇨🇳 台湾｜05｜原生IP",
+        "🇭🇰 香港｜01",
+        "🇭🇰 香港｜02",
+        "🇭🇰 香港｜03",
+        "🇯🇵 日本｜01",
+        "🇹🇭 泰国丨01｜原生IP",
+        "🇹🇭 泰国丨02｜原生IP",
+        "🇧🇩 孟加拉｜01｜住宅IP",
+        "🇧🇩 孟加拉｜02｜住宅IP",
+        "🇰🇭 柬埔寨｜01",
+        "🇺🇦 乌克兰｜01｜原生IP",
+        "🇮🇸 冰岛｜01",
+        "🇫🇷 法国｜01｜原生IP",
+        "🇦🇺 澳大利亚｜01｜原生IP",
+        "多哥｜01｜住宅IP",
+        "🇰🇿 哈萨克斯坦｜01｜住宅ip",
+        "🇭🇰 HK 高速无限",
+        "🇺🇸 美国04|1x",
+        "🇰🇷 韩国01|1x",
+        "🇯🇵 日本04|1x",
+        "🇸🇬 新加坡01|1x",
+        "🇬🇧 英国01|1x",
+        "🇨🇳 台湾01|1x",
+        "🇭🇰 香港04|1x",
+        "🇻🇳 越南 1Gbps",
+        "🇻🇳 越南",
+        "🇯🇵 日本",
+        "🇭🇰 香港",
+        "🇺🇸 美国",
+        "🇭🇰 香港 2",
+        "🇫🇮 芬兰",
+        "🇨🇳 节点-CN-50Mbps-100G",
+        "🇭🇰 香港1",
+        "🇭🇰 香港 3",
+        "🇭🇰 香港3",
+        "🇭🇰 香港2",
+        "🇭🇰 香港4",
+        "🇭🇰 香港5",
+        "🇸🇬 新加坡 2",
+        "🇯🇵 日本1",
+        "🇯🇵 日本2",
+        "🇰🇷 韩国首尔",
+        "🇺🇸 美国纽约",
+        "🇸🇬 美国洛杉矶新",
+        "🇺🇸 美国达拉斯",
+        "🇩🇪 德国法兰克福",
+        "🇬🇧 英国",
+        "🇺🇸 美国洛杉矶",
+        "🇮🇱 以色列",
+        "🇨🇦 加拿大",
+        "🇦🇺 澳大利亚",
+        "🇫🇷 法国巴黎",
+        "🇭🇰 Hongkong 021",
+        "🇭🇰 Hongkong 008",
+        "🇭🇰 Hongkong 077",
+        "🇭🇰 Hongkong 018",
+        "🇭🇰 Hongkong 016",
+        "🇭🇰 Hongkong 017",
+        "🇭🇰 Hongkong 020",
+        "🇭🇰 Hongkong 019",
+        "to.FlyintPro.om",
+        "🇯🇵 Japan 07",
+        "🇯🇵 Japan 029",
+        "🇯🇵 Japan 050",
+        "🇯🇵 Japan 028",
+        "🇯🇵 Japan 083",
+        "🇯🇵 Japan 027",
+        "🇸🇬 Singapore 057",
+        "🇸🇬 Singapore 032",
+        "🇸🇬 Singapore 078",
+        "有问题请随时联系我们",
+        "🇨🇳 Taiwan 065",
+        "🇨🇳 Taiwan 031",
+        "🇨🇳 Taiwan 030",
+        "🇨🇳 TaiwanDynamicIP",
+        "🇰🇷 SouthKorea 037",
+        "🇺🇸 USA 084",
+        "🇺🇸 USA 086",
+        "🇺🇸 USA 038",
+        "🇺🇸 USA 039",
+        "🇺🇸 USA 040",
+        "🇺🇸 USA 067",
+        "🇺🇸 USA 069",
+        "🇺🇸 USA 026",
+        "🇺🇸 USA 025",
+        "🇫🇷 France 043",
+        "🇮🇹 Italy 091",
+        "🇰🇿 Kazakhstan 092",
+        "🇧🇷 Brazil 093",
+        "🇮🇩 Indonesia 094",
+        "🇩🇪 Germany 044",
+        "Kingdom 045",
+        "Kingdom 081",
+        "🇨🇦 Canada 070",
+        "🇹🇷 Turkey 042",
+        "🇵🇰 Pakistan 024",
+        "🇦🇺 Australia 071",
+        "🇨🇭 Switzerland 087",
+        "🇲🇾 Malaysia 075 *1.5",
+        "🇵🇭 Philippines 05",
+        "🇹🇭 Thailand 041",
+        "🇷🇺 Russia 046",
+        "🇻🇳 Vietnam 047",
+        "🇺🇦 Ukraine 085",
+        "🇮🇳 India 048"
+      ]
+    },
+    {
+      "tag": "direct",
+      "type": "direct"
+    }
+  ],
+  "route": {
+    "rules": [
+      {
+        "action": "sniff"
+      },
+      {
+        "protocol": "dns",
+        "action": "hijack-dns"
+      },
+      {
+        "action": "resolve",
+        "strategy": "ipv4_only"
+      },
+      {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "clash_mode": "Global"
+          }
+        ],
+        "outbound": "select"
+      },
+      {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "package_name": "com.openai.chatgpt"
+          },
+          {
+            "domain_suffix": [
+              "gemini.google.com",
+              "proactivebackend-pa.googleapis.com",
+              "bing.com",
+              "bing.net",
+              "bingapis.com"
+            ]
+          }
+        ],
+        "outbound": "ai"
+      },
+      {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "clash_mode": "Direct"
+          },
+          {
+            "ip_is_private": true
+          },
+          {
+            "domain_keyword": [
+              "ushd.xmsl.org",
+              "cf.gtlx.org",
+              "mtalk.google.com"
+            ]
+          },
+          {
+            "port": [
+              23301,
+              22101,
+              22102,
+              20501,
+              21601,
+              21602,
+              21603,
+              21604,
+              21605,
+              21606
+            ]
+          },
+          {
+            "rule_set": [
+              "geoip-cn",
+              "geosite-cn"
+            ]
+          }
+        ],
+        "outbound": "direct"
+      }
+    ],
+    "rule_set": [
+      {
+        "type": "remote",
+        "tag": "geoip-cn",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/lyc8503/sing-box-rules/rule-set-geoip/geoip-cn.srs",
+        "download_detour": "select"
+      },
+      {
+        "type": "remote",
+        "tag": "geosite-cn",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/lyc8503/sing-box-rules/rule-set-geosite/geosite-cn.srs",
+        "download_detour": "select"
+      },
+      {
+        "type": "remote",
+        "tag": "AdGuardSDNSFilter",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/xmdhs/sing-box-ruleset/rule-set/AdGuardSDNSFilterSingBox.srs",
+        "download_detour": "select"
+      }
+    ],
+    "final": "select",
+    "default_domain_resolver": "dns_direct",
+    "auto_detect_interface": true,
+    "override_android_vpn": true
+  },
+  "experimental": {
+    "cache_file": {
+      "enabled": true
+    },
+    "clash_api": {
+      "external_controller": "127.0.0.1:9090"
+    }
+  }
+}

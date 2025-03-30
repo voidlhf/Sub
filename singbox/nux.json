@@ -1,0 +1,397 @@
+{
+  "log": {},
+  "dns": {
+    "servers": [
+      {
+        "tag": "dns_proxy",
+        "type": "https",
+        "server": "1.1.1.1",
+        "detour": "select"
+      },
+      {
+        "tag": "dns_direct",
+        "type": "https",
+        "server": "223.5.5.5"
+      },
+      {
+        "tag": "dns_fakeip",
+        "type": "fakeip",
+        "inet4_range": "198.18.0.0/15",
+        "inet6_range": "fc00::/18"
+      }
+    ],
+    "rules": [
+      {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "query_type": "HTTPS"
+          },
+          {
+            "rule_set": [
+              "AdGuardSDNSFilter"
+            ]
+          }
+        ],
+        "action": "reject"
+      },
+      {
+        "query_type": [
+          "A",
+          "AAAA"
+        ],
+        "server": "dns_fakeip",
+        "rewrite_ttl": 1
+      },
+      {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "clash_mode": "Global"
+          }
+        ],
+        "server": "dns_proxy"
+      },
+      {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "clash_mode": "Direct"
+          },
+          {
+            "rule_set": "geosite-cn"
+          }
+        ],
+        "server": "dns_direct"
+      }
+    ],
+    "strategy": "ipv4_only",
+    "independent_cache": true
+  },
+  "inbounds": [
+    {
+      "type": "tun",
+      "address": [
+        "172.18.0.1/30",
+        "fdfe:dcba:9876::1/126"
+      ],
+      "auto_route": true,
+      "strict_route": true,
+      "route_exclude_address": [
+        "192.168.0.0/16",
+        "fc00::/7"
+      ]
+    }
+  ],
+  "outbounds": [
+    {
+      "method": "chacha20-ietf-poly1305",
+      "password": "f17c76c1-2c3b-4791-b2a7-15435b81ed3a",
+      "server": "0.0.0.0",
+      "server_port": 0,
+      "tag": "小众高速机场官网⬇",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "chacha20-ietf-poly1305",
+      "password": "f17c76c1-2c3b-4791-b2a7-15435b81ed3a",
+      "server": "0.0.0.0",
+      "server_port": 0,
+      "tag": "nuxyun.v2rayflash.top",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "chacha20-ietf-poly1305",
+      "password": "f17c76c1-2c3b-4791-b2a7-15435b81ed3a",
+      "server": "0.0.0.0",
+      "server_port": 0,
+      "tag": "免费节点偏慢",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "chacha20-ietf-poly1305",
+      "password": "f17c76c1-2c3b-4791-b2a7-15435b81ed3a",
+      "server": "0.0.0.0",
+      "server_port": 0,
+      "tag": "其它套餐有高速节点",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "chacha20-ietf-poly1305",
+      "password": "f17c76c1-2c3b-4791-b2a7-15435b81ed3a",
+      "server": "0.0.0.0",
+      "server_port": 0,
+      "tag": "官网免费领200G",
+      "type": "shadowsocks"
+    },
+    {
+      "alter_id": 0,
+      "security": "auto",
+      "server": "134.195.211.116",
+      "server_port": 21013,
+      "tag": "洛杉矶-cloud-慢",
+      "transport": {
+        "type": "ws"
+      },
+      "type": "vmess",
+      "uuid": "f17c76c1-2c3b-4791-b2a7-15435b81ed3a"
+    },
+    {
+      "alter_id": 0,
+      "security": "auto",
+      "server": "134.195.211.116",
+      "server_port": 21014,
+      "tag": "洛杉矶-cloud2",
+      "transport": {
+        "type": "ws"
+      },
+      "type": "vmess",
+      "uuid": "f17c76c1-2c3b-4791-b2a7-15435b81ed3a"
+    },
+    {
+      "alter_id": 0,
+      "security": "auto",
+      "server": "134.195.211.116",
+      "server_port": 21015,
+      "tag": "洛杉矶-cloud3",
+      "transport": {
+        "type": "ws"
+      },
+      "type": "vmess",
+      "uuid": "f17c76c1-2c3b-4791-b2a7-15435b81ed3a"
+    },
+    {
+      "alter_id": 0,
+      "security": "auto",
+      "server": "134.195.211.116",
+      "server_port": 21016,
+      "tag": "洛杉矶-cloud4",
+      "transport": {
+        "type": "ws"
+      },
+      "type": "vmess",
+      "uuid": "f17c76c1-2c3b-4791-b2a7-15435b81ed3a"
+    },
+    {
+      "alter_id": 0,
+      "security": "auto",
+      "server": "134.195.211.116",
+      "server_port": 21012,
+      "tag": "洛杉矶-cloud5",
+      "transport": {
+        "type": "ws"
+      },
+      "type": "vmess",
+      "uuid": "f17c76c1-2c3b-4791-b2a7-15435b81ed3a"
+    },
+    {
+      "method": "chacha20-ietf-poly1305",
+      "password": "f17c76c1-2c3b-4791-b2a7-15435b81ed3a",
+      "server": "0.0.0.0",
+      "server_port": 0,
+      "tag": "官网：nuxyun.v2rayflash.top",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "chacha20-ietf-poly1305",
+      "password": "f17c76c1-2c3b-4791-b2a7-15435b81ed3a",
+      "server": "0.0.0.0",
+      "server_port": 0,
+      "tag": "邀请朋友获得 20% 佣金奖励",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "chacha20-ietf-poly1305",
+      "password": "f17c76c1-2c3b-4791-b2a7-15435b81ed3a",
+      "server": "0.0.0.0",
+      "server_port": 0,
+      "tag": "注意：无法连接请及时更新订阅",
+      "type": "shadowsocks"
+    },
+    {
+      "tag": "select",
+      "type": "selector",
+      "default": "auto",
+      "outbounds": [
+        "auto",
+        "小众高速机场官网⬇",
+        "nuxyun.v2rayflash.top",
+        "免费节点偏慢",
+        "其它套餐有高速节点",
+        "官网免费领200G",
+        "洛杉矶-cloud-慢",
+        "洛杉矶-cloud2",
+        "洛杉矶-cloud3",
+        "洛杉矶-cloud4",
+        "洛杉矶-cloud5",
+        "官网：nuxyun.v2rayflash.top",
+        "邀请朋友获得 20% 佣金奖励",
+        "注意：无法连接请及时更新订阅"
+      ]
+    },
+    {
+      "tag": "auto",
+      "type": "urltest",
+      "outbounds": [
+        "小众高速机场官网⬇",
+        "nuxyun.v2rayflash.top",
+        "免费节点偏慢",
+        "其它套餐有高速节点",
+        "官网免费领200G",
+        "洛杉矶-cloud-慢",
+        "洛杉矶-cloud2",
+        "洛杉矶-cloud3",
+        "洛杉矶-cloud4",
+        "洛杉矶-cloud5",
+        "官网：nuxyun.v2rayflash.top",
+        "邀请朋友获得 20% 佣金奖励",
+        "注意：无法连接请及时更新订阅"
+      ]
+    },
+    {
+      "tag": "ai",
+      "type": "selector",
+      "outbounds": [
+        "小众高速机场官网⬇",
+        "nuxyun.v2rayflash.top",
+        "免费节点偏慢",
+        "其它套餐有高速节点",
+        "官网免费领200G",
+        "洛杉矶-cloud-慢",
+        "洛杉矶-cloud2",
+        "洛杉矶-cloud3",
+        "洛杉矶-cloud4",
+        "洛杉矶-cloud5",
+        "官网：nuxyun.v2rayflash.top",
+        "邀请朋友获得 20% 佣金奖励",
+        "注意：无法连接请及时更新订阅"
+      ]
+    },
+    {
+      "tag": "direct",
+      "type": "direct"
+    }
+  ],
+  "route": {
+    "rules": [
+      {
+        "action": "sniff"
+      },
+      {
+        "protocol": "dns",
+        "action": "hijack-dns"
+      },
+      {
+        "action": "resolve",
+        "strategy": "ipv4_only"
+      },
+      {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "clash_mode": "Global"
+          }
+        ],
+        "outbound": "select"
+      },
+      {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "package_name": "com.openai.chatgpt"
+          },
+          {
+            "domain_suffix": [
+              "gemini.google.com",
+              "proactivebackend-pa.googleapis.com",
+              "bing.com",
+              "bing.net",
+              "bingapis.com"
+            ]
+          }
+        ],
+        "outbound": "ai"
+      },
+      {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "clash_mode": "Direct"
+          },
+          {
+            "ip_is_private": true
+          },
+          {
+            "domain_keyword": [
+              "ushd.xmsl.org",
+              "cf.gtlx.org",
+              "mtalk.google.com"
+            ]
+          },
+          {
+            "port": [
+              23301,
+              22101,
+              22102,
+              20501,
+              21601,
+              21602,
+              21603,
+              21604,
+              21605,
+              21606
+            ]
+          },
+          {
+            "rule_set": [
+              "geoip-cn",
+              "geosite-cn"
+            ]
+          }
+        ],
+        "outbound": "direct"
+      }
+    ],
+    "rule_set": [
+      {
+        "type": "remote",
+        "tag": "geoip-cn",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/lyc8503/sing-box-rules/rule-set-geoip/geoip-cn.srs",
+        "download_detour": "select"
+      },
+      {
+        "type": "remote",
+        "tag": "geosite-cn",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/lyc8503/sing-box-rules/rule-set-geosite/geosite-cn.srs",
+        "download_detour": "select"
+      },
+      {
+        "type": "remote",
+        "tag": "AdGuardSDNSFilter",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/xmdhs/sing-box-ruleset/rule-set/AdGuardSDNSFilterSingBox.srs",
+        "download_detour": "select"
+      }
+    ],
+    "final": "select",
+    "default_domain_resolver": "dns_direct",
+    "auto_detect_interface": true,
+    "override_android_vpn": true
+  },
+  "experimental": {
+    "cache_file": {
+      "enabled": true
+    },
+    "clash_api": {
+      "external_controller": "127.0.0.1:9090"
+    }
+  }
+}
