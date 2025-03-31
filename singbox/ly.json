@@ -92,7 +92,7 @@
       "password": "82febca6-8856-41fe-84df-c8bda0b72c7b",
       "server": "tw.akebi.cc",
       "server_port": 30001,
-      "tag": "剩余流量：92970.33 GB",
+      "tag": "剩余流量：92904.68 GB",
       "tls": {
         "enabled": true,
         "insecure": false,
@@ -401,7 +401,7 @@
       "default": "auto",
       "outbounds": [
         "auto",
-        "剩余流量：92970.33 GB",
+        "剩余流量：92904.68 GB",
         "距离下次重置剩余：5 天",
         "套餐到期：2026-11-05",
         "🇹🇼台湾｜01｜原生IP",
@@ -429,7 +429,7 @@
       "tag": "auto",
       "type": "urltest",
       "outbounds": [
-        "剩余流量：92970.33 GB",
+        "剩余流量：92904.68 GB",
         "距离下次重置剩余：5 天",
         "套餐到期：2026-11-05",
         "🇹🇼台湾｜01｜原生IP",
@@ -457,7 +457,7 @@
       "tag": "ai",
       "type": "selector",
       "outbounds": [
-        "剩余流量：92970.33 GB",
+        "剩余流量：92904.68 GB",
         "距离下次重置剩余：5 天",
         "套餐到期：2026-11-05",
         "🇹🇼台湾｜01｜原生IP",
@@ -504,7 +504,37 @@
         "mode": "or",
         "rules": [
           {
+            "domain_keyword": [
+              "mtalk.google.com",
+              "ushd.xmsl.org",
+              "cf.gtlx.org",
+              "public-operation-hkrpg-sg.hoyoverse.com",
+              "public-operation-hk4e-sg.hoyoverse.com",
+              "public-operation-nap-sg.hoyoverse.com"
+            ]
+          },
+          {
+            "port_range": [
+              "23301:23301",
+              "22101:22102",
+              "20501:20501",
+              "21601:21606"
+            ]
+          }
+        ],
+        "outbound": "direct"
+      },
+      {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
             "clash_mode": "Global"
+          },
+          {
+            "domain_keyword": [
+              "hoyoverse.com"
+            ]
           }
         ],
         "outbound": "select"
@@ -514,15 +544,9 @@
         "mode": "or",
         "rules": [
           {
-            "package_name": "com.openai.chatgpt"
-          },
-          {
-            "domain_suffix": [
-              "gemini.google.com",
-              "proactivebackend-pa.googleapis.com",
-              "bing.com",
-              "bing.net",
-              "bingapis.com"
+            "rule_set": [
+              "OpenAI",
+              "Gemini"
             ]
           }
         ],
@@ -537,27 +561,6 @@
           },
           {
             "ip_is_private": true
-          },
-          {
-            "domain_keyword": [
-              "ushd.xmsl.org",
-              "cf.gtlx.org",
-              "mtalk.google.com"
-            ]
-          },
-          {
-            "port": [
-              23301,
-              22101,
-              22102,
-              20501,
-              21601,
-              21602,
-              21603,
-              21604,
-              21605,
-              21606
-            ]
           },
           {
             "rule_set": [
@@ -589,6 +592,20 @@
         "tag": "AdGuardSDNSFilter",
         "format": "binary",
         "url": "https://raw.githubusercontent.com/xmdhs/sing-box-ruleset/rule-set/AdGuardSDNSFilterSingBox.srs",
+        "download_detour": "select"
+      },
+      {
+        "type": "remote",
+        "tag": "OpenAI",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/senshinya/singbox_ruleset/main/rule/OpenAI/OpenAI.srs",
+        "download_detour": "select"
+      },
+      {
+        "type": "remote",
+        "tag": "Gemini",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/senshinya/singbox_ruleset/main/rule/Gemini/Gemini.srs",
         "download_detour": "select"
       }
     ],
