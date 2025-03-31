@@ -12,16 +12,6 @@ dns:
   nameserver:
   - "https://dns.cloudflare.com/dns-query"
   - "https://dns.google/dns-query"
-hosts:
-  mtalk.google.com: "108.177.97.188"
-  alt1-mtalk.google.com: "142.250.141.188"
-  alt2-mtalk.google.com: "142.250.115.188"
-  alt3-mtalk.google.com: "108.177.104.188"
-  alt4-mtalk.google.com: "74.125.126.188"
-  alt5-mtalk.google.com: "172.253.113.188"
-  alt6-mtalk.google.com: "173.194.77.188"
-  alt7-mtalk.google.com: "173.194.219.188"
-  alt8-mtalk.google.com: "142.250.112.188"
 proxies:
 - {name: "美国1", server: "us.tuanzi.xyz", port: 20701, sni: null, up: 1000, down: 1000, skip-cert-verify: false, type: "hysteria2", password: "eaeaf53e-3a50-4c8d-9c30-0dd213b8726a"}
 - {name: "美国2", server: "us.tuanzi.xyz", port: 20701, sni: null, up: 1000, down: 1000, skip-cert-verify: false, type: "hysteria2", password: "eaeaf53e-3a50-4c8d-9c30-0dd213b8726a"}
@@ -39,10 +29,10 @@ proxies:
 - {name: "新加坡2", server: "sg.tuanzi.xyz", port: 20701, sni: null, up: 1000, down: 1000, skip-cert-verify: false, type: "hysteria2", password: "eaeaf53e-3a50-4c8d-9c30-0dd213b8726a"}
 - {name: "新加坡3", server: "sg.tuanzi.xyz", port: 20701, sni: null, up: 1000, down: 1000, skip-cert-verify: false, type: "hysteria2", password: "eaeaf53e-3a50-4c8d-9c30-0dd213b8726a"}
 - {name: "新加坡4", server: "sg.tuanzi.xyz", port: 20701, sni: null, up: 1000, down: 1000, skip-cert-verify: false, type: "hysteria2", password: "eaeaf53e-3a50-4c8d-9c30-0dd213b8726a"}
-- {name: "韩国1", server: "kr.tuanzi.xyz", port: 20793, sni: null, up: 1000, down: 1000, skip-cert-verify: true, ports: "20701-20799", type: "hysteria2", password: "eaeaf53e-3a50-4c8d-9c30-0dd213b8726a"}
-- {name: "韩国2", server: "kt.tuanzi.xyz", port: 20793, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "20701-20799", type: "hysteria2", password: "eaeaf53e-3a50-4c8d-9c30-0dd213b8726a"}
-- {name: "韩国3", server: "kr.tuanzi.xyz", port: 20717, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "20701-20799", type: "hysteria2", password: "eaeaf53e-3a50-4c8d-9c30-0dd213b8726a"}
-- {name: "韩国4", server: "kr.tuanzi.xyz", port: 20791, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "20701-20799", type: "hysteria2", password: "eaeaf53e-3a50-4c8d-9c30-0dd213b8726a"}
+- {name: "韩国1", server: "kr.tuanzi.xyz", port: 20713, sni: null, up: 1000, down: 1000, skip-cert-verify: true, ports: "20701-20799", type: "hysteria2", password: "eaeaf53e-3a50-4c8d-9c30-0dd213b8726a"}
+- {name: "韩国2", server: "kt.tuanzi.xyz", port: 20721, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "20701-20799", type: "hysteria2", password: "eaeaf53e-3a50-4c8d-9c30-0dd213b8726a"}
+- {name: "韩国3", server: "kr.tuanzi.xyz", port: 20733, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "20701-20799", type: "hysteria2", password: "eaeaf53e-3a50-4c8d-9c30-0dd213b8726a"}
+- {name: "韩国4", server: "kr.tuanzi.xyz", port: 20798, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "20701-20799", type: "hysteria2", password: "eaeaf53e-3a50-4c8d-9c30-0dd213b8726a"}
 proxy-groups:
 - name: "PROXY"
   type: "select"

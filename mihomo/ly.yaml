@@ -12,18 +12,8 @@ dns:
   nameserver:
   - "https://dns.cloudflare.com/dns-query"
   - "https://dns.google/dns-query"
-hosts:
-  mtalk.google.com: "108.177.97.188"
-  alt1-mtalk.google.com: "142.250.141.188"
-  alt2-mtalk.google.com: "142.250.115.188"
-  alt3-mtalk.google.com: "108.177.104.188"
-  alt4-mtalk.google.com: "74.125.126.188"
-  alt5-mtalk.google.com: "172.253.113.188"
-  alt6-mtalk.google.com: "173.194.77.188"
-  alt7-mtalk.google.com: "173.194.219.188"
-  alt8-mtalk.google.com: "142.250.112.188"
 proxies:
-- {name: "剩余流量：92535.57 GB", server: "tw.akebi.cc", port: 30001, sni: "tw.akebi.cc", up: 600, down: 1000, skip-cert-verify: false, type: "hysteria2", password: "82febca6-8856-41fe-84df-c8bda0b72c7b"}
+- {name: "剩余流量：92474.94 GB", server: "tw.akebi.cc", port: 30001, sni: "tw.akebi.cc", up: 600, down: 1000, skip-cert-verify: false, type: "hysteria2", password: "82febca6-8856-41fe-84df-c8bda0b72c7b"}
 - {name: "距离下次重置剩余：5 天", server: "tw.akebi.cc", port: 30001, sni: "tw.akebi.cc", up: 600, down: 1000, skip-cert-verify: false, type: "hysteria2", password: "82febca6-8856-41fe-84df-c8bda0b72c7b"}
 - {name: "套餐到期：2026-11-05", server: "tw.akebi.cc", port: 30001, sni: "tw.akebi.cc", up: 600, down: 1000, skip-cert-verify: false, type: "hysteria2", password: "82febca6-8856-41fe-84df-c8bda0b72c7b"}
 - {name: "🇹🇼台湾｜01｜原生IP", server: "tw.akebi.cc", port: 30001, sni: "tw.akebi.cc", up: 600, down: 1000, skip-cert-verify: false, type: "hysteria2", password: "82febca6-8856-41fe-84df-c8bda0b72c7b"}
@@ -50,7 +40,7 @@ proxy-groups:
   type: "select"
   proxies:
   - "AUTO"
-  - "剩余流量：92535.57 GB"
+  - "剩余流量：92474.94 GB"
   - "距离下次重置剩余：5 天"
   - "套餐到期：2026-11-05"
   - "🇹🇼台湾｜01｜原生IP"
@@ -78,7 +68,7 @@ proxy-groups:
   interval: 300
   tolerance: 50
   proxies:
-  - "剩余流量：92535.57 GB"
+  - "剩余流量：92474.94 GB"
   - "距离下次重置剩余：5 天"
   - "套餐到期：2026-11-05"
   - "🇹🇼台湾｜01｜原生IP"
@@ -103,7 +93,7 @@ proxy-groups:
 - name: "AI"
   type: "select"
   proxies:
-  - "剩余流量：92535.57 GB"
+  - "剩余流量：92474.94 GB"
   - "距离下次重置剩余：5 天"
   - "套餐到期：2026-11-05"
   - "🇹🇼台湾｜01｜原生IP"
