@@ -88,9 +88,31 @@
   ],
   "outbounds": [
     {
+      "server": "test123.zlqhdns.top",
+      "server_port": 11555,
+      "tag": "群被坏人举报了",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.nvidia.com",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "qhTzYYIgBzDLNYR79oxftqdo1kzL-1_hGJKfqrOliCY"
+        }
+      },
+      "type": "vless",
+      "uuid": "459b4a80-bd61-4ecd-a26b-e9c1809d9e45",
+      "flow": "xtls-rprx-vision",
+      "packet_encoding": "xudp"
+    },
+    {
       "server": "95.217.1.83",
       "server_port": 26586,
-      "tag": "高速 优先使用",
+      "tag": "白嫖怪家炸了",
       "transport": {
         "headers": {
           "Host": [
@@ -129,30 +151,6 @@
       "uuid": "459b4a80-bd61-4ecd-a26b-e9c1809d9e45",
       "flow": "xtls-rprx-vision",
       "packet_encoding": "xudp"
-    },
-    {
-      "password": "dongtaiwang.com",
-      "server": "46.29.163.171",
-      "server_port": 18626,
-      "tag": "爬虫给我爬爬爬",
-      "tls": {
-        "enabled": true,
-        "server_name": "www.bing.com",
-        "insecure": true
-      },
-      "type": "hysteria2"
-    },
-    {
-      "password": "dongtaiwang.com",
-      "server": "46.17.41.217",
-      "server_port": 37481,
-      "tag": "快进群快进群",
-      "tls": {
-        "enabled": true,
-        "server_name": "www.bing.com",
-        "insecure": true
-      },
-      "type": "hysteria2"
     },
     {
       "server": "www.vpslook.com",
@@ -409,91 +407,6 @@
       "type": "hysteria2"
     },
     {
-      "server": "162.247.5.96",
-      "server_port": 443,
-      "tag": "🇭🇰 HK 高速无限",
-      "tls": {
-        "enabled": true,
-        "server_name": "justhk.cayuo.me",
-        "insecure": true
-      },
-      "transport": {
-        "headers": {
-          "Host": [
-            "justhk.cayuo.me"
-          ]
-        },
-        "path": "/bing",
-        "type": "ws"
-      },
-      "type": "vless",
-      "uuid": "f3a1807d-67fb-4ab8-fe88-4290ef071768",
-      "packet_encoding": "xudp"
-    },
-    {
-      "password": "7ab0589c-9585-4436-84d4-9c9a18dcb64c",
-      "server": "u-s04.love-art-edu.com",
-      "server_port": 47016,
-      "tag": "🇺🇸 美国04|1x",
-      "type": "shadowsocks",
-      "method": "chacha20-ietf-poly1305",
-      "network": "tcp"
-    },
-    {
-      "password": "7ab0589c-9585-4436-84d4-9c9a18dcb64c",
-      "server": "k-r01.love-art-edu.com",
-      "server_port": 47021,
-      "tag": "🇰🇷 韩国01|1x",
-      "type": "shadowsocks",
-      "method": "chacha20-ietf-poly1305",
-      "network": "tcp"
-    },
-    {
-      "password": "7ab0589c-9585-4436-84d4-9c9a18dcb64c",
-      "server": "j-p04.love-art-edu.com",
-      "server_port": 47012,
-      "tag": "🇯🇵 日本04|1x",
-      "type": "shadowsocks",
-      "method": "chacha20-ietf-poly1305",
-      "network": "tcp"
-    },
-    {
-      "password": "7ab0589c-9585-4436-84d4-9c9a18dcb64c",
-      "server": "s-g01.love-art-edu.com",
-      "server_port": 47025,
-      "tag": "🇸🇬 新加坡01|1x",
-      "type": "shadowsocks",
-      "method": "chacha20-ietf-poly1305",
-      "network": "tcp"
-    },
-    {
-      "password": "7ab0589c-9585-4436-84d4-9c9a18dcb64c",
-      "server": "u-k01.love-art-edu.com",
-      "server_port": 47029,
-      "tag": "🇬🇧 英国01|1x",
-      "type": "shadowsocks",
-      "method": "chacha20-ietf-poly1305",
-      "network": "tcp"
-    },
-    {
-      "password": "7ab0589c-9585-4436-84d4-9c9a18dcb64c",
-      "server": "t-wn01.love-art-edu.com",
-      "server_port": 47017,
-      "tag": "🇨🇳 台湾01|1x",
-      "type": "shadowsocks",
-      "method": "chacha20-ietf-poly1305",
-      "network": "tcp"
-    },
-    {
-      "password": "7ab0589c-9585-4436-84d4-9c9a18dcb64c",
-      "server": "h-k04.love-art-edu.com",
-      "server_port": 47008,
-      "tag": "🇭🇰 香港04|1x",
-      "type": "shadowsocks",
-      "method": "chacha20-ietf-poly1305",
-      "network": "tcp"
-    },
-    {
       "server": "hyun.cloudflare.182682.xyz",
       "server_port": 443,
       "tag": "🇻🇳 越南 1Gbps",
@@ -547,28 +460,6 @@
       "packet_encoding": "xudp"
     },
     {
-      "server": "test123.zlqhdns.top",
-      "server_port": 11555,
-      "tag": "🇭🇰 香港",
-      "tls": {
-        "enabled": true,
-        "server_name": "www.nvidia.com",
-        "insecure": true,
-        "utls": {
-          "enabled": true,
-          "fingerprint": "chrome"
-        },
-        "reality": {
-          "enabled": true,
-          "public_key": "qhTzYYIgBzDLNYR79oxftqdo1kzL-1_hGJKfqrOliCY"
-        }
-      },
-      "type": "vless",
-      "uuid": "459b4a80-bd61-4ecd-a26b-e9c1809d9e45",
-      "flow": "xtls-rprx-vision",
-      "packet_encoding": "xudp"
-    },
-    {
       "server": "beiyong.dynuddns.net",
       "server_port": 57926,
       "tag": "🇺🇸 美国",
@@ -593,7 +484,7 @@
     {
       "server": "gy01.hunheiydd.xyz",
       "server_port": 23657,
-      "tag": "🇭🇰 香港 2",
+      "tag": "🇭🇰 香港",
       "tls": {
         "enabled": true,
         "server_name": "www.nvidia.com",
@@ -650,7 +541,7 @@
       "password": "passLUsO2Ktuer77tu",
       "server": "14.18.253.178",
       "server_port": 8321,
-      "tag": "🇭🇰 香港 3",
+      "tag": "🇭🇰 香港 2",
       "type": "shadowsocks",
       "method": "chacha20",
       "network": "tcp"
@@ -1295,10 +1186,9 @@
       "default": "auto",
       "outbounds": [
         "auto",
-        "高速 优先使用",
+        "群被坏人举报了",
+        "白嫖怪家炸了",
         "t.me/freeyule",
-        "爬虫给我爬爬爬",
-        "快进群快进群",
         "群里大佬分享更多节点",
         "🇨🇳 台湾｜01｜原生IP",
         "🇨🇳 台湾｜03｜原生IP",
@@ -1319,24 +1209,15 @@
         "🇦🇺 澳大利亚｜01｜原生IP",
         "多哥｜01｜住宅IP",
         "🇰🇿 哈萨克斯坦｜01｜住宅ip",
-        "🇭🇰 HK 高速无限",
-        "🇺🇸 美国04|1x",
-        "🇰🇷 韩国01|1x",
-        "🇯🇵 日本04|1x",
-        "🇸🇬 新加坡01|1x",
-        "🇬🇧 英国01|1x",
-        "🇨🇳 台湾01|1x",
-        "🇭🇰 香港04|1x",
         "🇻🇳 越南 1Gbps",
         "🇻🇳 越南",
         "🇯🇵 日本",
-        "🇭🇰 香港",
         "🇺🇸 美国",
-        "🇭🇰 香港 2",
+        "🇭🇰 香港",
         "🇫🇮 芬兰",
         "🇨🇳 节点-CN-50Mbps-100G",
         "🇭🇰 香港1",
-        "🇭🇰 香港 3",
+        "🇭🇰 香港 2",
         "🇭🇰 香港3",
         "🇭🇰 香港2",
         "🇭🇰 香港4",
@@ -1420,10 +1301,9 @@
       "tag": "auto",
       "type": "urltest",
       "outbounds": [
-        "高速 优先使用",
+        "群被坏人举报了",
+        "白嫖怪家炸了",
         "t.me/freeyule",
-        "爬虫给我爬爬爬",
-        "快进群快进群",
         "群里大佬分享更多节点",
         "🇨🇳 台湾｜01｜原生IP",
         "🇨🇳 台湾｜03｜原生IP",
@@ -1444,24 +1324,15 @@
         "🇦🇺 澳大利亚｜01｜原生IP",
         "多哥｜01｜住宅IP",
         "🇰🇿 哈萨克斯坦｜01｜住宅ip",
-        "🇭🇰 HK 高速无限",
-        "🇺🇸 美国04|1x",
-        "🇰🇷 韩国01|1x",
-        "🇯🇵 日本04|1x",
-        "🇸🇬 新加坡01|1x",
-        "🇬🇧 英国01|1x",
-        "🇨🇳 台湾01|1x",
-        "🇭🇰 香港04|1x",
         "🇻🇳 越南 1Gbps",
         "🇻🇳 越南",
         "🇯🇵 日本",
-        "🇭🇰 香港",
         "🇺🇸 美国",
-        "🇭🇰 香港 2",
+        "🇭🇰 香港",
         "🇫🇮 芬兰",
         "🇨🇳 节点-CN-50Mbps-100G",
         "🇭🇰 香港1",
-        "🇭🇰 香港 3",
+        "🇭🇰 香港 2",
         "🇭🇰 香港3",
         "🇭🇰 香港2",
         "🇭🇰 香港4",
@@ -1545,10 +1416,9 @@
       "tag": "ai",
       "type": "selector",
       "outbounds": [
-        "高速 优先使用",
+        "群被坏人举报了",
+        "白嫖怪家炸了",
         "t.me/freeyule",
-        "爬虫给我爬爬爬",
-        "快进群快进群",
         "群里大佬分享更多节点",
         "🇨🇳 台湾｜01｜原生IP",
         "🇨🇳 台湾｜03｜原生IP",
@@ -1569,24 +1439,15 @@
         "🇦🇺 澳大利亚｜01｜原生IP",
         "多哥｜01｜住宅IP",
         "🇰🇿 哈萨克斯坦｜01｜住宅ip",
-        "🇭🇰 HK 高速无限",
-        "🇺🇸 美国04|1x",
-        "🇰🇷 韩国01|1x",
-        "🇯🇵 日本04|1x",
-        "🇸🇬 新加坡01|1x",
-        "🇬🇧 英国01|1x",
-        "🇨🇳 台湾01|1x",
-        "🇭🇰 香港04|1x",
         "🇻🇳 越南 1Gbps",
         "🇻🇳 越南",
         "🇯🇵 日本",
-        "🇭🇰 香港",
         "🇺🇸 美国",
-        "🇭🇰 香港 2",
+        "🇭🇰 香港",
         "🇫🇮 芬兰",
         "🇨🇳 节点-CN-50Mbps-100G",
         "🇭🇰 香港1",
-        "🇭🇰 香港 3",
+        "🇭🇰 香港 2",
         "🇭🇰 香港3",
         "🇭🇰 香港2",
         "🇭🇰 香港4",

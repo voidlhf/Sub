@@ -22,7 +22,7 @@ proxies:
 - {name: "免费节点偏慢", type: "ss", server: "0.0.0.0", port: 0, cipher: "chacha20-ietf-poly1305", password: "f17c76c1-2c3b-4791-b2a7-15435b81ed3a", udp: true}
 - {name: "其它套餐有高速节点", type: "ss", server: "0.0.0.0", port: 0, cipher: "chacha20-ietf-poly1305", password: "f17c76c1-2c3b-4791-b2a7-15435b81ed3a", udp: true}
 - {name: "官网免费领200G", type: "ss", server: "0.0.0.0", port: 0, cipher: "chacha20-ietf-poly1305", password: "f17c76c1-2c3b-4791-b2a7-15435b81ed3a", udp: true}
-- {name: "洛杉矶-cloud-慢", type: "vmess", server: "134.195.211.116", port: 80, uuid: "f17c76c1-2c3b-4791-b2a7-15435b81ed3a", alterId: 0, cipher: "auto", udp: true, network: "ws"}
+- {name: "洛杉矶-cloud-慢", type: "vmess", server: "134.195.211.116", port: 80, uuid: "f17c76c1-2c3b-4791-b2a7-15435b81ed3a", alterId: 0, cipher: "auto", udp: true, network: "ws", ws-opts: {path: "/aaa", headers: {Host: "www.v2rayflash.top"}}, ws-path: "/aaa", ws-headers: {Host: "www.v2rayflash.top"}}
 - {name: "洛杉矶-cloud2", type: "vmess", server: "134.195.211.116", port: 21029, uuid: "f17c76c1-2c3b-4791-b2a7-15435b81ed3a", alterId: 0, cipher: "auto", udp: true, network: "ws"}
 - {name: "洛杉矶-cloud3", type: "vmess", server: "134.195.211.116", port: 21030, uuid: "f17c76c1-2c3b-4791-b2a7-15435b81ed3a", alterId: 0, cipher: "auto", udp: true, network: "ws"}
 - {name: "洛杉矶-cloud4", type: "vmess", server: "134.195.211.116", port: 21031, uuid: "f17c76c1-2c3b-4791-b2a7-15435b81ed3a", alterId: 0, cipher: "auto", udp: true, network: "ws"}
