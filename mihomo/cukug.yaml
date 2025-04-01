@@ -1,0 +1,201 @@
+log-level: "debug"
+mixed-port: 7890
+allow-lan: true
+external-controller: "127.0.0.1:9090"
+unified-delay: true
+tcp-concurrent: true
+find-process-mode: "strict"
+global-client-fingerprint: "chrome"
+profile:
+  store-selected: true
+  store-fake-ip: true
+sniffer:
+  enable: true
+  force-dns-mapping: true
+  parse-pure-ip: true
+  override-destination: false
+  sniff:
+    HTTP:
+      ports:
+      - 80
+      - "8080-8880"
+    TLS:
+      ports:
+      - 443
+      - 8443
+    QUIC:
+      ports:
+      - 443
+      - 8443
+tun:
+  enable: true
+  stack: "mixed"
+  dns-hijack:
+  - "any:53"
+  - "tcp://any:53"
+  auto-route: true
+  auto-redirect: true
+  auto-detect-interface: true
+  strict-route: true
+dns:
+  enable: true
+  ipv6: false
+  default-nameserver:
+  - "223.5.5.5"
+  - "119.29.29.29"
+  enhanced-mode: "fake-ip"
+  fake-ip-range: "198.18.0.1/16"
+  nameserver:
+  - "https://dns.cloudflare.com/dns-query"
+  - "https://dns.google/dns-query"
+  nameserver-policy:
+    geosite:cn,private:
+    - "https://dns.alidns.com/dns-query"
+    - "https://doh.pub/dns-query"
+proxies:
+- {name: "剩余流量：993.98 GB", type: "vmess", server: "5.39.252.72", port: 20039, uuid: "1cc59a3a-9625-40f7-b0e6-e233286ae82d", alterId: 0, cipher: "auto", udp: true, network: "ws"}
+- {name: "距离下次重置剩余：28 天", type: "vmess", server: "5.39.252.72", port: 20039, uuid: "1cc59a3a-9625-40f7-b0e6-e233286ae82d", alterId: 0, cipher: "auto", udp: true, network: "ws"}
+- {name: "套餐到期：2025-04-03", type: "vmess", server: "5.39.252.72", port: 20039, uuid: "1cc59a3a-9625-40f7-b0e6-e233286ae82d", alterId: 0, cipher: "auto", udp: true, network: "ws"}
+- {name: "德国-法兰克福-001", type: "vmess", server: "5.39.252.72", port: 20039, uuid: "1cc59a3a-9625-40f7-b0e6-e233286ae82d", alterId: 0, cipher: "auto", udp: true, network: "ws"}
+- {name: "德国-法兰克福-HY-001", server: "5.39.252.72", port: 32009, up: 100, down: 100, skip-cert-verify: true, type: "hysteria2", password: "1cc59a3a-9625-40f7-b0e6-e233286ae82d", obfs: "salamander", obfs-password: "M2UyNTc5OWUwYjkyM2Q2OQ=="}
+- {name: "中国-香港-F1-001", type: "vmess", server: "212.192.12.56", port: 21039, uuid: "1cc59a3a-9625-40f7-b0e6-e233286ae82d", alterId: 0, cipher: "auto", udp: true, network: "ws"}
+- {name: "中国-香港-F2-001", type: "vmess", server: "212.192.12.73", port: 22035, uuid: "1cc59a3a-9625-40f7-b0e6-e233286ae82d", alterId: 0, cipher: "auto", udp: true, network: "ws"}
+- {name: "中国-香港-F3-001", type: "vmess", server: "212.192.13.68", port: 23035, uuid: "1cc59a3a-9625-40f7-b0e6-e233286ae82d", alterId: 0, cipher: "auto", udp: true, network: "ws"}
+- {name: "中国-香港-HY-F1-001", server: "212.192.12.56", port: 31003, up: 100, down: 100, skip-cert-verify: true, type: "hysteria2", password: "1cc59a3a-9625-40f7-b0e6-e233286ae82d", obfs: "salamander", obfs-password: "M2UyNTc5OWUwYjkyM2Q2OQ=="}
+- {name: "中国-香港-HY-F2-001", server: "212.192.12.73", port: 32013, up: 100, down: 100, skip-cert-verify: true, type: "hysteria2", password: "1cc59a3a-9625-40f7-b0e6-e233286ae82d", obfs: "salamander", obfs-password: "M2UyNTc5OWUwYjkyM2Q2OQ=="}
+- {name: "中国-香港-HY-F3-001", server: "212.192.13.68", port: 33013, up: 100, down: 100, skip-cert-verify: true, type: "hysteria2", password: "1cc59a3a-9625-40f7-b0e6-e233286ae82d", obfs: "salamander", obfs-password: "M2UyNTc5OWUwYjkyM2Q2OQ=="}
+- {name: "加拿大-多伦多-001", type: "vmess", server: "141.195.112.33", port: 20039, uuid: "1cc59a3a-9625-40f7-b0e6-e233286ae82d", alterId: 0, cipher: "auto", udp: true, network: "ws"}
+- {name: "加拿大-多伦多-HY-001", server: "141.195.112.33", port: 30032, up: 100, down: 100, skip-cert-verify: true, type: "hysteria2", password: "1cc59a3a-9625-40f7-b0e6-e233286ae82d", obfs: "salamander", obfs-password: "M2UyNTc5OWUwYjkyM2Q2OQ=="}
+- {name: "美国-纽约-001", type: "vmess", server: "207.90.238.136", port: 20031, uuid: "1cc59a3a-9625-40f7-b0e6-e233286ae82d", alterId: 0, cipher: "auto", udp: true, network: "ws"}
+- {name: "美国-纽约-F1-001", type: "vmess", server: "207.90.236.21", port: 21015, uuid: "1cc59a3a-9625-40f7-b0e6-e233286ae82d", alterId: 0, cipher: "auto", udp: true, network: "ws"}
+- {name: "美国-纽约-F2-001", type: "vmess", server: "207.90.237.179", port: 22015, uuid: "1cc59a3a-9625-40f7-b0e6-e233286ae82d", alterId: 0, cipher: "auto", udp: true, network: "ws"}
+- {name: "美国-纽约-F3-001", type: "vmess", server: "207.90.237.96", port: 23018, uuid: "1cc59a3a-9625-40f7-b0e6-e233286ae82d", alterId: 0, cipher: "auto", udp: true, network: "ws"}
+- {name: "美国-纽约-HY-001", server: "207.90.238.136", port: 30037, up: 100, down: 100, skip-cert-verify: true, type: "hysteria2", password: "1cc59a3a-9625-40f7-b0e6-e233286ae82d", obfs: "salamander", obfs-password: "NDhhNmY5YTY0MGYzOTgxYQ=="}
+- {name: "美国-纽约-HY-F1-001", server: "207.90.236.21", port: 33037, up: 100, down: 100, skip-cert-verify: true, type: "hysteria2", password: "1cc59a3a-9625-40f7-b0e6-e233286ae82d", obfs: "salamander", obfs-password: "NDhhNmY5YTY0MGYzOTgxYQ=="}
+- {name: "美国-纽约-HY-F2-001", server: "207.90.237.179", port: 32039, up: 100, down: 100, skip-cert-verify: true, type: "hysteria2", password: "1cc59a3a-9625-40f7-b0e6-e233286ae82d", obfs: "salamander", obfs-password: "NDhhNmY5YTY0MGYzOTgxYQ=="}
+- {name: "美国-纽约-HY-F3-001", server: "207.90.237.96", port: 33039, up: 100, down: 100, skip-cert-verify: true, type: "hysteria2", password: "1cc59a3a-9625-40f7-b0e6-e233286ae82d", obfs: "salamander", obfs-password: "NDhhNmY5YTY0MGYzOTgxYQ=="}
+- {name: "俄罗斯-莫斯科-F1-001", type: "vmess", server: "176.32.35.148", port: 21039, uuid: "1cc59a3a-9625-40f7-b0e6-e233286ae82d", alterId: 0, cipher: "auto", udp: true, network: "ws"}
+- {name: "俄罗斯-莫斯科-F2-001", type: "vmess", server: "46.17.43.122", port: 22031, uuid: "1cc59a3a-9625-40f7-b0e6-e233286ae82d", alterId: 0, cipher: "auto", udp: true, network: "ws"}
+- {name: "俄罗斯-莫斯科-F3-001", type: "vmess", server: "195.133.5.127", port: 23039, uuid: "1cc59a3a-9625-40f7-b0e6-e233286ae82d", alterId: 0, cipher: "auto", udp: true, network: "ws"}
+- {name: "俄罗斯-莫斯科-HY-F1-001", server: "176.32.35.148", port: 31051, up: 100, down: 100, skip-cert-verify: true, type: "hysteria2", password: "1cc59a3a-9625-40f7-b0e6-e233286ae82d", obfs: "salamander", obfs-password: "NDhhNmY5YTY0MGYzOTgxYQ=="}
+- {name: "俄罗斯-莫斯科-HY-F2-001", server: "46.17.43.122", port: 32050, up: 100, down: 100, skip-cert-verify: true, type: "hysteria2", password: "1cc59a3a-9625-40f7-b0e6-e233286ae82d", obfs: "salamander", obfs-password: "NDhhNmY5YTY0MGYzOTgxYQ=="}
+- {name: "俄罗斯-莫斯科-HY-F3-001", server: "195.133.5.127", port: 33007, up: 100, down: 100, skip-cert-verify: true, type: "hysteria2", password: "1cc59a3a-9625-40f7-b0e6-e233286ae82d", obfs: "salamander", obfs-password: "NDhhNmY5YTY0MGYzOTgxYQ=="}
+proxy-groups:
+- name: "PROXY"
+  type: "select"
+  proxies:
+  - "AUTO"
+  - "剩余流量：993.98 GB"
+  - "距离下次重置剩余：28 天"
+  - "套餐到期：2025-04-03"
+  - "德国-法兰克福-001"
+  - "德国-法兰克福-HY-001"
+  - "中国-香港-F1-001"
+  - "中国-香港-F2-001"
+  - "中国-香港-F3-001"
+  - "中国-香港-HY-F1-001"
+  - "中国-香港-HY-F2-001"
+  - "中国-香港-HY-F3-001"
+  - "加拿大-多伦多-001"
+  - "加拿大-多伦多-HY-001"
+  - "美国-纽约-001"
+  - "美国-纽约-F1-001"
+  - "美国-纽约-F2-001"
+  - "美国-纽约-F3-001"
+  - "美国-纽约-HY-001"
+  - "美国-纽约-HY-F1-001"
+  - "美国-纽约-HY-F2-001"
+  - "美国-纽约-HY-F3-001"
+  - "俄罗斯-莫斯科-F1-001"
+  - "俄罗斯-莫斯科-F2-001"
+  - "俄罗斯-莫斯科-F3-001"
+  - "俄罗斯-莫斯科-HY-F1-001"
+  - "俄罗斯-莫斯科-HY-F2-001"
+  - "俄罗斯-莫斯科-HY-F3-001"
+- name: "AUTO"
+  type: "url-test"
+  url: "http://www.gstatic.com/generate_204"
+  interval: 300
+  tolerance: 50
+  proxies:
+  - "剩余流量：993.98 GB"
+  - "距离下次重置剩余：28 天"
+  - "套餐到期：2025-04-03"
+  - "德国-法兰克福-001"
+  - "德国-法兰克福-HY-001"
+  - "中国-香港-F1-001"
+  - "中国-香港-F2-001"
+  - "中国-香港-F3-001"
+  - "中国-香港-HY-F1-001"
+  - "中国-香港-HY-F2-001"
+  - "中国-香港-HY-F3-001"
+  - "加拿大-多伦多-001"
+  - "加拿大-多伦多-HY-001"
+  - "美国-纽约-001"
+  - "美国-纽约-F1-001"
+  - "美国-纽约-F2-001"
+  - "美国-纽约-F3-001"
+  - "美国-纽约-HY-001"
+  - "美国-纽约-HY-F1-001"
+  - "美国-纽约-HY-F2-001"
+  - "美国-纽约-HY-F3-001"
+  - "俄罗斯-莫斯科-F1-001"
+  - "俄罗斯-莫斯科-F2-001"
+  - "俄罗斯-莫斯科-F3-001"
+  - "俄罗斯-莫斯科-HY-F1-001"
+  - "俄罗斯-莫斯科-HY-F2-001"
+  - "俄罗斯-莫斯科-HY-F3-001"
+- name: "AI"
+  type: "select"
+  proxies:
+  - "剩余流量：993.98 GB"
+  - "距离下次重置剩余：28 天"
+  - "套餐到期：2025-04-03"
+  - "德国-法兰克福-001"
+  - "德国-法兰克福-HY-001"
+  - "中国-香港-F1-001"
+  - "中国-香港-F2-001"
+  - "中国-香港-F3-001"
+  - "中国-香港-HY-F1-001"
+  - "中国-香港-HY-F2-001"
+  - "中国-香港-HY-F3-001"
+  - "加拿大-多伦多-001"
+  - "加拿大-多伦多-HY-001"
+  - "美国-纽约-001"
+  - "美国-纽约-F1-001"
+  - "美国-纽约-F2-001"
+  - "美国-纽约-F3-001"
+  - "美国-纽约-HY-001"
+  - "美国-纽约-HY-F1-001"
+  - "美国-纽约-HY-F2-001"
+  - "美国-纽约-HY-F3-001"
+  - "俄罗斯-莫斯科-F1-001"
+  - "俄罗斯-莫斯科-F2-001"
+  - "俄罗斯-莫斯科-F3-001"
+  - "俄罗斯-莫斯科-HY-F1-001"
+  - "俄罗斯-莫斯科-HY-F2-001"
+  - "俄罗斯-莫斯科-HY-F3-001"
+rules:
+- "RULE-SET,reject-list,REJECT"
+- "DOMAIN-SUFFIX,ushd.xmsl.org,DIRECT"
+- "DOMAIN-SUFFIX,cf.gtlx.org,DIRECT"
+- "DOMAIN-SUFFIX,public-operation-hkrpg-sg.hoyoverse.com,DIRECT"
+- "DOMAIN-SUFFIX,public-operation-hk4e-sg.hoyoverse.com,DIRECT"
+- "DOMAIN-SUFFIX,public-operation-nap-sg.hoyoverse.com,DIRECT"
+- "DST-PORT,23301/22101-22102/20501/21601-21606,DIRECT"
+- "GEOSITE,HOYOVERSE,PROXY"
+- "GEOSITE,OPENAI,AI"
+- "GEOSITE,GOOGLE-GEMINI,AI"
+- "GEOSITE,GOOGLEFCM,DIRECT"
+- "GEOSITE,PRIVATE,DIRECT"
+- "GEOSITE,CN,DIRECT"
+- "GEOIP,PRIVATE,DIRECT,no-resolve"
+- "GEOIP,CN,DIRECT"
+- "MATCH,PROXY"
+rule-providers:
+  reject-list:
+    type: "http"
+    behavior: "domain"
+    format: "text"
+    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/v2ray-rules-dat@release/reject-list.txt"
+    path: "./v2ray-rules-da/reject-list.txt"

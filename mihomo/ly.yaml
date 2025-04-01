@@ -1,0 +1,181 @@
+log-level: "debug"
+mixed-port: 7890
+allow-lan: true
+external-controller: "127.0.0.1:9090"
+unified-delay: true
+tcp-concurrent: true
+find-process-mode: "strict"
+global-client-fingerprint: "chrome"
+profile:
+  store-selected: true
+  store-fake-ip: true
+sniffer:
+  enable: true
+  force-dns-mapping: true
+  parse-pure-ip: true
+  override-destination: false
+  sniff:
+    HTTP:
+      ports:
+      - 80
+      - "8080-8880"
+    TLS:
+      ports:
+      - 443
+      - 8443
+    QUIC:
+      ports:
+      - 443
+      - 8443
+tun:
+  enable: true
+  stack: "mixed"
+  dns-hijack:
+  - "any:53"
+  - "tcp://any:53"
+  auto-route: true
+  auto-redirect: true
+  auto-detect-interface: true
+  strict-route: true
+dns:
+  enable: true
+  ipv6: false
+  default-nameserver:
+  - "223.5.5.5"
+  - "119.29.29.29"
+  enhanced-mode: "fake-ip"
+  fake-ip-range: "198.18.0.1/16"
+  nameserver:
+  - "https://dns.cloudflare.com/dns-query"
+  - "https://dns.google/dns-query"
+  nameserver-policy:
+    geosite:cn,private:
+    - "https://dns.alidns.com/dns-query"
+    - "https://doh.pub/dns-query"
+proxies:
+- {name: "剩余流量：90580.78 GB", server: "tw.akebi.cc", port: 30001, sni: "tw.akebi.cc", up: 600, down: 1000, skip-cert-verify: false, type: "hysteria2", password: "82febca6-8856-41fe-84df-c8bda0b72c7b"}
+- {name: "距离下次重置剩余：3 天", server: "tw.akebi.cc", port: 30001, sni: "tw.akebi.cc", up: 600, down: 1000, skip-cert-verify: false, type: "hysteria2", password: "82febca6-8856-41fe-84df-c8bda0b72c7b"}
+- {name: "套餐到期：2026-11-05", server: "tw.akebi.cc", port: 30001, sni: "tw.akebi.cc", up: 600, down: 1000, skip-cert-verify: false, type: "hysteria2", password: "82febca6-8856-41fe-84df-c8bda0b72c7b"}
+- {name: "🇹🇼台湾｜01｜原生IP", server: "tw.akebi.cc", port: 30001, sni: "tw.akebi.cc", up: 600, down: 1000, skip-cert-verify: false, type: "hysteria2", password: "82febca6-8856-41fe-84df-c8bda0b72c7b"}
+- {name: "🇹🇼台湾｜03｜原生IP", server: "tw3.akebi.cc", port: 5006, sni: "tw3.akebi.cc", up: 600, down: 1000, skip-cert-verify: false, type: "hysteria2", password: "82febca6-8856-41fe-84df-c8bda0b72c7b"}
+- {name: "🇹🇼台湾｜04｜原生IP", server: "tw3.akebi.cc", port: 9000, sni: "tw3.akebi.cc", up: 600, down: 1000, skip-cert-verify: true, type: "hysteria2", password: "82febca6-8856-41fe-84df-c8bda0b72c7b"}
+- {name: "🇹🇼台湾｜05｜原生IP", server: "tw3.akebi.cc", port: 9001, sni: "tw3.akebi.cc", up: 600, down: 1000, skip-cert-verify: false, type: "hysteria2", password: "82febca6-8856-41fe-84df-c8bda0b72c7b"}
+- {name: "🇭🇰香港｜01", server: "tw.akebi.cc", port: 1000, sni: "hk03.akebi.cc", up: 600, down: 1000, skip-cert-verify: false, type: "hysteria2", password: "82febca6-8856-41fe-84df-c8bda0b72c7b"}
+- {name: "🇭🇰香港｜02", server: "tw3.akebi.cc", port: 2000, sni: "hk03.akebi.cc", up: 600, down: 1000, skip-cert-verify: false, type: "hysteria2", password: "82febca6-8856-41fe-84df-c8bda0b72c7b"}
+- {name: "🇭🇰香港｜03", server: "tw3.akebi.cc", port: 2021, sni: "hk03.akebi.cc", up: 600, down: 1000, skip-cert-verify: false, type: "hysteria2", password: "82febca6-8856-41fe-84df-c8bda0b72c7b"}
+- {name: "🇯🇵日本｜01", server: "tw3.akebi.cc", port: 2012, sni: "jp02.akebi.cc", up: 600, down: 1000, skip-cert-verify: false, type: "hysteria2", password: "82febca6-8856-41fe-84df-c8bda0b72c7b"}
+- {name: "🇹🇭泰国丨01｜原生IP", server: "tw3.akebi.cc", port: 2024, sni: "th.akebi.cc", up: 600, down: 1000, skip-cert-verify: true, type: "hysteria2", password: "82febca6-8856-41fe-84df-c8bda0b72c7b"}
+- {name: "🇹🇭泰国丨02｜原生IP", server: "tw3.akebi.cc", port: 2018, sni: "th.akebi.cc", up: 600, down: 1000, skip-cert-verify: true, type: "hysteria2", password: "82febca6-8856-41fe-84df-c8bda0b72c7b"}
+- {name: "🇧🇩孟加拉｜01｜住宅IP", server: "tw3.akebi.cc", port: 2019, sni: "bd.akebi.cc", up: 600, down: 1000, skip-cert-verify: true, type: "hysteria2", password: "82febca6-8856-41fe-84df-c8bda0b72c7b"}
+- {name: "🇧🇩孟加拉｜02｜住宅IP", server: "tw3.akebi.cc", port: 2025, sni: "bd.akebi.cc", up: 600, down: 1000, skip-cert-verify: true, type: "hysteria2", password: "82febca6-8856-41fe-84df-c8bda0b72c7b"}
+- {name: "🇰🇭柬埔寨｜01", server: "tw3.akebi.cc", port: 2023, sni: "kh01.akebi.cc", up: 600, down: 1000, skip-cert-verify: false, type: "hysteria2", password: "82febca6-8856-41fe-84df-c8bda0b72c7b"}
+- {name: "🇺🇦乌克兰｜01｜原生IP", server: "tw3.akebi.cc", port: 2020, sni: "ua01.akebi.cc", up: 600, down: 1000, skip-cert-verify: false, type: "hysteria2", password: "82febca6-8856-41fe-84df-c8bda0b72c7b"}
+- {name: "🇮🇸冰岛｜01", server: "tw3.akebi.cc", port: 2003, sni: "is01.akebi.cc", up: 600, down: 1000, skip-cert-verify: false, type: "hysteria2", password: "82febca6-8856-41fe-84df-c8bda0b72c7b"}
+- {name: "🇫🇷法国｜01｜原生IP", server: "tw3.akebi.cc", port: 2005, sni: "fr01.akebi.cc", up: 600, down: 1000, skip-cert-verify: false, type: "hysteria2", password: "82febca6-8856-41fe-84df-c8bda0b72c7b"}
+- {name: "🇦🇺澳大利亚｜01｜原生IP", server: "tw3.akebi.cc", port: 2006, sni: "au01.akebi.cc", up: 600, down: 1000, skip-cert-verify: false, type: "hysteria2", password: "82febca6-8856-41fe-84df-c8bda0b72c7b"}
+- {name: "🇹🇬多哥｜01｜住宅IP", server: "tw3.akebi.cc", port: 2026, sni: "tg.akebi.cc", up: 600, down: 1000, skip-cert-verify: false, type: "hysteria2", password: "82febca6-8856-41fe-84df-c8bda0b72c7b"}
+- {name: "🇰🇿哈萨克斯坦｜01｜住宅ip", server: "tw3.akebi.cc", port: 2027, sni: "kz.akebi.cc", up: 600, down: 1000, skip-cert-verify: false, type: "hysteria2", password: "82febca6-8856-41fe-84df-c8bda0b72c7b"}
+proxy-groups:
+- name: "PROXY"
+  type: "select"
+  proxies:
+  - "AUTO"
+  - "剩余流量：90580.78 GB"
+  - "距离下次重置剩余：3 天"
+  - "套餐到期：2026-11-05"
+  - "🇹🇼台湾｜01｜原生IP"
+  - "🇹🇼台湾｜03｜原生IP"
+  - "🇹🇼台湾｜04｜原生IP"
+  - "🇹🇼台湾｜05｜原生IP"
+  - "🇭🇰香港｜01"
+  - "🇭🇰香港｜02"
+  - "🇭🇰香港｜03"
+  - "🇯🇵日本｜01"
+  - "🇹🇭泰国丨01｜原生IP"
+  - "🇹🇭泰国丨02｜原生IP"
+  - "🇧🇩孟加拉｜01｜住宅IP"
+  - "🇧🇩孟加拉｜02｜住宅IP"
+  - "🇰🇭柬埔寨｜01"
+  - "🇺🇦乌克兰｜01｜原生IP"
+  - "🇮🇸冰岛｜01"
+  - "🇫🇷法国｜01｜原生IP"
+  - "🇦🇺澳大利亚｜01｜原生IP"
+  - "🇹🇬多哥｜01｜住宅IP"
+  - "🇰🇿哈萨克斯坦｜01｜住宅ip"
+- name: "AUTO"
+  type: "url-test"
+  url: "http://www.gstatic.com/generate_204"
+  interval: 300
+  tolerance: 50
+  proxies:
+  - "剩余流量：90580.78 GB"
+  - "距离下次重置剩余：3 天"
+  - "套餐到期：2026-11-05"
+  - "🇹🇼台湾｜01｜原生IP"
+  - "🇹🇼台湾｜03｜原生IP"
+  - "🇹🇼台湾｜04｜原生IP"
+  - "🇹🇼台湾｜05｜原生IP"
+  - "🇭🇰香港｜01"
+  - "🇭🇰香港｜02"
+  - "🇭🇰香港｜03"
+  - "🇯🇵日本｜01"
+  - "🇹🇭泰国丨01｜原生IP"
+  - "🇹🇭泰国丨02｜原生IP"
+  - "🇧🇩孟加拉｜01｜住宅IP"
+  - "🇧🇩孟加拉｜02｜住宅IP"
+  - "🇰🇭柬埔寨｜01"
+  - "🇺🇦乌克兰｜01｜原生IP"
+  - "🇮🇸冰岛｜01"
+  - "🇫🇷法国｜01｜原生IP"
+  - "🇦🇺澳大利亚｜01｜原生IP"
+  - "🇹🇬多哥｜01｜住宅IP"
+  - "🇰🇿哈萨克斯坦｜01｜住宅ip"
+- name: "AI"
+  type: "select"
+  proxies:
+  - "剩余流量：90580.78 GB"
+  - "距离下次重置剩余：3 天"
+  - "套餐到期：2026-11-05"
+  - "🇹🇼台湾｜01｜原生IP"
+  - "🇹🇼台湾｜03｜原生IP"
+  - "🇹🇼台湾｜04｜原生IP"
+  - "🇹🇼台湾｜05｜原生IP"
+  - "🇭🇰香港｜01"
+  - "🇭🇰香港｜02"
+  - "🇭🇰香港｜03"
+  - "🇯🇵日本｜01"
+  - "🇹🇭泰国丨01｜原生IP"
+  - "🇹🇭泰国丨02｜原生IP"
+  - "🇧🇩孟加拉｜01｜住宅IP"
+  - "🇧🇩孟加拉｜02｜住宅IP"
+  - "🇰🇭柬埔寨｜01"
+  - "🇺🇦乌克兰｜01｜原生IP"
+  - "🇮🇸冰岛｜01"
+  - "🇫🇷法国｜01｜原生IP"
+  - "🇦🇺澳大利亚｜01｜原生IP"
+  - "🇹🇬多哥｜01｜住宅IP"
+  - "🇰🇿哈萨克斯坦｜01｜住宅ip"
+rules:
+- "RULE-SET,reject-list,REJECT"
+- "DOMAIN-SUFFIX,ushd.xmsl.org,DIRECT"
+- "DOMAIN-SUFFIX,cf.gtlx.org,DIRECT"
+- "DOMAIN-SUFFIX,public-operation-hkrpg-sg.hoyoverse.com,DIRECT"
+- "DOMAIN-SUFFIX,public-operation-hk4e-sg.hoyoverse.com,DIRECT"
+- "DOMAIN-SUFFIX,public-operation-nap-sg.hoyoverse.com,DIRECT"
+- "DST-PORT,23301/22101-22102/20501/21601-21606,DIRECT"
+- "GEOSITE,HOYOVERSE,PROXY"
+- "GEOSITE,OPENAI,AI"
+- "GEOSITE,GOOGLE-GEMINI,AI"
+- "GEOSITE,GOOGLEFCM,DIRECT"
+- "GEOSITE,PRIVATE,DIRECT"
+- "GEOSITE,CN,DIRECT"
+- "GEOIP,PRIVATE,DIRECT,no-resolve"
+- "GEOIP,CN,DIRECT"
+- "MATCH,PROXY"
+rule-providers:
+  reject-list:
+    type: "http"
+    behavior: "domain"
+    format: "text"
+    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/v2ray-rules-dat@release/reject-list.txt"
+    path: "./v2ray-rules-da/reject-list.txt"

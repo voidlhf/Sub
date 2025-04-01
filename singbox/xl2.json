@@ -1,0 +1,569 @@
+{
+  "log": {},
+  "dns": {
+    "servers": [
+      {
+        "tag": "dns_proxy",
+        "type": "https",
+        "server": "1.1.1.1",
+        "detour": "select"
+      },
+      {
+        "tag": "dns_direct",
+        "type": "https",
+        "server": "223.5.5.5"
+      },
+      {
+        "tag": "dns_fakeip",
+        "type": "fakeip",
+        "inet4_range": "198.18.0.0/15",
+        "inet6_range": "fc00::/18"
+      }
+    ],
+    "rules": [
+      {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "query_type": "HTTPS"
+          },
+          {
+            "rule_set": [
+              "geosite-google-ads@ads",
+              "geosite-spotify-ads@ads",
+              "AdGuardSDNSFilter"
+            ]
+          }
+        ],
+        "action": "reject"
+      },
+      {
+        "query_type": [
+          "A",
+          "AAAA"
+        ],
+        "server": "dns_fakeip",
+        "rewrite_ttl": 1
+      },
+      {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "clash_mode": "Global"
+          }
+        ],
+        "server": "dns_proxy"
+      },
+      {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "clash_mode": "Direct"
+          },
+          {
+            "rule_set": [
+              "geosite-cn"
+            ]
+          }
+        ],
+        "server": "dns_direct"
+      }
+    ],
+    "strategy": "ipv4_only",
+    "independent_cache": true
+  },
+  "inbounds": [
+    {
+      "type": "tun",
+      "address": [
+        "172.18.0.1/30",
+        "fdfe:dcba:9876::1/126"
+      ],
+      "auto_route": true,
+      "strict_route": true,
+      "route_exclude_address": [
+        "192.168.0.0/16",
+        "fc00::/7"
+      ]
+    }
+  ],
+  "outbounds": [
+    {
+      "method": "aes-128-gcm",
+      "password": "bb92970e-75d6-477a-8493-efb51d463229",
+      "server": "hkg01.dns-node.top",
+      "server_port": 45573,
+      "tag": "❤官网｜SingLinkVPN.com",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "aes-128-gcm",
+      "password": "bb92970e-75d6-477a-8493-efb51d463229",
+      "server": "hkg01.dns-node.top",
+      "server_port": 45573,
+      "tag": "❤注册免费送套餐",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "aes-128-gcm",
+      "password": "bb92970e-75d6-477a-8493-efb51d463229",
+      "server": "hkg01.dns-node.top",
+      "server_port": 45573,
+      "tag": "❤购买Pro计划更快速",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "aes-128-gcm",
+      "password": "bb92970e-75d6-477a-8493-efb51d463229",
+      "server": "hkg01.dns-node.top",
+      "server_port": 45573,
+      "tag": "香港01",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "aes-128-gcm",
+      "password": "bb92970e-75d6-477a-8493-efb51d463229",
+      "server": "hkg02.dns-node.top",
+      "server_port": 45570,
+      "tag": "香港02",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "aes-128-gcm",
+      "password": "bb92970e-75d6-477a-8493-efb51d463229",
+      "server": "hkg03.dns-node.top",
+      "server_port": 45580,
+      "tag": "香港03",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "aes-128-gcm",
+      "password": "bb92970e-75d6-477a-8493-efb51d463229",
+      "server": "hkg04.dns-node.top",
+      "server_port": 45605,
+      "tag": "香港04",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "aes-128-gcm",
+      "password": "bb92970e-75d6-477a-8493-efb51d463229",
+      "server": "tw01.dns-node.top",
+      "server_port": 45571,
+      "tag": "台湾01",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "aes-128-gcm",
+      "password": "bb92970e-75d6-477a-8493-efb51d463229",
+      "server": "tw02.dns-node.top",
+      "server_port": 45614,
+      "tag": "台湾02",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "aes-128-gcm",
+      "password": "bb92970e-75d6-477a-8493-efb51d463229",
+      "server": "jp01.dns-node.top",
+      "server_port": 45612,
+      "tag": "日本01",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "aes-128-gcm",
+      "password": "bb92970e-75d6-477a-8493-efb51d463229",
+      "server": "jp02.dns-node.top",
+      "server_port": 45613,
+      "tag": "日本02",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "aes-128-gcm",
+      "password": "bb92970e-75d6-477a-8493-efb51d463229",
+      "server": "jp01.dns-node.top",
+      "server_port": 45572,
+      "tag": "韩国",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "aes-128-gcm",
+      "password": "bb92970e-75d6-477a-8493-efb51d463229",
+      "server": "sg04.dns-node.top",
+      "server_port": 45609,
+      "tag": "新加坡01",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "aes-128-gcm",
+      "password": "bb92970e-75d6-477a-8493-efb51d463229",
+      "server": "sg02.dns-node.top",
+      "server_port": 45574,
+      "tag": "新加坡02",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "aes-128-gcm",
+      "password": "bb92970e-75d6-477a-8493-efb51d463229",
+      "server": "sg03.dns-node.top",
+      "server_port": 45606,
+      "tag": "新加坡03",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "aes-128-gcm",
+      "password": "bb92970e-75d6-477a-8493-efb51d463229",
+      "server": "us01.dns-node.top",
+      "server_port": 45581,
+      "tag": "美国01",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "aes-128-gcm",
+      "password": "bb92970e-75d6-477a-8493-efb51d463229",
+      "server": "us02.dns-node.top",
+      "server_port": 45582,
+      "tag": "美国02",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "aes-128-gcm",
+      "password": "bb92970e-75d6-477a-8493-efb51d463229",
+      "server": "uk01.dns-node.top",
+      "server_port": 45615,
+      "tag": "英国01",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "aes-128-gcm",
+      "password": "bb92970e-75d6-477a-8493-efb51d463229",
+      "server": "sg04.dns-node.top",
+      "server_port": 45610,
+      "tag": "马来西亚",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "aes-128-gcm",
+      "password": "bb92970e-75d6-477a-8493-efb51d463229",
+      "server": "sg03.dns-node.top",
+      "server_port": 45608,
+      "tag": "印度尼西亚",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "aes-128-gcm",
+      "password": "bb92970e-75d6-477a-8493-efb51d463229",
+      "server": "sg04.dns-node.top",
+      "server_port": 45611,
+      "tag": "新西兰",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "aes-128-gcm",
+      "password": "bb92970e-75d6-477a-8493-efb51d463229",
+      "server": "sg03.dns-node.top",
+      "server_port": 45607,
+      "tag": "澳大利亚",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "aes-128-gcm",
+      "password": "bb92970e-75d6-477a-8493-efb51d463229",
+      "server": "sg03.dns-node.top",
+      "server_port": 45800,
+      "tag": "巴基斯坦",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "aes-128-gcm",
+      "password": "bb92970e-75d6-477a-8493-efb51d463229",
+      "server": "us03.dns-node.top",
+      "server_port": 45583,
+      "tag": "阿根廷",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "aes-128-gcm",
+      "password": "bb92970e-75d6-477a-8493-efb51d463229",
+      "server": "us03.dns-node.top",
+      "server_port": 45585,
+      "tag": "巴西",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "aes-128-gcm",
+      "password": "bb92970e-75d6-477a-8493-efb51d463229",
+      "server": "us03.dns-node.top",
+      "server_port": 45586,
+      "tag": "加拿大",
+      "type": "shadowsocks"
+    },
+    {
+      "tag": "select",
+      "type": "selector",
+      "default": "auto",
+      "outbounds": [
+        "auto",
+        "❤官网｜SingLinkVPN.com",
+        "❤注册免费送套餐",
+        "❤购买Pro计划更快速",
+        "香港01",
+        "香港02",
+        "香港03",
+        "香港04",
+        "台湾01",
+        "台湾02",
+        "日本01",
+        "日本02",
+        "韩国",
+        "新加坡01",
+        "新加坡02",
+        "新加坡03",
+        "美国01",
+        "美国02",
+        "英国01",
+        "马来西亚",
+        "印度尼西亚",
+        "新西兰",
+        "澳大利亚",
+        "巴基斯坦",
+        "阿根廷",
+        "巴西",
+        "加拿大"
+      ]
+    },
+    {
+      "tag": "auto",
+      "type": "urltest",
+      "outbounds": [
+        "❤官网｜SingLinkVPN.com",
+        "❤注册免费送套餐",
+        "❤购买Pro计划更快速",
+        "香港01",
+        "香港02",
+        "香港03",
+        "香港04",
+        "台湾01",
+        "台湾02",
+        "日本01",
+        "日本02",
+        "韩国",
+        "新加坡01",
+        "新加坡02",
+        "新加坡03",
+        "美国01",
+        "美国02",
+        "英国01",
+        "马来西亚",
+        "印度尼西亚",
+        "新西兰",
+        "澳大利亚",
+        "巴基斯坦",
+        "阿根廷",
+        "巴西",
+        "加拿大"
+      ]
+    },
+    {
+      "tag": "ai",
+      "type": "selector",
+      "outbounds": [
+        "❤官网｜SingLinkVPN.com",
+        "❤注册免费送套餐",
+        "❤购买Pro计划更快速",
+        "香港01",
+        "香港02",
+        "香港03",
+        "香港04",
+        "台湾01",
+        "台湾02",
+        "日本01",
+        "日本02",
+        "韩国",
+        "新加坡01",
+        "新加坡02",
+        "新加坡03",
+        "美国01",
+        "美国02",
+        "英国01",
+        "马来西亚",
+        "印度尼西亚",
+        "新西兰",
+        "澳大利亚",
+        "巴基斯坦",
+        "阿根廷",
+        "巴西",
+        "加拿大"
+      ]
+    },
+    {
+      "tag": "direct",
+      "type": "direct"
+    }
+  ],
+  "route": {
+    "rules": [
+      {
+        "action": "sniff"
+      },
+      {
+        "protocol": "dns",
+        "action": "hijack-dns"
+      },
+      {
+        "action": "resolve",
+        "strategy": "ipv4_only"
+      },
+      {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "domain_suffix": [
+              "ushd.xmsl.org",
+              "cf.gtlx.org",
+              "public-operation-hkrpg-sg.hoyoverse.com",
+              "public-operation-hk4e-sg.hoyoverse.com",
+              "public-operation-nap-sg.hoyoverse.com"
+            ]
+          },
+          {
+            "port_range": [
+              "23301:23301",
+              "22101:22102",
+              "20501:20501",
+              "21601:21606"
+            ]
+          }
+        ],
+        "outbound": "direct"
+      },
+      {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "clash_mode": "Global"
+          },
+          {
+            "rule_set": [
+              "geosite-hoyoverse"
+            ]
+          }
+        ],
+        "outbound": "select"
+      },
+      {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "rule_set": [
+              "geosite-openai",
+              "geosite-google-gemini"
+            ]
+          }
+        ],
+        "outbound": "ai"
+      },
+      {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "clash_mode": "Direct"
+          },
+          {
+            "ip_is_private": true
+          },
+          {
+            "rule_set": [
+              "geosite-googlefcm",
+              "geosite-cn",
+              "geoip-cn"
+            ]
+          }
+        ],
+        "outbound": "direct"
+      }
+    ],
+    "rule_set": [
+      {
+        "type": "remote",
+        "tag": "geoip-cn",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/lyc8503/sing-box-rules/rule-set-geoip/geoip-cn.srs",
+        "download_detour": "select"
+      },
+      {
+        "type": "remote",
+        "tag": "geosite-cn",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/lyc8503/sing-box-rules/rule-set-geosite/geosite-cn.srs",
+        "download_detour": "select"
+      },
+      {
+        "type": "remote",
+        "tag": "geosite-openai",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/lyc8503/sing-box-rules/rule-set-geosite/geosite-openai.srs",
+        "download_detour": "select"
+      },
+      {
+        "type": "remote",
+        "tag": "geosite-google-gemini",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/lyc8503/sing-box-rules/rule-set-geosite/geosite-google-gemini.srs",
+        "download_detour": "select"
+      },
+      {
+        "type": "remote",
+        "tag": "geosite-googlefcm",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/lyc8503/sing-box-rules/rule-set-geosite/geosite-googlefcm.srs",
+        "download_detour": "select"
+      },
+      {
+        "type": "remote",
+        "tag": "geosite-hoyoverse",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/lyc8503/sing-box-rules/rule-set-geosite/geosite-hoyoverse.srs",
+        "download_detour": "select"
+      },
+      {
+        "type": "remote",
+        "tag": "geosite-spotify-ads@ads",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/lyc8503/sing-box-rules/rule-set-geosite/geosite-spotify-ads@ads.srs",
+        "download_detour": "select"
+      },
+      {
+        "type": "remote",
+        "tag": "geosite-google-ads@ads",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/lyc8503/sing-box-rules/rule-set-geosite/geosite-google-ads@ads.srs",
+        "download_detour": "select"
+      },
+      {
+        "type": "remote",
+        "tag": "AdGuardSDNSFilter",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/xmdhs/sing-box-ruleset/rule-set/AdGuardSDNSFilterSingBox.srs",
+        "download_detour": "select"
+      }
+    ],
+    "final": "select",
+    "default_domain_resolver": "dns_direct",
+    "auto_detect_interface": true,
+    "override_android_vpn": true
+  },
+  "experimental": {
+    "cache_file": {
+      "enabled": true
+    },
+    "clash_api": {
+      "external_controller": "127.0.0.1:9090"
+    }
+  }
+}
