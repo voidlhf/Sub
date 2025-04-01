@@ -29,84 +29,83 @@ proxies:
   password: "1f9c2a3e-3386-4b6d-a731-893b44b84e5b"
   ip-version: "dual"
   cipher: "chacha20-ietf-poly1305"
-- name: "🇹🇼台湾1 | ⬇️ 1.1MB/s"
+- name: "🇯🇵日本1 | ⬇️ 6.6MB/s"
+  type: "vmess"
+  server: "jp05-vm0.entry.srthdw.art"
+  port: 46484
+  uuid: "65cdb2a2-ac65-3dc6-992d-a58b8cb996b9"
+  network: "tcp"
+  tls: false
+  ip-version: "dual"
+  alterId: 1
+  cipher: "auto"
+- name: "🇯🇵日本3 | ⬇️ 1.1MB/s"
   type: "trojan"
-  server: "10.qzhm8l42g1.xyz"
-  port: 20030
+  server: "6.9n3pqn1406.xyz"
+  port: 20006
   network: "tcp"
   tls: true
   password: "13c3cf97-5a4a-434f-880a-aecbd70c15bc"
-  sni: "10.qzhm8l42g1.xyz"
+  sni: "6.9n3pqn1406.xyz"
   skip-cert-verify: true
   client-fingerprint: "chrome"
   ip-version: "dual"
-- name: "🇺🇸美国2 | ⬇️ 3.3MB%2Fs"
+- name: "🇺🇸美国2 | ⬇️ 4.9MB%2Fs"
   type: "ss"
-  server: "54.200.186.111"
+  server: "34.208.31.71"
   port: 443
   tls: false
   password: "amazonskr05"
   ip-version: "dual"
   cipher: "aes-256-cfb"
-- name: "🇺🇸美国4 | ⬇️ 1.2MB/s"
-  type: "vmess"
-  server: "uS7-04.890606.XyZ"
-  port: 443
-  uuid: "4d04b30c-ef7b-4a07-8f9e-f581ec171f8a"
-  network: "ws"
-  tls: true
-  servername: "uS7-04.890606.XyZ"
-  skip-cert-verify: true
-  ip-version: "dual"
-  alterId: 0
-  cipher: "auto"
-- name: "🇨🇦加拿大1 | ⬇️ 3.5MB/s"
-  type: "hysteria2"
-  server: "155.248.219.197"
-  port: 37407
-  tls: true
-  password: "cfe032e4-1bc3-454f-9d09-301b0aea08ff"
-  sni: "www.bing.com"
-  skip-cert-verify: true
-  fast-open: false
-  ip-version: "dual"
-- name: "🇫🇷法国1 | ⬇️ 4.0MB/s"
-  type: "hysteria2"
-  server: "195.154.33.70"
-  port: 59967
-  tls: true
-  password: "dongtaiwang.com"
-  sni: "www.bing.com"
-  skip-cert-verify: true
-  fast-open: false
-  ip-version: "dual"
-- name: "🇺🇸美国7 | ⬇️ 5.4MB/s"
-  type: "hysteria2"
-  server: "cc.w1997.eu.org"
-  port: 66
-  tls: true
-  password: "838e602b"
-  sni: "www.bing.com"
-  skip-cert-verify: true
-  fast-open: false
-  ip-version: "dual"
-- name: "🇭🇰香港2 | ⬇️ 2.1MB%2Fs"
+- name: "🇭🇰香港1 | ⬇️ 1.4MB%2Fs"
   type: "ss"
-  server: "103.149.183.61"
+  server: "103.149.182.191"
   port: 8388
   tls: false
   password: "asd123456"
   ip-version: "dual"
   cipher: "chacha20-ietf"
-- name: "🇺🇸美国9 | ⬇️ 3.9MB%2Fs"
+- name: "🇺🇸美国4 | ⬇️ 2.2MB/s"
+  type: "hysteria2"
+  server: "164.152.19.229"
+  port: 47262
+  tls: true
+  password: "b72ba5d5-2d5e-45b7-93b5-236d343baa7c"
+  sni: "www.bing.com"
+  skip-cert-verify: true
+  fast-open: false
+  ip-version: "dual"
+- name: "🇹🇼台湾2 | ⬇️ 1.6MB/s"
+  type: "trojan"
+  server: "3.qzhm8l42g1.xyz"
+  port: 20023
+  network: "tcp"
+  tls: true
+  password: "13c3cf97-5a4a-434f-880a-aecbd70c15bc"
+  sni: "3.qzhm8l42g1.xyz"
+  skip-cert-verify: true
+  client-fingerprint: "chrome"
+  ip-version: "dual"
+- name: "🇺🇸美国5 | ⬇️ 4.4MB%2Fs"
   type: "ss"
-  server: "52.40.170.193"
+  server: "34.217.15.41"
   port: 443
   tls: false
   password: "amazonskr05"
   ip-version: "dual"
   cipher: "aes-256-cfb"
-- name: "🇯🇵日本4 | ⬇️ 1.9MB/s"
+- name: "🇭🇰香港2 | ⬇️ 1.3MB/s"
+  type: "trojan"
+  server: "2.2gyh5ybsic.xyz"
+  port: 20102
+  network: "tcp"
+  tls: true
+  password: "13c3cf97-5a4a-434f-880a-aecbd70c15bc"
+  sni: "2.2gyh5ybsic.xyz"
+  skip-cert-verify: true
+  ip-version: "dual"
+- name: "🇯🇵日本5 | ⬇️ 1.6MB/s"
   type: "vmess"
   server: "hhhfksdcbr.fask511.cfd"
   port: 25775
@@ -116,147 +115,7 @@ proxies:
   ip-version: "dual"
   alterId: 0
   cipher: "auto"
-- name: "🇳🇱荷兰2 | ⬇️ 1.5MB%2Fs"
-  type: "ss"
-  server: "149.34.244.80"
-  port: 443
-  tls: false
-  password: "shadowsocks"
-  ip-version: "dual"
-  cipher: "aes-128-gcm"
-- name: "🇺🇸美国12 | ⬇️ 1.8MB/s"
-  type: "vmess"
-  server: "kkkghdragxc.fask511.cfd"
-  port: 25774
-  uuid: "50597737-862b-43c4-a4ba-5c808171d6d1"
-  network: "ws"
-  tls: false
-  ip-version: "dual"
-  alterId: 0
-  cipher: "auto"
-- name: "🌀其他3-T1 | ⬇️ 1.3MB%2Fs"
-  type: "ss"
-  server: "51.15.15.82"
-  port: 989
-  tls: false
-  password: "f8f7aCzcPKbsF8p3"
-  ip-version: "dual"
-  cipher: "aes-256-cfb"
-- name: "🇹🇼台湾3 | ⬇️ 2.8MB/s"
-  type: "trojan"
-  server: "5.qzhm8l42g1.xyz"
-  port: 20025
-  network: "tcp"
-  tls: true
-  password: "13c3cf97-5a4a-434f-880a-aecbd70c15bc"
-  sni: "5.qzhm8l42g1.xyz"
-  skip-cert-verify: true
-  client-fingerprint: "chrome"
-  ip-version: "dual"
-- name: "🇹🇼台湾4 | ⬇️ 1.6MB/s"
-  type: "trojan"
-  server: "8.qzhm8l42g1.xyz"
-  port: 20028
-  network: "tcp"
-  tls: true
-  password: "13c3cf97-5a4a-434f-880a-aecbd70c15bc"
-  sni: "8.qzhm8l42g1.xyz"
-  skip-cert-verify: true
-  ip-version: "dual"
-- name: "🇨🇦加拿大3 | ⬇️ 1.3MB/s"
-  type: "hysteria2"
-  server: "141.195.112.33"
-  port: 30032
-  tls: false
-  password: "aa2f3828-0fb8-40f1-a645-01fa319c6237"
-  obfs: "salamander"
-  obfs-password: "M2UyNTc5OWUwYjkyM2Q2OQ=="
-  skip-cert-verify: true
-  fast-open: false
-  ip-version: "dual"
-- name: "🇭🇰香港4 | ⬇️ 1.1MB/s"
-  type: "trojan"
-  server: "4.elk3b3nwfy.xyz"
-  port: 20014
-  network: "tcp"
-  tls: true
-  password: "13c3cf97-5a4a-434f-880a-aecbd70c15bc"
-  sni: "4.elk3b3nwfy.xyz"
-  skip-cert-verify: true
-  ip-version: "dual"
-- name: "🇺🇸美国13 | ⬇️ 1.0MB/s"
-  type: "trojan"
-  server: "104.21.49.59"
-  port: 443
-  network: "ws"
-  tls: true
-  password: "d67cfeaf-b277-44ac-ab99-9dd02a7c5299"
-  sni: "Fgh9JkR5.890617.xYz"
-  skip-cert-verify: false
-  ws-opts:
-    path: "//lWljHWvIMOj85lz42MdhsCLV"
-    headers:
-      host: "Fgh9JkR5.890617.xYz"
-  ip-version: "dual"
-- name: "🇭🇰香港5 | ⬇️ 2.6MB/s"
-  type: "trojan"
-  server: "gy.58n.net"
-  port: 20307
-  network: "tcp"
-  tls: true
-  password: "07991c87-a931-3b1e-b3c6-b378fbac8602"
-  sni: "z307.hongkongnode.top"
-  skip-cert-verify: true
-  ip-version: "dual"
-- name: "🇯🇵日本5 | ⬇️ 5.8MB/s"
-  type: "vmess"
-  server: "v2-japan2.netcar.live"
-  port: 22984
-  uuid: "d28cf43f-00c3-4e5d-b7d9-8b6540d842a5"
-  network: "tcp"
-  tls: false
-  ip-version: "dual"
-  alterId: 0
-  cipher: "auto"
-- name: "🇩🇪德国1 | ⬇️ 5.9MB%2Fs"
-  type: "ss"
-  server: "193.108.119.230"
-  port: 8080
-  tls: false
-  password: "14fFPrbezE3HDZzsMOr6"
-  ip-version: "dual"
-  cipher: "rc4-md5"
-- name: "🇯🇵日本6 | ⬇️ 9.4MB/s"
-  type: "vmess"
-  server: "v2-hk2-zf2.netcar.live"
-  port: 36001
-  uuid: "f41a7211-3a16-4aa0-a3cf-0dd959b9ef1d"
-  network: "tcp"
-  tls: false
-  ip-version: "dual"
-  alterId: 0
-  cipher: "auto"
-- name: "🇵🇱波兰1 | ⬇️ 3.3MB/s"
-  type: "hysteria2"
-  server: "31.186.87.211"
-  port: 4029
-  tls: true
-  password: "be758973-186d-46fe-8aa4-e017134fa291"
-  sni: "www.bing.com"
-  skip-cert-verify: true
-  fast-open: false
-  ip-version: "dual"
-- name: "🇹🇼台湾5 | ⬇️ 3.1MB/s"
-  type: "trojan"
-  server: "6.qzhm8l42g1.xyz"
-  port: 20026
-  network: "tcp"
-  tls: true
-  password: "13c3cf97-5a4a-434f-880a-aecbd70c15bc"
-  sni: "6.qzhm8l42g1.xyz"
-  skip-cert-verify: true
-  ip-version: "dual"
-- name: "🇨🇦加拿大4 | ⬇️ 4.4MB/s"
+- name: "🇨🇦加拿大1 | ⬇️ 2.1MB/s"
   type: "hysteria2"
   server: "155.248.219.197"
   port: 37407
@@ -266,333 +125,17 @@ proxies:
   skip-cert-verify: true
   fast-open: false
   ip-version: "dual"
-- name: "🇭🇰香港6 | ⬇️ 7.8MB%2Fs"
-  type: "ss"
-  server: "south.inmysecretlife.xyz"
-  port: 10001
-  tls: false
-  password: "Sj10bnYDe7w6V29E"
-  ip-version: "dual"
-  cipher: "aes-128-gcm"
-- name: "🌀其他7-SE | ⬇️ 2.5MB/s"
-  type: "vmess"
-  server: "khabaronline.itn24.ir"
-  port: 2053
-  uuid: "682e7fa6-d1a9-4ced-a03d-5692230e033c"
-  network: "ws"
-  tls: true
-  servername: "khabaronline.itn24.ir"
-  skip-cert-verify: true
-  ip-version: "dual"
-  alterId: 0
-  cipher: "auto"
-- name: "🇺🇸美国18 | ⬇️ 5.6MB%2Fs"
-  type: "ss"
-  server: "44.247.247.209"
-  port: 443
-  tls: false
-  password: "amazonskr05"
-  ip-version: "dual"
-  cipher: "aes-256-cfb"
-- name: "🇺🇸美国19 | ⬇️ 2.6MB%2Fs"
-  type: "ss"
-  server: "54.187.221.114"
-  port: 443
-  tls: false
-  password: "amazonskr05"
-  ip-version: "dual"
-  cipher: "aes-256-cfb"
-- name: "🇹🇼台湾6 | ⬇️ 5.2MB/s"
+- name: "🇯🇵日本6 | ⬇️ 1.5MB/s"
   type: "trojan"
-  server: "5.qzhm8l42g1.xyz"
-  port: 20025
+  server: "1.9n3pqn1406.xyz"
+  port: 20001
   network: "tcp"
   tls: true
   password: "13c3cf97-5a4a-434f-880a-aecbd70c15bc"
-  sni: "5.qzhm8l42g1.xyz"
+  sni: "1.9n3pqn1406.xyz"
   skip-cert-verify: true
   ip-version: "dual"
-- name: "🇺🇸美国20 | ⬇️ 1.2MB/s"
-  type: "trojan"
-  server: "89.187.181.172"
-  port: 43118
-  network: "tcp"
-  tls: false
-  password: "ypDt8RkT7J"
-  skip-cert-verify: true
-  ip-version: "dual"
-- name: "🇹🇼台湾8 | ⬇️ 2.2MB/s"
-  type: "trojan"
-  server: "6.qzhm8l42g1.xyz"
-  port: 20026
-  network: "tcp"
-  tls: true
-  password: "13c3cf97-5a4a-434f-880a-aecbd70c15bc"
-  sni: "6.qzhm8l42g1.xyz"
-  skip-cert-verify: true
-  client-fingerprint: "chrome"
-  ip-version: "dual"
-- name: "🇷🇺俄罗斯2 | ⬇️ 1.6MB/s"
-  type: "hysteria"
-  server: "185.22.155.71"
-  port: 10803
-  tls: true
-  sni: "www.bing.com"
-  alpn:
-  - "h3"
-  up: "1000"
-  down: "1000"
-  skip-cert-verify: true
-  ip-version: "dual"
-  auth-str: "dongtaiwang.com"
-- name: "🇰🇷韩国3 | ⬇️ 3.9MB%2Fs"
-  type: "ss"
-  server: "43.203.206.73"
-  port: 443
-  tls: false
-  password: "amazonskr05"
-  ip-version: "dual"
-  cipher: "aes-256-cfb"
-- name: "🌀其他9-SE | ⬇️ 1.9MB/s"
-  type: "vmess"
-  server: "khabaronline.itn24.ir"
-  port: 2053
-  uuid: "b5a46c27-8e72-4b9c-83a7-45d831369143"
-  network: "ws"
-  tls: true
-  servername: "khabaronline.itn24.ir"
-  skip-cert-verify: true
-  ip-version: "dual"
-  alterId: 0
-  cipher: "auto"
-- name: "🇷🇺俄罗斯3 | ⬇️ 1.9MB/s"
-  type: "hysteria2"
-  server: "46.17.41.5"
-  port: 12904
-  tls: true
-  password: "dongtaiwang.com"
-  sni: "apple.com"
-  skip-cert-verify: true
-  fast-open: false
-  ip-version: "dual"
-- name: "🇭🇰香港12 | ⬇️ 1.3MB/s"
-  type: "trojan"
-  server: "8.elk3b3nwfy.xyz"
-  port: 20018
-  network: "tcp"
-  tls: true
-  password: "13c3cf97-5a4a-434f-880a-aecbd70c15bc"
-  sni: "8.elk3b3nwfy.xyz"
-  skip-cert-verify: true
-  client-fingerprint: "chrome"
-  ip-version: "dual"
-- name: "🇺🇸美国24 | ⬇️ 5.2MB/s"
-  type: "hysteria2"
-  server: "164.152.19.229"
-  port: 47262
-  tls: true
-  password: "b72ba5d5-2d5e-45b7-93b5-236d343baa7c"
-  sni: "www.bing.com"
-  skip-cert-verify: true
-  fast-open: false
-  ip-version: "dual"
-- name: "🌀其他10-TH | ⬇️ 10.0MB/s"
-  type: "vmess"
-  server: "cm.awslcn.info"
-  port: 25289
-  uuid: "b784f479-32c2-4fa9-a6f9-0e8d3f8cb4ae"
-  network: "ws"
-  tls: false
-  ip-version: "dual"
-  alterId: 0
-  cipher: "auto"
-- name: "🇹🇼台湾9 | ⬇️ 3.8MB/s"
-  type: "trojan"
-  server: "9.qzhm8l42g1.xyz"
-  port: 20029
-  network: "tcp"
-  tls: true
-  password: "13c3cf97-5a4a-434f-880a-aecbd70c15bc"
-  sni: "9.qzhm8l42g1.xyz"
-  skip-cert-verify: true
-  ip-version: "dual"
-- name: "🌀其他12-MY | ⬇️ 1.8MB/s"
-  type: "vmess"
-  server: "cm1.awslcn.info"
-  port: 25258
-  uuid: "b784f479-32c2-4fa9-a6f9-0e8d3f8cb4ae"
-  network: "ws"
-  tls: false
-  ip-version: "dual"
-  alterId: 0
-  cipher: "auto"
-- name: "🇩🇪德国6 | ⬇️ 2.5MB/s"
-  type: "vmess"
-  server: "cm1.awslcn.info"
-  port: 25241
-  uuid: "b784f479-32c2-4fa9-a6f9-0e8d3f8cb4ae"
-  network: "ws"
-  tls: false
-  ip-version: "dual"
-  alterId: 0
-  cipher: "auto"
-- name: "🌀其他13-GR | ⬇️ 8.2MB/s"
-  type: "vmess"
-  server: "hk1.awslcn.info"
-  port: 25244
-  uuid: "b784f479-32c2-4fa9-a6f9-0e8d3f8cb4ae"
-  network: "ws"
-  tls: false
-  ip-version: "dual"
-  alterId: 0
-  cipher: "auto"
-- name: "🇨🇦加拿大5 | ⬇️ 6.1MB/s"
-  type: "hysteria2"
-  server: "132.145.105.88"
-  port: 30300
-  tls: true
-  password: "2429bee3-e0c1-47dd-b420-75e6512b184b"
-  sni: "www.bing.com"
-  skip-cert-verify: true
-  fast-open: false
-  ip-version: "dual"
-- name: "🇹🇼台湾10 | ⬇️ 3.4MB/s"
-  type: "trojan"
-  server: "7.qzhm8l42g1.xyz"
-  port: 20027
-  network: "tcp"
-  tls: true
-  password: "13c3cf97-5a4a-434f-880a-aecbd70c15bc"
-  sni: "7.qzhm8l42g1.xyz"
-  skip-cert-verify: true
-  client-fingerprint: "chrome"
-  ip-version: "dual"
-- name: "🌀其他15-SK | ⬇️ 2.2MB%2Fs"
-  type: "ss"
-  server: "156.146.40.194"
-  port: 989
-  tls: false
-  password: "f8f7aCzcPKbsF8p3"
-  ip-version: "dual"
-  cipher: "aes-256-cfb"
-- name: "🇷🇺俄罗斯4 | ⬇️ 1.7MB/s"
-  type: "vmess"
-  server: "cm1.awslcn.info"
-  port: 25230
-  uuid: "b784f479-32c2-4fa9-a6f9-0e8d3f8cb4ae"
-  network: "ws"
-  tls: false
-  ip-version: "dual"
-  alterId: 0
-  cipher: "auto"
-- name: "🇭🇰香港14 | ⬇️ 10.3MB%2Fs"
-  type: "ss"
-  server: "hzhz1.sssyun.xyz"
-  port: 29527
-  tls: false
-  password: "MDhhMTdjZDI0MjI2ZWRlNg==:ZDRlZWFhN2ItNDNjNi00OQ=="
-  ip-version: "dual"
-  cipher: "2022-blake3-aes-128-gcm"
-- name: "🇹🇼台湾11 | ⬇️ 2.7MB/s"
-  type: "vmess"
-  server: "v2-tw3-zf1.netcar.live"
-  port: 34019
-  uuid: "8d768358-6874-4935-ac25-c7293dc7ca6b"
-  network: "tcp"
-  tls: false
-  ip-version: "dual"
-  alterId: 0
-  cipher: "auto"
-- name: "🇹🇼台湾12 | ⬇️ 3.2MB/s"
-  type: "trojan"
-  server: "3.qzhm8l42g1.xyz"
-  port: 20023
-  network: "tcp"
-  tls: true
-  password: "13c3cf97-5a4a-434f-880a-aecbd70c15bc"
-  sni: "3.qzhm8l42g1.xyz"
-  skip-cert-verify: true
-  ip-version: "dual"
-- name: "🇯🇵日本8 | ⬇️ 1.9MB%2Fs"
-  type: "ss"
-  server: "18.183.76.102"
-  port: 443
-  tls: false
-  password: "amazonskr05"
-  ip-version: "dual"
-  cipher: "aes-256-cfb"
-- name: "🇯🇵日本9 | ⬇️ 1.4MB/s"
-  type: "trojan"
-  server: "5.9n3pqn1406.xyz"
-  port: 20005
-  network: "tcp"
-  tls: true
-  password: "13c3cf97-5a4a-434f-880a-aecbd70c15bc"
-  sni: "5.9n3pqn1406.xyz"
-  skip-cert-verify: true
-  client-fingerprint: "chrome"
-  ip-version: "dual"
-- name: "🇺🇸美国26 | ⬇️ 1.2MB%2Fs"
-  type: "ss"
-  server: "35.94.124.230"
-  port: 443
-  tls: false
-  password: "amazonskr05"
-  ip-version: "dual"
-  cipher: "aes-256-cfb"
-- name: "🌀其他19-SE | ⬇️ 1.1MB/s"
-  type: "vmess"
-  server: "office.farsonline24.ir"
-  port: 2053
-  uuid: "e9ca37b9-ab8d-47fc-8ee6-e05ac3ef20e6"
-  network: "ws"
-  tls: true
-  servername: "office.farsonline24.ir"
-  skip-cert-verify: true
-  ip-version: "dual"
-  alterId: 0
-  cipher: "auto"
-- name: "🇭🇰香港16 | ⬇️ 1.5MB/s"
-  type: "trojan"
-  server: "111.62.241.211"
-  port: 20104
-  network: "tcp"
-  tls: true
-  password: "13c3cf97-5a4a-434f-880a-aecbd70c15bc"
-  sni: "4.2gyh5ybsic.xyz"
-  skip-cert-verify: true
-  ip-version: "dual"
-- name: "🌀其他20-VN | ⬇️ 7.7MB/s"
-  type: "vmess"
-  server: "cu.awslcn.info"
-  port: 25285
-  uuid: "b784f479-32c2-4fa9-a6f9-0e8d3f8cb4ae"
-  network: "ws"
-  tls: false
-  ip-version: "dual"
-  alterId: 0
-  cipher: "auto"
-- name: "🌀其他21-GR | ⬇️ 8.9MB/s"
-  type: "vmess"
-  server: "hk2.awslcn.info"
-  port: 25242
-  uuid: "b784f479-32c2-4fa9-a6f9-0e8d3f8cb4ae"
-  network: "ws"
-  tls: false
-  ip-version: "dual"
-  alterId: 0
-  cipher: "auto"
-- name: "🇫🇷法国4 | ⬇️ 1.5MB/s"
-  type: "hysteria2"
-  server: "tw3.akebi.cc"
-  port: 2005
-  tls: true
-  password: "82febca6-8856-41fe-84df-c8bda0b72c7b"
-  sni: "fr01.akebi.cc"
-  skip-cert-verify: false
-  fast-open: false
-  ip-version: "dual"
-- name: "🇫🇷法国5 | ⬇️ 5.2MB/s"
+- name: "🌀其他3-未识别 | ⬇️ 1.1MB/s"
   type: "hysteria2"
   server: "51.159.226.1"
   port: 61770
@@ -602,312 +145,15 @@ proxies:
   skip-cert-verify: true
   fast-open: false
   ip-version: "dual"
-- name: "🇦🇺澳大利亚4 | ⬇️ 1.5MB/s"
-  type: "hysteria2"
-  server: "tw3.akebi.cc"
-  port: 2006
-  tls: true
-  password: "82febca6-8856-41fe-84df-c8bda0b72c7b"
-  sni: "au01.akebi.cc"
-  skip-cert-verify: false
-  fast-open: false
-  ip-version: "dual"
-- name: "🇺🇸美国32 | ⬇️ 4.6MB/s"
-  type: "hysteria"
-  server: "108.181.24.77"
-  port: 11512
-  tls: true
-  sni: "apple.com"
-  alpn:
-  - "h3"
-  up: "1000"
-  down: "1000"
-  skip-cert-verify: true
-  ip-version: "dual"
-  auth-str: "dongtaiwang.com"
-- name: "🇺🇸美国33 | ⬇️ 6.1MB/s"
-  type: "hysteria2"
-  server: "cc.w1997.eu.org"
-  port: 66
-  tls: true
-  password: "838e602b"
-  sni: "www.bing.com"
-  skip-cert-verify: true
-  fast-open: false
-  ip-version: "dual"
-- name: "🇺🇸美国34 | ⬇️ 6.7MB%2Fs"
+- name: "🇭🇰香港3 | ⬇️ 5.7MB%2Fs"
   type: "ss"
-  server: "52.37.220.218"
-  port: 443
+  server: "south.inmysecretlife.xyz"
+  port: 10001
   tls: false
-  password: "amazonskr05"
+  password: "Sj10bnYDe7w6V29E"
   ip-version: "dual"
-  cipher: "aes-256-cfb"
-- name: "🇯🇵日本10 | ⬇️ 1.9MB/s"
-  type: "trojan"
-  server: "7.9n3pqn1406.xyz"
-  port: 20007
-  network: "tcp"
-  tls: true
-  password: "13c3cf97-5a4a-434f-880a-aecbd70c15bc"
-  sni: "7.9n3pqn1406.xyz"
-  skip-cert-verify: true
-  ip-version: "dual"
-- name: "🇰🇭柬埔寨1 | ⬇️ 1.0MB/s"
-  type: "hysteria2"
-  server: "tw3.akebi.cc"
-  port: 2023
-  tls: true
-  password: "82febca6-8856-41fe-84df-c8bda0b72c7b"
-  sni: "kh01.akebi.cc"
-  skip-cert-verify: false
-  fast-open: false
-  ip-version: "dual"
-- name: "🇺🇸美国36 | ⬇️ 4.8MB/s"
-  type: "hysteria2"
-  server: "164.152.19.229"
-  port: 47262
-  tls: true
-  password: "b72ba5d5-2d5e-45b7-93b5-236d343baa7c"
-  sni: "www.bing.com"
-  skip-cert-verify: true
-  fast-open: false
-  ip-version: "dual"
-- name: "🇹🇼台湾14 | ⬇️ 3.1MB/s"
-  type: "trojan"
-  server: "4.qzhm8l42g1.xyz"
-  port: 20024
-  network: "tcp"
-  tls: true
-  password: "13c3cf97-5a4a-434f-880a-aecbd70c15bc"
-  sni: "4.qzhm8l42g1.xyz"
-  skip-cert-verify: true
-  ip-version: "dual"
-- name: "🇫🇷法国6 | ⬇️ 5.4MB/s"
-  type: "hysteria"
-  server: "195.154.200.178"
-  port: 44557
-  tls: false
-  alpn:
-  - "h3"
-  up: "1000"
-  down: "1000"
-  skip-cert-verify: true
-  ip-version: "dual"
-  auth-str: "dongtaiwang.com"
-- name: "🇫🇷法国7 | ⬇️ 4.3MB/s"
-  type: "hysteria2"
-  server: "195.154.33.70"
-  port: 59967
-  tls: true
-  password: "dongtaiwang.com"
-  sni: "www.bing.com"
-  skip-cert-verify: true
-  fast-open: false
-  ip-version: "dual"
-- name: "🇺🇸美国37 | ⬇️ 5.7MB/s"
-  type: "hysteria"
-  server: "208.87.243.151"
-  port: 17549
-  tls: true
-  sni: "www.bing.com"
-  alpn:
-  - "h3"
-  up: "11"
-  down: "55"
-  skip-cert-verify: true
-  ip-version: "dual"
-  auth-str: "dongtaiwang.com"
-- name: "🇷🇺俄罗斯5 | ⬇️ 3.8MB/s"
-  type: "hysteria2"
-  server: "46.29.163.171"
-  port: 35751
-  tls: true
-  password: "dongtaiwang.com"
-  sni: "www.bing.com"
-  skip-cert-verify: true
-  fast-open: false
-  ip-version: "dual"
-- name: "🌀其他22-KZ | ⬇️ 2.1MB/s"
-  type: "hysteria2"
-  server: "tw3.akebi.cc"
-  port: 2027
-  tls: true
-  password: "82febca6-8856-41fe-84df-c8bda0b72c7b"
-  sni: "kz.akebi.cc"
-  skip-cert-verify: false
-  fast-open: false
-  ip-version: "dual"
-- name: "🇯🇵日本11 | ⬇️ 2.3MB/s"
-  type: "trojan"
-  server: "5.9n3pqn1406.xyz"
-  port: 20005
-  network: "tcp"
-  tls: true
-  password: "13c3cf97-5a4a-434f-880a-aecbd70c15bc"
-  sni: "5.9n3pqn1406.xyz"
-  skip-cert-verify: true
-  ip-version: "dual"
-- name: "🇯🇵日本12 | ⬇️ 1.5MB%2Fs"
-  type: "ss"
-  server: "54.199.64.156"
-  port: 443
-  tls: false
-  password: "amazonskr05"
-  ip-version: "dual"
-  cipher: "aes-256-cfb"
-- name: "🇺🇸美国39 | ⬇️ 2.9MB/s"
-  type: "trojan"
-  server: "104.21.69.41"
-  port: 443
-  network: "ws"
-  tls: true
-  password: "6040a753-e35b-4384-8713-96f3c639b621"
-  sni: "kju84.890602.XYZ"
-  skip-cert-verify: false
-  ws-opts:
-    path: "//WxWOWO1YA9bs2HOmaeWimvT3"
-    headers:
-      host: "kju84.890602.XYZ"
-  ip-version: "dual"
-- name: "🇰🇷韩国4 | ⬇️ 1.7MB%2Fs"
-  type: "ss"
-  server: "3.36.26.148"
-  port: 443
-  tls: false
-  password: "amazonskr05"
-  ip-version: "dual"
-  cipher: "aes-256-cfb"
-- name: "🇯🇵日本13 | ⬇️ 1.1MB%2Fs"
-  type: "ss"
-  server: "54.199.103.26"
-  port: 443
-  tls: false
-  password: "amazonskr05"
-  ip-version: "dual"
-  cipher: "aes-256-cfb"
-- name: "🇭🇰香港20 | ⬇️ 2.0MB/s"
-  type: "hysteria2"
-  server: "tw3.akebi.cc"
-  port: 2000
-  tls: true
-  password: "82febca6-8856-41fe-84df-c8bda0b72c7b"
-  sni: "hk03.akebi.cc"
-  skip-cert-verify: false
-  fast-open: false
-  ip-version: "dual"
-- name: "🇺🇸美国40 | ⬇️ 6.7MB%2Fs"
-  type: "ss"
-  server: "34.220.99.226"
-  port: 443
-  tls: false
-  password: "amazonskr05"
-  ip-version: "dual"
-  cipher: "aes-256-cfb"
-- name: "🇷🇺俄罗斯6 | ⬇️ 4.1MB/s"
-  type: "hysteria"
-  server: "176.32.35.226"
-  port: 62003
-  tls: false
-  alpn:
-  - "h3"
-  up: "1000"
-  down: "1000"
-  skip-cert-verify: true
-  ip-version: "dual"
-  auth-str: "dongtaiwang.com"
-- name: "🇺🇸美国41 | ⬇️ 2.8MB/s"
-  type: "trojan"
-  server: "172.67.135.23"
-  port: 443
-  network: "ws"
-  tls: true
-  password: "0cda5f7e-cc55-4ff2-8ad8-268b9b99dd01"
-  sni: "uS6-16.890601.xyz"
-  alpn:
-  - "http/1.1"
-  skip-cert-verify: false
-  client-fingerprint: "chrome"
-  ws-opts:
-    path: "/ILLcisbMYUd6MQzxVoMQ"
-    headers:
-      host: "uS6-16.890601.xyz"
-  ip-version: "dual"
-- name: "🇸🇬新加坡9 | ⬇️ 2.2MB%2Fs"
-  type: "ss"
-  server: "47.129.38.96"
-  port: 443
-  tls: false
-  password: "amazonskr05"
-  ip-version: "dual"
-  cipher: "aes-256-cfb"
-- name: "🇹🇼台湾16 | ⬇️ 1.1MB/s"
-  type: "trojan"
-  server: "10.qzhm8l42g1.xyz"
-  port: 20030
-  network: "tcp"
-  tls: true
-  password: "13c3cf97-5a4a-434f-880a-aecbd70c15bc"
-  sni: "10.qzhm8l42g1.xyz"
-  skip-cert-verify: true
-  ip-version: "dual"
-- name: "🇰🇷韩国5 | ⬇️ 9.1MB%2Fs"
-  type: "ss"
-  server: "3.36.72.86"
-  port: 443
-  tls: false
-  password: "amazonskr05"
-  ip-version: "dual"
-  cipher: "aes-256-cfb"
-- name: "🇷🇺俄罗斯7 | ⬇️ 4.4MB/s"
-  type: "hysteria2"
-  server: "46.29.163.171"
-  port: 35751
-  tls: true
-  password: "dongtaiwang.com"
-  sni: "www.bing.com"
-  skip-cert-verify: true
-  fast-open: false
-  ip-version: "dual"
-- name: "🇩🇪德国9 | ⬇️ 4.3MB%2Fs"
-  type: "ss"
-  server: "193.108.119.230"
-  port: 8080
-  tls: false
-  password: "14fFPrbezE3HDZzsMOr6"
-  ip-version: "dual"
-  cipher: "rc4-md5"
-- name: "🇷🇺俄罗斯8 | ⬇️ 5.7MB/s"
-  type: "hysteria2"
-  server: "46.17.41.5"
-  port: 12904
-  tls: true
-  password: "dongtaiwang.com"
-  sni: "apple.com"
-  skip-cert-verify: true
-  fast-open: false
-  ip-version: "dual"
-- name: "🇹🇼台湾17 | ⬇️ 4.8MB/s"
-  type: "trojan"
-  server: "2.qzhm8l42g1.xyz"
-  port: 20022
-  network: "tcp"
-  tls: true
-  password: "13c3cf97-5a4a-434f-880a-aecbd70c15bc"
-  sni: "2.qzhm8l42g1.xyz"
-  skip-cert-verify: true
-  ip-version: "dual"
-- name: "🇵🇱波兰2 | ⬇️ 5.1MB/s"
-  type: "hysteria2"
-  server: "85.194.246.115"
-  port: 53252
-  tls: true
-  password: "c8ed6f77-3a96-46f9-9959-79118f9c1019"
-  sni: "www.bing.com"
-  skip-cert-verify: true
-  fast-open: false
-  ip-version: "dual"
-- name: "🇷🇺俄罗斯9 | ⬇️ 5.4MB/s"
+  cipher: "aes-128-gcm"
+- name: "🌀其他4-未识别 | ⬇️ 2.5MB/s"
   type: "hysteria"
   server: "46.17.41.174"
   port: 10469
@@ -920,7 +166,197 @@ proxies:
   skip-cert-verify: true
   ip-version: "dual"
   auth-str: "dongtaiwang.com"
-- name: "🇫🇷法国9 | ⬇️ 4.6MB/s"
+- name: "🇰🇷韩国1 | ⬇️ 5.0MB%2Fs"
+  type: "ss"
+  server: "3.36.72.86"
+  port: 443
+  tls: false
+  password: "amazonskr05"
+  ip-version: "dual"
+  cipher: "aes-256-cfb"
+- name: "🌀其他7-未识别 | ⬇️ 3.2MB/s"
+  type: "trojan"
+  server: "gysz0000.dynu.net"
+  port: 38340
+  network: "tcp"
+  tls: true
+  password: "VMhGp5wEIyCDf90T"
+  sni: "hk39.work.gd"
+  skip-cert-verify: false
+  client-fingerprint: "chrome"
+  ip-version: "dual"
+- name: "🇺🇸美国6 | ⬇️ 5.5MB/s"
+  type: "vmess"
+  server: "v2-us2-zf2.netcar.live"
+  port: 34013
+  uuid: "986f52fb-2dc7-4b53-b38c-2dfc19814974"
+  network: "tcp"
+  tls: false
+  ip-version: "dual"
+  alterId: 0
+  cipher: "auto"
+- name: "🇺🇸美国7 | ⬇️ 3.3MB%2Fs"
+  type: "ss"
+  server: "52.37.220.218"
+  port: 443
+  tls: false
+  password: "amazonskr05"
+  ip-version: "dual"
+  cipher: "aes-256-cfb"
+- name: "🇹🇼台湾4 | ⬇️ 3.3MB/s"
+  type: "trojan"
+  server: "10.qzhm8l42g1.xyz"
+  port: 20030
+  network: "tcp"
+  tls: true
+  password: "13c3cf97-5a4a-434f-880a-aecbd70c15bc"
+  sni: "10.qzhm8l42g1.xyz"
+  skip-cert-verify: true
+  client-fingerprint: "chrome"
+  ip-version: "dual"
+- name: "🇯🇵日本7 | ⬇️ 1.8MB/s"
+  type: "trojan"
+  server: "2.9n3pqn1406.xyz"
+  port: 20002
+  network: "tcp"
+  tls: true
+  password: "13c3cf97-5a4a-434f-880a-aecbd70c15bc"
+  sni: "2.9n3pqn1406.xyz"
+  skip-cert-verify: true
+  ip-version: "dual"
+- name: "🇹🇼台湾5 | ⬇️ 1.2MB/s"
+  type: "trojan"
+  server: "6.qzhm8l42g1.xyz"
+  port: 20026
+  network: "tcp"
+  tls: true
+  password: "13c3cf97-5a4a-434f-880a-aecbd70c15bc"
+  sni: "6.qzhm8l42g1.xyz"
+  skip-cert-verify: true
+  client-fingerprint: "chrome"
+  ip-version: "dual"
+- name: "🇹🇼台湾6 | ⬇️ 3.2MB/s"
+  type: "trojan"
+  server: "6.qzhm8l42g1.xyz"
+  port: 20026
+  network: "tcp"
+  tls: true
+  password: "13c3cf97-5a4a-434f-880a-aecbd70c15bc"
+  sni: "6.qzhm8l42g1.xyz"
+  skip-cert-verify: true
+  ip-version: "dual"
+- name: "🇯🇵日本8 | ⬇️ 1.4MB%2Fs"
+  type: "ss"
+  server: "43.207.150.238"
+  port: 443
+  tls: false
+  password: "amazonskr05"
+  ip-version: "dual"
+  cipher: "aes-256-cfb"
+- name: "🇩🇪德国2 | ⬇️ 1.8MB%2Fs"
+  type: "ss"
+  server: "193.108.119.230"
+  port: 8080
+  tls: false
+  password: "14fFPrbezE3HDZzsMOr6"
+  ip-version: "dual"
+  cipher: "rc4-md5"
+- name: "🇯🇵日本9 | ⬇️ 1.0MB/s"
+  type: "trojan"
+  server: "2.9n3pqn1406.xyz"
+  port: 20002
+  network: "tcp"
+  tls: true
+  password: "13c3cf97-5a4a-434f-880a-aecbd70c15bc"
+  sni: "2.9n3pqn1406.xyz"
+  skip-cert-verify: true
+  client-fingerprint: "chrome"
+  ip-version: "dual"
+- name: "🇯🇵日本10 | ⬇️ 2.8MB/s"
+  type: "trojan"
+  server: "3.9n3pqn1406.xyz"
+  port: 20003
+  network: "tcp"
+  tls: true
+  password: "13c3cf97-5a4a-434f-880a-aecbd70c15bc"
+  sni: "3.9n3pqn1406.xyz"
+  skip-cert-verify: true
+  client-fingerprint: "chrome"
+  ip-version: "dual"
+- name: "🇺🇸美国12 | ⬇️ 2.9MB/s"
+  type: "trojan"
+  server: "104.21.21.226"
+  port: 443
+  network: "ws"
+  tls: true
+  password: "6040a753-e35b-4384-8713-96f3c639b621"
+  sni: "uK803.890689.Xyz"
+  skip-cert-verify: true
+  ws-opts:
+    path: "/WxWOWO1YA9bs2HOmaeWimvT3"
+    headers:
+      host: "uK803.890689.Xyz"
+  ip-version: "dual"
+- name: "🇹🇼台湾8 | ⬇️ 2.3MB/s"
+  type: "trojan"
+  server: "10.qzhm8l42g1.xyz"
+  port: 20030
+  network: "tcp"
+  tls: true
+  password: "13c3cf97-5a4a-434f-880a-aecbd70c15bc"
+  sni: "10.qzhm8l42g1.xyz"
+  skip-cert-verify: true
+  ip-version: "dual"
+- name: "🇬🇧英国3 | ⬇️ 1.1MB%2Fs"
+  type: "ss"
+  server: "81.19.137.66"
+  port: 44316
+  tls: false
+  password: "Qx22XZwNt4SCcnWNkypEAj"
+  ip-version: "dual"
+  cipher: "chacha20-ietf-poly1305"
+- name: "🇹🇼台湾9 | ⬇️ 1.8MB/s"
+  type: "trojan"
+  server: "7.qzhm8l42g1.xyz"
+  port: 20027
+  network: "tcp"
+  tls: true
+  password: "13c3cf97-5a4a-434f-880a-aecbd70c15bc"
+  sni: "7.qzhm8l42g1.xyz"
+  skip-cert-verify: true
+  ip-version: "dual"
+- name: "🇹🇼台湾10 | ⬇️ 1.4MB/s"
+  type: "trojan"
+  server: "8.qzhm8l42g1.xyz"
+  port: 20028
+  network: "tcp"
+  tls: true
+  password: "13c3cf97-5a4a-434f-880a-aecbd70c15bc"
+  sni: "8.qzhm8l42g1.xyz"
+  skip-cert-verify: true
+  client-fingerprint: "chrome"
+  ip-version: "dual"
+- name: "🇹🇼台湾11 | ⬇️ 1.2MB/s"
+  type: "trojan"
+  server: "2.qzhm8l42g1.xyz"
+  port: 20022
+  network: "tcp"
+  tls: true
+  password: "13c3cf97-5a4a-434f-880a-aecbd70c15bc"
+  sni: "2.qzhm8l42g1.xyz"
+  skip-cert-verify: true
+  ip-version: "dual"
+- name: "🇯🇵日本12 | ⬇️ 1.3MB/s"
+  type: "vmess"
+  server: "v2-japan2.netcar.live"
+  port: 22984
+  uuid: "d28cf43f-00c3-4e5d-b7d9-8b6540d842a5"
+  network: "tcp"
+  tls: false
+  ip-version: "dual"
+  alterId: 0
+  cipher: "auto"
+- name: "🇫🇷法国4 | ⬇️ 2.2MB/s"
   type: "hysteria2"
   server: "51.159.226.1"
   port: 61770
@@ -930,44 +366,197 @@ proxies:
   skip-cert-verify: true
   fast-open: false
   ip-version: "dual"
-- name: "🇷🇺俄罗斯10 | ⬇️ 5.6MB/s"
+- name: "🇯🇵日本13 | ⬇️ 4.3MB/s"
+  type: "vmess"
+  server: "v2-japan2.netcar.live"
+  port: 22984
+  uuid: "d28cf43f-00c3-4e5d-b7d9-8b6540d842a5"
+  network: "tcp"
+  tls: false
+  ip-version: "dual"
+  alterId: 0
+  cipher: "auto"
+- name: "🇺🇸美国18 | ⬇️ 2.4MB/s"
   type: "hysteria2"
-  server: "46.17.41.217"
-  port: 4395
+  server: "164.152.19.229"
+  port: 47262
+  tls: true
+  password: "b72ba5d5-2d5e-45b7-93b5-236d343baa7c"
+  sni: "www.bing.com"
+  skip-cert-verify: true
+  fast-open: false
+  ip-version: "dual"
+- name: "🇺🇸美国19 | ⬇️ 1.6MB/s"
+  type: "trojan"
+  server: "104.21.49.59"
+  port: 443
+  network: "ws"
+  tls: true
+  password: "d67cfeaf-b277-44ac-ab99-9dd02a7c5299"
+  sni: "Fgh9JkR5.890617.xYz"
+  alpn:
+  - "http/1.1"
+  skip-cert-verify: false
+  client-fingerprint: "chrome"
+  ws-opts:
+    path: "/lWljHWvIMOj85lz42MdhsCLV"
+    headers: {}
+  ip-version: "dual"
+- name: "🇭🇰香港13 | ⬇️ 2.3MB%2Fs"
+  type: "ss"
+  server: "south.inmysecretlife.xyz"
+  port: 10001
+  tls: false
+  password: "Sj10bnYDe7w6V29E"
+  ip-version: "dual"
+  cipher: "aes-128-gcm"
+- name: "🇷🇺俄罗斯2 | ⬇️ 1.7MB/s"
+  type: "hysteria"
+  server: "185.22.155.71"
+  port: 10803
+  tls: true
+  sni: "www.bing.com"
+  alpn:
+  - "h3"
+  up: "1000"
+  down: "1000"
+  skip-cert-verify: true
+  ip-version: "dual"
+  auth-str: "dongtaiwang.com"
+- name: "🇹🇼台湾13 | ⬇️ 3.3MB/s"
+  type: "trojan"
+  server: "1.qzhm8l42g1.xyz"
+  port: 20021
+  network: "tcp"
+  tls: true
+  password: "13c3cf97-5a4a-434f-880a-aecbd70c15bc"
+  sni: "1.qzhm8l42g1.xyz"
+  skip-cert-verify: true
+  client-fingerprint: "chrome"
+  ip-version: "dual"
+- name: "🇹🇼台湾14 | ⬇️ 1.1MB/s"
+  type: "trojan"
+  server: "5.qzhm8l42g1.xyz"
+  port: 20025
+  network: "tcp"
+  tls: true
+  password: "13c3cf97-5a4a-434f-880a-aecbd70c15bc"
+  sni: "5.qzhm8l42g1.xyz"
+  skip-cert-verify: true
+  client-fingerprint: "chrome"
+  ip-version: "dual"
+- name: "🇹🇼台湾16 | ⬇️ 3.0MB/s"
+  type: "trojan"
+  server: "3.qzhm8l42g1.xyz"
+  port: 20023
+  network: "tcp"
+  tls: true
+  password: "13c3cf97-5a4a-434f-880a-aecbd70c15bc"
+  sni: "3.qzhm8l42g1.xyz"
+  skip-cert-verify: true
+  ip-version: "dual"
+- name: "🇯🇵日本15 | ⬇️ 1.0MB/s"
+  type: "trojan"
+  server: "4.9n3pqn1406.xyz"
+  port: 20004
+  network: "tcp"
+  tls: true
+  password: "13c3cf97-5a4a-434f-880a-aecbd70c15bc"
+  sni: "4.9n3pqn1406.xyz"
+  skip-cert-verify: true
+  ip-version: "dual"
+- name: "🇨🇦加拿大5 | ⬇️ 3.8MB/s"
+  type: "hysteria2"
+  server: "132.145.105.88"
+  port: 30300
+  tls: true
+  password: "2429bee3-e0c1-47dd-b420-75e6512b184b"
+  sni: "www.bing.com"
+  skip-cert-verify: true
+  fast-open: false
+  ip-version: "dual"
+- name: "🇹🇼台湾17 | ⬇️ 2.2MB/s"
+  type: "trojan"
+  server: "5.qzhm8l42g1.xyz"
+  port: 20025
+  network: "tcp"
+  tls: true
+  password: "13c3cf97-5a4a-434f-880a-aecbd70c15bc"
+  sni: "5.qzhm8l42g1.xyz"
+  skip-cert-verify: true
+  ip-version: "dual"
+- name: "🇵🇱波兰1 | ⬇️ 2.2MB/s"
+  type: "hysteria2"
+  server: "31.186.87.211"
+  port: 4029
+  tls: true
+  password: "be758973-186d-46fe-8aa4-e017134fa291"
+  sni: "www.bing.com"
+  skip-cert-verify: true
+  fast-open: false
+  ip-version: "dual"
+- name: "🇺🇸美国25 | ⬇️ 4.7MB/s"
+  type: "hysteria"
+  server: "208.87.243.151"
+  port: 17549
+  tls: true
+  sni: "www.bing.com"
+  alpn:
+  - "h3"
+  up: "11"
+  down: "55"
+  skip-cert-verify: true
+  ip-version: "dual"
+  auth-str: "dongtaiwang.com"
+- name: "🇷🇺俄罗斯3 | ⬇️ 4.2MB/s"
+  type: "hysteria2"
+  server: "46.29.163.171"
+  port: 35751
   tls: true
   password: "dongtaiwang.com"
   sni: "www.bing.com"
   skip-cert-verify: true
   fast-open: false
   ip-version: "dual"
-- name: "🌀其他28-未识别 | ⬇️ 5.5MB%2Fs"
-  type: "ss"
-  server: "34.217.15.41"
-  port: 443
-  tls: false
-  password: "amazonskr05"
+- name: "🇷🇺俄罗斯4 | ⬇️ 3.0MB/s"
+  type: "hysteria2"
+  server: "46.29.163.171"
+  port: 35751
+  tls: true
+  password: "dongtaiwang.com"
+  sni: "www.bing.com"
+  skip-cert-verify: true
+  fast-open: false
   ip-version: "dual"
-  cipher: "aes-256-cfb"
-- name: "🇯🇵日本16 | ⬇️ 4.6MB/s"
-  type: "vmess"
-  server: "v2-hk2-zf2.netcar.live"
-  port: 36001
-  uuid: "f41a7211-3a16-4aa0-a3cf-0dd959b9ef1d"
-  network: "tcp"
-  tls: false
-  ip-version: "dual"
-  alterId: 0
-  cipher: "auto"
-- name: "🇯🇵日本17 | ⬇️ 1.1MB/s"
+- name: "🇹🇼台湾18 | ⬇️ 3.4MB/s"
   type: "trojan"
-  server: "1.9n3pqn1406.xyz"
-  port: 20001
+  server: "7.qzhm8l42g1.xyz"
+  port: 20027
   network: "tcp"
   tls: true
   password: "13c3cf97-5a4a-434f-880a-aecbd70c15bc"
-  sni: "1.9n3pqn1406.xyz"
+  sni: "7.qzhm8l42g1.xyz"
   skip-cert-verify: true
+  client-fingerprint: "chrome"
   ip-version: "dual"
+- name: "🇺🇸美国27 | ⬇️ 3.0MB/s"
+  type: "hysteria2"
+  server: "cc.w1997.eu.org"
+  port: 66
+  tls: true
+  password: "838e602b"
+  sni: "www.bing.com"
+  skip-cert-verify: true
+  fast-open: false
+  ip-version: "dual"
+- name: "🇭🇰香港17 | ⬇️ 5.6MB%2Fs"
+  type: "ss"
+  server: "hzhz1.sssyun.xyz"
+  port: 29527
+  tls: false
+  password: "MDhhMTdjZDI0MjI2ZWRlNg==:ZDRlZWFhN2ItNDNjNi00OQ=="
+  ip-version: "dual"
+  cipher: "2022-blake3-aes-128-gcm"
 proxy-groups:
 - name: "PROXY"
   type: "select"
@@ -975,100 +564,58 @@ proxy-groups:
   - "AUTO"
   - "https%3A%2F%2Ft.me%2Fmfjdtiankong"
   - "节点更新时间4-1"
-  - "🇹🇼台湾1 | ⬇️ 1.1MB/s"
-  - "🇺🇸美国2 | ⬇️ 3.3MB%2Fs"
-  - "🇺🇸美国4 | ⬇️ 1.2MB/s"
-  - "🇨🇦加拿大1 | ⬇️ 3.5MB/s"
-  - "🇫🇷法国1 | ⬇️ 4.0MB/s"
-  - "🇺🇸美国7 | ⬇️ 5.4MB/s"
-  - "🇭🇰香港2 | ⬇️ 2.1MB%2Fs"
-  - "🇺🇸美国9 | ⬇️ 3.9MB%2Fs"
-  - "🇯🇵日本4 | ⬇️ 1.9MB/s"
-  - "🇳🇱荷兰2 | ⬇️ 1.5MB%2Fs"
-  - "🇺🇸美国12 | ⬇️ 1.8MB/s"
-  - "🌀其他3-T1 | ⬇️ 1.3MB%2Fs"
-  - "🇹🇼台湾3 | ⬇️ 2.8MB/s"
-  - "🇹🇼台湾4 | ⬇️ 1.6MB/s"
-  - "🇨🇦加拿大3 | ⬇️ 1.3MB/s"
-  - "🇭🇰香港4 | ⬇️ 1.1MB/s"
-  - "🇺🇸美国13 | ⬇️ 1.0MB/s"
-  - "🇭🇰香港5 | ⬇️ 2.6MB/s"
-  - "🇯🇵日本5 | ⬇️ 5.8MB/s"
-  - "🇩🇪德国1 | ⬇️ 5.9MB%2Fs"
-  - "🇯🇵日本6 | ⬇️ 9.4MB/s"
-  - "🇵🇱波兰1 | ⬇️ 3.3MB/s"
-  - "🇹🇼台湾5 | ⬇️ 3.1MB/s"
-  - "🇨🇦加拿大4 | ⬇️ 4.4MB/s"
-  - "🇭🇰香港6 | ⬇️ 7.8MB%2Fs"
-  - "🌀其他7-SE | ⬇️ 2.5MB/s"
-  - "🇺🇸美国18 | ⬇️ 5.6MB%2Fs"
-  - "🇺🇸美国19 | ⬇️ 2.6MB%2Fs"
-  - "🇹🇼台湾6 | ⬇️ 5.2MB/s"
-  - "🇺🇸美国20 | ⬇️ 1.2MB/s"
-  - "🇹🇼台湾8 | ⬇️ 2.2MB/s"
-  - "🇷🇺俄罗斯2 | ⬇️ 1.6MB/s"
-  - "🇰🇷韩国3 | ⬇️ 3.9MB%2Fs"
-  - "🌀其他9-SE | ⬇️ 1.9MB/s"
-  - "🇷🇺俄罗斯3 | ⬇️ 1.9MB/s"
-  - "🇭🇰香港12 | ⬇️ 1.3MB/s"
-  - "🇺🇸美国24 | ⬇️ 5.2MB/s"
-  - "🌀其他10-TH | ⬇️ 10.0MB/s"
-  - "🇹🇼台湾9 | ⬇️ 3.8MB/s"
-  - "🌀其他12-MY | ⬇️ 1.8MB/s"
-  - "🇩🇪德国6 | ⬇️ 2.5MB/s"
-  - "🌀其他13-GR | ⬇️ 8.2MB/s"
-  - "🇨🇦加拿大5 | ⬇️ 6.1MB/s"
-  - "🇹🇼台湾10 | ⬇️ 3.4MB/s"
-  - "🌀其他15-SK | ⬇️ 2.2MB%2Fs"
-  - "🇷🇺俄罗斯4 | ⬇️ 1.7MB/s"
-  - "🇭🇰香港14 | ⬇️ 10.3MB%2Fs"
-  - "🇹🇼台湾11 | ⬇️ 2.7MB/s"
-  - "🇹🇼台湾12 | ⬇️ 3.2MB/s"
-  - "🇯🇵日本8 | ⬇️ 1.9MB%2Fs"
-  - "🇯🇵日本9 | ⬇️ 1.4MB/s"
-  - "🇺🇸美国26 | ⬇️ 1.2MB%2Fs"
-  - "🌀其他19-SE | ⬇️ 1.1MB/s"
-  - "🇭🇰香港16 | ⬇️ 1.5MB/s"
-  - "🌀其他20-VN | ⬇️ 7.7MB/s"
-  - "🌀其他21-GR | ⬇️ 8.9MB/s"
-  - "🇫🇷法国4 | ⬇️ 1.5MB/s"
-  - "🇫🇷法国5 | ⬇️ 5.2MB/s"
-  - "🇦🇺澳大利亚4 | ⬇️ 1.5MB/s"
-  - "🇺🇸美国32 | ⬇️ 4.6MB/s"
-  - "🇺🇸美国33 | ⬇️ 6.1MB/s"
-  - "🇺🇸美国34 | ⬇️ 6.7MB%2Fs"
-  - "🇯🇵日本10 | ⬇️ 1.9MB/s"
-  - "🇰🇭柬埔寨1 | ⬇️ 1.0MB/s"
-  - "🇺🇸美国36 | ⬇️ 4.8MB/s"
-  - "🇹🇼台湾14 | ⬇️ 3.1MB/s"
-  - "🇫🇷法国6 | ⬇️ 5.4MB/s"
-  - "🇫🇷法国7 | ⬇️ 4.3MB/s"
-  - "🇺🇸美国37 | ⬇️ 5.7MB/s"
-  - "🇷🇺俄罗斯5 | ⬇️ 3.8MB/s"
-  - "🌀其他22-KZ | ⬇️ 2.1MB/s"
-  - "🇯🇵日本11 | ⬇️ 2.3MB/s"
-  - "🇯🇵日本12 | ⬇️ 1.5MB%2Fs"
-  - "🇺🇸美国39 | ⬇️ 2.9MB/s"
-  - "🇰🇷韩国4 | ⬇️ 1.7MB%2Fs"
-  - "🇯🇵日本13 | ⬇️ 1.1MB%2Fs"
-  - "🇭🇰香港20 | ⬇️ 2.0MB/s"
-  - "🇺🇸美国40 | ⬇️ 6.7MB%2Fs"
-  - "🇷🇺俄罗斯6 | ⬇️ 4.1MB/s"
-  - "🇺🇸美国41 | ⬇️ 2.8MB/s"
-  - "🇸🇬新加坡9 | ⬇️ 2.2MB%2Fs"
-  - "🇹🇼台湾16 | ⬇️ 1.1MB/s"
-  - "🇰🇷韩国5 | ⬇️ 9.1MB%2Fs"
-  - "🇷🇺俄罗斯7 | ⬇️ 4.4MB/s"
-  - "🇩🇪德国9 | ⬇️ 4.3MB%2Fs"
-  - "🇷🇺俄罗斯8 | ⬇️ 5.7MB/s"
-  - "🇹🇼台湾17 | ⬇️ 4.8MB/s"
-  - "🇵🇱波兰2 | ⬇️ 5.1MB/s"
-  - "🇷🇺俄罗斯9 | ⬇️ 5.4MB/s"
-  - "🇫🇷法国9 | ⬇️ 4.6MB/s"
-  - "🇷🇺俄罗斯10 | ⬇️ 5.6MB/s"
-  - "🌀其他28-未识别 | ⬇️ 5.5MB%2Fs"
-  - "🇯🇵日本16 | ⬇️ 4.6MB/s"
-  - "🇯🇵日本17 | ⬇️ 1.1MB/s"
+  - "🇯🇵日本1 | ⬇️ 6.6MB/s"
+  - "🇯🇵日本3 | ⬇️ 1.1MB/s"
+  - "🇺🇸美国2 | ⬇️ 4.9MB%2Fs"
+  - "🇭🇰香港1 | ⬇️ 1.4MB%2Fs"
+  - "🇺🇸美国4 | ⬇️ 2.2MB/s"
+  - "🇹🇼台湾2 | ⬇️ 1.6MB/s"
+  - "🇺🇸美国5 | ⬇️ 4.4MB%2Fs"
+  - "🇭🇰香港2 | ⬇️ 1.3MB/s"
+  - "🇯🇵日本5 | ⬇️ 1.6MB/s"
+  - "🇨🇦加拿大1 | ⬇️ 2.1MB/s"
+  - "🇯🇵日本6 | ⬇️ 1.5MB/s"
+  - "🌀其他3-未识别 | ⬇️ 1.1MB/s"
+  - "🇭🇰香港3 | ⬇️ 5.7MB%2Fs"
+  - "🌀其他4-未识别 | ⬇️ 2.5MB/s"
+  - "🇰🇷韩国1 | ⬇️ 5.0MB%2Fs"
+  - "🌀其他7-未识别 | ⬇️ 3.2MB/s"
+  - "🇺🇸美国6 | ⬇️ 5.5MB/s"
+  - "🇺🇸美国7 | ⬇️ 3.3MB%2Fs"
+  - "🇹🇼台湾4 | ⬇️ 3.3MB/s"
+  - "🇯🇵日本7 | ⬇️ 1.8MB/s"
+  - "🇹🇼台湾5 | ⬇️ 1.2MB/s"
+  - "🇹🇼台湾6 | ⬇️ 3.2MB/s"
+  - "🇯🇵日本8 | ⬇️ 1.4MB%2Fs"
+  - "🇩🇪德国2 | ⬇️ 1.8MB%2Fs"
+  - "🇯🇵日本9 | ⬇️ 1.0MB/s"
+  - "🇯🇵日本10 | ⬇️ 2.8MB/s"
+  - "🇺🇸美国12 | ⬇️ 2.9MB/s"
+  - "🇹🇼台湾8 | ⬇️ 2.3MB/s"
+  - "🇬🇧英国3 | ⬇️ 1.1MB%2Fs"
+  - "🇹🇼台湾9 | ⬇️ 1.8MB/s"
+  - "🇹🇼台湾10 | ⬇️ 1.4MB/s"
+  - "🇹🇼台湾11 | ⬇️ 1.2MB/s"
+  - "🇯🇵日本12 | ⬇️ 1.3MB/s"
+  - "🇫🇷法国4 | ⬇️ 2.2MB/s"
+  - "🇯🇵日本13 | ⬇️ 4.3MB/s"
+  - "🇺🇸美国18 | ⬇️ 2.4MB/s"
+  - "🇺🇸美国19 | ⬇️ 1.6MB/s"
+  - "🇭🇰香港13 | ⬇️ 2.3MB%2Fs"
+  - "🇷🇺俄罗斯2 | ⬇️ 1.7MB/s"
+  - "🇹🇼台湾13 | ⬇️ 3.3MB/s"
+  - "🇹🇼台湾14 | ⬇️ 1.1MB/s"
+  - "🇹🇼台湾16 | ⬇️ 3.0MB/s"
+  - "🇯🇵日本15 | ⬇️ 1.0MB/s"
+  - "🇨🇦加拿大5 | ⬇️ 3.8MB/s"
+  - "🇹🇼台湾17 | ⬇️ 2.2MB/s"
+  - "🇵🇱波兰1 | ⬇️ 2.2MB/s"
+  - "🇺🇸美国25 | ⬇️ 4.7MB/s"
+  - "🇷🇺俄罗斯3 | ⬇️ 4.2MB/s"
+  - "🇷🇺俄罗斯4 | ⬇️ 3.0MB/s"
+  - "🇹🇼台湾18 | ⬇️ 3.4MB/s"
+  - "🇺🇸美国27 | ⬇️ 3.0MB/s"
+  - "🇭🇰香港17 | ⬇️ 5.6MB%2Fs"
 - name: "AUTO"
   type: "url-test"
   url: "http://www.gstatic.com/generate_204"
@@ -1077,199 +624,115 @@ proxy-groups:
   proxies:
   - "https%3A%2F%2Ft.me%2Fmfjdtiankong"
   - "节点更新时间4-1"
-  - "🇹🇼台湾1 | ⬇️ 1.1MB/s"
-  - "🇺🇸美国2 | ⬇️ 3.3MB%2Fs"
-  - "🇺🇸美国4 | ⬇️ 1.2MB/s"
-  - "🇨🇦加拿大1 | ⬇️ 3.5MB/s"
-  - "🇫🇷法国1 | ⬇️ 4.0MB/s"
-  - "🇺🇸美国7 | ⬇️ 5.4MB/s"
-  - "🇭🇰香港2 | ⬇️ 2.1MB%2Fs"
-  - "🇺🇸美国9 | ⬇️ 3.9MB%2Fs"
-  - "🇯🇵日本4 | ⬇️ 1.9MB/s"
-  - "🇳🇱荷兰2 | ⬇️ 1.5MB%2Fs"
-  - "🇺🇸美国12 | ⬇️ 1.8MB/s"
-  - "🌀其他3-T1 | ⬇️ 1.3MB%2Fs"
-  - "🇹🇼台湾3 | ⬇️ 2.8MB/s"
-  - "🇹🇼台湾4 | ⬇️ 1.6MB/s"
-  - "🇨🇦加拿大3 | ⬇️ 1.3MB/s"
-  - "🇭🇰香港4 | ⬇️ 1.1MB/s"
-  - "🇺🇸美国13 | ⬇️ 1.0MB/s"
-  - "🇭🇰香港5 | ⬇️ 2.6MB/s"
-  - "🇯🇵日本5 | ⬇️ 5.8MB/s"
-  - "🇩🇪德国1 | ⬇️ 5.9MB%2Fs"
-  - "🇯🇵日本6 | ⬇️ 9.4MB/s"
-  - "🇵🇱波兰1 | ⬇️ 3.3MB/s"
-  - "🇹🇼台湾5 | ⬇️ 3.1MB/s"
-  - "🇨🇦加拿大4 | ⬇️ 4.4MB/s"
-  - "🇭🇰香港6 | ⬇️ 7.8MB%2Fs"
-  - "🌀其他7-SE | ⬇️ 2.5MB/s"
-  - "🇺🇸美国18 | ⬇️ 5.6MB%2Fs"
-  - "🇺🇸美国19 | ⬇️ 2.6MB%2Fs"
-  - "🇹🇼台湾6 | ⬇️ 5.2MB/s"
-  - "🇺🇸美国20 | ⬇️ 1.2MB/s"
-  - "🇹🇼台湾8 | ⬇️ 2.2MB/s"
-  - "🇷🇺俄罗斯2 | ⬇️ 1.6MB/s"
-  - "🇰🇷韩国3 | ⬇️ 3.9MB%2Fs"
-  - "🌀其他9-SE | ⬇️ 1.9MB/s"
-  - "🇷🇺俄罗斯3 | ⬇️ 1.9MB/s"
-  - "🇭🇰香港12 | ⬇️ 1.3MB/s"
-  - "🇺🇸美国24 | ⬇️ 5.2MB/s"
-  - "🌀其他10-TH | ⬇️ 10.0MB/s"
-  - "🇹🇼台湾9 | ⬇️ 3.8MB/s"
-  - "🌀其他12-MY | ⬇️ 1.8MB/s"
-  - "🇩🇪德国6 | ⬇️ 2.5MB/s"
-  - "🌀其他13-GR | ⬇️ 8.2MB/s"
-  - "🇨🇦加拿大5 | ⬇️ 6.1MB/s"
-  - "🇹🇼台湾10 | ⬇️ 3.4MB/s"
-  - "🌀其他15-SK | ⬇️ 2.2MB%2Fs"
-  - "🇷🇺俄罗斯4 | ⬇️ 1.7MB/s"
-  - "🇭🇰香港14 | ⬇️ 10.3MB%2Fs"
-  - "🇹🇼台湾11 | ⬇️ 2.7MB/s"
-  - "🇹🇼台湾12 | ⬇️ 3.2MB/s"
-  - "🇯🇵日本8 | ⬇️ 1.9MB%2Fs"
-  - "🇯🇵日本9 | ⬇️ 1.4MB/s"
-  - "🇺🇸美国26 | ⬇️ 1.2MB%2Fs"
-  - "🌀其他19-SE | ⬇️ 1.1MB/s"
-  - "🇭🇰香港16 | ⬇️ 1.5MB/s"
-  - "🌀其他20-VN | ⬇️ 7.7MB/s"
-  - "🌀其他21-GR | ⬇️ 8.9MB/s"
-  - "🇫🇷法国4 | ⬇️ 1.5MB/s"
-  - "🇫🇷法国5 | ⬇️ 5.2MB/s"
-  - "🇦🇺澳大利亚4 | ⬇️ 1.5MB/s"
-  - "🇺🇸美国32 | ⬇️ 4.6MB/s"
-  - "🇺🇸美国33 | ⬇️ 6.1MB/s"
-  - "🇺🇸美国34 | ⬇️ 6.7MB%2Fs"
-  - "🇯🇵日本10 | ⬇️ 1.9MB/s"
-  - "🇰🇭柬埔寨1 | ⬇️ 1.0MB/s"
-  - "🇺🇸美国36 | ⬇️ 4.8MB/s"
-  - "🇹🇼台湾14 | ⬇️ 3.1MB/s"
-  - "🇫🇷法国6 | ⬇️ 5.4MB/s"
-  - "🇫🇷法国7 | ⬇️ 4.3MB/s"
-  - "🇺🇸美国37 | ⬇️ 5.7MB/s"
-  - "🇷🇺俄罗斯5 | ⬇️ 3.8MB/s"
-  - "🌀其他22-KZ | ⬇️ 2.1MB/s"
-  - "🇯🇵日本11 | ⬇️ 2.3MB/s"
-  - "🇯🇵日本12 | ⬇️ 1.5MB%2Fs"
-  - "🇺🇸美国39 | ⬇️ 2.9MB/s"
-  - "🇰🇷韩国4 | ⬇️ 1.7MB%2Fs"
-  - "🇯🇵日本13 | ⬇️ 1.1MB%2Fs"
-  - "🇭🇰香港20 | ⬇️ 2.0MB/s"
-  - "🇺🇸美国40 | ⬇️ 6.7MB%2Fs"
-  - "🇷🇺俄罗斯6 | ⬇️ 4.1MB/s"
-  - "🇺🇸美国41 | ⬇️ 2.8MB/s"
-  - "🇸🇬新加坡9 | ⬇️ 2.2MB%2Fs"
-  - "🇹🇼台湾16 | ⬇️ 1.1MB/s"
-  - "🇰🇷韩国5 | ⬇️ 9.1MB%2Fs"
-  - "🇷🇺俄罗斯7 | ⬇️ 4.4MB/s"
-  - "🇩🇪德国9 | ⬇️ 4.3MB%2Fs"
-  - "🇷🇺俄罗斯8 | ⬇️ 5.7MB/s"
-  - "🇹🇼台湾17 | ⬇️ 4.8MB/s"
-  - "🇵🇱波兰2 | ⬇️ 5.1MB/s"
-  - "🇷🇺俄罗斯9 | ⬇️ 5.4MB/s"
-  - "🇫🇷法国9 | ⬇️ 4.6MB/s"
-  - "🇷🇺俄罗斯10 | ⬇️ 5.6MB/s"
-  - "🌀其他28-未识别 | ⬇️ 5.5MB%2Fs"
-  - "🇯🇵日本16 | ⬇️ 4.6MB/s"
-  - "🇯🇵日本17 | ⬇️ 1.1MB/s"
+  - "🇯🇵日本1 | ⬇️ 6.6MB/s"
+  - "🇯🇵日本3 | ⬇️ 1.1MB/s"
+  - "🇺🇸美国2 | ⬇️ 4.9MB%2Fs"
+  - "🇭🇰香港1 | ⬇️ 1.4MB%2Fs"
+  - "🇺🇸美国4 | ⬇️ 2.2MB/s"
+  - "🇹🇼台湾2 | ⬇️ 1.6MB/s"
+  - "🇺🇸美国5 | ⬇️ 4.4MB%2Fs"
+  - "🇭🇰香港2 | ⬇️ 1.3MB/s"
+  - "🇯🇵日本5 | ⬇️ 1.6MB/s"
+  - "🇨🇦加拿大1 | ⬇️ 2.1MB/s"
+  - "🇯🇵日本6 | ⬇️ 1.5MB/s"
+  - "🌀其他3-未识别 | ⬇️ 1.1MB/s"
+  - "🇭🇰香港3 | ⬇️ 5.7MB%2Fs"
+  - "🌀其他4-未识别 | ⬇️ 2.5MB/s"
+  - "🇰🇷韩国1 | ⬇️ 5.0MB%2Fs"
+  - "🌀其他7-未识别 | ⬇️ 3.2MB/s"
+  - "🇺🇸美国6 | ⬇️ 5.5MB/s"
+  - "🇺🇸美国7 | ⬇️ 3.3MB%2Fs"
+  - "🇹🇼台湾4 | ⬇️ 3.3MB/s"
+  - "🇯🇵日本7 | ⬇️ 1.8MB/s"
+  - "🇹🇼台湾5 | ⬇️ 1.2MB/s"
+  - "🇹🇼台湾6 | ⬇️ 3.2MB/s"
+  - "🇯🇵日本8 | ⬇️ 1.4MB%2Fs"
+  - "🇩🇪德国2 | ⬇️ 1.8MB%2Fs"
+  - "🇯🇵日本9 | ⬇️ 1.0MB/s"
+  - "🇯🇵日本10 | ⬇️ 2.8MB/s"
+  - "🇺🇸美国12 | ⬇️ 2.9MB/s"
+  - "🇹🇼台湾8 | ⬇️ 2.3MB/s"
+  - "🇬🇧英国3 | ⬇️ 1.1MB%2Fs"
+  - "🇹🇼台湾9 | ⬇️ 1.8MB/s"
+  - "🇹🇼台湾10 | ⬇️ 1.4MB/s"
+  - "🇹🇼台湾11 | ⬇️ 1.2MB/s"
+  - "🇯🇵日本12 | ⬇️ 1.3MB/s"
+  - "🇫🇷法国4 | ⬇️ 2.2MB/s"
+  - "🇯🇵日本13 | ⬇️ 4.3MB/s"
+  - "🇺🇸美国18 | ⬇️ 2.4MB/s"
+  - "🇺🇸美国19 | ⬇️ 1.6MB/s"
+  - "🇭🇰香港13 | ⬇️ 2.3MB%2Fs"
+  - "🇷🇺俄罗斯2 | ⬇️ 1.7MB/s"
+  - "🇹🇼台湾13 | ⬇️ 3.3MB/s"
+  - "🇹🇼台湾14 | ⬇️ 1.1MB/s"
+  - "🇹🇼台湾16 | ⬇️ 3.0MB/s"
+  - "🇯🇵日本15 | ⬇️ 1.0MB/s"
+  - "🇨🇦加拿大5 | ⬇️ 3.8MB/s"
+  - "🇹🇼台湾17 | ⬇️ 2.2MB/s"
+  - "🇵🇱波兰1 | ⬇️ 2.2MB/s"
+  - "🇺🇸美国25 | ⬇️ 4.7MB/s"
+  - "🇷🇺俄罗斯3 | ⬇️ 4.2MB/s"
+  - "🇷🇺俄罗斯4 | ⬇️ 3.0MB/s"
+  - "🇹🇼台湾18 | ⬇️ 3.4MB/s"
+  - "🇺🇸美国27 | ⬇️ 3.0MB/s"
+  - "🇭🇰香港17 | ⬇️ 5.6MB%2Fs"
 - name: "AI"
   type: "select"
   proxies:
   - "https%3A%2F%2Ft.me%2Fmfjdtiankong"
   - "节点更新时间4-1"
-  - "🇹🇼台湾1 | ⬇️ 1.1MB/s"
-  - "🇺🇸美国2 | ⬇️ 3.3MB%2Fs"
-  - "🇺🇸美国4 | ⬇️ 1.2MB/s"
-  - "🇨🇦加拿大1 | ⬇️ 3.5MB/s"
-  - "🇫🇷法国1 | ⬇️ 4.0MB/s"
-  - "🇺🇸美国7 | ⬇️ 5.4MB/s"
-  - "🇭🇰香港2 | ⬇️ 2.1MB%2Fs"
-  - "🇺🇸美国9 | ⬇️ 3.9MB%2Fs"
-  - "🇯🇵日本4 | ⬇️ 1.9MB/s"
-  - "🇳🇱荷兰2 | ⬇️ 1.5MB%2Fs"
-  - "🇺🇸美国12 | ⬇️ 1.8MB/s"
-  - "🌀其他3-T1 | ⬇️ 1.3MB%2Fs"
-  - "🇹🇼台湾3 | ⬇️ 2.8MB/s"
-  - "🇹🇼台湾4 | ⬇️ 1.6MB/s"
-  - "🇨🇦加拿大3 | ⬇️ 1.3MB/s"
-  - "🇭🇰香港4 | ⬇️ 1.1MB/s"
-  - "🇺🇸美国13 | ⬇️ 1.0MB/s"
-  - "🇭🇰香港5 | ⬇️ 2.6MB/s"
-  - "🇯🇵日本5 | ⬇️ 5.8MB/s"
-  - "🇩🇪德国1 | ⬇️ 5.9MB%2Fs"
-  - "🇯🇵日本6 | ⬇️ 9.4MB/s"
-  - "🇵🇱波兰1 | ⬇️ 3.3MB/s"
-  - "🇹🇼台湾5 | ⬇️ 3.1MB/s"
-  - "🇨🇦加拿大4 | ⬇️ 4.4MB/s"
-  - "🇭🇰香港6 | ⬇️ 7.8MB%2Fs"
-  - "🌀其他7-SE | ⬇️ 2.5MB/s"
-  - "🇺🇸美国18 | ⬇️ 5.6MB%2Fs"
-  - "🇺🇸美国19 | ⬇️ 2.6MB%2Fs"
-  - "🇹🇼台湾6 | ⬇️ 5.2MB/s"
-  - "🇺🇸美国20 | ⬇️ 1.2MB/s"
-  - "🇹🇼台湾8 | ⬇️ 2.2MB/s"
-  - "🇷🇺俄罗斯2 | ⬇️ 1.6MB/s"
-  - "🇰🇷韩国3 | ⬇️ 3.9MB%2Fs"
-  - "🌀其他9-SE | ⬇️ 1.9MB/s"
-  - "🇷🇺俄罗斯3 | ⬇️ 1.9MB/s"
-  - "🇭🇰香港12 | ⬇️ 1.3MB/s"
-  - "🇺🇸美国24 | ⬇️ 5.2MB/s"
-  - "🌀其他10-TH | ⬇️ 10.0MB/s"
-  - "🇹🇼台湾9 | ⬇️ 3.8MB/s"
-  - "🌀其他12-MY | ⬇️ 1.8MB/s"
-  - "🇩🇪德国6 | ⬇️ 2.5MB/s"
-  - "🌀其他13-GR | ⬇️ 8.2MB/s"
-  - "🇨🇦加拿大5 | ⬇️ 6.1MB/s"
-  - "🇹🇼台湾10 | ⬇️ 3.4MB/s"
-  - "🌀其他15-SK | ⬇️ 2.2MB%2Fs"
-  - "🇷🇺俄罗斯4 | ⬇️ 1.7MB/s"
-  - "🇭🇰香港14 | ⬇️ 10.3MB%2Fs"
-  - "🇹🇼台湾11 | ⬇️ 2.7MB/s"
-  - "🇹🇼台湾12 | ⬇️ 3.2MB/s"
-  - "🇯🇵日本8 | ⬇️ 1.9MB%2Fs"
-  - "🇯🇵日本9 | ⬇️ 1.4MB/s"
-  - "🇺🇸美国26 | ⬇️ 1.2MB%2Fs"
-  - "🌀其他19-SE | ⬇️ 1.1MB/s"
-  - "🇭🇰香港16 | ⬇️ 1.5MB/s"
-  - "🌀其他20-VN | ⬇️ 7.7MB/s"
-  - "🌀其他21-GR | ⬇️ 8.9MB/s"
-  - "🇫🇷法国4 | ⬇️ 1.5MB/s"
-  - "🇫🇷法国5 | ⬇️ 5.2MB/s"
-  - "🇦🇺澳大利亚4 | ⬇️ 1.5MB/s"
-  - "🇺🇸美国32 | ⬇️ 4.6MB/s"
-  - "🇺🇸美国33 | ⬇️ 6.1MB/s"
-  - "🇺🇸美国34 | ⬇️ 6.7MB%2Fs"
-  - "🇯🇵日本10 | ⬇️ 1.9MB/s"
-  - "🇰🇭柬埔寨1 | ⬇️ 1.0MB/s"
-  - "🇺🇸美国36 | ⬇️ 4.8MB/s"
-  - "🇹🇼台湾14 | ⬇️ 3.1MB/s"
-  - "🇫🇷法国6 | ⬇️ 5.4MB/s"
-  - "🇫🇷法国7 | ⬇️ 4.3MB/s"
-  - "🇺🇸美国37 | ⬇️ 5.7MB/s"
-  - "🇷🇺俄罗斯5 | ⬇️ 3.8MB/s"
-  - "🌀其他22-KZ | ⬇️ 2.1MB/s"
-  - "🇯🇵日本11 | ⬇️ 2.3MB/s"
-  - "🇯🇵日本12 | ⬇️ 1.5MB%2Fs"
-  - "🇺🇸美国39 | ⬇️ 2.9MB/s"
-  - "🇰🇷韩国4 | ⬇️ 1.7MB%2Fs"
-  - "🇯🇵日本13 | ⬇️ 1.1MB%2Fs"
-  - "🇭🇰香港20 | ⬇️ 2.0MB/s"
-  - "🇺🇸美国40 | ⬇️ 6.7MB%2Fs"
-  - "🇷🇺俄罗斯6 | ⬇️ 4.1MB/s"
-  - "🇺🇸美国41 | ⬇️ 2.8MB/s"
-  - "🇸🇬新加坡9 | ⬇️ 2.2MB%2Fs"
-  - "🇹🇼台湾16 | ⬇️ 1.1MB/s"
-  - "🇰🇷韩国5 | ⬇️ 9.1MB%2Fs"
-  - "🇷🇺俄罗斯7 | ⬇️ 4.4MB/s"
-  - "🇩🇪德国9 | ⬇️ 4.3MB%2Fs"
-  - "🇷🇺俄罗斯8 | ⬇️ 5.7MB/s"
-  - "🇹🇼台湾17 | ⬇️ 4.8MB/s"
-  - "🇵🇱波兰2 | ⬇️ 5.1MB/s"
-  - "🇷🇺俄罗斯9 | ⬇️ 5.4MB/s"
-  - "🇫🇷法国9 | ⬇️ 4.6MB/s"
-  - "🇷🇺俄罗斯10 | ⬇️ 5.6MB/s"
-  - "🌀其他28-未识别 | ⬇️ 5.5MB%2Fs"
-  - "🇯🇵日本16 | ⬇️ 4.6MB/s"
-  - "🇯🇵日本17 | ⬇️ 1.1MB/s"
+  - "🇯🇵日本1 | ⬇️ 6.6MB/s"
+  - "🇯🇵日本3 | ⬇️ 1.1MB/s"
+  - "🇺🇸美国2 | ⬇️ 4.9MB%2Fs"
+  - "🇭🇰香港1 | ⬇️ 1.4MB%2Fs"
+  - "🇺🇸美国4 | ⬇️ 2.2MB/s"
+  - "🇹🇼台湾2 | ⬇️ 1.6MB/s"
+  - "🇺🇸美国5 | ⬇️ 4.4MB%2Fs"
+  - "🇭🇰香港2 | ⬇️ 1.3MB/s"
+  - "🇯🇵日本5 | ⬇️ 1.6MB/s"
+  - "🇨🇦加拿大1 | ⬇️ 2.1MB/s"
+  - "🇯🇵日本6 | ⬇️ 1.5MB/s"
+  - "🌀其他3-未识别 | ⬇️ 1.1MB/s"
+  - "🇭🇰香港3 | ⬇️ 5.7MB%2Fs"
+  - "🌀其他4-未识别 | ⬇️ 2.5MB/s"
+  - "🇰🇷韩国1 | ⬇️ 5.0MB%2Fs"
+  - "🌀其他7-未识别 | ⬇️ 3.2MB/s"
+  - "🇺🇸美国6 | ⬇️ 5.5MB/s"
+  - "🇺🇸美国7 | ⬇️ 3.3MB%2Fs"
+  - "🇹🇼台湾4 | ⬇️ 3.3MB/s"
+  - "🇯🇵日本7 | ⬇️ 1.8MB/s"
+  - "🇹🇼台湾5 | ⬇️ 1.2MB/s"
+  - "🇹🇼台湾6 | ⬇️ 3.2MB/s"
+  - "🇯🇵日本8 | ⬇️ 1.4MB%2Fs"
+  - "🇩🇪德国2 | ⬇️ 1.8MB%2Fs"
+  - "🇯🇵日本9 | ⬇️ 1.0MB/s"
+  - "🇯🇵日本10 | ⬇️ 2.8MB/s"
+  - "🇺🇸美国12 | ⬇️ 2.9MB/s"
+  - "🇹🇼台湾8 | ⬇️ 2.3MB/s"
+  - "🇬🇧英国3 | ⬇️ 1.1MB%2Fs"
+  - "🇹🇼台湾9 | ⬇️ 1.8MB/s"
+  - "🇹🇼台湾10 | ⬇️ 1.4MB/s"
+  - "🇹🇼台湾11 | ⬇️ 1.2MB/s"
+  - "🇯🇵日本12 | ⬇️ 1.3MB/s"
+  - "🇫🇷法国4 | ⬇️ 2.2MB/s"
+  - "🇯🇵日本13 | ⬇️ 4.3MB/s"
+  - "🇺🇸美国18 | ⬇️ 2.4MB/s"
+  - "🇺🇸美国19 | ⬇️ 1.6MB/s"
+  - "🇭🇰香港13 | ⬇️ 2.3MB%2Fs"
+  - "🇷🇺俄罗斯2 | ⬇️ 1.7MB/s"
+  - "🇹🇼台湾13 | ⬇️ 3.3MB/s"
+  - "🇹🇼台湾14 | ⬇️ 1.1MB/s"
+  - "🇹🇼台湾16 | ⬇️ 3.0MB/s"
+  - "🇯🇵日本15 | ⬇️ 1.0MB/s"
+  - "🇨🇦加拿大5 | ⬇️ 3.8MB/s"
+  - "🇹🇼台湾17 | ⬇️ 2.2MB/s"
+  - "🇵🇱波兰1 | ⬇️ 2.2MB/s"
+  - "🇺🇸美国25 | ⬇️ 4.7MB/s"
+  - "🇷🇺俄罗斯3 | ⬇️ 4.2MB/s"
+  - "🇷🇺俄罗斯4 | ⬇️ 3.0MB/s"
+  - "🇹🇼台湾18 | ⬇️ 3.4MB/s"
+  - "🇺🇸美国27 | ⬇️ 3.0MB/s"
+  - "🇭🇰香港17 | ⬇️ 5.6MB%2Fs"
 rules:
 - "RULE-SET,reject-list,REJECT"
 - "RULE-SET,ai,AI"

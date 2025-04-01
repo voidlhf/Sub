@@ -13,9 +13,7 @@ dns:
   - "https://dns.cloudflare.com/dns-query"
   - "https://dns.google/dns-query"
 proxies:
-- {name: "备用群t.me/baipiaoqun", server: "gysz0000.dynu.net", port: 23657, type: "vless", uuid: "459b4a80-bd61-4ecd-a26b-e9c1809d9e45", tls: true, tfo: false, flow: "xtls-rprx-vision", skip-cert-verify: true, reality-opts: {public-key: "qhTzYYIgBzDLNYR79oxftqdo1kzL-1_hGJKfqrOliCY"}, servername: "www.nvidia.com", client-fingerprint: "chrome", network: "tcp"}
-- {name: "群被坏人举报了", server: "test123.zlqhdns.top", port: 11555, type: "vless", uuid: "459b4a80-bd61-4ecd-a26b-e9c1809d9e45", tls: true, tfo: false, flow: "xtls-rprx-vision", skip-cert-verify: true, reality-opts: {public-key: "qhTzYYIgBzDLNYR79oxftqdo1kzL-1_hGJKfqrOliCY"}, servername: "www.nvidia.com", client-fingerprint: "chrome", network: "tcp"}
-- {name: "白嫖怪家炸了", server: "95.217.1.83", port: 26586, type: "vless", uuid: "6a7c21ba-57d1-46cd-d579-449a58b36c79", tls: false, tfo: false, skip-cert-verify: true, network: "http", http-opts: {method: "GET", path: ["/"], headers: {Host: ["www.189.cn"]}}}
+- {name: "懒得维护", server: "gysz0000.dynu.net", port: 23657, type: "vless", uuid: "459b4a80-bd61-4ecd-a26b-e9c1809d9e45", tls: true, tfo: false, flow: "xtls-rprx-vision", skip-cert-verify: true, reality-opts: {public-key: "qhTzYYIgBzDLNYR79oxftqdo1kzL-1_hGJKfqrOliCY"}, servername: "www.nvidia.com", client-fingerprint: "chrome", network: "tcp"}
 - {name: "t.me/freeyule", server: "shenzhou05.mysynology.net", port: 37809, type: "vless", uuid: "459b4a80-bd61-4ecd-a26b-e9c1809d9e45", tls: true, tfo: false, flow: "xtls-rprx-vision", skip-cert-verify: true, reality-opts: {public-key: "qhTzYYIgBzDLNYR79oxftqdo1kzL-1_hGJKfqrOliCY"}, servername: "www.yahoo.com", client-fingerprint: "chrome", network: "tcp"}
 - {name: "群里大佬分享更多节点", server: "www.vpslook.com", port: 443, type: "vless", uuid: "70f8697b-f9f3-4692-8e0a-3d1834fd76dc", tls: true, tfo: false, skip-cert-verify: true, servername: "64D78605.Fr-7rB.pageS.dEv", client-fingerprint: "randomized", network: "ws", ws-opts: {path: "/YBa1BBPnrlsvyMZD/MzUuMTgwLjIyOS4x?ed=2560", headers: {Host: "64D78605.Fr-7rB.pageS.dEv"}}}
 - {name: "🇨🇳 台湾｜01｜原生IP", server: "tw.akebi.cc", port: 30001, type: "hysteria2", password: "82febca6-8856-41fe-84df-c8bda0b72c7b", auth: "82febca6-8856-41fe-84df-c8bda0b72c7b", sni: "tw.akebi.cc", skip-cert-verify: true}
@@ -129,9 +127,7 @@ proxy-groups:
   type: "select"
   proxies:
   - "AUTO"
-  - "备用群t.me/baipiaoqun"
-  - "群被坏人举报了"
-  - "白嫖怪家炸了"
+  - "懒得维护"
   - "t.me/freeyule"
   - "群里大佬分享更多节点"
   - "🇨🇳 台湾｜01｜原生IP"
@@ -246,9 +242,7 @@ proxy-groups:
   interval: 300
   tolerance: 50
   proxies:
-  - "备用群t.me/baipiaoqun"
-  - "群被坏人举报了"
-  - "白嫖怪家炸了"
+  - "懒得维护"
   - "t.me/freeyule"
   - "群里大佬分享更多节点"
   - "🇨🇳 台湾｜01｜原生IP"
@@ -360,9 +354,7 @@ proxy-groups:
 - name: "AI"
   type: "select"
   proxies:
-  - "备用群t.me/baipiaoqun"
-  - "群被坏人举报了"
-  - "白嫖怪家炸了"
+  - "懒得维护"
   - "t.me/freeyule"
   - "群里大佬分享更多节点"
   - "🇨🇳 台湾｜01｜原生IP"
