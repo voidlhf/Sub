@@ -30,6 +30,8 @@
           },
           {
             "rule_set": [
+              "geosite-google-ads@ads",
+              "geosite-spotify-ads@ads",
               "AdGuardSDNSFilter"
             ]
           }
@@ -62,7 +64,9 @@
             "clash_mode": "Direct"
           },
           {
-            "rule_set": "geosite-cn"
+            "rule_set": [
+              "geosite-cn"
+            ]
           }
         ],
         "server": "dns_direct"
@@ -105,8 +109,7 @@
         "mode": "or",
         "rules": [
           {
-            "domain_keyword": [
-              "mtalk.google.com",
+            "domain_suffix": [
               "ushd.xmsl.org",
               "cf.gtlx.org",
               "public-operation-hkrpg-sg.hoyoverse.com",
@@ -133,8 +136,8 @@
             "clash_mode": "Global"
           },
           {
-            "domain_keyword": [
-              "hoyoverse.com"
+            "rule_set": [
+              "geosite-hoyoverse"
             ]
           }
         ],
@@ -146,8 +149,8 @@
         "rules": [
           {
             "rule_set": [
-              "OpenAI",
-              "Gemini"
+              "geosite-openai",
+              "geosite-google-gemini"
             ]
           }
         ],
@@ -165,8 +168,9 @@
           },
           {
             "rule_set": [
-              "geoip-cn",
-              "geosite-cn"
+              "geosite-googlefcm",
+              "geosite-cn",
+              "geoip-cn"
             ]
           }
         ],
@@ -190,23 +194,51 @@
       },
       {
         "type": "remote",
+        "tag": "geosite-openai",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/lyc8503/sing-box-rules/rule-set-geosite/geosite-openai.srs",
+        "download_detour": "select"
+      },
+      {
+        "type": "remote",
+        "tag": "geosite-google-gemini",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/lyc8503/sing-box-rules/rule-set-geosite/geosite-google-gemini.srs",
+        "download_detour": "select"
+      },
+      {
+        "type": "remote",
+        "tag": "geosite-googlefcm",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/lyc8503/sing-box-rules/rule-set-geosite/geosite-googlefcm.srs",
+        "download_detour": "select"
+      },
+      {
+        "type": "remote",
+        "tag": "geosite-hoyoverse",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/lyc8503/sing-box-rules/rule-set-geosite/geosite-hoyoverse.srs",
+        "download_detour": "select"
+      },
+      {
+        "type": "remote",
+        "tag": "geosite-spotify-ads@ads",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/lyc8503/sing-box-rules/rule-set-geosite/geosite-spotify-ads@ads.srs",
+        "download_detour": "select"
+      },
+      {
+        "type": "remote",
+        "tag": "geosite-google-ads@ads",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/lyc8503/sing-box-rules/rule-set-geosite/geosite-google-ads@ads.srs",
+        "download_detour": "select"
+      },
+      {
+        "type": "remote",
         "tag": "AdGuardSDNSFilter",
         "format": "binary",
         "url": "https://raw.githubusercontent.com/xmdhs/sing-box-ruleset/rule-set/AdGuardSDNSFilterSingBox.srs",
-        "download_detour": "select"
-      },
-      {
-        "type": "remote",
-        "tag": "OpenAI",
-        "format": "binary",
-        "url": "https://raw.githubusercontent.com/senshinya/singbox_ruleset/main/rule/OpenAI/OpenAI.srs",
-        "download_detour": "select"
-      },
-      {
-        "type": "remote",
-        "tag": "Gemini",
-        "format": "binary",
-        "url": "https://raw.githubusercontent.com/senshinya/singbox_ruleset/main/rule/Gemini/Gemini.srs",
         "download_detour": "select"
       }
     ],
