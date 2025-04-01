@@ -1,25 +1,65 @@
 log-level: "debug"
+mixed-port: 7890
+allow-lan: true
 external-controller: "127.0.0.1:9090"
 unified-delay: true
 tcp-concurrent: true
+find-process-mode: "strict"
+global-client-fingerprint: "chrome"
+profile:
+  store-selected: true
+  store-fake-ip: true
+sniffer:
+  enable: true
+  force-dns-mapping: true
+  parse-pure-ip: true
+  override-destination: false
+  sniff:
+    HTTP:
+      ports:
+      - 80
+      - "8080-8880"
+    TLS:
+      ports:
+      - 443
+      - 8443
+    QUIC:
+      ports:
+      - 443
+      - 8443
+tun:
+  enable: true
+  stack: "mixed"
+  dns-hijack:
+  - "any:53"
+  - "tcp://any:53"
+  auto-route: true
+  auto-redirect: true
+  auto-detect-interface: true
+  strict-route: true
 dns:
   enable: true
   ipv6: false
   default-nameserver:
   - "223.5.5.5"
+  - "119.29.29.29"
   enhanced-mode: "fake-ip"
   fake-ip-range: "198.18.0.1/16"
   nameserver:
   - "https://dns.cloudflare.com/dns-query"
   - "https://dns.google/dns-query"
+  nameserver-policy:
+    geosite:cn,private:
+    - "https://dns.alidns.com/dns-query"
+    - "https://doh.pub/dns-query"
 proxies:
-- {name: "🇯🇵 免费-日本1-Ver.6", server: "d7m2d-g05.jp01-0986-vm0.entry.fr0307a.art", port: 21585, type: "vmess", uuid: "3e7347c1-83dc-3ceb-9e07-d4484c056d32", alterId: 1, cipher: "auto", tls: true, skip-cert-verify: false, udp: true}
-- {name: "🇯🇵 免费-日本2-Ver.7", server: "qkt9y-g05.jp02-9a99-vm0.entry.fr0307a.art", port: 11777, type: "vmess", uuid: "3e7347c1-83dc-3ceb-9e07-d4484c056d32", alterId: 1, cipher: "auto", tls: false, skip-cert-verify: false, udp: true}
-- {name: "🇯🇵 免费-日本3-Ver.6", server: "wdfjr-g05.jp03-7d22-vm0.entry.fr0307a.art", port: 21585, type: "vmess", uuid: "3e7347c1-83dc-3ceb-9e07-d4484c056d32", alterId: 1, cipher: "auto", tls: true, skip-cert-verify: false, udp: true}
-- {name: "🇯🇵 免费-日本4-Ver.7", server: "qg08e-g05.jp04-3771-vm0.entry.fr0307a.art", port: 448, type: "vmess", uuid: "3e7347c1-83dc-3ceb-9e07-d4484c056d32", alterId: 1, cipher: "auto", tls: false, skip-cert-verify: false, udp: true}
-- {name: "🇯🇵 免费-日本5-Ver.8", server: "dlfdi-g05.jp05-6786-vm0.entry.fr0307a.art", port: 46486, type: "vmess", uuid: "3e7347c1-83dc-3ceb-9e07-d4484c056d32", alterId: 1, cipher: "auto", tls: false, skip-cert-verify: false, udp: true}
-- {name: "🇯🇵 免费-日本6-Ver.7", server: "8kxkj-g05.jp06-7c5a-vm0.entry.fr0307a.art", port: 28787, type: "vmess", uuid: "3e7347c1-83dc-3ceb-9e07-d4484c056d32", alterId: 1, cipher: "auto", tls: true, skip-cert-verify: false, udp: true}
-- {name: "🇯🇵 免费-日本7-Ver.1", server: "fc698-g05.jp07-1f28-vm0.entry.fr0307a.art", port: 28787, type: "vmess", uuid: "3e7347c1-83dc-3ceb-9e07-d4484c056d32", alterId: 1, cipher: "auto", tls: false, skip-cert-verify: false, udp: true}
+- {name: "🇯🇵 免费-日本1-Ver.6", server: "6od7r-g05.jp01-0986-vm0.entry.fr0307a.art", port: 21585, type: "vmess", uuid: "3e7347c1-83dc-3ceb-9e07-d4484c056d32", alterId: 1, cipher: "auto", tls: true, skip-cert-verify: false, udp: true}
+- {name: "🇯🇵 免费-日本2-Ver.7", server: "3bidd-g05.jp02-9a99-vm0.entry.fr0307a.art", port: 11777, type: "vmess", uuid: "3e7347c1-83dc-3ceb-9e07-d4484c056d32", alterId: 1, cipher: "auto", tls: false, skip-cert-verify: false, udp: true}
+- {name: "🇯🇵 免费-日本3-Ver.6", server: "zjxqw-g05.jp03-7d22-vm0.entry.fr0307a.art", port: 21585, type: "vmess", uuid: "3e7347c1-83dc-3ceb-9e07-d4484c056d32", alterId: 1, cipher: "auto", tls: true, skip-cert-verify: false, udp: true}
+- {name: "🇯🇵 免费-日本4-Ver.7", server: "56knc-g05.jp04-3771-vm0.entry.fr0307a.art", port: 448, type: "vmess", uuid: "3e7347c1-83dc-3ceb-9e07-d4484c056d32", alterId: 1, cipher: "auto", tls: false, skip-cert-verify: false, udp: true}
+- {name: "🇯🇵 免费-日本5-Ver.8", server: "jbe5j-g05.jp05-6786-vm0.entry.fr0307a.art", port: 46486, type: "vmess", uuid: "3e7347c1-83dc-3ceb-9e07-d4484c056d32", alterId: 1, cipher: "auto", tls: false, skip-cert-verify: false, udp: true}
+- {name: "🇯🇵 免费-日本6-Ver.7", server: "29xyq-g05.jp06-7c5a-vm0.entry.fr0307a.art", port: 28787, type: "vmess", uuid: "3e7347c1-83dc-3ceb-9e07-d4484c056d32", alterId: 1, cipher: "auto", tls: true, skip-cert-verify: false, udp: true}
+- {name: "🇯🇵 免费-日本7-Ver.1", server: "gbfsj-g05.jp07-1f28-vm0.entry.fr0307a.art", port: 28787, type: "vmess", uuid: "3e7347c1-83dc-3ceb-9e07-d4484c056d32", alterId: 1, cipher: "auto", tls: false, skip-cert-verify: false, udp: true}
 proxy-groups:
 - name: "PROXY"
   type: "select"
@@ -66,6 +106,7 @@ rules:
 - "DOMAIN-SUFFIX,ushd.xmsl.org,DIRECT"
 - "DOMAIN-SUFFIX,cf.gtlx.org,DIRECT"
 - "GEOSITE,GOOGLEFCM,DIRECT"
+- "GEOSITE,PRIVATE,DIRECT"
 - "GEOSITE,CN,DIRECT"
 - "GEOIP,PRIVATE,DIRECT"
 - "GEOIP,CN,DIRECT"

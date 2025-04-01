@@ -1,33 +1,73 @@
 log-level: "debug"
+mixed-port: 7890
+allow-lan: true
 external-controller: "127.0.0.1:9090"
 unified-delay: true
 tcp-concurrent: true
+find-process-mode: "strict"
+global-client-fingerprint: "chrome"
+profile:
+  store-selected: true
+  store-fake-ip: true
+sniffer:
+  enable: true
+  force-dns-mapping: true
+  parse-pure-ip: true
+  override-destination: false
+  sniff:
+    HTTP:
+      ports:
+      - 80
+      - "8080-8880"
+    TLS:
+      ports:
+      - 443
+      - 8443
+    QUIC:
+      ports:
+      - 443
+      - 8443
+tun:
+  enable: true
+  stack: "mixed"
+  dns-hijack:
+  - "any:53"
+  - "tcp://any:53"
+  auto-route: true
+  auto-redirect: true
+  auto-detect-interface: true
+  strict-route: true
 dns:
   enable: true
   ipv6: false
   default-nameserver:
   - "223.5.5.5"
+  - "119.29.29.29"
   enhanced-mode: "fake-ip"
   fake-ip-range: "198.18.0.1/16"
   nameserver:
   - "https://dns.cloudflare.com/dns-query"
   - "https://dns.google/dns-query"
+  nameserver-policy:
+    geosite:cn,private:
+    - "https://dns.alidns.com/dns-query"
+    - "https://doh.pub/dns-query"
 proxies:
-- {name: "剩余流量：164.23 GB", server: "sanguayun-jp.legeth.xyz", port: 22596, sni: null, up: 10, down: 10, skip-cert-verify: false, ports: "22001-22999", type: "hysteria2", password: "d7770de2-16bc-44cd-9414-3d4451fc38f2"}
-- {name: "距离下次重置剩余：20 天", server: "sanguayun-jp.legeth.xyz", port: 22596, sni: null, up: 10, down: 10, skip-cert-verify: false, ports: "22001-22999", type: "hysteria2", password: "d7770de2-16bc-44cd-9414-3d4451fc38f2"}
-- {name: "套餐到期：2025-04-21", server: "sanguayun-jp.legeth.xyz", port: 22596, sni: null, up: 10, down: 10, skip-cert-verify: false, ports: "22001-22999", type: "hysteria2", password: "d7770de2-16bc-44cd-9414-3d4451fc38f2"}
-- {name: "🚀 优质机场就选新狮云", server: "sanguayun-jp.legeth.xyz", port: 22596, sni: null, up: 10, down: 10, skip-cert-verify: false, ports: "22001-22999", type: "hysteria2", password: "d7770de2-16bc-44cd-9414-3d4451fc38f2"}
-- {name: "🚀 量大管饱就选新狮云", server: "sanguayun-jp.legeth.xyz", port: 22277, sni: null, up: 10, down: 10, skip-cert-verify: false, ports: "22001-22999", type: "hysteria2", password: "d7770de2-16bc-44cd-9414-3d4451fc38f2"}
-- {name: "🚀 新狮云官网：my.cloudlion.me", server: "sanguayun-jp.legeth.xyz", port: 22829, sni: null, up: 10, down: 10, skip-cert-verify: false, ports: "22001-22999", type: "hysteria2", password: "d7770de2-16bc-44cd-9414-3d4451fc38f2"}
-- {name: "🚀 新狮云群组：@cloudlion_chat", server: "sanguayun-jp.legeth.xyz", port: 22221, sni: null, up: 10, down: 10, skip-cert-verify: false, ports: "22001-22999", type: "hysteria2", password: "d7770de2-16bc-44cd-9414-3d4451fc38f2"}
-- {name: "波特兰1 三网优化", server: "sanguayun-us.legeth.xyz", port: 22732, sni: null, up: 10, down: 10, skip-cert-verify: false, ports: "22001-22999", type: "hysteria2", password: "d7770de2-16bc-44cd-9414-3d4451fc38f2"}
-- {name: "波特兰2 三网优化", server: "sanguayun-us.legeth.xyz", port: 22024, sni: null, up: 10, down: 10, skip-cert-verify: false, ports: "22001-22999", type: "hysteria2", password: "d7770de2-16bc-44cd-9414-3d4451fc38f2"}
-- {name: "东京1 三网优化", server: "sanguayun-jp.legeth.xyz", port: 22559, sni: null, up: 10, down: 10, skip-cert-verify: false, ports: "22001-22999", type: "hysteria2", password: "d7770de2-16bc-44cd-9414-3d4451fc38f2"}
-- {name: "东京2 三网优化", server: "sanguayun-jp.legeth.xyz", port: 22302, sni: null, up: 10, down: 10, skip-cert-verify: false, ports: "22001-22999", type: "hysteria2", password: "d7770de2-16bc-44cd-9414-3d4451fc38f2"}
-- {name: "拉斯维加斯1 三网优化", server: "sanguayun-us2.legeth.xyz", port: 22169, sni: null, up: 10, down: 10, skip-cert-verify: false, ports: "22001-22999", type: "hysteria2", password: "d7770de2-16bc-44cd-9414-3d4451fc38f2"}
-- {name: "拉斯维加斯2 三网优化", server: "sanguayun-us2.legeth.xyz", port: 22530, sni: null, up: 10, down: 10, skip-cert-verify: false, ports: "22001-22999", type: "hysteria2", password: "d7770de2-16bc-44cd-9414-3d4451fc38f2"}
-- {name: "卢森堡1 三网优化", server: "sanguayun-lu.legeth.xyz", port: 22456, sni: null, up: 10, down: 10, skip-cert-verify: false, ports: "22001-22999", type: "hysteria2", password: "d7770de2-16bc-44cd-9414-3d4451fc38f2"}
-- {name: "卢森堡2 三网优化", server: "sanguayun-lu.legeth.xyz", port: 22139, sni: null, up: 10, down: 10, skip-cert-verify: false, ports: "22001-22999", type: "hysteria2", password: "d7770de2-16bc-44cd-9414-3d4451fc38f2"}
+- {name: "剩余流量：164.23 GB", server: "sanguayun-jp.legeth.xyz", port: 22512, sni: null, up: 10, down: 10, skip-cert-verify: false, ports: "22001-22999", type: "hysteria2", password: "d7770de2-16bc-44cd-9414-3d4451fc38f2"}
+- {name: "距离下次重置剩余：20 天", server: "sanguayun-jp.legeth.xyz", port: 22512, sni: null, up: 10, down: 10, skip-cert-verify: false, ports: "22001-22999", type: "hysteria2", password: "d7770de2-16bc-44cd-9414-3d4451fc38f2"}
+- {name: "套餐到期：2025-04-21", server: "sanguayun-jp.legeth.xyz", port: 22512, sni: null, up: 10, down: 10, skip-cert-verify: false, ports: "22001-22999", type: "hysteria2", password: "d7770de2-16bc-44cd-9414-3d4451fc38f2"}
+- {name: "🚀 优质机场就选新狮云", server: "sanguayun-jp.legeth.xyz", port: 22512, sni: null, up: 10, down: 10, skip-cert-verify: false, ports: "22001-22999", type: "hysteria2", password: "d7770de2-16bc-44cd-9414-3d4451fc38f2"}
+- {name: "🚀 量大管饱就选新狮云", server: "sanguayun-jp.legeth.xyz", port: 22273, sni: null, up: 10, down: 10, skip-cert-verify: false, ports: "22001-22999", type: "hysteria2", password: "d7770de2-16bc-44cd-9414-3d4451fc38f2"}
+- {name: "🚀 新狮云官网：my.cloudlion.me", server: "sanguayun-jp.legeth.xyz", port: 22501, sni: null, up: 10, down: 10, skip-cert-verify: false, ports: "22001-22999", type: "hysteria2", password: "d7770de2-16bc-44cd-9414-3d4451fc38f2"}
+- {name: "🚀 新狮云群组：@cloudlion_chat", server: "sanguayun-jp.legeth.xyz", port: 22522, sni: null, up: 10, down: 10, skip-cert-verify: false, ports: "22001-22999", type: "hysteria2", password: "d7770de2-16bc-44cd-9414-3d4451fc38f2"}
+- {name: "波特兰1 三网优化", server: "sanguayun-us.legeth.xyz", port: 22561, sni: null, up: 10, down: 10, skip-cert-verify: false, ports: "22001-22999", type: "hysteria2", password: "d7770de2-16bc-44cd-9414-3d4451fc38f2"}
+- {name: "波特兰2 三网优化", server: "sanguayun-us.legeth.xyz", port: 22098, sni: null, up: 10, down: 10, skip-cert-verify: false, ports: "22001-22999", type: "hysteria2", password: "d7770de2-16bc-44cd-9414-3d4451fc38f2"}
+- {name: "东京1 三网优化", server: "sanguayun-jp.legeth.xyz", port: 22051, sni: null, up: 10, down: 10, skip-cert-verify: false, ports: "22001-22999", type: "hysteria2", password: "d7770de2-16bc-44cd-9414-3d4451fc38f2"}
+- {name: "东京2 三网优化", server: "sanguayun-jp.legeth.xyz", port: 22572, sni: null, up: 10, down: 10, skip-cert-verify: false, ports: "22001-22999", type: "hysteria2", password: "d7770de2-16bc-44cd-9414-3d4451fc38f2"}
+- {name: "拉斯维加斯1 三网优化", server: "sanguayun-us2.legeth.xyz", port: 22381, sni: null, up: 10, down: 10, skip-cert-verify: false, ports: "22001-22999", type: "hysteria2", password: "d7770de2-16bc-44cd-9414-3d4451fc38f2"}
+- {name: "拉斯维加斯2 三网优化", server: "sanguayun-us2.legeth.xyz", port: 22489, sni: null, up: 10, down: 10, skip-cert-verify: false, ports: "22001-22999", type: "hysteria2", password: "d7770de2-16bc-44cd-9414-3d4451fc38f2"}
+- {name: "卢森堡1 三网优化", server: "sanguayun-lu.legeth.xyz", port: 22848, sni: null, up: 10, down: 10, skip-cert-verify: false, ports: "22001-22999", type: "hysteria2", password: "d7770de2-16bc-44cd-9414-3d4451fc38f2"}
+- {name: "卢森堡2 三网优化", server: "sanguayun-lu.legeth.xyz", port: 22587, sni: null, up: 10, down: 10, skip-cert-verify: false, ports: "22001-22999", type: "hysteria2", password: "d7770de2-16bc-44cd-9414-3d4451fc38f2"}
 proxy-groups:
 - name: "PROXY"
   type: "select"
@@ -98,6 +138,7 @@ rules:
 - "DOMAIN-SUFFIX,ushd.xmsl.org,DIRECT"
 - "DOMAIN-SUFFIX,cf.gtlx.org,DIRECT"
 - "GEOSITE,GOOGLEFCM,DIRECT"
+- "GEOSITE,PRIVATE,DIRECT"
 - "GEOSITE,CN,DIRECT"
 - "GEOIP,PRIVATE,DIRECT"
 - "GEOIP,CN,DIRECT"

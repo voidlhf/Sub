@@ -1,19 +1,59 @@
 log-level: "debug"
+mixed-port: 7890
+allow-lan: true
 external-controller: "127.0.0.1:9090"
 unified-delay: true
 tcp-concurrent: true
+find-process-mode: "strict"
+global-client-fingerprint: "chrome"
+profile:
+  store-selected: true
+  store-fake-ip: true
+sniffer:
+  enable: true
+  force-dns-mapping: true
+  parse-pure-ip: true
+  override-destination: false
+  sniff:
+    HTTP:
+      ports:
+      - 80
+      - "8080-8880"
+    TLS:
+      ports:
+      - 443
+      - 8443
+    QUIC:
+      ports:
+      - 443
+      - 8443
+tun:
+  enable: true
+  stack: "mixed"
+  dns-hijack:
+  - "any:53"
+  - "tcp://any:53"
+  auto-route: true
+  auto-redirect: true
+  auto-detect-interface: true
+  strict-route: true
 dns:
   enable: true
   ipv6: false
   default-nameserver:
   - "223.5.5.5"
+  - "119.29.29.29"
   enhanced-mode: "fake-ip"
   fake-ip-range: "198.18.0.1/16"
   nameserver:
   - "https://dns.cloudflare.com/dns-query"
   - "https://dns.google/dns-query"
+  nameserver-policy:
+    geosite:cn,private:
+    - "https://dns.alidns.com/dns-query"
+    - "https://doh.pub/dns-query"
 proxies:
-- {name: "剩余流量：998.76 GB", type: "vmess", server: "5.39.252.72", port: 20039, uuid: "720d308b-c48a-40c1-a320-cf6b1caa92a5", alterId: 0, cipher: "auto", udp: true, network: "ws"}
+- {name: "剩余流量：997.56 GB", type: "vmess", server: "5.39.252.72", port: 20039, uuid: "720d308b-c48a-40c1-a320-cf6b1caa92a5", alterId: 0, cipher: "auto", udp: true, network: "ws"}
 - {name: "距离下次重置剩余：29 天", type: "vmess", server: "5.39.252.72", port: 20039, uuid: "720d308b-c48a-40c1-a320-cf6b1caa92a5", alterId: 0, cipher: "auto", udp: true, network: "ws"}
 - {name: "套餐到期：2025-04-12", type: "vmess", server: "5.39.252.72", port: 20039, uuid: "720d308b-c48a-40c1-a320-cf6b1caa92a5", alterId: 0, cipher: "auto", udp: true, network: "ws"}
 - {name: "德国-法兰克福-001", type: "vmess", server: "5.39.252.72", port: 20039, uuid: "720d308b-c48a-40c1-a320-cf6b1caa92a5", alterId: 0, cipher: "auto", udp: true, network: "ws"}
@@ -45,7 +85,7 @@ proxy-groups:
   type: "select"
   proxies:
   - "AUTO"
-  - "剩余流量：998.76 GB"
+  - "剩余流量：997.56 GB"
   - "距离下次重置剩余：29 天"
   - "套餐到期：2025-04-12"
   - "德国-法兰克福-001"
@@ -78,7 +118,7 @@ proxy-groups:
   interval: 300
   tolerance: 50
   proxies:
-  - "剩余流量：998.76 GB"
+  - "剩余流量：997.56 GB"
   - "距离下次重置剩余：29 天"
   - "套餐到期：2025-04-12"
   - "德国-法兰克福-001"
@@ -108,7 +148,7 @@ proxy-groups:
 - name: "AI"
   type: "select"
   proxies:
-  - "剩余流量：998.76 GB"
+  - "剩余流量：997.56 GB"
   - "距离下次重置剩余：29 天"
   - "套餐到期：2025-04-12"
   - "德国-法兰克福-001"
@@ -146,6 +186,7 @@ rules:
 - "DOMAIN-SUFFIX,ushd.xmsl.org,DIRECT"
 - "DOMAIN-SUFFIX,cf.gtlx.org,DIRECT"
 - "GEOSITE,GOOGLEFCM,DIRECT"
+- "GEOSITE,PRIVATE,DIRECT"
 - "GEOSITE,CN,DIRECT"
 - "GEOIP,PRIVATE,DIRECT"
 - "GEOIP,CN,DIRECT"

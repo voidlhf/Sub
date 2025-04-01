@@ -1,17 +1,57 @@
 log-level: "debug"
+mixed-port: 7890
+allow-lan: true
 external-controller: "127.0.0.1:9090"
 unified-delay: true
 tcp-concurrent: true
+find-process-mode: "strict"
+global-client-fingerprint: "chrome"
+profile:
+  store-selected: true
+  store-fake-ip: true
+sniffer:
+  enable: true
+  force-dns-mapping: true
+  parse-pure-ip: true
+  override-destination: false
+  sniff:
+    HTTP:
+      ports:
+      - 80
+      - "8080-8880"
+    TLS:
+      ports:
+      - 443
+      - 8443
+    QUIC:
+      ports:
+      - 443
+      - 8443
+tun:
+  enable: true
+  stack: "mixed"
+  dns-hijack:
+  - "any:53"
+  - "tcp://any:53"
+  auto-route: true
+  auto-redirect: true
+  auto-detect-interface: true
+  strict-route: true
 dns:
   enable: true
   ipv6: false
   default-nameserver:
   - "223.5.5.5"
+  - "119.29.29.29"
   enhanced-mode: "fake-ip"
   fake-ip-range: "198.18.0.1/16"
   nameserver:
   - "https://dns.cloudflare.com/dns-query"
   - "https://dns.google/dns-query"
+  nameserver-policy:
+    geosite:cn,private:
+    - "https://dns.alidns.com/dns-query"
+    - "https://doh.pub/dns-query"
 proxies:
 - {name: "美国gpt（三网优化）", server: "us-rs.aikunapp.com", port: 5002, sni: "d1--cn-gotcha204-3.bilivideo.com", skip-cert-verify: true, type: "hysteria2", password: "7e07ebe3-9da1-47c9-8d9c-57aedd4e9a8a"}
 - {name: "美国（优化）", server: "us-pz.aikunapp.com", port: 5002, sni: "d1--cn-gotcha204-3.bilivideo.com", skip-cert-verify: true, type: "hysteria2", password: "7e07ebe3-9da1-47c9-8d9c-57aedd4e9a8a"}
@@ -32,16 +72,16 @@ proxies:
 - {name: "美国 IPv6 流媒体专用", server: "2a14:67c0:600::b", port: 5002, sni: "d1--cn-gotcha204-3.bilivideo.com", skip-cert-verify: true, type: "hysteria2", password: "7e07ebe3-9da1-47c9-8d9c-57aedd4e9a8a"}
 - {name: "美国 hy2", server: "us-oracle.aikunapp.com", port: 5002, sni: "d1--cn-gotcha204-3.bilivideo.com", skip-cert-verify: true, type: "hysteria2", password: "7e07ebe3-9da1-47c9-8d9c-57aedd4e9a8a"}
 - {name: "如果只有几个节点，去官网更新软件", type: "trojan", server: "127.0.0.1", port: 443, password: "7e07ebe3-9da1-47c9-8d9c-57aedd4e9a8a", udp: true, client-fingerprint: "chrome", sni: "cdn.hkhgc.6641634715834932.me", skip-cert-verify: true, smux: {enabled: true, protocol: "h2mux"}}
-- {name: "加拿大 高速 cdn 1", type: "vmess", server: "cdncdncdn.aikunapp.com", port: 443, uuid: "7e07ebe3-9da1-47c9-8d9c-57aedd4e9a8a", alterId: 0, cipher: "auto", udp: true, tls: true, client-fingerprint: "chrome", skip-cert-verify: true, servername: "r-OxmABuL3KYtADGT3.sm-node.com", network: "ws", ws-opts: {path: "/vmess_ws/csjc/index?ed=8192", headers: {Host: "cdn-ca.sm-node.com"}}, ws-path: "/vmess_ws/csjc/index?ed=8192", ws-headers: {Host: "cdn-ca.sm-node.com"}}
-- {name: "日本 高速 cdn 1", type: "vmess", server: "cdncdncdn.aikunapp.com", port: 443, uuid: "7e07ebe3-9da1-47c9-8d9c-57aedd4e9a8a", alterId: 0, cipher: "auto", udp: true, tls: true, client-fingerprint: "chrome", skip-cert-verify: true, servername: "r-uruHlJprwWtAntKK.sm-node.com", network: "ws", ws-opts: {path: "/vmess_ws/csjc/index?ed=8192", headers: {Host: "cdn-jp.sm-node.com"}}, ws-path: "/vmess_ws/csjc/index?ed=8192", ws-headers: {Host: "cdn-jp.sm-node.com"}}
-- {name: "新加坡 高速 cdn 1", type: "vmess", server: "cdncdncdn.aikunapp.com", port: 443, uuid: "7e07ebe3-9da1-47c9-8d9c-57aedd4e9a8a", alterId: 0, cipher: "auto", udp: true, tls: true, client-fingerprint: "chrome", skip-cert-verify: true, servername: "r-LkplRvFDsjLFmy5V.sm-node.com", network: "ws", ws-opts: {path: "/vmess_ws/csjc/index?ed=8192", headers: {Host: "cdn-sg.sm-node.com"}}, ws-path: "/vmess_ws/csjc/index?ed=8192", ws-headers: {Host: "cdn-sg.sm-node.com"}}
-- {name: "美国 高速 cdn 1", type: "vmess", server: "cdncdncdn.aikunapp.com", port: 443, uuid: "7e07ebe3-9da1-47c9-8d9c-57aedd4e9a8a", alterId: 0, cipher: "auto", udp: true, tls: true, client-fingerprint: "chrome", skip-cert-verify: true, servername: "r-b7wGqLjQH7wRYY8M.sm-node.com", network: "ws", ws-opts: {path: "/vmess_ws/csjc/index?ed=8192", headers: {Host: "cdn-us.sm-node.com"}}, ws-path: "/vmess_ws/csjc/index?ed=8192", ws-headers: {Host: "cdn-us.sm-node.com"}}
-- {name: "加拿大 cdn 高速 2", type: "vless", server: "cdncdncdn.aikunapp.com", port: 443, uuid: "7e07ebe3-9da1-47c9-8d9c-57aedd4e9a8a", alterId: 0, cipher: "auto", udp: true, tls: true, client-fingerprint: "chrome", skip-cert-verify: true, servername: "r-7g79tfUTnijuyamP.sm-node.com", network: "ws", ws-opts: {path: "/vless_ws/csjc/index?ed=8192", headers: {Host: "cdn-ca.sm-node.com"}}, ws-path: "/vless_ws/csjc/index?ed=8192", ws-headers: {Host: "cdn-ca.sm-node.com"}}
-- {name: "日本 cdn 高速 2", type: "vless", server: "cdncdncdn.aikunapp.com", port: 443, uuid: "7e07ebe3-9da1-47c9-8d9c-57aedd4e9a8a", alterId: 0, cipher: "auto", udp: true, tls: true, client-fingerprint: "chrome", skip-cert-verify: true, servername: "r-ZbueE13kz3mQfbDL.sm-node.com", network: "ws", ws-opts: {path: "/vless_ws/csjc/index?ed=8192", headers: {Host: "cdn-jp.sm-node.com"}}, ws-path: "/vless_ws/csjc/index?ed=8192", ws-headers: {Host: "cdn-jp.sm-node.com"}}
-- {name: "新加坡 cdn 高速 2", type: "vless", server: "cdncdncdn.aikunapp.com", port: 443, uuid: "7e07ebe3-9da1-47c9-8d9c-57aedd4e9a8a", alterId: 0, cipher: "auto", udp: true, tls: true, client-fingerprint: "chrome", skip-cert-verify: true, servername: "r-pUkDc9HycEdH515Q.sm-node.com", network: "ws", ws-opts: {path: "/vless_ws/csjc/index?ed=8192", headers: {Host: "cdn-sg.sm-node.com"}}, ws-path: "/vless_ws/csjc/index?ed=8192", ws-headers: {Host: "cdn-sg.sm-node.com"}}
-- {name: "美国 cdn 高速 2", type: "vless", server: "cdncdncdn.aikunapp.com", port: 443, uuid: "7e07ebe3-9da1-47c9-8d9c-57aedd4e9a8a", alterId: 0, cipher: "auto", udp: true, tls: true, client-fingerprint: "chrome", skip-cert-verify: true, servername: "r-D8mYMnePxSvfZOu9.sm-node.com", network: "ws", ws-opts: {path: "/vless_ws/csjc/index?ed=8192", headers: {Host: "cdn-us.sm-node.com"}}, ws-path: "/vless_ws/csjc/index?ed=8192", ws-headers: {Host: "cdn-us.sm-node.com"}}
-- {name: "香港 HKT  01（原生ip）", type: "trojan", server: "tj-hk-1.aikunapp.com", port: 6002, password: "7e07ebe3-9da1-47c9-8d9c-57aedd4e9a8a", udp: true, client-fingerprint: "chrome", sni: "Sme1sO3J4OgN4atY.apple.com.akadns.net", skip-cert-verify: true, smux: {enabled: true, protocol: "h2mux"}}
-- {name: "香港 HKT  02（原生ip）", type: "trojan", server: "tj-hk-2.aikunapp.com", port: 6002, password: "7e07ebe3-9da1-47c9-8d9c-57aedd4e9a8a", udp: true, client-fingerprint: "chrome", sni: "CjDvqmjMUC6muVFA.apple.com.akadns.net", skip-cert-verify: true, smux: {enabled: true, protocol: "h2mux"}}
+- {name: "加拿大 高速 cdn 1", type: "vmess", server: "cdncdncdn.aikunapp.com", port: 443, uuid: "7e07ebe3-9da1-47c9-8d9c-57aedd4e9a8a", alterId: 0, cipher: "auto", udp: true, tls: true, client-fingerprint: "chrome", skip-cert-verify: true, servername: "r-iLqWQzq9FjmKE8SN.sm-node.com", network: "ws", ws-opts: {path: "/vmess_ws/csjc/index?ed=8192", headers: {Host: "cdn-ca.sm-node.com"}}, ws-path: "/vmess_ws/csjc/index?ed=8192", ws-headers: {Host: "cdn-ca.sm-node.com"}}
+- {name: "日本 高速 cdn 1", type: "vmess", server: "cdncdncdn.aikunapp.com", port: 443, uuid: "7e07ebe3-9da1-47c9-8d9c-57aedd4e9a8a", alterId: 0, cipher: "auto", udp: true, tls: true, client-fingerprint: "chrome", skip-cert-verify: true, servername: "r-daL0CkPxAl0qIPg6.sm-node.com", network: "ws", ws-opts: {path: "/vmess_ws/csjc/index?ed=8192", headers: {Host: "cdn-jp.sm-node.com"}}, ws-path: "/vmess_ws/csjc/index?ed=8192", ws-headers: {Host: "cdn-jp.sm-node.com"}}
+- {name: "新加坡 高速 cdn 1", type: "vmess", server: "cdncdncdn.aikunapp.com", port: 443, uuid: "7e07ebe3-9da1-47c9-8d9c-57aedd4e9a8a", alterId: 0, cipher: "auto", udp: true, tls: true, client-fingerprint: "chrome", skip-cert-verify: true, servername: "r-DuB5OXTL8Bntrtkb.sm-node.com", network: "ws", ws-opts: {path: "/vmess_ws/csjc/index?ed=8192", headers: {Host: "cdn-sg.sm-node.com"}}, ws-path: "/vmess_ws/csjc/index?ed=8192", ws-headers: {Host: "cdn-sg.sm-node.com"}}
+- {name: "美国 高速 cdn 1", type: "vmess", server: "cdncdncdn.aikunapp.com", port: 443, uuid: "7e07ebe3-9da1-47c9-8d9c-57aedd4e9a8a", alterId: 0, cipher: "auto", udp: true, tls: true, client-fingerprint: "chrome", skip-cert-verify: true, servername: "r-wPUfwMREZ94ggYPP.sm-node.com", network: "ws", ws-opts: {path: "/vmess_ws/csjc/index?ed=8192", headers: {Host: "cdn-us.sm-node.com"}}, ws-path: "/vmess_ws/csjc/index?ed=8192", ws-headers: {Host: "cdn-us.sm-node.com"}}
+- {name: "加拿大 cdn 高速 2", type: "vless", server: "cdncdncdn.aikunapp.com", port: 443, uuid: "7e07ebe3-9da1-47c9-8d9c-57aedd4e9a8a", alterId: 0, cipher: "auto", udp: true, tls: true, client-fingerprint: "chrome", skip-cert-verify: true, servername: "r-WHO5hFhMkdj37cTB.sm-node.com", network: "ws", ws-opts: {path: "/vless_ws/csjc/index?ed=8192", headers: {Host: "cdn-ca.sm-node.com"}}, ws-path: "/vless_ws/csjc/index?ed=8192", ws-headers: {Host: "cdn-ca.sm-node.com"}}
+- {name: "日本 cdn 高速 2", type: "vless", server: "cdncdncdn.aikunapp.com", port: 443, uuid: "7e07ebe3-9da1-47c9-8d9c-57aedd4e9a8a", alterId: 0, cipher: "auto", udp: true, tls: true, client-fingerprint: "chrome", skip-cert-verify: true, servername: "r-J1eqhBhCtR573JqI.sm-node.com", network: "ws", ws-opts: {path: "/vless_ws/csjc/index?ed=8192", headers: {Host: "cdn-jp.sm-node.com"}}, ws-path: "/vless_ws/csjc/index?ed=8192", ws-headers: {Host: "cdn-jp.sm-node.com"}}
+- {name: "新加坡 cdn 高速 2", type: "vless", server: "cdncdncdn.aikunapp.com", port: 443, uuid: "7e07ebe3-9da1-47c9-8d9c-57aedd4e9a8a", alterId: 0, cipher: "auto", udp: true, tls: true, client-fingerprint: "chrome", skip-cert-verify: true, servername: "r-plaxENH4kYK8rkmO.sm-node.com", network: "ws", ws-opts: {path: "/vless_ws/csjc/index?ed=8192", headers: {Host: "cdn-sg.sm-node.com"}}, ws-path: "/vless_ws/csjc/index?ed=8192", ws-headers: {Host: "cdn-sg.sm-node.com"}}
+- {name: "美国 cdn 高速 2", type: "vless", server: "cdncdncdn.aikunapp.com", port: 443, uuid: "7e07ebe3-9da1-47c9-8d9c-57aedd4e9a8a", alterId: 0, cipher: "auto", udp: true, tls: true, client-fingerprint: "chrome", skip-cert-verify: true, servername: "r-a7cRtVySEVHxf9H7.sm-node.com", network: "ws", ws-opts: {path: "/vless_ws/csjc/index?ed=8192", headers: {Host: "cdn-us.sm-node.com"}}, ws-path: "/vless_ws/csjc/index?ed=8192", ws-headers: {Host: "cdn-us.sm-node.com"}}
+- {name: "香港 HKT  01（原生ip）", type: "trojan", server: "tj-hk-1.aikunapp.com", port: 6002, password: "7e07ebe3-9da1-47c9-8d9c-57aedd4e9a8a", udp: true, client-fingerprint: "chrome", sni: "gtrusqSU71UrBd16.apple.com.akadns.net", skip-cert-verify: true, smux: {enabled: true, protocol: "h2mux"}}
+- {name: "香港 HKT  02（原生ip）", type: "trojan", server: "tj-hk-2.aikunapp.com", port: 6002, password: "7e07ebe3-9da1-47c9-8d9c-57aedd4e9a8a", udp: true, client-fingerprint: "chrome", sni: "9XFTQFHCEsE9jH9H.apple.com.akadns.net", skip-cert-verify: true, smux: {enabled: true, protocol: "h2mux"}}
 - {name: "日本 樱花 新协议", type: "trojan", server: "tj-jp-1.aikunapp.com", port: 6002, password: "7e07ebe3-9da1-47c9-8d9c-57aedd4e9a8a", udp: true, client-fingerprint: "chrome", sni: "bootcdn.xuexi.cn", skip-cert-verify: true, smux: {enabled: true, protocol: "h2mux"}}
 - {name: "香港 新协议", type: "trojan", server: "aws-hkhk.aikunapp.com", port: 6002, password: "7e07ebe3-9da1-47c9-8d9c-57aedd4e9a8a", udp: true, client-fingerprint: "chrome", sni: "bootcdn.xuexi.cn", skip-cert-verify: true, smux: {enabled: true, protocol: "h2mux"}}
 - {name: "日本 aws 新协议", type: "trojan", server: "aws-jpjp.aikunapp.com", port: 6002, password: "7e07ebe3-9da1-47c9-8d9c-57aedd4e9a8a", udp: true, client-fingerprint: "chrome", sni: "bootcdn.xuexi.cn", skip-cert-verify: true, smux: {enabled: true, protocol: "h2mux"}}
@@ -174,6 +214,7 @@ rules:
 - "DOMAIN-SUFFIX,ushd.xmsl.org,DIRECT"
 - "DOMAIN-SUFFIX,cf.gtlx.org,DIRECT"
 - "GEOSITE,GOOGLEFCM,DIRECT"
+- "GEOSITE,PRIVATE,DIRECT"
 - "GEOSITE,CN,DIRECT"
 - "GEOIP,PRIVATE,DIRECT"
 - "GEOIP,CN,DIRECT"
