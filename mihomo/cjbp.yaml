@@ -13,6 +13,8 @@ dns:
   - "https://dns.cloudflare.com/dns-query"
   - "https://dns.google/dns-query"
 proxies:
+- {name: "🇭🇰 香港 电信", server: "hn.jiasu.eu", port: 45673, type: "vless", uuid: "fcb8ded6-2984-4e78-8386-823bd8d1652c", tls: false, tfo: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/TG-AiLuMao/", headers: {Host: "baidu.com"}}}
+- {name: "🇭🇰 香港 移动", server: "2409:8c4c:e00:804::65", port: 52451, type: "vless", uuid: "fcb8ded6-2984-4e78-8386-823bd8d1652c", tls: false, tfo: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/TG-AiLuMao/", headers: {Host: "baidu.com"}}}
 - {name: "懒得维护", server: "gysz0000.dynu.net", port: 23657, type: "vless", uuid: "459b4a80-bd61-4ecd-a26b-e9c1809d9e45", tls: true, tfo: false, flow: "xtls-rprx-vision", skip-cert-verify: true, reality-opts: {public-key: "qhTzYYIgBzDLNYR79oxftqdo1kzL-1_hGJKfqrOliCY"}, servername: "www.nvidia.com", client-fingerprint: "chrome", network: "tcp"}
 - {name: "t.me/freeyule", server: "shenzhou05.mysynology.net", port: 37809, type: "vless", uuid: "459b4a80-bd61-4ecd-a26b-e9c1809d9e45", tls: true, tfo: false, flow: "xtls-rprx-vision", skip-cert-verify: true, reality-opts: {public-key: "qhTzYYIgBzDLNYR79oxftqdo1kzL-1_hGJKfqrOliCY"}, servername: "www.yahoo.com", client-fingerprint: "chrome", network: "tcp"}
 - {name: "群里大佬分享更多节点", server: "www.vpslook.com", port: 443, type: "vless", uuid: "70f8697b-f9f3-4692-8e0a-3d1834fd76dc", tls: true, tfo: false, skip-cert-verify: true, servername: "64D78605.Fr-7rB.pageS.dEv", client-fingerprint: "randomized", network: "ws", ws-opts: {path: "/YBa1BBPnrlsvyMZD/MzUuMTgwLjIyOS4x?ed=2560", headers: {Host: "64D78605.Fr-7rB.pageS.dEv"}}}
@@ -127,6 +129,8 @@ proxy-groups:
   type: "select"
   proxies:
   - "AUTO"
+  - "🇭🇰 香港 电信"
+  - "🇭🇰 香港 移动"
   - "懒得维护"
   - "t.me/freeyule"
   - "群里大佬分享更多节点"
@@ -242,6 +246,8 @@ proxy-groups:
   interval: 300
   tolerance: 50
   proxies:
+  - "🇭🇰 香港 电信"
+  - "🇭🇰 香港 移动"
   - "懒得维护"
   - "t.me/freeyule"
   - "群里大佬分享更多节点"
@@ -354,6 +360,8 @@ proxy-groups:
 - name: "AI"
   type: "select"
   proxies:
+  - "🇭🇰 香港 电信"
+  - "🇭🇰 香港 移动"
   - "懒得维护"
   - "t.me/freeyule"
   - "群里大佬分享更多节点"
