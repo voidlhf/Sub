@@ -1,0 +1,193 @@
+log-level: "debug"
+mixed-port: 7890
+allow-lan: true
+external-controller: "127.0.0.1:9090"
+unified-delay: true
+tcp-concurrent: true
+find-process-mode: "strict"
+global-client-fingerprint: "chrome"
+profile:
+  store-selected: true
+  store-fake-ip: true
+sniffer:
+  enable: true
+  force-dns-mapping: true
+  parse-pure-ip: true
+  override-destination: false
+  sniff:
+    HTTP:
+      ports:
+      - 80
+      - "8080-8880"
+    TLS:
+      ports:
+      - 443
+      - 8443
+    QUIC:
+      ports:
+      - 443
+      - 8443
+tun:
+  enable: true
+  stack: "mixed"
+  dns-hijack:
+  - "any:53"
+  - "tcp://any:53"
+  auto-route: true
+  auto-redirect: true
+  auto-detect-interface: true
+  strict-route: true
+dns:
+  enable: true
+  ipv6: false
+  default-nameserver:
+  - "223.5.5.5"
+  - "119.29.29.29"
+  enhanced-mode: "fake-ip"
+  fake-ip-range: "198.18.0.1/16"
+  nameserver:
+  - "https://dns.cloudflare.com/dns-query"
+  - "https://dns.google/dns-query"
+  nameserver-policy:
+    geosite:cn,private:
+    - "https://dns.alidns.com/dns-query"
+    - "https://doh.pub/dns-query"
+proxies:
+- {name: "剩余流量：200 GB", type: "vless", server: "sg001.421421.xyz", port: 20230, uuid: "644a11df-a74a-49d7-a31e-8bf42e77eb47", udp: true, tls: true, skip-cert-verify: false, flow: "xtls-rprx-vision", client-fingerprint: "chrome", servername: "www.alibaba.com", reality-opts: {public-key: "gKQ1iax36vjbOYLKLveiSn_OnlBVAf3ecHLpQnrC4jw", short-id: "a7464bff"}}
+- {name: "套餐到期：2025-07-02", type: "vless", server: "sg001.421421.xyz", port: 20230, uuid: "644a11df-a74a-49d7-a31e-8bf42e77eb47", udp: true, tls: true, skip-cert-verify: false, flow: "xtls-rprx-vision", client-fingerprint: "chrome", servername: "www.alibaba.com", reality-opts: {public-key: "gKQ1iax36vjbOYLKLveiSn_OnlBVAf3ecHLpQnrC4jw", short-id: "a7464bff"}}
+- {name: "新加坡01|流媒体", type: "vless", server: "sg001.421421.xyz", port: 20230, uuid: "644a11df-a74a-49d7-a31e-8bf42e77eb47", udp: true, tls: true, skip-cert-verify: false, flow: "xtls-rprx-vision", client-fingerprint: "chrome", servername: "www.alibaba.com", reality-opts: {public-key: "gKQ1iax36vjbOYLKLveiSn_OnlBVAf3ecHLpQnrC4jw", short-id: "a7464bff"}}
+- {name: "新加坡02|流媒体", type: "vless", server: "sg002.421421.xyz", port: 20230, uuid: "644a11df-a74a-49d7-a31e-8bf42e77eb47", udp: true, tls: true, skip-cert-verify: false, flow: "xtls-rprx-vision", client-fingerprint: "chrome", servername: "www.alibaba.com", reality-opts: {public-key: "gKQ1iax36vjbOYLKLveiSn_OnlBVAf3ecHLpQnrC4jw", short-id: "a7464bff"}}
+- {name: "新加坡03|流媒体", type: "vless", server: "sg003.421421.xyz", port: 20230, uuid: "644a11df-a74a-49d7-a31e-8bf42e77eb47", udp: true, tls: true, skip-cert-verify: false, flow: "xtls-rprx-vision", client-fingerprint: "chrome", servername: "www.alibaba.com", reality-opts: {public-key: "gKQ1iax36vjbOYLKLveiSn_OnlBVAf3ecHLpQnrC4jw", short-id: "a7464bff"}}
+- {name: "新加坡04|流媒体", type: "vless", server: "sg004.421421.xyz", port: 20230, uuid: "644a11df-a74a-49d7-a31e-8bf42e77eb47", udp: true, tls: true, skip-cert-verify: false, flow: "xtls-rprx-vision", client-fingerprint: "chrome", servername: "www.alibaba.com", reality-opts: {public-key: "gKQ1iax36vjbOYLKLveiSn_OnlBVAf3ecHLpQnrC4jw", short-id: "a7464bff"}}
+- {name: "日本01", type: "vless", server: "jp001.421421.xyz", port: 20230, uuid: "644a11df-a74a-49d7-a31e-8bf42e77eb47", udp: true, tls: true, skip-cert-verify: false, flow: "xtls-rprx-vision", client-fingerprint: "chrome", servername: "www.alibaba.com", reality-opts: {public-key: "gKQ1iax36vjbOYLKLveiSn_OnlBVAf3ecHLpQnrC4jw", short-id: "a7464bff"}}
+- {name: "日本02", type: "vless", server: "jp002.421421.xyz", port: 20230, uuid: "644a11df-a74a-49d7-a31e-8bf42e77eb47", udp: true, tls: true, skip-cert-verify: false, flow: "xtls-rprx-vision", client-fingerprint: "chrome", servername: "www.alibaba.com", reality-opts: {public-key: "gKQ1iax36vjbOYLKLveiSn_OnlBVAf3ecHLpQnrC4jw", short-id: "a7464bff"}}
+- {name: "日本03", type: "vless", server: "jp003.421421.xyz", port: 20230, uuid: "644a11df-a74a-49d7-a31e-8bf42e77eb47", udp: true, tls: true, skip-cert-verify: false, flow: "xtls-rprx-vision", client-fingerprint: "chrome", servername: "www.alibaba.com", reality-opts: {public-key: "gKQ1iax36vjbOYLKLveiSn_OnlBVAf3ecHLpQnrC4jw", short-id: "a7464bff"}}
+- {name: "日本04", type: "vless", server: "jp004.421421.xyz", port: 20230, uuid: "644a11df-a74a-49d7-a31e-8bf42e77eb47", udp: true, tls: true, skip-cert-verify: false, flow: "xtls-rprx-vision", client-fingerprint: "chrome", servername: "www.alibaba.com", reality-opts: {public-key: "gKQ1iax36vjbOYLKLveiSn_OnlBVAf3ecHLpQnrC4jw", short-id: "a7464bff"}}
+- {name: "美国01", type: "vless", server: "us001.421421.xyz", port: 20230, uuid: "644a11df-a74a-49d7-a31e-8bf42e77eb47", udp: true, tls: true, skip-cert-verify: false, flow: "xtls-rprx-vision", client-fingerprint: "chrome", servername: "www.alibaba.com", reality-opts: {public-key: "gKQ1iax36vjbOYLKLveiSn_OnlBVAf3ecHLpQnrC4jw", short-id: "a7464bff"}}
+- {name: "美国02", type: "vless", server: "us002.421421.xyz", port: 20230, uuid: "644a11df-a74a-49d7-a31e-8bf42e77eb47", udp: true, tls: true, skip-cert-verify: false, flow: "xtls-rprx-vision", client-fingerprint: "chrome", servername: "www.alibaba.com", reality-opts: {public-key: "gKQ1iax36vjbOYLKLveiSn_OnlBVAf3ecHLpQnrC4jw", short-id: "a7464bff"}}
+- {name: "新加坡05|流媒体", type: "trojan", server: "sg005.421421.xyz", port: 20230, password: "644a11df-a74a-49d7-a31e-8bf42e77eb47", udp: true, sni: "www.alibaba.com", skip-cert-verify: true}
+- {name: "新加坡06|流媒体", type: "trojan", server: "sg006.421421.xyz", port: 20230, password: "644a11df-a74a-49d7-a31e-8bf42e77eb47", udp: true, network: "ws", sni: "www.alibaba.com", skip-cert-verify: true}
+- {name: "新加坡07|流媒体", type: "trojan", server: "sg007.421421.xyz", port: 20230, password: "644a11df-a74a-49d7-a31e-8bf42e77eb47", udp: true, sni: "www.alibaba.com", skip-cert-verify: true}
+- {name: "新加坡08|流媒体", type: "trojan", server: "sg008.421421.xyz", port: 20230, password: "644a11df-a74a-49d7-a31e-8bf42e77eb47", udp: true, sni: "www.alibaba.com", skip-cert-verify: true}
+- {name: "日本05", type: "trojan", server: "jp005.421421.xyz", port: 20230, password: "644a11df-a74a-49d7-a31e-8bf42e77eb47", udp: true, sni: "www.alibaba.com", skip-cert-verify: true}
+- {name: "日本06", type: "trojan", server: "jp006.421421.xyz", port: 20230, password: "644a11df-a74a-49d7-a31e-8bf42e77eb47", udp: true, sni: "www.alibaba.com", skip-cert-verify: true}
+- {name: "日本07", type: "trojan", server: "jp007.421421.xyz", port: 20230, password: "644a11df-a74a-49d7-a31e-8bf42e77eb47", udp: true, sni: "www.alibaba.com", skip-cert-verify: true}
+- {name: "日本08", type: "trojan", server: "jp008.421421.xyz", port: 20230, password: "644a11df-a74a-49d7-a31e-8bf42e77eb47", udp: true, sni: "www.alibaba.com", skip-cert-verify: true}
+- {name: "美国03", type: "trojan", server: "us003.421421.xyz", port: 20230, password: "644a11df-a74a-49d7-a31e-8bf42e77eb47", udp: true, sni: "www.alibaba.com", skip-cert-verify: true}
+- {name: "美国04", type: "trojan", server: "us004.421421.xyz", port: 20230, password: "644a11df-a74a-49d7-a31e-8bf42e77eb47", udp: true, sni: "www.alibaba.com", skip-cert-verify: true}
+- {name: "邀请好友返利60%", type: "trojan", server: "sg001.421421.xyz", port: 20230, password: "644a11df-a74a-49d7-a31e-8bf42e77eb47", udp: true, sni: "www.alibaba.com", skip-cert-verify: true}
+- {name: "官网：tejiajichang.com", type: "trojan", server: "sg001.421421.xyz", port: 20230, password: "644a11df-a74a-49d7-a31e-8bf42e77eb47", udp: true, sni: "www.alibaba.com", skip-cert-verify: true}
+- {name: "tg群组: https://t.me/tjiajc1", type: "trojan", server: "sg001.421421.xyz", port: 20230, password: "644a11df-a74a-49d7-a31e-8bf42e77eb47", udp: true, sni: "www.alibaba.com", skip-cert-verify: true}
+proxy-groups:
+- name: "PROXY"
+  type: "select"
+  proxies:
+  - "AUTO"
+  - "剩余流量：200 GB"
+  - "套餐到期：2025-07-02"
+  - "新加坡01|流媒体"
+  - "新加坡02|流媒体"
+  - "新加坡03|流媒体"
+  - "新加坡04|流媒体"
+  - "日本01"
+  - "日本02"
+  - "日本03"
+  - "日本04"
+  - "美国01"
+  - "美国02"
+  - "新加坡05|流媒体"
+  - "新加坡06|流媒体"
+  - "新加坡07|流媒体"
+  - "新加坡08|流媒体"
+  - "日本05"
+  - "日本06"
+  - "日本07"
+  - "日本08"
+  - "美国03"
+  - "美国04"
+  - "邀请好友返利60%"
+  - "官网：tejiajichang.com"
+  - "tg群组: https://t.me/tjiajc1"
+- name: "AUTO"
+  type: "url-test"
+  url: "http://www.gstatic.com/generate_204"
+  interval: 300
+  tolerance: 50
+  proxies:
+  - "剩余流量：200 GB"
+  - "套餐到期：2025-07-02"
+  - "新加坡01|流媒体"
+  - "新加坡02|流媒体"
+  - "新加坡03|流媒体"
+  - "新加坡04|流媒体"
+  - "日本01"
+  - "日本02"
+  - "日本03"
+  - "日本04"
+  - "美国01"
+  - "美国02"
+  - "新加坡05|流媒体"
+  - "新加坡06|流媒体"
+  - "新加坡07|流媒体"
+  - "新加坡08|流媒体"
+  - "日本05"
+  - "日本06"
+  - "日本07"
+  - "日本08"
+  - "美国03"
+  - "美国04"
+  - "邀请好友返利60%"
+  - "官网：tejiajichang.com"
+  - "tg群组: https://t.me/tjiajc1"
+- name: "AI"
+  type: "select"
+  proxies:
+  - "剩余流量：200 GB"
+  - "套餐到期：2025-07-02"
+  - "新加坡01|流媒体"
+  - "新加坡02|流媒体"
+  - "新加坡03|流媒体"
+  - "新加坡04|流媒体"
+  - "日本01"
+  - "日本02"
+  - "日本03"
+  - "日本04"
+  - "美国01"
+  - "美国02"
+  - "新加坡05|流媒体"
+  - "新加坡06|流媒体"
+  - "新加坡07|流媒体"
+  - "新加坡08|流媒体"
+  - "日本05"
+  - "日本06"
+  - "日本07"
+  - "日本08"
+  - "美国03"
+  - "美国04"
+  - "邀请好友返利60%"
+  - "官网：tejiajichang.com"
+  - "tg群组: https://t.me/tjiajc1"
+rules:
+- "RULE-SET,reject-list,REJECT"
+- "DOMAIN-SUFFIX,ushd.xmsl.org,DIRECT"
+- "DOMAIN-SUFFIX,cf.gtlx.org,DIRECT"
+- "DOMAIN-SUFFIX,public-operation-hkrpg-sg.hoyoverse.com,DIRECT"
+- "DOMAIN-SUFFIX,public-operation-hk4e-sg.hoyoverse.com,DIRECT"
+- "DOMAIN-SUFFIX,public-operation-nap-sg.hoyoverse.com,DIRECT"
+- "DST-PORT,23301/22101-22102/20501/21601-21606,DIRECT"
+- "GEOSITE,HOYOVERSE,PROXY"
+- "GEOSITE,OPENAI,AI"
+- "GEOSITE,GOOGLE-GEMINI,AI"
+- "GEOSITE,GOOGLEFCM,DIRECT"
+- "GEOSITE,PRIVATE,DIRECT"
+- "GEOSITE,CN,DIRECT"
+- "GEOIP,PRIVATE,DIRECT,no-resolve"
+- "GEOIP,CN,DIRECT"
+- "MATCH,PROXY"
+rule-providers:
+  reject-list:
+    type: "http"
+    behavior: "domain"
+    format: "text"
+    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/v2ray-rules-dat@release/reject-list.txt"
+    path: "./v2ray-rules-da/reject-list.txt"
