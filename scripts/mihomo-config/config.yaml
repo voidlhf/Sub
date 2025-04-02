@@ -61,7 +61,7 @@ proxy-groups:
     type: select
     proxies:
 rules:
-  - RULE-SET,reject-list,REJECT
+  - GEOSITE,CATEGORY-ADS-ALL,REJECT
   - DOMAIN-SUFFIX,ushd.xmsl.org,DIRECT
   - DOMAIN-SUFFIX,cf.gtlx.org,DIRECT
   - DOMAIN-SUFFIX,public-operation-hkrpg-sg.hoyoverse.com,DIRECT
@@ -77,10 +77,3 @@ rules:
   - GEOIP,PRIVATE,DIRECT,no-resolve
   - GEOIP,CN,DIRECT
   - MATCH,PROXY
-rule-providers:
-  reject-list:
-    type: http
-    behavior: domain
-    format: text
-    url: https://cdn.jsdelivr.net/gh/Loyalsoldier/v2ray-rules-dat@release/reject-list.txt
-    path: ./v2ray-rules-da/reject-list.txt
