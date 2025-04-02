@@ -1,0 +1,1728 @@
+{
+  "log": {},
+  "dns": {
+    "servers": [
+      {
+        "tag": "dns_proxy",
+        "type": "https",
+        "server": "1.1.1.1",
+        "detour": "select"
+      },
+      {
+        "tag": "dns_direct",
+        "type": "https",
+        "server": "223.5.5.5"
+      },
+      {
+        "tag": "dns_fakeip",
+        "type": "fakeip",
+        "inet4_range": "198.18.0.0/15",
+        "inet6_range": "fc00::/18"
+      }
+    ],
+    "rules": [
+      {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "query_type": "HTTPS"
+          },
+          {
+            "rule_set": [
+              "geosite-category-ads-all"
+            ]
+          }
+        ],
+        "action": "reject"
+      },
+      {
+        "query_type": [
+          "A",
+          "AAAA"
+        ],
+        "server": "dns_fakeip",
+        "rewrite_ttl": 1
+      },
+      {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "clash_mode": "Global"
+          }
+        ],
+        "server": "dns_proxy"
+      },
+      {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "clash_mode": "Direct"
+          },
+          {
+            "rule_set": [
+              "geosite-cn"
+            ]
+          }
+        ],
+        "server": "dns_direct"
+      }
+    ],
+    "strategy": "ipv4_only",
+    "independent_cache": true
+  },
+  "inbounds": [
+    {
+      "type": "tun",
+      "address": [
+        "172.18.0.1/30",
+        "fdfe:dcba:9876::1/126"
+      ],
+      "auto_route": true,
+      "strict_route": true,
+      "route_exclude_address": [
+        "192.168.0.0/16",
+        "fc00::/7"
+      ]
+    }
+  ],
+  "outbounds": [
+    {
+      "server": "gysz0000.dynu.net",
+      "server_port": 23657,
+      "tag": "群里大佬分享更多节点",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.nvidia.com",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "qhTzYYIgBzDLNYR79oxftqdo1kzL-1_hGJKfqrOliCY"
+        }
+      },
+      "type": "vless",
+      "uuid": "459b4a80-bd61-4ecd-a26b-e9c1809d9e45",
+      "flow": "xtls-rprx-vision",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "shenzhou05.mysynology.net",
+      "server_port": 37809,
+      "tag": "t.me/freeyule",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.yahoo.com",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "qhTzYYIgBzDLNYR79oxftqdo1kzL-1_hGJKfqrOliCY"
+        }
+      },
+      "type": "vless",
+      "uuid": "459b4a80-bd61-4ecd-a26b-e9c1809d9e45",
+      "flow": "xtls-rprx-vision",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "www.csgo.com",
+      "server_port": 8443,
+      "tag": "纽约",
+      "tls": {
+        "enabled": true,
+        "server_name": "ny.likelike.ddns-ip.net",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "Host": [
+            "ny.likelike.ddns-ip.net"
+          ]
+        },
+        "path": "/",
+        "type": "ws"
+      },
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "9ded86f7-5c00-4202-9769-0d5d4d22575c"
+    },
+    {
+      "server": "107.175.155.202",
+      "server_port": 443,
+      "tag": "🇺🇸 美国",
+      "tls": {
+        "enabled": true,
+        "server_name": "e68f3ae3.com",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "R2gKMF0Tetlnesc1pPkZH9NaOeehw-f5_U9JKG_cLjU"
+        }
+      },
+      "type": "vless",
+      "uuid": "e68f3ae3-b4c7-448c-a964-03b47cb1681b",
+      "flow": "xtls-rprx-vision",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "xcf025-1.facai2024.com",
+      "server_port": 443,
+      "tag": "🇺🇸 美国 2",
+      "tls": {
+        "enabled": true,
+        "server_name": "xcf025-1.facai2024.com",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "Host": [
+            "xcf025-1.facai2024.com"
+          ]
+        },
+        "path": "/b9fea62b",
+        "type": "ws"
+      },
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "b9fea62b-abb6-49dc-9220-98d99ab2f26e"
+    },
+    {
+      "server": "hn.jiasu.eu",
+      "server_port": 45673,
+      "tag": "🇭🇰 香港 电信",
+      "transport": {
+        "headers": {
+          "Host": [
+            "baidu.com"
+          ]
+        },
+        "path": "/TG-AiLuMao/",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "fcb8ded6-2984-4e78-8386-823bd8d1652c",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "2409:8c4c:e00:804::65",
+      "server_port": 52451,
+      "tag": "🇭🇰 香港 移动",
+      "transport": {
+        "headers": {
+          "Host": [
+            "baidu.com"
+          ]
+        },
+        "path": "/TG-AiLuMao/",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "fcb8ded6-2984-4e78-8386-823bd8d1652c",
+      "packet_encoding": "xudp"
+    },
+    {
+      "password": "82febca6-8856-41fe-84df-c8bda0b72c7b",
+      "server": "tw.akebi.cc",
+      "server_port": 30001,
+      "tag": "🇨🇳 台湾｜01｜原生IP",
+      "tls": {
+        "enabled": true,
+        "server_name": "tw.akebi.cc",
+        "insecure": true
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "82febca6-8856-41fe-84df-c8bda0b72c7b",
+      "server": "tw3.akebi.cc",
+      "server_port": 5006,
+      "tag": "🇨🇳 台湾｜03｜原生IP",
+      "tls": {
+        "enabled": true,
+        "server_name": "tw3.akebi.cc",
+        "insecure": true
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "82febca6-8856-41fe-84df-c8bda0b72c7b",
+      "server": "tw3.akebi.cc",
+      "server_port": 9000,
+      "tag": "🇨🇳 台湾｜04｜原生IP",
+      "tls": {
+        "enabled": true,
+        "server_name": "tw3.akebi.cc",
+        "insecure": true
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "82febca6-8856-41fe-84df-c8bda0b72c7b",
+      "server": "tw3.akebi.cc",
+      "server_port": 9001,
+      "tag": "🇨🇳 台湾｜05｜原生IP",
+      "tls": {
+        "enabled": true,
+        "server_name": "tw3.akebi.cc",
+        "insecure": true
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "82febca6-8856-41fe-84df-c8bda0b72c7b",
+      "server": "tw.akebi.cc",
+      "server_port": 1000,
+      "tag": "🇭🇰 香港｜01",
+      "tls": {
+        "enabled": true,
+        "server_name": "hk03.akebi.cc",
+        "insecure": true
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "82febca6-8856-41fe-84df-c8bda0b72c7b",
+      "server": "tw3.akebi.cc",
+      "server_port": 2000,
+      "tag": "🇭🇰 香港｜02",
+      "tls": {
+        "enabled": true,
+        "server_name": "hk03.akebi.cc",
+        "insecure": true
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "82febca6-8856-41fe-84df-c8bda0b72c7b",
+      "server": "tw3.akebi.cc",
+      "server_port": 2021,
+      "tag": "🇭🇰 香港｜03",
+      "tls": {
+        "enabled": true,
+        "server_name": "hk03.akebi.cc",
+        "insecure": true
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "82febca6-8856-41fe-84df-c8bda0b72c7b",
+      "server": "tw3.akebi.cc",
+      "server_port": 2012,
+      "tag": "🇯🇵 日本｜01",
+      "tls": {
+        "enabled": true,
+        "server_name": "jp02.akebi.cc",
+        "insecure": true
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "82febca6-8856-41fe-84df-c8bda0b72c7b",
+      "server": "tw3.akebi.cc",
+      "server_port": 2024,
+      "tag": "🇹🇭 泰国丨01｜原生IP",
+      "tls": {
+        "enabled": true,
+        "server_name": "th.akebi.cc",
+        "insecure": true
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "82febca6-8856-41fe-84df-c8bda0b72c7b",
+      "server": "tw3.akebi.cc",
+      "server_port": 2018,
+      "tag": "🇹🇭 泰国丨02｜原生IP",
+      "tls": {
+        "enabled": true,
+        "server_name": "th.akebi.cc",
+        "insecure": true
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "82febca6-8856-41fe-84df-c8bda0b72c7b",
+      "server": "tw3.akebi.cc",
+      "server_port": 2019,
+      "tag": "🇧🇩 孟加拉｜01｜住宅IP",
+      "tls": {
+        "enabled": true,
+        "server_name": "bd.akebi.cc",
+        "insecure": true
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "82febca6-8856-41fe-84df-c8bda0b72c7b",
+      "server": "tw3.akebi.cc",
+      "server_port": 2025,
+      "tag": "🇧🇩 孟加拉｜02｜住宅IP",
+      "tls": {
+        "enabled": true,
+        "server_name": "bd.akebi.cc",
+        "insecure": true
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "82febca6-8856-41fe-84df-c8bda0b72c7b",
+      "server": "tw3.akebi.cc",
+      "server_port": 2023,
+      "tag": "🇰🇭 柬埔寨｜01",
+      "tls": {
+        "enabled": true,
+        "server_name": "kh01.akebi.cc",
+        "insecure": true
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "82febca6-8856-41fe-84df-c8bda0b72c7b",
+      "server": "tw3.akebi.cc",
+      "server_port": 2020,
+      "tag": "🇺🇦 乌克兰｜01｜原生IP",
+      "tls": {
+        "enabled": true,
+        "server_name": "ua01.akebi.cc",
+        "insecure": true
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "82febca6-8856-41fe-84df-c8bda0b72c7b",
+      "server": "tw3.akebi.cc",
+      "server_port": 2003,
+      "tag": "🇮🇸 冰岛｜01",
+      "tls": {
+        "enabled": true,
+        "server_name": "is01.akebi.cc",
+        "insecure": true
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "82febca6-8856-41fe-84df-c8bda0b72c7b",
+      "server": "tw3.akebi.cc",
+      "server_port": 2005,
+      "tag": "🇫🇷 法国｜01｜原生IP",
+      "tls": {
+        "enabled": true,
+        "server_name": "fr01.akebi.cc",
+        "insecure": true
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "82febca6-8856-41fe-84df-c8bda0b72c7b",
+      "server": "tw3.akebi.cc",
+      "server_port": 2006,
+      "tag": "🇦🇺 澳大利亚｜01｜原生IP",
+      "tls": {
+        "enabled": true,
+        "server_name": "au01.akebi.cc",
+        "insecure": true
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "82febca6-8856-41fe-84df-c8bda0b72c7b",
+      "server": "tw3.akebi.cc",
+      "server_port": 2026,
+      "tag": "多哥｜01｜住宅IP",
+      "tls": {
+        "enabled": true,
+        "server_name": "tg.akebi.cc",
+        "insecure": true
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "82febca6-8856-41fe-84df-c8bda0b72c7b",
+      "server": "tw3.akebi.cc",
+      "server_port": 2027,
+      "tag": "🇰🇿 哈萨克斯坦｜01｜住宅ip",
+      "tls": {
+        "enabled": true,
+        "server_name": "kz.akebi.cc",
+        "insecure": true
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "Nk9asglDzHzjktVzTkvhaA",
+      "server": "arxfw2b78fi2q9hzylhn.freesocks.work",
+      "server_port": 443,
+      "tag": "🇻🇳 越南",
+      "type": "shadowsocks",
+      "method": "chacha20-ietf-poly1305",
+      "network": "tcp"
+    },
+    {
+      "server": "beiyong.dynuddns.net",
+      "server_port": 48121,
+      "tag": "🇯🇵 日本",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.nvidia.com",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "qhTzYYIgBzDLNYR79oxftqdo1kzL-1_hGJKfqrOliCY"
+        }
+      },
+      "type": "vless",
+      "uuid": "459b4a80-bd61-4ecd-a26b-e9c1809d9e45",
+      "flow": "xtls-rprx-vision",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "beiyong.dynuddns.net",
+      "server_port": 57926,
+      "tag": "🇺🇸 美国 3",
+      "tls": {
+        "enabled": true,
+        "server_name": "gateway.icloud.com",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "qhTzYYIgBzDLNYR79oxftqdo1kzL-1_hGJKfqrOliCY"
+        }
+      },
+      "type": "vless",
+      "uuid": "459b4a80-bd61-4ecd-a26b-e9c1809d9e45",
+      "flow": "xtls-rprx-vision",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "gy01.hunheiydd.xyz",
+      "server_port": 23657,
+      "tag": "🇭🇰 香港",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.nvidia.com",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "qhTzYYIgBzDLNYR79oxftqdo1kzL-1_hGJKfqrOliCY"
+        }
+      },
+      "type": "vless",
+      "uuid": "459b4a80-bd61-4ecd-a26b-e9c1809d9e45",
+      "flow": "xtls-rprx-vision",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "www.vpslook.com",
+      "server_port": 80,
+      "tag": "🇫🇮 芬兰",
+      "transport": {
+        "headers": {
+          "Host": [
+            "fl.likelike.ddns-ip.net"
+          ]
+        },
+        "path": "/",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "e64c466e-912d-4ee9-8d9a-02f560562f2b",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "dxv4.pai50288.uk",
+      "server_port": 14100,
+      "tag": "🇨🇳 节点-CN-50Mbps-100G",
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "f6866b0b-f946-4a03-8df0-c7e0016b55ad"
+    },
+    {
+      "password": "nUthZ7z3VmyV",
+      "server": "14.18.253.178",
+      "server_port": 9001,
+      "tag": "🇭🇰 香港1",
+      "type": "shadowsocks",
+      "method": "chacha20",
+      "network": "tcp"
+    },
+    {
+      "password": "passLUsO2Ktuer77tu",
+      "server": "14.18.253.178",
+      "server_port": 8321,
+      "tag": "🇭🇰 香港 2",
+      "type": "shadowsocks",
+      "method": "chacha20",
+      "network": "tcp"
+    },
+    {
+      "password": "v5aUUtme3jxs",
+      "server": "14.18.253.178",
+      "server_port": 9003,
+      "tag": "🇭🇰 香港3",
+      "type": "shadowsocks",
+      "method": "chacha20",
+      "network": "tcp"
+    },
+    {
+      "password": "PTgFLLrT5pVg",
+      "server": "14.18.253.178",
+      "server_port": 9002,
+      "tag": "🇭🇰 香港2",
+      "type": "shadowsocks",
+      "method": "chacha20",
+      "network": "tcp"
+    },
+    {
+      "password": "s6Zau9ioic",
+      "server": "14.18.253.178",
+      "server_port": 9004,
+      "tag": "🇭🇰 香港4",
+      "type": "shadowsocks",
+      "method": "chacha20",
+      "network": "tcp"
+    },
+    {
+      "password": "sJMdcI7NPj",
+      "server": "14.18.253.178",
+      "server_port": 9005,
+      "tag": "🇭🇰 香港5",
+      "type": "shadowsocks",
+      "method": "chacha20",
+      "network": "tcp"
+    },
+    {
+      "password": "DvPfKa8vsV9K",
+      "server": "14.18.253.178",
+      "server_port": 8334,
+      "tag": "🇸🇬 新加坡",
+      "type": "shadowsocks",
+      "method": "chacha20",
+      "network": "tcp"
+    },
+    {
+      "password": "avpBqFFmsYBN",
+      "server": "14.18.253.178",
+      "server_port": 8335,
+      "tag": "🇯🇵 日本1",
+      "type": "shadowsocks",
+      "method": "chacha20",
+      "network": "tcp"
+    },
+    {
+      "password": "GqbcCfh365aT",
+      "server": "14.18.253.178",
+      "server_port": 8331,
+      "tag": "🇯🇵 日本2",
+      "type": "shadowsocks",
+      "method": "chacha20",
+      "network": "tcp"
+    },
+    {
+      "password": "ADZmRQUGHTwX",
+      "server": "14.18.253.178",
+      "server_port": 8339,
+      "tag": "🇰🇷 韩国首尔",
+      "type": "shadowsocks",
+      "method": "chacha20",
+      "network": "tcp"
+    },
+    {
+      "password": "d3baK6NW2HEc",
+      "server": "14.18.253.178",
+      "server_port": 8349,
+      "tag": "🇺🇸 美国纽约",
+      "type": "shadowsocks",
+      "method": "chacha20",
+      "network": "tcp"
+    },
+    {
+      "password": "8BZ5uBrPuUDY",
+      "server": "14.18.253.178",
+      "server_port": 8332,
+      "tag": "🇸🇬 美国洛杉矶新",
+      "type": "shadowsocks",
+      "method": "chacha20",
+      "network": "tcp"
+    },
+    {
+      "password": "wDazHDu63gcg",
+      "server": "14.18.253.178",
+      "server_port": 8344,
+      "tag": "🇺🇸 美国达拉斯",
+      "type": "shadowsocks",
+      "method": "chacha20",
+      "network": "tcp"
+    },
+    {
+      "password": "jrgc64sFSLQM",
+      "server": "14.18.253.178",
+      "server_port": 8333,
+      "tag": "🇩🇪 德国法兰克福",
+      "type": "shadowsocks",
+      "method": "chacha20",
+      "network": "tcp"
+    },
+    {
+      "password": "3fn3CH5Swh2N",
+      "server": "14.18.253.178",
+      "server_port": 8337,
+      "tag": "🇬🇧 英国",
+      "type": "shadowsocks",
+      "method": "chacha20",
+      "network": "tcp"
+    },
+    {
+      "password": "r8jh6ZeykHvB",
+      "server": "14.18.253.178",
+      "server_port": 8342,
+      "tag": "🇺🇸 美国洛杉矶",
+      "type": "shadowsocks",
+      "method": "chacha20",
+      "network": "tcp"
+    },
+    {
+      "password": "N9k4f2PORl14",
+      "server": "14.18.253.178",
+      "server_port": 8348,
+      "tag": "🇮🇱 以色列",
+      "type": "shadowsocks",
+      "method": "chacha20",
+      "network": "tcp"
+    },
+    {
+      "password": "dkYsdgWqegNV",
+      "server": "14.18.253.178",
+      "server_port": 8343,
+      "tag": "🇨🇦 加拿大",
+      "type": "shadowsocks",
+      "method": "chacha20",
+      "network": "tcp"
+    },
+    {
+      "password": "zWyQvJbQRZaV",
+      "server": "14.18.253.178",
+      "server_port": 8341,
+      "tag": "🇦🇺 澳大利亚",
+      "type": "shadowsocks",
+      "method": "chacha20",
+      "network": "tcp"
+    },
+    {
+      "password": "q2kSGp4ayFKB",
+      "server": "14.18.253.178",
+      "server_port": 8347,
+      "tag": "🇫🇷 法国巴黎",
+      "type": "shadowsocks",
+      "method": "chacha20",
+      "network": "tcp"
+    },
+    {
+      "server": "v2-hk1-zx.netcar.live",
+      "server_port": 10032,
+      "tag": "🇭🇰 香港1区[专线] [x1.5]*次日恢复使用*",
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "bfd93c5c-abc7-416a-a205-372d3db979a4"
+    },
+    {
+      "server": "v2-hk4-zf.netcar.live",
+      "server_port": 10032,
+      "tag": "🏳️‍🌈 香港1区[转发] [x1.0]*建议搭配不限时流量*",
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "21ddbca6-a333-4aa1-9431-33725df1e85e"
+    },
+    {
+      "server": "v2-hk2-zf2.netcar.live",
+      "server_port": 36001,
+      "tag": "🇭🇰 香港2区[转发] [x1.0]*超过每日限制*",
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "f41a7211-3a16-4aa0-a3cf-0dd959b9ef1d"
+    },
+    {
+      "server": "v2-hk3zf.netcar.live",
+      "server_port": 36003,
+      "tag": "🇭🇰 香港3区[转发] [x1.0]*次日恢复使用*",
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "f2da2534-571c-494c-b02a-9eec3ca5f84a"
+    },
+    {
+      "server": "v2-sg1-zx.netcar.live",
+      "server_port": 34004,
+      "tag": "🏳️‍🌈 新加坡1区[专线] [x1.5]*建议搭配不限时流量*",
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "924ce77e-d5e0-44e0-a27d-0831607c0588"
+    },
+    {
+      "server": "v2-sg1-zf1.netcar.live",
+      "server_port": 34004,
+      "tag": "🇸🇬 新加坡1区[转发1] [x1.0]*超过每日限制*",
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "1dee6151-b6df-4848-850e-781d2fc4b64e"
+    },
+    {
+      "server": "v2-sg2-hg.netcar.live",
+      "server_port": 36007,
+      "tag": "🇸🇬 新加坡2区[回国优化] [x2.0]*次日恢复使用*",
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "c1adfe2f-8d03-4482-8188-8c5032355de1"
+    },
+    {
+      "server": "v2-sg2-zf.netcar.live",
+      "server_port": 36007,
+      "tag": "🏳️‍🌈 新加坡2区[转发] [x1.0]*建议搭配不限时流量*",
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "b1f8ac28-98f4-4e75-93c1-37f0d959e78b"
+    },
+    {
+      "server": "v2-japan3-hg1.netcar.live",
+      "server_port": 33333,
+      "tag": "🇯🇵 日本1区[回国优化] [x2.0]*超过每日限制*",
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "3c3d4a79-8fdc-4082-a717-789b5376e344"
+    },
+    {
+      "server": "v2-japan3o2.netcar.live",
+      "server_port": 33333,
+      "tag": "🇯🇵 日本1区[回国优化2] [x2.0]*次日恢复使用*",
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "059a8580-1f4a-4100-bc5e-71fe54f5d1a8"
+    },
+    {
+      "server": "v2-japan2.netcar.live",
+      "server_port": 22984,
+      "tag": "🏳️‍🌈 日本2区[转发] [x1.0]*建议搭配不限时流量*",
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "d28cf43f-00c3-4e5d-b7d9-8b6540d842a5"
+    },
+    {
+      "server": "v2-tw1-zx.netcar.live",
+      "server_port": 34006,
+      "tag": "🇨🇳 台湾1区[专线] [x1.0]*超过每日限制*",
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "a7a702a2-c56d-4379-972b-30690dddec0d"
+    },
+    {
+      "server": "v2-tw1-zf1.netcar.live",
+      "server_port": 34006,
+      "tag": "🇨🇳 台湾1区[转发] [x1.0]*次日恢复使用*",
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "d5b99713-4e37-432d-b272-e87e62ba7a4b"
+    },
+    {
+      "server": "v2-taiwan3-zx.netcar.live",
+      "server_port": 34019,
+      "tag": "🏳️‍🌈 台湾2区[专线] [x1.5]*建议搭配不限时流量*",
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "72bda12c-ad7c-45b7-ba17-72eef85ecb29"
+    },
+    {
+      "server": "v2-tw3-zf1.netcar.live",
+      "server_port": 34019,
+      "tag": "🇨🇳 台湾2区[转发] [x1.0]*超过每日限制*",
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "8d768358-6874-4935-ac25-c7293dc7ca6b"
+    },
+    {
+      "server": "v3-hanguo-zx.netcar.live",
+      "server_port": 34009,
+      "tag": "🇯🇵 韩国[专线] [x1.5]*次日恢复使用*",
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "b4a59b54-4a1d-4afc-bd1b-2e3151047c9f"
+    },
+    {
+      "server": "v2-hanguo-zf1.netcar.live",
+      "server_port": 34009,
+      "tag": "🏳️‍🌈 韩国[转发] [x1.0]*建议搭配不限时流量*",
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "5f96cda9-828f-472e-927a-472fb7ca1d9a"
+    },
+    {
+      "server": "v2-us2-zx.netcar.live",
+      "server_port": 34013,
+      "tag": "🇯🇵 美国[专线] [x1.5]*超过每日限制*",
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "9a037058-73a1-4fc3-973f-c73b1f612d81"
+    },
+    {
+      "server": "v2-us2-zf2.netcar.live",
+      "server_port": 34013,
+      "tag": "🇯🇵 美国[转发] [x1.0]*次日恢复使用*",
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "986f52fb-2dc7-4b53-b38c-2dfc19814974"
+    },
+    {
+      "server": "v2-hkzz1.netcar.live",
+      "server_port": 52305,
+      "tag": "🏳️‍🌈 香港住宅1[原生IP] [x3.0]*建议搭配不限时流量*",
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "0c892163-afb2-4d89-996f-e932cb266311"
+    },
+    {
+      "server": "pilaobanpengyou.netcar.live",
+      "server_port": 320,
+      "tag": "🇭🇰 香港住宅2[原生IP] [x1.0]*超过每日限制*",
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "84834668-5a2c-4677-8aa2-ceb85a4c2361"
+    },
+    {
+      "server": "v2-us-zx.netcar.live",
+      "server_port": 37847,
+      "tag": "🇯🇵 美国住宅1[原生IP] [x3.0]*次日恢复使用*",
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "a5d96021-e87f-4a5c-a450-880db3b0d01f"
+    },
+    {
+      "server": "v3-us-zz2.netcar.live",
+      "server_port": 57345,
+      "tag": "🏳️‍🌈 美国住宅2[原生IP] [x3.0]*建议搭配不限时流量*",
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "abf85095-b2cd-4fce-bebd-c5a8a09946b1"
+    },
+    {
+      "server": "v2-jazzzf2.netcar.live",
+      "server_port": 59697,
+      "tag": "🇯🇵 日本住宅[原生IP] [x3.0]*超过每日限制*",
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "105c5aca-50f9-4e9d-abf2-9878babd6d08"
+    },
+    {
+      "server": "v3-sgzz.netcar.live",
+      "server_port": 30061,
+      "tag": "🇸🇬 新加坡住宅[原生IP] [x3.0]*次日恢复使用*",
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "bb9d3b3d-33fb-429b-90ac-badef1b4de1d"
+    },
+    {
+      "server": "v2-twzz.netcar.live",
+      "server_port": 57004,
+      "tag": "🏳️‍🌈 台湾住宅1区[原生IP] [x3.0]*建议搭配不限时流量*",
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "576fc2ae-5820-4212-8ee8-2856586a0be4"
+    },
+    {
+      "server": "v3-englandzz.netcar.live",
+      "server_port": 17942,
+      "tag": "🇯🇵 英国住宅[原生IP] [x3.0]*超过每日限制*",
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "31a0c9eb-1f25-4383-b0e7-7be8abe10c47"
+    },
+    {
+      "server": "v2-ynzz.netcar.live",
+      "server_port": 30001,
+      "tag": "🇯🇵 越南住宅[原生IP] [x3.0]*次日恢复使用*",
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "43a82845-0d62-4f82-a32c-e196f49e61da"
+    },
+    {
+      "server": "v2-india-zhuzhai.netcar.live",
+      "server_port": 43699,
+      "tag": "🏳️‍🌈 印度住宅[原生IP] [x3.0]*建议搭配不限时流量*",
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "7cc797d6-a613-4daa-8af4-fc03108e8c62"
+    },
+    {
+      "server": "v3-xbyzz.netcar.live",
+      "server_port": 45736,
+      "tag": "🇯🇵 西班牙住宅[原生IP] [x3.0]*超过每日限制*",
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "2107aebb-e396-4a51-ae36-2f2ed168a14d"
+    },
+    {
+      "server": "v2-adly-zhuzhai.netcar.live",
+      "server_port": 48872,
+      "tag": "🇯🇵 澳大利亚住宅[原生IP] [x3.0]*次日恢复使用*",
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "a3176f7c-e447-41f4-8b53-a8c65c469d47"
+    },
+    {
+      "server": "v2-jpz-zz.netcar.live",
+      "server_port": 49419,
+      "tag": "🏳️‍🌈 柬埔寨住宅[原生IP] [x3.0]*建议搭配不限时流量*",
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "87469812-9a0a-4658-bfab-971da3756dcc"
+    },
+    {
+      "server": "v2-deguo-zz.netcar.live",
+      "server_port": 57727,
+      "tag": "🇯🇵 德国住宅[原生IP] [x3.0]*超过每日限制*",
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "be88473f-91c7-4661-9af0-c4b7c18aefa4"
+    },
+    {
+      "server": "v2-flbzz.netcar.live",
+      "server_port": 24733,
+      "tag": "🇯🇵 菲律宾住宅[原生IP] [x3.0]*次日恢复使用*",
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "212c843f-831b-4c15-aee8-4cf187ac7d05"
+    },
+    {
+      "server": "v2-Brazil-zz.netcar.live",
+      "server_port": 28937,
+      "tag": "🏳️‍🌈 巴西住宅[原生IP] [x3.0]*建议搭配不限时流量*",
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "576e22cc-f383-40b3-ab7a-d2ab56f79535"
+    },
+    {
+      "server": "v2-hskstzz.netcar.live",
+      "server_port": 31975,
+      "tag": "🇯🇵 哈萨克斯坦住宅[原生IP] [x3.0]*超过每日限制*",
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "fed24145-e5f9-4cd9-9490-f1a8f8abdb21"
+    },
+    {
+      "server": "v2-xiongyali-zz.netcar.live",
+      "server_port": 27157,
+      "tag": "🇯🇵 匈牙利住宅[原生IP] [x3.0]*次日恢复使用*",
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "4cb421a9-25a5-4049-b6dd-2dff63766dc6"
+    },
+    {
+      "server": "v2-tgzz.netcar.live",
+      "server_port": 18139,
+      "tag": "🏳️‍🌈 泰国住宅[原生IP] [x3.0]*建议搭配不限时流量*",
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "76f19582-5c4b-49c6-a023-0f7c9e3c807a"
+    },
+    {
+      "server": "v3-dgzz.netcar.live",
+      "server_port": 52509,
+      "tag": "🇯🇵 多哥住宅[原生IP] [x3.0]*超过每日限制*",
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "c77aea82-4f7b-49fe-b0b6-c997607c85d9"
+    },
+    {
+      "server": "v3-ltwzz.netcar.live",
+      "server_port": 16782,
+      "tag": "🇯🇵 立陶宛住宅[原生IP] [x3.0]*次日恢复使用*",
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "6931bf1a-0a90-4fa4-9938-7dfba812747e"
+    },
+    {
+      "server": "v3-bjlyzz.netcar.live",
+      "server_port": 39054,
+      "tag": "🏳️‍🌈 保加利亚住宅[原生IP] [x3.0]*建议搭配不限时流量*",
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "419779cf-81aa-4074-94c9-01debf971964"
+    },
+    {
+      "server": "v2-wklzz.netcar.live",
+      "server_port": 52181,
+      "tag": "🇯🇵 乌克兰住宅[原生IP] [x3.0]*超过每日限制*",
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "9f168c88-26de-43a1-aa46-cea54c6dc822"
+    },
+    {
+      "server": "v2-blzz.netcar.live",
+      "server_port": 26611,
+      "tag": "🇯🇵 波兰住宅[原生IP] [x3.0]*次日恢复使用*",
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "c8e5cc24-e2c7-4186-8854-5727eefe5a71"
+    },
+    {
+      "server": "v3-lwzz.netcar.live",
+      "server_port": 28715,
+      "tag": "🏳️‍🌈 挪威住宅[原生IP] [x3.0]*建议搭配不限时流量*",
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "7954cae3-8bb9-48ab-bd63-cdc13f08c9ba"
+    },
+    {
+      "server": "v2-teqzz.netcar.live",
+      "server_port": 27852,
+      "tag": "🇯🇵 土耳其住宅[原生IP] [x3.0]*超过每日限制*",
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "313798e2-3a55-4d84-bb02-027f9aef5c6b"
+    },
+    {
+      "server": "v2-ydlzz.netcar.live",
+      "server_port": 13080,
+      "tag": "🇯🇵 意大利住宅[原生IP] [x3.0]*次日恢复使用*",
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "1e6b5701-5fc7-4fed-aed7-1324fcc5a712"
+    },
+    {
+      "server": "v2-mjlzz.netcar.live",
+      "server_port": 57974,
+      "tag": "🏳️‍🌈 孟加拉住宅[原生IP] [x3.0]*建议搭配不限时流量*",
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "8651fe37-9355-4b70-b303-9e0c995b30b0"
+    },
+    {
+      "server": "v3-rdzz.netcar.live",
+      "server_port": 44464,
+      "tag": "🇯🇵 瑞典住宅[原生IP] [x3.0]*超过每日限制*",
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "a7215d41-b445-4b1f-8b88-f59443b29164"
+    },
+    {
+      "server": "v3-mlxyzz.netcar.live",
+      "server_port": 10107,
+      "tag": "🇯🇵 马来西亚住宅[原生IP] [x3.0]*次日恢复使用*",
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "052680d9-4f31-4cda-b14d-156fa34b3cdc"
+    },
+    {
+      "server": "v3-idnxyzz.netcar.live",
+      "server_port": 3854,
+      "tag": "🏳️‍🌈 印度尼西亚住宅[原生IP] [x3.0]*建议搭配不限时流量*",
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "d4ef06ea-a561-4fb0-b790-10f860d72f0a"
+    },
+    {
+      "server": "v3-nrlyzz.netcar.live",
+      "server_port": 12649,
+      "tag": "🇳🇬 尼日利亚[原生IP] [x3.0]*超过每日限制*",
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "a0ba0500-1901-45a0-9d60-88f97d324dd7"
+    },
+    {
+      "server": "v2-uk-zx.netcar.live",
+      "server_port": 17931,
+      "tag": "🇯🇵 英国[专线] [x1.5]*次日恢复使用*",
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "3a6a527c-1c8c-4500-b644-a5ab35efc934"
+    },
+    {
+      "server": "v2-fg.netcar.live",
+      "server_port": 55690,
+      "tag": "🏳️‍🌈 法国[转发] [x1.0]*建议搭配不限时流量*",
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "e190afcb-b059-4582-986e-6a5309d0673f"
+    },
+    {
+      "server": "v2-jnd.netcar.live",
+      "server_port": 34018,
+      "tag": "🇯🇵 加拿大[转发] [x1.0]*超过每日限制*",
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "9a2012c8-6477-4386-b156-7133b4c42a26"
+    },
+    {
+      "server": "v3-hl.netcar.live",
+      "server_port": 35607,
+      "tag": "🇯🇵 荷兰[转发] [x1.0]*次日恢复使用*",
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "29c50189-4faa-43bd-9c96-b1a8f26f223b"
+    },
+    {
+      "server": "v2-els.netcar.live",
+      "server_port": 27115,
+      "tag": "🏳️‍🌈 俄罗斯[转发] [x1.0]*建议搭配不限时流量*",
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "77f2759f-6ca6-4fbf-8b21-d38691ac0974"
+    },
+    {
+      "server": "v3-medw.netcar.live",
+      "server_port": 21619,
+      "tag": "🇯🇵 摩尔多瓦[转发] [x1.0]*超过每日限制*",
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "2f05d04e-4e24-4207-a9b2-056e20b147db"
+    },
+    {
+      "server": "v3-rszf.netcar.live",
+      "server_port": 46128,
+      "tag": "🇯🇵 瑞士[转发] [x1.0]*次日恢复使用*",
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "372ddc1b-6e35-41a6-9bde-63fcf693d598"
+    },
+    {
+      "server": "v3-jejsst.netcar.live",
+      "server_port": 47423,
+      "tag": "🏳️‍🌈 吉尔吉斯斯坦[转发] [x1.0]*建议搭配不限时流量*",
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "6ef00638-66ab-46ed-873f-f4e72e0f67db"
+    },
+    {
+      "server": "v3-bdzf.netcar.live",
+      "server_port": 14144,
+      "tag": "🇯🇵 冰岛[转发] [x1.0]*超过每日限制*",
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "73d51dcf-173c-4433-bb4e-311836d3ccbc"
+    },
+    {
+      "tag": "select",
+      "type": "selector",
+      "default": "auto",
+      "outbounds": [
+        "auto",
+        "群里大佬分享更多节点",
+        "t.me/freeyule",
+        "纽约",
+        "🇺🇸 美国",
+        "🇺🇸 美国 2",
+        "🇭🇰 香港 电信",
+        "🇭🇰 香港 移动",
+        "🇨🇳 台湾｜01｜原生IP",
+        "🇨🇳 台湾｜03｜原生IP",
+        "🇨🇳 台湾｜04｜原生IP",
+        "🇨🇳 台湾｜05｜原生IP",
+        "🇭🇰 香港｜01",
+        "🇭🇰 香港｜02",
+        "🇭🇰 香港｜03",
+        "🇯🇵 日本｜01",
+        "🇹🇭 泰国丨01｜原生IP",
+        "🇹🇭 泰国丨02｜原生IP",
+        "🇧🇩 孟加拉｜01｜住宅IP",
+        "🇧🇩 孟加拉｜02｜住宅IP",
+        "🇰🇭 柬埔寨｜01",
+        "🇺🇦 乌克兰｜01｜原生IP",
+        "🇮🇸 冰岛｜01",
+        "🇫🇷 法国｜01｜原生IP",
+        "🇦🇺 澳大利亚｜01｜原生IP",
+        "多哥｜01｜住宅IP",
+        "🇰🇿 哈萨克斯坦｜01｜住宅ip",
+        "🇻🇳 越南",
+        "🇯🇵 日本",
+        "🇺🇸 美国 3",
+        "🇭🇰 香港",
+        "🇫🇮 芬兰",
+        "🇨🇳 节点-CN-50Mbps-100G",
+        "🇭🇰 香港1",
+        "🇭🇰 香港 2",
+        "🇭🇰 香港3",
+        "🇭🇰 香港2",
+        "🇭🇰 香港4",
+        "🇭🇰 香港5",
+        "🇸🇬 新加坡",
+        "🇯🇵 日本1",
+        "🇯🇵 日本2",
+        "🇰🇷 韩国首尔",
+        "🇺🇸 美国纽约",
+        "🇸🇬 美国洛杉矶新",
+        "🇺🇸 美国达拉斯",
+        "🇩🇪 德国法兰克福",
+        "🇬🇧 英国",
+        "🇺🇸 美国洛杉矶",
+        "🇮🇱 以色列",
+        "🇨🇦 加拿大",
+        "🇦🇺 澳大利亚",
+        "🇫🇷 法国巴黎",
+        "🇭🇰 香港1区[专线] [x1.5]*次日恢复使用*",
+        "🏳️‍🌈 香港1区[转发] [x1.0]*建议搭配不限时流量*",
+        "🇭🇰 香港2区[转发] [x1.0]*超过每日限制*",
+        "🇭🇰 香港3区[转发] [x1.0]*次日恢复使用*",
+        "🏳️‍🌈 新加坡1区[专线] [x1.5]*建议搭配不限时流量*",
+        "🇸🇬 新加坡1区[转发1] [x1.0]*超过每日限制*",
+        "🇸🇬 新加坡2区[回国优化] [x2.0]*次日恢复使用*",
+        "🏳️‍🌈 新加坡2区[转发] [x1.0]*建议搭配不限时流量*",
+        "🇯🇵 日本1区[回国优化] [x2.0]*超过每日限制*",
+        "🇯🇵 日本1区[回国优化2] [x2.0]*次日恢复使用*",
+        "🏳️‍🌈 日本2区[转发] [x1.0]*建议搭配不限时流量*",
+        "🇨🇳 台湾1区[专线] [x1.0]*超过每日限制*",
+        "🇨🇳 台湾1区[转发] [x1.0]*次日恢复使用*",
+        "🏳️‍🌈 台湾2区[专线] [x1.5]*建议搭配不限时流量*",
+        "🇨🇳 台湾2区[转发] [x1.0]*超过每日限制*",
+        "🇯🇵 韩国[专线] [x1.5]*次日恢复使用*",
+        "🏳️‍🌈 韩国[转发] [x1.0]*建议搭配不限时流量*",
+        "🇯🇵 美国[专线] [x1.5]*超过每日限制*",
+        "🇯🇵 美国[转发] [x1.0]*次日恢复使用*",
+        "🏳️‍🌈 香港住宅1[原生IP] [x3.0]*建议搭配不限时流量*",
+        "🇭🇰 香港住宅2[原生IP] [x1.0]*超过每日限制*",
+        "🇯🇵 美国住宅1[原生IP] [x3.0]*次日恢复使用*",
+        "🏳️‍🌈 美国住宅2[原生IP] [x3.0]*建议搭配不限时流量*",
+        "🇯🇵 日本住宅[原生IP] [x3.0]*超过每日限制*",
+        "🇸🇬 新加坡住宅[原生IP] [x3.0]*次日恢复使用*",
+        "🏳️‍🌈 台湾住宅1区[原生IP] [x3.0]*建议搭配不限时流量*",
+        "🇯🇵 英国住宅[原生IP] [x3.0]*超过每日限制*",
+        "🇯🇵 越南住宅[原生IP] [x3.0]*次日恢复使用*",
+        "🏳️‍🌈 印度住宅[原生IP] [x3.0]*建议搭配不限时流量*",
+        "🇯🇵 西班牙住宅[原生IP] [x3.0]*超过每日限制*",
+        "🇯🇵 澳大利亚住宅[原生IP] [x3.0]*次日恢复使用*",
+        "🏳️‍🌈 柬埔寨住宅[原生IP] [x3.0]*建议搭配不限时流量*",
+        "🇯🇵 德国住宅[原生IP] [x3.0]*超过每日限制*",
+        "🇯🇵 菲律宾住宅[原生IP] [x3.0]*次日恢复使用*",
+        "🏳️‍🌈 巴西住宅[原生IP] [x3.0]*建议搭配不限时流量*",
+        "🇯🇵 哈萨克斯坦住宅[原生IP] [x3.0]*超过每日限制*",
+        "🇯🇵 匈牙利住宅[原生IP] [x3.0]*次日恢复使用*",
+        "🏳️‍🌈 泰国住宅[原生IP] [x3.0]*建议搭配不限时流量*",
+        "🇯🇵 多哥住宅[原生IP] [x3.0]*超过每日限制*",
+        "🇯🇵 立陶宛住宅[原生IP] [x3.0]*次日恢复使用*",
+        "🏳️‍🌈 保加利亚住宅[原生IP] [x3.0]*建议搭配不限时流量*",
+        "🇯🇵 乌克兰住宅[原生IP] [x3.0]*超过每日限制*",
+        "🇯🇵 波兰住宅[原生IP] [x3.0]*次日恢复使用*",
+        "🏳️‍🌈 挪威住宅[原生IP] [x3.0]*建议搭配不限时流量*",
+        "🇯🇵 土耳其住宅[原生IP] [x3.0]*超过每日限制*",
+        "🇯🇵 意大利住宅[原生IP] [x3.0]*次日恢复使用*",
+        "🏳️‍🌈 孟加拉住宅[原生IP] [x3.0]*建议搭配不限时流量*",
+        "🇯🇵 瑞典住宅[原生IP] [x3.0]*超过每日限制*",
+        "🇯🇵 马来西亚住宅[原生IP] [x3.0]*次日恢复使用*",
+        "🏳️‍🌈 印度尼西亚住宅[原生IP] [x3.0]*建议搭配不限时流量*",
+        "🇳🇬 尼日利亚[原生IP] [x3.0]*超过每日限制*",
+        "🇯🇵 英国[专线] [x1.5]*次日恢复使用*",
+        "🏳️‍🌈 法国[转发] [x1.0]*建议搭配不限时流量*",
+        "🇯🇵 加拿大[转发] [x1.0]*超过每日限制*",
+        "🇯🇵 荷兰[转发] [x1.0]*次日恢复使用*",
+        "🏳️‍🌈 俄罗斯[转发] [x1.0]*建议搭配不限时流量*",
+        "🇯🇵 摩尔多瓦[转发] [x1.0]*超过每日限制*",
+        "🇯🇵 瑞士[转发] [x1.0]*次日恢复使用*",
+        "🏳️‍🌈 吉尔吉斯斯坦[转发] [x1.0]*建议搭配不限时流量*",
+        "🇯🇵 冰岛[转发] [x1.0]*超过每日限制*"
+      ]
+    },
+    {
+      "tag": "auto",
+      "type": "urltest",
+      "outbounds": [
+        "群里大佬分享更多节点",
+        "t.me/freeyule",
+        "纽约",
+        "🇺🇸 美国",
+        "🇺🇸 美国 2",
+        "🇭🇰 香港 电信",
+        "🇭🇰 香港 移动",
+        "🇨🇳 台湾｜01｜原生IP",
+        "🇨🇳 台湾｜03｜原生IP",
+        "🇨🇳 台湾｜04｜原生IP",
+        "🇨🇳 台湾｜05｜原生IP",
+        "🇭🇰 香港｜01",
+        "🇭🇰 香港｜02",
+        "🇭🇰 香港｜03",
+        "🇯🇵 日本｜01",
+        "🇹🇭 泰国丨01｜原生IP",
+        "🇹🇭 泰国丨02｜原生IP",
+        "🇧🇩 孟加拉｜01｜住宅IP",
+        "🇧🇩 孟加拉｜02｜住宅IP",
+        "🇰🇭 柬埔寨｜01",
+        "🇺🇦 乌克兰｜01｜原生IP",
+        "🇮🇸 冰岛｜01",
+        "🇫🇷 法国｜01｜原生IP",
+        "🇦🇺 澳大利亚｜01｜原生IP",
+        "多哥｜01｜住宅IP",
+        "🇰🇿 哈萨克斯坦｜01｜住宅ip",
+        "🇻🇳 越南",
+        "🇯🇵 日本",
+        "🇺🇸 美国 3",
+        "🇭🇰 香港",
+        "🇫🇮 芬兰",
+        "🇨🇳 节点-CN-50Mbps-100G",
+        "🇭🇰 香港1",
+        "🇭🇰 香港 2",
+        "🇭🇰 香港3",
+        "🇭🇰 香港2",
+        "🇭🇰 香港4",
+        "🇭🇰 香港5",
+        "🇸🇬 新加坡",
+        "🇯🇵 日本1",
+        "🇯🇵 日本2",
+        "🇰🇷 韩国首尔",
+        "🇺🇸 美国纽约",
+        "🇸🇬 美国洛杉矶新",
+        "🇺🇸 美国达拉斯",
+        "🇩🇪 德国法兰克福",
+        "🇬🇧 英国",
+        "🇺🇸 美国洛杉矶",
+        "🇮🇱 以色列",
+        "🇨🇦 加拿大",
+        "🇦🇺 澳大利亚",
+        "🇫🇷 法国巴黎",
+        "🇭🇰 香港1区[专线] [x1.5]*次日恢复使用*",
+        "🏳️‍🌈 香港1区[转发] [x1.0]*建议搭配不限时流量*",
+        "🇭🇰 香港2区[转发] [x1.0]*超过每日限制*",
+        "🇭🇰 香港3区[转发] [x1.0]*次日恢复使用*",
+        "🏳️‍🌈 新加坡1区[专线] [x1.5]*建议搭配不限时流量*",
+        "🇸🇬 新加坡1区[转发1] [x1.0]*超过每日限制*",
+        "🇸🇬 新加坡2区[回国优化] [x2.0]*次日恢复使用*",
+        "🏳️‍🌈 新加坡2区[转发] [x1.0]*建议搭配不限时流量*",
+        "🇯🇵 日本1区[回国优化] [x2.0]*超过每日限制*",
+        "🇯🇵 日本1区[回国优化2] [x2.0]*次日恢复使用*",
+        "🏳️‍🌈 日本2区[转发] [x1.0]*建议搭配不限时流量*",
+        "🇨🇳 台湾1区[专线] [x1.0]*超过每日限制*",
+        "🇨🇳 台湾1区[转发] [x1.0]*次日恢复使用*",
+        "🏳️‍🌈 台湾2区[专线] [x1.5]*建议搭配不限时流量*",
+        "🇨🇳 台湾2区[转发] [x1.0]*超过每日限制*",
+        "🇯🇵 韩国[专线] [x1.5]*次日恢复使用*",
+        "🏳️‍🌈 韩国[转发] [x1.0]*建议搭配不限时流量*",
+        "🇯🇵 美国[专线] [x1.5]*超过每日限制*",
+        "🇯🇵 美国[转发] [x1.0]*次日恢复使用*",
+        "🏳️‍🌈 香港住宅1[原生IP] [x3.0]*建议搭配不限时流量*",
+        "🇭🇰 香港住宅2[原生IP] [x1.0]*超过每日限制*",
+        "🇯🇵 美国住宅1[原生IP] [x3.0]*次日恢复使用*",
+        "🏳️‍🌈 美国住宅2[原生IP] [x3.0]*建议搭配不限时流量*",
+        "🇯🇵 日本住宅[原生IP] [x3.0]*超过每日限制*",
+        "🇸🇬 新加坡住宅[原生IP] [x3.0]*次日恢复使用*",
+        "🏳️‍🌈 台湾住宅1区[原生IP] [x3.0]*建议搭配不限时流量*",
+        "🇯🇵 英国住宅[原生IP] [x3.0]*超过每日限制*",
+        "🇯🇵 越南住宅[原生IP] [x3.0]*次日恢复使用*",
+        "🏳️‍🌈 印度住宅[原生IP] [x3.0]*建议搭配不限时流量*",
+        "🇯🇵 西班牙住宅[原生IP] [x3.0]*超过每日限制*",
+        "🇯🇵 澳大利亚住宅[原生IP] [x3.0]*次日恢复使用*",
+        "🏳️‍🌈 柬埔寨住宅[原生IP] [x3.0]*建议搭配不限时流量*",
+        "🇯🇵 德国住宅[原生IP] [x3.0]*超过每日限制*",
+        "🇯🇵 菲律宾住宅[原生IP] [x3.0]*次日恢复使用*",
+        "🏳️‍🌈 巴西住宅[原生IP] [x3.0]*建议搭配不限时流量*",
+        "🇯🇵 哈萨克斯坦住宅[原生IP] [x3.0]*超过每日限制*",
+        "🇯🇵 匈牙利住宅[原生IP] [x3.0]*次日恢复使用*",
+        "🏳️‍🌈 泰国住宅[原生IP] [x3.0]*建议搭配不限时流量*",
+        "🇯🇵 多哥住宅[原生IP] [x3.0]*超过每日限制*",
+        "🇯🇵 立陶宛住宅[原生IP] [x3.0]*次日恢复使用*",
+        "🏳️‍🌈 保加利亚住宅[原生IP] [x3.0]*建议搭配不限时流量*",
+        "🇯🇵 乌克兰住宅[原生IP] [x3.0]*超过每日限制*",
+        "🇯🇵 波兰住宅[原生IP] [x3.0]*次日恢复使用*",
+        "🏳️‍🌈 挪威住宅[原生IP] [x3.0]*建议搭配不限时流量*",
+        "🇯🇵 土耳其住宅[原生IP] [x3.0]*超过每日限制*",
+        "🇯🇵 意大利住宅[原生IP] [x3.0]*次日恢复使用*",
+        "🏳️‍🌈 孟加拉住宅[原生IP] [x3.0]*建议搭配不限时流量*",
+        "🇯🇵 瑞典住宅[原生IP] [x3.0]*超过每日限制*",
+        "🇯🇵 马来西亚住宅[原生IP] [x3.0]*次日恢复使用*",
+        "🏳️‍🌈 印度尼西亚住宅[原生IP] [x3.0]*建议搭配不限时流量*",
+        "🇳🇬 尼日利亚[原生IP] [x3.0]*超过每日限制*",
+        "🇯🇵 英国[专线] [x1.5]*次日恢复使用*",
+        "🏳️‍🌈 法国[转发] [x1.0]*建议搭配不限时流量*",
+        "🇯🇵 加拿大[转发] [x1.0]*超过每日限制*",
+        "🇯🇵 荷兰[转发] [x1.0]*次日恢复使用*",
+        "🏳️‍🌈 俄罗斯[转发] [x1.0]*建议搭配不限时流量*",
+        "🇯🇵 摩尔多瓦[转发] [x1.0]*超过每日限制*",
+        "🇯🇵 瑞士[转发] [x1.0]*次日恢复使用*",
+        "🏳️‍🌈 吉尔吉斯斯坦[转发] [x1.0]*建议搭配不限时流量*",
+        "🇯🇵 冰岛[转发] [x1.0]*超过每日限制*"
+      ]
+    },
+    {
+      "tag": "ai",
+      "type": "selector",
+      "outbounds": [
+        "群里大佬分享更多节点",
+        "t.me/freeyule",
+        "纽约",
+        "🇺🇸 美国",
+        "🇺🇸 美国 2",
+        "🇭🇰 香港 电信",
+        "🇭🇰 香港 移动",
+        "🇨🇳 台湾｜01｜原生IP",
+        "🇨🇳 台湾｜03｜原生IP",
+        "🇨🇳 台湾｜04｜原生IP",
+        "🇨🇳 台湾｜05｜原生IP",
+        "🇭🇰 香港｜01",
+        "🇭🇰 香港｜02",
+        "🇭🇰 香港｜03",
+        "🇯🇵 日本｜01",
+        "🇹🇭 泰国丨01｜原生IP",
+        "🇹🇭 泰国丨02｜原生IP",
+        "🇧🇩 孟加拉｜01｜住宅IP",
+        "🇧🇩 孟加拉｜02｜住宅IP",
+        "🇰🇭 柬埔寨｜01",
+        "🇺🇦 乌克兰｜01｜原生IP",
+        "🇮🇸 冰岛｜01",
+        "🇫🇷 法国｜01｜原生IP",
+        "🇦🇺 澳大利亚｜01｜原生IP",
+        "多哥｜01｜住宅IP",
+        "🇰🇿 哈萨克斯坦｜01｜住宅ip",
+        "🇻🇳 越南",
+        "🇯🇵 日本",
+        "🇺🇸 美国 3",
+        "🇭🇰 香港",
+        "🇫🇮 芬兰",
+        "🇨🇳 节点-CN-50Mbps-100G",
+        "🇭🇰 香港1",
+        "🇭🇰 香港 2",
+        "🇭🇰 香港3",
+        "🇭🇰 香港2",
+        "🇭🇰 香港4",
+        "🇭🇰 香港5",
+        "🇸🇬 新加坡",
+        "🇯🇵 日本1",
+        "🇯🇵 日本2",
+        "🇰🇷 韩国首尔",
+        "🇺🇸 美国纽约",
+        "🇸🇬 美国洛杉矶新",
+        "🇺🇸 美国达拉斯",
+        "🇩🇪 德国法兰克福",
+        "🇬🇧 英国",
+        "🇺🇸 美国洛杉矶",
+        "🇮🇱 以色列",
+        "🇨🇦 加拿大",
+        "🇦🇺 澳大利亚",
+        "🇫🇷 法国巴黎",
+        "🇭🇰 香港1区[专线] [x1.5]*次日恢复使用*",
+        "🏳️‍🌈 香港1区[转发] [x1.0]*建议搭配不限时流量*",
+        "🇭🇰 香港2区[转发] [x1.0]*超过每日限制*",
+        "🇭🇰 香港3区[转发] [x1.0]*次日恢复使用*",
+        "🏳️‍🌈 新加坡1区[专线] [x1.5]*建议搭配不限时流量*",
+        "🇸🇬 新加坡1区[转发1] [x1.0]*超过每日限制*",
+        "🇸🇬 新加坡2区[回国优化] [x2.0]*次日恢复使用*",
+        "🏳️‍🌈 新加坡2区[转发] [x1.0]*建议搭配不限时流量*",
+        "🇯🇵 日本1区[回国优化] [x2.0]*超过每日限制*",
+        "🇯🇵 日本1区[回国优化2] [x2.0]*次日恢复使用*",
+        "🏳️‍🌈 日本2区[转发] [x1.0]*建议搭配不限时流量*",
+        "🇨🇳 台湾1区[专线] [x1.0]*超过每日限制*",
+        "🇨🇳 台湾1区[转发] [x1.0]*次日恢复使用*",
+        "🏳️‍🌈 台湾2区[专线] [x1.5]*建议搭配不限时流量*",
+        "🇨🇳 台湾2区[转发] [x1.0]*超过每日限制*",
+        "🇯🇵 韩国[专线] [x1.5]*次日恢复使用*",
+        "🏳️‍🌈 韩国[转发] [x1.0]*建议搭配不限时流量*",
+        "🇯🇵 美国[专线] [x1.5]*超过每日限制*",
+        "🇯🇵 美国[转发] [x1.0]*次日恢复使用*",
+        "🏳️‍🌈 香港住宅1[原生IP] [x3.0]*建议搭配不限时流量*",
+        "🇭🇰 香港住宅2[原生IP] [x1.0]*超过每日限制*",
+        "🇯🇵 美国住宅1[原生IP] [x3.0]*次日恢复使用*",
+        "🏳️‍🌈 美国住宅2[原生IP] [x3.0]*建议搭配不限时流量*",
+        "🇯🇵 日本住宅[原生IP] [x3.0]*超过每日限制*",
+        "🇸🇬 新加坡住宅[原生IP] [x3.0]*次日恢复使用*",
+        "🏳️‍🌈 台湾住宅1区[原生IP] [x3.0]*建议搭配不限时流量*",
+        "🇯🇵 英国住宅[原生IP] [x3.0]*超过每日限制*",
+        "🇯🇵 越南住宅[原生IP] [x3.0]*次日恢复使用*",
+        "🏳️‍🌈 印度住宅[原生IP] [x3.0]*建议搭配不限时流量*",
+        "🇯🇵 西班牙住宅[原生IP] [x3.0]*超过每日限制*",
+        "🇯🇵 澳大利亚住宅[原生IP] [x3.0]*次日恢复使用*",
+        "🏳️‍🌈 柬埔寨住宅[原生IP] [x3.0]*建议搭配不限时流量*",
+        "🇯🇵 德国住宅[原生IP] [x3.0]*超过每日限制*",
+        "🇯🇵 菲律宾住宅[原生IP] [x3.0]*次日恢复使用*",
+        "🏳️‍🌈 巴西住宅[原生IP] [x3.0]*建议搭配不限时流量*",
+        "🇯🇵 哈萨克斯坦住宅[原生IP] [x3.0]*超过每日限制*",
+        "🇯🇵 匈牙利住宅[原生IP] [x3.0]*次日恢复使用*",
+        "🏳️‍🌈 泰国住宅[原生IP] [x3.0]*建议搭配不限时流量*",
+        "🇯🇵 多哥住宅[原生IP] [x3.0]*超过每日限制*",
+        "🇯🇵 立陶宛住宅[原生IP] [x3.0]*次日恢复使用*",
+        "🏳️‍🌈 保加利亚住宅[原生IP] [x3.0]*建议搭配不限时流量*",
+        "🇯🇵 乌克兰住宅[原生IP] [x3.0]*超过每日限制*",
+        "🇯🇵 波兰住宅[原生IP] [x3.0]*次日恢复使用*",
+        "🏳️‍🌈 挪威住宅[原生IP] [x3.0]*建议搭配不限时流量*",
+        "🇯🇵 土耳其住宅[原生IP] [x3.0]*超过每日限制*",
+        "🇯🇵 意大利住宅[原生IP] [x3.0]*次日恢复使用*",
+        "🏳️‍🌈 孟加拉住宅[原生IP] [x3.0]*建议搭配不限时流量*",
+        "🇯🇵 瑞典住宅[原生IP] [x3.0]*超过每日限制*",
+        "🇯🇵 马来西亚住宅[原生IP] [x3.0]*次日恢复使用*",
+        "🏳️‍🌈 印度尼西亚住宅[原生IP] [x3.0]*建议搭配不限时流量*",
+        "🇳🇬 尼日利亚[原生IP] [x3.0]*超过每日限制*",
+        "🇯🇵 英国[专线] [x1.5]*次日恢复使用*",
+        "🏳️‍🌈 法国[转发] [x1.0]*建议搭配不限时流量*",
+        "🇯🇵 加拿大[转发] [x1.0]*超过每日限制*",
+        "🇯🇵 荷兰[转发] [x1.0]*次日恢复使用*",
+        "🏳️‍🌈 俄罗斯[转发] [x1.0]*建议搭配不限时流量*",
+        "🇯🇵 摩尔多瓦[转发] [x1.0]*超过每日限制*",
+        "🇯🇵 瑞士[转发] [x1.0]*次日恢复使用*",
+        "🏳️‍🌈 吉尔吉斯斯坦[转发] [x1.0]*建议搭配不限时流量*",
+        "🇯🇵 冰岛[转发] [x1.0]*超过每日限制*"
+      ]
+    },
+    {
+      "tag": "direct",
+      "type": "direct"
+    }
+  ],
+  "route": {
+    "rules": [
+      {
+        "action": "sniff"
+      },
+      {
+        "protocol": "dns",
+        "action": "hijack-dns"
+      },
+      {
+        "action": "resolve",
+        "strategy": "ipv4_only"
+      },
+      {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "domain_suffix": [
+              "ushd.xmsl.org",
+              "cf.gtlx.org",
+              "public-operation-hkrpg-sg.hoyoverse.com",
+              "public-operation-hk4e-sg.hoyoverse.com",
+              "public-operation-nap-sg.hoyoverse.com"
+            ]
+          },
+          {
+            "port_range": [
+              "23301:23301",
+              "22101:22102",
+              "20501:20501",
+              "21601:21606"
+            ]
+          }
+        ],
+        "outbound": "direct"
+      },
+      {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "clash_mode": "Global"
+          },
+          {
+            "domain_keyword": [
+              "hoyoverse.com"
+            ]
+          }
+        ],
+        "outbound": "select"
+      },
+      {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "rule_set": [
+              "geosite-openai",
+              "geosite-google-gemini"
+            ]
+          }
+        ],
+        "outbound": "ai"
+      },
+      {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "clash_mode": "Direct"
+          },
+          {
+            "ip_is_private": true
+          },
+          {
+            "rule_set": [
+              "geosite-googlefcm",
+              "geosite-cn",
+              "geoip-cn"
+            ]
+          }
+        ],
+        "outbound": "direct"
+      }
+    ],
+    "rule_set": [
+      {
+        "type": "remote",
+        "tag": "geoip-cn",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/lyc8503/sing-box-rules/rule-set-geoip/geoip-cn.srs",
+        "download_detour": "select"
+      },
+      {
+        "type": "remote",
+        "tag": "geosite-cn",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/lyc8503/sing-box-rules/rule-set-geosite/geosite-cn.srs",
+        "download_detour": "select"
+      },
+      {
+        "type": "remote",
+        "tag": "geosite-openai",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/lyc8503/sing-box-rules/rule-set-geosite/geosite-openai.srs",
+        "download_detour": "select"
+      },
+      {
+        "type": "remote",
+        "tag": "geosite-google-gemini",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/lyc8503/sing-box-rules/rule-set-geosite/geosite-google-gemini.srs",
+        "download_detour": "select"
+      },
+      {
+        "type": "remote",
+        "tag": "geosite-googlefcm",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/lyc8503/sing-box-rules/rule-set-geosite/geosite-googlefcm.srs",
+        "download_detour": "select"
+      },
+      {
+        "type": "remote",
+        "tag": "geosite-category-ads-all",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/lyc8503/sing-box-rules/rule-set-geosite/geosite-category-ads-all.srs",
+        "download_detour": "select"
+      }
+    ],
+    "final": "select",
+    "default_domain_resolver": "dns_direct",
+    "auto_detect_interface": true,
+    "override_android_vpn": true
+  },
+  "experimental": {
+    "cache_file": {
+      "enabled": true
+    },
+    "clash_api": {
+      "external_controller": "127.0.0.1:9090"
+    }
+  }
+}
