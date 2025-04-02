@@ -1,0 +1,970 @@
+{
+  "log": {},
+  "dns": {
+    "servers": [
+      {
+        "tag": "dns_proxy",
+        "type": "https",
+        "server": "1.1.1.1",
+        "detour": "select"
+      },
+      {
+        "tag": "dns_direct",
+        "type": "https",
+        "server": "223.5.5.5"
+      },
+      {
+        "tag": "dns_fakeip",
+        "type": "fakeip",
+        "inet4_range": "198.18.0.0/15",
+        "inet6_range": "fc00::/18"
+      }
+    ],
+    "rules": [
+      {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "query_type": "HTTPS"
+          },
+          {
+            "rule_set": [
+              "geosite-category-ads-all"
+            ]
+          }
+        ],
+        "action": "reject"
+      },
+      {
+        "query_type": [
+          "A",
+          "AAAA"
+        ],
+        "server": "dns_fakeip",
+        "rewrite_ttl": 1
+      },
+      {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "clash_mode": "Global"
+          }
+        ],
+        "server": "dns_proxy"
+      },
+      {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "clash_mode": "Direct"
+          },
+          {
+            "rule_set": [
+              "geosite-cn"
+            ]
+          }
+        ],
+        "server": "dns_direct"
+      }
+    ],
+    "strategy": "ipv4_only",
+    "independent_cache": true
+  },
+  "inbounds": [
+    {
+      "type": "tun",
+      "address": [
+        "172.18.0.1/30",
+        "fdfe:dcba:9876::1/126"
+      ],
+      "auto_route": true,
+      "strict_route": true,
+      "route_exclude_address": [
+        "192.168.0.0/16",
+        "fc00::/7"
+      ]
+    }
+  ],
+  "outbounds": [
+    {
+      "password": "7e07ebe3-9da1-47c9-8d9c-57aedd4e9a8a",
+      "server": "us-rs.aikunapp.com",
+      "server_port": 5002,
+      "tag": "美国gpt（三网优化）",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "d1--cn-gotcha204-3.bilivideo.com"
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "7e07ebe3-9da1-47c9-8d9c-57aedd4e9a8a",
+      "server": "us-pz.aikunapp.com",
+      "server_port": 5002,
+      "tag": "美国（优化）",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "d1--cn-gotcha204-3.bilivideo.com"
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "7e07ebe3-9da1-47c9-8d9c-57aedd4e9a8a",
+      "server": "aws-sgsg.aikunapp.com",
+      "server_port": 5002,
+      "tag": "新加坡 01",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "d1--cn-gotcha204-3.bilivideo.com"
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "7e07ebe3-9da1-47c9-8d9c-57aedd4e9a8a",
+      "server": "aws-sgsg.aikunapp.com",
+      "server_port": 5002,
+      "tag": "新加坡 02 （移动优化）",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "d1--cn-gotcha204-3.bilivideo.com"
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "7e07ebe3-9da1-47c9-8d9c-57aedd4e9a8a",
+      "server": "krseoul.aikunapp.com",
+      "server_port": 5002,
+      "tag": "韩国首尔",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "d1--cn-gotcha204-3.bilivideo.com"
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "7e07ebe3-9da1-47c9-8d9c-57aedd4e9a8a",
+      "server": "2607:5300:205:200::3017",
+      "server_port": 5022,
+      "tag": "加拿大 IPv6",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "d1--cn-gotcha204-3.bilivideo.com"
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "7e07ebe3-9da1-47c9-8d9c-57aedd4e9a8a",
+      "server": "aws-hkhk.aikunapp.com",
+      "server_port": 5002,
+      "tag": "香港 01",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "d1--cn-gotcha204-3.bilivideo.com"
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "7e07ebe3-9da1-47c9-8d9c-57aedd4e9a8a",
+      "server": "aws-hkhk.aikunapp.com",
+      "server_port": 5002,
+      "tag": "香港 02",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "d1--cn-gotcha204-3.bilivideo.com"
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "7e07ebe3-9da1-47c9-8d9c-57aedd4e9a8a",
+      "server": "aws-jpjp.aikunapp.com",
+      "server_port": 5002,
+      "tag": "日本 01",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "d1--cn-gotcha204-3.bilivideo.com"
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "7e07ebe3-9da1-47c9-8d9c-57aedd4e9a8a",
+      "server": "152.53.125.70",
+      "server_port": 5002,
+      "tag": "德国 netcup",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "d1--cn-gotcha204-3.bilivideo.com"
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "7e07ebe3-9da1-47c9-8d9c-57aedd4e9a8a",
+      "server": "do-us.aikunapp.com",
+      "server_port": 5002,
+      "tag": "美国 01 三网优化",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "d1--cn-gotcha204-3.bilivideo.com"
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "7e07ebe3-9da1-47c9-8d9c-57aedd4e9a8a",
+      "server": "sg-oracle.aikunapp.com",
+      "server_port": 5002,
+      "tag": "新加坡 oracle hy2",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "d1--cn-gotcha204-3.bilivideo.com"
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "7e07ebe3-9da1-47c9-8d9c-57aedd4e9a8a",
+      "server": "jp-oracle.aikunapp.com",
+      "server_port": 5002,
+      "tag": "日本 oracle hy2",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "d1--cn-gotcha204-3.bilivideo.com"
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "7e07ebe3-9da1-47c9-8d9c-57aedd4e9a8a",
+      "server": "jp-linode.aikunapp.com",
+      "server_port": 5002,
+      "tag": "日本 aws （联通优化）",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "d1--cn-gotcha204-3.bilivideo.com"
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "7e07ebe3-9da1-47c9-8d9c-57aedd4e9a8a",
+      "server": "hinetddns1.aikunapp.com",
+      "server_port": 5002,
+      "tag": "台湾 中华电信",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "d1--cn-gotcha204-3.bilivideo.com"
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "7e07ebe3-9da1-47c9-8d9c-57aedd4e9a8a",
+      "server": "31.59.111.17",
+      "server_port": 5002,
+      "tag": "美国 2 流媒体专用",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "d1--cn-gotcha204-3.bilivideo.com"
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "7e07ebe3-9da1-47c9-8d9c-57aedd4e9a8a",
+      "server": "2a14:67c0:600::b",
+      "server_port": 5002,
+      "tag": "美国 IPv6 流媒体专用",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "d1--cn-gotcha204-3.bilivideo.com"
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "7e07ebe3-9da1-47c9-8d9c-57aedd4e9a8a",
+      "server": "us-oracle.aikunapp.com",
+      "server_port": 5002,
+      "tag": "美国 hy2",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "d1--cn-gotcha204-3.bilivideo.com"
+      },
+      "type": "hysteria2"
+    },
+    {
+      "multiplex": {
+        "enabled": true
+      },
+      "password": "7e07ebe3-9da1-47c9-8d9c-57aedd4e9a8a",
+      "server": "127.0.0.1",
+      "server_port": 443,
+      "tag": "如果只有几个节点，去官网更新软件",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "cdn.hkhgc.6641634715834932.me",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "type": "trojan"
+    },
+    {
+      "alter_id": 0,
+      "security": "auto",
+      "server": "cdncdncdn.aikunapp.com",
+      "server_port": 443,
+      "tag": "加拿大 高速 cdn 1",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "r-mSwtUTbVp3WcAurP.sm-node.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "headers": {
+          "Host": [
+            "cdn-ca.sm-node.com"
+          ]
+        },
+        "max_early_data": 2048,
+        "path": "/vmess_ws/csjc/index?ed=8192",
+        "type": "ws"
+      },
+      "type": "vmess",
+      "uuid": "7e07ebe3-9da1-47c9-8d9c-57aedd4e9a8a"
+    },
+    {
+      "alter_id": 0,
+      "security": "auto",
+      "server": "cdncdncdn.aikunapp.com",
+      "server_port": 443,
+      "tag": "日本 高速 cdn 1",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "r-4iY1TbdEjhpt3aYF.sm-node.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "headers": {
+          "Host": [
+            "cdn-jp.sm-node.com"
+          ]
+        },
+        "max_early_data": 2048,
+        "path": "/vmess_ws/csjc/index?ed=8192",
+        "type": "ws"
+      },
+      "type": "vmess",
+      "uuid": "7e07ebe3-9da1-47c9-8d9c-57aedd4e9a8a"
+    },
+    {
+      "alter_id": 0,
+      "security": "auto",
+      "server": "cdncdncdn.aikunapp.com",
+      "server_port": 443,
+      "tag": "新加坡 高速 cdn 1",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "r-HT7mar9qemUiHuDh.sm-node.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "headers": {
+          "Host": [
+            "cdn-sg.sm-node.com"
+          ]
+        },
+        "max_early_data": 2048,
+        "path": "/vmess_ws/csjc/index?ed=8192",
+        "type": "ws"
+      },
+      "type": "vmess",
+      "uuid": "7e07ebe3-9da1-47c9-8d9c-57aedd4e9a8a"
+    },
+    {
+      "alter_id": 0,
+      "security": "auto",
+      "server": "cdncdncdn.aikunapp.com",
+      "server_port": 443,
+      "tag": "美国 高速 cdn 1",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "r-iJxut7fO8mUzXu4A.sm-node.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "headers": {
+          "Host": [
+            "cdn-us.sm-node.com"
+          ]
+        },
+        "max_early_data": 2048,
+        "path": "/vmess_ws/csjc/index?ed=8192",
+        "type": "ws"
+      },
+      "type": "vmess",
+      "uuid": "7e07ebe3-9da1-47c9-8d9c-57aedd4e9a8a"
+    },
+    {
+      "multiplex": {
+        "enabled": true
+      },
+      "packet_encoding": "xudp",
+      "server": "cdncdncdn.aikunapp.com",
+      "server_port": 443,
+      "tag": "加拿大 cdn 高速 2",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "r-nDX18u1j32M5yzp3.sm-node.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "headers": {
+          "Host": [
+            "cdn-ca.sm-node.com"
+          ]
+        },
+        "max_early_data": 2048,
+        "path": "/vless_ws/csjc/index?ed=8192",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "7e07ebe3-9da1-47c9-8d9c-57aedd4e9a8a"
+    },
+    {
+      "multiplex": {
+        "enabled": true
+      },
+      "packet_encoding": "xudp",
+      "server": "cdncdncdn.aikunapp.com",
+      "server_port": 443,
+      "tag": "日本 cdn 高速 2",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "r-2OyvYyeoi66bVpKu.sm-node.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "headers": {
+          "Host": [
+            "cdn-jp.sm-node.com"
+          ]
+        },
+        "max_early_data": 2048,
+        "path": "/vless_ws/csjc/index?ed=8192",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "7e07ebe3-9da1-47c9-8d9c-57aedd4e9a8a"
+    },
+    {
+      "multiplex": {
+        "enabled": true
+      },
+      "packet_encoding": "xudp",
+      "server": "cdncdncdn.aikunapp.com",
+      "server_port": 443,
+      "tag": "新加坡 cdn 高速 2",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "r-MXyjucZ1B0duF5Fl.sm-node.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "headers": {
+          "Host": [
+            "cdn-sg.sm-node.com"
+          ]
+        },
+        "max_early_data": 2048,
+        "path": "/vless_ws/csjc/index?ed=8192",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "7e07ebe3-9da1-47c9-8d9c-57aedd4e9a8a"
+    },
+    {
+      "multiplex": {
+        "enabled": true
+      },
+      "packet_encoding": "xudp",
+      "server": "cdncdncdn.aikunapp.com",
+      "server_port": 443,
+      "tag": "美国 cdn 高速 2",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "r-TgR6RWSWb9QLzyw5.sm-node.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "headers": {
+          "Host": [
+            "cdn-us.sm-node.com"
+          ]
+        },
+        "max_early_data": 2048,
+        "path": "/vless_ws/csjc/index?ed=8192",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "7e07ebe3-9da1-47c9-8d9c-57aedd4e9a8a"
+    },
+    {
+      "multiplex": {
+        "enabled": true
+      },
+      "password": "7e07ebe3-9da1-47c9-8d9c-57aedd4e9a8a",
+      "server": "tj-hk-1.aikunapp.com",
+      "server_port": 6002,
+      "tag": "香港 HKT  01（原生ip）",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "cqcwqq8jBNWJmeMX.apple.com.akadns.net",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "type": "trojan"
+    },
+    {
+      "multiplex": {
+        "enabled": true
+      },
+      "password": "7e07ebe3-9da1-47c9-8d9c-57aedd4e9a8a",
+      "server": "tj-hk-2.aikunapp.com",
+      "server_port": 6002,
+      "tag": "香港 HKT  02（原生ip）",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "5lyMGkFQRyFXuWpZ.apple.com.akadns.net",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "type": "trojan"
+    },
+    {
+      "multiplex": {
+        "enabled": true
+      },
+      "password": "7e07ebe3-9da1-47c9-8d9c-57aedd4e9a8a",
+      "server": "tj-jp-1.aikunapp.com",
+      "server_port": 6002,
+      "tag": "日本 樱花 新协议",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "bootcdn.xuexi.cn",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "type": "trojan"
+    },
+    {
+      "multiplex": {
+        "enabled": true
+      },
+      "password": "7e07ebe3-9da1-47c9-8d9c-57aedd4e9a8a",
+      "server": "aws-hkhk.aikunapp.com",
+      "server_port": 6002,
+      "tag": "香港 新协议",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "bootcdn.xuexi.cn",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "type": "trojan"
+    },
+    {
+      "multiplex": {
+        "enabled": true
+      },
+      "password": "7e07ebe3-9da1-47c9-8d9c-57aedd4e9a8a",
+      "server": "aws-jpjp.aikunapp.com",
+      "server_port": 6002,
+      "tag": "日本 aws 新协议",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "bootcdn.xuexi.cn",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "type": "trojan"
+    },
+    {
+      "multiplex": {
+        "enabled": true
+      },
+      "password": "7e07ebe3-9da1-47c9-8d9c-57aedd4e9a8a",
+      "server": "hinetddns1.aikunapp.com",
+      "server_port": 6002,
+      "tag": "台湾 新协议",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "bootcdn.xuexi.cn",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "type": "trojan"
+    },
+    {
+      "multiplex": {
+        "enabled": true
+      },
+      "password": "7e07ebe3-9da1-47c9-8d9c-57aedd4e9a8a",
+      "server": "tj-sg-1.aikunapp.com",
+      "server_port": 6002,
+      "tag": "新加坡 AWS",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "bootcdn.xuexi.cn",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "type": "trojan"
+    },
+    {
+      "tag": "select",
+      "type": "selector",
+      "default": "auto",
+      "outbounds": [
+        "auto",
+        "美国gpt（三网优化）",
+        "美国（优化）",
+        "新加坡 01",
+        "新加坡 02 （移动优化）",
+        "韩国首尔",
+        "加拿大 IPv6",
+        "香港 01",
+        "香港 02",
+        "日本 01",
+        "德国 netcup",
+        "美国 01 三网优化",
+        "新加坡 oracle hy2",
+        "日本 oracle hy2",
+        "日本 aws （联通优化）",
+        "台湾 中华电信",
+        "美国 2 流媒体专用",
+        "美国 IPv6 流媒体专用",
+        "美国 hy2",
+        "如果只有几个节点，去官网更新软件",
+        "加拿大 高速 cdn 1",
+        "日本 高速 cdn 1",
+        "新加坡 高速 cdn 1",
+        "美国 高速 cdn 1",
+        "加拿大 cdn 高速 2",
+        "日本 cdn 高速 2",
+        "新加坡 cdn 高速 2",
+        "美国 cdn 高速 2",
+        "香港 HKT  01（原生ip）",
+        "香港 HKT  02（原生ip）",
+        "日本 樱花 新协议",
+        "香港 新协议",
+        "日本 aws 新协议",
+        "台湾 新协议",
+        "新加坡 AWS"
+      ]
+    },
+    {
+      "tag": "auto",
+      "type": "urltest",
+      "outbounds": [
+        "美国gpt（三网优化）",
+        "美国（优化）",
+        "新加坡 01",
+        "新加坡 02 （移动优化）",
+        "韩国首尔",
+        "加拿大 IPv6",
+        "香港 01",
+        "香港 02",
+        "日本 01",
+        "德国 netcup",
+        "美国 01 三网优化",
+        "新加坡 oracle hy2",
+        "日本 oracle hy2",
+        "日本 aws （联通优化）",
+        "台湾 中华电信",
+        "美国 2 流媒体专用",
+        "美国 IPv6 流媒体专用",
+        "美国 hy2",
+        "如果只有几个节点，去官网更新软件",
+        "加拿大 高速 cdn 1",
+        "日本 高速 cdn 1",
+        "新加坡 高速 cdn 1",
+        "美国 高速 cdn 1",
+        "加拿大 cdn 高速 2",
+        "日本 cdn 高速 2",
+        "新加坡 cdn 高速 2",
+        "美国 cdn 高速 2",
+        "香港 HKT  01（原生ip）",
+        "香港 HKT  02（原生ip）",
+        "日本 樱花 新协议",
+        "香港 新协议",
+        "日本 aws 新协议",
+        "台湾 新协议",
+        "新加坡 AWS"
+      ]
+    },
+    {
+      "tag": "ai",
+      "type": "selector",
+      "outbounds": [
+        "美国gpt（三网优化）",
+        "美国（优化）",
+        "新加坡 01",
+        "新加坡 02 （移动优化）",
+        "韩国首尔",
+        "加拿大 IPv6",
+        "香港 01",
+        "香港 02",
+        "日本 01",
+        "德国 netcup",
+        "美国 01 三网优化",
+        "新加坡 oracle hy2",
+        "日本 oracle hy2",
+        "日本 aws （联通优化）",
+        "台湾 中华电信",
+        "美国 2 流媒体专用",
+        "美国 IPv6 流媒体专用",
+        "美国 hy2",
+        "如果只有几个节点，去官网更新软件",
+        "加拿大 高速 cdn 1",
+        "日本 高速 cdn 1",
+        "新加坡 高速 cdn 1",
+        "美国 高速 cdn 1",
+        "加拿大 cdn 高速 2",
+        "日本 cdn 高速 2",
+        "新加坡 cdn 高速 2",
+        "美国 cdn 高速 2",
+        "香港 HKT  01（原生ip）",
+        "香港 HKT  02（原生ip）",
+        "日本 樱花 新协议",
+        "香港 新协议",
+        "日本 aws 新协议",
+        "台湾 新协议",
+        "新加坡 AWS"
+      ]
+    },
+    {
+      "tag": "direct",
+      "type": "direct"
+    }
+  ],
+  "route": {
+    "rules": [
+      {
+        "action": "sniff"
+      },
+      {
+        "protocol": "dns",
+        "action": "hijack-dns"
+      },
+      {
+        "action": "resolve",
+        "strategy": "ipv4_only"
+      },
+      {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "domain_suffix": [
+              "ushd.xmsl.org",
+              "cf.gtlx.org",
+              "public-operation-hkrpg-sg.hoyoverse.com",
+              "public-operation-hk4e-sg.hoyoverse.com",
+              "public-operation-nap-sg.hoyoverse.com"
+            ]
+          },
+          {
+            "port_range": [
+              "23301:23301",
+              "22101:22102",
+              "20501:20501",
+              "21601:21606"
+            ]
+          }
+        ],
+        "outbound": "direct"
+      },
+      {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "clash_mode": "Global"
+          },
+          {
+            "domain_keyword": [
+              "hoyoverse.com"
+            ]
+          }
+        ],
+        "outbound": "select"
+      },
+      {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "rule_set": [
+              "geosite-openai",
+              "geosite-google-gemini"
+            ]
+          }
+        ],
+        "outbound": "ai"
+      },
+      {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "clash_mode": "Direct"
+          },
+          {
+            "ip_is_private": true
+          },
+          {
+            "rule_set": [
+              "geosite-googlefcm",
+              "geosite-cn",
+              "geoip-cn"
+            ]
+          }
+        ],
+        "outbound": "direct"
+      }
+    ],
+    "rule_set": [
+      {
+        "type": "remote",
+        "tag": "geoip-cn",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/lyc8503/sing-box-rules/rule-set-geoip/geoip-cn.srs",
+        "download_detour": "select"
+      },
+      {
+        "type": "remote",
+        "tag": "geosite-cn",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/lyc8503/sing-box-rules/rule-set-geosite/geosite-cn.srs",
+        "download_detour": "select"
+      },
+      {
+        "type": "remote",
+        "tag": "geosite-openai",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/lyc8503/sing-box-rules/rule-set-geosite/geosite-openai.srs",
+        "download_detour": "select"
+      },
+      {
+        "type": "remote",
+        "tag": "geosite-google-gemini",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/lyc8503/sing-box-rules/rule-set-geosite/geosite-google-gemini.srs",
+        "download_detour": "select"
+      },
+      {
+        "type": "remote",
+        "tag": "geosite-googlefcm",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/lyc8503/sing-box-rules/rule-set-geosite/geosite-googlefcm.srs",
+        "download_detour": "select"
+      },
+      {
+        "type": "remote",
+        "tag": "geosite-category-ads-all",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/lyc8503/sing-box-rules/rule-set-geosite/geosite-category-ads-all.srs",
+        "download_detour": "select"
+      }
+    ],
+    "final": "select",
+    "default_domain_resolver": "dns_direct",
+    "auto_detect_interface": true,
+    "override_android_vpn": true
+  },
+  "experimental": {
+    "cache_file": {
+      "enabled": true
+    },
+    "clash_api": {
+      "external_controller": "127.0.0.1:9090"
+    }
+  }
+}

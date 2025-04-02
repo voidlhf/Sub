@@ -1,0 +1,178 @@
+log-level: "debug"
+mixed-port: 7890
+allow-lan: true
+external-controller: "127.0.0.1:9090"
+unified-delay: true
+tcp-concurrent: true
+find-process-mode: "strict"
+global-client-fingerprint: "chrome"
+profile:
+  store-selected: true
+  store-fake-ip: true
+sniffer:
+  enable: true
+  force-dns-mapping: true
+  parse-pure-ip: true
+  override-destination: false
+  sniff:
+    HTTP:
+      ports:
+      - 80
+      - "8080-8880"
+    TLS:
+      ports:
+      - 443
+      - 8443
+    QUIC:
+      ports:
+      - 443
+      - 8443
+tun:
+  enable: true
+  stack: "mixed"
+  dns-hijack:
+  - "any:53"
+  - "tcp://any:53"
+  auto-route: true
+  auto-redirect: true
+  auto-detect-interface: true
+  strict-route: true
+dns:
+  enable: true
+  ipv6: false
+  default-nameserver:
+  - "223.5.5.5"
+  - "119.29.29.29"
+  enhanced-mode: "fake-ip"
+  fake-ip-range: "198.18.0.1/16"
+  nameserver:
+  - "https://dns.cloudflare.com/dns-query"
+  - "https://dns.google/dns-query"
+  nameserver-policy:
+    geosite:cn,private:
+    - "https://dns.alidns.com/dns-query"
+    - "https://doh.pub/dns-query"
+proxies:
+- {name: "剩余流量：0", server: "us.cloudog.me", port: 20309, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "20301-20399", type: "hysteria2", password: "233e552b-cd53-4421-88cb-82bfb43f17b9"}
+- {name: "距离下次重置剩余：10 天", server: "us.cloudog.me", port: 20309, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "20301-20399", type: "hysteria2", password: "233e552b-cd53-4421-88cb-82bfb43f17b9"}
+- {name: "套餐到期：2025-04-12", server: "us.cloudog.me", port: 20309, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "20301-20399", type: "hysteria2", password: "233e552b-cd53-4421-88cb-82bfb43f17b9"}
+- {name: "🇺🇸美国1 大带宽", server: "us.cloudog.me", port: 20309, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "20301-20399", type: "hysteria2", password: "233e552b-cd53-4421-88cb-82bfb43f17b9"}
+- {name: "美国2 大带宽🇺🇸", server: "us.cloudog.me", port: 20312, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "20301-20399", type: "hysteria2", password: "233e552b-cd53-4421-88cb-82bfb43f17b9"}
+- {name: "美国3 大带宽🇺🇸", server: "us.cloudog.me", port: 20353, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "20301-20399", type: "hysteria2", password: "233e552b-cd53-4421-88cb-82bfb43f17b9"}
+- {name: "美国4 大带宽🇺🇸", server: "us.cloudog.me", port: 20311, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "20301-20399", type: "hysteria2", password: "233e552b-cd53-4421-88cb-82bfb43f17b9"}
+- {name: "香港1🇭🇰", server: "hk.cloudog.me", port: 20383, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "20301-20399", type: "hysteria2", password: "233e552b-cd53-4421-88cb-82bfb43f17b9"}
+- {name: "香港2🇭🇰", server: "hk.cloudog.me", port: 20379, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "20301-20399", type: "hysteria2", password: "233e552b-cd53-4421-88cb-82bfb43f17b9"}
+- {name: "香港3🇭🇰", server: "hk.cloudog.me", port: 20354, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "20301-20399", type: "hysteria2", password: "233e552b-cd53-4421-88cb-82bfb43f17b9"}
+- {name: "香港4🇭🇰", server: "hk.cloudog.me", port: 20319, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "20301-20399", type: "hysteria2", password: "233e552b-cd53-4421-88cb-82bfb43f17b9"}
+- {name: "日本1🇯🇵", server: "jp.cloudog.me", port: 20333, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "20301-20399", type: "hysteria2", password: "233e552b-cd53-4421-88cb-82bfb43f17b9"}
+- {name: "日本2🇯🇵", server: "jp.cloudog.me", port: 20315, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "20301-20399", type: "hysteria2", password: "233e552b-cd53-4421-88cb-82bfb43f17b9"}
+- {name: "日本3🇯🇵", server: "jp.cloudog.me", port: 20397, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "20301-20399", type: "hysteria2", password: "233e552b-cd53-4421-88cb-82bfb43f17b9"}
+- {name: "日本4🇯🇵", server: "jp.cloudog.me", port: 20332, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "20301-20399", type: "hysteria2", password: "233e552b-cd53-4421-88cb-82bfb43f17b9"}
+- {name: "🇸🇬新加坡1", server: "sg.cloudog.me", port: 20338, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "20301-20399", type: "hysteria2", password: "233e552b-cd53-4421-88cb-82bfb43f17b9"}
+- {name: "新加坡2🇸🇬", server: "sg.cloudog.me", port: 20366, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "20301-20399", type: "hysteria2", password: "233e552b-cd53-4421-88cb-82bfb43f17b9"}
+- {name: "新加坡3🇸🇬", server: "sg.cloudog.me", port: 20309, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "20301-20399", type: "hysteria2", password: "233e552b-cd53-4421-88cb-82bfb43f17b9"}
+- {name: "新加坡4🇸🇬", server: "sg.cloudog.me", port: 20315, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "20301-20399", type: "hysteria2", password: "233e552b-cd53-4421-88cb-82bfb43f17b9"}
+- {name: "🇰🇷韩国", server: "kr.cloudog.me", port: 20389, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "20301-20399", type: "hysteria2", password: "233e552b-cd53-4421-88cb-82bfb43f17b9"}
+- {name: "🇰🇷韩国2", server: "kr.cloudog.me", port: 20377, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "20301-20399", type: "hysteria2", password: "233e552b-cd53-4421-88cb-82bfb43f17b9"}
+- {name: "🇰🇷韩国3", server: "kr.cloudog.me", port: 20366, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "20301-20399", type: "hysteria2", password: "233e552b-cd53-4421-88cb-82bfb43f17b9"}
+- {name: "🇰🇷韩国4", server: "kr.cloudog.me", port: 20312, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "20301-20399", type: "hysteria2", password: "233e552b-cd53-4421-88cb-82bfb43f17b9"}
+proxy-groups:
+- name: "PROXY"
+  type: "select"
+  proxies:
+  - "AUTO"
+  - "剩余流量：0"
+  - "距离下次重置剩余：10 天"
+  - "套餐到期：2025-04-12"
+  - "🇺🇸美国1 大带宽"
+  - "美国2 大带宽🇺🇸"
+  - "美国3 大带宽🇺🇸"
+  - "美国4 大带宽🇺🇸"
+  - "香港1🇭🇰"
+  - "香港2🇭🇰"
+  - "香港3🇭🇰"
+  - "香港4🇭🇰"
+  - "日本1🇯🇵"
+  - "日本2🇯🇵"
+  - "日本3🇯🇵"
+  - "日本4🇯🇵"
+  - "🇸🇬新加坡1"
+  - "新加坡2🇸🇬"
+  - "新加坡3🇸🇬"
+  - "新加坡4🇸🇬"
+  - "🇰🇷韩国"
+  - "🇰🇷韩国2"
+  - "🇰🇷韩国3"
+  - "🇰🇷韩国4"
+- name: "AUTO"
+  type: "url-test"
+  url: "http://www.gstatic.com/generate_204"
+  interval: 300
+  tolerance: 50
+  proxies:
+  - "剩余流量：0"
+  - "距离下次重置剩余：10 天"
+  - "套餐到期：2025-04-12"
+  - "🇺🇸美国1 大带宽"
+  - "美国2 大带宽🇺🇸"
+  - "美国3 大带宽🇺🇸"
+  - "美国4 大带宽🇺🇸"
+  - "香港1🇭🇰"
+  - "香港2🇭🇰"
+  - "香港3🇭🇰"
+  - "香港4🇭🇰"
+  - "日本1🇯🇵"
+  - "日本2🇯🇵"
+  - "日本3🇯🇵"
+  - "日本4🇯🇵"
+  - "🇸🇬新加坡1"
+  - "新加坡2🇸🇬"
+  - "新加坡3🇸🇬"
+  - "新加坡4🇸🇬"
+  - "🇰🇷韩国"
+  - "🇰🇷韩国2"
+  - "🇰🇷韩国3"
+  - "🇰🇷韩国4"
+- name: "AI"
+  type: "select"
+  proxies:
+  - "剩余流量：0"
+  - "距离下次重置剩余：10 天"
+  - "套餐到期：2025-04-12"
+  - "🇺🇸美国1 大带宽"
+  - "美国2 大带宽🇺🇸"
+  - "美国3 大带宽🇺🇸"
+  - "美国4 大带宽🇺🇸"
+  - "香港1🇭🇰"
+  - "香港2🇭🇰"
+  - "香港3🇭🇰"
+  - "香港4🇭🇰"
+  - "日本1🇯🇵"
+  - "日本2🇯🇵"
+  - "日本3🇯🇵"
+  - "日本4🇯🇵"
+  - "🇸🇬新加坡1"
+  - "新加坡2🇸🇬"
+  - "新加坡3🇸🇬"
+  - "新加坡4🇸🇬"
+  - "🇰🇷韩国"
+  - "🇰🇷韩国2"
+  - "🇰🇷韩国3"
+  - "🇰🇷韩国4"
+rules:
+- "GEOSITE,CATEGORY-ADS-ALL,REJECT"
+- "DOMAIN-SUFFIX,ushd.xmsl.org,DIRECT"
+- "DOMAIN-SUFFIX,cf.gtlx.org,DIRECT"
+- "DOMAIN-SUFFIX,public-operation-hkrpg-sg.hoyoverse.com,DIRECT"
+- "DOMAIN-SUFFIX,public-operation-hk4e-sg.hoyoverse.com,DIRECT"
+- "DOMAIN-SUFFIX,public-operation-nap-sg.hoyoverse.com,DIRECT"
+- "DST-PORT,23301/22101-22102/20501/21601-21606,DIRECT"
+- "DOMAIN-KEYWORD,hoyoverse.com,PROXY"
+- "GEOSITE,OPENAI,AI"
+- "GEOSITE,GOOGLE-GEMINI,AI"
+- "GEOSITE,GOOGLEFCM,DIRECT"
+- "GEOSITE,PRIVATE,DIRECT"
+- "GEOSITE,CN,DIRECT"
+- "GEOIP,PRIVATE,DIRECT,no-resolve"
+- "GEOIP,CN,DIRECT"
+- "MATCH,PROXY"

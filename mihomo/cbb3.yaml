@@ -1,0 +1,166 @@
+log-level: "debug"
+mixed-port: 7890
+allow-lan: true
+external-controller: "127.0.0.1:9090"
+unified-delay: true
+tcp-concurrent: true
+find-process-mode: "strict"
+global-client-fingerprint: "chrome"
+profile:
+  store-selected: true
+  store-fake-ip: true
+sniffer:
+  enable: true
+  force-dns-mapping: true
+  parse-pure-ip: true
+  override-destination: false
+  sniff:
+    HTTP:
+      ports:
+      - 80
+      - "8080-8880"
+    TLS:
+      ports:
+      - 443
+      - 8443
+    QUIC:
+      ports:
+      - 443
+      - 8443
+tun:
+  enable: true
+  stack: "mixed"
+  dns-hijack:
+  - "any:53"
+  - "tcp://any:53"
+  auto-route: true
+  auto-redirect: true
+  auto-detect-interface: true
+  strict-route: true
+dns:
+  enable: true
+  ipv6: false
+  default-nameserver:
+  - "223.5.5.5"
+  - "119.29.29.29"
+  enhanced-mode: "fake-ip"
+  fake-ip-range: "198.18.0.1/16"
+  nameserver:
+  - "https://dns.cloudflare.com/dns-query"
+  - "https://dns.google/dns-query"
+  nameserver-policy:
+    geosite:cn,private:
+    - "https://dns.alidns.com/dns-query"
+    - "https://doh.pub/dns-query"
+proxies:
+- {name: "1巴西圣保罗", type: "vmess", server: "104.18.23.180", port: "80", uuid: "812eb086-8442-4799-9d92-112fd1a225af", alterId: 0, cipher: "auto", udp: true, network: "ws", ws-opts: {path: "/s15.html", headers: {Host: "101903513292142025040222211333882.s15.chibaba.filegear-sg.me"}}, ws-path: "/s15.html", ws-headers: {Host: "2025040222211333882.s15.chibaba.filegear-sg.me", headers: {Host: "854012000396132025040222211333882.s15.chibaba.filegear-sg.me"}}}
+- {name: "2巴西圣保罗", type: "vmess", server: "104.18.23.179", port: "80", uuid: "812eb086-8442-4799-9d92-112fd1a225af", alterId: 0, cipher: "auto", udp: true, network: "ws", ws-opts: {path: "/s15.html", headers: {Host: "504413788148122025040222211386741.s15.chibaba.filegear-sg.me"}}, ws-path: "/s15.html", ws-headers: {Host: "2025040222211386741.s15.chibaba.filegear-sg.me", headers: {Host: "51542386174372025040222211386741.s15.chibaba.filegear-sg.me"}}}
+- {name: "3巴西圣保罗", type: "vmess", server: "104.18.23.46", port: "80", uuid: "812eb086-8442-4799-9d92-112fd1a225af", alterId: 0, cipher: "auto", udp: true, network: "ws", ws-opts: {path: "/s15.html", headers: {Host: "9071921743082025040222211338731.s15.chibaba.filegear-sg.me"}}, ws-path: "/s15.html", ws-headers: {Host: "2025040222211338731.s15.chibaba.filegear-sg.me", headers: {Host: "747137338805382025040222211338731.s15.chibaba.filegear-sg.me"}}}
+- {name: "4巴西圣保罗", type: "vmess", server: "104.18.23.29", port: "80", uuid: "812eb086-8442-4799-9d92-112fd1a225af", alterId: 0, cipher: "auto", udp: true, network: "ws", ws-opts: {path: "/s15.html", headers: {Host: "663648878404052025040222211381384.s15.chibaba.filegear-sg.me"}}, ws-path: "/s15.html", ws-headers: {Host: "2025040222211381384.s15.chibaba.filegear-sg.me", headers: {Host: "980897160352842025040222211381384.s15.chibaba.filegear-sg.me"}}}
+- {name: "5巴西圣保罗", type: "vmess", server: "104.18.23.55", port: "80", uuid: "812eb086-8442-4799-9d92-112fd1a225af", alterId: 0, cipher: "auto", udp: true, network: "ws", ws-opts: {path: "/s15.html", headers: {Host: "189005372258352025040222211374038.s15.chibaba.filegear-sg.me"}}, ws-path: "/s15.html", ws-headers: {Host: "2025040222211374038.s15.chibaba.filegear-sg.me", headers: {Host: "274843443958602025040222211374038.s15.chibaba.filegear-sg.me"}}}
+- {name: "6巴西圣保罗", type: "vmess", server: "104.18.23.114", port: "80", uuid: "812eb086-8442-4799-9d92-112fd1a225af", alterId: 0, cipher: "auto", udp: true, network: "ws", ws-opts: {path: "/s15.html", headers: {Host: "769681394787462025040222211353136.s15.chibaba.filegear-sg.me"}}, ws-path: "/s15.html", ws-headers: {Host: "2025040222211353136.s15.chibaba.filegear-sg.me", headers: {Host: "278881801007122025040222211353136.s15.chibaba.filegear-sg.me"}}}
+- {name: "7巴西圣保罗", type: "vmess", server: "104.18.23.23", port: "80", uuid: "812eb086-8442-4799-9d92-112fd1a225af", alterId: 0, cipher: "auto", udp: true, network: "ws", ws-opts: {path: "/s15.html", headers: {Host: "346738803187782025040222211363125.s15.chibaba.filegear-sg.me"}}, ws-path: "/s15.html", ws-headers: {Host: "2025040222211363125.s15.chibaba.filegear-sg.me", headers: {Host: "428641096161732025040222211363125.s15.chibaba.filegear-sg.me"}}}
+- {name: "8巴西圣保罗", type: "vmess", server: "104.18.23.53", port: "80", uuid: "812eb086-8442-4799-9d92-112fd1a225af", alterId: 0, cipher: "auto", udp: true, network: "ws", ws-opts: {path: "/s15.html", headers: {Host: "745439430319622025040222211417531.s15.chibaba.filegear-sg.me"}}, ws-path: "/s15.html", ws-headers: {Host: "2025040222211417531.s15.chibaba.filegear-sg.me", headers: {Host: "385724046674042025040222211417531.s15.chibaba.filegear-sg.me"}}}
+- {name: "9巴西圣保罗", type: "vmess", server: "104.18.23.212", port: "80", uuid: "812eb086-8442-4799-9d92-112fd1a225af", alterId: 0, cipher: "auto", udp: true, network: "ws", ws-opts: {path: "/s15.html", headers: {Host: "854463752590332025040222211448604.s15.chibaba.filegear-sg.me"}}, ws-path: "/s15.html", ws-headers: {Host: "2025040222211448604.s15.chibaba.filegear-sg.me", headers: {Host: "130428735096632025040222211448604.s15.chibaba.filegear-sg.me"}}}
+- {name: "10巴西圣保罗", type: "vmess", server: "104.18.23.5", port: "80", uuid: "812eb086-8442-4799-9d92-112fd1a225af", alterId: 0, cipher: "auto", udp: true, network: "ws", ws-opts: {path: "/s15.html", headers: {Host: "502351122565892025040222211413819.s15.chibaba.filegear-sg.me"}}, ws-path: "/s15.html", ws-headers: {Host: "2025040222211413819.s15.chibaba.filegear-sg.me", headers: {Host: "139794548850672025040222211413819.s15.chibaba.filegear-sg.me"}}}
+- {name: "11巴西圣保罗", type: "vmess", server: "104.18.23.235", port: "80", uuid: "812eb086-8442-4799-9d92-112fd1a225af", alterId: 0, cipher: "auto", udp: true, network: "ws", ws-opts: {path: "/s15.html", headers: {Host: "841003246362572025040222211439515.s15.chibaba.filegear-sg.me"}}, ws-path: "/s15.html", ws-headers: {Host: "2025040222211439515.s15.chibaba.filegear-sg.me", headers: {Host: "731336531904592025040222211439515.s15.chibaba.filegear-sg.me"}}}
+- {name: "12巴西圣保罗", type: "vmess", server: "104.18.20.69", port: "80", uuid: "812eb086-8442-4799-9d92-112fd1a225af", alterId: 0, cipher: "auto", udp: true, network: "ws", ws-opts: {path: "/s15.html", headers: {Host: "216590865167392025040222211423830.s15.chibaba.filegear-sg.me"}}, ws-path: "/s15.html", ws-headers: {Host: "2025040222211423830.s15.chibaba.filegear-sg.me", headers: {Host: "244789577877802025040222211423830.s15.chibaba.filegear-sg.me"}}}
+- {name: "13巴西圣保罗", type: "vmess", server: "104.18.27.94", port: "80", uuid: "812eb086-8442-4799-9d92-112fd1a225af", alterId: 0, cipher: "auto", udp: true, network: "ws", ws-opts: {path: "/s15.html", headers: {Host: "592368160334012025040222211464225.s15.chibaba.filegear-sg.me"}}, ws-path: "/s15.html", ws-headers: {Host: "2025040222211464225.s15.chibaba.filegear-sg.me", headers: {Host: "934279026786882025040222211464225.s15.chibaba.filegear-sg.me"}}}
+- {name: "14巴西圣保罗", type: "vmess", server: "104.18.21.69", port: "80", uuid: "812eb086-8442-4799-9d92-112fd1a225af", alterId: 0, cipher: "auto", udp: true, network: "ws", ws-opts: {path: "/s15.html", headers: {Host: "132398562030782025040222211473053.s15.chibaba.filegear-sg.me"}}, ws-path: "/s15.html", ws-headers: {Host: "2025040222211473053.s15.chibaba.filegear-sg.me", headers: {Host: "214648312003032025040222211473053.s15.chibaba.filegear-sg.me"}}}
+- {name: "15巴西圣保罗", type: "vmess", server: "104.26.13.54", port: "80", uuid: "812eb086-8442-4799-9d92-112fd1a225af", alterId: 0, cipher: "auto", udp: true, network: "ws", ws-opts: {path: "/s15.html", headers: {Host: "700259665518792025040222211481012.s15.chibaba.filegear-sg.me"}}, ws-path: "/s15.html", ws-headers: {Host: "2025040222211481012.s15.chibaba.filegear-sg.me", headers: {Host: "550124736841032025040222211481012.s15.chibaba.filegear-sg.me"}}}
+- {name: "16巴西圣保罗-V6", type: "vmess", server: "2606:4700:9c6b:3705:7b0e:4e0c:3cf4:1a12", port: "80", uuid: "812eb086-8442-4799-9d92-112fd1a225af", alterId: 0, cipher: "auto", udp: true, network: "ws", ws-opts: {path: "/s15.html", headers: {Host: "259955989834252025040222211449482.s15.chibaba.filegear-sg.me"}}, ws-path: "/s15.html", ws-headers: {Host: "2025040222211449482.s15.chibaba.filegear-sg.me", headers: {Host: "12007643347382025040222211449482.s15.chibaba.filegear-sg.me"}}}
+- {name: "17巴西圣保罗-V6", type: "vmess", server: "2606:4700:9c6b:7a7c:1c59:2700:80a2:78e9", port: "80", uuid: "812eb086-8442-4799-9d92-112fd1a225af", alterId: 0, cipher: "auto", udp: true, network: "ws", ws-opts: {path: "/s15.html", headers: {Host: "936552440930992025040222211422308.s15.chibaba.filegear-sg.me"}}, ws-path: "/s15.html", ws-headers: {Host: "2025040222211422308.s15.chibaba.filegear-sg.me", headers: {Host: "896282014838072025040222211422308.s15.chibaba.filegear-sg.me"}}}
+- {name: "18巴西圣保罗-V6", type: "vmess", server: "2606:4700:9c6b:441:bd46:aa3f:eeef:9b73", port: "80", uuid: "812eb086-8442-4799-9d92-112fd1a225af", alterId: 0, cipher: "auto", udp: true, network: "ws", ws-opts: {path: "/s15.html", headers: {Host: "359951855221902025040222211497749.s15.chibaba.filegear-sg.me"}}, ws-path: "/s15.html", ws-headers: {Host: "2025040222211497749.s15.chibaba.filegear-sg.me", headers: {Host: "33063296145072025040222211497749.s15.chibaba.filegear-sg.me"}}}
+- {name: "19巴西圣保罗-V6", type: "vmess", server: "2606:4700:9c6b:4e38:1594:e1a:1323:aad9", port: "80", uuid: "812eb086-8442-4799-9d92-112fd1a225af", alterId: 0, cipher: "auto", udp: true, network: "ws", ws-opts: {path: "/s15.html", headers: {Host: "407350951563402025040222211413768.s15.chibaba.filegear-sg.me"}}, ws-path: "/s15.html", ws-headers: {Host: "2025040222211413768.s15.chibaba.filegear-sg.me", headers: {Host: "458732510198222025040222211413768.s15.chibaba.filegear-sg.me"}}}
+- {name: "20巴西圣保罗-V6", type: "vmess", server: "2606:4700:9c6b:d3a5:25c5:dcee:3845:d95e", port: "80", uuid: "812eb086-8442-4799-9d92-112fd1a225af", alterId: 0, cipher: "auto", udp: true, network: "ws", ws-opts: {path: "/s15.html", headers: {Host: "918020931801192025040222211430363.s15.chibaba.filegear-sg.me"}}, ws-path: "/s15.html", ws-headers: {Host: "2025040222211430363.s15.chibaba.filegear-sg.me", headers: {Host: "620151004185472025040222211430363.s15.chibaba.filegear-sg.me"}}}
+proxy-groups:
+- name: "PROXY"
+  type: "select"
+  proxies:
+  - "AUTO"
+  - "1巴西圣保罗"
+  - "2巴西圣保罗"
+  - "3巴西圣保罗"
+  - "4巴西圣保罗"
+  - "5巴西圣保罗"
+  - "6巴西圣保罗"
+  - "7巴西圣保罗"
+  - "8巴西圣保罗"
+  - "9巴西圣保罗"
+  - "10巴西圣保罗"
+  - "11巴西圣保罗"
+  - "12巴西圣保罗"
+  - "13巴西圣保罗"
+  - "14巴西圣保罗"
+  - "15巴西圣保罗"
+  - "16巴西圣保罗-V6"
+  - "17巴西圣保罗-V6"
+  - "18巴西圣保罗-V6"
+  - "19巴西圣保罗-V6"
+  - "20巴西圣保罗-V6"
+- name: "AUTO"
+  type: "url-test"
+  url: "http://www.gstatic.com/generate_204"
+  interval: 300
+  tolerance: 50
+  proxies:
+  - "1巴西圣保罗"
+  - "2巴西圣保罗"
+  - "3巴西圣保罗"
+  - "4巴西圣保罗"
+  - "5巴西圣保罗"
+  - "6巴西圣保罗"
+  - "7巴西圣保罗"
+  - "8巴西圣保罗"
+  - "9巴西圣保罗"
+  - "10巴西圣保罗"
+  - "11巴西圣保罗"
+  - "12巴西圣保罗"
+  - "13巴西圣保罗"
+  - "14巴西圣保罗"
+  - "15巴西圣保罗"
+  - "16巴西圣保罗-V6"
+  - "17巴西圣保罗-V6"
+  - "18巴西圣保罗-V6"
+  - "19巴西圣保罗-V6"
+  - "20巴西圣保罗-V6"
+- name: "AI"
+  type: "select"
+  proxies:
+  - "1巴西圣保罗"
+  - "2巴西圣保罗"
+  - "3巴西圣保罗"
+  - "4巴西圣保罗"
+  - "5巴西圣保罗"
+  - "6巴西圣保罗"
+  - "7巴西圣保罗"
+  - "8巴西圣保罗"
+  - "9巴西圣保罗"
+  - "10巴西圣保罗"
+  - "11巴西圣保罗"
+  - "12巴西圣保罗"
+  - "13巴西圣保罗"
+  - "14巴西圣保罗"
+  - "15巴西圣保罗"
+  - "16巴西圣保罗-V6"
+  - "17巴西圣保罗-V6"
+  - "18巴西圣保罗-V6"
+  - "19巴西圣保罗-V6"
+  - "20巴西圣保罗-V6"
+rules:
+- "GEOSITE,CATEGORY-ADS-ALL,REJECT"
+- "DOMAIN-SUFFIX,ushd.xmsl.org,DIRECT"
+- "DOMAIN-SUFFIX,cf.gtlx.org,DIRECT"
+- "DOMAIN-SUFFIX,public-operation-hkrpg-sg.hoyoverse.com,DIRECT"
+- "DOMAIN-SUFFIX,public-operation-hk4e-sg.hoyoverse.com,DIRECT"
+- "DOMAIN-SUFFIX,public-operation-nap-sg.hoyoverse.com,DIRECT"
+- "DST-PORT,23301/22101-22102/20501/21601-21606,DIRECT"
+- "DOMAIN-KEYWORD,hoyoverse.com,PROXY"
+- "GEOSITE,OPENAI,AI"
+- "GEOSITE,GOOGLE-GEMINI,AI"
+- "GEOSITE,GOOGLEFCM,DIRECT"
+- "GEOSITE,PRIVATE,DIRECT"
+- "GEOSITE,CN,DIRECT"
+- "GEOIP,PRIVATE,DIRECT,no-resolve"
+- "GEOIP,CN,DIRECT"
+- "MATCH,PROXY"
