@@ -1,0 +1,202 @@
+log-level: "debug"
+mixed-port: 7890
+allow-lan: true
+external-controller: "127.0.0.1:9090"
+unified-delay: true
+tcp-concurrent: true
+find-process-mode: "strict"
+global-client-fingerprint: "chrome"
+profile:
+  store-selected: true
+  store-fake-ip: true
+sniffer:
+  enable: true
+  force-dns-mapping: true
+  parse-pure-ip: true
+  override-destination: false
+  sniff:
+    HTTP:
+      ports:
+      - 80
+      - "8080-8880"
+    TLS:
+      ports:
+      - 443
+      - 8443
+    QUIC:
+      ports:
+      - 443
+      - 8443
+tun:
+  enable: true
+  stack: "mixed"
+  dns-hijack:
+  - "any:53"
+  - "tcp://any:53"
+  auto-route: true
+  auto-redirect: true
+  auto-detect-interface: true
+  strict-route: true
+dns:
+  enable: true
+  ipv6: false
+  default-nameserver:
+  - "223.5.5.5"
+  - "119.29.29.29"
+  enhanced-mode: "fake-ip"
+  fake-ip-range: "198.18.0.1/16"
+  nameserver:
+  - "https://dns.cloudflare.com/dns-query"
+  - "https://dns.google/dns-query"
+  nameserver-policy:
+    geosite:cn,private:
+    - "https://dns.alidns.com/dns-query"
+    - "https://doh.pub/dns-query"
+proxies:
+- {name: "剩余流量：0", type: "ss", server: "hka2302.fraternizey.com", port: 18197, cipher: "chacha20-ietf-poly1305", password: "6c557956-4c9d-45d5-b7c2-0f3f3e09f645", udp: true}
+- {name: "距离下次重置剩余：14 天", type: "ss", server: "hka2302.fraternizey.com", port: 18197, cipher: "chacha20-ietf-poly1305", password: "6c557956-4c9d-45d5-b7c2-0f3f3e09f645", udp: true}
+- {name: "套餐到期：2025-04-16", type: "ss", server: "hka2302.fraternizey.com", port: 18197, cipher: "chacha20-ietf-poly1305", password: "6c557956-4c9d-45d5-b7c2-0f3f3e09f645", udp: true}
+- {name: "永久官网：fangzoudiu.com", type: "ss", server: "hka2302.fraternizey.com", port: 18197, cipher: "chacha20-ietf-poly1305", password: "6c557956-4c9d-45d5-b7c2-0f3f3e09f645", udp: true}
+- {name: "香港A | 1.0x [试用]", type: "ss", server: "hka2302.fraternizey.com", port: 18197, cipher: "chacha20-ietf-poly1305", password: "6c557956-4c9d-45d5-b7c2-0f3f3e09f645", udp: true}
+- {name: "香港B | 1.0x", type: "ss", server: "hk9571.fraternizey.com", port: 44472, cipher: "chacha20-ietf-poly1305", password: "6c557956-4c9d-45d5-b7c2-0f3f3e09f645", udp: true}
+- {name: "香港C | 家宽 | 1.5x", type: "ss", server: "hkc6590.fraternizey.com", port: 23091, cipher: "chacha20-ietf-poly1305", password: "6c557956-4c9d-45d5-b7c2-0f3f3e09f645", udp: true}
+- {name: "澳门A | 2.0x", type: "ss", server: "moa2502.fraternizey.com", port: 31821, cipher: "chacha20-ietf-poly1305", password: "6c557956-4c9d-45d5-b7c2-0f3f3e09f645", udp: true}
+- {name: "台湾A | 家宽 1.0x", type: "ss", server: "twa3302.fraternizey.com", port: 34969, cipher: "chacha20-ietf-poly1305", password: "6c557956-4c9d-45d5-b7c2-0f3f3e09f645", udp: true}
+- {name: "越南A | 家宽 1.0x", type: "ss", server: "vnma4200.fraternizey.com", port: 35213, cipher: "chacha20-ietf-poly1305", password: "6c557956-4c9d-45d5-b7c2-0f3f3e09f645", udp: true}
+- {name: "泰国A | 家宽 1.0x", type: "ss", server: "tha8060.fraternizey.com", port: 27017, cipher: "chacha20-ietf-poly1305", password: "6c557956-4c9d-45d5-b7c2-0f3f3e09f645", udp: true}
+- {name: "菲律宾A | 1.5x [测试]", type: "ss", server: "pha3510.fraternizey.com", port: 34406, cipher: "chacha20-ietf-poly1305", password: "6c557956-4c9d-45d5-b7c2-0f3f3e09f645", udp: true}
+- {name: "日本A | 1.0x [试用]", type: "ss", server: "jpa7502.fraternizey.com", port: 21035, cipher: "chacha20-ietf-poly1305", password: "6c557956-4c9d-45d5-b7c2-0f3f3e09f645", udp: true}
+- {name: "日本B | 1.0x", type: "ss", server: "jpb7502.fraternizey.com", port: 20239, cipher: "chacha20-ietf-poly1305", password: "6c557956-4c9d-45d5-b7c2-0f3f3e09f645", udp: true}
+- {name: "韩国A | 1.0x", type: "ss", server: "kra9012.fraternizey.com", port: 19644, cipher: "chacha20-ietf-poly1305", password: "6c557956-4c9d-45d5-b7c2-0f3f3e09f645", udp: true}
+- {name: "马来西亚A | 家宽 1.5x", type: "ss", server: "mya3460.fraternizey.com", port: 13788, cipher: "chacha20-ietf-poly1305", password: "6c557956-4c9d-45d5-b7c2-0f3f3e09f645", udp: true}
+- {name: "新加坡A | 1.0x [试用]", type: "ss", server: "sga8502.fraternizey.com", port: 24893, cipher: "chacha20-ietf-poly1305", password: "6c557956-4c9d-45d5-b7c2-0f3f3e09f645", udp: true}
+- {name: "新加坡B | 1.0x", type: "ss", server: "sgb9502.fraternizey.com", port: 39548, cipher: "chacha20-ietf-poly1305", password: "6c557956-4c9d-45d5-b7c2-0f3f3e09f645", udp: true}
+- {name: "印度A | 1.0x", type: "ss", server: "ina8400.fraternizey.com", port: 40119, cipher: "chacha20-ietf-poly1305", password: "6c557956-4c9d-45d5-b7c2-0f3f3e09f645", udp: true}
+- {name: "巴基斯坦A | 1.0x [测试]", type: "ss", server: "pka8461.fraternizey.com", port: 41653, cipher: "chacha20-ietf-poly1305", password: "6c557956-4c9d-45d5-b7c2-0f3f3e09f645", udp: true}
+- {name: "澳大利亚A | 1.0x", type: "ss", server: "aua0811.fraternizey.com", port: 43149, cipher: "chacha20-ietf-poly1305", password: "6c557956-4c9d-45d5-b7c2-0f3f3e09f645", udp: true}
+- {name: "美国A | 1.0x", type: "ss", server: "usa1012.fraternizey.com", port: 23159, cipher: "chacha20-ietf-poly1305", password: "6c557956-4c9d-45d5-b7c2-0f3f3e09f645", udp: true}
+- {name: "美国B | 家宽 | 2.0x", type: "ss", server: "usb0451.fraternizey.com", port: 51307, cipher: "chacha20-ietf-poly1305", password: "6c557956-4c9d-45d5-b7c2-0f3f3e09f645", udp: true}
+- {name: "加拿大A | 1.0x", type: "ss", server: "caa1491.fraternizey.com", port: 47234, cipher: "chacha20-ietf-poly1305", password: "6c557956-4c9d-45d5-b7c2-0f3f3e09f645", udp: true}
+- {name: "英国A | 1.0x", type: "ss", server: "uka7222.fraternizey.com", port: 29290, cipher: "chacha20-ietf-poly1305", password: "6c557956-4c9d-45d5-b7c2-0f3f3e09f645", udp: true}
+- {name: "德国A | 1.0x", type: "ss", server: "dea4410.fraternizey.com", port: 37592, cipher: "chacha20-ietf-poly1305", password: "6c557956-4c9d-45d5-b7c2-0f3f3e09f645", udp: true}
+- {name: "荷兰A | 1.0x", type: "ss", server: "nla8130.fraternizey.com", port: 42163, cipher: "chacha20-ietf-poly1305", password: "6c557956-4c9d-45d5-b7c2-0f3f3e09f645", udp: true}
+- {name: "瑞典A | 1.0x", type: "ss", server: "se6011.fraternizey.com", port: 18312, cipher: "chacha20-ietf-poly1305", password: "6c557956-4c9d-45d5-b7c2-0f3f3e09f645", udp: true}
+- {name: "尼日利亚 | 家宽 1.0x [测试]", type: "ss", server: "ngra0122.fraternizey.com", port: 47548, cipher: "chacha20-ietf-poly1305", password: "6c557956-4c9d-45d5-b7c2-0f3f3e09f645", udp: true}
+proxy-groups:
+- name: "PROXY"
+  type: "select"
+  proxies:
+  - "AUTO"
+  - "剩余流量：0"
+  - "距离下次重置剩余：14 天"
+  - "套餐到期：2025-04-16"
+  - "永久官网：fangzoudiu.com"
+  - "香港A | 1.0x [试用]"
+  - "香港B | 1.0x"
+  - "香港C | 家宽 | 1.5x"
+  - "澳门A | 2.0x"
+  - "台湾A | 家宽 1.0x"
+  - "越南A | 家宽 1.0x"
+  - "泰国A | 家宽 1.0x"
+  - "菲律宾A | 1.5x [测试]"
+  - "日本A | 1.0x [试用]"
+  - "日本B | 1.0x"
+  - "韩国A | 1.0x"
+  - "马来西亚A | 家宽 1.5x"
+  - "新加坡A | 1.0x [试用]"
+  - "新加坡B | 1.0x"
+  - "印度A | 1.0x"
+  - "巴基斯坦A | 1.0x [测试]"
+  - "澳大利亚A | 1.0x"
+  - "美国A | 1.0x"
+  - "美国B | 家宽 | 2.0x"
+  - "加拿大A | 1.0x"
+  - "英国A | 1.0x"
+  - "德国A | 1.0x"
+  - "荷兰A | 1.0x"
+  - "瑞典A | 1.0x"
+  - "尼日利亚 | 家宽 1.0x [测试]"
+- name: "AUTO"
+  type: "url-test"
+  url: "http://www.gstatic.com/generate_204"
+  interval: 300
+  tolerance: 50
+  proxies:
+  - "剩余流量：0"
+  - "距离下次重置剩余：14 天"
+  - "套餐到期：2025-04-16"
+  - "永久官网：fangzoudiu.com"
+  - "香港A | 1.0x [试用]"
+  - "香港B | 1.0x"
+  - "香港C | 家宽 | 1.5x"
+  - "澳门A | 2.0x"
+  - "台湾A | 家宽 1.0x"
+  - "越南A | 家宽 1.0x"
+  - "泰国A | 家宽 1.0x"
+  - "菲律宾A | 1.5x [测试]"
+  - "日本A | 1.0x [试用]"
+  - "日本B | 1.0x"
+  - "韩国A | 1.0x"
+  - "马来西亚A | 家宽 1.5x"
+  - "新加坡A | 1.0x [试用]"
+  - "新加坡B | 1.0x"
+  - "印度A | 1.0x"
+  - "巴基斯坦A | 1.0x [测试]"
+  - "澳大利亚A | 1.0x"
+  - "美国A | 1.0x"
+  - "美国B | 家宽 | 2.0x"
+  - "加拿大A | 1.0x"
+  - "英国A | 1.0x"
+  - "德国A | 1.0x"
+  - "荷兰A | 1.0x"
+  - "瑞典A | 1.0x"
+  - "尼日利亚 | 家宽 1.0x [测试]"
+- name: "AI"
+  type: "select"
+  proxies:
+  - "剩余流量：0"
+  - "距离下次重置剩余：14 天"
+  - "套餐到期：2025-04-16"
+  - "永久官网：fangzoudiu.com"
+  - "香港A | 1.0x [试用]"
+  - "香港B | 1.0x"
+  - "香港C | 家宽 | 1.5x"
+  - "澳门A | 2.0x"
+  - "台湾A | 家宽 1.0x"
+  - "越南A | 家宽 1.0x"
+  - "泰国A | 家宽 1.0x"
+  - "菲律宾A | 1.5x [测试]"
+  - "日本A | 1.0x [试用]"
+  - "日本B | 1.0x"
+  - "韩国A | 1.0x"
+  - "马来西亚A | 家宽 1.5x"
+  - "新加坡A | 1.0x [试用]"
+  - "新加坡B | 1.0x"
+  - "印度A | 1.0x"
+  - "巴基斯坦A | 1.0x [测试]"
+  - "澳大利亚A | 1.0x"
+  - "美国A | 1.0x"
+  - "美国B | 家宽 | 2.0x"
+  - "加拿大A | 1.0x"
+  - "英国A | 1.0x"
+  - "德国A | 1.0x"
+  - "荷兰A | 1.0x"
+  - "瑞典A | 1.0x"
+  - "尼日利亚 | 家宽 1.0x [测试]"
+rules:
+- "GEOSITE,CATEGORY-ADS-ALL,REJECT"
+- "DOMAIN-SUFFIX,ushd.xmsl.org,DIRECT"
+- "DOMAIN-SUFFIX,cf.gtlx.org,DIRECT"
+- "DOMAIN-SUFFIX,public-operation-hkrpg-sg.hoyoverse.com,DIRECT"
+- "DOMAIN-SUFFIX,public-operation-hk4e-sg.hoyoverse.com,DIRECT"
+- "DOMAIN-SUFFIX,public-operation-nap-sg.hoyoverse.com,DIRECT"
+- "DST-PORT,23301/22101-22102/20501/21601-21606,DIRECT"
+- "GEOSITE,HOYOVERSE,PROXY"
+- "GEOSITE,OPENAI,AI"
+- "GEOSITE,GOOGLE-GEMINI,AI"
+- "GEOSITE,GOOGLEFCM,DIRECT"
+- "GEOSITE,PRIVATE,DIRECT"
+- "GEOSITE,CN,DIRECT"
+- "GEOIP,PRIVATE,DIRECT,no-resolve"
+- "GEOIP,CN,DIRECT"
+- "MATCH,PROXY"

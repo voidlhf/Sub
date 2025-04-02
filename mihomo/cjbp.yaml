@@ -1,0 +1,566 @@
+log-level: "debug"
+mixed-port: 7890
+allow-lan: true
+external-controller: "127.0.0.1:9090"
+unified-delay: true
+tcp-concurrent: true
+find-process-mode: "strict"
+global-client-fingerprint: "chrome"
+profile:
+  store-selected: true
+  store-fake-ip: true
+sniffer:
+  enable: true
+  force-dns-mapping: true
+  parse-pure-ip: true
+  override-destination: false
+  sniff:
+    HTTP:
+      ports:
+      - 80
+      - "8080-8880"
+    TLS:
+      ports:
+      - 443
+      - 8443
+    QUIC:
+      ports:
+      - 443
+      - 8443
+tun:
+  enable: true
+  stack: "mixed"
+  dns-hijack:
+  - "any:53"
+  - "tcp://any:53"
+  auto-route: true
+  auto-redirect: true
+  auto-detect-interface: true
+  strict-route: true
+dns:
+  enable: true
+  ipv6: false
+  default-nameserver:
+  - "223.5.5.5"
+  - "119.29.29.29"
+  enhanced-mode: "fake-ip"
+  fake-ip-range: "198.18.0.1/16"
+  nameserver:
+  - "https://dns.cloudflare.com/dns-query"
+  - "https://dns.google/dns-query"
+  nameserver-policy:
+    geosite:cn,private:
+    - "https://dns.alidns.com/dns-query"
+    - "https://doh.pub/dns-query"
+proxies:
+- {name: "群里大佬分享更多节点", server: "gysz0000.dynu.net", port: 23657, type: "vless", uuid: "459b4a80-bd61-4ecd-a26b-e9c1809d9e45", tls: true, tfo: false, flow: "xtls-rprx-vision", skip-cert-verify: true, reality-opts: {public-key: "qhTzYYIgBzDLNYR79oxftqdo1kzL-1_hGJKfqrOliCY"}, servername: "www.nvidia.com", client-fingerprint: "chrome", network: "tcp"}
+- {name: "t.me/freeyule", server: "shenzhou05.mysynology.net", port: 37809, type: "vless", uuid: "459b4a80-bd61-4ecd-a26b-e9c1809d9e45", tls: true, tfo: false, flow: "xtls-rprx-vision", skip-cert-verify: true, reality-opts: {public-key: "qhTzYYIgBzDLNYR79oxftqdo1kzL-1_hGJKfqrOliCY"}, servername: "www.yahoo.com", client-fingerprint: "chrome", network: "tcp"}
+- {name: "🇺🇸 US 1", server: "www.csgo.com", port: 8080, type: "vmess", uuid: "bcac1542-6bd2-44f0-dc02-d69690f5022a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/", headers: {Host: "us.likelike.ddns-ip.net"}}}
+- {name: "🇺🇸 US 2", server: "www.vpslook.com", port: 80, type: "vmess", uuid: "bcac1542-6bd2-44f0-dc02-d69690f5022a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, servername: "us.likelike.ddns-ip.net", network: "ws", ws-opts: {path: "/", headers: {Host: "us.likelike.ddns-ip.net"}}}
+- {name: "🇺🇸 US 3", server: "www.visa.com.tw", port: 80, type: "vmess", uuid: "bcac1542-6bd2-44f0-dc02-d69690f5022a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, servername: "us.likelike.ddns-ip.net", network: "ws", ws-opts: {path: "/", headers: {Host: "us.likelike.ddns-ip.net"}}}
+- {name: "🇺🇸 US 4", server: "www.visa.com.sg", port: 80, type: "vmess", uuid: "bcac1542-6bd2-44f0-dc02-d69690f5022a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, servername: "us.likelike.ddns-ip.net", network: "ws", ws-opts: {path: "/", headers: {Host: "us.likelike.ddns-ip.net"}}}
+- {name: "🇺🇸 US 5", server: "america.com", port: 80, type: "vmess", uuid: "bcac1542-6bd2-44f0-dc02-d69690f5022a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, servername: "us.likelike.ddns-ip.net", network: "ws", ws-opts: {path: "/", headers: {Host: "us.likelike.ddns-ip.net"}}}
+- {name: "🇺🇸 US 6", server: "japan.com", port: 80, type: "vmess", uuid: "bcac1542-6bd2-44f0-dc02-d69690f5022a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true, servername: "us.likelike.ddns-ip.net", network: "ws", ws-opts: {path: "/", headers: {Host: "us.likelike.ddns-ip.net"}}}
+- {name: "纽约", server: "www.csgo.com", port: 8443, type: "vmess", uuid: "9ded86f7-5c00-4202-9769-0d5d4d22575c", alterId: 0, cipher: "auto", tls: true, skip-cert-verify: true, servername: "ny.likelike.ddns-ip.net", network: "ws", ws-opts: {path: "/", headers: {Host: "ny.likelike.ddns-ip.net"}}}
+- {name: "🇺🇸 美国", server: "107.175.155.202", port: 443, type: "vless", uuid: "e68f3ae3-b4c7-448c-a964-03b47cb1681b", tls: true, tfo: false, flow: "xtls-rprx-vision", skip-cert-verify: true, reality-opts: {public-key: "R2gKMF0Tetlnesc1pPkZH9NaOeehw-f5_U9JKG_cLjU"}, servername: "e68f3ae3.com", client-fingerprint: "chrome", network: "tcp"}
+- {name: "🇺🇸 美国 2", server: "xcf025-1.facai2024.com", port: 443, type: "vmess", uuid: "b9fea62b-abb6-49dc-9220-98d99ab2f26e", alterId: 0, cipher: "auto", tls: true, skip-cert-verify: true, network: "ws", ws-opts: {path: "/b9fea62b", headers: {Host: "xcf025-1.facai2024.com"}}}
+- {name: "🇺🇸 美国 3", server: "tk3.wtstars5802.com", port: 443, type: "vmess", uuid: "92462765-aa45-408c-ccf3-d1c085c6972c", alterId: 0, cipher: "auto", tls: true, skip-cert-verify: true, network: "ws", ws-opts: {path: "/tk234", headers: {Host: "tk3.wtstars5802.com"}}}
+- {name: "🇭🇰 香港 电信", server: "hn.jiasu.eu", port: 45673, type: "vless", uuid: "fcb8ded6-2984-4e78-8386-823bd8d1652c", tls: false, tfo: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/TG-AiLuMao/", headers: {Host: "baidu.com"}}}
+- {name: "🇭🇰 香港 移动", server: "2409:8c4c:e00:804::65", port: 52451, type: "vless", uuid: "fcb8ded6-2984-4e78-8386-823bd8d1652c", tls: false, tfo: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/TG-AiLuMao/", headers: {Host: "baidu.com"}}}
+- {name: "🇨🇳 台湾｜01｜原生IP", server: "tw.akebi.cc", port: 30001, type: "hysteria2", password: "82febca6-8856-41fe-84df-c8bda0b72c7b", auth: "82febca6-8856-41fe-84df-c8bda0b72c7b", sni: "tw.akebi.cc", skip-cert-verify: true}
+- {name: "🇨🇳 台湾｜03｜原生IP", server: "tw3.akebi.cc", port: 5006, type: "hysteria2", password: "82febca6-8856-41fe-84df-c8bda0b72c7b", auth: "82febca6-8856-41fe-84df-c8bda0b72c7b", sni: "tw3.akebi.cc", skip-cert-verify: true}
+- {name: "🇨🇳 台湾｜04｜原生IP", server: "tw3.akebi.cc", port: 9000, type: "hysteria2", password: "82febca6-8856-41fe-84df-c8bda0b72c7b", auth: "82febca6-8856-41fe-84df-c8bda0b72c7b", sni: "tw3.akebi.cc", skip-cert-verify: true}
+- {name: "🇨🇳 台湾｜05｜原生IP", server: "tw3.akebi.cc", port: 9001, type: "hysteria2", password: "82febca6-8856-41fe-84df-c8bda0b72c7b", auth: "82febca6-8856-41fe-84df-c8bda0b72c7b", sni: "tw3.akebi.cc", skip-cert-verify: true}
+- {name: "🇭🇰 香港｜01", server: "tw.akebi.cc", port: 1000, type: "hysteria2", password: "82febca6-8856-41fe-84df-c8bda0b72c7b", auth: "82febca6-8856-41fe-84df-c8bda0b72c7b", sni: "hk03.akebi.cc", skip-cert-verify: true}
+- {name: "🇭🇰 香港｜02", server: "tw3.akebi.cc", port: 2000, type: "hysteria2", password: "82febca6-8856-41fe-84df-c8bda0b72c7b", auth: "82febca6-8856-41fe-84df-c8bda0b72c7b", sni: "hk03.akebi.cc", skip-cert-verify: true}
+- {name: "🇭🇰 香港｜03", server: "tw3.akebi.cc", port: 2021, type: "hysteria2", password: "82febca6-8856-41fe-84df-c8bda0b72c7b", auth: "82febca6-8856-41fe-84df-c8bda0b72c7b", sni: "hk03.akebi.cc", skip-cert-verify: true}
+- {name: "🇯🇵 日本｜01", server: "tw3.akebi.cc", port: 2012, type: "hysteria2", password: "82febca6-8856-41fe-84df-c8bda0b72c7b", auth: "82febca6-8856-41fe-84df-c8bda0b72c7b", sni: "jp02.akebi.cc", skip-cert-verify: true}
+- {name: "🇹🇭 泰国丨01｜原生IP", server: "tw3.akebi.cc", port: 2024, type: "hysteria2", password: "82febca6-8856-41fe-84df-c8bda0b72c7b", auth: "82febca6-8856-41fe-84df-c8bda0b72c7b", sni: "th.akebi.cc", skip-cert-verify: true}
+- {name: "🇹🇭 泰国丨02｜原生IP", server: "tw3.akebi.cc", port: 2018, type: "hysteria2", password: "82febca6-8856-41fe-84df-c8bda0b72c7b", auth: "82febca6-8856-41fe-84df-c8bda0b72c7b", sni: "th.akebi.cc", skip-cert-verify: true}
+- {name: "🇧🇩 孟加拉｜01｜住宅IP", server: "tw3.akebi.cc", port: 2019, type: "hysteria2", password: "82febca6-8856-41fe-84df-c8bda0b72c7b", auth: "82febca6-8856-41fe-84df-c8bda0b72c7b", sni: "bd.akebi.cc", skip-cert-verify: true}
+- {name: "🇧🇩 孟加拉｜02｜住宅IP", server: "tw3.akebi.cc", port: 2025, type: "hysteria2", password: "82febca6-8856-41fe-84df-c8bda0b72c7b", auth: "82febca6-8856-41fe-84df-c8bda0b72c7b", sni: "bd.akebi.cc", skip-cert-verify: true}
+- {name: "🇰🇭 柬埔寨｜01", server: "tw3.akebi.cc", port: 2023, type: "hysteria2", password: "82febca6-8856-41fe-84df-c8bda0b72c7b", auth: "82febca6-8856-41fe-84df-c8bda0b72c7b", sni: "kh01.akebi.cc", skip-cert-verify: true}
+- {name: "🇺🇦 乌克兰｜01｜原生IP", server: "tw3.akebi.cc", port: 2020, type: "hysteria2", password: "82febca6-8856-41fe-84df-c8bda0b72c7b", auth: "82febca6-8856-41fe-84df-c8bda0b72c7b", sni: "ua01.akebi.cc", skip-cert-verify: true}
+- {name: "🇮🇸 冰岛｜01", server: "tw3.akebi.cc", port: 2003, type: "hysteria2", password: "82febca6-8856-41fe-84df-c8bda0b72c7b", auth: "82febca6-8856-41fe-84df-c8bda0b72c7b", sni: "is01.akebi.cc", skip-cert-verify: true}
+- {name: "🇫🇷 法国｜01｜原生IP", server: "tw3.akebi.cc", port: 2005, type: "hysteria2", password: "82febca6-8856-41fe-84df-c8bda0b72c7b", auth: "82febca6-8856-41fe-84df-c8bda0b72c7b", sni: "fr01.akebi.cc", skip-cert-verify: true}
+- {name: "🇦🇺 澳大利亚｜01｜原生IP", server: "tw3.akebi.cc", port: 2006, type: "hysteria2", password: "82febca6-8856-41fe-84df-c8bda0b72c7b", auth: "82febca6-8856-41fe-84df-c8bda0b72c7b", sni: "au01.akebi.cc", skip-cert-verify: true}
+- {name: "多哥｜01｜住宅IP", server: "tw3.akebi.cc", port: 2026, type: "hysteria2", password: "82febca6-8856-41fe-84df-c8bda0b72c7b", auth: "82febca6-8856-41fe-84df-c8bda0b72c7b", sni: "tg.akebi.cc", skip-cert-verify: true}
+- {name: "🇰🇿 哈萨克斯坦｜01｜住宅ip", server: "tw3.akebi.cc", port: 2027, type: "hysteria2", password: "82febca6-8856-41fe-84df-c8bda0b72c7b", auth: "82febca6-8856-41fe-84df-c8bda0b72c7b", sni: "kz.akebi.cc", skip-cert-verify: true}
+- {name: "🇻🇳 越南", server: "arxfw2b78fi2q9hzylhn.freesocks.work", port: 443, type: "ss", cipher: "chacha20-ietf-poly1305", password: "Nk9asglDzHzjktVzTkvhaA"}
+- {name: "🇯🇵 日本", server: "beiyong.dynuddns.net", port: 48121, type: "vless", uuid: "459b4a80-bd61-4ecd-a26b-e9c1809d9e45", tls: true, tfo: false, flow: "xtls-rprx-vision", skip-cert-verify: true, reality-opts: {public-key: "qhTzYYIgBzDLNYR79oxftqdo1kzL-1_hGJKfqrOliCY"}, servername: "www.nvidia.com", client-fingerprint: "chrome", network: "tcp"}
+- {name: "🇺🇸 美国 4", server: "beiyong.dynuddns.net", port: 57926, type: "vless", uuid: "459b4a80-bd61-4ecd-a26b-e9c1809d9e45", tls: true, tfo: false, flow: "xtls-rprx-vision", skip-cert-verify: true, reality-opts: {public-key: "qhTzYYIgBzDLNYR79oxftqdo1kzL-1_hGJKfqrOliCY"}, servername: "gateway.icloud.com", client-fingerprint: "chrome", network: "tcp"}
+- {name: "🇭🇰 香港", server: "gy01.hunheiydd.xyz", port: 23657, type: "vless", uuid: "459b4a80-bd61-4ecd-a26b-e9c1809d9e45", tls: true, tfo: false, flow: "xtls-rprx-vision", skip-cert-verify: true, reality-opts: {public-key: "qhTzYYIgBzDLNYR79oxftqdo1kzL-1_hGJKfqrOliCY"}, servername: "www.nvidia.com", client-fingerprint: "chrome", network: "tcp"}
+- {name: "🇬🇧 英国", server: "8.208.28.221", port: 17647, type: "vless", uuid: "addc0c49-1ae1-440d-c654-6392ed781476", tls: false, tfo: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/"}}
+- {name: "🇫🇮 芬兰", server: "www.vpslook.com", port: 80, type: "vless", uuid: "e64c466e-912d-4ee9-8d9a-02f560562f2b", tls: false, tfo: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/", headers: {Host: "fl.likelike.ddns-ip.net"}}}
+- {name: "🇨🇳 节点-CN-50Mbps-100G", server: "dxv4.pai50288.uk", port: 14100, type: "vmess", uuid: "f6866b0b-f946-4a03-8df0-c7e0016b55ad", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true}
+- {name: "🇭🇰 香港1", server: "14.18.253.178", port: 9001, type: "ss", cipher: "chacha20", password: "nUthZ7z3VmyV"}
+- {name: "🇭🇰 香港 2", server: "14.18.253.178", port: 8321, type: "ss", cipher: "chacha20", password: "passLUsO2Ktuer77tu"}
+- {name: "🇭🇰 香港3", server: "14.18.253.178", port: 9003, type: "ss", cipher: "chacha20", password: "v5aUUtme3jxs"}
+- {name: "🇭🇰 香港2", server: "14.18.253.178", port: 9002, type: "ss", cipher: "chacha20", password: "PTgFLLrT5pVg"}
+- {name: "🇭🇰 香港4", server: "14.18.253.178", port: 9004, type: "ss", cipher: "chacha20", password: "s6Zau9ioic"}
+- {name: "🇭🇰 香港5", server: "14.18.253.178", port: 9005, type: "ss", cipher: "chacha20", password: "sJMdcI7NPj"}
+- {name: "🇸🇬 新加坡", server: "14.18.253.178", port: 8334, type: "ss", cipher: "chacha20", password: "DvPfKa8vsV9K"}
+- {name: "🇯🇵 日本1", server: "14.18.253.178", port: 8335, type: "ss", cipher: "chacha20", password: "avpBqFFmsYBN"}
+- {name: "🇯🇵 日本2", server: "14.18.253.178", port: 8331, type: "ss", cipher: "chacha20", password: "GqbcCfh365aT"}
+- {name: "🇰🇷 韩国首尔", server: "14.18.253.178", port: 8339, type: "ss", cipher: "chacha20", password: "ADZmRQUGHTwX"}
+- {name: "🇺🇸 美国纽约", server: "14.18.253.178", port: 8349, type: "ss", cipher: "chacha20", password: "d3baK6NW2HEc"}
+- {name: "🇸🇬 美国洛杉矶新", server: "14.18.253.178", port: 8332, type: "ss", cipher: "chacha20", password: "8BZ5uBrPuUDY"}
+- {name: "🇺🇸 美国达拉斯", server: "14.18.253.178", port: 8344, type: "ss", cipher: "chacha20", password: "wDazHDu63gcg"}
+- {name: "🇩🇪 德国法兰克福", server: "14.18.253.178", port: 8333, type: "ss", cipher: "chacha20", password: "jrgc64sFSLQM"}
+- {name: "🇬🇧 英国 2", server: "14.18.253.178", port: 8337, type: "ss", cipher: "chacha20", password: "3fn3CH5Swh2N"}
+- {name: "🇺🇸 美国洛杉矶", server: "14.18.253.178", port: 8342, type: "ss", cipher: "chacha20", password: "r8jh6ZeykHvB"}
+- {name: "🇮🇱 以色列", server: "14.18.253.178", port: 8348, type: "ss", cipher: "chacha20", password: "N9k4f2PORl14"}
+- {name: "🇨🇦 加拿大", server: "14.18.253.178", port: 8343, type: "ss", cipher: "chacha20", password: "dkYsdgWqegNV"}
+- {name: "🇦🇺 澳大利亚", server: "14.18.253.178", port: 8341, type: "ss", cipher: "chacha20", password: "zWyQvJbQRZaV"}
+- {name: "🇫🇷 法国巴黎", server: "14.18.253.178", port: 8347, type: "ss", cipher: "chacha20", password: "q2kSGp4ayFKB"}
+- {name: "🇭🇰 香港1区[专线] [x1.5]*次日恢复使用*", server: "v2-hk1-zx.netcar.live", port: 10032, type: "vmess", uuid: "bfd93c5c-abc7-416a-a205-372d3db979a4", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true}
+- {name: "🏳️‍🌈 香港1区[转发] [x1.0]*建议搭配不限时流量*", server: "v2-hk4-zf.netcar.live", port: 10032, type: "vmess", uuid: "21ddbca6-a333-4aa1-9431-33725df1e85e", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true}
+- {name: "🇭🇰 香港2区[转发] [x1.0]*超过每日限制*", server: "v2-hk2-zf2.netcar.live", port: 36001, type: "vmess", uuid: "f41a7211-3a16-4aa0-a3cf-0dd959b9ef1d", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true}
+- {name: "🇭🇰 香港3区[转发] [x1.0]*次日恢复使用*", server: "v2-hk3zf.netcar.live", port: 36003, type: "vmess", uuid: "f2da2534-571c-494c-b02a-9eec3ca5f84a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true}
+- {name: "🏳️‍🌈 新加坡1区[专线] [x1.5]*建议搭配不限时流量*", server: "v2-sg1-zx.netcar.live", port: 34004, type: "vmess", uuid: "924ce77e-d5e0-44e0-a27d-0831607c0588", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true}
+- {name: "🇸🇬 新加坡1区[转发1] [x1.0]*超过每日限制*", server: "v2-sg1-zf1.netcar.live", port: 34004, type: "vmess", uuid: "1dee6151-b6df-4848-850e-781d2fc4b64e", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true}
+- {name: "🇸🇬 新加坡2区[回国优化] [x2.0]*次日恢复使用*", server: "v2-sg2-hg.netcar.live", port: 36007, type: "vmess", uuid: "c1adfe2f-8d03-4482-8188-8c5032355de1", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true}
+- {name: "🏳️‍🌈 新加坡2区[转发] [x1.0]*建议搭配不限时流量*", server: "v2-sg2-zf.netcar.live", port: 36007, type: "vmess", uuid: "b1f8ac28-98f4-4e75-93c1-37f0d959e78b", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true}
+- {name: "🇯🇵 日本1区[回国优化] [x2.0]*超过每日限制*", server: "v2-japan3-hg1.netcar.live", port: 33333, type: "vmess", uuid: "3c3d4a79-8fdc-4082-a717-789b5376e344", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true}
+- {name: "🇯🇵 日本1区[回国优化2] [x2.0]*次日恢复使用*", server: "v2-japan3o2.netcar.live", port: 33333, type: "vmess", uuid: "059a8580-1f4a-4100-bc5e-71fe54f5d1a8", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true}
+- {name: "🏳️‍🌈 日本2区[转发] [x1.0]*建议搭配不限时流量*", server: "v2-japan2.netcar.live", port: 22984, type: "vmess", uuid: "d28cf43f-00c3-4e5d-b7d9-8b6540d842a5", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true}
+- {name: "🇨🇳 台湾1区[专线] [x1.0]*超过每日限制*", server: "v2-tw1-zx.netcar.live", port: 34006, type: "vmess", uuid: "a7a702a2-c56d-4379-972b-30690dddec0d", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true}
+- {name: "🇨🇳 台湾1区[转发] [x1.0]*次日恢复使用*", server: "v2-tw1-zf1.netcar.live", port: 34006, type: "vmess", uuid: "d5b99713-4e37-432d-b272-e87e62ba7a4b", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true}
+- {name: "🏳️‍🌈 台湾2区[专线] [x1.5]*建议搭配不限时流量*", server: "v2-taiwan3-zx.netcar.live", port: 34019, type: "vmess", uuid: "72bda12c-ad7c-45b7-ba17-72eef85ecb29", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true}
+- {name: "🇨🇳 台湾2区[转发] [x1.0]*超过每日限制*", server: "v2-tw3-zf1.netcar.live", port: 34019, type: "vmess", uuid: "8d768358-6874-4935-ac25-c7293dc7ca6b", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true}
+- {name: "🇯🇵 韩国[专线] [x1.5]*次日恢复使用*", server: "v3-hanguo-zx.netcar.live", port: 34009, type: "vmess", uuid: "b4a59b54-4a1d-4afc-bd1b-2e3151047c9f", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true}
+- {name: "🏳️‍🌈 韩国[转发] [x1.0]*建议搭配不限时流量*", server: "v2-hanguo-zf1.netcar.live", port: 34009, type: "vmess", uuid: "5f96cda9-828f-472e-927a-472fb7ca1d9a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true}
+- {name: "🇯🇵 美国[专线] [x1.5]*超过每日限制*", server: "v2-us2-zx.netcar.live", port: 34013, type: "vmess", uuid: "9a037058-73a1-4fc3-973f-c73b1f612d81", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true}
+- {name: "🇯🇵 美国[转发] [x1.0]*次日恢复使用*", server: "v2-us2-zf2.netcar.live", port: 34013, type: "vmess", uuid: "986f52fb-2dc7-4b53-b38c-2dfc19814974", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true}
+- {name: "🏳️‍🌈 香港住宅1[原生IP] [x3.0]*建议搭配不限时流量*", server: "v2-hkzz1.netcar.live", port: 52305, type: "vmess", uuid: "0c892163-afb2-4d89-996f-e932cb266311", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true}
+- {name: "🇭🇰 香港住宅2[原生IP] [x1.0]*超过每日限制*", server: "pilaobanpengyou.netcar.live", port: 320, type: "vmess", uuid: "84834668-5a2c-4677-8aa2-ceb85a4c2361", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true}
+- {name: "🇯🇵 美国住宅1[原生IP] [x3.0]*次日恢复使用*", server: "v2-us-zx.netcar.live", port: 37847, type: "vmess", uuid: "a5d96021-e87f-4a5c-a450-880db3b0d01f", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true}
+- {name: "🏳️‍🌈 美国住宅2[原生IP] [x3.0]*建议搭配不限时流量*", server: "v3-us-zz2.netcar.live", port: 57345, type: "vmess", uuid: "abf85095-b2cd-4fce-bebd-c5a8a09946b1", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true}
+- {name: "🇯🇵 日本住宅[原生IP] [x3.0]*超过每日限制*", server: "v2-jazzzf2.netcar.live", port: 59697, type: "vmess", uuid: "105c5aca-50f9-4e9d-abf2-9878babd6d08", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true}
+- {name: "🇸🇬 新加坡住宅[原生IP] [x3.0]*次日恢复使用*", server: "v3-sgzz.netcar.live", port: 30061, type: "vmess", uuid: "bb9d3b3d-33fb-429b-90ac-badef1b4de1d", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true}
+- {name: "🏳️‍🌈 台湾住宅1区[原生IP] [x3.0]*建议搭配不限时流量*", server: "v2-twzz.netcar.live", port: 57004, type: "vmess", uuid: "576fc2ae-5820-4212-8ee8-2856586a0be4", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true}
+- {name: "🇯🇵 英国住宅[原生IP] [x3.0]*超过每日限制*", server: "v3-englandzz.netcar.live", port: 17942, type: "vmess", uuid: "31a0c9eb-1f25-4383-b0e7-7be8abe10c47", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true}
+- {name: "🇯🇵 越南住宅[原生IP] [x3.0]*次日恢复使用*", server: "v2-ynzz.netcar.live", port: 30001, type: "vmess", uuid: "43a82845-0d62-4f82-a32c-e196f49e61da", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true}
+- {name: "🏳️‍🌈 印度住宅[原生IP] [x3.0]*建议搭配不限时流量*", server: "v2-india-zhuzhai.netcar.live", port: 43699, type: "vmess", uuid: "7cc797d6-a613-4daa-8af4-fc03108e8c62", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true}
+- {name: "🇯🇵 西班牙住宅[原生IP] [x3.0]*超过每日限制*", server: "v3-xbyzz.netcar.live", port: 45736, type: "vmess", uuid: "2107aebb-e396-4a51-ae36-2f2ed168a14d", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true}
+- {name: "🇯🇵 澳大利亚住宅[原生IP] [x3.0]*次日恢复使用*", server: "v2-adly-zhuzhai.netcar.live", port: 48872, type: "vmess", uuid: "a3176f7c-e447-41f4-8b53-a8c65c469d47", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true}
+- {name: "🏳️‍🌈 柬埔寨住宅[原生IP] [x3.0]*建议搭配不限时流量*", server: "v2-jpz-zz.netcar.live", port: 49419, type: "vmess", uuid: "87469812-9a0a-4658-bfab-971da3756dcc", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true}
+- {name: "🇯🇵 德国住宅[原生IP] [x3.0]*超过每日限制*", server: "v2-deguo-zz.netcar.live", port: 57727, type: "vmess", uuid: "be88473f-91c7-4661-9af0-c4b7c18aefa4", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true}
+- {name: "🇯🇵 菲律宾住宅[原生IP] [x3.0]*次日恢复使用*", server: "v2-flbzz.netcar.live", port: 24733, type: "vmess", uuid: "212c843f-831b-4c15-aee8-4cf187ac7d05", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true}
+- {name: "🏳️‍🌈 巴西住宅[原生IP] [x3.0]*建议搭配不限时流量*", server: "v2-Brazil-zz.netcar.live", port: 28937, type: "vmess", uuid: "576e22cc-f383-40b3-ab7a-d2ab56f79535", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true}
+- {name: "🇯🇵 哈萨克斯坦住宅[原生IP] [x3.0]*超过每日限制*", server: "v2-hskstzz.netcar.live", port: 31975, type: "vmess", uuid: "fed24145-e5f9-4cd9-9490-f1a8f8abdb21", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true}
+- {name: "🇯🇵 匈牙利住宅[原生IP] [x3.0]*次日恢复使用*", server: "v2-xiongyali-zz.netcar.live", port: 27157, type: "vmess", uuid: "4cb421a9-25a5-4049-b6dd-2dff63766dc6", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true}
+- {name: "🏳️‍🌈 泰国住宅[原生IP] [x3.0]*建议搭配不限时流量*", server: "v2-tgzz.netcar.live", port: 18139, type: "vmess", uuid: "76f19582-5c4b-49c6-a023-0f7c9e3c807a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true}
+- {name: "🇯🇵 多哥住宅[原生IP] [x3.0]*超过每日限制*", server: "v3-dgzz.netcar.live", port: 52509, type: "vmess", uuid: "c77aea82-4f7b-49fe-b0b6-c997607c85d9", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true}
+- {name: "🇯🇵 立陶宛住宅[原生IP] [x3.0]*次日恢复使用*", server: "v3-ltwzz.netcar.live", port: 16782, type: "vmess", uuid: "6931bf1a-0a90-4fa4-9938-7dfba812747e", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true}
+- {name: "🏳️‍🌈 保加利亚住宅[原生IP] [x3.0]*建议搭配不限时流量*", server: "v3-bjlyzz.netcar.live", port: 39054, type: "vmess", uuid: "419779cf-81aa-4074-94c9-01debf971964", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true}
+- {name: "🇯🇵 乌克兰住宅[原生IP] [x3.0]*超过每日限制*", server: "v2-wklzz.netcar.live", port: 52181, type: "vmess", uuid: "9f168c88-26de-43a1-aa46-cea54c6dc822", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true}
+- {name: "🇯🇵 波兰住宅[原生IP] [x3.0]*次日恢复使用*", server: "v2-blzz.netcar.live", port: 26611, type: "vmess", uuid: "c8e5cc24-e2c7-4186-8854-5727eefe5a71", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true}
+- {name: "🏳️‍🌈 挪威住宅[原生IP] [x3.0]*建议搭配不限时流量*", server: "v3-lwzz.netcar.live", port: 28715, type: "vmess", uuid: "7954cae3-8bb9-48ab-bd63-cdc13f08c9ba", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true}
+- {name: "🇯🇵 土耳其住宅[原生IP] [x3.0]*超过每日限制*", server: "v2-teqzz.netcar.live", port: 27852, type: "vmess", uuid: "313798e2-3a55-4d84-bb02-027f9aef5c6b", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true}
+- {name: "🇯🇵 意大利住宅[原生IP] [x3.0]*次日恢复使用*", server: "v2-ydlzz.netcar.live", port: 13080, type: "vmess", uuid: "1e6b5701-5fc7-4fed-aed7-1324fcc5a712", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true}
+- {name: "🏳️‍🌈 孟加拉住宅[原生IP] [x3.0]*建议搭配不限时流量*", server: "v2-mjlzz.netcar.live", port: 57974, type: "vmess", uuid: "8651fe37-9355-4b70-b303-9e0c995b30b0", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true}
+- {name: "🇯🇵 瑞典住宅[原生IP] [x3.0]*超过每日限制*", server: "v3-rdzz.netcar.live", port: 44464, type: "vmess", uuid: "a7215d41-b445-4b1f-8b88-f59443b29164", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true}
+- {name: "🇯🇵 马来西亚住宅[原生IP] [x3.0]*次日恢复使用*", server: "v3-mlxyzz.netcar.live", port: 10107, type: "vmess", uuid: "052680d9-4f31-4cda-b14d-156fa34b3cdc", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true}
+- {name: "🏳️‍🌈 印度尼西亚住宅[原生IP] [x3.0]*建议搭配不限时流量*", server: "v3-idnxyzz.netcar.live", port: 3854, type: "vmess", uuid: "d4ef06ea-a561-4fb0-b790-10f860d72f0a", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true}
+- {name: "🇳🇬 尼日利亚[原生IP] [x3.0]*超过每日限制*", server: "v3-nrlyzz.netcar.live", port: 12649, type: "vmess", uuid: "a0ba0500-1901-45a0-9d60-88f97d324dd7", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true}
+- {name: "🇯🇵 英国[专线] [x1.5]*次日恢复使用*", server: "v2-uk-zx.netcar.live", port: 17931, type: "vmess", uuid: "3a6a527c-1c8c-4500-b644-a5ab35efc934", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true}
+- {name: "🏳️‍🌈 法国[转发] [x1.0]*建议搭配不限时流量*", server: "v2-fg.netcar.live", port: 55690, type: "vmess", uuid: "e190afcb-b059-4582-986e-6a5309d0673f", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true}
+- {name: "🇯🇵 加拿大[转发] [x1.0]*超过每日限制*", server: "v2-jnd.netcar.live", port: 34018, type: "vmess", uuid: "9a2012c8-6477-4386-b156-7133b4c42a26", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true}
+- {name: "🇯🇵 荷兰[转发] [x1.0]*次日恢复使用*", server: "v3-hl.netcar.live", port: 35607, type: "vmess", uuid: "29c50189-4faa-43bd-9c96-b1a8f26f223b", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true}
+- {name: "🏳️‍🌈 俄罗斯[转发] [x1.0]*建议搭配不限时流量*", server: "v2-els.netcar.live", port: 27115, type: "vmess", uuid: "77f2759f-6ca6-4fbf-8b21-d38691ac0974", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true}
+- {name: "🇯🇵 摩尔多瓦[转发] [x1.0]*超过每日限制*", server: "v3-medw.netcar.live", port: 21619, type: "vmess", uuid: "2f05d04e-4e24-4207-a9b2-056e20b147db", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true}
+- {name: "🇯🇵 瑞士[转发] [x1.0]*次日恢复使用*", server: "v3-rszf.netcar.live", port: 46128, type: "vmess", uuid: "372ddc1b-6e35-41a6-9bde-63fcf693d598", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true}
+- {name: "🏳️‍🌈 吉尔吉斯斯坦[转发] [x1.0]*建议搭配不限时流量*", server: "v3-jejsst.netcar.live", port: 47423, type: "vmess", uuid: "6ef00638-66ab-46ed-873f-f4e72e0f67db", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true}
+- {name: "🇯🇵 冰岛[转发] [x1.0]*超过每日限制*", server: "v3-bdzf.netcar.live", port: 14144, type: "vmess", uuid: "73d51dcf-173c-4433-bb4e-311836d3ccbc", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true}
+proxy-groups:
+- name: "PROXY"
+  type: "select"
+  proxies:
+  - "AUTO"
+  - "群里大佬分享更多节点"
+  - "t.me/freeyule"
+  - "🇺🇸 US 1"
+  - "🇺🇸 US 2"
+  - "🇺🇸 US 3"
+  - "🇺🇸 US 4"
+  - "🇺🇸 US 5"
+  - "🇺🇸 US 6"
+  - "纽约"
+  - "🇺🇸 美国"
+  - "🇺🇸 美国 2"
+  - "🇺🇸 美国 3"
+  - "🇭🇰 香港 电信"
+  - "🇭🇰 香港 移动"
+  - "🇨🇳 台湾｜01｜原生IP"
+  - "🇨🇳 台湾｜03｜原生IP"
+  - "🇨🇳 台湾｜04｜原生IP"
+  - "🇨🇳 台湾｜05｜原生IP"
+  - "🇭🇰 香港｜01"
+  - "🇭🇰 香港｜02"
+  - "🇭🇰 香港｜03"
+  - "🇯🇵 日本｜01"
+  - "🇹🇭 泰国丨01｜原生IP"
+  - "🇹🇭 泰国丨02｜原生IP"
+  - "🇧🇩 孟加拉｜01｜住宅IP"
+  - "🇧🇩 孟加拉｜02｜住宅IP"
+  - "🇰🇭 柬埔寨｜01"
+  - "🇺🇦 乌克兰｜01｜原生IP"
+  - "🇮🇸 冰岛｜01"
+  - "🇫🇷 法国｜01｜原生IP"
+  - "🇦🇺 澳大利亚｜01｜原生IP"
+  - "多哥｜01｜住宅IP"
+  - "🇰🇿 哈萨克斯坦｜01｜住宅ip"
+  - "🇻🇳 越南"
+  - "🇯🇵 日本"
+  - "🇺🇸 美国 4"
+  - "🇭🇰 香港"
+  - "🇬🇧 英国"
+  - "🇫🇮 芬兰"
+  - "🇨🇳 节点-CN-50Mbps-100G"
+  - "🇭🇰 香港1"
+  - "🇭🇰 香港 2"
+  - "🇭🇰 香港3"
+  - "🇭🇰 香港2"
+  - "🇭🇰 香港4"
+  - "🇭🇰 香港5"
+  - "🇸🇬 新加坡"
+  - "🇯🇵 日本1"
+  - "🇯🇵 日本2"
+  - "🇰🇷 韩国首尔"
+  - "🇺🇸 美国纽约"
+  - "🇸🇬 美国洛杉矶新"
+  - "🇺🇸 美国达拉斯"
+  - "🇩🇪 德国法兰克福"
+  - "🇬🇧 英国 2"
+  - "🇺🇸 美国洛杉矶"
+  - "🇮🇱 以色列"
+  - "🇨🇦 加拿大"
+  - "🇦🇺 澳大利亚"
+  - "🇫🇷 法国巴黎"
+  - "🇭🇰 香港1区[专线] [x1.5]*次日恢复使用*"
+  - "🏳️‍🌈 香港1区[转发] [x1.0]*建议搭配不限时流量*"
+  - "🇭🇰 香港2区[转发] [x1.0]*超过每日限制*"
+  - "🇭🇰 香港3区[转发] [x1.0]*次日恢复使用*"
+  - "🏳️‍🌈 新加坡1区[专线] [x1.5]*建议搭配不限时流量*"
+  - "🇸🇬 新加坡1区[转发1] [x1.0]*超过每日限制*"
+  - "🇸🇬 新加坡2区[回国优化] [x2.0]*次日恢复使用*"
+  - "🏳️‍🌈 新加坡2区[转发] [x1.0]*建议搭配不限时流量*"
+  - "🇯🇵 日本1区[回国优化] [x2.0]*超过每日限制*"
+  - "🇯🇵 日本1区[回国优化2] [x2.0]*次日恢复使用*"
+  - "🏳️‍🌈 日本2区[转发] [x1.0]*建议搭配不限时流量*"
+  - "🇨🇳 台湾1区[专线] [x1.0]*超过每日限制*"
+  - "🇨🇳 台湾1区[转发] [x1.0]*次日恢复使用*"
+  - "🏳️‍🌈 台湾2区[专线] [x1.5]*建议搭配不限时流量*"
+  - "🇨🇳 台湾2区[转发] [x1.0]*超过每日限制*"
+  - "🇯🇵 韩国[专线] [x1.5]*次日恢复使用*"
+  - "🏳️‍🌈 韩国[转发] [x1.0]*建议搭配不限时流量*"
+  - "🇯🇵 美国[专线] [x1.5]*超过每日限制*"
+  - "🇯🇵 美国[转发] [x1.0]*次日恢复使用*"
+  - "🏳️‍🌈 香港住宅1[原生IP] [x3.0]*建议搭配不限时流量*"
+  - "🇭🇰 香港住宅2[原生IP] [x1.0]*超过每日限制*"
+  - "🇯🇵 美国住宅1[原生IP] [x3.0]*次日恢复使用*"
+  - "🏳️‍🌈 美国住宅2[原生IP] [x3.0]*建议搭配不限时流量*"
+  - "🇯🇵 日本住宅[原生IP] [x3.0]*超过每日限制*"
+  - "🇸🇬 新加坡住宅[原生IP] [x3.0]*次日恢复使用*"
+  - "🏳️‍🌈 台湾住宅1区[原生IP] [x3.0]*建议搭配不限时流量*"
+  - "🇯🇵 英国住宅[原生IP] [x3.0]*超过每日限制*"
+  - "🇯🇵 越南住宅[原生IP] [x3.0]*次日恢复使用*"
+  - "🏳️‍🌈 印度住宅[原生IP] [x3.0]*建议搭配不限时流量*"
+  - "🇯🇵 西班牙住宅[原生IP] [x3.0]*超过每日限制*"
+  - "🇯🇵 澳大利亚住宅[原生IP] [x3.0]*次日恢复使用*"
+  - "🏳️‍🌈 柬埔寨住宅[原生IP] [x3.0]*建议搭配不限时流量*"
+  - "🇯🇵 德国住宅[原生IP] [x3.0]*超过每日限制*"
+  - "🇯🇵 菲律宾住宅[原生IP] [x3.0]*次日恢复使用*"
+  - "🏳️‍🌈 巴西住宅[原生IP] [x3.0]*建议搭配不限时流量*"
+  - "🇯🇵 哈萨克斯坦住宅[原生IP] [x3.0]*超过每日限制*"
+  - "🇯🇵 匈牙利住宅[原生IP] [x3.0]*次日恢复使用*"
+  - "🏳️‍🌈 泰国住宅[原生IP] [x3.0]*建议搭配不限时流量*"
+  - "🇯🇵 多哥住宅[原生IP] [x3.0]*超过每日限制*"
+  - "🇯🇵 立陶宛住宅[原生IP] [x3.0]*次日恢复使用*"
+  - "🏳️‍🌈 保加利亚住宅[原生IP] [x3.0]*建议搭配不限时流量*"
+  - "🇯🇵 乌克兰住宅[原生IP] [x3.0]*超过每日限制*"
+  - "🇯🇵 波兰住宅[原生IP] [x3.0]*次日恢复使用*"
+  - "🏳️‍🌈 挪威住宅[原生IP] [x3.0]*建议搭配不限时流量*"
+  - "🇯🇵 土耳其住宅[原生IP] [x3.0]*超过每日限制*"
+  - "🇯🇵 意大利住宅[原生IP] [x3.0]*次日恢复使用*"
+  - "🏳️‍🌈 孟加拉住宅[原生IP] [x3.0]*建议搭配不限时流量*"
+  - "🇯🇵 瑞典住宅[原生IP] [x3.0]*超过每日限制*"
+  - "🇯🇵 马来西亚住宅[原生IP] [x3.0]*次日恢复使用*"
+  - "🏳️‍🌈 印度尼西亚住宅[原生IP] [x3.0]*建议搭配不限时流量*"
+  - "🇳🇬 尼日利亚[原生IP] [x3.0]*超过每日限制*"
+  - "🇯🇵 英国[专线] [x1.5]*次日恢复使用*"
+  - "🏳️‍🌈 法国[转发] [x1.0]*建议搭配不限时流量*"
+  - "🇯🇵 加拿大[转发] [x1.0]*超过每日限制*"
+  - "🇯🇵 荷兰[转发] [x1.0]*次日恢复使用*"
+  - "🏳️‍🌈 俄罗斯[转发] [x1.0]*建议搭配不限时流量*"
+  - "🇯🇵 摩尔多瓦[转发] [x1.0]*超过每日限制*"
+  - "🇯🇵 瑞士[转发] [x1.0]*次日恢复使用*"
+  - "🏳️‍🌈 吉尔吉斯斯坦[转发] [x1.0]*建议搭配不限时流量*"
+  - "🇯🇵 冰岛[转发] [x1.0]*超过每日限制*"
+- name: "AUTO"
+  type: "url-test"
+  url: "http://www.gstatic.com/generate_204"
+  interval: 300
+  tolerance: 50
+  proxies:
+  - "群里大佬分享更多节点"
+  - "t.me/freeyule"
+  - "🇺🇸 US 1"
+  - "🇺🇸 US 2"
+  - "🇺🇸 US 3"
+  - "🇺🇸 US 4"
+  - "🇺🇸 US 5"
+  - "🇺🇸 US 6"
+  - "纽约"
+  - "🇺🇸 美国"
+  - "🇺🇸 美国 2"
+  - "🇺🇸 美国 3"
+  - "🇭🇰 香港 电信"
+  - "🇭🇰 香港 移动"
+  - "🇨🇳 台湾｜01｜原生IP"
+  - "🇨🇳 台湾｜03｜原生IP"
+  - "🇨🇳 台湾｜04｜原生IP"
+  - "🇨🇳 台湾｜05｜原生IP"
+  - "🇭🇰 香港｜01"
+  - "🇭🇰 香港｜02"
+  - "🇭🇰 香港｜03"
+  - "🇯🇵 日本｜01"
+  - "🇹🇭 泰国丨01｜原生IP"
+  - "🇹🇭 泰国丨02｜原生IP"
+  - "🇧🇩 孟加拉｜01｜住宅IP"
+  - "🇧🇩 孟加拉｜02｜住宅IP"
+  - "🇰🇭 柬埔寨｜01"
+  - "🇺🇦 乌克兰｜01｜原生IP"
+  - "🇮🇸 冰岛｜01"
+  - "🇫🇷 法国｜01｜原生IP"
+  - "🇦🇺 澳大利亚｜01｜原生IP"
+  - "多哥｜01｜住宅IP"
+  - "🇰🇿 哈萨克斯坦｜01｜住宅ip"
+  - "🇻🇳 越南"
+  - "🇯🇵 日本"
+  - "🇺🇸 美国 4"
+  - "🇭🇰 香港"
+  - "🇬🇧 英国"
+  - "🇫🇮 芬兰"
+  - "🇨🇳 节点-CN-50Mbps-100G"
+  - "🇭🇰 香港1"
+  - "🇭🇰 香港 2"
+  - "🇭🇰 香港3"
+  - "🇭🇰 香港2"
+  - "🇭🇰 香港4"
+  - "🇭🇰 香港5"
+  - "🇸🇬 新加坡"
+  - "🇯🇵 日本1"
+  - "🇯🇵 日本2"
+  - "🇰🇷 韩国首尔"
+  - "🇺🇸 美国纽约"
+  - "🇸🇬 美国洛杉矶新"
+  - "🇺🇸 美国达拉斯"
+  - "🇩🇪 德国法兰克福"
+  - "🇬🇧 英国 2"
+  - "🇺🇸 美国洛杉矶"
+  - "🇮🇱 以色列"
+  - "🇨🇦 加拿大"
+  - "🇦🇺 澳大利亚"
+  - "🇫🇷 法国巴黎"
+  - "🇭🇰 香港1区[专线] [x1.5]*次日恢复使用*"
+  - "🏳️‍🌈 香港1区[转发] [x1.0]*建议搭配不限时流量*"
+  - "🇭🇰 香港2区[转发] [x1.0]*超过每日限制*"
+  - "🇭🇰 香港3区[转发] [x1.0]*次日恢复使用*"
+  - "🏳️‍🌈 新加坡1区[专线] [x1.5]*建议搭配不限时流量*"
+  - "🇸🇬 新加坡1区[转发1] [x1.0]*超过每日限制*"
+  - "🇸🇬 新加坡2区[回国优化] [x2.0]*次日恢复使用*"
+  - "🏳️‍🌈 新加坡2区[转发] [x1.0]*建议搭配不限时流量*"
+  - "🇯🇵 日本1区[回国优化] [x2.0]*超过每日限制*"
+  - "🇯🇵 日本1区[回国优化2] [x2.0]*次日恢复使用*"
+  - "🏳️‍🌈 日本2区[转发] [x1.0]*建议搭配不限时流量*"
+  - "🇨🇳 台湾1区[专线] [x1.0]*超过每日限制*"
+  - "🇨🇳 台湾1区[转发] [x1.0]*次日恢复使用*"
+  - "🏳️‍🌈 台湾2区[专线] [x1.5]*建议搭配不限时流量*"
+  - "🇨🇳 台湾2区[转发] [x1.0]*超过每日限制*"
+  - "🇯🇵 韩国[专线] [x1.5]*次日恢复使用*"
+  - "🏳️‍🌈 韩国[转发] [x1.0]*建议搭配不限时流量*"
+  - "🇯🇵 美国[专线] [x1.5]*超过每日限制*"
+  - "🇯🇵 美国[转发] [x1.0]*次日恢复使用*"
+  - "🏳️‍🌈 香港住宅1[原生IP] [x3.0]*建议搭配不限时流量*"
+  - "🇭🇰 香港住宅2[原生IP] [x1.0]*超过每日限制*"
+  - "🇯🇵 美国住宅1[原生IP] [x3.0]*次日恢复使用*"
+  - "🏳️‍🌈 美国住宅2[原生IP] [x3.0]*建议搭配不限时流量*"
+  - "🇯🇵 日本住宅[原生IP] [x3.0]*超过每日限制*"
+  - "🇸🇬 新加坡住宅[原生IP] [x3.0]*次日恢复使用*"
+  - "🏳️‍🌈 台湾住宅1区[原生IP] [x3.0]*建议搭配不限时流量*"
+  - "🇯🇵 英国住宅[原生IP] [x3.0]*超过每日限制*"
+  - "🇯🇵 越南住宅[原生IP] [x3.0]*次日恢复使用*"
+  - "🏳️‍🌈 印度住宅[原生IP] [x3.0]*建议搭配不限时流量*"
+  - "🇯🇵 西班牙住宅[原生IP] [x3.0]*超过每日限制*"
+  - "🇯🇵 澳大利亚住宅[原生IP] [x3.0]*次日恢复使用*"
+  - "🏳️‍🌈 柬埔寨住宅[原生IP] [x3.0]*建议搭配不限时流量*"
+  - "🇯🇵 德国住宅[原生IP] [x3.0]*超过每日限制*"
+  - "🇯🇵 菲律宾住宅[原生IP] [x3.0]*次日恢复使用*"
+  - "🏳️‍🌈 巴西住宅[原生IP] [x3.0]*建议搭配不限时流量*"
+  - "🇯🇵 哈萨克斯坦住宅[原生IP] [x3.0]*超过每日限制*"
+  - "🇯🇵 匈牙利住宅[原生IP] [x3.0]*次日恢复使用*"
+  - "🏳️‍🌈 泰国住宅[原生IP] [x3.0]*建议搭配不限时流量*"
+  - "🇯🇵 多哥住宅[原生IP] [x3.0]*超过每日限制*"
+  - "🇯🇵 立陶宛住宅[原生IP] [x3.0]*次日恢复使用*"
+  - "🏳️‍🌈 保加利亚住宅[原生IP] [x3.0]*建议搭配不限时流量*"
+  - "🇯🇵 乌克兰住宅[原生IP] [x3.0]*超过每日限制*"
+  - "🇯🇵 波兰住宅[原生IP] [x3.0]*次日恢复使用*"
+  - "🏳️‍🌈 挪威住宅[原生IP] [x3.0]*建议搭配不限时流量*"
+  - "🇯🇵 土耳其住宅[原生IP] [x3.0]*超过每日限制*"
+  - "🇯🇵 意大利住宅[原生IP] [x3.0]*次日恢复使用*"
+  - "🏳️‍🌈 孟加拉住宅[原生IP] [x3.0]*建议搭配不限时流量*"
+  - "🇯🇵 瑞典住宅[原生IP] [x3.0]*超过每日限制*"
+  - "🇯🇵 马来西亚住宅[原生IP] [x3.0]*次日恢复使用*"
+  - "🏳️‍🌈 印度尼西亚住宅[原生IP] [x3.0]*建议搭配不限时流量*"
+  - "🇳🇬 尼日利亚[原生IP] [x3.0]*超过每日限制*"
+  - "🇯🇵 英国[专线] [x1.5]*次日恢复使用*"
+  - "🏳️‍🌈 法国[转发] [x1.0]*建议搭配不限时流量*"
+  - "🇯🇵 加拿大[转发] [x1.0]*超过每日限制*"
+  - "🇯🇵 荷兰[转发] [x1.0]*次日恢复使用*"
+  - "🏳️‍🌈 俄罗斯[转发] [x1.0]*建议搭配不限时流量*"
+  - "🇯🇵 摩尔多瓦[转发] [x1.0]*超过每日限制*"
+  - "🇯🇵 瑞士[转发] [x1.0]*次日恢复使用*"
+  - "🏳️‍🌈 吉尔吉斯斯坦[转发] [x1.0]*建议搭配不限时流量*"
+  - "🇯🇵 冰岛[转发] [x1.0]*超过每日限制*"
+- name: "AI"
+  type: "select"
+  proxies:
+  - "群里大佬分享更多节点"
+  - "t.me/freeyule"
+  - "🇺🇸 US 1"
+  - "🇺🇸 US 2"
+  - "🇺🇸 US 3"
+  - "🇺🇸 US 4"
+  - "🇺🇸 US 5"
+  - "🇺🇸 US 6"
+  - "纽约"
+  - "🇺🇸 美国"
+  - "🇺🇸 美国 2"
+  - "🇺🇸 美国 3"
+  - "🇭🇰 香港 电信"
+  - "🇭🇰 香港 移动"
+  - "🇨🇳 台湾｜01｜原生IP"
+  - "🇨🇳 台湾｜03｜原生IP"
+  - "🇨🇳 台湾｜04｜原生IP"
+  - "🇨🇳 台湾｜05｜原生IP"
+  - "🇭🇰 香港｜01"
+  - "🇭🇰 香港｜02"
+  - "🇭🇰 香港｜03"
+  - "🇯🇵 日本｜01"
+  - "🇹🇭 泰国丨01｜原生IP"
+  - "🇹🇭 泰国丨02｜原生IP"
+  - "🇧🇩 孟加拉｜01｜住宅IP"
+  - "🇧🇩 孟加拉｜02｜住宅IP"
+  - "🇰🇭 柬埔寨｜01"
+  - "🇺🇦 乌克兰｜01｜原生IP"
+  - "🇮🇸 冰岛｜01"
+  - "🇫🇷 法国｜01｜原生IP"
+  - "🇦🇺 澳大利亚｜01｜原生IP"
+  - "多哥｜01｜住宅IP"
+  - "🇰🇿 哈萨克斯坦｜01｜住宅ip"
+  - "🇻🇳 越南"
+  - "🇯🇵 日本"
+  - "🇺🇸 美国 4"
+  - "🇭🇰 香港"
+  - "🇬🇧 英国"
+  - "🇫🇮 芬兰"
+  - "🇨🇳 节点-CN-50Mbps-100G"
+  - "🇭🇰 香港1"
+  - "🇭🇰 香港 2"
+  - "🇭🇰 香港3"
+  - "🇭🇰 香港2"
+  - "🇭🇰 香港4"
+  - "🇭🇰 香港5"
+  - "🇸🇬 新加坡"
+  - "🇯🇵 日本1"
+  - "🇯🇵 日本2"
+  - "🇰🇷 韩国首尔"
+  - "🇺🇸 美国纽约"
+  - "🇸🇬 美国洛杉矶新"
+  - "🇺🇸 美国达拉斯"
+  - "🇩🇪 德国法兰克福"
+  - "🇬🇧 英国 2"
+  - "🇺🇸 美国洛杉矶"
+  - "🇮🇱 以色列"
+  - "🇨🇦 加拿大"
+  - "🇦🇺 澳大利亚"
+  - "🇫🇷 法国巴黎"
+  - "🇭🇰 香港1区[专线] [x1.5]*次日恢复使用*"
+  - "🏳️‍🌈 香港1区[转发] [x1.0]*建议搭配不限时流量*"
+  - "🇭🇰 香港2区[转发] [x1.0]*超过每日限制*"
+  - "🇭🇰 香港3区[转发] [x1.0]*次日恢复使用*"
+  - "🏳️‍🌈 新加坡1区[专线] [x1.5]*建议搭配不限时流量*"
+  - "🇸🇬 新加坡1区[转发1] [x1.0]*超过每日限制*"
+  - "🇸🇬 新加坡2区[回国优化] [x2.0]*次日恢复使用*"
+  - "🏳️‍🌈 新加坡2区[转发] [x1.0]*建议搭配不限时流量*"
+  - "🇯🇵 日本1区[回国优化] [x2.0]*超过每日限制*"
+  - "🇯🇵 日本1区[回国优化2] [x2.0]*次日恢复使用*"
+  - "🏳️‍🌈 日本2区[转发] [x1.0]*建议搭配不限时流量*"
+  - "🇨🇳 台湾1区[专线] [x1.0]*超过每日限制*"
+  - "🇨🇳 台湾1区[转发] [x1.0]*次日恢复使用*"
+  - "🏳️‍🌈 台湾2区[专线] [x1.5]*建议搭配不限时流量*"
+  - "🇨🇳 台湾2区[转发] [x1.0]*超过每日限制*"
+  - "🇯🇵 韩国[专线] [x1.5]*次日恢复使用*"
+  - "🏳️‍🌈 韩国[转发] [x1.0]*建议搭配不限时流量*"
+  - "🇯🇵 美国[专线] [x1.5]*超过每日限制*"
+  - "🇯🇵 美国[转发] [x1.0]*次日恢复使用*"
+  - "🏳️‍🌈 香港住宅1[原生IP] [x3.0]*建议搭配不限时流量*"
+  - "🇭🇰 香港住宅2[原生IP] [x1.0]*超过每日限制*"
+  - "🇯🇵 美国住宅1[原生IP] [x3.0]*次日恢复使用*"
+  - "🏳️‍🌈 美国住宅2[原生IP] [x3.0]*建议搭配不限时流量*"
+  - "🇯🇵 日本住宅[原生IP] [x3.0]*超过每日限制*"
+  - "🇸🇬 新加坡住宅[原生IP] [x3.0]*次日恢复使用*"
+  - "🏳️‍🌈 台湾住宅1区[原生IP] [x3.0]*建议搭配不限时流量*"
+  - "🇯🇵 英国住宅[原生IP] [x3.0]*超过每日限制*"
+  - "🇯🇵 越南住宅[原生IP] [x3.0]*次日恢复使用*"
+  - "🏳️‍🌈 印度住宅[原生IP] [x3.0]*建议搭配不限时流量*"
+  - "🇯🇵 西班牙住宅[原生IP] [x3.0]*超过每日限制*"
+  - "🇯🇵 澳大利亚住宅[原生IP] [x3.0]*次日恢复使用*"
+  - "🏳️‍🌈 柬埔寨住宅[原生IP] [x3.0]*建议搭配不限时流量*"
+  - "🇯🇵 德国住宅[原生IP] [x3.0]*超过每日限制*"
+  - "🇯🇵 菲律宾住宅[原生IP] [x3.0]*次日恢复使用*"
+  - "🏳️‍🌈 巴西住宅[原生IP] [x3.0]*建议搭配不限时流量*"
+  - "🇯🇵 哈萨克斯坦住宅[原生IP] [x3.0]*超过每日限制*"
+  - "🇯🇵 匈牙利住宅[原生IP] [x3.0]*次日恢复使用*"
+  - "🏳️‍🌈 泰国住宅[原生IP] [x3.0]*建议搭配不限时流量*"
+  - "🇯🇵 多哥住宅[原生IP] [x3.0]*超过每日限制*"
+  - "🇯🇵 立陶宛住宅[原生IP] [x3.0]*次日恢复使用*"
+  - "🏳️‍🌈 保加利亚住宅[原生IP] [x3.0]*建议搭配不限时流量*"
+  - "🇯🇵 乌克兰住宅[原生IP] [x3.0]*超过每日限制*"
+  - "🇯🇵 波兰住宅[原生IP] [x3.0]*次日恢复使用*"
+  - "🏳️‍🌈 挪威住宅[原生IP] [x3.0]*建议搭配不限时流量*"
+  - "🇯🇵 土耳其住宅[原生IP] [x3.0]*超过每日限制*"
+  - "🇯🇵 意大利住宅[原生IP] [x3.0]*次日恢复使用*"
+  - "🏳️‍🌈 孟加拉住宅[原生IP] [x3.0]*建议搭配不限时流量*"
+  - "🇯🇵 瑞典住宅[原生IP] [x3.0]*超过每日限制*"
+  - "🇯🇵 马来西亚住宅[原生IP] [x3.0]*次日恢复使用*"
+  - "🏳️‍🌈 印度尼西亚住宅[原生IP] [x3.0]*建议搭配不限时流量*"
+  - "🇳🇬 尼日利亚[原生IP] [x3.0]*超过每日限制*"
+  - "🇯🇵 英国[专线] [x1.5]*次日恢复使用*"
+  - "🏳️‍🌈 法国[转发] [x1.0]*建议搭配不限时流量*"
+  - "🇯🇵 加拿大[转发] [x1.0]*超过每日限制*"
+  - "🇯🇵 荷兰[转发] [x1.0]*次日恢复使用*"
+  - "🏳️‍🌈 俄罗斯[转发] [x1.0]*建议搭配不限时流量*"
+  - "🇯🇵 摩尔多瓦[转发] [x1.0]*超过每日限制*"
+  - "🇯🇵 瑞士[转发] [x1.0]*次日恢复使用*"
+  - "🏳️‍🌈 吉尔吉斯斯坦[转发] [x1.0]*建议搭配不限时流量*"
+  - "🇯🇵 冰岛[转发] [x1.0]*超过每日限制*"
+rules:
+- "GEOSITE,CATEGORY-ADS-ALL,REJECT"
+- "DOMAIN-SUFFIX,ushd.xmsl.org,DIRECT"
+- "DOMAIN-SUFFIX,cf.gtlx.org,DIRECT"
+- "DOMAIN-SUFFIX,public-operation-hkrpg-sg.hoyoverse.com,DIRECT"
+- "DOMAIN-SUFFIX,public-operation-hk4e-sg.hoyoverse.com,DIRECT"
+- "DOMAIN-SUFFIX,public-operation-nap-sg.hoyoverse.com,DIRECT"
+- "DST-PORT,23301/22101-22102/20501/21601-21606,DIRECT"
+- "GEOSITE,HOYOVERSE,PROXY"
+- "GEOSITE,OPENAI,AI"
+- "GEOSITE,GOOGLE-GEMINI,AI"
+- "GEOSITE,GOOGLEFCM,DIRECT"
+- "GEOSITE,PRIVATE,DIRECT"
+- "GEOSITE,CN,DIRECT"
+- "GEOIP,PRIVATE,DIRECT,no-resolve"
+- "GEOIP,CN,DIRECT"
+- "MATCH,PROXY"

@@ -1,0 +1,507 @@
+{
+  "log": {},
+  "dns": {
+    "servers": [
+      {
+        "tag": "dns_proxy",
+        "type": "https",
+        "server": "1.1.1.1",
+        "detour": "select"
+      },
+      {
+        "tag": "dns_direct",
+        "type": "https",
+        "server": "223.5.5.5"
+      },
+      {
+        "tag": "dns_fakeip",
+        "type": "fakeip",
+        "inet4_range": "198.18.0.0/15",
+        "inet6_range": "fc00::/18"
+      }
+    ],
+    "rules": [
+      {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "query_type": "HTTPS"
+          },
+          {
+            "rule_set": [
+              "geosite-category-ads-all"
+            ]
+          }
+        ],
+        "action": "reject"
+      },
+      {
+        "query_type": [
+          "A",
+          "AAAA"
+        ],
+        "server": "dns_fakeip",
+        "rewrite_ttl": 1
+      },
+      {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "clash_mode": "Global"
+          }
+        ],
+        "server": "dns_proxy"
+      },
+      {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "clash_mode": "Direct"
+          },
+          {
+            "rule_set": [
+              "geosite-cn"
+            ]
+          }
+        ],
+        "server": "dns_direct"
+      }
+    ],
+    "strategy": "ipv4_only",
+    "independent_cache": true
+  },
+  "inbounds": [
+    {
+      "type": "tun",
+      "address": [
+        "172.18.0.1/30",
+        "fdfe:dcba:9876::1/126"
+      ],
+      "auto_route": true,
+      "strict_route": true,
+      "route_exclude_address": [
+        "192.168.0.0/16",
+        "fc00::/7"
+      ]
+    }
+  ],
+  "outbounds": [
+    {
+      "password": "nUthZ7z3VmyV",
+      "server": "14.18.253.178",
+      "server_port": 9001,
+      "tag": "🇭🇰 香港1 @mfbpn",
+      "type": "shadowsocks",
+      "method": "chacha20",
+      "network": "tcp"
+    },
+    {
+      "password": "PTgFLLrT5pVg",
+      "server": "14.18.253.178",
+      "server_port": 9002,
+      "tag": "🇭🇰 香港2 @mfbpn",
+      "type": "shadowsocks",
+      "method": "chacha20",
+      "network": "tcp"
+    },
+    {
+      "password": "v5aUUtme3jxs",
+      "server": "14.18.253.178",
+      "server_port": 9003,
+      "tag": "🇭🇰 香港3 @mfbpn",
+      "type": "shadowsocks",
+      "method": "chacha20",
+      "network": "tcp"
+    },
+    {
+      "password": "s6Zau9ioic",
+      "server": "14.18.253.178",
+      "server_port": 9004,
+      "tag": "🇭🇰 香港4 @mfbpn",
+      "type": "shadowsocks",
+      "method": "chacha20",
+      "network": "tcp"
+    },
+    {
+      "password": "sJMdcI7NPj",
+      "server": "14.18.253.178",
+      "server_port": 9005,
+      "tag": "🇭🇰 香港5 @mfbpn",
+      "type": "shadowsocks",
+      "method": "chacha20",
+      "network": "tcp"
+    },
+    {
+      "password": "passLUsO2Ktuer77tu",
+      "server": "14.18.253.178",
+      "server_port": 8321,
+      "tag": "🇭🇰 香港 @mfbpn",
+      "type": "shadowsocks",
+      "method": "chacha20",
+      "network": "tcp"
+    },
+    {
+      "password": "dkYsdgWqegNV",
+      "server": "14.18.253.178",
+      "server_port": 8343,
+      "tag": "🇨🇦 加拿大 @mfbpn",
+      "type": "shadowsocks",
+      "method": "chacha20",
+      "network": "tcp"
+    },
+    {
+      "password": "r8jh6ZeykHvB",
+      "server": "14.18.253.178",
+      "server_port": 8342,
+      "tag": "🇺🇸 洛杉矶 @mfbpn",
+      "type": "shadowsocks",
+      "method": "chacha20",
+      "network": "tcp"
+    },
+    {
+      "password": "zWyQvJbQRZaV",
+      "server": "14.18.253.178",
+      "server_port": 8341,
+      "tag": "🇦🇺 澳大利亚 @mfbpn",
+      "type": "shadowsocks",
+      "method": "chacha20",
+      "network": "tcp"
+    },
+    {
+      "password": "N9k4f2PORl14",
+      "server": "14.18.253.178",
+      "server_port": 8348,
+      "tag": "🇮🇱 以色列 @mfbpn",
+      "type": "shadowsocks",
+      "method": "chacha20",
+      "network": "tcp"
+    },
+    {
+      "password": "q2kSGp4ayFKB",
+      "server": "14.18.253.178",
+      "server_port": 8347,
+      "tag": "🇫🇷 巴黎 @mfbpn",
+      "type": "shadowsocks",
+      "method": "chacha20",
+      "network": "tcp"
+    },
+    {
+      "password": "d3baK6NW2HEc",
+      "server": "14.18.253.178",
+      "server_port": 8349,
+      "tag": "纽约 @mfbpn",
+      "type": "shadowsocks",
+      "method": "chacha20",
+      "network": "tcp"
+    },
+    {
+      "password": "wDazHDu63gcg",
+      "server": "14.18.253.178",
+      "server_port": 8344,
+      "tag": "🇺🇸 达拉斯 @mfbpn",
+      "type": "shadowsocks",
+      "method": "chacha20",
+      "network": "tcp"
+    },
+    {
+      "password": "ADZmRQUGHTwX",
+      "server": "14.18.253.178",
+      "server_port": 8339,
+      "tag": "🇰🇷 首尔 @mfbpn",
+      "type": "shadowsocks",
+      "method": "chacha20",
+      "network": "tcp"
+    },
+    {
+      "password": "3fn3CH5Swh2N",
+      "server": "14.18.253.178",
+      "server_port": 8337,
+      "tag": "🇬🇧 英国 @mfbpn",
+      "type": "shadowsocks",
+      "method": "chacha20",
+      "network": "tcp"
+    },
+    {
+      "password": "avpBqFFmsYBN",
+      "server": "14.18.253.178",
+      "server_port": 8335,
+      "tag": "🇯🇵 日本2 @mfbpn",
+      "type": "shadowsocks",
+      "method": "chacha20",
+      "network": "tcp"
+    },
+    {
+      "password": "DvPfKa8vsV9K",
+      "server": "14.18.253.178",
+      "server_port": 8334,
+      "tag": "🇸🇬 新加坡 @mfbpn",
+      "type": "shadowsocks",
+      "method": "chacha20",
+      "network": "tcp"
+    },
+    {
+      "password": "jrgc64sFSLQM",
+      "server": "14.18.253.178",
+      "server_port": 8333,
+      "tag": "🇩🇪 法兰克福 @mfbpn",
+      "type": "shadowsocks",
+      "method": "chacha20",
+      "network": "tcp"
+    },
+    {
+      "password": "8BZ5uBrPuUDY",
+      "server": "14.18.253.178",
+      "server_port": 8332,
+      "tag": "🇸🇬 洛杉矶新 @mfbpn",
+      "type": "shadowsocks",
+      "method": "chacha20",
+      "network": "tcp"
+    },
+    {
+      "password": "GqbcCfh365aT",
+      "server": "14.18.253.178",
+      "server_port": 8331,
+      "tag": "🇯🇵 日本 @mfbpn",
+      "type": "shadowsocks",
+      "method": "chacha20",
+      "network": "tcp"
+    },
+    {
+      "tag": "select",
+      "type": "selector",
+      "default": "auto",
+      "outbounds": [
+        "auto",
+        "🇭🇰 香港1 @mfbpn",
+        "🇭🇰 香港2 @mfbpn",
+        "🇭🇰 香港3 @mfbpn",
+        "🇭🇰 香港4 @mfbpn",
+        "🇭🇰 香港5 @mfbpn",
+        "🇭🇰 香港 @mfbpn",
+        "🇨🇦 加拿大 @mfbpn",
+        "🇺🇸 洛杉矶 @mfbpn",
+        "🇦🇺 澳大利亚 @mfbpn",
+        "🇮🇱 以色列 @mfbpn",
+        "🇫🇷 巴黎 @mfbpn",
+        "纽约 @mfbpn",
+        "🇺🇸 达拉斯 @mfbpn",
+        "🇰🇷 首尔 @mfbpn",
+        "🇬🇧 英国 @mfbpn",
+        "🇯🇵 日本2 @mfbpn",
+        "🇸🇬 新加坡 @mfbpn",
+        "🇩🇪 法兰克福 @mfbpn",
+        "🇸🇬 洛杉矶新 @mfbpn",
+        "🇯🇵 日本 @mfbpn"
+      ]
+    },
+    {
+      "tag": "auto",
+      "type": "urltest",
+      "outbounds": [
+        "🇭🇰 香港1 @mfbpn",
+        "🇭🇰 香港2 @mfbpn",
+        "🇭🇰 香港3 @mfbpn",
+        "🇭🇰 香港4 @mfbpn",
+        "🇭🇰 香港5 @mfbpn",
+        "🇭🇰 香港 @mfbpn",
+        "🇨🇦 加拿大 @mfbpn",
+        "🇺🇸 洛杉矶 @mfbpn",
+        "🇦🇺 澳大利亚 @mfbpn",
+        "🇮🇱 以色列 @mfbpn",
+        "🇫🇷 巴黎 @mfbpn",
+        "纽约 @mfbpn",
+        "🇺🇸 达拉斯 @mfbpn",
+        "🇰🇷 首尔 @mfbpn",
+        "🇬🇧 英国 @mfbpn",
+        "🇯🇵 日本2 @mfbpn",
+        "🇸🇬 新加坡 @mfbpn",
+        "🇩🇪 法兰克福 @mfbpn",
+        "🇸🇬 洛杉矶新 @mfbpn",
+        "🇯🇵 日本 @mfbpn"
+      ]
+    },
+    {
+      "tag": "ai",
+      "type": "selector",
+      "outbounds": [
+        "🇭🇰 香港1 @mfbpn",
+        "🇭🇰 香港2 @mfbpn",
+        "🇭🇰 香港3 @mfbpn",
+        "🇭🇰 香港4 @mfbpn",
+        "🇭🇰 香港5 @mfbpn",
+        "🇭🇰 香港 @mfbpn",
+        "🇨🇦 加拿大 @mfbpn",
+        "🇺🇸 洛杉矶 @mfbpn",
+        "🇦🇺 澳大利亚 @mfbpn",
+        "🇮🇱 以色列 @mfbpn",
+        "🇫🇷 巴黎 @mfbpn",
+        "纽约 @mfbpn",
+        "🇺🇸 达拉斯 @mfbpn",
+        "🇰🇷 首尔 @mfbpn",
+        "🇬🇧 英国 @mfbpn",
+        "🇯🇵 日本2 @mfbpn",
+        "🇸🇬 新加坡 @mfbpn",
+        "🇩🇪 法兰克福 @mfbpn",
+        "🇸🇬 洛杉矶新 @mfbpn",
+        "🇯🇵 日本 @mfbpn"
+      ]
+    },
+    {
+      "tag": "direct",
+      "type": "direct"
+    }
+  ],
+  "route": {
+    "rules": [
+      {
+        "action": "sniff"
+      },
+      {
+        "protocol": "dns",
+        "action": "hijack-dns"
+      },
+      {
+        "action": "resolve",
+        "strategy": "ipv4_only"
+      },
+      {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "domain_suffix": [
+              "ushd.xmsl.org",
+              "cf.gtlx.org",
+              "public-operation-hkrpg-sg.hoyoverse.com",
+              "public-operation-hk4e-sg.hoyoverse.com",
+              "public-operation-nap-sg.hoyoverse.com"
+            ]
+          },
+          {
+            "port_range": [
+              "23301:23301",
+              "22101:22102",
+              "20501:20501",
+              "21601:21606"
+            ]
+          }
+        ],
+        "outbound": "direct"
+      },
+      {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "clash_mode": "Global"
+          },
+          {
+            "rule_set": [
+              "geosite-hoyoverse"
+            ]
+          }
+        ],
+        "outbound": "select"
+      },
+      {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "rule_set": [
+              "geosite-openai",
+              "geosite-google-gemini"
+            ]
+          }
+        ],
+        "outbound": "ai"
+      },
+      {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "clash_mode": "Direct"
+          },
+          {
+            "ip_is_private": true
+          },
+          {
+            "rule_set": [
+              "geosite-googlefcm",
+              "geosite-cn",
+              "geoip-cn"
+            ]
+          }
+        ],
+        "outbound": "direct"
+      }
+    ],
+    "rule_set": [
+      {
+        "type": "remote",
+        "tag": "geoip-cn",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/lyc8503/sing-box-rules/rule-set-geoip/geoip-cn.srs",
+        "download_detour": "select"
+      },
+      {
+        "type": "remote",
+        "tag": "geosite-cn",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/lyc8503/sing-box-rules/rule-set-geosite/geosite-cn.srs",
+        "download_detour": "select"
+      },
+      {
+        "type": "remote",
+        "tag": "geosite-openai",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/lyc8503/sing-box-rules/rule-set-geosite/geosite-openai.srs",
+        "download_detour": "select"
+      },
+      {
+        "type": "remote",
+        "tag": "geosite-google-gemini",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/lyc8503/sing-box-rules/rule-set-geosite/geosite-google-gemini.srs",
+        "download_detour": "select"
+      },
+      {
+        "type": "remote",
+        "tag": "geosite-googlefcm",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/lyc8503/sing-box-rules/rule-set-geosite/geosite-googlefcm.srs",
+        "download_detour": "select"
+      },
+      {
+        "type": "remote",
+        "tag": "geosite-hoyoverse",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/lyc8503/sing-box-rules/rule-set-geosite/geosite-hoyoverse.srs",
+        "download_detour": "select"
+      },
+      {
+        "type": "remote",
+        "tag": "geosite-category-ads-all",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/lyc8503/sing-box-rules/rule-set-geosite/geosite-category-ads-all.srs",
+        "download_detour": "select"
+      }
+    ],
+    "final": "select",
+    "default_domain_resolver": "dns_direct",
+    "auto_detect_interface": true,
+    "override_android_vpn": true
+  },
+  "experimental": {
+    "cache_file": {
+      "enabled": true
+    },
+    "clash_api": {
+      "external_controller": "127.0.0.1:9090"
+    }
+  }
+}
