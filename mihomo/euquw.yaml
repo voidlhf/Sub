@@ -1,0 +1,238 @@
+log-level: "debug"
+mixed-port: 7890
+allow-lan: true
+external-controller: "127.0.0.1:9090"
+unified-delay: true
+tcp-concurrent: true
+find-process-mode: "strict"
+global-client-fingerprint: "chrome"
+profile:
+  store-selected: true
+  store-fake-ip: true
+sniffer:
+  enable: true
+  force-dns-mapping: true
+  parse-pure-ip: true
+  override-destination: false
+  sniff:
+    HTTP:
+      ports:
+      - 80
+      - "8080-8880"
+    TLS:
+      ports:
+      - 443
+      - 8443
+    QUIC:
+      ports:
+      - 443
+      - 8443
+tun:
+  enable: true
+  stack: "mixed"
+  dns-hijack:
+  - "any:53"
+  - "tcp://any:53"
+  auto-route: true
+  auto-redirect: true
+  auto-detect-interface: true
+  strict-route: true
+dns:
+  enable: true
+  ipv6: false
+  default-nameserver:
+  - "223.5.5.5"
+  - "119.29.29.29"
+  enhanced-mode: "fake-ip"
+  fake-ip-range: "198.18.0.1/16"
+  nameserver:
+  - "https://dns.cloudflare.com/dns-query"
+  - "https://dns.google/dns-query"
+  nameserver-policy:
+    geosite:cn,private:
+    - "https://dns.alidns.com/dns-query"
+    - "https://doh.pub/dns-query"
+proxies:
+- {name: "[ss]剩余流量：225.62 GB", type: "ss", server: "xx.9800x3d.xyz", port: 52000, cipher: "chacha20-ietf-poly1305", password: "6d676500-f6a9-4a8f-ae4e-3d04e50a038c", udp: true}
+- {name: "[ss]距离下次重置剩余：8 天", type: "ss", server: "xx.9800x3d.xyz", port: 52000, cipher: "chacha20-ietf-poly1305", password: "6d676500-f6a9-4a8f-ae4e-3d04e50a038c", udp: true}
+- {name: "[ss]套餐到期：2026-04-11", type: "ss", server: "xx.9800x3d.xyz", port: 52000, cipher: "chacha20-ietf-poly1305", password: "6d676500-f6a9-4a8f-ae4e-3d04e50a038c", udp: true}
+- {name: "[ss]如果看不到香港1", type: "ss", server: "xx.9800x3d.xyz", port: 52000, cipher: "chacha20-ietf-poly1305", password: "6d676500-f6a9-4a8f-ae4e-3d04e50a038c", udp: true}
+- {name: "[ss]请更新代理软件", type: "ss", server: "zz.9800x3d.xyz", port: 52001, cipher: "chacha20-ietf-poly1305", password: "6d676500-f6a9-4a8f-ae4e-3d04e50a038c", udp: true}
+- {name: "[ss]香港1", type: "ss", server: "xx.9800x3d.xyz", port: 10000, cipher: "2022-blake3-aes-128-gcm", password: "ZjUyOWZkMzlhYzQ3NDFmNA==:NmQ2NzY1MDAtZjZhOS00YQ==", udp: true}
+- {name: "[ss]香港2", type: "ss", server: "zz.9800x3d.xyz", port: 10001, cipher: "2022-blake3-aes-128-gcm", password: "ZjUyOWZkMzlhYzQ3NDFmNA==:NmQ2NzY1MDAtZjZhOS00YQ==", udp: true}
+- {name: "[trojan]香港3", type: "trojan", server: "xx.9800x3d.xyz", port: 10010, password: "6d676500-f6a9-4a8f-ae4e-3d04e50a038c", udp: true, sni: "xx.9800x3d.xyz", skip-cert-verify: true}
+- {name: "[trojan]香港4", type: "trojan", server: "zz.9800x3d.xyz", port: 10011, password: "6d676500-f6a9-4a8f-ae4e-3d04e50a038c", udp: true, sni: "zz.9800x3d.xyz", skip-cert-verify: true}
+- {name: "[ss]香港5", type: "ss", server: "xx.9800x3d.xyz", port: 11000, cipher: "chacha20-ietf-poly1305", password: "6d676500-f6a9-4a8f-ae4e-3d04e50a038c", udp: true}
+- {name: "[ss]香港6", type: "ss", server: "zz.9800x3d.xyz", port: 11001, cipher: "chacha20-ietf-poly1305", password: "6d676500-f6a9-4a8f-ae4e-3d04e50a038c", udp: true}
+- {name: "[ss]澳门1", type: "ss", server: "xx.9800x3d.xyz", port: 31000, cipher: "2022-blake3-aes-128-gcm", password: "MTVhZTQ5OWM3NzAxNGY2ZA==:NmQ2NzY1MDAtZjZhOS00YQ==", udp: true}
+- {name: "[ss]澳门2", type: "ss", server: "zz.9800x3d.xyz", port: 31001, cipher: "2022-blake3-aes-128-gcm", password: "MTVhZTQ5OWM3NzAxNGY2ZA==:NmQ2NzY1MDAtZjZhOS00YQ==", udp: true}
+- {name: "[trojan]澳门3", type: "trojan", server: "xx.9800x3d.xyz", port: 31010, password: "6d676500-f6a9-4a8f-ae4e-3d04e50a038c", udp: true, sni: "xx.9800x3d.xyz", skip-cert-verify: true}
+- {name: "[trojan]澳门4", type: "trojan", server: "zz.9800x3d.xyz", port: 31011, password: "6d676500-f6a9-4a8f-ae4e-3d04e50a038c", udp: true, sni: "zz.9800x3d.xyz", skip-cert-verify: true}
+- {name: "[Hy2]香港直连1", server: "hk.9800x3d.xyz", port: 50001, sni: "hk.9800x3d.xyz", up: 1000, down: 1000, skip-cert-verify: true, type: "hysteria2", password: "6d676500-f6a9-4a8f-ae4e-3d04e50a038c"}
+- {name: "[Hy2]美国直连1", server: "mg.9800x3d.xyz", port: 50001, sni: "mg.9800x3d.xyz", up: 1000, down: 1000, skip-cert-verify: true, type: "hysteria2", password: "6d676500-f6a9-4a8f-ae4e-3d04e50a038c"}
+- {name: "[Hy2]澳门直连1", server: "aom.9800x3d.xyz", port: 50001, sni: "aom.9800x3d.xyz", up: 1000, down: 1000, skip-cert-verify: true, type: "hysteria2", password: "6d676500-f6a9-4a8f-ae4e-3d04e50a038c"}
+- {name: "[Hy2]日本直连1", server: "rb.9800x3d.xyz", port: 50000, sni: "rb.9800x3d.xyz", up: 2000, down: 2000, skip-cert-verify: true, type: "hysteria2", password: "6d676500-f6a9-4a8f-ae4e-3d04e50a038c"}
+- {name: "[Hy2]韩国直连1", server: "hg.9800x3d.xyz", port: 50000, sni: "hg.9800x3d.xyz", up: 1000, down: 1000, skip-cert-verify: true, type: "hysteria2", password: "6d676500-f6a9-4a8f-ae4e-3d04e50a038c"}
+- {name: "[ss]新加坡1", type: "ss", server: "xx.9800x3d.xyz", port: 51100, cipher: "chacha20-ietf-poly1305", password: "6d676500-f6a9-4a8f-ae4e-3d04e50a038c", udp: true}
+- {name: "[ss]新加坡2", type: "ss", server: "zz.9800x3d.xyz", port: 51101, cipher: "chacha20-ietf-poly1305", password: "6d676500-f6a9-4a8f-ae4e-3d04e50a038c", udp: true}
+- {name: "[ss]台湾家宽1", type: "ss", server: "xx.9800x3d.xyz", port: 11110, cipher: "2022-blake3-aes-128-gcm", password: "YTQ2ZWY1YWMzODc0MDcxNg==:NmQ2NzY1MDAtZjZhOS00YQ==", udp: true}
+- {name: "[ss]台湾家宽2", type: "ss", server: "zz.9800x3d.xyz", port: 11111, cipher: "2022-blake3-aes-128-gcm", password: "YTQ2ZWY1YWMzODc0MDcxNg==:NmQ2NzY1MDAtZjZhOS00YQ==", udp: true}
+- {name: "[ss]日本1", type: "ss", server: "xx.9800x3d.xyz", port: 50000, cipher: "2022-blake3-aes-128-gcm", password: "Y2QzYTFjYjg2NGIzMzc4ZQ==:NmQ2NzY1MDAtZjZhOS00YQ==", udp: true}
+- {name: "[ss]日本2", type: "ss", server: "zz.9800x3d.xyz", port: 50001, cipher: "2022-blake3-aes-128-gcm", password: "Y2QzYTFjYjg2NGIzMzc4ZQ==:NmQ2NzY1MDAtZjZhOS00YQ==", udp: true}
+- {name: "[trojan]日本3", type: "trojan", server: "xx.9800x3d.xyz", port: 50010, password: "6d676500-f6a9-4a8f-ae4e-3d04e50a038c", udp: true, sni: "xx.9800x3d.xyz", skip-cert-verify: true}
+- {name: "[trojan]日本4", type: "trojan", server: "zz.9800x3d.xyz", port: 50011, password: "6d676500-f6a9-4a8f-ae4e-3d04e50a038c", udp: true, sni: "zz.9800x3d.xyz", skip-cert-verify: true}
+- {name: "[ss]美国1", type: "ss", server: "xx.9800x3d.xyz", port: 26488, cipher: "2022-blake3-aes-128-gcm", password: "MTFiNGYyODM5NjE2ZDgzNg==:NmQ2NzY1MDAtZjZhOS00YQ==", udp: true}
+- {name: "[ss]美国2", type: "ss", server: "zz.9800x3d.xyz", port: 40001, cipher: "2022-blake3-aes-128-gcm", password: "MTFiNGYyODM5NjE2ZDgzNg==:NmQ2NzY1MDAtZjZhOS00YQ==", udp: true}
+- {name: "[trojan]美国3", type: "trojan", server: "xx.9800x3d.xyz", port: 40010, password: "6d676500-f6a9-4a8f-ae4e-3d04e50a038c", udp: true, sni: "xx.9800x3d.xyz", skip-cert-verify: true}
+- {name: "[trojan]美国4", type: "trojan", server: "zz.9800x3d.xyz", port: 40011, password: "6d676500-f6a9-4a8f-ae4e-3d04e50a038c", udp: true, sni: "zz.9800x3d.xyz", skip-cert-verify: true}
+- {name: "[ss]美国5", type: "ss", server: "xx.9800x3d.xyz", port: 54000, cipher: "chacha20-ietf-poly1305", password: "6d676500-f6a9-4a8f-ae4e-3d04e50a038c", udp: true}
+- {name: "[ss]美国6", type: "ss", server: "zz.9800x3d.xyz", port: 54001, cipher: "chacha20-ietf-poly1305", password: "6d676500-f6a9-4a8f-ae4e-3d04e50a038c", udp: true}
+- {name: "[ss]韩国1", type: "ss", server: "xx.9800x3d.xyz", port: 20000, cipher: "2022-blake3-aes-128-gcm", password: "MTc1NTY3MzhlNDY2Yzk0Mw==:NmQ2NzY1MDAtZjZhOS00YQ==", udp: true}
+- {name: "[ss]韩国2", type: "ss", server: "zz.9800x3d.xyz", port: 20001, cipher: "2022-blake3-aes-128-gcm", password: "MTc1NTY3MzhlNDY2Yzk0Mw==:NmQ2NzY1MDAtZjZhOS00YQ==", udp: true}
+- {name: "[trojan]韩国3", type: "trojan", server: "xx.9800x3d.xyz", port: 21000, password: "6d676500-f6a9-4a8f-ae4e-3d04e50a038c", udp: true, sni: "xx.9800x3d.xyz", skip-cert-verify: true}
+- {name: "[trojan]韩国4", type: "trojan", server: "zz.9800x3d.xyz", port: 21001, password: "6d676500-f6a9-4a8f-ae4e-3d04e50a038c", udp: true, sni: "zz.9800x3d.xyz", skip-cert-verify: true}
+proxy-groups:
+- name: "PROXY"
+  type: "select"
+  proxies:
+  - "AUTO"
+  - "[ss]剩余流量：225.62 GB"
+  - "[ss]距离下次重置剩余：8 天"
+  - "[ss]套餐到期：2026-04-11"
+  - "[ss]如果看不到香港1"
+  - "[ss]请更新代理软件"
+  - "[ss]香港1"
+  - "[ss]香港2"
+  - "[trojan]香港3"
+  - "[trojan]香港4"
+  - "[ss]香港5"
+  - "[ss]香港6"
+  - "[ss]澳门1"
+  - "[ss]澳门2"
+  - "[trojan]澳门3"
+  - "[trojan]澳门4"
+  - "[Hy2]香港直连1"
+  - "[Hy2]美国直连1"
+  - "[Hy2]澳门直连1"
+  - "[Hy2]日本直连1"
+  - "[Hy2]韩国直连1"
+  - "[ss]新加坡1"
+  - "[ss]新加坡2"
+  - "[ss]台湾家宽1"
+  - "[ss]台湾家宽2"
+  - "[ss]日本1"
+  - "[ss]日本2"
+  - "[trojan]日本3"
+  - "[trojan]日本4"
+  - "[ss]美国1"
+  - "[ss]美国2"
+  - "[trojan]美国3"
+  - "[trojan]美国4"
+  - "[ss]美国5"
+  - "[ss]美国6"
+  - "[ss]韩国1"
+  - "[ss]韩国2"
+  - "[trojan]韩国3"
+  - "[trojan]韩国4"
+- name: "AUTO"
+  type: "url-test"
+  url: "http://www.gstatic.com/generate_204"
+  interval: 300
+  tolerance: 50
+  proxies:
+  - "[ss]剩余流量：225.62 GB"
+  - "[ss]距离下次重置剩余：8 天"
+  - "[ss]套餐到期：2026-04-11"
+  - "[ss]如果看不到香港1"
+  - "[ss]请更新代理软件"
+  - "[ss]香港1"
+  - "[ss]香港2"
+  - "[trojan]香港3"
+  - "[trojan]香港4"
+  - "[ss]香港5"
+  - "[ss]香港6"
+  - "[ss]澳门1"
+  - "[ss]澳门2"
+  - "[trojan]澳门3"
+  - "[trojan]澳门4"
+  - "[Hy2]香港直连1"
+  - "[Hy2]美国直连1"
+  - "[Hy2]澳门直连1"
+  - "[Hy2]日本直连1"
+  - "[Hy2]韩国直连1"
+  - "[ss]新加坡1"
+  - "[ss]新加坡2"
+  - "[ss]台湾家宽1"
+  - "[ss]台湾家宽2"
+  - "[ss]日本1"
+  - "[ss]日本2"
+  - "[trojan]日本3"
+  - "[trojan]日本4"
+  - "[ss]美国1"
+  - "[ss]美国2"
+  - "[trojan]美国3"
+  - "[trojan]美国4"
+  - "[ss]美国5"
+  - "[ss]美国6"
+  - "[ss]韩国1"
+  - "[ss]韩国2"
+  - "[trojan]韩国3"
+  - "[trojan]韩国4"
+- name: "AI"
+  type: "select"
+  proxies:
+  - "[ss]剩余流量：225.62 GB"
+  - "[ss]距离下次重置剩余：8 天"
+  - "[ss]套餐到期：2026-04-11"
+  - "[ss]如果看不到香港1"
+  - "[ss]请更新代理软件"
+  - "[ss]香港1"
+  - "[ss]香港2"
+  - "[trojan]香港3"
+  - "[trojan]香港4"
+  - "[ss]香港5"
+  - "[ss]香港6"
+  - "[ss]澳门1"
+  - "[ss]澳门2"
+  - "[trojan]澳门3"
+  - "[trojan]澳门4"
+  - "[Hy2]香港直连1"
+  - "[Hy2]美国直连1"
+  - "[Hy2]澳门直连1"
+  - "[Hy2]日本直连1"
+  - "[Hy2]韩国直连1"
+  - "[ss]新加坡1"
+  - "[ss]新加坡2"
+  - "[ss]台湾家宽1"
+  - "[ss]台湾家宽2"
+  - "[ss]日本1"
+  - "[ss]日本2"
+  - "[trojan]日本3"
+  - "[trojan]日本4"
+  - "[ss]美国1"
+  - "[ss]美国2"
+  - "[trojan]美国3"
+  - "[trojan]美国4"
+  - "[ss]美国5"
+  - "[ss]美国6"
+  - "[ss]韩国1"
+  - "[ss]韩国2"
+  - "[trojan]韩国3"
+  - "[trojan]韩国4"
+rules:
+- "GEOSITE,CATEGORY-ADS-ALL,REJECT"
+- "DOMAIN-SUFFIX,ushd.xmsl.org,DIRECT"
+- "DOMAIN-SUFFIX,cf.gtlx.org,DIRECT"
+- "DOMAIN-SUFFIX,public-operation-hkrpg-sg.hoyoverse.com,DIRECT"
+- "DOMAIN-SUFFIX,public-operation-hk4e-sg.hoyoverse.com,DIRECT"
+- "DOMAIN-SUFFIX,public-operation-nap-sg.hoyoverse.com,DIRECT"
+- "DST-PORT,23301/22101-22102/20501/21601-21606,DIRECT"
+- "DOMAIN-KEYWORD,hoyoverse.com,PROXY"
+- "GEOSITE,OPENAI,AI"
+- "GEOSITE,GOOGLE-GEMINI,AI"
+- "GEOSITE,GOOGLEFCM,DIRECT"
+- "GEOSITE,PRIVATE,DIRECT"
+- "GEOSITE,CN,DIRECT"
+- "GEOIP,PRIVATE,DIRECT,no-resolve"
+- "GEOIP,CN,DIRECT"
+- "MATCH,PROXY"

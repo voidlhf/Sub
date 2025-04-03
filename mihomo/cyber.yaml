@@ -1,0 +1,226 @@
+log-level: "debug"
+mixed-port: 7890
+allow-lan: true
+external-controller: "127.0.0.1:9090"
+unified-delay: true
+tcp-concurrent: true
+find-process-mode: "strict"
+global-client-fingerprint: "chrome"
+profile:
+  store-selected: true
+  store-fake-ip: true
+sniffer:
+  enable: true
+  force-dns-mapping: true
+  parse-pure-ip: true
+  override-destination: false
+  sniff:
+    HTTP:
+      ports:
+      - 80
+      - "8080-8880"
+    TLS:
+      ports:
+      - 443
+      - 8443
+    QUIC:
+      ports:
+      - 443
+      - 8443
+tun:
+  enable: true
+  stack: "mixed"
+  dns-hijack:
+  - "any:53"
+  - "tcp://any:53"
+  auto-route: true
+  auto-redirect: true
+  auto-detect-interface: true
+  strict-route: true
+dns:
+  enable: true
+  ipv6: false
+  default-nameserver:
+  - "223.5.5.5"
+  - "119.29.29.29"
+  enhanced-mode: "fake-ip"
+  fake-ip-range: "198.18.0.1/16"
+  nameserver:
+  - "https://dns.cloudflare.com/dns-query"
+  - "https://dns.google/dns-query"
+  nameserver-policy:
+    geosite:cn,private:
+    - "https://dns.alidns.com/dns-query"
+    - "https://doh.pub/dns-query"
+proxies:
+- {name: "剩余流量：256.32 GB", type: "trojan", server: "gzyd.cg.xxality.cn", port: 33000, password: "873853df-b01a-4d0d-8373-a5d1aa020a08", udp: true, sni: "cghk.hysality.com"}
+- {name: "距离下次重置剩余：7 天", type: "trojan", server: "gzyd.cg.xxality.cn", port: 33000, password: "873853df-b01a-4d0d-8373-a5d1aa020a08", udp: true, sni: "cghk.hysality.com"}
+- {name: "套餐到期：2025-04-10", type: "trojan", server: "gzyd.cg.xxality.cn", port: 33000, password: "873853df-b01a-4d0d-8373-a5d1aa020a08", udp: true, sni: "cghk.hysality.com"}
+- {name: "官網: www.cyberguard.best", type: "trojan", server: "gzyd.cg.xxality.cn", port: 33000, password: "873853df-b01a-4d0d-8373-a5d1aa020a08", udp: true, sni: "cghk.hysality.com"}
+- {name: "🇭🇰香港 01 | IEPL + UDP 1X | CM", type: "trojan", server: "gzyd.cg.xxality.cn", port: 33000, password: "873853df-b01a-4d0d-8373-a5d1aa020a08", udp: true, sni: "cghk.hysality.com"}
+- {name: "🇭🇰香港 02 | IEPL + UDP 1X | CM", type: "trojan", server: "gzyd.cg.xxality.cn", port: 33000, password: "873853df-b01a-4d0d-8373-a5d1aa020a08", udp: true, sni: "cghk.hysality.com"}
+- {name: "🇭🇰香港 03 | IEPL 3X | CM", type: "trojan", server: "cghk.xxality.cn", port: 9900, password: "873853df-b01a-4d0d-8373-a5d1aa020a08", udp: true, sni: "cghk.hysality.com"}
+- {name: "🇭🇰香港 04 | IEPL 3X | CM", type: "trojan", server: "cghk.xxality.cn", port: 9900, password: "873853df-b01a-4d0d-8373-a5d1aa020a08", udp: true, sni: "cghk.hysality.com"}
+- {name: "🇭🇰香港 05 | IEPL 3.1X | BGP", type: "trojan", server: "sz.bgp.cg.xxality.cn", port: 10000, password: "873853df-b01a-4d0d-8373-a5d1aa020a08", udp: true, sni: "cghk.hysality.com"}
+- {name: "🇭🇰香港 06 | IEPL 3.1X | BGP", type: "trojan", server: "sz.bgp.cg.xxality.cn", port: 10000, password: "873853df-b01a-4d0d-8373-a5d1aa020a08", udp: true, sni: "cghk.hysality.com"}
+- {name: "🇼🇸台湾 01 | IEPL 1X | CM", type: "trojan", server: "sz.bgp.cg.xxality.cn", port: 33000, password: "873853df-b01a-4d0d-8373-a5d1aa020a08", udp: true, sni: "cgtw.hysality.com"}
+- {name: "🇼🇸台湾 02 | IPLC + UDP 3X | CM", type: "trojan", server: "sz.bgp.cg.xxality.cn", port: 33000, password: "873853df-b01a-4d0d-8373-a5d1aa020a08", udp: true, sni: "cgtw.hysality.com"}
+- {name: "🇯🇵日本 01 | ISP + UDP 1X | CM", type: "trojan", server: "gzyd.cg.xxality.cn", port: 33000, password: "873853df-b01a-4d0d-8373-a5d1aa020a08", udp: true, sni: "cgjp3.hysality.com"}
+- {name: "🇯🇵日本 02 | ISP + UDP 3.1X | CM", type: "trojan", server: "cghk.xxality.cn", port: 35000, password: "873853df-b01a-4d0d-8373-a5d1aa020a08", udp: true, sni: "cgjp3.hysality.com"}
+- {name: "🇸🇬新加坡 01 | IPLC + UDP 3.1X | CT", type: "trojan", server: "cghk.xxality.cn", port: 35000, password: "873853df-b01a-4d0d-8373-a5d1aa020a08", udp: true, sni: "cgsg.hysality.com"}
+- {name: "🇸🇬新加坡 02 | IPLC + UDP 3.1X | CT", type: "trojan", server: "cghk.xxality.cn", port: 35000, password: "873853df-b01a-4d0d-8373-a5d1aa020a08", udp: true, sni: "cgsg.hysality.com"}
+- {name: "🇺🇸美国 01 | IEPL 1.7X | CM", type: "trojan", server: "cghk.xxality.cn", port: 35000, password: "873853df-b01a-4d0d-8373-a5d1aa020a08", udp: true, sni: "cgus.hysality.com"}
+- {name: "🇺🇸美国 02 | IEPL 1.7X | CM", type: "trojan", server: "cghk.xxality.cn", port: 35000, password: "873853df-b01a-4d0d-8373-a5d1aa020a08", udp: true, sni: "cgus.hysality.com"}
+- {name: "🇺🇸美国 03 | IEPL 0.8X | CM", type: "trojan", server: "gzyd.cg.xxality.cn", port: 33000, password: "873853df-b01a-4d0d-8373-a5d1aa020a08", udp: true, sni: "cgus.hysality.com"}
+- {name: "🇦🇺澳大利亚 01 | IEPL 1.7X | CM", type: "trojan", server: "cghk.xxality.cn", port: 35000, password: "873853df-b01a-4d0d-8373-a5d1aa020a08", udp: true, sni: "cgau.hysality.com"}
+- {name: "🇦🇺澳大利亚 02 | IEPL 0.8X | CM", type: "trojan", server: "gzyd.cg.xxality.cn", port: 33000, password: "873853df-b01a-4d0d-8373-a5d1aa020a08", udp: true, sni: "cgau.hysality.com"}
+- {name: "🇩🇪德国 01 | IEPL 1.7X | CM", type: "trojan", server: "cghk.xxality.cn", port: 35000, password: "873853df-b01a-4d0d-8373-a5d1aa020a08", udp: true, sni: "cgde.hysality.com"}
+- {name: "🇩🇪德国 02 | IEPL 0.8X | CM", type: "trojan", server: "gzyd.cg.xxality.cn", port: 33000, password: "873853df-b01a-4d0d-8373-a5d1aa020a08", udp: true, sni: "cgde.hysality.com"}
+- {name: "🇰🇷韩国 01 | IEPL 1.7X | CM", type: "trojan", server: "cghk.xxality.cn", port: 35000, password: "873853df-b01a-4d0d-8373-a5d1aa020a08", udp: true, sni: "cgkr.hysality.com"}
+- {name: "🇰🇷韩国 02 | IEPL 1.7X | CM", type: "trojan", server: "cghk.xxality.cn", port: 35000, password: "873853df-b01a-4d0d-8373-a5d1aa020a08", udp: true, sni: "cgkr.hysality.com"}
+- {name: "🇰🇷韩国 03 | IEPL 0.8X | CM", type: "trojan", server: "gzyd.cg.xxality.cn", port: 33000, password: "873853df-b01a-4d0d-8373-a5d1aa020a08", udp: true, sni: "cgkr.hysality.com"}
+- {name: "🇫🇷法国 01 | IEPL 1.7X | CM", type: "trojan", server: "cghk.xxality.cn", port: 35000, password: "873853df-b01a-4d0d-8373-a5d1aa020a08", udp: true, sni: "cgfr.hysality.com"}
+- {name: "🇫🇷法国 02 | IEPL 0.8X | CM", type: "trojan", server: "gzyd.cg.xxality.cn", port: 33000, password: "873853df-b01a-4d0d-8373-a5d1aa020a08", udp: true, sni: "cgfr.hysality.com"}
+- {name: "🇦🇪迪拜 01 | IEPL 1.7X | CM", type: "trojan", server: "cghk.xxality.cn", port: 35000, password: "873853df-b01a-4d0d-8373-a5d1aa020a08", udp: true, sni: "cgae.hysality.com"}
+- {name: "🇦🇪迪拜 02 | IEPL 0.8X | CM", type: "trojan", server: "gzyd.cg.xxality.cn", port: 33000, password: "873853df-b01a-4d0d-8373-a5d1aa020a08", udp: true, sni: "cgae.hysality.com"}
+- {name: "🇬🇧英国 01 | IEPL 1.7X | CM", type: "trojan", server: "cghk.xxality.cn", port: 35000, password: "873853df-b01a-4d0d-8373-a5d1aa020a08", udp: true, sni: "cggb.hysality.com"}
+- {name: "🇬🇧英国 02 | IEPL 0.8X | CM", type: "trojan", server: "gzyd.cg.xxality.cn", port: 33000, password: "873853df-b01a-4d0d-8373-a5d1aa020a08", udp: true, sni: "cggb.hysality.com"}
+- {name: "🇮🇳印度 01 | IEPL 1.7X | CM", type: "trojan", server: "cghk.xxality.cn", port: 35000, password: "873853df-b01a-4d0d-8373-a5d1aa020a08", udp: true, sni: "cgin.hysality.com"}
+- {name: "🇮🇳印度 02 | IEPL 1.7X | CM", type: "trojan", server: "cghk.xxality.cn", port: 35000, password: "873853df-b01a-4d0d-8373-a5d1aa020a08", udp: true, sni: "cgin.hysality.com"}
+- {name: "🇮🇳印度 03 | IEPL 1.7X | CM", type: "trojan", server: "cghk.xxality.cn", port: 35000, password: "873853df-b01a-4d0d-8373-a5d1aa020a08", udp: true, sni: "cgin.hysality.com"}
+proxy-groups:
+- name: "PROXY"
+  type: "select"
+  proxies:
+  - "AUTO"
+  - "剩余流量：256.32 GB"
+  - "距离下次重置剩余：7 天"
+  - "套餐到期：2025-04-10"
+  - "官網: www.cyberguard.best"
+  - "🇭🇰香港 01 | IEPL + UDP 1X | CM"
+  - "🇭🇰香港 02 | IEPL + UDP 1X | CM"
+  - "🇭🇰香港 03 | IEPL 3X | CM"
+  - "🇭🇰香港 04 | IEPL 3X | CM"
+  - "🇭🇰香港 05 | IEPL 3.1X | BGP"
+  - "🇭🇰香港 06 | IEPL 3.1X | BGP"
+  - "🇼🇸台湾 01 | IEPL 1X | CM"
+  - "🇼🇸台湾 02 | IPLC + UDP 3X | CM"
+  - "🇯🇵日本 01 | ISP + UDP 1X | CM"
+  - "🇯🇵日本 02 | ISP + UDP 3.1X | CM"
+  - "🇸🇬新加坡 01 | IPLC + UDP 3.1X | CT"
+  - "🇸🇬新加坡 02 | IPLC + UDP 3.1X | CT"
+  - "🇺🇸美国 01 | IEPL 1.7X | CM"
+  - "🇺🇸美国 02 | IEPL 1.7X | CM"
+  - "🇺🇸美国 03 | IEPL 0.8X | CM"
+  - "🇦🇺澳大利亚 01 | IEPL 1.7X | CM"
+  - "🇦🇺澳大利亚 02 | IEPL 0.8X | CM"
+  - "🇩🇪德国 01 | IEPL 1.7X | CM"
+  - "🇩🇪德国 02 | IEPL 0.8X | CM"
+  - "🇰🇷韩国 01 | IEPL 1.7X | CM"
+  - "🇰🇷韩国 02 | IEPL 1.7X | CM"
+  - "🇰🇷韩国 03 | IEPL 0.8X | CM"
+  - "🇫🇷法国 01 | IEPL 1.7X | CM"
+  - "🇫🇷法国 02 | IEPL 0.8X | CM"
+  - "🇦🇪迪拜 01 | IEPL 1.7X | CM"
+  - "🇦🇪迪拜 02 | IEPL 0.8X | CM"
+  - "🇬🇧英国 01 | IEPL 1.7X | CM"
+  - "🇬🇧英国 02 | IEPL 0.8X | CM"
+  - "🇮🇳印度 01 | IEPL 1.7X | CM"
+  - "🇮🇳印度 02 | IEPL 1.7X | CM"
+  - "🇮🇳印度 03 | IEPL 1.7X | CM"
+- name: "AUTO"
+  type: "url-test"
+  url: "http://www.gstatic.com/generate_204"
+  interval: 300
+  tolerance: 50
+  proxies:
+  - "剩余流量：256.32 GB"
+  - "距离下次重置剩余：7 天"
+  - "套餐到期：2025-04-10"
+  - "官網: www.cyberguard.best"
+  - "🇭🇰香港 01 | IEPL + UDP 1X | CM"
+  - "🇭🇰香港 02 | IEPL + UDP 1X | CM"
+  - "🇭🇰香港 03 | IEPL 3X | CM"
+  - "🇭🇰香港 04 | IEPL 3X | CM"
+  - "🇭🇰香港 05 | IEPL 3.1X | BGP"
+  - "🇭🇰香港 06 | IEPL 3.1X | BGP"
+  - "🇼🇸台湾 01 | IEPL 1X | CM"
+  - "🇼🇸台湾 02 | IPLC + UDP 3X | CM"
+  - "🇯🇵日本 01 | ISP + UDP 1X | CM"
+  - "🇯🇵日本 02 | ISP + UDP 3.1X | CM"
+  - "🇸🇬新加坡 01 | IPLC + UDP 3.1X | CT"
+  - "🇸🇬新加坡 02 | IPLC + UDP 3.1X | CT"
+  - "🇺🇸美国 01 | IEPL 1.7X | CM"
+  - "🇺🇸美国 02 | IEPL 1.7X | CM"
+  - "🇺🇸美国 03 | IEPL 0.8X | CM"
+  - "🇦🇺澳大利亚 01 | IEPL 1.7X | CM"
+  - "🇦🇺澳大利亚 02 | IEPL 0.8X | CM"
+  - "🇩🇪德国 01 | IEPL 1.7X | CM"
+  - "🇩🇪德国 02 | IEPL 0.8X | CM"
+  - "🇰🇷韩国 01 | IEPL 1.7X | CM"
+  - "🇰🇷韩国 02 | IEPL 1.7X | CM"
+  - "🇰🇷韩国 03 | IEPL 0.8X | CM"
+  - "🇫🇷法国 01 | IEPL 1.7X | CM"
+  - "🇫🇷法国 02 | IEPL 0.8X | CM"
+  - "🇦🇪迪拜 01 | IEPL 1.7X | CM"
+  - "🇦🇪迪拜 02 | IEPL 0.8X | CM"
+  - "🇬🇧英国 01 | IEPL 1.7X | CM"
+  - "🇬🇧英国 02 | IEPL 0.8X | CM"
+  - "🇮🇳印度 01 | IEPL 1.7X | CM"
+  - "🇮🇳印度 02 | IEPL 1.7X | CM"
+  - "🇮🇳印度 03 | IEPL 1.7X | CM"
+- name: "AI"
+  type: "select"
+  proxies:
+  - "剩余流量：256.32 GB"
+  - "距离下次重置剩余：7 天"
+  - "套餐到期：2025-04-10"
+  - "官網: www.cyberguard.best"
+  - "🇭🇰香港 01 | IEPL + UDP 1X | CM"
+  - "🇭🇰香港 02 | IEPL + UDP 1X | CM"
+  - "🇭🇰香港 03 | IEPL 3X | CM"
+  - "🇭🇰香港 04 | IEPL 3X | CM"
+  - "🇭🇰香港 05 | IEPL 3.1X | BGP"
+  - "🇭🇰香港 06 | IEPL 3.1X | BGP"
+  - "🇼🇸台湾 01 | IEPL 1X | CM"
+  - "🇼🇸台湾 02 | IPLC + UDP 3X | CM"
+  - "🇯🇵日本 01 | ISP + UDP 1X | CM"
+  - "🇯🇵日本 02 | ISP + UDP 3.1X | CM"
+  - "🇸🇬新加坡 01 | IPLC + UDP 3.1X | CT"
+  - "🇸🇬新加坡 02 | IPLC + UDP 3.1X | CT"
+  - "🇺🇸美国 01 | IEPL 1.7X | CM"
+  - "🇺🇸美国 02 | IEPL 1.7X | CM"
+  - "🇺🇸美国 03 | IEPL 0.8X | CM"
+  - "🇦🇺澳大利亚 01 | IEPL 1.7X | CM"
+  - "🇦🇺澳大利亚 02 | IEPL 0.8X | CM"
+  - "🇩🇪德国 01 | IEPL 1.7X | CM"
+  - "🇩🇪德国 02 | IEPL 0.8X | CM"
+  - "🇰🇷韩国 01 | IEPL 1.7X | CM"
+  - "🇰🇷韩国 02 | IEPL 1.7X | CM"
+  - "🇰🇷韩国 03 | IEPL 0.8X | CM"
+  - "🇫🇷法国 01 | IEPL 1.7X | CM"
+  - "🇫🇷法国 02 | IEPL 0.8X | CM"
+  - "🇦🇪迪拜 01 | IEPL 1.7X | CM"
+  - "🇦🇪迪拜 02 | IEPL 0.8X | CM"
+  - "🇬🇧英国 01 | IEPL 1.7X | CM"
+  - "🇬🇧英国 02 | IEPL 0.8X | CM"
+  - "🇮🇳印度 01 | IEPL 1.7X | CM"
+  - "🇮🇳印度 02 | IEPL 1.7X | CM"
+  - "🇮🇳印度 03 | IEPL 1.7X | CM"
+rules:
+- "GEOSITE,CATEGORY-ADS-ALL,REJECT"
+- "DOMAIN-SUFFIX,ushd.xmsl.org,DIRECT"
+- "DOMAIN-SUFFIX,cf.gtlx.org,DIRECT"
+- "DOMAIN-SUFFIX,public-operation-hkrpg-sg.hoyoverse.com,DIRECT"
+- "DOMAIN-SUFFIX,public-operation-hk4e-sg.hoyoverse.com,DIRECT"
+- "DOMAIN-SUFFIX,public-operation-nap-sg.hoyoverse.com,DIRECT"
+- "DST-PORT,23301/22101-22102/20501/21601-21606,DIRECT"
+- "DOMAIN-KEYWORD,hoyoverse.com,PROXY"
+- "GEOSITE,OPENAI,AI"
+- "GEOSITE,GOOGLE-GEMINI,AI"
+- "GEOSITE,GOOGLEFCM,DIRECT"
+- "GEOSITE,PRIVATE,DIRECT"
+- "GEOSITE,CN,DIRECT"
+- "GEOIP,PRIVATE,DIRECT,no-resolve"
+- "GEOIP,CN,DIRECT"
+- "MATCH,PROXY"

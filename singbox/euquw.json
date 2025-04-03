@@ -1,0 +1,748 @@
+{
+  "log": {},
+  "dns": {
+    "servers": [
+      {
+        "tag": "dns_proxy",
+        "type": "https",
+        "server": "1.1.1.1",
+        "detour": "select"
+      },
+      {
+        "tag": "dns_direct",
+        "type": "https",
+        "server": "223.5.5.5"
+      },
+      {
+        "tag": "dns_fakeip",
+        "type": "fakeip",
+        "inet4_range": "198.18.0.0/15",
+        "inet6_range": "fc00::/18"
+      }
+    ],
+    "rules": [
+      {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "query_type": "HTTPS"
+          },
+          {
+            "rule_set": [
+              "geosite-category-ads-all"
+            ]
+          }
+        ],
+        "action": "reject"
+      },
+      {
+        "query_type": [
+          "A",
+          "AAAA"
+        ],
+        "server": "dns_fakeip",
+        "rewrite_ttl": 1
+      },
+      {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "clash_mode": "Global"
+          }
+        ],
+        "server": "dns_proxy"
+      },
+      {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "clash_mode": "Direct"
+          },
+          {
+            "rule_set": [
+              "geosite-cn"
+            ]
+          }
+        ],
+        "server": "dns_direct"
+      }
+    ],
+    "strategy": "ipv4_only",
+    "independent_cache": true
+  },
+  "inbounds": [
+    {
+      "type": "tun",
+      "address": [
+        "172.18.0.1/30",
+        "fdfe:dcba:9876::1/126"
+      ],
+      "auto_route": true,
+      "strict_route": true,
+      "route_exclude_address": [
+        "192.168.0.0/16",
+        "fc00::/7"
+      ]
+    }
+  ],
+  "outbounds": [
+    {
+      "method": "chacha20-ietf-poly1305",
+      "password": "6d676500-f6a9-4a8f-ae4e-3d04e50a038c",
+      "server": "xx.9800x3d.xyz",
+      "server_port": 52000,
+      "tag": "[ss]剩余流量：225.62 GB",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "chacha20-ietf-poly1305",
+      "password": "6d676500-f6a9-4a8f-ae4e-3d04e50a038c",
+      "server": "xx.9800x3d.xyz",
+      "server_port": 52000,
+      "tag": "[ss]距离下次重置剩余：8 天",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "chacha20-ietf-poly1305",
+      "password": "6d676500-f6a9-4a8f-ae4e-3d04e50a038c",
+      "server": "xx.9800x3d.xyz",
+      "server_port": 52000,
+      "tag": "[ss]套餐到期：2026-04-11",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "chacha20-ietf-poly1305",
+      "password": "6d676500-f6a9-4a8f-ae4e-3d04e50a038c",
+      "server": "xx.9800x3d.xyz",
+      "server_port": 52000,
+      "tag": "[ss]如果看不到香港1",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "chacha20-ietf-poly1305",
+      "password": "6d676500-f6a9-4a8f-ae4e-3d04e50a038c",
+      "server": "zz.9800x3d.xyz",
+      "server_port": 52001,
+      "tag": "[ss]请更新代理软件",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "2022-blake3-aes-128-gcm",
+      "password": "ZjUyOWZkMzlhYzQ3NDFmNA==:NmQ2NzY1MDAtZjZhOS00YQ==",
+      "server": "xx.9800x3d.xyz",
+      "server_port": 10000,
+      "tag": "[ss]香港1",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "2022-blake3-aes-128-gcm",
+      "password": "ZjUyOWZkMzlhYzQ3NDFmNA==:NmQ2NzY1MDAtZjZhOS00YQ==",
+      "server": "zz.9800x3d.xyz",
+      "server_port": 10001,
+      "tag": "[ss]香港2",
+      "type": "shadowsocks"
+    },
+    {
+      "password": "6d676500-f6a9-4a8f-ae4e-3d04e50a038c",
+      "server": "xx.9800x3d.xyz",
+      "server_port": 10010,
+      "tag": "[trojan]香港3",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "xx.9800x3d.xyz"
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "6d676500-f6a9-4a8f-ae4e-3d04e50a038c",
+      "server": "zz.9800x3d.xyz",
+      "server_port": 10011,
+      "tag": "[trojan]香港4",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "zz.9800x3d.xyz"
+      },
+      "type": "trojan"
+    },
+    {
+      "method": "chacha20-ietf-poly1305",
+      "password": "6d676500-f6a9-4a8f-ae4e-3d04e50a038c",
+      "server": "xx.9800x3d.xyz",
+      "server_port": 11000,
+      "tag": "[ss]香港5",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "chacha20-ietf-poly1305",
+      "password": "6d676500-f6a9-4a8f-ae4e-3d04e50a038c",
+      "server": "zz.9800x3d.xyz",
+      "server_port": 11001,
+      "tag": "[ss]香港6",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "2022-blake3-aes-128-gcm",
+      "password": "MTVhZTQ5OWM3NzAxNGY2ZA==:NmQ2NzY1MDAtZjZhOS00YQ==",
+      "server": "xx.9800x3d.xyz",
+      "server_port": 31000,
+      "tag": "[ss]澳门1",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "2022-blake3-aes-128-gcm",
+      "password": "MTVhZTQ5OWM3NzAxNGY2ZA==:NmQ2NzY1MDAtZjZhOS00YQ==",
+      "server": "zz.9800x3d.xyz",
+      "server_port": 31001,
+      "tag": "[ss]澳门2",
+      "type": "shadowsocks"
+    },
+    {
+      "password": "6d676500-f6a9-4a8f-ae4e-3d04e50a038c",
+      "server": "xx.9800x3d.xyz",
+      "server_port": 31010,
+      "tag": "[trojan]澳门3",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "xx.9800x3d.xyz"
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "6d676500-f6a9-4a8f-ae4e-3d04e50a038c",
+      "server": "zz.9800x3d.xyz",
+      "server_port": 31011,
+      "tag": "[trojan]澳门4",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "zz.9800x3d.xyz"
+      },
+      "type": "trojan"
+    },
+    {
+      "down_mbps": 1000,
+      "password": "6d676500-f6a9-4a8f-ae4e-3d04e50a038c",
+      "server": "hk.9800x3d.xyz",
+      "server_port": 50001,
+      "tag": "[Hy2]香港直连1",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "hk.9800x3d.xyz"
+      },
+      "type": "hysteria2",
+      "up_mbps": 1000
+    },
+    {
+      "down_mbps": 1000,
+      "password": "6d676500-f6a9-4a8f-ae4e-3d04e50a038c",
+      "server": "mg.9800x3d.xyz",
+      "server_port": 50001,
+      "tag": "[Hy2]美国直连1",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "mg.9800x3d.xyz"
+      },
+      "type": "hysteria2",
+      "up_mbps": 1000
+    },
+    {
+      "down_mbps": 1000,
+      "password": "6d676500-f6a9-4a8f-ae4e-3d04e50a038c",
+      "server": "aom.9800x3d.xyz",
+      "server_port": 50001,
+      "tag": "[Hy2]澳门直连1",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "aom.9800x3d.xyz"
+      },
+      "type": "hysteria2",
+      "up_mbps": 1000
+    },
+    {
+      "down_mbps": 2000,
+      "password": "6d676500-f6a9-4a8f-ae4e-3d04e50a038c",
+      "server": "rb.9800x3d.xyz",
+      "server_port": 50000,
+      "tag": "[Hy2]日本直连1",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "rb.9800x3d.xyz"
+      },
+      "type": "hysteria2",
+      "up_mbps": 2000
+    },
+    {
+      "down_mbps": 1000,
+      "password": "6d676500-f6a9-4a8f-ae4e-3d04e50a038c",
+      "server": "hg.9800x3d.xyz",
+      "server_port": 50000,
+      "tag": "[Hy2]韩国直连1",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "hg.9800x3d.xyz"
+      },
+      "type": "hysteria2",
+      "up_mbps": 1000
+    },
+    {
+      "method": "chacha20-ietf-poly1305",
+      "password": "6d676500-f6a9-4a8f-ae4e-3d04e50a038c",
+      "server": "xx.9800x3d.xyz",
+      "server_port": 51100,
+      "tag": "[ss]新加坡1",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "chacha20-ietf-poly1305",
+      "password": "6d676500-f6a9-4a8f-ae4e-3d04e50a038c",
+      "server": "zz.9800x3d.xyz",
+      "server_port": 51101,
+      "tag": "[ss]新加坡2",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "2022-blake3-aes-128-gcm",
+      "password": "YTQ2ZWY1YWMzODc0MDcxNg==:NmQ2NzY1MDAtZjZhOS00YQ==",
+      "server": "xx.9800x3d.xyz",
+      "server_port": 11110,
+      "tag": "[ss]台湾家宽1",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "2022-blake3-aes-128-gcm",
+      "password": "YTQ2ZWY1YWMzODc0MDcxNg==:NmQ2NzY1MDAtZjZhOS00YQ==",
+      "server": "zz.9800x3d.xyz",
+      "server_port": 11111,
+      "tag": "[ss]台湾家宽2",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "2022-blake3-aes-128-gcm",
+      "password": "Y2QzYTFjYjg2NGIzMzc4ZQ==:NmQ2NzY1MDAtZjZhOS00YQ==",
+      "server": "xx.9800x3d.xyz",
+      "server_port": 50000,
+      "tag": "[ss]日本1",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "2022-blake3-aes-128-gcm",
+      "password": "Y2QzYTFjYjg2NGIzMzc4ZQ==:NmQ2NzY1MDAtZjZhOS00YQ==",
+      "server": "zz.9800x3d.xyz",
+      "server_port": 50001,
+      "tag": "[ss]日本2",
+      "type": "shadowsocks"
+    },
+    {
+      "password": "6d676500-f6a9-4a8f-ae4e-3d04e50a038c",
+      "server": "xx.9800x3d.xyz",
+      "server_port": 50010,
+      "tag": "[trojan]日本3",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "xx.9800x3d.xyz"
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "6d676500-f6a9-4a8f-ae4e-3d04e50a038c",
+      "server": "zz.9800x3d.xyz",
+      "server_port": 50011,
+      "tag": "[trojan]日本4",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "zz.9800x3d.xyz"
+      },
+      "type": "trojan"
+    },
+    {
+      "method": "2022-blake3-aes-128-gcm",
+      "password": "MTFiNGYyODM5NjE2ZDgzNg==:NmQ2NzY1MDAtZjZhOS00YQ==",
+      "server": "xx.9800x3d.xyz",
+      "server_port": 26488,
+      "tag": "[ss]美国1",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "2022-blake3-aes-128-gcm",
+      "password": "MTFiNGYyODM5NjE2ZDgzNg==:NmQ2NzY1MDAtZjZhOS00YQ==",
+      "server": "zz.9800x3d.xyz",
+      "server_port": 40001,
+      "tag": "[ss]美国2",
+      "type": "shadowsocks"
+    },
+    {
+      "password": "6d676500-f6a9-4a8f-ae4e-3d04e50a038c",
+      "server": "xx.9800x3d.xyz",
+      "server_port": 40010,
+      "tag": "[trojan]美国3",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "xx.9800x3d.xyz"
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "6d676500-f6a9-4a8f-ae4e-3d04e50a038c",
+      "server": "zz.9800x3d.xyz",
+      "server_port": 40011,
+      "tag": "[trojan]美国4",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "zz.9800x3d.xyz"
+      },
+      "type": "trojan"
+    },
+    {
+      "method": "chacha20-ietf-poly1305",
+      "password": "6d676500-f6a9-4a8f-ae4e-3d04e50a038c",
+      "server": "xx.9800x3d.xyz",
+      "server_port": 54000,
+      "tag": "[ss]美国5",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "chacha20-ietf-poly1305",
+      "password": "6d676500-f6a9-4a8f-ae4e-3d04e50a038c",
+      "server": "zz.9800x3d.xyz",
+      "server_port": 54001,
+      "tag": "[ss]美国6",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "2022-blake3-aes-128-gcm",
+      "password": "MTc1NTY3MzhlNDY2Yzk0Mw==:NmQ2NzY1MDAtZjZhOS00YQ==",
+      "server": "xx.9800x3d.xyz",
+      "server_port": 20000,
+      "tag": "[ss]韩国1",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "2022-blake3-aes-128-gcm",
+      "password": "MTc1NTY3MzhlNDY2Yzk0Mw==:NmQ2NzY1MDAtZjZhOS00YQ==",
+      "server": "zz.9800x3d.xyz",
+      "server_port": 20001,
+      "tag": "[ss]韩国2",
+      "type": "shadowsocks"
+    },
+    {
+      "password": "6d676500-f6a9-4a8f-ae4e-3d04e50a038c",
+      "server": "xx.9800x3d.xyz",
+      "server_port": 21000,
+      "tag": "[trojan]韩国3",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "xx.9800x3d.xyz"
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "6d676500-f6a9-4a8f-ae4e-3d04e50a038c",
+      "server": "zz.9800x3d.xyz",
+      "server_port": 21001,
+      "tag": "[trojan]韩国4",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "zz.9800x3d.xyz"
+      },
+      "type": "trojan"
+    },
+    {
+      "tag": "select",
+      "type": "selector",
+      "default": "auto",
+      "outbounds": [
+        "auto",
+        "[ss]剩余流量：225.62 GB",
+        "[ss]距离下次重置剩余：8 天",
+        "[ss]套餐到期：2026-04-11",
+        "[ss]如果看不到香港1",
+        "[ss]请更新代理软件",
+        "[ss]香港1",
+        "[ss]香港2",
+        "[trojan]香港3",
+        "[trojan]香港4",
+        "[ss]香港5",
+        "[ss]香港6",
+        "[ss]澳门1",
+        "[ss]澳门2",
+        "[trojan]澳门3",
+        "[trojan]澳门4",
+        "[Hy2]香港直连1",
+        "[Hy2]美国直连1",
+        "[Hy2]澳门直连1",
+        "[Hy2]日本直连1",
+        "[Hy2]韩国直连1",
+        "[ss]新加坡1",
+        "[ss]新加坡2",
+        "[ss]台湾家宽1",
+        "[ss]台湾家宽2",
+        "[ss]日本1",
+        "[ss]日本2",
+        "[trojan]日本3",
+        "[trojan]日本4",
+        "[ss]美国1",
+        "[ss]美国2",
+        "[trojan]美国3",
+        "[trojan]美国4",
+        "[ss]美国5",
+        "[ss]美国6",
+        "[ss]韩国1",
+        "[ss]韩国2",
+        "[trojan]韩国3",
+        "[trojan]韩国4"
+      ]
+    },
+    {
+      "tag": "auto",
+      "type": "urltest",
+      "outbounds": [
+        "[ss]剩余流量：225.62 GB",
+        "[ss]距离下次重置剩余：8 天",
+        "[ss]套餐到期：2026-04-11",
+        "[ss]如果看不到香港1",
+        "[ss]请更新代理软件",
+        "[ss]香港1",
+        "[ss]香港2",
+        "[trojan]香港3",
+        "[trojan]香港4",
+        "[ss]香港5",
+        "[ss]香港6",
+        "[ss]澳门1",
+        "[ss]澳门2",
+        "[trojan]澳门3",
+        "[trojan]澳门4",
+        "[Hy2]香港直连1",
+        "[Hy2]美国直连1",
+        "[Hy2]澳门直连1",
+        "[Hy2]日本直连1",
+        "[Hy2]韩国直连1",
+        "[ss]新加坡1",
+        "[ss]新加坡2",
+        "[ss]台湾家宽1",
+        "[ss]台湾家宽2",
+        "[ss]日本1",
+        "[ss]日本2",
+        "[trojan]日本3",
+        "[trojan]日本4",
+        "[ss]美国1",
+        "[ss]美国2",
+        "[trojan]美国3",
+        "[trojan]美国4",
+        "[ss]美国5",
+        "[ss]美国6",
+        "[ss]韩国1",
+        "[ss]韩国2",
+        "[trojan]韩国3",
+        "[trojan]韩国4"
+      ]
+    },
+    {
+      "tag": "ai",
+      "type": "selector",
+      "outbounds": [
+        "[ss]剩余流量：225.62 GB",
+        "[ss]距离下次重置剩余：8 天",
+        "[ss]套餐到期：2026-04-11",
+        "[ss]如果看不到香港1",
+        "[ss]请更新代理软件",
+        "[ss]香港1",
+        "[ss]香港2",
+        "[trojan]香港3",
+        "[trojan]香港4",
+        "[ss]香港5",
+        "[ss]香港6",
+        "[ss]澳门1",
+        "[ss]澳门2",
+        "[trojan]澳门3",
+        "[trojan]澳门4",
+        "[Hy2]香港直连1",
+        "[Hy2]美国直连1",
+        "[Hy2]澳门直连1",
+        "[Hy2]日本直连1",
+        "[Hy2]韩国直连1",
+        "[ss]新加坡1",
+        "[ss]新加坡2",
+        "[ss]台湾家宽1",
+        "[ss]台湾家宽2",
+        "[ss]日本1",
+        "[ss]日本2",
+        "[trojan]日本3",
+        "[trojan]日本4",
+        "[ss]美国1",
+        "[ss]美国2",
+        "[trojan]美国3",
+        "[trojan]美国4",
+        "[ss]美国5",
+        "[ss]美国6",
+        "[ss]韩国1",
+        "[ss]韩国2",
+        "[trojan]韩国3",
+        "[trojan]韩国4"
+      ]
+    },
+    {
+      "tag": "direct",
+      "type": "direct"
+    }
+  ],
+  "route": {
+    "rules": [
+      {
+        "action": "sniff"
+      },
+      {
+        "protocol": "dns",
+        "action": "hijack-dns"
+      },
+      {
+        "action": "resolve",
+        "strategy": "ipv4_only"
+      },
+      {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "domain_suffix": [
+              "ushd.xmsl.org",
+              "cf.gtlx.org",
+              "public-operation-hkrpg-sg.hoyoverse.com",
+              "public-operation-hk4e-sg.hoyoverse.com",
+              "public-operation-nap-sg.hoyoverse.com"
+            ]
+          },
+          {
+            "port_range": [
+              "23301:23301",
+              "22101:22102",
+              "20501:20501",
+              "21601:21606"
+            ]
+          }
+        ],
+        "outbound": "direct"
+      },
+      {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "clash_mode": "Global"
+          },
+          {
+            "domain_keyword": [
+              "hoyoverse.com"
+            ]
+          }
+        ],
+        "outbound": "select"
+      },
+      {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "rule_set": [
+              "geosite-openai",
+              "geosite-google-gemini"
+            ]
+          }
+        ],
+        "outbound": "ai"
+      },
+      {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "clash_mode": "Direct"
+          },
+          {
+            "ip_is_private": true
+          },
+          {
+            "rule_set": [
+              "geosite-googlefcm",
+              "geosite-cn",
+              "geoip-cn"
+            ]
+          }
+        ],
+        "outbound": "direct"
+      }
+    ],
+    "rule_set": [
+      {
+        "type": "remote",
+        "tag": "geoip-cn",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/lyc8503/sing-box-rules/rule-set-geoip/geoip-cn.srs",
+        "download_detour": "select"
+      },
+      {
+        "type": "remote",
+        "tag": "geosite-cn",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/lyc8503/sing-box-rules/rule-set-geosite/geosite-cn.srs",
+        "download_detour": "select"
+      },
+      {
+        "type": "remote",
+        "tag": "geosite-openai",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/lyc8503/sing-box-rules/rule-set-geosite/geosite-openai.srs",
+        "download_detour": "select"
+      },
+      {
+        "type": "remote",
+        "tag": "geosite-google-gemini",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/lyc8503/sing-box-rules/rule-set-geosite/geosite-google-gemini.srs",
+        "download_detour": "select"
+      },
+      {
+        "type": "remote",
+        "tag": "geosite-googlefcm",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/lyc8503/sing-box-rules/rule-set-geosite/geosite-googlefcm.srs",
+        "download_detour": "select"
+      },
+      {
+        "type": "remote",
+        "tag": "geosite-category-ads-all",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/lyc8503/sing-box-rules/rule-set-geosite/geosite-category-ads-all.srs",
+        "download_detour": "select"
+      }
+    ],
+    "final": "select",
+    "default_domain_resolver": "dns_direct",
+    "auto_detect_interface": true,
+    "override_android_vpn": true
+  },
+  "experimental": {
+    "cache_file": {
+      "enabled": true
+    },
+    "clash_api": {
+      "external_controller": "127.0.0.1:9090"
+    }
+  }
+}
