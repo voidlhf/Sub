@@ -13,6 +13,21 @@ def download(url, output):
     except Exception as e:
         print(f"下载失败：{e}")
 
+def remove_lines_after_keyword(file_path, keyword):
+    try:
+        with open(file_path, 'r', encoding='utf-8') as file:
+            lines = file.readlines()
+
+        for i, line in enumerate(lines):
+            if keyword in line:
+                lines = lines[:i]
+                break
+
+        with open(file_path, 'w', encoding='utf-8') as file:
+            file.writelines(lines)
+    except Exception as e:
+        print(f"处理文件失败：{e}")
+
 def get_stb_id():
     try:
         script_dir = os.path.dirname(os.path.abspath(sys.argv[0]))
@@ -34,6 +49,9 @@ def get_stb_id():
                 zip_ref.extract('iptv.txt', extract_path, pwd="xfflchVCWG9941".encode())
             else:
                 print("未找到 iptv.txt")
+
+        iptv_file_path = os.path.join(extract_path, 'iptv.txt')
+        remove_lines_after_keyword(iptv_file_path, '卫视,#genre#')
 
         if os.path.exists(zip_path):
             os.remove(zip_path)
