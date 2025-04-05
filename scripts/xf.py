@@ -1,0 +1,48 @@
+import requests
+import zipfile
+import os
+import sys
+
+def download(url, output):
+    try:
+        response = requests.get(url, stream=True)
+        response.raise_for_status()
+        with open(output, 'wb') as f:
+            for chunk in response.iter_content(chunk_size=8192):
+                f.write(chunk)
+    except Exception as e:
+        print(f"下载失败：{e}")
+
+def get_stb_id():
+    try:
+        script_dir = os.path.dirname(os.path.abspath(sys.argv[0]))
+        os.chdir(script_dir)
+
+        parent_dir = os.path.dirname(script_dir)
+        live_dir = os.path.join(parent_dir, 'live')
+        if not os.path.exists(live_dir):
+            os.makedirs(live_dir)
+
+        zip_path = './iptv.zip'
+        extract_path = live_dir
+
+        download("http://api.y977.com/iptv.txt.zip", zip_path)
+
+        with zipfile.ZipFile(zip_path, 'r') as zip_ref:
+            file_list = zip_ref.namelist()
+            if 'iptv.txt' in file_list:
+                zip_ref.extract('iptv.txt', extract_path, pwd="xfflchVCWG9941".encode())
+            else:
+                print("未找到 iptv.txt")
+
+        if os.path.exists(zip_path):
+            os.remove(zip_path)
+
+    except Exception as e:
+        print(f"解压失败：{e}")
+
+def main():
+    get_stb_id()
+
+if __name__ == "__main__":
+    main()

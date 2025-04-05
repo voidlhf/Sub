@@ -30,6 +30,7 @@ process_json() {
   done
 }
 
+python scripts/xf.py
 process_json "sub-zs.json" "../mihomo" "mihomo"
 process_json "sub.json" "../mihomo" "mihomo"
 process_json "sub.json" "../singbox" "singbox"
