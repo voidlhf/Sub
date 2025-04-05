@@ -28,6 +28,18 @@ def remove_lines_after_keyword(file_path, keyword):
     except Exception as e:
         print(f"处理文件失败：{e}")
 
+def remove_lines_containing_url(file_path, url):
+    try:
+        with open(file_path, 'r', encoding='utf-8') as file:
+            lines = file.readlines()
+
+        lines = [line for line in lines if url not in line]
+
+        with open(file_path, 'w', encoding='utf-8') as file:
+            file.writelines(lines)
+    except Exception as e:
+        print(f"删除包含URL的行失败：{e}")
+
 def get_stb_id():
     try:
         script_dir = os.path.dirname(os.path.abspath(sys.argv[0]))
@@ -52,6 +64,7 @@ def get_stb_id():
 
         iptv_file_path = os.path.join(extract_path, 'iptv.txt')
         remove_lines_after_keyword(iptv_file_path, '卫视,#genre#')
+        remove_lines_containing_url(iptv_file_path, "http://ottrrs.hl.chinamobile.com")
 
         if os.path.exists(zip_path):
             os.remove(zip_path)
