@@ -57,6 +57,7 @@ proxies:
 - {name: "t.me/freeyule", server: "shenzhou05.mysynology.net", port: 37809, type: "vless", uuid: "459b4a80-bd61-4ecd-a26b-e9c1809d9e45", tls: true, tfo: false, flow: "xtls-rprx-vision", skip-cert-verify: true, reality-opts: {public-key: "qhTzYYIgBzDLNYR79oxftqdo1kzL-1_hGJKfqrOliCY"}, servername: "www.yahoo.com", client-fingerprint: "chrome", network: "tcp"}
 - {name: "🇭🇰 香港 电信", server: "hn.jiasu.eu", port: 45673, type: "vless", uuid: "fcb8ded6-2984-4e78-8386-823bd8d1652c", tls: false, tfo: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/TG-AiLuMao/", headers: {Host: "baidu.com"}}}
 - {name: "🇭🇰 香港 移动", server: "2409:8c4c:e00:804::65", port: 52451, type: "vless", uuid: "fcb8ded6-2984-4e78-8386-823bd8d1652c", tls: false, tfo: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/TG-AiLuMao/", headers: {Host: "baidu.com"}}}
+- {name: "epeius", server: "juzi8186-sr1.pages.dev", port: 443, type: "trojan", password: "juzi", sni: "juzi8186-sr1.pages.dev", alpn: ["h3"], skip-cert-verify: true, network: "ws", ws-opts: {path: "/?ed=2560&proxyip=sjc.o00o.ooo", headers: {Host: "juzi8186-sr1.pages.dev"}}}
 - {name: "🇨🇳 台湾｜01｜原生IP", server: "tw.akebi.cc", port: 30001, type: "hysteria2", password: "82febca6-8856-41fe-84df-c8bda0b72c7b", auth: "82febca6-8856-41fe-84df-c8bda0b72c7b", sni: "tw.akebi.cc", skip-cert-verify: true}
 - {name: "🇨🇳 台湾｜03｜原生IP", server: "tw3.akebi.cc", port: 5006, type: "hysteria2", password: "82febca6-8856-41fe-84df-c8bda0b72c7b", auth: "82febca6-8856-41fe-84df-c8bda0b72c7b", sni: "tw3.akebi.cc", skip-cert-verify: true}
 - {name: "🇨🇳 台湾｜04｜原生IP", server: "tw3.akebi.cc", port: 9000, type: "hysteria2", password: "82febca6-8856-41fe-84df-c8bda0b72c7b", auth: "82febca6-8856-41fe-84df-c8bda0b72c7b", sni: "tw3.akebi.cc", skip-cert-verify: true}
@@ -115,6 +116,25 @@ proxies:
 - {name: "🇨🇦 加拿大", server: "14.18.253.178", port: 8343, type: "ss", cipher: "chacha20", password: "dkYsdgWqegNV"}
 - {name: "🇦🇺 澳大利亚", server: "14.18.253.178", port: 8341, type: "ss", cipher: "chacha20", password: "zWyQvJbQRZaV"}
 - {name: "🇫🇷 法国巴黎", server: "14.18.253.178", port: 8347, type: "ss", cipher: "chacha20", password: "q2kSGp4ayFKB"}
+- {name: "🇸🇬 新加坡01", server: "westsg2-ddns.oraclenat.cc", port: 13533, type: "vless", uuid: "b19c4375-d847-4c40-9824-4767c88b5f38", tls: true, tfo: false, skip-cert-verify: true, reality-opts: {public-key: "s2Lr_deTRNuRBKQ15Rsx04KFcujYRFImLNVLAoGFTl8", short-id: "a81cba9c"}, servername: "www.python.org", client-fingerprint: "ios", network: "tcp"}
+- {name: "🇸🇬 新加坡02", server: "sg-a1.oci.ee", port: 10084, type: "vless", uuid: "b19c4375-d847-4c40-9824-4767c88b5f38", tls: true, tfo: false, skip-cert-verify: true, reality-opts: {public-key: "s2Lr_deTRNuRBKQ15Rsx04KFcujYRFImLNVLAoGFTl8", short-id: "a81cba9c"}, servername: "www.amazon.com", client-fingerprint: "chrome", network: "tcp"}
+- {name: "🇬🇧 英国VLess", server: "www.ak-hk.top", port: 10190, type: "vless", uuid: "b19c4375-d847-4c40-9824-4767c88b5f38", tls: true, tfo: false, skip-cert-verify: true, reality-opts: {public-key: "s2Lr_deTRNuRBKQ15Rsx04KFcujYRFImLNVLAoGFTl8", short-id: "a81cba9c"}, servername: "www.amazon.com", client-fingerprint: "ios", network: "tcp"}
+- {name: "🇿🇦 南非", server: "www.jucer001.click", port: 10190, type: "trojan", password: "b19c4375-d847-4c40-9824-4767c88b5f38", sni: "www.jucer001.click", skip-cert-verify: true}
+- {name: "🇬🇧 英国VLess 2", server: "www.ak-hk.top", port: 10190, type: "vless", uuid: "b19c4375-d847-4c40-9824-4767c88b5f38", tls: true, tfo: false, skip-cert-verify: true, reality-opts: {public-key: "s2Lr_deTRNuRBKQ15Rsx04KFcujYRFImLNVLAoGFTl8", short-id: "a81cba9c"}, servername: "www.amazon.com", client-fingerprint: "edge", network: "tcp"}
+- {name: "🇸🇬 新加坡01 2", server: "westsg2-ddns.oraclenat.cc", port: 13533, type: "vless", uuid: "b19c4375-d847-4c40-9824-4767c88b5f38", tls: true, tfo: false, skip-cert-verify: true, reality-opts: {public-key: "s2Lr_deTRNuRBKQ15Rsx04KFcujYRFImLNVLAoGFTl8", short-id: "a81cba9c"}, servername: "www.python.org", client-fingerprint: "qq", network: "tcp"}
+- {name: "🇸🇬 新加坡02 2", server: "sg-a1.oci.ee", port: 10084, type: "vless", uuid: "b19c4375-d847-4c40-9824-4767c88b5f38", tls: true, tfo: false, skip-cert-verify: true, reality-opts: {public-key: "s2Lr_deTRNuRBKQ15Rsx04KFcujYRFImLNVLAoGFTl8", short-id: "a81cba9c"}, servername: "www.amazon.com", client-fingerprint: "edge", network: "tcp"}
+- {name: "🇬🇧 英国VLess 3", server: "www.ak-hk.top", port: 10190, type: "vless", uuid: "b19c4375-d847-4c40-9824-4767c88b5f38", tls: true, tfo: false, skip-cert-verify: true, reality-opts: {public-key: "s2Lr_deTRNuRBKQ15Rsx04KFcujYRFImLNVLAoGFTl8", short-id: "a81cba9c"}, servername: "www.amazon.com", client-fingerprint: "safari", network: "tcp"}
+- {name: "🇸🇬 新加坡01 3", server: "westsg2-ddns.oraclenat.cc", port: 13533, type: "vless", uuid: "b19c4375-d847-4c40-9824-4767c88b5f38", tls: true, tfo: false, skip-cert-verify: true, reality-opts: {public-key: "s2Lr_deTRNuRBKQ15Rsx04KFcujYRFImLNVLAoGFTl8", short-id: "a81cba9c"}, servername: "www.python.org", client-fingerprint: "chrome", network: "tcp"}
+- {name: "🇸🇬 新加坡02 3", server: "sg-a1.oci.ee", port: 10084, type: "vless", uuid: "b19c4375-d847-4c40-9824-4767c88b5f38", tls: true, tfo: false, skip-cert-verify: true, reality-opts: {public-key: "s2Lr_deTRNuRBKQ15Rsx04KFcujYRFImLNVLAoGFTl8", short-id: "a81cba9c"}, servername: "www.amazon.com", client-fingerprint: "safari", network: "tcp"}
+- {name: "🇬🇧 英国VLess 4", server: "www.ak-hk.top", port: 10190, type: "vless", uuid: "b19c4375-d847-4c40-9824-4767c88b5f38", tls: true, tfo: false, skip-cert-verify: true, reality-opts: {public-key: "s2Lr_deTRNuRBKQ15Rsx04KFcujYRFImLNVLAoGFTl8", short-id: "a81cba9c"}, servername: "www.amazon.com", client-fingerprint: "qq", network: "tcp"}
+- {name: "🇸🇬 新加坡01 4", server: "westsg2-ddns.oraclenat.cc", port: 13533, type: "vless", uuid: "b19c4375-d847-4c40-9824-4767c88b5f38", tls: true, tfo: false, skip-cert-verify: true, reality-opts: {public-key: "s2Lr_deTRNuRBKQ15Rsx04KFcujYRFImLNVLAoGFTl8", short-id: "a81cba9c"}, servername: "www.python.org", client-fingerprint: "safari", network: "tcp"}
+- {name: "🇸🇬 新加坡02 4", server: "sg-a1.oci.ee", port: 10084, type: "vless", uuid: "b19c4375-d847-4c40-9824-4767c88b5f38", tls: true, tfo: false, skip-cert-verify: true, reality-opts: {public-key: "s2Lr_deTRNuRBKQ15Rsx04KFcujYRFImLNVLAoGFTl8", short-id: "a81cba9c"}, servername: "www.amazon.com", client-fingerprint: "firefox", network: "tcp"}
+- {name: "🇬🇧 英国VLess 5", server: "www.ak-hk.top", port: 10190, type: "vless", uuid: "b19c4375-d847-4c40-9824-4767c88b5f38", tls: true, tfo: false, skip-cert-verify: true, reality-opts: {public-key: "s2Lr_deTRNuRBKQ15Rsx04KFcujYRFImLNVLAoGFTl8", short-id: "a81cba9c"}, servername: "www.amazon.com", client-fingerprint: "firefox", network: "tcp"}
+- {name: "🇸🇬 新加坡01 5", server: "westsg2-ddns.oraclenat.cc", port: 13533, type: "vless", uuid: "b19c4375-d847-4c40-9824-4767c88b5f38", tls: true, tfo: false, skip-cert-verify: true, reality-opts: {public-key: "s2Lr_deTRNuRBKQ15Rsx04KFcujYRFImLNVLAoGFTl8", short-id: "a81cba9c"}, servername: "www.python.org", client-fingerprint: "edge", network: "tcp"}
+- {name: "🇸🇬 新加坡02 5", server: "sg-a1.oci.ee", port: 10084, type: "vless", uuid: "b19c4375-d847-4c40-9824-4767c88b5f38", tls: true, tfo: false, skip-cert-verify: true, reality-opts: {public-key: "s2Lr_deTRNuRBKQ15Rsx04KFcujYRFImLNVLAoGFTl8", short-id: "a81cba9c"}, servername: "www.amazon.com", client-fingerprint: "ios", network: "tcp"}
+- {name: "🇸🇬 新加坡02 6", server: "sg-a1.oci.ee", port: 10084, type: "vless", uuid: "b19c4375-d847-4c40-9824-4767c88b5f38", tls: true, tfo: false, skip-cert-verify: true, reality-opts: {public-key: "s2Lr_deTRNuRBKQ15Rsx04KFcujYRFImLNVLAoGFTl8", short-id: "a81cba9c"}, servername: "www.amazon.com", client-fingerprint: "qq", network: "tcp"}
+- {name: "🇬🇧 英国VLess 6", server: "www.ak-hk.top", port: 10190, type: "vless", uuid: "b19c4375-d847-4c40-9824-4767c88b5f38", tls: true, tfo: false, skip-cert-verify: true, reality-opts: {public-key: "s2Lr_deTRNuRBKQ15Rsx04KFcujYRFImLNVLAoGFTl8", short-id: "a81cba9c"}, servername: "www.amazon.com", client-fingerprint: "chrome", network: "tcp"}
+- {name: "🇸🇬 新加坡01 6", server: "westsg2-ddns.oraclenat.cc", port: 13533, type: "vless", uuid: "b19c4375-d847-4c40-9824-4767c88b5f38", tls: true, tfo: false, skip-cert-verify: true, reality-opts: {public-key: "s2Lr_deTRNuRBKQ15Rsx04KFcujYRFImLNVLAoGFTl8", short-id: "a81cba9c"}, servername: "www.python.org", client-fingerprint: "firefox", network: "tcp"}
 proxy-groups:
 - name: "PROXY"
   type: "select"
@@ -124,6 +144,7 @@ proxy-groups:
   - "t.me/freeyule"
   - "🇭🇰 香港 电信"
   - "🇭🇰 香港 移动"
+  - "epeius"
   - "🇨🇳 台湾｜01｜原生IP"
   - "🇨🇳 台湾｜03｜原生IP"
   - "🇨🇳 台湾｜04｜原生IP"
@@ -182,6 +203,25 @@ proxy-groups:
   - "🇨🇦 加拿大"
   - "🇦🇺 澳大利亚"
   - "🇫🇷 法国巴黎"
+  - "🇸🇬 新加坡01"
+  - "🇸🇬 新加坡02"
+  - "🇬🇧 英国VLess"
+  - "🇿🇦 南非"
+  - "🇬🇧 英国VLess 2"
+  - "🇸🇬 新加坡01 2"
+  - "🇸🇬 新加坡02 2"
+  - "🇬🇧 英国VLess 3"
+  - "🇸🇬 新加坡01 3"
+  - "🇸🇬 新加坡02 3"
+  - "🇬🇧 英国VLess 4"
+  - "🇸🇬 新加坡01 4"
+  - "🇸🇬 新加坡02 4"
+  - "🇬🇧 英国VLess 5"
+  - "🇸🇬 新加坡01 5"
+  - "🇸🇬 新加坡02 5"
+  - "🇸🇬 新加坡02 6"
+  - "🇬🇧 英国VLess 6"
+  - "🇸🇬 新加坡01 6"
 - name: "AUTO"
   type: "url-test"
   url: "http://www.gstatic.com/generate_204"
@@ -192,6 +232,7 @@ proxy-groups:
   - "t.me/freeyule"
   - "🇭🇰 香港 电信"
   - "🇭🇰 香港 移动"
+  - "epeius"
   - "🇨🇳 台湾｜01｜原生IP"
   - "🇨🇳 台湾｜03｜原生IP"
   - "🇨🇳 台湾｜04｜原生IP"
@@ -250,6 +291,25 @@ proxy-groups:
   - "🇨🇦 加拿大"
   - "🇦🇺 澳大利亚"
   - "🇫🇷 法国巴黎"
+  - "🇸🇬 新加坡01"
+  - "🇸🇬 新加坡02"
+  - "🇬🇧 英国VLess"
+  - "🇿🇦 南非"
+  - "🇬🇧 英国VLess 2"
+  - "🇸🇬 新加坡01 2"
+  - "🇸🇬 新加坡02 2"
+  - "🇬🇧 英国VLess 3"
+  - "🇸🇬 新加坡01 3"
+  - "🇸🇬 新加坡02 3"
+  - "🇬🇧 英国VLess 4"
+  - "🇸🇬 新加坡01 4"
+  - "🇸🇬 新加坡02 4"
+  - "🇬🇧 英国VLess 5"
+  - "🇸🇬 新加坡01 5"
+  - "🇸🇬 新加坡02 5"
+  - "🇸🇬 新加坡02 6"
+  - "🇬🇧 英国VLess 6"
+  - "🇸🇬 新加坡01 6"
 - name: "AI"
   type: "select"
   proxies:
@@ -257,6 +317,7 @@ proxy-groups:
   - "t.me/freeyule"
   - "🇭🇰 香港 电信"
   - "🇭🇰 香港 移动"
+  - "epeius"
   - "🇨🇳 台湾｜01｜原生IP"
   - "🇨🇳 台湾｜03｜原生IP"
   - "🇨🇳 台湾｜04｜原生IP"
@@ -315,6 +376,25 @@ proxy-groups:
   - "🇨🇦 加拿大"
   - "🇦🇺 澳大利亚"
   - "🇫🇷 法国巴黎"
+  - "🇸🇬 新加坡01"
+  - "🇸🇬 新加坡02"
+  - "🇬🇧 英国VLess"
+  - "🇿🇦 南非"
+  - "🇬🇧 英国VLess 2"
+  - "🇸🇬 新加坡01 2"
+  - "🇸🇬 新加坡02 2"
+  - "🇬🇧 英国VLess 3"
+  - "🇸🇬 新加坡01 3"
+  - "🇸🇬 新加坡02 3"
+  - "🇬🇧 英国VLess 4"
+  - "🇸🇬 新加坡01 4"
+  - "🇸🇬 新加坡02 4"
+  - "🇬🇧 英国VLess 5"
+  - "🇸🇬 新加坡01 5"
+  - "🇸🇬 新加坡02 5"
+  - "🇸🇬 新加坡02 6"
+  - "🇬🇧 英国VLess 6"
+  - "🇸🇬 新加坡01 6"
 rules:
 - "GEOSITE,CATEGORY-ADS-ALL,REJECT"
 - "DOMAIN-SUFFIX,ushd.xmsl.org,DIRECT"
