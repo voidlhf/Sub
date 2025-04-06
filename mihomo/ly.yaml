@@ -53,7 +53,7 @@ dns:
     - "https://dns.alidns.com/dns-query"
     - "https://doh.pub/dns-query"
 proxies:
-- {name: "剩余流量：7676.21 GB", server: "tw.akebi.cc", port: 30001, sni: "tw.akebi.cc", up: 600, down: 1000, skip-cert-verify: false, type: "hysteria2", password: "82febca6-8856-41fe-84df-c8bda0b72c7b"}
+- {name: "剩余流量：7597.84 GB", server: "tw.akebi.cc", port: 30001, sni: "tw.akebi.cc", up: 600, down: 1000, skip-cert-verify: false, type: "hysteria2", password: "82febca6-8856-41fe-84df-c8bda0b72c7b"}
 - {name: "距离下次重置剩余：29 天", server: "tw.akebi.cc", port: 30001, sni: "tw.akebi.cc", up: 600, down: 1000, skip-cert-verify: false, type: "hysteria2", password: "82febca6-8856-41fe-84df-c8bda0b72c7b"}
 - {name: "套餐到期：2026-11-05", server: "tw.akebi.cc", port: 30001, sni: "tw.akebi.cc", up: 600, down: 1000, skip-cert-verify: false, type: "hysteria2", password: "82febca6-8856-41fe-84df-c8bda0b72c7b"}
 - {name: "🇹🇼台湾｜01｜原生IP", server: "tw.akebi.cc", port: 30001, sni: "tw.akebi.cc", up: 600, down: 1000, skip-cert-verify: false, type: "hysteria2", password: "82febca6-8856-41fe-84df-c8bda0b72c7b"}
@@ -63,6 +63,7 @@ proxies:
 - {name: "🇭🇰香港｜01", server: "tw.akebi.cc", port: 1000, sni: "hk03.akebi.cc", up: 600, down: 1000, skip-cert-verify: false, type: "hysteria2", password: "82febca6-8856-41fe-84df-c8bda0b72c7b"}
 - {name: "🇭🇰香港｜02", server: "tw3.akebi.cc", port: 2000, sni: "hk03.akebi.cc", up: 600, down: 1000, skip-cert-verify: false, type: "hysteria2", password: "82febca6-8856-41fe-84df-c8bda0b72c7b"}
 - {name: "🇭🇰香港｜03", server: "tw3.akebi.cc", port: 2021, sni: "hk03.akebi.cc", up: 600, down: 1000, skip-cert-verify: false, type: "hysteria2", password: "82febca6-8856-41fe-84df-c8bda0b72c7b"}
+- {name: "🇭🇰香港｜04｜BGP", server: "hkaly01.akebi.cc", port: 443, sni: "hkaly01.akebi.cc", up: 200, down: 200, skip-cert-verify: false, type: "hysteria2", password: "82febca6-8856-41fe-84df-c8bda0b72c7b"}
 - {name: "🇯🇵日本｜01", server: "tw3.akebi.cc", port: 2012, sni: "jp02.akebi.cc", up: 600, down: 1000, skip-cert-verify: false, type: "hysteria2", password: "82febca6-8856-41fe-84df-c8bda0b72c7b"}
 - {name: "🇹🇭泰国丨01｜原生IP", server: "tw3.akebi.cc", port: 2024, sni: "th.akebi.cc", up: 600, down: 1000, skip-cert-verify: true, type: "hysteria2", password: "82febca6-8856-41fe-84df-c8bda0b72c7b"}
 - {name: "🇧🇩孟加拉｜01｜住宅IP", server: "tw3.akebi.cc", port: 2019, sni: "bd.akebi.cc", up: 600, down: 1000, skip-cert-verify: true, type: "hysteria2", password: "82febca6-8856-41fe-84df-c8bda0b72c7b"}
@@ -78,7 +79,7 @@ proxy-groups:
   type: "select"
   proxies:
   - "AUTO"
-  - "剩余流量：7676.21 GB"
+  - "剩余流量：7597.84 GB"
   - "距离下次重置剩余：29 天"
   - "套餐到期：2026-11-05"
   - "🇹🇼台湾｜01｜原生IP"
@@ -88,6 +89,7 @@ proxy-groups:
   - "🇭🇰香港｜01"
   - "🇭🇰香港｜02"
   - "🇭🇰香港｜03"
+  - "🇭🇰香港｜04｜BGP"
   - "🇯🇵日本｜01"
   - "🇹🇭泰国丨01｜原生IP"
   - "🇧🇩孟加拉｜01｜住宅IP"
@@ -104,7 +106,7 @@ proxy-groups:
   interval: 300
   tolerance: 50
   proxies:
-  - "剩余流量：7676.21 GB"
+  - "剩余流量：7597.84 GB"
   - "距离下次重置剩余：29 天"
   - "套餐到期：2026-11-05"
   - "🇹🇼台湾｜01｜原生IP"
@@ -114,6 +116,7 @@ proxy-groups:
   - "🇭🇰香港｜01"
   - "🇭🇰香港｜02"
   - "🇭🇰香港｜03"
+  - "🇭🇰香港｜04｜BGP"
   - "🇯🇵日本｜01"
   - "🇹🇭泰国丨01｜原生IP"
   - "🇧🇩孟加拉｜01｜住宅IP"
@@ -127,7 +130,7 @@ proxy-groups:
 - name: "AI"
   type: "select"
   proxies:
-  - "剩余流量：7676.21 GB"
+  - "剩余流量：7597.84 GB"
   - "距离下次重置剩余：29 天"
   - "套餐到期：2026-11-05"
   - "🇹🇼台湾｜01｜原生IP"
@@ -137,6 +140,7 @@ proxy-groups:
   - "🇭🇰香港｜01"
   - "🇭🇰香港｜02"
   - "🇭🇰香港｜03"
+  - "🇭🇰香港｜04｜BGP"
   - "🇯🇵日本｜01"
   - "🇹🇭泰国丨01｜原生IP"
   - "🇧🇩孟加拉｜01｜住宅IP"
