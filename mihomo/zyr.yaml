@@ -53,7 +53,7 @@ dns:
     - "https://dns.alidns.com/dns-query"
     - "https://doh.pub/dns-query"
 proxies:
-- {name: "[ss]剩余流量：142.52 GB", type: "ss", server: "dns.a123.my", port: 50741, cipher: "aes-128-gcm", password: "c49aa39d-d566-45e8-8893-d5e79462ae6b", udp: true}
+- {name: "[ss]剩余流量：142.28 GB", type: "ss", server: "dns.a123.my", port: 50741, cipher: "aes-128-gcm", password: "c49aa39d-d566-45e8-8893-d5e79462ae6b", udp: true}
 - {name: "[ss]距离下次重置剩余：6 天", type: "ss", server: "dns.a123.my", port: 50741, cipher: "aes-128-gcm", password: "c49aa39d-d566-45e8-8893-d5e79462ae6b", udp: true}
 - {name: "[ss]套餐到期：2026-03-13", type: "ss", server: "dns.a123.my", port: 50741, cipher: "aes-128-gcm", password: "c49aa39d-d566-45e8-8893-d5e79462ae6b", udp: true}
 - {name: "[ss]官网：ziyouren.net", type: "ss", server: "dns.a123.my", port: 50741, cipher: "aes-128-gcm", password: "c49aa39d-d566-45e8-8893-d5e79462ae6b", udp: true}
@@ -95,12 +95,17 @@ proxies:
 - {name: "[Hy2]日本03", server: "jp1.a123.my", port: 6370, sni: null, up: 200, down: 500, skip-cert-verify: true, type: "hysteria2", password: "c49aa39d-d566-45e8-8893-d5e79462ae6b", obfs: "salamander", obfs-password: "Ofm9GVr5kczJCAg0"}
 - {name: "[Hy2]日本04", server: "jp1.a123.my", port: 6370, sni: null, up: 200, down: 500, skip-cert-verify: true, type: "hysteria2", password: "c49aa39d-d566-45e8-8893-d5e79462ae6b", obfs: "salamander", obfs-password: "Ofm9GVr5kczJCAg0"}
 - {name: "[Hy2]日本05", server: "jp1.a123.my", port: 6370, sni: null, up: 200, down: 500, skip-cert-verify: true, type: "hysteria2", password: "c49aa39d-d566-45e8-8893-d5e79462ae6b", obfs: "salamander", obfs-password: "Ofm9GVr5kczJCAg0"}
+- {name: "[Hy2]新加坡01", server: "gs1.a123.my", port: 6370, sni: null, up: 200, down: 501, skip-cert-verify: true, type: "hysteria2", password: "c49aa39d-d566-45e8-8893-d5e79462ae6b", obfs: "salamander", obfs-password: "4RDZD4jNUKPQ4s3u"}
+- {name: "[Hy2]新加坡02", server: "gs1.a123.my", port: 6370, sni: null, up: 200, down: 500, skip-cert-verify: true, type: "hysteria2", password: "c49aa39d-d566-45e8-8893-d5e79462ae6b", obfs: "salamander", obfs-password: "4RDZD4jNUKPQ4s3u"}
+- {name: "[Hy2]新加坡03", server: "gs1.a123.my", port: 6370, sni: null, up: 200, down: 500, skip-cert-verify: true, type: "hysteria2", password: "c49aa39d-d566-45e8-8893-d5e79462ae6b", obfs: "salamander", obfs-password: "4RDZD4jNUKPQ4s3u"}
+- {name: "[Hy2]新加坡04", server: "gs1.a123.my", port: 6370, sni: null, up: 200, down: 500, skip-cert-verify: true, type: "hysteria2", password: "c49aa39d-d566-45e8-8893-d5e79462ae6b", obfs: "salamander", obfs-password: "4RDZD4jNUKPQ4s3u"}
+- {name: "[Hy2]新加坡05", server: "gs1.a123.my", port: 6370, sni: null, up: 200, down: 500, skip-cert-verify: true, type: "hysteria2", password: "c49aa39d-d566-45e8-8893-d5e79462ae6b", obfs: "salamander", obfs-password: "4RDZD4jNUKPQ4s3u"}
 proxy-groups:
 - name: "PROXY"
   type: "select"
   proxies:
   - "AUTO"
-  - "[ss]剩余流量：142.52 GB"
+  - "[ss]剩余流量：142.28 GB"
   - "[ss]距离下次重置剩余：6 天"
   - "[ss]套餐到期：2026-03-13"
   - "[ss]官网：ziyouren.net"
@@ -142,13 +147,18 @@ proxy-groups:
   - "[Hy2]日本03"
   - "[Hy2]日本04"
   - "[Hy2]日本05"
+  - "[Hy2]新加坡01"
+  - "[Hy2]新加坡02"
+  - "[Hy2]新加坡03"
+  - "[Hy2]新加坡04"
+  - "[Hy2]新加坡05"
 - name: "AUTO"
   type: "url-test"
   url: "http://www.gstatic.com/generate_204"
   interval: 300
   tolerance: 50
   proxies:
-  - "[ss]剩余流量：142.52 GB"
+  - "[ss]剩余流量：142.28 GB"
   - "[ss]距离下次重置剩余：6 天"
   - "[ss]套餐到期：2026-03-13"
   - "[ss]官网：ziyouren.net"
@@ -190,10 +200,15 @@ proxy-groups:
   - "[Hy2]日本03"
   - "[Hy2]日本04"
   - "[Hy2]日本05"
+  - "[Hy2]新加坡01"
+  - "[Hy2]新加坡02"
+  - "[Hy2]新加坡03"
+  - "[Hy2]新加坡04"
+  - "[Hy2]新加坡05"
 - name: "AI"
   type: "select"
   proxies:
-  - "[ss]剩余流量：142.52 GB"
+  - "[ss]剩余流量：142.28 GB"
   - "[ss]距离下次重置剩余：6 天"
   - "[ss]套餐到期：2026-03-13"
   - "[ss]官网：ziyouren.net"
@@ -235,6 +250,11 @@ proxy-groups:
   - "[Hy2]日本03"
   - "[Hy2]日本04"
   - "[Hy2]日本05"
+  - "[Hy2]新加坡01"
+  - "[Hy2]新加坡02"
+  - "[Hy2]新加坡03"
+  - "[Hy2]新加坡04"
+  - "[Hy2]新加坡05"
 rules:
 - "GEOSITE,CATEGORY-ADS-ALL,REJECT"
 - "DOMAIN-SUFFIX,ushd.xmsl.org,DIRECT"
