@@ -1,0 +1,194 @@
+log-level: "debug"
+mixed-port: 7890
+allow-lan: true
+external-controller: "127.0.0.1:9090"
+unified-delay: true
+tcp-concurrent: true
+find-process-mode: "strict"
+global-client-fingerprint: "chrome"
+profile:
+  store-selected: true
+  store-fake-ip: true
+sniffer:
+  enable: true
+  force-dns-mapping: true
+  parse-pure-ip: true
+  override-destination: false
+  sniff:
+    HTTP:
+      ports:
+      - 80
+      - "8080-8880"
+    TLS:
+      ports:
+      - 443
+      - 8443
+    QUIC:
+      ports:
+      - 443
+      - 8443
+tun:
+  enable: true
+  stack: "mixed"
+  dns-hijack:
+  - "any:53"
+  - "tcp://any:53"
+  auto-route: true
+  auto-redirect: true
+  auto-detect-interface: true
+  strict-route: true
+dns:
+  enable: true
+  ipv6: false
+  default-nameserver:
+  - "223.5.5.5"
+  - "119.29.29.29"
+  enhanced-mode: "fake-ip"
+  fake-ip-range: "198.18.0.1/16"
+  nameserver:
+  - "https://dns.cloudflare.com/dns-query"
+  - "https://dns.google/dns-query"
+  nameserver-policy:
+    geosite:cn,private:
+    - "https://dns.alidns.com/dns-query"
+    - "https://doh.pub/dns-query"
+proxies:
+- {name: "官网：hayaku.fun", type: "vmess", server: "fbf248.de15-5483-d16b.sbs", port: 80, uuid: "2119a8ea-9015-4a2a-bf12-f5eb0425daf7", alterId: 0, cipher: "auto", network: "ws", ws-opts: {path: "/", headers: {Host: "kr04s.de15-5483-d16b.sbs"}}, ws-path: "/", ws-headers: {Host: "kr04s.de15-5483-d16b.sbs"}, udp: true}
+- {name: "TG群组：@hayakuicugp", type: "vmess", server: "fbf248.de15-5483-d16b.sbs", port: 80, uuid: "2119a8ea-9015-4a2a-bf12-f5eb0425daf7", alterId: 0, cipher: "auto", network: "ws", ws-opts: {path: "/", headers: {Host: "kr02s.de15-5483-d16b.sbs"}}, ws-path: "/", ws-headers: {Host: "kr02s.de15-5483-d16b.sbs"}, udp: true}
+- {name: "节点全红检查是否流量已用完", type: "vmess", server: "fbf248.de15-5483-d16b.sbs", port: 80, uuid: "2119a8ea-9015-4a2a-bf12-f5eb0425daf7", alterId: 0, cipher: "auto", network: "ws", ws-opts: {path: "/", headers: {Host: "jp03s.de15-5483-d16b.sbs"}}, ws-path: "/", ws-headers: {Host: "jp03s.de15-5483-d16b.sbs"}, udp: true}
+- {name: "加入TG群组抽奖得Telegram大会员", type: "vmess", server: "fbf248.de15-5483-d16b.sbs", port: 80, uuid: "2119a8ea-9015-4a2a-bf12-f5eb0425daf7", alterId: 0, cipher: "auto", network: "ws", ws-opts: {path: "/", headers: {Host: "jp01s.de15-5483-d16b.sbs"}}, ws-path: "/", ws-headers: {Host: "jp01s.de15-5483-d16b.sbs"}, udp: true}
+- {name: "直连订阅每日早更，注意更新你的本地订阅", type: "vmess", server: "fbf248.de15-5483-d16b.sbs", port: 80, uuid: "2119a8ea-9015-4a2a-bf12-f5eb0425daf7", alterId: 0, cipher: "auto", network: "ws", ws-opts: {path: "/", headers: {Host: "sg01s.de15-5483-d16b.sbs"}}, ws-path: "/", ws-headers: {Host: "sg01s.de15-5483-d16b.sbs"}, udp: true}
+- {name: "剩余流量：4545.51 GB", type: "vmess", server: "fbf248.de15-5483-d16b.sbs", port: 80, uuid: "2119a8ea-9015-4a2a-bf12-f5eb0425daf7", alterId: 0, cipher: "auto", network: "ws", ws-opts: {path: "/", headers: {Host: "sg04s.de15-5483-d16b.sbs"}}, ws-path: "/", ws-headers: {Host: "sg04s.de15-5483-d16b.sbs"}, udp: true}
+- {name: "订阅到期：2124-05-14", type: "vmess", server: "fbf248.de15-5483-d16b.sbs", port: 80, uuid: "2119a8ea-9015-4a2a-bf12-f5eb0425daf7", alterId: 0, cipher: "auto", network: "ws", ws-opts: {path: "/", headers: {Host: "hk03s.de15-5483-d16b.sbs"}}, ws-path: "/", ws-headers: {Host: "hk03s.de15-5483-d16b.sbs"}, udp: true}
+- {name: "🇭🇰 香港 HK01", type: "vmess", server: "fbf248.de15-5483-d16b.sbs", port: 80, uuid: "2119a8ea-9015-4a2a-bf12-f5eb0425daf7", alterId: 0, cipher: "auto", network: "ws", ws-opts: {path: "/", headers: {Host: "hk01s.de15-5483-d16b.sbs"}}, ws-path: "/", ws-headers: {Host: "hk01s.de15-5483-d16b.sbs"}, udp: true}
+- {name: "🇭🇰 香港 HK02", type: "vmess", server: "fbf248.de15-5483-d16b.sbs", port: 80, uuid: "2119a8ea-9015-4a2a-bf12-f5eb0425daf7", alterId: 0, cipher: "auto", network: "ws", ws-opts: {path: "/", headers: {Host: "hk02s.de15-5483-d16b.sbs"}}, ws-path: "/", ws-headers: {Host: "hk02s.de15-5483-d16b.sbs"}, udp: true}
+- {name: "🇭🇰 香港 HK03", type: "vmess", server: "fbf248.de15-5483-d16b.sbs", port: 80, uuid: "2119a8ea-9015-4a2a-bf12-f5eb0425daf7", alterId: 0, cipher: "auto", network: "ws", ws-opts: {path: "/", headers: {Host: "hk03s.de15-5483-d16b.sbs"}}, ws-path: "/", ws-headers: {Host: "hk03s.de15-5483-d16b.sbs"}, udp: true}
+- {name: "🇭🇰 香港 HK04", type: "vmess", server: "fbf248.de15-5483-d16b.sbs", port: 80, uuid: "2119a8ea-9015-4a2a-bf12-f5eb0425daf7", alterId: 0, cipher: "auto", network: "ws", ws-opts: {path: "/", headers: {Host: "hk04s.de15-5483-d16b.sbs"}}, ws-path: "/", ws-headers: {Host: "hk04s.de15-5483-d16b.sbs"}, udp: true}
+- {name: "🇸🇬 新加坡 SG01", type: "vmess", server: "fbf248.de15-5483-d16b.sbs", port: 80, uuid: "2119a8ea-9015-4a2a-bf12-f5eb0425daf7", alterId: 0, cipher: "auto", network: "ws", ws-opts: {path: "/", headers: {Host: "sg01s.de15-5483-d16b.sbs"}}, ws-path: "/", ws-headers: {Host: "sg01s.de15-5483-d16b.sbs"}, udp: true}
+- {name: "🇸🇬 新加坡 SG02", type: "vmess", server: "fbf248.de15-5483-d16b.sbs", port: 80, uuid: "2119a8ea-9015-4a2a-bf12-f5eb0425daf7", alterId: 0, cipher: "auto", network: "ws", ws-opts: {path: "/", headers: {Host: "sg02s.de15-5483-d16b.sbs"}}, ws-path: "/", ws-headers: {Host: "sg02s.de15-5483-d16b.sbs"}, udp: true}
+- {name: "🇸🇬 新加坡 SG03", type: "vmess", server: "fbf248.de15-5483-d16b.sbs", port: 80, uuid: "2119a8ea-9015-4a2a-bf12-f5eb0425daf7", alterId: 0, cipher: "auto", network: "ws", ws-opts: {path: "/", headers: {Host: "sg03s.de15-5483-d16b.sbs"}}, ws-path: "/", ws-headers: {Host: "sg03s.de15-5483-d16b.sbs"}, udp: true}
+- {name: "🇸🇬 新加坡 SG04", type: "vmess", server: "fbf248.de15-5483-d16b.sbs", port: 80, uuid: "2119a8ea-9015-4a2a-bf12-f5eb0425daf7", alterId: 0, cipher: "auto", network: "ws", ws-opts: {path: "/", headers: {Host: "sg04s.de15-5483-d16b.sbs"}}, ws-path: "/", ws-headers: {Host: "sg04s.de15-5483-d16b.sbs"}, udp: true}
+- {name: "🇺🇸 美国 US01", type: "vmess", server: "fbf248.de15-5483-d16b.sbs", port: 80, uuid: "2119a8ea-9015-4a2a-bf12-f5eb0425daf7", alterId: 0, cipher: "auto", network: "ws", ws-opts: {path: "/", headers: {Host: "us01s.de15-5483-d16b.sbs"}}, ws-path: "/", ws-headers: {Host: "us01s.de15-5483-d16b.sbs"}, udp: true}
+- {name: "🇺🇸 美国 US02", type: "vmess", server: "fbf248.de15-5483-d16b.sbs", port: 80, uuid: "2119a8ea-9015-4a2a-bf12-f5eb0425daf7", alterId: 0, cipher: "auto", network: "ws", ws-opts: {path: "/", headers: {Host: "us02s.de15-5483-d16b.sbs"}}, ws-path: "/", ws-headers: {Host: "us02s.de15-5483-d16b.sbs"}, udp: true}
+- {name: "🇺🇸 美国 US03", type: "vmess", server: "fbf248.de15-5483-d16b.sbs", port: 80, uuid: "2119a8ea-9015-4a2a-bf12-f5eb0425daf7", alterId: 0, cipher: "auto", network: "ws", ws-opts: {path: "/", headers: {Host: "us03s.de15-5483-d16b.sbs"}}, ws-path: "/", ws-headers: {Host: "us03s.de15-5483-d16b.sbs"}, udp: true}
+- {name: "🇺🇸 美国 US04", type: "vmess", server: "fbf248.de15-5483-d16b.sbs", port: 80, uuid: "2119a8ea-9015-4a2a-bf12-f5eb0425daf7", alterId: 0, cipher: "auto", network: "ws", ws-opts: {path: "/", headers: {Host: "us04s.de15-5483-d16b.sbs"}}, ws-path: "/", ws-headers: {Host: "us04s.de15-5483-d16b.sbs"}, udp: true}
+- {name: "🇯🇵 日本 JP01", type: "vmess", server: "fbf248.de15-5483-d16b.sbs", port: 80, uuid: "2119a8ea-9015-4a2a-bf12-f5eb0425daf7", alterId: 0, cipher: "auto", network: "ws", ws-opts: {path: "/", headers: {Host: "jp01s.de15-5483-d16b.sbs"}}, ws-path: "/", ws-headers: {Host: "jp01s.de15-5483-d16b.sbs"}, udp: true}
+- {name: "🇯🇵 日本 JP02", type: "vmess", server: "fbf248.de15-5483-d16b.sbs", port: 80, uuid: "2119a8ea-9015-4a2a-bf12-f5eb0425daf7", alterId: 0, cipher: "auto", network: "ws", ws-opts: {path: "/", headers: {Host: "jp02s.de15-5483-d16b.sbs"}}, ws-path: "/", ws-headers: {Host: "jp02s.de15-5483-d16b.sbs"}, udp: true}
+- {name: "🇯🇵 日本 JP03", type: "vmess", server: "fbf248.de15-5483-d16b.sbs", port: 80, uuid: "2119a8ea-9015-4a2a-bf12-f5eb0425daf7", alterId: 0, cipher: "auto", network: "ws", ws-opts: {path: "/", headers: {Host: "jp03s.de15-5483-d16b.sbs"}}, ws-path: "/", ws-headers: {Host: "jp03s.de15-5483-d16b.sbs"}, udp: true}
+- {name: "🇯🇵 日本 JP04", type: "vmess", server: "fbf248.de15-5483-d16b.sbs", port: 80, uuid: "2119a8ea-9015-4a2a-bf12-f5eb0425daf7", alterId: 0, cipher: "auto", network: "ws", ws-opts: {path: "/", headers: {Host: "jp04s.de15-5483-d16b.sbs"}}, ws-path: "/", ws-headers: {Host: "jp04s.de15-5483-d16b.sbs"}, udp: true}
+- {name: "🇰🇷 韩国 KR01", type: "vmess", server: "fbf248.de15-5483-d16b.sbs", port: 80, uuid: "2119a8ea-9015-4a2a-bf12-f5eb0425daf7", alterId: 0, cipher: "auto", network: "ws", ws-opts: {path: "/", headers: {Host: "kr01s.de15-5483-d16b.sbs"}}, ws-path: "/", ws-headers: {Host: "kr01s.de15-5483-d16b.sbs"}, udp: true}
+- {name: "🇰🇷 韩国 KR02", type: "vmess", server: "fbf248.de15-5483-d16b.sbs", port: 80, uuid: "2119a8ea-9015-4a2a-bf12-f5eb0425daf7", alterId: 0, cipher: "auto", network: "ws", ws-opts: {path: "/", headers: {Host: "kr02s.de15-5483-d16b.sbs"}}, ws-path: "/", ws-headers: {Host: "kr02s.de15-5483-d16b.sbs"}, udp: true}
+- {name: "🇰🇷 韩国 KR03", type: "vmess", server: "fbf248.de15-5483-d16b.sbs", port: 80, uuid: "2119a8ea-9015-4a2a-bf12-f5eb0425daf7", alterId: 0, cipher: "auto", network: "ws", ws-opts: {path: "/", headers: {Host: "kr03s.de15-5483-d16b.sbs"}}, ws-path: "/", ws-headers: {Host: "kr03s.de15-5483-d16b.sbs"}, udp: true}
+- {name: "🇰🇷 韩国 KR04", type: "vmess", server: "fbf248.de15-5483-d16b.sbs", port: 80, uuid: "2119a8ea-9015-4a2a-bf12-f5eb0425daf7", alterId: 0, cipher: "auto", network: "ws", ws-opts: {path: "/", headers: {Host: "kr04s.de15-5483-d16b.sbs"}}, ws-path: "/", ws-headers: {Host: "kr04s.de15-5483-d16b.sbs"}, udp: true}
+proxy-groups:
+- name: "PROXY"
+  type: "select"
+  proxies:
+  - "AUTO"
+  - "官网：hayaku.fun"
+  - "TG群组：@hayakuicugp"
+  - "节点全红检查是否流量已用完"
+  - "加入TG群组抽奖得Telegram大会员"
+  - "直连订阅每日早更，注意更新你的本地订阅"
+  - "剩余流量：4545.51 GB"
+  - "订阅到期：2124-05-14"
+  - "🇭🇰 香港 HK01"
+  - "🇭🇰 香港 HK02"
+  - "🇭🇰 香港 HK03"
+  - "🇭🇰 香港 HK04"
+  - "🇸🇬 新加坡 SG01"
+  - "🇸🇬 新加坡 SG02"
+  - "🇸🇬 新加坡 SG03"
+  - "🇸🇬 新加坡 SG04"
+  - "🇺🇸 美国 US01"
+  - "🇺🇸 美国 US02"
+  - "🇺🇸 美国 US03"
+  - "🇺🇸 美国 US04"
+  - "🇯🇵 日本 JP01"
+  - "🇯🇵 日本 JP02"
+  - "🇯🇵 日本 JP03"
+  - "🇯🇵 日本 JP04"
+  - "🇰🇷 韩国 KR01"
+  - "🇰🇷 韩国 KR02"
+  - "🇰🇷 韩国 KR03"
+  - "🇰🇷 韩国 KR04"
+- name: "AUTO"
+  type: "url-test"
+  url: "http://www.gstatic.com/generate_204"
+  interval: 300
+  tolerance: 50
+  proxies:
+  - "官网：hayaku.fun"
+  - "TG群组：@hayakuicugp"
+  - "节点全红检查是否流量已用完"
+  - "加入TG群组抽奖得Telegram大会员"
+  - "直连订阅每日早更，注意更新你的本地订阅"
+  - "剩余流量：4545.51 GB"
+  - "订阅到期：2124-05-14"
+  - "🇭🇰 香港 HK01"
+  - "🇭🇰 香港 HK02"
+  - "🇭🇰 香港 HK03"
+  - "🇭🇰 香港 HK04"
+  - "🇸🇬 新加坡 SG01"
+  - "🇸🇬 新加坡 SG02"
+  - "🇸🇬 新加坡 SG03"
+  - "🇸🇬 新加坡 SG04"
+  - "🇺🇸 美国 US01"
+  - "🇺🇸 美国 US02"
+  - "🇺🇸 美国 US03"
+  - "🇺🇸 美国 US04"
+  - "🇯🇵 日本 JP01"
+  - "🇯🇵 日本 JP02"
+  - "🇯🇵 日本 JP03"
+  - "🇯🇵 日本 JP04"
+  - "🇰🇷 韩国 KR01"
+  - "🇰🇷 韩国 KR02"
+  - "🇰🇷 韩国 KR03"
+  - "🇰🇷 韩国 KR04"
+- name: "AI"
+  type: "select"
+  proxies:
+  - "官网：hayaku.fun"
+  - "TG群组：@hayakuicugp"
+  - "节点全红检查是否流量已用完"
+  - "加入TG群组抽奖得Telegram大会员"
+  - "直连订阅每日早更，注意更新你的本地订阅"
+  - "剩余流量：4545.51 GB"
+  - "订阅到期：2124-05-14"
+  - "🇭🇰 香港 HK01"
+  - "🇭🇰 香港 HK02"
+  - "🇭🇰 香港 HK03"
+  - "🇭🇰 香港 HK04"
+  - "🇸🇬 新加坡 SG01"
+  - "🇸🇬 新加坡 SG02"
+  - "🇸🇬 新加坡 SG03"
+  - "🇸🇬 新加坡 SG04"
+  - "🇺🇸 美国 US01"
+  - "🇺🇸 美国 US02"
+  - "🇺🇸 美国 US03"
+  - "🇺🇸 美国 US04"
+  - "🇯🇵 日本 JP01"
+  - "🇯🇵 日本 JP02"
+  - "🇯🇵 日本 JP03"
+  - "🇯🇵 日本 JP04"
+  - "🇰🇷 韩国 KR01"
+  - "🇰🇷 韩国 KR02"
+  - "🇰🇷 韩国 KR03"
+  - "🇰🇷 韩国 KR04"
+rules:
+- "GEOSITE,CATEGORY-ADS-ALL,REJECT"
+- "DOMAIN-SUFFIX,ushd.xmsl.org,DIRECT"
+- "DOMAIN-SUFFIX,cf.gtlx.org,DIRECT"
+- "DOMAIN-SUFFIX,public-operation-hkrpg-sg.hoyoverse.com,DIRECT"
+- "DOMAIN-SUFFIX,public-operation-hk4e-sg.hoyoverse.com,DIRECT"
+- "DOMAIN-SUFFIX,public-operation-nap-sg.hoyoverse.com,DIRECT"
+- "DST-PORT,23301/22101-22102/20501/21601-21606,DIRECT"
+- "DOMAIN-KEYWORD,hoyoverse.com,PROXY"
+- "GEOSITE,OPENAI,AI"
+- "GEOSITE,GOOGLE-GEMINI,AI"
+- "GEOSITE,GOOGLEFCM,DIRECT"
+- "GEOSITE,PRIVATE,DIRECT"
+- "GEOSITE,CN,DIRECT"
+- "GEOIP,PRIVATE,DIRECT,no-resolve"
+- "GEOIP,CN,DIRECT"
+- "MATCH,PROXY"

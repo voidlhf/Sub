@@ -1,0 +1,800 @@
+{
+  "log": {},
+  "dns": {
+    "servers": [
+      {
+        "tag": "dns_proxy",
+        "type": "https",
+        "server": "1.1.1.1",
+        "detour": "select"
+      },
+      {
+        "tag": "dns_direct",
+        "type": "https",
+        "server": "223.5.5.5"
+      },
+      {
+        "tag": "dns_fakeip",
+        "type": "fakeip",
+        "inet4_range": "198.18.0.0/15",
+        "inet6_range": "fc00::/18"
+      }
+    ],
+    "rules": [
+      {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "query_type": "HTTPS"
+          },
+          {
+            "rule_set": [
+              "geosite-category-ads-all"
+            ]
+          }
+        ],
+        "action": "reject"
+      },
+      {
+        "query_type": [
+          "A",
+          "AAAA"
+        ],
+        "server": "dns_fakeip",
+        "rewrite_ttl": 1
+      },
+      {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "clash_mode": "Global"
+          }
+        ],
+        "server": "dns_proxy"
+      },
+      {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "clash_mode": "Direct"
+          },
+          {
+            "rule_set": [
+              "geosite-cn"
+            ]
+          }
+        ],
+        "server": "dns_direct"
+      }
+    ],
+    "strategy": "ipv4_only",
+    "independent_cache": true
+  },
+  "inbounds": [
+    {
+      "type": "tun",
+      "address": [
+        "172.18.0.1/30",
+        "fdfe:dcba:9876::1/126"
+      ],
+      "auto_route": true,
+      "strict_route": true,
+      "route_exclude_address": [
+        "192.168.0.0/16",
+        "fc00::/7"
+      ]
+    }
+  ],
+  "outbounds": [
+    {
+      "server": "fbf248.de15-5483-d16b.sbs",
+      "server_port": 80,
+      "tag": "官网：hayaku.fun",
+      "transport": {
+        "headers": {
+          "Host": [
+            "kr04s.de15-5483-d16b.sbs"
+          ]
+        },
+        "path": "/",
+        "type": "ws"
+      },
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "2119a8ea-9015-4a2a-bf12-f5eb0425daf7"
+    },
+    {
+      "server": "fbf248.de15-5483-d16b.sbs",
+      "server_port": 80,
+      "tag": "TG群组：@hayakuicugp",
+      "transport": {
+        "headers": {
+          "Host": [
+            "kr02s.de15-5483-d16b.sbs"
+          ]
+        },
+        "path": "/",
+        "type": "ws"
+      },
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "2119a8ea-9015-4a2a-bf12-f5eb0425daf7"
+    },
+    {
+      "server": "fbf248.de15-5483-d16b.sbs",
+      "server_port": 80,
+      "tag": "节点全红检查是否流量已用完",
+      "transport": {
+        "headers": {
+          "Host": [
+            "jp03s.de15-5483-d16b.sbs"
+          ]
+        },
+        "path": "/",
+        "type": "ws"
+      },
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "2119a8ea-9015-4a2a-bf12-f5eb0425daf7"
+    },
+    {
+      "server": "fbf248.de15-5483-d16b.sbs",
+      "server_port": 80,
+      "tag": "加入TG群组抽奖得Telegram大会员",
+      "transport": {
+        "headers": {
+          "Host": [
+            "jp01s.de15-5483-d16b.sbs"
+          ]
+        },
+        "path": "/",
+        "type": "ws"
+      },
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "2119a8ea-9015-4a2a-bf12-f5eb0425daf7"
+    },
+    {
+      "server": "fbf248.de15-5483-d16b.sbs",
+      "server_port": 80,
+      "tag": "直连订阅每日早更，注意更新你的本地订阅",
+      "transport": {
+        "headers": {
+          "Host": [
+            "sg01s.de15-5483-d16b.sbs"
+          ]
+        },
+        "path": "/",
+        "type": "ws"
+      },
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "2119a8ea-9015-4a2a-bf12-f5eb0425daf7"
+    },
+    {
+      "server": "fbf248.de15-5483-d16b.sbs",
+      "server_port": 80,
+      "tag": "剩余流量：4545.51 GB",
+      "transport": {
+        "headers": {
+          "Host": [
+            "sg04s.de15-5483-d16b.sbs"
+          ]
+        },
+        "path": "/",
+        "type": "ws"
+      },
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "2119a8ea-9015-4a2a-bf12-f5eb0425daf7"
+    },
+    {
+      "server": "fbf248.de15-5483-d16b.sbs",
+      "server_port": 80,
+      "tag": "订阅到期：2124-05-14",
+      "transport": {
+        "headers": {
+          "Host": [
+            "hk03s.de15-5483-d16b.sbs"
+          ]
+        },
+        "path": "/",
+        "type": "ws"
+      },
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "2119a8ea-9015-4a2a-bf12-f5eb0425daf7"
+    },
+    {
+      "server": "fbf248.de15-5483-d16b.sbs",
+      "server_port": 80,
+      "tag": "🇭🇰 香港 HK01",
+      "transport": {
+        "headers": {
+          "Host": [
+            "hk01s.de15-5483-d16b.sbs"
+          ]
+        },
+        "path": "/",
+        "type": "ws"
+      },
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "2119a8ea-9015-4a2a-bf12-f5eb0425daf7"
+    },
+    {
+      "server": "fbf248.de15-5483-d16b.sbs",
+      "server_port": 80,
+      "tag": "🇭🇰 香港 HK02",
+      "transport": {
+        "headers": {
+          "Host": [
+            "hk02s.de15-5483-d16b.sbs"
+          ]
+        },
+        "path": "/",
+        "type": "ws"
+      },
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "2119a8ea-9015-4a2a-bf12-f5eb0425daf7"
+    },
+    {
+      "server": "fbf248.de15-5483-d16b.sbs",
+      "server_port": 80,
+      "tag": "🇭🇰 香港 HK03",
+      "transport": {
+        "headers": {
+          "Host": [
+            "hk03s.de15-5483-d16b.sbs"
+          ]
+        },
+        "path": "/",
+        "type": "ws"
+      },
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "2119a8ea-9015-4a2a-bf12-f5eb0425daf7"
+    },
+    {
+      "server": "fbf248.de15-5483-d16b.sbs",
+      "server_port": 80,
+      "tag": "🇭🇰 香港 HK04",
+      "transport": {
+        "headers": {
+          "Host": [
+            "hk04s.de15-5483-d16b.sbs"
+          ]
+        },
+        "path": "/",
+        "type": "ws"
+      },
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "2119a8ea-9015-4a2a-bf12-f5eb0425daf7"
+    },
+    {
+      "server": "fbf248.de15-5483-d16b.sbs",
+      "server_port": 80,
+      "tag": "🇸🇬 新加坡 SG01",
+      "transport": {
+        "headers": {
+          "Host": [
+            "sg01s.de15-5483-d16b.sbs"
+          ]
+        },
+        "path": "/",
+        "type": "ws"
+      },
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "2119a8ea-9015-4a2a-bf12-f5eb0425daf7"
+    },
+    {
+      "server": "fbf248.de15-5483-d16b.sbs",
+      "server_port": 80,
+      "tag": "🇸🇬 新加坡 SG02",
+      "transport": {
+        "headers": {
+          "Host": [
+            "sg02s.de15-5483-d16b.sbs"
+          ]
+        },
+        "path": "/",
+        "type": "ws"
+      },
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "2119a8ea-9015-4a2a-bf12-f5eb0425daf7"
+    },
+    {
+      "server": "fbf248.de15-5483-d16b.sbs",
+      "server_port": 80,
+      "tag": "🇸🇬 新加坡 SG03",
+      "transport": {
+        "headers": {
+          "Host": [
+            "sg03s.de15-5483-d16b.sbs"
+          ]
+        },
+        "path": "/",
+        "type": "ws"
+      },
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "2119a8ea-9015-4a2a-bf12-f5eb0425daf7"
+    },
+    {
+      "server": "fbf248.de15-5483-d16b.sbs",
+      "server_port": 80,
+      "tag": "🇸🇬 新加坡 SG04",
+      "transport": {
+        "headers": {
+          "Host": [
+            "sg04s.de15-5483-d16b.sbs"
+          ]
+        },
+        "path": "/",
+        "type": "ws"
+      },
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "2119a8ea-9015-4a2a-bf12-f5eb0425daf7"
+    },
+    {
+      "server": "fbf248.de15-5483-d16b.sbs",
+      "server_port": 80,
+      "tag": "🇺🇸 美国 US01",
+      "transport": {
+        "headers": {
+          "Host": [
+            "us01s.de15-5483-d16b.sbs"
+          ]
+        },
+        "path": "/",
+        "type": "ws"
+      },
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "2119a8ea-9015-4a2a-bf12-f5eb0425daf7"
+    },
+    {
+      "server": "fbf248.de15-5483-d16b.sbs",
+      "server_port": 80,
+      "tag": "🇺🇸 美国 US02",
+      "transport": {
+        "headers": {
+          "Host": [
+            "us02s.de15-5483-d16b.sbs"
+          ]
+        },
+        "path": "/",
+        "type": "ws"
+      },
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "2119a8ea-9015-4a2a-bf12-f5eb0425daf7"
+    },
+    {
+      "server": "fbf248.de15-5483-d16b.sbs",
+      "server_port": 80,
+      "tag": "🇺🇸 美国 US03",
+      "transport": {
+        "headers": {
+          "Host": [
+            "us03s.de15-5483-d16b.sbs"
+          ]
+        },
+        "path": "/",
+        "type": "ws"
+      },
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "2119a8ea-9015-4a2a-bf12-f5eb0425daf7"
+    },
+    {
+      "server": "fbf248.de15-5483-d16b.sbs",
+      "server_port": 80,
+      "tag": "🇺🇸 美国 US04",
+      "transport": {
+        "headers": {
+          "Host": [
+            "us04s.de15-5483-d16b.sbs"
+          ]
+        },
+        "path": "/",
+        "type": "ws"
+      },
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "2119a8ea-9015-4a2a-bf12-f5eb0425daf7"
+    },
+    {
+      "server": "fbf248.de15-5483-d16b.sbs",
+      "server_port": 80,
+      "tag": "🇯🇵 日本 JP01",
+      "transport": {
+        "headers": {
+          "Host": [
+            "jp01s.de15-5483-d16b.sbs"
+          ]
+        },
+        "path": "/",
+        "type": "ws"
+      },
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "2119a8ea-9015-4a2a-bf12-f5eb0425daf7"
+    },
+    {
+      "server": "fbf248.de15-5483-d16b.sbs",
+      "server_port": 80,
+      "tag": "🇯🇵 日本 JP02",
+      "transport": {
+        "headers": {
+          "Host": [
+            "jp02s.de15-5483-d16b.sbs"
+          ]
+        },
+        "path": "/",
+        "type": "ws"
+      },
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "2119a8ea-9015-4a2a-bf12-f5eb0425daf7"
+    },
+    {
+      "server": "fbf248.de15-5483-d16b.sbs",
+      "server_port": 80,
+      "tag": "🇯🇵 日本 JP03",
+      "transport": {
+        "headers": {
+          "Host": [
+            "jp03s.de15-5483-d16b.sbs"
+          ]
+        },
+        "path": "/",
+        "type": "ws"
+      },
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "2119a8ea-9015-4a2a-bf12-f5eb0425daf7"
+    },
+    {
+      "server": "fbf248.de15-5483-d16b.sbs",
+      "server_port": 80,
+      "tag": "🇯🇵 日本 JP04",
+      "transport": {
+        "headers": {
+          "Host": [
+            "jp04s.de15-5483-d16b.sbs"
+          ]
+        },
+        "path": "/",
+        "type": "ws"
+      },
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "2119a8ea-9015-4a2a-bf12-f5eb0425daf7"
+    },
+    {
+      "server": "fbf248.de15-5483-d16b.sbs",
+      "server_port": 80,
+      "tag": "🇰🇷 韩国 KR01",
+      "transport": {
+        "headers": {
+          "Host": [
+            "kr01s.de15-5483-d16b.sbs"
+          ]
+        },
+        "path": "/",
+        "type": "ws"
+      },
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "2119a8ea-9015-4a2a-bf12-f5eb0425daf7"
+    },
+    {
+      "server": "fbf248.de15-5483-d16b.sbs",
+      "server_port": 80,
+      "tag": "🇰🇷 韩国 KR02",
+      "transport": {
+        "headers": {
+          "Host": [
+            "kr02s.de15-5483-d16b.sbs"
+          ]
+        },
+        "path": "/",
+        "type": "ws"
+      },
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "2119a8ea-9015-4a2a-bf12-f5eb0425daf7"
+    },
+    {
+      "server": "fbf248.de15-5483-d16b.sbs",
+      "server_port": 80,
+      "tag": "🇰🇷 韩国 KR03",
+      "transport": {
+        "headers": {
+          "Host": [
+            "kr03s.de15-5483-d16b.sbs"
+          ]
+        },
+        "path": "/",
+        "type": "ws"
+      },
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "2119a8ea-9015-4a2a-bf12-f5eb0425daf7"
+    },
+    {
+      "server": "fbf248.de15-5483-d16b.sbs",
+      "server_port": 80,
+      "tag": "🇰🇷 韩国 KR04",
+      "transport": {
+        "headers": {
+          "Host": [
+            "kr04s.de15-5483-d16b.sbs"
+          ]
+        },
+        "path": "/",
+        "type": "ws"
+      },
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "2119a8ea-9015-4a2a-bf12-f5eb0425daf7"
+    },
+    {
+      "tag": "select",
+      "type": "selector",
+      "default": "auto",
+      "outbounds": [
+        "auto",
+        "官网：hayaku.fun",
+        "TG群组：@hayakuicugp",
+        "节点全红检查是否流量已用完",
+        "加入TG群组抽奖得Telegram大会员",
+        "直连订阅每日早更，注意更新你的本地订阅",
+        "剩余流量：4545.51 GB",
+        "订阅到期：2124-05-14",
+        "🇭🇰 香港 HK01",
+        "🇭🇰 香港 HK02",
+        "🇭🇰 香港 HK03",
+        "🇭🇰 香港 HK04",
+        "🇸🇬 新加坡 SG01",
+        "🇸🇬 新加坡 SG02",
+        "🇸🇬 新加坡 SG03",
+        "🇸🇬 新加坡 SG04",
+        "🇺🇸 美国 US01",
+        "🇺🇸 美国 US02",
+        "🇺🇸 美国 US03",
+        "🇺🇸 美国 US04",
+        "🇯🇵 日本 JP01",
+        "🇯🇵 日本 JP02",
+        "🇯🇵 日本 JP03",
+        "🇯🇵 日本 JP04",
+        "🇰🇷 韩国 KR01",
+        "🇰🇷 韩国 KR02",
+        "🇰🇷 韩国 KR03",
+        "🇰🇷 韩国 KR04"
+      ]
+    },
+    {
+      "tag": "auto",
+      "type": "urltest",
+      "outbounds": [
+        "官网：hayaku.fun",
+        "TG群组：@hayakuicugp",
+        "节点全红检查是否流量已用完",
+        "加入TG群组抽奖得Telegram大会员",
+        "直连订阅每日早更，注意更新你的本地订阅",
+        "剩余流量：4545.51 GB",
+        "订阅到期：2124-05-14",
+        "🇭🇰 香港 HK01",
+        "🇭🇰 香港 HK02",
+        "🇭🇰 香港 HK03",
+        "🇭🇰 香港 HK04",
+        "🇸🇬 新加坡 SG01",
+        "🇸🇬 新加坡 SG02",
+        "🇸🇬 新加坡 SG03",
+        "🇸🇬 新加坡 SG04",
+        "🇺🇸 美国 US01",
+        "🇺🇸 美国 US02",
+        "🇺🇸 美国 US03",
+        "🇺🇸 美国 US04",
+        "🇯🇵 日本 JP01",
+        "🇯🇵 日本 JP02",
+        "🇯🇵 日本 JP03",
+        "🇯🇵 日本 JP04",
+        "🇰🇷 韩国 KR01",
+        "🇰🇷 韩国 KR02",
+        "🇰🇷 韩国 KR03",
+        "🇰🇷 韩国 KR04"
+      ]
+    },
+    {
+      "tag": "ai",
+      "type": "selector",
+      "outbounds": [
+        "官网：hayaku.fun",
+        "TG群组：@hayakuicugp",
+        "节点全红检查是否流量已用完",
+        "加入TG群组抽奖得Telegram大会员",
+        "直连订阅每日早更，注意更新你的本地订阅",
+        "剩余流量：4545.51 GB",
+        "订阅到期：2124-05-14",
+        "🇭🇰 香港 HK01",
+        "🇭🇰 香港 HK02",
+        "🇭🇰 香港 HK03",
+        "🇭🇰 香港 HK04",
+        "🇸🇬 新加坡 SG01",
+        "🇸🇬 新加坡 SG02",
+        "🇸🇬 新加坡 SG03",
+        "🇸🇬 新加坡 SG04",
+        "🇺🇸 美国 US01",
+        "🇺🇸 美国 US02",
+        "🇺🇸 美国 US03",
+        "🇺🇸 美国 US04",
+        "🇯🇵 日本 JP01",
+        "🇯🇵 日本 JP02",
+        "🇯🇵 日本 JP03",
+        "🇯🇵 日本 JP04",
+        "🇰🇷 韩国 KR01",
+        "🇰🇷 韩国 KR02",
+        "🇰🇷 韩国 KR03",
+        "🇰🇷 韩国 KR04"
+      ]
+    },
+    {
+      "tag": "direct",
+      "type": "direct"
+    }
+  ],
+  "route": {
+    "rules": [
+      {
+        "action": "sniff"
+      },
+      {
+        "protocol": "dns",
+        "action": "hijack-dns"
+      },
+      {
+        "action": "resolve",
+        "strategy": "ipv4_only"
+      },
+      {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "domain_suffix": [
+              "ushd.xmsl.org",
+              "cf.gtlx.org",
+              "public-operation-hkrpg-sg.hoyoverse.com",
+              "public-operation-hk4e-sg.hoyoverse.com",
+              "public-operation-nap-sg.hoyoverse.com"
+            ]
+          },
+          {
+            "port_range": [
+              "23301:23301",
+              "22101:22102",
+              "20501:20501",
+              "21601:21606"
+            ]
+          }
+        ],
+        "outbound": "direct"
+      },
+      {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "clash_mode": "Global"
+          },
+          {
+            "domain_keyword": [
+              "hoyoverse.com"
+            ]
+          }
+        ],
+        "outbound": "select"
+      },
+      {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "rule_set": [
+              "geosite-openai",
+              "geosite-google-gemini"
+            ]
+          }
+        ],
+        "outbound": "ai"
+      },
+      {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "clash_mode": "Direct"
+          },
+          {
+            "ip_is_private": true
+          },
+          {
+            "rule_set": [
+              "geosite-googlefcm",
+              "geosite-cn",
+              "geoip-cn"
+            ]
+          }
+        ],
+        "outbound": "direct"
+      }
+    ],
+    "rule_set": [
+      {
+        "type": "remote",
+        "tag": "geoip-cn",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/lyc8503/sing-box-rules/rule-set-geoip/geoip-cn.srs",
+        "download_detour": "select"
+      },
+      {
+        "type": "remote",
+        "tag": "geosite-cn",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/lyc8503/sing-box-rules/rule-set-geosite/geosite-cn.srs",
+        "download_detour": "select"
+      },
+      {
+        "type": "remote",
+        "tag": "geosite-openai",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/lyc8503/sing-box-rules/rule-set-geosite/geosite-openai.srs",
+        "download_detour": "select"
+      },
+      {
+        "type": "remote",
+        "tag": "geosite-google-gemini",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/lyc8503/sing-box-rules/rule-set-geosite/geosite-google-gemini.srs",
+        "download_detour": "select"
+      },
+      {
+        "type": "remote",
+        "tag": "geosite-googlefcm",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/lyc8503/sing-box-rules/rule-set-geosite/geosite-googlefcm.srs",
+        "download_detour": "select"
+      },
+      {
+        "type": "remote",
+        "tag": "geosite-category-ads-all",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/lyc8503/sing-box-rules/rule-set-geosite/geosite-category-ads-all.srs",
+        "download_detour": "select"
+      }
+    ],
+    "final": "select",
+    "default_domain_resolver": "dns_direct",
+    "auto_detect_interface": true,
+    "override_android_vpn": true
+  },
+  "experimental": {
+    "cache_file": {
+      "enabled": true
+    },
+    "clash_api": {
+      "external_controller": "127.0.0.1:9090"
+    }
+  }
+}

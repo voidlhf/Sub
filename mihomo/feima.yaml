@@ -1,0 +1,370 @@
+log-level: "debug"
+mixed-port: 7890
+allow-lan: true
+external-controller: "127.0.0.1:9090"
+unified-delay: true
+tcp-concurrent: true
+find-process-mode: "strict"
+global-client-fingerprint: "chrome"
+profile:
+  store-selected: true
+  store-fake-ip: true
+sniffer:
+  enable: true
+  force-dns-mapping: true
+  parse-pure-ip: true
+  override-destination: false
+  sniff:
+    HTTP:
+      ports:
+      - 80
+      - "8080-8880"
+    TLS:
+      ports:
+      - 443
+      - 8443
+    QUIC:
+      ports:
+      - 443
+      - 8443
+tun:
+  enable: true
+  stack: "mixed"
+  dns-hijack:
+  - "any:53"
+  - "tcp://any:53"
+  auto-route: true
+  auto-redirect: true
+  auto-detect-interface: true
+  strict-route: true
+dns:
+  enable: true
+  ipv6: false
+  default-nameserver:
+  - "223.5.5.5"
+  - "119.29.29.29"
+  enhanced-mode: "fake-ip"
+  fake-ip-range: "198.18.0.1/16"
+  nameserver:
+  - "https://dns.cloudflare.com/dns-query"
+  - "https://dns.google/dns-query"
+  nameserver-policy:
+    geosite:cn,private:
+    - "https://dns.alidns.com/dns-query"
+    - "https://doh.pub/dns-query"
+proxies:
+- {name: "剩余流量：998024.51 GB", server: "us.pddwdf.store", port: 10599, udp: true, skip-cert-verify: false, sni: "us.pddwdf.store", type: "hysteria2", password: "b75873fe-7e5b-43d9-b199-94674c83cf6b"}
+- {name: "距离下次重置剩余：4 天", server: "us.pddwdf.store", port: 10599, udp: true, skip-cert-verify: false, sni: "us.pddwdf.store", type: "hysteria2", password: "b75873fe-7e5b-43d9-b199-94674c83cf6b"}
+- {name: "套餐到期：2025-04-13", server: "us.pddwdf.store", port: 10599, udp: true, skip-cert-verify: false, sni: "us.pddwdf.store", type: "hysteria2", password: "b75873fe-7e5b-43d9-b199-94674c83cf6b"}
+- {name: "官网:feima.kahao.online", server: "us.pddwdf.store", port: 10599, udp: true, skip-cert-verify: false, sni: "us.pddwdf.store", type: "hysteria2", password: "b75873fe-7e5b-43d9-b199-94674c83cf6b"}
+- {name: "如订阅更新失败到官网重新获取", server: "us.pddwdf.store", port: 10599, udp: true, skip-cert-verify: false, sni: "us.pddwdf.store", type: "hysteria2", password: "b75873fe-7e5b-43d9-b199-94674c83cf6b"}
+- {name: "🇺🇸 美國 1 大流量下载专用", server: "us.pddwdf.store", port: 10599, udp: true, skip-cert-verify: false, sni: "us.pddwdf.store", type: "hysteria2", password: "b75873fe-7e5b-43d9-b199-94674c83cf6b"}
+- {name: "🇺🇸 美國 2 大流量下载专用", server: "mxdx.pddwdf.store", port: 10822, udp: true, skip-cert-verify: false, sni: "mxdx.pddwdf.store", type: "hysteria2", password: "b75873fe-7e5b-43d9-b199-94674c83cf6b"}
+- {name: "🇺🇸 美國 3 大流量下载专用", server: "mgwx.pddwdf.store", port: 10666, udp: true, skip-cert-verify: false, sni: "mgwx.pddwdf.store", type: "hysteria2", password: "b75873fe-7e5b-43d9-b199-94674c83cf6b"}
+- {name: "🇺🇸 美國 4", type: "ss", server: "gz.pddwdf.store", port: 11515, cipher: "chacha20-ietf-poly1305", password: "b75873fe-7e5b-43d9-b199-94674c83cf6b", udp: true}
+- {name: "🇺🇸 美國 5", type: "ss", server: "gz.pddwdf.store", port: 18006, cipher: "chacha20-ietf-poly1305", password: "b75873fe-7e5b-43d9-b199-94674c83cf6b", udp: true}
+- {name: "🇺🇸 美國 6", type: "ss", server: "gz.pddwdf.store", port: 39723, cipher: "chacha20-ietf-poly1305", password: "b75873fe-7e5b-43d9-b199-94674c83cf6b", udp: true}
+- {name: "🇺🇸 美國 7", server: "uussaa.pddwdf.store", port: 20362, udp: true, skip-cert-verify: false, sni: "uussaa.pddwdf.store", type: "hysteria2", password: "b75873fe-7e5b-43d9-b199-94674c83cf6b"}
+- {name: "🇺🇸 美國 8", type: "ss", server: "gz.pddwdf.store", port: 33143, cipher: "chacha20-ietf-poly1305", password: "b75873fe-7e5b-43d9-b199-94674c83cf6b", udp: true}
+- {name: "🇹🇼 台灣 1", server: "tw.pddwdf.store", port: 11309, udp: true, skip-cert-verify: false, sni: "tw.pddwdf.store", type: "hysteria2", password: "b75873fe-7e5b-43d9-b199-94674c83cf6b"}
+- {name: "🇹🇼 台灣 2", server: "ww.pddwdf.store", port: 15963, udp: true, skip-cert-verify: false, sni: "ww.pddwdf.store", type: "hysteria2", password: "b75873fe-7e5b-43d9-b199-94674c83cf6b"}
+- {name: "🇹🇼 台灣 3", type: "ss", server: "gz.pddwdf.store", port: 50971, cipher: "chacha20-ietf-poly1305", password: "b75873fe-7e5b-43d9-b199-94674c83cf6b", udp: true}
+- {name: "🇹🇼 台灣 4", type: "ss", server: "gz.pddwdf.store", port: 42980, cipher: "chacha20-ietf-poly1305", password: "b75873fe-7e5b-43d9-b199-94674c83cf6b", udp: true}
+- {name: "🇹🇼 台灣 5", type: "ss", server: "gz.pddwdf.store", port: 14867, cipher: "chacha20-ietf-poly1305", password: "b75873fe-7e5b-43d9-b199-94674c83cf6b", udp: true}
+- {name: "🇯🇵 日本 1", server: "dj.pddwdf.store", port: 11225, udp: true, skip-cert-verify: false, sni: "dj.pddwdf.store", type: "hysteria2", password: "b75873fe-7e5b-43d9-b199-94674c83cf6b"}
+- {name: "🇯🇵 日本 2", server: "jp7.pddwdf.store", port: 10269, udp: true, skip-cert-verify: false, sni: "jp7.pddwdf.store", type: "hysteria2", password: "b75873fe-7e5b-43d9-b199-94674c83cf6b"}
+- {name: "🇯🇵 日本 3", type: "ss", server: "gz.pddwdf.store", port: 28485, cipher: "chacha20-ietf-poly1305", password: "b75873fe-7e5b-43d9-b199-94674c83cf6b", udp: true}
+- {name: "🇯🇵 日本 4", type: "ss", server: "gz.pddwdf.store", port: 47431, cipher: "chacha20-ietf-poly1305", password: "b75873fe-7e5b-43d9-b199-94674c83cf6b", udp: true}
+- {name: "🇰🇷 韓國 1", server: "kor.pddwdf.store", port: 10119, udp: true, skip-cert-verify: false, sni: "kor.pddwdf.store", type: "hysteria2", password: "b75873fe-7e5b-43d9-b199-94674c83cf6b"}
+- {name: "🇰🇷 韓國 2", type: "ss", server: "gz.pddwdf.store", port: 44081, cipher: "chacha20-ietf-poly1305", password: "b75873fe-7e5b-43d9-b199-94674c83cf6b", udp: true}
+- {name: "🇰🇷 韓國 3", type: "ss", server: "gz.pddwdf.store", port: 11315, cipher: "chacha20-ietf-poly1305", password: "b75873fe-7e5b-43d9-b199-94674c83cf6b", udp: true}
+- {name: "🇸🇬 新加坡 1", server: "sg2.pddwdf.store", port: 10115, udp: true, skip-cert-verify: false, sni: "sg2.pddwdf.store", type: "hysteria2", password: "b75873fe-7e5b-43d9-b199-94674c83cf6b"}
+- {name: "🇸🇬 新加坡 2", server: "sg1t.pddwdf.store", port: 20362, udp: true, skip-cert-verify: false, sni: "sg1t.pddwdf.store", type: "hysteria2", password: "b75873fe-7e5b-43d9-b199-94674c83cf6b"}
+- {name: "🇸🇬 新加坡 3", type: "ss", server: "gz.pddwdf.store", port: 39367, cipher: "chacha20-ietf-poly1305", password: "b75873fe-7e5b-43d9-b199-94674c83cf6b", udp: true}
+- {name: "🇸🇬 新加坡 4", type: "ss", server: "gz.pddwdf.store", port: 33227, cipher: "chacha20-ietf-poly1305", password: "b75873fe-7e5b-43d9-b199-94674c83cf6b", udp: true}
+- {name: "🇸🇬 新加坡 5", type: "ss", server: "gz.pddwdf.store", port: 20692, cipher: "chacha20-ietf-poly1305", password: "b75873fe-7e5b-43d9-b199-94674c83cf6b", udp: true}
+- {name: "🇭🇰 香港 1", server: "hk1.pddwdf.store", port: 36123, udp: true, skip-cert-verify: false, sni: "hk1.pddwdf.store", type: "hysteria2", password: "b75873fe-7e5b-43d9-b199-94674c83cf6b"}
+- {name: "🇭🇰 香港 2", server: "hk.pddwdf.store", port: 11264, udp: true, skip-cert-verify: false, sni: "hk.pddwdf.store", type: "hysteria2", password: "b75873fe-7e5b-43d9-b199-94674c83cf6b"}
+- {name: "🇭🇰 香港 3", server: "hk3.pddwdf.store", port: 10866, udp: true, skip-cert-verify: false, sni: "hk3.pddwdf.store", type: "hysteria2", password: "b75873fe-7e5b-43d9-b199-94674c83cf6b", obfs: "salamander", obfs-password: "ZDQxZDhjZDk4ZjAwYjIwNA=="}
+- {name: "🇭🇰 香港 4", type: "ss", server: "gz.pddwdf.store", port: 36137, cipher: "chacha20-ietf-poly1305", password: "b75873fe-7e5b-43d9-b199-94674c83cf6b", udp: true}
+- {name: "🇭🇰 香港 5", type: "ss", server: "sh.pddwdf.store", port: 39707, cipher: "chacha20-ietf-poly1305", password: "b75873fe-7e5b-43d9-b199-94674c83cf6b", udp: true}
+- {name: "🇭🇰 香港 6", type: "ss", server: "gz.pddwdf.store", port: 14941, cipher: "chacha20-ietf-poly1305", password: "b75873fe-7e5b-43d9-b199-94674c83cf6b", udp: true}
+- {name: "🇮🇹 義大利 1", server: "ita.pddwdf.store", port: 14852, udp: true, skip-cert-verify: false, sni: "ita.pddwdf.store", type: "hysteria2", password: "b75873fe-7e5b-43d9-b199-94674c83cf6b", obfs: "salamander", obfs-password: "ZDQxZDhjZDk4ZjAwYjIwNA=="}
+- {name: "🇮🇹 義大利 2", type: "ss", server: "gz.pddwdf.store", port: 46253, cipher: "chacha20-ietf-poly1305", password: "b75873fe-7e5b-43d9-b199-94674c83cf6b", udp: true}
+- {name: "🇹🇷 土耳其 1", server: "tr.pddwdf.store", port: 10963, udp: true, skip-cert-verify: false, sni: "tr.pddwdf.store", type: "hysteria2", password: "b75873fe-7e5b-43d9-b199-94674c83cf6b", obfs: "salamander", obfs-password: "ZDQxZDhjZDk4ZjAwYjIwNA=="}
+- {name: "🇹🇷 土耳其 2", type: "ss", server: "gz.pddwdf.store", port: 33476, cipher: "chacha20-ietf-poly1305", password: "b75873fe-7e5b-43d9-b199-94674c83cf6b", udp: true}
+- {name: "🇮🇸 冰島 1", server: "is.pddwdf.store", port: 23614, udp: true, skip-cert-verify: false, sni: "is.pddwdf.store", type: "hysteria2", password: "b75873fe-7e5b-43d9-b199-94674c83cf6b", obfs: "salamander", obfs-password: "ZDQxZDhjZDk4ZjAwYjIwNA=="}
+- {name: "🇮🇸 冰島 2", type: "ss", server: "gz.pddwdf.store", port: 36086, cipher: "chacha20-ietf-poly1305", password: "b75873fe-7e5b-43d9-b199-94674c83cf6b", udp: true}
+- {name: "🇮🇳 印度 1", server: "in.pddwdf.store", port: 12345, udp: true, skip-cert-verify: true, sni: "in.pddwdf.store", type: "hysteria2", password: "b75873fe-7e5b-43d9-b199-94674c83cf6b"}
+- {name: "🇮🇳 印度 2", type: "ss", server: "gz.pddwdf.store", port: 43611, cipher: "chacha20-ietf-poly1305", password: "b75873fe-7e5b-43d9-b199-94674c83cf6b", udp: true}
+- {name: "🇺🇦 烏克蘭 1 IPV6", server: "wkl.pddwdf.store", port: 2435, udp: true, skip-cert-verify: false, sni: "wkl.pddwdf.store", type: "hysteria2", password: "b75873fe-7e5b-43d9-b199-94674c83cf6b"}
+- {name: "🇺🇦 烏克蘭 2", type: "ss", server: "gz.pddwdf.store", port: 53177, cipher: "chacha20-ietf-poly1305", password: "b75873fe-7e5b-43d9-b199-94674c83cf6b", udp: true}
+- {name: "🇦🇪 阿聯酋 1", server: "alian.pddwdf.store", port: 20362, udp: true, skip-cert-verify: true, sni: "alian.pddwdf.store", type: "hysteria2", password: "b75873fe-7e5b-43d9-b199-94674c83cf6b"}
+- {name: "🇦🇪 阿聯酋 2", type: "ss", server: "gz.pddwdf.store", port: 49831, cipher: "chacha20-ietf-poly1305", password: "b75873fe-7e5b-43d9-b199-94674c83cf6b", udp: true}
+- {name: "🇵🇭 菲律賓 1 IPV6", server: "phl.pddwdf.store", port: 13695, udp: true, skip-cert-verify: false, sni: "phl.pddwdf.store", type: "hysteria2", password: "b75873fe-7e5b-43d9-b199-94674c83cf6b"}
+- {name: "🇵🇭 菲律賓 2", type: "ss", server: "sh.pddwdf.store", port: 38733, cipher: "chacha20-ietf-poly1305", password: "b75873fe-7e5b-43d9-b199-94674c83cf6b", udp: true}
+- {name: "🇲🇲 缅甸 1 IPV6", server: "miandian.pddwdf.store", port: 10365, udp: true, skip-cert-verify: false, sni: "miandian.pddwdf.store", type: "hysteria2", password: "b75873fe-7e5b-43d9-b199-94674c83cf6b"}
+- {name: "🇲🇲 缅甸 2", type: "ss", server: "gz.pddwdf.store", port: 42722, cipher: "chacha20-ietf-poly1305", password: "b75873fe-7e5b-43d9-b199-94674c83cf6b", udp: true}
+- {name: "🇹🇭 泰國 1 IPV6", server: "naone-tha.pddwdf.store", port: 23652, udp: true, skip-cert-verify: false, sni: "naone-tha.pddwdf.store", type: "hysteria2", password: "b75873fe-7e5b-43d9-b199-94674c83cf6b"}
+- {name: "🇹🇭 泰國 2", type: "ss", server: "gz.pddwdf.store", port: 51881, cipher: "chacha20-ietf-poly1305", password: "b75873fe-7e5b-43d9-b199-94674c83cf6b", udp: true}
+- {name: "🇲🇾 馬來西亞 2", type: "ss", server: "gz.pddwdf.store", port: 44105, cipher: "chacha20-ietf-poly1305", password: "b75873fe-7e5b-43d9-b199-94674c83cf6b", udp: true}
+- {name: "🇮🇩 印度尼西亞 2", type: "ss", server: "gz.pddwdf.store", port: 22327, cipher: "chacha20-ietf-poly1305", password: "b75873fe-7e5b-43d9-b199-94674c83cf6b", udp: true}
+- {name: "🇩🇪 德國 1", server: "de.pddwdf.store", port: 42586, udp: true, skip-cert-verify: false, sni: "de.pddwdf.store", type: "hysteria2", password: "b75873fe-7e5b-43d9-b199-94674c83cf6b"}
+- {name: "🇩🇪 德國 2", type: "ss", server: "gz.pddwdf.store", port: 22455, cipher: "chacha20-ietf-poly1305", password: "b75873fe-7e5b-43d9-b199-94674c83cf6b", udp: true}
+- {name: "🇳🇱 荷蘭  1", server: "helan.pddwdf.store", port: 15974, udp: true, skip-cert-verify: false, sni: "helan.pddwdf.store", type: "hysteria2", password: "b75873fe-7e5b-43d9-b199-94674c83cf6b"}
+- {name: "🇳🇱 荷蘭 2", type: "ss", server: "gz.pddwdf.store", port: 14193, cipher: "chacha20-ietf-poly1305", password: "b75873fe-7e5b-43d9-b199-94674c83cf6b", udp: true}
+- {name: "🇬🇧 英國 1", server: "uk.pddwdf.store", port: 36225, udp: true, skip-cert-verify: false, sni: "uk.pddwdf.store", type: "hysteria2", password: "b75873fe-7e5b-43d9-b199-94674c83cf6b"}
+- {name: "🇬🇧 英國 2", type: "ss", server: "sh.pddwdf.store", port: 31032, cipher: "chacha20-ietf-poly1305", password: "b75873fe-7e5b-43d9-b199-94674c83cf6b", udp: true}
+- {name: "🇦🇺 澳大利亞 1", server: "au0.pddwdf.store", port: 17296, udp: true, skip-cert-verify: false, sni: "au0.pddwdf.store", type: "hysteria2", password: "b75873fe-7e5b-43d9-b199-94674c83cf6b", obfs: "salamander", obfs-password: "ZmJlYzA1ZTUxMjk1NDA0Nw=="}
+- {name: "🇦🇺 澳大利亞 2", type: "ss", server: "gz.pddwdf.store", port: 15783, cipher: "chacha20-ietf-poly1305", password: "b75873fe-7e5b-43d9-b199-94674c83cf6b", udp: true}
+- {name: "🇲🇴 澳門 1 IPV6", server: "ai.pddwdf.store", port: 42564, udp: true, skip-cert-verify: false, sni: "ai.pddwdf.store", type: "hysteria2", password: "b75873fe-7e5b-43d9-b199-94674c83cf6b"}
+- {name: "🇲🇴 澳門 2", type: "ss", server: "gz.pddwdf.store", port: 50921, cipher: "chacha20-ietf-poly1305", password: "b75873fe-7e5b-43d9-b199-94674c83cf6b", udp: true}
+- {name: "🇨🇦 加拿大 1", server: "naone-ca.pddwdf.store", port: 19238, udp: true, skip-cert-verify: false, sni: "naone-ca.pddwdf.store", type: "hysteria2", password: "b75873fe-7e5b-43d9-b199-94674c83cf6b"}
+- {name: "🇨🇦 加拿大 2", type: "ss", server: "gz.pddwdf.store", port: 25916, cipher: "chacha20-ietf-poly1305", password: "b75873fe-7e5b-43d9-b199-94674c83cf6b", udp: true}
+- {name: "🇫🇷 法國 1", server: "fr.pddwdf.store", port: 26399, udp: true, skip-cert-verify: false, sni: "fr.pddwdf.store", type: "hysteria2", password: "b75873fe-7e5b-43d9-b199-94674c83cf6b", obfs: "salamander", obfs-password: "ZjlmNDQ0MzAwNDgwMTUxMQ=="}
+- {name: "🇧🇷 巴西 1", type: "vless", server: "brv.pddwdf.store", port: 8080, uuid: "b75873fe-7e5b-43d9-b199-94674c83cf6b", udp: true, tls: true, skip-cert-verify: false, flow: "xtls-rprx-vision", client-fingerprint: "chrome", servername: "www.python.org", reality-opts: {public-key: "FuO7Mq-YFbYQddaXZg4Bg08KbVIDzr1tNXVykA4aYFY", short-id: "89790ba0"}}
+- {name: "🇧🇷 巴西 2", type: "ss", server: "gz.pddwdf.store", port: 11270, cipher: "chacha20-ietf-poly1305", password: "b75873fe-7e5b-43d9-b199-94674c83cf6b", udp: true}
+proxy-groups:
+- name: "PROXY"
+  type: "select"
+  proxies:
+  - "AUTO"
+  - "剩余流量：998024.51 GB"
+  - "距离下次重置剩余：4 天"
+  - "套餐到期：2025-04-13"
+  - "官网:feima.kahao.online"
+  - "如订阅更新失败到官网重新获取"
+  - "🇺🇸 美國 1 大流量下载专用"
+  - "🇺🇸 美國 2 大流量下载专用"
+  - "🇺🇸 美國 3 大流量下载专用"
+  - "🇺🇸 美國 4"
+  - "🇺🇸 美國 5"
+  - "🇺🇸 美國 6"
+  - "🇺🇸 美國 7"
+  - "🇺🇸 美國 8"
+  - "🇹🇼 台灣 1"
+  - "🇹🇼 台灣 2"
+  - "🇹🇼 台灣 3"
+  - "🇹🇼 台灣 4"
+  - "🇹🇼 台灣 5"
+  - "🇯🇵 日本 1"
+  - "🇯🇵 日本 2"
+  - "🇯🇵 日本 3"
+  - "🇯🇵 日本 4"
+  - "🇰🇷 韓國 1"
+  - "🇰🇷 韓國 2"
+  - "🇰🇷 韓國 3"
+  - "🇸🇬 新加坡 1"
+  - "🇸🇬 新加坡 2"
+  - "🇸🇬 新加坡 3"
+  - "🇸🇬 新加坡 4"
+  - "🇸🇬 新加坡 5"
+  - "🇭🇰 香港 1"
+  - "🇭🇰 香港 2"
+  - "🇭🇰 香港 3"
+  - "🇭🇰 香港 4"
+  - "🇭🇰 香港 5"
+  - "🇭🇰 香港 6"
+  - "🇮🇹 義大利 1"
+  - "🇮🇹 義大利 2"
+  - "🇹🇷 土耳其 1"
+  - "🇹🇷 土耳其 2"
+  - "🇮🇸 冰島 1"
+  - "🇮🇸 冰島 2"
+  - "🇮🇳 印度 1"
+  - "🇮🇳 印度 2"
+  - "🇺🇦 烏克蘭 1 IPV6"
+  - "🇺🇦 烏克蘭 2"
+  - "🇦🇪 阿聯酋 1"
+  - "🇦🇪 阿聯酋 2"
+  - "🇵🇭 菲律賓 1 IPV6"
+  - "🇵🇭 菲律賓 2"
+  - "🇲🇲 缅甸 1 IPV6"
+  - "🇲🇲 缅甸 2"
+  - "🇹🇭 泰國 1 IPV6"
+  - "🇹🇭 泰國 2"
+  - "🇲🇾 馬來西亞 2"
+  - "🇮🇩 印度尼西亞 2"
+  - "🇩🇪 德國 1"
+  - "🇩🇪 德國 2"
+  - "🇳🇱 荷蘭  1"
+  - "🇳🇱 荷蘭 2"
+  - "🇬🇧 英國 1"
+  - "🇬🇧 英國 2"
+  - "🇦🇺 澳大利亞 1"
+  - "🇦🇺 澳大利亞 2"
+  - "🇲🇴 澳門 1 IPV6"
+  - "🇲🇴 澳門 2"
+  - "🇨🇦 加拿大 1"
+  - "🇨🇦 加拿大 2"
+  - "🇫🇷 法國 1"
+  - "🇧🇷 巴西 1"
+  - "🇧🇷 巴西 2"
+- name: "AUTO"
+  type: "url-test"
+  url: "http://www.gstatic.com/generate_204"
+  interval: 300
+  tolerance: 50
+  proxies:
+  - "剩余流量：998024.51 GB"
+  - "距离下次重置剩余：4 天"
+  - "套餐到期：2025-04-13"
+  - "官网:feima.kahao.online"
+  - "如订阅更新失败到官网重新获取"
+  - "🇺🇸 美國 1 大流量下载专用"
+  - "🇺🇸 美國 2 大流量下载专用"
+  - "🇺🇸 美國 3 大流量下载专用"
+  - "🇺🇸 美國 4"
+  - "🇺🇸 美國 5"
+  - "🇺🇸 美國 6"
+  - "🇺🇸 美國 7"
+  - "🇺🇸 美國 8"
+  - "🇹🇼 台灣 1"
+  - "🇹🇼 台灣 2"
+  - "🇹🇼 台灣 3"
+  - "🇹🇼 台灣 4"
+  - "🇹🇼 台灣 5"
+  - "🇯🇵 日本 1"
+  - "🇯🇵 日本 2"
+  - "🇯🇵 日本 3"
+  - "🇯🇵 日本 4"
+  - "🇰🇷 韓國 1"
+  - "🇰🇷 韓國 2"
+  - "🇰🇷 韓國 3"
+  - "🇸🇬 新加坡 1"
+  - "🇸🇬 新加坡 2"
+  - "🇸🇬 新加坡 3"
+  - "🇸🇬 新加坡 4"
+  - "🇸🇬 新加坡 5"
+  - "🇭🇰 香港 1"
+  - "🇭🇰 香港 2"
+  - "🇭🇰 香港 3"
+  - "🇭🇰 香港 4"
+  - "🇭🇰 香港 5"
+  - "🇭🇰 香港 6"
+  - "🇮🇹 義大利 1"
+  - "🇮🇹 義大利 2"
+  - "🇹🇷 土耳其 1"
+  - "🇹🇷 土耳其 2"
+  - "🇮🇸 冰島 1"
+  - "🇮🇸 冰島 2"
+  - "🇮🇳 印度 1"
+  - "🇮🇳 印度 2"
+  - "🇺🇦 烏克蘭 1 IPV6"
+  - "🇺🇦 烏克蘭 2"
+  - "🇦🇪 阿聯酋 1"
+  - "🇦🇪 阿聯酋 2"
+  - "🇵🇭 菲律賓 1 IPV6"
+  - "🇵🇭 菲律賓 2"
+  - "🇲🇲 缅甸 1 IPV6"
+  - "🇲🇲 缅甸 2"
+  - "🇹🇭 泰國 1 IPV6"
+  - "🇹🇭 泰國 2"
+  - "🇲🇾 馬來西亞 2"
+  - "🇮🇩 印度尼西亞 2"
+  - "🇩🇪 德國 1"
+  - "🇩🇪 德國 2"
+  - "🇳🇱 荷蘭  1"
+  - "🇳🇱 荷蘭 2"
+  - "🇬🇧 英國 1"
+  - "🇬🇧 英國 2"
+  - "🇦🇺 澳大利亞 1"
+  - "🇦🇺 澳大利亞 2"
+  - "🇲🇴 澳門 1 IPV6"
+  - "🇲🇴 澳門 2"
+  - "🇨🇦 加拿大 1"
+  - "🇨🇦 加拿大 2"
+  - "🇫🇷 法國 1"
+  - "🇧🇷 巴西 1"
+  - "🇧🇷 巴西 2"
+- name: "AI"
+  type: "select"
+  proxies:
+  - "剩余流量：998024.51 GB"
+  - "距离下次重置剩余：4 天"
+  - "套餐到期：2025-04-13"
+  - "官网:feima.kahao.online"
+  - "如订阅更新失败到官网重新获取"
+  - "🇺🇸 美國 1 大流量下载专用"
+  - "🇺🇸 美國 2 大流量下载专用"
+  - "🇺🇸 美國 3 大流量下载专用"
+  - "🇺🇸 美國 4"
+  - "🇺🇸 美國 5"
+  - "🇺🇸 美國 6"
+  - "🇺🇸 美國 7"
+  - "🇺🇸 美國 8"
+  - "🇹🇼 台灣 1"
+  - "🇹🇼 台灣 2"
+  - "🇹🇼 台灣 3"
+  - "🇹🇼 台灣 4"
+  - "🇹🇼 台灣 5"
+  - "🇯🇵 日本 1"
+  - "🇯🇵 日本 2"
+  - "🇯🇵 日本 3"
+  - "🇯🇵 日本 4"
+  - "🇰🇷 韓國 1"
+  - "🇰🇷 韓國 2"
+  - "🇰🇷 韓國 3"
+  - "🇸🇬 新加坡 1"
+  - "🇸🇬 新加坡 2"
+  - "🇸🇬 新加坡 3"
+  - "🇸🇬 新加坡 4"
+  - "🇸🇬 新加坡 5"
+  - "🇭🇰 香港 1"
+  - "🇭🇰 香港 2"
+  - "🇭🇰 香港 3"
+  - "🇭🇰 香港 4"
+  - "🇭🇰 香港 5"
+  - "🇭🇰 香港 6"
+  - "🇮🇹 義大利 1"
+  - "🇮🇹 義大利 2"
+  - "🇹🇷 土耳其 1"
+  - "🇹🇷 土耳其 2"
+  - "🇮🇸 冰島 1"
+  - "🇮🇸 冰島 2"
+  - "🇮🇳 印度 1"
+  - "🇮🇳 印度 2"
+  - "🇺🇦 烏克蘭 1 IPV6"
+  - "🇺🇦 烏克蘭 2"
+  - "🇦🇪 阿聯酋 1"
+  - "🇦🇪 阿聯酋 2"
+  - "🇵🇭 菲律賓 1 IPV6"
+  - "🇵🇭 菲律賓 2"
+  - "🇲🇲 缅甸 1 IPV6"
+  - "🇲🇲 缅甸 2"
+  - "🇹🇭 泰國 1 IPV6"
+  - "🇹🇭 泰國 2"
+  - "🇲🇾 馬來西亞 2"
+  - "🇮🇩 印度尼西亞 2"
+  - "🇩🇪 德國 1"
+  - "🇩🇪 德國 2"
+  - "🇳🇱 荷蘭  1"
+  - "🇳🇱 荷蘭 2"
+  - "🇬🇧 英國 1"
+  - "🇬🇧 英國 2"
+  - "🇦🇺 澳大利亞 1"
+  - "🇦🇺 澳大利亞 2"
+  - "🇲🇴 澳門 1 IPV6"
+  - "🇲🇴 澳門 2"
+  - "🇨🇦 加拿大 1"
+  - "🇨🇦 加拿大 2"
+  - "🇫🇷 法國 1"
+  - "🇧🇷 巴西 1"
+  - "🇧🇷 巴西 2"
+rules:
+- "GEOSITE,CATEGORY-ADS-ALL,REJECT"
+- "DOMAIN-SUFFIX,ushd.xmsl.org,DIRECT"
+- "DOMAIN-SUFFIX,cf.gtlx.org,DIRECT"
+- "DOMAIN-SUFFIX,public-operation-hkrpg-sg.hoyoverse.com,DIRECT"
+- "DOMAIN-SUFFIX,public-operation-hk4e-sg.hoyoverse.com,DIRECT"
+- "DOMAIN-SUFFIX,public-operation-nap-sg.hoyoverse.com,DIRECT"
+- "DST-PORT,23301/22101-22102/20501/21601-21606,DIRECT"
+- "DOMAIN-KEYWORD,hoyoverse.com,PROXY"
+- "GEOSITE,OPENAI,AI"
+- "GEOSITE,GOOGLE-GEMINI,AI"
+- "GEOSITE,GOOGLEFCM,DIRECT"
+- "GEOSITE,PRIVATE,DIRECT"
+- "GEOSITE,CN,DIRECT"
+- "GEOIP,PRIVATE,DIRECT,no-resolve"
+- "GEOIP,CN,DIRECT"
+- "MATCH,PROXY"
