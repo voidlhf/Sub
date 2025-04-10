@@ -53,96 +53,44 @@ dns:
     - "https://dns.alidns.com/dns-query"
     - "https://doh.pub/dns-query"
 proxies:
-- {name: "剩余流量：0", server: "tw.akebi.cc", port: 30001, sni: "tw.akebi.cc", up: 600, down: 1000, skip-cert-verify: false, type: "hysteria2", password: "82febca6-8856-41fe-84df-c8bda0b72c7b"}
-- {name: "距离下次重置剩余：25 天", server: "tw.akebi.cc", port: 30001, sni: "tw.akebi.cc", up: 600, down: 1000, skip-cert-verify: false, type: "hysteria2", password: "82febca6-8856-41fe-84df-c8bda0b72c7b"}
-- {name: "套餐到期：2026-11-05", server: "tw.akebi.cc", port: 30001, sni: "tw.akebi.cc", up: 600, down: 1000, skip-cert-verify: false, type: "hysteria2", password: "82febca6-8856-41fe-84df-c8bda0b72c7b"}
-- {name: "🇹🇼台湾｜01｜原生IP", server: "tw.akebi.cc", port: 30001, sni: "tw.akebi.cc", up: 600, down: 1000, skip-cert-verify: false, type: "hysteria2", password: "82febca6-8856-41fe-84df-c8bda0b72c7b"}
-- {name: "🇹🇼台湾｜03｜原生IP", server: "tw3.akebi.cc", port: 5006, sni: "tw3.akebi.cc", up: 600, down: 1000, skip-cert-verify: false, type: "hysteria2", password: "82febca6-8856-41fe-84df-c8bda0b72c7b"}
-- {name: "🇹🇼台湾｜04｜原生IP", server: "tw3.akebi.cc", port: 9000, sni: "tw3.akebi.cc", up: 600, down: 1000, skip-cert-verify: true, type: "hysteria2", password: "82febca6-8856-41fe-84df-c8bda0b72c7b"}
-- {name: "🇹🇼台湾｜05｜原生IP", server: "tw3.akebi.cc", port: 9001, sni: "tw3.akebi.cc", up: 600, down: 1000, skip-cert-verify: false, type: "hysteria2", password: "82febca6-8856-41fe-84df-c8bda0b72c7b"}
-- {name: "🇭🇰香港｜01", server: "tw.akebi.cc", port: 1000, sni: "hk03.akebi.cc", up: 600, down: 1000, skip-cert-verify: false, type: "hysteria2", password: "82febca6-8856-41fe-84df-c8bda0b72c7b"}
-- {name: "🇭🇰香港｜02", server: "tw3.akebi.cc", port: 2000, sni: "hk03.akebi.cc", up: 600, down: 1000, skip-cert-verify: false, type: "hysteria2", password: "82febca6-8856-41fe-84df-c8bda0b72c7b"}
-- {name: "🇭🇰香港｜03", server: "tw3.akebi.cc", port: 2021, sni: "hk03.akebi.cc", up: 600, down: 1000, skip-cert-verify: false, type: "hysteria2", password: "82febca6-8856-41fe-84df-c8bda0b72c7b"}
+- {name: "剩余流量：109.72 GB", server: "tw.akebi.cc", port: 30001, sni: "tw.akebi.cc", up: 500, down: 500, skip-cert-verify: false, type: "hysteria2", password: "82febca6-8856-41fe-84df-c8bda0b72c7b"}
+- {name: "套餐到期：2025-05-10", server: "tw.akebi.cc", port: 30001, sni: "tw.akebi.cc", up: 500, down: 500, skip-cert-verify: false, type: "hysteria2", password: "82febca6-8856-41fe-84df-c8bda0b72c7b"}
+- {name: "🇹🇼台湾｜01｜原生IP", server: "tw.akebi.cc", port: 30001, sni: "tw.akebi.cc", up: 500, down: 500, skip-cert-verify: false, type: "hysteria2", password: "82febca6-8856-41fe-84df-c8bda0b72c7b"}
+- {name: "🇭🇰香港｜01", server: "tw.akebi.cc", port: 1000, sni: "hk03.akebi.cc", up: 500, down: 500, skip-cert-verify: false, type: "hysteria2", password: "82febca6-8856-41fe-84df-c8bda0b72c7b"}
 - {name: "🇭🇰香港｜04｜BGP", server: "hkaly01.akebi.cc", port: 443, sni: "hkaly01.akebi.cc", up: 200, down: 200, skip-cert-verify: false, type: "hysteria2", password: "82febca6-8856-41fe-84df-c8bda0b72c7b"}
-- {name: "🇭🇰香港｜05｜BGP", server: "hkaly01.akebi.cc", port: 8080, sni: "hkaly01.akebi.cc", up: 200, down: 200, skip-cert-verify: false, type: "hysteria2", password: "82febca6-8856-41fe-84df-c8bda0b72c7b"}
-- {name: "🇭🇰香港｜06｜BGP", server: "hkaly01.akebi.cc", port: 8000, sni: "hkaly01.akebi.cc", up: 200, down: 200, skip-cert-verify: false, type: "hysteria2", password: "82febca6-8856-41fe-84df-c8bda0b72c7b"}
-- {name: "🇹🇭泰国丨01｜原生IP", server: "tw3.akebi.cc", port: 2024, sni: "th.akebi.cc", up: 600, down: 1000, skip-cert-verify: true, type: "hysteria2", password: "82febca6-8856-41fe-84df-c8bda0b72c7b"}
-- {name: "🇰🇭柬埔寨｜01", server: "tw3.akebi.cc", port: 2023, sni: "kh01.akebi.cc", up: 600, down: 1000, skip-cert-verify: false, type: "hysteria2", password: "82febca6-8856-41fe-84df-c8bda0b72c7b"}
-- {name: "🇺🇦乌克兰｜01｜原生IP", server: "tw3.akebi.cc", port: 2020, sni: "ua01.akebi.cc", up: 600, down: 1000, skip-cert-verify: false, type: "hysteria2", password: "82febca6-8856-41fe-84df-c8bda0b72c7b"}
-- {name: "🇦🇺澳大利亚｜01｜原生IP", server: "tw3.akebi.cc", port: 2006, sni: "au01.akebi.cc", up: 600, down: 1000, skip-cert-verify: false, type: "hysteria2", password: "82febca6-8856-41fe-84df-c8bda0b72c7b"}
-- {name: "🇹🇬多哥｜01｜住宅IP", server: "tw3.akebi.cc", port: 2026, sni: "tg.akebi.cc", up: 600, down: 1000, skip-cert-verify: false, type: "hysteria2", password: "82febca6-8856-41fe-84df-c8bda0b72c7b"}
-- {name: "🇰🇿哈萨克斯坦｜01｜住宅ip", server: "tw3.akebi.cc", port: 2027, sni: "kz.akebi.cc", up: 600, down: 1000, skip-cert-verify: false, type: "hysteria2", password: "82febca6-8856-41fe-84df-c8bda0b72c7b"}
+- {name: "🇦🇺澳大利亚｜01｜原生IP", server: "tw3.akebi.cc", port: 2006, sni: "au01.akebi.cc", up: 500, down: 500, skip-cert-verify: false, type: "hysteria2", password: "82febca6-8856-41fe-84df-c8bda0b72c7b"}
 proxy-groups:
 - name: "PROXY"
   type: "select"
   proxies:
   - "AUTO"
-  - "剩余流量：0"
-  - "距离下次重置剩余：25 天"
-  - "套餐到期：2026-11-05"
+  - "剩余流量：109.72 GB"
+  - "套餐到期：2025-05-10"
   - "🇹🇼台湾｜01｜原生IP"
-  - "🇹🇼台湾｜03｜原生IP"
-  - "🇹🇼台湾｜04｜原生IP"
-  - "🇹🇼台湾｜05｜原生IP"
   - "🇭🇰香港｜01"
-  - "🇭🇰香港｜02"
-  - "🇭🇰香港｜03"
   - "🇭🇰香港｜04｜BGP"
-  - "🇭🇰香港｜05｜BGP"
-  - "🇭🇰香港｜06｜BGP"
-  - "🇹🇭泰国丨01｜原生IP"
-  - "🇰🇭柬埔寨｜01"
-  - "🇺🇦乌克兰｜01｜原生IP"
   - "🇦🇺澳大利亚｜01｜原生IP"
-  - "🇹🇬多哥｜01｜住宅IP"
-  - "🇰🇿哈萨克斯坦｜01｜住宅ip"
 - name: "AUTO"
   type: "url-test"
   url: "http://www.gstatic.com/generate_204"
   interval: 300
   tolerance: 50
   proxies:
-  - "剩余流量：0"
-  - "距离下次重置剩余：25 天"
-  - "套餐到期：2026-11-05"
+  - "剩余流量：109.72 GB"
+  - "套餐到期：2025-05-10"
   - "🇹🇼台湾｜01｜原生IP"
-  - "🇹🇼台湾｜03｜原生IP"
-  - "🇹🇼台湾｜04｜原生IP"
-  - "🇹🇼台湾｜05｜原生IP"
   - "🇭🇰香港｜01"
-  - "🇭🇰香港｜02"
-  - "🇭🇰香港｜03"
   - "🇭🇰香港｜04｜BGP"
-  - "🇭🇰香港｜05｜BGP"
-  - "🇭🇰香港｜06｜BGP"
-  - "🇹🇭泰国丨01｜原生IP"
-  - "🇰🇭柬埔寨｜01"
-  - "🇺🇦乌克兰｜01｜原生IP"
   - "🇦🇺澳大利亚｜01｜原生IP"
-  - "🇹🇬多哥｜01｜住宅IP"
-  - "🇰🇿哈萨克斯坦｜01｜住宅ip"
 - name: "AI"
   type: "select"
   proxies:
-  - "剩余流量：0"
-  - "距离下次重置剩余：25 天"
-  - "套餐到期：2026-11-05"
+  - "剩余流量：109.72 GB"
+  - "套餐到期：2025-05-10"
   - "🇹🇼台湾｜01｜原生IP"
-  - "🇹🇼台湾｜03｜原生IP"
-  - "🇹🇼台湾｜04｜原生IP"
-  - "🇹🇼台湾｜05｜原生IP"
   - "🇭🇰香港｜01"
-  - "🇭🇰香港｜02"
-  - "🇭🇰香港｜03"
   - "🇭🇰香港｜04｜BGP"
-  - "🇭🇰香港｜05｜BGP"
-  - "🇭🇰香港｜06｜BGP"
-  - "🇹🇭泰国丨01｜原生IP"
-  - "🇰🇭柬埔寨｜01"
-  - "🇺🇦乌克兰｜01｜原生IP"
   - "🇦🇺澳大利亚｜01｜原生IP"
-  - "🇹🇬多哥｜01｜住宅IP"
-  - "🇰🇿哈萨克斯坦｜01｜住宅ip"
 rules:
 - "GEOSITE,CATEGORY-ADS-ALL,REJECT"
 - "DOMAIN-SUFFIX,ushd.xmsl.org,DIRECT"
