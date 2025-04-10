@@ -53,7 +53,7 @@ dns:
     - "https://dns.alidns.com/dns-query"
     - "https://doh.pub/dns-query"
 proxies:
-- {name: "剩余流量：997454.94 GB", server: "us.pddwdf.store", port: 10599, udp: true, skip-cert-verify: false, sni: "us.pddwdf.store", type: "hysteria2", password: "b75873fe-7e5b-43d9-b199-94674c83cf6b"}
+- {name: "剩余流量：997451.45 GB", server: "us.pddwdf.store", port: 10599, udp: true, skip-cert-verify: false, sni: "us.pddwdf.store", type: "hysteria2", password: "b75873fe-7e5b-43d9-b199-94674c83cf6b"}
 - {name: "距离下次重置剩余：3 天", server: "us.pddwdf.store", port: 10599, udp: true, skip-cert-verify: false, sni: "us.pddwdf.store", type: "hysteria2", password: "b75873fe-7e5b-43d9-b199-94674c83cf6b"}
 - {name: "套餐到期：2025-04-13", server: "us.pddwdf.store", port: 10599, udp: true, skip-cert-verify: false, sni: "us.pddwdf.store", type: "hysteria2", password: "b75873fe-7e5b-43d9-b199-94674c83cf6b"}
 - {name: "官网:feima.kahao.online", server: "us.pddwdf.store", port: 10599, udp: true, skip-cert-verify: false, sni: "us.pddwdf.store", type: "hysteria2", password: "b75873fe-7e5b-43d9-b199-94674c83cf6b"}
@@ -76,8 +76,9 @@ proxies:
 - {name: "🇯🇵 日本 3", type: "ss", server: "gz.pddwdf.store", port: 28485, cipher: "chacha20-ietf-poly1305", password: "b75873fe-7e5b-43d9-b199-94674c83cf6b", udp: true}
 - {name: "🇯🇵 日本 4", type: "ss", server: "gz.pddwdf.store", port: 47431, cipher: "chacha20-ietf-poly1305", password: "b75873fe-7e5b-43d9-b199-94674c83cf6b", udp: true}
 - {name: "🇰🇷 韓國 1", server: "kor.pddwdf.store", port: 10119, udp: true, skip-cert-verify: false, sni: "kor.pddwdf.store", type: "hysteria2", password: "b75873fe-7e5b-43d9-b199-94674c83cf6b"}
-- {name: "🇰🇷 韓國 2", type: "ss", server: "gz.pddwdf.store", port: 44081, cipher: "chacha20-ietf-poly1305", password: "b75873fe-7e5b-43d9-b199-94674c83cf6b", udp: true}
-- {name: "🇰🇷 韓國 3", type: "ss", server: "gz.pddwdf.store", port: 11315, cipher: "chacha20-ietf-poly1305", password: "b75873fe-7e5b-43d9-b199-94674c83cf6b", udp: true}
+- {name: "🇰🇷 韓國 2", server: "kor-2.pddwdf.store", port: 17523, udp: true, skip-cert-verify: false, sni: "kor-2.pddwdf.store", type: "hysteria2", password: "b75873fe-7e5b-43d9-b199-94674c83cf6b", obfs: "salamander", obfs-password: "ZDQxZDhjZDk4ZjAwYjIwNA=="}
+- {name: "🇰🇷 韓國 3", type: "ss", server: "gz.pddwdf.store", port: 44081, cipher: "chacha20-ietf-poly1305", password: "b75873fe-7e5b-43d9-b199-94674c83cf6b", udp: true}
+- {name: "🇰🇷 韓國 4", type: "ss", server: "gz.pddwdf.store", port: 11315, cipher: "chacha20-ietf-poly1305", password: "b75873fe-7e5b-43d9-b199-94674c83cf6b", udp: true}
 - {name: "🇸🇬 新加坡 1", server: "sg2.pddwdf.store", port: 10115, udp: true, skip-cert-verify: false, sni: "sg2.pddwdf.store", type: "hysteria2", password: "b75873fe-7e5b-43d9-b199-94674c83cf6b"}
 - {name: "🇸🇬 新加坡 2", server: "sg1t.pddwdf.store", port: 20362, udp: true, skip-cert-verify: false, sni: "sg1t.pddwdf.store", type: "hysteria2", password: "b75873fe-7e5b-43d9-b199-94674c83cf6b"}
 - {name: "🇸🇬 新加坡 3", type: "ss", server: "gz.pddwdf.store", port: 39367, cipher: "chacha20-ietf-poly1305", password: "b75873fe-7e5b-43d9-b199-94674c83cf6b", udp: true}
@@ -129,7 +130,7 @@ proxy-groups:
   type: "select"
   proxies:
   - "AUTO"
-  - "剩余流量：997454.94 GB"
+  - "剩余流量：997451.45 GB"
   - "距离下次重置剩余：3 天"
   - "套餐到期：2025-04-13"
   - "官网:feima.kahao.online"
@@ -154,6 +155,7 @@ proxy-groups:
   - "🇰🇷 韓國 1"
   - "🇰🇷 韓國 2"
   - "🇰🇷 韓國 3"
+  - "🇰🇷 韓國 4"
   - "🇸🇬 新加坡 1"
   - "🇸🇬 新加坡 2"
   - "🇸🇬 新加坡 3"
@@ -206,7 +208,7 @@ proxy-groups:
   interval: 300
   tolerance: 50
   proxies:
-  - "剩余流量：997454.94 GB"
+  - "剩余流量：997451.45 GB"
   - "距离下次重置剩余：3 天"
   - "套餐到期：2025-04-13"
   - "官网:feima.kahao.online"
@@ -231,6 +233,7 @@ proxy-groups:
   - "🇰🇷 韓國 1"
   - "🇰🇷 韓國 2"
   - "🇰🇷 韓國 3"
+  - "🇰🇷 韓國 4"
   - "🇸🇬 新加坡 1"
   - "🇸🇬 新加坡 2"
   - "🇸🇬 新加坡 3"
@@ -280,7 +283,7 @@ proxy-groups:
 - name: "AI"
   type: "select"
   proxies:
-  - "剩余流量：997454.94 GB"
+  - "剩余流量：997451.45 GB"
   - "距离下次重置剩余：3 天"
   - "套餐到期：2025-04-13"
   - "官网:feima.kahao.online"
@@ -305,6 +308,7 @@ proxy-groups:
   - "🇰🇷 韓國 1"
   - "🇰🇷 韓國 2"
   - "🇰🇷 韓國 3"
+  - "🇰🇷 韓國 4"
   - "🇸🇬 新加坡 1"
   - "🇸🇬 新加坡 2"
   - "🇸🇬 新加坡 3"
