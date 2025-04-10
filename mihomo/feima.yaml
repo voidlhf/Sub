@@ -53,7 +53,7 @@ dns:
     - "https://dns.alidns.com/dns-query"
     - "https://doh.pub/dns-query"
 proxies:
-- {name: "剩余流量：997451.45 GB", server: "us.pddwdf.store", port: 10599, udp: true, skip-cert-verify: false, sni: "us.pddwdf.store", type: "hysteria2", password: "b75873fe-7e5b-43d9-b199-94674c83cf6b"}
+- {name: "剩余流量：997441.56 GB", server: "us.pddwdf.store", port: 10599, udp: true, skip-cert-verify: false, sni: "us.pddwdf.store", type: "hysteria2", password: "b75873fe-7e5b-43d9-b199-94674c83cf6b"}
 - {name: "距离下次重置剩余：3 天", server: "us.pddwdf.store", port: 10599, udp: true, skip-cert-verify: false, sni: "us.pddwdf.store", type: "hysteria2", password: "b75873fe-7e5b-43d9-b199-94674c83cf6b"}
 - {name: "套餐到期：2025-04-13", server: "us.pddwdf.store", port: 10599, udp: true, skip-cert-verify: false, sni: "us.pddwdf.store", type: "hysteria2", password: "b75873fe-7e5b-43d9-b199-94674c83cf6b"}
 - {name: "官网:feima.kahao.online", server: "us.pddwdf.store", port: 10599, udp: true, skip-cert-verify: false, sni: "us.pddwdf.store", type: "hysteria2", password: "b75873fe-7e5b-43d9-b199-94674c83cf6b"}
@@ -104,6 +104,8 @@ proxies:
 - {name: "🇦🇪 阿聯酋 2", type: "ss", server: "gz.pddwdf.store", port: 49831, cipher: "chacha20-ietf-poly1305", password: "b75873fe-7e5b-43d9-b199-94674c83cf6b", udp: true}
 - {name: "🇵🇭 菲律賓 1 IPV6", server: "phl.pddwdf.store", port: 13695, udp: true, skip-cert-verify: false, sni: "phl.pddwdf.store", type: "hysteria2", password: "b75873fe-7e5b-43d9-b199-94674c83cf6b"}
 - {name: "🇵🇭 菲律賓 2", type: "ss", server: "sh.pddwdf.store", port: 38733, cipher: "chacha20-ietf-poly1305", password: "b75873fe-7e5b-43d9-b199-94674c83cf6b", udp: true}
+- {name: "🇻🇳 越南 1", server: "vn.pddwdf.store", port: 10567, udp: true, skip-cert-verify: false, sni: "vn.pddwdf.store", type: "hysteria2", password: "b75873fe-7e5b-43d9-b199-94674c83cf6b", obfs: "salamander", obfs-password: "ZDQxZDhjZDk4ZjAwYjIwNA=="}
+- {name: "🇻🇳 越南 2", type: "ss", server: "gz.pddwdf.store", port: 58043, cipher: "chacha20-ietf-poly1305", password: "b75873fe-7e5b-43d9-b199-94674c83cf6b", udp: true}
 - {name: "🇲🇲 缅甸 1 IPV6", server: "miandian.pddwdf.store", port: 10365, udp: true, skip-cert-verify: false, sni: "miandian.pddwdf.store", type: "hysteria2", password: "b75873fe-7e5b-43d9-b199-94674c83cf6b"}
 - {name: "🇲🇲 缅甸 2", type: "ss", server: "gz.pddwdf.store", port: 42722, cipher: "chacha20-ietf-poly1305", password: "b75873fe-7e5b-43d9-b199-94674c83cf6b", udp: true}
 - {name: "🇹🇭 泰國 1 IPV6", server: "naone-tha.pddwdf.store", port: 23652, udp: true, skip-cert-verify: false, sni: "naone-tha.pddwdf.store", type: "hysteria2", password: "b75873fe-7e5b-43d9-b199-94674c83cf6b"}
@@ -130,7 +132,7 @@ proxy-groups:
   type: "select"
   proxies:
   - "AUTO"
-  - "剩余流量：997451.45 GB"
+  - "剩余流量：997441.56 GB"
   - "距离下次重置剩余：3 天"
   - "套餐到期：2025-04-13"
   - "官网:feima.kahao.online"
@@ -181,6 +183,8 @@ proxy-groups:
   - "🇦🇪 阿聯酋 2"
   - "🇵🇭 菲律賓 1 IPV6"
   - "🇵🇭 菲律賓 2"
+  - "🇻🇳 越南 1"
+  - "🇻🇳 越南 2"
   - "🇲🇲 缅甸 1 IPV6"
   - "🇲🇲 缅甸 2"
   - "🇹🇭 泰國 1 IPV6"
@@ -208,7 +212,7 @@ proxy-groups:
   interval: 300
   tolerance: 50
   proxies:
-  - "剩余流量：997451.45 GB"
+  - "剩余流量：997441.56 GB"
   - "距离下次重置剩余：3 天"
   - "套餐到期：2025-04-13"
   - "官网:feima.kahao.online"
@@ -259,6 +263,8 @@ proxy-groups:
   - "🇦🇪 阿聯酋 2"
   - "🇵🇭 菲律賓 1 IPV6"
   - "🇵🇭 菲律賓 2"
+  - "🇻🇳 越南 1"
+  - "🇻🇳 越南 2"
   - "🇲🇲 缅甸 1 IPV6"
   - "🇲🇲 缅甸 2"
   - "🇹🇭 泰國 1 IPV6"
@@ -283,7 +289,7 @@ proxy-groups:
 - name: "AI"
   type: "select"
   proxies:
-  - "剩余流量：997451.45 GB"
+  - "剩余流量：997441.56 GB"
   - "距离下次重置剩余：3 天"
   - "套餐到期：2025-04-13"
   - "官网:feima.kahao.online"
@@ -334,6 +340,8 @@ proxy-groups:
   - "🇦🇪 阿聯酋 2"
   - "🇵🇭 菲律賓 1 IPV6"
   - "🇵🇭 菲律賓 2"
+  - "🇻🇳 越南 1"
+  - "🇻🇳 越南 2"
   - "🇲🇲 缅甸 1 IPV6"
   - "🇲🇲 缅甸 2"
   - "🇹🇭 泰國 1 IPV6"
