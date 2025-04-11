@@ -21,7 +21,10 @@ def download_json_from_url(url):
 def extract_and_generate_new_outbounds(source_data):
     try:
         outbounds = source_data.get("outbounds", [])
-        server_objects = [outbound for outbound in outbounds if "server" in outbound]
+        server_objects = [
+            outbound for outbound in outbounds
+            if "server" in outbound and outbound.get("method") != "chacha20"
+        ]
         server_tags = [outbound["tag"] for outbound in server_objects]
         new_objects = [
             {
