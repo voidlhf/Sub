@@ -1,0 +1,126 @@
+log-level: "debug"
+mixed-port: 7890
+allow-lan: true
+external-controller: "127.0.0.1:9090"
+unified-delay: true
+tcp-concurrent: true
+find-process-mode: "strict"
+global-client-fingerprint: "chrome"
+profile:
+  store-selected: true
+  store-fake-ip: true
+sniffer:
+  enable: true
+  force-dns-mapping: true
+  parse-pure-ip: true
+  override-destination: false
+  sniff:
+    HTTP:
+      ports:
+      - 80
+      - "8080-8880"
+    TLS:
+      ports:
+      - 443
+      - 8443
+    QUIC:
+      ports:
+      - 443
+      - 8443
+tun:
+  enable: true
+  stack: "mixed"
+  dns-hijack:
+  - "any:53"
+  - "tcp://any:53"
+  auto-route: true
+  auto-redirect: true
+  auto-detect-interface: true
+  strict-route: true
+dns:
+  enable: true
+  ipv6: false
+  default-nameserver:
+  - "223.5.5.5"
+  - "119.29.29.29"
+  enhanced-mode: "fake-ip"
+  fake-ip-range: "198.18.0.1/16"
+  nameserver:
+  - "https://dns.cloudflare.com/dns-query"
+  - "https://dns.google/dns-query"
+  nameserver-policy:
+    geosite:cn,private:
+    - "https://dns.alidns.com/dns-query"
+    - "https://doh.pub/dns-query"
+proxies:
+- {name: "🏴‍☠️ Netflix/Disney+/油管Premium/ChatGPT", type: "ss", server: "hkdns.webcdn.me", port: 31900, cipher: "chacha20-ietf-poly1305", password: "17995035-415e-422c-8527-6beb8899c054"}
+- {name: "🇨🇳 台湾 - VIP專線", type: "ss", server: "hk-cdn.appscdn.xyz", port: 55100, cipher: "chacha20-ietf-poly1305", password: "17995035-415e-422c-8527-6beb8899c054"}
+- {name: "🏴‍☠️ 更多节点,购买套餐: https://airapp.us", type: "ss", server: "kr-cdn.webcdn.me", port: 55400, cipher: "chacha20-ietf-poly1305", password: "17995035-415e-422c-8527-6beb8899c054"}
+- {name: "🇯🇵 JP - 2x - ChatGPT", type: "ss", server: "jp.webcdn.me", port: 55300, cipher: "chacha20-ietf-poly1305", password: "17995035-415e-422c-8527-6beb8899c054"}
+- {name: "🇺🇸 US - ChatGPT | 住宅IP", type: "ss", server: "usvip.webcdn.me", port: 55001, cipher: "chacha20-ietf-poly1305", password: "17995035-415e-422c-8527-6beb8899c054"}
+- {name: "🇰🇷 韩国", type: "ss", server: "kr-cdn.appscdn.xyz", port: 30015, cipher: "chacha20-ietf-poly1305", password: "17995035-415e-422c-8527-6beb8899c054"}
+- {name: "🇬🇧 UK", type: "ss", server: "uk.webcdn.me", port: 37291, cipher: "chacha20-ietf-poly1305", password: "17995035-415e-422c-8527-6beb8899c054"}
+- {name: "🇸🇬 SG Netflix / Disney 流媒體", type: "ss", server: "sg-cdn.appscdn.xyz", port: 30000, cipher: "chacha20-ietf-poly1305", password: "17995035-415e-422c-8527-6beb8899c054"}
+- {name: "🇬🇧 ChatGPT - GB", type: "ss", server: "ukchat.appscdn.xyz", port: 32002, cipher: "chacha20-ietf-poly1305", password: "17995035-415e-422c-8527-6beb8899c054"}
+- {name: "🇩🇪 德国", type: "ss", server: "de.webcdn.me", port: 30009, cipher: "chacha20-ietf-poly1305", password: "17995035-415e-422c-8527-6beb8899c054"}
+proxy-groups:
+- name: "PROXY"
+  type: "select"
+  proxies:
+  - "AUTO"
+  - "🏴‍☠️ Netflix/Disney+/油管Premium/ChatGPT"
+  - "🇨🇳 台湾 - VIP專線"
+  - "🏴‍☠️ 更多节点,购买套餐: https://airapp.us"
+  - "🇯🇵 JP - 2x - ChatGPT"
+  - "🇺🇸 US - ChatGPT | 住宅IP"
+  - "🇰🇷 韩国"
+  - "🇬🇧 UK"
+  - "🇸🇬 SG Netflix / Disney 流媒體"
+  - "🇬🇧 ChatGPT - GB"
+  - "🇩🇪 德国"
+- name: "AUTO"
+  type: "url-test"
+  url: "http://www.gstatic.com/generate_204"
+  interval: 300
+  tolerance: 50
+  proxies:
+  - "🏴‍☠️ Netflix/Disney+/油管Premium/ChatGPT"
+  - "🇨🇳 台湾 - VIP專線"
+  - "🏴‍☠️ 更多节点,购买套餐: https://airapp.us"
+  - "🇯🇵 JP - 2x - ChatGPT"
+  - "🇺🇸 US - ChatGPT | 住宅IP"
+  - "🇰🇷 韩国"
+  - "🇬🇧 UK"
+  - "🇸🇬 SG Netflix / Disney 流媒體"
+  - "🇬🇧 ChatGPT - GB"
+  - "🇩🇪 德国"
+- name: "AI"
+  type: "select"
+  proxies:
+  - "🏴‍☠️ Netflix/Disney+/油管Premium/ChatGPT"
+  - "🇨🇳 台湾 - VIP專線"
+  - "🏴‍☠️ 更多节点,购买套餐: https://airapp.us"
+  - "🇯🇵 JP - 2x - ChatGPT"
+  - "🇺🇸 US - ChatGPT | 住宅IP"
+  - "🇰🇷 韩国"
+  - "🇬🇧 UK"
+  - "🇸🇬 SG Netflix / Disney 流媒體"
+  - "🇬🇧 ChatGPT - GB"
+  - "🇩🇪 德国"
+rules:
+- "GEOSITE,CATEGORY-ADS-ALL,REJECT"
+- "DOMAIN-SUFFIX,ushd.xmsl.org,DIRECT"
+- "DOMAIN-SUFFIX,cf.gtlx.org,DIRECT"
+- "DOMAIN-SUFFIX,public-operation-hkrpg-sg.hoyoverse.com,DIRECT"
+- "DOMAIN-SUFFIX,public-operation-hk4e-sg.hoyoverse.com,DIRECT"
+- "DOMAIN-SUFFIX,public-operation-nap-sg.hoyoverse.com,DIRECT"
+- "DST-PORT,23301/22101-22102/20501/21601-21606,DIRECT"
+- "DOMAIN-KEYWORD,hoyoverse.com,PROXY"
+- "GEOSITE,OPENAI,AI"
+- "GEOSITE,GOOGLE-GEMINI,AI"
+- "GEOSITE,GOOGLEFCM,DIRECT"
+- "GEOSITE,PRIVATE,DIRECT"
+- "GEOSITE,CN,DIRECT"
+- "GEOIP,PRIVATE,DIRECT,no-resolve"
+- "GEOIP,CN,DIRECT"
+- "MATCH,PROXY"
