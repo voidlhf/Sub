@@ -116,9 +116,102 @@
       "packet_encoding": "xudp"
     },
     {
-      "server": "154.83.2.61",
-      "server_port": 8443,
-      "tag": "🇨🇦 加拿大1 | ⬇️ 4.3MB/s|Netflix|Disney|Gemini",
+      "password": "5dd7d900-409d-4ae7-8197-c94c6629ef0c",
+      "server": "free.2apzhfa.xyz",
+      "server_port": 31611,
+      "tag": "🇺🇦 乌克兰1 | ⬇️ 5.1MB/s|39%|Netflix|Youtube|Openai",
+      "type": "shadowsocks",
+      "method": "chacha20-ietf-poly1305",
+      "network": "tcp"
+    },
+    {
+      "password": "dongtaiwang.com",
+      "server": "46.17.41.217",
+      "server_port": 64816,
+      "tag": "🇷🇺 俄罗斯3 | ⬇️ 6.5MB/s|100%|Youtube",
+      "tls": {
+        "enabled": true,
+        "server_name": "apple.com",
+        "insecure": true
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "dongtaiwang.com",
+      "server": "46.29.163.171",
+      "server_port": 32555,
+      "tag": "🇷🇺 俄罗斯4 | ⬇️ 9.7MB/s|0%",
+      "tls": {
+        "enabled": true,
+        "server_name": "apple.com",
+        "insecure": true
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "5dd7d900-409d-4ae7-8197-c94c6629ef0c",
+      "server": "free.2apzhfa.xyz",
+      "server_port": 31511,
+      "tag": "🇷🇺 俄罗斯5 | ⬇️ 5.1MB/s|10%",
+      "type": "shadowsocks",
+      "method": "chacha20-ietf-poly1305",
+      "network": "tcp"
+    },
+    {
+      "password": "dongtaiwang.com",
+      "server": "46.17.41.5",
+      "server_port": 12904,
+      "tag": "🇷🇺 俄罗斯6 | ⬇️ 4.5MB/s|100%",
+      "tls": {
+        "enabled": true,
+        "server_name": "apple.com",
+        "insecure": true
+      },
+      "type": "hysteria2"
+    },
+    {
+      "server": "195.58.49.84",
+      "server_port": 22011,
+      "tag": "🇷🇺 俄罗斯7 | ⬇️ 4.2MB/s|50%|Netflix|Youtube",
+      "transport": {
+        "path": "/",
+        "type": "ws"
+      },
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "9175b2cb-a204-4cbd-aed7-88c50ef79815"
+    },
+    {
+      "password": "5dd7d900-409d-4ae7-8197-c94c6629ef0c",
+      "server": "free.2apzhfa.xyz",
+      "server_port": 31441,
+      "tag": "🇨🇦 加拿大1 | ⬇️ 5.0MB/s|28%|Netflix|Youtube|Openai|Gemini",
+      "type": "shadowsocks",
+      "method": "chacha20-ietf-poly1305",
+      "network": "tcp"
+    },
+    {
+      "server": "v25.heduian.link",
+      "server_port": 30825,
+      "tag": "🇨🇦 加拿大2 | ⬇️ 10.7MB/s|Netflix|Youtube|Openai|Gemini",
+      "transport": {
+        "headers": {
+          "Host": [
+            "v25.heduian.link"
+          ]
+        },
+        "path": "/oooo",
+        "type": "ws"
+      },
+      "type": "vmess",
+      "alter_id": 2,
+      "security": "auto",
+      "uuid": "cbb3f877-d1fb-344c-87a9-d153bffd5484"
+    },
+    {
+      "server": "198.62.62.156",
+      "server_port": 443,
+      "tag": "🇨🇦 加拿大3 | ⬇️ 8.5MB/s|Netflix|Disney|Gemini",
       "tls": {
         "enabled": true,
         "server_name": "vlee.amclubs.nyc.mn",
@@ -142,18 +235,40 @@
       "packet_encoding": "xudp"
     },
     {
-      "password": "628be4b1-36dd-4c09-bd0f-9d88e424f216",
-      "server": "free.2weradf.xyz",
-      "server_port": 36371,
-      "tag": "🇮🇳 印度1 | ⬇️ 4.9MB/s|28%|Netflix|Youtube|Openai|Gemini",
+      "password": "5dd7d900-409d-4ae7-8197-c94c6629ef0c",
+      "server": "free.2apzhfa.xyz",
+      "server_port": 31371,
+      "tag": "🇮🇳 印度1 | ⬇️ 5.2MB/s|28%|Netflix|Youtube|Openai|Gemini",
       "type": "shadowsocks",
       "method": "chacha20-ietf-poly1305",
       "network": "tcp"
     },
     {
+      "server": "agaungzhou01.bumbleshrimp.com",
+      "server_port": 12791,
+      "tag": "🇮🇳 印度2 | ⬇️ 5.0MB/s|54%|Netflix|Youtube|Openai|Gemini",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.yahoo.com",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "qhTzYYIgBzDLNYR79oxftqdo1kzL-1_hGJKfqrOliCY"
+        }
+      },
+      "type": "vless",
+      "uuid": "459b4a80-bd61-4ecd-a26b-e9c1809d9e45",
+      "flow": "xtls-rprx-vision",
+      "packet_encoding": "xudp"
+    },
+    {
       "server": "gysz0000.dynu.net",
       "server_port": 12477,
-      "tag": "🇨🇳 台湾1 | ⬇️ 8.3MB/s|16%|Youtube|Openai|Gemini",
+      "tag": "🇨🇳 台湾1 | ⬇️ 5.9MB/s|16%|Netflix|Youtube|Openai|Gemini",
       "tls": {
         "enabled": true,
         "server_name": "www.nvidia.com",
@@ -173,33 +288,74 @@
       "packet_encoding": "xudp"
     },
     {
-      "password": "628be4b1-36dd-4c09-bd0f-9d88e424f216",
-      "server": "free.2weradf.xyz",
-      "server_port": 36241,
-      "tag": "🇨🇳 台湾2 | ⬇️ 4.3MB/s|0%|Netflix|Disney|Youtube|Openai|Gemini",
+      "password": "5dd7d900-409d-4ae7-8197-c94c6629ef0c",
+      "server": "free.2apzhfa.xyz",
+      "server_port": 31241,
+      "tag": "🇨🇳 台湾2 | ⬇️ 4.9MB/s|0%|Netflix|Disney|Youtube|Openai|Gemini",
       "type": "shadowsocks",
       "method": "chacha20-ietf-poly1305",
       "network": "tcp"
     },
     {
-      "password": "dee29869-ae36-4504-89f5-8f06b7dc7a6a",
-      "server": "94.159.107.136",
-      "server_port": 1443,
-      "tag": "🇩🇪 德国1 | ⬇️ 4.3MB/s|0%|Netflix|Openai",
-      "tls": {
-        "enabled": true,
-        "server_name": "de2.587458.xyz",
-        "insecure": true
-      },
-      "type": "hysteria2"
+      "password": "5dd7d900-409d-4ae7-8197-c94c6629ef0c",
+      "server": "free.2apzhfa.xyz",
+      "server_port": 31245,
+      "tag": "🇨🇳 台湾3 | ⬇️ 5.2MB/s|0%|Netflix|Disney|Youtube|Openai|Gemini",
+      "type": "shadowsocks",
+      "method": "chacha20-ietf-poly1305",
+      "network": "tcp"
     },
     {
-      "server": "108.165.216.195",
-      "server_port": 443,
-      "tag": "🇩🇪 德国2 | ⬇️ 4.0MB/s|25%",
+      "server": "zhee01.dynu.net",
+      "server_port": 13263,
+      "tag": "🇨🇳 台湾4 | ⬇️ 28.8MB/s|16%|Netflix|Youtube|Openai|Gemini",
       "tls": {
         "enabled": true,
-        "server_name": "aghayesex.hajalii.com",
+        "server_name": "gateway.icloud.com",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "qhTzYYIgBzDLNYR79oxftqdo1kzL-1_hGJKfqrOliCY"
+        }
+      },
+      "type": "vless",
+      "uuid": "459b4a80-bd61-4ecd-a26b-e9c1809d9e45",
+      "flow": "xtls-rprx-vision",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "bsuqian01.dynu.net",
+      "server_port": 47531,
+      "tag": "🇨🇳 台湾5 | ⬇️ 14.5MB/s|16%|Netflix|Youtube|Openai|Gemini",
+      "tls": {
+        "enabled": true,
+        "server_name": "gateway.icloud.com",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "qhTzYYIgBzDLNYR79oxftqdo1kzL-1_hGJKfqrOliCY"
+        }
+      },
+      "type": "vless",
+      "uuid": "459b4a80-bd61-4ecd-a26b-e9c1809d9e45",
+      "flow": "xtls-rprx-vision",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "162.247.5.91",
+      "server_port": 443,
+      "tag": "🇨🇳 台湾6 | ⬇️ 12.7MB/s|36%|Netflix|Youtube|Openai|Gemini",
+      "tls": {
+        "enabled": true,
+        "server_name": "tw.qhahd.shop",
         "insecure": true,
         "utls": {
           "enabled": true,
@@ -209,41 +365,20 @@
       "transport": {
         "headers": {
           "Host": [
-            "aghayesex.hajalii.com"
+            "tw.qhahd.shop"
           ]
         },
-        "path": "/",
+        "path": "/bing",
         "type": "ws"
       },
       "type": "vless",
-      "uuid": "250dd200-2e83-4645-ac1d-6e7c85e91afe",
-      "packet_encoding": "xudp"
-    },
-    {
-      "server": "91.107.254.145",
-      "server_port": 3037,
-      "tag": "🇩🇪 德国3 | ⬇️ 11.8MB/s|25%|Netflix|Openai",
-      "tls": {
-        "enabled": true,
-        "server_name": "refersion.com",
-        "insecure": true,
-        "utls": {
-          "enabled": true,
-          "fingerprint": "chrome"
-        },
-        "reality": {
-          "enabled": true,
-          "public_key": "91bCG1r8YkOBqn138sLf8099WoHAzdsxVr24UVSZJig"
-        }
-      },
-      "type": "vless",
-      "uuid": "7f3e8830-70ce-4fa2-8185-e73baeb780a6",
+      "uuid": "06a323c7-bf9f-4fc4-a230-f2eab27fa1ae",
       "packet_encoding": "xudp"
     },
     {
       "server": "jnir-addr.cybsecguru.com",
       "server_port": 443,
-      "tag": "🇩🇪 德国4 | ⬇️ 4.0MB/s|Disney|Openai",
+      "tag": "🇩🇪 德国1 | ⬇️ 11.4MB/s|0%|Netflix|Disney|Openai",
       "tls": {
         "enabled": true,
         "server_name": "rakhsh.4972616e.xyz",
@@ -267,74 +402,180 @@
       "packet_encoding": "xudp"
     },
     {
-      "server": "support.zoom.us",
-      "server_port": 80,
-      "tag": "🇸🇬 新加坡1 | ⬇️ 5.2MB/s|Netflix|Youtube|Openai|Gemini",
+      "password": "5dd7d900-409d-4ae7-8197-c94c6629ef0c",
+      "server": "free.2apzhfa.xyz",
+      "server_port": 31471,
+      "tag": "🇩🇪 德国2 | ⬇️ 4.6MB/s|41%|Netflix|Disney|Youtube|Openai",
+      "type": "shadowsocks",
+      "method": "chacha20-ietf-poly1305",
+      "network": "tcp"
+    },
+    {
+      "server": "whatismyipaddress.com",
+      "server_port": 2096,
+      "tag": "🇩🇪 德国3 | ⬇️ 11.1MB/s|47%|Openai",
+      "tls": {
+        "enabled": true,
+        "server_name": "wwwspeedtestnetwhiteberinsistomd6625996s28.elitemizban.ir",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
       "transport": {
         "headers": {
           "Host": [
-            "free.server.techsonicpremium.shop"
+            "wwwspeedtestnetwhiteberinsistomd6625996s28.elitemizban.ir"
           ]
         },
-        "path": "/%2Ffree.server.techsonicpremium.shop",
+        "path": "/",
         "type": "ws"
       },
       "type": "vless",
-      "uuid": "1cf1e1b6-fc44-4000-8aa9-ffeee3b1aae8",
+      "uuid": "27a778d4-543e-43f5-85a2-6acf18821ccb",
       "packet_encoding": "xudp"
     },
     {
-      "password": "2zDxCBy3NlalDe3ZO0cpF7FqDnYRa46uygSXYTjAwpE8AR5KeS3CZ98C3axIOS",
-      "server": "bungle.superpokemon.com",
-      "server_port": 443,
-      "tag": "🇯🇵 日本1 | ⬇️ 9.9MB/s|36%|Netflix|Disney|Youtube|Openai|Gemini",
+      "server": "crm.iranigamepars.ir",
+      "server_port": 8443,
+      "tag": "🇩🇪 德国4 | ⬇️ 14.0MB/s|25%|Netflix|Youtube|Openai",
       "tls": {
         "enabled": true,
-        "server_name": "bungle.superpokemon.com",
+        "server_name": "Vpnmizban.iranigamepars.ir",
+        "insecure": true
+      },
+      "transport": {
+        "type": "grpc",
+        "service_name": "V2RayMizban----V2RayMizban----V2RayMizban----V2RayMizban----V2RayMizban----V2RayMizban----V2RayMizban"
+      },
+      "type": "vless",
+      "uuid": "3e509f62-56ef-479f-a884-e74aea5b89e1",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "zula.ir",
+      "server_port": 2053,
+      "tag": "🇩🇪 德国5 | ⬇️ 16.7MB/s|25%|Netflix|Openai",
+      "tls": {
+        "enabled": true,
+        "server_name": "all18.kikforwindows.com",
+        "alpn": [
+          "h3%2Ch2%2Chttp%2F1.1"
+        ],
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "headers": {
+          "Host": [
+            "all18.kikforwindows.com"
+          ]
+        },
+        "path": "/containers/de",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "99333609-167f-4750-ab63-34cfa27c723a",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "fra5.vpntype.dev",
+      "server_port": 443,
+      "tag": "🇩🇪 德国6 | ⬇️ 4.6MB/s|45%|Netflix|Youtube|Openai",
+      "tls": {
+        "enabled": true,
+        "server_name": "fra5.vpntype.dev",
+        "alpn": [
+          "h2%2Chttp%2F1.1"
+        ],
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "type": "vless",
+      "uuid": "f9968daf-b3ae-437d-ac99-4893b6432c95",
+      "flow": "xtls-rprx-vision",
+      "packet_encoding": "xudp"
+    },
+    {
+      "password": "5dd7d900-409d-4ae7-8197-c94c6629ef0c",
+      "server": "free.2apzhfa.xyz",
+      "server_port": 31173,
+      "tag": "🇸🇬 新加坡1 | ⬇️ 4.6MB/s|53%|Netflix|Disney|Youtube|Openai|Gemini",
+      "type": "shadowsocks",
+      "method": "chacha20-ietf-poly1305",
+      "network": "tcp"
+    },
+    {
+      "password": "5dd7d900-409d-4ae7-8197-c94c6629ef0c",
+      "server": "free.2apzhfa.xyz",
+      "server_port": 31171,
+      "tag": "🇸🇬 新加坡2 | ⬇️ 5.6MB/s|52%|Netflix|Disney|Youtube|Openai|Gemini",
+      "type": "shadowsocks",
+      "method": "chacha20-ietf-poly1305",
+      "network": "tcp"
+    },
+    {
+      "password": "597dc9ce-5ce8-4ff5-833b-76cd4e5789e1",
+      "server": "xjp1.gywanglug.xyz",
+      "server_port": 8443,
+      "tag": "🇸🇬 新加坡3 | ⬇️ 9.4MB/s|Netflix|Disney|Youtube|Openai|Gemini",
+      "tls": {
+        "enabled": true,
+        "server_name": "xjp1.gywanglug.xyz",
+        "insecure": true
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "d68fa1c3-1dcc-4fb0-b906-68b9384f2b64",
+      "server": "xjp2.gywanglug.xyz",
+      "server_port": 8443,
+      "tag": "🇸🇬 新加坡4 | ⬇️ 5.8MB/s|Netflix|Disney|Youtube|Openai|Gemini",
+      "tls": {
+        "enabled": true,
+        "server_name": "xjp2.gywanglug.xyz",
+        "insecure": true
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "77d16a10-7d7f-443e-acad-5b279260a523",
+      "server": "xjp2.gywanglug.xyz",
+      "server_port": 8443,
+      "tag": "🇸🇬 新加坡5 | ⬇️ 8.2MB/s|Netflix|Disney|Youtube|Openai|Gemini",
+      "tls": {
+        "enabled": true,
+        "server_name": "xjp2.gywanglug.xyz",
+        "insecure": true
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "VMhGp5wEIyCDf90T",
+      "server": "gysz0000.dynu.net",
+      "server_port": 38340,
+      "tag": "🇸🇬 新加坡6 | ⬇️ 22.6MB/s|Netflix|Youtube|Openai|Gemini",
+      "tls": {
+        "enabled": true,
+        "server_name": "hk39.work.gd",
         "insecure": true
       },
       "type": "trojan"
     },
     {
-      "server": "43.207.175.222",
-      "server_port": 45059,
-      "tag": "🇯🇵 日本10 | ⬇️ 23.0MB/s|36%|Netflix|Youtube|Openai|Gemini",
-      "type": "vless",
-      "uuid": "172af565-6ed5-4e44-905b-a8c20a1f53d5",
-      "packet_encoding": "xudp"
-    },
-    {
-      "server": "120.198.71.214",
-      "server_port": 32980,
-      "tag": "🇯🇵 日本2 | ⬇️ 6.1MB/s|0%|Netflix|Disney|Openai",
-      "type": "vmess",
-      "alter_id": 64,
-      "security": "auto",
-      "uuid": "418048af-a293-4b99-9b0c-98ca3580dd24"
-    },
-    {
-      "server": "43.207.176.93",
-      "server_port": 52787,
-      "tag": "🇯🇵 日本3 | ⬇️ 12.0MB/s|15%|Netflix|Disney|Youtube|Openai|Gemini",
-      "type": "vless",
-      "uuid": "abcaa7dc-9b0a-459e-a9fd-a76c161fa432",
-      "packet_encoding": "xudp"
-    },
-    {
-      "server": "35.72.9.171",
-      "server_port": 47435,
-      "tag": "🇯🇵 日本4 | ⬇️ 7.5MB/s|15%|Netflix|Disney|Youtube|Openai|Gemini",
-      "type": "vless",
-      "uuid": "c4e78724-b906-44a2-aefe-c370801a82b9",
-      "packet_encoding": "xudp"
-    },
-    {
-      "server": "csuzhou01.1cooldns.com",
-      "server_port": 13989,
-      "tag": "🇯🇵 日本5 | ⬇️ 6.9MB/s|76%|Netflix|Youtube|Openai",
+      "server": "agaungzhou01.bumbleshrimp.com",
+      "server_port": 56127,
+      "tag": "🇸🇬 新加坡7 | ⬇️ 8.1MB/s|35%|Netflix|Openai",
       "tls": {
         "enabled": true,
-        "server_name": "gateway.icloud.com",
+        "server_name": "www.yahoo.com",
         "insecure": true,
         "utls": {
           "enabled": true,
@@ -351,21 +592,65 @@
       "packet_encoding": "xudp"
     },
     {
-      "password": "8XOq72xna8DFeZySSppDDSCNAjlYacA3gB3uZ03RCOlC5xe6ITFR4zwayEKY93",
-      "server": "broker.superpokemon.com",
-      "server_port": 443,
-      "tag": "🇯🇵 日本7 | ⬇️ 11.7MB/s|36%|Netflix|Disney|Youtube|Openai|Gemini",
+      "password": "00a41b90-d694-406b-9b4b-392fe2c52cf1",
+      "server": "sg1.epclub.xyz",
+      "server_port": 9999,
+      "tag": "🇸🇬 新加坡8 | ⬇️ 5.3MB/s|35%|Netflix|Openai",
       "tls": {
         "enabled": true,
-        "server_name": "broker.superpokemon.com",
+        "server_name": "apple.com",
         "insecure": true
       },
-      "type": "trojan"
+      "type": "hysteria2",
+      "obfs": {
+        "password": "ZDQxZDhjZDk4ZjAwYjIwNA%3D%3D",
+        "type": "salamander"
+      }
+    },
+    {
+      "server": "92.112.23.47",
+      "server_port": 30114,
+      "tag": "🇸🇬 新加坡9 | ⬇️ 7.4MB/s|0%|Youtube|Openai|Gemini",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.yahoo.com",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "gW_VBG7LX1e-5kSy_wW0Q56h10QeWPSl-h2Dvj2NqhM",
+          "short_id": "a56a8143"
+        }
+      },
+      "type": "vless",
+      "uuid": "cc91416c-f14a-4324-b632-3d1b6309b18f",
+      "flow": "xtls-rprx-vision",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "35.72.9.171",
+      "server_port": 47435,
+      "tag": "🇯🇵 日本1 | ⬇️ 12.5MB/s|15%|Netflix|Disney|Youtube|Openai|Gemini",
+      "type": "vless",
+      "uuid": "c4e78724-b906-44a2-aefe-c370801a82b9",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "120.198.71.214",
+      "server_port": 32980,
+      "tag": "🇯🇵 日本2 | ⬇️ 5.5MB/s|0%|Netflix|Disney|Openai",
+      "type": "vmess",
+      "alter_id": 64,
+      "security": "auto",
+      "uuid": "418048af-a293-4b99-9b0c-98ca3580dd24"
     },
     {
       "server": "bsuqian01.dynu.net",
       "server_port": 31735,
-      "tag": "🇯🇵 日本8 | ⬇️ 4.9MB/s|20%|Netflix|Youtube",
+      "tag": "🇯🇵 日本3 | ⬇️ 6.8MB/s|20%|Netflix|Youtube|Openai|Gemini",
       "tls": {
         "enabled": true,
         "server_name": "www.nvidia.com",
@@ -385,19 +670,102 @@
       "packet_encoding": "xudp"
     },
     {
-      "password": "628be4b1-36dd-4c09-bd0f-9d88e424f216",
-      "server": "free.2weradf.xyz",
-      "server_port": 36115,
-      "tag": "🇯🇵 日本9 | ⬇️ 7.7MB/s|10%|Netflix|Youtube|Openai|Gemini",
+      "password": "5dd7d900-409d-4ae7-8197-c94c6629ef0c",
+      "server": "free.2apzhfa.xyz",
+      "server_port": 31111,
+      "tag": "🇯🇵 日本4 | ⬇️ 4.4MB/s|52%|Netflix|Disney|Youtube|Openai|Gemini",
       "type": "shadowsocks",
       "method": "chacha20-ietf-poly1305",
       "network": "tcp"
     },
     {
+      "password": "5dd7d900-409d-4ae7-8197-c94c6629ef0c",
+      "server": "free.2apzhfa.xyz",
+      "server_port": 31115,
+      "tag": "🇯🇵 日本5 | ⬇️ 5.1MB/s|10%|Netflix|Disney|Youtube|Openai|Gemini",
+      "type": "shadowsocks",
+      "method": "chacha20-ietf-poly1305",
+      "network": "tcp"
+    },
+    {
+      "server": "bsuqian01.dynu.net",
+      "server_port": 25768,
+      "tag": "🇯🇵 日本6 | ⬇️ 6.6MB/s|76%|Netflix|Openai",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.nvidia.com",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "qhTzYYIgBzDLNYR79oxftqdo1kzL-1_hGJKfqrOliCY"
+        }
+      },
+      "type": "vless",
+      "uuid": "459b4a80-bd61-4ecd-a26b-e9c1809d9e45",
+      "flow": "xtls-rprx-vision",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "464fd463-sutj40-svphz8-1nhwh.cm5.p5pv.com",
+      "server_port": 17233,
+      "tag": "🇯🇵 日本7 | ⬇️ 9.6MB/s|16%|Netflix|Disney|Youtube|Openai|Gemini",
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "3a3ef54c-eb42-11ed-9bf0-f23c91369f2d"
+    },
+    {
+      "server": "gysz0000.dynu.net",
+      "server_port": 10635,
+      "tag": "🇯🇵 日本8 | ⬇️ 10.1MB/s|10%|Netflix|Youtube|Openai",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.nvidia.com",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "qhTzYYIgBzDLNYR79oxftqdo1kzL-1_hGJKfqrOliCY"
+        }
+      },
+      "type": "vless",
+      "uuid": "459b4a80-bd61-4ecd-a26b-e9c1809d9e45",
+      "flow": "xtls-rprx-vision",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "shenzhou05.mysynology.net",
+      "server_port": 10635,
+      "tag": "🇯🇵 日本9 | ⬇️ 19.5MB/s|10%|Netflix|Youtube|Openai|Gemini",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.nvidia.com",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "qhTzYYIgBzDLNYR79oxftqdo1kzL-1_hGJKfqrOliCY"
+        }
+      },
+      "type": "vless",
+      "uuid": "459b4a80-bd61-4ecd-a26b-e9c1809d9e45",
+      "flow": "xtls-rprx-vision",
+      "packet_encoding": "xudp"
+    },
+    {
       "password": "dongtaiwang.com",
       "server": "195.154.33.70",
       "server_port": 23587,
-      "tag": "🇫🇷 法国1 | ⬇️ 11.3MB/s|0%|Netflix|Youtube|Openai",
+      "tag": "🇫🇷 法国3 | ⬇️ 11.7MB/s|0%|Netflix|Youtube|Openai",
       "tls": {
         "enabled": true,
         "server_name": "www.bing.com",
@@ -406,21 +774,79 @@
       "type": "hysteria2"
     },
     {
-      "password": "4467ae8518abf1ef321618c0bfb5549ccc",
-      "server": "sydney-mini-ddns.faforex.eu.org",
-      "server_port": 25131,
-      "tag": "🇦🇺 澳大利亚1 | ⬇️ 5.0MB/s|63%|Netflix|Youtube|Openai|Gemini",
+      "password": "dongtaiwang.com",
+      "server": "51.159.226.1",
+      "server_port": 61770,
+      "tag": "🇫🇷 法国4 | ⬇️ 10.8MB/s|14%|Netflix|Openai",
       "tls": {
         "enabled": true,
-        "server_name": "www.cloudflare.com",
+        "server_name": "www.bing.com",
         "insecure": true
       },
-      "type": "trojan"
+      "type": "hysteria2"
+    },
+    {
+      "server": "104.17.148.22",
+      "server_port": 2053,
+      "tag": "🇫🇷 法国6 | ⬇️ 10.1MB/s|41%|Netflix|Openai",
+      "tls": {
+        "enabled": true,
+        "server_name": "app39.appdatanewh.lat",
+        "alpn": [
+          "h2%2Chttp%2F1.1"
+        ],
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "headers": {
+          "Host": [
+            "app39.appdatanewh.lat"
+          ]
+        },
+        "path": "/",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "c2f690dc-6187-48a8-aa8b-b75d43d11df4",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "104.17.147.22",
+      "server_port": 2053,
+      "tag": "🇫🇷 法国7 | ⬇️ 8.0MB/s|41%|Netflix|Openai",
+      "tls": {
+        "enabled": true,
+        "server_name": "app39.appdatanewh.lat",
+        "alpn": [
+          "h2%2Chttp%2F1.1"
+        ],
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "headers": {
+          "Host": [
+            "app39.appdatanewh.lat"
+          ]
+        },
+        "path": "/",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "c2f690dc-6187-48a8-aa8b-b75d43d11df4",
+      "packet_encoding": "xudp"
     },
     {
       "server": "bsuqian01.dynu.net",
       "server_port": 42426,
-      "tag": "🇦🇺 澳大利亚2 | ⬇️ 4.5MB/s|54%|Netflix|Openai",
+      "tag": "🇦🇺 澳大利亚1 | ⬇️ 7.2MB/s|54%|Netflix|Youtube|Openai|Gemini",
       "tls": {
         "enabled": true,
         "server_name": "gateway.icloud.com",
@@ -440,51 +866,74 @@
       "packet_encoding": "xudp"
     },
     {
-      "password": "628be4b1-36dd-4c09-bd0f-9d88e424f216",
-      "server": "free.2weradf.xyz",
-      "server_port": 36211,
-      "tag": "🇺🇸 美国10 | ⬇️ 9.9MB/s|6%|Netflix|Disney|Openai|Gemini",
-      "type": "shadowsocks",
-      "method": "chacha20-ietf-poly1305",
-      "network": "tcp"
-    },
-    {
-      "server": "54.193.172.23",
-      "server_port": 35473,
-      "tag": "🇺🇸 美国11 | ⬇️ 10.0MB/s|0%|Netflix|Openai|Gemini",
-      "transport": {
-        "path": "/bing",
-        "type": "ws"
-      },
-      "type": "vless",
-      "uuid": "bec4f74e-b372-4b1c-bc78-afc28a32d5ee",
-      "packet_encoding": "xudp"
-    },
-    {
-      "server": "120.198.71.219",
-      "server_port": 44015,
-      "tag": "🇺🇸 美国12 | ⬇️ 5.6MB/s|0%|Openai",
-      "type": "vmess",
-      "alter_id": 64,
-      "security": "auto",
-      "uuid": "418048af-a293-4b99-9b0c-98ca3580dd24"
-    },
-    {
-      "password": "d9fe1f5e-8f0f-41b6-95f6-d90aa0404924",
-      "server": "sub-us-1.yangxiansheng.online",
-      "server_port": 45551,
-      "tag": "🇺🇸 美国3 | ⬇️ 9.2MB/s|55%|Netflix|Openai",
+      "password": "4467ae8518abf1ef321618c0bfb5549ccc",
+      "server": "152.69.175.39",
+      "server_port": 25131,
+      "tag": "🇦🇺 澳大利亚2 | ⬇️ 8.4MB/s|63%|Netflix|Youtube|Openai|Gemini",
       "tls": {
         "enabled": true,
-        "server_name": "www.bing.com",
+        "server_name": "152.69.175.39",
         "insecure": true
       },
-      "type": "hysteria2"
+      "type": "trojan"
     },
     {
-      "server": "sea-vl.new.now.cc",
+      "password": "psycho",
+      "server": "psycho.suex12.ir",
       "server_port": 443,
-      "tag": "🇺🇸 美国4 | ⬇️ 5.5MB/s|37%|Netflix|Openai",
+      "tag": "🇦🇺 澳大利亚3 | ⬇️ 11.8MB/s|0%|Netflix|Disney|Youtube|Openai",
+      "tls": {
+        "enabled": true,
+        "server_name": "pSYcho.sUeX12.IR",
+        "alpn": [
+          "http%2F1.1"
+        ],
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "Host": [
+            "pSYcho.sUeX12.IR"
+          ]
+        },
+        "path": "/trv9KENu5FqbFAtPFq?ed=2560",
+        "type": "ws"
+      },
+      "type": "trojan"
+    },
+    {
+      "server": "716545eb-sux8g0-t5oe1a-1ejod.cu.plebai.net",
+      "server_port": 5228,
+      "tag": "🇺🇸 美国10 | ⬇️ 10.4MB/s|41%|Netflix|Openai|Gemini",
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "6ada1622-e018-11ec-bb74-f23c9164ca5d"
+    },
+    {
+      "password": "redfree8",
+      "server": "104.17.148.22",
+      "server_port": 443,
+      "tag": "🇺🇸 美国11 | ⬇️ 14.2MB/s|0%|Netflix|Disney|Openai|Gemini",
+      "tls": {
+        "enabled": true,
+        "server_name": "redfree8-p1.pooriashop.ir",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "Host": [
+            "redfree8-p1.pooriashop.ir"
+          ]
+        },
+        "path": "/trJF1XisQEbWZpxEHh?ed=2560",
+        "type": "ws"
+      },
+      "type": "trojan"
+    },
+    {
+      "server": "210.61.97.241",
+      "server_port": 81,
+      "tag": "🇺🇸 美国12 | ⬇️ 4.1MB/s|37%|Netflix|Openai|Gemini",
       "tls": {
         "enabled": true,
         "server_name": "sea-vl.new.now.cc",
@@ -504,9 +953,114 @@
       "packet_encoding": "xudp"
     },
     {
-      "server": "zhee01.dynu.net",
-      "server_port": 64654,
-      "tag": "🇺🇸 美国5 | ⬇️ 5.2MB/s|35%|Netflix|Openai",
+      "password": "5dd7d900-409d-4ae7-8197-c94c6629ef0c",
+      "server": "free.2apzhfa.xyz",
+      "server_port": 31215,
+      "tag": "🇺🇸 美国13 | ⬇️ 5.5MB/s|10%|Netflix|Disney|Openai|Gemini",
+      "type": "shadowsocks",
+      "method": "chacha20-ietf-poly1305",
+      "network": "tcp"
+    },
+    {
+      "password": "5dd7d900-409d-4ae7-8197-c94c6629ef0c",
+      "server": "free.2apzhfa.xyz",
+      "server_port": 31213,
+      "tag": "🇺🇸 美国14 | ⬇️ 5.1MB/s|0%|Netflix|Disney|Openai|Gemini",
+      "type": "shadowsocks",
+      "method": "chacha20-ietf-poly1305",
+      "network": "tcp"
+    },
+    {
+      "password": "dongtaiwang.com",
+      "server": "108.181.5.133",
+      "server_port": 15544,
+      "tag": "🇺🇸 美国16 | ⬇️ 21.7MB/s|48%|Netflix|Openai",
+      "tls": {
+        "enabled": true,
+        "server_name": "apple.com",
+        "insecure": true
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "597dc9ce-5ce8-4ff5-833b-76cd4e5789e1",
+      "server": "mg1.gywanglug.xyz",
+      "server_port": 8443,
+      "tag": "🇺🇸 美国17 | ⬇️ 21.7MB/s|Netflix|Openai|Gemini",
+      "tls": {
+        "enabled": true,
+        "server_name": "mg1.gywanglug.xyz",
+        "insecure": true
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "d68fa1c3-1dcc-4fb0-b906-68b9384f2b64",
+      "server": "mg1.gywanglug.xyz",
+      "server_port": 8443,
+      "tag": "🇺🇸 美国18 | ⬇️ 21.1MB/s|Netflix|Openai|Gemini",
+      "tls": {
+        "enabled": true,
+        "server_name": "mg1.gywanglug.xyz",
+        "insecure": true
+      },
+      "type": "hysteria2"
+    },
+    {
+      "server": "ddf277c3-sutj40-sv07nd-jtx1.se.plebai.net",
+      "server_port": 22083,
+      "tag": "🇺🇸 美国19 | ⬇️ 13.5MB/s|0%|Netflix|Openai|Gemini",
+      "transport": {
+        "headers": {
+          "Host": [
+            "ddf277c3-sutj40-sv07nd-jtx1.se.plebai.net"
+          ]
+        },
+        "path": "/",
+        "type": "ws"
+      },
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "947dde8e-bcf5-11ef-af4a-f23c91cfbbc9"
+    },
+    {
+      "password": "d9fe1f5e-8f0f-41b6-95f6-d90aa0404924",
+      "server": "sub-us-1.yangxiansheng.online",
+      "server_port": 45551,
+      "tag": "🇺🇸 美国2 | ⬇️ 12.4MB/s|55%|Netflix|Openai",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.bing.com",
+        "insecure": true
+      },
+      "type": "hysteria2"
+    },
+    {
+      "server": "agaungzhou01.bumbleshrimp.com",
+      "server_port": 65428,
+      "tag": "🇺🇸 美国20 | ⬇️ 5.2MB/s|35%|Netflix|Openai",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.nvidia.com",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "qhTzYYIgBzDLNYR79oxftqdo1kzL-1_hGJKfqrOliCY"
+        }
+      },
+      "type": "vless",
+      "uuid": "459b4a80-bd61-4ecd-a26b-e9c1809d9e45",
+      "flow": "xtls-rprx-vision",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "beiyong.dynuddns.net",
+      "server_port": 57926,
+      "tag": "🇺🇸 美国21 | ⬇️ 9.2MB/s|57%|Netflix|Openai",
       "tls": {
         "enabled": true,
         "server_name": "gateway.icloud.com",
@@ -526,43 +1080,9 @@
       "packet_encoding": "xudp"
     },
     {
-      "server": "212.183.88.43",
-      "server_port": 443,
-      "tag": "🇺🇸 美国6 | ⬇️ 4.7MB/s|0%|Netflix|Disney|Openai|Gemini",
-      "tls": {
-        "enabled": true,
-        "server_name": "vb.bgm2024.dpdns.org",
-        "insecure": true
-      },
-      "transport": {
-        "headers": {
-          "Host": [
-            "vb.bgm2024.dpdns.org"
-          ]
-        },
-        "path": "/?ed=2560",
-        "type": "ws"
-      },
-      "type": "vless",
-      "uuid": "55520747-311e-4015-83ce-be46e2060ce3",
-      "packet_encoding": "xudp"
-    },
-    {
-      "password": "597dc9ce-5ce8-4ff5-833b-76cd4e5789e1",
-      "server": "mg6.gywanglug.xyz",
-      "server_port": 8443,
-      "tag": "🇺🇸 美国7 | ⬇️ 18.0MB/s|Netflix|Disney|Openai|Gemini",
-      "tls": {
-        "enabled": true,
-        "server_name": "mg6.gywanglug.xyz",
-        "insecure": true
-      },
-      "type": "hysteria2"
-    },
-    {
-      "server": "shenzhou05.mysynology.net",
-      "server_port": 50452,
-      "tag": "🇺🇸 美国8 | ⬇️ 4.2MB/s|35%|Netflix|Openai|Gemini",
+      "server": "agaungzhou01.bumbleshrimp.com",
+      "server_port": 38302,
+      "tag": "🇺🇸 美国22 | ⬇️ 5.1MB/s|48%|Netflix|Openai",
       "tls": {
         "enabled": true,
         "server_name": "www.amazon.com",
@@ -582,9 +1102,82 @@
       "packet_encoding": "xudp"
     },
     {
+      "server": "bsuqian01.dynu.net",
+      "server_port": 50200,
+      "tag": "🇺🇸 美国23 | ⬇️ 5.7MB/s|48%|Netflix|Openai",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.amazon.com",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "qhTzYYIgBzDLNYR79oxftqdo1kzL-1_hGJKfqrOliCY"
+        }
+      },
+      "type": "vless",
+      "uuid": "459b4a80-bd61-4ecd-a26b-e9c1809d9e45",
+      "flow": "xtls-rprx-vision",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "51.81.18.62",
+      "server_port": 443,
+      "tag": "🇺🇸 美国24 | ⬇️ 5.8MB/s|67%|Netflix|Openai|Gemini",
+      "tls": {
+        "enabled": true,
+        "server_name": "147135011033.sec21org.com",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "type": "vless",
+      "uuid": "0a44145f-59dc-4e5b-a233-677b97f5114c",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "144.24.243.207",
+      "server_port": 443,
+      "tag": "🇺🇸 美国25 | ⬇️ 6.2MB/s|61%|Netflix|Openai|Gemini",
+      "tls": {
+        "enabled": true,
+        "server_name": "147135004002.sec20org.com",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "type": "vless",
+      "uuid": "54694a33-a8dc-47dd-bc38-acd3971e0055",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "8.210.29.68",
+      "server_port": 443,
+      "tag": "🇺🇸 美国26 | ⬇️ 4.7MB/s|61%|Netflix|Openai|Gemini",
+      "tls": {
+        "enabled": true,
+        "server_name": "147135001195.sec22org.com",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "type": "vless",
+      "uuid": "ea286109-d20f-415e-849e-4af20ab04b65",
+      "packet_encoding": "xudp"
+    },
+    {
       "server": "cloudgetservice.mcloudservice.site",
       "server_port": 443,
-      "tag": "🇺🇸 美国9 | ⬇️ 5.9MB/s|61%|Netflix|Openai|Gemini",
+      "tag": "🇺🇸 美国27 | ⬇️ 18.3MB/s|61%|Netflix|Openai|Gemini",
       "tls": {
         "enabled": true,
         "server_name": "cloudgetservice.mcloudservice.site",
@@ -593,20 +1186,327 @@
       "transport": {
         "headers": {
           "Host": [
-            "mAxNEtVip-uSA-Vp4.nETKh3.sItE"
+            "uSa-Vp-149.BLazECloudMain.Site"
           ]
         },
-        "path": "/linkws",
+        "path": "/linkvkws",
         "type": "ws"
       },
       "type": "vmess",
       "security": "auto",
-      "uuid": "ad2bca4d-be9e-4ac2-b2ed-4c81abb4242f"
+      "uuid": "81cfc74e-79f6-4187-9c11-58b6acdc0e83"
+    },
+    {
+      "password": "a8fce442-ae9a-4cc1-a0cc-20308ff0a0db",
+      "server": "104.21.21.226",
+      "server_port": 443,
+      "tag": "🇺🇸 美国28 | ⬇️ 6.9MB/s|Openai",
+      "tls": {
+        "enabled": true,
+        "server_name": "1P.890689.xyZ",
+        "alpn": [
+          "http%2F1.1"
+        ],
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "Host": [
+            "1P.890689.xyZ"
+          ]
+        },
+        "path": "/lXENb74xF4ylXngZ",
+        "type": "ws"
+      },
+      "type": "trojan"
+    },
+    {
+      "server": "135.148.186.250",
+      "server_port": 443,
+      "tag": "🇺🇸 美国29 | ⬇️ 8.8MB/s|67%|Netflix|Openai|Gemini",
+      "tls": {
+        "enabled": true,
+        "server_name": "147135011033.sec21org.com",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "type": "vless",
+      "uuid": "0a44145f-59dc-4e5b-a233-677b97f5114c",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "sea-vl.new.now.cc",
+      "server_port": 443,
+      "tag": "🇺🇸 美国3 | ⬇️ 6.1MB/s|37%|Netflix|Openai|Gemini",
+      "tls": {
+        "enabled": true,
+        "server_name": "sea-vl.new.now.cc",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "Host": [
+            "sea-vl.new.now.cc"
+          ]
+        },
+        "path": "/?ed=2048",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "3b8ebffa-8a35-4bc7-a52b-93c5b073593c",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "74f77c00-sutj40-t5qufl-8n27.cu.plebai.net",
+      "server_port": 5229,
+      "tag": "🇺🇸 美国30 | ⬇️ 10.7MB/s|41%|Netflix|Openai",
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "5dc6fa05-a601-aba6-7761-ecde22d2b0fc"
+    },
+    {
+      "server": "shenzhou05.mysynology.net",
+      "server_port": 29023,
+      "tag": "🇺🇸 美国31 | ⬇️ 11.9MB/s|63%|Netflix|Openai|Gemini",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.amazon.com",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "qhTzYYIgBzDLNYR79oxftqdo1kzL-1_hGJKfqrOliCY"
+        }
+      },
+      "type": "vless",
+      "uuid": "459b4a80-bd61-4ecd-a26b-e9c1809d9e45",
+      "flow": "xtls-rprx-vision",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "shenzhou05.mysynology.net",
+      "server_port": 19620,
+      "tag": "🇺🇸 美国32 | ⬇️ 11.5MB/s|55%|Netflix|Openai|Gemini",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.amazon.com",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "qhTzYYIgBzDLNYR79oxftqdo1kzL-1_hGJKfqrOliCY"
+        }
+      },
+      "type": "vless",
+      "uuid": "459b4a80-bd61-4ecd-a26b-e9c1809d9e45",
+      "flow": "xtls-rprx-vision",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "Www.speedtest.net",
+      "server_port": 2052,
+      "tag": "🇺🇸 美国33 | ⬇️ 9.0MB/s|40%|Netflix|Youtube|Openai",
+      "transport": {
+        "headers": {
+          "Host": [
+            "sPeedtest2.sbs.za.v2vless.sitespeedtest.net"
+          ]
+        },
+        "path": "/vless#@V2RAY_SPATIAL,@V2RAY_SPATIAL,@V2RAY_SPATIAL,@V2RAY_SPATIAL,@V2RAY_SPATIAL,@V2RAY_SPATIAL,@V2RAY_SPATIAL,@V2RAY_SPATIAL,@V2RAY_SPATIAL,@V2RAY_SPATIAL,@V2RAY_SPATIAL,@V2RAY_SPATIALflow=-udp443",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "f6c96581-cad4-5749-b02d-742cd0870c44",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "154.26.183.51",
+      "server_port": 443,
+      "tag": "🇺🇸 美国34 | ⬇️ 16.0MB/s|12%|Netflix|Openai",
+      "tls": {
+        "enabled": true,
+        "server_name": "usb.cayuo.me",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "headers": {
+          "Host": [
+            "usb.cayuo.me"
+          ]
+        },
+        "path": "/bing",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "15372547-4201-48e4-9d4b-8691d9915ceb",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "66.179.48.46",
+      "server_port": 443,
+      "tag": "🇺🇸 美国35 | ⬇️ 6.1MB/s|0%|Disney|Openai|Gemini",
+      "tls": {
+        "enabled": true,
+        "server_name": "hy2.xiaozi.cc.ua",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "headers": {
+          "Host": [
+            "hy2.xiaozi.cc.ua"
+          ]
+        },
+        "path": "/lzjjj",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "a3c075ab-51cd-4947-e8a4-aad55e19bec2",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "104.17.148.22",
+      "server_port": 2052,
+      "tag": "🇺🇸 美国36 | ⬇️ 17.0MB/s|40%|Openai",
+      "transport": {
+        "headers": {
+          "Host": [
+            "sPeedtest2.sbs.za.v2vless.sitespeedtest.net"
+          ]
+        },
+        "path": "/vless",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "f6c96581-cad4-5749-b02d-742cd0870c44",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "zhee01.dynu.net",
+      "server_port": 64654,
+      "tag": "🇺🇸 美国4 | ⬇️ 10.9MB/s|35%|Netflix|Openai",
+      "tls": {
+        "enabled": true,
+        "server_name": "gateway.icloud.com",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "qhTzYYIgBzDLNYR79oxftqdo1kzL-1_hGJKfqrOliCY"
+        }
+      },
+      "type": "vless",
+      "uuid": "459b4a80-bd61-4ecd-a26b-e9c1809d9e45",
+      "flow": "xtls-rprx-vision",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "shenzhou05.mysynology.net",
+      "server_port": 50452,
+      "tag": "🇺🇸 美国5 | ⬇️ 11.0MB/s|35%|Netflix|Openai|Gemini",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.amazon.com",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "qhTzYYIgBzDLNYR79oxftqdo1kzL-1_hGJKfqrOliCY"
+        }
+      },
+      "type": "vless",
+      "uuid": "459b4a80-bd61-4ecd-a26b-e9c1809d9e45",
+      "flow": "xtls-rprx-vision",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "120.198.71.219",
+      "server_port": 44015,
+      "tag": "🇺🇸 美国6 | ⬇️ 6.7MB/s|0%|Openai",
+      "type": "vmess",
+      "alter_id": 64,
+      "security": "auto",
+      "uuid": "418048af-a293-4b99-9b0c-98ca3580dd24"
+    },
+    {
+      "server": "54.193.172.23",
+      "server_port": 35473,
+      "tag": "🇺🇸 美国7 | ⬇️ 4.7MB/s|0%|Netflix|Openai|Gemini",
+      "transport": {
+        "path": "/bing",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "bec4f74e-b372-4b1c-bc78-afc28a32d5ee",
+      "packet_encoding": "xudp"
+    },
+    {
+      "password": "c6bccea3-2f03-4f3e-80f4-d6757f1f3f46",
+      "server": "sub-us-2.yangxiansheng.online",
+      "server_port": 41951,
+      "tag": "🇺🇸 美国9 | ⬇️ 14.5MB/s|55%|Netflix|Openai|Gemini",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.bing.com",
+        "insecure": true
+      },
+      "type": "hysteria2"
+    },
+    {
+      "server": "www.parsvds.com",
+      "server_port": 2083,
+      "tag": "🇫🇮 芬兰1 | ⬇️ 17.7MB/s|25%|Netflix|Openai",
+      "tls": {
+        "enabled": true,
+        "server_name": "bEAt.MIRaclETaxbiTS.Top.",
+        "alpn": [
+          "h2%2Chttp%2F1.1"
+        ],
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "headers": {
+          "Host": [
+            "bEAt.MIRaclETaxbiTS.Top."
+          ]
+        },
+        "path": "/2083/@VRayyNGvpn",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "a8e59566-4420-4493-91ba-029ee0ff6d74",
+      "packet_encoding": "xudp"
     },
     {
       "server": "www.speedtest.net",
       "server_port": 443,
-      "tag": "🇫🇮 芬兰1 | ⬇️ 4.2MB/s|10%|Openai",
+      "tag": "🇬🇧 英国1 | ⬇️ 12.4MB/s|0%|Openai",
       "tls": {
         "enabled": true,
         "server_name": "ZqFsGsMr.cAfUnEaR.InFo",
@@ -635,7 +1535,7 @@
     {
       "server": "104.17.147.22",
       "server_port": 2096,
-      "tag": "🇫🇮 芬兰2 | ⬇️ 4.2MB/s|25%|Openai",
+      "tag": "🇬🇧 英国2 | ⬇️ 15.7MB/s|0%|Netflix|Openai",
       "tls": {
         "enabled": true,
         "server_name": "FuIjBvQa.rIcKtMoUsE.InFo",
@@ -659,62 +1559,33 @@
       "packet_encoding": "xudp"
     },
     {
-      "server": "151.101.2.133",
-      "server_port": 80,
-      "tag": "🇳🇱 荷兰1 | ⬇️ 14.4MB/s|0%|Youtube",
-      "transport": {
-        "headers": {
-          "Host": [
-            "snappfood.com"
-          ]
-        },
-        "path": "/Join--HAJIMAMADVPN?ed=80",
-        "type": "ws"
-      },
-      "type": "vless",
-      "uuid": "8061f062-a7bc-4059-805a-03d7853f5eba",
-      "packet_encoding": "xudp"
-    },
-    {
-      "password": "d07ec566-018a-4a80-b3d3-b378fdead52c",
-      "server": "shy23.zqjc.cloud",
-      "server_port": 55215,
-      "tag": "🇰🇷 韩国1 | ⬇️ 4.5MB/s|63%|Netflix|Youtube|Openai|Gemini",
-      "tls": {
-        "enabled": true,
-        "server_name": "shy23.zqjc.cloud",
-        "insecure": true
-      },
-      "type": "hysteria2"
-    },
-    {
-      "password": "628be4b1-36dd-4c09-bd0f-9d88e424f216",
-      "server": "free.2weradf.xyz",
-      "server_port": 36313,
-      "tag": "🇰🇷 韩国2 | ⬇️ 6.2MB/s|0%|Netflix|Disney|Youtube|Openai|Gemini",
+      "password": "5dd7d900-409d-4ae7-8197-c94c6629ef0c",
+      "server": "free.2apzhfa.xyz",
+      "server_port": 31271,
+      "tag": "🇬🇧 英国3 | ⬇️ 4.5MB/s|0%|Netflix|Disney|Openai",
       "type": "shadowsocks",
       "method": "chacha20-ietf-poly1305",
       "network": "tcp"
     },
     {
-      "server": "3.39.249.14",
-      "server_port": 50246,
-      "tag": "🇰🇷 韩国3 | ⬇️ 11.5MB/s|36%|Netflix|Disney|Youtube|Openai|Gemini",
-      "transport": {
-        "path": "/bing",
-        "type": "ws"
-      },
-      "type": "vless",
-      "uuid": "52436966-b467-43a2-8128-753501641dff",
-      "packet_encoding": "xudp"
-    },
-    {
-      "server": "zhee01.dynu.net",
-      "server_port": 54220,
-      "tag": "🇭🇰 香港5 | ⬇️ 7.1MB/s|0%|Netflix|Disney|Youtube",
+      "password": "d68fa1c3-1dcc-4fb0-b906-68b9384f2b64",
+      "server": "yg1.gywanglug.xyz",
+      "server_port": 8443,
+      "tag": "🇬🇧 英国4 | ⬇️ 17.2MB/s|Youtube|Openai",
       "tls": {
         "enabled": true,
-        "server_name": "www.nvidia.com",
+        "server_name": "yg1.gywanglug.xyz",
+        "insecure": true
+      },
+      "type": "hysteria2"
+    },
+    {
+      "server": "beiyong.dynuddns.net",
+      "server_port": 65053,
+      "tag": "🇬🇧 英国5 | ⬇️ 8.8MB/s|50%|Netflix|Disney|Openai",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.amazon.com",
         "insecure": true,
         "utls": {
           "enabled": true,
@@ -732,11 +1603,11 @@
     },
     {
       "server": "shenzhou05.mysynology.net",
-      "server_port": 33782,
-      "tag": "🇭🇰 香港6 | ⬇️ 6.4MB/s|Openai",
+      "server_port": 49699,
+      "tag": "🇬🇧 英国6 | ⬇️ 7.0MB/s|Netflix|Openai",
       "tls": {
         "enabled": true,
-        "server_name": "www.nvidia.com",
+        "server_name": "www.amazon.com",
         "insecure": true,
         "utls": {
           "enabled": true,
@@ -753,87 +1624,74 @@
       "packet_encoding": "xudp"
     },
     {
-      "password": "628be4b1-36dd-4c09-bd0f-9d88e424f216",
-      "server": "free.2weradf.xyz",
-      "server_port": 36143,
-      "tag": "🇭🇰 香港7 | ⬇️ 4.5MB/s|10%|Netflix|Youtube|Openai",
+      "password": "3725974748",
+      "server": "109.74.200.150",
+      "server_port": 49761,
+      "tag": "🇬🇧 英国7 | ⬇️ 12.2MB/s|53%|Netflix|Youtube|Openai",
       "type": "shadowsocks",
       "method": "chacha20-ietf-poly1305",
       "network": "tcp"
     },
     {
-      "server": "43.154.34.74",
-      "server_port": 1935,
-      "tag": "🇭🇰 香港8 | ⬇️ 10.0MB/s|10%|Netflix|Youtube",
+      "server": "151.101.2.133",
+      "server_port": 80,
+      "tag": "🇳🇱 荷兰1 | ⬇️ 13.0MB/s|Openai",
+      "transport": {
+        "headers": {
+          "Host": [
+            "snappfood.com"
+          ]
+        },
+        "path": "/Join--HAJIMAMADVPN?ed=80",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "8061f062-a7bc-4059-805a-03d7853f5eba",
+      "packet_encoding": "xudp"
+    },
+    {
+      "password": "867f512f-93d2-4344-853c-50965de9b103",
+      "server": "shy42.zqjc.cloud",
+      "server_port": 55215,
+      "tag": "🇳🇱 荷兰2 | ⬇️ 12.9MB/s|70%|Netflix|Youtube|Openai",
       "tls": {
         "enabled": true,
-        "server_name": "djdjjrjjrhk.lzj520hxw.dpdns.org",
+        "server_name": "shy42.zqjc.cloud",
         "insecure": true
       },
-      "transport": {
-        "headers": {
-          "Host": [
-            "djdjjrjjrhk.lzj520hxw.dpdns.org"
-          ]
-        },
-        "path": "/vmess-argo",
-        "type": "ws"
-      },
-      "type": "vmess",
-      "security": "auto",
-      "uuid": "2e5bfd4a-0852-4df4-b9e7-9b6f207113b4"
+      "type": "hysteria2"
     },
     {
-      "server": "162.247.5.96",
-      "server_port": 443,
-      "tag": "🇭🇰 香港9 | ⬇️ 7.6MB/s|20%|Netflix",
-      "tls": {
-        "enabled": true,
-        "server_name": "hk.qhahd.shop",
-        "insecure": true,
-        "utls": {
-          "enabled": true,
-          "fingerprint": "chrome"
-        }
-      },
+      "server": "5.253.30.14",
+      "server_port": 8880,
+      "tag": "🇳🇱 荷兰3 | ⬇️ 9.2MB/s|40%|Netflix|Disney|Youtube|Openai",
       "transport": {
-        "headers": {
-          "Host": [
-            "hk.qhahd.shop"
-          ]
-        },
-        "path": "/bing",
-        "type": "ws"
+        "type": "grpc",
+        "service_name": "vless-grpc"
       },
       "type": "vless",
-      "uuid": "1ae00de3-a900-4039-8fda-71612c744258",
+      "uuid": "c7d4b0f6-0f18-45a3-97c7-caaf373f032d",
       "packet_encoding": "xudp"
     },
     {
-      "password": "628be4b1-36dd-4c09-bd0f-9d88e424f216",
-      "server": "free.2weradf.xyz",
-      "server_port": 36721,
-      "tag": "🇲🇾 其他1-MY | ⬇️ 8.9MB/s|0%|Netflix|Youtube|Openai|Gemini",
-      "type": "shadowsocks",
-      "method": "chacha20-ietf-poly1305",
-      "network": "tcp"
+      "server": "85.209.156.7",
+      "server_port": 8880,
+      "tag": "🇳🇱 荷兰4 | ⬇️ 6.5MB/s|40%|Netflix|Disney|Openai",
+      "transport": {
+        "type": "grpc",
+        "service_name": "vless-grpc"
+      },
+      "type": "vless",
+      "uuid": "46db85a1-9d97-46f8-9b7a-ff9704510e5e",
+      "packet_encoding": "xudp"
     },
     {
-      "password": "628be4b1-36dd-4c09-bd0f-9d88e424f216",
-      "server": "free.2weradf.xyz",
-      "server_port": 36677,
-      "tag": "其他2-ID | ⬇️ 4.8MB/s|38%|Netflix|Youtube|Openai|Gemini",
-      "type": "shadowsocks",
-      "method": "chacha20-ietf-poly1305",
-      "network": "tcp"
-    },
-    {
-      "server": "bsuqian01.dynu.net",
-      "server_port": 17889,
-      "tag": "其他3-AT | ⬇️ 6.9MB/s|48%|Openai",
+      "server": "188.227.107.152",
+      "server_port": 8443,
+      "tag": "🇳🇱 荷兰5 | ⬇️ 12.4MB/s|0%|Netflix|Youtube|Openai",
       "tls": {
         "enabled": true,
-        "server_name": "gateway.icloud.com",
+        "server_name": "www.speedtest.net",
         "insecure": true,
         "utls": {
           "enabled": true,
@@ -841,18 +1699,80 @@
         },
         "reality": {
           "enabled": true,
-          "public_key": "qhTzYYIgBzDLNYR79oxftqdo1kzL-1_hGJKfqrOliCY"
+          "public_key": "pYkSwLdGRkBtw2tczaVqPukucwFAn90U3iOcx6jVvyI",
+          "short_id": "54980f"
         }
       },
+      "transport": {
+        "type": "grpc",
+        "service_name": "JoinBadeChannel%40antimeli"
+      },
       "type": "vless",
-      "uuid": "459b4a80-bd61-4ecd-a26b-e9c1809d9e45",
-      "flow": "xtls-rprx-vision",
+      "uuid": "9f287123-2b97-4b43-8ddd-d3354a0ed6bc",
       "packet_encoding": "xudp"
     },
     {
-      "server": "154.83.2.61",
-      "server_port": 8443,
-      "tag": "🇨🇦 加拿大1 | ⬇️ 4.3MB/s|Netflix|Disney|Gemini 2",
+      "password": "Bia-SiNAVM-SiNAVM-SiNAVM-SiNAVM",
+      "server": "sinavm.sinabigo.ir",
+      "server_port": 443,
+      "tag": "🇳🇱 荷兰6 | ⬇️ 5.1MB/s|48%|Netflix|Openai",
+      "tls": {
+        "enabled": true,
+        "server_name": "sinavm.sinabigo.ir",
+        "insecure": true
+      },
+      "type": "hysteria2",
+      "obfs": {
+        "password": "%40SiNAVM-%40SiNAVM-%40SiNAVM-SiNAVM",
+        "type": "salamander"
+      }
+    },
+    {
+      "server": "usvpnandroid2.69.mu",
+      "server_port": 8880,
+      "tag": "🇳🇱 荷兰7 | ⬇️ 6.3MB/s|40%|Netflix|Disney|Youtube|Openai",
+      "transport": {
+        "type": "grpc",
+        "service_name": "vless-grpc"
+      },
+      "type": "vless",
+      "uuid": "c7d4b0f6-0f18-45a3-97c7-caaf373f032d",
+      "packet_encoding": "xudp"
+    },
+    {
+      "password": "d07ec566-018a-4a80-b3d3-b378fdead52c",
+      "server": "shy23.zqjc.cloud",
+      "server_port": 55215,
+      "tag": "🇰🇷 韩国1 | ⬇️ 6.6MB/s|63%|Netflix|Youtube|Openai|Gemini",
+      "tls": {
+        "enabled": true,
+        "server_name": "shy23.zqjc.cloud",
+        "insecure": true
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "5dd7d900-409d-4ae7-8197-c94c6629ef0c",
+      "server": "free.2apzhfa.xyz",
+      "server_port": 31311,
+      "tag": "🇰🇷 韩国2 | ⬇️ 4.9MB/s|54%|Netflix|Youtube|Openai|Gemini",
+      "type": "shadowsocks",
+      "method": "chacha20-ietf-poly1305",
+      "network": "tcp"
+    },
+    {
+      "password": "5dd7d900-409d-4ae7-8197-c94c6629ef0c",
+      "server": "free.2apzhfa.xyz",
+      "server_port": 31313,
+      "tag": "🇰🇷 韩国3 | ⬇️ 5.2MB/s|0%|Netflix|Disney|Youtube|Openai|Gemini",
+      "type": "shadowsocks",
+      "method": "chacha20-ietf-poly1305",
+      "network": "tcp"
+    },
+    {
+      "server": "154.83.2.54",
+      "server_port": 2096,
+      "tag": "🇰🇷 韩国4 | ⬇️ 14.0MB/s|63%|Netflix|Disney",
       "tls": {
         "enabled": true,
         "server_name": "vlee.amclubs.nyc.mn",
@@ -876,18 +1796,43 @@
       "packet_encoding": "xudp"
     },
     {
-      "password": "628be4b1-36dd-4c09-bd0f-9d88e424f216",
-      "server": "free.2weradf.xyz",
-      "server_port": 36371,
-      "tag": "🇮🇳 印度1 | ⬇️ 4.9MB/s|28%|Netflix|Youtube|Openai|Gemini 2",
+      "server": "a64e572b-sutj40-tei4of-1qxa1.cm5.p5pv.com",
+      "server_port": 17232,
+      "tag": "🇰🇷 韩国5 | ⬇️ 6.3MB/s|54%|Netflix|Youtube|Openai",
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "f609abb4-ed17-11ee-9fa2-f23c9164ca5d"
+    },
+    {
+      "server": "4c16178d-surog0-t26vr3-1likw.cm.plebai.net",
+      "server_port": 15229,
+      "tag": "🇭🇰 香港22 | ⬇️ 4.2MB/s|12%|Netflix|Disney|Openai",
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "a23c20fc-3e66-11ef-b1d2-f23c91cfbbc9"
+    },
+    {
+      "password": "5dd7d900-409d-4ae7-8197-c94c6629ef0c",
+      "server": "free.2apzhfa.xyz",
+      "server_port": 31141,
+      "tag": "🇭🇰 香港23 | ⬇️ 4.2MB/s|14%|Netflix|Disney|Youtube|Openai",
       "type": "shadowsocks",
       "method": "chacha20-ietf-poly1305",
       "network": "tcp"
     },
     {
-      "server": "gysz0000.dynu.net",
-      "server_port": 12477,
-      "tag": "🇨🇳 台湾1 | ⬇️ 8.3MB/s|16%|Youtube|Openai|Gemini 2",
+      "password": "5dd7d900-409d-4ae7-8197-c94c6629ef0c",
+      "server": "free.2apzhfa.xyz",
+      "server_port": 31143,
+      "tag": "🇭🇰 香港24 | ⬇️ 4.4MB/s|10%|Netflix|Youtube|Openai",
+      "type": "shadowsocks",
+      "method": "chacha20-ietf-poly1305",
+      "network": "tcp"
+    },
+    {
+      "server": "bsuqian01.dynu.net",
+      "server_port": 27631,
+      "tag": "🇭🇰 香港25 | ⬇️ 17.8MB/s|0%|Netflix|Disney|Youtube",
       "tls": {
         "enabled": true,
         "server_name": "www.nvidia.com",
@@ -907,33 +1852,80 @@
       "packet_encoding": "xudp"
     },
     {
-      "password": "628be4b1-36dd-4c09-bd0f-9d88e424f216",
-      "server": "free.2weradf.xyz",
-      "server_port": 36241,
-      "tag": "🇨🇳 台湾2 | ⬇️ 4.3MB/s|0%|Netflix|Disney|Youtube|Openai|Gemini 2",
-      "type": "shadowsocks",
-      "method": "chacha20-ietf-poly1305",
-      "network": "tcp"
-    },
-    {
-      "password": "dee29869-ae36-4504-89f5-8f06b7dc7a6a",
-      "server": "94.159.107.136",
-      "server_port": 1443,
-      "tag": "🇩🇪 德国1 | ⬇️ 4.3MB/s|0%|Netflix|Openai 2",
+      "server": "beiyong.dynuddns.net",
+      "server_port": 12597,
+      "tag": "🇭🇰 香港26 | ⬇️ 24.0MB/s|0%|Youtube",
       "tls": {
         "enabled": true,
-        "server_name": "de2.587458.xyz",
+        "server_name": "www.nvidia.com",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "qhTzYYIgBzDLNYR79oxftqdo1kzL-1_hGJKfqrOliCY"
+        }
+      },
+      "type": "vless",
+      "uuid": "459b4a80-bd61-4ecd-a26b-e9c1809d9e45",
+      "flow": "xtls-rprx-vision",
+      "packet_encoding": "xudp"
+    },
+    {
+      "password": "psycho",
+      "server": "104.21.48.1",
+      "server_port": 443,
+      "tag": "🇭🇰 香港27 | ⬇️ 12.5MB/s|0%|Netflix|Disney|Youtube|Openai",
+      "tls": {
+        "enabled": true,
+        "server_name": "pSychO.sueX12.IR",
+        "alpn": [
+          "http%2F1.1"
+        ],
         "insecure": true
       },
-      "type": "hysteria2"
+      "transport": {
+        "headers": {
+          "Host": [
+            "pSychO.sueX12.IR"
+          ]
+        },
+        "path": "/tr7m9KE73yqd6Htr2E?ed=2560",
+        "type": "ws"
+      },
+      "type": "trojan"
     },
     {
-      "server": "108.165.216.195",
-      "server_port": 443,
-      "tag": "🇩🇪 德国2 | ⬇️ 4.0MB/s|25% 2",
+      "server": "shenzhou05.mysynology.net",
+      "server_port": 33782,
+      "tag": "🇭🇰 香港5 | ⬇️ 18.1MB/s|0%|Youtube|Openai|Gemini",
       "tls": {
         "enabled": true,
-        "server_name": "aghayesex.hajalii.com",
+        "server_name": "www.nvidia.com",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "qhTzYYIgBzDLNYR79oxftqdo1kzL-1_hGJKfqrOliCY"
+        }
+      },
+      "type": "vless",
+      "uuid": "459b4a80-bd61-4ecd-a26b-e9c1809d9e45",
+      "flow": "xtls-rprx-vision",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "162.247.5.96",
+      "server_port": 443,
+      "tag": "🇭🇰 香港6 | ⬇️ 13.2MB/s|20%|Netflix|Disney",
+      "tls": {
+        "enabled": true,
+        "server_name": "hk.qhahd.shop",
         "insecure": true,
         "utls": {
           "enabled": true,
@@ -943,23 +1935,23 @@
       "transport": {
         "headers": {
           "Host": [
-            "aghayesex.hajalii.com"
+            "hk.qhahd.shop"
           ]
         },
-        "path": "/",
+        "path": "/bing",
         "type": "ws"
       },
       "type": "vless",
-      "uuid": "250dd200-2e83-4645-ac1d-6e7c85e91afe",
+      "uuid": "1ae00de3-a900-4039-8fda-71612c744258",
       "packet_encoding": "xudp"
     },
     {
-      "server": "91.107.254.145",
-      "server_port": 3037,
-      "tag": "🇩🇪 德国3 | ⬇️ 11.8MB/s|25%|Netflix|Openai 2",
+      "server": "bsuqian01.dynu.net",
+      "server_port": 17889,
+      "tag": "其他1-AT | ⬇️ 12.8MB/s|48%|Netflix|Openai",
       "tls": {
         "enabled": true,
-        "server_name": "refersion.com",
+        "server_name": "gateway.icloud.com",
         "insecure": true,
         "utls": {
           "enabled": true,
@@ -967,17 +1959,386 @@
         },
         "reality": {
           "enabled": true,
-          "public_key": "91bCG1r8YkOBqn138sLf8099WoHAzdsxVr24UVSZJig"
+          "public_key": "qhTzYYIgBzDLNYR79oxftqdo1kzL-1_hGJKfqrOliCY"
         }
       },
       "type": "vless",
-      "uuid": "7f3e8830-70ce-4fa2-8185-e73baeb780a6",
+      "uuid": "459b4a80-bd61-4ecd-a26b-e9c1809d9e45",
+      "flow": "xtls-rprx-vision",
+      "packet_encoding": "xudp"
+    },
+    {
+      "password": "5dd7d900-409d-4ae7-8197-c94c6629ef0c",
+      "server": "free.2apzhfa.xyz",
+      "server_port": 31721,
+      "tag": "🇲🇾 其他2-MY | ⬇️ 5.4MB/s|0%|Netflix|Youtube|Openai|Gemini",
+      "type": "shadowsocks",
+      "method": "chacha20-ietf-poly1305",
+      "network": "tcp"
+    },
+    {
+      "password": "5dd7d900-409d-4ae7-8197-c94c6629ef0c",
+      "server": "free.2apzhfa.xyz",
+      "server_port": 31722,
+      "tag": "🇲🇾 其他3-MY | ⬇️ 5.0MB/s|0%|Netflix|Youtube|Openai|Gemini",
+      "type": "shadowsocks",
+      "method": "chacha20-ietf-poly1305",
+      "network": "tcp"
+    },
+    {
+      "password": "5dd7d900-409d-4ae7-8197-c94c6629ef0c",
+      "server": "free.2apzhfa.xyz",
+      "server_port": 31741,
+      "tag": "🇪🇸 其他4-ES | ⬇️ 5.1MB/s|31%|Netflix|Openai",
+      "type": "shadowsocks",
+      "method": "chacha20-ietf-poly1305",
+      "network": "tcp"
+    },
+    {
+      "password": "5dd7d900-409d-4ae7-8197-c94c6629ef0c",
+      "server": "free.2apzhfa.xyz",
+      "server_port": 31641,
+      "tag": "其他5-VN | ⬇️ 5.5MB/s|0%|Netflix|Youtube|Openai|Gemini",
+      "type": "shadowsocks",
+      "method": "chacha20-ietf-poly1305",
+      "network": "tcp"
+    },
+    {
+      "server": "bsuqian01.dynu.net",
+      "server_port": 22216,
+      "tag": "其他6-MD | ⬇️ 5.4MB/s|48%|Netflix|Openai",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.nvidia.com",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "qhTzYYIgBzDLNYR79oxftqdo1kzL-1_hGJKfqrOliCY"
+        }
+      },
+      "type": "vless",
+      "uuid": "459b4a80-bd61-4ecd-a26b-e9c1809d9e45",
+      "flow": "xtls-rprx-vision",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "170.114.45.6",
+      "server_port": 80,
+      "tag": "其他7-LK | ⬇️ 19.3MB/s|23%|Youtube|Openai|Gemini",
+      "transport": {
+        "headers": {
+          "Host": [
+            "free.server.pranithsandaruwan.shop"
+          ]
+        },
+        "path": "/",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "f95543de-d6c7-474e-a58e-c9891833f45b",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "shenzhou05.mysynology.net",
+      "server_port": 28680,
+      "tag": "🇨🇳 其他8-CN | ⬇️ 31.8MB/s|35%|Netflix",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.nvidia.com",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "qhTzYYIgBzDLNYR79oxftqdo1kzL-1_hGJKfqrOliCY"
+        }
+      },
+      "type": "vless",
+      "uuid": "459b4a80-bd61-4ecd-a26b-e9c1809d9e45",
+      "flow": "xtls-rprx-vision",
+      "packet_encoding": "xudp"
+    },
+    {
+      "password": "telegram_ryukohk",
+      "server": "cs_office.hideshots.eu",
+      "server_port": 6001,
+      "tag": "其他9-LV | ⬇️ 5.1MB/s|24%|Netflix|Youtube|Openai",
+      "type": "shadowsocks",
+      "method": "chacha20-ietf-poly1305",
+      "network": "tcp"
+    },
+    {
+      "password": "5dd7d900-409d-4ae7-8197-c94c6629ef0c",
+      "server": "free.2apzhfa.xyz",
+      "server_port": 31611,
+      "tag": "🇺🇦 乌克兰1 | ⬇️ 5.1MB/s|39%|Netflix|Youtube|Openai 2",
+      "type": "shadowsocks",
+      "method": "chacha20-ietf-poly1305",
+      "network": "tcp"
+    },
+    {
+      "password": "dongtaiwang.com",
+      "server": "46.17.41.217",
+      "server_port": 64816,
+      "tag": "🇷🇺 俄罗斯3 | ⬇️ 6.5MB/s|100%|Youtube 2",
+      "tls": {
+        "enabled": true,
+        "server_name": "apple.com",
+        "insecure": true
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "dongtaiwang.com",
+      "server": "46.29.163.171",
+      "server_port": 32555,
+      "tag": "🇷🇺 俄罗斯4 | ⬇️ 9.7MB/s|0% 2",
+      "tls": {
+        "enabled": true,
+        "server_name": "apple.com",
+        "insecure": true
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "5dd7d900-409d-4ae7-8197-c94c6629ef0c",
+      "server": "free.2apzhfa.xyz",
+      "server_port": 31511,
+      "tag": "🇷🇺 俄罗斯5 | ⬇️ 5.1MB/s|10% 2",
+      "type": "shadowsocks",
+      "method": "chacha20-ietf-poly1305",
+      "network": "tcp"
+    },
+    {
+      "password": "dongtaiwang.com",
+      "server": "46.17.41.5",
+      "server_port": 12904,
+      "tag": "🇷🇺 俄罗斯6 | ⬇️ 4.5MB/s|100% 2",
+      "tls": {
+        "enabled": true,
+        "server_name": "apple.com",
+        "insecure": true
+      },
+      "type": "hysteria2",
+      "down_mbps": 100,
+      "up_mbps": 100
+    },
+    {
+      "server": "195.58.49.84",
+      "server_port": 22011,
+      "tag": "🇷🇺 俄罗斯7 | ⬇️ 4.2MB/s|50%|Netflix|Youtube 2",
+      "transport": {
+        "path": "/",
+        "type": "ws"
+      },
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "9175b2cb-a204-4cbd-aed7-88c50ef79815"
+    },
+    {
+      "password": "5dd7d900-409d-4ae7-8197-c94c6629ef0c",
+      "server": "free.2apzhfa.xyz",
+      "server_port": 31441,
+      "tag": "🇨🇦 加拿大1 | ⬇️ 5.0MB/s|28%|Netflix|Youtube|Openai|Gemini 2",
+      "type": "shadowsocks",
+      "method": "chacha20-ietf-poly1305",
+      "network": "tcp"
+    },
+    {
+      "server": "v25.heduian.link",
+      "server_port": 30825,
+      "tag": "🇨🇦 加拿大2 | ⬇️ 10.7MB/s|Netflix|Youtube|Openai|Gemini 2",
+      "transport": {
+        "headers": {
+          "Host": [
+            "v25.heduian.link"
+          ]
+        },
+        "path": "/oooo",
+        "type": "ws"
+      },
+      "type": "vmess",
+      "alter_id": 2,
+      "security": "auto",
+      "uuid": "cbb3f877-d1fb-344c-87a9-d153bffd5484"
+    },
+    {
+      "server": "198.62.62.156",
+      "server_port": 443,
+      "tag": "🇨🇦 加拿大3 | ⬇️ 8.5MB/s|Netflix|Disney|Gemini 2",
+      "tls": {
+        "enabled": true,
+        "server_name": "vlee.amclubs.nyc.mn",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "randomized"
+        }
+      },
+      "transport": {
+        "headers": {
+          "Host": [
+            "vlee.amclubs.nyc.mn"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "d6b8011a-c725-435a-9fec-bf6d3530392c",
+      "packet_encoding": "xudp"
+    },
+    {
+      "password": "5dd7d900-409d-4ae7-8197-c94c6629ef0c",
+      "server": "free.2apzhfa.xyz",
+      "server_port": 31371,
+      "tag": "🇮🇳 印度1 | ⬇️ 5.2MB/s|28%|Netflix|Youtube|Openai|Gemini 2",
+      "type": "shadowsocks",
+      "method": "chacha20-ietf-poly1305",
+      "network": "tcp"
+    },
+    {
+      "server": "agaungzhou01.bumbleshrimp.com",
+      "server_port": 12791,
+      "tag": "🇮🇳 印度2 | ⬇️ 5.0MB/s|54%|Netflix|Youtube|Openai|Gemini 2",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.yahoo.com",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "qhTzYYIgBzDLNYR79oxftqdo1kzL-1_hGJKfqrOliCY"
+        }
+      },
+      "type": "vless",
+      "uuid": "459b4a80-bd61-4ecd-a26b-e9c1809d9e45",
+      "flow": "xtls-rprx-vision",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "gysz0000.dynu.net",
+      "server_port": 12477,
+      "tag": "🇨🇳 台湾1 | ⬇️ 5.9MB/s|16%|Netflix|Youtube|Openai|Gemini 2",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.nvidia.com",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "qhTzYYIgBzDLNYR79oxftqdo1kzL-1_hGJKfqrOliCY"
+        }
+      },
+      "type": "vless",
+      "uuid": "459b4a80-bd61-4ecd-a26b-e9c1809d9e45",
+      "flow": "xtls-rprx-vision",
+      "packet_encoding": "xudp"
+    },
+    {
+      "password": "5dd7d900-409d-4ae7-8197-c94c6629ef0c",
+      "server": "free.2apzhfa.xyz",
+      "server_port": 31241,
+      "tag": "🇨🇳 台湾2 | ⬇️ 4.9MB/s|0%|Netflix|Disney|Youtube|Openai|Gemini 2",
+      "type": "shadowsocks",
+      "method": "chacha20-ietf-poly1305",
+      "network": "tcp"
+    },
+    {
+      "password": "5dd7d900-409d-4ae7-8197-c94c6629ef0c",
+      "server": "free.2apzhfa.xyz",
+      "server_port": 31245,
+      "tag": "🇨🇳 台湾3 | ⬇️ 5.2MB/s|0%|Netflix|Disney|Youtube|Openai|Gemini 2",
+      "type": "shadowsocks",
+      "method": "chacha20-ietf-poly1305",
+      "network": "tcp"
+    },
+    {
+      "server": "zhee01.dynu.net",
+      "server_port": 13263,
+      "tag": "🇨🇳 台湾4 | ⬇️ 28.8MB/s|16%|Netflix|Youtube|Openai|Gemini 2",
+      "tls": {
+        "enabled": true,
+        "server_name": "gateway.icloud.com",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "qhTzYYIgBzDLNYR79oxftqdo1kzL-1_hGJKfqrOliCY"
+        }
+      },
+      "type": "vless",
+      "uuid": "459b4a80-bd61-4ecd-a26b-e9c1809d9e45",
+      "flow": "xtls-rprx-vision",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "bsuqian01.dynu.net",
+      "server_port": 47531,
+      "tag": "🇨🇳 台湾5 | ⬇️ 14.5MB/s|16%|Netflix|Youtube|Openai|Gemini 2",
+      "tls": {
+        "enabled": true,
+        "server_name": "gateway.icloud.com",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "qhTzYYIgBzDLNYR79oxftqdo1kzL-1_hGJKfqrOliCY"
+        }
+      },
+      "type": "vless",
+      "uuid": "459b4a80-bd61-4ecd-a26b-e9c1809d9e45",
+      "flow": "xtls-rprx-vision",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "162.247.5.91",
+      "server_port": 443,
+      "tag": "🇨🇳 台湾6 | ⬇️ 12.7MB/s|36%|Netflix|Youtube|Openai|Gemini 2",
+      "tls": {
+        "enabled": true,
+        "server_name": "tw.qhahd.shop",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "headers": {
+          "Host": [
+            "tw.qhahd.shop"
+          ]
+        },
+        "path": "/bing",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "06a323c7-bf9f-4fc4-a230-f2eab27fa1ae",
       "packet_encoding": "xudp"
     },
     {
       "server": "jnir-addr.cybsecguru.com",
       "server_port": 443,
-      "tag": "🇩🇪 德国4 | ⬇️ 4.0MB/s|Disney|Openai 2",
+      "tag": "🇩🇪 德国1 | ⬇️ 11.4MB/s|0%|Netflix|Disney|Openai 2",
       "tls": {
         "enabled": true,
         "server_name": "rakhsh.4972616e.xyz",
@@ -1001,74 +2362,183 @@
       "packet_encoding": "xudp"
     },
     {
-      "server": "support.zoom.us",
-      "server_port": 80,
-      "tag": "🇸🇬 新加坡1 | ⬇️ 5.2MB/s|Netflix|Youtube|Openai|Gemini 2",
+      "password": "5dd7d900-409d-4ae7-8197-c94c6629ef0c",
+      "server": "free.2apzhfa.xyz",
+      "server_port": 31471,
+      "tag": "🇩🇪 德国2 | ⬇️ 4.6MB/s|41%|Netflix|Disney|Youtube|Openai 2",
+      "type": "shadowsocks",
+      "method": "chacha20-ietf-poly1305",
+      "network": "tcp"
+    },
+    {
+      "server": "whatismyipaddress.com",
+      "server_port": 2096,
+      "tag": "🇩🇪 德国3 | ⬇️ 11.1MB/s|47%|Openai 2",
+      "tls": {
+        "enabled": true,
+        "server_name": "wwwspeedtestnetwhiteberinsistomd6625996s28.elitemizban.ir",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
       "transport": {
         "headers": {
           "Host": [
-            "free.server.techsonicpremium.shop"
+            "wwwspeedtestnetwhiteberinsistomd6625996s28.elitemizban.ir"
           ]
         },
-        "path": "//free.server.techsonicpremium.shop",
+        "path": "/",
         "type": "ws"
       },
       "type": "vless",
-      "uuid": "1cf1e1b6-fc44-4000-8aa9-ffeee3b1aae8",
+      "uuid": "27a778d4-543e-43f5-85a2-6acf18821ccb",
       "packet_encoding": "xudp"
     },
     {
-      "password": "2zDxCBy3NlalDe3ZO0cpF7FqDnYRa46uygSXYTjAwpE8AR5KeS3CZ98C3axIOS",
-      "server": "bungle.superpokemon.com",
-      "server_port": 443,
-      "tag": "🇯🇵 日本1 | ⬇️ 9.9MB/s|36%|Netflix|Disney|Youtube|Openai|Gemini 2",
+      "server": "crm.iranigamepars.ir",
+      "server_port": 8443,
+      "tag": "🇩🇪 德国4 | ⬇️ 14.0MB/s|25%|Netflix|Youtube|Openai 2",
       "tls": {
         "enabled": true,
-        "server_name": "bungle.superpokemon.com",
+        "server_name": "Vpnmizban.iranigamepars.ir",
+        "insecure": true
+      },
+      "transport": {
+        "type": "grpc",
+        "service_name": "V2RayMizban----V2RayMizban----V2RayMizban----V2RayMizban----V2RayMizban----V2RayMizban----V2RayMizban"
+      },
+      "type": "vless",
+      "uuid": "3e509f62-56ef-479f-a884-e74aea5b89e1",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "zula.ir",
+      "server_port": 2053,
+      "tag": "🇩🇪 德国5 | ⬇️ 16.7MB/s|25%|Netflix|Openai 2",
+      "tls": {
+        "enabled": true,
+        "server_name": "all18.kikforwindows.com",
+        "alpn": [
+          "h3",
+          "h2",
+          "http/1.1"
+        ],
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "headers": {
+          "Host": [
+            "all18.kikforwindows.com"
+          ]
+        },
+        "path": "/containers/de",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "99333609-167f-4750-ab63-34cfa27c723a",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "fra5.vpntype.dev",
+      "server_port": 443,
+      "tag": "🇩🇪 德国6 | ⬇️ 4.6MB/s|45%|Netflix|Youtube|Openai 2",
+      "tls": {
+        "enabled": true,
+        "server_name": "fra5.vpntype.dev",
+        "alpn": [
+          "h2",
+          "http/1.1"
+        ],
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "type": "vless",
+      "uuid": "f9968daf-b3ae-437d-ac99-4893b6432c95",
+      "flow": "xtls-rprx-vision",
+      "packet_encoding": "xudp"
+    },
+    {
+      "password": "5dd7d900-409d-4ae7-8197-c94c6629ef0c",
+      "server": "free.2apzhfa.xyz",
+      "server_port": 31173,
+      "tag": "🇸🇬 新加坡1 | ⬇️ 4.6MB/s|53%|Netflix|Disney|Youtube|Openai|Gemini 2",
+      "type": "shadowsocks",
+      "method": "chacha20-ietf-poly1305",
+      "network": "tcp"
+    },
+    {
+      "password": "5dd7d900-409d-4ae7-8197-c94c6629ef0c",
+      "server": "free.2apzhfa.xyz",
+      "server_port": 31171,
+      "tag": "🇸🇬 新加坡2 | ⬇️ 5.6MB/s|52%|Netflix|Disney|Youtube|Openai|Gemini 2",
+      "type": "shadowsocks",
+      "method": "chacha20-ietf-poly1305",
+      "network": "tcp"
+    },
+    {
+      "password": "597dc9ce-5ce8-4ff5-833b-76cd4e5789e1",
+      "server": "xjp1.gywanglug.xyz",
+      "server_port": 8443,
+      "tag": "🇸🇬 新加坡3 | ⬇️ 9.4MB/s|Netflix|Disney|Youtube|Openai|Gemini 2",
+      "tls": {
+        "enabled": true,
+        "server_name": "xjp1.gywanglug.xyz",
+        "insecure": true
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "d68fa1c3-1dcc-4fb0-b906-68b9384f2b64",
+      "server": "xjp2.gywanglug.xyz",
+      "server_port": 8443,
+      "tag": "🇸🇬 新加坡4 | ⬇️ 5.8MB/s|Netflix|Disney|Youtube|Openai|Gemini 2",
+      "tls": {
+        "enabled": true,
+        "server_name": "xjp2.gywanglug.xyz",
+        "insecure": true
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "77d16a10-7d7f-443e-acad-5b279260a523",
+      "server": "xjp2.gywanglug.xyz",
+      "server_port": 8443,
+      "tag": "🇸🇬 新加坡5 | ⬇️ 8.2MB/s|Netflix|Disney|Youtube|Openai|Gemini 2",
+      "tls": {
+        "enabled": true,
+        "server_name": "xjp2.gywanglug.xyz",
+        "insecure": true
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "VMhGp5wEIyCDf90T",
+      "server": "gysz0000.dynu.net",
+      "server_port": 38340,
+      "tag": "🇸🇬 新加坡6 | ⬇️ 22.6MB/s|Netflix|Youtube|Openai|Gemini 2",
+      "tls": {
+        "enabled": true,
+        "server_name": "hk39.work.gd",
         "insecure": true
       },
       "type": "trojan"
     },
     {
-      "server": "43.207.175.222",
-      "server_port": 45059,
-      "tag": "🇯🇵 日本10 | ⬇️ 23.0MB/s|36%|Netflix|Youtube|Openai|Gemini 2",
-      "type": "vless",
-      "uuid": "172af565-6ed5-4e44-905b-a8c20a1f53d5",
-      "packet_encoding": "xudp"
-    },
-    {
-      "server": "120.198.71.214",
-      "server_port": 32980,
-      "tag": "🇯🇵 日本2 | ⬇️ 6.1MB/s|0%|Netflix|Disney|Openai 2",
-      "type": "vmess",
-      "alter_id": 64,
-      "security": "auto",
-      "uuid": "418048af-a293-4b99-9b0c-98ca3580dd24"
-    },
-    {
-      "server": "43.207.176.93",
-      "server_port": 52787,
-      "tag": "🇯🇵 日本3 | ⬇️ 12.0MB/s|15%|Netflix|Disney|Youtube|Openai|Gemini 2",
-      "type": "vless",
-      "uuid": "abcaa7dc-9b0a-459e-a9fd-a76c161fa432",
-      "packet_encoding": "xudp"
-    },
-    {
-      "server": "35.72.9.171",
-      "server_port": 47435,
-      "tag": "🇯🇵 日本4 | ⬇️ 7.5MB/s|15%|Netflix|Disney|Youtube|Openai|Gemini 2",
-      "type": "vless",
-      "uuid": "c4e78724-b906-44a2-aefe-c370801a82b9",
-      "packet_encoding": "xudp"
-    },
-    {
-      "server": "csuzhou01.1cooldns.com",
-      "server_port": 13989,
-      "tag": "🇯🇵 日本5 | ⬇️ 6.9MB/s|76%|Netflix|Youtube|Openai 2",
+      "server": "agaungzhou01.bumbleshrimp.com",
+      "server_port": 56127,
+      "tag": "🇸🇬 新加坡7 | ⬇️ 8.1MB/s|35%|Netflix|Openai 2",
       "tls": {
         "enabled": true,
-        "server_name": "gateway.icloud.com",
+        "server_name": "www.yahoo.com",
         "insecure": true,
         "utls": {
           "enabled": true,
@@ -1085,21 +2555,65 @@
       "packet_encoding": "xudp"
     },
     {
-      "password": "8XOq72xna8DFeZySSppDDSCNAjlYacA3gB3uZ03RCOlC5xe6ITFR4zwayEKY93",
-      "server": "broker.superpokemon.com",
-      "server_port": 443,
-      "tag": "🇯🇵 日本7 | ⬇️ 11.7MB/s|36%|Netflix|Disney|Youtube|Openai|Gemini 2",
+      "password": "00a41b90-d694-406b-9b4b-392fe2c52cf1",
+      "server": "sg1.epclub.xyz",
+      "server_port": 9999,
+      "tag": "🇸🇬 新加坡8 | ⬇️ 5.3MB/s|35%|Netflix|Openai 2",
       "tls": {
         "enabled": true,
-        "server_name": "broker.superpokemon.com",
+        "server_name": "apple.com",
         "insecure": true
       },
-      "type": "trojan"
+      "type": "hysteria2",
+      "obfs": {
+        "password": "ZDQxZDhjZDk4ZjAwYjIwNA==",
+        "type": "salamander"
+      }
+    },
+    {
+      "server": "92.112.23.47",
+      "server_port": 30114,
+      "tag": "🇸🇬 新加坡9 | ⬇️ 7.4MB/s|0%|Youtube|Openai|Gemini 2",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.yahoo.com",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "gW_VBG7LX1e-5kSy_wW0Q56h10QeWPSl-h2Dvj2NqhM",
+          "short_id": "a56a8143"
+        }
+      },
+      "type": "vless",
+      "uuid": "cc91416c-f14a-4324-b632-3d1b6309b18f",
+      "flow": "xtls-rprx-vision",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "35.72.9.171",
+      "server_port": 47435,
+      "tag": "🇯🇵 日本1 | ⬇️ 12.5MB/s|15%|Netflix|Disney|Youtube|Openai|Gemini 2",
+      "type": "vless",
+      "uuid": "c4e78724-b906-44a2-aefe-c370801a82b9",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "120.198.71.214",
+      "server_port": 32980,
+      "tag": "🇯🇵 日本2 | ⬇️ 5.5MB/s|0%|Netflix|Disney|Openai 2",
+      "type": "vmess",
+      "alter_id": 64,
+      "security": "auto",
+      "uuid": "418048af-a293-4b99-9b0c-98ca3580dd24"
     },
     {
       "server": "bsuqian01.dynu.net",
       "server_port": 31735,
-      "tag": "🇯🇵 日本8 | ⬇️ 4.9MB/s|20%|Netflix|Youtube 2",
+      "tag": "🇯🇵 日本3 | ⬇️ 6.8MB/s|20%|Netflix|Youtube|Openai|Gemini 2",
       "tls": {
         "enabled": true,
         "server_name": "www.nvidia.com",
@@ -1119,19 +2633,102 @@
       "packet_encoding": "xudp"
     },
     {
-      "password": "628be4b1-36dd-4c09-bd0f-9d88e424f216",
-      "server": "free.2weradf.xyz",
-      "server_port": 36115,
-      "tag": "🇯🇵 日本9 | ⬇️ 7.7MB/s|10%|Netflix|Youtube|Openai|Gemini 2",
+      "password": "5dd7d900-409d-4ae7-8197-c94c6629ef0c",
+      "server": "free.2apzhfa.xyz",
+      "server_port": 31111,
+      "tag": "🇯🇵 日本4 | ⬇️ 4.4MB/s|52%|Netflix|Disney|Youtube|Openai|Gemini 2",
       "type": "shadowsocks",
       "method": "chacha20-ietf-poly1305",
       "network": "tcp"
     },
     {
+      "password": "5dd7d900-409d-4ae7-8197-c94c6629ef0c",
+      "server": "free.2apzhfa.xyz",
+      "server_port": 31115,
+      "tag": "🇯🇵 日本5 | ⬇️ 5.1MB/s|10%|Netflix|Disney|Youtube|Openai|Gemini 2",
+      "type": "shadowsocks",
+      "method": "chacha20-ietf-poly1305",
+      "network": "tcp"
+    },
+    {
+      "server": "bsuqian01.dynu.net",
+      "server_port": 25768,
+      "tag": "🇯🇵 日本6 | ⬇️ 6.6MB/s|76%|Netflix|Openai 2",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.nvidia.com",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "qhTzYYIgBzDLNYR79oxftqdo1kzL-1_hGJKfqrOliCY"
+        }
+      },
+      "type": "vless",
+      "uuid": "459b4a80-bd61-4ecd-a26b-e9c1809d9e45",
+      "flow": "xtls-rprx-vision",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "464fd463-sutj40-svphz8-1nhwh.cm5.p5pv.com",
+      "server_port": 17233,
+      "tag": "🇯🇵 日本7 | ⬇️ 9.6MB/s|16%|Netflix|Disney|Youtube|Openai|Gemini 2",
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "3a3ef54c-eb42-11ed-9bf0-f23c91369f2d"
+    },
+    {
+      "server": "gysz0000.dynu.net",
+      "server_port": 10635,
+      "tag": "🇯🇵 日本8 | ⬇️ 10.1MB/s|10%|Netflix|Youtube|Openai 2",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.nvidia.com",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "qhTzYYIgBzDLNYR79oxftqdo1kzL-1_hGJKfqrOliCY"
+        }
+      },
+      "type": "vless",
+      "uuid": "459b4a80-bd61-4ecd-a26b-e9c1809d9e45",
+      "flow": "xtls-rprx-vision",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "shenzhou05.mysynology.net",
+      "server_port": 10635,
+      "tag": "🇯🇵 日本9 | ⬇️ 19.5MB/s|10%|Netflix|Youtube|Openai|Gemini 2",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.nvidia.com",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "qhTzYYIgBzDLNYR79oxftqdo1kzL-1_hGJKfqrOliCY"
+        }
+      },
+      "type": "vless",
+      "uuid": "459b4a80-bd61-4ecd-a26b-e9c1809d9e45",
+      "flow": "xtls-rprx-vision",
+      "packet_encoding": "xudp"
+    },
+    {
       "password": "dongtaiwang.com",
       "server": "195.154.33.70",
       "server_port": 23587,
-      "tag": "🇫🇷 法国1 | ⬇️ 11.3MB/s|0%|Netflix|Youtube|Openai 2",
+      "tag": "🇫🇷 法国3 | ⬇️ 11.7MB/s|0%|Netflix|Youtube|Openai 2",
       "tls": {
         "enabled": true,
         "server_name": "www.bing.com",
@@ -1142,21 +2739,83 @@
       "up_mbps": 100
     },
     {
-      "password": "4467ae8518abf1ef321618c0bfb5549ccc",
-      "server": "sydney-mini-ddns.faforex.eu.org",
-      "server_port": 25131,
-      "tag": "🇦🇺 澳大利亚1 | ⬇️ 5.0MB/s|63%|Netflix|Youtube|Openai|Gemini 2",
+      "password": "dongtaiwang.com",
+      "server": "51.159.226.1",
+      "server_port": 61770,
+      "tag": "🇫🇷 法国4 | ⬇️ 10.8MB/s|14%|Netflix|Openai 2",
       "tls": {
         "enabled": true,
-        "server_name": "www.cloudflare.com",
+        "server_name": "www.bing.com",
         "insecure": true
       },
-      "type": "trojan"
+      "type": "hysteria2",
+      "down_mbps": 100,
+      "up_mbps": 100
+    },
+    {
+      "server": "104.17.148.22",
+      "server_port": 2053,
+      "tag": "🇫🇷 法国6 | ⬇️ 10.1MB/s|41%|Netflix|Openai 2",
+      "tls": {
+        "enabled": true,
+        "server_name": "app39.appdatanewh.lat",
+        "alpn": [
+          "h2",
+          "http/1.1"
+        ],
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "headers": {
+          "Host": [
+            "app39.appdatanewh.lat"
+          ]
+        },
+        "path": "/",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "c2f690dc-6187-48a8-aa8b-b75d43d11df4",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "104.17.147.22",
+      "server_port": 2053,
+      "tag": "🇫🇷 法国7 | ⬇️ 8.0MB/s|41%|Netflix|Openai 2",
+      "tls": {
+        "enabled": true,
+        "server_name": "app39.appdatanewh.lat",
+        "alpn": [
+          "h2",
+          "http/1.1"
+        ],
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "headers": {
+          "Host": [
+            "app39.appdatanewh.lat"
+          ]
+        },
+        "path": "/",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "c2f690dc-6187-48a8-aa8b-b75d43d11df4",
+      "packet_encoding": "xudp"
     },
     {
       "server": "bsuqian01.dynu.net",
       "server_port": 42426,
-      "tag": "🇦🇺 澳大利亚2 | ⬇️ 4.5MB/s|54%|Netflix|Openai 2",
+      "tag": "🇦🇺 澳大利亚1 | ⬇️ 7.2MB/s|54%|Netflix|Youtube|Openai|Gemini 2",
       "tls": {
         "enabled": true,
         "server_name": "gateway.icloud.com",
@@ -1176,54 +2835,74 @@
       "packet_encoding": "xudp"
     },
     {
-      "password": "628be4b1-36dd-4c09-bd0f-9d88e424f216",
-      "server": "free.2weradf.xyz",
-      "server_port": 36211,
-      "tag": "🇺🇸 美国10 | ⬇️ 9.9MB/s|6%|Netflix|Disney|Openai|Gemini 2",
-      "type": "shadowsocks",
-      "method": "chacha20-ietf-poly1305",
-      "network": "tcp"
-    },
-    {
-      "server": "54.193.172.23",
-      "server_port": 35473,
-      "tag": "🇺🇸 美国11 | ⬇️ 10.0MB/s|0%|Netflix|Openai|Gemini 2",
-      "transport": {
-        "path": "/bing",
-        "type": "ws"
-      },
-      "type": "vless",
-      "uuid": "bec4f74e-b372-4b1c-bc78-afc28a32d5ee",
-      "packet_encoding": "xudp"
-    },
-    {
-      "server": "120.198.71.219",
-      "server_port": 44015,
-      "tag": "🇺🇸 美国12 | ⬇️ 5.6MB/s|0%|Openai 2",
-      "type": "vmess",
-      "alter_id": 64,
-      "security": "auto",
-      "uuid": "418048af-a293-4b99-9b0c-98ca3580dd24"
-    },
-    {
-      "password": "d9fe1f5e-8f0f-41b6-95f6-d90aa0404924",
-      "server": "sub-us-1.yangxiansheng.online",
-      "server_port": 45551,
-      "tag": "🇺🇸 美国3 | ⬇️ 9.2MB/s|55%|Netflix|Openai 2",
+      "password": "4467ae8518abf1ef321618c0bfb5549ccc",
+      "server": "152.69.175.39",
+      "server_port": 25131,
+      "tag": "🇦🇺 澳大利亚2 | ⬇️ 8.4MB/s|63%|Netflix|Youtube|Openai|Gemini 2",
       "tls": {
         "enabled": true,
-        "server_name": "www.bing.com",
+        "server_name": "152.69.175.39",
+        "insecure": true
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "psycho",
+      "server": "psycho.suex12.ir",
+      "server_port": 443,
+      "tag": "🇦🇺 澳大利亚3 | ⬇️ 11.8MB/s|0%|Netflix|Disney|Youtube|Openai 2",
+      "tls": {
+        "enabled": true,
+        "server_name": "pSYcho.sUeX12.IR",
         "alpn": [
-          "h3"
+          "http/1.1"
         ],
         "insecure": true
       },
-      "type": "hysteria2"
+      "transport": {
+        "headers": {
+          "Host": [
+            "pSYcho.sUeX12.IR"
+          ]
+        },
+        "path": "/trv9KENu5FqbFAtPFq?ed=2560",
+        "type": "ws"
+      },
+      "type": "trojan"
     },
     {
-      "server": "sea-vl.new.now.cc",
+      "server": "716545eb-sux8g0-t5oe1a-1ejod.cu.plebai.net",
+      "server_port": 5228,
+      "tag": "🇺🇸 美国10 | ⬇️ 10.4MB/s|41%|Netflix|Openai|Gemini 2",
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "6ada1622-e018-11ec-bb74-f23c9164ca5d"
+    },
+    {
+      "password": "redfree8",
+      "server": "104.17.148.22",
       "server_port": 443,
-      "tag": "🇺🇸 美国4 | ⬇️ 5.5MB/s|37%|Netflix|Openai 2",
+      "tag": "🇺🇸 美国11 | ⬇️ 14.2MB/s|0%|Netflix|Disney|Openai|Gemini 2",
+      "tls": {
+        "enabled": true,
+        "server_name": "redfree8-p1.pooriashop.ir",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "Host": [
+            "redfree8-p1.pooriashop.ir"
+          ]
+        },
+        "path": "/trJF1XisQEbWZpxEHh?ed=2560",
+        "type": "ws"
+      },
+      "type": "trojan"
+    },
+    {
+      "server": "210.61.97.241",
+      "server_port": 81,
+      "tag": "🇺🇸 美国12 | ⬇️ 4.1MB/s|37%|Netflix|Openai|Gemini 2",
       "tls": {
         "enabled": true,
         "server_name": "sea-vl.new.now.cc",
@@ -1243,9 +2922,117 @@
       "packet_encoding": "xudp"
     },
     {
-      "server": "zhee01.dynu.net",
-      "server_port": 64654,
-      "tag": "🇺🇸 美国5 | ⬇️ 5.2MB/s|35%|Netflix|Openai 2",
+      "password": "5dd7d900-409d-4ae7-8197-c94c6629ef0c",
+      "server": "free.2apzhfa.xyz",
+      "server_port": 31215,
+      "tag": "🇺🇸 美国13 | ⬇️ 5.5MB/s|10%|Netflix|Disney|Openai|Gemini 2",
+      "type": "shadowsocks",
+      "method": "chacha20-ietf-poly1305",
+      "network": "tcp"
+    },
+    {
+      "password": "5dd7d900-409d-4ae7-8197-c94c6629ef0c",
+      "server": "free.2apzhfa.xyz",
+      "server_port": 31213,
+      "tag": "🇺🇸 美国14 | ⬇️ 5.1MB/s|0%|Netflix|Disney|Openai|Gemini 2",
+      "type": "shadowsocks",
+      "method": "chacha20-ietf-poly1305",
+      "network": "tcp"
+    },
+    {
+      "password": "dongtaiwang.com",
+      "server": "108.181.5.133",
+      "server_port": 15544,
+      "tag": "🇺🇸 美国16 | ⬇️ 21.7MB/s|48%|Netflix|Openai 2",
+      "tls": {
+        "enabled": true,
+        "server_name": "apple.com",
+        "insecure": true
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "597dc9ce-5ce8-4ff5-833b-76cd4e5789e1",
+      "server": "mg1.gywanglug.xyz",
+      "server_port": 8443,
+      "tag": "🇺🇸 美国17 | ⬇️ 21.7MB/s|Netflix|Openai|Gemini 2",
+      "tls": {
+        "enabled": true,
+        "server_name": "mg1.gywanglug.xyz",
+        "insecure": true
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "d68fa1c3-1dcc-4fb0-b906-68b9384f2b64",
+      "server": "mg1.gywanglug.xyz",
+      "server_port": 8443,
+      "tag": "🇺🇸 美国18 | ⬇️ 21.1MB/s|Netflix|Openai|Gemini 2",
+      "tls": {
+        "enabled": true,
+        "server_name": "mg1.gywanglug.xyz",
+        "insecure": true
+      },
+      "type": "hysteria2"
+    },
+    {
+      "server": "ddf277c3-sutj40-sv07nd-jtx1.se.plebai.net",
+      "server_port": 22083,
+      "tag": "🇺🇸 美国19 | ⬇️ 13.5MB/s|0%|Netflix|Openai|Gemini 2",
+      "transport": {
+        "headers": {
+          "Host": [
+            "ddf277c3-sutj40-sv07nd-jtx1.se.plebai.net"
+          ]
+        },
+        "path": "/",
+        "type": "ws"
+      },
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "947dde8e-bcf5-11ef-af4a-f23c91cfbbc9"
+    },
+    {
+      "password": "d9fe1f5e-8f0f-41b6-95f6-d90aa0404924",
+      "server": "sub-us-1.yangxiansheng.online",
+      "server_port": 45551,
+      "tag": "🇺🇸 美国2 | ⬇️ 12.4MB/s|55%|Netflix|Openai 2",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.bing.com",
+        "alpn": [
+          "h3"
+        ],
+        "insecure": true
+      },
+      "type": "hysteria2"
+    },
+    {
+      "server": "agaungzhou01.bumbleshrimp.com",
+      "server_port": 65428,
+      "tag": "🇺🇸 美国20 | ⬇️ 5.2MB/s|35%|Netflix|Openai 2",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.nvidia.com",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "qhTzYYIgBzDLNYR79oxftqdo1kzL-1_hGJKfqrOliCY"
+        }
+      },
+      "type": "vless",
+      "uuid": "459b4a80-bd61-4ecd-a26b-e9c1809d9e45",
+      "flow": "xtls-rprx-vision",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "beiyong.dynuddns.net",
+      "server_port": 57926,
+      "tag": "🇺🇸 美国21 | ⬇️ 9.2MB/s|57%|Netflix|Openai 2",
       "tls": {
         "enabled": true,
         "server_name": "gateway.icloud.com",
@@ -1265,43 +3052,9 @@
       "packet_encoding": "xudp"
     },
     {
-      "server": "212.183.88.43",
-      "server_port": 443,
-      "tag": "🇺🇸 美国6 | ⬇️ 4.7MB/s|0%|Netflix|Disney|Openai|Gemini 2",
-      "tls": {
-        "enabled": true,
-        "server_name": "vb.bgm2024.dpdns.org",
-        "insecure": true
-      },
-      "transport": {
-        "headers": {
-          "Host": [
-            "vb.bgm2024.dpdns.org"
-          ]
-        },
-        "path": "/?ed=2560",
-        "type": "ws"
-      },
-      "type": "vless",
-      "uuid": "55520747-311e-4015-83ce-be46e2060ce3",
-      "packet_encoding": "xudp"
-    },
-    {
-      "password": "597dc9ce-5ce8-4ff5-833b-76cd4e5789e1",
-      "server": "mg6.gywanglug.xyz",
-      "server_port": 8443,
-      "tag": "🇺🇸 美国7 | ⬇️ 18.0MB/s|Netflix|Disney|Openai|Gemini 2",
-      "tls": {
-        "enabled": true,
-        "server_name": "mg6.gywanglug.xyz",
-        "insecure": true
-      },
-      "type": "hysteria2"
-    },
-    {
-      "server": "shenzhou05.mysynology.net",
-      "server_port": 50452,
-      "tag": "🇺🇸 美国8 | ⬇️ 4.2MB/s|35%|Netflix|Openai|Gemini 2",
+      "server": "agaungzhou01.bumbleshrimp.com",
+      "server_port": 38302,
+      "tag": "🇺🇸 美国22 | ⬇️ 5.1MB/s|48%|Netflix|Openai 2",
       "tls": {
         "enabled": true,
         "server_name": "www.amazon.com",
@@ -1321,9 +3074,82 @@
       "packet_encoding": "xudp"
     },
     {
+      "server": "bsuqian01.dynu.net",
+      "server_port": 50200,
+      "tag": "🇺🇸 美国23 | ⬇️ 5.7MB/s|48%|Netflix|Openai 2",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.amazon.com",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "qhTzYYIgBzDLNYR79oxftqdo1kzL-1_hGJKfqrOliCY"
+        }
+      },
+      "type": "vless",
+      "uuid": "459b4a80-bd61-4ecd-a26b-e9c1809d9e45",
+      "flow": "xtls-rprx-vision",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "51.81.18.62",
+      "server_port": 443,
+      "tag": "🇺🇸 美国24 | ⬇️ 5.8MB/s|67%|Netflix|Openai|Gemini 2",
+      "tls": {
+        "enabled": true,
+        "server_name": "147135011033.sec21org.com",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "type": "vless",
+      "uuid": "0a44145f-59dc-4e5b-a233-677b97f5114c",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "144.24.243.207",
+      "server_port": 443,
+      "tag": "🇺🇸 美国25 | ⬇️ 6.2MB/s|61%|Netflix|Openai|Gemini 2",
+      "tls": {
+        "enabled": true,
+        "server_name": "147135004002.sec20org.com",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "type": "vless",
+      "uuid": "54694a33-a8dc-47dd-bc38-acd3971e0055",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "8.210.29.68",
+      "server_port": 443,
+      "tag": "🇺🇸 美国26 | ⬇️ 4.7MB/s|61%|Netflix|Openai|Gemini 2",
+      "tls": {
+        "enabled": true,
+        "server_name": "147135001195.sec22org.com",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "type": "vless",
+      "uuid": "ea286109-d20f-415e-849e-4af20ab04b65",
+      "packet_encoding": "xudp"
+    },
+    {
       "server": "cloudgetservice.mcloudservice.site",
       "server_port": 443,
-      "tag": "🇺🇸 美国9 | ⬇️ 5.9MB/s|61%|Netflix|Openai|Gemini 2",
+      "tag": "🇺🇸 美国27 | ⬇️ 18.3MB/s|61%|Netflix|Openai|Gemini 2",
       "tls": {
         "enabled": true,
         "server_name": "cloudgetservice.mcloudservice.site",
@@ -1332,20 +3158,331 @@
       "transport": {
         "headers": {
           "Host": [
-            "mAxNEtVip-uSA-Vp4.nETKh3.sItE"
+            "uSa-Vp-149.BLazECloudMain.Site"
           ]
         },
-        "path": "/linkws",
+        "path": "/linkvkws",
         "type": "ws"
       },
       "type": "vmess",
       "security": "auto",
-      "uuid": "ad2bca4d-be9e-4ac2-b2ed-4c81abb4242f"
+      "uuid": "81cfc74e-79f6-4187-9c11-58b6acdc0e83"
+    },
+    {
+      "password": "a8fce442-ae9a-4cc1-a0cc-20308ff0a0db",
+      "server": "104.21.21.226",
+      "server_port": 443,
+      "tag": "🇺🇸 美国28 | ⬇️ 6.9MB/s|Openai 2",
+      "tls": {
+        "enabled": true,
+        "server_name": "1P.890689.xyZ",
+        "alpn": [
+          "http/1.1"
+        ],
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "Host": [
+            "1P.890689.xyZ"
+          ]
+        },
+        "path": "/lXENb74xF4ylXngZ",
+        "type": "ws"
+      },
+      "type": "trojan"
+    },
+    {
+      "server": "135.148.186.250",
+      "server_port": 443,
+      "tag": "🇺🇸 美国29 | ⬇️ 8.8MB/s|67%|Netflix|Openai|Gemini 2",
+      "tls": {
+        "enabled": true,
+        "server_name": "147135011033.sec21org.com",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "type": "vless",
+      "uuid": "0a44145f-59dc-4e5b-a233-677b97f5114c",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "sea-vl.new.now.cc",
+      "server_port": 443,
+      "tag": "🇺🇸 美国3 | ⬇️ 6.1MB/s|37%|Netflix|Openai|Gemini 2",
+      "tls": {
+        "enabled": true,
+        "server_name": "sea-vl.new.now.cc",
+        "insecure": true
+      },
+      "transport": {
+        "headers": {
+          "Host": [
+            "sea-vl.new.now.cc"
+          ]
+        },
+        "path": "/?ed=2048",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "3b8ebffa-8a35-4bc7-a52b-93c5b073593c",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "74f77c00-sutj40-t5qufl-8n27.cu.plebai.net",
+      "server_port": 5229,
+      "tag": "🇺🇸 美国30 | ⬇️ 10.7MB/s|41%|Netflix|Openai 2",
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "5dc6fa05-a601-aba6-7761-ecde22d2b0fc"
+    },
+    {
+      "server": "shenzhou05.mysynology.net",
+      "server_port": 29023,
+      "tag": "🇺🇸 美国31 | ⬇️ 11.9MB/s|63%|Netflix|Openai|Gemini 2",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.amazon.com",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "qhTzYYIgBzDLNYR79oxftqdo1kzL-1_hGJKfqrOliCY"
+        }
+      },
+      "type": "vless",
+      "uuid": "459b4a80-bd61-4ecd-a26b-e9c1809d9e45",
+      "flow": "xtls-rprx-vision",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "shenzhou05.mysynology.net",
+      "server_port": 19620,
+      "tag": "🇺🇸 美国32 | ⬇️ 11.5MB/s|55%|Netflix|Openai|Gemini 2",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.amazon.com",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "qhTzYYIgBzDLNYR79oxftqdo1kzL-1_hGJKfqrOliCY"
+        }
+      },
+      "type": "vless",
+      "uuid": "459b4a80-bd61-4ecd-a26b-e9c1809d9e45",
+      "flow": "xtls-rprx-vision",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "Www.speedtest.net",
+      "server_port": 2052,
+      "tag": "🇺🇸 美国33 | ⬇️ 9.0MB/s|40%|Netflix|Youtube|Openai 2",
+      "transport": {
+        "headers": {
+          "Host": [
+            "sPeedtest2.sbs.za.v2vless.sitespeedtest.net"
+          ]
+        },
+        "path": "/vless#@V2RAY_SPATIAL,@V2RAY_SPATIAL,@V2RAY_SPATIAL,@V2RAY_SPATIAL,@V2RAY_SPATIAL,@V2RAY_SPATIAL,@V2RAY_SPATIAL,@V2RAY_SPATIAL,@V2RAY_SPATIAL,@V2RAY_SPATIAL,@V2RAY_SPATIAL,@V2RAY_SPATIALflow=-udp443",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "f6c96581-cad4-5749-b02d-742cd0870c44",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "154.26.183.51",
+      "server_port": 443,
+      "tag": "🇺🇸 美国34 | ⬇️ 16.0MB/s|12%|Netflix|Openai 2",
+      "tls": {
+        "enabled": true,
+        "server_name": "usb.cayuo.me",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "headers": {
+          "Host": [
+            "usb.cayuo.me"
+          ]
+        },
+        "path": "/bing",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "15372547-4201-48e4-9d4b-8691d9915ceb",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "66.179.48.46",
+      "server_port": 443,
+      "tag": "🇺🇸 美国35 | ⬇️ 6.1MB/s|0%|Disney|Openai|Gemini 2",
+      "tls": {
+        "enabled": true,
+        "server_name": "hy2.xiaozi.cc.ua",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "headers": {
+          "Host": [
+            "hy2.xiaozi.cc.ua"
+          ]
+        },
+        "path": "/lzjjj",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "a3c075ab-51cd-4947-e8a4-aad55e19bec2",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "104.17.148.22",
+      "server_port": 2052,
+      "tag": "🇺🇸 美国36 | ⬇️ 17.0MB/s|40%|Openai 2",
+      "transport": {
+        "headers": {
+          "Host": [
+            "sPeedtest2.sbs.za.v2vless.sitespeedtest.net"
+          ]
+        },
+        "path": "/vless",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "f6c96581-cad4-5749-b02d-742cd0870c44",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "zhee01.dynu.net",
+      "server_port": 64654,
+      "tag": "🇺🇸 美国4 | ⬇️ 10.9MB/s|35%|Netflix|Openai 2",
+      "tls": {
+        "enabled": true,
+        "server_name": "gateway.icloud.com",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "qhTzYYIgBzDLNYR79oxftqdo1kzL-1_hGJKfqrOliCY"
+        }
+      },
+      "type": "vless",
+      "uuid": "459b4a80-bd61-4ecd-a26b-e9c1809d9e45",
+      "flow": "xtls-rprx-vision",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "shenzhou05.mysynology.net",
+      "server_port": 50452,
+      "tag": "🇺🇸 美国5 | ⬇️ 11.0MB/s|35%|Netflix|Openai|Gemini 2",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.amazon.com",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "qhTzYYIgBzDLNYR79oxftqdo1kzL-1_hGJKfqrOliCY"
+        }
+      },
+      "type": "vless",
+      "uuid": "459b4a80-bd61-4ecd-a26b-e9c1809d9e45",
+      "flow": "xtls-rprx-vision",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "120.198.71.219",
+      "server_port": 44015,
+      "tag": "🇺🇸 美国6 | ⬇️ 6.7MB/s|0%|Openai 2",
+      "type": "vmess",
+      "alter_id": 64,
+      "security": "auto",
+      "uuid": "418048af-a293-4b99-9b0c-98ca3580dd24"
+    },
+    {
+      "server": "54.193.172.23",
+      "server_port": 35473,
+      "tag": "🇺🇸 美国7 | ⬇️ 4.7MB/s|0%|Netflix|Openai|Gemini 2",
+      "transport": {
+        "path": "/bing",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "bec4f74e-b372-4b1c-bc78-afc28a32d5ee",
+      "packet_encoding": "xudp"
+    },
+    {
+      "password": "c6bccea3-2f03-4f3e-80f4-d6757f1f3f46",
+      "server": "sub-us-2.yangxiansheng.online",
+      "server_port": 41951,
+      "tag": "🇺🇸 美国9 | ⬇️ 14.5MB/s|55%|Netflix|Openai|Gemini 2",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.bing.com",
+        "alpn": [
+          "h3"
+        ],
+        "insecure": true
+      },
+      "type": "hysteria2"
+    },
+    {
+      "server": "www.parsvds.com",
+      "server_port": 2083,
+      "tag": "🇫🇮 芬兰1 | ⬇️ 17.7MB/s|25%|Netflix|Openai 2",
+      "tls": {
+        "enabled": true,
+        "server_name": "bEAt.MIRaclETaxbiTS.Top.",
+        "alpn": [
+          "h2",
+          "http/1.1"
+        ],
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "headers": {
+          "Host": [
+            "bEAt.MIRaclETaxbiTS.Top."
+          ]
+        },
+        "path": "/2083/@VRayyNGvpn",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "a8e59566-4420-4493-91ba-029ee0ff6d74",
+      "packet_encoding": "xudp"
     },
     {
       "server": "www.speedtest.net",
       "server_port": 443,
-      "tag": "🇫🇮 芬兰1 | ⬇️ 4.2MB/s|10%|Openai 2",
+      "tag": "🇬🇧 英国1 | ⬇️ 12.4MB/s|0%|Openai 2",
       "tls": {
         "enabled": true,
         "server_name": "ZqFsGsMr.cAfUnEaR.InFo",
@@ -1375,7 +3512,7 @@
     {
       "server": "104.17.147.22",
       "server_port": 2096,
-      "tag": "🇫🇮 芬兰2 | ⬇️ 4.2MB/s|25%|Openai 2",
+      "tag": "🇬🇧 英国2 | ⬇️ 15.7MB/s|0%|Netflix|Openai 2",
       "tls": {
         "enabled": true,
         "server_name": "FuIjBvQa.rIcKtMoUsE.InFo",
@@ -1399,74 +3536,33 @@
       "packet_encoding": "xudp"
     },
     {
-      "server": "151.101.2.133",
-      "server_port": 80,
-      "tag": "🇳🇱 荷兰1 | ⬇️ 14.4MB/s|0%|Youtube 2",
-      "transport": {
-        "headers": {
-          "Host": [
-            "snappfood.com"
-          ]
-        },
-        "path": "/Join--HAJIMAMADVPN?ed=80",
-        "type": "ws"
-      },
-      "type": "vless",
-      "uuid": "8061f062-a7bc-4059-805a-03d7853f5eba",
-      "packet_encoding": "xudp"
-    },
-    {
-      "password": "d07ec566-018a-4a80-b3d3-b378fdead52c",
-      "server": "shy23.zqjc.cloud",
-      "server_port": 55215,
-      "tag": "🇰🇷 韩国1 | ⬇️ 4.5MB/s|63%|Netflix|Youtube|Openai|Gemini 2",
-      "tls": {
-        "enabled": true,
-        "server_name": "shy23.zqjc.cloud",
-        "insecure": true
-      },
-      "type": "hysteria2"
-    },
-    {
-      "password": "628be4b1-36dd-4c09-bd0f-9d88e424f216",
-      "server": "free.2weradf.xyz",
-      "server_port": 36313,
-      "tag": "🇰🇷 韩国2 | ⬇️ 6.2MB/s|0%|Netflix|Disney|Youtube|Openai|Gemini 2",
+      "password": "5dd7d900-409d-4ae7-8197-c94c6629ef0c",
+      "server": "free.2apzhfa.xyz",
+      "server_port": 31271,
+      "tag": "🇬🇧 英国3 | ⬇️ 4.5MB/s|0%|Netflix|Disney|Openai 2",
       "type": "shadowsocks",
       "method": "chacha20-ietf-poly1305",
       "network": "tcp"
     },
     {
-      "server": "3.39.249.14",
-      "server_port": 50246,
-      "tag": "🇰🇷 韩国3 | ⬇️ 11.5MB/s|36%|Netflix|Disney|Youtube|Openai|Gemini 2",
-      "transport": {
-        "path": "/bing",
-        "type": "ws"
-      },
-      "type": "vless",
-      "uuid": "52436966-b467-43a2-8128-753501641dff",
-      "packet_encoding": "xudp"
-    },
-    {
-      "password": "exaxgqkKkd0TAMrCxeonWg==",
-      "server": "hkre1-cdn-route.couldflare-cdn.com",
-      "server_port": 443,
-      "tag": "🇭🇰 香港1 | ⬇️ 27.8MB/s|0%|Netflix|Youtube",
+      "password": "d68fa1c3-1dcc-4fb0-b906-68b9384f2b64",
+      "server": "yg1.gywanglug.xyz",
+      "server_port": 8443,
+      "tag": "🇬🇧 英国4 | ⬇️ 17.2MB/s|Youtube|Openai 2",
       "tls": {
         "enabled": true,
-        "server_name": "hkre1-cdn-route.couldflare-cdn.com",
+        "server_name": "yg1.gywanglug.xyz",
         "insecure": true
       },
-      "type": "http"
+      "type": "hysteria2"
     },
     {
-      "server": "zhee01.dynu.net",
-      "server_port": 54220,
-      "tag": "🇭🇰 香港5 | ⬇️ 7.1MB/s|0%|Netflix|Disney|Youtube 2",
+      "server": "beiyong.dynuddns.net",
+      "server_port": 65053,
+      "tag": "🇬🇧 英国5 | ⬇️ 8.8MB/s|50%|Netflix|Disney|Openai 2",
       "tls": {
         "enabled": true,
-        "server_name": "www.nvidia.com",
+        "server_name": "www.amazon.com",
         "insecure": true,
         "utls": {
           "enabled": true,
@@ -1484,8 +3580,251 @@
     },
     {
       "server": "shenzhou05.mysynology.net",
-      "server_port": 33782,
-      "tag": "🇭🇰 香港6 | ⬇️ 6.4MB/s|Openai 2",
+      "server_port": 49699,
+      "tag": "🇬🇧 英国6 | ⬇️ 7.0MB/s|Netflix|Openai 2",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.amazon.com",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "qhTzYYIgBzDLNYR79oxftqdo1kzL-1_hGJKfqrOliCY"
+        }
+      },
+      "type": "vless",
+      "uuid": "459b4a80-bd61-4ecd-a26b-e9c1809d9e45",
+      "flow": "xtls-rprx-vision",
+      "packet_encoding": "xudp"
+    },
+    {
+      "password": "3725974748",
+      "server": "109.74.200.150",
+      "server_port": 49761,
+      "tag": "🇬🇧 英国7 | ⬇️ 12.2MB/s|53%|Netflix|Youtube|Openai 2",
+      "type": "shadowsocks",
+      "method": "chacha20-ietf-poly1305",
+      "network": "tcp"
+    },
+    {
+      "server": "151.101.2.133",
+      "server_port": 80,
+      "tag": "🇳🇱 荷兰1 | ⬇️ 13.0MB/s|Openai 2",
+      "transport": {
+        "headers": {
+          "Host": [
+            "snappfood.com"
+          ]
+        },
+        "path": "/Join--HAJIMAMADVPN?ed=80",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "8061f062-a7bc-4059-805a-03d7853f5eba",
+      "packet_encoding": "xudp"
+    },
+    {
+      "password": "867f512f-93d2-4344-853c-50965de9b103",
+      "server": "shy42.zqjc.cloud",
+      "server_port": 55215,
+      "tag": "🇳🇱 荷兰2 | ⬇️ 12.9MB/s|70%|Netflix|Youtube|Openai 2",
+      "tls": {
+        "enabled": true,
+        "server_name": "shy42.zqjc.cloud",
+        "insecure": true
+      },
+      "type": "hysteria2"
+    },
+    {
+      "server": "5.253.30.14",
+      "server_port": 8880,
+      "tag": "🇳🇱 荷兰3 | ⬇️ 9.2MB/s|40%|Netflix|Disney|Youtube|Openai 2",
+      "transport": {
+        "type": "grpc",
+        "service_name": "vless-grpc"
+      },
+      "type": "vless",
+      "uuid": "c7d4b0f6-0f18-45a3-97c7-caaf373f032d",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "85.209.156.7",
+      "server_port": 8880,
+      "tag": "🇳🇱 荷兰4 | ⬇️ 6.5MB/s|40%|Netflix|Disney|Openai 2",
+      "transport": {
+        "type": "grpc",
+        "service_name": "vless-grpc"
+      },
+      "type": "vless",
+      "uuid": "46db85a1-9d97-46f8-9b7a-ff9704510e5e",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "188.227.107.152",
+      "server_port": 8443,
+      "tag": "🇳🇱 荷兰5 | ⬇️ 12.4MB/s|0%|Netflix|Youtube|Openai 2",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.speedtest.net",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "pYkSwLdGRkBtw2tczaVqPukucwFAn90U3iOcx6jVvyI",
+          "short_id": "54980f"
+        }
+      },
+      "transport": {
+        "type": "grpc",
+        "service_name": "JoinBadeChannel%40antimeli"
+      },
+      "type": "vless",
+      "uuid": "9f287123-2b97-4b43-8ddd-d3354a0ed6bc",
+      "packet_encoding": "xudp"
+    },
+    {
+      "password": "Bia-SiNAVM-SiNAVM-SiNAVM-SiNAVM",
+      "server": "sinavm.sinabigo.ir",
+      "server_port": 443,
+      "tag": "🇳🇱 荷兰6 | ⬇️ 5.1MB/s|48%|Netflix|Openai 2",
+      "tls": {
+        "enabled": true,
+        "server_name": "sinavm.sinabigo.ir",
+        "alpn": [
+          "h3"
+        ],
+        "insecure": true
+      },
+      "type": "hysteria2",
+      "obfs": {
+        "password": "@SiNAVM-@SiNAVM-@SiNAVM-SiNAVM",
+        "type": "salamander"
+      }
+    },
+    {
+      "server": "usvpnandroid2.69.mu",
+      "server_port": 8880,
+      "tag": "🇳🇱 荷兰7 | ⬇️ 6.3MB/s|40%|Netflix|Disney|Youtube|Openai 2",
+      "transport": {
+        "type": "grpc",
+        "service_name": "vless-grpc"
+      },
+      "type": "vless",
+      "uuid": "c7d4b0f6-0f18-45a3-97c7-caaf373f032d",
+      "packet_encoding": "xudp"
+    },
+    {
+      "password": "d07ec566-018a-4a80-b3d3-b378fdead52c",
+      "server": "shy23.zqjc.cloud",
+      "server_port": 55215,
+      "tag": "🇰🇷 韩国1 | ⬇️ 6.6MB/s|63%|Netflix|Youtube|Openai|Gemini 2",
+      "tls": {
+        "enabled": true,
+        "server_name": "shy23.zqjc.cloud",
+        "insecure": true
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "5dd7d900-409d-4ae7-8197-c94c6629ef0c",
+      "server": "free.2apzhfa.xyz",
+      "server_port": 31311,
+      "tag": "🇰🇷 韩国2 | ⬇️ 4.9MB/s|54%|Netflix|Youtube|Openai|Gemini 2",
+      "type": "shadowsocks",
+      "method": "chacha20-ietf-poly1305",
+      "network": "tcp"
+    },
+    {
+      "password": "5dd7d900-409d-4ae7-8197-c94c6629ef0c",
+      "server": "free.2apzhfa.xyz",
+      "server_port": 31313,
+      "tag": "🇰🇷 韩国3 | ⬇️ 5.2MB/s|0%|Netflix|Disney|Youtube|Openai|Gemini 2",
+      "type": "shadowsocks",
+      "method": "chacha20-ietf-poly1305",
+      "network": "tcp"
+    },
+    {
+      "server": "154.83.2.54",
+      "server_port": 2096,
+      "tag": "🇰🇷 韩国4 | ⬇️ 14.0MB/s|63%|Netflix|Disney 2",
+      "tls": {
+        "enabled": true,
+        "server_name": "vlee.amclubs.nyc.mn",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "randomized"
+        }
+      },
+      "transport": {
+        "headers": {
+          "Host": [
+            "vlee.amclubs.nyc.mn"
+          ]
+        },
+        "path": "/?ed=2560",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "d6b8011a-c725-435a-9fec-bf6d3530392c",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "a64e572b-sutj40-tei4of-1qxa1.cm5.p5pv.com",
+      "server_port": 17232,
+      "tag": "🇰🇷 韩国5 | ⬇️ 6.3MB/s|54%|Netflix|Youtube|Openai 2",
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "f609abb4-ed17-11ee-9fa2-f23c9164ca5d"
+    },
+    {
+      "password": "exaxgqkKkd0TAMrCxeonWg==",
+      "server": "hkre1-cdn-route.couldflare-cdn.com",
+      "server_port": 443,
+      "tag": "🇭🇰 香港1 | ⬇️ 10.2MB/s|0%|Netflix|Youtube",
+      "tls": {
+        "enabled": true,
+        "server_name": "hkre1-cdn-route.couldflare-cdn.com",
+        "insecure": true
+      },
+      "type": "http"
+    },
+    {
+      "server": "4c16178d-surog0-t26vr3-1likw.cm.plebai.net",
+      "server_port": 15229,
+      "tag": "🇭🇰 香港22 | ⬇️ 4.2MB/s|12%|Netflix|Disney|Openai 2",
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "a23c20fc-3e66-11ef-b1d2-f23c91cfbbc9"
+    },
+    {
+      "password": "5dd7d900-409d-4ae7-8197-c94c6629ef0c",
+      "server": "free.2apzhfa.xyz",
+      "server_port": 31141,
+      "tag": "🇭🇰 香港23 | ⬇️ 4.2MB/s|14%|Netflix|Disney|Youtube|Openai 2",
+      "type": "shadowsocks",
+      "method": "chacha20-ietf-poly1305",
+      "network": "tcp"
+    },
+    {
+      "password": "5dd7d900-409d-4ae7-8197-c94c6629ef0c",
+      "server": "free.2apzhfa.xyz",
+      "server_port": 31143,
+      "tag": "🇭🇰 香港24 | ⬇️ 4.4MB/s|10%|Netflix|Youtube|Openai 2",
+      "type": "shadowsocks",
+      "method": "chacha20-ietf-poly1305",
+      "network": "tcp"
+    },
+    {
+      "server": "bsuqian01.dynu.net",
+      "server_port": 27631,
+      "tag": "🇭🇰 香港25 | ⬇️ 17.8MB/s|0%|Netflix|Disney|Youtube 2",
       "tls": {
         "enabled": true,
         "server_name": "www.nvidia.com",
@@ -1505,40 +3844,77 @@
       "packet_encoding": "xudp"
     },
     {
-      "password": "628be4b1-36dd-4c09-bd0f-9d88e424f216",
-      "server": "free.2weradf.xyz",
-      "server_port": 36143,
-      "tag": "🇭🇰 香港7 | ⬇️ 4.5MB/s|10%|Netflix|Youtube|Openai 2",
-      "type": "shadowsocks",
-      "method": "chacha20-ietf-poly1305",
-      "network": "tcp"
-    },
-    {
-      "server": "43.154.34.74",
-      "server_port": 1935,
-      "tag": "🇭🇰 香港8 | ⬇️ 10.0MB/s|10%|Netflix|Youtube 2",
+      "server": "beiyong.dynuddns.net",
+      "server_port": 12597,
+      "tag": "🇭🇰 香港26 | ⬇️ 24.0MB/s|0%|Youtube 2",
       "tls": {
         "enabled": true,
-        "server_name": "djdjjrjjrhk.lzj520hxw.dpdns.org",
+        "server_name": "www.nvidia.com",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "qhTzYYIgBzDLNYR79oxftqdo1kzL-1_hGJKfqrOliCY"
+        }
+      },
+      "type": "vless",
+      "uuid": "459b4a80-bd61-4ecd-a26b-e9c1809d9e45",
+      "flow": "xtls-rprx-vision",
+      "packet_encoding": "xudp"
+    },
+    {
+      "password": "psycho",
+      "server": "104.21.48.1",
+      "server_port": 443,
+      "tag": "🇭🇰 香港27 | ⬇️ 12.5MB/s|0%|Netflix|Disney|Youtube|Openai 2",
+      "tls": {
+        "enabled": true,
+        "server_name": "pSychO.sueX12.IR",
+        "alpn": [
+          "http/1.1"
+        ],
         "insecure": true
       },
       "transport": {
         "headers": {
           "Host": [
-            "djdjjrjjrhk.lzj520hxw.dpdns.org"
+            "pSychO.sueX12.IR"
           ]
         },
-        "path": "/vmess-argo",
+        "path": "/tr7m9KE73yqd6Htr2E?ed=2560",
         "type": "ws"
       },
-      "type": "vmess",
-      "security": "none",
-      "uuid": "2e5bfd4a-0852-4df4-b9e7-9b6f207113b4"
+      "type": "trojan"
+    },
+    {
+      "server": "shenzhou05.mysynology.net",
+      "server_port": 33782,
+      "tag": "🇭🇰 香港5 | ⬇️ 18.1MB/s|0%|Youtube|Openai|Gemini 2",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.nvidia.com",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "qhTzYYIgBzDLNYR79oxftqdo1kzL-1_hGJKfqrOliCY"
+        }
+      },
+      "type": "vless",
+      "uuid": "459b4a80-bd61-4ecd-a26b-e9c1809d9e45",
+      "flow": "xtls-rprx-vision",
+      "packet_encoding": "xudp"
     },
     {
       "server": "162.247.5.96",
       "server_port": 443,
-      "tag": "🇭🇰 香港9 | ⬇️ 7.6MB/s|20%|Netflix 2",
+      "tag": "🇭🇰 香港6 | ⬇️ 13.2MB/s|20%|Netflix|Disney 2",
       "tls": {
         "enabled": true,
         "server_name": "hk.qhahd.shop",
@@ -1562,27 +3938,9 @@
       "packet_encoding": "xudp"
     },
     {
-      "password": "628be4b1-36dd-4c09-bd0f-9d88e424f216",
-      "server": "free.2weradf.xyz",
-      "server_port": 36721,
-      "tag": "🇲🇾 其他1-MY | ⬇️ 8.9MB/s|0%|Netflix|Youtube|Openai|Gemini 2",
-      "type": "shadowsocks",
-      "method": "chacha20-ietf-poly1305",
-      "network": "tcp"
-    },
-    {
-      "password": "628be4b1-36dd-4c09-bd0f-9d88e424f216",
-      "server": "free.2weradf.xyz",
-      "server_port": 36677,
-      "tag": "其他2-ID | ⬇️ 4.8MB/s|38%|Netflix|Youtube|Openai|Gemini 2",
-      "type": "shadowsocks",
-      "method": "chacha20-ietf-poly1305",
-      "network": "tcp"
-    },
-    {
       "server": "bsuqian01.dynu.net",
       "server_port": 17889,
-      "tag": "其他3-AT | ⬇️ 6.9MB/s|48%|Openai 2",
+      "tag": "其他1-AT | ⬇️ 12.8MB/s|48%|Netflix|Openai 2",
       "tls": {
         "enabled": true,
         "server_name": "gateway.icloud.com",
@@ -1602,103 +3960,355 @@
       "packet_encoding": "xudp"
     },
     {
+      "password": "5dd7d900-409d-4ae7-8197-c94c6629ef0c",
+      "server": "free.2apzhfa.xyz",
+      "server_port": 31721,
+      "tag": "🇲🇾 其他2-MY | ⬇️ 5.4MB/s|0%|Netflix|Youtube|Openai|Gemini 2",
+      "type": "shadowsocks",
+      "method": "chacha20-ietf-poly1305",
+      "network": "tcp"
+    },
+    {
+      "password": "5dd7d900-409d-4ae7-8197-c94c6629ef0c",
+      "server": "free.2apzhfa.xyz",
+      "server_port": 31722,
+      "tag": "🇲🇾 其他3-MY | ⬇️ 5.0MB/s|0%|Netflix|Youtube|Openai|Gemini 2",
+      "type": "shadowsocks",
+      "method": "chacha20-ietf-poly1305",
+      "network": "tcp"
+    },
+    {
+      "password": "5dd7d900-409d-4ae7-8197-c94c6629ef0c",
+      "server": "free.2apzhfa.xyz",
+      "server_port": 31741,
+      "tag": "🇪🇸 其他4-ES | ⬇️ 5.1MB/s|31%|Netflix|Openai 2",
+      "type": "shadowsocks",
+      "method": "chacha20-ietf-poly1305",
+      "network": "tcp"
+    },
+    {
+      "password": "5dd7d900-409d-4ae7-8197-c94c6629ef0c",
+      "server": "free.2apzhfa.xyz",
+      "server_port": 31641,
+      "tag": "其他5-VN | ⬇️ 5.5MB/s|0%|Netflix|Youtube|Openai|Gemini 2",
+      "type": "shadowsocks",
+      "method": "chacha20-ietf-poly1305",
+      "network": "tcp"
+    },
+    {
+      "server": "bsuqian01.dynu.net",
+      "server_port": 22216,
+      "tag": "其他6-MD | ⬇️ 5.4MB/s|48%|Netflix|Openai 2",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.nvidia.com",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "qhTzYYIgBzDLNYR79oxftqdo1kzL-1_hGJKfqrOliCY"
+        }
+      },
+      "type": "vless",
+      "uuid": "459b4a80-bd61-4ecd-a26b-e9c1809d9e45",
+      "flow": "xtls-rprx-vision",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "170.114.45.6",
+      "server_port": 80,
+      "tag": "其他7-LK | ⬇️ 19.3MB/s|23%|Youtube|Openai|Gemini 2",
+      "transport": {
+        "headers": {
+          "Host": [
+            "free.server.pranithsandaruwan.shop"
+          ]
+        },
+        "path": "/",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "f95543de-d6c7-474e-a58e-c9891833f45b",
+      "packet_encoding": "xudp"
+    },
+    {
+      "server": "shenzhou05.mysynology.net",
+      "server_port": 28680,
+      "tag": "🇨🇳 其他8-CN | ⬇️ 31.8MB/s|35%|Netflix 2",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.nvidia.com",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "qhTzYYIgBzDLNYR79oxftqdo1kzL-1_hGJKfqrOliCY"
+        }
+      },
+      "type": "vless",
+      "uuid": "459b4a80-bd61-4ecd-a26b-e9c1809d9e45",
+      "flow": "xtls-rprx-vision",
+      "packet_encoding": "xudp"
+    },
+    {
+      "password": "telegram_ryukohk",
+      "server": "cs_office.hideshots.eu",
+      "server_port": 6001,
+      "tag": "其他9-LV | ⬇️ 5.1MB/s|24%|Netflix|Youtube|Openai 2",
+      "type": "shadowsocks",
+      "method": "chacha20-ietf-poly1305",
+      "network": "tcp"
+    },
+    {
       "tag": "select",
       "type": "selector",
       "default": "auto",
       "outbounds": [
         "auto",
         "加入我的频道t.me/CMLiussss解锁更多优选节点",
-        "🇨🇦 加拿大1 | ⬇️ 4.3MB/s|Netflix|Disney|Gemini",
-        "🇮🇳 印度1 | ⬇️ 4.9MB/s|28%|Netflix|Youtube|Openai|Gemini",
-        "🇨🇳 台湾1 | ⬇️ 8.3MB/s|16%|Youtube|Openai|Gemini",
-        "🇨🇳 台湾2 | ⬇️ 4.3MB/s|0%|Netflix|Disney|Youtube|Openai|Gemini",
-        "🇩🇪 德国1 | ⬇️ 4.3MB/s|0%|Netflix|Openai",
-        "🇩🇪 德国2 | ⬇️ 4.0MB/s|25%",
-        "🇩🇪 德国3 | ⬇️ 11.8MB/s|25%|Netflix|Openai",
-        "🇩🇪 德国4 | ⬇️ 4.0MB/s|Disney|Openai",
-        "🇸🇬 新加坡1 | ⬇️ 5.2MB/s|Netflix|Youtube|Openai|Gemini",
-        "🇯🇵 日本1 | ⬇️ 9.9MB/s|36%|Netflix|Disney|Youtube|Openai|Gemini",
-        "🇯🇵 日本10 | ⬇️ 23.0MB/s|36%|Netflix|Youtube|Openai|Gemini",
-        "🇯🇵 日本2 | ⬇️ 6.1MB/s|0%|Netflix|Disney|Openai",
-        "🇯🇵 日本3 | ⬇️ 12.0MB/s|15%|Netflix|Disney|Youtube|Openai|Gemini",
-        "🇯🇵 日本4 | ⬇️ 7.5MB/s|15%|Netflix|Disney|Youtube|Openai|Gemini",
-        "🇯🇵 日本5 | ⬇️ 6.9MB/s|76%|Netflix|Youtube|Openai",
-        "🇯🇵 日本7 | ⬇️ 11.7MB/s|36%|Netflix|Disney|Youtube|Openai|Gemini",
-        "🇯🇵 日本8 | ⬇️ 4.9MB/s|20%|Netflix|Youtube",
-        "🇯🇵 日本9 | ⬇️ 7.7MB/s|10%|Netflix|Youtube|Openai|Gemini",
-        "🇫🇷 法国1 | ⬇️ 11.3MB/s|0%|Netflix|Youtube|Openai",
-        "🇦🇺 澳大利亚1 | ⬇️ 5.0MB/s|63%|Netflix|Youtube|Openai|Gemini",
-        "🇦🇺 澳大利亚2 | ⬇️ 4.5MB/s|54%|Netflix|Openai",
-        "🇺🇸 美国10 | ⬇️ 9.9MB/s|6%|Netflix|Disney|Openai|Gemini",
-        "🇺🇸 美国11 | ⬇️ 10.0MB/s|0%|Netflix|Openai|Gemini",
-        "🇺🇸 美国12 | ⬇️ 5.6MB/s|0%|Openai",
-        "🇺🇸 美国3 | ⬇️ 9.2MB/s|55%|Netflix|Openai",
-        "🇺🇸 美国4 | ⬇️ 5.5MB/s|37%|Netflix|Openai",
-        "🇺🇸 美国5 | ⬇️ 5.2MB/s|35%|Netflix|Openai",
-        "🇺🇸 美国6 | ⬇️ 4.7MB/s|0%|Netflix|Disney|Openai|Gemini",
-        "🇺🇸 美国7 | ⬇️ 18.0MB/s|Netflix|Disney|Openai|Gemini",
-        "🇺🇸 美国8 | ⬇️ 4.2MB/s|35%|Netflix|Openai|Gemini",
-        "🇺🇸 美国9 | ⬇️ 5.9MB/s|61%|Netflix|Openai|Gemini",
-        "🇫🇮 芬兰1 | ⬇️ 4.2MB/s|10%|Openai",
-        "🇫🇮 芬兰2 | ⬇️ 4.2MB/s|25%|Openai",
-        "🇳🇱 荷兰1 | ⬇️ 14.4MB/s|0%|Youtube",
-        "🇰🇷 韩国1 | ⬇️ 4.5MB/s|63%|Netflix|Youtube|Openai|Gemini",
-        "🇰🇷 韩国2 | ⬇️ 6.2MB/s|0%|Netflix|Disney|Youtube|Openai|Gemini",
-        "🇰🇷 韩国3 | ⬇️ 11.5MB/s|36%|Netflix|Disney|Youtube|Openai|Gemini",
-        "🇭🇰 香港5 | ⬇️ 7.1MB/s|0%|Netflix|Disney|Youtube",
-        "🇭🇰 香港6 | ⬇️ 6.4MB/s|Openai",
-        "🇭🇰 香港7 | ⬇️ 4.5MB/s|10%|Netflix|Youtube|Openai",
-        "🇭🇰 香港8 | ⬇️ 10.0MB/s|10%|Netflix|Youtube",
-        "🇭🇰 香港9 | ⬇️ 7.6MB/s|20%|Netflix",
-        "🇲🇾 其他1-MY | ⬇️ 8.9MB/s|0%|Netflix|Youtube|Openai|Gemini",
-        "其他2-ID | ⬇️ 4.8MB/s|38%|Netflix|Youtube|Openai|Gemini",
-        "其他3-AT | ⬇️ 6.9MB/s|48%|Openai",
-        "🇨🇦 加拿大1 | ⬇️ 4.3MB/s|Netflix|Disney|Gemini 2",
-        "🇮🇳 印度1 | ⬇️ 4.9MB/s|28%|Netflix|Youtube|Openai|Gemini 2",
-        "🇨🇳 台湾1 | ⬇️ 8.3MB/s|16%|Youtube|Openai|Gemini 2",
-        "🇨🇳 台湾2 | ⬇️ 4.3MB/s|0%|Netflix|Disney|Youtube|Openai|Gemini 2",
-        "🇩🇪 德国1 | ⬇️ 4.3MB/s|0%|Netflix|Openai 2",
-        "🇩🇪 德国2 | ⬇️ 4.0MB/s|25% 2",
-        "🇩🇪 德国3 | ⬇️ 11.8MB/s|25%|Netflix|Openai 2",
-        "🇩🇪 德国4 | ⬇️ 4.0MB/s|Disney|Openai 2",
-        "🇸🇬 新加坡1 | ⬇️ 5.2MB/s|Netflix|Youtube|Openai|Gemini 2",
-        "🇯🇵 日本1 | ⬇️ 9.9MB/s|36%|Netflix|Disney|Youtube|Openai|Gemini 2",
-        "🇯🇵 日本10 | ⬇️ 23.0MB/s|36%|Netflix|Youtube|Openai|Gemini 2",
-        "🇯🇵 日本2 | ⬇️ 6.1MB/s|0%|Netflix|Disney|Openai 2",
-        "🇯🇵 日本3 | ⬇️ 12.0MB/s|15%|Netflix|Disney|Youtube|Openai|Gemini 2",
-        "🇯🇵 日本4 | ⬇️ 7.5MB/s|15%|Netflix|Disney|Youtube|Openai|Gemini 2",
-        "🇯🇵 日本5 | ⬇️ 6.9MB/s|76%|Netflix|Youtube|Openai 2",
-        "🇯🇵 日本7 | ⬇️ 11.7MB/s|36%|Netflix|Disney|Youtube|Openai|Gemini 2",
-        "🇯🇵 日本8 | ⬇️ 4.9MB/s|20%|Netflix|Youtube 2",
-        "🇯🇵 日本9 | ⬇️ 7.7MB/s|10%|Netflix|Youtube|Openai|Gemini 2",
-        "🇫🇷 法国1 | ⬇️ 11.3MB/s|0%|Netflix|Youtube|Openai 2",
-        "🇦🇺 澳大利亚1 | ⬇️ 5.0MB/s|63%|Netflix|Youtube|Openai|Gemini 2",
-        "🇦🇺 澳大利亚2 | ⬇️ 4.5MB/s|54%|Netflix|Openai 2",
-        "🇺🇸 美国10 | ⬇️ 9.9MB/s|6%|Netflix|Disney|Openai|Gemini 2",
-        "🇺🇸 美国11 | ⬇️ 10.0MB/s|0%|Netflix|Openai|Gemini 2",
-        "🇺🇸 美国12 | ⬇️ 5.6MB/s|0%|Openai 2",
-        "🇺🇸 美国3 | ⬇️ 9.2MB/s|55%|Netflix|Openai 2",
-        "🇺🇸 美国4 | ⬇️ 5.5MB/s|37%|Netflix|Openai 2",
-        "🇺🇸 美国5 | ⬇️ 5.2MB/s|35%|Netflix|Openai 2",
-        "🇺🇸 美国6 | ⬇️ 4.7MB/s|0%|Netflix|Disney|Openai|Gemini 2",
-        "🇺🇸 美国7 | ⬇️ 18.0MB/s|Netflix|Disney|Openai|Gemini 2",
-        "🇺🇸 美国8 | ⬇️ 4.2MB/s|35%|Netflix|Openai|Gemini 2",
-        "🇺🇸 美国9 | ⬇️ 5.9MB/s|61%|Netflix|Openai|Gemini 2",
-        "🇫🇮 芬兰1 | ⬇️ 4.2MB/s|10%|Openai 2",
-        "🇫🇮 芬兰2 | ⬇️ 4.2MB/s|25%|Openai 2",
-        "🇳🇱 荷兰1 | ⬇️ 14.4MB/s|0%|Youtube 2",
-        "🇰🇷 韩国1 | ⬇️ 4.5MB/s|63%|Netflix|Youtube|Openai|Gemini 2",
-        "🇰🇷 韩国2 | ⬇️ 6.2MB/s|0%|Netflix|Disney|Youtube|Openai|Gemini 2",
-        "🇰🇷 韩国3 | ⬇️ 11.5MB/s|36%|Netflix|Disney|Youtube|Openai|Gemini 2",
-        "🇭🇰 香港1 | ⬇️ 27.8MB/s|0%|Netflix|Youtube",
-        "🇭🇰 香港5 | ⬇️ 7.1MB/s|0%|Netflix|Disney|Youtube 2",
-        "🇭🇰 香港6 | ⬇️ 6.4MB/s|Openai 2",
-        "🇭🇰 香港7 | ⬇️ 4.5MB/s|10%|Netflix|Youtube|Openai 2",
-        "🇭🇰 香港8 | ⬇️ 10.0MB/s|10%|Netflix|Youtube 2",
-        "🇭🇰 香港9 | ⬇️ 7.6MB/s|20%|Netflix 2",
-        "🇲🇾 其他1-MY | ⬇️ 8.9MB/s|0%|Netflix|Youtube|Openai|Gemini 2",
-        "其他2-ID | ⬇️ 4.8MB/s|38%|Netflix|Youtube|Openai|Gemini 2",
-        "其他3-AT | ⬇️ 6.9MB/s|48%|Openai 2"
+        "🇺🇦 乌克兰1 | ⬇️ 5.1MB/s|39%|Netflix|Youtube|Openai",
+        "🇷🇺 俄罗斯3 | ⬇️ 6.5MB/s|100%|Youtube",
+        "🇷🇺 俄罗斯4 | ⬇️ 9.7MB/s|0%",
+        "🇷🇺 俄罗斯5 | ⬇️ 5.1MB/s|10%",
+        "🇷🇺 俄罗斯6 | ⬇️ 4.5MB/s|100%",
+        "🇷🇺 俄罗斯7 | ⬇️ 4.2MB/s|50%|Netflix|Youtube",
+        "🇨🇦 加拿大1 | ⬇️ 5.0MB/s|28%|Netflix|Youtube|Openai|Gemini",
+        "🇨🇦 加拿大2 | ⬇️ 10.7MB/s|Netflix|Youtube|Openai|Gemini",
+        "🇨🇦 加拿大3 | ⬇️ 8.5MB/s|Netflix|Disney|Gemini",
+        "🇮🇳 印度1 | ⬇️ 5.2MB/s|28%|Netflix|Youtube|Openai|Gemini",
+        "🇮🇳 印度2 | ⬇️ 5.0MB/s|54%|Netflix|Youtube|Openai|Gemini",
+        "🇨🇳 台湾1 | ⬇️ 5.9MB/s|16%|Netflix|Youtube|Openai|Gemini",
+        "🇨🇳 台湾2 | ⬇️ 4.9MB/s|0%|Netflix|Disney|Youtube|Openai|Gemini",
+        "🇨🇳 台湾3 | ⬇️ 5.2MB/s|0%|Netflix|Disney|Youtube|Openai|Gemini",
+        "🇨🇳 台湾4 | ⬇️ 28.8MB/s|16%|Netflix|Youtube|Openai|Gemini",
+        "🇨🇳 台湾5 | ⬇️ 14.5MB/s|16%|Netflix|Youtube|Openai|Gemini",
+        "🇨🇳 台湾6 | ⬇️ 12.7MB/s|36%|Netflix|Youtube|Openai|Gemini",
+        "🇩🇪 德国1 | ⬇️ 11.4MB/s|0%|Netflix|Disney|Openai",
+        "🇩🇪 德国2 | ⬇️ 4.6MB/s|41%|Netflix|Disney|Youtube|Openai",
+        "🇩🇪 德国3 | ⬇️ 11.1MB/s|47%|Openai",
+        "🇩🇪 德国4 | ⬇️ 14.0MB/s|25%|Netflix|Youtube|Openai",
+        "🇩🇪 德国5 | ⬇️ 16.7MB/s|25%|Netflix|Openai",
+        "🇩🇪 德国6 | ⬇️ 4.6MB/s|45%|Netflix|Youtube|Openai",
+        "🇸🇬 新加坡1 | ⬇️ 4.6MB/s|53%|Netflix|Disney|Youtube|Openai|Gemini",
+        "🇸🇬 新加坡2 | ⬇️ 5.6MB/s|52%|Netflix|Disney|Youtube|Openai|Gemini",
+        "🇸🇬 新加坡3 | ⬇️ 9.4MB/s|Netflix|Disney|Youtube|Openai|Gemini",
+        "🇸🇬 新加坡4 | ⬇️ 5.8MB/s|Netflix|Disney|Youtube|Openai|Gemini",
+        "🇸🇬 新加坡5 | ⬇️ 8.2MB/s|Netflix|Disney|Youtube|Openai|Gemini",
+        "🇸🇬 新加坡6 | ⬇️ 22.6MB/s|Netflix|Youtube|Openai|Gemini",
+        "🇸🇬 新加坡7 | ⬇️ 8.1MB/s|35%|Netflix|Openai",
+        "🇸🇬 新加坡8 | ⬇️ 5.3MB/s|35%|Netflix|Openai",
+        "🇸🇬 新加坡9 | ⬇️ 7.4MB/s|0%|Youtube|Openai|Gemini",
+        "🇯🇵 日本1 | ⬇️ 12.5MB/s|15%|Netflix|Disney|Youtube|Openai|Gemini",
+        "🇯🇵 日本2 | ⬇️ 5.5MB/s|0%|Netflix|Disney|Openai",
+        "🇯🇵 日本3 | ⬇️ 6.8MB/s|20%|Netflix|Youtube|Openai|Gemini",
+        "🇯🇵 日本4 | ⬇️ 4.4MB/s|52%|Netflix|Disney|Youtube|Openai|Gemini",
+        "🇯🇵 日本5 | ⬇️ 5.1MB/s|10%|Netflix|Disney|Youtube|Openai|Gemini",
+        "🇯🇵 日本6 | ⬇️ 6.6MB/s|76%|Netflix|Openai",
+        "🇯🇵 日本7 | ⬇️ 9.6MB/s|16%|Netflix|Disney|Youtube|Openai|Gemini",
+        "🇯🇵 日本8 | ⬇️ 10.1MB/s|10%|Netflix|Youtube|Openai",
+        "🇯🇵 日本9 | ⬇️ 19.5MB/s|10%|Netflix|Youtube|Openai|Gemini",
+        "🇫🇷 法国3 | ⬇️ 11.7MB/s|0%|Netflix|Youtube|Openai",
+        "🇫🇷 法国4 | ⬇️ 10.8MB/s|14%|Netflix|Openai",
+        "🇫🇷 法国6 | ⬇️ 10.1MB/s|41%|Netflix|Openai",
+        "🇫🇷 法国7 | ⬇️ 8.0MB/s|41%|Netflix|Openai",
+        "🇦🇺 澳大利亚1 | ⬇️ 7.2MB/s|54%|Netflix|Youtube|Openai|Gemini",
+        "🇦🇺 澳大利亚2 | ⬇️ 8.4MB/s|63%|Netflix|Youtube|Openai|Gemini",
+        "🇦🇺 澳大利亚3 | ⬇️ 11.8MB/s|0%|Netflix|Disney|Youtube|Openai",
+        "🇺🇸 美国10 | ⬇️ 10.4MB/s|41%|Netflix|Openai|Gemini",
+        "🇺🇸 美国11 | ⬇️ 14.2MB/s|0%|Netflix|Disney|Openai|Gemini",
+        "🇺🇸 美国12 | ⬇️ 4.1MB/s|37%|Netflix|Openai|Gemini",
+        "🇺🇸 美国13 | ⬇️ 5.5MB/s|10%|Netflix|Disney|Openai|Gemini",
+        "🇺🇸 美国14 | ⬇️ 5.1MB/s|0%|Netflix|Disney|Openai|Gemini",
+        "🇺🇸 美国16 | ⬇️ 21.7MB/s|48%|Netflix|Openai",
+        "🇺🇸 美国17 | ⬇️ 21.7MB/s|Netflix|Openai|Gemini",
+        "🇺🇸 美国18 | ⬇️ 21.1MB/s|Netflix|Openai|Gemini",
+        "🇺🇸 美国19 | ⬇️ 13.5MB/s|0%|Netflix|Openai|Gemini",
+        "🇺🇸 美国2 | ⬇️ 12.4MB/s|55%|Netflix|Openai",
+        "🇺🇸 美国20 | ⬇️ 5.2MB/s|35%|Netflix|Openai",
+        "🇺🇸 美国21 | ⬇️ 9.2MB/s|57%|Netflix|Openai",
+        "🇺🇸 美国22 | ⬇️ 5.1MB/s|48%|Netflix|Openai",
+        "🇺🇸 美国23 | ⬇️ 5.7MB/s|48%|Netflix|Openai",
+        "🇺🇸 美国24 | ⬇️ 5.8MB/s|67%|Netflix|Openai|Gemini",
+        "🇺🇸 美国25 | ⬇️ 6.2MB/s|61%|Netflix|Openai|Gemini",
+        "🇺🇸 美国26 | ⬇️ 4.7MB/s|61%|Netflix|Openai|Gemini",
+        "🇺🇸 美国27 | ⬇️ 18.3MB/s|61%|Netflix|Openai|Gemini",
+        "🇺🇸 美国28 | ⬇️ 6.9MB/s|Openai",
+        "🇺🇸 美国29 | ⬇️ 8.8MB/s|67%|Netflix|Openai|Gemini",
+        "🇺🇸 美国3 | ⬇️ 6.1MB/s|37%|Netflix|Openai|Gemini",
+        "🇺🇸 美国30 | ⬇️ 10.7MB/s|41%|Netflix|Openai",
+        "🇺🇸 美国31 | ⬇️ 11.9MB/s|63%|Netflix|Openai|Gemini",
+        "🇺🇸 美国32 | ⬇️ 11.5MB/s|55%|Netflix|Openai|Gemini",
+        "🇺🇸 美国33 | ⬇️ 9.0MB/s|40%|Netflix|Youtube|Openai",
+        "🇺🇸 美国34 | ⬇️ 16.0MB/s|12%|Netflix|Openai",
+        "🇺🇸 美国35 | ⬇️ 6.1MB/s|0%|Disney|Openai|Gemini",
+        "🇺🇸 美国36 | ⬇️ 17.0MB/s|40%|Openai",
+        "🇺🇸 美国4 | ⬇️ 10.9MB/s|35%|Netflix|Openai",
+        "🇺🇸 美国5 | ⬇️ 11.0MB/s|35%|Netflix|Openai|Gemini",
+        "🇺🇸 美国6 | ⬇️ 6.7MB/s|0%|Openai",
+        "🇺🇸 美国7 | ⬇️ 4.7MB/s|0%|Netflix|Openai|Gemini",
+        "🇺🇸 美国9 | ⬇️ 14.5MB/s|55%|Netflix|Openai|Gemini",
+        "🇫🇮 芬兰1 | ⬇️ 17.7MB/s|25%|Netflix|Openai",
+        "🇬🇧 英国1 | ⬇️ 12.4MB/s|0%|Openai",
+        "🇬🇧 英国2 | ⬇️ 15.7MB/s|0%|Netflix|Openai",
+        "🇬🇧 英国3 | ⬇️ 4.5MB/s|0%|Netflix|Disney|Openai",
+        "🇬🇧 英国4 | ⬇️ 17.2MB/s|Youtube|Openai",
+        "🇬🇧 英国5 | ⬇️ 8.8MB/s|50%|Netflix|Disney|Openai",
+        "🇬🇧 英国6 | ⬇️ 7.0MB/s|Netflix|Openai",
+        "🇬🇧 英国7 | ⬇️ 12.2MB/s|53%|Netflix|Youtube|Openai",
+        "🇳🇱 荷兰1 | ⬇️ 13.0MB/s|Openai",
+        "🇳🇱 荷兰2 | ⬇️ 12.9MB/s|70%|Netflix|Youtube|Openai",
+        "🇳🇱 荷兰3 | ⬇️ 9.2MB/s|40%|Netflix|Disney|Youtube|Openai",
+        "🇳🇱 荷兰4 | ⬇️ 6.5MB/s|40%|Netflix|Disney|Openai",
+        "🇳🇱 荷兰5 | ⬇️ 12.4MB/s|0%|Netflix|Youtube|Openai",
+        "🇳🇱 荷兰6 | ⬇️ 5.1MB/s|48%|Netflix|Openai",
+        "🇳🇱 荷兰7 | ⬇️ 6.3MB/s|40%|Netflix|Disney|Youtube|Openai",
+        "🇰🇷 韩国1 | ⬇️ 6.6MB/s|63%|Netflix|Youtube|Openai|Gemini",
+        "🇰🇷 韩国2 | ⬇️ 4.9MB/s|54%|Netflix|Youtube|Openai|Gemini",
+        "🇰🇷 韩国3 | ⬇️ 5.2MB/s|0%|Netflix|Disney|Youtube|Openai|Gemini",
+        "🇰🇷 韩国4 | ⬇️ 14.0MB/s|63%|Netflix|Disney",
+        "🇰🇷 韩国5 | ⬇️ 6.3MB/s|54%|Netflix|Youtube|Openai",
+        "🇭🇰 香港22 | ⬇️ 4.2MB/s|12%|Netflix|Disney|Openai",
+        "🇭🇰 香港23 | ⬇️ 4.2MB/s|14%|Netflix|Disney|Youtube|Openai",
+        "🇭🇰 香港24 | ⬇️ 4.4MB/s|10%|Netflix|Youtube|Openai",
+        "🇭🇰 香港25 | ⬇️ 17.8MB/s|0%|Netflix|Disney|Youtube",
+        "🇭🇰 香港26 | ⬇️ 24.0MB/s|0%|Youtube",
+        "🇭🇰 香港27 | ⬇️ 12.5MB/s|0%|Netflix|Disney|Youtube|Openai",
+        "🇭🇰 香港5 | ⬇️ 18.1MB/s|0%|Youtube|Openai|Gemini",
+        "🇭🇰 香港6 | ⬇️ 13.2MB/s|20%|Netflix|Disney",
+        "其他1-AT | ⬇️ 12.8MB/s|48%|Netflix|Openai",
+        "🇲🇾 其他2-MY | ⬇️ 5.4MB/s|0%|Netflix|Youtube|Openai|Gemini",
+        "🇲🇾 其他3-MY | ⬇️ 5.0MB/s|0%|Netflix|Youtube|Openai|Gemini",
+        "🇪🇸 其他4-ES | ⬇️ 5.1MB/s|31%|Netflix|Openai",
+        "其他5-VN | ⬇️ 5.5MB/s|0%|Netflix|Youtube|Openai|Gemini",
+        "其他6-MD | ⬇️ 5.4MB/s|48%|Netflix|Openai",
+        "其他7-LK | ⬇️ 19.3MB/s|23%|Youtube|Openai|Gemini",
+        "🇨🇳 其他8-CN | ⬇️ 31.8MB/s|35%|Netflix",
+        "其他9-LV | ⬇️ 5.1MB/s|24%|Netflix|Youtube|Openai",
+        "🇺🇦 乌克兰1 | ⬇️ 5.1MB/s|39%|Netflix|Youtube|Openai 2",
+        "🇷🇺 俄罗斯3 | ⬇️ 6.5MB/s|100%|Youtube 2",
+        "🇷🇺 俄罗斯4 | ⬇️ 9.7MB/s|0% 2",
+        "🇷🇺 俄罗斯5 | ⬇️ 5.1MB/s|10% 2",
+        "🇷🇺 俄罗斯6 | ⬇️ 4.5MB/s|100% 2",
+        "🇷🇺 俄罗斯7 | ⬇️ 4.2MB/s|50%|Netflix|Youtube 2",
+        "🇨🇦 加拿大1 | ⬇️ 5.0MB/s|28%|Netflix|Youtube|Openai|Gemini 2",
+        "🇨🇦 加拿大2 | ⬇️ 10.7MB/s|Netflix|Youtube|Openai|Gemini 2",
+        "🇨🇦 加拿大3 | ⬇️ 8.5MB/s|Netflix|Disney|Gemini 2",
+        "🇮🇳 印度1 | ⬇️ 5.2MB/s|28%|Netflix|Youtube|Openai|Gemini 2",
+        "🇮🇳 印度2 | ⬇️ 5.0MB/s|54%|Netflix|Youtube|Openai|Gemini 2",
+        "🇨🇳 台湾1 | ⬇️ 5.9MB/s|16%|Netflix|Youtube|Openai|Gemini 2",
+        "🇨🇳 台湾2 | ⬇️ 4.9MB/s|0%|Netflix|Disney|Youtube|Openai|Gemini 2",
+        "🇨🇳 台湾3 | ⬇️ 5.2MB/s|0%|Netflix|Disney|Youtube|Openai|Gemini 2",
+        "🇨🇳 台湾4 | ⬇️ 28.8MB/s|16%|Netflix|Youtube|Openai|Gemini 2",
+        "🇨🇳 台湾5 | ⬇️ 14.5MB/s|16%|Netflix|Youtube|Openai|Gemini 2",
+        "🇨🇳 台湾6 | ⬇️ 12.7MB/s|36%|Netflix|Youtube|Openai|Gemini 2",
+        "🇩🇪 德国1 | ⬇️ 11.4MB/s|0%|Netflix|Disney|Openai 2",
+        "🇩🇪 德国2 | ⬇️ 4.6MB/s|41%|Netflix|Disney|Youtube|Openai 2",
+        "🇩🇪 德国3 | ⬇️ 11.1MB/s|47%|Openai 2",
+        "🇩🇪 德国4 | ⬇️ 14.0MB/s|25%|Netflix|Youtube|Openai 2",
+        "🇩🇪 德国5 | ⬇️ 16.7MB/s|25%|Netflix|Openai 2",
+        "🇩🇪 德国6 | ⬇️ 4.6MB/s|45%|Netflix|Youtube|Openai 2",
+        "🇸🇬 新加坡1 | ⬇️ 4.6MB/s|53%|Netflix|Disney|Youtube|Openai|Gemini 2",
+        "🇸🇬 新加坡2 | ⬇️ 5.6MB/s|52%|Netflix|Disney|Youtube|Openai|Gemini 2",
+        "🇸🇬 新加坡3 | ⬇️ 9.4MB/s|Netflix|Disney|Youtube|Openai|Gemini 2",
+        "🇸🇬 新加坡4 | ⬇️ 5.8MB/s|Netflix|Disney|Youtube|Openai|Gemini 2",
+        "🇸🇬 新加坡5 | ⬇️ 8.2MB/s|Netflix|Disney|Youtube|Openai|Gemini 2",
+        "🇸🇬 新加坡6 | ⬇️ 22.6MB/s|Netflix|Youtube|Openai|Gemini 2",
+        "🇸🇬 新加坡7 | ⬇️ 8.1MB/s|35%|Netflix|Openai 2",
+        "🇸🇬 新加坡8 | ⬇️ 5.3MB/s|35%|Netflix|Openai 2",
+        "🇸🇬 新加坡9 | ⬇️ 7.4MB/s|0%|Youtube|Openai|Gemini 2",
+        "🇯🇵 日本1 | ⬇️ 12.5MB/s|15%|Netflix|Disney|Youtube|Openai|Gemini 2",
+        "🇯🇵 日本2 | ⬇️ 5.5MB/s|0%|Netflix|Disney|Openai 2",
+        "🇯🇵 日本3 | ⬇️ 6.8MB/s|20%|Netflix|Youtube|Openai|Gemini 2",
+        "🇯🇵 日本4 | ⬇️ 4.4MB/s|52%|Netflix|Disney|Youtube|Openai|Gemini 2",
+        "🇯🇵 日本5 | ⬇️ 5.1MB/s|10%|Netflix|Disney|Youtube|Openai|Gemini 2",
+        "🇯🇵 日本6 | ⬇️ 6.6MB/s|76%|Netflix|Openai 2",
+        "🇯🇵 日本7 | ⬇️ 9.6MB/s|16%|Netflix|Disney|Youtube|Openai|Gemini 2",
+        "🇯🇵 日本8 | ⬇️ 10.1MB/s|10%|Netflix|Youtube|Openai 2",
+        "🇯🇵 日本9 | ⬇️ 19.5MB/s|10%|Netflix|Youtube|Openai|Gemini 2",
+        "🇫🇷 法国3 | ⬇️ 11.7MB/s|0%|Netflix|Youtube|Openai 2",
+        "🇫🇷 法国4 | ⬇️ 10.8MB/s|14%|Netflix|Openai 2",
+        "🇫🇷 法国6 | ⬇️ 10.1MB/s|41%|Netflix|Openai 2",
+        "🇫🇷 法国7 | ⬇️ 8.0MB/s|41%|Netflix|Openai 2",
+        "🇦🇺 澳大利亚1 | ⬇️ 7.2MB/s|54%|Netflix|Youtube|Openai|Gemini 2",
+        "🇦🇺 澳大利亚2 | ⬇️ 8.4MB/s|63%|Netflix|Youtube|Openai|Gemini 2",
+        "🇦🇺 澳大利亚3 | ⬇️ 11.8MB/s|0%|Netflix|Disney|Youtube|Openai 2",
+        "🇺🇸 美国10 | ⬇️ 10.4MB/s|41%|Netflix|Openai|Gemini 2",
+        "🇺🇸 美国11 | ⬇️ 14.2MB/s|0%|Netflix|Disney|Openai|Gemini 2",
+        "🇺🇸 美国12 | ⬇️ 4.1MB/s|37%|Netflix|Openai|Gemini 2",
+        "🇺🇸 美国13 | ⬇️ 5.5MB/s|10%|Netflix|Disney|Openai|Gemini 2",
+        "🇺🇸 美国14 | ⬇️ 5.1MB/s|0%|Netflix|Disney|Openai|Gemini 2",
+        "🇺🇸 美国16 | ⬇️ 21.7MB/s|48%|Netflix|Openai 2",
+        "🇺🇸 美国17 | ⬇️ 21.7MB/s|Netflix|Openai|Gemini 2",
+        "🇺🇸 美国18 | ⬇️ 21.1MB/s|Netflix|Openai|Gemini 2",
+        "🇺🇸 美国19 | ⬇️ 13.5MB/s|0%|Netflix|Openai|Gemini 2",
+        "🇺🇸 美国2 | ⬇️ 12.4MB/s|55%|Netflix|Openai 2",
+        "🇺🇸 美国20 | ⬇️ 5.2MB/s|35%|Netflix|Openai 2",
+        "🇺🇸 美国21 | ⬇️ 9.2MB/s|57%|Netflix|Openai 2",
+        "🇺🇸 美国22 | ⬇️ 5.1MB/s|48%|Netflix|Openai 2",
+        "🇺🇸 美国23 | ⬇️ 5.7MB/s|48%|Netflix|Openai 2",
+        "🇺🇸 美国24 | ⬇️ 5.8MB/s|67%|Netflix|Openai|Gemini 2",
+        "🇺🇸 美国25 | ⬇️ 6.2MB/s|61%|Netflix|Openai|Gemini 2",
+        "🇺🇸 美国26 | ⬇️ 4.7MB/s|61%|Netflix|Openai|Gemini 2",
+        "🇺🇸 美国27 | ⬇️ 18.3MB/s|61%|Netflix|Openai|Gemini 2",
+        "🇺🇸 美国28 | ⬇️ 6.9MB/s|Openai 2",
+        "🇺🇸 美国29 | ⬇️ 8.8MB/s|67%|Netflix|Openai|Gemini 2",
+        "🇺🇸 美国3 | ⬇️ 6.1MB/s|37%|Netflix|Openai|Gemini 2",
+        "🇺🇸 美国30 | ⬇️ 10.7MB/s|41%|Netflix|Openai 2",
+        "🇺🇸 美国31 | ⬇️ 11.9MB/s|63%|Netflix|Openai|Gemini 2",
+        "🇺🇸 美国32 | ⬇️ 11.5MB/s|55%|Netflix|Openai|Gemini 2",
+        "🇺🇸 美国33 | ⬇️ 9.0MB/s|40%|Netflix|Youtube|Openai 2",
+        "🇺🇸 美国34 | ⬇️ 16.0MB/s|12%|Netflix|Openai 2",
+        "🇺🇸 美国35 | ⬇️ 6.1MB/s|0%|Disney|Openai|Gemini 2",
+        "🇺🇸 美国36 | ⬇️ 17.0MB/s|40%|Openai 2",
+        "🇺🇸 美国4 | ⬇️ 10.9MB/s|35%|Netflix|Openai 2",
+        "🇺🇸 美国5 | ⬇️ 11.0MB/s|35%|Netflix|Openai|Gemini 2",
+        "🇺🇸 美国6 | ⬇️ 6.7MB/s|0%|Openai 2",
+        "🇺🇸 美国7 | ⬇️ 4.7MB/s|0%|Netflix|Openai|Gemini 2",
+        "🇺🇸 美国9 | ⬇️ 14.5MB/s|55%|Netflix|Openai|Gemini 2",
+        "🇫🇮 芬兰1 | ⬇️ 17.7MB/s|25%|Netflix|Openai 2",
+        "🇬🇧 英国1 | ⬇️ 12.4MB/s|0%|Openai 2",
+        "🇬🇧 英国2 | ⬇️ 15.7MB/s|0%|Netflix|Openai 2",
+        "🇬🇧 英国3 | ⬇️ 4.5MB/s|0%|Netflix|Disney|Openai 2",
+        "🇬🇧 英国4 | ⬇️ 17.2MB/s|Youtube|Openai 2",
+        "🇬🇧 英国5 | ⬇️ 8.8MB/s|50%|Netflix|Disney|Openai 2",
+        "🇬🇧 英国6 | ⬇️ 7.0MB/s|Netflix|Openai 2",
+        "🇬🇧 英国7 | ⬇️ 12.2MB/s|53%|Netflix|Youtube|Openai 2",
+        "🇳🇱 荷兰1 | ⬇️ 13.0MB/s|Openai 2",
+        "🇳🇱 荷兰2 | ⬇️ 12.9MB/s|70%|Netflix|Youtube|Openai 2",
+        "🇳🇱 荷兰3 | ⬇️ 9.2MB/s|40%|Netflix|Disney|Youtube|Openai 2",
+        "🇳🇱 荷兰4 | ⬇️ 6.5MB/s|40%|Netflix|Disney|Openai 2",
+        "🇳🇱 荷兰5 | ⬇️ 12.4MB/s|0%|Netflix|Youtube|Openai 2",
+        "🇳🇱 荷兰6 | ⬇️ 5.1MB/s|48%|Netflix|Openai 2",
+        "🇳🇱 荷兰7 | ⬇️ 6.3MB/s|40%|Netflix|Disney|Youtube|Openai 2",
+        "🇰🇷 韩国1 | ⬇️ 6.6MB/s|63%|Netflix|Youtube|Openai|Gemini 2",
+        "🇰🇷 韩国2 | ⬇️ 4.9MB/s|54%|Netflix|Youtube|Openai|Gemini 2",
+        "🇰🇷 韩国3 | ⬇️ 5.2MB/s|0%|Netflix|Disney|Youtube|Openai|Gemini 2",
+        "🇰🇷 韩国4 | ⬇️ 14.0MB/s|63%|Netflix|Disney 2",
+        "🇰🇷 韩国5 | ⬇️ 6.3MB/s|54%|Netflix|Youtube|Openai 2",
+        "🇭🇰 香港1 | ⬇️ 10.2MB/s|0%|Netflix|Youtube",
+        "🇭🇰 香港22 | ⬇️ 4.2MB/s|12%|Netflix|Disney|Openai 2",
+        "🇭🇰 香港23 | ⬇️ 4.2MB/s|14%|Netflix|Disney|Youtube|Openai 2",
+        "🇭🇰 香港24 | ⬇️ 4.4MB/s|10%|Netflix|Youtube|Openai 2",
+        "🇭🇰 香港25 | ⬇️ 17.8MB/s|0%|Netflix|Disney|Youtube 2",
+        "🇭🇰 香港26 | ⬇️ 24.0MB/s|0%|Youtube 2",
+        "🇭🇰 香港27 | ⬇️ 12.5MB/s|0%|Netflix|Disney|Youtube|Openai 2",
+        "🇭🇰 香港5 | ⬇️ 18.1MB/s|0%|Youtube|Openai|Gemini 2",
+        "🇭🇰 香港6 | ⬇️ 13.2MB/s|20%|Netflix|Disney 2",
+        "其他1-AT | ⬇️ 12.8MB/s|48%|Netflix|Openai 2",
+        "🇲🇾 其他2-MY | ⬇️ 5.4MB/s|0%|Netflix|Youtube|Openai|Gemini 2",
+        "🇲🇾 其他3-MY | ⬇️ 5.0MB/s|0%|Netflix|Youtube|Openai|Gemini 2",
+        "🇪🇸 其他4-ES | ⬇️ 5.1MB/s|31%|Netflix|Openai 2",
+        "其他5-VN | ⬇️ 5.5MB/s|0%|Netflix|Youtube|Openai|Gemini 2",
+        "其他6-MD | ⬇️ 5.4MB/s|48%|Netflix|Openai 2",
+        "其他7-LK | ⬇️ 19.3MB/s|23%|Youtube|Openai|Gemini 2",
+        "🇨🇳 其他8-CN | ⬇️ 31.8MB/s|35%|Netflix 2",
+        "其他9-LV | ⬇️ 5.1MB/s|24%|Netflix|Youtube|Openai 2"
       ]
     },
     {
@@ -1706,97 +4316,243 @@
       "type": "urltest",
       "outbounds": [
         "加入我的频道t.me/CMLiussss解锁更多优选节点",
-        "🇨🇦 加拿大1 | ⬇️ 4.3MB/s|Netflix|Disney|Gemini",
-        "🇮🇳 印度1 | ⬇️ 4.9MB/s|28%|Netflix|Youtube|Openai|Gemini",
-        "🇨🇳 台湾1 | ⬇️ 8.3MB/s|16%|Youtube|Openai|Gemini",
-        "🇨🇳 台湾2 | ⬇️ 4.3MB/s|0%|Netflix|Disney|Youtube|Openai|Gemini",
-        "🇩🇪 德国1 | ⬇️ 4.3MB/s|0%|Netflix|Openai",
-        "🇩🇪 德国2 | ⬇️ 4.0MB/s|25%",
-        "🇩🇪 德国3 | ⬇️ 11.8MB/s|25%|Netflix|Openai",
-        "🇩🇪 德国4 | ⬇️ 4.0MB/s|Disney|Openai",
-        "🇸🇬 新加坡1 | ⬇️ 5.2MB/s|Netflix|Youtube|Openai|Gemini",
-        "🇯🇵 日本1 | ⬇️ 9.9MB/s|36%|Netflix|Disney|Youtube|Openai|Gemini",
-        "🇯🇵 日本10 | ⬇️ 23.0MB/s|36%|Netflix|Youtube|Openai|Gemini",
-        "🇯🇵 日本2 | ⬇️ 6.1MB/s|0%|Netflix|Disney|Openai",
-        "🇯🇵 日本3 | ⬇️ 12.0MB/s|15%|Netflix|Disney|Youtube|Openai|Gemini",
-        "🇯🇵 日本4 | ⬇️ 7.5MB/s|15%|Netflix|Disney|Youtube|Openai|Gemini",
-        "🇯🇵 日本5 | ⬇️ 6.9MB/s|76%|Netflix|Youtube|Openai",
-        "🇯🇵 日本7 | ⬇️ 11.7MB/s|36%|Netflix|Disney|Youtube|Openai|Gemini",
-        "🇯🇵 日本8 | ⬇️ 4.9MB/s|20%|Netflix|Youtube",
-        "🇯🇵 日本9 | ⬇️ 7.7MB/s|10%|Netflix|Youtube|Openai|Gemini",
-        "🇫🇷 法国1 | ⬇️ 11.3MB/s|0%|Netflix|Youtube|Openai",
-        "🇦🇺 澳大利亚1 | ⬇️ 5.0MB/s|63%|Netflix|Youtube|Openai|Gemini",
-        "🇦🇺 澳大利亚2 | ⬇️ 4.5MB/s|54%|Netflix|Openai",
-        "🇺🇸 美国10 | ⬇️ 9.9MB/s|6%|Netflix|Disney|Openai|Gemini",
-        "🇺🇸 美国11 | ⬇️ 10.0MB/s|0%|Netflix|Openai|Gemini",
-        "🇺🇸 美国12 | ⬇️ 5.6MB/s|0%|Openai",
-        "🇺🇸 美国3 | ⬇️ 9.2MB/s|55%|Netflix|Openai",
-        "🇺🇸 美国4 | ⬇️ 5.5MB/s|37%|Netflix|Openai",
-        "🇺🇸 美国5 | ⬇️ 5.2MB/s|35%|Netflix|Openai",
-        "🇺🇸 美国6 | ⬇️ 4.7MB/s|0%|Netflix|Disney|Openai|Gemini",
-        "🇺🇸 美国7 | ⬇️ 18.0MB/s|Netflix|Disney|Openai|Gemini",
-        "🇺🇸 美国8 | ⬇️ 4.2MB/s|35%|Netflix|Openai|Gemini",
-        "🇺🇸 美国9 | ⬇️ 5.9MB/s|61%|Netflix|Openai|Gemini",
-        "🇫🇮 芬兰1 | ⬇️ 4.2MB/s|10%|Openai",
-        "🇫🇮 芬兰2 | ⬇️ 4.2MB/s|25%|Openai",
-        "🇳🇱 荷兰1 | ⬇️ 14.4MB/s|0%|Youtube",
-        "🇰🇷 韩国1 | ⬇️ 4.5MB/s|63%|Netflix|Youtube|Openai|Gemini",
-        "🇰🇷 韩国2 | ⬇️ 6.2MB/s|0%|Netflix|Disney|Youtube|Openai|Gemini",
-        "🇰🇷 韩国3 | ⬇️ 11.5MB/s|36%|Netflix|Disney|Youtube|Openai|Gemini",
-        "🇭🇰 香港5 | ⬇️ 7.1MB/s|0%|Netflix|Disney|Youtube",
-        "🇭🇰 香港6 | ⬇️ 6.4MB/s|Openai",
-        "🇭🇰 香港7 | ⬇️ 4.5MB/s|10%|Netflix|Youtube|Openai",
-        "🇭🇰 香港8 | ⬇️ 10.0MB/s|10%|Netflix|Youtube",
-        "🇭🇰 香港9 | ⬇️ 7.6MB/s|20%|Netflix",
-        "🇲🇾 其他1-MY | ⬇️ 8.9MB/s|0%|Netflix|Youtube|Openai|Gemini",
-        "其他2-ID | ⬇️ 4.8MB/s|38%|Netflix|Youtube|Openai|Gemini",
-        "其他3-AT | ⬇️ 6.9MB/s|48%|Openai",
-        "🇨🇦 加拿大1 | ⬇️ 4.3MB/s|Netflix|Disney|Gemini 2",
-        "🇮🇳 印度1 | ⬇️ 4.9MB/s|28%|Netflix|Youtube|Openai|Gemini 2",
-        "🇨🇳 台湾1 | ⬇️ 8.3MB/s|16%|Youtube|Openai|Gemini 2",
-        "🇨🇳 台湾2 | ⬇️ 4.3MB/s|0%|Netflix|Disney|Youtube|Openai|Gemini 2",
-        "🇩🇪 德国1 | ⬇️ 4.3MB/s|0%|Netflix|Openai 2",
-        "🇩🇪 德国2 | ⬇️ 4.0MB/s|25% 2",
-        "🇩🇪 德国3 | ⬇️ 11.8MB/s|25%|Netflix|Openai 2",
-        "🇩🇪 德国4 | ⬇️ 4.0MB/s|Disney|Openai 2",
-        "🇸🇬 新加坡1 | ⬇️ 5.2MB/s|Netflix|Youtube|Openai|Gemini 2",
-        "🇯🇵 日本1 | ⬇️ 9.9MB/s|36%|Netflix|Disney|Youtube|Openai|Gemini 2",
-        "🇯🇵 日本10 | ⬇️ 23.0MB/s|36%|Netflix|Youtube|Openai|Gemini 2",
-        "🇯🇵 日本2 | ⬇️ 6.1MB/s|0%|Netflix|Disney|Openai 2",
-        "🇯🇵 日本3 | ⬇️ 12.0MB/s|15%|Netflix|Disney|Youtube|Openai|Gemini 2",
-        "🇯🇵 日本4 | ⬇️ 7.5MB/s|15%|Netflix|Disney|Youtube|Openai|Gemini 2",
-        "🇯🇵 日本5 | ⬇️ 6.9MB/s|76%|Netflix|Youtube|Openai 2",
-        "🇯🇵 日本7 | ⬇️ 11.7MB/s|36%|Netflix|Disney|Youtube|Openai|Gemini 2",
-        "🇯🇵 日本8 | ⬇️ 4.9MB/s|20%|Netflix|Youtube 2",
-        "🇯🇵 日本9 | ⬇️ 7.7MB/s|10%|Netflix|Youtube|Openai|Gemini 2",
-        "🇫🇷 法国1 | ⬇️ 11.3MB/s|0%|Netflix|Youtube|Openai 2",
-        "🇦🇺 澳大利亚1 | ⬇️ 5.0MB/s|63%|Netflix|Youtube|Openai|Gemini 2",
-        "🇦🇺 澳大利亚2 | ⬇️ 4.5MB/s|54%|Netflix|Openai 2",
-        "🇺🇸 美国10 | ⬇️ 9.9MB/s|6%|Netflix|Disney|Openai|Gemini 2",
-        "🇺🇸 美国11 | ⬇️ 10.0MB/s|0%|Netflix|Openai|Gemini 2",
-        "🇺🇸 美国12 | ⬇️ 5.6MB/s|0%|Openai 2",
-        "🇺🇸 美国3 | ⬇️ 9.2MB/s|55%|Netflix|Openai 2",
-        "🇺🇸 美国4 | ⬇️ 5.5MB/s|37%|Netflix|Openai 2",
-        "🇺🇸 美国5 | ⬇️ 5.2MB/s|35%|Netflix|Openai 2",
-        "🇺🇸 美国6 | ⬇️ 4.7MB/s|0%|Netflix|Disney|Openai|Gemini 2",
-        "🇺🇸 美国7 | ⬇️ 18.0MB/s|Netflix|Disney|Openai|Gemini 2",
-        "🇺🇸 美国8 | ⬇️ 4.2MB/s|35%|Netflix|Openai|Gemini 2",
-        "🇺🇸 美国9 | ⬇️ 5.9MB/s|61%|Netflix|Openai|Gemini 2",
-        "🇫🇮 芬兰1 | ⬇️ 4.2MB/s|10%|Openai 2",
-        "🇫🇮 芬兰2 | ⬇️ 4.2MB/s|25%|Openai 2",
-        "🇳🇱 荷兰1 | ⬇️ 14.4MB/s|0%|Youtube 2",
-        "🇰🇷 韩国1 | ⬇️ 4.5MB/s|63%|Netflix|Youtube|Openai|Gemini 2",
-        "🇰🇷 韩国2 | ⬇️ 6.2MB/s|0%|Netflix|Disney|Youtube|Openai|Gemini 2",
-        "🇰🇷 韩国3 | ⬇️ 11.5MB/s|36%|Netflix|Disney|Youtube|Openai|Gemini 2",
-        "🇭🇰 香港1 | ⬇️ 27.8MB/s|0%|Netflix|Youtube",
-        "🇭🇰 香港5 | ⬇️ 7.1MB/s|0%|Netflix|Disney|Youtube 2",
-        "🇭🇰 香港6 | ⬇️ 6.4MB/s|Openai 2",
-        "🇭🇰 香港7 | ⬇️ 4.5MB/s|10%|Netflix|Youtube|Openai 2",
-        "🇭🇰 香港8 | ⬇️ 10.0MB/s|10%|Netflix|Youtube 2",
-        "🇭🇰 香港9 | ⬇️ 7.6MB/s|20%|Netflix 2",
-        "🇲🇾 其他1-MY | ⬇️ 8.9MB/s|0%|Netflix|Youtube|Openai|Gemini 2",
-        "其他2-ID | ⬇️ 4.8MB/s|38%|Netflix|Youtube|Openai|Gemini 2",
-        "其他3-AT | ⬇️ 6.9MB/s|48%|Openai 2"
+        "🇺🇦 乌克兰1 | ⬇️ 5.1MB/s|39%|Netflix|Youtube|Openai",
+        "🇷🇺 俄罗斯3 | ⬇️ 6.5MB/s|100%|Youtube",
+        "🇷🇺 俄罗斯4 | ⬇️ 9.7MB/s|0%",
+        "🇷🇺 俄罗斯5 | ⬇️ 5.1MB/s|10%",
+        "🇷🇺 俄罗斯6 | ⬇️ 4.5MB/s|100%",
+        "🇷🇺 俄罗斯7 | ⬇️ 4.2MB/s|50%|Netflix|Youtube",
+        "🇨🇦 加拿大1 | ⬇️ 5.0MB/s|28%|Netflix|Youtube|Openai|Gemini",
+        "🇨🇦 加拿大2 | ⬇️ 10.7MB/s|Netflix|Youtube|Openai|Gemini",
+        "🇨🇦 加拿大3 | ⬇️ 8.5MB/s|Netflix|Disney|Gemini",
+        "🇮🇳 印度1 | ⬇️ 5.2MB/s|28%|Netflix|Youtube|Openai|Gemini",
+        "🇮🇳 印度2 | ⬇️ 5.0MB/s|54%|Netflix|Youtube|Openai|Gemini",
+        "🇨🇳 台湾1 | ⬇️ 5.9MB/s|16%|Netflix|Youtube|Openai|Gemini",
+        "🇨🇳 台湾2 | ⬇️ 4.9MB/s|0%|Netflix|Disney|Youtube|Openai|Gemini",
+        "🇨🇳 台湾3 | ⬇️ 5.2MB/s|0%|Netflix|Disney|Youtube|Openai|Gemini",
+        "🇨🇳 台湾4 | ⬇️ 28.8MB/s|16%|Netflix|Youtube|Openai|Gemini",
+        "🇨🇳 台湾5 | ⬇️ 14.5MB/s|16%|Netflix|Youtube|Openai|Gemini",
+        "🇨🇳 台湾6 | ⬇️ 12.7MB/s|36%|Netflix|Youtube|Openai|Gemini",
+        "🇩🇪 德国1 | ⬇️ 11.4MB/s|0%|Netflix|Disney|Openai",
+        "🇩🇪 德国2 | ⬇️ 4.6MB/s|41%|Netflix|Disney|Youtube|Openai",
+        "🇩🇪 德国3 | ⬇️ 11.1MB/s|47%|Openai",
+        "🇩🇪 德国4 | ⬇️ 14.0MB/s|25%|Netflix|Youtube|Openai",
+        "🇩🇪 德国5 | ⬇️ 16.7MB/s|25%|Netflix|Openai",
+        "🇩🇪 德国6 | ⬇️ 4.6MB/s|45%|Netflix|Youtube|Openai",
+        "🇸🇬 新加坡1 | ⬇️ 4.6MB/s|53%|Netflix|Disney|Youtube|Openai|Gemini",
+        "🇸🇬 新加坡2 | ⬇️ 5.6MB/s|52%|Netflix|Disney|Youtube|Openai|Gemini",
+        "🇸🇬 新加坡3 | ⬇️ 9.4MB/s|Netflix|Disney|Youtube|Openai|Gemini",
+        "🇸🇬 新加坡4 | ⬇️ 5.8MB/s|Netflix|Disney|Youtube|Openai|Gemini",
+        "🇸🇬 新加坡5 | ⬇️ 8.2MB/s|Netflix|Disney|Youtube|Openai|Gemini",
+        "🇸🇬 新加坡6 | ⬇️ 22.6MB/s|Netflix|Youtube|Openai|Gemini",
+        "🇸🇬 新加坡7 | ⬇️ 8.1MB/s|35%|Netflix|Openai",
+        "🇸🇬 新加坡8 | ⬇️ 5.3MB/s|35%|Netflix|Openai",
+        "🇸🇬 新加坡9 | ⬇️ 7.4MB/s|0%|Youtube|Openai|Gemini",
+        "🇯🇵 日本1 | ⬇️ 12.5MB/s|15%|Netflix|Disney|Youtube|Openai|Gemini",
+        "🇯🇵 日本2 | ⬇️ 5.5MB/s|0%|Netflix|Disney|Openai",
+        "🇯🇵 日本3 | ⬇️ 6.8MB/s|20%|Netflix|Youtube|Openai|Gemini",
+        "🇯🇵 日本4 | ⬇️ 4.4MB/s|52%|Netflix|Disney|Youtube|Openai|Gemini",
+        "🇯🇵 日本5 | ⬇️ 5.1MB/s|10%|Netflix|Disney|Youtube|Openai|Gemini",
+        "🇯🇵 日本6 | ⬇️ 6.6MB/s|76%|Netflix|Openai",
+        "🇯🇵 日本7 | ⬇️ 9.6MB/s|16%|Netflix|Disney|Youtube|Openai|Gemini",
+        "🇯🇵 日本8 | ⬇️ 10.1MB/s|10%|Netflix|Youtube|Openai",
+        "🇯🇵 日本9 | ⬇️ 19.5MB/s|10%|Netflix|Youtube|Openai|Gemini",
+        "🇫🇷 法国3 | ⬇️ 11.7MB/s|0%|Netflix|Youtube|Openai",
+        "🇫🇷 法国4 | ⬇️ 10.8MB/s|14%|Netflix|Openai",
+        "🇫🇷 法国6 | ⬇️ 10.1MB/s|41%|Netflix|Openai",
+        "🇫🇷 法国7 | ⬇️ 8.0MB/s|41%|Netflix|Openai",
+        "🇦🇺 澳大利亚1 | ⬇️ 7.2MB/s|54%|Netflix|Youtube|Openai|Gemini",
+        "🇦🇺 澳大利亚2 | ⬇️ 8.4MB/s|63%|Netflix|Youtube|Openai|Gemini",
+        "🇦🇺 澳大利亚3 | ⬇️ 11.8MB/s|0%|Netflix|Disney|Youtube|Openai",
+        "🇺🇸 美国10 | ⬇️ 10.4MB/s|41%|Netflix|Openai|Gemini",
+        "🇺🇸 美国11 | ⬇️ 14.2MB/s|0%|Netflix|Disney|Openai|Gemini",
+        "🇺🇸 美国12 | ⬇️ 4.1MB/s|37%|Netflix|Openai|Gemini",
+        "🇺🇸 美国13 | ⬇️ 5.5MB/s|10%|Netflix|Disney|Openai|Gemini",
+        "🇺🇸 美国14 | ⬇️ 5.1MB/s|0%|Netflix|Disney|Openai|Gemini",
+        "🇺🇸 美国16 | ⬇️ 21.7MB/s|48%|Netflix|Openai",
+        "🇺🇸 美国17 | ⬇️ 21.7MB/s|Netflix|Openai|Gemini",
+        "🇺🇸 美国18 | ⬇️ 21.1MB/s|Netflix|Openai|Gemini",
+        "🇺🇸 美国19 | ⬇️ 13.5MB/s|0%|Netflix|Openai|Gemini",
+        "🇺🇸 美国2 | ⬇️ 12.4MB/s|55%|Netflix|Openai",
+        "🇺🇸 美国20 | ⬇️ 5.2MB/s|35%|Netflix|Openai",
+        "🇺🇸 美国21 | ⬇️ 9.2MB/s|57%|Netflix|Openai",
+        "🇺🇸 美国22 | ⬇️ 5.1MB/s|48%|Netflix|Openai",
+        "🇺🇸 美国23 | ⬇️ 5.7MB/s|48%|Netflix|Openai",
+        "🇺🇸 美国24 | ⬇️ 5.8MB/s|67%|Netflix|Openai|Gemini",
+        "🇺🇸 美国25 | ⬇️ 6.2MB/s|61%|Netflix|Openai|Gemini",
+        "🇺🇸 美国26 | ⬇️ 4.7MB/s|61%|Netflix|Openai|Gemini",
+        "🇺🇸 美国27 | ⬇️ 18.3MB/s|61%|Netflix|Openai|Gemini",
+        "🇺🇸 美国28 | ⬇️ 6.9MB/s|Openai",
+        "🇺🇸 美国29 | ⬇️ 8.8MB/s|67%|Netflix|Openai|Gemini",
+        "🇺🇸 美国3 | ⬇️ 6.1MB/s|37%|Netflix|Openai|Gemini",
+        "🇺🇸 美国30 | ⬇️ 10.7MB/s|41%|Netflix|Openai",
+        "🇺🇸 美国31 | ⬇️ 11.9MB/s|63%|Netflix|Openai|Gemini",
+        "🇺🇸 美国32 | ⬇️ 11.5MB/s|55%|Netflix|Openai|Gemini",
+        "🇺🇸 美国33 | ⬇️ 9.0MB/s|40%|Netflix|Youtube|Openai",
+        "🇺🇸 美国34 | ⬇️ 16.0MB/s|12%|Netflix|Openai",
+        "🇺🇸 美国35 | ⬇️ 6.1MB/s|0%|Disney|Openai|Gemini",
+        "🇺🇸 美国36 | ⬇️ 17.0MB/s|40%|Openai",
+        "🇺🇸 美国4 | ⬇️ 10.9MB/s|35%|Netflix|Openai",
+        "🇺🇸 美国5 | ⬇️ 11.0MB/s|35%|Netflix|Openai|Gemini",
+        "🇺🇸 美国6 | ⬇️ 6.7MB/s|0%|Openai",
+        "🇺🇸 美国7 | ⬇️ 4.7MB/s|0%|Netflix|Openai|Gemini",
+        "🇺🇸 美国9 | ⬇️ 14.5MB/s|55%|Netflix|Openai|Gemini",
+        "🇫🇮 芬兰1 | ⬇️ 17.7MB/s|25%|Netflix|Openai",
+        "🇬🇧 英国1 | ⬇️ 12.4MB/s|0%|Openai",
+        "🇬🇧 英国2 | ⬇️ 15.7MB/s|0%|Netflix|Openai",
+        "🇬🇧 英国3 | ⬇️ 4.5MB/s|0%|Netflix|Disney|Openai",
+        "🇬🇧 英国4 | ⬇️ 17.2MB/s|Youtube|Openai",
+        "🇬🇧 英国5 | ⬇️ 8.8MB/s|50%|Netflix|Disney|Openai",
+        "🇬🇧 英国6 | ⬇️ 7.0MB/s|Netflix|Openai",
+        "🇬🇧 英国7 | ⬇️ 12.2MB/s|53%|Netflix|Youtube|Openai",
+        "🇳🇱 荷兰1 | ⬇️ 13.0MB/s|Openai",
+        "🇳🇱 荷兰2 | ⬇️ 12.9MB/s|70%|Netflix|Youtube|Openai",
+        "🇳🇱 荷兰3 | ⬇️ 9.2MB/s|40%|Netflix|Disney|Youtube|Openai",
+        "🇳🇱 荷兰4 | ⬇️ 6.5MB/s|40%|Netflix|Disney|Openai",
+        "🇳🇱 荷兰5 | ⬇️ 12.4MB/s|0%|Netflix|Youtube|Openai",
+        "🇳🇱 荷兰6 | ⬇️ 5.1MB/s|48%|Netflix|Openai",
+        "🇳🇱 荷兰7 | ⬇️ 6.3MB/s|40%|Netflix|Disney|Youtube|Openai",
+        "🇰🇷 韩国1 | ⬇️ 6.6MB/s|63%|Netflix|Youtube|Openai|Gemini",
+        "🇰🇷 韩国2 | ⬇️ 4.9MB/s|54%|Netflix|Youtube|Openai|Gemini",
+        "🇰🇷 韩国3 | ⬇️ 5.2MB/s|0%|Netflix|Disney|Youtube|Openai|Gemini",
+        "🇰🇷 韩国4 | ⬇️ 14.0MB/s|63%|Netflix|Disney",
+        "🇰🇷 韩国5 | ⬇️ 6.3MB/s|54%|Netflix|Youtube|Openai",
+        "🇭🇰 香港22 | ⬇️ 4.2MB/s|12%|Netflix|Disney|Openai",
+        "🇭🇰 香港23 | ⬇️ 4.2MB/s|14%|Netflix|Disney|Youtube|Openai",
+        "🇭🇰 香港24 | ⬇️ 4.4MB/s|10%|Netflix|Youtube|Openai",
+        "🇭🇰 香港25 | ⬇️ 17.8MB/s|0%|Netflix|Disney|Youtube",
+        "🇭🇰 香港26 | ⬇️ 24.0MB/s|0%|Youtube",
+        "🇭🇰 香港27 | ⬇️ 12.5MB/s|0%|Netflix|Disney|Youtube|Openai",
+        "🇭🇰 香港5 | ⬇️ 18.1MB/s|0%|Youtube|Openai|Gemini",
+        "🇭🇰 香港6 | ⬇️ 13.2MB/s|20%|Netflix|Disney",
+        "其他1-AT | ⬇️ 12.8MB/s|48%|Netflix|Openai",
+        "🇲🇾 其他2-MY | ⬇️ 5.4MB/s|0%|Netflix|Youtube|Openai|Gemini",
+        "🇲🇾 其他3-MY | ⬇️ 5.0MB/s|0%|Netflix|Youtube|Openai|Gemini",
+        "🇪🇸 其他4-ES | ⬇️ 5.1MB/s|31%|Netflix|Openai",
+        "其他5-VN | ⬇️ 5.5MB/s|0%|Netflix|Youtube|Openai|Gemini",
+        "其他6-MD | ⬇️ 5.4MB/s|48%|Netflix|Openai",
+        "其他7-LK | ⬇️ 19.3MB/s|23%|Youtube|Openai|Gemini",
+        "🇨🇳 其他8-CN | ⬇️ 31.8MB/s|35%|Netflix",
+        "其他9-LV | ⬇️ 5.1MB/s|24%|Netflix|Youtube|Openai",
+        "🇺🇦 乌克兰1 | ⬇️ 5.1MB/s|39%|Netflix|Youtube|Openai 2",
+        "🇷🇺 俄罗斯3 | ⬇️ 6.5MB/s|100%|Youtube 2",
+        "🇷🇺 俄罗斯4 | ⬇️ 9.7MB/s|0% 2",
+        "🇷🇺 俄罗斯5 | ⬇️ 5.1MB/s|10% 2",
+        "🇷🇺 俄罗斯6 | ⬇️ 4.5MB/s|100% 2",
+        "🇷🇺 俄罗斯7 | ⬇️ 4.2MB/s|50%|Netflix|Youtube 2",
+        "🇨🇦 加拿大1 | ⬇️ 5.0MB/s|28%|Netflix|Youtube|Openai|Gemini 2",
+        "🇨🇦 加拿大2 | ⬇️ 10.7MB/s|Netflix|Youtube|Openai|Gemini 2",
+        "🇨🇦 加拿大3 | ⬇️ 8.5MB/s|Netflix|Disney|Gemini 2",
+        "🇮🇳 印度1 | ⬇️ 5.2MB/s|28%|Netflix|Youtube|Openai|Gemini 2",
+        "🇮🇳 印度2 | ⬇️ 5.0MB/s|54%|Netflix|Youtube|Openai|Gemini 2",
+        "🇨🇳 台湾1 | ⬇️ 5.9MB/s|16%|Netflix|Youtube|Openai|Gemini 2",
+        "🇨🇳 台湾2 | ⬇️ 4.9MB/s|0%|Netflix|Disney|Youtube|Openai|Gemini 2",
+        "🇨🇳 台湾3 | ⬇️ 5.2MB/s|0%|Netflix|Disney|Youtube|Openai|Gemini 2",
+        "🇨🇳 台湾4 | ⬇️ 28.8MB/s|16%|Netflix|Youtube|Openai|Gemini 2",
+        "🇨🇳 台湾5 | ⬇️ 14.5MB/s|16%|Netflix|Youtube|Openai|Gemini 2",
+        "🇨🇳 台湾6 | ⬇️ 12.7MB/s|36%|Netflix|Youtube|Openai|Gemini 2",
+        "🇩🇪 德国1 | ⬇️ 11.4MB/s|0%|Netflix|Disney|Openai 2",
+        "🇩🇪 德国2 | ⬇️ 4.6MB/s|41%|Netflix|Disney|Youtube|Openai 2",
+        "🇩🇪 德国3 | ⬇️ 11.1MB/s|47%|Openai 2",
+        "🇩🇪 德国4 | ⬇️ 14.0MB/s|25%|Netflix|Youtube|Openai 2",
+        "🇩🇪 德国5 | ⬇️ 16.7MB/s|25%|Netflix|Openai 2",
+        "🇩🇪 德国6 | ⬇️ 4.6MB/s|45%|Netflix|Youtube|Openai 2",
+        "🇸🇬 新加坡1 | ⬇️ 4.6MB/s|53%|Netflix|Disney|Youtube|Openai|Gemini 2",
+        "🇸🇬 新加坡2 | ⬇️ 5.6MB/s|52%|Netflix|Disney|Youtube|Openai|Gemini 2",
+        "🇸🇬 新加坡3 | ⬇️ 9.4MB/s|Netflix|Disney|Youtube|Openai|Gemini 2",
+        "🇸🇬 新加坡4 | ⬇️ 5.8MB/s|Netflix|Disney|Youtube|Openai|Gemini 2",
+        "🇸🇬 新加坡5 | ⬇️ 8.2MB/s|Netflix|Disney|Youtube|Openai|Gemini 2",
+        "🇸🇬 新加坡6 | ⬇️ 22.6MB/s|Netflix|Youtube|Openai|Gemini 2",
+        "🇸🇬 新加坡7 | ⬇️ 8.1MB/s|35%|Netflix|Openai 2",
+        "🇸🇬 新加坡8 | ⬇️ 5.3MB/s|35%|Netflix|Openai 2",
+        "🇸🇬 新加坡9 | ⬇️ 7.4MB/s|0%|Youtube|Openai|Gemini 2",
+        "🇯🇵 日本1 | ⬇️ 12.5MB/s|15%|Netflix|Disney|Youtube|Openai|Gemini 2",
+        "🇯🇵 日本2 | ⬇️ 5.5MB/s|0%|Netflix|Disney|Openai 2",
+        "🇯🇵 日本3 | ⬇️ 6.8MB/s|20%|Netflix|Youtube|Openai|Gemini 2",
+        "🇯🇵 日本4 | ⬇️ 4.4MB/s|52%|Netflix|Disney|Youtube|Openai|Gemini 2",
+        "🇯🇵 日本5 | ⬇️ 5.1MB/s|10%|Netflix|Disney|Youtube|Openai|Gemini 2",
+        "🇯🇵 日本6 | ⬇️ 6.6MB/s|76%|Netflix|Openai 2",
+        "🇯🇵 日本7 | ⬇️ 9.6MB/s|16%|Netflix|Disney|Youtube|Openai|Gemini 2",
+        "🇯🇵 日本8 | ⬇️ 10.1MB/s|10%|Netflix|Youtube|Openai 2",
+        "🇯🇵 日本9 | ⬇️ 19.5MB/s|10%|Netflix|Youtube|Openai|Gemini 2",
+        "🇫🇷 法国3 | ⬇️ 11.7MB/s|0%|Netflix|Youtube|Openai 2",
+        "🇫🇷 法国4 | ⬇️ 10.8MB/s|14%|Netflix|Openai 2",
+        "🇫🇷 法国6 | ⬇️ 10.1MB/s|41%|Netflix|Openai 2",
+        "🇫🇷 法国7 | ⬇️ 8.0MB/s|41%|Netflix|Openai 2",
+        "🇦🇺 澳大利亚1 | ⬇️ 7.2MB/s|54%|Netflix|Youtube|Openai|Gemini 2",
+        "🇦🇺 澳大利亚2 | ⬇️ 8.4MB/s|63%|Netflix|Youtube|Openai|Gemini 2",
+        "🇦🇺 澳大利亚3 | ⬇️ 11.8MB/s|0%|Netflix|Disney|Youtube|Openai 2",
+        "🇺🇸 美国10 | ⬇️ 10.4MB/s|41%|Netflix|Openai|Gemini 2",
+        "🇺🇸 美国11 | ⬇️ 14.2MB/s|0%|Netflix|Disney|Openai|Gemini 2",
+        "🇺🇸 美国12 | ⬇️ 4.1MB/s|37%|Netflix|Openai|Gemini 2",
+        "🇺🇸 美国13 | ⬇️ 5.5MB/s|10%|Netflix|Disney|Openai|Gemini 2",
+        "🇺🇸 美国14 | ⬇️ 5.1MB/s|0%|Netflix|Disney|Openai|Gemini 2",
+        "🇺🇸 美国16 | ⬇️ 21.7MB/s|48%|Netflix|Openai 2",
+        "🇺🇸 美国17 | ⬇️ 21.7MB/s|Netflix|Openai|Gemini 2",
+        "🇺🇸 美国18 | ⬇️ 21.1MB/s|Netflix|Openai|Gemini 2",
+        "🇺🇸 美国19 | ⬇️ 13.5MB/s|0%|Netflix|Openai|Gemini 2",
+        "🇺🇸 美国2 | ⬇️ 12.4MB/s|55%|Netflix|Openai 2",
+        "🇺🇸 美国20 | ⬇️ 5.2MB/s|35%|Netflix|Openai 2",
+        "🇺🇸 美国21 | ⬇️ 9.2MB/s|57%|Netflix|Openai 2",
+        "🇺🇸 美国22 | ⬇️ 5.1MB/s|48%|Netflix|Openai 2",
+        "🇺🇸 美国23 | ⬇️ 5.7MB/s|48%|Netflix|Openai 2",
+        "🇺🇸 美国24 | ⬇️ 5.8MB/s|67%|Netflix|Openai|Gemini 2",
+        "🇺🇸 美国25 | ⬇️ 6.2MB/s|61%|Netflix|Openai|Gemini 2",
+        "🇺🇸 美国26 | ⬇️ 4.7MB/s|61%|Netflix|Openai|Gemini 2",
+        "🇺🇸 美国27 | ⬇️ 18.3MB/s|61%|Netflix|Openai|Gemini 2",
+        "🇺🇸 美国28 | ⬇️ 6.9MB/s|Openai 2",
+        "🇺🇸 美国29 | ⬇️ 8.8MB/s|67%|Netflix|Openai|Gemini 2",
+        "🇺🇸 美国3 | ⬇️ 6.1MB/s|37%|Netflix|Openai|Gemini 2",
+        "🇺🇸 美国30 | ⬇️ 10.7MB/s|41%|Netflix|Openai 2",
+        "🇺🇸 美国31 | ⬇️ 11.9MB/s|63%|Netflix|Openai|Gemini 2",
+        "🇺🇸 美国32 | ⬇️ 11.5MB/s|55%|Netflix|Openai|Gemini 2",
+        "🇺🇸 美国33 | ⬇️ 9.0MB/s|40%|Netflix|Youtube|Openai 2",
+        "🇺🇸 美国34 | ⬇️ 16.0MB/s|12%|Netflix|Openai 2",
+        "🇺🇸 美国35 | ⬇️ 6.1MB/s|0%|Disney|Openai|Gemini 2",
+        "🇺🇸 美国36 | ⬇️ 17.0MB/s|40%|Openai 2",
+        "🇺🇸 美国4 | ⬇️ 10.9MB/s|35%|Netflix|Openai 2",
+        "🇺🇸 美国5 | ⬇️ 11.0MB/s|35%|Netflix|Openai|Gemini 2",
+        "🇺🇸 美国6 | ⬇️ 6.7MB/s|0%|Openai 2",
+        "🇺🇸 美国7 | ⬇️ 4.7MB/s|0%|Netflix|Openai|Gemini 2",
+        "🇺🇸 美国9 | ⬇️ 14.5MB/s|55%|Netflix|Openai|Gemini 2",
+        "🇫🇮 芬兰1 | ⬇️ 17.7MB/s|25%|Netflix|Openai 2",
+        "🇬🇧 英国1 | ⬇️ 12.4MB/s|0%|Openai 2",
+        "🇬🇧 英国2 | ⬇️ 15.7MB/s|0%|Netflix|Openai 2",
+        "🇬🇧 英国3 | ⬇️ 4.5MB/s|0%|Netflix|Disney|Openai 2",
+        "🇬🇧 英国4 | ⬇️ 17.2MB/s|Youtube|Openai 2",
+        "🇬🇧 英国5 | ⬇️ 8.8MB/s|50%|Netflix|Disney|Openai 2",
+        "🇬🇧 英国6 | ⬇️ 7.0MB/s|Netflix|Openai 2",
+        "🇬🇧 英国7 | ⬇️ 12.2MB/s|53%|Netflix|Youtube|Openai 2",
+        "🇳🇱 荷兰1 | ⬇️ 13.0MB/s|Openai 2",
+        "🇳🇱 荷兰2 | ⬇️ 12.9MB/s|70%|Netflix|Youtube|Openai 2",
+        "🇳🇱 荷兰3 | ⬇️ 9.2MB/s|40%|Netflix|Disney|Youtube|Openai 2",
+        "🇳🇱 荷兰4 | ⬇️ 6.5MB/s|40%|Netflix|Disney|Openai 2",
+        "🇳🇱 荷兰5 | ⬇️ 12.4MB/s|0%|Netflix|Youtube|Openai 2",
+        "🇳🇱 荷兰6 | ⬇️ 5.1MB/s|48%|Netflix|Openai 2",
+        "🇳🇱 荷兰7 | ⬇️ 6.3MB/s|40%|Netflix|Disney|Youtube|Openai 2",
+        "🇰🇷 韩国1 | ⬇️ 6.6MB/s|63%|Netflix|Youtube|Openai|Gemini 2",
+        "🇰🇷 韩国2 | ⬇️ 4.9MB/s|54%|Netflix|Youtube|Openai|Gemini 2",
+        "🇰🇷 韩国3 | ⬇️ 5.2MB/s|0%|Netflix|Disney|Youtube|Openai|Gemini 2",
+        "🇰🇷 韩国4 | ⬇️ 14.0MB/s|63%|Netflix|Disney 2",
+        "🇰🇷 韩国5 | ⬇️ 6.3MB/s|54%|Netflix|Youtube|Openai 2",
+        "🇭🇰 香港1 | ⬇️ 10.2MB/s|0%|Netflix|Youtube",
+        "🇭🇰 香港22 | ⬇️ 4.2MB/s|12%|Netflix|Disney|Openai 2",
+        "🇭🇰 香港23 | ⬇️ 4.2MB/s|14%|Netflix|Disney|Youtube|Openai 2",
+        "🇭🇰 香港24 | ⬇️ 4.4MB/s|10%|Netflix|Youtube|Openai 2",
+        "🇭🇰 香港25 | ⬇️ 17.8MB/s|0%|Netflix|Disney|Youtube 2",
+        "🇭🇰 香港26 | ⬇️ 24.0MB/s|0%|Youtube 2",
+        "🇭🇰 香港27 | ⬇️ 12.5MB/s|0%|Netflix|Disney|Youtube|Openai 2",
+        "🇭🇰 香港5 | ⬇️ 18.1MB/s|0%|Youtube|Openai|Gemini 2",
+        "🇭🇰 香港6 | ⬇️ 13.2MB/s|20%|Netflix|Disney 2",
+        "其他1-AT | ⬇️ 12.8MB/s|48%|Netflix|Openai 2",
+        "🇲🇾 其他2-MY | ⬇️ 5.4MB/s|0%|Netflix|Youtube|Openai|Gemini 2",
+        "🇲🇾 其他3-MY | ⬇️ 5.0MB/s|0%|Netflix|Youtube|Openai|Gemini 2",
+        "🇪🇸 其他4-ES | ⬇️ 5.1MB/s|31%|Netflix|Openai 2",
+        "其他5-VN | ⬇️ 5.5MB/s|0%|Netflix|Youtube|Openai|Gemini 2",
+        "其他6-MD | ⬇️ 5.4MB/s|48%|Netflix|Openai 2",
+        "其他7-LK | ⬇️ 19.3MB/s|23%|Youtube|Openai|Gemini 2",
+        "🇨🇳 其他8-CN | ⬇️ 31.8MB/s|35%|Netflix 2",
+        "其他9-LV | ⬇️ 5.1MB/s|24%|Netflix|Youtube|Openai 2"
       ]
     },
     {
@@ -1804,97 +4560,243 @@
       "type": "selector",
       "outbounds": [
         "加入我的频道t.me/CMLiussss解锁更多优选节点",
-        "🇨🇦 加拿大1 | ⬇️ 4.3MB/s|Netflix|Disney|Gemini",
-        "🇮🇳 印度1 | ⬇️ 4.9MB/s|28%|Netflix|Youtube|Openai|Gemini",
-        "🇨🇳 台湾1 | ⬇️ 8.3MB/s|16%|Youtube|Openai|Gemini",
-        "🇨🇳 台湾2 | ⬇️ 4.3MB/s|0%|Netflix|Disney|Youtube|Openai|Gemini",
-        "🇩🇪 德国1 | ⬇️ 4.3MB/s|0%|Netflix|Openai",
-        "🇩🇪 德国2 | ⬇️ 4.0MB/s|25%",
-        "🇩🇪 德国3 | ⬇️ 11.8MB/s|25%|Netflix|Openai",
-        "🇩🇪 德国4 | ⬇️ 4.0MB/s|Disney|Openai",
-        "🇸🇬 新加坡1 | ⬇️ 5.2MB/s|Netflix|Youtube|Openai|Gemini",
-        "🇯🇵 日本1 | ⬇️ 9.9MB/s|36%|Netflix|Disney|Youtube|Openai|Gemini",
-        "🇯🇵 日本10 | ⬇️ 23.0MB/s|36%|Netflix|Youtube|Openai|Gemini",
-        "🇯🇵 日本2 | ⬇️ 6.1MB/s|0%|Netflix|Disney|Openai",
-        "🇯🇵 日本3 | ⬇️ 12.0MB/s|15%|Netflix|Disney|Youtube|Openai|Gemini",
-        "🇯🇵 日本4 | ⬇️ 7.5MB/s|15%|Netflix|Disney|Youtube|Openai|Gemini",
-        "🇯🇵 日本5 | ⬇️ 6.9MB/s|76%|Netflix|Youtube|Openai",
-        "🇯🇵 日本7 | ⬇️ 11.7MB/s|36%|Netflix|Disney|Youtube|Openai|Gemini",
-        "🇯🇵 日本8 | ⬇️ 4.9MB/s|20%|Netflix|Youtube",
-        "🇯🇵 日本9 | ⬇️ 7.7MB/s|10%|Netflix|Youtube|Openai|Gemini",
-        "🇫🇷 法国1 | ⬇️ 11.3MB/s|0%|Netflix|Youtube|Openai",
-        "🇦🇺 澳大利亚1 | ⬇️ 5.0MB/s|63%|Netflix|Youtube|Openai|Gemini",
-        "🇦🇺 澳大利亚2 | ⬇️ 4.5MB/s|54%|Netflix|Openai",
-        "🇺🇸 美国10 | ⬇️ 9.9MB/s|6%|Netflix|Disney|Openai|Gemini",
-        "🇺🇸 美国11 | ⬇️ 10.0MB/s|0%|Netflix|Openai|Gemini",
-        "🇺🇸 美国12 | ⬇️ 5.6MB/s|0%|Openai",
-        "🇺🇸 美国3 | ⬇️ 9.2MB/s|55%|Netflix|Openai",
-        "🇺🇸 美国4 | ⬇️ 5.5MB/s|37%|Netflix|Openai",
-        "🇺🇸 美国5 | ⬇️ 5.2MB/s|35%|Netflix|Openai",
-        "🇺🇸 美国6 | ⬇️ 4.7MB/s|0%|Netflix|Disney|Openai|Gemini",
-        "🇺🇸 美国7 | ⬇️ 18.0MB/s|Netflix|Disney|Openai|Gemini",
-        "🇺🇸 美国8 | ⬇️ 4.2MB/s|35%|Netflix|Openai|Gemini",
-        "🇺🇸 美国9 | ⬇️ 5.9MB/s|61%|Netflix|Openai|Gemini",
-        "🇫🇮 芬兰1 | ⬇️ 4.2MB/s|10%|Openai",
-        "🇫🇮 芬兰2 | ⬇️ 4.2MB/s|25%|Openai",
-        "🇳🇱 荷兰1 | ⬇️ 14.4MB/s|0%|Youtube",
-        "🇰🇷 韩国1 | ⬇️ 4.5MB/s|63%|Netflix|Youtube|Openai|Gemini",
-        "🇰🇷 韩国2 | ⬇️ 6.2MB/s|0%|Netflix|Disney|Youtube|Openai|Gemini",
-        "🇰🇷 韩国3 | ⬇️ 11.5MB/s|36%|Netflix|Disney|Youtube|Openai|Gemini",
-        "🇭🇰 香港5 | ⬇️ 7.1MB/s|0%|Netflix|Disney|Youtube",
-        "🇭🇰 香港6 | ⬇️ 6.4MB/s|Openai",
-        "🇭🇰 香港7 | ⬇️ 4.5MB/s|10%|Netflix|Youtube|Openai",
-        "🇭🇰 香港8 | ⬇️ 10.0MB/s|10%|Netflix|Youtube",
-        "🇭🇰 香港9 | ⬇️ 7.6MB/s|20%|Netflix",
-        "🇲🇾 其他1-MY | ⬇️ 8.9MB/s|0%|Netflix|Youtube|Openai|Gemini",
-        "其他2-ID | ⬇️ 4.8MB/s|38%|Netflix|Youtube|Openai|Gemini",
-        "其他3-AT | ⬇️ 6.9MB/s|48%|Openai",
-        "🇨🇦 加拿大1 | ⬇️ 4.3MB/s|Netflix|Disney|Gemini 2",
-        "🇮🇳 印度1 | ⬇️ 4.9MB/s|28%|Netflix|Youtube|Openai|Gemini 2",
-        "🇨🇳 台湾1 | ⬇️ 8.3MB/s|16%|Youtube|Openai|Gemini 2",
-        "🇨🇳 台湾2 | ⬇️ 4.3MB/s|0%|Netflix|Disney|Youtube|Openai|Gemini 2",
-        "🇩🇪 德国1 | ⬇️ 4.3MB/s|0%|Netflix|Openai 2",
-        "🇩🇪 德国2 | ⬇️ 4.0MB/s|25% 2",
-        "🇩🇪 德国3 | ⬇️ 11.8MB/s|25%|Netflix|Openai 2",
-        "🇩🇪 德国4 | ⬇️ 4.0MB/s|Disney|Openai 2",
-        "🇸🇬 新加坡1 | ⬇️ 5.2MB/s|Netflix|Youtube|Openai|Gemini 2",
-        "🇯🇵 日本1 | ⬇️ 9.9MB/s|36%|Netflix|Disney|Youtube|Openai|Gemini 2",
-        "🇯🇵 日本10 | ⬇️ 23.0MB/s|36%|Netflix|Youtube|Openai|Gemini 2",
-        "🇯🇵 日本2 | ⬇️ 6.1MB/s|0%|Netflix|Disney|Openai 2",
-        "🇯🇵 日本3 | ⬇️ 12.0MB/s|15%|Netflix|Disney|Youtube|Openai|Gemini 2",
-        "🇯🇵 日本4 | ⬇️ 7.5MB/s|15%|Netflix|Disney|Youtube|Openai|Gemini 2",
-        "🇯🇵 日本5 | ⬇️ 6.9MB/s|76%|Netflix|Youtube|Openai 2",
-        "🇯🇵 日本7 | ⬇️ 11.7MB/s|36%|Netflix|Disney|Youtube|Openai|Gemini 2",
-        "🇯🇵 日本8 | ⬇️ 4.9MB/s|20%|Netflix|Youtube 2",
-        "🇯🇵 日本9 | ⬇️ 7.7MB/s|10%|Netflix|Youtube|Openai|Gemini 2",
-        "🇫🇷 法国1 | ⬇️ 11.3MB/s|0%|Netflix|Youtube|Openai 2",
-        "🇦🇺 澳大利亚1 | ⬇️ 5.0MB/s|63%|Netflix|Youtube|Openai|Gemini 2",
-        "🇦🇺 澳大利亚2 | ⬇️ 4.5MB/s|54%|Netflix|Openai 2",
-        "🇺🇸 美国10 | ⬇️ 9.9MB/s|6%|Netflix|Disney|Openai|Gemini 2",
-        "🇺🇸 美国11 | ⬇️ 10.0MB/s|0%|Netflix|Openai|Gemini 2",
-        "🇺🇸 美国12 | ⬇️ 5.6MB/s|0%|Openai 2",
-        "🇺🇸 美国3 | ⬇️ 9.2MB/s|55%|Netflix|Openai 2",
-        "🇺🇸 美国4 | ⬇️ 5.5MB/s|37%|Netflix|Openai 2",
-        "🇺🇸 美国5 | ⬇️ 5.2MB/s|35%|Netflix|Openai 2",
-        "🇺🇸 美国6 | ⬇️ 4.7MB/s|0%|Netflix|Disney|Openai|Gemini 2",
-        "🇺🇸 美国7 | ⬇️ 18.0MB/s|Netflix|Disney|Openai|Gemini 2",
-        "🇺🇸 美国8 | ⬇️ 4.2MB/s|35%|Netflix|Openai|Gemini 2",
-        "🇺🇸 美国9 | ⬇️ 5.9MB/s|61%|Netflix|Openai|Gemini 2",
-        "🇫🇮 芬兰1 | ⬇️ 4.2MB/s|10%|Openai 2",
-        "🇫🇮 芬兰2 | ⬇️ 4.2MB/s|25%|Openai 2",
-        "🇳🇱 荷兰1 | ⬇️ 14.4MB/s|0%|Youtube 2",
-        "🇰🇷 韩国1 | ⬇️ 4.5MB/s|63%|Netflix|Youtube|Openai|Gemini 2",
-        "🇰🇷 韩国2 | ⬇️ 6.2MB/s|0%|Netflix|Disney|Youtube|Openai|Gemini 2",
-        "🇰🇷 韩国3 | ⬇️ 11.5MB/s|36%|Netflix|Disney|Youtube|Openai|Gemini 2",
-        "🇭🇰 香港1 | ⬇️ 27.8MB/s|0%|Netflix|Youtube",
-        "🇭🇰 香港5 | ⬇️ 7.1MB/s|0%|Netflix|Disney|Youtube 2",
-        "🇭🇰 香港6 | ⬇️ 6.4MB/s|Openai 2",
-        "🇭🇰 香港7 | ⬇️ 4.5MB/s|10%|Netflix|Youtube|Openai 2",
-        "🇭🇰 香港8 | ⬇️ 10.0MB/s|10%|Netflix|Youtube 2",
-        "🇭🇰 香港9 | ⬇️ 7.6MB/s|20%|Netflix 2",
-        "🇲🇾 其他1-MY | ⬇️ 8.9MB/s|0%|Netflix|Youtube|Openai|Gemini 2",
-        "其他2-ID | ⬇️ 4.8MB/s|38%|Netflix|Youtube|Openai|Gemini 2",
-        "其他3-AT | ⬇️ 6.9MB/s|48%|Openai 2"
+        "🇺🇦 乌克兰1 | ⬇️ 5.1MB/s|39%|Netflix|Youtube|Openai",
+        "🇷🇺 俄罗斯3 | ⬇️ 6.5MB/s|100%|Youtube",
+        "🇷🇺 俄罗斯4 | ⬇️ 9.7MB/s|0%",
+        "🇷🇺 俄罗斯5 | ⬇️ 5.1MB/s|10%",
+        "🇷🇺 俄罗斯6 | ⬇️ 4.5MB/s|100%",
+        "🇷🇺 俄罗斯7 | ⬇️ 4.2MB/s|50%|Netflix|Youtube",
+        "🇨🇦 加拿大1 | ⬇️ 5.0MB/s|28%|Netflix|Youtube|Openai|Gemini",
+        "🇨🇦 加拿大2 | ⬇️ 10.7MB/s|Netflix|Youtube|Openai|Gemini",
+        "🇨🇦 加拿大3 | ⬇️ 8.5MB/s|Netflix|Disney|Gemini",
+        "🇮🇳 印度1 | ⬇️ 5.2MB/s|28%|Netflix|Youtube|Openai|Gemini",
+        "🇮🇳 印度2 | ⬇️ 5.0MB/s|54%|Netflix|Youtube|Openai|Gemini",
+        "🇨🇳 台湾1 | ⬇️ 5.9MB/s|16%|Netflix|Youtube|Openai|Gemini",
+        "🇨🇳 台湾2 | ⬇️ 4.9MB/s|0%|Netflix|Disney|Youtube|Openai|Gemini",
+        "🇨🇳 台湾3 | ⬇️ 5.2MB/s|0%|Netflix|Disney|Youtube|Openai|Gemini",
+        "🇨🇳 台湾4 | ⬇️ 28.8MB/s|16%|Netflix|Youtube|Openai|Gemini",
+        "🇨🇳 台湾5 | ⬇️ 14.5MB/s|16%|Netflix|Youtube|Openai|Gemini",
+        "🇨🇳 台湾6 | ⬇️ 12.7MB/s|36%|Netflix|Youtube|Openai|Gemini",
+        "🇩🇪 德国1 | ⬇️ 11.4MB/s|0%|Netflix|Disney|Openai",
+        "🇩🇪 德国2 | ⬇️ 4.6MB/s|41%|Netflix|Disney|Youtube|Openai",
+        "🇩🇪 德国3 | ⬇️ 11.1MB/s|47%|Openai",
+        "🇩🇪 德国4 | ⬇️ 14.0MB/s|25%|Netflix|Youtube|Openai",
+        "🇩🇪 德国5 | ⬇️ 16.7MB/s|25%|Netflix|Openai",
+        "🇩🇪 德国6 | ⬇️ 4.6MB/s|45%|Netflix|Youtube|Openai",
+        "🇸🇬 新加坡1 | ⬇️ 4.6MB/s|53%|Netflix|Disney|Youtube|Openai|Gemini",
+        "🇸🇬 新加坡2 | ⬇️ 5.6MB/s|52%|Netflix|Disney|Youtube|Openai|Gemini",
+        "🇸🇬 新加坡3 | ⬇️ 9.4MB/s|Netflix|Disney|Youtube|Openai|Gemini",
+        "🇸🇬 新加坡4 | ⬇️ 5.8MB/s|Netflix|Disney|Youtube|Openai|Gemini",
+        "🇸🇬 新加坡5 | ⬇️ 8.2MB/s|Netflix|Disney|Youtube|Openai|Gemini",
+        "🇸🇬 新加坡6 | ⬇️ 22.6MB/s|Netflix|Youtube|Openai|Gemini",
+        "🇸🇬 新加坡7 | ⬇️ 8.1MB/s|35%|Netflix|Openai",
+        "🇸🇬 新加坡8 | ⬇️ 5.3MB/s|35%|Netflix|Openai",
+        "🇸🇬 新加坡9 | ⬇️ 7.4MB/s|0%|Youtube|Openai|Gemini",
+        "🇯🇵 日本1 | ⬇️ 12.5MB/s|15%|Netflix|Disney|Youtube|Openai|Gemini",
+        "🇯🇵 日本2 | ⬇️ 5.5MB/s|0%|Netflix|Disney|Openai",
+        "🇯🇵 日本3 | ⬇️ 6.8MB/s|20%|Netflix|Youtube|Openai|Gemini",
+        "🇯🇵 日本4 | ⬇️ 4.4MB/s|52%|Netflix|Disney|Youtube|Openai|Gemini",
+        "🇯🇵 日本5 | ⬇️ 5.1MB/s|10%|Netflix|Disney|Youtube|Openai|Gemini",
+        "🇯🇵 日本6 | ⬇️ 6.6MB/s|76%|Netflix|Openai",
+        "🇯🇵 日本7 | ⬇️ 9.6MB/s|16%|Netflix|Disney|Youtube|Openai|Gemini",
+        "🇯🇵 日本8 | ⬇️ 10.1MB/s|10%|Netflix|Youtube|Openai",
+        "🇯🇵 日本9 | ⬇️ 19.5MB/s|10%|Netflix|Youtube|Openai|Gemini",
+        "🇫🇷 法国3 | ⬇️ 11.7MB/s|0%|Netflix|Youtube|Openai",
+        "🇫🇷 法国4 | ⬇️ 10.8MB/s|14%|Netflix|Openai",
+        "🇫🇷 法国6 | ⬇️ 10.1MB/s|41%|Netflix|Openai",
+        "🇫🇷 法国7 | ⬇️ 8.0MB/s|41%|Netflix|Openai",
+        "🇦🇺 澳大利亚1 | ⬇️ 7.2MB/s|54%|Netflix|Youtube|Openai|Gemini",
+        "🇦🇺 澳大利亚2 | ⬇️ 8.4MB/s|63%|Netflix|Youtube|Openai|Gemini",
+        "🇦🇺 澳大利亚3 | ⬇️ 11.8MB/s|0%|Netflix|Disney|Youtube|Openai",
+        "🇺🇸 美国10 | ⬇️ 10.4MB/s|41%|Netflix|Openai|Gemini",
+        "🇺🇸 美国11 | ⬇️ 14.2MB/s|0%|Netflix|Disney|Openai|Gemini",
+        "🇺🇸 美国12 | ⬇️ 4.1MB/s|37%|Netflix|Openai|Gemini",
+        "🇺🇸 美国13 | ⬇️ 5.5MB/s|10%|Netflix|Disney|Openai|Gemini",
+        "🇺🇸 美国14 | ⬇️ 5.1MB/s|0%|Netflix|Disney|Openai|Gemini",
+        "🇺🇸 美国16 | ⬇️ 21.7MB/s|48%|Netflix|Openai",
+        "🇺🇸 美国17 | ⬇️ 21.7MB/s|Netflix|Openai|Gemini",
+        "🇺🇸 美国18 | ⬇️ 21.1MB/s|Netflix|Openai|Gemini",
+        "🇺🇸 美国19 | ⬇️ 13.5MB/s|0%|Netflix|Openai|Gemini",
+        "🇺🇸 美国2 | ⬇️ 12.4MB/s|55%|Netflix|Openai",
+        "🇺🇸 美国20 | ⬇️ 5.2MB/s|35%|Netflix|Openai",
+        "🇺🇸 美国21 | ⬇️ 9.2MB/s|57%|Netflix|Openai",
+        "🇺🇸 美国22 | ⬇️ 5.1MB/s|48%|Netflix|Openai",
+        "🇺🇸 美国23 | ⬇️ 5.7MB/s|48%|Netflix|Openai",
+        "🇺🇸 美国24 | ⬇️ 5.8MB/s|67%|Netflix|Openai|Gemini",
+        "🇺🇸 美国25 | ⬇️ 6.2MB/s|61%|Netflix|Openai|Gemini",
+        "🇺🇸 美国26 | ⬇️ 4.7MB/s|61%|Netflix|Openai|Gemini",
+        "🇺🇸 美国27 | ⬇️ 18.3MB/s|61%|Netflix|Openai|Gemini",
+        "🇺🇸 美国28 | ⬇️ 6.9MB/s|Openai",
+        "🇺🇸 美国29 | ⬇️ 8.8MB/s|67%|Netflix|Openai|Gemini",
+        "🇺🇸 美国3 | ⬇️ 6.1MB/s|37%|Netflix|Openai|Gemini",
+        "🇺🇸 美国30 | ⬇️ 10.7MB/s|41%|Netflix|Openai",
+        "🇺🇸 美国31 | ⬇️ 11.9MB/s|63%|Netflix|Openai|Gemini",
+        "🇺🇸 美国32 | ⬇️ 11.5MB/s|55%|Netflix|Openai|Gemini",
+        "🇺🇸 美国33 | ⬇️ 9.0MB/s|40%|Netflix|Youtube|Openai",
+        "🇺🇸 美国34 | ⬇️ 16.0MB/s|12%|Netflix|Openai",
+        "🇺🇸 美国35 | ⬇️ 6.1MB/s|0%|Disney|Openai|Gemini",
+        "🇺🇸 美国36 | ⬇️ 17.0MB/s|40%|Openai",
+        "🇺🇸 美国4 | ⬇️ 10.9MB/s|35%|Netflix|Openai",
+        "🇺🇸 美国5 | ⬇️ 11.0MB/s|35%|Netflix|Openai|Gemini",
+        "🇺🇸 美国6 | ⬇️ 6.7MB/s|0%|Openai",
+        "🇺🇸 美国7 | ⬇️ 4.7MB/s|0%|Netflix|Openai|Gemini",
+        "🇺🇸 美国9 | ⬇️ 14.5MB/s|55%|Netflix|Openai|Gemini",
+        "🇫🇮 芬兰1 | ⬇️ 17.7MB/s|25%|Netflix|Openai",
+        "🇬🇧 英国1 | ⬇️ 12.4MB/s|0%|Openai",
+        "🇬🇧 英国2 | ⬇️ 15.7MB/s|0%|Netflix|Openai",
+        "🇬🇧 英国3 | ⬇️ 4.5MB/s|0%|Netflix|Disney|Openai",
+        "🇬🇧 英国4 | ⬇️ 17.2MB/s|Youtube|Openai",
+        "🇬🇧 英国5 | ⬇️ 8.8MB/s|50%|Netflix|Disney|Openai",
+        "🇬🇧 英国6 | ⬇️ 7.0MB/s|Netflix|Openai",
+        "🇬🇧 英国7 | ⬇️ 12.2MB/s|53%|Netflix|Youtube|Openai",
+        "🇳🇱 荷兰1 | ⬇️ 13.0MB/s|Openai",
+        "🇳🇱 荷兰2 | ⬇️ 12.9MB/s|70%|Netflix|Youtube|Openai",
+        "🇳🇱 荷兰3 | ⬇️ 9.2MB/s|40%|Netflix|Disney|Youtube|Openai",
+        "🇳🇱 荷兰4 | ⬇️ 6.5MB/s|40%|Netflix|Disney|Openai",
+        "🇳🇱 荷兰5 | ⬇️ 12.4MB/s|0%|Netflix|Youtube|Openai",
+        "🇳🇱 荷兰6 | ⬇️ 5.1MB/s|48%|Netflix|Openai",
+        "🇳🇱 荷兰7 | ⬇️ 6.3MB/s|40%|Netflix|Disney|Youtube|Openai",
+        "🇰🇷 韩国1 | ⬇️ 6.6MB/s|63%|Netflix|Youtube|Openai|Gemini",
+        "🇰🇷 韩国2 | ⬇️ 4.9MB/s|54%|Netflix|Youtube|Openai|Gemini",
+        "🇰🇷 韩国3 | ⬇️ 5.2MB/s|0%|Netflix|Disney|Youtube|Openai|Gemini",
+        "🇰🇷 韩国4 | ⬇️ 14.0MB/s|63%|Netflix|Disney",
+        "🇰🇷 韩国5 | ⬇️ 6.3MB/s|54%|Netflix|Youtube|Openai",
+        "🇭🇰 香港22 | ⬇️ 4.2MB/s|12%|Netflix|Disney|Openai",
+        "🇭🇰 香港23 | ⬇️ 4.2MB/s|14%|Netflix|Disney|Youtube|Openai",
+        "🇭🇰 香港24 | ⬇️ 4.4MB/s|10%|Netflix|Youtube|Openai",
+        "🇭🇰 香港25 | ⬇️ 17.8MB/s|0%|Netflix|Disney|Youtube",
+        "🇭🇰 香港26 | ⬇️ 24.0MB/s|0%|Youtube",
+        "🇭🇰 香港27 | ⬇️ 12.5MB/s|0%|Netflix|Disney|Youtube|Openai",
+        "🇭🇰 香港5 | ⬇️ 18.1MB/s|0%|Youtube|Openai|Gemini",
+        "🇭🇰 香港6 | ⬇️ 13.2MB/s|20%|Netflix|Disney",
+        "其他1-AT | ⬇️ 12.8MB/s|48%|Netflix|Openai",
+        "🇲🇾 其他2-MY | ⬇️ 5.4MB/s|0%|Netflix|Youtube|Openai|Gemini",
+        "🇲🇾 其他3-MY | ⬇️ 5.0MB/s|0%|Netflix|Youtube|Openai|Gemini",
+        "🇪🇸 其他4-ES | ⬇️ 5.1MB/s|31%|Netflix|Openai",
+        "其他5-VN | ⬇️ 5.5MB/s|0%|Netflix|Youtube|Openai|Gemini",
+        "其他6-MD | ⬇️ 5.4MB/s|48%|Netflix|Openai",
+        "其他7-LK | ⬇️ 19.3MB/s|23%|Youtube|Openai|Gemini",
+        "🇨🇳 其他8-CN | ⬇️ 31.8MB/s|35%|Netflix",
+        "其他9-LV | ⬇️ 5.1MB/s|24%|Netflix|Youtube|Openai",
+        "🇺🇦 乌克兰1 | ⬇️ 5.1MB/s|39%|Netflix|Youtube|Openai 2",
+        "🇷🇺 俄罗斯3 | ⬇️ 6.5MB/s|100%|Youtube 2",
+        "🇷🇺 俄罗斯4 | ⬇️ 9.7MB/s|0% 2",
+        "🇷🇺 俄罗斯5 | ⬇️ 5.1MB/s|10% 2",
+        "🇷🇺 俄罗斯6 | ⬇️ 4.5MB/s|100% 2",
+        "🇷🇺 俄罗斯7 | ⬇️ 4.2MB/s|50%|Netflix|Youtube 2",
+        "🇨🇦 加拿大1 | ⬇️ 5.0MB/s|28%|Netflix|Youtube|Openai|Gemini 2",
+        "🇨🇦 加拿大2 | ⬇️ 10.7MB/s|Netflix|Youtube|Openai|Gemini 2",
+        "🇨🇦 加拿大3 | ⬇️ 8.5MB/s|Netflix|Disney|Gemini 2",
+        "🇮🇳 印度1 | ⬇️ 5.2MB/s|28%|Netflix|Youtube|Openai|Gemini 2",
+        "🇮🇳 印度2 | ⬇️ 5.0MB/s|54%|Netflix|Youtube|Openai|Gemini 2",
+        "🇨🇳 台湾1 | ⬇️ 5.9MB/s|16%|Netflix|Youtube|Openai|Gemini 2",
+        "🇨🇳 台湾2 | ⬇️ 4.9MB/s|0%|Netflix|Disney|Youtube|Openai|Gemini 2",
+        "🇨🇳 台湾3 | ⬇️ 5.2MB/s|0%|Netflix|Disney|Youtube|Openai|Gemini 2",
+        "🇨🇳 台湾4 | ⬇️ 28.8MB/s|16%|Netflix|Youtube|Openai|Gemini 2",
+        "🇨🇳 台湾5 | ⬇️ 14.5MB/s|16%|Netflix|Youtube|Openai|Gemini 2",
+        "🇨🇳 台湾6 | ⬇️ 12.7MB/s|36%|Netflix|Youtube|Openai|Gemini 2",
+        "🇩🇪 德国1 | ⬇️ 11.4MB/s|0%|Netflix|Disney|Openai 2",
+        "🇩🇪 德国2 | ⬇️ 4.6MB/s|41%|Netflix|Disney|Youtube|Openai 2",
+        "🇩🇪 德国3 | ⬇️ 11.1MB/s|47%|Openai 2",
+        "🇩🇪 德国4 | ⬇️ 14.0MB/s|25%|Netflix|Youtube|Openai 2",
+        "🇩🇪 德国5 | ⬇️ 16.7MB/s|25%|Netflix|Openai 2",
+        "🇩🇪 德国6 | ⬇️ 4.6MB/s|45%|Netflix|Youtube|Openai 2",
+        "🇸🇬 新加坡1 | ⬇️ 4.6MB/s|53%|Netflix|Disney|Youtube|Openai|Gemini 2",
+        "🇸🇬 新加坡2 | ⬇️ 5.6MB/s|52%|Netflix|Disney|Youtube|Openai|Gemini 2",
+        "🇸🇬 新加坡3 | ⬇️ 9.4MB/s|Netflix|Disney|Youtube|Openai|Gemini 2",
+        "🇸🇬 新加坡4 | ⬇️ 5.8MB/s|Netflix|Disney|Youtube|Openai|Gemini 2",
+        "🇸🇬 新加坡5 | ⬇️ 8.2MB/s|Netflix|Disney|Youtube|Openai|Gemini 2",
+        "🇸🇬 新加坡6 | ⬇️ 22.6MB/s|Netflix|Youtube|Openai|Gemini 2",
+        "🇸🇬 新加坡7 | ⬇️ 8.1MB/s|35%|Netflix|Openai 2",
+        "🇸🇬 新加坡8 | ⬇️ 5.3MB/s|35%|Netflix|Openai 2",
+        "🇸🇬 新加坡9 | ⬇️ 7.4MB/s|0%|Youtube|Openai|Gemini 2",
+        "🇯🇵 日本1 | ⬇️ 12.5MB/s|15%|Netflix|Disney|Youtube|Openai|Gemini 2",
+        "🇯🇵 日本2 | ⬇️ 5.5MB/s|0%|Netflix|Disney|Openai 2",
+        "🇯🇵 日本3 | ⬇️ 6.8MB/s|20%|Netflix|Youtube|Openai|Gemini 2",
+        "🇯🇵 日本4 | ⬇️ 4.4MB/s|52%|Netflix|Disney|Youtube|Openai|Gemini 2",
+        "🇯🇵 日本5 | ⬇️ 5.1MB/s|10%|Netflix|Disney|Youtube|Openai|Gemini 2",
+        "🇯🇵 日本6 | ⬇️ 6.6MB/s|76%|Netflix|Openai 2",
+        "🇯🇵 日本7 | ⬇️ 9.6MB/s|16%|Netflix|Disney|Youtube|Openai|Gemini 2",
+        "🇯🇵 日本8 | ⬇️ 10.1MB/s|10%|Netflix|Youtube|Openai 2",
+        "🇯🇵 日本9 | ⬇️ 19.5MB/s|10%|Netflix|Youtube|Openai|Gemini 2",
+        "🇫🇷 法国3 | ⬇️ 11.7MB/s|0%|Netflix|Youtube|Openai 2",
+        "🇫🇷 法国4 | ⬇️ 10.8MB/s|14%|Netflix|Openai 2",
+        "🇫🇷 法国6 | ⬇️ 10.1MB/s|41%|Netflix|Openai 2",
+        "🇫🇷 法国7 | ⬇️ 8.0MB/s|41%|Netflix|Openai 2",
+        "🇦🇺 澳大利亚1 | ⬇️ 7.2MB/s|54%|Netflix|Youtube|Openai|Gemini 2",
+        "🇦🇺 澳大利亚2 | ⬇️ 8.4MB/s|63%|Netflix|Youtube|Openai|Gemini 2",
+        "🇦🇺 澳大利亚3 | ⬇️ 11.8MB/s|0%|Netflix|Disney|Youtube|Openai 2",
+        "🇺🇸 美国10 | ⬇️ 10.4MB/s|41%|Netflix|Openai|Gemini 2",
+        "🇺🇸 美国11 | ⬇️ 14.2MB/s|0%|Netflix|Disney|Openai|Gemini 2",
+        "🇺🇸 美国12 | ⬇️ 4.1MB/s|37%|Netflix|Openai|Gemini 2",
+        "🇺🇸 美国13 | ⬇️ 5.5MB/s|10%|Netflix|Disney|Openai|Gemini 2",
+        "🇺🇸 美国14 | ⬇️ 5.1MB/s|0%|Netflix|Disney|Openai|Gemini 2",
+        "🇺🇸 美国16 | ⬇️ 21.7MB/s|48%|Netflix|Openai 2",
+        "🇺🇸 美国17 | ⬇️ 21.7MB/s|Netflix|Openai|Gemini 2",
+        "🇺🇸 美国18 | ⬇️ 21.1MB/s|Netflix|Openai|Gemini 2",
+        "🇺🇸 美国19 | ⬇️ 13.5MB/s|0%|Netflix|Openai|Gemini 2",
+        "🇺🇸 美国2 | ⬇️ 12.4MB/s|55%|Netflix|Openai 2",
+        "🇺🇸 美国20 | ⬇️ 5.2MB/s|35%|Netflix|Openai 2",
+        "🇺🇸 美国21 | ⬇️ 9.2MB/s|57%|Netflix|Openai 2",
+        "🇺🇸 美国22 | ⬇️ 5.1MB/s|48%|Netflix|Openai 2",
+        "🇺🇸 美国23 | ⬇️ 5.7MB/s|48%|Netflix|Openai 2",
+        "🇺🇸 美国24 | ⬇️ 5.8MB/s|67%|Netflix|Openai|Gemini 2",
+        "🇺🇸 美国25 | ⬇️ 6.2MB/s|61%|Netflix|Openai|Gemini 2",
+        "🇺🇸 美国26 | ⬇️ 4.7MB/s|61%|Netflix|Openai|Gemini 2",
+        "🇺🇸 美国27 | ⬇️ 18.3MB/s|61%|Netflix|Openai|Gemini 2",
+        "🇺🇸 美国28 | ⬇️ 6.9MB/s|Openai 2",
+        "🇺🇸 美国29 | ⬇️ 8.8MB/s|67%|Netflix|Openai|Gemini 2",
+        "🇺🇸 美国3 | ⬇️ 6.1MB/s|37%|Netflix|Openai|Gemini 2",
+        "🇺🇸 美国30 | ⬇️ 10.7MB/s|41%|Netflix|Openai 2",
+        "🇺🇸 美国31 | ⬇️ 11.9MB/s|63%|Netflix|Openai|Gemini 2",
+        "🇺🇸 美国32 | ⬇️ 11.5MB/s|55%|Netflix|Openai|Gemini 2",
+        "🇺🇸 美国33 | ⬇️ 9.0MB/s|40%|Netflix|Youtube|Openai 2",
+        "🇺🇸 美国34 | ⬇️ 16.0MB/s|12%|Netflix|Openai 2",
+        "🇺🇸 美国35 | ⬇️ 6.1MB/s|0%|Disney|Openai|Gemini 2",
+        "🇺🇸 美国36 | ⬇️ 17.0MB/s|40%|Openai 2",
+        "🇺🇸 美国4 | ⬇️ 10.9MB/s|35%|Netflix|Openai 2",
+        "🇺🇸 美国5 | ⬇️ 11.0MB/s|35%|Netflix|Openai|Gemini 2",
+        "🇺🇸 美国6 | ⬇️ 6.7MB/s|0%|Openai 2",
+        "🇺🇸 美国7 | ⬇️ 4.7MB/s|0%|Netflix|Openai|Gemini 2",
+        "🇺🇸 美国9 | ⬇️ 14.5MB/s|55%|Netflix|Openai|Gemini 2",
+        "🇫🇮 芬兰1 | ⬇️ 17.7MB/s|25%|Netflix|Openai 2",
+        "🇬🇧 英国1 | ⬇️ 12.4MB/s|0%|Openai 2",
+        "🇬🇧 英国2 | ⬇️ 15.7MB/s|0%|Netflix|Openai 2",
+        "🇬🇧 英国3 | ⬇️ 4.5MB/s|0%|Netflix|Disney|Openai 2",
+        "🇬🇧 英国4 | ⬇️ 17.2MB/s|Youtube|Openai 2",
+        "🇬🇧 英国5 | ⬇️ 8.8MB/s|50%|Netflix|Disney|Openai 2",
+        "🇬🇧 英国6 | ⬇️ 7.0MB/s|Netflix|Openai 2",
+        "🇬🇧 英国7 | ⬇️ 12.2MB/s|53%|Netflix|Youtube|Openai 2",
+        "🇳🇱 荷兰1 | ⬇️ 13.0MB/s|Openai 2",
+        "🇳🇱 荷兰2 | ⬇️ 12.9MB/s|70%|Netflix|Youtube|Openai 2",
+        "🇳🇱 荷兰3 | ⬇️ 9.2MB/s|40%|Netflix|Disney|Youtube|Openai 2",
+        "🇳🇱 荷兰4 | ⬇️ 6.5MB/s|40%|Netflix|Disney|Openai 2",
+        "🇳🇱 荷兰5 | ⬇️ 12.4MB/s|0%|Netflix|Youtube|Openai 2",
+        "🇳🇱 荷兰6 | ⬇️ 5.1MB/s|48%|Netflix|Openai 2",
+        "🇳🇱 荷兰7 | ⬇️ 6.3MB/s|40%|Netflix|Disney|Youtube|Openai 2",
+        "🇰🇷 韩国1 | ⬇️ 6.6MB/s|63%|Netflix|Youtube|Openai|Gemini 2",
+        "🇰🇷 韩国2 | ⬇️ 4.9MB/s|54%|Netflix|Youtube|Openai|Gemini 2",
+        "🇰🇷 韩国3 | ⬇️ 5.2MB/s|0%|Netflix|Disney|Youtube|Openai|Gemini 2",
+        "🇰🇷 韩国4 | ⬇️ 14.0MB/s|63%|Netflix|Disney 2",
+        "🇰🇷 韩国5 | ⬇️ 6.3MB/s|54%|Netflix|Youtube|Openai 2",
+        "🇭🇰 香港1 | ⬇️ 10.2MB/s|0%|Netflix|Youtube",
+        "🇭🇰 香港22 | ⬇️ 4.2MB/s|12%|Netflix|Disney|Openai 2",
+        "🇭🇰 香港23 | ⬇️ 4.2MB/s|14%|Netflix|Disney|Youtube|Openai 2",
+        "🇭🇰 香港24 | ⬇️ 4.4MB/s|10%|Netflix|Youtube|Openai 2",
+        "🇭🇰 香港25 | ⬇️ 17.8MB/s|0%|Netflix|Disney|Youtube 2",
+        "🇭🇰 香港26 | ⬇️ 24.0MB/s|0%|Youtube 2",
+        "🇭🇰 香港27 | ⬇️ 12.5MB/s|0%|Netflix|Disney|Youtube|Openai 2",
+        "🇭🇰 香港5 | ⬇️ 18.1MB/s|0%|Youtube|Openai|Gemini 2",
+        "🇭🇰 香港6 | ⬇️ 13.2MB/s|20%|Netflix|Disney 2",
+        "其他1-AT | ⬇️ 12.8MB/s|48%|Netflix|Openai 2",
+        "🇲🇾 其他2-MY | ⬇️ 5.4MB/s|0%|Netflix|Youtube|Openai|Gemini 2",
+        "🇲🇾 其他3-MY | ⬇️ 5.0MB/s|0%|Netflix|Youtube|Openai|Gemini 2",
+        "🇪🇸 其他4-ES | ⬇️ 5.1MB/s|31%|Netflix|Openai 2",
+        "其他5-VN | ⬇️ 5.5MB/s|0%|Netflix|Youtube|Openai|Gemini 2",
+        "其他6-MD | ⬇️ 5.4MB/s|48%|Netflix|Openai 2",
+        "其他7-LK | ⬇️ 19.3MB/s|23%|Youtube|Openai|Gemini 2",
+        "🇨🇳 其他8-CN | ⬇️ 31.8MB/s|35%|Netflix 2",
+        "其他9-LV | ⬇️ 5.1MB/s|24%|Netflix|Youtube|Openai 2"
       ]
     },
     {
