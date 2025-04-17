@@ -389,47 +389,8 @@ proxies:
   password: "1f9c2a3e-3386-4b6d-a731-893b44b84e5b"
   ip-version: "dual"
   cipher: "chacha20-ietf-poly1305"
-- {name: "🇷🇺 俄罗斯3 | ⬇️ 14.9MB/s|0%|Youtube 2 [cml]", server: "176.32.35.226", port: 62003, type: "hysteria", auth_str: "dongtaiwang.com", auth-str: "dongtaiwang.com", up: "1000 Mbps", down: "1000 Mbps", fast-open: false, protocol: "none", skip-cert-verify: true, alpn: ["h3"]}
-- {name: "🇷🇺 俄罗斯_5 [dcj]", type: "hysteria", server: "185.22.155.71", port: "10803", auth_str: "dongtaiwang.com", alpn: ["h3"], sni: "www.bing.com", skip-cert-verify: true, up: "11 Mbps", down: "55 Mbps", client-fingerprint: "chrome", auth-str: "dongtaiwang.com"}
 - {name: "🇷🇺 俄罗斯_1 [dcj]", type: "hysteria", server: "46.17.41.174", port: "10469", ports: "10469", auth_str: "dongtaiwang.com", up: "1000", down: "1000", fast-open: true, protocol: "udp", sni: "apple.com", skip-cert-verify: true, alpn: ["h3"], client-fingerprint: "chrome", auth-str: "dongtaiwang.com"}
-- name: "🇯🇵日本1 | ⬇️ 1.4MB/s [tk1]"
-  type: "vmess"
-  server: "5ed696c1-sutj40-t907cr-1c1mr.cm5.p5pv.com"
-  port: 17233
-  uuid: "a12640d0-e2ad-11ef-8f5b-f23c913c8d2b"
-  network: "tcp"
-  tls: false
-  ip-version: "dual"
-  alterId: 0
-  cipher: "auto"
-- name: "🇯🇵日本2 | ⬇️ 1.4MB/s [tk1]"
-  type: "vmess"
-  server: "929e4f8a-sutj40-sutgau-1r62f.cm5.p5pv.com"
-  port: 17233
-  uuid: "154b0bf8-f9a7-11ee-a218-f23c91cfbbc9"
-  network: "tcp"
-  tls: false
-  ip-version: "dual"
-  alterId: 0
-  cipher: "auto"
-- {name: "🇺🇸 美国_2 [dcj]", type: "hysteria", server: "208.87.243.151", port: "17549", auth_str: "dongtaiwang.com", alpn: ["h3"], sni: "www.bing.com", skip-cert-verify: true, up: "11 Mbps", down: "55 Mbps", client-fingerprint: "chrome", auth-str: "dongtaiwang.com"}
-- name: "🇺🇸美国6 | ⬇️ 1.4MB/s [tk1]"
-  type: "trojan"
-  server: "sanjose01.852224.ggff.net"
-  port: 443
-  network: "ws"
-  tls: true
-  password: "89c1aea7-4d0d-4013-b663-0f94a3e6bdbd"
-  sni: "sanjose01.852224.ggff.net"
-  alpn:
-  - "http/1.1"
-  skip-cert-verify: false
-  client-fingerprint: "chrome"
-  ws-opts:
-    path: "/T5yZBrY2Qkg2cThJQeJb"
-    headers: {}
-  ip-version: "dual"
-- name: "🇺🇸美国7 | ⬇️ 2.1MB/s [tk1]"
+- name: "🇺🇸美国4 | ⬇️ 1.8MB/s [tk1]"
   type: "trojan"
   server: "1p.890689.xyz"
   port: 443
@@ -445,45 +406,79 @@ proxies:
     path: "/lXENb74xF4ylXngZ"
     headers: {}
   ip-version: "dual"
-- name: "🇬🇧英国3 | ⬇️ 1.1MB%2Fs [tk1]"
-  type: "ss"
-  server: "85.210.120.237"
-  port: 443
+- name: "🇸🇬新加坡1 | ⬇️ 1.5MB/s [tk1]"
+  type: "vmess"
+  server: "183.236.51.38"
+  port: 41902
+  uuid: "418048af-a293-4b99-9b0c-98ca3580dd24"
+  network: "tcp"
   tls: false
-  password: "Bog0ELmMM9DSxDdQ"
+  ip-version: "dual"
+  alterId: 64
+  cipher: "auto"
+- name: "🇭🇰香港2 | ⬇️ 3.8MB%2Fs [tk1]"
+  type: "ss"
+  server: "free.2weradf.xyz"
+  port: 36143
+  tls: false
+  password: "c0754f7b-e82b-4b65-8f57-0043a393132b"
   ip-version: "dual"
   cipher: "chacha20-ietf-poly1305"
-- {alterId: "0", cipher: "auto", name: "🇺🇸 美国_4 [dcj]", network: "tcp", port: "43674", server: "120.234.102.229", skip-cert-verify: true, tls: false, type: "vmess", uuid: "418048af-a293-4b99-9b0c-98ca3580dd24", ws-headers: {Host: "120.234.102.229"}, ws-path: "/", client-fingerprint: "chrome"}
-- name: "🌀其他4-SE | ⬇️ 2.0MB/s [tk1]"
-  type: "trojan"
-  server: "51.21.78.88"
-  port: 22222
+- name: "🇬🇧英国2 | ⬇️ 1.1MB%2Fs [tk1]"
+  type: "ss"
+  server: "free.2weradf.xyz"
+  port: 36271
+  tls: false
+  password: "c0754f7b-e82b-4b65-8f57-0043a393132b"
+  ip-version: "dual"
+  cipher: "chacha20-ietf-poly1305"
+- name: "🌀其他3-TR | ⬇️ 2.8MB%2Fs [tk1]"
+  type: "ss"
+  server: "free.2weradf.xyz"
+  port: 36571
+  tls: false
+  password: "c0754f7b-e82b-4b65-8f57-0043a393132b"
+  ip-version: "dual"
+  cipher: "chacha20-ietf-poly1305"
+- name: "🇺🇸美国6 | ⬇️ 1.5MB/s [tk1]"
+  type: "vmess"
+  server: "157.148.96.92"
+  port: 5228
+  uuid: "6ada1622-e018-11ec-bb74-f23c9164ca5d"
   network: "tcp"
-  tls: true
-  password: "telegram-id-privatevpns"
-  sni: "trojan.burgerip.co.uk"
-  alpn:
-  - "http/1.1"
-  skip-cert-verify: false
-  client-fingerprint: "chrome"
+  tls: false
   ip-version: "dual"
-- name: "🇺🇸美国11 | ⬇️ 1.1MB/s [tk1]"
-  type: "trojan"
-  server: "172.67.210.210"
-  port: 443
+  alterId: 0
+  cipher: "auto"
+- name: "🌀其他4-ID | ⬇️ 4.8MB%2Fs [tk1]"
+  type: "ss"
+  server: "free.2weradf.xyz"
+  port: 36677
+  tls: false
+  password: "c0754f7b-e82b-4b65-8f57-0043a393132b"
+  ip-version: "dual"
+  cipher: "chacha20-ietf-poly1305"
+- name: "🇺🇸美国7 | ⬇️ 1.0MB/s [tk1]"
+  type: "vmess"
+  server: "v8.heduian.link"
+  port: 30808
+  uuid: "cbb3f877-d1fb-344c-87a9-d153bffd5484"
   network: "ws"
-  tls: true
-  password: "89c1aea7-4d0d-4013-b663-0f94a3e6bdbd"
-  sni: "sanjose06.852224.ggff.net"
-  alpn:
-  - "http/1.1"
-  skip-cert-verify: false
-  client-fingerprint: "chrome"
-  ws-opts:
-    path: "/T5yZBrY2Qkg2cThJQeJb"
-    headers: {}
+  tls: false
   ip-version: "dual"
-- name: "🇺🇸美国13 | ⬇️ 4.1MB/s [tk1]"
+  alterId: 2
+  cipher: "auto"
+- name: "🇺🇸美国15 | ⬇️ 3.4MB/s [tk1]"
+  type: "vmess"
+  server: "0ecc8d37-sux8g0-swbudg-1mzwj.cu.plebai.net"
+  port: 5229
+  uuid: "a203d80e-10fe-11ef-88a6-f23c9164ca5d"
+  network: "tcp"
+  tls: false
+  ip-version: "dual"
+  alterId: 0
+  cipher: "auto"
+- name: "🇺🇸美国16 | ⬇️ 6.4MB/s [tk1]"
   type: "trojan"
   server: "104.21.21.226"
   port: 443
@@ -499,138 +494,148 @@ proxies:
     path: "/lXENb74xF4ylXngZ"
     headers: {}
   ip-version: "dual"
-- name: "🇺🇸美国14 | ⬇️ 1.1MB/s [tk1]"
-  type: "trojan"
-  server: "104.21.23.115"
-  port: 443
+- name: "🇺🇸美国18 | ⬇️ 3.8MB/s [tk1]"
+  type: "vmess"
+  server: "v29.heduian.link"
+  port: 30829
+  uuid: "cbb3f877-d1fb-344c-87a9-d153bffd5484"
   network: "ws"
-  tls: true
-  password: "89c1aea7-4d0d-4013-b663-0f94a3e6bdbd"
-  sni: "sanjose06.852224.ggff.net"
-  alpn:
-  - "http/1.1"
-  skip-cert-verify: false
-  client-fingerprint: "chrome"
-  ws-opts:
-    path: "/T5yZBrY2Qkg2cThJQeJb"
-    headers: {}
-  ip-version: "dual"
-- name: "🇺🇸美国21 | ⬇️ 2.3MB/s [tk1]"
-  type: "vmess"
-  server: "2e93912d-sutj40-sutgau-1r62f.cu.plebai.net"
-  port: 5229
-  uuid: "154b0bf8-f9a7-11ee-a218-f23c91cfbbc9"
-  network: "tcp"
   tls: false
   ip-version: "dual"
-  alterId: 0
+  alterId: 2
   cipher: "auto"
-- name: "🌀其他8-CZ | ⬇️ 3.7MB/s [tk1]"
+- name: "🇺🇸美国22 | ⬇️ 3.3MB/s [tk1]"
   type: "vmess"
-  server: "89.18.58.63"
-  port: 180
-  uuid: "d13fc2f5-3e05-4795-81eb-44143a09e552"
-  network: "tcp"
-  tls: false
-  ip-version: "dual"
-  alterId: 0
-  cipher: "auto"
-- name: "🇰🇷韩国3 | ⬇️ 1.0MB/s [tk1]"
-  type: "vmess"
-  server: "4ae05e61-sux8g0-sv3t21-1ryup.cm5.p5pv.com"
-  port: 17232
-  uuid: "3ee091ca-ab9c-11ef-a791-f23c9164ca5d"
-  network: "tcp"
-  tls: false
-  ip-version: "dual"
-  alterId: 0
-  cipher: "auto"
-- name: "🌀其他12-未识别 | ⬇️ 1.1MB/s [tk1]"
-  type: "trojan"
-  server: "sanjose06.852224.ggff.net"
-  port: 443
-  network: "ws"
-  tls: true
-  password: "89c1aea7-4d0d-4013-b663-0f94a3e6bdbd"
-  sni: "sanjose06.852224.ggff.net"
-  skip-cert-verify: false
-  ws-opts:
-    path: "/T5yZBrY2Qkg2cThJQeJb"
-    headers:
-      host: "sanjose06.852224.ggff.net"
-  ip-version: "dual"
-- name: "🇸🇬新加坡1 | ⬇️ 1.3MB/s [tk1]"
-  type: "vmess"
-  server: "0496335c-sux8g0-swbudg-1mzwj.cm5.p5pv.com"
-  port: 17231
-  uuid: "a203d80e-10fe-11ef-88a6-f23c9164ca5d"
-  network: "tcp"
-  tls: false
-  ip-version: "dual"
-  alterId: 0
-  cipher: "auto"
-- name: "🇺🇸美国25 | ⬇️ 2.8MB/s [tk1]"
-  type: "vmess"
-  server: "fea38a5e-sum4g0-sv6oiy-1p1b.cu.plebai.net"
+  server: "7daa6f3a-sux8g0-tavf3m-18imv.cu.plebai.net"
   port: 5228
-  uuid: "279b8588-616b-11ed-a8bf-f23c91cfbbc9"
+  uuid: "9a846cd4-7a86-11ed-a8bf-f23c91cfbbc9"
   network: "tcp"
   tls: false
   ip-version: "dual"
   alterId: 0
   cipher: "auto"
-- {skip-cert-verify: false, sni: "robust-redfish.shiner427.skin", type: "trojan", password: "74260696553770700", server: "robust-redfish.shiner427.skin", port: "443", name: "🇯🇵 日本_2 [dcj]"}
-- {name: "🇷🇺 俄罗斯_4 [dcj]", type: "hysteria2", server: "46.17.41.217", port: "64816", password: "dongtaiwang.com", fast-open: true, sni: "apple.com", skip-cert-verify: true, client-fingerprint: "chrome"}
-- {name: "🇺🇸 美国_3 [dcj]", type: "hysteria", server: "108.181.24.77", port: "11512", auth-str: "dongtaiwang.com", sni: "apple.com", skip-cert-verify: true, alpn: ["h3"], protocol: "udp", up: "11 Mbps", down: "55 Mbps", client-fingerprint: "chrome"}
-- {name: "🇺🇸 美国23 | ⬇️ 4.2MB/s|41%|Netflix|Openai 2 [cml]", server: "3b6ec92e-sux8g0-swffb5-1s6xm.cu.plebai.net", port: 5228, type: "vmess", uuid: "2b634c80-fd7e-11ef-9f25-f23c9164ca5d", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true}
-- name: "🇺🇸美国28 | ⬇️ 3.6MB/s [tk1]"
-  type: "trojan"
-  server: "104.21.112.1"
+- {name: "🇸🇬 新加坡2 | ⬇️ 8.3MB/s|6%|Netflix|Disney|Youtube|Openai|Gemini 2 [cml]", server: "okanc.node-is.green", port: 21114, type: "ss", cipher: "aes-256-gcm", password: "9acfc574-acc3-4c2b-ab3b-491d43a6eb83"}
+- name: "🇷🇺俄罗斯2 | ⬇️ 1.7MB/s [tk1]"
+  type: "vmess"
+  server: "195.58.49.84"
+  port: 22015
+  uuid: "f3373bde-b10b-4e51-b198-be1ef64da4d1"
+  network: "ws"
+  tls: false
+  ip-version: "dual"
+  alterId: 0
+  cipher: "auto"
+- {name: "🇷🇺 俄罗斯_2 [dcj]", type: "hysteria2", server: "46.29.163.171", port: "32555", password: "dongtaiwang.com", fast-open: true, sni: "apple.com", skip-cert-verify: true, client-fingerprint: "chrome"}
+- name: "🇳🇱荷兰3 | ⬇️ 2.9MB/s [tk1]"
+  type: "hysteria2"
+  server: "sinavm.sinabigo.ir"
   port: 443
+  tls: true
+  password: "Bia-SiNAVM-SiNAVM-SiNAVM-SiNAVM"
+  sni: "sinavm.sinabigo.ir"
+  obfs: "salamander"
+  obfs-password: "@SiNAVM-@SiNAVM-@SiNAVM-SiNAVM"
+  skip-cert-verify: false
+  fast-open: false
+  ip-version: "dual"
+- {name: "🇫🇷 法国6 | ⬇️ 9.9MB/s|0%|Youtube|Openai 2 [cml]", server: "195.154.33.70", port: 23587, type: "hysteria2", password: "dongtaiwang.com", auth: "dongtaiwang.com", sni: "www.bing.com", up: "100 Mbps", down: "100 Mbps", skip-cert-verify: true}
+- {name: "🇷🇺 俄罗斯_5 [dcj]", type: "hysteria", server: "185.22.155.71", port: "10803", auth_str: "dongtaiwang.com", alpn: ["h3"], sni: "www.bing.com", skip-cert-verify: true, up: "11 Mbps", down: "55 Mbps", client-fingerprint: "chrome", auth-str: "dongtaiwang.com"}
+- {name: "🇷🇺 俄罗斯3 | ⬇️ 14.9MB/s|0%|Youtube 2 [cml]", server: "176.32.35.226", port: 62003, type: "hysteria", auth_str: "dongtaiwang.com", auth-str: "dongtaiwang.com", up: "1000 Mbps", down: "1000 Mbps", fast-open: false, protocol: "none", skip-cert-verify: true, alpn: ["h3"]}
+- name: "🇺🇸美国30 | ⬇️ 1.2MB/s [tk1]"
+  type: "vmess"
+  server: "c8038e06-sutj40-tei4of-1qxa1.cu.plebai.net"
+  port: 5228
+  uuid: "f609abb4-ed17-11ee-9fa2-f23c9164ca5d"
+  network: "tcp"
+  tls: false
+  ip-version: "dual"
+  alterId: 0
+  cipher: "auto"
+- name: "🇺🇸美国32 | ⬇️ 3.3MB/s [tk1]"
+  type: "vmess"
+  server: "d88cbd41-sv2sg0-sv2tqi-1gy2v.cu.plebai.net"
+  port: 5228
+  uuid: "9b604194-17b7-11ef-80b0-f23c913c8d2b"
+  network: "tcp"
+  tls: false
+  ip-version: "dual"
+  alterId: 0
+  cipher: "auto"
+- name: "🇩🇪德国11 | ⬇️ 4.0MB%2Fs [tk1]"
+  type: "ss"
+  server: "139.162.172.244"
+  port: 57021
+  tls: false
+  password: "1745459692"
+  ip-version: "dual"
+  cipher: "chacha20-ietf-poly1305"
+- name: "🇭🇰香港7 | ⬇️ 2.7MB%2Fs [tk1]"
+  type: "ss"
+  server: "103.149.183.61"
+  port: 8388
+  tls: false
+  password: "asd123456"
+  ip-version: "dual"
+  cipher: "chacha20-ietf"
+- name: "🌀其他7-T1 | ⬇️ 1.3MB%2Fs [tk1]"
+  type: "ss"
+  server: "51.15.23.63"
+  port: 989
+  tls: false
+  password: "f8f7aCzcPKbsF8p3"
+  ip-version: "dual"
+  cipher: "aes-256-cfb"
+- name: "🇵🇱波兰1 | ⬇️ 3.7MB/s [tk1]"
+  type: "vmess"
+  server: "biiia-vpn-whal.fast.hosting-ip.com"
+  port: 80
+  uuid: "id44---@vpn-whal"
+  network: "ws"
+  tls: false
+  ip-version: "dual"
+  alterId: 0
+  cipher: "auto"
+- name: "🇭🇰香港8 | ⬇️ 1.6MB/s [tk1]"
+  type: "vmess"
+  server: "4c16178d-surog0-t26vr3-1likw.cm.plebai.net"
+  port: 15229
+  uuid: "a23c20fc-3e66-11ef-b1d2-f23c91cfbbc9"
+  network: "tcp"
+  tls: false
+  ip-version: "dual"
+  alterId: 0
+  cipher: "auto"
+- name: "🇭🇰香港9 | ⬇️ 1.5MB/s [tk1]"
+  type: "vmess"
+  server: "104.17.137.127"
+  port: 443
+  uuid: "47eab0de-97f9-49be-f2f3-2e4eb17268e6"
   network: "ws"
   tls: true
-  password: "a8fce442-ae9a-4cc1-a0cc-20308ff0a0db"
-  sni: "1kM.HUaNgSHang.pP.UA"
-  alpn:
-  - "http/1.1"
+  servername: "hk.niskakowski.ggff.net"
+  skip-cert-verify: true
+  ip-version: "dual"
+  alterId: 0
+  cipher: "auto"
+- name: "🇭🇰香港10 | ⬇️ 1.2MB%2Fs [tk1]"
+  type: "ss"
+  server: "210.0.244.137"
+  port: 42756
+  tls: false
+  password: "asd1223"
+  ip-version: "dual"
+  cipher: "aes-256-gcm"
+- name: "🇭🇰香港6 | ⬇️ 2.2MB/s [tk1]"
+  type: "trojan"
+  server: "aafrtpfxr.hkl02i9zjfegelp.5xfsur8v62.gosdk.xyz"
+  port: 27102
+  network: "tcp"
+  tls: true
+  password: "33e08522-a63b-4cec-9f05-76beffb153b5"
+  sni: "q08m.vgraxiw73s.hasyaf.cn"
   skip-cert-verify: false
   client-fingerprint: "chrome"
-  ws-opts:
-    path: "/lXENb74xF4ylXngZ"
-    headers: {}
   ip-version: "dual"
-- name: "🇭🇰香港5 | ⬇️ 1.1MB%2Fs [tk1]"
-  type: "ss"
-  server: "194.41.59.80"
-  port: 8388
-  tls: false
-  password: "asd123456"
-  ip-version: "dual"
-  cipher: "chacha20-ietf"
-- name: "🇺🇸美国30 | ⬇️ 2.2MB%2Fs [tk1]"
-  type: "ss"
-  server: "103.36.90.195"
-  port: 8388
-  tls: false
-  password: "asd123456"
-  ip-version: "dual"
-  cipher: "chacha20-ietf"
-- name: "🇭🇰香港6 | ⬇️ 2.2MB%2Fs [tk1]"
-  type: "ss"
-  server: "hk03.x.quickcht3.club"
-  port: 52613
-  tls: false
-  password: "ba3b3bee-8a31-43bd-bd0e-b8279fdf32a5"
-  ip-version: "dual"
-  cipher: "aes-128-gcm"
-- name: "🇭🇰香港7 | ⬇️ 1.5MB%2Fs [tk1]"
-  type: "ss"
-  server: "103.149.182.191"
-  port: 8388
-  tls: false
-  password: "asd123456"
-  ip-version: "dual"
-  cipher: "chacha20-ietf"
 - {type: "trojan", name: "❓ 未知_1 [dcj]", server: "46.3.104.20", port: "22222", password: "Aimer", udp: true, skip-cert-verify: true, sni: "epcci.ambercc.filegear-sg.me", network: "ws", ws-opts: {path: "/?ed=2560&proxyip=ts.hpc.tw", headers: {Host: "epcci.ambercc.filegear-sg.me"}}}
 - {name: "❓ 未知_2 [dcj]", type: "vmess", server: "112.65.92.20", port: "45402", cipher: "auto", uuid: "469e0b31-30c3-4dab-800d-711232634ce1", alterId: "0", tls: false, client-fingerprint: "chrome"}
 - {name: "🇨🇳 中国_1 [dcj]", type: "vmess", server: "47.92.152.169", port: "50002", cipher: "auto", uuid: "418048af-a293-4b99-9b0c-98ca3580dd24", alterId: "0", tls: false, client-fingerprint: "chrome"}
@@ -639,7 +644,6 @@ proxies:
 - {name: "🇨🇳 中国_3 [dcj]", type: "vmess", server: "183.236.51.36", port: "59003", cipher: "auto", uuid: "418048af-a293-4b99-9b0c-98ca3580dd24", alterId: "0", tls: false, client-fingerprint: "chrome"}
 - {name: "🇨🇳 中国_4 [dcj]", type: "vmess", server: "47.104.186.133", port: "50002", cipher: "auto", uuid: "418048af-a293-4b99-9b0c-98ca3580dd24", alterId: "0", tls: false, client-fingerprint: "chrome"}
 - {type: "hysteria2", name: "❓ 未知_4 [dcj]", server: "0e1462f1-sum4g0-t8ro7t-1ey07.hy2.gotochinatown.net", port: "8443", password: "203d1d64-3313-11ed-bb74-f23c9164ca5d", sni: "0e1462f1-sum4g0-t8ro7t-1ey07.hy2.gotochinatown.net", skip-cert-verify: false, tfo: false, client-fingerprint: "chrome"}
-- {name: "🇸🇬 新加坡2 | ⬇️ 8.3MB/s|6%|Netflix|Disney|Youtube|Openai|Gemini 2 [cml]", server: "okanc.node-is.green", port: 21114, type: "ss", cipher: "aes-256-gcm", password: "9acfc574-acc3-4c2b-ab3b-491d43a6eb83"}
 - {type: "hysteria2", name: "❓ 未知_6 [dcj]", server: "cdb71208-suk9s0-sv6oiy-1p1b.hy2.gotochinatown.net", port: "8443", password: "279b8588-616b-11ed-a8bf-f23c91cfbbc9", sni: "cdb71208-suk9s0-sv6oiy-1p1b.hy2.gotochinatown.net", skip-cert-verify: false, tfo: false}
 - {name: "t.me/freeyule [cjbp]", server: "test123.zlqhdns.top", port: 11555, type: "vless", uuid: "459b4a80-bd61-4ecd-a26b-e9c1809d9e45", tls: true, tfo: false, flow: "xtls-rprx-vision", skip-cert-verify: true, reality-opts: {public-key: "qhTzYYIgBzDLNYR79oxftqdo1kzL-1_hGJKfqrOliCY"}, servername: "www.nvidia.com", client-fingerprint: "chrome", network: "tcp"}
 - {type: "hysteria2", name: "❓ 未知_7 [dcj]", server: "fe021254-suk9s0-sve5if-z93q.hy2.gotochinatown.net", port: "8443", password: "40639730-e027-11ea-87ad-f23c913c8d2b", sni: "fe021254-suk9s0-sve5if-z93q.hy2.gotochinatown.net", skip-cert-verify: false, tfo: false}
@@ -649,7 +653,6 @@ proxies:
 - {type: "trojan", name: "❓ 未知_9 [dcj]", server: "54.169.65.225", port: "443", password: "Aimer", udp: true, skip-cert-verify: true, sni: "epcco.ambercc.filegear-sg.me", network: "ws", ws-opts: {path: "/?ed=2560&proxyip=ts.hpc.tw", headers: {Host: "epcco.ambercc.filegear-sg.me"}}}
 - {type: "trojan", name: "❓ 未知_10 [dcj]", server: "18.183.158.211", port: "443", password: "Aimer", udp: true, skip-cert-verify: true, sni: "epccu.ambercc.filegear-sg.me", network: "ws", ws-opts: {path: "/?ed=2560&proxyip=ts.hpc.tw", headers: {Host: "epccu.ambercc.filegear-sg.me"}}}
 - {type: "trojan", name: "🇹🇼 台湾_2 [dcj]", server: "13.230.34.30", port: "443", password: "Aimer", udp: true, skip-cert-verify: true, sni: "epccu.ambercc.filegear-sg.me", network: "ws", ws-opts: {path: "/?ed=2560&proxyip=ts.hpc.tw", headers: {Host: "epccu.ambercc.filegear-sg.me"}}}
-- {name: "🇷🇺 俄罗斯_2 [dcj]", type: "hysteria2", server: "46.29.163.171", port: "32555", password: "dongtaiwang.com", fast-open: true, sni: "apple.com", skip-cert-verify: true, client-fingerprint: "chrome"}
 - {name: "🇯🇵 日本_1 [dcj]", server: "beiyong.dynuddns.net", port: "48121", type: "vless", uuid: "459b4a80-bd61-4ecd-a26b-e9c1809d9e45", tls: true, tfo: false, flow: "xtls-rprx-vision", skip-cert-verify: true, reality-opts: {public-key: "qhTzYYIgBzDLNYR79oxftqdo1kzL-1_hGJKfqrOliCY"}, client-fingerprint: "chrome", network: "tcp", servername: "www.nvidia.com"}
 - {type: "hysteria2", name: "❓ 未知_11 [dcj]", server: "8b21ebfd-suif40-tcvn0z-1tlyg.hy2.gotochinatown.net", port: "8443", password: "be8ba532-0dcf-11f0-9a65-f23c9164ca5d", sni: "8b21ebfd-suif40-tcvn0z-1tlyg.hy2.gotochinatown.net", skip-cert-verify: false, tfo: false, client-fingerprint: "chrome"}
 - name: "中国 - 香港 - CTG Server Ltd. - 2 [go4sharing]"
@@ -679,6 +682,7 @@ proxies:
 - {type: "trojan", name: "🇹🇼 台湾_3 [dcj]", server: "18.167.74.152", port: "1080", password: "Aimer", udp: true, skip-cert-verify: true, sni: "epcco.ambercc.filegear-sg.me", network: "ws", ws-opts: {path: "/?ed=2560&proxyip=ts.hpc.tw", headers: {Host: "epcco.ambercc.filegear-sg.me"}}}
 - {type: "vless", name: "❓ 未知_24 [dcj]", server: "104.20.18.168", port: "8880", uuid: "96494ca5-6dcf-4d33-b94f-5c3485586095", tls: false, skip-cert-verify: false, network: "ws", ws-opts: {headers: {Host: "hamedan.hiven33959.workers.dev"}, path: "/?ed=2048"}, client-fingerprint: "chrome"}
 - {name: "❓ 未知_25 [dcj]", type: "vless", network: "ws", server: "104.16.1.47", port: "80", uuid: "b550a101-63fe-4862-bfd3-8b87bb4168dd", tls: false, client-fingerprint: "chrome", ws-opts: {headers: {Host: "flat-bread-ddb6-ppal03.joriy39169.workers.dev"}, path: "/?ed=2560"}, servername: "flat-bread-ddb6-ppal03.joriy39169.workers.dev"}
+- {name: "🇷🇺 俄罗斯_4 [dcj]", type: "hysteria2", server: "46.17.41.217", port: "64816", password: "dongtaiwang.com", fast-open: true, sni: "apple.com", skip-cert-verify: true, client-fingerprint: "chrome"}
 - {type: "trojan", name: "🇹🇼 台湾_4 [dcj]", server: "18.166.149.73", port: "18443", password: "Aimer", udp: true, skip-cert-verify: true, sni: "epccu.ambercc.filegear-sg.me", network: "ws", ws-opts: {path: "/?ed=2560&proxyip=ts.hpc.tw", headers: {Host: "epccu.ambercc.filegear-sg.me"}}}
 - {type: "vless", name: "❓ 未知_26 [dcj]", server: "104.16.132.187", port: "80", uuid: "80d32ddd-c0ac-4eb6-8a2a-3b27b23f32b4", tls: false, skip-cert-verify: false, network: "ws", ws-opts: {headers: {Host: "icy-cherry-b8af-ppal03.givay59005.workers.dev"}, path: "/?ed=2560"}, client-fingerprint: "chrome"}
 - {type: "vless", name: "🇩🇪 德国_1 [dcj]", server: "116.203.136.232", port: "2078", uuid: "5528489a-c548-481f-b558-8c7a8a0b6448", flow: "-udp443", client-fingerprint: "", skip-cert-verify: false, network: "tcp"}
@@ -714,6 +718,7 @@ proxies:
 - {type: "trojan", name: "❓ 未知_42 [dcj]", server: "221.165.88.237", port: "10205", password: "Aimer", udp: true, skip-cert-verify: true, sni: "epccu.ambercc.filegear-sg.me", network: "ws", ws-opts: {path: "/?ed=2560&proxyip=ts.hpc.tw", headers: {Host: "epccu.ambercc.filegear-sg.me"}}}
 - {type: "vless", name: "❓ 未知_43 [dcj]", server: "172.67.2.238", port: "8880", uuid: "96494ca5-6dcf-4d33-b94f-5c3485586095", tls: false, skip-cert-verify: false, network: "ws", ws-opts: {headers: {Host: "hamedan.hiven33959.workers.dev"}, path: "/?ed=2048"}, client-fingerprint: "chrome"}
 - {type: "vless", name: "❓ 未知_44 [dcj]", server: "172.67.187.251", port: "8080", uuid: "b6e97b8a-1b43-4fa9-ab1b-d0139df07f59", tls: false, skip-cert-verify: false, network: "ws", ws-opts: {headers: {Host: "11tg.w79kip11.workers.dev"}, path: "/?ed=2560"}, client-fingerprint: "chrome"}
+- {name: "🇺🇸 美国_2 [dcj]", type: "hysteria", server: "208.87.243.151", port: "17549", auth_str: "dongtaiwang.com", alpn: ["h3"], sni: "www.bing.com", skip-cert-verify: true, up: "11 Mbps", down: "55 Mbps", client-fingerprint: "chrome", auth-str: "dongtaiwang.com"}
 - {name: "❓ 未知_45 [dcj]", type: "vmess", server: "120.232.17.9", port: "45269", cipher: "auto", uuid: "469e0b31-30c3-4dab-800d-711232634ce1", alterId: "0", tls: false, client-fingerprint: "chrome"}
 - {type: "trojan", name: "🇹🇼 台湾_10 [dcj]", server: "220.78.176.158", port: "18059", password: "Aimer", udp: true, skip-cert-verify: true, sni: "epcci.ambercc.filegear-sg.me", network: "ws", ws-opts: {path: "/?ed=2560&proxyip=ts.hpc.tw", headers: {Host: "epcci.ambercc.filegear-sg.me"}}}
 - {type: "vless", name: "❓ 未知_46 [dcj]", server: "104.21.22.88", port: "8080", uuid: "8c129b7d-c87f-42d7-bdac-55dfbfe88534", tls: false, skip-cert-verify: false, network: "ws", ws-opts: {headers: {Host: "maHdi-hEctOrR.viSoWe1371.WOrkERS.dEV"}, path: "/2b2W5QkuhSICb3IE?ed=2560"}, client-fingerprint: "chrome"}
@@ -723,14 +728,17 @@ proxies:
 - {type: "vless", name: "❓ 未知_50 [dcj]", server: "104.21.16.48", port: "80", uuid: "7c18eeab-f38f-48a2-ae25-50c26cdfb0d9", skip-cert-verify: false, network: "ws", ws-opts: {headers: {Host: "anTiFiLTEr.dOXAs38496.wOrkErs.dEV"}, path: "/6Fb9gZwPctjjwBVW?ed=2048"}, client-fingerprint: "chrome"}
 - {name: "🇭🇰 香港_4 [dcj]", type: "vmess", server: "120.232.153.40", port: "59082", cipher: "auto", uuid: "418048af-a293-4b99-9b0c-98ca3580dd24", alterId: "0", tls: false, skip-cert-verify: true, network: "tcp"}
 - {type: "trojan", name: "🇹🇼 台湾_11 [dcj]", server: "210.123.143.214", port: "12514", password: "Aimer", udp: true, skip-cert-verify: true, sni: "epcci.ambercc.filegear-sg.me", network: "ws", ws-opts: {path: "/?ed=2560&proxyip=ts.hpc.tw", headers: {Host: "epcci.ambercc.filegear-sg.me"}}}
+- {name: "🇺🇸 美国_3 [dcj]", type: "hysteria", server: "108.181.24.77", port: "11512", auth-str: "dongtaiwang.com", sni: "apple.com", skip-cert-verify: true, alpn: ["h3"], protocol: "udp", up: "11 Mbps", down: "55 Mbps", client-fingerprint: "chrome"}
 - {name: "❓ 未知_51 [dcj]", type: "ss", server: "154.90.62.168", port: "989", cipher: "aes-256-cfb", password: "f8f7aCzcPKbsF8p3", client-fingerprint: "chrome"}
 - {type: "trojan", name: "🇹🇼 台湾_12 [dcj]", server: "183.107.52.136", port: "12120", password: "Aimer", udp: true, skip-cert-verify: true, sni: "epcco.ambercc.filegear-sg.me", network: "ws", ws-opts: {path: "/?ed=2560&proxyip=ts.hpc.tw", headers: {Host: "epcco.ambercc.filegear-sg.me"}}}
 - {type: "vless", name: "❓ 未知_52 [dcj]", server: "104.24.148.184", port: "80", uuid: "01cb18d1-2062-47e7-999b-ec08e8b2ec85", tls: false, skip-cert-verify: false, network: "ws", ws-opts: {headers: {Host: "muddy-rain-0a28-ppal03.mitey24737.workers.dev"}, path: "/?ed=2560"}, client-fingerprint: "chrome"}
 - {name: "❓ 未知_53 [dcj]", type: "vless", network: "ws", server: "104.24.9.204", port: "80", uuid: "ca68a029-971c-4ea4-8c1d-411cb7adc474", skip-cert-verify: false, tls: false, ws-opts: {headers: {Host: "patient-sunset-f000-ppal03.cijej53213.workers.dev"}, path: "/?ed=2560"}, client-fingerprint: "chrome"}
 - {name: "❓ 未知_54 [dcj]", type: "vmess", server: "lt.fxlcn.com", port: "45231", cipher: "auto", uuid: "469e0b31-30c3-4dab-800d-711232634ce1", alterId: "0", tls: false, skip-cert-verify: true, network: "tcp"}
 - {type: "trojan", name: "🇹🇼 台湾_13 [dcj]", server: "16.162.225.15", port: "443", password: "Aimer", udp: true, skip-cert-verify: true, sni: "epccu.ambercc.filegear-sg.me", network: "ws", ws-opts: {path: "/?ed=2560&proxyip=ts.hpc.tw", headers: {Host: "epccu.ambercc.filegear-sg.me"}}}
+- {alterId: "0", cipher: "auto", name: "🇺🇸 美国_4 [dcj]", network: "tcp", port: "43674", server: "120.234.102.229", skip-cert-verify: true, tls: false, type: "vmess", uuid: "418048af-a293-4b99-9b0c-98ca3580dd24", ws-headers: {Host: "120.234.102.229"}, ws-path: "/", client-fingerprint: "chrome"}
 - {type: "trojan", name: "🇹🇼 台湾_14 [dcj]", server: "221.151.204.241", port: "12369", password: "Aimer", udp: true, skip-cert-verify: true, sni: "epcci.ambercc.filegear-sg.me", network: "ws", ws-opts: {path: "/?ed=2560&proxyip=ts.hpc.tw", headers: {Host: "epcci.ambercc.filegear-sg.me"}}}
 - {type: "vless", name: "❓ 未知_55 [dcj]", server: "104.16.53.48", port: "80", uuid: "c1659206-d827-41f6-9f73-f18ca30102d3", tls: false, skip-cert-verify: false, network: "ws", ws-opts: {headers: {Host: "still-forest-e3e8-ppal03.mekah93880.workers.dev"}, path: "/"}, client-fingerprint: "chrome"}
+- {name: "🇺🇸 美国23 | ⬇️ 4.2MB/s|41%|Netflix|Openai 2 [cml]", server: "3b6ec92e-sux8g0-swffb5-1s6xm.cu.plebai.net", port: 5228, type: "vmess", uuid: "2b634c80-fd7e-11ef-9f25-f23c9164ca5d", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true}
 - {name: "🇸🇬 新加坡_1 [dcj]", type: "trojan", server: "43.162.118.156", port: "443", udp: true, password: "oIwjHDXpKePvYIg8", sni: "myvps.cfd", skip-cert-verify: true}
 - {name: "❓ 未知_56 [dcj]", type: "vless", network: "ws", server: "172.66.40.87", port: "2083", uuid: "8f320d6a-9953-4065-b61c-d62f89a6767f", skip-cert-verify: false, tls: true, udp: true, tfo: false, client-fingerprint: "chrome", ws-opts: {headers: {Host: "e.exedu.ip-ddns.com"}, path: "/?ed=2048"}, servername: "e.exedu.ip-ddns.com"}
 - {name: "🇺🇸 美国24 | ⬇️ 4.7MB/s|41%|Netflix|Openai 2 [cml]", server: "a0bc30e2-sux8g0-sv74ec-1t7c2.cu.plebai.net", port: 5228, type: "vmess", uuid: "a087871c-d185-11ef-bdb9-f23c91cfbbc9", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true}
@@ -745,6 +753,7 @@ proxies:
 - {name: "🇺🇸 美国_7 [dcj]", type: "vmess", server: "120.232.153.63", port: "37805", cipher: "auto", uuid: "418048af-a293-4b99-9b0c-98ca3580dd24", alterId: "0", tls: false, skip-cert-verify: true, network: "tcp"}
 - {name: "🇸🇨 塞舌尔 [dcj]", type: "ss", server: "51.15.15.82", port: "989", cipher: "aes-256-cfb", password: "f8f7aCzcPKbsF8p3"}
 - {type: "vless", name: "🇩🇪 德国_2 [dcj]", server: "V2RAXX-channel.cataba.ir", port: "15379", uuid: "V2RAXX", client-fingerprint: "", skip-cert-verify: false, network: "ws", ws-opts: {path: "/@V2RAXX-telegram,@V2RAXX-telegram,@V2RAXX-telegram,@V2RAXX-telegram,@V2RAXX-telegram,@V2RAXX-telegram,@V2RAXX-telegram,@V2RAXX-telegram?ed", headers: {Host: "V2RAXX-channel.cataba.ir"}}}
+- {skip-cert-verify: false, sni: "robust-redfish.shiner427.skin", type: "trojan", password: "74260696553770700", server: "robust-redfish.shiner427.skin", port: "443", name: "🇯🇵 日本_2 [dcj]"}
 - {type: "vless", name: "❓ 未知_62 [dcj]", server: "104.21.17.92", port: "443", uuid: "16d7a04d-e6f4-479f-8914-80d3817317f9", tls: true, skip-cert-verify: false, network: "ws", ws-opts: {headers: {Host: "ed19-dc7.pages.dev"}, path: "/azarbayjab1.tab.net?ed=2560"}, client-fingerprint: "chrome", servername: "ed19-dc7.pages.dev"}
 - {name: "❓ 未知_63 [dcj]", type: "vless", network: "ws", server: "www.zsu.gov.ua", port: "80", uuid: "ca2d8658-9ed6-4e0d-8f58-eaaa021f3baa", skip-cert-verify: false, tls: false, tfo: false, client-fingerprint: "randomized", ws-opts: {headers: {Host: "warp.irss.eu.org"}, path: "/?ed=2048"}}
 - {name: "❓ 未知_64 [dcj]", type: "trojan", server: "18.170.140.1", port: "22222", udp: true, password: "telegram-id-privatevpns", sni: "trojan.burgerip.co.uk", skip-cert-verify: false}
@@ -1537,7 +1546,6 @@ proxies:
 - {name: "🇫🇷 法国3 | ⬇️ 9.7MB/s|14%|Netflix|Openai 2 [cml]", server: "51.159.226.1", port: 14241, type: "hysteria", auth_str: "dongtaiwang.com", auth-str: "dongtaiwang.com", up: 100, down: 100, fast-open: false, protocol: "udp", sni: "apple.com", skip-cert-verify: true, alpn: ["h3"]}
 - {name: "🇫🇷 法国4 | ⬇️ 6.9MB/s|14%|Netflix|Openai 2 [cml]", server: "51.159.226.1", port: 43496, type: "hysteria2", password: "dongtaiwang.com", auth: "dongtaiwang.com", sni: "www.bing.com", up: "100 Mbps", down: "100 Mbps", skip-cert-verify: true}
 - {name: "🇫🇷 法国5 | ⬇️ 11.1MB/s|14%|Netflix|Openai 2 [cml]", server: "104.26.15.85", port: 8080, type: "vless", uuid: "0eb83f3e-7b95-427a-8952-abedfca1869f", tls: false, tfo: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/?ed=2048", headers: {Host: "QW.VU6d72nt9y.zULaiR.orG."}}}
-- {name: "🇫🇷 法国6 | ⬇️ 9.9MB/s|0%|Youtube|Openai 2 [cml]", server: "195.154.33.70", port: 23587, type: "hysteria2", password: "dongtaiwang.com", auth: "dongtaiwang.com", sni: "www.bing.com", up: "100 Mbps", down: "100 Mbps", skip-cert-verify: true}
 - {name: "🇫🇷 法国7 | ⬇️ 12.0MB/s|100%|Netflix|Youtube|Openai 2 [cml]", server: "57.130.11.204", port: 11202, type: "ss", cipher: "chacha20-ietf-poly1305", password: "84b48f4f0f3517d4"}
 - {name: "🇫🇷 法国8 | ⬇️ 16.4MB/s|14%|Netflix|Openai 2 [cml]", server: "tgju.org", port: 8080, type: "vless", uuid: "0eb83f3e-7b95-427a-8952-abedfca1869f", tls: false, tfo: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/?ed=2048", headers: {Host: "QW.VU6d72nt9y.zULaiR.orG."}}}
 - {name: "🇦🇺 澳大利亚1 | ⬇️ 15.6MB/s|0%|Netflix|Disney|Gemini 2 [cml]", server: "45.131.4.133", port: 80, type: "vless", uuid: "4088e698-69fd-4d15-98bc-f1fe4c071642", tls: false, tfo: false, skip-cert-verify: true, servername: "digitalscientificresearchgroup.ir", network: "ws", ws-opts: {path: "/Telegram🇨🇳@WangCai2/?ed=2560", headers: {Host: "digitalscientificresearchgroup.ir"}}}
@@ -1604,13 +1612,13 @@ proxies:
 - {name: "其他9-GR | ⬇️ 5.4MB/s|0%|Netflix|Openai 2 [cml]", server: "agaungzhou01.bumbleshrimp.com", port: 12831, type: "vless", uuid: "459b4a80-bd61-4ecd-a26b-e9c1809d9e45", tls: true, tfo: false, flow: "xtls-rprx-vision", skip-cert-verify: true, reality-opts: {public-key: "qhTzYYIgBzDLNYR79oxftqdo1kzL-1_hGJKfqrOliCY"}, servername: "www.nvidia.com", client-fingerprint: "chrome", network: "tcp"}
 - {name: "🇩🇪 德国11 | ⬇️ 4.2MB/s|25%|Netflix|Openai [cml]", server: "188.245.183.122", port: 15379, type: "vless", uuid: "V2RAXX", tls: false, tfo: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/@V2RAXX-telegram,@V2RAXX-telegram,@V2RAXX-telegram,@V2RAXX-telegram,@V2RAXX-telegram,@V2RAXX-telegram,@V2RAXX-telegram,@V2RAXX-telegram?ed=2560flow=-udp443"}}
 - {name: "🇯🇵 日本2 | ⬇️ 7.5MB/s|0%|Youtube|Openai|Gemini [cml]", server: "jp104-cdn-route.couldflare-cdn.com", port: 443, type: "http", username: "mrwdfNTD8M79LCukCieldrqZWqs=", password: "exaxgqkKkd0TAMrCxeonWg==", tls: true, skip-cert-verify: true}
-- {name: "🇯🇵 免费-日本1-Ver.6 [ikuuu2]", server: "t1wxo-g05.jp01-0986-vm0.entry.fr0307a.art", port: 21585, type: "vmess", uuid: "3e7347c1-83dc-3ceb-9e07-d4484c056d32", alterId: 1, cipher: "auto", tls: true, skip-cert-verify: false, udp: true}
-- {name: "🇯🇵 免费-日本2-Ver.7 [ikuuu2]", server: "egj3d-g05.jp02-9a99-vm0.entry.fr0307a.art", port: 11777, type: "vmess", uuid: "3e7347c1-83dc-3ceb-9e07-d4484c056d32", alterId: 1, cipher: "auto", tls: false, skip-cert-verify: false, udp: true}
-- {name: "🇯🇵 免费-日本3-Ver.6 [ikuuu2]", server: "fgphj-g05.jp03-7d22-vm0.entry.fr0307a.art", port: 21585, type: "vmess", uuid: "3e7347c1-83dc-3ceb-9e07-d4484c056d32", alterId: 1, cipher: "auto", tls: true, skip-cert-verify: false, udp: true}
-- {name: "🇯🇵 免费-日本4-Ver.7 [ikuuu2]", server: "z9aey-g05.jp04-3771-vm0.entry.fr0307a.art", port: 448, type: "vmess", uuid: "3e7347c1-83dc-3ceb-9e07-d4484c056d32", alterId: 1, cipher: "auto", tls: false, skip-cert-verify: false, udp: true}
-- {name: "🇯🇵 免费-日本5-Ver.8 [ikuuu2]", server: "39fqj-g05.jp05-6786-vm0.entry.fr0307a.art", port: 46486, type: "vmess", uuid: "3e7347c1-83dc-3ceb-9e07-d4484c056d32", alterId: 1, cipher: "auto", tls: false, skip-cert-verify: false, udp: true}
-- {name: "🇯🇵 免费-日本6-Ver.7 [ikuuu2]", server: "hgeee-g05.jp06-7c5a-vm0.entry.fr0307a.art", port: 28787, type: "vmess", uuid: "3e7347c1-83dc-3ceb-9e07-d4484c056d32", alterId: 1, cipher: "auto", tls: true, skip-cert-verify: false, udp: true}
-- {name: "🇯🇵 免费-日本7-Ver.1 [ikuuu2]", server: "tdd47-g05.jp07-1f28-vm0.entry.fr0307a.art", port: 28787, type: "vmess", uuid: "3e7347c1-83dc-3ceb-9e07-d4484c056d32", alterId: 1, cipher: "auto", tls: false, skip-cert-verify: false, udp: true}
+- {name: "🇯🇵 免费-日本1-Ver.6 [ikuuu2]", server: "2qv0d-g05.jp01-0986-vm0.entry.fr0307a.art", port: 21585, type: "vmess", uuid: "3e7347c1-83dc-3ceb-9e07-d4484c056d32", alterId: 1, cipher: "auto", tls: true, skip-cert-verify: false, udp: true}
+- {name: "🇯🇵 免费-日本2-Ver.7 [ikuuu2]", server: "tmroq-g05.jp02-9a99-vm0.entry.fr0307a.art", port: 11777, type: "vmess", uuid: "3e7347c1-83dc-3ceb-9e07-d4484c056d32", alterId: 1, cipher: "auto", tls: false, skip-cert-verify: false, udp: true}
+- {name: "🇯🇵 免费-日本3-Ver.6 [ikuuu2]", server: "f0owi-g05.jp03-7d22-vm0.entry.fr0307a.art", port: 21585, type: "vmess", uuid: "3e7347c1-83dc-3ceb-9e07-d4484c056d32", alterId: 1, cipher: "auto", tls: true, skip-cert-verify: false, udp: true}
+- {name: "🇯🇵 免费-日本4-Ver.7 [ikuuu2]", server: "0ii45-g05.jp04-3771-vm0.entry.fr0307a.art", port: 448, type: "vmess", uuid: "3e7347c1-83dc-3ceb-9e07-d4484c056d32", alterId: 1, cipher: "auto", tls: false, skip-cert-verify: false, udp: true}
+- {name: "🇯🇵 免费-日本5-Ver.8 [ikuuu2]", server: "chz9w-g05.jp05-6786-vm0.entry.fr0307a.art", port: 46486, type: "vmess", uuid: "3e7347c1-83dc-3ceb-9e07-d4484c056d32", alterId: 1, cipher: "auto", tls: false, skip-cert-verify: false, udp: true}
+- {name: "🇯🇵 免费-日本6-Ver.7 [ikuuu2]", server: "vvwhq-g05.jp06-7c5a-vm0.entry.fr0307a.art", port: 28787, type: "vmess", uuid: "3e7347c1-83dc-3ceb-9e07-d4484c056d32", alterId: 1, cipher: "auto", tls: true, skip-cert-verify: false, udp: true}
+- {name: "🇯🇵 免费-日本7-Ver.1 [ikuuu2]", server: "phxdc-g05.jp07-1f28-vm0.entry.fr0307a.art", port: 28787, type: "vmess", uuid: "3e7347c1-83dc-3ceb-9e07-d4484c056d32", alterId: 1, cipher: "auto", tls: false, skip-cert-verify: false, udp: true}
 - {name: "移动优选 01 [cmj2]", server: "104.25.252.185", port: 8443, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/?proxyip=proxyip.fxxk.dedyn.io", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
 - {name: "群组@mianfeicf [cmj2]", server: "104.25.252.184", port: 8443, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/?proxyip=proxyip.fxxk.dedyn.io", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
 - {name: "移动优选 02 [cmj2]", server: "104.25.254.197", port: 2096, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/?proxyip=proxyip.fxxk.dedyn.io", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
@@ -1705,137 +1713,117 @@ proxies:
 - {name: "🇩🇪 德国 09 [cmj2]", server: "138.201.244.245", port: 443, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/?proxyip=proxyip.fxxk.dedyn.io", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
 - {name: "🇩🇪 德国 10 [cmj2]", server: "130.61.23.77", port: 443, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/?proxyip=proxyip.fxxk.dedyn.io", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
 - {name: "加入我的频道t.me/CMLiussss解锁更多优选节点 [cmj3]", server: "Join.my.Telegram.channel.CMLiussss.to.unlock.more.premium.nodes.cf.090227.xyz", port: 443, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=proxyip.us.cmliussss.net", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
-- {name: "CFnat [cmj3]", server: "127.0.0.1", port: 1234, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=proxyip.tp32576.s2.uno.090227.xyz", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
-- {name: "ZA [cmj3]", server: "160.123.255.15", port: 443, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=proxyip.tp20654.s2.uno.090227.xyz", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
-- {name: "🇺🇸 US [cmj3]", server: "192.0.54.216", port: 443, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=proxyip.us.cmliussss.net", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
-- {name: "🇭🇰 HK [cmj3]", server: "47.243.5.154", port: 8443, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=ProxyIP.Oracle.cmliussss.net", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
-- {name: "BR [cmj3]", server: "185.133.35.64", port: 443, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=proxyip.tp32576.s2.uno.090227.xyz", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
-- {name: "🇭🇰 HK 2 [cmj3]", server: "47.243.139.85", port: 2083, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=ProxyIP.Oracle.cmliussss.net", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
-- {name: "🇭🇰 HK 3 [cmj3]", server: "18.167.194.154", port: 443, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=ProxyIP.Oracle.cmliussss.net", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
-- {name: "🇺🇸 US 2 [cmj3]", server: "160.79.104.126", port: 443, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=proxyip.us.cmliussss.net", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
-- {name: "🇺🇸 US 3 [cmj3]", server: "160.79.105.14", port: 443, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=proxyip.us.cmliussss.net", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
-- {name: "🇺🇸 US 4 [cmj3]", server: "160.79.105.254", port: 443, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=proxyip.us.cmliussss.net", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
-- {name: "🇭🇰 HK 4 [cmj3]", server: "16.163.18.210", port: 443, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=ProxyIP.Oracle.cmliussss.net", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
-- {name: "🇺🇸 US 5 [cmj3]", server: "63.141.128.12", port: 443, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=proxyip.us.cmliussss.net", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
-- {name: "ZA 2 [cmj3]", server: "160.123.255.0", port: 443, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=proxyip.tp20654.s2.uno.090227.xyz", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
-- {name: "🇺🇸 US 6 [cmj3]", server: "160.79.105.169", port: 443, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=proxyip.us.cmliussss.net", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
-- {name: "🇭🇰 HK 5 [cmj3]", server: "16.162.10.198", port: 443, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=ProxyIP.Oracle.cmliussss.net", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
-- {name: "ZA 3 [cmj3]", server: "160.123.255.36", port: 443, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=proxyip.tp20654.s2.uno.090227.xyz", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
-- {name: "BR 2 [cmj3]", server: "185.133.35.237", port: 443, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=proxyip.tp32576.s2.uno.090227.xyz", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
+- {name: "CFnat [cmj3]", server: "127.0.0.1", port: 1234, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=proxyip.tp46871.s2.uno.090227.xyz", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
+- {name: "🇭🇰 HK [cmj3]", server: "47.243.139.85", port: 2053, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=ProxyIP.Oracle.cmliussss.net", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
+- {name: "ZA [cmj3]", server: "160.123.255.77", port: 443, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=proxyip.tp20064.s2.uno.090227.xyz", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
+- {name: "🇺🇸 US [cmj3]", server: "69.84.182.147", port: 443, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=proxyip.us.cmliussss.net", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
+- {name: "🇭🇰 HK 2 [cmj3]", server: "16.162.37.167", port: 443, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=ProxyIP.Oracle.cmliussss.net", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
+- {name: "ZA 2 [cmj3]", server: "160.123.255.180", port: 443, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=proxyip.tp32576.s2.uno.090227.xyz", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
+- {name: "🇭🇰 HK 3 [cmj3]", server: "47.242.57.106", port: 443, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=ProxyIP.Oracle.cmliussss.net", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
+- {name: "🇭🇰 HK 4 [cmj3]", server: "47.242.171.94", port: 2087, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=ProxyIP.Oracle.cmliussss.net", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
+- {name: "🇺🇸 US 2 [cmj3]", server: "47.76.32.108", port: 8443, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=proxyip.us.cmliussss.net", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
+- {name: "🇭🇰 HK 5 [cmj3]", server: "8.217.232.246", port: 2096, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=ProxyIP.Oracle.cmliussss.net", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
+- {name: "🇺🇸 US 3 [cmj3]", server: "160.79.104.199", port: 443, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=proxyip.us.cmliussss.net", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
+- {name: "🇺🇸 US 4 [cmj3]", server: "160.79.104.117", port: 443, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=proxyip.us.cmliussss.net", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
+- {name: "🇭🇰 HK 6 [cmj3]", server: "16.162.10.198", port: 443, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=ProxyIP.Oracle.cmliussss.net", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
+- {name: "🇺🇸 US 5 [cmj3]", server: "160.79.104.175", port: 443, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=proxyip.us.cmliussss.net", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
+- {name: "🇭🇰 HK 7 [cmj3]", server: "47.76.146.1", port: 2083, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=ProxyIP.Oracle.cmliussss.net", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
+- {name: "🇺🇸 US 6 [cmj3]", server: "160.79.105.82", port: 443, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=proxyip.us.cmliussss.net", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
+- {name: "🇺🇸 US 7 [cmj3]", server: "192.0.54.171", port: 443, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=proxyip.us.cmliussss.net", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
 - {name: "🇯🇵 JP [cmj3]", server: "103.20.199.166", port: 6666, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=103.20.199.166:6666", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
 - {name: "🇯🇵 JP 2 [cmj3]", server: "103.20.199.196", port: 8882, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=103.20.199.196:8882", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
 - {name: "🇸🇬 SG [cmj3]", server: "138.2.64.175", port: 6443, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=138.2.64.175:6443", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
 - {name: "🇸🇬 SG 2 [cmj3]", server: "139.180.191.96", port: 31001, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=139.180.191.96:31001", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
-- {name: "🇳🇱 NL [cmj3]", server: "45.154.98.210", port: 5002, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=45.154.98.210:5002", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
+- {name: "🇳🇱 NL [cmj3]", server: "45.154.98.210", port: 5002, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=45.154.98.210:5001", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
 - {name: "🇳🇱 NL 2 [cmj3]", server: "45.154.98.211", port: 4001, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=45.154.98.211:4001", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
 - {name: "🇰🇷 KR [cmj3]", server: "118.47.65.248", port: 30012, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=118.47.65.248:30012", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
 - {name: "🇰🇷 KR 2 [cmj3]", server: "193.122.115.67", port: 4434, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=193.122.115.67:4434", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
 - {name: "🇰🇷 KR 3 [cmj3]", server: "210.121.207.53", port: 50001, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=210.121.207.53:50001", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
 - {name: "🇰🇷 KR 4 [cmj3]", server: "116.47.10.236", port: 10912, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=116.47.10.236:10912", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
-- {name: "🇺🇸 US 7 [cmj3]", server: "154.40.46.28", port: 46757, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=154.40.46.28:46757", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
-- {name: "🇺🇸 US 8 [cmj3]", server: "204.110.220.135", port: 80, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=204.110.220.135:80", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
-- {name: "🇺🇸 US 9 [cmj3]", server: "107.174.228.38", port: 23234, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=107.174.228.38:23234", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
-- {name: "🇺🇸 US 10 [cmj3]", server: "23.95.61.191", port: 19678, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=23.95.61.191:19678", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
-- {name: "IL [cmj3]", server: "129.159.129.107", port: 2053, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=proxyip.tp32576.s2.uno.090227.xyz", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
-- {name: "IL 2 [cmj3]", server: "129.159.143.171", port: 8443, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=proxyip.tp46871.s2.uno.090227.xyz", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
+- {name: "🇺🇸 US 8 [cmj3]", server: "154.40.46.28", port: 46757, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=154.40.46.28:46757", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
+- {name: "🇺🇸 US 9 [cmj3]", server: "204.110.220.135", port: 80, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=204.110.220.135:80", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
+- {name: "🇺🇸 US 10 [cmj3]", server: "107.174.228.38", port: 23234, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=107.174.228.38:23234", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
+- {name: "🇺🇸 US 11 [cmj3]", server: "23.95.61.191", port: 19678, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=23.95.61.191:19678", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
+- {name: "IL [cmj3]", server: "129.159.129.107", port: 2053, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=proxyip.tp33470.s2.uno.090227.xyz", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
+- {name: "IL 2 [cmj3]", server: "129.159.143.171", port: 8443, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=proxyip.tp33470.s2.uno.090227.xyz", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
 - {name: "🇰🇷 KR 5 [cmj3]", server: "132.145.81.117", port: 443, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=proxyip.kr.cmliussss.net", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
 - {name: "🇯🇵 JP 3 [cmj3]", server: "138.2.61.180", port: 443, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=proxyip.jp.cmliussss.net", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
-- {name: "CH [cmj3]", server: "140.238.212.95", port: 443, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=proxyip.tp20654.s2.uno.090227.xyz", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
+- {name: "CH [cmj3]", server: "140.238.212.95", port: 443, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=proxyip.tp46871.s2.uno.090227.xyz", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
 - {name: "🇮🇳 IN [cmj3]", server: "141.148.203.6", port: 443, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=proxyip.tp33470.s2.uno.090227.xyz", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
-- {name: "🇮🇳 IN 2 [cmj3]", server: "144.24.140.37", port: 443, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=proxyip.tp32576.s2.uno.090227.xyz", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
-- {name: "🇺🇸 US 11 [cmj3]", server: "150.136.87.192", port: 443, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=proxyip.us.cmliussss.net", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
-- {name: "🇮🇳 IN 3 [cmj3]", server: "152.67.190.105", port: 443, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=proxyip.tp32576.s2.uno.090227.xyz", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
-- {name: "🇺🇸 US 12 [cmj3]", server: "154.17.21.134", port: 18446, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=proxyip.us.cmliussss.net", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
-- {name: "🇨🇳 CN [cmj3]", server: "156.230.12.71", port: 443, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=proxyip.tp20654.s2.uno.090227.xyz", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
-- {name: "IT [cmj3]", server: "158.180.230.4", port: 8443, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=proxyip.tp32576.s2.uno.090227.xyz", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
-- {name: "🇦🇺 AU [cmj3]", server: "168.138.13.201", port: 443, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=proxyip.tp20064.s2.uno.090227.xyz", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
+- {name: "🇮🇳 IN 2 [cmj3]", server: "144.24.140.37", port: 443, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=proxyip.tp33470.s2.uno.090227.xyz", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
+- {name: "🇺🇸 US 12 [cmj3]", server: "150.136.87.192", port: 443, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=proxyip.us.cmliussss.net", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
+- {name: "🇮🇳 IN 3 [cmj3]", server: "152.67.190.105", port: 443, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=proxyip.tp20064.s2.uno.090227.xyz", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
+- {name: "🇺🇸 US 13 [cmj3]", server: "154.17.21.134", port: 18446, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=proxyip.us.cmliussss.net", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
+- {name: "🇨🇳 CN [cmj3]", server: "156.230.12.71", port: 443, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=proxyip.tp33470.s2.uno.090227.xyz", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
+- {name: "IT [cmj3]", server: "158.180.230.4", port: 8443, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=proxyip.tp46871.s2.uno.090227.xyz", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
+- {name: "🇦🇺 AU [cmj3]", server: "168.138.13.201", port: 443, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=proxyip.tp20654.s2.uno.090227.xyz", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
 - {name: "🇦🇺 AU 2 [cmj3]", server: "192.9.180.162", port: 443, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=proxyip.tp20064.s2.uno.090227.xyz", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
 - {name: "🇨🇳 TW [cmj3]", server: "210.61.97.241", port: 81, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=proxyip.tw.cmliussss.net", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
-- {name: "🇭🇰 HK 6 [cmj3]", server: "43.135.44.101", port: 30002, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=ProxyIP.Oracle.cmliussss.net", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
-- {name: "🇺🇸 US 13 [cmj3]", server: "47.253.105.131", port: 443, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=proxyip.us.cmliussss.net", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
-- {name: "🇭🇰 HK 7 [cmj3]", server: "8.217.36.98", port: 14934, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=ProxyIP.Oracle.cmliussss.net", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
-- {name: "CT [cmj3]", server: "162.159.152.11", port: 443, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=proxyip.tp33470.s2.uno.090227.xyz", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
-- {name: "CT 2 [cmj3]", server: "162.159.153.144", port: 443, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=proxyip.tp20064.s2.uno.090227.xyz", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
-- {name: "CT 3 [cmj3]", server: "162.159.153.170", port: 443, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=proxyip.tp33470.s2.uno.090227.xyz", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
-- {name: "CT 4 [cmj3]", server: "162.159.152.225", port: 443, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=proxyip.tp20654.s2.uno.090227.xyz", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
-- {name: "CT 5 [cmj3]", server: "162.159.153.216", port: 443, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=proxyip.tp42595.s2.uno.090227.xyz", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
-- {name: "CT 6 [cmj3]", server: "162.159.153.184", port: 443, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=proxyip.tp20064.s2.uno.090227.xyz", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
-- {name: "CMCC [cmj3]", server: "104.17.102.95", port: 443, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=proxyip.tp20654.s2.uno.090227.xyz", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
-- {name: "CMCC 2 [cmj3]", server: "104.17.219.208", port: 443, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=proxyip.tp42595.s2.uno.090227.xyz", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
-- {name: "CMCC 3 [cmj3]", server: "104.17.100.185", port: 443, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=proxyip.tp32576.s2.uno.090227.xyz", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
-- {name: "CMCC 4 [cmj3]", server: "104.17.223.37", port: 443, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=proxyip.tp32576.s2.uno.090227.xyz", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
-- {name: "CMCC 5 [cmj3]", server: "104.18.147.201", port: 443, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=proxyip.tp46871.s2.uno.090227.xyz", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
-- {name: "CMCC 6 [cmj3]", server: "104.19.150.28", port: 443, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=proxyip.tp46871.s2.uno.090227.xyz", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
-- {name: "CMCC-IPV6 [cmj3]", server: "2606:4700:3036:ef:db9e:eecc:caef:9d4a", port: 443, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=proxyip.tp46871.s2.uno.090227.xyz", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
-- {name: "CMCC-IPV6 2 [cmj3]", server: "2606:4700:3036:6ed4:ff6e:712c:4953:87a5", port: 443, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=proxyip.tp20654.s2.uno.090227.xyz", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
-- {name: "CMCC-IPV6 3 [cmj3]", server: "2606:4700:3036:ef:95e:7a29:2ccc:d331", port: 443, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=proxyip.tp33470.s2.uno.090227.xyz", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
-- {name: "CMCC-IPV6 4 [cmj3]", server: "2606:4700:3036:6ed4:260:e367:c3d4:d3bb", port: 443, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=proxyip.tp32576.s2.uno.090227.xyz", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
-- {name: "CMCC-IPV6 5 [cmj3]", server: "2606:4700:3036:6ed4:e1ed:36:7204:2031", port: 443, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=proxyip.tp20064.s2.uno.090227.xyz", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
-- {name: "CMCC-IPV6 6 [cmj3]", server: "2606:4700:3036:6ed4:260:e3e9:a48c:8437", port: 443, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=proxyip.tp32576.s2.uno.090227.xyz", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
-- {name: "日本1 [yhjc]", server: "youhui-jp.sanguayun.com", port: 55299, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "50001-59999", type: "hysteria2", password: "5f2ca7ea-3111-4a73-a8f4-f711a1aeba5f"}
-- {name: "日本2 [yhjc]", server: "youhui-jp.sanguayun.com", port: 51260, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "50001-59999", type: "hysteria2", password: "5f2ca7ea-3111-4a73-a8f4-f711a1aeba5f"}
-- {name: "日本3 [yhjc]", server: "youhui-jp.sanguayun.com", port: 59805, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "50001-59999", type: "hysteria2", password: "5f2ca7ea-3111-4a73-a8f4-f711a1aeba5f"}
-- {name: "日本4 [yhjc]", server: "youhui-jp.sanguayun.com", port: 53033, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "50001-59999", type: "hysteria2", password: "5f2ca7ea-3111-4a73-a8f4-f711a1aeba5f"}
-- {name: "法国1 [yhjc]", server: "youhui-fr.sanguayun.com", port: 52380, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "50001-59999", type: "hysteria2", password: "5f2ca7ea-3111-4a73-a8f4-f711a1aeba5f"}
-- {name: "法国2 [yhjc]", server: "youhui-fr.sanguayun.com", port: 59280, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "50001-59999", type: "hysteria2", password: "5f2ca7ea-3111-4a73-a8f4-f711a1aeba5f"}
-- {name: "法国3 [yhjc]", server: "youhui-fr.sanguayun.com", port: 53137, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "50001-59999", type: "hysteria2", password: "5f2ca7ea-3111-4a73-a8f4-f711a1aeba5f"}
-- {name: "法国4 [yhjc]", server: "youhui-fr.sanguayun.com", port: 55700, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "50001-59999", type: "hysteria2", password: "5f2ca7ea-3111-4a73-a8f4-f711a1aeba5f"}
-- {name: "加拿大1 [yhjc]", server: "youhui-ca.sanguayun.com", port: 51576, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "50001-59999", type: "hysteria2", password: "5f2ca7ea-3111-4a73-a8f4-f711a1aeba5f"}
-- {name: "加拿大2 [yhjc]", server: "youhui-ca.sanguayun.com", port: 50154, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "50001-59999", type: "hysteria2", password: "5f2ca7ea-3111-4a73-a8f4-f711a1aeba5f"}
-- {name: "加拿大3 [yhjc]", server: "youhui-ca.sanguayun.com", port: 54307, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "50001-59999", type: "hysteria2", password: "5f2ca7ea-3111-4a73-a8f4-f711a1aeba5f"}
-- {name: "加拿大4 [yhjc]", server: "youhui-ca.sanguayun.com", port: 51104, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "50001-59999", type: "hysteria2", password: "5f2ca7ea-3111-4a73-a8f4-f711a1aeba5f"}
-- {name: "伊拉克1 [yhjc]", server: "youhui-iq.sanguayun.com", port: 56924, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "50001-59999", type: "hysteria2", password: "5f2ca7ea-3111-4a73-a8f4-f711a1aeba5f"}
-- {name: "伊拉克2 [yhjc]", server: "youhui-iq.sanguayun.com", port: 51305, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "50001-59999", type: "hysteria2", password: "5f2ca7ea-3111-4a73-a8f4-f711a1aeba5f"}
-- {name: "伊拉克3 [yhjc]", server: "youhui-iq.sanguayun.com", port: 52457, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "50001-59999", type: "hysteria2", password: "5f2ca7ea-3111-4a73-a8f4-f711a1aeba5f"}
-- {name: "伊拉克4 [yhjc]", server: "youhui-iq.sanguayun.com", port: 52525, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "50001-59999", type: "hysteria2", password: "5f2ca7ea-3111-4a73-a8f4-f711a1aeba5f"}
-- {name: "美国1 [yhjc]", server: "youhui-us.sanguayun.com", port: 50044, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "50001-59999", type: "hysteria2", password: "5f2ca7ea-3111-4a73-a8f4-f711a1aeba5f"}
-- {name: "美国2 [yhjc]", server: "youhui-us.sanguayun.com", port: 58905, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "50001-59999", type: "hysteria2", password: "5f2ca7ea-3111-4a73-a8f4-f711a1aeba5f"}
-- {name: "美国3 [yhjc]", server: "youhui-us.sanguayun.com", port: 51434, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "50001-59999", type: "hysteria2", password: "5f2ca7ea-3111-4a73-a8f4-f711a1aeba5f"}
-- {name: "美国4 [yhjc]", server: "youhui-us.sanguayun.com", port: 59976, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "50001-59999", type: "hysteria2", password: "5f2ca7ea-3111-4a73-a8f4-f711a1aeba5f"}
-- {name: "1巴西圣保罗 [cbb3]", type: "vmess", server: "172.67.55.142", port: "80", uuid: "812eb086-8442-4799-9d92-112fd1a225af", alterId: 0, cipher: "auto", udp: true, network: "ws", ws-opts: {path: "/s15.html", headers: {Host: "988892496653562025041723130796451.s15.chibaba.filegear-sg.me"}}, ws-path: "/s15.html", ws-headers: {Host: "2025041723130796451.s15.chibaba.filegear-sg.me", headers: {Host: "138440416167962025041723130796451.s15.chibaba.filegear-sg.me"}}}
-- {name: "2巴西圣保罗 [cbb3]", type: "vmess", server: "162.159.2.102", port: "80", uuid: "812eb086-8442-4799-9d92-112fd1a225af", alterId: 0, cipher: "auto", udp: true, network: "ws", ws-opts: {path: "/s15.html", headers: {Host: "934734556475752025041723130716778.s15.chibaba.filegear-sg.me"}}, ws-path: "/s15.html", ws-headers: {Host: "2025041723130716778.s15.chibaba.filegear-sg.me", headers: {Host: "353297146531552025041723130716778.s15.chibaba.filegear-sg.me"}}}
-- {name: "3巴西圣保罗 [cbb3]", type: "vmess", server: "172.67.98.140", port: "80", uuid: "812eb086-8442-4799-9d92-112fd1a225af", alterId: 0, cipher: "auto", udp: true, network: "ws", ws-opts: {path: "/s15.html", headers: {Host: "470498116336092025041723130717013.s15.chibaba.filegear-sg.me"}}, ws-path: "/s15.html", ws-headers: {Host: "2025041723130717013.s15.chibaba.filegear-sg.me", headers: {Host: "451613925784632025041723130717013.s15.chibaba.filegear-sg.me"}}}
-- {name: "4巴西圣保罗 [cbb3]", type: "vmess", server: "172.67.110.36", port: "80", uuid: "812eb086-8442-4799-9d92-112fd1a225af", alterId: 0, cipher: "auto", udp: true, network: "ws", ws-opts: {path: "/s15.html", headers: {Host: "491123517850912025041723130758656.s15.chibaba.filegear-sg.me"}}, ws-path: "/s15.html", ws-headers: {Host: "2025041723130758656.s15.chibaba.filegear-sg.me", headers: {Host: "167769476490222025041723130758656.s15.chibaba.filegear-sg.me"}}}
-- {name: "5巴西圣保罗 [cbb3]", type: "vmess", server: "104.25.155.3", port: "80", uuid: "812eb086-8442-4799-9d92-112fd1a225af", alterId: 0, cipher: "auto", udp: true, network: "ws", ws-opts: {path: "/s15.html", headers: {Host: "935797022511132025041723130729331.s15.chibaba.filegear-sg.me"}}, ws-path: "/s15.html", ws-headers: {Host: "2025041723130729331.s15.chibaba.filegear-sg.me", headers: {Host: "197309584789512025041723130729331.s15.chibaba.filegear-sg.me"}}}
-- {name: "6巴西圣保罗 [cbb3]", type: "vmess", server: "198.41.204.140", port: "80", uuid: "812eb086-8442-4799-9d92-112fd1a225af", alterId: 0, cipher: "auto", udp: true, network: "ws", ws-opts: {path: "/s15.html", headers: {Host: "464508988180282025041723130792356.s15.chibaba.filegear-sg.me"}}, ws-path: "/s15.html", ws-headers: {Host: "2025041723130792356.s15.chibaba.filegear-sg.me", headers: {Host: "312332023323862025041723130792356.s15.chibaba.filegear-sg.me"}}}
-- {name: "7巴西圣保罗 [cbb3]", type: "vmess", server: "104.17.250.255", port: "80", uuid: "812eb086-8442-4799-9d92-112fd1a225af", alterId: 0, cipher: "auto", udp: true, network: "ws", ws-opts: {path: "/s15.html", headers: {Host: "934117160921092025041723130765092.s15.chibaba.filegear-sg.me"}}, ws-path: "/s15.html", ws-headers: {Host: "2025041723130765092.s15.chibaba.filegear-sg.me", headers: {Host: "148572710124732025041723130765092.s15.chibaba.filegear-sg.me"}}}
-- {name: "8巴西圣保罗 [cbb3]", type: "vmess", server: "198.41.203.231", port: "80", uuid: "812eb086-8442-4799-9d92-112fd1a225af", alterId: 0, cipher: "auto", udp: true, network: "ws", ws-opts: {path: "/s15.html", headers: {Host: "730581093079702025041723130750807.s15.chibaba.filegear-sg.me"}}, ws-path: "/s15.html", ws-headers: {Host: "2025041723130750807.s15.chibaba.filegear-sg.me", headers: {Host: "441788044580802025041723130750807.s15.chibaba.filegear-sg.me"}}}
-- {name: "9巴西圣保罗 [cbb3]", type: "vmess", server: "172.64.40.204", port: "80", uuid: "812eb086-8442-4799-9d92-112fd1a225af", alterId: 0, cipher: "auto", udp: true, network: "ws", ws-opts: {path: "/s15.html", headers: {Host: "166902503671162025041723130751063.s15.chibaba.filegear-sg.me"}}, ws-path: "/s15.html", ws-headers: {Host: "2025041723130751063.s15.chibaba.filegear-sg.me", headers: {Host: "874977642829782025041723130751063.s15.chibaba.filegear-sg.me"}}}
-- {name: "10巴西圣保罗 [cbb3]", type: "vmess", server: "162.159.20.53", port: "80", uuid: "812eb086-8442-4799-9d92-112fd1a225af", alterId: 0, cipher: "auto", udp: true, network: "ws", ws-opts: {path: "/s15.html", headers: {Host: "161329461253492025041723130783147.s15.chibaba.filegear-sg.me"}}, ws-path: "/s15.html", ws-headers: {Host: "2025041723130783147.s15.chibaba.filegear-sg.me", headers: {Host: "518541270345992025041723130783147.s15.chibaba.filegear-sg.me"}}}
-- {name: "11巴西圣保罗 [cbb3]", type: "vmess", server: "172.67.71.72", port: "80", uuid: "812eb086-8442-4799-9d92-112fd1a225af", alterId: 0, cipher: "auto", udp: true, network: "ws", ws-opts: {path: "/s15.html", headers: {Host: "826761485860672025041723130787505.s15.chibaba.filegear-sg.me"}}, ws-path: "/s15.html", ws-headers: {Host: "2025041723130787505.s15.chibaba.filegear-sg.me", headers: {Host: "249625117622602025041723130787505.s15.chibaba.filegear-sg.me"}}}
-- {name: "12巴西圣保罗 [cbb3]", type: "vmess", server: "172.67.89.199", port: "80", uuid: "812eb086-8442-4799-9d92-112fd1a225af", alterId: 0, cipher: "auto", udp: true, network: "ws", ws-opts: {path: "/s15.html", headers: {Host: "551592741015502025041723130722886.s15.chibaba.filegear-sg.me"}}, ws-path: "/s15.html", ws-headers: {Host: "2025041723130722886.s15.chibaba.filegear-sg.me", headers: {Host: "96803295038492025041723130722886.s15.chibaba.filegear-sg.me"}}}
-- {name: "13巴西圣保罗 [cbb3]", type: "vmess", server: "162.159.136.150", port: "80", uuid: "812eb086-8442-4799-9d92-112fd1a225af", alterId: 0, cipher: "auto", udp: true, network: "ws", ws-opts: {path: "/s15.html", headers: {Host: "598355996215882025041723130778552.s15.chibaba.filegear-sg.me"}}, ws-path: "/s15.html", ws-headers: {Host: "2025041723130778552.s15.chibaba.filegear-sg.me", headers: {Host: "493232574634382025041723130778552.s15.chibaba.filegear-sg.me"}}}
-- {name: "14巴西圣保罗 [cbb3]", type: "vmess", server: "172.67.78.222", port: "80", uuid: "812eb086-8442-4799-9d92-112fd1a225af", alterId: 0, cipher: "auto", udp: true, network: "ws", ws-opts: {path: "/s15.html", headers: {Host: "410489518673942025041723130732115.s15.chibaba.filegear-sg.me"}}, ws-path: "/s15.html", ws-headers: {Host: "2025041723130732115.s15.chibaba.filegear-sg.me", headers: {Host: "838551684092542025041723130732115.s15.chibaba.filegear-sg.me"}}}
-- {name: "15巴西圣保罗 [cbb3]", type: "vmess", server: "162.159.32.167", port: "80", uuid: "812eb086-8442-4799-9d92-112fd1a225af", alterId: 0, cipher: "auto", udp: true, network: "ws", ws-opts: {path: "/s15.html", headers: {Host: "549936817794852025041723130750417.s15.chibaba.filegear-sg.me"}}, ws-path: "/s15.html", ws-headers: {Host: "2025041723130750417.s15.chibaba.filegear-sg.me", headers: {Host: "581237372576612025041723130750417.s15.chibaba.filegear-sg.me"}}}
-- {name: "16巴西圣保罗-V6 [cbb3]", type: "vmess", server: "198.41.200.146", port: "80", uuid: "812eb086-8442-4799-9d92-112fd1a225af", alterId: 0, cipher: "auto", udp: true, network: "ws", ws-opts: {path: "/s15.html", headers: {Host: "312877415399322025041723130747612.s15.chibaba.filegear-sg.me"}}, ws-path: "/s15.html", ws-headers: {Host: "2025041723130747612.s15.chibaba.filegear-sg.me", headers: {Host: "543867008188532025041723130747612.s15.chibaba.filegear-sg.me"}}}
-- {name: "17巴西圣保罗-V6 [cbb3]", type: "vmess", server: "2606:4700:3000::81:47b4", port: "80", uuid: "812eb086-8442-4799-9d92-112fd1a225af", alterId: 0, cipher: "auto", udp: true, network: "ws", ws-opts: {path: "/s15.html", headers: {Host: "713183671841352025041723130752489.s15.chibaba.filegear-sg.me"}}, ws-path: "/s15.html", ws-headers: {Host: "2025041723130752489.s15.chibaba.filegear-sg.me", headers: {Host: "412570434957992025041723130752489.s15.chibaba.filegear-sg.me"}}}
-- {name: "18巴西圣保罗-V6 [cbb3]", type: "vmess", server: "2606:4700:4402::2935:40d4", port: "80", uuid: "812eb086-8442-4799-9d92-112fd1a225af", alterId: 0, cipher: "auto", udp: true, network: "ws", ws-opts: {path: "/s15.html", headers: {Host: "873211197528842025041723130768477.s15.chibaba.filegear-sg.me"}}, ws-path: "/s15.html", ws-headers: {Host: "2025041723130768477.s15.chibaba.filegear-sg.me", headers: {Host: "361746482064702025041723130768477.s15.chibaba.filegear-sg.me"}}}
-- {name: "19巴西圣保罗-V6 [cbb3]", type: "vmess", server: "2606:4700:3056::32e3:76b9", port: "80", uuid: "812eb086-8442-4799-9d92-112fd1a225af", alterId: 0, cipher: "auto", udp: true, network: "ws", ws-opts: {path: "/s15.html", headers: {Host: "245130829399142025041723130724392.s15.chibaba.filegear-sg.me"}}, ws-path: "/s15.html", ws-headers: {Host: "2025041723130724392.s15.chibaba.filegear-sg.me", headers: {Host: "92142472776992025041723130724392.s15.chibaba.filegear-sg.me"}}}
-- {name: "20巴西圣保罗-V6 [cbb3]", type: "vmess", server: "2606:4700:1200::4f88:78ba", port: "80", uuid: "812eb086-8442-4799-9d92-112fd1a225af", alterId: 0, cipher: "auto", udp: true, network: "ws", ws-opts: {path: "/s15.html", headers: {Host: "916901904007602025041723130729482.s15.chibaba.filegear-sg.me"}}, ws-path: "/s15.html", ws-headers: {Host: "2025041723130729482.s15.chibaba.filegear-sg.me", headers: {Host: "611872963605262025041723130729482.s15.chibaba.filegear-sg.me"}}}
+- {name: "🇭🇰 HK 8 [cmj3]", server: "43.135.44.101", port: 30002, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=ProxyIP.Oracle.cmliussss.net", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
+- {name: "🇺🇸 US 14 [cmj3]", server: "47.253.105.131", port: 443, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=proxyip.us.cmliussss.net", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
+- {name: "🇭🇰 HK 9 [cmj3]", server: "8.217.36.98", port: 14934, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=ProxyIP.Oracle.cmliussss.net", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
+- {name: "CT [cmj3]", server: "162.159.152.53", port: 443, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=proxyip.tp20654.s2.uno.090227.xyz", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
+- {name: "CT 2 [cmj3]", server: "162.159.153.239", port: 443, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=proxyip.tp46871.s2.uno.090227.xyz", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
+- {name: "CT 3 [cmj3]", server: "162.159.152.31", port: 443, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=proxyip.tp42595.s2.uno.090227.xyz", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
+- {name: "CT 4 [cmj3]", server: "162.159.153.216", port: 443, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=proxyip.tp20064.s2.uno.090227.xyz", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
+- {name: "CT 5 [cmj3]", server: "162.159.153.212", port: 443, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=proxyip.tp33470.s2.uno.090227.xyz", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
+- {name: "CT 6 [cmj3]", server: "162.159.152.225", port: 443, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=proxyip.tp33470.s2.uno.090227.xyz", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
+- {name: "CMCC [cmj3]", server: "104.17.110.70", port: 443, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=proxyip.tp32576.s2.uno.090227.xyz", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
+- {name: "CMCC 2 [cmj3]", server: "104.17.104.243", port: 443, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=proxyip.tp46871.s2.uno.090227.xyz", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
+- {name: "CMCC 3 [cmj3]", server: "104.16.246.188", port: 443, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=proxyip.tp20064.s2.uno.090227.xyz", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
+- {name: "CMCC 4 [cmj3]", server: "104.18.83.92", port: 443, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=proxyip.tp33470.s2.uno.090227.xyz", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
+- {name: "CMCC 5 [cmj3]", server: "104.17.101.175", port: 443, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=proxyip.tp20064.s2.uno.090227.xyz", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
+- {name: "CMCC 6 [cmj3]", server: "104.17.223.37", port: 443, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=proxyip.tp20064.s2.uno.090227.xyz", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
+- {name: "CMCC-IPV6 [cmj3]", server: "2606:4700:3036:ef:3f32:a9c6:39c4:9ae3", port: 443, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=proxyip.tp20064.s2.uno.090227.xyz", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
+- {name: "CMCC-IPV6 2 [cmj3]", server: "2606:4700:3036:ef:95e:7a29:2ccc:d331", port: 443, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=proxyip.tp32576.s2.uno.090227.xyz", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
+- {name: "CMCC-IPV6 3 [cmj3]", server: "2606:4700:3036:ef:92f:be51:8695:9fc5", port: 443, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=proxyip.tp20064.s2.uno.090227.xyz", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
+- {name: "CMCC-IPV6 4 [cmj3]", server: "2606:4700:3036:6ed4:ffdf:15bf:7d77:5f52", port: 443, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=proxyip.tp46871.s2.uno.090227.xyz", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
+- {name: "CMCC-IPV6 5 [cmj3]", server: "2606:4700:3036:6ed4:e1ed:ae00:3c36:e683", port: 443, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=proxyip.tp20654.s2.uno.090227.xyz", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
+- {name: "CMCC-IPV6 6 [cmj3]", server: "2606:4700:3036:6ed4:260:e367:c3d4:d3bb", port: 443, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=proxyip.tp20654.s2.uno.090227.xyz", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
+- {name: "1巴西圣保罗 [cbb3]", type: "vmess", server: "172.67.55.142", port: "80", uuid: "812eb086-8442-4799-9d92-112fd1a225af", alterId: 0, cipher: "auto", udp: true, network: "ws", ws-opts: {path: "/s15.html", headers: {Host: "10746763462702025041800154377421.s15.chibaba.filegear-sg.me"}}, ws-path: "/s15.html", ws-headers: {Host: "2025041800154377421.s15.chibaba.filegear-sg.me", headers: {Host: "79629674435222025041800154377421.s15.chibaba.filegear-sg.me"}}}
+- {name: "2巴西圣保罗 [cbb3]", type: "vmess", server: "162.159.2.102", port: "80", uuid: "812eb086-8442-4799-9d92-112fd1a225af", alterId: 0, cipher: "auto", udp: true, network: "ws", ws-opts: {path: "/s15.html", headers: {Host: "897715716929032025041800154384987.s15.chibaba.filegear-sg.me"}}, ws-path: "/s15.html", ws-headers: {Host: "2025041800154384987.s15.chibaba.filegear-sg.me", headers: {Host: "201620039800582025041800154384987.s15.chibaba.filegear-sg.me"}}}
+- {name: "3巴西圣保罗 [cbb3]", type: "vmess", server: "172.67.98.140", port: "80", uuid: "812eb086-8442-4799-9d92-112fd1a225af", alterId: 0, cipher: "auto", udp: true, network: "ws", ws-opts: {path: "/s15.html", headers: {Host: "462471880306842025041800154366303.s15.chibaba.filegear-sg.me"}}, ws-path: "/s15.html", ws-headers: {Host: "2025041800154366303.s15.chibaba.filegear-sg.me", headers: {Host: "628348755325302025041800154366303.s15.chibaba.filegear-sg.me"}}}
+- {name: "4巴西圣保罗 [cbb3]", type: "vmess", server: "172.67.110.36", port: "80", uuid: "812eb086-8442-4799-9d92-112fd1a225af", alterId: 0, cipher: "auto", udp: true, network: "ws", ws-opts: {path: "/s15.html", headers: {Host: "768904266006002025041800154332067.s15.chibaba.filegear-sg.me"}}, ws-path: "/s15.html", ws-headers: {Host: "2025041800154332067.s15.chibaba.filegear-sg.me", headers: {Host: "934920264311642025041800154332067.s15.chibaba.filegear-sg.me"}}}
+- {name: "5巴西圣保罗 [cbb3]", type: "vmess", server: "104.25.155.3", port: "80", uuid: "812eb086-8442-4799-9d92-112fd1a225af", alterId: 0, cipher: "auto", udp: true, network: "ws", ws-opts: {path: "/s15.html", headers: {Host: "901208493995062025041800154311744.s15.chibaba.filegear-sg.me"}}, ws-path: "/s15.html", ws-headers: {Host: "2025041800154311744.s15.chibaba.filegear-sg.me", headers: {Host: "176147820114062025041800154311744.s15.chibaba.filegear-sg.me"}}}
+- {name: "6巴西圣保罗 [cbb3]", type: "vmess", server: "198.41.204.140", port: "80", uuid: "812eb086-8442-4799-9d92-112fd1a225af", alterId: 0, cipher: "auto", udp: true, network: "ws", ws-opts: {path: "/s15.html", headers: {Host: "861503440732062025041800154318161.s15.chibaba.filegear-sg.me"}}, ws-path: "/s15.html", ws-headers: {Host: "2025041800154318161.s15.chibaba.filegear-sg.me", headers: {Host: "885115729840782025041800154318161.s15.chibaba.filegear-sg.me"}}}
+- {name: "7巴西圣保罗 [cbb3]", type: "vmess", server: "104.17.250.255", port: "80", uuid: "812eb086-8442-4799-9d92-112fd1a225af", alterId: 0, cipher: "auto", udp: true, network: "ws", ws-opts: {path: "/s15.html", headers: {Host: "744755254282912025041800154397886.s15.chibaba.filegear-sg.me"}}, ws-path: "/s15.html", ws-headers: {Host: "2025041800154397886.s15.chibaba.filegear-sg.me", headers: {Host: "427728114146262025041800154397886.s15.chibaba.filegear-sg.me"}}}
+- {name: "8巴西圣保罗 [cbb3]", type: "vmess", server: "198.41.203.231", port: "80", uuid: "812eb086-8442-4799-9d92-112fd1a225af", alterId: 0, cipher: "auto", udp: true, network: "ws", ws-opts: {path: "/s15.html", headers: {Host: "612601698009842025041800154390755.s15.chibaba.filegear-sg.me"}}, ws-path: "/s15.html", ws-headers: {Host: "2025041800154390755.s15.chibaba.filegear-sg.me", headers: {Host: "757767557954372025041800154390755.s15.chibaba.filegear-sg.me"}}}
+- {name: "9巴西圣保罗 [cbb3]", type: "vmess", server: "172.64.40.204", port: "80", uuid: "812eb086-8442-4799-9d92-112fd1a225af", alterId: 0, cipher: "auto", udp: true, network: "ws", ws-opts: {path: "/s15.html", headers: {Host: "699241532995992025041800154375211.s15.chibaba.filegear-sg.me"}}, ws-path: "/s15.html", ws-headers: {Host: "2025041800154375211.s15.chibaba.filegear-sg.me", headers: {Host: "378868205716782025041800154375211.s15.chibaba.filegear-sg.me"}}}
+- {name: "10巴西圣保罗 [cbb3]", type: "vmess", server: "162.159.20.53", port: "80", uuid: "812eb086-8442-4799-9d92-112fd1a225af", alterId: 0, cipher: "auto", udp: true, network: "ws", ws-opts: {path: "/s15.html", headers: {Host: "664397209324512025041800154351769.s15.chibaba.filegear-sg.me"}}, ws-path: "/s15.html", ws-headers: {Host: "2025041800154351769.s15.chibaba.filegear-sg.me", headers: {Host: "389634757157142025041800154351769.s15.chibaba.filegear-sg.me"}}}
+- {name: "11巴西圣保罗 [cbb3]", type: "vmess", server: "172.67.71.72", port: "80", uuid: "812eb086-8442-4799-9d92-112fd1a225af", alterId: 0, cipher: "auto", udp: true, network: "ws", ws-opts: {path: "/s15.html", headers: {Host: "873772858921182025041800154348746.s15.chibaba.filegear-sg.me"}}, ws-path: "/s15.html", ws-headers: {Host: "2025041800154348746.s15.chibaba.filegear-sg.me", headers: {Host: "229431244098962025041800154348746.s15.chibaba.filegear-sg.me"}}}
+- {name: "12巴西圣保罗 [cbb3]", type: "vmess", server: "172.67.89.199", port: "80", uuid: "812eb086-8442-4799-9d92-112fd1a225af", alterId: 0, cipher: "auto", udp: true, network: "ws", ws-opts: {path: "/s15.html", headers: {Host: "907850404251212025041800154375766.s15.chibaba.filegear-sg.me"}}, ws-path: "/s15.html", ws-headers: {Host: "2025041800154375766.s15.chibaba.filegear-sg.me", headers: {Host: "673268444347222025041800154375766.s15.chibaba.filegear-sg.me"}}}
+- {name: "13巴西圣保罗 [cbb3]", type: "vmess", server: "162.159.136.150", port: "80", uuid: "812eb086-8442-4799-9d92-112fd1a225af", alterId: 0, cipher: "auto", udp: true, network: "ws", ws-opts: {path: "/s15.html", headers: {Host: "496823419583372025041800154368148.s15.chibaba.filegear-sg.me"}}, ws-path: "/s15.html", ws-headers: {Host: "2025041800154368148.s15.chibaba.filegear-sg.me", headers: {Host: "677474172353112025041800154368148.s15.chibaba.filegear-sg.me"}}}
+- {name: "14巴西圣保罗 [cbb3]", type: "vmess", server: "172.67.78.222", port: "80", uuid: "812eb086-8442-4799-9d92-112fd1a225af", alterId: 0, cipher: "auto", udp: true, network: "ws", ws-opts: {path: "/s15.html", headers: {Host: "249842662103872025041800154316828.s15.chibaba.filegear-sg.me"}}, ws-path: "/s15.html", ws-headers: {Host: "2025041800154316828.s15.chibaba.filegear-sg.me", headers: {Host: "844327932361012025041800154316828.s15.chibaba.filegear-sg.me"}}}
+- {name: "15巴西圣保罗 [cbb3]", type: "vmess", server: "162.159.32.167", port: "80", uuid: "812eb086-8442-4799-9d92-112fd1a225af", alterId: 0, cipher: "auto", udp: true, network: "ws", ws-opts: {path: "/s15.html", headers: {Host: "887367446403812025041800154372889.s15.chibaba.filegear-sg.me"}}, ws-path: "/s15.html", ws-headers: {Host: "2025041800154372889.s15.chibaba.filegear-sg.me", headers: {Host: "282007236972792025041800154372889.s15.chibaba.filegear-sg.me"}}}
+- {name: "16巴西圣保罗-V6 [cbb3]", type: "vmess", server: "198.41.200.146", port: "80", uuid: "812eb086-8442-4799-9d92-112fd1a225af", alterId: 0, cipher: "auto", udp: true, network: "ws", ws-opts: {path: "/s15.html", headers: {Host: "839439622909432025041800154322631.s15.chibaba.filegear-sg.me"}}, ws-path: "/s15.html", ws-headers: {Host: "2025041800154322631.s15.chibaba.filegear-sg.me", headers: {Host: "594603557570992025041800154322631.s15.chibaba.filegear-sg.me"}}}
+- {name: "17巴西圣保罗-V6 [cbb3]", type: "vmess", server: "2606:4700:3000::81:47b4", port: "80", uuid: "812eb086-8442-4799-9d92-112fd1a225af", alterId: 0, cipher: "auto", udp: true, network: "ws", ws-opts: {path: "/s15.html", headers: {Host: "422522251247812025041800154359903.s15.chibaba.filegear-sg.me"}}, ws-path: "/s15.html", ws-headers: {Host: "2025041800154359903.s15.chibaba.filegear-sg.me", headers: {Host: "735788634707532025041800154359903.s15.chibaba.filegear-sg.me"}}}
+- {name: "18巴西圣保罗-V6 [cbb3]", type: "vmess", server: "2606:4700:4402::2935:40d4", port: "80", uuid: "812eb086-8442-4799-9d92-112fd1a225af", alterId: 0, cipher: "auto", udp: true, network: "ws", ws-opts: {path: "/s15.html", headers: {Host: "937839164240332025041800154343492.s15.chibaba.filegear-sg.me"}}, ws-path: "/s15.html", ws-headers: {Host: "2025041800154343492.s15.chibaba.filegear-sg.me", headers: {Host: "933662469920402025041800154343492.s15.chibaba.filegear-sg.me"}}}
+- {name: "19巴西圣保罗-V6 [cbb3]", type: "vmess", server: "2606:4700:3056::32e3:76b9", port: "80", uuid: "812eb086-8442-4799-9d92-112fd1a225af", alterId: 0, cipher: "auto", udp: true, network: "ws", ws-opts: {path: "/s15.html", headers: {Host: "793540804956392025041800154389189.s15.chibaba.filegear-sg.me"}}, ws-path: "/s15.html", ws-headers: {Host: "2025041800154389189.s15.chibaba.filegear-sg.me", headers: {Host: "675649636690242025041800154389189.s15.chibaba.filegear-sg.me"}}}
+- {name: "20巴西圣保罗-V6 [cbb3]", type: "vmess", server: "2606:4700:1200::4f88:78ba", port: "80", uuid: "812eb086-8442-4799-9d92-112fd1a225af", alterId: 0, cipher: "auto", udp: true, network: "ws", ws-opts: {path: "/s15.html", headers: {Host: "445861097036782025041800154353737.s15.chibaba.filegear-sg.me"}}, ws-path: "/s15.html", ws-headers: {Host: "2025041800154353737.s15.chibaba.filegear-sg.me", headers: {Host: "282773083696402025041800154353737.s15.chibaba.filegear-sg.me"}}}
 - {name: "🇹🇼台湾｜01｜原生IP｜免费 [ly]", server: "tw.akebi.cc", port: 30001, sni: "tw.akebi.cc", up: 500, down: 500, skip-cert-verify: false, type: "hysteria2", password: "82febca6-8856-41fe-84df-c8bda0b72c7b"}
 - {name: "🇭🇰香港｜01｜免费 [ly]", server: "tw.akebi.cc", port: 1000, sni: "hk03.akebi.cc", up: 500, down: 500, skip-cert-verify: false, type: "hysteria2", password: "82febca6-8856-41fe-84df-c8bda0b72c7b"}
 - {name: "🇦🇺澳大利亚｜01｜原生IP [ly]", server: "tw3.akebi.cc", port: 2006, sni: "au01.akebi.cc", up: 500, down: 500, skip-cert-verify: false, type: "hysteria2", password: "82febca6-8856-41fe-84df-c8bda0b72c7b"}
-- {name: "香港 [xl2]", type: "ss", server: "hkg01.dns-node.top", port: 45573, cipher: "aes-128-gcm", password: "c706a290-97cd-47f2-9a9d-a1981c03a4fe", udp: true}
-- {name: "台湾 [xl2]", type: "ss", server: "tw01.dns-node.top", port: 45571, cipher: "aes-128-gcm", password: "c706a290-97cd-47f2-9a9d-a1981c03a4fe", udp: true}
-- {name: "日本 [xl2]", type: "ss", server: "jp01.dns-node.top", port: 45612, cipher: "aes-128-gcm", password: "c706a290-97cd-47f2-9a9d-a1981c03a4fe", udp: true}
-- {name: "韩国 [xl2]", type: "ss", server: "jp01.dns-node.top", port: 45572, cipher: "aes-128-gcm", password: "c706a290-97cd-47f2-9a9d-a1981c03a4fe", udp: true}
-- {name: "新加坡 [xl2]", type: "ss", server: "sg04.dns-node.top", port: 45609, cipher: "aes-128-gcm", password: "c706a290-97cd-47f2-9a9d-a1981c03a4fe", udp: true}
-- {name: "美国 [xl2]", type: "ss", server: "us01.dns-node.top", port: 45581, cipher: "aes-128-gcm", password: "c706a290-97cd-47f2-9a9d-a1981c03a4fe", udp: true}
-- {name: "英国 [xl2]", type: "ss", server: "uk01.dns-node.top", port: 45615, cipher: "aes-128-gcm", password: "c706a290-97cd-47f2-9a9d-a1981c03a4fe", udp: true}
-- {name: "马来西亚 [xl2]", type: "ss", server: "sg04.dns-node.top", port: 45610, cipher: "aes-128-gcm", password: "c706a290-97cd-47f2-9a9d-a1981c03a4fe", udp: true}
-- {name: "印度尼西亚 [xl2]", type: "ss", server: "sg03.dns-node.top", port: 45608, cipher: "aes-128-gcm", password: "c706a290-97cd-47f2-9a9d-a1981c03a4fe", udp: true}
-- {name: "新西兰 [xl2]", type: "ss", server: "sg04.dns-node.top", port: 45611, cipher: "aes-128-gcm", password: "c706a290-97cd-47f2-9a9d-a1981c03a4fe", udp: true}
-- {name: "澳大利亚 [xl2]", type: "ss", server: "sg03.dns-node.top", port: 45607, cipher: "aes-128-gcm", password: "c706a290-97cd-47f2-9a9d-a1981c03a4fe", udp: true}
-- {name: "巴基斯坦 [xl2]", type: "ss", server: "sg03.dns-node.top", port: 45800, cipher: "aes-128-gcm", password: "c706a290-97cd-47f2-9a9d-a1981c03a4fe", udp: true}
-- {name: "奥地利 [xl2]", type: "ss", server: "eu.dns-node.top", port: 43800, cipher: "aes-128-gcm", password: "c706a290-97cd-47f2-9a9d-a1981c03a4fe", udp: true}
-- {name: "埃及 [xl2]", type: "ss", server: "eu.dns-node.top", port: 45595, cipher: "aes-128-gcm", password: "c706a290-97cd-47f2-9a9d-a1981c03a4fe", udp: true}
-- {name: "法国 [xl2]", type: "ss", server: "eu.dns-node.top", port: 45597, cipher: "aes-128-gcm", password: "c706a290-97cd-47f2-9a9d-a1981c03a4fe", udp: true}
-- {name: "印度 [xl2]", type: "ss", server: "eu.dns-node.top", port: 45598, cipher: "aes-128-gcm", password: "c706a290-97cd-47f2-9a9d-a1981c03a4fe", udp: true}
-- {name: "尼日利亚 [xl2]", type: "ss", server: "eu.dns-node.top", port: 45601, cipher: "aes-128-gcm", password: "c706a290-97cd-47f2-9a9d-a1981c03a4fe", udp: true}
-- {name: "土耳其 [xl2]", type: "ss", server: "eu.dns-node.top", port: 45602, cipher: "aes-128-gcm", password: "c706a290-97cd-47f2-9a9d-a1981c03a4fe", udp: true}
-- {name: "阿根廷 [xl2]", type: "ss", server: "us_nord.dns-node.top", port: 45583, cipher: "aes-128-gcm", password: "c706a290-97cd-47f2-9a9d-a1981c03a4fe", udp: true}
-- {name: "巴西 [xl2]", type: "ss", server: "us03.dns-node.top", port: 45585, cipher: "aes-128-gcm", password: "c706a290-97cd-47f2-9a9d-a1981c03a4fe", udp: true}
-- {name: "加拿大 [xl2]", type: "ss", server: "us_nord.dns-node.top", port: 45586, cipher: "aes-128-gcm", password: "c706a290-97cd-47f2-9a9d-a1981c03a4fe", udp: true}
+- {name: "香港 [xl2]", type: "ss", server: "hkg01.dns-node.top", port: 45573, cipher: "aes-128-gcm", password: "ae6093bf-eaf6-4bd5-8fff-0b5631cc0c01", udp: true}
+- {name: "台湾 [xl2]", type: "ss", server: "tw01.dns-node.top", port: 45571, cipher: "aes-128-gcm", password: "ae6093bf-eaf6-4bd5-8fff-0b5631cc0c01", udp: true}
+- {name: "日本 [xl2]", type: "ss", server: "jp01.dns-node.top", port: 45612, cipher: "aes-128-gcm", password: "ae6093bf-eaf6-4bd5-8fff-0b5631cc0c01", udp: true}
+- {name: "韩国 [xl2]", type: "ss", server: "jp01.dns-node.top", port: 45572, cipher: "aes-128-gcm", password: "ae6093bf-eaf6-4bd5-8fff-0b5631cc0c01", udp: true}
+- {name: "新加坡 [xl2]", type: "ss", server: "sg04.dns-node.top", port: 45609, cipher: "aes-128-gcm", password: "ae6093bf-eaf6-4bd5-8fff-0b5631cc0c01", udp: true}
+- {name: "美国 [xl2]", type: "ss", server: "us01.dns-node.top", port: 45581, cipher: "aes-128-gcm", password: "ae6093bf-eaf6-4bd5-8fff-0b5631cc0c01", udp: true}
+- {name: "英国 [xl2]", type: "ss", server: "uk01.dns-node.top", port: 45615, cipher: "aes-128-gcm", password: "ae6093bf-eaf6-4bd5-8fff-0b5631cc0c01", udp: true}
+- {name: "马来西亚 [xl2]", type: "ss", server: "sg04.dns-node.top", port: 45610, cipher: "aes-128-gcm", password: "ae6093bf-eaf6-4bd5-8fff-0b5631cc0c01", udp: true}
+- {name: "印度尼西亚 [xl2]", type: "ss", server: "sg03.dns-node.top", port: 45608, cipher: "aes-128-gcm", password: "ae6093bf-eaf6-4bd5-8fff-0b5631cc0c01", udp: true}
+- {name: "新西兰 [xl2]", type: "ss", server: "sg04.dns-node.top", port: 45611, cipher: "aes-128-gcm", password: "ae6093bf-eaf6-4bd5-8fff-0b5631cc0c01", udp: true}
+- {name: "澳大利亚 [xl2]", type: "ss", server: "sg03.dns-node.top", port: 45607, cipher: "aes-128-gcm", password: "ae6093bf-eaf6-4bd5-8fff-0b5631cc0c01", udp: true}
+- {name: "巴基斯坦 [xl2]", type: "ss", server: "sg03.dns-node.top", port: 45800, cipher: "aes-128-gcm", password: "ae6093bf-eaf6-4bd5-8fff-0b5631cc0c01", udp: true}
+- {name: "奥地利 [xl2]", type: "ss", server: "eu.dns-node.top", port: 43800, cipher: "aes-128-gcm", password: "ae6093bf-eaf6-4bd5-8fff-0b5631cc0c01", udp: true}
+- {name: "埃及 [xl2]", type: "ss", server: "eu.dns-node.top", port: 45595, cipher: "aes-128-gcm", password: "ae6093bf-eaf6-4bd5-8fff-0b5631cc0c01", udp: true}
+- {name: "法国 [xl2]", type: "ss", server: "eu.dns-node.top", port: 45597, cipher: "aes-128-gcm", password: "ae6093bf-eaf6-4bd5-8fff-0b5631cc0c01", udp: true}
+- {name: "印度 [xl2]", type: "ss", server: "eu.dns-node.top", port: 45598, cipher: "aes-128-gcm", password: "ae6093bf-eaf6-4bd5-8fff-0b5631cc0c01", udp: true}
+- {name: "尼日利亚 [xl2]", type: "ss", server: "eu.dns-node.top", port: 45601, cipher: "aes-128-gcm", password: "ae6093bf-eaf6-4bd5-8fff-0b5631cc0c01", udp: true}
+- {name: "土耳其 [xl2]", type: "ss", server: "eu.dns-node.top", port: 45602, cipher: "aes-128-gcm", password: "ae6093bf-eaf6-4bd5-8fff-0b5631cc0c01", udp: true}
+- {name: "阿根廷 [xl2]", type: "ss", server: "us_nord.dns-node.top", port: 45583, cipher: "aes-128-gcm", password: "ae6093bf-eaf6-4bd5-8fff-0b5631cc0c01", udp: true}
+- {name: "巴西 [xl2]", type: "ss", server: "us03.dns-node.top", port: 45585, cipher: "aes-128-gcm", password: "ae6093bf-eaf6-4bd5-8fff-0b5631cc0c01", udp: true}
+- {name: "加拿大 [xl2]", type: "ss", server: "us_nord.dns-node.top", port: 45586, cipher: "aes-128-gcm", password: "ae6093bf-eaf6-4bd5-8fff-0b5631cc0c01", udp: true}
 - {name: "[日本] ⚡️ 东京 01 🚀 1000Mbps [epc3]", server: "jpt1.epclub.xyz", port: 9999, udp: true, skip-cert-verify: true, sni: "apple.com", type: "hysteria2", password: "32a6d3ac-a4d8-4aae-a8c1-200647a07065", obfs: "salamander", obfs-password: "ZDQxZDhjZDk4ZjAwYjIwNA=="}
 - {name: "[香港] ⚡️ 香港 01  🚀 1000Mbps [epc3]", server: "hk.epclub.xyz", port: 9999, udp: true, skip-cert-verify: true, sni: "apple.com", type: "hysteria2", password: "32a6d3ac-a4d8-4aae-a8c1-200647a07065", obfs: "salamander", obfs-password: "ZDQxZDhjZDk4ZjAwYjIwNA=="}
 - {name: "[香港] ⚡️ 香港 02  🚀 1000Mbps [epc3]", server: "hk2.epclub.xyz", port: 9999, udp: true, skip-cert-verify: true, sni: "apple.com", type: "hysteria2", password: "32a6d3ac-a4d8-4aae-a8c1-200647a07065", obfs: "salamander", obfs-password: "ZDQxZDhjZDk4ZjAwYjIwNA=="}
@@ -1907,123 +1895,6 @@ proxies:
 - {name: "保加利亚1|IEPL|1X [hx]", type: "vmess", server: "iepl-l.blue-bgp.xyz", port: 26221, uuid: "c9e9aa1b-a7f1-47a3-a397-7267cd961b52", alterId: 0, cipher: "auto", udp: true}
 - {name: "阿联酋1|BGP|0.4X [hx]", type: "vmess", server: "bgp-xdd.blue-bgp.xyz", port: 26231, uuid: "c9e9aa1b-a7f1-47a3-a397-7267cd961b52", alterId: 0, cipher: "auto", udp: true}
 - {name: "阿联酋1|IEPL|1X [hx]", type: "vmess", server: "iepl-l.blue-bgp.xyz", port: 26231, uuid: "c9e9aa1b-a7f1-47a3-a397-7267cd961b52", alterId: 0, cipher: "auto", udp: true}
-- {name: "日本1 [yhjc2]", server: "youhui-jp.sanguayun.com", port: 58003, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "50001-59999", type: "hysteria2", password: "04519bfc-0d67-4000-8c19-0fef8c880cca"}
-- {name: "日本2 [yhjc2]", server: "youhui-jp.sanguayun.com", port: 52382, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "50001-59999", type: "hysteria2", password: "04519bfc-0d67-4000-8c19-0fef8c880cca"}
-- {name: "日本3 [yhjc2]", server: "youhui-jp.sanguayun.com", port: 50004, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "50001-59999", type: "hysteria2", password: "04519bfc-0d67-4000-8c19-0fef8c880cca"}
-- {name: "日本4 [yhjc2]", server: "youhui-jp.sanguayun.com", port: 52374, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "50001-59999", type: "hysteria2", password: "04519bfc-0d67-4000-8c19-0fef8c880cca"}
-- {name: "法国1 [yhjc2]", server: "youhui-fr.sanguayun.com", port: 59257, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "50001-59999", type: "hysteria2", password: "04519bfc-0d67-4000-8c19-0fef8c880cca"}
-- {name: "法国2 [yhjc2]", server: "youhui-fr.sanguayun.com", port: 52553, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "50001-59999", type: "hysteria2", password: "04519bfc-0d67-4000-8c19-0fef8c880cca"}
-- {name: "法国3 [yhjc2]", server: "youhui-fr.sanguayun.com", port: 53469, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "50001-59999", type: "hysteria2", password: "04519bfc-0d67-4000-8c19-0fef8c880cca"}
-- {name: "法国4 [yhjc2]", server: "youhui-fr.sanguayun.com", port: 59800, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "50001-59999", type: "hysteria2", password: "04519bfc-0d67-4000-8c19-0fef8c880cca"}
-- {name: "加拿大1 [yhjc2]", server: "youhui-ca.sanguayun.com", port: 50743, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "50001-59999", type: "hysteria2", password: "04519bfc-0d67-4000-8c19-0fef8c880cca"}
-- {name: "加拿大2 [yhjc2]", server: "youhui-ca.sanguayun.com", port: 55285, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "50001-59999", type: "hysteria2", password: "04519bfc-0d67-4000-8c19-0fef8c880cca"}
-- {name: "加拿大3 [yhjc2]", server: "youhui-ca.sanguayun.com", port: 55328, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "50001-59999", type: "hysteria2", password: "04519bfc-0d67-4000-8c19-0fef8c880cca"}
-- {name: "加拿大4 [yhjc2]", server: "youhui-ca.sanguayun.com", port: 55607, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "50001-59999", type: "hysteria2", password: "04519bfc-0d67-4000-8c19-0fef8c880cca"}
-- {name: "伊拉克1 [yhjc2]", server: "youhui-iq.sanguayun.com", port: 52298, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "50001-59999", type: "hysteria2", password: "04519bfc-0d67-4000-8c19-0fef8c880cca"}
-- {name: "伊拉克2 [yhjc2]", server: "youhui-iq.sanguayun.com", port: 53360, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "50001-59999", type: "hysteria2", password: "04519bfc-0d67-4000-8c19-0fef8c880cca"}
-- {name: "伊拉克3 [yhjc2]", server: "youhui-iq.sanguayun.com", port: 50168, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "50001-59999", type: "hysteria2", password: "04519bfc-0d67-4000-8c19-0fef8c880cca"}
-- {name: "伊拉克4 [yhjc2]", server: "youhui-iq.sanguayun.com", port: 56734, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "50001-59999", type: "hysteria2", password: "04519bfc-0d67-4000-8c19-0fef8c880cca"}
-- {name: "美国1 [yhjc2]", server: "youhui-us.sanguayun.com", port: 50118, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "50001-59999", type: "hysteria2", password: "04519bfc-0d67-4000-8c19-0fef8c880cca"}
-- {name: "美国2 [yhjc2]", server: "youhui-us.sanguayun.com", port: 52636, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "50001-59999", type: "hysteria2", password: "04519bfc-0d67-4000-8c19-0fef8c880cca"}
-- {name: "美国3 [yhjc2]", server: "youhui-us.sanguayun.com", port: 57526, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "50001-59999", type: "hysteria2", password: "04519bfc-0d67-4000-8c19-0fef8c880cca"}
-- {name: "美国4 [yhjc2]", server: "youhui-us.sanguayun.com", port: 58941, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "50001-59999", type: "hysteria2", password: "04519bfc-0d67-4000-8c19-0fef8c880cca"}
-- {name: "日本4 [ygjc]", type: "vless", server: "13.231.226.186", port: 32000, uuid: "080b128f-4d8d-4a1b-a752-42c6d1aba227", alterId: 0, cipher: "auto", udp: true, flow: "xtls-rprx-vision", tls: true, skip-cert-verify: false, servername: "s0.awsstatic.com", reality-opts: {public-key: "K-rJkQX4Aix-0zxXbhxaZx2YcZmftmsMwybwpdGcpBU", short-id: null}, client-fingerprint: "safari"}
-- {name: "韩国1 [ygjc]", type: "vless", server: "yige-kr.sanguayun.com", port: 32399, uuid: "080b128f-4d8d-4a1b-a752-42c6d1aba227", alterId: 0, cipher: "auto", udp: true, flow: "xtls-rprx-vision", tls: true, skip-cert-verify: false, servername: "s0.awsstatic.com", reality-opts: {public-key: "K-rJkQX4Aix-0zxXbhxaZx2YcZmftmsMwybwpdGcpBU", short-id: null}, client-fingerprint: "safari"}
-- {name: "韩国2 [ygjc]", type: "vless", server: "yige-kr.sanguayun.com", port: 32543, uuid: "080b128f-4d8d-4a1b-a752-42c6d1aba227", alterId: 0, cipher: "auto", udp: true, flow: "xtls-rprx-vision", tls: true, skip-cert-verify: false, servername: "s0.awsstatic.com", reality-opts: {public-key: "K-rJkQX4Aix-0zxXbhxaZx2YcZmftmsMwybwpdGcpBU", short-id: null}, client-fingerprint: "firefox"}
-- {name: "韩国3 [ygjc]", type: "vless", server: "yige-kr.sanguayun.com", port: 32348, uuid: "080b128f-4d8d-4a1b-a752-42c6d1aba227", alterId: 0, cipher: "auto", udp: true, flow: "xtls-rprx-vision", tls: true, skip-cert-verify: false, servername: "s0.awsstatic.com", reality-opts: {public-key: "K-rJkQX4Aix-0zxXbhxaZx2YcZmftmsMwybwpdGcpBU", short-id: null}, client-fingerprint: "firefox"}
-- {name: "韩国4 [ygjc]", type: "vless", server: "yige-kr.sanguayun.com", port: 32192, uuid: "080b128f-4d8d-4a1b-a752-42c6d1aba227", alterId: 0, cipher: "auto", udp: true, flow: "xtls-rprx-vision", tls: true, skip-cert-verify: false, servername: "s0.awsstatic.com", reality-opts: {public-key: "K-rJkQX4Aix-0zxXbhxaZx2YcZmftmsMwybwpdGcpBU", short-id: null}, client-fingerprint: "qq"}
-- {name: "新加坡1 [ygjc]", type: "vless", server: "yige-sg.sanguayun.com", port: 32219, uuid: "080b128f-4d8d-4a1b-a752-42c6d1aba227", alterId: 0, cipher: "auto", udp: true, flow: "xtls-rprx-vision", tls: true, skip-cert-verify: false, servername: "s0.awsstatic.com", reality-opts: {public-key: "K-rJkQX4Aix-0zxXbhxaZx2YcZmftmsMwybwpdGcpBU", short-id: null}, client-fingerprint: "chrome"}
-- {name: "新加坡2 [ygjc]", type: "vless", server: "yige-sg.sanguayun.com", port: 32378, uuid: "080b128f-4d8d-4a1b-a752-42c6d1aba227", alterId: 0, cipher: "auto", udp: true, flow: "xtls-rprx-vision", tls: true, skip-cert-verify: false, servername: "s0.awsstatic.com", reality-opts: {public-key: "K-rJkQX4Aix-0zxXbhxaZx2YcZmftmsMwybwpdGcpBU", short-id: null}, client-fingerprint: "chrome"}
-- {name: "新加坡3 [ygjc]", type: "vless", server: "yige-sg.sanguayun.com", port: 32903, uuid: "080b128f-4d8d-4a1b-a752-42c6d1aba227", alterId: 0, cipher: "auto", udp: true, flow: "xtls-rprx-vision", tls: true, skip-cert-verify: false, servername: "s0.awsstatic.com", reality-opts: {public-key: "K-rJkQX4Aix-0zxXbhxaZx2YcZmftmsMwybwpdGcpBU", short-id: null}, client-fingerprint: "firefox"}
-- {name: "新加坡4 [ygjc]", type: "vless", server: "yige-sg.sanguayun.com", port: 32706, uuid: "080b128f-4d8d-4a1b-a752-42c6d1aba227", alterId: 0, cipher: "auto", udp: true, flow: "xtls-rprx-vision", tls: true, skip-cert-verify: false, servername: "s0.awsstatic.com", reality-opts: {public-key: "K-rJkQX4Aix-0zxXbhxaZx2YcZmftmsMwybwpdGcpBU", short-id: null}, client-fingerprint: "qq"}
-- {name: "美国1 [ygjc]", type: "vless", server: "yige-us.sanguayun.com", port: 32680, uuid: "080b128f-4d8d-4a1b-a752-42c6d1aba227", alterId: 0, cipher: "auto", udp: true, flow: "xtls-rprx-vision", tls: true, skip-cert-verify: false, servername: "s0.awsstatic.com", reality-opts: {public-key: "K-rJkQX4Aix-0zxXbhxaZx2YcZmftmsMwybwpdGcpBU", short-id: null}, client-fingerprint: "ios"}
-- {name: "美国2 [ygjc]", type: "vless", server: "yige-us.sanguayun.com", port: 32519, uuid: "080b128f-4d8d-4a1b-a752-42c6d1aba227", alterId: 0, cipher: "auto", udp: true, flow: "xtls-rprx-vision", tls: true, skip-cert-verify: false, servername: "s0.awsstatic.com", reality-opts: {public-key: "K-rJkQX4Aix-0zxXbhxaZx2YcZmftmsMwybwpdGcpBU", short-id: null}, client-fingerprint: "qq"}
-- {name: "美国3 [ygjc]", type: "vless", server: "yige-us.sanguayun.com", port: 32220, uuid: "080b128f-4d8d-4a1b-a752-42c6d1aba227", alterId: 0, cipher: "auto", udp: true, flow: "xtls-rprx-vision", tls: true, skip-cert-verify: false, servername: "s0.awsstatic.com", reality-opts: {public-key: "K-rJkQX4Aix-0zxXbhxaZx2YcZmftmsMwybwpdGcpBU", short-id: null}, client-fingerprint: "qq"}
-- {name: "美国4 [ygjc]", type: "vless", server: "yige-us.sanguayun.com", port: 32258, uuid: "080b128f-4d8d-4a1b-a752-42c6d1aba227", alterId: 0, cipher: "auto", udp: true, flow: "xtls-rprx-vision", tls: true, skip-cert-verify: false, servername: "s0.awsstatic.com", reality-opts: {public-key: "K-rJkQX4Aix-0zxXbhxaZx2YcZmftmsMwybwpdGcpBU", short-id: null}, client-fingerprint: "chrome"}
-- {name: "英国1 [ygjc]", type: "vless", server: "yige-uk.sanguayun.com", port: 32276, uuid: "080b128f-4d8d-4a1b-a752-42c6d1aba227", alterId: 0, cipher: "auto", udp: true, flow: "xtls-rprx-vision", tls: true, skip-cert-verify: false, servername: "s0.awsstatic.com", reality-opts: {public-key: "K-rJkQX4Aix-0zxXbhxaZx2YcZmftmsMwybwpdGcpBU", short-id: null}, client-fingerprint: "safari"}
-- {name: "英国2 [ygjc]", type: "vless", server: "yige-uk.sanguayun.com", port: 32657, uuid: "080b128f-4d8d-4a1b-a752-42c6d1aba227", alterId: 0, cipher: "auto", udp: true, flow: "xtls-rprx-vision", tls: true, skip-cert-verify: false, servername: "s0.awsstatic.com", reality-opts: {public-key: "K-rJkQX4Aix-0zxXbhxaZx2YcZmftmsMwybwpdGcpBU", short-id: null}, client-fingerprint: "edge"}
-- {name: "英国3 [ygjc]", type: "vless", server: "yige-uk.sanguayun.com", port: 32121, uuid: "080b128f-4d8d-4a1b-a752-42c6d1aba227", alterId: 0, cipher: "auto", udp: true, flow: "xtls-rprx-vision", tls: true, skip-cert-verify: false, servername: "s0.awsstatic.com", reality-opts: {public-key: "K-rJkQX4Aix-0zxXbhxaZx2YcZmftmsMwybwpdGcpBU", short-id: null}, client-fingerprint: "qq"}
-- {name: "英国4 [ygjc]", type: "vless", server: "yige-uk.sanguayun.com", port: 32694, uuid: "080b128f-4d8d-4a1b-a752-42c6d1aba227", alterId: 0, cipher: "auto", udp: true, flow: "xtls-rprx-vision", tls: true, skip-cert-verify: false, servername: "s0.awsstatic.com", reality-opts: {public-key: "K-rJkQX4Aix-0zxXbhxaZx2YcZmftmsMwybwpdGcpBU", short-id: null}, client-fingerprint: "chrome"}
-- {name: "TG交流群https://t.me/wukongjichang [wk1]", type: "ss", server: "us.xn--mes91t7ofgnw.com", port: 20233, cipher: "aes-128-gcm", password: "b9e25588-aa2d-47a1-949d-2601f3a04971", udp: true}
-- {name: "🇭🇰香港家宽 星河幻境 ✨🌌 [wk1]", server: "hk.xn--mes91t7ofgnw.com", port: 20259, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: 20259, type: "hysteria2", password: "b9e25588-aa2d-47a1-949d-2601f3a04971"}
-- {name: "🇭🇰香港家宽 流光溢彩 🌃💫 [wk1]", server: "hk.xn--mes91t7ofgnw.com", port: 20222, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: 20222, type: "hysteria2", password: "b9e25588-aa2d-47a1-949d-2601f3a04971"}
-- {name: "🇭🇰香港家宽 潮韵霓裳 🎶🌈 [wk1]", server: "hk.xn--mes91t7ofgnw.com", port: 20234, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: 20234, type: "hysteria2", password: "b9e25588-aa2d-47a1-949d-2601f3a04971"}
-- {name: "🇭🇰香港家宽 云帆启航 ☁️⛵ [wk1]", server: "hk.xn--mes91t7ofgnw.com", port: 20218, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: 20218, type: "hysteria2", password: "b9e25588-aa2d-47a1-949d-2601f3a04971"}
-- {name: "🇺🇸美国巨容 星梦幻城 🌟🏙️ [wk1]", server: "us.xn--mes91t7ofgnw.com", port: 20219, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: 20219, type: "hysteria2", password: "b9e25588-aa2d-47a1-949d-2601f3a04971"}
-- {name: "🇺🇸美国巨容 光影旖旎 🌴🎬 [wk1]", server: "us.xn--mes91t7ofgnw.com", port: 20264, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: 20264, type: "hysteria2", password: "b9e25588-aa2d-47a1-949d-2601f3a04971"}
-- {name: "🇺🇸美国巨容 风情雅韵 🍂🏙️ [wk1]", server: "us.xn--mes91t7ofgnw.com", port: 20212, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: 20212, type: "hysteria2", password: "b9e25588-aa2d-47a1-949d-2601f3a04971"}
-- {name: "🇺🇸美国巨容 阳光碧海 🌞🌊 [wk1]", server: "us.xn--mes91t7ofgnw.com", port: 20252, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: 20252, type: "hysteria2", password: "b9e25588-aa2d-47a1-949d-2601f3a04971"}
-- {name: "🇺🇸美国 雾海星桥🌁✨ [wk1]", type: "vless", server: "yige-us.sanguayun.com", port: 31590, uuid: "b9e25588-aa2d-47a1-949d-2601f3a04971", alterId: 0, cipher: "auto", udp: true, flow: null, tls: true, skip-cert-verify: false, servername: "s0.awsstatic.com", reality-opts: {public-key: "aMF9eIVZVxwnnCjz7DY_gEmnWzIIWlPMpojYOHbSWSo", short-id: null}, client-fingerprint: "edge"}
-- {name: "🇺🇸美国 幻彩之梦🎰🌈 [wk1]", type: "vless", server: "yige-us.sanguayun.com", port: 31234, uuid: "b9e25588-aa2d-47a1-949d-2601f3a04971", alterId: 0, cipher: "auto", udp: true, flow: null, tls: true, skip-cert-verify: false, servername: "s0.awsstatic.com", reality-opts: {public-key: "aMF9eIVZVxwnnCjz7DY_gEmnWzIIWlPMpojYOHbSWSo", short-id: null}, client-fingerprint: "safari"}
-- {name: "🇺🇸美国 晨曦雨韵🌦️🌅 [wk1]", type: "vless", server: "yige-us.sanguayun.com", port: 31949, uuid: "b9e25588-aa2d-47a1-949d-2601f3a04971", alterId: 0, cipher: "auto", udp: true, flow: null, tls: true, skip-cert-verify: false, servername: "s0.awsstatic.com", reality-opts: {public-key: "aMF9eIVZVxwnnCjz7DY_gEmnWzIIWlPMpojYOHbSWSo", short-id: null}, client-fingerprint: "firefox"}
-- {name: "🇺🇸美国 爵夜迷情🎷🌙 [wk1]", type: "vless", server: "yige-us.sanguayun.com", port: 31108, uuid: "b9e25588-aa2d-47a1-949d-2601f3a04971", alterId: 0, cipher: "auto", udp: true, flow: null, tls: true, skip-cert-verify: false, servername: "s0.awsstatic.com", reality-opts: {public-key: "aMF9eIVZVxwnnCjz7DY_gEmnWzIIWlPMpojYOHbSWSo", short-id: null}, client-fingerprint: "chrome"}
-- {name: "🇯🇵日本低延 樱梦流光 🌸✨ [wk1]", server: "jp.xn--mes91t7ofgnw.com", port: 20201, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: 20201, type: "hysteria2", password: "b9e25588-aa2d-47a1-949d-2601f3a04971"}
-- {name: "🇯🇵日本低延 古韵流芳 🏯🌺 [wk1]", server: "jp.xn--mes91t7ofgnw.com", port: 20246, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: 20246, type: "hysteria2", password: "b9e25588-aa2d-47a1-949d-2601f3a04971"}
-- {name: "🇯🇵日本低延 霓虹恋曲 🌆💖 [wk1]", server: "jp.xn--mes91t7ofgnw.com", port: 20252, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: 20252, type: "hysteria2", password: "b9e25588-aa2d-47a1-949d-2601f3a04971"}
-- {name: "🇯🇵日本低延 雪韵悠然 ❄️🌌 [wk1]", server: "jp.xn--mes91t7ofgnw.com", port: 20214, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: 20214, type: "hysteria2", password: "b9e25588-aa2d-47a1-949d-2601f3a04971"}
-- {name: "🇯🇵日本 星港潮音✨🌊 [wk1]", type: "vless", server: "yige-jp.sanguayun.com", port: 31032, uuid: "b9e25588-aa2d-47a1-949d-2601f3a04971", alterId: 0, cipher: "auto", udp: true, flow: null, tls: true, skip-cert-verify: false, servername: "s0.awsstatic.com", reality-opts: {public-key: "XN4WPFyPydfYwB6uvDS8flsJ5SElYU9RIeCjwKnzqh8", short-id: null}, client-fingerprint: "qq"}
-- {name: "🇯🇵日本 鹿梦千樱🦌🌸 [wk1]", type: "vless", server: "yige-jp.sanguayun.com", port: 31163, uuid: "b9e25588-aa2d-47a1-949d-2601f3a04971", alterId: 0, cipher: "auto", udp: true, flow: null, tls: true, skip-cert-verify: false, servername: "s0.awsstatic.com", reality-opts: {public-key: "XN4WPFyPydfYwB6uvDS8flsJ5SElYU9RIeCjwKnzqh8", short-id: null}, client-fingerprint: "ios"}
-- {name: "🇯🇵日本 云岚琉光☁️🌅 [wk1]", type: "vless", server: "yige-jp.sanguayun.com", port: 31862, uuid: "b9e25588-aa2d-47a1-949d-2601f3a04971", alterId: 0, cipher: "auto", udp: true, flow: null, tls: true, skip-cert-verify: false, servername: "s0.awsstatic.com", reality-opts: {public-key: "XN4WPFyPydfYwB6uvDS8flsJ5SElYU9RIeCjwKnzqh8", short-id: null}, client-fingerprint: "edge"}
-- {name: "🇯🇵日本 樱潮夜歌🌸🌙 [wk1]", type: "vless", server: "yige-jp.sanguayun.com", port: 31413, uuid: "b9e25588-aa2d-47a1-949d-2601f3a04971", alterId: 0, cipher: "auto", udp: true, flow: null, tls: true, skip-cert-verify: false, servername: "s0.awsstatic.com", reality-opts: {public-key: "XN4WPFyPydfYwB6uvDS8flsJ5SElYU9RIeCjwKnzqh8", short-id: null}, client-fingerprint: "ios"}
-- {name: "🇸🇬新加坡稳 月映星澜🌙✨ [wk1]", server: "sg.xn--mes91t7ofgnw.com", port: 20286, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: 20286, type: "hysteria2", password: "b9e25588-aa2d-47a1-949d-2601f3a04971"}
-- {name: "🇸🇬新加坡稳 诗香弄影📜🌸 [wk1]", server: "sg.xn--mes91t7ofgnw.com", port: 20216, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: 20216, type: "hysteria2", password: "b9e25588-aa2d-47a1-949d-2601f3a04971"}
-- {name: "🇸🇬新加坡稳 彩梦织锦🎨🌺 [wk1]", server: "sg.xn--mes91t7ofgnw.com", port: 20219, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: 20219, type: "hysteria2", password: "b9e25588-aa2d-47a1-949d-2601f3a04971"}
-- {name: "🇸🇬新加坡稳 翡翠星辰🍃⭐ [wk1]", server: "sg.xn--mes91t7ofgnw.com", port: 20266, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: 20266, type: "hysteria2", password: "b9e25588-aa2d-47a1-949d-2601f3a04971"}
-- {name: "🇸🇬新加坡 星橙夜语✨🍊 [wk1]", type: "vless", server: "yige-sg.sanguayun.com", port: 31062, uuid: "b9e25588-aa2d-47a1-949d-2601f3a04971", alterId: 0, cipher: "auto", udp: true, flow: null, tls: true, skip-cert-verify: false, servername: "s0.awsstatic.com", reality-opts: {public-key: "LIATCwh7FR_odO8b_gml8QtU5vZsj8SKlk37IW5CHyw", short-id: null}, client-fingerprint: "ios"}
-- {name: "🇸🇬新加坡 碧海晨曦🌊🌅 [wk1]", type: "vless", server: "yige-sg.sanguayun.com", port: 31032, uuid: "b9e25588-aa2d-47a1-949d-2601f3a04971", alterId: 0, cipher: "auto", udp: true, flow: null, tls: true, skip-cert-verify: false, servername: "s0.awsstatic.com", reality-opts: {public-key: "LIATCwh7FR_odO8b_gml8QtU5vZsj8SKlk37IW5CHyw", short-id: null}, client-fingerprint: "firefox"}
-- {name: "🇸🇬新加坡 云岭幽香☁️🌿 [wk1]", type: "vless", server: "yige-sg.sanguayun.com", port: 31541, uuid: "b9e25588-aa2d-47a1-949d-2601f3a04971", alterId: 0, cipher: "auto", udp: true, flow: null, tls: true, skip-cert-verify: false, servername: "s0.awsstatic.com", reality-opts: {public-key: "LIATCwh7FR_odO8b_gml8QtU5vZsj8SKlk37IW5CHyw", short-id: null}, client-fingerprint: "safari"}
-- {name: "🇸🇬新加坡 霞光映水🌇💧 [wk1]", type: "vless", server: "yige-sg.sanguayun.com", port: 31335, uuid: "b9e25588-aa2d-47a1-949d-2601f3a04971", alterId: 0, cipher: "auto", udp: true, flow: null, tls: true, skip-cert-verify: false, servername: "s0.awsstatic.com", reality-opts: {public-key: "LIATCwh7FR_odO8b_gml8QtU5vZsj8SKlk37IW5CHyw", short-id: null}, client-fingerprint: "qq"}
-- {name: "🇰🇷韩国超速 霓虹醉影🌃💫 [wk1]", server: "kr.xn--mes91t7ofgnw.com", port: 20255, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: 20255, type: "hysteria2", password: "b9e25588-aa2d-47a1-949d-2601f3a04971"}
-- {name: "🇰🇷韩国超速 霓虹醉影🌃💫 [wk2]", server: "kr.xn--mes91t7ofgnw.com", port: 20227, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: 20227, type: "hysteria2", password: "eb8045dc-c90d-4e4b-a685-da02f6318856"}
-- {name: "🇰🇷韩国超速 蓝海吟风🌊🍃 [wk1]", server: "kr.xn--mes91t7ofgnw.com", port: 20244, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: 20244, type: "hysteria2", password: "b9e25588-aa2d-47a1-949d-2601f3a04971"}
-- {name: "🇰🇷韩国 云港晨曦☁️🌅 [wk1]", type: "vless", server: "yige-kr.sanguayun.com", port: 31020, uuid: "b9e25588-aa2d-47a1-949d-2601f3a04971", alterId: 0, cipher: "auto", udp: true, flow: null, tls: true, skip-cert-verify: false, servername: "s0.awsstatic.com", reality-opts: {public-key: "DyRHSP0NYimjT2GuBQ1qyIIYvSHvR1X9ufQjUBVw9yQ", short-id: null}, client-fingerprint: "edge"}
-- {name: "🇰🇷韩国 花映春岚🌸🍃 [wk1]", type: "vless", server: "yige-kr.sanguayun.com", port: 31249, uuid: "b9e25588-aa2d-47a1-949d-2601f3a04971", alterId: 0, cipher: "auto", udp: true, flow: null, tls: true, skip-cert-verify: false, servername: "s0.awsstatic.com", reality-opts: {public-key: "DyRHSP0NYimjT2GuBQ1qyIIYvSHvR1X9ufQjUBVw9yQ", short-id: null}, client-fingerprint: "chrome"}
-- {name: "🇰🇷韩国 碧涛星岸🌊✨ [wk1]", type: "vless", server: "yige-kr.sanguayun.com", port: 31575, uuid: "b9e25588-aa2d-47a1-949d-2601f3a04971", alterId: 0, cipher: "auto", udp: true, flow: null, tls: true, skip-cert-verify: false, servername: "s0.awsstatic.com", reality-opts: {public-key: "DyRHSP0NYimjT2GuBQ1qyIIYvSHvR1X9ufQjUBVw9yQ", short-id: null}, client-fingerprint: "chrome"}
-- {name: "🇰🇷韩国 风铃澄空🍃🔔 [wk1]", type: "vless", server: "yige-kr.sanguayun.com", port: 31055, uuid: "b9e25588-aa2d-47a1-949d-2601f3a04971", alterId: 0, cipher: "auto", udp: true, flow: null, tls: true, skip-cert-verify: false, servername: "s0.awsstatic.com", reality-opts: {public-key: "DyRHSP0NYimjT2GuBQ1qyIIYvSHvR1X9ufQjUBVw9yQ", short-id: null}, client-fingerprint: "ios"}
-- {name: "🇬🇧英国 雾都晨曦🌫️🌅 [wk1]", type: "vless", server: "yige-uk.sanguayun.com", port: 31756, uuid: "b9e25588-aa2d-47a1-949d-2601f3a04971", alterId: 0, cipher: "auto", udp: true, flow: null, tls: true, skip-cert-verify: false, servername: "s0.awsstatic.com", reality-opts: {public-key: "umMTBR2TIwlPcd9TilfbnUTjszlT3H1y4Us2Z11ifl8", short-id: null}, client-fingerprint: "firefox"}
-- {name: "🇬🇧英国 暮影古城🏰🌆 [wk1]", type: "vless", server: "yige-uk.sanguayun.com", port: 31161, uuid: "b9e25588-aa2d-47a1-949d-2601f3a04971", alterId: 0, cipher: "auto", udp: true, flow: null, tls: true, skip-cert-verify: false, servername: "s0.awsstatic.com", reality-opts: {public-key: "umMTBR2TIwlPcd9TilfbnUTjszlT3H1y4Us2Z11ifl8", short-id: null}, client-fingerprint: "firefox"}
-- {name: "🇬🇧英国 英雨琴韵☔🎶 [wk1]", type: "vless", server: "yige-uk.sanguayun.com", port: 31759, uuid: "b9e25588-aa2d-47a1-949d-2601f3a04971", alterId: 0, cipher: "auto", udp: true, flow: null, tls: true, skip-cert-verify: false, servername: "s0.awsstatic.com", reality-opts: {public-key: "umMTBR2TIwlPcd9TilfbnUTjszlT3H1y4Us2Z11ifl8", short-id: null}, client-fingerprint: "qq"}
-- {name: "🇬🇧英国 湖光书梦📖🌊 [wk1]", type: "vless", server: "yige-uk.sanguayun.com", port: 31815, uuid: "b9e25588-aa2d-47a1-949d-2601f3a04971", alterId: 0, cipher: "auto", udp: true, flow: null, tls: true, skip-cert-verify: false, servername: "s0.awsstatic.com", reality-opts: {public-key: "umMTBR2TIwlPcd9TilfbnUTjszlT3H1y4Us2Z11ifl8", short-id: null}, client-fingerprint: "edge"}
-- {name: "TG交流群https://t.me/wukongjichang [wk2]", type: "ss", server: "us.xn--mes91t7ofgnw.com", port: 20285, cipher: "aes-128-gcm", password: "eb8045dc-c90d-4e4b-a685-da02f6318856", udp: true}
-- {name: "🇭🇰香港家宽 星河幻境 ✨🌌 [wk2]", server: "hk.xn--mes91t7ofgnw.com", port: 20282, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: 20282, type: "hysteria2", password: "eb8045dc-c90d-4e4b-a685-da02f6318856"}
-- {name: "🇭🇰香港家宽 流光溢彩 🌃💫 [wk2]", server: "hk.xn--mes91t7ofgnw.com", port: 20287, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: 20287, type: "hysteria2", password: "eb8045dc-c90d-4e4b-a685-da02f6318856"}
-- {name: "🇭🇰香港家宽 潮韵霓裳 🎶🌈 [wk2]", server: "hk.xn--mes91t7ofgnw.com", port: 20228, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: 20228, type: "hysteria2", password: "eb8045dc-c90d-4e4b-a685-da02f6318856"}
-- {name: "🇭🇰香港家宽 云帆启航 ☁️⛵ [wk2]", server: "hk.xn--mes91t7ofgnw.com", port: 20273, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: 20273, type: "hysteria2", password: "eb8045dc-c90d-4e4b-a685-da02f6318856"}
-- {name: "🇺🇸美国巨容 星梦幻城 🌟🏙️ [wk2]", server: "us.xn--mes91t7ofgnw.com", port: 20258, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: 20258, type: "hysteria2", password: "eb8045dc-c90d-4e4b-a685-da02f6318856"}
-- {name: "🇺🇸美国巨容 光影旖旎 🌴🎬 [wk2]", server: "us.xn--mes91t7ofgnw.com", port: 20211, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: 20211, type: "hysteria2", password: "eb8045dc-c90d-4e4b-a685-da02f6318856"}
-- {name: "🇺🇸美国巨容 风情雅韵 🍂🏙️ [wk2]", server: "us.xn--mes91t7ofgnw.com", port: 20206, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: 20206, type: "hysteria2", password: "eb8045dc-c90d-4e4b-a685-da02f6318856"}
-- {name: "🇺🇸美国巨容 阳光碧海 🌞🌊 [wk2]", server: "us.xn--mes91t7ofgnw.com", port: 20202, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: 20202, type: "hysteria2", password: "eb8045dc-c90d-4e4b-a685-da02f6318856"}
-- {name: "🇺🇸美国 雾海星桥🌁✨ [wk2]", type: "vless", server: "yige-us.sanguayun.com", port: 31985, uuid: "eb8045dc-c90d-4e4b-a685-da02f6318856", alterId: 0, cipher: "auto", udp: true, flow: null, tls: true, skip-cert-verify: false, servername: "s0.awsstatic.com", reality-opts: {public-key: "aMF9eIVZVxwnnCjz7DY_gEmnWzIIWlPMpojYOHbSWSo", short-id: null}, client-fingerprint: "qq"}
-- {name: "🇺🇸美国 幻彩之梦🎰🌈 [wk2]", type: "vless", server: "yige-us.sanguayun.com", port: 31421, uuid: "eb8045dc-c90d-4e4b-a685-da02f6318856", alterId: 0, cipher: "auto", udp: true, flow: null, tls: true, skip-cert-verify: false, servername: "s0.awsstatic.com", reality-opts: {public-key: "aMF9eIVZVxwnnCjz7DY_gEmnWzIIWlPMpojYOHbSWSo", short-id: null}, client-fingerprint: "safari"}
-- {name: "🇺🇸美国 晨曦雨韵🌦️🌅 [wk2]", type: "vless", server: "yige-us.sanguayun.com", port: 31236, uuid: "eb8045dc-c90d-4e4b-a685-da02f6318856", alterId: 0, cipher: "auto", udp: true, flow: null, tls: true, skip-cert-verify: false, servername: "s0.awsstatic.com", reality-opts: {public-key: "aMF9eIVZVxwnnCjz7DY_gEmnWzIIWlPMpojYOHbSWSo", short-id: null}, client-fingerprint: "firefox"}
-- {name: "🇺🇸美国 爵夜迷情🎷🌙 [wk2]", type: "vless", server: "yige-us.sanguayun.com", port: 31550, uuid: "eb8045dc-c90d-4e4b-a685-da02f6318856", alterId: 0, cipher: "auto", udp: true, flow: null, tls: true, skip-cert-verify: false, servername: "s0.awsstatic.com", reality-opts: {public-key: "aMF9eIVZVxwnnCjz7DY_gEmnWzIIWlPMpojYOHbSWSo", short-id: null}, client-fingerprint: "chrome"}
-- {name: "🇯🇵日本低延 樱梦流光 🌸✨ [wk2]", server: "jp.xn--mes91t7ofgnw.com", port: 20285, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: 20285, type: "hysteria2", password: "eb8045dc-c90d-4e4b-a685-da02f6318856"}
-- {name: "🇯🇵日本低延 古韵流芳 🏯🌺 [wk2]", server: "jp.xn--mes91t7ofgnw.com", port: 20233, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: 20233, type: "hysteria2", password: "eb8045dc-c90d-4e4b-a685-da02f6318856"}
-- {name: "🇯🇵日本低延 霓虹恋曲 🌆💖 [wk2]", server: "jp.xn--mes91t7ofgnw.com", port: 20296, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: 20296, type: "hysteria2", password: "eb8045dc-c90d-4e4b-a685-da02f6318856"}
-- {name: "🇯🇵日本低延 雪韵悠然 ❄️🌌 [wk2]", server: "jp.xn--mes91t7ofgnw.com", port: 20217, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: 20217, type: "hysteria2", password: "eb8045dc-c90d-4e4b-a685-da02f6318856"}
-- {name: "🇯🇵日本 星港潮音✨🌊 [wk2]", type: "vless", server: "yige-jp.sanguayun.com", port: 31854, uuid: "eb8045dc-c90d-4e4b-a685-da02f6318856", alterId: 0, cipher: "auto", udp: true, flow: null, tls: true, skip-cert-verify: false, servername: "s0.awsstatic.com", reality-opts: {public-key: "XN4WPFyPydfYwB6uvDS8flsJ5SElYU9RIeCjwKnzqh8", short-id: null}, client-fingerprint: "qq"}
-- {name: "🇯🇵日本 鹿梦千樱🦌🌸 [wk2]", type: "vless", server: "yige-jp.sanguayun.com", port: 31297, uuid: "eb8045dc-c90d-4e4b-a685-da02f6318856", alterId: 0, cipher: "auto", udp: true, flow: null, tls: true, skip-cert-verify: false, servername: "s0.awsstatic.com", reality-opts: {public-key: "XN4WPFyPydfYwB6uvDS8flsJ5SElYU9RIeCjwKnzqh8", short-id: null}, client-fingerprint: "qq"}
-- {name: "🇯🇵日本 云岚琉光☁️🌅 [wk2]", type: "vless", server: "yige-jp.sanguayun.com", port: 31346, uuid: "eb8045dc-c90d-4e4b-a685-da02f6318856", alterId: 0, cipher: "auto", udp: true, flow: null, tls: true, skip-cert-verify: false, servername: "s0.awsstatic.com", reality-opts: {public-key: "XN4WPFyPydfYwB6uvDS8flsJ5SElYU9RIeCjwKnzqh8", short-id: null}, client-fingerprint: "edge"}
-- {name: "🇯🇵日本 樱潮夜歌🌸🌙 [wk2]", type: "vless", server: "yige-jp.sanguayun.com", port: 31651, uuid: "eb8045dc-c90d-4e4b-a685-da02f6318856", alterId: 0, cipher: "auto", udp: true, flow: null, tls: true, skip-cert-verify: false, servername: "s0.awsstatic.com", reality-opts: {public-key: "XN4WPFyPydfYwB6uvDS8flsJ5SElYU9RIeCjwKnzqh8", short-id: null}, client-fingerprint: "firefox"}
-- {name: "🇸🇬新加坡稳 月映星澜🌙✨ [wk2]", server: "sg.xn--mes91t7ofgnw.com", port: 20221, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: 20221, type: "hysteria2", password: "eb8045dc-c90d-4e4b-a685-da02f6318856"}
-- {name: "🇸🇬新加坡稳 诗香弄影📜🌸 [wk2]", server: "sg.xn--mes91t7ofgnw.com", port: 20217, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: 20217, type: "hysteria2", password: "eb8045dc-c90d-4e4b-a685-da02f6318856"}
-- {name: "🇸🇬新加坡稳 彩梦织锦🎨🌺 [wk2]", server: "sg.xn--mes91t7ofgnw.com", port: 20204, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: 20204, type: "hysteria2", password: "eb8045dc-c90d-4e4b-a685-da02f6318856"}
-- {name: "🇸🇬新加坡稳 翡翠星辰🍃⭐ [wk2]", server: "sg.xn--mes91t7ofgnw.com", port: 20236, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: 20236, type: "hysteria2", password: "eb8045dc-c90d-4e4b-a685-da02f6318856"}
-- {name: "🇸🇬新加坡 星橙夜语✨🍊 [wk2]", type: "vless", server: "yige-sg.sanguayun.com", port: 31157, uuid: "eb8045dc-c90d-4e4b-a685-da02f6318856", alterId: 0, cipher: "auto", udp: true, flow: null, tls: true, skip-cert-verify: false, servername: "s0.awsstatic.com", reality-opts: {public-key: "LIATCwh7FR_odO8b_gml8QtU5vZsj8SKlk37IW5CHyw", short-id: null}, client-fingerprint: "edge"}
-- {name: "🇸🇬新加坡 碧海晨曦🌊🌅 [wk2]", type: "vless", server: "yige-sg.sanguayun.com", port: 31339, uuid: "eb8045dc-c90d-4e4b-a685-da02f6318856", alterId: 0, cipher: "auto", udp: true, flow: null, tls: true, skip-cert-verify: false, servername: "s0.awsstatic.com", reality-opts: {public-key: "LIATCwh7FR_odO8b_gml8QtU5vZsj8SKlk37IW5CHyw", short-id: null}, client-fingerprint: "safari"}
-- {name: "🇸🇬新加坡 云岭幽香☁️🌿 [wk2]", type: "vless", server: "yige-sg.sanguayun.com", port: 31461, uuid: "eb8045dc-c90d-4e4b-a685-da02f6318856", alterId: 0, cipher: "auto", udp: true, flow: null, tls: true, skip-cert-verify: false, servername: "s0.awsstatic.com", reality-opts: {public-key: "LIATCwh7FR_odO8b_gml8QtU5vZsj8SKlk37IW5CHyw", short-id: null}, client-fingerprint: "safari"}
-- {name: "🇸🇬新加坡 霞光映水🌇💧 [wk2]", type: "vless", server: "yige-sg.sanguayun.com", port: 31183, uuid: "eb8045dc-c90d-4e4b-a685-da02f6318856", alterId: 0, cipher: "auto", udp: true, flow: null, tls: true, skip-cert-verify: false, servername: "s0.awsstatic.com", reality-opts: {public-key: "LIATCwh7FR_odO8b_gml8QtU5vZsj8SKlk37IW5CHyw", short-id: null}, client-fingerprint: "edge"}
-- {name: "🇰🇷韩国超速 海韵情怀🌊💖 [wk2]", server: "kr.xn--mes91t7ofgnw.com", port: 20215, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: 20215, type: "hysteria2", password: "eb8045dc-c90d-4e4b-a685-da02f6318856"}
-- {name: "🇰🇷韩国超速 梦幻霓裳🌸🌟 [wk2]", server: "kr.xn--mes91t7ofgnw.com", port: 20264, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: 20264, type: "hysteria2", password: "eb8045dc-c90d-4e4b-a685-da02f6318856"}
-- {name: "🇰🇷韩国超速 蓝海吟风🌊🍃 [wk2]", server: "kr.xn--mes91t7ofgnw.com", port: 20285, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: 20285, type: "hysteria2", password: "eb8045dc-c90d-4e4b-a685-da02f6318856"}
-- {name: "🇰🇷韩国 云港晨曦☁️🌅 [wk2]", type: "vless", server: "yige-kr.sanguayun.com", port: 31437, uuid: "eb8045dc-c90d-4e4b-a685-da02f6318856", alterId: 0, cipher: "auto", udp: true, flow: null, tls: true, skip-cert-verify: false, servername: "s0.awsstatic.com", reality-opts: {public-key: "DyRHSP0NYimjT2GuBQ1qyIIYvSHvR1X9ufQjUBVw9yQ", short-id: null}, client-fingerprint: "safari"}
-- {name: "🇰🇷韩国 花映春岚🌸🍃 [wk2]", type: "vless", server: "yige-kr.sanguayun.com", port: 31179, uuid: "eb8045dc-c90d-4e4b-a685-da02f6318856", alterId: 0, cipher: "auto", udp: true, flow: null, tls: true, skip-cert-verify: false, servername: "s0.awsstatic.com", reality-opts: {public-key: "DyRHSP0NYimjT2GuBQ1qyIIYvSHvR1X9ufQjUBVw9yQ", short-id: null}, client-fingerprint: "edge"}
-- {name: "🇰🇷韩国 碧涛星岸🌊✨ [wk2]", type: "vless", server: "yige-kr.sanguayun.com", port: 31916, uuid: "eb8045dc-c90d-4e4b-a685-da02f6318856", alterId: 0, cipher: "auto", udp: true, flow: null, tls: true, skip-cert-verify: false, servername: "s0.awsstatic.com", reality-opts: {public-key: "DyRHSP0NYimjT2GuBQ1qyIIYvSHvR1X9ufQjUBVw9yQ", short-id: null}, client-fingerprint: "safari"}
-- {name: "🇰🇷韩国 风铃澄空🍃🔔 [wk2]", type: "vless", server: "yige-kr.sanguayun.com", port: 31365, uuid: "eb8045dc-c90d-4e4b-a685-da02f6318856", alterId: 0, cipher: "auto", udp: true, flow: null, tls: true, skip-cert-verify: false, servername: "s0.awsstatic.com", reality-opts: {public-key: "DyRHSP0NYimjT2GuBQ1qyIIYvSHvR1X9ufQjUBVw9yQ", short-id: null}, client-fingerprint: "qq"}
-- {name: "🇬🇧英国 雾都晨曦🌫️🌅 [wk2]", type: "vless", server: "yige-uk.sanguayun.com", port: 31029, uuid: "eb8045dc-c90d-4e4b-a685-da02f6318856", alterId: 0, cipher: "auto", udp: true, flow: null, tls: true, skip-cert-verify: false, servername: "s0.awsstatic.com", reality-opts: {public-key: "umMTBR2TIwlPcd9TilfbnUTjszlT3H1y4Us2Z11ifl8", short-id: null}, client-fingerprint: "edge"}
-- {name: "🇬🇧英国 暮影古城🏰🌆 [wk2]", type: "vless", server: "yige-uk.sanguayun.com", port: 31814, uuid: "eb8045dc-c90d-4e4b-a685-da02f6318856", alterId: 0, cipher: "auto", udp: true, flow: null, tls: true, skip-cert-verify: false, servername: "s0.awsstatic.com", reality-opts: {public-key: "umMTBR2TIwlPcd9TilfbnUTjszlT3H1y4Us2Z11ifl8", short-id: null}, client-fingerprint: "safari"}
-- {name: "🇬🇧英国 英雨琴韵☔🎶 [wk2]", type: "vless", server: "yige-uk.sanguayun.com", port: 31698, uuid: "eb8045dc-c90d-4e4b-a685-da02f6318856", alterId: 0, cipher: "auto", udp: true, flow: null, tls: true, skip-cert-verify: false, servername: "s0.awsstatic.com", reality-opts: {public-key: "umMTBR2TIwlPcd9TilfbnUTjszlT3H1y4Us2Z11ifl8", short-id: null}, client-fingerprint: "ios"}
-- {name: "🇬🇧英国 湖光书梦📖🌊 [wk2]", type: "vless", server: "yige-uk.sanguayun.com", port: 31160, uuid: "eb8045dc-c90d-4e4b-a685-da02f6318856", alterId: 0, cipher: "auto", udp: true, flow: null, tls: true, skip-cert-verify: false, servername: "s0.awsstatic.com", reality-opts: {public-key: "umMTBR2TIwlPcd9TilfbnUTjszlT3H1y4Us2Z11ifl8", short-id: null}, client-fingerprint: "firefox"}
 - {name: "🇭🇰  香港 vless 5 [whh5]", type: "vless", server: "45.207.157.154", port: 40001, uuid: "94d54d37-0149-4172-8ab7-60c9d1f60e33", alterId: 0, cipher: "auto", udp: true, flow: null, tls: false}
 - {name: "🇩🇪 德国 vless 4 [whh5]", type: "vless", server: "156.226.174.40", port: 40002, uuid: "94d54d37-0149-4172-8ab7-60c9d1f60e33", alterId: 0, cipher: "auto", udp: true, flow: null, tls: false}
 - {name: "🇹🇼 台湾 vless 4 [whh5]", type: "vless", server: "156.224.79.232", port: 40003, uuid: "94d54d37-0149-4172-8ab7-60c9d1f60e33", alterId: 0, cipher: "auto", udp: true, flow: null, tls: false}
@@ -2365,35 +2236,36 @@ proxy-groups:
   - "🇦🇺 澳大利亚 @mfbpn [bzy]"
   - "🇫🇷 巴黎 @mfbpn [bzy]"
   - "节点更新时间4-17 [tk1]"
-  - "🇷🇺 俄罗斯3 | ⬇️ 14.9MB/s|0%|Youtube 2 [cml]"
-  - "🇷🇺 俄罗斯_5 [dcj]"
   - "🇷🇺 俄罗斯_1 [dcj]"
-  - "🇯🇵日本1 | ⬇️ 1.4MB/s [tk1]"
-  - "🇯🇵日本2 | ⬇️ 1.4MB/s [tk1]"
-  - "🇺🇸 美国_2 [dcj]"
-  - "🇺🇸美国6 | ⬇️ 1.4MB/s [tk1]"
-  - "🇺🇸美国7 | ⬇️ 2.1MB/s [tk1]"
-  - "🇬🇧英国3 | ⬇️ 1.1MB%2Fs [tk1]"
-  - "🇺🇸 美国_4 [dcj]"
-  - "🌀其他4-SE | ⬇️ 2.0MB/s [tk1]"
-  - "🇺🇸美国11 | ⬇️ 1.1MB/s [tk1]"
-  - "🇺🇸美国13 | ⬇️ 4.1MB/s [tk1]"
-  - "🇺🇸美国14 | ⬇️ 1.1MB/s [tk1]"
-  - "🇺🇸美国21 | ⬇️ 2.3MB/s [tk1]"
-  - "🌀其他8-CZ | ⬇️ 3.7MB/s [tk1]"
-  - "🇰🇷韩国3 | ⬇️ 1.0MB/s [tk1]"
-  - "🌀其他12-未识别 | ⬇️ 1.1MB/s [tk1]"
-  - "🇸🇬新加坡1 | ⬇️ 1.3MB/s [tk1]"
-  - "🇺🇸美国25 | ⬇️ 2.8MB/s [tk1]"
-  - "🇯🇵 日本_2 [dcj]"
-  - "🇷🇺 俄罗斯_4 [dcj]"
-  - "🇺🇸 美国_3 [dcj]"
-  - "🇺🇸 美国23 | ⬇️ 4.2MB/s|41%|Netflix|Openai 2 [cml]"
-  - "🇺🇸美国28 | ⬇️ 3.6MB/s [tk1]"
-  - "🇭🇰香港5 | ⬇️ 1.1MB%2Fs [tk1]"
-  - "🇺🇸美国30 | ⬇️ 2.2MB%2Fs [tk1]"
-  - "🇭🇰香港6 | ⬇️ 2.2MB%2Fs [tk1]"
-  - "🇭🇰香港7 | ⬇️ 1.5MB%2Fs [tk1]"
+  - "🇺🇸美国4 | ⬇️ 1.8MB/s [tk1]"
+  - "🇸🇬新加坡1 | ⬇️ 1.5MB/s [tk1]"
+  - "🇭🇰香港2 | ⬇️ 3.8MB%2Fs [tk1]"
+  - "🇬🇧英国2 | ⬇️ 1.1MB%2Fs [tk1]"
+  - "🌀其他3-TR | ⬇️ 2.8MB%2Fs [tk1]"
+  - "🇺🇸美国6 | ⬇️ 1.5MB/s [tk1]"
+  - "🌀其他4-ID | ⬇️ 4.8MB%2Fs [tk1]"
+  - "🇺🇸美国7 | ⬇️ 1.0MB/s [tk1]"
+  - "🇺🇸美国15 | ⬇️ 3.4MB/s [tk1]"
+  - "🇺🇸美国16 | ⬇️ 6.4MB/s [tk1]"
+  - "🇺🇸美国18 | ⬇️ 3.8MB/s [tk1]"
+  - "🇺🇸美国22 | ⬇️ 3.3MB/s [tk1]"
+  - "🇸🇬 新加坡2 | ⬇️ 8.3MB/s|6%|Netflix|Disney|Youtube|Openai|Gemini 2 [cml]"
+  - "🇷🇺俄罗斯2 | ⬇️ 1.7MB/s [tk1]"
+  - "🇷🇺 俄罗斯_2 [dcj]"
+  - "🇳🇱荷兰3 | ⬇️ 2.9MB/s [tk1]"
+  - "🇫🇷 法国6 | ⬇️ 9.9MB/s|0%|Youtube|Openai 2 [cml]"
+  - "🇷🇺 俄罗斯_5 [dcj]"
+  - "🇷🇺 俄罗斯3 | ⬇️ 14.9MB/s|0%|Youtube 2 [cml]"
+  - "🇺🇸美国30 | ⬇️ 1.2MB/s [tk1]"
+  - "🇺🇸美国32 | ⬇️ 3.3MB/s [tk1]"
+  - "🇩🇪德国11 | ⬇️ 4.0MB%2Fs [tk1]"
+  - "🇭🇰香港7 | ⬇️ 2.7MB%2Fs [tk1]"
+  - "🌀其他7-T1 | ⬇️ 1.3MB%2Fs [tk1]"
+  - "🇵🇱波兰1 | ⬇️ 3.7MB/s [tk1]"
+  - "🇭🇰香港8 | ⬇️ 1.6MB/s [tk1]"
+  - "🇭🇰香港9 | ⬇️ 1.5MB/s [tk1]"
+  - "🇭🇰香港10 | ⬇️ 1.2MB%2Fs [tk1]"
+  - "🇭🇰香港6 | ⬇️ 2.2MB/s [tk1]"
   - "❓ 未知_1 [dcj]"
   - "❓ 未知_2 [dcj]"
   - "🇨🇳 中国_1 [dcj]"
@@ -2402,7 +2274,6 @@ proxy-groups:
   - "🇨🇳 中国_3 [dcj]"
   - "🇨🇳 中国_4 [dcj]"
   - "❓ 未知_4 [dcj]"
-  - "🇸🇬 新加坡2 | ⬇️ 8.3MB/s|6%|Netflix|Disney|Youtube|Openai|Gemini 2 [cml]"
   - "❓ 未知_6 [dcj]"
   - "t.me/freeyule [cjbp]"
   - "❓ 未知_7 [dcj]"
@@ -2412,7 +2283,6 @@ proxy-groups:
   - "❓ 未知_9 [dcj]"
   - "❓ 未知_10 [dcj]"
   - "🇹🇼 台湾_2 [dcj]"
-  - "🇷🇺 俄罗斯_2 [dcj]"
   - "🇯🇵 日本_1 [dcj]"
   - "❓ 未知_11 [dcj]"
   - "中国 - 香港 - CTG Server Ltd. - 2 [go4sharing]"
@@ -2433,6 +2303,7 @@ proxy-groups:
   - "🇹🇼 台湾_3 [dcj]"
   - "❓ 未知_24 [dcj]"
   - "❓ 未知_25 [dcj]"
+  - "🇷🇺 俄罗斯_4 [dcj]"
   - "🇹🇼 台湾_4 [dcj]"
   - "❓ 未知_26 [dcj]"
   - "🇩🇪 德国_1 [dcj]"
@@ -2460,6 +2331,7 @@ proxy-groups:
   - "❓ 未知_42 [dcj]"
   - "❓ 未知_43 [dcj]"
   - "❓ 未知_44 [dcj]"
+  - "🇺🇸 美国_2 [dcj]"
   - "❓ 未知_45 [dcj]"
   - "🇹🇼 台湾_10 [dcj]"
   - "❓ 未知_46 [dcj]"
@@ -2469,14 +2341,17 @@ proxy-groups:
   - "❓ 未知_50 [dcj]"
   - "🇭🇰 香港_4 [dcj]"
   - "🇹🇼 台湾_11 [dcj]"
+  - "🇺🇸 美国_3 [dcj]"
   - "❓ 未知_51 [dcj]"
   - "🇹🇼 台湾_12 [dcj]"
   - "❓ 未知_52 [dcj]"
   - "❓ 未知_53 [dcj]"
   - "❓ 未知_54 [dcj]"
   - "🇹🇼 台湾_13 [dcj]"
+  - "🇺🇸 美国_4 [dcj]"
   - "🇹🇼 台湾_14 [dcj]"
   - "❓ 未知_55 [dcj]"
+  - "🇺🇸 美国23 | ⬇️ 4.2MB/s|41%|Netflix|Openai 2 [cml]"
   - "🇸🇬 新加坡_1 [dcj]"
   - "❓ 未知_56 [dcj]"
   - "🇺🇸 美国24 | ⬇️ 4.7MB/s|41%|Netflix|Openai 2 [cml]"
@@ -2491,6 +2366,7 @@ proxy-groups:
   - "🇺🇸 美国_7 [dcj]"
   - "🇸🇨 塞舌尔 [dcj]"
   - "🇩🇪 德国_2 [dcj]"
+  - "🇯🇵 日本_2 [dcj]"
   - "❓ 未知_62 [dcj]"
   - "❓ 未知_63 [dcj]"
   - "❓ 未知_64 [dcj]"
@@ -2720,7 +2596,6 @@ proxy-groups:
   - "🇫🇷 法国3 | ⬇️ 9.7MB/s|14%|Netflix|Openai 2 [cml]"
   - "🇫🇷 法国4 | ⬇️ 6.9MB/s|14%|Netflix|Openai 2 [cml]"
   - "🇫🇷 法国5 | ⬇️ 11.1MB/s|14%|Netflix|Openai 2 [cml]"
-  - "🇫🇷 法国6 | ⬇️ 9.9MB/s|0%|Youtube|Openai 2 [cml]"
   - "🇫🇷 法国7 | ⬇️ 12.0MB/s|100%|Netflix|Youtube|Openai 2 [cml]"
   - "🇫🇷 法国8 | ⬇️ 16.4MB/s|14%|Netflix|Openai 2 [cml]"
   - "🇦🇺 澳大利亚1 | ⬇️ 15.6MB/s|0%|Netflix|Disney|Gemini 2 [cml]"
@@ -2889,22 +2764,22 @@ proxy-groups:
   - "🇩🇪 德国 10 [cmj2]"
   - "加入我的频道t.me/CMLiussss解锁更多优选节点 [cmj3]"
   - "CFnat [cmj3]"
+  - "🇭🇰 HK [cmj3]"
   - "ZA [cmj3]"
   - "🇺🇸 US [cmj3]"
-  - "🇭🇰 HK [cmj3]"
-  - "BR [cmj3]"
   - "🇭🇰 HK 2 [cmj3]"
+  - "ZA 2 [cmj3]"
   - "🇭🇰 HK 3 [cmj3]"
+  - "🇭🇰 HK 4 [cmj3]"
   - "🇺🇸 US 2 [cmj3]"
+  - "🇭🇰 HK 5 [cmj3]"
   - "🇺🇸 US 3 [cmj3]"
   - "🇺🇸 US 4 [cmj3]"
-  - "🇭🇰 HK 4 [cmj3]"
+  - "🇭🇰 HK 6 [cmj3]"
   - "🇺🇸 US 5 [cmj3]"
-  - "ZA 2 [cmj3]"
+  - "🇭🇰 HK 7 [cmj3]"
   - "🇺🇸 US 6 [cmj3]"
-  - "🇭🇰 HK 5 [cmj3]"
-  - "ZA 3 [cmj3]"
-  - "BR 2 [cmj3]"
+  - "🇺🇸 US 7 [cmj3]"
   - "🇯🇵 JP [cmj3]"
   - "🇯🇵 JP 2 [cmj3]"
   - "🇸🇬 SG [cmj3]"
@@ -2915,10 +2790,10 @@ proxy-groups:
   - "🇰🇷 KR 2 [cmj3]"
   - "🇰🇷 KR 3 [cmj3]"
   - "🇰🇷 KR 4 [cmj3]"
-  - "🇺🇸 US 7 [cmj3]"
   - "🇺🇸 US 8 [cmj3]"
   - "🇺🇸 US 9 [cmj3]"
   - "🇺🇸 US 10 [cmj3]"
+  - "🇺🇸 US 11 [cmj3]"
   - "IL [cmj3]"
   - "IL 2 [cmj3]"
   - "🇰🇷 KR 5 [cmj3]"
@@ -2926,17 +2801,17 @@ proxy-groups:
   - "CH [cmj3]"
   - "🇮🇳 IN [cmj3]"
   - "🇮🇳 IN 2 [cmj3]"
-  - "🇺🇸 US 11 [cmj3]"
-  - "🇮🇳 IN 3 [cmj3]"
   - "🇺🇸 US 12 [cmj3]"
+  - "🇮🇳 IN 3 [cmj3]"
+  - "🇺🇸 US 13 [cmj3]"
   - "🇨🇳 CN [cmj3]"
   - "IT [cmj3]"
   - "🇦🇺 AU [cmj3]"
   - "🇦🇺 AU 2 [cmj3]"
   - "🇨🇳 TW [cmj3]"
-  - "🇭🇰 HK 6 [cmj3]"
-  - "🇺🇸 US 13 [cmj3]"
-  - "🇭🇰 HK 7 [cmj3]"
+  - "🇭🇰 HK 8 [cmj3]"
+  - "🇺🇸 US 14 [cmj3]"
+  - "🇭🇰 HK 9 [cmj3]"
   - "CT [cmj3]"
   - "CT 2 [cmj3]"
   - "CT 3 [cmj3]"
@@ -2955,26 +2830,6 @@ proxy-groups:
   - "CMCC-IPV6 4 [cmj3]"
   - "CMCC-IPV6 5 [cmj3]"
   - "CMCC-IPV6 6 [cmj3]"
-  - "日本1 [yhjc]"
-  - "日本2 [yhjc]"
-  - "日本3 [yhjc]"
-  - "日本4 [yhjc]"
-  - "法国1 [yhjc]"
-  - "法国2 [yhjc]"
-  - "法国3 [yhjc]"
-  - "法国4 [yhjc]"
-  - "加拿大1 [yhjc]"
-  - "加拿大2 [yhjc]"
-  - "加拿大3 [yhjc]"
-  - "加拿大4 [yhjc]"
-  - "伊拉克1 [yhjc]"
-  - "伊拉克2 [yhjc]"
-  - "伊拉克3 [yhjc]"
-  - "伊拉克4 [yhjc]"
-  - "美国1 [yhjc]"
-  - "美国2 [yhjc]"
-  - "美国3 [yhjc]"
-  - "美国4 [yhjc]"
   - "1巴西圣保罗 [cbb3]"
   - "2巴西圣保罗 [cbb3]"
   - "3巴西圣保罗 [cbb3]"
@@ -3090,123 +2945,6 @@ proxy-groups:
   - "保加利亚1|IEPL|1X [hx]"
   - "阿联酋1|BGP|0.4X [hx]"
   - "阿联酋1|IEPL|1X [hx]"
-  - "日本1 [yhjc2]"
-  - "日本2 [yhjc2]"
-  - "日本3 [yhjc2]"
-  - "日本4 [yhjc2]"
-  - "法国1 [yhjc2]"
-  - "法国2 [yhjc2]"
-  - "法国3 [yhjc2]"
-  - "法国4 [yhjc2]"
-  - "加拿大1 [yhjc2]"
-  - "加拿大2 [yhjc2]"
-  - "加拿大3 [yhjc2]"
-  - "加拿大4 [yhjc2]"
-  - "伊拉克1 [yhjc2]"
-  - "伊拉克2 [yhjc2]"
-  - "伊拉克3 [yhjc2]"
-  - "伊拉克4 [yhjc2]"
-  - "美国1 [yhjc2]"
-  - "美国2 [yhjc2]"
-  - "美国3 [yhjc2]"
-  - "美国4 [yhjc2]"
-  - "日本4 [ygjc]"
-  - "韩国1 [ygjc]"
-  - "韩国2 [ygjc]"
-  - "韩国3 [ygjc]"
-  - "韩国4 [ygjc]"
-  - "新加坡1 [ygjc]"
-  - "新加坡2 [ygjc]"
-  - "新加坡3 [ygjc]"
-  - "新加坡4 [ygjc]"
-  - "美国1 [ygjc]"
-  - "美国2 [ygjc]"
-  - "美国3 [ygjc]"
-  - "美国4 [ygjc]"
-  - "英国1 [ygjc]"
-  - "英国2 [ygjc]"
-  - "英国3 [ygjc]"
-  - "英国4 [ygjc]"
-  - "TG交流群https://t.me/wukongjichang [wk1]"
-  - "🇭🇰香港家宽 星河幻境 ✨🌌 [wk1]"
-  - "🇭🇰香港家宽 流光溢彩 🌃💫 [wk1]"
-  - "🇭🇰香港家宽 潮韵霓裳 🎶🌈 [wk1]"
-  - "🇭🇰香港家宽 云帆启航 ☁️⛵ [wk1]"
-  - "🇺🇸美国巨容 星梦幻城 🌟🏙️ [wk1]"
-  - "🇺🇸美国巨容 光影旖旎 🌴🎬 [wk1]"
-  - "🇺🇸美国巨容 风情雅韵 🍂🏙️ [wk1]"
-  - "🇺🇸美国巨容 阳光碧海 🌞🌊 [wk1]"
-  - "🇺🇸美国 雾海星桥🌁✨ [wk1]"
-  - "🇺🇸美国 幻彩之梦🎰🌈 [wk1]"
-  - "🇺🇸美国 晨曦雨韵🌦️🌅 [wk1]"
-  - "🇺🇸美国 爵夜迷情🎷🌙 [wk1]"
-  - "🇯🇵日本低延 樱梦流光 🌸✨ [wk1]"
-  - "🇯🇵日本低延 古韵流芳 🏯🌺 [wk1]"
-  - "🇯🇵日本低延 霓虹恋曲 🌆💖 [wk1]"
-  - "🇯🇵日本低延 雪韵悠然 ❄️🌌 [wk1]"
-  - "🇯🇵日本 星港潮音✨🌊 [wk1]"
-  - "🇯🇵日本 鹿梦千樱🦌🌸 [wk1]"
-  - "🇯🇵日本 云岚琉光☁️🌅 [wk1]"
-  - "🇯🇵日本 樱潮夜歌🌸🌙 [wk1]"
-  - "🇸🇬新加坡稳 月映星澜🌙✨ [wk1]"
-  - "🇸🇬新加坡稳 诗香弄影📜🌸 [wk1]"
-  - "🇸🇬新加坡稳 彩梦织锦🎨🌺 [wk1]"
-  - "🇸🇬新加坡稳 翡翠星辰🍃⭐ [wk1]"
-  - "🇸🇬新加坡 星橙夜语✨🍊 [wk1]"
-  - "🇸🇬新加坡 碧海晨曦🌊🌅 [wk1]"
-  - "🇸🇬新加坡 云岭幽香☁️🌿 [wk1]"
-  - "🇸🇬新加坡 霞光映水🌇💧 [wk1]"
-  - "🇰🇷韩国超速 霓虹醉影🌃💫 [wk1]"
-  - "🇰🇷韩国超速 霓虹醉影🌃💫 [wk2]"
-  - "🇰🇷韩国超速 蓝海吟风🌊🍃 [wk1]"
-  - "🇰🇷韩国 云港晨曦☁️🌅 [wk1]"
-  - "🇰🇷韩国 花映春岚🌸🍃 [wk1]"
-  - "🇰🇷韩国 碧涛星岸🌊✨ [wk1]"
-  - "🇰🇷韩国 风铃澄空🍃🔔 [wk1]"
-  - "🇬🇧英国 雾都晨曦🌫️🌅 [wk1]"
-  - "🇬🇧英国 暮影古城🏰🌆 [wk1]"
-  - "🇬🇧英国 英雨琴韵☔🎶 [wk1]"
-  - "🇬🇧英国 湖光书梦📖🌊 [wk1]"
-  - "TG交流群https://t.me/wukongjichang [wk2]"
-  - "🇭🇰香港家宽 星河幻境 ✨🌌 [wk2]"
-  - "🇭🇰香港家宽 流光溢彩 🌃💫 [wk2]"
-  - "🇭🇰香港家宽 潮韵霓裳 🎶🌈 [wk2]"
-  - "🇭🇰香港家宽 云帆启航 ☁️⛵ [wk2]"
-  - "🇺🇸美国巨容 星梦幻城 🌟🏙️ [wk2]"
-  - "🇺🇸美国巨容 光影旖旎 🌴🎬 [wk2]"
-  - "🇺🇸美国巨容 风情雅韵 🍂🏙️ [wk2]"
-  - "🇺🇸美国巨容 阳光碧海 🌞🌊 [wk2]"
-  - "🇺🇸美国 雾海星桥🌁✨ [wk2]"
-  - "🇺🇸美国 幻彩之梦🎰🌈 [wk2]"
-  - "🇺🇸美国 晨曦雨韵🌦️🌅 [wk2]"
-  - "🇺🇸美国 爵夜迷情🎷🌙 [wk2]"
-  - "🇯🇵日本低延 樱梦流光 🌸✨ [wk2]"
-  - "🇯🇵日本低延 古韵流芳 🏯🌺 [wk2]"
-  - "🇯🇵日本低延 霓虹恋曲 🌆💖 [wk2]"
-  - "🇯🇵日本低延 雪韵悠然 ❄️🌌 [wk2]"
-  - "🇯🇵日本 星港潮音✨🌊 [wk2]"
-  - "🇯🇵日本 鹿梦千樱🦌🌸 [wk2]"
-  - "🇯🇵日本 云岚琉光☁️🌅 [wk2]"
-  - "🇯🇵日本 樱潮夜歌🌸🌙 [wk2]"
-  - "🇸🇬新加坡稳 月映星澜🌙✨ [wk2]"
-  - "🇸🇬新加坡稳 诗香弄影📜🌸 [wk2]"
-  - "🇸🇬新加坡稳 彩梦织锦🎨🌺 [wk2]"
-  - "🇸🇬新加坡稳 翡翠星辰🍃⭐ [wk2]"
-  - "🇸🇬新加坡 星橙夜语✨🍊 [wk2]"
-  - "🇸🇬新加坡 碧海晨曦🌊🌅 [wk2]"
-  - "🇸🇬新加坡 云岭幽香☁️🌿 [wk2]"
-  - "🇸🇬新加坡 霞光映水🌇💧 [wk2]"
-  - "🇰🇷韩国超速 海韵情怀🌊💖 [wk2]"
-  - "🇰🇷韩国超速 梦幻霓裳🌸🌟 [wk2]"
-  - "🇰🇷韩国超速 蓝海吟风🌊🍃 [wk2]"
-  - "🇰🇷韩国 云港晨曦☁️🌅 [wk2]"
-  - "🇰🇷韩国 花映春岚🌸🍃 [wk2]"
-  - "🇰🇷韩国 碧涛星岸🌊✨ [wk2]"
-  - "🇰🇷韩国 风铃澄空🍃🔔 [wk2]"
-  - "🇬🇧英国 雾都晨曦🌫️🌅 [wk2]"
-  - "🇬🇧英国 暮影古城🏰🌆 [wk2]"
-  - "🇬🇧英国 英雨琴韵☔🎶 [wk2]"
-  - "🇬🇧英国 湖光书梦📖🌊 [wk2]"
   - "🇭🇰  香港 vless 5 [whh5]"
   - "🇩🇪 德国 vless 4 [whh5]"
   - "🇹🇼 台湾 vless 4 [whh5]"
@@ -3504,35 +3242,36 @@ proxy-groups:
   - "🇦🇺 澳大利亚 @mfbpn [bzy]"
   - "🇫🇷 巴黎 @mfbpn [bzy]"
   - "节点更新时间4-17 [tk1]"
-  - "🇷🇺 俄罗斯3 | ⬇️ 14.9MB/s|0%|Youtube 2 [cml]"
-  - "🇷🇺 俄罗斯_5 [dcj]"
   - "🇷🇺 俄罗斯_1 [dcj]"
-  - "🇯🇵日本1 | ⬇️ 1.4MB/s [tk1]"
-  - "🇯🇵日本2 | ⬇️ 1.4MB/s [tk1]"
-  - "🇺🇸 美国_2 [dcj]"
-  - "🇺🇸美国6 | ⬇️ 1.4MB/s [tk1]"
-  - "🇺🇸美国7 | ⬇️ 2.1MB/s [tk1]"
-  - "🇬🇧英国3 | ⬇️ 1.1MB%2Fs [tk1]"
-  - "🇺🇸 美国_4 [dcj]"
-  - "🌀其他4-SE | ⬇️ 2.0MB/s [tk1]"
-  - "🇺🇸美国11 | ⬇️ 1.1MB/s [tk1]"
-  - "🇺🇸美国13 | ⬇️ 4.1MB/s [tk1]"
-  - "🇺🇸美国14 | ⬇️ 1.1MB/s [tk1]"
-  - "🇺🇸美国21 | ⬇️ 2.3MB/s [tk1]"
-  - "🌀其他8-CZ | ⬇️ 3.7MB/s [tk1]"
-  - "🇰🇷韩国3 | ⬇️ 1.0MB/s [tk1]"
-  - "🌀其他12-未识别 | ⬇️ 1.1MB/s [tk1]"
-  - "🇸🇬新加坡1 | ⬇️ 1.3MB/s [tk1]"
-  - "🇺🇸美国25 | ⬇️ 2.8MB/s [tk1]"
-  - "🇯🇵 日本_2 [dcj]"
-  - "🇷🇺 俄罗斯_4 [dcj]"
-  - "🇺🇸 美国_3 [dcj]"
-  - "🇺🇸 美国23 | ⬇️ 4.2MB/s|41%|Netflix|Openai 2 [cml]"
-  - "🇺🇸美国28 | ⬇️ 3.6MB/s [tk1]"
-  - "🇭🇰香港5 | ⬇️ 1.1MB%2Fs [tk1]"
-  - "🇺🇸美国30 | ⬇️ 2.2MB%2Fs [tk1]"
-  - "🇭🇰香港6 | ⬇️ 2.2MB%2Fs [tk1]"
-  - "🇭🇰香港7 | ⬇️ 1.5MB%2Fs [tk1]"
+  - "🇺🇸美国4 | ⬇️ 1.8MB/s [tk1]"
+  - "🇸🇬新加坡1 | ⬇️ 1.5MB/s [tk1]"
+  - "🇭🇰香港2 | ⬇️ 3.8MB%2Fs [tk1]"
+  - "🇬🇧英国2 | ⬇️ 1.1MB%2Fs [tk1]"
+  - "🌀其他3-TR | ⬇️ 2.8MB%2Fs [tk1]"
+  - "🇺🇸美国6 | ⬇️ 1.5MB/s [tk1]"
+  - "🌀其他4-ID | ⬇️ 4.8MB%2Fs [tk1]"
+  - "🇺🇸美国7 | ⬇️ 1.0MB/s [tk1]"
+  - "🇺🇸美国15 | ⬇️ 3.4MB/s [tk1]"
+  - "🇺🇸美国16 | ⬇️ 6.4MB/s [tk1]"
+  - "🇺🇸美国18 | ⬇️ 3.8MB/s [tk1]"
+  - "🇺🇸美国22 | ⬇️ 3.3MB/s [tk1]"
+  - "🇸🇬 新加坡2 | ⬇️ 8.3MB/s|6%|Netflix|Disney|Youtube|Openai|Gemini 2 [cml]"
+  - "🇷🇺俄罗斯2 | ⬇️ 1.7MB/s [tk1]"
+  - "🇷🇺 俄罗斯_2 [dcj]"
+  - "🇳🇱荷兰3 | ⬇️ 2.9MB/s [tk1]"
+  - "🇫🇷 法国6 | ⬇️ 9.9MB/s|0%|Youtube|Openai 2 [cml]"
+  - "🇷🇺 俄罗斯_5 [dcj]"
+  - "🇷🇺 俄罗斯3 | ⬇️ 14.9MB/s|0%|Youtube 2 [cml]"
+  - "🇺🇸美国30 | ⬇️ 1.2MB/s [tk1]"
+  - "🇺🇸美国32 | ⬇️ 3.3MB/s [tk1]"
+  - "🇩🇪德国11 | ⬇️ 4.0MB%2Fs [tk1]"
+  - "🇭🇰香港7 | ⬇️ 2.7MB%2Fs [tk1]"
+  - "🌀其他7-T1 | ⬇️ 1.3MB%2Fs [tk1]"
+  - "🇵🇱波兰1 | ⬇️ 3.7MB/s [tk1]"
+  - "🇭🇰香港8 | ⬇️ 1.6MB/s [tk1]"
+  - "🇭🇰香港9 | ⬇️ 1.5MB/s [tk1]"
+  - "🇭🇰香港10 | ⬇️ 1.2MB%2Fs [tk1]"
+  - "🇭🇰香港6 | ⬇️ 2.2MB/s [tk1]"
   - "❓ 未知_1 [dcj]"
   - "❓ 未知_2 [dcj]"
   - "🇨🇳 中国_1 [dcj]"
@@ -3541,7 +3280,6 @@ proxy-groups:
   - "🇨🇳 中国_3 [dcj]"
   - "🇨🇳 中国_4 [dcj]"
   - "❓ 未知_4 [dcj]"
-  - "🇸🇬 新加坡2 | ⬇️ 8.3MB/s|6%|Netflix|Disney|Youtube|Openai|Gemini 2 [cml]"
   - "❓ 未知_6 [dcj]"
   - "t.me/freeyule [cjbp]"
   - "❓ 未知_7 [dcj]"
@@ -3551,7 +3289,6 @@ proxy-groups:
   - "❓ 未知_9 [dcj]"
   - "❓ 未知_10 [dcj]"
   - "🇹🇼 台湾_2 [dcj]"
-  - "🇷🇺 俄罗斯_2 [dcj]"
   - "🇯🇵 日本_1 [dcj]"
   - "❓ 未知_11 [dcj]"
   - "中国 - 香港 - CTG Server Ltd. - 2 [go4sharing]"
@@ -3572,6 +3309,7 @@ proxy-groups:
   - "🇹🇼 台湾_3 [dcj]"
   - "❓ 未知_24 [dcj]"
   - "❓ 未知_25 [dcj]"
+  - "🇷🇺 俄罗斯_4 [dcj]"
   - "🇹🇼 台湾_4 [dcj]"
   - "❓ 未知_26 [dcj]"
   - "🇩🇪 德国_1 [dcj]"
@@ -3599,6 +3337,7 @@ proxy-groups:
   - "❓ 未知_42 [dcj]"
   - "❓ 未知_43 [dcj]"
   - "❓ 未知_44 [dcj]"
+  - "🇺🇸 美国_2 [dcj]"
   - "❓ 未知_45 [dcj]"
   - "🇹🇼 台湾_10 [dcj]"
   - "❓ 未知_46 [dcj]"
@@ -3608,14 +3347,17 @@ proxy-groups:
   - "❓ 未知_50 [dcj]"
   - "🇭🇰 香港_4 [dcj]"
   - "🇹🇼 台湾_11 [dcj]"
+  - "🇺🇸 美国_3 [dcj]"
   - "❓ 未知_51 [dcj]"
   - "🇹🇼 台湾_12 [dcj]"
   - "❓ 未知_52 [dcj]"
   - "❓ 未知_53 [dcj]"
   - "❓ 未知_54 [dcj]"
   - "🇹🇼 台湾_13 [dcj]"
+  - "🇺🇸 美国_4 [dcj]"
   - "🇹🇼 台湾_14 [dcj]"
   - "❓ 未知_55 [dcj]"
+  - "🇺🇸 美国23 | ⬇️ 4.2MB/s|41%|Netflix|Openai 2 [cml]"
   - "🇸🇬 新加坡_1 [dcj]"
   - "❓ 未知_56 [dcj]"
   - "🇺🇸 美国24 | ⬇️ 4.7MB/s|41%|Netflix|Openai 2 [cml]"
@@ -3630,6 +3372,7 @@ proxy-groups:
   - "🇺🇸 美国_7 [dcj]"
   - "🇸🇨 塞舌尔 [dcj]"
   - "🇩🇪 德国_2 [dcj]"
+  - "🇯🇵 日本_2 [dcj]"
   - "❓ 未知_62 [dcj]"
   - "❓ 未知_63 [dcj]"
   - "❓ 未知_64 [dcj]"
@@ -3859,7 +3602,6 @@ proxy-groups:
   - "🇫🇷 法国3 | ⬇️ 9.7MB/s|14%|Netflix|Openai 2 [cml]"
   - "🇫🇷 法国4 | ⬇️ 6.9MB/s|14%|Netflix|Openai 2 [cml]"
   - "🇫🇷 法国5 | ⬇️ 11.1MB/s|14%|Netflix|Openai 2 [cml]"
-  - "🇫🇷 法国6 | ⬇️ 9.9MB/s|0%|Youtube|Openai 2 [cml]"
   - "🇫🇷 法国7 | ⬇️ 12.0MB/s|100%|Netflix|Youtube|Openai 2 [cml]"
   - "🇫🇷 法国8 | ⬇️ 16.4MB/s|14%|Netflix|Openai 2 [cml]"
   - "🇦🇺 澳大利亚1 | ⬇️ 15.6MB/s|0%|Netflix|Disney|Gemini 2 [cml]"
@@ -4028,22 +3770,22 @@ proxy-groups:
   - "🇩🇪 德国 10 [cmj2]"
   - "加入我的频道t.me/CMLiussss解锁更多优选节点 [cmj3]"
   - "CFnat [cmj3]"
+  - "🇭🇰 HK [cmj3]"
   - "ZA [cmj3]"
   - "🇺🇸 US [cmj3]"
-  - "🇭🇰 HK [cmj3]"
-  - "BR [cmj3]"
   - "🇭🇰 HK 2 [cmj3]"
+  - "ZA 2 [cmj3]"
   - "🇭🇰 HK 3 [cmj3]"
+  - "🇭🇰 HK 4 [cmj3]"
   - "🇺🇸 US 2 [cmj3]"
+  - "🇭🇰 HK 5 [cmj3]"
   - "🇺🇸 US 3 [cmj3]"
   - "🇺🇸 US 4 [cmj3]"
-  - "🇭🇰 HK 4 [cmj3]"
+  - "🇭🇰 HK 6 [cmj3]"
   - "🇺🇸 US 5 [cmj3]"
-  - "ZA 2 [cmj3]"
+  - "🇭🇰 HK 7 [cmj3]"
   - "🇺🇸 US 6 [cmj3]"
-  - "🇭🇰 HK 5 [cmj3]"
-  - "ZA 3 [cmj3]"
-  - "BR 2 [cmj3]"
+  - "🇺🇸 US 7 [cmj3]"
   - "🇯🇵 JP [cmj3]"
   - "🇯🇵 JP 2 [cmj3]"
   - "🇸🇬 SG [cmj3]"
@@ -4054,10 +3796,10 @@ proxy-groups:
   - "🇰🇷 KR 2 [cmj3]"
   - "🇰🇷 KR 3 [cmj3]"
   - "🇰🇷 KR 4 [cmj3]"
-  - "🇺🇸 US 7 [cmj3]"
   - "🇺🇸 US 8 [cmj3]"
   - "🇺🇸 US 9 [cmj3]"
   - "🇺🇸 US 10 [cmj3]"
+  - "🇺🇸 US 11 [cmj3]"
   - "IL [cmj3]"
   - "IL 2 [cmj3]"
   - "🇰🇷 KR 5 [cmj3]"
@@ -4065,17 +3807,17 @@ proxy-groups:
   - "CH [cmj3]"
   - "🇮🇳 IN [cmj3]"
   - "🇮🇳 IN 2 [cmj3]"
-  - "🇺🇸 US 11 [cmj3]"
-  - "🇮🇳 IN 3 [cmj3]"
   - "🇺🇸 US 12 [cmj3]"
+  - "🇮🇳 IN 3 [cmj3]"
+  - "🇺🇸 US 13 [cmj3]"
   - "🇨🇳 CN [cmj3]"
   - "IT [cmj3]"
   - "🇦🇺 AU [cmj3]"
   - "🇦🇺 AU 2 [cmj3]"
   - "🇨🇳 TW [cmj3]"
-  - "🇭🇰 HK 6 [cmj3]"
-  - "🇺🇸 US 13 [cmj3]"
-  - "🇭🇰 HK 7 [cmj3]"
+  - "🇭🇰 HK 8 [cmj3]"
+  - "🇺🇸 US 14 [cmj3]"
+  - "🇭🇰 HK 9 [cmj3]"
   - "CT [cmj3]"
   - "CT 2 [cmj3]"
   - "CT 3 [cmj3]"
@@ -4094,26 +3836,6 @@ proxy-groups:
   - "CMCC-IPV6 4 [cmj3]"
   - "CMCC-IPV6 5 [cmj3]"
   - "CMCC-IPV6 6 [cmj3]"
-  - "日本1 [yhjc]"
-  - "日本2 [yhjc]"
-  - "日本3 [yhjc]"
-  - "日本4 [yhjc]"
-  - "法国1 [yhjc]"
-  - "法国2 [yhjc]"
-  - "法国3 [yhjc]"
-  - "法国4 [yhjc]"
-  - "加拿大1 [yhjc]"
-  - "加拿大2 [yhjc]"
-  - "加拿大3 [yhjc]"
-  - "加拿大4 [yhjc]"
-  - "伊拉克1 [yhjc]"
-  - "伊拉克2 [yhjc]"
-  - "伊拉克3 [yhjc]"
-  - "伊拉克4 [yhjc]"
-  - "美国1 [yhjc]"
-  - "美国2 [yhjc]"
-  - "美国3 [yhjc]"
-  - "美国4 [yhjc]"
   - "1巴西圣保罗 [cbb3]"
   - "2巴西圣保罗 [cbb3]"
   - "3巴西圣保罗 [cbb3]"
@@ -4229,123 +3951,6 @@ proxy-groups:
   - "保加利亚1|IEPL|1X [hx]"
   - "阿联酋1|BGP|0.4X [hx]"
   - "阿联酋1|IEPL|1X [hx]"
-  - "日本1 [yhjc2]"
-  - "日本2 [yhjc2]"
-  - "日本3 [yhjc2]"
-  - "日本4 [yhjc2]"
-  - "法国1 [yhjc2]"
-  - "法国2 [yhjc2]"
-  - "法国3 [yhjc2]"
-  - "法国4 [yhjc2]"
-  - "加拿大1 [yhjc2]"
-  - "加拿大2 [yhjc2]"
-  - "加拿大3 [yhjc2]"
-  - "加拿大4 [yhjc2]"
-  - "伊拉克1 [yhjc2]"
-  - "伊拉克2 [yhjc2]"
-  - "伊拉克3 [yhjc2]"
-  - "伊拉克4 [yhjc2]"
-  - "美国1 [yhjc2]"
-  - "美国2 [yhjc2]"
-  - "美国3 [yhjc2]"
-  - "美国4 [yhjc2]"
-  - "日本4 [ygjc]"
-  - "韩国1 [ygjc]"
-  - "韩国2 [ygjc]"
-  - "韩国3 [ygjc]"
-  - "韩国4 [ygjc]"
-  - "新加坡1 [ygjc]"
-  - "新加坡2 [ygjc]"
-  - "新加坡3 [ygjc]"
-  - "新加坡4 [ygjc]"
-  - "美国1 [ygjc]"
-  - "美国2 [ygjc]"
-  - "美国3 [ygjc]"
-  - "美国4 [ygjc]"
-  - "英国1 [ygjc]"
-  - "英国2 [ygjc]"
-  - "英国3 [ygjc]"
-  - "英国4 [ygjc]"
-  - "TG交流群https://t.me/wukongjichang [wk1]"
-  - "🇭🇰香港家宽 星河幻境 ✨🌌 [wk1]"
-  - "🇭🇰香港家宽 流光溢彩 🌃💫 [wk1]"
-  - "🇭🇰香港家宽 潮韵霓裳 🎶🌈 [wk1]"
-  - "🇭🇰香港家宽 云帆启航 ☁️⛵ [wk1]"
-  - "🇺🇸美国巨容 星梦幻城 🌟🏙️ [wk1]"
-  - "🇺🇸美国巨容 光影旖旎 🌴🎬 [wk1]"
-  - "🇺🇸美国巨容 风情雅韵 🍂🏙️ [wk1]"
-  - "🇺🇸美国巨容 阳光碧海 🌞🌊 [wk1]"
-  - "🇺🇸美国 雾海星桥🌁✨ [wk1]"
-  - "🇺🇸美国 幻彩之梦🎰🌈 [wk1]"
-  - "🇺🇸美国 晨曦雨韵🌦️🌅 [wk1]"
-  - "🇺🇸美国 爵夜迷情🎷🌙 [wk1]"
-  - "🇯🇵日本低延 樱梦流光 🌸✨ [wk1]"
-  - "🇯🇵日本低延 古韵流芳 🏯🌺 [wk1]"
-  - "🇯🇵日本低延 霓虹恋曲 🌆💖 [wk1]"
-  - "🇯🇵日本低延 雪韵悠然 ❄️🌌 [wk1]"
-  - "🇯🇵日本 星港潮音✨🌊 [wk1]"
-  - "🇯🇵日本 鹿梦千樱🦌🌸 [wk1]"
-  - "🇯🇵日本 云岚琉光☁️🌅 [wk1]"
-  - "🇯🇵日本 樱潮夜歌🌸🌙 [wk1]"
-  - "🇸🇬新加坡稳 月映星澜🌙✨ [wk1]"
-  - "🇸🇬新加坡稳 诗香弄影📜🌸 [wk1]"
-  - "🇸🇬新加坡稳 彩梦织锦🎨🌺 [wk1]"
-  - "🇸🇬新加坡稳 翡翠星辰🍃⭐ [wk1]"
-  - "🇸🇬新加坡 星橙夜语✨🍊 [wk1]"
-  - "🇸🇬新加坡 碧海晨曦🌊🌅 [wk1]"
-  - "🇸🇬新加坡 云岭幽香☁️🌿 [wk1]"
-  - "🇸🇬新加坡 霞光映水🌇💧 [wk1]"
-  - "🇰🇷韩国超速 霓虹醉影🌃💫 [wk1]"
-  - "🇰🇷韩国超速 霓虹醉影🌃💫 [wk2]"
-  - "🇰🇷韩国超速 蓝海吟风🌊🍃 [wk1]"
-  - "🇰🇷韩国 云港晨曦☁️🌅 [wk1]"
-  - "🇰🇷韩国 花映春岚🌸🍃 [wk1]"
-  - "🇰🇷韩国 碧涛星岸🌊✨ [wk1]"
-  - "🇰🇷韩国 风铃澄空🍃🔔 [wk1]"
-  - "🇬🇧英国 雾都晨曦🌫️🌅 [wk1]"
-  - "🇬🇧英国 暮影古城🏰🌆 [wk1]"
-  - "🇬🇧英国 英雨琴韵☔🎶 [wk1]"
-  - "🇬🇧英国 湖光书梦📖🌊 [wk1]"
-  - "TG交流群https://t.me/wukongjichang [wk2]"
-  - "🇭🇰香港家宽 星河幻境 ✨🌌 [wk2]"
-  - "🇭🇰香港家宽 流光溢彩 🌃💫 [wk2]"
-  - "🇭🇰香港家宽 潮韵霓裳 🎶🌈 [wk2]"
-  - "🇭🇰香港家宽 云帆启航 ☁️⛵ [wk2]"
-  - "🇺🇸美国巨容 星梦幻城 🌟🏙️ [wk2]"
-  - "🇺🇸美国巨容 光影旖旎 🌴🎬 [wk2]"
-  - "🇺🇸美国巨容 风情雅韵 🍂🏙️ [wk2]"
-  - "🇺🇸美国巨容 阳光碧海 🌞🌊 [wk2]"
-  - "🇺🇸美国 雾海星桥🌁✨ [wk2]"
-  - "🇺🇸美国 幻彩之梦🎰🌈 [wk2]"
-  - "🇺🇸美国 晨曦雨韵🌦️🌅 [wk2]"
-  - "🇺🇸美国 爵夜迷情🎷🌙 [wk2]"
-  - "🇯🇵日本低延 樱梦流光 🌸✨ [wk2]"
-  - "🇯🇵日本低延 古韵流芳 🏯🌺 [wk2]"
-  - "🇯🇵日本低延 霓虹恋曲 🌆💖 [wk2]"
-  - "🇯🇵日本低延 雪韵悠然 ❄️🌌 [wk2]"
-  - "🇯🇵日本 星港潮音✨🌊 [wk2]"
-  - "🇯🇵日本 鹿梦千樱🦌🌸 [wk2]"
-  - "🇯🇵日本 云岚琉光☁️🌅 [wk2]"
-  - "🇯🇵日本 樱潮夜歌🌸🌙 [wk2]"
-  - "🇸🇬新加坡稳 月映星澜🌙✨ [wk2]"
-  - "🇸🇬新加坡稳 诗香弄影📜🌸 [wk2]"
-  - "🇸🇬新加坡稳 彩梦织锦🎨🌺 [wk2]"
-  - "🇸🇬新加坡稳 翡翠星辰🍃⭐ [wk2]"
-  - "🇸🇬新加坡 星橙夜语✨🍊 [wk2]"
-  - "🇸🇬新加坡 碧海晨曦🌊🌅 [wk2]"
-  - "🇸🇬新加坡 云岭幽香☁️🌿 [wk2]"
-  - "🇸🇬新加坡 霞光映水🌇💧 [wk2]"
-  - "🇰🇷韩国超速 海韵情怀🌊💖 [wk2]"
-  - "🇰🇷韩国超速 梦幻霓裳🌸🌟 [wk2]"
-  - "🇰🇷韩国超速 蓝海吟风🌊🍃 [wk2]"
-  - "🇰🇷韩国 云港晨曦☁️🌅 [wk2]"
-  - "🇰🇷韩国 花映春岚🌸🍃 [wk2]"
-  - "🇰🇷韩国 碧涛星岸🌊✨ [wk2]"
-  - "🇰🇷韩国 风铃澄空🍃🔔 [wk2]"
-  - "🇬🇧英国 雾都晨曦🌫️🌅 [wk2]"
-  - "🇬🇧英国 暮影古城🏰🌆 [wk2]"
-  - "🇬🇧英国 英雨琴韵☔🎶 [wk2]"
-  - "🇬🇧英国 湖光书梦📖🌊 [wk2]"
   - "🇭🇰  香港 vless 5 [whh5]"
   - "🇩🇪 德国 vless 4 [whh5]"
   - "🇹🇼 台湾 vless 4 [whh5]"
@@ -4640,35 +4245,36 @@ proxy-groups:
   - "🇦🇺 澳大利亚 @mfbpn [bzy]"
   - "🇫🇷 巴黎 @mfbpn [bzy]"
   - "节点更新时间4-17 [tk1]"
-  - "🇷🇺 俄罗斯3 | ⬇️ 14.9MB/s|0%|Youtube 2 [cml]"
-  - "🇷🇺 俄罗斯_5 [dcj]"
   - "🇷🇺 俄罗斯_1 [dcj]"
-  - "🇯🇵日本1 | ⬇️ 1.4MB/s [tk1]"
-  - "🇯🇵日本2 | ⬇️ 1.4MB/s [tk1]"
-  - "🇺🇸 美国_2 [dcj]"
-  - "🇺🇸美国6 | ⬇️ 1.4MB/s [tk1]"
-  - "🇺🇸美国7 | ⬇️ 2.1MB/s [tk1]"
-  - "🇬🇧英国3 | ⬇️ 1.1MB%2Fs [tk1]"
-  - "🇺🇸 美国_4 [dcj]"
-  - "🌀其他4-SE | ⬇️ 2.0MB/s [tk1]"
-  - "🇺🇸美国11 | ⬇️ 1.1MB/s [tk1]"
-  - "🇺🇸美国13 | ⬇️ 4.1MB/s [tk1]"
-  - "🇺🇸美国14 | ⬇️ 1.1MB/s [tk1]"
-  - "🇺🇸美国21 | ⬇️ 2.3MB/s [tk1]"
-  - "🌀其他8-CZ | ⬇️ 3.7MB/s [tk1]"
-  - "🇰🇷韩国3 | ⬇️ 1.0MB/s [tk1]"
-  - "🌀其他12-未识别 | ⬇️ 1.1MB/s [tk1]"
-  - "🇸🇬新加坡1 | ⬇️ 1.3MB/s [tk1]"
-  - "🇺🇸美国25 | ⬇️ 2.8MB/s [tk1]"
-  - "🇯🇵 日本_2 [dcj]"
-  - "🇷🇺 俄罗斯_4 [dcj]"
-  - "🇺🇸 美国_3 [dcj]"
-  - "🇺🇸 美国23 | ⬇️ 4.2MB/s|41%|Netflix|Openai 2 [cml]"
-  - "🇺🇸美国28 | ⬇️ 3.6MB/s [tk1]"
-  - "🇭🇰香港5 | ⬇️ 1.1MB%2Fs [tk1]"
-  - "🇺🇸美国30 | ⬇️ 2.2MB%2Fs [tk1]"
-  - "🇭🇰香港6 | ⬇️ 2.2MB%2Fs [tk1]"
-  - "🇭🇰香港7 | ⬇️ 1.5MB%2Fs [tk1]"
+  - "🇺🇸美国4 | ⬇️ 1.8MB/s [tk1]"
+  - "🇸🇬新加坡1 | ⬇️ 1.5MB/s [tk1]"
+  - "🇭🇰香港2 | ⬇️ 3.8MB%2Fs [tk1]"
+  - "🇬🇧英国2 | ⬇️ 1.1MB%2Fs [tk1]"
+  - "🌀其他3-TR | ⬇️ 2.8MB%2Fs [tk1]"
+  - "🇺🇸美国6 | ⬇️ 1.5MB/s [tk1]"
+  - "🌀其他4-ID | ⬇️ 4.8MB%2Fs [tk1]"
+  - "🇺🇸美国7 | ⬇️ 1.0MB/s [tk1]"
+  - "🇺🇸美国15 | ⬇️ 3.4MB/s [tk1]"
+  - "🇺🇸美国16 | ⬇️ 6.4MB/s [tk1]"
+  - "🇺🇸美国18 | ⬇️ 3.8MB/s [tk1]"
+  - "🇺🇸美国22 | ⬇️ 3.3MB/s [tk1]"
+  - "🇸🇬 新加坡2 | ⬇️ 8.3MB/s|6%|Netflix|Disney|Youtube|Openai|Gemini 2 [cml]"
+  - "🇷🇺俄罗斯2 | ⬇️ 1.7MB/s [tk1]"
+  - "🇷🇺 俄罗斯_2 [dcj]"
+  - "🇳🇱荷兰3 | ⬇️ 2.9MB/s [tk1]"
+  - "🇫🇷 法国6 | ⬇️ 9.9MB/s|0%|Youtube|Openai 2 [cml]"
+  - "🇷🇺 俄罗斯_5 [dcj]"
+  - "🇷🇺 俄罗斯3 | ⬇️ 14.9MB/s|0%|Youtube 2 [cml]"
+  - "🇺🇸美国30 | ⬇️ 1.2MB/s [tk1]"
+  - "🇺🇸美国32 | ⬇️ 3.3MB/s [tk1]"
+  - "🇩🇪德国11 | ⬇️ 4.0MB%2Fs [tk1]"
+  - "🇭🇰香港7 | ⬇️ 2.7MB%2Fs [tk1]"
+  - "🌀其他7-T1 | ⬇️ 1.3MB%2Fs [tk1]"
+  - "🇵🇱波兰1 | ⬇️ 3.7MB/s [tk1]"
+  - "🇭🇰香港8 | ⬇️ 1.6MB/s [tk1]"
+  - "🇭🇰香港9 | ⬇️ 1.5MB/s [tk1]"
+  - "🇭🇰香港10 | ⬇️ 1.2MB%2Fs [tk1]"
+  - "🇭🇰香港6 | ⬇️ 2.2MB/s [tk1]"
   - "❓ 未知_1 [dcj]"
   - "❓ 未知_2 [dcj]"
   - "🇨🇳 中国_1 [dcj]"
@@ -4677,7 +4283,6 @@ proxy-groups:
   - "🇨🇳 中国_3 [dcj]"
   - "🇨🇳 中国_4 [dcj]"
   - "❓ 未知_4 [dcj]"
-  - "🇸🇬 新加坡2 | ⬇️ 8.3MB/s|6%|Netflix|Disney|Youtube|Openai|Gemini 2 [cml]"
   - "❓ 未知_6 [dcj]"
   - "t.me/freeyule [cjbp]"
   - "❓ 未知_7 [dcj]"
@@ -4687,7 +4292,6 @@ proxy-groups:
   - "❓ 未知_9 [dcj]"
   - "❓ 未知_10 [dcj]"
   - "🇹🇼 台湾_2 [dcj]"
-  - "🇷🇺 俄罗斯_2 [dcj]"
   - "🇯🇵 日本_1 [dcj]"
   - "❓ 未知_11 [dcj]"
   - "中国 - 香港 - CTG Server Ltd. - 2 [go4sharing]"
@@ -4708,6 +4312,7 @@ proxy-groups:
   - "🇹🇼 台湾_3 [dcj]"
   - "❓ 未知_24 [dcj]"
   - "❓ 未知_25 [dcj]"
+  - "🇷🇺 俄罗斯_4 [dcj]"
   - "🇹🇼 台湾_4 [dcj]"
   - "❓ 未知_26 [dcj]"
   - "🇩🇪 德国_1 [dcj]"
@@ -4735,6 +4340,7 @@ proxy-groups:
   - "❓ 未知_42 [dcj]"
   - "❓ 未知_43 [dcj]"
   - "❓ 未知_44 [dcj]"
+  - "🇺🇸 美国_2 [dcj]"
   - "❓ 未知_45 [dcj]"
   - "🇹🇼 台湾_10 [dcj]"
   - "❓ 未知_46 [dcj]"
@@ -4744,14 +4350,17 @@ proxy-groups:
   - "❓ 未知_50 [dcj]"
   - "🇭🇰 香港_4 [dcj]"
   - "🇹🇼 台湾_11 [dcj]"
+  - "🇺🇸 美国_3 [dcj]"
   - "❓ 未知_51 [dcj]"
   - "🇹🇼 台湾_12 [dcj]"
   - "❓ 未知_52 [dcj]"
   - "❓ 未知_53 [dcj]"
   - "❓ 未知_54 [dcj]"
   - "🇹🇼 台湾_13 [dcj]"
+  - "🇺🇸 美国_4 [dcj]"
   - "🇹🇼 台湾_14 [dcj]"
   - "❓ 未知_55 [dcj]"
+  - "🇺🇸 美国23 | ⬇️ 4.2MB/s|41%|Netflix|Openai 2 [cml]"
   - "🇸🇬 新加坡_1 [dcj]"
   - "❓ 未知_56 [dcj]"
   - "🇺🇸 美国24 | ⬇️ 4.7MB/s|41%|Netflix|Openai 2 [cml]"
@@ -4766,6 +4375,7 @@ proxy-groups:
   - "🇺🇸 美国_7 [dcj]"
   - "🇸🇨 塞舌尔 [dcj]"
   - "🇩🇪 德国_2 [dcj]"
+  - "🇯🇵 日本_2 [dcj]"
   - "❓ 未知_62 [dcj]"
   - "❓ 未知_63 [dcj]"
   - "❓ 未知_64 [dcj]"
@@ -4995,7 +4605,6 @@ proxy-groups:
   - "🇫🇷 法国3 | ⬇️ 9.7MB/s|14%|Netflix|Openai 2 [cml]"
   - "🇫🇷 法国4 | ⬇️ 6.9MB/s|14%|Netflix|Openai 2 [cml]"
   - "🇫🇷 法国5 | ⬇️ 11.1MB/s|14%|Netflix|Openai 2 [cml]"
-  - "🇫🇷 法国6 | ⬇️ 9.9MB/s|0%|Youtube|Openai 2 [cml]"
   - "🇫🇷 法国7 | ⬇️ 12.0MB/s|100%|Netflix|Youtube|Openai 2 [cml]"
   - "🇫🇷 法国8 | ⬇️ 16.4MB/s|14%|Netflix|Openai 2 [cml]"
   - "🇦🇺 澳大利亚1 | ⬇️ 15.6MB/s|0%|Netflix|Disney|Gemini 2 [cml]"
@@ -5164,22 +4773,22 @@ proxy-groups:
   - "🇩🇪 德国 10 [cmj2]"
   - "加入我的频道t.me/CMLiussss解锁更多优选节点 [cmj3]"
   - "CFnat [cmj3]"
+  - "🇭🇰 HK [cmj3]"
   - "ZA [cmj3]"
   - "🇺🇸 US [cmj3]"
-  - "🇭🇰 HK [cmj3]"
-  - "BR [cmj3]"
   - "🇭🇰 HK 2 [cmj3]"
+  - "ZA 2 [cmj3]"
   - "🇭🇰 HK 3 [cmj3]"
+  - "🇭🇰 HK 4 [cmj3]"
   - "🇺🇸 US 2 [cmj3]"
+  - "🇭🇰 HK 5 [cmj3]"
   - "🇺🇸 US 3 [cmj3]"
   - "🇺🇸 US 4 [cmj3]"
-  - "🇭🇰 HK 4 [cmj3]"
+  - "🇭🇰 HK 6 [cmj3]"
   - "🇺🇸 US 5 [cmj3]"
-  - "ZA 2 [cmj3]"
+  - "🇭🇰 HK 7 [cmj3]"
   - "🇺🇸 US 6 [cmj3]"
-  - "🇭🇰 HK 5 [cmj3]"
-  - "ZA 3 [cmj3]"
-  - "BR 2 [cmj3]"
+  - "🇺🇸 US 7 [cmj3]"
   - "🇯🇵 JP [cmj3]"
   - "🇯🇵 JP 2 [cmj3]"
   - "🇸🇬 SG [cmj3]"
@@ -5190,10 +4799,10 @@ proxy-groups:
   - "🇰🇷 KR 2 [cmj3]"
   - "🇰🇷 KR 3 [cmj3]"
   - "🇰🇷 KR 4 [cmj3]"
-  - "🇺🇸 US 7 [cmj3]"
   - "🇺🇸 US 8 [cmj3]"
   - "🇺🇸 US 9 [cmj3]"
   - "🇺🇸 US 10 [cmj3]"
+  - "🇺🇸 US 11 [cmj3]"
   - "IL [cmj3]"
   - "IL 2 [cmj3]"
   - "🇰🇷 KR 5 [cmj3]"
@@ -5201,17 +4810,17 @@ proxy-groups:
   - "CH [cmj3]"
   - "🇮🇳 IN [cmj3]"
   - "🇮🇳 IN 2 [cmj3]"
-  - "🇺🇸 US 11 [cmj3]"
-  - "🇮🇳 IN 3 [cmj3]"
   - "🇺🇸 US 12 [cmj3]"
+  - "🇮🇳 IN 3 [cmj3]"
+  - "🇺🇸 US 13 [cmj3]"
   - "🇨🇳 CN [cmj3]"
   - "IT [cmj3]"
   - "🇦🇺 AU [cmj3]"
   - "🇦🇺 AU 2 [cmj3]"
   - "🇨🇳 TW [cmj3]"
-  - "🇭🇰 HK 6 [cmj3]"
-  - "🇺🇸 US 13 [cmj3]"
-  - "🇭🇰 HK 7 [cmj3]"
+  - "🇭🇰 HK 8 [cmj3]"
+  - "🇺🇸 US 14 [cmj3]"
+  - "🇭🇰 HK 9 [cmj3]"
   - "CT [cmj3]"
   - "CT 2 [cmj3]"
   - "CT 3 [cmj3]"
@@ -5230,26 +4839,6 @@ proxy-groups:
   - "CMCC-IPV6 4 [cmj3]"
   - "CMCC-IPV6 5 [cmj3]"
   - "CMCC-IPV6 6 [cmj3]"
-  - "日本1 [yhjc]"
-  - "日本2 [yhjc]"
-  - "日本3 [yhjc]"
-  - "日本4 [yhjc]"
-  - "法国1 [yhjc]"
-  - "法国2 [yhjc]"
-  - "法国3 [yhjc]"
-  - "法国4 [yhjc]"
-  - "加拿大1 [yhjc]"
-  - "加拿大2 [yhjc]"
-  - "加拿大3 [yhjc]"
-  - "加拿大4 [yhjc]"
-  - "伊拉克1 [yhjc]"
-  - "伊拉克2 [yhjc]"
-  - "伊拉克3 [yhjc]"
-  - "伊拉克4 [yhjc]"
-  - "美国1 [yhjc]"
-  - "美国2 [yhjc]"
-  - "美国3 [yhjc]"
-  - "美国4 [yhjc]"
   - "1巴西圣保罗 [cbb3]"
   - "2巴西圣保罗 [cbb3]"
   - "3巴西圣保罗 [cbb3]"
@@ -5365,123 +4954,6 @@ proxy-groups:
   - "保加利亚1|IEPL|1X [hx]"
   - "阿联酋1|BGP|0.4X [hx]"
   - "阿联酋1|IEPL|1X [hx]"
-  - "日本1 [yhjc2]"
-  - "日本2 [yhjc2]"
-  - "日本3 [yhjc2]"
-  - "日本4 [yhjc2]"
-  - "法国1 [yhjc2]"
-  - "法国2 [yhjc2]"
-  - "法国3 [yhjc2]"
-  - "法国4 [yhjc2]"
-  - "加拿大1 [yhjc2]"
-  - "加拿大2 [yhjc2]"
-  - "加拿大3 [yhjc2]"
-  - "加拿大4 [yhjc2]"
-  - "伊拉克1 [yhjc2]"
-  - "伊拉克2 [yhjc2]"
-  - "伊拉克3 [yhjc2]"
-  - "伊拉克4 [yhjc2]"
-  - "美国1 [yhjc2]"
-  - "美国2 [yhjc2]"
-  - "美国3 [yhjc2]"
-  - "美国4 [yhjc2]"
-  - "日本4 [ygjc]"
-  - "韩国1 [ygjc]"
-  - "韩国2 [ygjc]"
-  - "韩国3 [ygjc]"
-  - "韩国4 [ygjc]"
-  - "新加坡1 [ygjc]"
-  - "新加坡2 [ygjc]"
-  - "新加坡3 [ygjc]"
-  - "新加坡4 [ygjc]"
-  - "美国1 [ygjc]"
-  - "美国2 [ygjc]"
-  - "美国3 [ygjc]"
-  - "美国4 [ygjc]"
-  - "英国1 [ygjc]"
-  - "英国2 [ygjc]"
-  - "英国3 [ygjc]"
-  - "英国4 [ygjc]"
-  - "TG交流群https://t.me/wukongjichang [wk1]"
-  - "🇭🇰香港家宽 星河幻境 ✨🌌 [wk1]"
-  - "🇭🇰香港家宽 流光溢彩 🌃💫 [wk1]"
-  - "🇭🇰香港家宽 潮韵霓裳 🎶🌈 [wk1]"
-  - "🇭🇰香港家宽 云帆启航 ☁️⛵ [wk1]"
-  - "🇺🇸美国巨容 星梦幻城 🌟🏙️ [wk1]"
-  - "🇺🇸美国巨容 光影旖旎 🌴🎬 [wk1]"
-  - "🇺🇸美国巨容 风情雅韵 🍂🏙️ [wk1]"
-  - "🇺🇸美国巨容 阳光碧海 🌞🌊 [wk1]"
-  - "🇺🇸美国 雾海星桥🌁✨ [wk1]"
-  - "🇺🇸美国 幻彩之梦🎰🌈 [wk1]"
-  - "🇺🇸美国 晨曦雨韵🌦️🌅 [wk1]"
-  - "🇺🇸美国 爵夜迷情🎷🌙 [wk1]"
-  - "🇯🇵日本低延 樱梦流光 🌸✨ [wk1]"
-  - "🇯🇵日本低延 古韵流芳 🏯🌺 [wk1]"
-  - "🇯🇵日本低延 霓虹恋曲 🌆💖 [wk1]"
-  - "🇯🇵日本低延 雪韵悠然 ❄️🌌 [wk1]"
-  - "🇯🇵日本 星港潮音✨🌊 [wk1]"
-  - "🇯🇵日本 鹿梦千樱🦌🌸 [wk1]"
-  - "🇯🇵日本 云岚琉光☁️🌅 [wk1]"
-  - "🇯🇵日本 樱潮夜歌🌸🌙 [wk1]"
-  - "🇸🇬新加坡稳 月映星澜🌙✨ [wk1]"
-  - "🇸🇬新加坡稳 诗香弄影📜🌸 [wk1]"
-  - "🇸🇬新加坡稳 彩梦织锦🎨🌺 [wk1]"
-  - "🇸🇬新加坡稳 翡翠星辰🍃⭐ [wk1]"
-  - "🇸🇬新加坡 星橙夜语✨🍊 [wk1]"
-  - "🇸🇬新加坡 碧海晨曦🌊🌅 [wk1]"
-  - "🇸🇬新加坡 云岭幽香☁️🌿 [wk1]"
-  - "🇸🇬新加坡 霞光映水🌇💧 [wk1]"
-  - "🇰🇷韩国超速 霓虹醉影🌃💫 [wk1]"
-  - "🇰🇷韩国超速 霓虹醉影🌃💫 [wk2]"
-  - "🇰🇷韩国超速 蓝海吟风🌊🍃 [wk1]"
-  - "🇰🇷韩国 云港晨曦☁️🌅 [wk1]"
-  - "🇰🇷韩国 花映春岚🌸🍃 [wk1]"
-  - "🇰🇷韩国 碧涛星岸🌊✨ [wk1]"
-  - "🇰🇷韩国 风铃澄空🍃🔔 [wk1]"
-  - "🇬🇧英国 雾都晨曦🌫️🌅 [wk1]"
-  - "🇬🇧英国 暮影古城🏰🌆 [wk1]"
-  - "🇬🇧英国 英雨琴韵☔🎶 [wk1]"
-  - "🇬🇧英国 湖光书梦📖🌊 [wk1]"
-  - "TG交流群https://t.me/wukongjichang [wk2]"
-  - "🇭🇰香港家宽 星河幻境 ✨🌌 [wk2]"
-  - "🇭🇰香港家宽 流光溢彩 🌃💫 [wk2]"
-  - "🇭🇰香港家宽 潮韵霓裳 🎶🌈 [wk2]"
-  - "🇭🇰香港家宽 云帆启航 ☁️⛵ [wk2]"
-  - "🇺🇸美国巨容 星梦幻城 🌟🏙️ [wk2]"
-  - "🇺🇸美国巨容 光影旖旎 🌴🎬 [wk2]"
-  - "🇺🇸美国巨容 风情雅韵 🍂🏙️ [wk2]"
-  - "🇺🇸美国巨容 阳光碧海 🌞🌊 [wk2]"
-  - "🇺🇸美国 雾海星桥🌁✨ [wk2]"
-  - "🇺🇸美国 幻彩之梦🎰🌈 [wk2]"
-  - "🇺🇸美国 晨曦雨韵🌦️🌅 [wk2]"
-  - "🇺🇸美国 爵夜迷情🎷🌙 [wk2]"
-  - "🇯🇵日本低延 樱梦流光 🌸✨ [wk2]"
-  - "🇯🇵日本低延 古韵流芳 🏯🌺 [wk2]"
-  - "🇯🇵日本低延 霓虹恋曲 🌆💖 [wk2]"
-  - "🇯🇵日本低延 雪韵悠然 ❄️🌌 [wk2]"
-  - "🇯🇵日本 星港潮音✨🌊 [wk2]"
-  - "🇯🇵日本 鹿梦千樱🦌🌸 [wk2]"
-  - "🇯🇵日本 云岚琉光☁️🌅 [wk2]"
-  - "🇯🇵日本 樱潮夜歌🌸🌙 [wk2]"
-  - "🇸🇬新加坡稳 月映星澜🌙✨ [wk2]"
-  - "🇸🇬新加坡稳 诗香弄影📜🌸 [wk2]"
-  - "🇸🇬新加坡稳 彩梦织锦🎨🌺 [wk2]"
-  - "🇸🇬新加坡稳 翡翠星辰🍃⭐ [wk2]"
-  - "🇸🇬新加坡 星橙夜语✨🍊 [wk2]"
-  - "🇸🇬新加坡 碧海晨曦🌊🌅 [wk2]"
-  - "🇸🇬新加坡 云岭幽香☁️🌿 [wk2]"
-  - "🇸🇬新加坡 霞光映水🌇💧 [wk2]"
-  - "🇰🇷韩国超速 海韵情怀🌊💖 [wk2]"
-  - "🇰🇷韩国超速 梦幻霓裳🌸🌟 [wk2]"
-  - "🇰🇷韩国超速 蓝海吟风🌊🍃 [wk2]"
-  - "🇰🇷韩国 云港晨曦☁️🌅 [wk2]"
-  - "🇰🇷韩国 花映春岚🌸🍃 [wk2]"
-  - "🇰🇷韩国 碧涛星岸🌊✨ [wk2]"
-  - "🇰🇷韩国 风铃澄空🍃🔔 [wk2]"
-  - "🇬🇧英国 雾都晨曦🌫️🌅 [wk2]"
-  - "🇬🇧英国 暮影古城🏰🌆 [wk2]"
-  - "🇬🇧英国 英雨琴韵☔🎶 [wk2]"
-  - "🇬🇧英国 湖光书梦📖🌊 [wk2]"
   - "🇭🇰  香港 vless 5 [whh5]"
   - "🇩🇪 德国 vless 4 [whh5]"
   - "🇹🇼 台湾 vless 4 [whh5]"
