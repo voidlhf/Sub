@@ -55,6 +55,7 @@ dns:
 proxies:
 - {name: "美国-德克萨斯州", type: "vmess", server: "ourfast.asia", port: 443, uuid: "7c2d2b22-0ff5-4f68-a583-5b04c4292385", alterId: 0, cipher: "auto", udp: true, tls: true, skip-cert-verify: true, servername: "ourfast.asia"}
 - {name: "日本-东京https://t.me/+mn4kiafsM0RhMDI1", type: "vmess", server: "node2.ourfast.asia", port: 443, uuid: "7c2d2b22-0ff5-4f68-a583-5b04c4292385", alterId: 0, cipher: "auto", udp: true, tls: true, skip-cert-verify: true, servername: "node2.ourfast.asia"}
+- {name: "香港", type: "vmess", server: "node3.ourfast.asia", port: 443, uuid: "7c2d2b22-0ff5-4f68-a583-5b04c4292385", alterId: 0, cipher: "auto", udp: true, tls: true, skip-cert-verify: true, servername: "node3.ourfast.asia"}
 proxy-groups:
 - name: "PROXY"
   type: "select"
@@ -62,6 +63,7 @@ proxy-groups:
   - "AUTO"
   - "美国-德克萨斯州"
   - "日本-东京https://t.me/+mn4kiafsM0RhMDI1"
+  - "香港"
 - name: "AUTO"
   type: "url-test"
   url: "http://www.gstatic.com/generate_204"
@@ -70,11 +72,13 @@ proxy-groups:
   proxies:
   - "美国-德克萨斯州"
   - "日本-东京https://t.me/+mn4kiafsM0RhMDI1"
+  - "香港"
 - name: "AI"
   type: "select"
   proxies:
   - "美国-德克萨斯州"
   - "日本-东京https://t.me/+mn4kiafsM0RhMDI1"
+  - "香港"
 rules:
 - "GEOSITE,CATEGORY-ADS-ALL,REJECT"
 - "DOMAIN-SUFFIX,ushd.xmsl.org,DIRECT"

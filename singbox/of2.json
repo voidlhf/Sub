@@ -116,13 +116,27 @@
       "uuid": "780306b6-8666-4db9-93f3-c45c50babe64"
     },
     {
+      "server": "node3.ourfast.asia",
+      "server_port": 443,
+      "tag": "香港",
+      "tls": {
+        "enabled": true,
+        "server_name": "node3.ourfast.asia",
+        "insecure": true
+      },
+      "type": "vmess",
+      "security": "auto",
+      "uuid": "780306b6-8666-4db9-93f3-c45c50babe64"
+    },
+    {
       "tag": "select",
       "type": "selector",
       "default": "auto",
       "outbounds": [
         "auto",
         "美国-德克萨斯州",
-        "日本-东京https://t.me/+mn4kiafsM0RhMDI1"
+        "日本-东京https://t.me/+mn4kiafsM0RhMDI1",
+        "香港"
       ]
     },
     {
@@ -130,7 +144,8 @@
       "type": "urltest",
       "outbounds": [
         "美国-德克萨斯州",
-        "日本-东京https://t.me/+mn4kiafsM0RhMDI1"
+        "日本-东京https://t.me/+mn4kiafsM0RhMDI1",
+        "香港"
       ]
     },
     {
@@ -138,7 +153,8 @@
       "type": "selector",
       "outbounds": [
         "美国-德克萨斯州",
-        "日本-东京https://t.me/+mn4kiafsM0RhMDI1"
+        "日本-东京https://t.me/+mn4kiafsM0RhMDI1",
+        "香港"
       ]
     },
     {
