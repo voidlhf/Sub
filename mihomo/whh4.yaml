@@ -53,17 +53,9 @@ dns:
     - "https://dns.alidns.com/dns-query"
     - "https://doh.pub/dns-query"
 proxies:
-- {name: "剩余流量：499.13 GB", type: "vless", server: "156.226.174.40", port: 40002, uuid: "6141c9c0-05f2-4462-9925-371eb80400a1", alterId: 0, cipher: "auto", udp: true, flow: null, tls: false}
-- {name: "距离下次重置剩余：16 天", type: "vless", server: "156.226.174.40", port: 40002, uuid: "6141c9c0-05f2-4462-9925-371eb80400a1", alterId: 0, cipher: "auto", udp: true, flow: null, tls: false}
-- {name: "套餐到期：2025-05-07", type: "vless", server: "156.226.174.40", port: 40002, uuid: "6141c9c0-05f2-4462-9925-371eb80400a1", alterId: 0, cipher: "auto", udp: true, flow: null, tls: false}
-- {name: "🇩🇪 德国 vless 1", type: "vless", server: "156.226.174.40", port: 40002, uuid: "6141c9c0-05f2-4462-9925-371eb80400a1", alterId: 0, cipher: "auto", udp: true, flow: null, tls: false}
-- {name: "🇩🇪 德国 vless 2", type: "vless", server: "156.226.174.40", port: 40002, uuid: "6141c9c0-05f2-4462-9925-371eb80400a1", alterId: 0, cipher: "auto", udp: true, flow: null, tls: false}
-- {name: "🇩🇪 德国 vless 3", type: "vless", server: "156.226.174.40", port: 40002, uuid: "6141c9c0-05f2-4462-9925-371eb80400a1", alterId: 0, cipher: "auto", udp: true, flow: null, tls: false}
-- {name: "🇩🇪 德国 vless 4", type: "vless", server: "156.226.174.40", port: 40002, uuid: "6141c9c0-05f2-4462-9925-371eb80400a1", alterId: 0, cipher: "auto", udp: true, flow: null, tls: false}
-- {name: "🇸🇬 新加坡 1", type: "vless", server: "156.224.79.91", port: 40004, uuid: "6141c9c0-05f2-4462-9925-371eb80400a1", alterId: 0, cipher: "auto", udp: true, flow: null, tls: false}
-- {name: "🇸🇬 新加坡 2", type: "vless", server: "156.224.79.91", port: 40004, uuid: "6141c9c0-05f2-4462-9925-371eb80400a1", alterId: 0, cipher: "auto", udp: true, flow: null, tls: false}
-- {name: "🇸🇬 新加坡 3", type: "vless", server: "156.224.79.91", port: 40004, uuid: "6141c9c0-05f2-4462-9925-371eb80400a1", alterId: 0, cipher: "auto", udp: true, flow: null, tls: false}
-- {name: "🇸🇬 新加坡 4", type: "vless", server: "156.224.79.91", port: 40004, uuid: "6141c9c0-05f2-4462-9925-371eb80400a1", alterId: 0, cipher: "auto", udp: true, flow: null, tls: false}
+- {name: "剩余流量：499.13 GB", server: "82.152.90.200", port: 8443, sni: "tw.bailian.uk", up: 1000, down: 1000, skip-cert-verify: false, type: "hysteria2", password: "6141c9c0-05f2-4462-9925-371eb80400a1"}
+- {name: "距离下次重置剩余：16 天", server: "82.152.90.200", port: 8443, sni: "tw.bailian.uk", up: 1000, down: 1000, skip-cert-verify: false, type: "hysteria2", password: "6141c9c0-05f2-4462-9925-371eb80400a1"}
+- {name: "套餐到期：2025-05-07", server: "82.152.90.200", port: 8443, sni: "tw.bailian.uk", up: 1000, down: 1000, skip-cert-verify: false, type: "hysteria2", password: "6141c9c0-05f2-4462-9925-371eb80400a1"}
 - {name: "🇹🇼 台湾 5", server: "82.152.90.200", port: 8443, sni: "tw.bailian.uk", up: 1000, down: 1000, skip-cert-verify: false, type: "hysteria2", password: "6141c9c0-05f2-4462-9925-371eb80400a1"}
 - {name: "🇹🇼 台湾 6", server: "82.152.90.200", port: 8443, sni: "tw.bailian.uk", up: 1000, down: 1000, skip-cert-verify: false, type: "hysteria2", password: "6141c9c0-05f2-4462-9925-371eb80400a1"}
 - {name: "🇹🇼 台湾 7", server: "82.152.90.200", port: 8443, sni: "tw.bailian.uk", up: 1000, down: 1000, skip-cert-verify: false, type: "hysteria2", password: "6141c9c0-05f2-4462-9925-371eb80400a1"}
@@ -72,6 +64,10 @@ proxies:
 - {name: "🇭🇰  香港 2", server: "156.224.78.33", port: 8443, sni: "xg.bailian.uk", up: 1000, down: 1000, skip-cert-verify: false, type: "hysteria2", password: "6141c9c0-05f2-4462-9925-371eb80400a1"}
 - {name: "🇭🇰  香港 3", server: "156.224.78.33", port: 8443, sni: "xg.bailian.uk", up: 1000, down: 1000, skip-cert-verify: false, type: "hysteria2", password: "6141c9c0-05f2-4462-9925-371eb80400a1"}
 - {name: "🇭🇰  香港 4", server: "156.224.78.33", port: 8443, sni: "xg.bailian.uk", up: 1000, down: 1000, skip-cert-verify: false, type: "hysteria2", password: "6141c9c0-05f2-4462-9925-371eb80400a1"}
+- {name: "🇩🇪 德国 1", server: "156.226.175.130", port: 8443, sni: "dg.bailian.uk", up: 1000, down: 1000, skip-cert-verify: false, type: "hysteria2", password: "6141c9c0-05f2-4462-9925-371eb80400a1"}
+- {name: "🇩🇪 德国 2", server: "156.226.175.130", port: 8443, sni: "dg.bailian.uk", up: 1000, down: 1000, skip-cert-verify: false, type: "hysteria2", password: "6141c9c0-05f2-4462-9925-371eb80400a1"}
+- {name: "🇩🇪 德国 3", server: "156.226.175.130", port: 8443, sni: "dg.bailian.uk", up: 1000, down: 1000, skip-cert-verify: false, type: "hysteria2", password: "6141c9c0-05f2-4462-9925-371eb80400a1"}
+- {name: "🇩🇪 德国 4", server: "156.226.175.130", port: 8443, sni: "dg.bailian.uk", up: 1000, down: 1000, skip-cert-verify: false, type: "hysteria2", password: "6141c9c0-05f2-4462-9925-371eb80400a1"}
 proxy-groups:
 - name: "PROXY"
   type: "select"
@@ -80,14 +76,6 @@ proxy-groups:
   - "剩余流量：499.13 GB"
   - "距离下次重置剩余：16 天"
   - "套餐到期：2025-05-07"
-  - "🇩🇪 德国 vless 1"
-  - "🇩🇪 德国 vless 2"
-  - "🇩🇪 德国 vless 3"
-  - "🇩🇪 德国 vless 4"
-  - "🇸🇬 新加坡 1"
-  - "🇸🇬 新加坡 2"
-  - "🇸🇬 新加坡 3"
-  - "🇸🇬 新加坡 4"
   - "🇹🇼 台湾 5"
   - "🇹🇼 台湾 6"
   - "🇹🇼 台湾 7"
@@ -96,6 +84,10 @@ proxy-groups:
   - "🇭🇰  香港 2"
   - "🇭🇰  香港 3"
   - "🇭🇰  香港 4"
+  - "🇩🇪 德国 1"
+  - "🇩🇪 德国 2"
+  - "🇩🇪 德国 3"
+  - "🇩🇪 德国 4"
 - name: "AUTO"
   type: "url-test"
   url: "http://www.gstatic.com/generate_204"
@@ -105,14 +97,6 @@ proxy-groups:
   - "剩余流量：499.13 GB"
   - "距离下次重置剩余：16 天"
   - "套餐到期：2025-05-07"
-  - "🇩🇪 德国 vless 1"
-  - "🇩🇪 德国 vless 2"
-  - "🇩🇪 德国 vless 3"
-  - "🇩🇪 德国 vless 4"
-  - "🇸🇬 新加坡 1"
-  - "🇸🇬 新加坡 2"
-  - "🇸🇬 新加坡 3"
-  - "🇸🇬 新加坡 4"
   - "🇹🇼 台湾 5"
   - "🇹🇼 台湾 6"
   - "🇹🇼 台湾 7"
@@ -121,20 +105,16 @@ proxy-groups:
   - "🇭🇰  香港 2"
   - "🇭🇰  香港 3"
   - "🇭🇰  香港 4"
+  - "🇩🇪 德国 1"
+  - "🇩🇪 德国 2"
+  - "🇩🇪 德国 3"
+  - "🇩🇪 德国 4"
 - name: "AI"
   type: "select"
   proxies:
   - "剩余流量：499.13 GB"
   - "距离下次重置剩余：16 天"
   - "套餐到期：2025-05-07"
-  - "🇩🇪 德国 vless 1"
-  - "🇩🇪 德国 vless 2"
-  - "🇩🇪 德国 vless 3"
-  - "🇩🇪 德国 vless 4"
-  - "🇸🇬 新加坡 1"
-  - "🇸🇬 新加坡 2"
-  - "🇸🇬 新加坡 3"
-  - "🇸🇬 新加坡 4"
   - "🇹🇼 台湾 5"
   - "🇹🇼 台湾 6"
   - "🇹🇼 台湾 7"
@@ -143,6 +123,10 @@ proxy-groups:
   - "🇭🇰  香港 2"
   - "🇭🇰  香港 3"
   - "🇭🇰  香港 4"
+  - "🇩🇪 德国 1"
+  - "🇩🇪 德国 2"
+  - "🇩🇪 德国 3"
+  - "🇩🇪 德国 4"
 rules:
 - "GEOSITE,CATEGORY-ADS-ALL,REJECT"
 - "DOMAIN-SUFFIX,ushd.xmsl.org,DIRECT"
