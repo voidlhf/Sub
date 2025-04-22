@@ -1,0 +1,202 @@
+log-level: "debug"
+mixed-port: 7890
+allow-lan: true
+external-controller: "127.0.0.1:9090"
+unified-delay: true
+tcp-concurrent: true
+find-process-mode: "strict"
+global-client-fingerprint: "chrome"
+profile:
+  store-selected: true
+  store-fake-ip: true
+sniffer:
+  enable: true
+  force-dns-mapping: true
+  parse-pure-ip: true
+  override-destination: false
+  sniff:
+    HTTP:
+      ports:
+      - 80
+      - "8080-8880"
+    TLS:
+      ports:
+      - 443
+      - 8443
+    QUIC:
+      ports:
+      - 443
+      - 8443
+tun:
+  enable: true
+  stack: "mixed"
+  dns-hijack:
+  - "any:53"
+  - "tcp://any:53"
+  auto-route: true
+  auto-redirect: true
+  auto-detect-interface: true
+  strict-route: true
+dns:
+  enable: true
+  ipv6: false
+  default-nameserver:
+  - "223.5.5.5"
+  - "119.29.29.29"
+  enhanced-mode: "fake-ip"
+  fake-ip-range: "198.18.0.1/16"
+  nameserver:
+  - "https://dns.cloudflare.com/dns-query"
+  - "https://dns.google/dns-query"
+  nameserver-policy:
+    geosite:cn,private:
+    - "https://dns.alidns.com/dns-query"
+    - "https://doh.pub/dns-query"
+proxies:
+- {name: "剩余流量：642.38 GB", server: "yefenghongkong-ddns.yefengjc.xyz", port: 45644, udp: true, skip-cert-verify: true, sni: "s0.awsstatic.com", type: "hysteria2", password: "8cfe052e-78e4-4bb9-9efb-4855514cc07b", obfs: "salamander", obfs-password: "ZDQxZDhjZDk4ZjAwYjIwNA=="}
+- {name: "距离下次重置剩余：28 天", server: "yefenghongkong-ddns.yefengjc.xyz", port: 45644, udp: true, skip-cert-verify: true, sni: "s0.awsstatic.com", type: "hysteria2", password: "8cfe052e-78e4-4bb9-9efb-4855514cc07b", obfs: "salamander", obfs-password: "ZDQxZDhjZDk4ZjAwYjIwNA=="}
+- {name: "套餐到期：2025-05-20", server: "yefenghongkong-ddns.yefengjc.xyz", port: 45644, udp: true, skip-cert-verify: true, sni: "s0.awsstatic.com", type: "hysteria2", password: "8cfe052e-78e4-4bb9-9efb-4855514cc07b", obfs: "salamander", obfs-password: "ZDQxZDhjZDk4ZjAwYjIwNA=="}
+- {name: "夜风机场官网：yefengjc.xyz", server: "yefenghongkong-ddns.yefengjc.xyz", port: 45644, udp: true, skip-cert-verify: true, sni: "s0.awsstatic.com", type: "hysteria2", password: "8cfe052e-78e4-4bb9-9efb-4855514cc07b", obfs: "salamander", obfs-password: "ZDQxZDhjZDk4ZjAwYjIwNA=="}
+- {name: "夜风机场电报群组：@yfjc_chat", server: "yefenghongkong-ddns.yefengjc.xyz", port: 45644, udp: true, skip-cert-verify: true, sni: "s0.awsstatic.com", type: "hysteria2", password: "8cfe052e-78e4-4bb9-9efb-4855514cc07b", obfs: "salamander", obfs-password: "ZDQxZDhjZDk4ZjAwYjIwNA=="}
+- {name: "📶 香港 英雄本色", server: "yefenghongkong-ddns.yefengjc.xyz", port: 45644, udp: true, skip-cert-verify: true, sni: "s0.awsstatic.com", type: "hysteria2", password: "8cfe052e-78e4-4bb9-9efb-4855514cc07b", obfs: "salamander", obfs-password: "ZDQxZDhjZDk4ZjAwYjIwNA=="}
+- {name: "📶 香港 大话西游之大圣娶亲", server: "yefenghongkong-ddns.yefengjc.xyz", port: 45644, udp: true, skip-cert-verify: true, sni: "s0.awsstatic.com", type: "hysteria2", password: "8cfe052e-78e4-4bb9-9efb-4855514cc07b", obfs: "salamander", obfs-password: "ZDQxZDhjZDk4ZjAwYjIwNA=="}
+- {name: "📶 香港 霸王别姬", server: "yefenghongkong-ddns.yefengjc.xyz", port: 45644, udp: true, skip-cert-verify: true, sni: "s0.awsstatic.com", type: "hysteria2", password: "8cfe052e-78e4-4bb9-9efb-4855514cc07b", obfs: "salamander", obfs-password: "ZDQxZDhjZDk4ZjAwYjIwNA=="}
+- {name: "📶 香港 破·地狱", server: "yefenghongkong-ddns-test.yefengjc.xyz", port: 45644, udp: true, skip-cert-verify: true, sni: "s0.awsstatic.com", type: "hysteria2", password: "8cfe052e-78e4-4bb9-9efb-4855514cc07b", obfs: "salamander", obfs-password: "ZDQxZDhjZDk4ZjAwYjIwNA=="}
+- {name: "📶日本 鬼灭之刃剧场版 无限列车篇", server: "yefengjapan-ddns-test.yefengjc.xyz", port: 45644, udp: true, skip-cert-verify: true, sni: "s0.awsstatic.com", type: "hysteria2", password: "8cfe052e-78e4-4bb9-9efb-4855514cc07b", obfs: "salamander", obfs-password: "ZDQxZDhjZDk4ZjAwYjIwNA=="}
+- {name: "📶日本 东京物语", server: "yefengjapan-ddns.yefengjc.xyz", port: 45644, udp: true, skip-cert-verify: true, sni: "s0.awsstatic.com", type: "hysteria2", password: "8cfe052e-78e4-4bb9-9efb-4855514cc07b", obfs: "salamander", obfs-password: "ZDQxZDhjZDk4ZjAwYjIwNA=="}
+- {name: "📶日本 天空之城", server: "yefengjapan-ddns.yefengjc.xyz", port: 45644, udp: true, skip-cert-verify: true, sni: "s0.awsstatic.com", type: "hysteria2", password: "8cfe052e-78e4-4bb9-9efb-4855514cc07b", obfs: "salamander", obfs-password: "ZDQxZDhjZDk4ZjAwYjIwNA=="}
+- {name: "📶日本 罗生门", server: "yefengjapan-ddns.yefengjc.xyz", port: 45644, udp: true, skip-cert-verify: true, sni: "s0.awsstatic.com", type: "hysteria2", password: "8cfe052e-78e4-4bb9-9efb-4855514cc07b", obfs: "salamander", obfs-password: "ZDQxZDhjZDk4ZjAwYjIwNA=="}
+- {name: "📶新加坡 新兵正传", server: "yefengsingapore-ddns-test.yefengjc.xyz", port: 45644, udp: true, skip-cert-verify: true, sni: "s0.awsstatic.com", type: "hysteria2", password: "8cfe052e-78e4-4bb9-9efb-4855514cc07b", obfs: "salamander", obfs-password: "ZDQxZDhjZDk4ZjAwYjIwNA=="}
+- {name: "📶新加坡 我们的故事", server: "yefengsingapore-ddns.yefengjc.xyz", port: 45644, udp: true, skip-cert-verify: true, sni: "s0.awsstatic.com", type: "hysteria2", password: "8cfe052e-78e4-4bb9-9efb-4855514cc07b", obfs: "salamander", obfs-password: "ZDQxZDhjZDk4ZjAwYjIwNA=="}
+- {name: "📶新加坡 美食王国", server: "yefengsingapore-ddns.yefengjc.xyz", port: 45644, udp: true, skip-cert-verify: true, sni: "s0.awsstatic.com", type: "hysteria2", password: "8cfe052e-78e4-4bb9-9efb-4855514cc07b", obfs: "salamander", obfs-password: "ZDQxZDhjZDk4ZjAwYjIwNA=="}
+- {name: "📶新加坡 小孩不笨", server: "yefengsingapore-ddns.yefengjc.xyz", port: 45644, udp: true, skip-cert-verify: true, sni: "s0.awsstatic.com", type: "hysteria2", password: "8cfe052e-78e4-4bb9-9efb-4855514cc07b", obfs: "salamander", obfs-password: "ZDQxZDhjZDk4ZjAwYjIwNA=="}
+- {name: "📶美国 阿凡达", server: "yefengusa-ddns-test.yefengjc.xyz", port: 45644, udp: true, skip-cert-verify: true, sni: "s0.awsstatic.com", type: "hysteria2", password: "8cfe052e-78e4-4bb9-9efb-4855514cc07b", obfs: "salamander", obfs-password: "ZDQxZDhjZDk4ZjAwYjIwNA=="}
+- {name: "📶美国 星球大战7：原力觉醒", server: "yefengusa-ddns.yefengjc.xyz", port: 45644, udp: true, skip-cert-verify: true, sni: "s0.awsstatic.com", type: "hysteria2", password: "8cfe052e-78e4-4bb9-9efb-4855514cc07b", obfs: "salamander", obfs-password: "ZDQxZDhjZDk4ZjAwYjIwNA=="}
+- {name: "📶美国 复仇者联盟4：终局之战", server: "yefengusa-ddns.yefengjc.xyz", port: 45644, udp: true, skip-cert-verify: true, sni: "s0.awsstatic.com", type: "hysteria2", password: "8cfe052e-78e4-4bb9-9efb-4855514cc07b", obfs: "salamander", obfs-password: "ZDQxZDhjZDk4ZjAwYjIwNA=="}
+- {name: "📶美国 蜘蛛侠：英雄无归", server: "yefengusa-ddns.yefengjc.xyz", port: 45644, udp: true, skip-cert-verify: true, sni: "s0.awsstatic.com", type: "hysteria2", password: "8cfe052e-78e4-4bb9-9efb-4855514cc07b", obfs: "salamander", obfs-password: "ZDQxZDhjZDk4ZjAwYjIwNA=="}
+- {name: "📶韩国 首尔之春", server: "yefengseoul-ddns.yefengjc.xyz", port: 45644, udp: true, skip-cert-verify: true, sni: "s0.awsstatic.com", type: "hysteria2", password: "8cfe052e-78e4-4bb9-9efb-4855514cc07b", obfs: "salamander", obfs-password: "ZDQxZDhjZDk4ZjAwYjIwNA=="}
+- {name: "📶韩国 不能说的秘密", server: "yefengseoul-ddns.yefengjc.xyz", port: 45644, udp: true, skip-cert-verify: true, sni: "s0.awsstatic.com", type: "hysteria2", password: "8cfe052e-78e4-4bb9-9efb-4855514cc07b", obfs: "salamander", obfs-password: "ZDQxZDhjZDk4ZjAwYjIwNA=="}
+- {name: "📶印度 地球上的星星", server: "yefengIndiamumbai-ddns.yefengjc.xyz", port: 45644, udp: true, skip-cert-verify: true, sni: "s0.awsstatic.com", type: "hysteria2", password: "8cfe052e-78e4-4bb9-9efb-4855514cc07b", obfs: "salamander", obfs-password: "ZDQxZDhjZDk4ZjAwYjIwNA=="}
+- {name: "📶印度 甘地传", server: "yefengIndiamumbai-ddns.yefengjc.xyz", port: 45644, udp: true, skip-cert-verify: true, sni: "s0.awsstatic.com", type: "hysteria2", password: "8cfe052e-78e4-4bb9-9efb-4855514cc07b", obfs: "salamander", obfs-password: "ZDQxZDhjZDk4ZjAwYjIwNA=="}
+- {name: "📶俄罗斯 战争与和平", server: "yefengmoscowrussia-ddns.yefengjc.xyz", port: 45644, udp: true, skip-cert-verify: true, sni: "s0.awsstatic.com", type: "hysteria2", password: "8cfe052e-78e4-4bb9-9efb-4855514cc07b", obfs: "salamander", obfs-password: "ZDQxZDhjZDk4ZjAwYjIwNA=="}
+- {name: "📶俄罗斯 冒险电子学", server: "yefengmoscowrussia-ddns.yefengjc.xyz", port: 45644, udp: true, skip-cert-verify: true, sni: "s0.awsstatic.com", type: "hysteria2", password: "8cfe052e-78e4-4bb9-9efb-4855514cc07b", obfs: "salamander", obfs-password: "ZDQxZDhjZDk4ZjAwYjIwNA=="}
+- {name: "📶德国 施佩尔和希特勒", server: "yefenggermany-ddns.yefengjc.xyz", port: 45644, udp: true, skip-cert-verify: true, sni: "s0.awsstatic.com", type: "hysteria2", password: "8cfe052e-78e4-4bb9-9efb-4855514cc07b", obfs: "salamander", obfs-password: "ZDQxZDhjZDk4ZjAwYjIwNA=="}
+- {name: "📶德国 西线无战事", server: "yefenggermany-ddns.yefengjc.xyz", port: 45644, udp: true, skip-cert-verify: true, sni: "s0.awsstatic.com", type: "hysteria2", password: "8cfe052e-78e4-4bb9-9efb-4855514cc07b", obfs: "salamander", obfs-password: "ZDQxZDhjZDk4ZjAwYjIwNA=="}
+proxy-groups:
+- name: "PROXY"
+  type: "select"
+  proxies:
+  - "AUTO"
+  - "剩余流量：642.38 GB"
+  - "距离下次重置剩余：28 天"
+  - "套餐到期：2025-05-20"
+  - "夜风机场官网：yefengjc.xyz"
+  - "夜风机场电报群组：@yfjc_chat"
+  - "📶 香港 英雄本色"
+  - "📶 香港 大话西游之大圣娶亲"
+  - "📶 香港 霸王别姬"
+  - "📶 香港 破·地狱"
+  - "📶日本 鬼灭之刃剧场版 无限列车篇"
+  - "📶日本 东京物语"
+  - "📶日本 天空之城"
+  - "📶日本 罗生门"
+  - "📶新加坡 新兵正传"
+  - "📶新加坡 我们的故事"
+  - "📶新加坡 美食王国"
+  - "📶新加坡 小孩不笨"
+  - "📶美国 阿凡达"
+  - "📶美国 星球大战7：原力觉醒"
+  - "📶美国 复仇者联盟4：终局之战"
+  - "📶美国 蜘蛛侠：英雄无归"
+  - "📶韩国 首尔之春"
+  - "📶韩国 不能说的秘密"
+  - "📶印度 地球上的星星"
+  - "📶印度 甘地传"
+  - "📶俄罗斯 战争与和平"
+  - "📶俄罗斯 冒险电子学"
+  - "📶德国 施佩尔和希特勒"
+  - "📶德国 西线无战事"
+- name: "AUTO"
+  type: "url-test"
+  url: "http://www.gstatic.com/generate_204"
+  interval: 300
+  tolerance: 50
+  proxies:
+  - "剩余流量：642.38 GB"
+  - "距离下次重置剩余：28 天"
+  - "套餐到期：2025-05-20"
+  - "夜风机场官网：yefengjc.xyz"
+  - "夜风机场电报群组：@yfjc_chat"
+  - "📶 香港 英雄本色"
+  - "📶 香港 大话西游之大圣娶亲"
+  - "📶 香港 霸王别姬"
+  - "📶 香港 破·地狱"
+  - "📶日本 鬼灭之刃剧场版 无限列车篇"
+  - "📶日本 东京物语"
+  - "📶日本 天空之城"
+  - "📶日本 罗生门"
+  - "📶新加坡 新兵正传"
+  - "📶新加坡 我们的故事"
+  - "📶新加坡 美食王国"
+  - "📶新加坡 小孩不笨"
+  - "📶美国 阿凡达"
+  - "📶美国 星球大战7：原力觉醒"
+  - "📶美国 复仇者联盟4：终局之战"
+  - "📶美国 蜘蛛侠：英雄无归"
+  - "📶韩国 首尔之春"
+  - "📶韩国 不能说的秘密"
+  - "📶印度 地球上的星星"
+  - "📶印度 甘地传"
+  - "📶俄罗斯 战争与和平"
+  - "📶俄罗斯 冒险电子学"
+  - "📶德国 施佩尔和希特勒"
+  - "📶德国 西线无战事"
+- name: "AI"
+  type: "select"
+  proxies:
+  - "剩余流量：642.38 GB"
+  - "距离下次重置剩余：28 天"
+  - "套餐到期：2025-05-20"
+  - "夜风机场官网：yefengjc.xyz"
+  - "夜风机场电报群组：@yfjc_chat"
+  - "📶 香港 英雄本色"
+  - "📶 香港 大话西游之大圣娶亲"
+  - "📶 香港 霸王别姬"
+  - "📶 香港 破·地狱"
+  - "📶日本 鬼灭之刃剧场版 无限列车篇"
+  - "📶日本 东京物语"
+  - "📶日本 天空之城"
+  - "📶日本 罗生门"
+  - "📶新加坡 新兵正传"
+  - "📶新加坡 我们的故事"
+  - "📶新加坡 美食王国"
+  - "📶新加坡 小孩不笨"
+  - "📶美国 阿凡达"
+  - "📶美国 星球大战7：原力觉醒"
+  - "📶美国 复仇者联盟4：终局之战"
+  - "📶美国 蜘蛛侠：英雄无归"
+  - "📶韩国 首尔之春"
+  - "📶韩国 不能说的秘密"
+  - "📶印度 地球上的星星"
+  - "📶印度 甘地传"
+  - "📶俄罗斯 战争与和平"
+  - "📶俄罗斯 冒险电子学"
+  - "📶德国 施佩尔和希特勒"
+  - "📶德国 西线无战事"
+rules:
+- "GEOSITE,CATEGORY-ADS-ALL,REJECT"
+- "DOMAIN-SUFFIX,ushd.xmsl.org,DIRECT"
+- "DOMAIN-SUFFIX,cf.gtlx.org,DIRECT"
+- "DOMAIN-SUFFIX,public-operation-hkrpg-sg.hoyoverse.com,DIRECT"
+- "DOMAIN-SUFFIX,public-operation-hk4e-sg.hoyoverse.com,DIRECT"
+- "DOMAIN-SUFFIX,public-operation-nap-sg.hoyoverse.com,DIRECT"
+- "DST-PORT,23301/22101-22102/20501/21601-21606,DIRECT"
+- "DOMAIN-KEYWORD,hoyoverse.com,PROXY"
+- "GEOSITE,OPENAI,AI"
+- "GEOSITE,GOOGLE-GEMINI,AI"
+- "GEOSITE,GOOGLEFCM,DIRECT"
+- "GEOSITE,PRIVATE,DIRECT"
+- "GEOSITE,CN,DIRECT"
+- "GEOIP,PRIVATE,DIRECT,no-resolve"
+- "GEOIP,CN,DIRECT"
+- "MATCH,PROXY"

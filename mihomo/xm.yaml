@@ -1,0 +1,282 @@
+log-level: "debug"
+mixed-port: 7890
+allow-lan: true
+external-controller: "127.0.0.1:9090"
+unified-delay: true
+tcp-concurrent: true
+find-process-mode: "strict"
+global-client-fingerprint: "chrome"
+profile:
+  store-selected: true
+  store-fake-ip: true
+sniffer:
+  enable: true
+  force-dns-mapping: true
+  parse-pure-ip: true
+  override-destination: false
+  sniff:
+    HTTP:
+      ports:
+      - 80
+      - "8080-8880"
+    TLS:
+      ports:
+      - 443
+      - 8443
+    QUIC:
+      ports:
+      - 443
+      - 8443
+tun:
+  enable: true
+  stack: "mixed"
+  dns-hijack:
+  - "any:53"
+  - "tcp://any:53"
+  auto-route: true
+  auto-redirect: true
+  auto-detect-interface: true
+  strict-route: true
+dns:
+  enable: true
+  ipv6: false
+  default-nameserver:
+  - "223.5.5.5"
+  - "119.29.29.29"
+  enhanced-mode: "fake-ip"
+  fake-ip-range: "198.18.0.1/16"
+  nameserver:
+  - "https://dns.cloudflare.com/dns-query"
+  - "https://dns.google/dns-query"
+  nameserver-policy:
+    geosite:cn,private:
+    - "https://dns.alidns.com/dns-query"
+    - "https://doh.pub/dns-query"
+proxies:
+- {name: "剩余流量：1612.3 GB", type: "ss", server: "xm.miloli.cc", port: 19242, cipher: "chacha20-ietf-poly1305", password: "be01f0d1-c3aa-4500-b924-a6061731136f", udp: true}
+- {name: "距离下次重置剩余：1 天", type: "ss", server: "xm.miloli.cc", port: 19242, cipher: "chacha20-ietf-poly1305", password: "be01f0d1-c3aa-4500-b924-a6061731136f", udp: true}
+- {name: "套餐到期：2025-04-23", type: "ss", server: "xm.miloli.cc", port: 19242, cipher: "chacha20-ietf-poly1305", password: "be01f0d1-c3aa-4500-b924-a6061731136f", udp: true}
+- {name: "🐼续费官网 xiongmaoo.com", type: "ss", server: "xm.miloli.cc", port: 19242, cipher: "chacha20-ietf-poly1305", password: "be01f0d1-c3aa-4500-b924-a6061731136f", udp: true}
+- {name: "🐼续费备用 119id.com", type: "ss", server: "xm.miloli.cc", port: 19242, cipher: "chacha20-ietf-poly1305", password: "be01f0d1-c3aa-4500-b924-a6061731136f", udp: true}
+- {name: "⚠不能用就更新⚠", type: "ss", server: "xm.miloli.cc", port: 28907, cipher: "chacha20-ietf-poly1305", password: "be01f0d1-c3aa-4500-b924-a6061731136f", udp: true}
+- {name: "香港01|⚡高速专线", type: "ss", server: "xm.miloli.cc", port: 30800, cipher: "chacha20-ietf-poly1305", password: "be01f0d1-c3aa-4500-b924-a6061731136f", udp: true}
+- {name: "香港02|⚡高速专线", type: "ss", server: "xm.miloli.cc", port: 28907, cipher: "chacha20-ietf-poly1305", password: "be01f0d1-c3aa-4500-b924-a6061731136f", udp: true}
+- {name: "香港03|⚡高速专线", type: "ss", server: "xm.miloli.cc", port: 19242, cipher: "chacha20-ietf-poly1305", password: "be01f0d1-c3aa-4500-b924-a6061731136f", udp: true}
+- {name: "香港04|⚡高速专线", type: "ss", server: "xm.miloli.cc", port: 39226, cipher: "chacha20-ietf-poly1305", password: "be01f0d1-c3aa-4500-b924-a6061731136f", udp: true}
+- {name: "香港05|⚡高速专线", type: "ss", server: "xm.miloli.cc", port: 45395, cipher: "chacha20-ietf-poly1305", password: "be01f0d1-c3aa-4500-b924-a6061731136f", udp: true}
+- {name: "香港06|⚡高速专线", type: "ss", server: "xm.miloli.cc", port: 39020, cipher: "chacha20-ietf-poly1305", password: "be01f0d1-c3aa-4500-b924-a6061731136f", udp: true}
+- {name: "香港07|⚡⚡深港国际专线【x2】", type: "ss", server: "ss.miloli.cc", port: 42259, cipher: "chacha20-ietf-poly1305", password: "be01f0d1-c3aa-4500-b924-a6061731136f", udp: true}
+- {name: "香港08|⚡⚡深港国际专线【x2】", type: "ss", server: "ss.miloli.cc", port: 19240, cipher: "chacha20-ietf-poly1305", password: "be01f0d1-c3aa-4500-b924-a6061731136f", udp: true}
+- {name: "新加坡 01|⚡高速专线", type: "ss", server: "xm.miloli.cc", port: 32948, cipher: "chacha20-ietf-poly1305", password: "be01f0d1-c3aa-4500-b924-a6061731136f", udp: true}
+- {name: "新加坡 02|⚡高速专线", type: "ss", server: "xm.miloli.cc", port: 22587, cipher: "chacha20-ietf-poly1305", password: "be01f0d1-c3aa-4500-b924-a6061731136f", udp: true}
+- {name: "新加坡 03|⚡高速专线", type: "ss", server: "xm.miloli.cc", port: 14489, cipher: "chacha20-ietf-poly1305", password: "be01f0d1-c3aa-4500-b924-a6061731136f", udp: true}
+- {name: "台湾01|⚡高速专线", type: "ss", server: "xm.miloli.cc", port: 38890, cipher: "chacha20-ietf-poly1305", password: "be01f0d1-c3aa-4500-b924-a6061731136f", udp: true}
+- {name: "台湾02|⚡高速专线", type: "ss", server: "xm.miloli.cc", port: 42151, cipher: "chacha20-ietf-poly1305", password: "be01f0d1-c3aa-4500-b924-a6061731136f", udp: true}
+- {name: "日本01|⚡高速专线", type: "ss", server: "xm.miloli.cc", port: 33075, cipher: "chacha20-ietf-poly1305", password: "be01f0d1-c3aa-4500-b924-a6061731136f", udp: true}
+- {name: "日本02|⚡高速专线", type: "ss", server: "xm.miloli.cc", port: 23752, cipher: "chacha20-ietf-poly1305", password: "be01f0d1-c3aa-4500-b924-a6061731136f", udp: true}
+- {name: "美国 01|⚡高速专线", type: "ss", server: "xm.miloli.cc", port: 33396, cipher: "chacha20-ietf-poly1305", password: "be01f0d1-c3aa-4500-b924-a6061731136f", udp: true}
+- {name: "美国02|⚡高速专线", type: "ss", server: "xm.miloli.cc", port: 21312, cipher: "chacha20-ietf-poly1305", password: "be01f0d1-c3aa-4500-b924-a6061731136f", udp: true}
+- {name: "美国03|⚡高速专线", type: "ss", server: "xm.miloli.cc", port: 23933, cipher: "chacha20-ietf-poly1305", password: "be01f0d1-c3aa-4500-b924-a6061731136f", udp: true}
+- {name: "美国04|⚡高速专线", type: "ss", server: "xm.miloli.cc", port: 22832, cipher: "chacha20-ietf-poly1305", password: "be01f0d1-c3aa-4500-b924-a6061731136f", udp: true}
+- {name: "美国05|⚡高速专线", type: "ss", server: "xm.miloli.cc", port: 45331, cipher: "chacha20-ietf-poly1305", password: "be01f0d1-c3aa-4500-b924-a6061731136f", udp: true}
+- {name: "美国06|⚡高速专线", type: "ss", server: "xm.miloli.cc", port: 11530, cipher: "chacha20-ietf-poly1305", password: "be01f0d1-c3aa-4500-b924-a6061731136f", udp: true}
+- {name: "泰国01|⚡高速专线", type: "ss", server: "xm.miloli.cc", port: 18848, cipher: "chacha20-ietf-poly1305", password: "be01f0d1-c3aa-4500-b924-a6061731136f", udp: true}
+- {name: "泰国02|⚡高速专线", type: "ss", server: "xm.miloli.cc", port: 23681, cipher: "chacha20-ietf-poly1305", password: "be01f0d1-c3aa-4500-b924-a6061731136f", udp: true}
+- {name: "英国01|⚡高速专线", type: "ss", server: "xm.miloli.cc", port: 41667, cipher: "chacha20-ietf-poly1305", password: "be01f0d1-c3aa-4500-b924-a6061731136f", udp: true}
+- {name: "英国02|⚡高速专线", type: "ss", server: "xm.miloli.cc", port: 41667, cipher: "chacha20-ietf-poly1305", password: "be01f0d1-c3aa-4500-b924-a6061731136f", udp: true}
+- {name: "墨西哥01|⚡高速专线", type: "ss", server: "xm.miloli.cc", port: 48874, cipher: "chacha20-ietf-poly1305", password: "be01f0d1-c3aa-4500-b924-a6061731136f", udp: true}
+- {name: "墨西哥02|⚡高速专线", type: "ss", server: "xm.miloli.cc", port: 48874, cipher: "chacha20-ietf-poly1305", password: "be01f0d1-c3aa-4500-b924-a6061731136f", udp: true}
+- {name: "德国01|⚡高速专线", type: "ss", server: "xm.miloli.cc", port: 46222, cipher: "chacha20-ietf-poly1305", password: "be01f0d1-c3aa-4500-b924-a6061731136f", udp: true}
+- {name: "德国02|⚡高速专线", type: "ss", server: "xm.miloli.cc", port: 46222, cipher: "chacha20-ietf-poly1305", password: "be01f0d1-c3aa-4500-b924-a6061731136f", udp: true}
+- {name: "加拿大01|⚡高速专线", type: "ss", server: "xm.miloli.cc", port: 20828, cipher: "chacha20-ietf-poly1305", password: "be01f0d1-c3aa-4500-b924-a6061731136f", udp: true}
+- {name: "加拿大02|⚡高速专线", type: "ss", server: "xm.miloli.cc", port: 20828, cipher: "chacha20-ietf-poly1305", password: "be01f0d1-c3aa-4500-b924-a6061731136f", udp: true}
+- {name: "韩国01|⚡高速专线", type: "ss", server: "xm.miloli.cc", port: 31778, cipher: "chacha20-ietf-poly1305", password: "be01f0d1-c3aa-4500-b924-a6061731136f", udp: true}
+- {name: "韩国02|⚡高速专线", type: "ss", server: "xm.miloli.cc", port: 31778, cipher: "chacha20-ietf-poly1305", password: "be01f0d1-c3aa-4500-b924-a6061731136f", udp: true}
+- {name: "巴基斯坦01|⚡高速专线", type: "ss", server: "xm.miloli.cc", port: 35545, cipher: "chacha20-ietf-poly1305", password: "be01f0d1-c3aa-4500-b924-a6061731136f", udp: true}
+- {name: "巴基斯坦02|⚡高速专线", type: "ss", server: "xm.miloli.cc", port: 32254, cipher: "chacha20-ietf-poly1305", password: "be01f0d1-c3aa-4500-b924-a6061731136f", udp: true}
+- {name: "法国01|⚡高速专线", type: "ss", server: "xm.miloli.cc", port: 10798, cipher: "chacha20-ietf-poly1305", password: "be01f0d1-c3aa-4500-b924-a6061731136f", udp: true}
+- {name: "法国02|⚡高速专线", type: "ss", server: "xm.miloli.cc", port: 10798, cipher: "chacha20-ietf-poly1305", password: "be01f0d1-c3aa-4500-b924-a6061731136f", udp: true}
+- {name: "瑞典01|⚡高速专线", type: "ss", server: "xm.miloli.cc", port: 19105, cipher: "chacha20-ietf-poly1305", password: "be01f0d1-c3aa-4500-b924-a6061731136f", udp: true}
+- {name: "瑞典02|⚡高速专线", type: "ss", server: "xm.miloli.cc", port: 19105, cipher: "chacha20-ietf-poly1305", password: "be01f0d1-c3aa-4500-b924-a6061731136f", udp: true}
+- {name: "澳大利亚01|⚡高速专线", type: "ss", server: "xm.miloli.cc", port: 24428, cipher: "chacha20-ietf-poly1305", password: "be01f0d1-c3aa-4500-b924-a6061731136f", udp: true}
+- {name: "澳大利亚02|⚡高速专线", type: "ss", server: "xm.miloli.cc", port: 24428, cipher: "chacha20-ietf-poly1305", password: "be01f0d1-c3aa-4500-b924-a6061731136f", udp: true}
+- {name: "波兰01|⚡高速专线", type: "ss", server: "xm.miloli.cc", port: 26654, cipher: "chacha20-ietf-poly1305", password: "be01f0d1-c3aa-4500-b924-a6061731136f", udp: true}
+- {name: "波兰02|⚡高速专线", type: "ss", server: "xm.miloli.cc", port: 26654, cipher: "chacha20-ietf-poly1305", password: "be01f0d1-c3aa-4500-b924-a6061731136f", udp: true}
+proxy-groups:
+- name: "PROXY"
+  type: "select"
+  proxies:
+  - "AUTO"
+  - "剩余流量：1612.3 GB"
+  - "距离下次重置剩余：1 天"
+  - "套餐到期：2025-04-23"
+  - "🐼续费官网 xiongmaoo.com"
+  - "🐼续费备用 119id.com"
+  - "⚠不能用就更新⚠"
+  - "香港01|⚡高速专线"
+  - "香港02|⚡高速专线"
+  - "香港03|⚡高速专线"
+  - "香港04|⚡高速专线"
+  - "香港05|⚡高速专线"
+  - "香港06|⚡高速专线"
+  - "香港07|⚡⚡深港国际专线【x2】"
+  - "香港08|⚡⚡深港国际专线【x2】"
+  - "新加坡 01|⚡高速专线"
+  - "新加坡 02|⚡高速专线"
+  - "新加坡 03|⚡高速专线"
+  - "台湾01|⚡高速专线"
+  - "台湾02|⚡高速专线"
+  - "日本01|⚡高速专线"
+  - "日本02|⚡高速专线"
+  - "美国 01|⚡高速专线"
+  - "美国02|⚡高速专线"
+  - "美国03|⚡高速专线"
+  - "美国04|⚡高速专线"
+  - "美国05|⚡高速专线"
+  - "美国06|⚡高速专线"
+  - "泰国01|⚡高速专线"
+  - "泰国02|⚡高速专线"
+  - "英国01|⚡高速专线"
+  - "英国02|⚡高速专线"
+  - "墨西哥01|⚡高速专线"
+  - "墨西哥02|⚡高速专线"
+  - "德国01|⚡高速专线"
+  - "德国02|⚡高速专线"
+  - "加拿大01|⚡高速专线"
+  - "加拿大02|⚡高速专线"
+  - "韩国01|⚡高速专线"
+  - "韩国02|⚡高速专线"
+  - "巴基斯坦01|⚡高速专线"
+  - "巴基斯坦02|⚡高速专线"
+  - "法国01|⚡高速专线"
+  - "法国02|⚡高速专线"
+  - "瑞典01|⚡高速专线"
+  - "瑞典02|⚡高速专线"
+  - "澳大利亚01|⚡高速专线"
+  - "澳大利亚02|⚡高速专线"
+  - "波兰01|⚡高速专线"
+  - "波兰02|⚡高速专线"
+- name: "AUTO"
+  type: "url-test"
+  url: "http://www.gstatic.com/generate_204"
+  interval: 300
+  tolerance: 50
+  proxies:
+  - "剩余流量：1612.3 GB"
+  - "距离下次重置剩余：1 天"
+  - "套餐到期：2025-04-23"
+  - "🐼续费官网 xiongmaoo.com"
+  - "🐼续费备用 119id.com"
+  - "⚠不能用就更新⚠"
+  - "香港01|⚡高速专线"
+  - "香港02|⚡高速专线"
+  - "香港03|⚡高速专线"
+  - "香港04|⚡高速专线"
+  - "香港05|⚡高速专线"
+  - "香港06|⚡高速专线"
+  - "香港07|⚡⚡深港国际专线【x2】"
+  - "香港08|⚡⚡深港国际专线【x2】"
+  - "新加坡 01|⚡高速专线"
+  - "新加坡 02|⚡高速专线"
+  - "新加坡 03|⚡高速专线"
+  - "台湾01|⚡高速专线"
+  - "台湾02|⚡高速专线"
+  - "日本01|⚡高速专线"
+  - "日本02|⚡高速专线"
+  - "美国 01|⚡高速专线"
+  - "美国02|⚡高速专线"
+  - "美国03|⚡高速专线"
+  - "美国04|⚡高速专线"
+  - "美国05|⚡高速专线"
+  - "美国06|⚡高速专线"
+  - "泰国01|⚡高速专线"
+  - "泰国02|⚡高速专线"
+  - "英国01|⚡高速专线"
+  - "英国02|⚡高速专线"
+  - "墨西哥01|⚡高速专线"
+  - "墨西哥02|⚡高速专线"
+  - "德国01|⚡高速专线"
+  - "德国02|⚡高速专线"
+  - "加拿大01|⚡高速专线"
+  - "加拿大02|⚡高速专线"
+  - "韩国01|⚡高速专线"
+  - "韩国02|⚡高速专线"
+  - "巴基斯坦01|⚡高速专线"
+  - "巴基斯坦02|⚡高速专线"
+  - "法国01|⚡高速专线"
+  - "法国02|⚡高速专线"
+  - "瑞典01|⚡高速专线"
+  - "瑞典02|⚡高速专线"
+  - "澳大利亚01|⚡高速专线"
+  - "澳大利亚02|⚡高速专线"
+  - "波兰01|⚡高速专线"
+  - "波兰02|⚡高速专线"
+- name: "AI"
+  type: "select"
+  proxies:
+  - "剩余流量：1612.3 GB"
+  - "距离下次重置剩余：1 天"
+  - "套餐到期：2025-04-23"
+  - "🐼续费官网 xiongmaoo.com"
+  - "🐼续费备用 119id.com"
+  - "⚠不能用就更新⚠"
+  - "香港01|⚡高速专线"
+  - "香港02|⚡高速专线"
+  - "香港03|⚡高速专线"
+  - "香港04|⚡高速专线"
+  - "香港05|⚡高速专线"
+  - "香港06|⚡高速专线"
+  - "香港07|⚡⚡深港国际专线【x2】"
+  - "香港08|⚡⚡深港国际专线【x2】"
+  - "新加坡 01|⚡高速专线"
+  - "新加坡 02|⚡高速专线"
+  - "新加坡 03|⚡高速专线"
+  - "台湾01|⚡高速专线"
+  - "台湾02|⚡高速专线"
+  - "日本01|⚡高速专线"
+  - "日本02|⚡高速专线"
+  - "美国 01|⚡高速专线"
+  - "美国02|⚡高速专线"
+  - "美国03|⚡高速专线"
+  - "美国04|⚡高速专线"
+  - "美国05|⚡高速专线"
+  - "美国06|⚡高速专线"
+  - "泰国01|⚡高速专线"
+  - "泰国02|⚡高速专线"
+  - "英国01|⚡高速专线"
+  - "英国02|⚡高速专线"
+  - "墨西哥01|⚡高速专线"
+  - "墨西哥02|⚡高速专线"
+  - "德国01|⚡高速专线"
+  - "德国02|⚡高速专线"
+  - "加拿大01|⚡高速专线"
+  - "加拿大02|⚡高速专线"
+  - "韩国01|⚡高速专线"
+  - "韩国02|⚡高速专线"
+  - "巴基斯坦01|⚡高速专线"
+  - "巴基斯坦02|⚡高速专线"
+  - "法国01|⚡高速专线"
+  - "法国02|⚡高速专线"
+  - "瑞典01|⚡高速专线"
+  - "瑞典02|⚡高速专线"
+  - "澳大利亚01|⚡高速专线"
+  - "澳大利亚02|⚡高速专线"
+  - "波兰01|⚡高速专线"
+  - "波兰02|⚡高速专线"
+rules:
+- "GEOSITE,CATEGORY-ADS-ALL,REJECT"
+- "DOMAIN-SUFFIX,ushd.xmsl.org,DIRECT"
+- "DOMAIN-SUFFIX,cf.gtlx.org,DIRECT"
+- "DOMAIN-SUFFIX,public-operation-hkrpg-sg.hoyoverse.com,DIRECT"
+- "DOMAIN-SUFFIX,public-operation-hk4e-sg.hoyoverse.com,DIRECT"
+- "DOMAIN-SUFFIX,public-operation-nap-sg.hoyoverse.com,DIRECT"
+- "DST-PORT,23301/22101-22102/20501/21601-21606,DIRECT"
+- "DOMAIN-KEYWORD,hoyoverse.com,PROXY"
+- "GEOSITE,OPENAI,AI"
+- "GEOSITE,GOOGLE-GEMINI,AI"
+- "GEOSITE,GOOGLEFCM,DIRECT"
+- "GEOSITE,PRIVATE,DIRECT"
+- "GEOSITE,CN,DIRECT"
+- "GEOIP,PRIVATE,DIRECT,no-resolve"
+- "GEOIP,CN,DIRECT"
+- "MATCH,PROXY"

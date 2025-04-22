@@ -1,0 +1,1399 @@
+{
+  "log": {},
+  "dns": {
+    "servers": [
+      {
+        "tag": "dns_proxy",
+        "type": "https",
+        "server": "1.1.1.1",
+        "detour": "select"
+      },
+      {
+        "tag": "dns_direct",
+        "type": "https",
+        "server": "223.5.5.5"
+      },
+      {
+        "tag": "dns_fakeip",
+        "type": "fakeip",
+        "inet4_range": "198.18.0.0/15",
+        "inet6_range": "fc00::/18"
+      }
+    ],
+    "rules": [
+      {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "query_type": "HTTPS"
+          },
+          {
+            "rule_set": [
+              "geosite-category-ads-all"
+            ]
+          }
+        ],
+        "action": "reject"
+      },
+      {
+        "query_type": [
+          "A",
+          "AAAA"
+        ],
+        "server": "dns_fakeip",
+        "rewrite_ttl": 1
+      },
+      {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "clash_mode": "Global"
+          }
+        ],
+        "server": "dns_proxy"
+      },
+      {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "clash_mode": "Direct"
+          },
+          {
+            "rule_set": [
+              "geosite-cn"
+            ]
+          }
+        ],
+        "server": "dns_direct"
+      }
+    ],
+    "strategy": "ipv4_only",
+    "independent_cache": true
+  },
+  "inbounds": [
+    {
+      "type": "tun",
+      "address": [
+        "172.18.0.1/30",
+        "fdfe:dcba:9876::1/126"
+      ],
+      "auto_route": true,
+      "strict_route": true,
+      "route_exclude_address": [
+        "192.168.0.0/16",
+        "fc00::/7"
+      ]
+    }
+  ],
+  "outbounds": [
+    {
+      "method": "chacha20-ietf-poly1305",
+      "password": "d40004e8-ac7a-45ad-9758-c28ec47129d6",
+      "server": "ore.zenovz.xyz",
+      "server_port": 31758,
+      "tag": "🇭🇰香港福利 1X",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "chacha20-ietf-poly1305",
+      "password": "d40004e8-ac7a-45ad-9758-c28ec47129d6",
+      "server": "ore.zenovz.xyz",
+      "server_port": 15046,
+      "tag": "🇭🇰香港福利 02 1X",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "chacha20-ietf-poly1305",
+      "password": "d40004e8-ac7a-45ad-9758-c28ec47129d6",
+      "server": "ore.zenovz.xyz",
+      "server_port": 56412,
+      "tag": "🇭🇰香港福利 03 1X",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "chacha20-ietf-poly1305",
+      "password": "d40004e8-ac7a-45ad-9758-c28ec47129d6",
+      "server": "ore.zenovz.xyz",
+      "server_port": 35179,
+      "tag": "🇺🇸US 福利 1X",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "chacha20-ietf-poly1305",
+      "password": "d40004e8-ac7a-45ad-9758-c28ec47129d6",
+      "server": "ore.zenovz.xyz",
+      "server_port": 23025,
+      "tag": "🇺🇸US原生福利 1X",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "chacha20-ietf-poly1305",
+      "password": "d40004e8-ac7a-45ad-9758-c28ec47129d6",
+      "server": "ore.zenovz.xyz",
+      "server_port": 44497,
+      "tag": "🇭🇰HKT 4X 02",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "chacha20-ietf-poly1305",
+      "password": "d40004e8-ac7a-45ad-9758-c28ec47129d6",
+      "server": "ore.zenovz.xyz",
+      "server_port": 59432,
+      "tag": "🇯🇵日本ChatGPT 13 1.5X 中转",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "chacha20-ietf-poly1305",
+      "password": "d40004e8-ac7a-45ad-9758-c28ec47129d6",
+      "server": "ore.zenovz.xyz",
+      "server_port": 40943,
+      "tag": "🇨🇳台湾DNS解锁 1.5X 中转",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "chacha20-ietf-poly1305",
+      "password": "d40004e8-ac7a-45ad-9758-c28ec47129d6",
+      "server": "ore.zenovz.xyz",
+      "server_port": 22681,
+      "tag": "🇸🇬新加坡原生12 1.5X ChatGPT",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "chacha20-ietf-poly1305",
+      "password": "d40004e8-ac7a-45ad-9758-c28ec47129d6",
+      "server": "ore.zenovz.xyz",
+      "server_port": 13833,
+      "tag": "🇨🇳台湾全解锁 12 1.5X 原生",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "chacha20-ietf-poly1305",
+      "password": "d40004e8-ac7a-45ad-9758-c28ec47129d6",
+      "server": "ore.zenovz.xyz",
+      "server_port": 37640,
+      "tag": "🇮🇱以色列 12 1.5X 中转",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "chacha20-ietf-poly1305",
+      "password": "d40004e8-ac7a-45ad-9758-c28ec47129d6",
+      "server": "ore.zenovz.xyz",
+      "server_port": 13487,
+      "tag": "🇿🇦南非 01 1.5X",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "chacha20-ietf-poly1305",
+      "password": "d40004e8-ac7a-45ad-9758-c28ec47129d6",
+      "server": "110.42.62.173",
+      "server_port": 16698,
+      "tag": "🇨🇳TW全解锁 3X",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "chacha20-ietf-poly1305",
+      "password": "d40004e8-ac7a-45ad-9758-c28ec47129d6",
+      "server": "ore.zenovz.xyz",
+      "server_port": 34678,
+      "tag": "🇺🇸盐湖城 02 3X 双ISP 原生",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "chacha20-ietf-poly1305",
+      "password": "d40004e8-ac7a-45ad-9758-c28ec47129d6",
+      "server": "ore.zenovz.xyz",
+      "server_port": 14000,
+      "tag": "🇺🇸USLAX原生 01 1.5X",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "chacha20-ietf-poly1305",
+      "password": "d40004e8-ac7a-45ad-9758-c28ec47129d6",
+      "server": "ore.zenovz.xyz",
+      "server_port": 14750,
+      "tag": "🇪🇸spain 01 1.5X",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "chacha20-ietf-poly1305",
+      "password": "d40004e8-ac7a-45ad-9758-c28ec47129d6",
+      "server": "ore.zenovz.xyz",
+      "server_port": 46131,
+      "tag": "🇭🇰香港 26 2X DNS解锁流媒体",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "chacha20-ietf-poly1305",
+      "password": "d40004e8-ac7a-45ad-9758-c28ec47129d6",
+      "server": "ore.zenovz.xyz",
+      "server_port": 17718,
+      "tag": "🇭🇰香港 29 2X DNS解锁流媒体",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "chacha20-ietf-poly1305",
+      "password": "d40004e8-ac7a-45ad-9758-c28ec47129d6",
+      "server": "ore.zenovz.xyz",
+      "server_port": 13491,
+      "tag": "🇭🇰香港 30 2X DNS解锁流媒体",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "chacha20-ietf-poly1305",
+      "password": "d40004e8-ac7a-45ad-9758-c28ec47129d6",
+      "server": "ore.zenovz.xyz",
+      "server_port": 30748,
+      "tag": "🇭🇰香港 31 2X DNS解锁流媒体",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "chacha20-ietf-poly1305",
+      "password": "d40004e8-ac7a-45ad-9758-c28ec47129d6",
+      "server": "ore.zenovz.xyz",
+      "server_port": 40830,
+      "tag": "🇭🇰香港 32 2X DNS解锁流媒体",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "chacha20-ietf-poly1305",
+      "password": "d40004e8-ac7a-45ad-9758-c28ec47129d6",
+      "server": "ore.zenovz.xyz",
+      "server_port": 32132,
+      "tag": "🇺🇸美国东部阿什本 2X 02  中转",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "chacha20-ietf-poly1305",
+      "password": "d40004e8-ac7a-45ad-9758-c28ec47129d6",
+      "server": "ore.zenovz.xyz",
+      "server_port": 32360,
+      "tag": "🇺🇸美国东部阿什本 2X 04  中转",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "chacha20-ietf-poly1305",
+      "password": "d40004e8-ac7a-45ad-9758-c28ec47129d6",
+      "server": "ore.zenovz.xyz",
+      "server_port": 35676,
+      "tag": "🇦🇺澳大利亚悉尼 2X 02  中转",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "chacha20-ietf-poly1305",
+      "password": "d40004e8-ac7a-45ad-9758-c28ec47129d6",
+      "server": "ore.zenovz.xyz",
+      "server_port": 25450,
+      "tag": "🇩🇪德国 法兰克福 2X 01  中转",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "chacha20-ietf-poly1305",
+      "password": "d40004e8-ac7a-45ad-9758-c28ec47129d6",
+      "server": "ore.zenovz.xyz",
+      "server_port": 17931,
+      "tag": "🇩🇪德国 法兰克福 2X 02  中转",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "chacha20-ietf-poly1305",
+      "password": "d40004e8-ac7a-45ad-9758-c28ec47129d6",
+      "server": "ore.zenovz.xyz",
+      "server_port": 12711,
+      "tag": "🇺🇸美国芝加哥 34 1.5X",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "chacha20-ietf-poly1305",
+      "password": "d40004e8-ac7a-45ad-9758-c28ec47129d6",
+      "server": "ore.zenovz.xyz",
+      "server_port": 44505,
+      "tag": "🇸🇬SG新加坡 1.5X",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "chacha20-ietf-poly1305",
+      "password": "d40004e8-ac7a-45ad-9758-c28ec47129d6",
+      "server": "117.173.88.171",
+      "server_port": 22270,
+      "tag": "🇸🇬SG新加坡西部 1.5X",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "chacha20-ietf-poly1305",
+      "password": "d40004e8-ac7a-45ad-9758-c28ec47129d6",
+      "server": "ore.zenovz.xyz",
+      "server_port": 58261,
+      "tag": "🇭🇰香港 01 1.5X 10G ss",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "chacha20-ietf-poly1305",
+      "password": "d40004e8-ac7a-45ad-9758-c28ec47129d6",
+      "server": "183.236.51.160",
+      "server_port": 26447,
+      "tag": "🇭🇰香港 03 3X 10G",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "chacha20-ietf-poly1305",
+      "password": "d40004e8-ac7a-45ad-9758-c28ec47129d6",
+      "server": "183.236.51.160",
+      "server_port": 28672,
+      "tag": "🇭🇰HKLITE全解锁 01 2X",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "chacha20-ietf-poly1305",
+      "password": "d40004e8-ac7a-45ad-9758-c28ec47129d6",
+      "server": "183.236.51.160",
+      "server_port": 23935,
+      "tag": "🇭🇰HKLITE全解锁 02 2X",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "chacha20-ietf-poly1305",
+      "password": "d40004e8-ac7a-45ad-9758-c28ec47129d6",
+      "server": "183.236.51.160",
+      "server_port": 24534,
+      "tag": "🇭🇰HKLITE全解锁 03 2X",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "chacha20-ietf-poly1305",
+      "password": "d40004e8-ac7a-45ad-9758-c28ec47129d6",
+      "server": "183.236.51.160",
+      "server_port": 10791,
+      "tag": "🇭🇰HKLite全解锁 04 2X",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "chacha20-ietf-poly1305",
+      "password": "d40004e8-ac7a-45ad-9758-c28ec47129d6",
+      "server": "183.236.51.160",
+      "server_port": 28931,
+      "tag": "🇭🇰HKLite全解锁 05 2X",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "chacha20-ietf-poly1305",
+      "password": "d40004e8-ac7a-45ad-9758-c28ec47129d6",
+      "server": "117.173.88.171",
+      "server_port": 14089,
+      "tag": "🇭🇰HK 100M 01 1.5X",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "chacha20-ietf-poly1305",
+      "password": "d40004e8-ac7a-45ad-9758-c28ec47129d6",
+      "server": "117.173.88.171",
+      "server_port": 39500,
+      "tag": "🇭🇰HK 100M 02 1.5X",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "chacha20-ietf-poly1305",
+      "password": "d40004e8-ac7a-45ad-9758-c28ec47129d6",
+      "server": "117.173.88.171",
+      "server_port": 21506,
+      "tag": "🇭🇰HK 100M 03 1.5X",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "chacha20-ietf-poly1305",
+      "password": "d40004e8-ac7a-45ad-9758-c28ec47129d6",
+      "server": "117.173.88.171",
+      "server_port": 19548,
+      "tag": "🇭🇰HK 100M 04 1.5X",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "chacha20-ietf-poly1305",
+      "password": "d40004e8-ac7a-45ad-9758-c28ec47129d6",
+      "server": "117.173.88.171",
+      "server_port": 45350,
+      "tag": "🇭🇰HK 100M 05 1.5X",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "chacha20-ietf-poly1305",
+      "password": "d40004e8-ac7a-45ad-9758-c28ec47129d6",
+      "server": "117.173.88.171",
+      "server_port": 31870,
+      "tag": "🇭🇰HK 100M 06 1.5X",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "chacha20-ietf-poly1305",
+      "password": "d40004e8-ac7a-45ad-9758-c28ec47129d6",
+      "server": "183.236.51.160",
+      "server_port": 34338,
+      "tag": "🇭🇰香港 08 2X 中转",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "chacha20-ietf-poly1305",
+      "password": "d40004e8-ac7a-45ad-9758-c28ec47129d6",
+      "server": "183.236.51.160",
+      "server_port": 53432,
+      "tag": "🇭🇰香港12 2X  GPT",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "chacha20-ietf-poly1305",
+      "password": "d40004e8-ac7a-45ad-9758-c28ec47129d6",
+      "server": "183.236.51.160",
+      "server_port": 52592,
+      "tag": "🇭🇰香港HK 01 2X",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "chacha20-ietf-poly1305",
+      "password": "d40004e8-ac7a-45ad-9758-c28ec47129d6",
+      "server": "183.236.51.160",
+      "server_port": 12289,
+      "tag": "🇺🇸美国原生03 3X 双ISP",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "chacha20-ietf-poly1305",
+      "password": "d40004e8-ac7a-45ad-9758-c28ec47129d6",
+      "server": "117.173.88.171",
+      "server_port": 58814,
+      "tag": "🇯🇵日本 03 2X",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "chacha20-ietf-poly1305",
+      "password": "d40004e8-ac7a-45ad-9758-c28ec47129d6",
+      "server": "117.173.88.171",
+      "server_port": 19954,
+      "tag": "🇯🇵日本 04 2X",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "chacha20-ietf-poly1305",
+      "password": "d40004e8-ac7a-45ad-9758-c28ec47129d6",
+      "server": "183.236.51.160",
+      "server_port": 12295,
+      "tag": "🇦🇺澳大利亚悉尼 02 2X",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "chacha20-ietf-poly1305",
+      "password": "d40004e8-ac7a-45ad-9758-c28ec47129d6",
+      "server": "183.236.51.160",
+      "server_port": 12297,
+      "tag": "🇸🇬新加坡05 2X",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "chacha20-ietf-poly1305",
+      "password": "d40004e8-ac7a-45ad-9758-c28ec47129d6",
+      "server": "183.236.51.160",
+      "server_port": 12302,
+      "tag": "🇸🇬新加坡07 2X",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "chacha20-ietf-poly1305",
+      "password": "d40004e8-ac7a-45ad-9758-c28ec47129d6",
+      "server": "183.236.51.160",
+      "server_port": 12304,
+      "tag": "🇸🇬新加坡09 2X",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "chacha20-ietf-poly1305",
+      "password": "d40004e8-ac7a-45ad-9758-c28ec47129d6",
+      "server": "183.236.51.160",
+      "server_port": 23992,
+      "tag": "🇨🇳台湾 03 2X hinet 中转",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "chacha20-ietf-poly1305",
+      "password": "d40004e8-ac7a-45ad-9758-c28ec47129d6",
+      "server": "183.236.51.160",
+      "server_port": 25066,
+      "tag": "🇨🇳台湾04 2X",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "chacha20-ietf-poly1305",
+      "password": "d40004e8-ac7a-45ad-9758-c28ec47129d6",
+      "server": "183.236.51.160",
+      "server_port": 12314,
+      "tag": "🇸🇬新加坡01 2X YuTube原生",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "chacha20-ietf-poly1305",
+      "password": "d40004e8-ac7a-45ad-9758-c28ec47129d6",
+      "server": "183.236.51.160",
+      "server_port": 12315,
+      "tag": "🇸🇬新加坡02 2X YuTube原生",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "chacha20-ietf-poly1305",
+      "password": "d40004e8-ac7a-45ad-9758-c28ec47129d6",
+      "server": "183.236.51.160",
+      "server_port": 12316,
+      "tag": "🇦🇪阿联酋（阿布扎比）vip",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "chacha20-ietf-poly1305",
+      "password": "d40004e8-ac7a-45ad-9758-c28ec47129d6",
+      "server": "183.236.51.160",
+      "server_port": 12317,
+      "tag": "🇦🇪阿联酋 02 1.5X",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "chacha20-ietf-poly1305",
+      "password": "d40004e8-ac7a-45ad-9758-c28ec47129d6",
+      "server": "183.236.51.160",
+      "server_port": 12319,
+      "tag": "🇰🇷韩国02 2X ss",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "chacha20-ietf-poly1305",
+      "password": "d40004e8-ac7a-45ad-9758-c28ec47129d6",
+      "server": "183.236.51.160",
+      "server_port": 12321,
+      "tag": "🇰🇷韩国春川 2X 04 中转",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "chacha20-ietf-poly1305",
+      "password": "d40004e8-ac7a-45ad-9758-c28ec47129d6",
+      "server": "183.236.51.160",
+      "server_port": 34255,
+      "tag": "🇺🇸美国02原生 2X",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "chacha20-ietf-poly1305",
+      "password": "d40004e8-ac7a-45ad-9758-c28ec47129d6",
+      "server": "183.236.51.160",
+      "server_port": 34257,
+      "tag": "🇺🇸美国04原生 2X",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "chacha20-ietf-poly1305",
+      "password": "d40004e8-ac7a-45ad-9758-c28ec47129d6",
+      "server": "183.236.51.160",
+      "server_port": 34261,
+      "tag": "🇺🇸美国 35 2X",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "chacha20-ietf-poly1305",
+      "password": "d40004e8-ac7a-45ad-9758-c28ec47129d6",
+      "server": "117.173.88.171",
+      "server_port": 27744,
+      "tag": "🇺🇸美国 36 1.5X",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "chacha20-ietf-poly1305",
+      "password": "d40004e8-ac7a-45ad-9758-c28ec47129d6",
+      "server": "183.236.51.160",
+      "server_port": 12332,
+      "tag": "🇮🇳印度孟买",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "chacha20-ietf-poly1305",
+      "password": "d40004e8-ac7a-45ad-9758-c28ec47129d6",
+      "server": "183.236.51.160",
+      "server_port": 31076,
+      "tag": "🇬🇧英国 02 2X",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "chacha20-ietf-poly1305",
+      "password": "d40004e8-ac7a-45ad-9758-c28ec47129d6",
+      "server": "183.236.51.160",
+      "server_port": 12334,
+      "tag": "🇬🇧英国 03 2X",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "chacha20-ietf-poly1305",
+      "password": "d40004e8-ac7a-45ad-9758-c28ec47129d6",
+      "server": "183.236.51.160",
+      "server_port": 15201,
+      "tag": "🇩🇪德国02 2X",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "chacha20-ietf-poly1305",
+      "password": "d40004e8-ac7a-45ad-9758-c28ec47129d6",
+      "server": "183.236.51.160",
+      "server_port": 12337,
+      "tag": "🇫🇷法国02 1.5X",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "chacha20-ietf-poly1305",
+      "password": "d40004e8-ac7a-45ad-9758-c28ec47129d6",
+      "server": "183.236.51.160",
+      "server_port": 12339,
+      "tag": "🇲🇽墨西哥 新萊昂州 1.5X",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "chacha20-ietf-poly1305",
+      "password": "d40004e8-ac7a-45ad-9758-c28ec47129d6",
+      "server": "183.236.51.160",
+      "server_port": 12341,
+      "tag": "🇳🇱荷兰01 1.5X",
+      "type": "shadowsocks"
+    },
+    {
+      "method": "chacha20-ietf-poly1305",
+      "password": "d40004e8-ac7a-45ad-9758-c28ec47129d6",
+      "server": "183.236.51.160",
+      "server_port": 34277,
+      "tag": "🇭🇰香港 25 2X 流媒体解锁",
+      "type": "shadowsocks"
+    },
+    {
+      "password": "d40004e8-ac7a-45ad-9758-c28ec47129d6",
+      "server": "us21falco170.whiteemperor.shop",
+      "server_port": 20000,
+      "tag": "🇺🇸美国 21 0.5X",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "us21falco170.whiteemperor.shop"
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "d40004e8-ac7a-45ad-9758-c28ec47129d6",
+      "server": "us01falco181f.whiteemperor.shop",
+      "server_port": 20000,
+      "tag": "🇺🇸美国 01",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "us01falco181f.whiteemperor.shop"
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "d40004e8-ac7a-45ad-9758-c28ec47129d6",
+      "server": "us15falco83f.whiteemperor.shop",
+      "server_port": 20000,
+      "tag": "🇺🇸美国 15 0.5X",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "us15falco83f.whiteemperor.shop"
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "d40004e8-ac7a-45ad-9758-c28ec47129d6",
+      "server": "us20falco217f.whiteemperor.shop",
+      "server_port": 20000,
+      "tag": "🇺🇸美国 20 0.5X",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "us20falco217f.whiteemperor.shop"
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "d40004e8-ac7a-45ad-9758-c28ec47129d6",
+      "server": "us04falco96f.whiteemperor.shop",
+      "server_port": 20000,
+      "tag": "🇺🇸美国 04 0.5X",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "us04falco96f.whiteemperor.shop"
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "d40004e8-ac7a-45ad-9758-c28ec47129d6",
+      "server": "us06falco88f.whiteemperor.shop",
+      "server_port": 20000,
+      "tag": "🇺🇸美国 06 0.5X",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "us06falco88f.whiteemperor.shop"
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "d40004e8-ac7a-45ad-9758-c28ec47129d6",
+      "server": "us08falco8f.whiteemperor.shop",
+      "server_port": 20000,
+      "tag": "🇺🇸美国 08",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "us08falco8f.whiteemperor.shop"
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "d40004e8-ac7a-45ad-9758-c28ec47129d6",
+      "server": "us24falco83f.whiteemperor.shop",
+      "server_port": 20000,
+      "tag": "🇺🇸美国 24",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "us24falco83f.whiteemperor.shop"
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "d40004e8-ac7a-45ad-9758-c28ec47129d6",
+      "server": "hk04falco46.whiteemperor.shop",
+      "server_port": 20000,
+      "tag": "🇭🇰香港 04 0.5X DNS解锁流媒体",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "hk04falco46.whiteemperor.shop"
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "d40004e8-ac7a-45ad-9758-c28ec47129d6",
+      "server": "hk05falco248.whiteemperor.shop",
+      "server_port": 20000,
+      "tag": "🇭🇰香港 05 0.5X DNS解锁流媒体",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "hk05falco248.whiteemperor.shop"
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "d40004e8-ac7a-45ad-9758-c28ec47129d6",
+      "server": "hk07falco195.whiteemperor.shop",
+      "server_port": 20000,
+      "tag": "🇭🇰香港 07 0.5X DNS解锁流媒体",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "hk07falco195.whiteemperor.shop"
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "d40004e8-ac7a-45ad-9758-c28ec47129d6",
+      "server": "hk10falco100f.whiteemperor.shop",
+      "server_port": 20000,
+      "tag": "🇭🇰香港 10 0.5X DNS解锁流媒体",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "hk10falco100f.whiteemperor.shop"
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "d40004e8-ac7a-45ad-9758-c28ec47129d6",
+      "server": "hk16falco170f.whiteemperor.shop",
+      "server_port": 20000,
+      "tag": "🇭🇰香港 16 0.5X DNS解锁流媒体",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "hk16falco170f.whiteemperor.shop"
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "d40004e8-ac7a-45ad-9758-c28ec47129d6",
+      "server": "hk18falco163f.whiteemperor.shop",
+      "server_port": 20000,
+      "tag": "🇭🇰香港 18 0.5X DNS解锁流媒体",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "hk18falco163f.whiteemperor.shop"
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "d40004e8-ac7a-45ad-9758-c28ec47129d6",
+      "server": "jp02falco3f.whiteemperor.shop",
+      "server_port": 20000,
+      "tag": "🇯🇵日本 02 1.5X DNS解锁流媒体",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "jp02falco3f.whiteemperor.shop"
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "d40004e8-ac7a-45ad-9758-c28ec47129d6",
+      "server": "japan03falco97f.whiteemperor.shop",
+      "server_port": 20000,
+      "tag": "🇯🇵日本 03 1.5X DNS解锁流媒体",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "japan03falco97f.whiteemperor.shop"
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "d40004e8-ac7a-45ad-9758-c28ec47129d6",
+      "server": "japan04falco170f.whiteemperor.shop",
+      "server_port": 20000,
+      "tag": "🇯🇵日本 04 1.5X DNS解锁流媒体",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "japan04falco170f.whiteemperor.shop"
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "d40004e8-ac7a-45ad-9758-c28ec47129d6",
+      "server": "jp05falco34f.whiteemperor.shop",
+      "server_port": 20000,
+      "tag": "🇯🇵日本05 1.5X DNS解锁流媒体",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "jp05falco34f.whiteemperor.shop"
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "d40004e8-ac7a-45ad-9758-c28ec47129d6",
+      "server": "japan06falco178f.whiteemperor.shop",
+      "server_port": 20000,
+      "tag": "🇯🇵日本 06 1.5X DNS解锁流媒体",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "japan06falco178f.whiteemperor.shop"
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "d40004e8-ac7a-45ad-9758-c28ec47129d6",
+      "server": "japan07falco78f.whiteemperor.shop",
+      "server_port": 20000,
+      "tag": "🇯🇵日本 07 1.5X DNS解锁流媒体",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "japan07falco78f.whiteemperor.shop"
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "d40004e8-ac7a-45ad-9758-c28ec47129d6",
+      "server": "tw01falco20.whiteemperor.shop",
+      "server_port": 20000,
+      "tag": "🇨🇳台湾 01 2X",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "tw01falco20.whiteemperor.shop"
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "d40004e8-ac7a-45ad-9758-c28ec47129d6",
+      "server": "tw02falco117f.whiteemperor.shop",
+      "server_port": 20000,
+      "tag": "🇨🇳台湾 02",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "tw02falco117f.whiteemperor.shop"
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "d40004e8-ac7a-45ad-9758-c28ec47129d6",
+      "server": "uk03falco10f.whiteemperor.shop",
+      "server_port": 20000,
+      "tag": "🇬🇧英国 03",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "uk03falco10f.whiteemperor.shop"
+      },
+      "type": "hysteria2"
+    },
+    {
+      "tag": "select",
+      "type": "selector",
+      "default": "auto",
+      "outbounds": [
+        "auto",
+        "🇭🇰香港福利 1X",
+        "🇭🇰香港福利 02 1X",
+        "🇭🇰香港福利 03 1X",
+        "🇺🇸US 福利 1X",
+        "🇺🇸US原生福利 1X",
+        "🇭🇰HKT 4X 02",
+        "🇯🇵日本ChatGPT 13 1.5X 中转",
+        "🇨🇳台湾DNS解锁 1.5X 中转",
+        "🇸🇬新加坡原生12 1.5X ChatGPT",
+        "🇨🇳台湾全解锁 12 1.5X 原生",
+        "🇮🇱以色列 12 1.5X 中转",
+        "🇿🇦南非 01 1.5X",
+        "🇨🇳TW全解锁 3X",
+        "🇺🇸盐湖城 02 3X 双ISP 原生",
+        "🇺🇸USLAX原生 01 1.5X",
+        "🇪🇸spain 01 1.5X",
+        "🇭🇰香港 26 2X DNS解锁流媒体",
+        "🇭🇰香港 29 2X DNS解锁流媒体",
+        "🇭🇰香港 30 2X DNS解锁流媒体",
+        "🇭🇰香港 31 2X DNS解锁流媒体",
+        "🇭🇰香港 32 2X DNS解锁流媒体",
+        "🇺🇸美国东部阿什本 2X 02  中转",
+        "🇺🇸美国东部阿什本 2X 04  中转",
+        "🇦🇺澳大利亚悉尼 2X 02  中转",
+        "🇩🇪德国 法兰克福 2X 01  中转",
+        "🇩🇪德国 法兰克福 2X 02  中转",
+        "🇺🇸美国芝加哥 34 1.5X",
+        "🇸🇬SG新加坡 1.5X",
+        "🇸🇬SG新加坡西部 1.5X",
+        "🇭🇰香港 01 1.5X 10G ss",
+        "🇭🇰香港 03 3X 10G",
+        "🇭🇰HKLITE全解锁 01 2X",
+        "🇭🇰HKLITE全解锁 02 2X",
+        "🇭🇰HKLITE全解锁 03 2X",
+        "🇭🇰HKLite全解锁 04 2X",
+        "🇭🇰HKLite全解锁 05 2X",
+        "🇭🇰HK 100M 01 1.5X",
+        "🇭🇰HK 100M 02 1.5X",
+        "🇭🇰HK 100M 03 1.5X",
+        "🇭🇰HK 100M 04 1.5X",
+        "🇭🇰HK 100M 05 1.5X",
+        "🇭🇰HK 100M 06 1.5X",
+        "🇭🇰香港 08 2X 中转",
+        "🇭🇰香港12 2X  GPT",
+        "🇭🇰香港HK 01 2X",
+        "🇺🇸美国原生03 3X 双ISP",
+        "🇯🇵日本 03 2X",
+        "🇯🇵日本 04 2X",
+        "🇦🇺澳大利亚悉尼 02 2X",
+        "🇸🇬新加坡05 2X",
+        "🇸🇬新加坡07 2X",
+        "🇸🇬新加坡09 2X",
+        "🇨🇳台湾 03 2X hinet 中转",
+        "🇨🇳台湾04 2X",
+        "🇸🇬新加坡01 2X YuTube原生",
+        "🇸🇬新加坡02 2X YuTube原生",
+        "🇦🇪阿联酋（阿布扎比）vip",
+        "🇦🇪阿联酋 02 1.5X",
+        "🇰🇷韩国02 2X ss",
+        "🇰🇷韩国春川 2X 04 中转",
+        "🇺🇸美国02原生 2X",
+        "🇺🇸美国04原生 2X",
+        "🇺🇸美国 35 2X",
+        "🇺🇸美国 36 1.5X",
+        "🇮🇳印度孟买",
+        "🇬🇧英国 02 2X",
+        "🇬🇧英国 03 2X",
+        "🇩🇪德国02 2X",
+        "🇫🇷法国02 1.5X",
+        "🇲🇽墨西哥 新萊昂州 1.5X",
+        "🇳🇱荷兰01 1.5X",
+        "🇭🇰香港 25 2X 流媒体解锁",
+        "🇺🇸美国 21 0.5X",
+        "🇺🇸美国 01",
+        "🇺🇸美国 15 0.5X",
+        "🇺🇸美国 20 0.5X",
+        "🇺🇸美国 04 0.5X",
+        "🇺🇸美国 06 0.5X",
+        "🇺🇸美国 08",
+        "🇺🇸美国 24",
+        "🇭🇰香港 04 0.5X DNS解锁流媒体",
+        "🇭🇰香港 05 0.5X DNS解锁流媒体",
+        "🇭🇰香港 07 0.5X DNS解锁流媒体",
+        "🇭🇰香港 10 0.5X DNS解锁流媒体",
+        "🇭🇰香港 16 0.5X DNS解锁流媒体",
+        "🇭🇰香港 18 0.5X DNS解锁流媒体",
+        "🇯🇵日本 02 1.5X DNS解锁流媒体",
+        "🇯🇵日本 03 1.5X DNS解锁流媒体",
+        "🇯🇵日本 04 1.5X DNS解锁流媒体",
+        "🇯🇵日本05 1.5X DNS解锁流媒体",
+        "🇯🇵日本 06 1.5X DNS解锁流媒体",
+        "🇯🇵日本 07 1.5X DNS解锁流媒体",
+        "🇨🇳台湾 01 2X",
+        "🇨🇳台湾 02",
+        "🇬🇧英国 03"
+      ]
+    },
+    {
+      "tag": "auto",
+      "type": "urltest",
+      "outbounds": [
+        "🇭🇰香港福利 1X",
+        "🇭🇰香港福利 02 1X",
+        "🇭🇰香港福利 03 1X",
+        "🇺🇸US 福利 1X",
+        "🇺🇸US原生福利 1X",
+        "🇭🇰HKT 4X 02",
+        "🇯🇵日本ChatGPT 13 1.5X 中转",
+        "🇨🇳台湾DNS解锁 1.5X 中转",
+        "🇸🇬新加坡原生12 1.5X ChatGPT",
+        "🇨🇳台湾全解锁 12 1.5X 原生",
+        "🇮🇱以色列 12 1.5X 中转",
+        "🇿🇦南非 01 1.5X",
+        "🇨🇳TW全解锁 3X",
+        "🇺🇸盐湖城 02 3X 双ISP 原生",
+        "🇺🇸USLAX原生 01 1.5X",
+        "🇪🇸spain 01 1.5X",
+        "🇭🇰香港 26 2X DNS解锁流媒体",
+        "🇭🇰香港 29 2X DNS解锁流媒体",
+        "🇭🇰香港 30 2X DNS解锁流媒体",
+        "🇭🇰香港 31 2X DNS解锁流媒体",
+        "🇭🇰香港 32 2X DNS解锁流媒体",
+        "🇺🇸美国东部阿什本 2X 02  中转",
+        "🇺🇸美国东部阿什本 2X 04  中转",
+        "🇦🇺澳大利亚悉尼 2X 02  中转",
+        "🇩🇪德国 法兰克福 2X 01  中转",
+        "🇩🇪德国 法兰克福 2X 02  中转",
+        "🇺🇸美国芝加哥 34 1.5X",
+        "🇸🇬SG新加坡 1.5X",
+        "🇸🇬SG新加坡西部 1.5X",
+        "🇭🇰香港 01 1.5X 10G ss",
+        "🇭🇰香港 03 3X 10G",
+        "🇭🇰HKLITE全解锁 01 2X",
+        "🇭🇰HKLITE全解锁 02 2X",
+        "🇭🇰HKLITE全解锁 03 2X",
+        "🇭🇰HKLite全解锁 04 2X",
+        "🇭🇰HKLite全解锁 05 2X",
+        "🇭🇰HK 100M 01 1.5X",
+        "🇭🇰HK 100M 02 1.5X",
+        "🇭🇰HK 100M 03 1.5X",
+        "🇭🇰HK 100M 04 1.5X",
+        "🇭🇰HK 100M 05 1.5X",
+        "🇭🇰HK 100M 06 1.5X",
+        "🇭🇰香港 08 2X 中转",
+        "🇭🇰香港12 2X  GPT",
+        "🇭🇰香港HK 01 2X",
+        "🇺🇸美国原生03 3X 双ISP",
+        "🇯🇵日本 03 2X",
+        "🇯🇵日本 04 2X",
+        "🇦🇺澳大利亚悉尼 02 2X",
+        "🇸🇬新加坡05 2X",
+        "🇸🇬新加坡07 2X",
+        "🇸🇬新加坡09 2X",
+        "🇨🇳台湾 03 2X hinet 中转",
+        "🇨🇳台湾04 2X",
+        "🇸🇬新加坡01 2X YuTube原生",
+        "🇸🇬新加坡02 2X YuTube原生",
+        "🇦🇪阿联酋（阿布扎比）vip",
+        "🇦🇪阿联酋 02 1.5X",
+        "🇰🇷韩国02 2X ss",
+        "🇰🇷韩国春川 2X 04 中转",
+        "🇺🇸美国02原生 2X",
+        "🇺🇸美国04原生 2X",
+        "🇺🇸美国 35 2X",
+        "🇺🇸美国 36 1.5X",
+        "🇮🇳印度孟买",
+        "🇬🇧英国 02 2X",
+        "🇬🇧英国 03 2X",
+        "🇩🇪德国02 2X",
+        "🇫🇷法国02 1.5X",
+        "🇲🇽墨西哥 新萊昂州 1.5X",
+        "🇳🇱荷兰01 1.5X",
+        "🇭🇰香港 25 2X 流媒体解锁",
+        "🇺🇸美国 21 0.5X",
+        "🇺🇸美国 01",
+        "🇺🇸美国 15 0.5X",
+        "🇺🇸美国 20 0.5X",
+        "🇺🇸美国 04 0.5X",
+        "🇺🇸美国 06 0.5X",
+        "🇺🇸美国 08",
+        "🇺🇸美国 24",
+        "🇭🇰香港 04 0.5X DNS解锁流媒体",
+        "🇭🇰香港 05 0.5X DNS解锁流媒体",
+        "🇭🇰香港 07 0.5X DNS解锁流媒体",
+        "🇭🇰香港 10 0.5X DNS解锁流媒体",
+        "🇭🇰香港 16 0.5X DNS解锁流媒体",
+        "🇭🇰香港 18 0.5X DNS解锁流媒体",
+        "🇯🇵日本 02 1.5X DNS解锁流媒体",
+        "🇯🇵日本 03 1.5X DNS解锁流媒体",
+        "🇯🇵日本 04 1.5X DNS解锁流媒体",
+        "🇯🇵日本05 1.5X DNS解锁流媒体",
+        "🇯🇵日本 06 1.5X DNS解锁流媒体",
+        "🇯🇵日本 07 1.5X DNS解锁流媒体",
+        "🇨🇳台湾 01 2X",
+        "🇨🇳台湾 02",
+        "🇬🇧英国 03"
+      ]
+    },
+    {
+      "tag": "ai",
+      "type": "selector",
+      "outbounds": [
+        "🇭🇰香港福利 1X",
+        "🇭🇰香港福利 02 1X",
+        "🇭🇰香港福利 03 1X",
+        "🇺🇸US 福利 1X",
+        "🇺🇸US原生福利 1X",
+        "🇭🇰HKT 4X 02",
+        "🇯🇵日本ChatGPT 13 1.5X 中转",
+        "🇨🇳台湾DNS解锁 1.5X 中转",
+        "🇸🇬新加坡原生12 1.5X ChatGPT",
+        "🇨🇳台湾全解锁 12 1.5X 原生",
+        "🇮🇱以色列 12 1.5X 中转",
+        "🇿🇦南非 01 1.5X",
+        "🇨🇳TW全解锁 3X",
+        "🇺🇸盐湖城 02 3X 双ISP 原生",
+        "🇺🇸USLAX原生 01 1.5X",
+        "🇪🇸spain 01 1.5X",
+        "🇭🇰香港 26 2X DNS解锁流媒体",
+        "🇭🇰香港 29 2X DNS解锁流媒体",
+        "🇭🇰香港 30 2X DNS解锁流媒体",
+        "🇭🇰香港 31 2X DNS解锁流媒体",
+        "🇭🇰香港 32 2X DNS解锁流媒体",
+        "🇺🇸美国东部阿什本 2X 02  中转",
+        "🇺🇸美国东部阿什本 2X 04  中转",
+        "🇦🇺澳大利亚悉尼 2X 02  中转",
+        "🇩🇪德国 法兰克福 2X 01  中转",
+        "🇩🇪德国 法兰克福 2X 02  中转",
+        "🇺🇸美国芝加哥 34 1.5X",
+        "🇸🇬SG新加坡 1.5X",
+        "🇸🇬SG新加坡西部 1.5X",
+        "🇭🇰香港 01 1.5X 10G ss",
+        "🇭🇰香港 03 3X 10G",
+        "🇭🇰HKLITE全解锁 01 2X",
+        "🇭🇰HKLITE全解锁 02 2X",
+        "🇭🇰HKLITE全解锁 03 2X",
+        "🇭🇰HKLite全解锁 04 2X",
+        "🇭🇰HKLite全解锁 05 2X",
+        "🇭🇰HK 100M 01 1.5X",
+        "🇭🇰HK 100M 02 1.5X",
+        "🇭🇰HK 100M 03 1.5X",
+        "🇭🇰HK 100M 04 1.5X",
+        "🇭🇰HK 100M 05 1.5X",
+        "🇭🇰HK 100M 06 1.5X",
+        "🇭🇰香港 08 2X 中转",
+        "🇭🇰香港12 2X  GPT",
+        "🇭🇰香港HK 01 2X",
+        "🇺🇸美国原生03 3X 双ISP",
+        "🇯🇵日本 03 2X",
+        "🇯🇵日本 04 2X",
+        "🇦🇺澳大利亚悉尼 02 2X",
+        "🇸🇬新加坡05 2X",
+        "🇸🇬新加坡07 2X",
+        "🇸🇬新加坡09 2X",
+        "🇨🇳台湾 03 2X hinet 中转",
+        "🇨🇳台湾04 2X",
+        "🇸🇬新加坡01 2X YuTube原生",
+        "🇸🇬新加坡02 2X YuTube原生",
+        "🇦🇪阿联酋（阿布扎比）vip",
+        "🇦🇪阿联酋 02 1.5X",
+        "🇰🇷韩国02 2X ss",
+        "🇰🇷韩国春川 2X 04 中转",
+        "🇺🇸美国02原生 2X",
+        "🇺🇸美国04原生 2X",
+        "🇺🇸美国 35 2X",
+        "🇺🇸美国 36 1.5X",
+        "🇮🇳印度孟买",
+        "🇬🇧英国 02 2X",
+        "🇬🇧英国 03 2X",
+        "🇩🇪德国02 2X",
+        "🇫🇷法国02 1.5X",
+        "🇲🇽墨西哥 新萊昂州 1.5X",
+        "🇳🇱荷兰01 1.5X",
+        "🇭🇰香港 25 2X 流媒体解锁",
+        "🇺🇸美国 21 0.5X",
+        "🇺🇸美国 01",
+        "🇺🇸美国 15 0.5X",
+        "🇺🇸美国 20 0.5X",
+        "🇺🇸美国 04 0.5X",
+        "🇺🇸美国 06 0.5X",
+        "🇺🇸美国 08",
+        "🇺🇸美国 24",
+        "🇭🇰香港 04 0.5X DNS解锁流媒体",
+        "🇭🇰香港 05 0.5X DNS解锁流媒体",
+        "🇭🇰香港 07 0.5X DNS解锁流媒体",
+        "🇭🇰香港 10 0.5X DNS解锁流媒体",
+        "🇭🇰香港 16 0.5X DNS解锁流媒体",
+        "🇭🇰香港 18 0.5X DNS解锁流媒体",
+        "🇯🇵日本 02 1.5X DNS解锁流媒体",
+        "🇯🇵日本 03 1.5X DNS解锁流媒体",
+        "🇯🇵日本 04 1.5X DNS解锁流媒体",
+        "🇯🇵日本05 1.5X DNS解锁流媒体",
+        "🇯🇵日本 06 1.5X DNS解锁流媒体",
+        "🇯🇵日本 07 1.5X DNS解锁流媒体",
+        "🇨🇳台湾 01 2X",
+        "🇨🇳台湾 02",
+        "🇬🇧英国 03"
+      ]
+    },
+    {
+      "tag": "direct",
+      "type": "direct"
+    }
+  ],
+  "route": {
+    "rules": [
+      {
+        "action": "sniff"
+      },
+      {
+        "port": [
+          53
+        ],
+        "action": "hijack-dns"
+      },
+      {
+        "action": "resolve",
+        "strategy": "ipv4_only"
+      },
+      {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "domain_suffix": [
+              "ushd.xmsl.org",
+              "cf.gtlx.org",
+              "public-operation-hkrpg-sg.hoyoverse.com",
+              "public-operation-hk4e-sg.hoyoverse.com",
+              "public-operation-nap-sg.hoyoverse.com"
+            ]
+          },
+          {
+            "port_range": [
+              "23301:23301",
+              "22101:22102",
+              "20501:20501",
+              "21601:21606"
+            ]
+          }
+        ],
+        "outbound": "direct"
+      },
+      {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "clash_mode": "Global"
+          },
+          {
+            "domain_keyword": [
+              "hoyoverse.com"
+            ]
+          }
+        ],
+        "outbound": "select"
+      },
+      {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "rule_set": [
+              "geosite-openai",
+              "geosite-google-gemini"
+            ]
+          }
+        ],
+        "outbound": "ai"
+      },
+      {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "clash_mode": "Direct"
+          },
+          {
+            "ip_is_private": true
+          },
+          {
+            "rule_set": [
+              "geosite-googlefcm",
+              "geosite-cn",
+              "geoip-cn"
+            ]
+          }
+        ],
+        "outbound": "direct"
+      }
+    ],
+    "rule_set": [
+      {
+        "type": "remote",
+        "tag": "geoip-cn",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/lyc8503/sing-box-rules/rule-set-geoip/geoip-cn.srs",
+        "download_detour": "select"
+      },
+      {
+        "type": "remote",
+        "tag": "geosite-cn",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/lyc8503/sing-box-rules/rule-set-geosite/geosite-cn.srs",
+        "download_detour": "select"
+      },
+      {
+        "type": "remote",
+        "tag": "geosite-openai",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/lyc8503/sing-box-rules/rule-set-geosite/geosite-openai.srs",
+        "download_detour": "select"
+      },
+      {
+        "type": "remote",
+        "tag": "geosite-google-gemini",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/lyc8503/sing-box-rules/rule-set-geosite/geosite-google-gemini.srs",
+        "download_detour": "select"
+      },
+      {
+        "type": "remote",
+        "tag": "geosite-googlefcm",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/lyc8503/sing-box-rules/rule-set-geosite/geosite-googlefcm.srs",
+        "download_detour": "select"
+      },
+      {
+        "type": "remote",
+        "tag": "geosite-category-ads-all",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/lyc8503/sing-box-rules/rule-set-geosite/geosite-category-ads-all.srs",
+        "download_detour": "select"
+      }
+    ],
+    "final": "select",
+    "default_domain_resolver": "dns_direct",
+    "auto_detect_interface": true,
+    "override_android_vpn": true
+  },
+  "experimental": {
+    "cache_file": {
+      "enabled": true
+    },
+    "clash_api": {
+      "external_controller": "127.0.0.1:9090"
+    }
+  }
+}

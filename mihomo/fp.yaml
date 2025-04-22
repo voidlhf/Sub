@@ -1,0 +1,210 @@
+log-level: "debug"
+mixed-port: 7890
+allow-lan: true
+external-controller: "127.0.0.1:9090"
+unified-delay: true
+tcp-concurrent: true
+find-process-mode: "strict"
+global-client-fingerprint: "chrome"
+profile:
+  store-selected: true
+  store-fake-ip: true
+sniffer:
+  enable: true
+  force-dns-mapping: true
+  parse-pure-ip: true
+  override-destination: false
+  sniff:
+    HTTP:
+      ports:
+      - 80
+      - "8080-8880"
+    TLS:
+      ports:
+      - 443
+      - 8443
+    QUIC:
+      ports:
+      - 443
+      - 8443
+tun:
+  enable: true
+  stack: "mixed"
+  dns-hijack:
+  - "any:53"
+  - "tcp://any:53"
+  auto-route: true
+  auto-redirect: true
+  auto-detect-interface: true
+  strict-route: true
+dns:
+  enable: true
+  ipv6: false
+  default-nameserver:
+  - "223.5.5.5"
+  - "119.29.29.29"
+  enhanced-mode: "fake-ip"
+  fake-ip-range: "198.18.0.1/16"
+  nameserver:
+  - "https://dns.cloudflare.com/dns-query"
+  - "https://dns.google/dns-query"
+  nameserver-policy:
+    geosite:cn,private:
+    - "https://dns.alidns.com/dns-query"
+    - "https://doh.pub/dns-query"
+proxies:
+- {name: "🇭🇰 香港¹ HGC", type: "ss", server: "35004.fishportnode.top", port: 35004, cipher: "aes-256-gcm", password: "e0372a5e-4884-49ba-85aa-1938733e7041", udp: true}
+- {name: "🇭🇰 香港 BGP IEPL*", type: "ss", server: "56540.portfish.asia", port: 56540, cipher: "aes-256-gcm", password: "e0372a5e-4884-49ba-85aa-1938733e7041", udp: true}
+- {name: "🇭🇰 香港² HKT", type: "ss", server: "35002.fishportnode.top", port: 35002, cipher: "aes-256-gcm", password: "e0372a5e-4884-49ba-85aa-1938733e7041", udp: true}
+- {name: "🇭🇰 香港³ HKBN", type: "ss", server: "35001.fishportnode.top", port: 35001, cipher: "aes-256-gcm", password: "e0372a5e-4884-49ba-85aa-1938733e7041", udp: true}
+- {name: "🇭🇰 香港⁴ Akari", type: "ss", server: "35000.fishportnode.top", port: 35000, cipher: "aes-256-gcm", password: "e0372a5e-4884-49ba-85aa-1938733e7041", udp: true}
+- {name: "🇯🇵 日本¹", type: "ss", server: "35003.fishportnode.top", port: 35003, cipher: "aes-256-gcm", password: "e0372a5e-4884-49ba-85aa-1938733e7041", udp: true}
+- {name: "🇯🇵 日本²", type: "ss", server: "35005.fishportnode.top", port: 35005, cipher: "aes-256-gcm", password: "e0372a5e-4884-49ba-85aa-1938733e7041", udp: true}
+- {name: "🇯🇵 日本³", type: "ss", server: "35007.fishportnode.top", port: 35007, cipher: "aes-256-gcm", password: "e0372a5e-4884-49ba-85aa-1938733e7041", udp: true}
+- {name: "🇯🇵 日本⁴", type: "ss", server: "35006.fishportnode.top", port: 35006, cipher: "aes-256-gcm", password: "e0372a5e-4884-49ba-85aa-1938733e7041", udp: true}
+- {name: "🇸🇬 新加坡¹", type: "ss", server: "35023.fishportnode.top", port: 35023, cipher: "aes-256-gcm", password: "e0372a5e-4884-49ba-85aa-1938733e7041", udp: true}
+- {name: "🇸🇬 新加坡³", type: "ss", server: "35022.fishportnode.top", port: 35022, cipher: "aes-256-gcm", password: "e0372a5e-4884-49ba-85aa-1938733e7041", udp: true}
+- {name: "ɢᴇ 格鲁吉亚", type: "ss", server: "35020.fishportnode.top", port: 35020, cipher: "aes-256-gcm", password: "e0372a5e-4884-49ba-85aa-1938733e7041", udp: true}
+- {name: "🇸🇬 新加坡⁵", type: "ss", server: "35010.fishportnode.top", port: 35010, cipher: "aes-256-gcm", password: "e0372a5e-4884-49ba-85aa-1938733e7041", udp: true}
+- {name: "🇸🇬 新加坡²", type: "ss", server: "35009.fishportnode.top", port: 35009, cipher: "aes-256-gcm", password: "e0372a5e-4884-49ba-85aa-1938733e7041", udp: true}
+- {name: "🇹🇼 台湾¹ Hinet", type: "ss", server: "35014.fishportnode.top", port: 35014, cipher: "aes-256-gcm", password: "e0372a5e-4884-49ba-85aa-1938733e7041", udp: true}
+- {name: "🇹🇼 台湾² Hinet", type: "ss", server: "35011.fishportnode.top", port: 35011, cipher: "aes-256-gcm", password: "e0372a5e-4884-49ba-85aa-1938733e7041", udp: true}
+- {name: "🇹🇼 台湾³ Hinet", type: "ss", server: "35017.fishportnode.top", port: 35017, cipher: "aes-256-gcm", password: "e0372a5e-4884-49ba-85aa-1938733e7041", udp: true}
+- {name: "🇹🇼 台湾⁴ Far EasTone", type: "ss", server: "35015.fishportnode.top", port: 35015, cipher: "aes-256-gcm", password: "e0372a5e-4884-49ba-85aa-1938733e7041", udp: true}
+- {name: "ᴄᴀ 加拿大", type: "ss", server: "35013.fishportnode.top", port: 35013, cipher: "aes-256-gcm", password: "e0372a5e-4884-49ba-85aa-1938733e7041", udp: true}
+- {name: "🇲🇾 马来西亚¹ GBNet", type: "ss", server: "35012.fishportnode.top", port: 35012, cipher: "aes-256-gcm", password: "e0372a5e-4884-49ba-85aa-1938733e7041", udp: true}
+- {name: "🇮🇳 印度¹", type: "ss", server: "35021.fishportnode.top", port: 35021, cipher: "aes-256-gcm", password: "e0372a5e-4884-49ba-85aa-1938733e7041", udp: true}
+- {name: "🇰🇷 韩国¹ SK", type: "ss", server: "35024.fishportnode.top", port: 35024, cipher: "aes-256-gcm", password: "e0372a5e-4884-49ba-85aa-1938733e7041", udp: true}
+- {name: "🇰🇷 韩国²", type: "ss", server: "35029.fishportnode.top", port: 35029, cipher: "aes-256-gcm", password: "e0372a5e-4884-49ba-85aa-1938733e7041", udp: true}
+- {name: "🇺🇸 美国¹", type: "ss", server: "35008.fishportnode.top", port: 35008, cipher: "aes-256-gcm", password: "e0372a5e-4884-49ba-85aa-1938733e7041", udp: true}
+- {name: "🇺🇸 美国²", type: "ss", server: "35016.fishportnode.top", port: 35016, cipher: "aes-256-gcm", password: "e0372a5e-4884-49ba-85aa-1938733e7041", udp: true}
+- {name: "🇺🇸 美国³", type: "ss", server: "35025.fishportnode.top", port: 35025, cipher: "aes-256-gcm", password: "e0372a5e-4884-49ba-85aa-1938733e7041", udp: true}
+- {name: "🇦🇺 澳大利亚¹", type: "ss", server: "35009.fishportnode.top", port: 35009, cipher: "aes-256-gcm", password: "e0372a5e-4884-49ba-85aa-1938733e7041", udp: true}
+- {name: "🇩🇪 德国¹", type: "ss", server: "35028.fishportnode.top", port: 35028, cipher: "aes-256-gcm", password: "e0372a5e-4884-49ba-85aa-1938733e7041", udp: true}
+- {name: "🇬🇧 英国¹", type: "ss", server: "35031.fishportnode.top", port: 35031, cipher: "aes-256-gcm", password: "e0372a5e-4884-49ba-85aa-1938733e7041", udp: true}
+- {name: "🇳🇱 荷兰¹", type: "ss", server: "35039.fishportnode.top", port: 35039, cipher: "aes-256-gcm", password: "e0372a5e-4884-49ba-85aa-1938733e7041", udp: true}
+- {name: "🇹🇷 土耳其¹ Kadir", type: "ss", server: "35030.fishportnode.top", port: 35030, cipher: "aes-256-gcm", password: "e0372a5e-4884-49ba-85aa-1938733e7041", udp: true}
+proxy-groups:
+- name: "PROXY"
+  type: "select"
+  proxies:
+  - "AUTO"
+  - "🇭🇰 香港¹ HGC"
+  - "🇭🇰 香港 BGP IEPL*"
+  - "🇭🇰 香港² HKT"
+  - "🇭🇰 香港³ HKBN"
+  - "🇭🇰 香港⁴ Akari"
+  - "🇯🇵 日本¹"
+  - "🇯🇵 日本²"
+  - "🇯🇵 日本³"
+  - "🇯🇵 日本⁴"
+  - "🇸🇬 新加坡¹"
+  - "🇸🇬 新加坡³"
+  - "ɢᴇ 格鲁吉亚"
+  - "🇸🇬 新加坡⁵"
+  - "🇸🇬 新加坡²"
+  - "🇹🇼 台湾¹ Hinet"
+  - "🇹🇼 台湾² Hinet"
+  - "🇹🇼 台湾³ Hinet"
+  - "🇹🇼 台湾⁴ Far EasTone"
+  - "ᴄᴀ 加拿大"
+  - "🇲🇾 马来西亚¹ GBNet"
+  - "🇮🇳 印度¹"
+  - "🇰🇷 韩国¹ SK"
+  - "🇰🇷 韩国²"
+  - "🇺🇸 美国¹"
+  - "🇺🇸 美国²"
+  - "🇺🇸 美国³"
+  - "🇦🇺 澳大利亚¹"
+  - "🇩🇪 德国¹"
+  - "🇬🇧 英国¹"
+  - "🇳🇱 荷兰¹"
+  - "🇹🇷 土耳其¹ Kadir"
+- name: "AUTO"
+  type: "url-test"
+  url: "http://www.gstatic.com/generate_204"
+  interval: 300
+  tolerance: 50
+  proxies:
+  - "🇭🇰 香港¹ HGC"
+  - "🇭🇰 香港 BGP IEPL*"
+  - "🇭🇰 香港² HKT"
+  - "🇭🇰 香港³ HKBN"
+  - "🇭🇰 香港⁴ Akari"
+  - "🇯🇵 日本¹"
+  - "🇯🇵 日本²"
+  - "🇯🇵 日本³"
+  - "🇯🇵 日本⁴"
+  - "🇸🇬 新加坡¹"
+  - "🇸🇬 新加坡³"
+  - "ɢᴇ 格鲁吉亚"
+  - "🇸🇬 新加坡⁵"
+  - "🇸🇬 新加坡²"
+  - "🇹🇼 台湾¹ Hinet"
+  - "🇹🇼 台湾² Hinet"
+  - "🇹🇼 台湾³ Hinet"
+  - "🇹🇼 台湾⁴ Far EasTone"
+  - "ᴄᴀ 加拿大"
+  - "🇲🇾 马来西亚¹ GBNet"
+  - "🇮🇳 印度¹"
+  - "🇰🇷 韩国¹ SK"
+  - "🇰🇷 韩国²"
+  - "🇺🇸 美国¹"
+  - "🇺🇸 美国²"
+  - "🇺🇸 美国³"
+  - "🇦🇺 澳大利亚¹"
+  - "🇩🇪 德国¹"
+  - "🇬🇧 英国¹"
+  - "🇳🇱 荷兰¹"
+  - "🇹🇷 土耳其¹ Kadir"
+- name: "AI"
+  type: "select"
+  proxies:
+  - "🇭🇰 香港¹ HGC"
+  - "🇭🇰 香港 BGP IEPL*"
+  - "🇭🇰 香港² HKT"
+  - "🇭🇰 香港³ HKBN"
+  - "🇭🇰 香港⁴ Akari"
+  - "🇯🇵 日本¹"
+  - "🇯🇵 日本²"
+  - "🇯🇵 日本³"
+  - "🇯🇵 日本⁴"
+  - "🇸🇬 新加坡¹"
+  - "🇸🇬 新加坡³"
+  - "ɢᴇ 格鲁吉亚"
+  - "🇸🇬 新加坡⁵"
+  - "🇸🇬 新加坡²"
+  - "🇹🇼 台湾¹ Hinet"
+  - "🇹🇼 台湾² Hinet"
+  - "🇹🇼 台湾³ Hinet"
+  - "🇹🇼 台湾⁴ Far EasTone"
+  - "ᴄᴀ 加拿大"
+  - "🇲🇾 马来西亚¹ GBNet"
+  - "🇮🇳 印度¹"
+  - "🇰🇷 韩国¹ SK"
+  - "🇰🇷 韩国²"
+  - "🇺🇸 美国¹"
+  - "🇺🇸 美国²"
+  - "🇺🇸 美国³"
+  - "🇦🇺 澳大利亚¹"
+  - "🇩🇪 德国¹"
+  - "🇬🇧 英国¹"
+  - "🇳🇱 荷兰¹"
+  - "🇹🇷 土耳其¹ Kadir"
+rules:
+- "GEOSITE,CATEGORY-ADS-ALL,REJECT"
+- "DOMAIN-SUFFIX,ushd.xmsl.org,DIRECT"
+- "DOMAIN-SUFFIX,cf.gtlx.org,DIRECT"
+- "DOMAIN-SUFFIX,public-operation-hkrpg-sg.hoyoverse.com,DIRECT"
+- "DOMAIN-SUFFIX,public-operation-hk4e-sg.hoyoverse.com,DIRECT"
+- "DOMAIN-SUFFIX,public-operation-nap-sg.hoyoverse.com,DIRECT"
+- "DST-PORT,23301/22101-22102/20501/21601-21606,DIRECT"
+- "DOMAIN-KEYWORD,hoyoverse.com,PROXY"
+- "GEOSITE,OPENAI,AI"
+- "GEOSITE,GOOGLE-GEMINI,AI"
+- "GEOSITE,GOOGLEFCM,DIRECT"
+- "GEOSITE,PRIVATE,DIRECT"
+- "GEOSITE,CN,DIRECT"
+- "GEOIP,PRIVATE,DIRECT,no-resolve"
+- "GEOIP,CN,DIRECT"
+- "MATCH,PROXY"
