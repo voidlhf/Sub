@@ -68,6 +68,10 @@ proxies:
 - {name: "🇩🇪 德国 2", server: "156.226.175.130", port: 8443, sni: "dg.bailian.uk", up: 1000, down: 1000, skip-cert-verify: false, type: "hysteria2", password: "5dc05e7c-b1f4-4f33-ba85-4abf082902c6"}
 - {name: "🇩🇪 德国 3", server: "156.226.175.130", port: 8443, sni: "dg.bailian.uk", up: 1000, down: 1000, skip-cert-verify: false, type: "hysteria2", password: "5dc05e7c-b1f4-4f33-ba85-4abf082902c6"}
 - {name: "🇩🇪 德国 4", server: "156.226.175.130", port: 8443, sni: "dg.bailian.uk", up: 1000, down: 1000, skip-cert-verify: false, type: "hysteria2", password: "5dc05e7c-b1f4-4f33-ba85-4abf082902c6"}
+- {name: "新加坡 1", server: "47.129.216.24", port: 8443, sni: "xjp.bailian.uk", up: 1000, down: 1000, skip-cert-verify: false, type: "hysteria2", password: "5dc05e7c-b1f4-4f33-ba85-4abf082902c6"}
+- {name: "新加坡 2", server: "47.129.216.24", port: 8443, sni: "xjp.bailian.uk", up: 1000, down: 1000, skip-cert-verify: false, type: "hysteria2", password: "5dc05e7c-b1f4-4f33-ba85-4abf082902c6"}
+- {name: "新加坡 3", server: "47.129.216.24", port: 8443, sni: "xjp.bailian.uk", up: 1000, down: 1000, skip-cert-verify: false, type: "hysteria2", password: "5dc05e7c-b1f4-4f33-ba85-4abf082902c6"}
+- {name: "新加坡 4", server: "47.129.216.24", port: 8443, sni: "xjp.bailian.uk", up: 1000, down: 1000, skip-cert-verify: false, type: "hysteria2", password: "5dc05e7c-b1f4-4f33-ba85-4abf082902c6"}
 proxy-groups:
 - name: "PROXY"
   type: "select"
@@ -88,6 +92,10 @@ proxy-groups:
   - "🇩🇪 德国 2"
   - "🇩🇪 德国 3"
   - "🇩🇪 德国 4"
+  - "新加坡 1"
+  - "新加坡 2"
+  - "新加坡 3"
+  - "新加坡 4"
 - name: "AUTO"
   type: "url-test"
   url: "http://www.gstatic.com/generate_204"
@@ -109,6 +117,10 @@ proxy-groups:
   - "🇩🇪 德国 2"
   - "🇩🇪 德国 3"
   - "🇩🇪 德国 4"
+  - "新加坡 1"
+  - "新加坡 2"
+  - "新加坡 3"
+  - "新加坡 4"
 - name: "AI"
   type: "select"
   proxies:
@@ -127,6 +139,10 @@ proxy-groups:
   - "🇩🇪 德国 2"
   - "🇩🇪 德国 3"
   - "🇩🇪 德国 4"
+  - "新加坡 1"
+  - "新加坡 2"
+  - "新加坡 3"
+  - "新加坡 4"
 rules:
 - "GEOSITE,CATEGORY-ADS-ALL,REJECT"
 - "DOMAIN-SUFFIX,ushd.xmsl.org,DIRECT"
