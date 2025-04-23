@@ -53,10 +53,10 @@ dns:
     - "https://dns.alidns.com/dns-query"
     - "https://doh.pub/dns-query"
 proxies:
-- {name: "剩余流量：969.32 GB", server: "hk.sinqin.net", port: 8080, sni: null, up: null, down: null, skip-cert-verify: false, type: "hysteria2", password: "cd322fc9-713e-4034-bafd-bea2b1723caa"}
-- {name: "距离下次重置剩余：29 天", server: "hk.sinqin.net", port: 8080, sni: null, up: null, down: null, skip-cert-verify: false, type: "hysteria2", password: "cd322fc9-713e-4034-bafd-bea2b1723caa"}
-- {name: "套餐到期：2025-05-22", server: "hk.sinqin.net", port: 8080, sni: null, up: null, down: null, skip-cert-verify: false, type: "hysteria2", password: "cd322fc9-713e-4034-bafd-bea2b1723caa"}
-- {name: "香港", server: "hk.sinqin.net", port: 8080, sni: null, up: null, down: null, skip-cert-verify: false, type: "hysteria2", password: "cd322fc9-713e-4034-bafd-bea2b1723caa"}
+- {name: "剩余流量：968.89 GB", server: "hk.sinqin.net", port: 8080, sni: null, up: 10, down: 10, skip-cert-verify: false, type: "hysteria2", password: "cd322fc9-713e-4034-bafd-bea2b1723caa"}
+- {name: "距离下次重置剩余：29 天", server: "hk.sinqin.net", port: 8080, sni: null, up: 10, down: 10, skip-cert-verify: false, type: "hysteria2", password: "cd322fc9-713e-4034-bafd-bea2b1723caa"}
+- {name: "套餐到期：2025-05-22", server: "hk.sinqin.net", port: 8080, sni: null, up: 10, down: 10, skip-cert-verify: false, type: "hysteria2", password: "cd322fc9-713e-4034-bafd-bea2b1723caa"}
+- {name: "香港", server: "hk.sinqin.net", port: 8080, sni: null, up: 10, down: 10, skip-cert-verify: false, type: "hysteria2", password: "cd322fc9-713e-4034-bafd-bea2b1723caa"}
 - {name: "美国", server: "us.sinqin.net", port: 8080, sni: null, up: null, down: null, skip-cert-verify: false, type: "hysteria2", password: "cd322fc9-713e-4034-bafd-bea2b1723caa"}
 - {name: "英国", server: "uk.sinqin.net", port: 8080, sni: null, up: null, down: null, skip-cert-verify: false, type: "hysteria2", password: "cd322fc9-713e-4034-bafd-bea2b1723caa"}
 - {name: "加拿大", server: "ca.sinqin.net", port: 8080, sni: null, up: null, down: null, skip-cert-verify: false, type: "hysteria2", password: "cd322fc9-713e-4034-bafd-bea2b1723caa"}
@@ -64,12 +64,13 @@ proxies:
 - {name: "法国", server: "fr.sinqin.net", port: 8080, sni: null, up: null, down: null, skip-cert-verify: false, type: "hysteria2", password: "cd322fc9-713e-4034-bafd-bea2b1723caa"}
 - {name: "爱尔兰", server: "ie.sinqin.net", port: 8080, sni: null, up: null, down: null, skip-cert-verify: false, type: "hysteria2", password: "cd322fc9-713e-4034-bafd-bea2b1723caa"}
 - {name: "瑞典", server: "se.sinqin.net", port: 8080, sni: null, up: null, down: null, skip-cert-verify: false, type: "hysteria2", password: "cd322fc9-713e-4034-bafd-bea2b1723caa"}
+- {name: "韩国", server: "kr.sinqin.net", port: 8080, sni: null, up: null, down: null, skip-cert-verify: false, type: "hysteria2", password: "cd322fc9-713e-4034-bafd-bea2b1723caa"}
 proxy-groups:
 - name: "PROXY"
   type: "select"
   proxies:
   - "AUTO"
-  - "剩余流量：969.32 GB"
+  - "剩余流量：968.89 GB"
   - "距离下次重置剩余：29 天"
   - "套餐到期：2025-05-22"
   - "香港"
@@ -80,13 +81,14 @@ proxy-groups:
   - "法国"
   - "爱尔兰"
   - "瑞典"
+  - "韩国"
 - name: "AUTO"
   type: "url-test"
   url: "http://www.gstatic.com/generate_204"
   interval: 300
   tolerance: 50
   proxies:
-  - "剩余流量：969.32 GB"
+  - "剩余流量：968.89 GB"
   - "距离下次重置剩余：29 天"
   - "套餐到期：2025-05-22"
   - "香港"
@@ -97,10 +99,11 @@ proxy-groups:
   - "法国"
   - "爱尔兰"
   - "瑞典"
+  - "韩国"
 - name: "AI"
   type: "select"
   proxies:
-  - "剩余流量：969.32 GB"
+  - "剩余流量：968.89 GB"
   - "距离下次重置剩余：29 天"
   - "套餐到期：2025-05-22"
   - "香港"
@@ -111,6 +114,7 @@ proxy-groups:
   - "法国"
   - "爱尔兰"
   - "瑞典"
+  - "韩国"
 rules:
 - "GEOSITE,CATEGORY-ADS-ALL,REJECT"
 - "DOMAIN-SUFFIX,ushd.xmsl.org,DIRECT"
