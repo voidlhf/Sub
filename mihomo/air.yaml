@@ -53,16 +53,16 @@ dns:
     - "https://dns.alidns.com/dns-query"
     - "https://doh.pub/dns-query"
 proxies:
-- {name: "🏴‍☠️ Netflix/Disney+/油管Premium/ChatGPT", type: "ss", server: "hkdns.webcdn.me", port: 31900, cipher: "chacha20-ietf-poly1305", password: "17995035-415e-422c-8527-6beb8899c054"}
-- {name: "🇨🇳 台湾 - VIP專線", type: "ss", server: "hk-cdn.appscdn.xyz", port: 55100, cipher: "chacha20-ietf-poly1305", password: "17995035-415e-422c-8527-6beb8899c054"}
-- {name: "🏴‍☠️ 更多节点,购买套餐: https://airapp.us", type: "ss", server: "kr-cdn.webcdn.me", port: 55400, cipher: "chacha20-ietf-poly1305", password: "17995035-415e-422c-8527-6beb8899c054"}
-- {name: "🇯🇵 JP - 2x - ChatGPT", type: "ss", server: "jp.webcdn.me", port: 55300, cipher: "chacha20-ietf-poly1305", password: "17995035-415e-422c-8527-6beb8899c054"}
-- {name: "🇺🇸 US - ChatGPT | 住宅IP", type: "ss", server: "usvip.webcdn.me", port: 55001, cipher: "chacha20-ietf-poly1305", password: "17995035-415e-422c-8527-6beb8899c054"}
-- {name: "🇰🇷 韩国", type: "ss", server: "kr-cdn.appscdn.xyz", port: 30015, cipher: "chacha20-ietf-poly1305", password: "17995035-415e-422c-8527-6beb8899c054"}
-- {name: "🇬🇧 UK", type: "ss", server: "uk.webcdn.me", port: 37291, cipher: "chacha20-ietf-poly1305", password: "17995035-415e-422c-8527-6beb8899c054"}
-- {name: "🇸🇬 SG Netflix / Disney 流媒體", type: "ss", server: "sg-cdn.appscdn.xyz", port: 30000, cipher: "chacha20-ietf-poly1305", password: "17995035-415e-422c-8527-6beb8899c054"}
-- {name: "🇬🇧 ChatGPT - GB", type: "ss", server: "ukchat.appscdn.xyz", port: 32002, cipher: "chacha20-ietf-poly1305", password: "17995035-415e-422c-8527-6beb8899c054"}
-- {name: "🇩🇪 德国", type: "ss", server: "de.webcdn.me", port: 30009, cipher: "chacha20-ietf-poly1305", password: "17995035-415e-422c-8527-6beb8899c054"}
+- {type: "ss", server: "hkdns.webcdn.me", port: 31900, cipher: "chacha20-ietf-poly1305", password: "17995035-415e-422c-8527-6beb8899c054", name: "🏴‍☠️ Netflix/Disney+/油管Premium/ChatGPT"}
+- {type: "ss", server: "hk-cdn.appscdn.xyz", port: 55100, cipher: "chacha20-ietf-poly1305", password: "17995035-415e-422c-8527-6beb8899c054", name: "🇨🇳 台湾 - VIP專線"}
+- {type: "ss", server: "kr-cdn.webcdn.me", port: 55400, cipher: "chacha20-ietf-poly1305", password: "17995035-415e-422c-8527-6beb8899c054", name: "🏴‍☠️ 更多节点,购买套餐: https://airapp.us"}
+- {type: "ss", server: "jp.webcdn.me", port: 55300, cipher: "chacha20-ietf-poly1305", password: "17995035-415e-422c-8527-6beb8899c054", name: "🇯🇵 JP - 2x - ChatGPT"}
+- {type: "ss", server: "usvip.webcdn.me", port: 55001, cipher: "chacha20-ietf-poly1305", password: "17995035-415e-422c-8527-6beb8899c054", name: "🇺🇸 US - ChatGPT | 住宅IP"}
+- {type: "ss", server: "kr-cdn.appscdn.xyz", port: 30015, cipher: "chacha20-ietf-poly1305", password: "17995035-415e-422c-8527-6beb8899c054", name: "🇰🇷 韩国"}
+- {type: "ss", server: "uk.webcdn.me", port: 37291, cipher: "chacha20-ietf-poly1305", password: "17995035-415e-422c-8527-6beb8899c054", name: "🇬🇧 UK"}
+- {type: "ss", server: "sg-cdn.appscdn.xyz", port: 30000, cipher: "chacha20-ietf-poly1305", password: "17995035-415e-422c-8527-6beb8899c054", name: "🇸🇬 SG Netflix / Disney 流媒體"}
+- {type: "ss", server: "ukchat.appscdn.xyz", port: 32002, cipher: "chacha20-ietf-poly1305", password: "17995035-415e-422c-8527-6beb8899c054", name: "🇬🇧 ChatGPT - GB"}
+- {type: "ss", server: "de.webcdn.me", port: 30009, cipher: "chacha20-ietf-poly1305", password: "17995035-415e-422c-8527-6beb8899c054", name: "🇩🇪 德国"}
 proxy-groups:
 - name: "PROXY"
   type: "select"
