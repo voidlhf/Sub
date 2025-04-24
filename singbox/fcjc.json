@@ -45,22 +45,17 @@
         "rewrite_ttl": 1
       },
       {
-        "type": "logical",
-        "mode": "or",
-        "rules": [
-          {
-            "clash_mode": "Global"
-          }
-        ],
+        "clash_mode": "Global",
         "server": "dns_proxy"
+      },
+      {
+        "clash_mode": "Direct",
+        "server": "dns_direct"
       },
       {
         "type": "logical",
         "mode": "or",
         "rules": [
-          {
-            "clash_mode": "Direct"
-          },
           {
             "rule_set": [
               "geosite-cn"
@@ -95,7 +90,7 @@
       "password": "cd322fc9-713e-4034-bafd-bea2b1723caa",
       "server": "hk.sinqin.net",
       "server_port": 8080,
-      "tag": "剩余流量：217.04 GB",
+      "tag": "剩余流量：216.36 GB",
       "tls": {
         "enabled": true,
         "insecure": false
@@ -263,7 +258,7 @@
       "default": "auto",
       "outbounds": [
         "auto",
-        "剩余流量：217.04 GB",
+        "剩余流量：216.36 GB",
         "距离下次重置剩余：28 天",
         "套餐到期：2025-05-22",
         "香港",
@@ -281,7 +276,7 @@
       "tag": "auto",
       "type": "urltest",
       "outbounds": [
-        "剩余流量：217.04 GB",
+        "剩余流量：216.36 GB",
         "距离下次重置剩余：28 天",
         "套餐到期：2025-05-22",
         "香港",
@@ -299,7 +294,7 @@
       "tag": "ai",
       "type": "selector",
       "outbounds": [
-        "剩余流量：217.04 GB",
+        "剩余流量：216.36 GB",
         "距离下次重置剩余：28 天",
         "套餐到期：2025-05-22",
         "香港",
@@ -334,6 +329,14 @@
         "strategy": "ipv4_only"
       },
       {
+        "clash_mode": "Global",
+        "outbound": "select"
+      },
+      {
+        "clash_mode": "Direct",
+        "outbound": "direct"
+      },
+      {
         "type": "logical",
         "mode": "or",
         "rules": [
@@ -362,9 +365,6 @@
         "mode": "or",
         "rules": [
           {
-            "clash_mode": "Global"
-          },
-          {
             "domain_keyword": [
               "hoyoverse.com"
             ]
@@ -389,9 +389,6 @@
         "type": "logical",
         "mode": "or",
         "rules": [
-          {
-            "clash_mode": "Direct"
-          },
           {
             "ip_is_private": true
           },

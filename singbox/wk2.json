@@ -45,22 +45,17 @@
         "rewrite_ttl": 1
       },
       {
-        "type": "logical",
-        "mode": "or",
-        "rules": [
-          {
-            "clash_mode": "Global"
-          }
-        ],
+        "clash_mode": "Global",
         "server": "dns_proxy"
+      },
+      {
+        "clash_mode": "Direct",
+        "server": "dns_direct"
       },
       {
         "type": "logical",
         "mode": "or",
         "rules": [
-          {
-            "clash_mode": "Direct"
-          },
           {
             "rule_set": [
               "geosite-cn"
@@ -93,7 +88,7 @@
       "method": "aes-128-gcm",
       "password": "eb8045dc-c90d-4e4b-a685-da02f6318856",
       "server": "us.xn--mes91t7ofgnw.com",
-      "server_port": 20229,
+      "server_port": 20210,
       "tag": "剩余流量：956.16 GB",
       "type": "shadowsocks"
     },
@@ -101,7 +96,7 @@
       "method": "aes-128-gcm",
       "password": "eb8045dc-c90d-4e4b-a685-da02f6318856",
       "server": "us.xn--mes91t7ofgnw.com",
-      "server_port": 20229,
+      "server_port": 20210,
       "tag": "距离下次重置剩余：12 天",
       "type": "shadowsocks"
     },
@@ -109,7 +104,7 @@
       "method": "aes-128-gcm",
       "password": "eb8045dc-c90d-4e4b-a685-da02f6318856",
       "server": "us.xn--mes91t7ofgnw.com",
-      "server_port": 20229,
+      "server_port": 20210,
       "tag": "套餐到期：2025-05-06",
       "type": "shadowsocks"
     },
@@ -117,7 +112,7 @@
       "method": "aes-128-gcm",
       "password": "eb8045dc-c90d-4e4b-a685-da02f6318856",
       "server": "us.xn--mes91t7ofgnw.com",
-      "server_port": 20229,
+      "server_port": 20210,
       "tag": "TG交流群https://t.me/wukongjichang",
       "type": "shadowsocks"
     },
@@ -126,7 +121,7 @@
       "obfs": null,
       "password": "eb8045dc-c90d-4e4b-a685-da02f6318856",
       "server": "hk.xn--mes91t7ofgnw.com",
-      "server_port": 20221,
+      "server_port": 20215,
       "tag": "🇭🇰香港家宽 星河幻境 ✨🌌",
       "tls": {
         "enabled": true,
@@ -140,7 +135,7 @@
       "obfs": null,
       "password": "eb8045dc-c90d-4e4b-a685-da02f6318856",
       "server": "hk.xn--mes91t7ofgnw.com",
-      "server_port": 20230,
+      "server_port": 20286,
       "tag": "🇭🇰香港家宽 流光溢彩 🌃💫",
       "tls": {
         "enabled": true,
@@ -154,7 +149,7 @@
       "obfs": null,
       "password": "eb8045dc-c90d-4e4b-a685-da02f6318856",
       "server": "hk.xn--mes91t7ofgnw.com",
-      "server_port": 20273,
+      "server_port": 20234,
       "tag": "🇭🇰香港家宽 潮韵霓裳 🎶🌈",
       "tls": {
         "enabled": true,
@@ -168,7 +163,7 @@
       "obfs": null,
       "password": "eb8045dc-c90d-4e4b-a685-da02f6318856",
       "server": "hk.xn--mes91t7ofgnw.com",
-      "server_port": 20275,
+      "server_port": 20216,
       "tag": "🇭🇰香港家宽 云帆启航 ☁️⛵",
       "tls": {
         "enabled": true,
@@ -214,7 +209,7 @@
       "obfs": null,
       "password": "eb8045dc-c90d-4e4b-a685-da02f6318856",
       "server": "us.xn--mes91t7ofgnw.com",
-      "server_port": 20266,
+      "server_port": 20243,
       "tag": "🇺🇸美国巨容 光影旖旎 🌴🎬",
       "tls": {
         "enabled": true,
@@ -228,7 +223,7 @@
       "obfs": null,
       "password": "eb8045dc-c90d-4e4b-a685-da02f6318856",
       "server": "us.xn--mes91t7ofgnw.com",
-      "server_port": 20271,
+      "server_port": 20253,
       "tag": "🇺🇸美国巨容 星梦幻城 🌟🏙️",
       "tls": {
         "enabled": true,
@@ -242,7 +237,7 @@
       "obfs": null,
       "password": "eb8045dc-c90d-4e4b-a685-da02f6318856",
       "server": "us.xn--mes91t7ofgnw.com",
-      "server_port": 20217,
+      "server_port": 20204,
       "tag": "🇺🇸美国巨容 风情雅韵 🍂🏙️",
       "tls": {
         "enabled": true,
@@ -256,7 +251,7 @@
       "obfs": null,
       "password": "eb8045dc-c90d-4e4b-a685-da02f6318856",
       "server": "us.xn--mes91t7ofgnw.com",
-      "server_port": 20293,
+      "server_port": 20219,
       "tag": "🇺🇸美国巨容 阳光碧海 🌞🌊",
       "tls": {
         "enabled": true,
@@ -302,7 +297,7 @@
       "obfs": null,
       "password": "eb8045dc-c90d-4e4b-a685-da02f6318856",
       "server": "jp.xn--mes91t7ofgnw.com",
-      "server_port": 20230,
+      "server_port": 20206,
       "tag": "🇯🇵日本低延 樱梦流光 🌸✨",
       "tls": {
         "enabled": true,
@@ -316,7 +311,7 @@
       "obfs": null,
       "password": "eb8045dc-c90d-4e4b-a685-da02f6318856",
       "server": "jp.xn--mes91t7ofgnw.com",
-      "server_port": 20229,
+      "server_port": 20233,
       "tag": "🇯🇵日本低延 古韵流芳 🏯🌺",
       "tls": {
         "enabled": true,
@@ -330,7 +325,7 @@
       "obfs": null,
       "password": "eb8045dc-c90d-4e4b-a685-da02f6318856",
       "server": "jp.xn--mes91t7ofgnw.com",
-      "server_port": 20253,
+      "server_port": 20290,
       "tag": "🇯🇵日本低延 霓虹恋曲 🌆💖",
       "tls": {
         "enabled": true,
@@ -344,7 +339,7 @@
       "obfs": null,
       "password": "eb8045dc-c90d-4e4b-a685-da02f6318856",
       "server": "jp.xn--mes91t7ofgnw.com",
-      "server_port": 20257,
+      "server_port": 20268,
       "tag": "🇯🇵日本低延 雪韵悠然 ❄️🌌",
       "tls": {
         "enabled": true,
@@ -390,7 +385,7 @@
       "obfs": null,
       "password": "eb8045dc-c90d-4e4b-a685-da02f6318856",
       "server": "sg.xn--mes91t7ofgnw.com",
-      "server_port": 20285,
+      "server_port": 20275,
       "tag": "🇸🇬新加坡稳 月映星澜🌙✨",
       "tls": {
         "enabled": true,
@@ -404,7 +399,7 @@
       "obfs": null,
       "password": "eb8045dc-c90d-4e4b-a685-da02f6318856",
       "server": "sg.xn--mes91t7ofgnw.com",
-      "server_port": 20201,
+      "server_port": 20279,
       "tag": "🇸🇬新加坡稳 诗香弄影📜🌸",
       "tls": {
         "enabled": true,
@@ -418,7 +413,7 @@
       "obfs": null,
       "password": "eb8045dc-c90d-4e4b-a685-da02f6318856",
       "server": "sg.xn--mes91t7ofgnw.com",
-      "server_port": 20218,
+      "server_port": 20222,
       "tag": "🇸🇬新加坡稳 彩梦织锦🎨🌺",
       "tls": {
         "enabled": true,
@@ -432,7 +427,7 @@
       "obfs": null,
       "password": "eb8045dc-c90d-4e4b-a685-da02f6318856",
       "server": "sg.xn--mes91t7ofgnw.com",
-      "server_port": 20229,
+      "server_port": 20290,
       "tag": "🇸🇬新加坡稳 翡翠星辰🍃⭐",
       "tls": {
         "enabled": true,
@@ -478,7 +473,7 @@
       "obfs": null,
       "password": "eb8045dc-c90d-4e4b-a685-da02f6318856",
       "server": "uk.xn--mes91t7ofgnw.com",
-      "server_port": 20298,
+      "server_port": 20214,
       "tag": "🇬🇧英国超速 霓虹醉影🌃💫",
       "tls": {
         "enabled": true,
@@ -492,7 +487,7 @@
       "obfs": null,
       "password": "eb8045dc-c90d-4e4b-a685-da02f6318856",
       "server": "uk.xn--mes91t7ofgnw.com",
-      "server_port": 20207,
+      "server_port": 20214,
       "tag": "🇬🇧英国超速 海韵情怀🌊💖",
       "tls": {
         "enabled": true,
@@ -506,7 +501,7 @@
       "obfs": null,
       "password": "eb8045dc-c90d-4e4b-a685-da02f6318856",
       "server": "uk.xn--mes91t7ofgnw.com",
-      "server_port": 20207,
+      "server_port": 20211,
       "tag": "🇬🇧英国超速 梦幻霓裳🌸🌟",
       "tls": {
         "enabled": true,
@@ -520,7 +515,7 @@
       "obfs": null,
       "password": "eb8045dc-c90d-4e4b-a685-da02f6318856",
       "server": "uk.xn--mes91t7ofgnw.com",
-      "server_port": 20297,
+      "server_port": 20212,
       "tag": "🇬🇧英国超速 蓝海吟风🌊🍃",
       "tls": {
         "enabled": true,
@@ -734,6 +729,14 @@
         "strategy": "ipv4_only"
       },
       {
+        "clash_mode": "Global",
+        "outbound": "select"
+      },
+      {
+        "clash_mode": "Direct",
+        "outbound": "direct"
+      },
+      {
         "type": "logical",
         "mode": "or",
         "rules": [
@@ -762,9 +765,6 @@
         "mode": "or",
         "rules": [
           {
-            "clash_mode": "Global"
-          },
-          {
             "domain_keyword": [
               "hoyoverse.com"
             ]
@@ -789,9 +789,6 @@
         "type": "logical",
         "mode": "or",
         "rules": [
-          {
-            "clash_mode": "Direct"
-          },
           {
             "ip_is_private": true
           },

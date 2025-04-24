@@ -45,22 +45,17 @@
         "rewrite_ttl": 1
       },
       {
-        "type": "logical",
-        "mode": "or",
-        "rules": [
-          {
-            "clash_mode": "Global"
-          }
-        ],
+        "clash_mode": "Global",
         "server": "dns_proxy"
+      },
+      {
+        "clash_mode": "Direct",
+        "server": "dns_direct"
       },
       {
         "type": "logical",
         "mode": "or",
         "rules": [
-          {
-            "clash_mode": "Direct"
-          },
           {
             "rule_set": [
               "geosite-cn"
@@ -94,7 +89,7 @@
       "obfs": null,
       "password": "04519bfc-0d67-4000-8c19-0fef8c880cca",
       "server": "youhui-fr.sanguayun.com",
-      "server_port": 55252,
+      "server_port": 59054,
       "tag": "剩余流量：419.06 GB",
       "tls": {
         "enabled": true,
@@ -108,7 +103,7 @@
       "obfs": null,
       "password": "04519bfc-0d67-4000-8c19-0fef8c880cca",
       "server": "youhui-fr.sanguayun.com",
-      "server_port": 55252,
+      "server_port": 59054,
       "tag": "距离下次重置剩余：4 天",
       "tls": {
         "enabled": true,
@@ -122,7 +117,7 @@
       "obfs": null,
       "password": "04519bfc-0d67-4000-8c19-0fef8c880cca",
       "server": "youhui-fr.sanguayun.com",
-      "server_port": 55252,
+      "server_port": 59054,
       "tag": "套餐到期：2025-04-28",
       "tls": {
         "enabled": true,
@@ -136,7 +131,7 @@
       "obfs": null,
       "password": "04519bfc-0d67-4000-8c19-0fef8c880cca",
       "server": "youhui-fr.sanguayun.com",
-      "server_port": 55252,
+      "server_port": 59054,
       "tag": "法国1",
       "tls": {
         "enabled": true,
@@ -150,7 +145,7 @@
       "obfs": null,
       "password": "04519bfc-0d67-4000-8c19-0fef8c880cca",
       "server": "youhui-fr.sanguayun.com",
-      "server_port": 59265,
+      "server_port": 52800,
       "tag": "法国2",
       "tls": {
         "enabled": true,
@@ -164,7 +159,7 @@
       "obfs": null,
       "password": "04519bfc-0d67-4000-8c19-0fef8c880cca",
       "server": "youhui-fr.sanguayun.com",
-      "server_port": 52908,
+      "server_port": 52120,
       "tag": "法国3",
       "tls": {
         "enabled": true,
@@ -178,7 +173,7 @@
       "obfs": null,
       "password": "04519bfc-0d67-4000-8c19-0fef8c880cca",
       "server": "youhui-fr.sanguayun.com",
-      "server_port": 59067,
+      "server_port": 52771,
       "tag": "法国4",
       "tls": {
         "enabled": true,
@@ -192,7 +187,7 @@
       "obfs": null,
       "password": "04519bfc-0d67-4000-8c19-0fef8c880cca",
       "server": "youhui-ca.sanguayun.com",
-      "server_port": 58490,
+      "server_port": 53990,
       "tag": "加拿大1",
       "tls": {
         "enabled": true,
@@ -206,7 +201,7 @@
       "obfs": null,
       "password": "04519bfc-0d67-4000-8c19-0fef8c880cca",
       "server": "youhui-ca.sanguayun.com",
-      "server_port": 56555,
+      "server_port": 53164,
       "tag": "加拿大2",
       "tls": {
         "enabled": true,
@@ -220,7 +215,7 @@
       "obfs": null,
       "password": "04519bfc-0d67-4000-8c19-0fef8c880cca",
       "server": "youhui-ca.sanguayun.com",
-      "server_port": 54971,
+      "server_port": 50700,
       "tag": "加拿大3",
       "tls": {
         "enabled": true,
@@ -234,7 +229,7 @@
       "obfs": null,
       "password": "04519bfc-0d67-4000-8c19-0fef8c880cca",
       "server": "youhui-ca.sanguayun.com",
-      "server_port": 58794,
+      "server_port": 58892,
       "tag": "加拿大4",
       "tls": {
         "enabled": true,
@@ -248,7 +243,7 @@
       "obfs": null,
       "password": "04519bfc-0d67-4000-8c19-0fef8c880cca",
       "server": "youhui-iq.sanguayun.com",
-      "server_port": 50481,
+      "server_port": 56883,
       "tag": "伊拉克1",
       "tls": {
         "enabled": true,
@@ -262,7 +257,7 @@
       "obfs": null,
       "password": "04519bfc-0d67-4000-8c19-0fef8c880cca",
       "server": "youhui-iq.sanguayun.com",
-      "server_port": 59992,
+      "server_port": 56384,
       "tag": "伊拉克2",
       "tls": {
         "enabled": true,
@@ -276,7 +271,7 @@
       "obfs": null,
       "password": "04519bfc-0d67-4000-8c19-0fef8c880cca",
       "server": "youhui-iq.sanguayun.com",
-      "server_port": 53378,
+      "server_port": 55991,
       "tag": "伊拉克3",
       "tls": {
         "enabled": true,
@@ -290,7 +285,7 @@
       "obfs": null,
       "password": "04519bfc-0d67-4000-8c19-0fef8c880cca",
       "server": "youhui-iq.sanguayun.com",
-      "server_port": 52390,
+      "server_port": 54721,
       "tag": "伊拉克4",
       "tls": {
         "enabled": true,
@@ -304,7 +299,7 @@
       "obfs": null,
       "password": "04519bfc-0d67-4000-8c19-0fef8c880cca",
       "server": "youhui-us.sanguayun.com",
-      "server_port": 56025,
+      "server_port": 53696,
       "tag": "美国1",
       "tls": {
         "enabled": true,
@@ -318,7 +313,7 @@
       "obfs": null,
       "password": "04519bfc-0d67-4000-8c19-0fef8c880cca",
       "server": "youhui-us.sanguayun.com",
-      "server_port": 52065,
+      "server_port": 56973,
       "tag": "美国2",
       "tls": {
         "enabled": true,
@@ -332,7 +327,7 @@
       "obfs": null,
       "password": "04519bfc-0d67-4000-8c19-0fef8c880cca",
       "server": "youhui-us.sanguayun.com",
-      "server_port": 51939,
+      "server_port": 54841,
       "tag": "美国3",
       "tls": {
         "enabled": true,
@@ -346,7 +341,7 @@
       "obfs": null,
       "password": "04519bfc-0d67-4000-8c19-0fef8c880cca",
       "server": "youhui-us.sanguayun.com",
-      "server_port": 59640,
+      "server_port": 52945,
       "tag": "美国4",
       "tls": {
         "enabled": true,
@@ -453,6 +448,14 @@
         "strategy": "ipv4_only"
       },
       {
+        "clash_mode": "Global",
+        "outbound": "select"
+      },
+      {
+        "clash_mode": "Direct",
+        "outbound": "direct"
+      },
+      {
         "type": "logical",
         "mode": "or",
         "rules": [
@@ -481,9 +484,6 @@
         "mode": "or",
         "rules": [
           {
-            "clash_mode": "Global"
-          },
-          {
             "domain_keyword": [
               "hoyoverse.com"
             ]
@@ -508,9 +508,6 @@
         "type": "logical",
         "mode": "or",
         "rules": [
-          {
-            "clash_mode": "Direct"
-          },
           {
             "ip_is_private": true
           },
