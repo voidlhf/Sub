@@ -53,6 +53,7 @@ dns:
     - "https://dns.alidns.com/dns-query"
     - "https://doh.pub/dns-query"
 proxies:
+- {name: "🇭🇰HK LITE 1.5X 1", type: "ss", server: "ore.zenovz.xyz", port: 58175, cipher: "chacha20-ietf-poly1305", password: "d40004e8-ac7a-45ad-9758-c28ec47129d6", udp: true}
 - {name: "🇭🇰香港福利 1X", type: "ss", server: "ore.zenovz.xyz", port: 31758, cipher: "chacha20-ietf-poly1305", password: "d40004e8-ac7a-45ad-9758-c28ec47129d6", udp: true}
 - {name: "🇭🇰香港福利 02 1X", type: "ss", server: "ore.zenovz.xyz", port: 15046, cipher: "chacha20-ietf-poly1305", password: "d40004e8-ac7a-45ad-9758-c28ec47129d6", udp: true}
 - {name: "🇭🇰香港福利 03 1X", type: "ss", server: "ore.zenovz.xyz", port: 56412, cipher: "chacha20-ietf-poly1305", password: "d40004e8-ac7a-45ad-9758-c28ec47129d6", udp: true}
@@ -152,6 +153,7 @@ proxy-groups:
   type: "select"
   proxies:
   - "AUTO"
+  - "🇭🇰HK LITE 1.5X 1"
   - "🇭🇰香港福利 1X"
   - "🇭🇰香港福利 02 1X"
   - "🇭🇰香港福利 03 1X"
@@ -252,6 +254,7 @@ proxy-groups:
   interval: 300
   tolerance: 50
   proxies:
+  - "🇭🇰HK LITE 1.5X 1"
   - "🇭🇰香港福利 1X"
   - "🇭🇰香港福利 02 1X"
   - "🇭🇰香港福利 03 1X"
@@ -349,6 +352,7 @@ proxy-groups:
 - name: "AI"
   type: "select"
   proxies:
+  - "🇭🇰HK LITE 1.5X 1"
   - "🇭🇰香港福利 1X"
   - "🇭🇰香港福利 02 1X"
   - "🇭🇰香港福利 03 1X"
