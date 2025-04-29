@@ -53,64 +53,37 @@ dns:
     - "https://dns.alidns.com/dns-query"
     - "https://doh.pub/dns-query"
 proxies:
-- name: "🇨🇳|4-28🍯@xkmfjd|台湾 02"
-  type: "trojan"
-  server: "108.165.152.130"
-  port: 2083
-  network: "ws"
-  tls: false
-  password: "Aimer"
-  skip-cert-verify: false
-  ws-opts:
-    headers: {}
-  ip-version: "dual"
-- name: "🇺🇸|4-28🍯@xkmfjd|美国 01"
-  type: "vmess"
-  server: "s4.db-link02.top"
-  port: 2082
-  uuid: "4b36625c-b9d9-3ea6-aed5-86d62c70e16d"
-  network: "ws"
-  tls: false
-  ip-version: "dual"
-  alterId: 0
-  cipher: "auto"
 - name: "🇺🇸|4-28🍯@xkmfjd|美国 02"
   type: "trojan"
-  server: "172.67.219.196"
+  server: "172.67.214.21"
   port: 443
   network: "ws"
   tls: true
-  password: "53249200-30ff-436f-a032-0bb00605f8f9"
-  sni: "3derty.852224.dpdns.org"
+  password: "fefba36d-5142-42f1-b14d-db5249511d93"
+  sni: "5re.191268.xyz"
+  alpn:
+  - "http/1.1"
   skip-cert-verify: false
   ws-opts:
-    path: "/YPTDHLX8qjvTU5JqXZxjQ5ILc"
-    headers:
-      host: "3derty.852224.dpdns.org"
+    path: "/BFBuPh4SuxTxCwkqKrjE"
+    headers: {}
   ip-version: "dual"
-- name: "🇺🇸|4-28🍯@xkmfjd|美国 04"
-  type: "vmess"
-  server: "yymg18.haibo168.com"
+- name: "🇺🇸|4-28🍯@xkmfjd|美国 03"
+  type: "trojan"
+  server: "104.21.42.250"
   port: 443
-  uuid: "5fc5106c-2ada-4481-a5df-608d66f7eda0"
   network: "ws"
   tls: true
-  servername: "yymg18.haibo168.com"
-  skip-cert-verify: true
+  password: "fefba36d-5142-42f1-b14d-db5249511d93"
+  sni: "5re.191268.xyz"
+  alpn:
+  - "http/1.1"
+  skip-cert-verify: false
+  ws-opts:
+    path: "/BFBuPh4SuxTxCwkqKrjE"
+    headers: {}
   ip-version: "dual"
-  alterId: 0
-  cipher: "auto"
-- name: "🇺🇸|4-28🍯@xkmfjd|美国 05"
-  type: "hysteria2"
-  server: "108.181.5.130"
-  port: 65232
-  tls: true
-  password: "dongtaiwang.com"
-  sni: "apple.com"
-  skip-cert-verify: true
-  fast-open: false
-  ip-version: "dual"
-- name: "🇺🇸|4-28🍯@xkmfjd|美国 06"
+- name: "🇺🇸|4-28🍯@xkmfjd|美国 04"
   type: "hysteria"
   server: "208.87.243.151"
   port: 17549
@@ -122,7 +95,91 @@ proxies:
   down: "50"
   skip-cert-verify: true
   ip-version: "dual"
-- name: "🇺🇸|4-28🍯@xkmfjd|美国 08"
+- name: "🇺🇸|4-28🍯%40xkmfjd|美国 05"
+  type: "ss"
+  server: "212.102.47.129"
+  port: 443
+  tls: false
+  password: "shadowsocks"
+  ip-version: "dual"
+  cipher: "aes-128-gcm"
+- name: "🇺🇸|4-28🍯%40xkmfjd|美国 06"
+  type: "ss"
+  server: "156.146.38.170"
+  port: 443
+  tls: false
+  password: "shadowsocks"
+  ip-version: "dual"
+  cipher: "aes-128-gcm"
+- name: "🇺🇸|4-28🍯%40xkmfjd|美国 08"
+  type: "ss"
+  server: "184.170.241.194"
+  port: 443
+  tls: false
+  password: "shadowsocks"
+  ip-version: "dual"
+  cipher: "aes-128-cfb"
+- name: "🇺🇸|4-28🍯%40xkmfjd|美国 09"
+  type: "ss"
+  server: "156.146.38.169"
+  port: 443
+  tls: false
+  password: "shadowsocks"
+  ip-version: "dual"
+  cipher: "aes-128-gcm"
+- name: "🇺🇸|4-28🍯%40xkmfjd|美国 07"
+  type: "ss"
+  server: "173.244.56.6"
+  port: 443
+  tls: false
+  password: "shadowsocks"
+  ip-version: "dual"
+  cipher: "aes-128-gcm"
+- name: "🇺🇸|4-28🍯%40xkmfjd|美国 10"
+  type: "ss"
+  server: "37.19.198.244"
+  port: 443
+  tls: false
+  password: "shadowsocks"
+  ip-version: "dual"
+  cipher: "aes-128-gcm"
+- name: "🇺🇸|4-28🍯%40xkmfjd|美国 11"
+  type: "ss"
+  server: "156.146.38.168"
+  port: 443
+  tls: false
+  password: "shadowsocks"
+  ip-version: "dual"
+  cipher: "aes-128-gcm"
+- name: "🇺🇸|4-28🍯%40xkmfjd|美国 12"
+  type: "ss"
+  server: "37.19.198.160"
+  port: 443
+  tls: false
+  password: "shadowsocks"
+  ip-version: "dual"
+  cipher: "aes-128-gcm"
+- name: "🇺🇸|4-28🍯@xkmfjd|美国 13"
+  type: "vmess"
+  server: "1743919941.tencentapp.cn"
+  port: 2096
+  uuid: "3bb3c730-e107-49c5-a0b2-b576d1b26a5e"
+  network: "ws"
+  tls: true
+  servername: "1743919941.tencentapp.cn"
+  skip-cert-verify: true
+  ip-version: "dual"
+  alterId: 0
+  cipher: "auto"
+- name: "🇺🇸|4-28🍯%40xkmfjd|美国 14"
+  type: "ss"
+  server: "51.81.34.62"
+  port: 18846
+  tls: false
+  password: "4404245ed8c34398"
+  ip-version: "dual"
+  cipher: "chacha20-ietf-poly1305"
+- name: "🇺🇸|4-28🍯@xkmfjd|美国 15"
   type: "trojan"
   server: "104.21.24.172"
   port: 443
@@ -133,242 +190,62 @@ proxies:
   skip-cert-verify: false
   ws-opts:
     path: "/YPTDHLX8qjvTU5JqXZxjQ5ILc"
-    headers: {}
+    headers:
+      host: "3derty.852224.dpdns.org"
   ip-version: "dual"
-- name: "🇺🇸|4-28🍯%40xkmfjd|美国 09"
-  type: "ss"
-  server: "51.81.34.62"
-  port: 18846
-  tls: false
-  password: "4404245ed8c34398"
-  ip-version: "dual"
-  cipher: "chacha20-ietf-poly1305"
-- name: "🇺🇸|4-28🍯@xkmfjd|美国 07"
-  type: "vmess"
-  server: "uswuxian.pai50288.uk"
-  port: 8443
-  uuid: "c313606f-98c2-4d7b-ba74-48b94f61b11d"
-  network: "ws"
+- name: "🇺🇸|4-28🍯@xkmfjd|美国 16"
+  type: "hysteria2"
+  server: "64.181.204.186"
+  port: 47262
   tls: true
-  servername: "uswuxian.pai50288.uk"
+  password: "b72ba5d5-2d5e-45b7-93b5-236d343baa7c"
+  sni: "www.bing.com"
   skip-cert-verify: true
+  fast-open: false
   ip-version: "dual"
-  alterId: 0
-  cipher: "auto"
-- name: "🇺🇸|4-28🍯%40xkmfjd|美国 10"
-  type: "ss"
-  server: "135.148.11.54"
-  port: 1080
-  tls: false
-  password: "fk_91bifUJx9dQcp2FSgvg"
-  ip-version: "dual"
-  cipher: "chacha20-ietf-poly1305"
-- name: "🇺🇸|4-28🍯@xkmfjd|美国 11"
-  type: "vmess"
-  server: "uswuxian.pai50288.uk"
-  port: 8443
-  uuid: "c313606f-98c2-4d7b-ba74-48b94f61b11d"
-  network: "ws"
+- name: "🇺🇸|4-28🍯@xkmfjd|美国 17"
+  type: "hysteria2"
+  server: "108.181.5.130"
+  port: 65232
   tls: true
-  servername: "uswuxian.pai50288.uk"
+  password: "dongtaiwang.com"
+  sni: "apple.com"
   skip-cert-verify: true
+  fast-open: false
   ip-version: "dual"
-  alterId: 0
-  cipher: "auto"
-- name: "🇺🇸|4-28🍯%40xkmfjd|美国 12"
-  type: "ss"
-  server: "15.204.67.100"
-  port: 18742
-  tls: false
-  password: "49d3da01faa57548"
-  ip-version: "dual"
-  cipher: "chacha20-ietf-poly1305"
-- name: "🇺🇸|4-28🍯@xkmfjd|美国 13"
-  type: "vmess"
-  server: "38.102.235.36"
-  port: 23602
-  uuid: "18b3b300-7bc4-4ee6-8806-dbde3bba84ac"
-  network: "tcp"
-  tls: false
-  ip-version: "dual"
-  alterId: 0
-  cipher: "auto"
-- name: "🇺🇸|4-28🍯%40xkmfjd|美国 14"
-  type: "ss"
-  server: "156.146.38.170"
-  port: 443
-  tls: false
-  password: "shadowsocks"
-  ip-version: "dual"
-  cipher: "aes-128-gcm"
-- name: "🇺🇸|4-28🍯%40xkmfjd|美国 15"
-  type: "ss"
-  server: "156.146.38.169"
-  port: 443
-  tls: false
-  password: "shadowsocks"
-  ip-version: "dual"
-  cipher: "aes-128-gcm"
-- name: "🇺🇸|4-28🍯%40xkmfjd|美国 16"
-  type: "ss"
-  server: "37.19.198.160"
-  port: 443
-  tls: false
-  password: "shadowsocks"
-  ip-version: "dual"
-  cipher: "aes-128-gcm"
-- name: "🇺🇸|4-28🍯%40xkmfjd|美国 17"
-  type: "ss"
-  server: "37.19.198.236"
-  port: 443
-  tls: false
-  password: "shadowsocks"
-  ip-version: "dual"
-  cipher: "aes-128-gcm"
-- name: "🇺🇸|4-28🍯%40xkmfjd|美国 18"
-  type: "ss"
-  server: "212.102.47.129"
-  port: 443
-  tls: false
-  password: "shadowsocks"
-  ip-version: "dual"
-  cipher: "aes-128-gcm"
-- name: "🇺🇸|4-28🍯%40xkmfjd|美国 19"
-  type: "ss"
-  server: "173.244.56.9"
-  port: 443
-  tls: false
-  password: "shadowsocks"
-  ip-version: "dual"
-  cipher: "aes-128-gcm"
-- name: "🇺🇸|4-28🍯%40xkmfjd|美国 20"
-  type: "ss"
-  server: "37.19.198.243"
-  port: 443
-  tls: false
-  password: "shadowsocks"
-  ip-version: "dual"
-  cipher: "aes-128-gcm"
-- name: "🇺🇸|4-28🍯%40xkmfjd|美国 21"
-  type: "ss"
-  server: "156.146.38.168"
-  port: 443
-  tls: false
-  password: "shadowsocks"
-  ip-version: "dual"
-  cipher: "aes-128-gcm"
-- name: "🇺🇸|4-28🍯%40xkmfjd|美国 22"
-  type: "ss"
-  server: "37.19.198.244"
-  port: 443
-  tls: false
-  password: "shadowsocks"
-  ip-version: "dual"
-  cipher: "aes-128-gcm"
-- name: "🇺🇸|4-28🍯%40xkmfjd|美国 23"
-  type: "ss"
-  server: "212.102.47.131"
-  port: 443
-  tls: false
-  password: "shadowsocks"
-  ip-version: "dual"
-  cipher: "aes-128-gcm"
-- name: "🇺🇸|4-28🍯%40xkmfjd|美国 24"
-  type: "ss"
-  server: "173.244.56.6"
-  port: 443
-  tls: false
-  password: "shadowsocks"
-  ip-version: "dual"
-  cipher: "aes-128-gcm"
-- name: "🇺🇸|4-28🍯@xkmfjd|美国 25"
-  type: "trojan"
-  server: "us.blazeppn.info"
-  port: 443
-  network: "tcp"
+- name: "🇺🇸|4-28🍯@xkmfjd|美国 18"
+  type: "hysteria2"
+  server: "2ef15a2a-svi800-sw77c8-dnss.la.shifen.uk"
+  port: 1443
   tls: true
-  password: "xxoo"
-  sni: "us.blazeppn.info"
+  password: "16955d72-1794-11f0-a035-f23c95b6f51d"
+  sni: "2ef15a2a-svi800-sw77c8-dnss.la.shifen.uk"
   skip-cert-verify: false
+  fast-open: false
   ip-version: "dual"
-- name: "🇺🇸|4-28🍯%40xkmfjd|美国 26"
-  type: "ss"
-  server: "156.146.38.167"
+- name: "🇺🇸|4-28🍯@xkmfjd|美国 21"
+  type: "vmess"
+  server: "7fa54343-7c0a-45c9.2031.pp.ua"
   port: 443
-  tls: false
-  password: "shadowsocks"
+  uuid: "15b24b56-d667-4fa8-b548-f3dc942fb461"
+  network: "ws"
+  tls: true
+  servername: "7fa54343-7c0a-45c9.2031.pp.ua"
+  skip-cert-verify: true
   ip-version: "dual"
-  cipher: "aes-128-gcm"
+  alterId: 0
+  cipher: "auto"
+- name: "🇺🇸|4-28🍯@xkmfjd|美国 22"
+  type: "vmess"
+  server: "15.204.249.0"
+  port: 48160
+  uuid: "5b113c12-4dd4-4bb5-9c01-cff092b559e3"
+  network: "tcp"
+  tls: false
+  ip-version: "dual"
+  alterId: 0
+  cipher: "auto"
 - name: "🇺🇸|4-28🍯@xkmfjd|美国 27"
-  type: "vmess"
-  server: "104.18.118.195"
-  port: 8443
-  uuid: "3bb3c730-e107-49c5-a0b2-b576d1b26a5e"
-  network: "ws"
-  tls: true
-  servername: "1743919978.speed.zjgza.cccp.freefly.pp.ua"
-  skip-cert-verify: true
-  ip-version: "dual"
-  alterId: 0
-  cipher: "auto"
-- name: "🇺🇸|4-28🍯%40xkmfjd|美国 36"
-  type: "ss"
-  server: "79.110.53.169"
-  port: 8080
-  tls: false
-  password: "14fFPrbezE3HDZzsMOr6"
-  ip-version: "dual"
-  cipher: "rc4-md5"
-- name: "🇺🇸|4-28🍯@xkmfjd|美国 37"
-  type: "trojan"
-  server: "104.17.148.22"
-  port: 443
-  network: "ws"
-  tls: true
-  password: "redfree8"
-  sni: "ipsychO.SUEx12.Ir"
-  alpn:
-  - "h2"
-  - "http/1.1"
-  skip-cert-verify: false
-  client-fingerprint: "chrome"
-  ws-opts:
-    path: "/trre5IzbZ9IZZMddtw?ed=2560"
-    headers: {}
-  ip-version: "dual"
-- name: "🇺🇸|4-28🍯@xkmfjd|美国 43"
-  type: "vmess"
-  server: "185.146.173.158"
-  port: 443
-  uuid: "950db6aa-4926-4616-816e-ec0312dcb87b"
-  network: "ws"
-  tls: true
-  servername: "jahfkjha.cfd"
-  skip-cert-verify: true
-  ip-version: "dual"
-  alterId: 0
-  cipher: "auto"
-- name: "🇺🇸|4-28🍯@xkmfjd|美国 44"
-  type: "vmess"
-  server: "15.204.248.92"
-  port: 30562
-  uuid: "82466715-6a58-4046-a363-a0d18e5b2ab4"
-  network: "tcp"
-  tls: false
-  ip-version: "dual"
-  alterId: 0
-  cipher: "auto"
-- name: "🇺🇸|4-28🍯@xkmfjd|美国 51"
-  type: "vmess"
-  server: "129.80.199.239"
-  port: 17099
-  uuid: "e062b217-5b1d-4bfe-b1fe-c1bd8fd44861"
-  network: "tcp"
-  tls: false
-  ip-version: "dual"
-  alterId: 0
-  cipher: "auto"
-- name: "🇺🇸|4-28🍯@xkmfjd|美国 53"
   type: "vmess"
   server: "5.180.30.110"
   port: 51352
@@ -378,27 +255,46 @@ proxies:
   ip-version: "dual"
   alterId: 0
   cipher: "auto"
-- name: "🇺🇸|4-28🍯@xkmfjd|美国 58"
-  type: "vmess"
-  server: "5.180.30.85"
-  port: 18598
-  uuid: "bf26f2fb-9d2a-49b6-8527-82e8aba3a9a9"
-  network: "tcp"
-  tls: false
-  ip-version: "dual"
-  alterId: 0
-  cipher: "auto"
-- name: "🇷🇺|4-28🍯@xkmfjd|俄罗斯 01"
-  type: "hysteria2"
-  server: "hy2.694463.xyz"
-  port: 10011
+- name: "🇺🇸|4-28🍯@xkmfjd|美国 30"
+  type: "trojan"
+  server: "104.21.57.88"
+  port: 443
+  network: "ws"
   tls: true
-  password: "dongtaiwang.com"
-  sni: "www.bing.com"
+  password: "072f4db4-d89d-420d-9d9e-045ed8d5c9cc"
+  sni: "10tyu.iran.pp.ua"
+  alpn:
+  - "http/1.1"
   skip-cert-verify: true
-  fast-open: false
+  ws-opts:
+    path: "/VEP415T5mby2DulPWRIwOavJd"
+    headers: {}
   ip-version: "dual"
-- name: "🇺🇸|4-28🍯@xkmfjd|美国 60"
+- name: "🇺🇸|4-28🍯@xkmfjd|美国 33"
+  type: "trojan"
+  server: "104.21.80.1"
+  port: 443
+  network: "ws"
+  tls: true
+  password: "ad4a124c-12fb-4467-9ad0-dc6d9b509ac0"
+  sni: "7bhui.191262.xyz"
+  alpn:
+  - "http/1.1"
+  skip-cert-verify: false
+  client-fingerprint: "chrome"
+  ws-opts:
+    path: "/wGgR8FyAGgRCKSiyxgvJgLl"
+    headers: {}
+  ip-version: "dual"
+- name: "🇺🇸|4-28🍯%40xkmfjd|美国 41"
+  type: "ss"
+  server: "217.77.3.18"
+  port: 40745
+  tls: false
+  password: "a1b9c415cf56df95"
+  ip-version: "dual"
+  cipher: "chacha20-ietf-poly1305"
+- name: "🇺🇸|4-28🍯@xkmfjd|美国 51"
   type: "trojan"
   server: "104.21.96.1"
   port: 443
@@ -413,23 +309,17 @@ proxies:
     path: "/4p35eUnmGxQ8YJFJxz"
     headers: {}
   ip-version: "dual"
-- name: "🇺🇸|4-28🍯%40xkmfjd|美国 62"
-  type: "ss"
-  server: "217.77.3.18"
-  port: 40745
+- name: "🇺🇸|4-28🍯@xkmfjd|美国 54"
+  type: "vmess"
+  server: "51.81.203.57"
+  port: 28860
+  uuid: "1784497d-03a1-40bb-bb8b-de4ffac7c59c"
+  network: "tcp"
   tls: false
-  password: "a1b9c415cf56df95"
   ip-version: "dual"
-  cipher: "chacha20-ietf-poly1305"
-- name: "🇺🇸|4-28🍯%40xkmfjd|美国 63"
-  type: "ss"
-  server: "23.251.121.242"
-  port: 8080
-  tls: false
-  password: "14fFPrbezE3HDZzsMOr6"
-  ip-version: "dual"
-  cipher: "rc4-md5"
-- name: "🇺🇸|4-28🍯%40xkmfjd|美国 65"
+  alterId: 0
+  cipher: "auto"
+- name: "🇺🇸|4-28🍯%40xkmfjd|美国 55"
   type: "ss"
   server: "138.199.42.68"
   port: 8080
@@ -437,138 +327,6 @@ proxies:
   password: "14fFPrbezE3HDZzsMOr6"
   ip-version: "dual"
   cipher: "rc4-md5"
-- name: "🇺🇸|4-28🍯@xkmfjd|美国 69"
-  type: "vmess"
-  server: "9x.938.pp.ua"
-  port: 443
-  uuid: "906ba92f-ef96-4133-8eee-f33202a5a721"
-  network: "ws"
-  tls: true
-  servername: "9x.938.pp.ua"
-  skip-cert-verify: true
-  ip-version: "dual"
-  alterId: 0
-  cipher: "auto"
-- name: "🇺🇸|4-28🍯@xkmfjd|美国 70"
-  type: "trojan"
-  server: "104.21.96.1"
-  port: 443
-  network: "ws"
-  tls: true
-  password: "ad4a124c-12fb-4467-9ad0-dc6d9b509ac0"
-  sni: "7nnn.191262.xyz"
-  skip-cert-verify: false
-  client-fingerprint: "chrome"
-  ws-opts:
-    path: "/wGgR8FyAGgRCKSiyxgvJgLl"
-    headers:
-      host: "7nnn.191262.xyz"
-  ip-version: "dual"
-- name: "🇺🇸|4-28🍯@xkmfjd|美国 72"
-  type: "trojan"
-  server: "183.2.150.64"
-  port: 33506
-  network: "tcp"
-  tls: true
-  password: "60237717-3b36-4f70-af10-ce630d3382c6"
-  sni: "q08m.vgraxiw73s.hasyaf.cn"
-  skip-cert-verify: false
-  client-fingerprint: "chrome"
-  ip-version: "dual"
-- name: "🇬🇧|4-28🍯@xkmfjd|英国 02"
-  type: "vmess"
-  server: "37.221.125.159"
-  port: 33940
-  uuid: "353e0787-71bc-442d-9c9d-902f90359eb5"
-  network: "tcp"
-  tls: false
-  ip-version: "dual"
-  alterId: 0
-  cipher: "auto"
-- name: "🇭🇰|4-28🍯@xkmfjd|香港 01"
-  type: "trojan"
-  server: "183.232.235.2"
-  port: 8313
-  network: "tcp"
-  tls: true
-  password: "2c605663-b89a-5734-a9d6-97d4743d72cf"
-  sni: "hk-13-568.flztjc.net"
-  skip-cert-verify: true
-  ip-version: "dual"
-- name: "🇰🇷|4-28🍯%40xkmfjd|韩国 01"
-  type: "ss"
-  server: "@@p222.panda001.net"
-  port: 15098
-  tls: false
-  password: "qwerREWQ"
-  ip-version: "dual"
-  cipher: "aes-256-cfb"
-- name: "🇨🇭|4-28🍯%40xkmfjd|瑞士 04"
-  type: "ss"
-  server: "204.136.10.115"
-  port: 1866
-  tls: false
-  password: "oXGp1+ihlfKg826H"
-  ip-version: "dual"
-  cipher: "chacha20-ietf-poly1305"
-- name: "🇨🇭|4-28🍯@xkmfjd|瑞士 05"
-  type: "vmess"
-  server: "186.190.215.93"
-  port: 22324
-  uuid: "04621bae-ab36-11ec-b909-0242ac120002"
-  network: "tcp"
-  tls: false
-  ip-version: "dual"
-  alterId: 0
-  cipher: "auto"
-- name: "🇩🇪|4-28🍯@xkmfjd|德国 01"
-  type: "vmess"
-  server: "57.129.64.238"
-  port: 443
-  uuid: "03fcc618-b93d-6796-6aed-8a38c975d581"
-  network: "ws"
-  tls: true
-  servername: "kapelleng.com"
-  skip-cert-verify: true
-  ip-version: "dual"
-  alterId: 0
-  cipher: "auto"
-- name: "🇩🇪|4-28🍯@xkmfjd|德国 04"
-  type: "trojan"
-  server: "104.26.5.60"
-  port: 443
-  network: "ws"
-  tls: true
-  password: "bpb-trojan"
-  sni: "zamim340.ggff.net"
-  skip-cert-verify: false
-  client-fingerprint: "chrome"
-  ws-opts:
-    path: "/tr?ed=2560"
-    headers: {}
-  ip-version: "dual"
-- name: "🇩🇪|4-28🍯@xkmfjd|德国 05"
-  type: "trojan"
-  server: "162.159.152.2"
-  port: 443
-  network: "ws"
-  tls: true
-  password: "bpb-trojan"
-  sni: "zamim340.ggff.net"
-  skip-cert-verify: false
-  ws-opts:
-    path: "/tr?ed=2560"
-    headers:
-      host: "zamim340.ggff.net"
-  ip-version: "dual"
-- name: "🇫🇷|4-28🍯%40xkmfjd|法国 04"
-  type: "ss"
-  server: "62.210.88.22"
-  port: 443
-  tls: false
-  password: "gtnazdaHshXZoXUKGCj1KR"
-  ip-version: "dual"
-  cipher: "chacha20-ietf-poly1305"
 - name: "🇳🇱|4-28🍯@xkmfjd|荷兰 01"
   type: "vmess"
   server: "0:0:0:0:0:ffff:9df5:4c61"
@@ -579,17 +337,59 @@ proxies:
   ip-version: "dual"
   alterId: 0
   cipher: "auto"
-- name: "🇳🇱|4-28🍯@xkmfjd|荷兰 02"
+- name: "🇺🇸|4-28🍯@xkmfjd|美国 57"
   type: "vmess"
-  server: "45.12.145.111"
-  port: 46290
-  uuid: "1b41153e-c4d4-431b-83eb-10472f869f93"
-  network: "tcp"
-  tls: false
+  server: "141.101.121.127"
+  port: 2053
+  uuid: "381cb6d1-6ad4-4909-8494-b8d786cf78ce"
+  network: "ws"
+  tls: true
+  servername: "1744007578.speed.mamha.cccp.freefly.pp.ua"
+  skip-cert-verify: true
   ip-version: "dual"
   alterId: 0
   cipher: "auto"
-- name: "🇳🇱|4-28🍯%40xkmfjd|荷兰 03"
+- name: "🇺🇸|4-28🍯@xkmfjd|美国 59"
+  type: "vmess"
+  server: "141.101.121.127"
+  port: 2053
+  uuid: "381cb6d1-6ad4-4909-8494-b8d786cf78ce"
+  network: "ws"
+  tls: true
+  servername: "1744007578.speed.mamha.cccp.freefly.pp.ua"
+  skip-cert-verify: true
+  ip-version: "dual"
+  alterId: 0
+  cipher: "auto"
+- name: "🇺🇸|4-28🍯@xkmfjd|美国 60"
+  type: "hysteria2"
+  server: "us.1e6af9be69cbae59cba.tech"
+  port: 20394
+  tls: true
+  password: "efa3ba5e-06ad-4e94-ad8f-ebf5e611ec4c"
+  sni: "us.1e6af9be69cbae59cba.tech"
+  skip-cert-verify: false
+  fast-open: false
+  ip-version: "dual"
+- name: "🇳🇱|4-28🍯%40xkmfjd|荷兰 06"
+  type: "ss"
+  server: "89.23.103.125"
+  port: 42090
+  tls: false
+  password: "O4z5EfeNoD3q4kgmSjBgCU"
+  ip-version: "dual"
+  cipher: "chacha20-ietf-poly1305"
+- name: "🇺🇸|4-28🍯@xkmfjd|美国 61"
+  type: "hysteria2"
+  server: "2ef15a2a-svi800-sw77c8-dnss.la.shifen.uk"
+  port: 1443
+  tls: true
+  password: "16955d72-1794-11f0-a035-f23c95b6f51d"
+  sni: "2ef15a2a-svi800-sw77c8-dnss.la.shifen.uk"
+  skip-cert-verify: false
+  fast-open: false
+  ip-version: "dual"
+- name: "🇳🇱|4-28🍯%40xkmfjd|荷兰 08"
   type: "ss"
   server: "45.87.175.164"
   port: 8080
@@ -597,7 +397,29 @@ proxies:
   password: "1RWwXhwfAB5gAEozU4G2Pg"
   ip-version: "dual"
   cipher: "chacha20-ietf-poly1305"
-- name: "🇳🇱|4-28🍯@xkmfjd|荷兰 04"
+- name: "🇺🇸|4-28🍯@xkmfjd|美国 63"
+  type: "vmess"
+  server: "xc131.meiziba5566.com"
+  port: 443
+  uuid: "3e3d59fd-bc2f-407d-a8d3-a1dee0a257d5"
+  network: "ws"
+  tls: true
+  servername: "xc131.meiziba5566.com"
+  skip-cert-verify: true
+  ip-version: "dual"
+  alterId: 0
+  cipher: "auto"
+- name: "🇳🇱|4-28🍯@xkmfjd|荷兰 09"
+  type: "vmess"
+  server: "45.8.145.145"
+  port: 30520
+  uuid: "3038024f-3a34-4228-b61c-d741b2fbec8f"
+  network: "tcp"
+  tls: false
+  ip-version: "dual"
+  alterId: 0
+  cipher: "auto"
+- name: "🇳🇱|4-28🍯@xkmfjd|荷兰 10"
   type: "vmess"
   server: "146.190.228.67"
   port: 59452
@@ -607,55 +429,25 @@ proxies:
   ip-version: "dual"
   alterId: 0
   cipher: "auto"
-- name: "🇯🇵|4-28🍯@xkmfjd|日本 01"
-  type: "vmess"
-  server: "0e8845d1-suk9s0-sve5if-z93q.cm5.p5pv.com"
-  port: 17233
-  uuid: "40639730-e027-11ea-87ad-f23c913c8d2b"
-  network: "tcp"
-  tls: false
-  ip-version: "dual"
-  alterId: 0
-  cipher: "auto"
-- name: "🇯🇵|4-28🍯@xkmfjd|日本 02"
-  type: "vmess"
-  server: "bf20b8b1-svhls0-svtxnz-1rgxu.cm5.p5pv.com"
-  port: 17233
-  uuid: "ea93064c-176c-11f0-885d-f23c91cfbbc9"
-  network: "tcp"
-  tls: false
-  ip-version: "dual"
-  alterId: 0
-  cipher: "auto"
-- name: "🇯🇵|4-28🍯@xkmfjd|日本 03"
-  type: "vmess"
-  server: "fyo5n-g05.jp05-6786-vm0.entry.fr0307a.art"
-  port: 46486
-  uuid: "1a794fbe-4a35-32ae-a1e9-e9ab224d93ff"
-  network: "tcp"
-  tls: false
-  ip-version: "dual"
-  alterId: 1
-  cipher: "auto"
-- name: "🇸🇬|4-28🍯%40xkmfjd|新加坡 01"
+- name: "🇳🇱|4-28🍯%40xkmfjd|荷兰 11"
   type: "ss"
-  server: "103.3.62.110"
-  port: 13058
+  server: "45.158.171.151"
+  port: 8080
   tls: false
-  password: "xj3xTQaW"
+  password: "4a2rfixophdjffa8KVA4Aa"
   ip-version: "dual"
-  cipher: "aes-256-gcm"
-- name: "🇨🇦|4-28🍯@xkmfjd|加拿大 02"
+  cipher: "chacha20-ietf-poly1305"
+- name: "🇨🇦|4-28🍯@xkmfjd|加拿大 05"
   type: "vmess"
-  server: "91.194.11.118"
-  port: 27699
-  uuid: "c23b127b-af87-43bb-aa1e-ce42374a2b53"
+  server: "91.194.11.178"
+  port: 28984
+  uuid: "9b2335af-f24c-4810-9c34-95568ebd579d"
   network: "tcp"
   tls: false
   ip-version: "dual"
   alterId: 0
   cipher: "auto"
-- name: "🇨🇦|4-28🍯@xkmfjd|加拿大 01"
+- name: "🇨🇦|4-28🍯@xkmfjd|加拿大 06"
   type: "vmess"
   server: "91.194.11.162"
   port: 58891
@@ -665,53 +457,58 @@ proxies:
   ip-version: "dual"
   alterId: 0
   cipher: "auto"
-- name: "🇨🇦|4-28🍯%40xkmfjd|加拿大 03"
-  type: "ss"
-  server: "79.127.200.162"
-  port: 989
-  tls: false
-  password: "f8f7aCzcPKbsF8p3"
-  ip-version: "dual"
-  cipher: "aes-256-cfb"
-- name: "🇫🇷|4-28🍯%40xkmfjd|法国 03"
-  type: "ss"
-  server: "57.128.190.171"
-  port: 11259
-  tls: false
-  password: "f9d73c84e32a10f3"
-  ip-version: "dual"
-  cipher: "chacha20-ietf-poly1305"
-- name: "🇫🇷|4-28🍯@xkmfjd|法国 05"
+- name: "🇺🇦|4-28🍯@xkmfjd|乌克兰 01"
   type: "vmess"
-  server: "kapelleng.com"
-  port: 443
-  uuid: "03fcc618-b93d-6796-6aed-8a38c975d581"
-  network: "ws"
-  tls: true
-  servername: "kapelleng.com"
-  skip-cert-verify: true
-  client-fingerprint: "chrome"
-  ip-version: "dual"
-  alterId: 0
-  cipher: "auto"
-- name: "🇫🇷|4-28🍯@xkmfjd|法国 07"
-  type: "vmess"
-  server: "51.77.20.131"
-  port: 22324
-  uuid: "04621bae-ab36-11ec-b909-0242ac120002"
+  server: "45.137.155.45"
+  port: 17646
+  uuid: "82734724-8c06-4c2e-9cff-b34776fe1757"
   network: "tcp"
   tls: false
   ip-version: "dual"
   alterId: 0
   cipher: "auto"
-- name: "🇫🇷|4-28🍯%40xkmfjd|法国 08"
-  type: "ss"
-  server: "57.128.190.238"
-  port: 18992
-  tls: false
-  password: "b20ae8db3d278526"
+- name: "4-28🍯@xkmfjd|🌀其他12-未识别 | ⬇️ 9.0MB/s 01"
+  type: "vmess"
+  server: "104.21.31.62"
+  port: 443
+  uuid: "05641cf5-58d2-4ba4-a9f1-b3cda0b1fb1d"
+  network: "ws"
+  tls: true
+  servername: "obdii.cfd"
+  skip-cert-verify: true
   ip-version: "dual"
-  cipher: "chacha20-ietf-poly1305"
+  alterId: 0
+  cipher: "auto"
+- name: "🇷🇺|4-28🍯@xkmfjd|俄罗斯 02"
+  type: "hysteria2"
+  server: "hy2.694463.xyz"
+  port: 10011
+  tls: true
+  password: "dongtaiwang.com"
+  sni: "www.bing.com"
+  skip-cert-verify: true
+  fast-open: false
+  ip-version: "dual"
+- name: "🇷🇺|4-28🍯@xkmfjd|俄罗斯 03"
+  type: "hysteria"
+  server: "46.17.41.174"
+  port: 10469
+  tls: true
+  sni: "apple.com"
+  alpn:
+  - "h3"
+  up: "10"
+  down: "50"
+  skip-cert-verify: true
+  ip-version: "dual"
+- name: "🇪🇸|4-28🍯%40xkmfjd|西班牙 01"
+  type: "ss"
+  server: "5.188.181.201"
+  port: 9005
+  tls: false
+  password: "ZET59LF6DvCC8KVt"
+  ip-version: "dual"
+  cipher: "aes-256-cfb"
 - name: "🇲🇩|4-28🍯%40xkmfjd|摩尔多瓦 01"
   type: "ss"
   server: "45.153.124.90"
@@ -720,7 +517,216 @@ proxies:
   password: "f8f7aCzcPKbsF8p3"
   ip-version: "dual"
   cipher: "aes-256-cfb"
-- name: "🇨🇾|4-28🍯@xkmfjd|塞浦路斯 03"
+- name: "🇲🇩|4-28🍯@xkmfjd|摩尔多瓦 02"
+  type: "trojan"
+  server: "aafrtpfxr.jpl01i9zjfegelp.5xfsur8v62.gosdk.xyz"
+  port: 43586
+  network: "tcp"
+  tls: true
+  password: "920f0c70-63e1-4538-8ac1-3aebb2df2ae9"
+  sni: "q08m.vgraxiw73s.hasyaf.cn"
+  skip-cert-verify: false
+  client-fingerprint: "chrome"
+  ip-version: "dual"
+- name: "🇬🇧|4-28🍯@xkmfjd|英国 01"
+  type: "vmess"
+  server: "37.221.125.159"
+  port: 33940
+  uuid: "353e0787-71bc-442d-9c9d-902f90359eb5"
+  network: "tcp"
+  tls: false
+  ip-version: "dual"
+  alterId: 0
+  cipher: "auto"
+- name: "🇰🇷|4-28🍯%40xkmfjd|韩国 01"
+  type: "ss"
+  server: "@@p221.panda001.net"
+  port: 34669
+  tls: false
+  password: "qwerREWQ"
+  ip-version: "dual"
+  cipher: "aes-256-cfb"
+- name: "🇩🇪|4-28🍯@xkmfjd|德国 02"
+  type: "trojan"
+  server: "194.164.57.9"
+  port: 1935
+  network: "tcp"
+  tls: true
+  password: "I46LpSIM1f"
+  sni: "x4ger-ionos.devefun.net"
+  skip-cert-verify: false
+  ip-version: "dual"
+- name: "🇨🇭|4-28🍯@xkmfjd|瑞士 04"
+  type: "vmess"
+  server: "186.190.215.93"
+  port: 22324
+  uuid: "04621bae-ab36-11ec-b909-0242ac120002"
+  network: "tcp"
+  tls: false
+  ip-version: "dual"
+  alterId: 0
+  cipher: "auto"
+- name: "🇨🇭|4-28🍯@xkmfjd|瑞士 05"
+  type: "vmess"
+  server: "186.190.215.193"
+  port: 22324
+  uuid: "04621bae-ab36-11ec-b909-0242ac120002"
+  network: "tcp"
+  tls: false
+  ip-version: "dual"
+  alterId: 0
+  cipher: "auto"
+- name: "🇨🇳|4-28🍯@xkmfjd|台湾 01"
+  type: "trojan"
+  server: "188.164.159.55"
+  port: 2096
+  network: "ws"
+  tls: false
+  password: "Aimer"
+  skip-cert-verify: false
+  ws-opts:
+    headers:
+      host: "epcca.ambercc.filegear-sg.me"
+  ip-version: "dual"
+- name: "🇫🇷|4-28🍯%40xkmfjd|法国 04"
+  type: "ss"
+  server: "57.128.190.171"
+  port: 11259
+  tls: false
+  password: "f9d73c84e32a10f3"
+  ip-version: "dual"
+  cipher: "chacha20-ietf-poly1305"
+- name: "🇳🇱|4-28🍯%40xkmfjd|荷兰 02"
+  type: "ss"
+  server: "103.106.1.92"
+  port: 23492
+  tls: false
+  password: "yMX9WGPgUEcRZmlaa0YHHC"
+  ip-version: "dual"
+  cipher: "chacha20-ietf-poly1305"
+- name: "🇳🇱|4-28🍯%40xkmfjd|荷兰 03"
+  type: "ss"
+  server: "149.34.244.71"
+  port: 443
+  tls: false
+  password: "shadowsocks"
+  ip-version: "dual"
+  cipher: "aes-128-gcm"
+- name: "🇳🇱|4-28🍯@xkmfjd|荷兰 04"
+  type: "vmess"
+  server: "45.12.145.111"
+  port: 46290
+  uuid: "1b41153e-c4d4-431b-83eb-10472f869f93"
+  network: "tcp"
+  tls: false
+  ip-version: "dual"
+  alterId: 0
+  cipher: "auto"
+- name: "🇸🇬|4-28🍯%40xkmfjd|新加坡 01"
+  type: "ss"
+  server: "okanc.node-is.green"
+  port: 21114
+  tls: false
+  password: "9acfc574-acc3-4c2b-ab3b-491d43a6eb83"
+  ip-version: "dual"
+  cipher: "aes-256-gcm"
+- name: "🇨🇦|4-28🍯@xkmfjd|加拿大 02"
+  type: "vmess"
+  server: "kapelleng.com"
+  port: 443
+  uuid: "03fcc618-b93d-6796-6aed-8a38c975d581"
+  network: "ws"
+  tls: true
+  servername: "kapelleng.com"
+  skip-cert-verify: true
+  ip-version: "dual"
+  alterId: 0
+  cipher: "auto"
+- name: "🇨🇦|4-28🍯%40xkmfjd|加拿大 01"
+  type: "ss"
+  server: "149.22.95.183"
+  port: 443
+  tls: false
+  password: "shadowsocks"
+  ip-version: "dual"
+  cipher: "aes-128-gcm"
+- name: "🇨🇦|4-28🍯@xkmfjd|加拿大 03"
+  type: "vmess"
+  server: "91.194.11.118"
+  port: 27699
+  uuid: "c23b127b-af87-43bb-aa1e-ce42374a2b53"
+  network: "tcp"
+  tls: false
+  ip-version: "dual"
+  alterId: 0
+  cipher: "auto"
+- name: "🇫🇷|4-28🍯%40xkmfjd|法国 03"
+  type: "ss"
+  server: "62.210.88.22"
+  port: 443
+  tls: false
+  password: "gtnazdaHshXZoXUKGCj1KR"
+  ip-version: "dual"
+  cipher: "chacha20-ietf-poly1305"
+- name: "🇫🇷|4-28🍯%40xkmfjd|法国 05"
+  type: "ss"
+  server: "57.128.190.110"
+  port: 11703
+  tls: false
+  password: "d275849ebcfcec7e"
+  ip-version: "dual"
+  cipher: "chacha20-ietf-poly1305"
+- name: "🇫🇷|4-28🍯%40xkmfjd|法国 06"
+  type: "ss"
+  server: "57.128.190.238"
+  port: 18992
+  tls: false
+  password: "b20ae8db3d278526"
+  ip-version: "dual"
+  cipher: "chacha20-ietf-poly1305"
+- name: "🇫🇷|4-28🍯@xkmfjd|法国 07"
+  type: "vmess"
+  server: "172.67.71.160"
+  port: 443
+  uuid: "05641cf5-58d2-4ba4-a9f1-b3cda0b1fb1d"
+  network: "ws"
+  tls: true
+  servername: "obdii.cfd"
+  skip-cert-verify: true
+  ip-version: "dual"
+  alterId: 0
+  cipher: "auto"
+- name: "🇫🇷|4-28🍯@xkmfjd|法国 09"
+  type: "hysteria2"
+  server: "51.159.226.1"
+  port: 43496
+  tls: true
+  password: "dongtaiwang.com"
+  sni: "www.bing.com"
+  skip-cert-verify: true
+  fast-open: false
+  ip-version: "dual"
+- name: "🇨🇾|4-28🍯@xkmfjd|塞浦路斯 06"
+  type: "vmess"
+  server: "45.12.138.82"
+  port: 54757
+  uuid: "cde9f074-c930-4aa3-a558-46bbc9d0a5a1"
+  network: "tcp"
+  tls: false
+  ip-version: "dual"
+  alterId: 0
+  cipher: "auto"
+- name: "🇭🇰|4-28🍯@xkmfjd|香港 02"
+  type: "vmess"
+  server: "35.220.230.251"
+  port: 30251
+  uuid: "86c9c119-c46d-45a9-82a6-75a886e5e795"
+  network: "tcp"
+  tls: false
+  ip-version: "dual"
+  alterId: 0
+  cipher: "auto"
+- name: "🇨🇾|4-28🍯@xkmfjd|塞浦路斯 11"
   type: "vmess"
   server: "45.12.133.43"
   port: 28444
@@ -730,259 +736,224 @@ proxies:
   ip-version: "dual"
   alterId: 0
   cipher: "auto"
-- name: "🇭🇰|4-28🍯%40xkmfjd|香港 02"
-  type: "ss"
-  server: "103.36.90.195"
-  port: 8388
-  tls: false
-  password: "asd123456"
-  ip-version: "dual"
-  cipher: "chacha20-ietf"
-- name: "🇨🇾|4-28🍯@xkmfjd|塞浦路斯 13"
-  type: "vmess"
-  server: "45.12.138.47"
-  port: 22839
-  uuid: "2858a404-d0ca-4d67-80a6-ce8e95e383ff"
-  network: "tcp"
-  tls: false
-  ip-version: "dual"
-  alterId: 0
-  cipher: "auto"
-- name: "🇦🇹|4-28🍯%40xkmfjd|奥地利 01"
-  type: "ss"
-  server: "178.22.31.239"
-  port: 443
-  tls: false
-  password: "Bgr6YBHEnpft"
-  ip-version: "dual"
-  cipher: "chacha20-ietf-poly1305"
 proxy-groups:
 - name: "PROXY"
   type: "select"
   proxies:
   - "AUTO"
-  - "🇨🇳|4-28🍯@xkmfjd|台湾 02"
-  - "🇺🇸|4-28🍯@xkmfjd|美国 01"
   - "🇺🇸|4-28🍯@xkmfjd|美国 02"
+  - "🇺🇸|4-28🍯@xkmfjd|美国 03"
   - "🇺🇸|4-28🍯@xkmfjd|美国 04"
-  - "🇺🇸|4-28🍯@xkmfjd|美国 05"
-  - "🇺🇸|4-28🍯@xkmfjd|美国 06"
-  - "🇺🇸|4-28🍯@xkmfjd|美国 08"
+  - "🇺🇸|4-28🍯%40xkmfjd|美国 05"
+  - "🇺🇸|4-28🍯%40xkmfjd|美国 06"
+  - "🇺🇸|4-28🍯%40xkmfjd|美国 08"
   - "🇺🇸|4-28🍯%40xkmfjd|美国 09"
-  - "🇺🇸|4-28🍯@xkmfjd|美国 07"
+  - "🇺🇸|4-28🍯%40xkmfjd|美国 07"
   - "🇺🇸|4-28🍯%40xkmfjd|美国 10"
-  - "🇺🇸|4-28🍯@xkmfjd|美国 11"
+  - "🇺🇸|4-28🍯%40xkmfjd|美国 11"
   - "🇺🇸|4-28🍯%40xkmfjd|美国 12"
   - "🇺🇸|4-28🍯@xkmfjd|美国 13"
   - "🇺🇸|4-28🍯%40xkmfjd|美国 14"
-  - "🇺🇸|4-28🍯%40xkmfjd|美国 15"
-  - "🇺🇸|4-28🍯%40xkmfjd|美国 16"
-  - "🇺🇸|4-28🍯%40xkmfjd|美国 17"
-  - "🇺🇸|4-28🍯%40xkmfjd|美国 18"
-  - "🇺🇸|4-28🍯%40xkmfjd|美国 19"
-  - "🇺🇸|4-28🍯%40xkmfjd|美国 20"
-  - "🇺🇸|4-28🍯%40xkmfjd|美国 21"
-  - "🇺🇸|4-28🍯%40xkmfjd|美国 22"
-  - "🇺🇸|4-28🍯%40xkmfjd|美国 23"
-  - "🇺🇸|4-28🍯%40xkmfjd|美国 24"
-  - "🇺🇸|4-28🍯@xkmfjd|美国 25"
-  - "🇺🇸|4-28🍯%40xkmfjd|美国 26"
+  - "🇺🇸|4-28🍯@xkmfjd|美国 15"
+  - "🇺🇸|4-28🍯@xkmfjd|美国 16"
+  - "🇺🇸|4-28🍯@xkmfjd|美国 17"
+  - "🇺🇸|4-28🍯@xkmfjd|美国 18"
+  - "🇺🇸|4-28🍯@xkmfjd|美国 21"
+  - "🇺🇸|4-28🍯@xkmfjd|美国 22"
   - "🇺🇸|4-28🍯@xkmfjd|美国 27"
-  - "🇺🇸|4-28🍯%40xkmfjd|美国 36"
-  - "🇺🇸|4-28🍯@xkmfjd|美国 37"
-  - "🇺🇸|4-28🍯@xkmfjd|美国 43"
-  - "🇺🇸|4-28🍯@xkmfjd|美国 44"
+  - "🇺🇸|4-28🍯@xkmfjd|美国 30"
+  - "🇺🇸|4-28🍯@xkmfjd|美国 33"
+  - "🇺🇸|4-28🍯%40xkmfjd|美国 41"
   - "🇺🇸|4-28🍯@xkmfjd|美国 51"
-  - "🇺🇸|4-28🍯@xkmfjd|美国 53"
-  - "🇺🇸|4-28🍯@xkmfjd|美国 58"
-  - "🇷🇺|4-28🍯@xkmfjd|俄罗斯 01"
-  - "🇺🇸|4-28🍯@xkmfjd|美国 60"
-  - "🇺🇸|4-28🍯%40xkmfjd|美国 62"
-  - "🇺🇸|4-28🍯%40xkmfjd|美国 63"
-  - "🇺🇸|4-28🍯%40xkmfjd|美国 65"
-  - "🇺🇸|4-28🍯@xkmfjd|美国 69"
-  - "🇺🇸|4-28🍯@xkmfjd|美国 70"
-  - "🇺🇸|4-28🍯@xkmfjd|美国 72"
-  - "🇬🇧|4-28🍯@xkmfjd|英国 02"
-  - "🇭🇰|4-28🍯@xkmfjd|香港 01"
-  - "🇰🇷|4-28🍯%40xkmfjd|韩国 01"
-  - "🇨🇭|4-28🍯%40xkmfjd|瑞士 04"
-  - "🇨🇭|4-28🍯@xkmfjd|瑞士 05"
-  - "🇩🇪|4-28🍯@xkmfjd|德国 01"
-  - "🇩🇪|4-28🍯@xkmfjd|德国 04"
-  - "🇩🇪|4-28🍯@xkmfjd|德国 05"
-  - "🇫🇷|4-28🍯%40xkmfjd|法国 04"
+  - "🇺🇸|4-28🍯@xkmfjd|美国 54"
+  - "🇺🇸|4-28🍯%40xkmfjd|美国 55"
   - "🇳🇱|4-28🍯@xkmfjd|荷兰 01"
-  - "🇳🇱|4-28🍯@xkmfjd|荷兰 02"
+  - "🇺🇸|4-28🍯@xkmfjd|美国 57"
+  - "🇺🇸|4-28🍯@xkmfjd|美国 59"
+  - "🇺🇸|4-28🍯@xkmfjd|美国 60"
+  - "🇳🇱|4-28🍯%40xkmfjd|荷兰 06"
+  - "🇺🇸|4-28🍯@xkmfjd|美国 61"
+  - "🇳🇱|4-28🍯%40xkmfjd|荷兰 08"
+  - "🇺🇸|4-28🍯@xkmfjd|美国 63"
+  - "🇳🇱|4-28🍯@xkmfjd|荷兰 09"
+  - "🇳🇱|4-28🍯@xkmfjd|荷兰 10"
+  - "🇳🇱|4-28🍯%40xkmfjd|荷兰 11"
+  - "🇨🇦|4-28🍯@xkmfjd|加拿大 05"
+  - "🇨🇦|4-28🍯@xkmfjd|加拿大 06"
+  - "🇺🇦|4-28🍯@xkmfjd|乌克兰 01"
+  - "4-28🍯@xkmfjd|🌀其他12-未识别 | ⬇️ 9.0MB/s 01"
+  - "🇷🇺|4-28🍯@xkmfjd|俄罗斯 02"
+  - "🇷🇺|4-28🍯@xkmfjd|俄罗斯 03"
+  - "🇪🇸|4-28🍯%40xkmfjd|西班牙 01"
+  - "🇲🇩|4-28🍯%40xkmfjd|摩尔多瓦 01"
+  - "🇲🇩|4-28🍯@xkmfjd|摩尔多瓦 02"
+  - "🇬🇧|4-28🍯@xkmfjd|英国 01"
+  - "🇰🇷|4-28🍯%40xkmfjd|韩国 01"
+  - "🇩🇪|4-28🍯@xkmfjd|德国 02"
+  - "🇨🇭|4-28🍯@xkmfjd|瑞士 04"
+  - "🇨🇭|4-28🍯@xkmfjd|瑞士 05"
+  - "🇨🇳|4-28🍯@xkmfjd|台湾 01"
+  - "🇫🇷|4-28🍯%40xkmfjd|法国 04"
+  - "🇳🇱|4-28🍯%40xkmfjd|荷兰 02"
   - "🇳🇱|4-28🍯%40xkmfjd|荷兰 03"
   - "🇳🇱|4-28🍯@xkmfjd|荷兰 04"
-  - "🇯🇵|4-28🍯@xkmfjd|日本 01"
-  - "🇯🇵|4-28🍯@xkmfjd|日本 02"
-  - "🇯🇵|4-28🍯@xkmfjd|日本 03"
   - "🇸🇬|4-28🍯%40xkmfjd|新加坡 01"
   - "🇨🇦|4-28🍯@xkmfjd|加拿大 02"
-  - "🇨🇦|4-28🍯@xkmfjd|加拿大 01"
-  - "🇨🇦|4-28🍯%40xkmfjd|加拿大 03"
+  - "🇨🇦|4-28🍯%40xkmfjd|加拿大 01"
+  - "🇨🇦|4-28🍯@xkmfjd|加拿大 03"
   - "🇫🇷|4-28🍯%40xkmfjd|法国 03"
-  - "🇫🇷|4-28🍯@xkmfjd|法国 05"
+  - "🇫🇷|4-28🍯%40xkmfjd|法国 05"
+  - "🇫🇷|4-28🍯%40xkmfjd|法国 06"
   - "🇫🇷|4-28🍯@xkmfjd|法国 07"
-  - "🇫🇷|4-28🍯%40xkmfjd|法国 08"
-  - "🇲🇩|4-28🍯%40xkmfjd|摩尔多瓦 01"
-  - "🇨🇾|4-28🍯@xkmfjd|塞浦路斯 03"
-  - "🇭🇰|4-28🍯%40xkmfjd|香港 02"
-  - "🇨🇾|4-28🍯@xkmfjd|塞浦路斯 13"
-  - "🇦🇹|4-28🍯%40xkmfjd|奥地利 01"
+  - "🇫🇷|4-28🍯@xkmfjd|法国 09"
+  - "🇨🇾|4-28🍯@xkmfjd|塞浦路斯 06"
+  - "🇭🇰|4-28🍯@xkmfjd|香港 02"
+  - "🇨🇾|4-28🍯@xkmfjd|塞浦路斯 11"
 - name: "AUTO"
   type: "url-test"
   url: "http://www.gstatic.com/generate_204"
   interval: 300
   tolerance: 50
   proxies:
-  - "🇨🇳|4-28🍯@xkmfjd|台湾 02"
-  - "🇺🇸|4-28🍯@xkmfjd|美国 01"
   - "🇺🇸|4-28🍯@xkmfjd|美国 02"
+  - "🇺🇸|4-28🍯@xkmfjd|美国 03"
   - "🇺🇸|4-28🍯@xkmfjd|美国 04"
-  - "🇺🇸|4-28🍯@xkmfjd|美国 05"
-  - "🇺🇸|4-28🍯@xkmfjd|美国 06"
-  - "🇺🇸|4-28🍯@xkmfjd|美国 08"
+  - "🇺🇸|4-28🍯%40xkmfjd|美国 05"
+  - "🇺🇸|4-28🍯%40xkmfjd|美国 06"
+  - "🇺🇸|4-28🍯%40xkmfjd|美国 08"
   - "🇺🇸|4-28🍯%40xkmfjd|美国 09"
-  - "🇺🇸|4-28🍯@xkmfjd|美国 07"
+  - "🇺🇸|4-28🍯%40xkmfjd|美国 07"
   - "🇺🇸|4-28🍯%40xkmfjd|美国 10"
-  - "🇺🇸|4-28🍯@xkmfjd|美国 11"
+  - "🇺🇸|4-28🍯%40xkmfjd|美国 11"
   - "🇺🇸|4-28🍯%40xkmfjd|美国 12"
   - "🇺🇸|4-28🍯@xkmfjd|美国 13"
   - "🇺🇸|4-28🍯%40xkmfjd|美国 14"
-  - "🇺🇸|4-28🍯%40xkmfjd|美国 15"
-  - "🇺🇸|4-28🍯%40xkmfjd|美国 16"
-  - "🇺🇸|4-28🍯%40xkmfjd|美国 17"
-  - "🇺🇸|4-28🍯%40xkmfjd|美国 18"
-  - "🇺🇸|4-28🍯%40xkmfjd|美国 19"
-  - "🇺🇸|4-28🍯%40xkmfjd|美国 20"
-  - "🇺🇸|4-28🍯%40xkmfjd|美国 21"
-  - "🇺🇸|4-28🍯%40xkmfjd|美国 22"
-  - "🇺🇸|4-28🍯%40xkmfjd|美国 23"
-  - "🇺🇸|4-28🍯%40xkmfjd|美国 24"
-  - "🇺🇸|4-28🍯@xkmfjd|美国 25"
-  - "🇺🇸|4-28🍯%40xkmfjd|美国 26"
+  - "🇺🇸|4-28🍯@xkmfjd|美国 15"
+  - "🇺🇸|4-28🍯@xkmfjd|美国 16"
+  - "🇺🇸|4-28🍯@xkmfjd|美国 17"
+  - "🇺🇸|4-28🍯@xkmfjd|美国 18"
+  - "🇺🇸|4-28🍯@xkmfjd|美国 21"
+  - "🇺🇸|4-28🍯@xkmfjd|美国 22"
   - "🇺🇸|4-28🍯@xkmfjd|美国 27"
-  - "🇺🇸|4-28🍯%40xkmfjd|美国 36"
-  - "🇺🇸|4-28🍯@xkmfjd|美国 37"
-  - "🇺🇸|4-28🍯@xkmfjd|美国 43"
-  - "🇺🇸|4-28🍯@xkmfjd|美国 44"
+  - "🇺🇸|4-28🍯@xkmfjd|美国 30"
+  - "🇺🇸|4-28🍯@xkmfjd|美国 33"
+  - "🇺🇸|4-28🍯%40xkmfjd|美国 41"
   - "🇺🇸|4-28🍯@xkmfjd|美国 51"
-  - "🇺🇸|4-28🍯@xkmfjd|美国 53"
-  - "🇺🇸|4-28🍯@xkmfjd|美国 58"
-  - "🇷🇺|4-28🍯@xkmfjd|俄罗斯 01"
-  - "🇺🇸|4-28🍯@xkmfjd|美国 60"
-  - "🇺🇸|4-28🍯%40xkmfjd|美国 62"
-  - "🇺🇸|4-28🍯%40xkmfjd|美国 63"
-  - "🇺🇸|4-28🍯%40xkmfjd|美国 65"
-  - "🇺🇸|4-28🍯@xkmfjd|美国 69"
-  - "🇺🇸|4-28🍯@xkmfjd|美国 70"
-  - "🇺🇸|4-28🍯@xkmfjd|美国 72"
-  - "🇬🇧|4-28🍯@xkmfjd|英国 02"
-  - "🇭🇰|4-28🍯@xkmfjd|香港 01"
-  - "🇰🇷|4-28🍯%40xkmfjd|韩国 01"
-  - "🇨🇭|4-28🍯%40xkmfjd|瑞士 04"
-  - "🇨🇭|4-28🍯@xkmfjd|瑞士 05"
-  - "🇩🇪|4-28🍯@xkmfjd|德国 01"
-  - "🇩🇪|4-28🍯@xkmfjd|德国 04"
-  - "🇩🇪|4-28🍯@xkmfjd|德国 05"
-  - "🇫🇷|4-28🍯%40xkmfjd|法国 04"
+  - "🇺🇸|4-28🍯@xkmfjd|美国 54"
+  - "🇺🇸|4-28🍯%40xkmfjd|美国 55"
   - "🇳🇱|4-28🍯@xkmfjd|荷兰 01"
-  - "🇳🇱|4-28🍯@xkmfjd|荷兰 02"
+  - "🇺🇸|4-28🍯@xkmfjd|美国 57"
+  - "🇺🇸|4-28🍯@xkmfjd|美国 59"
+  - "🇺🇸|4-28🍯@xkmfjd|美国 60"
+  - "🇳🇱|4-28🍯%40xkmfjd|荷兰 06"
+  - "🇺🇸|4-28🍯@xkmfjd|美国 61"
+  - "🇳🇱|4-28🍯%40xkmfjd|荷兰 08"
+  - "🇺🇸|4-28🍯@xkmfjd|美国 63"
+  - "🇳🇱|4-28🍯@xkmfjd|荷兰 09"
+  - "🇳🇱|4-28🍯@xkmfjd|荷兰 10"
+  - "🇳🇱|4-28🍯%40xkmfjd|荷兰 11"
+  - "🇨🇦|4-28🍯@xkmfjd|加拿大 05"
+  - "🇨🇦|4-28🍯@xkmfjd|加拿大 06"
+  - "🇺🇦|4-28🍯@xkmfjd|乌克兰 01"
+  - "4-28🍯@xkmfjd|🌀其他12-未识别 | ⬇️ 9.0MB/s 01"
+  - "🇷🇺|4-28🍯@xkmfjd|俄罗斯 02"
+  - "🇷🇺|4-28🍯@xkmfjd|俄罗斯 03"
+  - "🇪🇸|4-28🍯%40xkmfjd|西班牙 01"
+  - "🇲🇩|4-28🍯%40xkmfjd|摩尔多瓦 01"
+  - "🇲🇩|4-28🍯@xkmfjd|摩尔多瓦 02"
+  - "🇬🇧|4-28🍯@xkmfjd|英国 01"
+  - "🇰🇷|4-28🍯%40xkmfjd|韩国 01"
+  - "🇩🇪|4-28🍯@xkmfjd|德国 02"
+  - "🇨🇭|4-28🍯@xkmfjd|瑞士 04"
+  - "🇨🇭|4-28🍯@xkmfjd|瑞士 05"
+  - "🇨🇳|4-28🍯@xkmfjd|台湾 01"
+  - "🇫🇷|4-28🍯%40xkmfjd|法国 04"
+  - "🇳🇱|4-28🍯%40xkmfjd|荷兰 02"
   - "🇳🇱|4-28🍯%40xkmfjd|荷兰 03"
   - "🇳🇱|4-28🍯@xkmfjd|荷兰 04"
-  - "🇯🇵|4-28🍯@xkmfjd|日本 01"
-  - "🇯🇵|4-28🍯@xkmfjd|日本 02"
-  - "🇯🇵|4-28🍯@xkmfjd|日本 03"
   - "🇸🇬|4-28🍯%40xkmfjd|新加坡 01"
   - "🇨🇦|4-28🍯@xkmfjd|加拿大 02"
-  - "🇨🇦|4-28🍯@xkmfjd|加拿大 01"
-  - "🇨🇦|4-28🍯%40xkmfjd|加拿大 03"
+  - "🇨🇦|4-28🍯%40xkmfjd|加拿大 01"
+  - "🇨🇦|4-28🍯@xkmfjd|加拿大 03"
   - "🇫🇷|4-28🍯%40xkmfjd|法国 03"
-  - "🇫🇷|4-28🍯@xkmfjd|法国 05"
+  - "🇫🇷|4-28🍯%40xkmfjd|法国 05"
+  - "🇫🇷|4-28🍯%40xkmfjd|法国 06"
   - "🇫🇷|4-28🍯@xkmfjd|法国 07"
-  - "🇫🇷|4-28🍯%40xkmfjd|法国 08"
-  - "🇲🇩|4-28🍯%40xkmfjd|摩尔多瓦 01"
-  - "🇨🇾|4-28🍯@xkmfjd|塞浦路斯 03"
-  - "🇭🇰|4-28🍯%40xkmfjd|香港 02"
-  - "🇨🇾|4-28🍯@xkmfjd|塞浦路斯 13"
-  - "🇦🇹|4-28🍯%40xkmfjd|奥地利 01"
+  - "🇫🇷|4-28🍯@xkmfjd|法国 09"
+  - "🇨🇾|4-28🍯@xkmfjd|塞浦路斯 06"
+  - "🇭🇰|4-28🍯@xkmfjd|香港 02"
+  - "🇨🇾|4-28🍯@xkmfjd|塞浦路斯 11"
 - name: "AI"
   type: "select"
   proxies:
-  - "🇨🇳|4-28🍯@xkmfjd|台湾 02"
-  - "🇺🇸|4-28🍯@xkmfjd|美国 01"
   - "🇺🇸|4-28🍯@xkmfjd|美国 02"
+  - "🇺🇸|4-28🍯@xkmfjd|美国 03"
   - "🇺🇸|4-28🍯@xkmfjd|美国 04"
-  - "🇺🇸|4-28🍯@xkmfjd|美国 05"
-  - "🇺🇸|4-28🍯@xkmfjd|美国 06"
-  - "🇺🇸|4-28🍯@xkmfjd|美国 08"
+  - "🇺🇸|4-28🍯%40xkmfjd|美国 05"
+  - "🇺🇸|4-28🍯%40xkmfjd|美国 06"
+  - "🇺🇸|4-28🍯%40xkmfjd|美国 08"
   - "🇺🇸|4-28🍯%40xkmfjd|美国 09"
-  - "🇺🇸|4-28🍯@xkmfjd|美国 07"
+  - "🇺🇸|4-28🍯%40xkmfjd|美国 07"
   - "🇺🇸|4-28🍯%40xkmfjd|美国 10"
-  - "🇺🇸|4-28🍯@xkmfjd|美国 11"
+  - "🇺🇸|4-28🍯%40xkmfjd|美国 11"
   - "🇺🇸|4-28🍯%40xkmfjd|美国 12"
   - "🇺🇸|4-28🍯@xkmfjd|美国 13"
   - "🇺🇸|4-28🍯%40xkmfjd|美国 14"
-  - "🇺🇸|4-28🍯%40xkmfjd|美国 15"
-  - "🇺🇸|4-28🍯%40xkmfjd|美国 16"
-  - "🇺🇸|4-28🍯%40xkmfjd|美国 17"
-  - "🇺🇸|4-28🍯%40xkmfjd|美国 18"
-  - "🇺🇸|4-28🍯%40xkmfjd|美国 19"
-  - "🇺🇸|4-28🍯%40xkmfjd|美国 20"
-  - "🇺🇸|4-28🍯%40xkmfjd|美国 21"
-  - "🇺🇸|4-28🍯%40xkmfjd|美国 22"
-  - "🇺🇸|4-28🍯%40xkmfjd|美国 23"
-  - "🇺🇸|4-28🍯%40xkmfjd|美国 24"
-  - "🇺🇸|4-28🍯@xkmfjd|美国 25"
-  - "🇺🇸|4-28🍯%40xkmfjd|美国 26"
+  - "🇺🇸|4-28🍯@xkmfjd|美国 15"
+  - "🇺🇸|4-28🍯@xkmfjd|美国 16"
+  - "🇺🇸|4-28🍯@xkmfjd|美国 17"
+  - "🇺🇸|4-28🍯@xkmfjd|美国 18"
+  - "🇺🇸|4-28🍯@xkmfjd|美国 21"
+  - "🇺🇸|4-28🍯@xkmfjd|美国 22"
   - "🇺🇸|4-28🍯@xkmfjd|美国 27"
-  - "🇺🇸|4-28🍯%40xkmfjd|美国 36"
-  - "🇺🇸|4-28🍯@xkmfjd|美国 37"
-  - "🇺🇸|4-28🍯@xkmfjd|美国 43"
-  - "🇺🇸|4-28🍯@xkmfjd|美国 44"
+  - "🇺🇸|4-28🍯@xkmfjd|美国 30"
+  - "🇺🇸|4-28🍯@xkmfjd|美国 33"
+  - "🇺🇸|4-28🍯%40xkmfjd|美国 41"
   - "🇺🇸|4-28🍯@xkmfjd|美国 51"
-  - "🇺🇸|4-28🍯@xkmfjd|美国 53"
-  - "🇺🇸|4-28🍯@xkmfjd|美国 58"
-  - "🇷🇺|4-28🍯@xkmfjd|俄罗斯 01"
-  - "🇺🇸|4-28🍯@xkmfjd|美国 60"
-  - "🇺🇸|4-28🍯%40xkmfjd|美国 62"
-  - "🇺🇸|4-28🍯%40xkmfjd|美国 63"
-  - "🇺🇸|4-28🍯%40xkmfjd|美国 65"
-  - "🇺🇸|4-28🍯@xkmfjd|美国 69"
-  - "🇺🇸|4-28🍯@xkmfjd|美国 70"
-  - "🇺🇸|4-28🍯@xkmfjd|美国 72"
-  - "🇬🇧|4-28🍯@xkmfjd|英国 02"
-  - "🇭🇰|4-28🍯@xkmfjd|香港 01"
-  - "🇰🇷|4-28🍯%40xkmfjd|韩国 01"
-  - "🇨🇭|4-28🍯%40xkmfjd|瑞士 04"
-  - "🇨🇭|4-28🍯@xkmfjd|瑞士 05"
-  - "🇩🇪|4-28🍯@xkmfjd|德国 01"
-  - "🇩🇪|4-28🍯@xkmfjd|德国 04"
-  - "🇩🇪|4-28🍯@xkmfjd|德国 05"
-  - "🇫🇷|4-28🍯%40xkmfjd|法国 04"
+  - "🇺🇸|4-28🍯@xkmfjd|美国 54"
+  - "🇺🇸|4-28🍯%40xkmfjd|美国 55"
   - "🇳🇱|4-28🍯@xkmfjd|荷兰 01"
-  - "🇳🇱|4-28🍯@xkmfjd|荷兰 02"
+  - "🇺🇸|4-28🍯@xkmfjd|美国 57"
+  - "🇺🇸|4-28🍯@xkmfjd|美国 59"
+  - "🇺🇸|4-28🍯@xkmfjd|美国 60"
+  - "🇳🇱|4-28🍯%40xkmfjd|荷兰 06"
+  - "🇺🇸|4-28🍯@xkmfjd|美国 61"
+  - "🇳🇱|4-28🍯%40xkmfjd|荷兰 08"
+  - "🇺🇸|4-28🍯@xkmfjd|美国 63"
+  - "🇳🇱|4-28🍯@xkmfjd|荷兰 09"
+  - "🇳🇱|4-28🍯@xkmfjd|荷兰 10"
+  - "🇳🇱|4-28🍯%40xkmfjd|荷兰 11"
+  - "🇨🇦|4-28🍯@xkmfjd|加拿大 05"
+  - "🇨🇦|4-28🍯@xkmfjd|加拿大 06"
+  - "🇺🇦|4-28🍯@xkmfjd|乌克兰 01"
+  - "4-28🍯@xkmfjd|🌀其他12-未识别 | ⬇️ 9.0MB/s 01"
+  - "🇷🇺|4-28🍯@xkmfjd|俄罗斯 02"
+  - "🇷🇺|4-28🍯@xkmfjd|俄罗斯 03"
+  - "🇪🇸|4-28🍯%40xkmfjd|西班牙 01"
+  - "🇲🇩|4-28🍯%40xkmfjd|摩尔多瓦 01"
+  - "🇲🇩|4-28🍯@xkmfjd|摩尔多瓦 02"
+  - "🇬🇧|4-28🍯@xkmfjd|英国 01"
+  - "🇰🇷|4-28🍯%40xkmfjd|韩国 01"
+  - "🇩🇪|4-28🍯@xkmfjd|德国 02"
+  - "🇨🇭|4-28🍯@xkmfjd|瑞士 04"
+  - "🇨🇭|4-28🍯@xkmfjd|瑞士 05"
+  - "🇨🇳|4-28🍯@xkmfjd|台湾 01"
+  - "🇫🇷|4-28🍯%40xkmfjd|法国 04"
+  - "🇳🇱|4-28🍯%40xkmfjd|荷兰 02"
   - "🇳🇱|4-28🍯%40xkmfjd|荷兰 03"
   - "🇳🇱|4-28🍯@xkmfjd|荷兰 04"
-  - "🇯🇵|4-28🍯@xkmfjd|日本 01"
-  - "🇯🇵|4-28🍯@xkmfjd|日本 02"
-  - "🇯🇵|4-28🍯@xkmfjd|日本 03"
   - "🇸🇬|4-28🍯%40xkmfjd|新加坡 01"
   - "🇨🇦|4-28🍯@xkmfjd|加拿大 02"
-  - "🇨🇦|4-28🍯@xkmfjd|加拿大 01"
-  - "🇨🇦|4-28🍯%40xkmfjd|加拿大 03"
+  - "🇨🇦|4-28🍯%40xkmfjd|加拿大 01"
+  - "🇨🇦|4-28🍯@xkmfjd|加拿大 03"
   - "🇫🇷|4-28🍯%40xkmfjd|法国 03"
-  - "🇫🇷|4-28🍯@xkmfjd|法国 05"
+  - "🇫🇷|4-28🍯%40xkmfjd|法国 05"
+  - "🇫🇷|4-28🍯%40xkmfjd|法国 06"
   - "🇫🇷|4-28🍯@xkmfjd|法国 07"
-  - "🇫🇷|4-28🍯%40xkmfjd|法国 08"
-  - "🇲🇩|4-28🍯%40xkmfjd|摩尔多瓦 01"
-  - "🇨🇾|4-28🍯@xkmfjd|塞浦路斯 03"
-  - "🇭🇰|4-28🍯%40xkmfjd|香港 02"
-  - "🇨🇾|4-28🍯@xkmfjd|塞浦路斯 13"
-  - "🇦🇹|4-28🍯%40xkmfjd|奥地利 01"
+  - "🇫🇷|4-28🍯@xkmfjd|法国 09"
+  - "🇨🇾|4-28🍯@xkmfjd|塞浦路斯 06"
+  - "🇭🇰|4-28🍯@xkmfjd|香港 02"
+  - "🇨🇾|4-28🍯@xkmfjd|塞浦路斯 11"
 rules:
 - "GEOSITE,CATEGORY-ADS-ALL,REJECT"
 - "DOMAIN-SUFFIX,ushd.xmsl.org,DIRECT"
