@@ -69,24 +69,10 @@ proxies:
 - {name: "GigaMAX03🐼 [flynb]", server: "p241.panda004.net", port: 3886, client-fingerprint: "chrome", type: "ss", cipher: "aes-256-cfb", password: "qwerREWQ@@", tfo: true, udp: true}
 - {name: "대한민국15🐼 [flynb]", server: "p234.panda004.net", port: 45544, client-fingerprint: "chrome", type: "ss", cipher: "aes-256-cfb", password: "qwerREWQ@@", tfo: true, udp: true}
 - {name: "PremiumSK25🐼 [flynb]", server: "p141.panda001.net", port: 4652, client-fingerprint: "chrome", type: "ss", cipher: "aes-256-cfb", password: "qwerREWQ@@", tfo: true, udp: true}
-- name: "韩国 - Gwanak-gu - Korea Telecom - 3 [go4sharing]"
-  server: "p221.panda001.net"
-  type: "ss"
-  country: "🇰🇷KR"
-  port: 34669
-  password: "qwerREWQ@@"
-  cipher: "aes-256-cfb"
-  delay: 476
+- {name: "대한민국02🐼 [flynb]", server: "p221.panda001.net", port: 34669, client-fingerprint: "chrome", type: "ss", cipher: "aes-256-cfb", password: "qwerREWQ@@", tfo: true, udp: true}
 - {name: "대한민국03🐼 [flynb]", server: "p222.panda001.net", port: 15098, client-fingerprint: "chrome", type: "ss", cipher: "aes-256-cfb", password: "qwerREWQ@@", tfo: true, udp: true}
 - {name: "🇨🇳 Taiwan01@🐼 [flynb]", server: "e001.panda003.net", port: 64759, client-fingerprint: "chrome", type: "ss", cipher: "aes-256-cfb", password: "qwerREWQ@@", tfo: true, udp: true}
-- name: "韩国 - Gasan-dong - LG DACOM Corporation - 2 [go4sharing]"
-  server: "p080.panda001.net"
-  port: 36379
-  type: "ss"
-  cipher: "aes-256-cfb"
-  password: "qwerREWQ@@"
-  udp: true
-  delay: 791
+- {name: "TerraLG18🐼 [flynb]", server: "p080.panda001.net", port: 36379, client-fingerprint: "chrome", type: "ss", cipher: "aes-256-cfb", password: "qwerREWQ@@", tfo: true, udp: true}
 - {name: "🇯🇵 ⓢⓟ Tokyo Pro 4 [flynb]", server: "13.113.80.125", port: 30323, client-fingerprint: "chrome", type: "ss", cipher: "aes-256-gcm", password: "nHUXPsJ6", tfo: true, udp: true}
 - {name: "ⓢⓟ Seoul Pro 3 [flynb]", server: "13.125.168.176", port: 30976, client-fingerprint: "chrome", type: "ss", cipher: "aes-256-gcm", password: "gJg1TyUQ", tfo: true, udp: true}
 - {name: "ⓢⓟ Seoul Pro 1 [flynb]", server: "54.180.189.215", port: 8995, client-fingerprint: "chrome", type: "ss", cipher: "aes-256-gcm", password: "poiyT9rF", tfo: true, udp: true}
@@ -724,13 +710,14 @@ proxies:
   password: "79739832-b888-415a-a454-8b53911c944a"
   ip-version: "dual"
   cipher: "aes-128-gcm"
-- name: "波兰 - 华沙 - 1337 Services GmbH - 1 [go4sharing]"
+- name: "4-28🍯%40xkmfjd|🌀其他3-T1 | ⬇️ 3.1MB%2Fs 01 [tk1]"
+  type: "ss"
   server: "51.15.15.82"
   port: 989
-  type: "ss"
-  cipher: "aes-256-cfb"
+  tls: false
   password: "f8f7aCzcPKbsF8p3"
-  delay: 1816
+  ip-version: "dual"
+  cipher: "aes-256-cfb"
 - name: "🇭🇰|4-28🍯%40xkmfjd|香港 03 [tk1]"
   type: "ss"
   server: "46.17.41.4"
@@ -1435,16 +1422,7 @@ proxies:
   ip-version: "dual"
   alterId: 0
   cipher: "auto"
-- name: "中国 - 香港 - Google LLC - 4 [go4sharing]"
-  server: "35.220.230.251"
-  port: 30251
-  type: "vmess"
-  uuid: "86c9c119-c46d-45a9-82a6-75a886e5e795"
-  alterId: 0
-  cipher: "auto"
-  tls: false
-  skip-cert-verify: true
-  delay: 268
+- {name: "❓ 未知_1 [dcj]", type: "vmess", server: "35.220.230.251", port: "30251", cipher: "auto", uuid: "86c9c119-c46d-45a9-82a6-75a886e5e795", alterId: "0", tls: false}
 - name: "🇫🇷|4-28🍯@xkmfjd|法国 10 [tk1]"
   type: "vmess"
   server: "kapelleng.com"
@@ -1469,25 +1447,7 @@ proxies:
   ip-version: "dual"
   alterId: 0
   cipher: "auto"
-- name: "荷兰 - 阿姆斯特丹 - DigitalOcean, LLC - 1 [go4sharing]"
-  server: "0:0:0:0:0:ffff:9df5:4c61"
-  port: 2095
-  type: "vmess"
-  uuid: "6ba15edd-efc5-426b-baf7-70b9c6607e26"
-  alterId: 0
-  cipher: "auto"
-  tls: false
-  skip-cert-verify: false
-  network: "http"
-  http-opts:
-    method: "GET"
-    path:
-    - "/"
-    headers:
-      Host:
-      - "nl1.bugfreenet.biz.ddns-ip.net"
-  udp: true
-  delay: 569
+- {type: "vmess", name: "🇳🇱 荷兰_3 [dcj]", http-opts: {path: ["/"], headers: {Host: ["nl1.bugfreenet.biz.ddns-ip.net"]}}, server: "0:0:0:0:0:ffff:9df5:4c61", port: "2095", uuid: "6ba15edd-efc5-426b-baf7-70b9c6607e26", alterId: "0", cipher: "auto", network: "http", client-fingerprint: "chrome"}
 - name: "🇳🇱|4-28🍯@xkmfjd|荷兰 29 [tk1]"
   type: "vmess"
   server: "45.8.145.145"
@@ -1656,29 +1616,11 @@ proxies:
   ip-version: "dual"
   alterId: 0
   cipher: "auto"
-- name: "中国 - 合肥 - China Unicom CHINA169 Anhui Province Network - 2 [go4sharing]"
-  server: "112.132.215.34"
-  port: 50007
-  type: "vmess"
-  uuid: "418048af-a293-4b99-9b0c-98ca3580dd24"
-  alterId: 0
-  cipher: "auto"
-  tls: false
-  skip-cert-verify: true
-  delay: 880
+- {name: "❓ 未知_2 [dcj]", type: "vmess", server: "112.132.215.34", port: "50007", cipher: "auto", uuid: "418048af-a293-4b99-9b0c-98ca3580dd24", alterId: "0", tls: false, client-fingerprint: "chrome"}
 - {type: "vmess", name: "🇨🇳 中国_1 [dcj]", server: "47.92.152.169", port: "50002", uuid: "418048af-a293-4b99-9b0c-98ca3580dd24", alterId: "0", cipher: "auto", network: "tcp", client-fingerprint: "chrome"}
 - {skip-cert-verify: true, sni: "k39.tudou211.com", type: "trojan", password: "f57f01e6-9bb1-4277-a5cb-75ad0ce1fa11", server: "125.94.40.162", port: "21170", name: "🇸🇬 新加坡_1 [dcj]", client-fingerprint: "chrome"}
 - {type: "vmess", name: "🇨🇳 中国_2 [dcj]", server: "47.104.186.133", port: "50002", uuid: "418048af-a293-4b99-9b0c-98ca3580dd24", alterId: "0", cipher: "auto", network: "tcp", client-fingerprint: "chrome"}
-- name: "中国 - 广州市 - China Mobile communications corporation - 3 [go4sharing]"
-  server: "120.210.205.59"
-  port: 50002
-  type: "vmess"
-  uuid: "418048af-a293-4b99-9b0c-98ca3580dd24"
-  alterId: 64
-  cipher: "auto"
-  tls: false
-  skip-cert-verify: true
-  delay: 226
+- {type: "vmess", name: "❓ 未知_3 [dcj]", server: "120.210.205.59", port: "50002", uuid: "418048af-a293-4b99-9b0c-98ca3580dd24", alterId: "64", cipher: "auto", network: "tcp", client-fingerprint: "chrome"}
 - {type: "vmess", name: "🇨🇳 中国_3 [dcj]", server: "47.116.166.178", port: "50002", uuid: "418048af-a293-4b99-9b0c-98ca3580dd24", alterId: "0", cipher: "auto", network: "tcp", client-fingerprint: "chrome"}
 - {name: "❓ 未知_4 [dcj]", type: "vmess", server: "120.26.55.225", port: "50002", cipher: "auto", uuid: "418048af-a293-4b99-9b0c-98ca3580dd24", alterId: "0", tls: false, skip-cert-verify: true, network: "tcp", client-fingerprint: "chrome"}
 - {type: "hysteria2", name: "❓ 未知_5 [dcj]", server: "165.1.76.128", port: "444", password: "sysadmin.sysadmin", sni: "mg1.wtn.wang", skip-cert-verify: true, tfo: false, client-fingerprint: "chrome"}
@@ -1696,46 +1638,18 @@ proxies:
 - {name: "❓ 未知_12 [dcj]", type: "vmess", server: "120.199.83.240", port: "45260", cipher: "auto", uuid: "3888997d-dca4-40ba-92e4-06b6918c9643", alterId: "0", tls: false, skip-cert-verify: true, network: "tcp", client-fingerprint: "chrome"}
 - {name: "❓ 未知_13 [dcj]", type: "ss", server: "cmthkd-d.net-lag.xyz", port: "565", password: "88430607-f080-4816-b2e5-1a47e193a057", cipher: "aes-128-gcm", client-fingerprint: "chrome"}
 - {name: "🇭🇰 香港_2 [dcj]", type: "vmess", server: "f00627fb-sva740-sv995i-xz4l.cm.plebai.net", port: "15229", cipher: "auto", uuid: "8c3ef4c2-980d-11ef-add7-f23c913c8d2b", alterId: "0", tls: false, skip-cert-verify: true, network: "tcp", client-fingerprint: "chrome"}
-- name: "俄罗斯 - 莫斯科 - LLC BAXET - 2 [go4sharing]"
-  server: "46.17.41.5"
-  type: "hysteria2"
-  country: "🇷🇺RU"
-  port: 12904
-  udp: true
-  password: "dongtaiwang.com"
-  sni: "apple.com"
-  skip-cert-verify: true
-  delay: 803
+- {type: "hysteria2", name: "🇷🇺 俄罗斯_1 [dcj]", server: "46.17.41.5", port: "12904", password: "dongtaiwang.com", sni: "apple.com", skip-cert-verify: true, tfo: false, client-fingerprint: "chrome"}
 - {name: "❓ 未知_14 [dcj]", type: "vmess", server: "lt.fxlcn.com", port: "45291", cipher: "auto", uuid: "469e0b31-30c3-4dab-800d-711232634ce1", alterId: "0", tls: false, skip-cert-verify: true, network: "tcp", client-fingerprint: "chrome"}
 - {cipher: "aes-256-cfb", name: "🇰🇷 韩国_2 [dcj]", password: "qwerREWQ@@", port: "63648", server: "125.141.26.15", type: "ss", client-fingerprint: "chrome"}
 - {name: "🇷🇺 俄罗斯_2 [dcj]", type: "hysteria", server: "46.17.41.174", port: "10469", ports: "10469", auth_str: "dongtaiwang.com", up: "1000", down: "1000", fast-open: true, protocol: "udp", sni: "apple.com", skip-cert-verify: true, alpn: ["h3"], client-fingerprint: "chrome", auth-str: "dongtaiwang.com"}
 - {type: "hysteria2", name: "🇫🇷 法国_1 [dcj]", server: "fr3.eyucdn.xyz", port: "2056", password: "45b46edb-679b-4ea5-befd-88c05bb94f80", sni: "fr3.eyucdn.xyz", skip-cert-verify: true, tfo: false, client-fingerprint: "chrome"}
-- name: "俄罗斯 - 莫斯科 - LLC Baxet - 1 [go4sharing]"
-  server: "hy2.694463.xyz"
-  port: 10011
-  type: "hysteria2"
-  password: "dongtaiwang.com"
-  auth: "dongtaiwang.com"
-  sni: "www.bing.com"
-  skip-cert-verify: true
-  udp: true
-  delay: 220
+- {type: "hysteria2", name: "🇷🇺 俄罗斯_3 [dcj]", server: "hy2.694463.xyz", port: "10011", password: "dongtaiwang.com", sni: "www.bing.com", skip-cert-verify: true, tfo: false, client-fingerprint: "chrome"}
 - {type: "vless", name: "🇩🇪 德国_1 [dcj]", server: "188.166.194.27", port: "7594", uuid: "2a219df1-a04b-4424-bfd2-cb37aeb10b2c", tls: true, client-fingerprint: "chrome", skip-cert-verify: false, reality-opts: {public-key: "AZSptdvlWvvmKWEDTY56UsIcnTP8nGCafvPEQOozrxw", short-id: "765e8e700426816c"}, network: "grpc", grpc-opts: {grpc-service-name: "7594vless"}, servername: "dash.cloudflare.com"}
 - {type: "hysteria2", name: "❓ 未知_15 [dcj]", server: "152.67.234.151", port: "444", password: "sysadmin.sysadmin", sni: "mg2.wtn.wang", skip-cert-verify: true, tfo: false}
 - {type: "hysteria2", name: "❓ 未知_16 [dcj]", server: "4e4babe3-suk9s0-t234dm-eso8.hy2.gotochinatown.net", port: "8443", password: "3c461e2c-9d13-11ef-8563-f23c913c8d2b", sni: "4e4babe3-suk9s0-t234dm-eso8.hy2.gotochinatown.net", skip-cert-verify: false, tfo: false, client-fingerprint: "chrome"}
 - {type: "vless", name: "❓ 未知_17 [dcj]", server: "220.118.248.123", port: "30012", uuid: "55520747-311e-4015-83ce-be46e2060ce3", skip-cert-verify: true, udp: true, tls: true, network: "ws", ws-opts: {path: "/?ed=2560", headers: {Host: "vx.bgm2024.dpdns.org"}}, client-fingerprint: "chrome", servername: "vx.bgm2024.dpdns.org"}
 - {type: "ss", server: "125.141.31.72", port: "15098", cipher: "aes-256-cfb", password: "qwerREWQ@@", name: "🇰🇷 韩国_3 [dcj]", client-fingerprint: "chrome"}
-- name: "中国 - 香港 - CTG Server Ltd. - 9 [go4sharing]"
-  server: "120.232.153.40"
-  port: 59082
-  type: "vmess"
-  uuid: "418048af-a293-4b99-9b0c-98ca3580dd24"
-  alterId: 0
-  cipher: "auto"
-  tls: false
-  skip-cert-verify: false
-  udp: true
-  delay: 781
+- {name: "🇭🇰 香港_3 [dcj]", type: "vmess", server: "120.232.153.40", port: "59082", cipher: "auto", uuid: "418048af-a293-4b99-9b0c-98ca3580dd24", alterId: "0", tls: false, client-fingerprint: "chrome"}
 - {type: "ss", server: "185.189.160.98", port: "64759", cipher: "aes-256-cfb", password: "qwerREWQ@@", name: "🇹🇼 台湾_1 [dcj]", client-fingerprint: "chrome"}
 - {type: "hysteria2", name: "❓ 未知_18 [dcj]", server: "6ce8fc7b-surog0-t2cl3c-14ubl.hy2.gotochinatown.net", port: "8443", password: "d0f35ada-c39c-11ef-8a98-f23c91cfbbc9", sni: "6ce8fc7b-surog0-t2cl3c-14ubl.hy2.gotochinatown.net", skip-cert-verify: false, tfo: false, client-fingerprint: "chrome"}
 - {type: "hysteria2", name: "❓ 未知_19 [dcj]", server: "80f221ad-sv8cg0-sy9xc0-1s3lb.hy2.gotochinatown.net", port: "8443", password: "fbf91120-50ba-11ef-a203-f23c91cfbbc9", sni: "80f221ad-sv8cg0-sy9xc0-1s3lb.hy2.gotochinatown.net", skip-cert-verify: false, tfo: false, client-fingerprint: "chrome"}
@@ -1747,20 +1661,7 @@ proxies:
 - {type: "hysteria2", name: "❓ 未知_23 [dcj]", server: "p5.punchline.ir", port: "14055", password: "p27Iss2ByA", sni: "p5.punchline.ir", obfs: "salamander", obfs-password: "AOICMIWHB892R8LNKDQX", skip-cert-verify: true, tfo: false, client-fingerprint: "chrome"}
 - {type: "hysteria2", name: "🇱🇮 列支敦士登 [dcj]", server: "sinavm.soft10.ir", port: "443", password: "Bia-SiNAVM-Telegram-SiNAVM-Bia-SiNAVM", sni: "sinavm.soft10.ir", obfs: "salamander", obfs-password: "@SiNAVM-SiNAVM-SiNAVM-@SiNAVM-@SiNAVM", skip-cert-verify: false, tfo: false, client-fingerprint: "chrome"}
 - {type: "vless", name: "❓ 未知_24 [dcj]", server: "104.21.86.235", port: "80", uuid: "d342d11e-d424-4583-b36e-524ab1f0afa4", skip-cert-verify: false, network: "ws", ws-opts: {headers: {Host: "c.lkzb-0t0.workers.dev"}, path: "/?ed=2048"}, client-fingerprint: "chrome"}
-- name: "中国 - 台湾 - Akari Networks - 10 [go4sharing]"
-  server: "shenzhou02.mysynology.net"
-  port: 34313
-  type: "vless"
-  uuid: "459b4a80-bd61-4ecd-a26b-e9c1809d9e45"
-  tls: true
-  flow: "xtls-rprx-vision"
-  reality-opts:
-    public-key: "qhTzYYIgBzDLNYR79oxftqdo1kzL-1_hGJKfqrOliCY"
-  servername: "gateway.icloud.com"
-  client-fingerprint: "chrome"
-  network: "tcp"
-  udp: true
-  delay: 795
+- {name: "🇹🇼 台湾_3 [dcj]", server: "shenzhou02.mysynology.net", port: "34313", type: "vless", uuid: "459b4a80-bd61-4ecd-a26b-e9c1809d9e45", flow: "xtls-rprx-vision", tls: true, skip-cert-verify: false, client-fingerprint: "chrome", reality-opts: {public-key: "qhTzYYIgBzDLNYR79oxftqdo1kzL-1_hGJKfqrOliCY"}, udp: true, network: "tcp", servername: "gateway.icloud.com"}
 - {name: "❓ 未知_25 [dcj]", server: "admin.c3.webramz.co", port: "443", type: "ss", cipher: "chacha20-ietf-poly1305", password: "Bog0ELmMM9DSxDdQ"}
 - {type: "hysteria2", name: "🇨🇦 加拿大 [dcj]", server: "155.248.219.28", port: "30300", password: "2429bee3-e0c1-47dd-b420-75e6512b184b", sni: "www.bing.com", skip-cert-verify: true, tfo: false, client-fingerprint: "chrome"}
 - {name: "🇭🇰 香港_4 [dcj]", type: "vmess", server: "fc4de86a-sv8cg0-sv995i-xz4l.cm.plebai.net", port: "15229", cipher: "auto", uuid: "8c3ef4c2-980d-11ef-add7-f23c913c8d2b", alterId: "0", tls: false, skip-cert-verify: true, network: "tcp", client-fingerprint: "chrome"}
@@ -1799,28 +1700,9 @@ proxies:
 - {name: "🇩🇪 德国_4 [dcj]", type: "vmess", server: "dxv4.pai50288.uk", port: "14100", cipher: "auto", uuid: "f6866b0b-f946-4a03-8df0-c7e0016b55ad", alterId: "0", tls: false, skip-cert-verify: true, network: "tcp", client-fingerprint: "chrome"}
 - {type: "ss", server: "185.39.207.60", port: "443", cipher: "chacha20-ietf-poly1305", password: "Z0UurGkG6iJa", name: "🇬🇷 希腊 [dcj]"}
 - {name: "🇺🇸 美国_6 [dcj]", type: "vmess", server: "120.232.153.41", port: "46597", cipher: "auto", uuid: "418048af-a293-4b99-9b0c-98ca3580dd24", alterId: "0", tls: false, skip-cert-verify: true, network: "tcp"}
-- name: "法国 - 巴黎 - Online S.A.S. - 1 [go4sharing]"
-  server: "tgju.org"
-  port: 8080
-  type: "vless"
-  uuid: "690ab90e-3f21-422b-8cb1-bc9845c7af1e"
-  tls: false
-  servername: "IO.IhJtq0hklC.ZULAiR.OrG."
-  network: "ws"
-  ws-opts:
-    path: "/?ed=2048"
-    headers:
-      Host: "IO.IhJtq0hklC.ZULAiR.OrG."
-  udp: true
-  delay: 877
+- {type: "vless", name: "❓ 未知_42 [dcj]", server: "tgju.org", port: "8080", uuid: "6abbaf96-4b16-48d3-b996-a6067fc6eb2c", skip-cert-verify: false, network: "ws", ws-opts: {headers: {Host: "M4.nF9JZ2st7N.zULAiR.ORG."}, path: "/"}, client-fingerprint: "chrome", servername: "M4.nF9JZ2st7N.zULAiR.ORG."}
 - {name: "🇸🇬 新加坡_6 [dcj]", type: "vmess", server: "183.236.51.38", port: "54652", cipher: "auto", uuid: "418048af-a293-4b99-9b0c-98ca3580dd24", alterId: "0", tls: false, skip-cert-verify: true, network: "tcp", client-fingerprint: "chrome"}
-- name: "美国 - 洛杉矶 - GTHost - 1 [go4sharing]"
-  server: "38.114.114.108"
-  port: 8091
-  type: "ss"
-  cipher: "aes-256-gcm"
-  password: "PCnnH6SQSnfoS27"
-  delay: 865
+- {type: "ss", server: "38.114.114.108", port: "8091", cipher: "aes-256-gcm", password: "PCnnH6SQSnfoS27", name: "🇺🇸 美国_7 [dcj]"}
 - {type: "vless", name: "❓ 未知_46 [dcj]", server: "213.142.133.172", port: "7594", uuid: "2a219df1-a04b-4424-bfd2-cb37aeb10b2c", tls: true, client-fingerprint: "chrome", skip-cert-verify: false, reality-opts: {public-key: "AZSptdvlWvvmKWEDTY56UsIcnTP8nGCafvPEQOozrxw", short-id: "765e8e700426816c"}, network: "grpc", grpc-opts: {grpc-service-name: "7594vless"}, servername: "dash.cloudflare.com"}
 - {type: "vless", name: "❓ 未知_49 [dcj]", server: "104.21.75.193", port: "443", uuid: "89b3cbba-e6ac-485a-9481-976a0415eab9", tls: true, skip-cert-verify: false, network: "ws", ws-opts: {headers: {Host: "bpb.64kb.cc"}, path: "/?ed=5108"}, servername: "bpb.64kb.cc"}
 - {type: "trojan", name: "🇹🇼 台湾_8 [dcj]", server: "218.158.109.102", port: "12336", password: "Aimer", udp: true, skip-cert-verify: true, sni: "epcca.ambercc.filegear-sg.me", network: "ws", ws-opts: {path: "/?ed=2560&proxyip=ts.hpc.tw", headers: {Host: "epcca.ambercc.filegear-sg.me"}}, client-fingerprint: "chrome"}
@@ -1843,37 +1725,10 @@ proxies:
 - {type: "vless", name: "❓ 未知_59 [dcj]", server: "104.21.82.137", port: "443", uuid: "1d5e1a16-607a-45d5-a27a-2d4e764addb6", tls: true, client-fingerprint: "chrome", alpn: ["h3", "h2", "http/1.1"], skip-cert-verify: false, network: "ws", ws-opts: {headers: {Host: "cdnfast.lunarmc.ir."}, path: "/@one_shop_official_@one_shop_official_@one_shop_official_@one_shop_official_@one_shop_official_@one_shop_official_@one_shop_official_@one_shop_official_@one_shop_official_@one_shop_official_@one_shop_official_@one_shop_official_@one_shop_official_@one_shop_official_@one_shop_official_@one_shop_official_@one_shop_official_@one_shop_official_?ed=2048"}, servername: "cdnfast.lunarmc.ir."}
 - {name: "加入我的频道t.me/CMLiussss解锁更多优选节点 [cml]", server: "join.my.telegram.channel.cmliussss.to.unlock.more.premium.nodes.cf.090227.xyz", port: 443, type: "vless", uuid: "838f5273-5d2d-4630-a0f5-9cc8e4aef4d6", tls: true, tfo: false, skip-cert-verify: true, servername: "TySpSgQg.rIcKtMoUsE.InFo", client-fingerprint: "chrome", network: "ws", ws-opts: {path: "/", headers: {Host: "TySpSgQg.rIcKtMoUsE.InFo"}}}
 - {sni: "trojan.burgerip.co.uk", alpn: ["http/1.1"], type: "trojan", password: "telegram-id-vlessconfig", server: "35.181.111.2", port: "22222", name: "❓ 未知_60 [dcj]"}
-- name: "日本 - 东京 - Akamai Technologies - 1 [go4sharing]"
-  server: "120.253.242.194"
-  port: 35244
-  type: "vmess"
-  uuid: "46a539d2-d3ba-4a6e-aedb-b727d2fc60f8"
-  alterId: 0
-  cipher: "auto"
-  tls: true
-  skip-cert-verify: true
-  servername: "jp4.vip2.g2.moonbase.life"
-  network: "ws"
-  ws-opts:
-    path: "/home"
-    headers:
-      Host: "jp4.vip2.g2.moonbase.life"
-  udp: true
-  delay: 1062
+- {name: "🇯🇵 日本_4 [dcj]", server: "120.253.242.194", port: "35244", type: "vmess", uuid: "46a539d2-d3ba-4a6e-aedb-b727d2fc60f8", alterId: "0", cipher: "auto", tls: true, skip-cert-verify: true, network: "ws", ws-opts: {path: "/home", headers: {Host: "jp4.vip2.g2.moonbase.life"}}, udp: true, client-fingerprint: "chrome", servername: "jp4.vip2.g2.moonbase.life"}
 - {name: "🇬🇧 英国_3 [dcj]", type: "vmess", server: "edcc173e-sum4g0-sv7391-mv7m.cu.plebai.net", port: "5229", uuid: "94d40708-8273-11ea-8fc9-f23c913c8d2b", network: "tcp", ip-version: "dual", udp: true, alterId: "0", cipher: "auto", client-fingerprint: "chrome"}
 - {type: "trojan", name: "🇹🇼 台湾_10 [dcj]", server: "121.149.228.125", port: "12315", password: "Aimer", udp: true, skip-cert-verify: true, sni: "epcca.ambercc.filegear-sg.me", network: "ws", ws-opts: {path: "/?ed=2560&proxyip=ts.hpc.tw", headers: {Host: "epcca.ambercc.filegear-sg.me"}}, client-fingerprint: "chrome"}
-- name: "英国 - 豪恩斯洛 - Cloudflare, Inc. - 5 [go4sharing]"
-  server: "159.54.173.8"
-  port: 443
-  type: "trojan"
-  password: "Aimer"
-  sni: "epcca.ambercc.filegear-sg.me"
-  network: "ws"
-  ws-opts:
-    path: "/?ed=2560"
-    headers:
-      Host: "epcca.ambercc.filegear-sg.me"
-  delay: 1092
+- {name: "🇹🇼 台湾_11 [dcj]", network: "ws", password: "Aimer", port: "443", server: "159.54.173.8", skip-cert-verify: true, sni: "epcca.ambercc.filegear-sg.me", type: "trojan", udp: true, ws-opts: {headers: {Host: "epcca.ambercc.filegear-sg.me"}, path: "/?ed=2560&proxyip=ts.hpc.tw"}, client-fingerprint: "chrome"}
 - {type: "trojan", name: "🇹🇼 台湾_12 [dcj]", server: "199.180.113.47", port: "36770", password: "Aimer", udp: true, skip-cert-verify: true, sni: "epcca.ambercc.filegear-sg.me", network: "ws", ws-opts: {path: "/?ed=2560&proxyip=ts.hpc.tw", headers: {Host: "epcca.ambercc.filegear-sg.me"}}, client-fingerprint: "chrome"}
 - {type: "trojan", name: "🇹🇼 台湾_13 [dcj]", server: "80.251.215.186", port: "8080", password: "Aimer", udp: true, skip-cert-verify: true, sni: "epcca.ambercc.filegear-sg.me", network: "ws", ws-opts: {path: "/?ed=2560&proxyip=ts.hpc.tw", headers: {Host: "epcca.ambercc.filegear-sg.me"}}, client-fingerprint: "chrome"}
 - {type: "vless", name: "🇺🇸 美国_12 [dcj]", server: "63.141.128.102", port: "443", uuid: "55520747-311e-4015-83ce-be46e2060ce3", skip-cert-verify: true, udp: true, tls: true, network: "ws", ws-opts: {path: "/?ed=2560", headers: {Host: "vx.bgm2024.dpdns.org"}}, client-fingerprint: "chrome", servername: "vx.bgm2024.dpdns.org"}
@@ -1913,175 +1768,6 @@ proxies:
 - {type: "ss", server: "154.90.62.168", port: "989", cipher: "aes-256-cfb", password: "f8f7aCzcPKbsF8p3", name: "🇰🇷 韩国_5 [dcj]", client-fingerprint: "chrome"}
 - {type: "vless", name: "🇩🇪 德国_6 [dcj]", server: "194.36.88.78", port: "443", uuid: "27c11f2c-85f4-44ef-ac28-670e987f5788", tls: true, flow: "xtls-rprx-vision", client-fingerprint: "chrome", skip-cert-verify: false, reality-opts: {public-key: "83kO-C72OoPSqNzGDHRwRwl2bAHlI6DCzDs2KR0spnI", short-id: "10de3e76c515259b"}, network: "tcp", servername: "www.microsoft.com"}
 - {name: "🇺🇸 美国_16 [dcj]", type: "vmess", server: "111.26.109.79", port: "30828", cipher: "auto", uuid: "cbb3f877-d1fb-344c-87a9-d153bffd5484", alterId: "2", tls: false, network: "ws", ws-opts: {path: "/oooo", headers: {Host: "ocbc.com"}}, client-fingerprint: "chrome"}
-- name: "奥地利 - 維也納 - Foundation for Applied Privacy - 1 [go4sharing]"
-  server: "51.15.23.63"
-  type: "ss"
-  country: "🇫🇷FR"
-  port: 989
-  password: "f8f7aCzcPKbsF8p3"
-  cipher: "aes-256-cfb"
-  delay: 1823
-- {name: "🇦🇺 澳大利亚1 | ⬇️ 6.8MB/s|53%|Openai 2 [cml]", server: "bsuqian01.dynu.net", port: 42426, type: "vless", uuid: "459b4a80-bd61-4ecd-a26b-e9c1809d9e45", tls: true, tfo: false, flow: "xtls-rprx-vision", skip-cert-verify: true, reality-opts: {public-key: "qhTzYYIgBzDLNYR79oxftqdo1kzL-1_hGJKfqrOliCY"}, servername: "gateway.icloud.com", client-fingerprint: "chrome", network: "tcp"}
-- name: "韩国 - 首尔特别市 - Shenzhen Tencent Computer Systems Company Limited - 1 [go4sharing]"
-  server: "43.131.255.175"
-  type: "ss"
-  country: "🇸🇬SG"
-  port: 3306
-  password: "1601e3c29c8db1a88942cf0cad731bf3"
-  cipher: "aes-256-cfb"
-  delay: 570
-- name: "美国 - 华盛顿特区 - GTHost - 2 [go4sharing]"
-  server: "38.107.226.14"
-  type: "ss"
-  country: "🇺🇸 US"
-  port: 2375
-  password: "faBAoD54k87UJG7"
-  cipher: "aes-256-gcm"
-  delay: 1450
-- name: "美国 - 华盛顿特区 - GTHost - 3 [go4sharing]"
-  server: "38.107.226.14"
-  type: "ss"
-  country: "🇺🇸 US"
-  port: 8882
-  password: "kDWvXYZoTBcGkC4"
-  cipher: "aes-256-gcm"
-  delay: 930
-- name: "美国 - 聖荷西 - Cloudflare, Inc. - 5 [go4sharing]"
-  server: "161.145.150.26"
-  port: 2087
-  type: "trojan"
-  password: "Aimer"
-  sni: "epcca.ambercc.filegear-sg.me"
-  network: "ws"
-  ws-opts:
-    path: "/?ed=2560"
-    headers:
-      Host: "epcca.ambercc.filegear-sg.me"
-  delay: 1479
-- name: "美国 - 芝加哥 - Sharktech - 4 [go4sharing]"
-  server: "5d38531f-sum4g0-svq8ok-ebxr.cu.plebai.net"
-  type: "vmess"
-  country: "🇨🇳CN"
-  port: 5229
-  uuid: "5cfde7fa-ed1b-11ef-b5d9-f23c9164ca5d"
-  alterId: 0
-  cipher: "auto"
-  network: "tcp"
-  http-opts: {}
-  h2-opts: {}
-  skip-cert-verify: true
-  delay: 906
-- name: "泰国 - 曼谷 - Kaopu Cloud HK Limited - 1 [go4sharing]"
-  server: "bsuqian01.dynu.net"
-  port: 16955
-  type: "vless"
-  uuid: "459b4a80-bd61-4ecd-a26b-e9c1809d9e45"
-  tls: true
-  flow: "xtls-rprx-vision"
-  reality-opts:
-    public-key: "qhTzYYIgBzDLNYR79oxftqdo1kzL-1_hGJKfqrOliCY"
-  servername: "www.yahoo.com"
-  client-fingerprint: "chrome"
-  network: "tcp"
-  udp: true
-  delay: 1612
-- name: "新加坡 - 新加坡 - DigitalOcean, LLC - 1 [go4sharing]"
-  server: "console.03.aliyun.aq.kunlunaqs.com"
-  type: "ss"
-  port: 45917
-  password: "f4cd0a554e9d0558c581"
-  cipher: "aes-128-gcm"
-  plugin: "obfs"
-  plugin-opts:
-    host: "215996dd9f1c3db1e54b.microsoft.com"
-    mode: "http"
-  delay: 444
-- name: "意大利 - 罗马市 - SonderCloud Limited - 1 [go4sharing]"
-  server: "194.41.59.80"
-  type: "ss"
-  country: "🇭🇰HK"
-  port: 8388
-  password: "asd123456"
-  cipher: "chacha20-ietf"
-  delay: 478
-- name: "英国 - 伦敦 - OVH SAS - 4 [go4sharing]"
-  server: "uk1.test3.net"
-  type: "trojan"
-  country: "🇬🇧GB"
-  port: 443
-  password: "c8b9db60-2132-11f0-880d-1239d0255272"
-  skip-cert-verify: true
-  udp: true
-  delay: 1001
-- name: "英国 - 伦敦 - OVH SAS - 2 [go4sharing]"
-  server: "51.38.65.155"
-  type: "trojan"
-  country: "🇬🇧GB"
-  port: 443
-  password: "7cbeb900-1939-11f0-ae81-1239d0255272"
-  sni: "tgju.org"
-  skip-cert-verify: true
-  udp: true
-  delay: 1252
-- name: "中国 - 合肥 - China Unicom CHINA169 Anhui Province Network - 1 [go4sharing]"
-  server: "112.132.215.12"
-  port: 50002
-  type: "vmess"
-  uuid: "418048af-a293-4b99-9b0c-98ca3580dd24"
-  alterId: 64
-  cipher: "auto"
-  tls: false
-  skip-cert-verify: true
-  servername: "ury-unit-c030ehei8.poget71138.workers.dev"
-  delay: 152
-- name: "中国 - 青园 - PEG TECH INC - 11 [go4sharing]"
-  server: "c2284d70-svhls0-t28b6o-ef48.sj.gotochinatown.net"
-  port: 443
-  type: "http"
-  username: "cb15123a-084c-11f0-8eab-f23c91cfbbc9"
-  password: "cb15123a-084c-11f0-8eab-f23c91cfbbc9"
-  tls: true
-  delay: 997
-- name: "中国 - 香港 - Global Connectivity Solutions LLP - 8 [go4sharing]"
-  server: "tw3.akebi.cc"
-  type: "hysteria2"
-  country: "🇹🇼TW"
-  port: 2021
-  udp: true
-  password: "82febca6-8856-41fe-84df-c8bda0b72c7b"
-  sni: "hk03.akebi.cc"
-  skip-cert-verify: false
-  delay: 199
-- name: "中国 - 香港 - Hong Kong Telecommunications (HKT) Limited Mass Internet - 6 [go4sharing]"
-  server: "console.03.aliyun.aq.kunlunaqs.com"
-  type: "ss"
-  port: 45905
-  password: "777bc05be0dd624959fb"
-  cipher: "aes-128-gcm"
-  plugin: "obfs"
-  plugin-opts:
-    host: "215996dd9f1c3db1e54b.microsoft.com"
-    mode: "http"
-  delay: 302
-- name: "中国 - 香港 - Polonetwork Limited - 7 [go4sharing]"
-  server: "console.02.aliyun.aq.kunlunaqs.com"
-  type: "ss"
-  port: 45578
-  password: "7243745919d6de49a5db"
-  cipher: "chacha20-ietf-poly1305"
-  plugin: "obfs"
-  plugin-opts:
-    host: "215996dd9f1c3db1e54b.microsoft.com"
-    mode: "http"
-  delay: 291
-- name: "中国 - 香港 - SonderCloud Limited - 5 [go4sharing]"
-  server: "154.197.26.120"
-  type: "ss"
-  country: "🇸🇨SC"
-  port: 8388
-  password: "asd123456"
-  cipher: "chacha20-ietf"
-  delay: 242
 - {name: "群里大佬分享更多节点 [cjbp]", server: "test123.zlqhdns.top", port: 10778, type: "vless", uuid: "459b4a80-bd61-4ecd-a26b-e9c1809d9e45", tls: true, tfo: false, flow: "xtls-rprx-vision", skip-cert-verify: true, reality-opts: {public-key: "qhTzYYIgBzDLNYR79oxftqdo1kzL-1_hGJKfqrOliCY"}, servername: "www.nvidia.com", client-fingerprint: "chrome", network: "tcp"}
 - {name: "订阅要换了 [cjbp]", server: "agaungzhou01.bumbleshrimp.com", port: 31800, type: "vless", uuid: "459b4a80-bd61-4ecd-a26b-e9c1809d9e45", tls: true, tfo: false, flow: "xtls-rprx-vision", skip-cert-verify: true, reality-opts: {public-key: "qhTzYYIgBzDLNYR79oxftqdo1kzL-1_hGJKfqrOliCY"}, servername: "www.nvidia.com", client-fingerprint: "chrome", network: "tcp"}
 - {name: "这个订阅不好看 [cjbp]", server: "agaungzhou01.bumbleshrimp.com", port: 38302, type: "vless", uuid: "459b4a80-bd61-4ecd-a26b-e9c1809d9e45", tls: true, tfo: false, flow: "xtls-rprx-vision", skip-cert-verify: true, reality-opts: {public-key: "qhTzYYIgBzDLNYR79oxftqdo1kzL-1_hGJKfqrOliCY"}, servername: "www.amazon.com", client-fingerprint: "chrome", network: "tcp"}
@@ -2476,6 +2162,7 @@ proxies:
 - {name: "🇯🇵 日本6 | ⬇️ 4.3MB/s|11%|Netflix|Disney|Youtube|Openai|Gemini 2 [cml]", server: "1ff869eb-svjgg0-t1bnjq-1krtb.cm5.p5pv.com", port: 17233, type: "vmess", uuid: "60f6b4c4-9d70-11ed-a4d2-f23c9164ca5d", alterId: 0, cipher: "auto", tls: false, skip-cert-verify: true}
 - {name: "🇫🇷 法国2 | ⬇️ 4.2MB/s|100%|Openai 2 [cml]", server: "158.180.228.226", port: 443, type: "vmess", uuid: "9b456c2a-f2c1-45e1-87a9-b7628b04bb24", alterId: 0, cipher: "auto", tls: true, skip-cert-verify: true, servername: "beyonddsz.cfd", network: "ws", ws-opts: {path: "/linkws"}}
 - {name: "🇫🇷 法国3 | ⬇️ 14.0MB/s|46%|Netflix|Youtube|Openai 2 [cml]", server: "zula.ir", port: 8880, type: "vless", uuid: "c8defeb3-768c-4b30-b39b-d392a13435ca", tls: false, tfo: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/?ed=2048", headers: {Host: "join.V2RAYFAST7.iran.ir.arvancloud.ir.nett.focusontrade.ir"}}}
+- {name: "🇦🇺 澳大利亚1 | ⬇️ 6.8MB/s|53%|Openai 2 [cml]", server: "bsuqian01.dynu.net", port: 42426, type: "vless", uuid: "459b4a80-bd61-4ecd-a26b-e9c1809d9e45", tls: true, tfo: false, flow: "xtls-rprx-vision", skip-cert-verify: true, reality-opts: {public-key: "qhTzYYIgBzDLNYR79oxftqdo1kzL-1_hGJKfqrOliCY"}, servername: "gateway.icloud.com", client-fingerprint: "chrome", network: "tcp"}
 - {name: "🇺🇸 美国1 | ⬇️ 10.7MB/s|6%|Netflix|Openai|Gemini 2 [cml]", server: "ssm.pimax.com", port: 10430, type: "vmess", uuid: "68876abb-0e56-4beb-b959-34a4bc57a6a2", alterId: 0, cipher: "auto", tls: true, skip-cert-verify: true, servername: "ssm.pimax.com", network: "ws", ws-opts: {path: "/fkgevws", headers: {Host: "ssm.pimax.com"}}}
 - {name: "🇺🇸 美国12 | ⬇️ 5.6MB/s|Openai 2 [cml]", server: "csuzhou01.1cooldns.com", port: 50200, type: "vless", uuid: "459b4a80-bd61-4ecd-a26b-e9c1809d9e45", tls: true, tfo: false, flow: "xtls-rprx-vision", skip-cert-verify: true, reality-opts: {public-key: "qhTzYYIgBzDLNYR79oxftqdo1kzL-1_hGJKfqrOliCY"}, servername: "www.amazon.com", client-fingerprint: "chrome", network: "tcp"}
 - {name: "🇺🇸 美国13 | ⬇️ 4.2MB/s|Netflix|Openai|Gemini 2 [cml]", server: "v8.heduian.link", port: 30808, type: "vmess", uuid: "cbb3f877-d1fb-344c-87a9-d153bffd5484", alterId: 2, cipher: "auto", tls: false, skip-cert-verify: true, servername: "baidu.com", network: "ws", ws-opts: {path: "/oooo", headers: {Host: "v8.heduian.link"}}}
@@ -2627,23 +2314,23 @@ proxies:
 - {name: "🇩🇪 德国 09 [cmj2]", server: "5.9.192.27", port: 443, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/?proxyip=proxyip.fxxk.dedyn.io", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
 - {name: "🇩🇪 德国 10 [cmj2]", server: "194.87.148.148", port: 8443, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/?proxyip=proxyip.fxxk.dedyn.io", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
 - {name: "加入我的频道t.me/CMLiussss解锁更多优选节点 [cmj3]", server: "Join.my.Telegram.channel.CMLiussss.to.unlock.more.premium.nodes.cf.090227.xyz", port: 443, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=proxyip.us.cmliussss.net", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
-- {name: "CFnat [cmj3]", server: "127.0.0.1", port: 1234, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=proxyip.tp46871.s2.uno.090227.xyz", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
-- {name: "🇺🇸 US [cmj3]", server: "160.79.105.187", port: 443, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=proxyip.us.cmliussss.net", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
-- {name: "🇫🇷 FR [cmj3]", server: "185.16.110.80", port: 443, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=proxyip.tp33470.s2.uno.090227.xyz", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
-- {name: "🇺🇸 US 2 [cmj3]", server: "63.141.128.233", port: 443, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=proxyip.us.cmliussss.net", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
-- {name: "🇭🇰 HK [cmj3]", server: "47.242.171.94", port: 2087, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=ProxyIP.Oracle.cmliussss.net", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
-- {name: "🇺🇸 US 3 [cmj3]", server: "192.200.160.172", port: 443, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=proxyip.us.cmliussss.net", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
-- {name: "🇷🇺 RU [cmj3]", server: "45.67.215.149", port: 443, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=proxyip.tp46871.s2.uno.090227.xyz", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
-- {name: "🇺🇸 US 4 [cmj3]", server: "160.79.105.233", port: 443, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=proxyip.us.cmliussss.net", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
-- {name: "🇭🇰 HK 2 [cmj3]", server: "47.242.57.106", port: 443, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=ProxyIP.Oracle.cmliussss.net", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
-- {name: "🇺🇸 US 5 [cmj3]", server: "192.0.63.196", port: 443, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=proxyip.us.cmliussss.net", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
-- {name: "🇺🇸 US 6 [cmj3]", server: "192.0.63.248", port: 443, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=proxyip.us.cmliussss.net", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
-- {name: "🇺🇸 US 7 [cmj3]", server: "192.0.63.183", port: 443, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=proxyip.us.cmliussss.net", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
-- {name: "🇺🇸 US 8 [cmj3]", server: "198.62.62.161", port: 443, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=proxyip.us.cmliussss.net", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
-- {name: "🇺🇸 US 9 [cmj3]", server: "69.84.182.250", port: 443, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=proxyip.us.cmliussss.net", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
-- {name: "🇺🇸 US 10 [cmj3]", server: "192.200.160.151", port: 443, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=proxyip.us.cmliussss.net", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
-- {name: "🇭🇰 HK 3 [cmj3]", server: "47.242.171.94", port: 8443, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=ProxyIP.Oracle.cmliussss.net", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
-- {name: "🇺🇸 US 11 [cmj3]", server: "135.84.76.98", port: 443, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=proxyip.us.cmliussss.net", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
+- {name: "CFnat [cmj3]", server: "127.0.0.1", port: 1234, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=proxyip.tp32576.s2.uno.090227.xyz", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
+- {name: "🇺🇸 US [cmj3]", server: "69.84.182.106", port: 443, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=69.84.182.106:443", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
+- {name: "🇺🇸 US 2 [cmj3]", server: "63.141.128.199", port: 443, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=63.141.128.199:443", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
+- {name: "🇭🇰 HK [cmj3]", server: "47.243.5.154", port: 2087, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=ProxyIP.Oracle.cmliussss.net", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
+- {name: "🇭🇰 HK 2 [cmj3]", server: "8.217.232.246", port: 2083, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=ProxyIP.Oracle.cmliussss.net", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
+- {name: "🇺🇸 US 3 [cmj3]", server: "63.141.128.88", port: 443, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=63.141.128.88:443", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
+- {name: "🇺🇸 US 4 [cmj3]", server: "69.84.182.16", port: 443, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=69.84.182.165:443", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
+- {name: "🇺🇸 US 5 [cmj3]", server: "47.76.32.108", port: 2053, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=proxyip.us.cmliussss.net", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
+- {name: "🇭🇰 HK 3 [cmj3]", server: "47.243.5.154", port: 2083, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=ProxyIP.Oracle.cmliussss.net", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
+- {name: "🇭🇰 HK 4 [cmj3]", server: "8.217.90.154", port: 443, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=8.217.90.154:443", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
+- {name: "🇭🇰 HK 5 [cmj3]", server: "16.163.18.210", port: 443, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=16.163.18.210:443", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
+- {name: "🇺🇸 US 6 [cmj3]", server: "63.141.128.53", port: 443, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=63.141.128.53:443", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
+- {name: "🇨🇳 TW [cmj3]", server: "35.201.203.106", port: 443, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=35.201.203.106:443", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
+- {name: "🇭🇰 HK 6 [cmj3]", server: "8.217.232.246", port: 2053, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=ProxyIP.Oracle.cmliussss.net", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
+- {name: "🇺🇸 US 7 [cmj3]", server: "192.0.63.178", port: 443, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=192.0.63.178:443", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
+- {name: "🇺🇸 US 8 [cmj3]", server: "47.76.32.108", port: 2083, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=proxyip.us.cmliussss.net", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
+- {name: "🇭🇰 HK 7 [cmj3]", server: "47.243.139.85", port: 2053, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=ProxyIP.Oracle.cmliussss.net", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
 - {name: "🇯🇵 JP [cmj3]", server: "158.101.154.245", port: 47001, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=158.101.154.245:47001", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
 - {name: "🇯🇵 JP 2 [cmj3]", server: "150.230.97.136", port: 12508, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=150.230.97.136:12508", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
 - {name: "🇸🇬 SG [cmj3]", server: "150.109.24.233", port: 6666, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=150.109.24.233:6666", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
@@ -2654,114 +2341,114 @@ proxies:
 - {name: "🇰🇷 KR 2 [cmj3]", server: "119.205.70.203", port: 50000, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=119.205.70.203:50000", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
 - {name: "🇰🇷 KR 3 [cmj3]", server: "221.167.144.225", port: 50000, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=221.167.144.225:50000", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
 - {name: "🇰🇷 KR 4 [cmj3]", server: "118.223.221.24", port: 30037, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=118.223.221.24:30037", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
-- {name: "🇺🇸 US 12 [cmj3]", server: "5.161.176.159", port: 50001, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=5.161.176.159:50001", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
-- {name: "🇺🇸 US 13 [cmj3]", server: "172.245.205.226", port: 6666, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=172.245.205.226:6666", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
-- {name: "🇺🇸 US 14 [cmj3]", server: "18.236.13.188", port: 80, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=18.236.13.188:80", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
-- {name: "🇺🇸 US 15 [cmj3]", server: "107.175.124.81", port: 8081, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=107.175.124.81:8081", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
-- {name: "🇰🇷 KR 5 [cmj3]", server: "132.145.81.117", port: 443, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=proxyip.kr.cmliussss.net", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
-- {name: "🇸🇬 SG 3 [cmj3]", server: "138.2.107.107", port: 443, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=proxyip.sg.cmliussss.net", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
-- {name: "🇮🇳 IN [cmj3]", server: "144.24.140.37", port: 443, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=proxyip.tp42595.s2.uno.090227.xyz", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
-- {name: "🇺🇸 US 16 [cmj3]", server: "150.136.87.192", port: 443, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=proxyip.us.cmliussss.net", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
-- {name: "🇮🇳 IN 2 [cmj3]", server: "152.67.190.105", port: 443, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=proxyip.tp46871.s2.uno.090227.xyz", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
-- {name: "🇺🇸 US 17 [cmj3]", server: "154.17.21.134", port: 18446, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=proxyip.us.cmliussss.net", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
-- {name: "🇦🇺 AU [cmj3]", server: "168.138.13.201", port: 443, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=proxyip.tp32576.s2.uno.090227.xyz", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
-- {name: "🇺🇸 US 18 [cmj3]", server: "192.18.134.22", port: 443, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=proxyip.us.cmliussss.net", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
-- {name: "🇨🇳 TW [cmj3]", server: "210.61.97.241", port: 81, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=proxyip.tw.cmliussss.net", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
-- {name: "🇭🇰 HK 4 [cmj3]", server: "43.135.44.101", port: 30002, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=ProxyIP.Oracle.cmliussss.net", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
-- {name: "🇺🇸 US 19 [cmj3]", server: "47.253.105.131", port: 443, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=proxyip.us.cmliussss.net", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
-- {name: "🇭🇰 HK 5 [cmj3]", server: "8.218.73.41", port: 443, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=ProxyIP.Oracle.cmliussss.net", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
-- {name: "CT [cmj3]", server: "162.159.153.184", port: 443, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=proxyip.tp20064.s2.uno.090227.xyz", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
-- {name: "CT 2 [cmj3]", server: "162.159.153.209", port: 443, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=proxyip.tp46871.s2.uno.090227.xyz", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
-- {name: "CT 3 [cmj3]", server: "162.159.152.69", port: 443, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=proxyip.tp33470.s2.uno.090227.xyz", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
-- {name: "CT 4 [cmj3]", server: "162.159.153.216", port: 443, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=proxyip.tp33470.s2.uno.090227.xyz", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
-- {name: "CT 5 [cmj3]", server: "162.159.153.72", port: 443, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=proxyip.tp33470.s2.uno.090227.xyz", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
-- {name: "CT 6 [cmj3]", server: "162.159.153.194", port: 443, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=proxyip.tp46871.s2.uno.090227.xyz", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
-- {name: "CMCC [cmj3]", server: "104.18.147.201", port: 443, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=proxyip.tp32576.s2.uno.090227.xyz", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
-- {name: "CMCC 2 [cmj3]", server: "104.17.104.243", port: 443, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=proxyip.tp20654.s2.uno.090227.xyz", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
-- {name: "CMCC 3 [cmj3]", server: "104.19.144.212", port: 443, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=proxyip.tp32576.s2.uno.090227.xyz", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
-- {name: "CMCC 4 [cmj3]", server: "104.17.210.171", port: 443, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=proxyip.tp20654.s2.uno.090227.xyz", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
-- {name: "CMCC 5 [cmj3]", server: "104.19.148.108", port: 443, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=proxyip.tp20064.s2.uno.090227.xyz", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
-- {name: "CMCC 6 [cmj3]", server: "104.19.150.163", port: 443, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=proxyip.tp32576.s2.uno.090227.xyz", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
-- {name: "CMCC-IPV6 [cmj3]", server: "2606:4700:3036::ce:d6ea", port: 443, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=proxyip.tp32576.s2.uno.090227.xyz", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
-- {name: "CMCC-IPV6 2 [cmj3]", server: "2606:4700:3036:6ed4:ff6e:712c:4953:87a5", port: 443, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=proxyip.tp42595.s2.uno.090227.xyz", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
-- {name: "CMCC-IPV6 3 [cmj3]", server: "2606:4700:3036:6ed4:ffdf:f2ba:820b:ed5c", port: 443, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=proxyip.tp46871.s2.uno.090227.xyz", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
-- {name: "CMCC-IPV6 4 [cmj3]", server: "2606:4700:3036:6ed4:e1ed:36:8916:dace", port: 443, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=proxyip.tp32576.s2.uno.090227.xyz", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
-- {name: "CMCC-IPV6 5 [cmj3]", server: "2606:4700:3036:ef:3f32:a9c6:39c4:9ae3", port: 443, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=proxyip.tp42595.s2.uno.090227.xyz", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
-- {name: "CMCC-IPV6 6 [cmj3]", server: "2606:4700:3036:0:a36a:4af2:65e7:a0d6", port: 443, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=proxyip.tp20654.s2.uno.090227.xyz", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
-- {name: "香港 [xl2]", type: "ss", server: "hkg01.dns-node.top", port: 45573, cipher: "aes-128-gcm", password: "053ea17a-a728-4081-98c1-c4dcbf35c514", udp: true}
-- {name: "台湾 [xl2]", type: "ss", server: "tw01.dns-node.top", port: 45571, cipher: "aes-128-gcm", password: "053ea17a-a728-4081-98c1-c4dcbf35c514", udp: true}
-- {name: "日本 [xl2]", type: "ss", server: "jp01.dns-node.top", port: 45612, cipher: "aes-128-gcm", password: "053ea17a-a728-4081-98c1-c4dcbf35c514", udp: true}
-- {name: "韩国 [xl2]", type: "ss", server: "jp01.dns-node.top", port: 45572, cipher: "aes-128-gcm", password: "053ea17a-a728-4081-98c1-c4dcbf35c514", udp: true}
-- {name: "新加坡 [xl2]", type: "ss", server: "sg04.dns-node.top", port: 45609, cipher: "aes-128-gcm", password: "053ea17a-a728-4081-98c1-c4dcbf35c514", udp: true}
-- {name: "美国 [xl2]", type: "ss", server: "us01.dns-node.top", port: 45581, cipher: "aes-128-gcm", password: "053ea17a-a728-4081-98c1-c4dcbf35c514", udp: true}
-- {name: "英国 [xl2]", type: "ss", server: "uk01.dns-node.top", port: 45615, cipher: "aes-128-gcm", password: "053ea17a-a728-4081-98c1-c4dcbf35c514", udp: true}
-- {name: "马来西亚 [xl2]", type: "ss", server: "sg04.dns-node.top", port: 45610, cipher: "aes-128-gcm", password: "053ea17a-a728-4081-98c1-c4dcbf35c514", udp: true}
-- {name: "印度尼西亚 [xl2]", type: "ss", server: "sg03.dns-node.top", port: 45608, cipher: "aes-128-gcm", password: "053ea17a-a728-4081-98c1-c4dcbf35c514", udp: true}
-- {name: "新西兰 [xl2]", type: "ss", server: "sg04.dns-node.top", port: 45611, cipher: "aes-128-gcm", password: "053ea17a-a728-4081-98c1-c4dcbf35c514", udp: true}
-- {name: "澳大利亚 [xl2]", type: "ss", server: "sg03.dns-node.top", port: 45607, cipher: "aes-128-gcm", password: "053ea17a-a728-4081-98c1-c4dcbf35c514", udp: true}
-- {name: "巴基斯坦 [xl2]", type: "ss", server: "sg03.dns-node.top", port: 45800, cipher: "aes-128-gcm", password: "053ea17a-a728-4081-98c1-c4dcbf35c514", udp: true}
-- {name: "奥地利 [xl2]", type: "ss", server: "eu.dns-node.top", port: 43800, cipher: "aes-128-gcm", password: "053ea17a-a728-4081-98c1-c4dcbf35c514", udp: true}
-- {name: "德国 [xl2]", type: "ss", server: "eu.dns-node.top", port: 45594, cipher: "aes-128-gcm", password: "053ea17a-a728-4081-98c1-c4dcbf35c514", udp: true}
-- {name: "埃及 [xl2]", type: "ss", server: "eu.dns-node.top", port: 45595, cipher: "aes-128-gcm", password: "053ea17a-a728-4081-98c1-c4dcbf35c514", udp: true}
-- {name: "西班牙 [xl2]", type: "ss", server: "de01.dns-node.top", port: 45596, cipher: "aes-128-gcm", password: "053ea17a-a728-4081-98c1-c4dcbf35c514", udp: true}
-- {name: "法国 [xl2]", type: "ss", server: "eu.dns-node.top", port: 45597, cipher: "aes-128-gcm", password: "053ea17a-a728-4081-98c1-c4dcbf35c514", udp: true}
-- {name: "印度 [xl2]", type: "ss", server: "eu.dns-node.top", port: 45598, cipher: "aes-128-gcm", password: "053ea17a-a728-4081-98c1-c4dcbf35c514", udp: true}
-- {name: "意大利 [xl2]", type: "ss", server: "de01.dns-node.top", port: 45599, cipher: "aes-128-gcm", password: "053ea17a-a728-4081-98c1-c4dcbf35c514", udp: true}
-- {name: "尼日利亚 [xl2]", type: "ss", server: "eu.dns-node.top", port: 45601, cipher: "aes-128-gcm", password: "053ea17a-a728-4081-98c1-c4dcbf35c514", udp: true}
-- {name: "土耳其 [xl2]", type: "ss", server: "eu.dns-node.top", port: 45602, cipher: "aes-128-gcm", password: "053ea17a-a728-4081-98c1-c4dcbf35c514", udp: true}
-- {name: "乌克兰 [xl2]", type: "ss", server: "de01.dns-node.top", port: 45603, cipher: "aes-128-gcm", password: "053ea17a-a728-4081-98c1-c4dcbf35c514", udp: true}
-- {name: "阿根廷 [xl2]", type: "ss", server: "us_nord.dns-node.top", port: 45583, cipher: "aes-128-gcm", password: "053ea17a-a728-4081-98c1-c4dcbf35c514", udp: true}
-- {name: "巴西 [xl2]", type: "ss", server: "us03.dns-node.top", port: 45585, cipher: "aes-128-gcm", password: "053ea17a-a728-4081-98c1-c4dcbf35c514", udp: true}
-- {name: "加拿大 [xl2]", type: "ss", server: "us_nord.dns-node.top", port: 45586, cipher: "aes-128-gcm", password: "053ea17a-a728-4081-98c1-c4dcbf35c514", udp: true}
-- {name: "TG交流群https://t.me/wukongjichang [wk1]", type: "ss", server: "us.xn--mes91t7ofgnw.com", port: 20231, cipher: "aes-128-gcm", password: "b9e25588-aa2d-47a1-949d-2601f3a04971", udp: true}
-- {name: "🇭🇰香港家宽 星河幻境 ✨🌌 [wk1]", server: "hk.xn--mes91t7ofgnw.com", port: 20224, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "20201-20299", type: "hysteria2", password: "b9e25588-aa2d-47a1-949d-2601f3a04971"}
-- {name: "🇭🇰香港家宽 流光溢彩 🌃💫 [wk1]", server: "hk.xn--mes91t7ofgnw.com", port: 20231, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "20201-20299", type: "hysteria2", password: "b9e25588-aa2d-47a1-949d-2601f3a04971"}
-- {name: "🇭🇰香港家宽 潮韵霓裳 🎶🌈 [wk1]", server: "hk.xn--mes91t7ofgnw.com", port: 20267, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "20201-20299", type: "hysteria2", password: "b9e25588-aa2d-47a1-949d-2601f3a04971"}
-- {name: "🇭🇰香港家宽 云帆启航 ☁️⛵ [wk1]", server: "hk.xn--mes91t7ofgnw.com", port: 20211, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "20201-20299", type: "hysteria2", password: "b9e25588-aa2d-47a1-949d-2601f3a04971"}
+- {name: "🇺🇸 US 9 [cmj3]", server: "5.161.176.159", port: 50001, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=5.161.176.159:50001", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
+- {name: "🇺🇸 US 10 [cmj3]", server: "172.245.205.226", port: 6666, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=172.245.205.226:6666", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
+- {name: "🇺🇸 US 11 [cmj3]", server: "18.236.13.188", port: 80, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=18.236.13.188:80", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
+- {name: "🇺🇸 US 12 [cmj3]", server: "107.175.124.81", port: 8081, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=107.175.124.81:8081", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
+- {name: "🇰🇷 KR 5 [cmj3]", server: "132.145.81.117", port: 443, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=132.145.81.117:443", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
+- {name: "🇸🇬 SG 3 [cmj3]", server: "138.2.107.107", port: 443, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=138.2.107.107:443", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
+- {name: "🇮🇳 IN [cmj3]", server: "144.24.140.37", port: 443, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=144.24.140.37:443", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
+- {name: "🇺🇸 US 13 [cmj3]", server: "150.136.87.192", port: 443, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=150.136.87.192:443", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
+- {name: "🇮🇳 IN 2 [cmj3]", server: "152.67.190.105", port: 443, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=152.67.190.105:443", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
+- {name: "🇺🇸 US 14 [cmj3]", server: "154.17.21.134", port: 18446, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=154.17.21.134:18446", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
+- {name: "🇦🇺 AU [cmj3]", server: "168.138.13.201", port: 443, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=168.138.13.201:443", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
+- {name: "🇺🇸 US 15 [cmj3]", server: "192.18.134.22", port: 443, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=192.18.134.22:443", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
+- {name: "🇨🇳 TW 2 [cmj3]", server: "210.61.97.241", port: 81, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=210.61.97.241:81", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
+- {name: "🇭🇰 HK 8 [cmj3]", server: "43.135.44.101", port: 30002, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=43.135.44.101:30002", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
+- {name: "🇺🇸 US 16 [cmj3]", server: "47.253.105.131", port: 443, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=47.253.105.131:443", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
+- {name: "🇭🇰 HK 9 [cmj3]", server: "8.218.73.41", port: 443, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=8.218.73.41:443", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
+- {name: "CT [cmj3]", server: "162.159.153.170", port: 443, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=proxyip.tp20064.s2.uno.090227.xyz", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
+- {name: "CT 2 [cmj3]", server: "162.159.153.42", port: 443, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=proxyip.tp20064.s2.uno.090227.xyz", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
+- {name: "CT 3 [cmj3]", server: "162.159.153.144", port: 443, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=proxyip.tp33470.s2.uno.090227.xyz", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
+- {name: "CT 4 [cmj3]", server: "162.159.153.239", port: 443, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=proxyip.tp20064.s2.uno.090227.xyz", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
+- {name: "CT 5 [cmj3]", server: "162.159.152.31", port: 443, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=proxyip.tp20064.s2.uno.090227.xyz", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
+- {name: "CT 6 [cmj3]", server: "162.159.152.225", port: 443, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=proxyip.tp32576.s2.uno.090227.xyz", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
+- {name: "CMCC [cmj3]", server: "104.17.102.95", port: 443, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=proxyip.tp42595.s2.uno.090227.xyz", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
+- {name: "CMCC 2 [cmj3]", server: "104.18.93.7", port: 443, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=proxyip.tp46871.s2.uno.090227.xyz", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
+- {name: "CMCC 3 [cmj3]", server: "104.19.148.108", port: 443, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=proxyip.tp42595.s2.uno.090227.xyz", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
+- {name: "CMCC 4 [cmj3]", server: "104.19.150.163", port: 443, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=proxyip.tp32576.s2.uno.090227.xyz", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
+- {name: "CMCC 5 [cmj3]", server: "104.16.242.72", port: 443, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=proxyip.tp33470.s2.uno.090227.xyz", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
+- {name: "CMCC 6 [cmj3]", server: "104.18.86.131", port: 443, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=proxyip.tp33470.s2.uno.090227.xyz", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
+- {name: "CMCC-IPV6 [cmj3]", server: "2606:4700:3036:ef:92f:be51:8695:9fc5", port: 443, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=proxyip.tp20654.s2.uno.090227.xyz", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
+- {name: "CMCC-IPV6 2 [cmj3]", server: "2606:4700:3036:0:a36a:4a23:4a60:9f3f", port: 443, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=proxyip.tp32576.s2.uno.090227.xyz", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
+- {name: "CMCC-IPV6 3 [cmj3]", server: "2606:4700:3036::ce:d6ea", port: 443, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=proxyip.tp32576.s2.uno.090227.xyz", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
+- {name: "CMCC-IPV6 4 [cmj3]", server: "2606:4700:3036:ef:3f32:9601:b705:e94b", port: 443, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=proxyip.tp32576.s2.uno.090227.xyz", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
+- {name: "CMCC-IPV6 5 [cmj3]", server: "2606:4700:3036:ef:db9e:ee41:a8df:d3b2", port: 443, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=proxyip.tp20064.s2.uno.090227.xyz", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
+- {name: "CMCC-IPV6 6 [cmj3]", server: "2606:4700:3036:6ed4:260:e367:c3d4:d3bb", port: 443, type: "vless", uuid: "acb4d776-431c-4701-9868-a41f32c6222c", tls: true, tfo: false, skip-cert-verify: true, servername: "cmjiedian.jsczczc.nyc.mn", client-fingerprint: "random", network: "ws", ws-opts: {path: "/proxyip=proxyip.tp33470.s2.uno.090227.xyz", headers: {Host: "cmjiedian.jsczczc.nyc.mn"}}}
+- {name: "香港 [xl2]", type: "ss", server: "hkg01.dns-node.top", port: 45573, cipher: "aes-128-gcm", password: "19caaeb8-7e57-4d36-9f3f-8ed799f89fa3", udp: true}
+- {name: "台湾 [xl2]", type: "ss", server: "tw01.dns-node.top", port: 45571, cipher: "aes-128-gcm", password: "19caaeb8-7e57-4d36-9f3f-8ed799f89fa3", udp: true}
+- {name: "日本 [xl2]", type: "ss", server: "jp01.dns-node.top", port: 45612, cipher: "aes-128-gcm", password: "19caaeb8-7e57-4d36-9f3f-8ed799f89fa3", udp: true}
+- {name: "韩国 [xl2]", type: "ss", server: "jp01.dns-node.top", port: 45572, cipher: "aes-128-gcm", password: "19caaeb8-7e57-4d36-9f3f-8ed799f89fa3", udp: true}
+- {name: "新加坡 [xl2]", type: "ss", server: "sg04.dns-node.top", port: 45609, cipher: "aes-128-gcm", password: "19caaeb8-7e57-4d36-9f3f-8ed799f89fa3", udp: true}
+- {name: "美国 [xl2]", type: "ss", server: "us01.dns-node.top", port: 45581, cipher: "aes-128-gcm", password: "19caaeb8-7e57-4d36-9f3f-8ed799f89fa3", udp: true}
+- {name: "英国 [xl2]", type: "ss", server: "uk01.dns-node.top", port: 45615, cipher: "aes-128-gcm", password: "19caaeb8-7e57-4d36-9f3f-8ed799f89fa3", udp: true}
+- {name: "马来西亚 [xl2]", type: "ss", server: "sg04.dns-node.top", port: 45610, cipher: "aes-128-gcm", password: "19caaeb8-7e57-4d36-9f3f-8ed799f89fa3", udp: true}
+- {name: "印度尼西亚 [xl2]", type: "ss", server: "sg03.dns-node.top", port: 45608, cipher: "aes-128-gcm", password: "19caaeb8-7e57-4d36-9f3f-8ed799f89fa3", udp: true}
+- {name: "新西兰 [xl2]", type: "ss", server: "sg04.dns-node.top", port: 45611, cipher: "aes-128-gcm", password: "19caaeb8-7e57-4d36-9f3f-8ed799f89fa3", udp: true}
+- {name: "澳大利亚 [xl2]", type: "ss", server: "sg03.dns-node.top", port: 45607, cipher: "aes-128-gcm", password: "19caaeb8-7e57-4d36-9f3f-8ed799f89fa3", udp: true}
+- {name: "巴基斯坦 [xl2]", type: "ss", server: "sg03.dns-node.top", port: 45800, cipher: "aes-128-gcm", password: "19caaeb8-7e57-4d36-9f3f-8ed799f89fa3", udp: true}
+- {name: "奥地利 [xl2]", type: "ss", server: "eu.dns-node.top", port: 43800, cipher: "aes-128-gcm", password: "19caaeb8-7e57-4d36-9f3f-8ed799f89fa3", udp: true}
+- {name: "德国 [xl2]", type: "ss", server: "eu.dns-node.top", port: 45594, cipher: "aes-128-gcm", password: "19caaeb8-7e57-4d36-9f3f-8ed799f89fa3", udp: true}
+- {name: "埃及 [xl2]", type: "ss", server: "eu.dns-node.top", port: 45595, cipher: "aes-128-gcm", password: "19caaeb8-7e57-4d36-9f3f-8ed799f89fa3", udp: true}
+- {name: "西班牙 [xl2]", type: "ss", server: "de01.dns-node.top", port: 45596, cipher: "aes-128-gcm", password: "19caaeb8-7e57-4d36-9f3f-8ed799f89fa3", udp: true}
+- {name: "法国 [xl2]", type: "ss", server: "eu.dns-node.top", port: 45597, cipher: "aes-128-gcm", password: "19caaeb8-7e57-4d36-9f3f-8ed799f89fa3", udp: true}
+- {name: "印度 [xl2]", type: "ss", server: "eu.dns-node.top", port: 45598, cipher: "aes-128-gcm", password: "19caaeb8-7e57-4d36-9f3f-8ed799f89fa3", udp: true}
+- {name: "意大利 [xl2]", type: "ss", server: "de01.dns-node.top", port: 45599, cipher: "aes-128-gcm", password: "19caaeb8-7e57-4d36-9f3f-8ed799f89fa3", udp: true}
+- {name: "尼日利亚 [xl2]", type: "ss", server: "eu.dns-node.top", port: 45601, cipher: "aes-128-gcm", password: "19caaeb8-7e57-4d36-9f3f-8ed799f89fa3", udp: true}
+- {name: "土耳其 [xl2]", type: "ss", server: "eu.dns-node.top", port: 45602, cipher: "aes-128-gcm", password: "19caaeb8-7e57-4d36-9f3f-8ed799f89fa3", udp: true}
+- {name: "乌克兰 [xl2]", type: "ss", server: "de01.dns-node.top", port: 45603, cipher: "aes-128-gcm", password: "19caaeb8-7e57-4d36-9f3f-8ed799f89fa3", udp: true}
+- {name: "阿根廷 [xl2]", type: "ss", server: "us_nord.dns-node.top", port: 45583, cipher: "aes-128-gcm", password: "19caaeb8-7e57-4d36-9f3f-8ed799f89fa3", udp: true}
+- {name: "巴西 [xl2]", type: "ss", server: "us03.dns-node.top", port: 45585, cipher: "aes-128-gcm", password: "19caaeb8-7e57-4d36-9f3f-8ed799f89fa3", udp: true}
+- {name: "加拿大 [xl2]", type: "ss", server: "us_nord.dns-node.top", port: 45586, cipher: "aes-128-gcm", password: "19caaeb8-7e57-4d36-9f3f-8ed799f89fa3", udp: true}
+- {name: "TG交流群https://t.me/wukongjichang [wk1]", type: "ss", server: "us.xn--mes91t7ofgnw.com", port: 20221, cipher: "aes-128-gcm", password: "b9e25588-aa2d-47a1-949d-2601f3a04971", udp: true}
+- {name: "🇭🇰香港家宽 星河幻境 ✨🌌 [wk2]", server: "hk.xn--mes91t7ofgnw.com", port: 20239, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "20201-20299", type: "hysteria2", password: "eb8045dc-c90d-4e4b-a685-da02f6318856"}
+- {name: "🇭🇰香港家宽 流光溢彩 🌃💫 [wk1]", server: "hk.xn--mes91t7ofgnw.com", port: 20289, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "20201-20299", type: "hysteria2", password: "b9e25588-aa2d-47a1-949d-2601f3a04971"}
+- {name: "🇭🇰香港家宽 潮韵霓裳 🎶🌈 [wk1]", server: "hk.xn--mes91t7ofgnw.com", port: 20273, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "20201-20299", type: "hysteria2", password: "b9e25588-aa2d-47a1-949d-2601f3a04971"}
+- {name: "🇭🇰香港家宽 云帆启航 ☁️⛵ [wk1]", server: "hk.xn--mes91t7ofgnw.com", port: 20210, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "20201-20299", type: "hysteria2", password: "b9e25588-aa2d-47a1-949d-2601f3a04971"}
 - {name: "🇭🇰香港家宽 海风呢喃 🌿 [wk2]", type: "ss", server: "zz.xn--mes91t7ofgnw.com", port: 8081, cipher: "2022-blake3-aes-256-gcm", password: "Yzg1YmEyOWM5YjgyODg1YmY1MzExNTk0YjFjMDE3YzI=:ZWI4MDQ1ZGMtYzkwZC00ZTRiLWE2ODUtZGEwMmY2MzE=", udp: true}
-- {name: "🇺🇸美国巨容 光影旖旎 🌴🎬 [wk1]", server: "us.xn--mes91t7ofgnw.com", port: 20253, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "20201-20299", type: "hysteria2", password: "b9e25588-aa2d-47a1-949d-2601f3a04971"}
-- {name: "🇺🇸美国巨容 星梦幻城 🌟🏙️ [wk1]", server: "us.xn--mes91t7ofgnw.com", port: 20228, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "20201-20299", type: "hysteria2", password: "b9e25588-aa2d-47a1-949d-2601f3a04971"}
-- {name: "🇺🇸美国巨容 风情雅韵 🍂🏙️ [wk1]", server: "us.xn--mes91t7ofgnw.com", port: 20270, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "20201-20299", type: "hysteria2", password: "b9e25588-aa2d-47a1-949d-2601f3a04971"}
-- {name: "🇺🇸美国巨容 阳光碧海 🌞🌊 [wk1]", server: "us.xn--mes91t7ofgnw.com", port: 20286, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "20201-20299", type: "hysteria2", password: "b9e25588-aa2d-47a1-949d-2601f3a04971"}
+- {name: "🇺🇸美国巨容 光影旖旎 🌴🎬 [wk1]", server: "us.xn--mes91t7ofgnw.com", port: 20283, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "20201-20299", type: "hysteria2", password: "b9e25588-aa2d-47a1-949d-2601f3a04971"}
+- {name: "🇺🇸美国巨容 星梦幻城 🌟🏙️ [wk1]", server: "us.xn--mes91t7ofgnw.com", port: 20222, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "20201-20299", type: "hysteria2", password: "b9e25588-aa2d-47a1-949d-2601f3a04971"}
+- {name: "🇺🇸美国巨容 风情雅韵 🍂🏙️ [wk1]", server: "us.xn--mes91t7ofgnw.com", port: 20298, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "20201-20299", type: "hysteria2", password: "b9e25588-aa2d-47a1-949d-2601f3a04971"}
+- {name: "🇺🇸美国巨容 阳光碧海 🌞🌊 [wk1]", server: "us.xn--mes91t7ofgnw.com", port: 20276, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "20201-20299", type: "hysteria2", password: "b9e25588-aa2d-47a1-949d-2601f3a04971"}
 - {name: "🇺🇸美国 爵夜迷情🎷🌙 [wk2]", type: "ss", server: "zz.xn--mes91t7ofgnw.com", port: 8082, cipher: "2022-blake3-aes-256-gcm", password: "YTNkZmMwNDBhN2E1ZjE0ZDU5NDEwMmIxNjJkMGJhNWM=:ZWI4MDQ1ZGMtYzkwZC00ZTRiLWE2ODUtZGEwMmY2MzE=", udp: true}
-- {name: "🇯🇵日本低延 樱梦流光 🌸✨ [wk1]", server: "jp.xn--mes91t7ofgnw.com", port: 20209, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "20201-20299", type: "hysteria2", password: "b9e25588-aa2d-47a1-949d-2601f3a04971"}
-- {name: "🇯🇵日本低延 古韵流芳 🏯🌺 [wk1]", server: "jp.xn--mes91t7ofgnw.com", port: 20287, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "20201-20299", type: "hysteria2", password: "b9e25588-aa2d-47a1-949d-2601f3a04971"}
-- {name: "🇯🇵日本低延 霓虹恋曲 🌆💖 [wk1]", server: "jp.xn--mes91t7ofgnw.com", port: 20216, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "20201-20299", type: "hysteria2", password: "b9e25588-aa2d-47a1-949d-2601f3a04971"}
-- {name: "🇯🇵日本低延 雪韵悠然 ❄️🌌 [wk1]", server: "jp.xn--mes91t7ofgnw.com", port: 20212, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "20201-20299", type: "hysteria2", password: "b9e25588-aa2d-47a1-949d-2601f3a04971"}
+- {name: "🇯🇵日本低延 樱梦流光 🌸✨ [wk1]", server: "jp.xn--mes91t7ofgnw.com", port: 20218, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "20201-20299", type: "hysteria2", password: "b9e25588-aa2d-47a1-949d-2601f3a04971"}
+- {name: "🇯🇵日本低延 古韵流芳 🏯🌺 [wk1]", server: "jp.xn--mes91t7ofgnw.com", port: 20215, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "20201-20299", type: "hysteria2", password: "b9e25588-aa2d-47a1-949d-2601f3a04971"}
+- {name: "🇯🇵日本低延 霓虹恋曲 🌆💖 [wk1]", server: "jp.xn--mes91t7ofgnw.com", port: 20249, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "20201-20299", type: "hysteria2", password: "b9e25588-aa2d-47a1-949d-2601f3a04971"}
+- {name: "🇯🇵日本低延 雪韵悠然 ❄️🌌 [wk1]", server: "jp.xn--mes91t7ofgnw.com", port: 20294, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "20201-20299", type: "hysteria2", password: "b9e25588-aa2d-47a1-949d-2601f3a04971"}
 - {name: "🇯🇵日本 云岚琉光☁️🌅 [wk2]", type: "ss", server: "zz.xn--mes91t7ofgnw.com", port: 8083, cipher: "2022-blake3-aes-256-gcm", password: "ZjIxMDg0ZWU0YjNjMTM1ZjlmMDQwMTlmMzQ4OTI4YTE=:ZWI4MDQ1ZGMtYzkwZC00ZTRiLWE2ODUtZGEwMmY2MzE=", udp: true}
-- {name: "🇸🇬新加坡稳 月映星澜🌙✨ [wk1]", server: "sg.xn--mes91t7ofgnw.com", port: 20283, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "20201-20299", type: "hysteria2", password: "b9e25588-aa2d-47a1-949d-2601f3a04971"}
-- {name: "🇸🇬新加坡稳 诗香弄影📜🌸 [wk1]", server: "sg.xn--mes91t7ofgnw.com", port: 20258, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "20201-20299", type: "hysteria2", password: "b9e25588-aa2d-47a1-949d-2601f3a04971"}
-- {name: "🇸🇬新加坡稳 诗香弄影📜🌸 [wk2]", server: "sg.xn--mes91t7ofgnw.com", port: 20278, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "20201-20299", type: "hysteria2", password: "eb8045dc-c90d-4e4b-a685-da02f6318856"}
-- {name: "🇸🇬新加坡稳 翡翠星辰🍃⭐ [wk1]", server: "sg.xn--mes91t7ofgnw.com", port: 20203, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "20201-20299", type: "hysteria2", password: "b9e25588-aa2d-47a1-949d-2601f3a04971"}
+- {name: "🇸🇬新加坡稳 月映星澜🌙✨ [wk1]", server: "sg.xn--mes91t7ofgnw.com", port: 20229, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "20201-20299", type: "hysteria2", password: "b9e25588-aa2d-47a1-949d-2601f3a04971"}
+- {name: "🇸🇬新加坡稳 诗香弄影📜🌸 [wk1]", server: "sg.xn--mes91t7ofgnw.com", port: 20213, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "20201-20299", type: "hysteria2", password: "b9e25588-aa2d-47a1-949d-2601f3a04971"}
+- {name: "🇸🇬新加坡稳 彩梦织锦🎨🌺 [wk1]", server: "sg.xn--mes91t7ofgnw.com", port: 20259, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "20201-20299", type: "hysteria2", password: "b9e25588-aa2d-47a1-949d-2601f3a04971"}
+- {name: "🇸🇬新加坡稳 翡翠星辰🍃⭐ [wk1]", server: "sg.xn--mes91t7ofgnw.com", port: 20239, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "20201-20299", type: "hysteria2", password: "b9e25588-aa2d-47a1-949d-2601f3a04971"}
 - {name: "🇸🇬新加坡 霞光映水🌇💧 [wk2]", type: "ss", server: "zz.xn--mes91t7ofgnw.com", port: 8084, cipher: "2022-blake3-aes-256-gcm", password: "NTkxZDRjNjQ1YTNjOGU3ZWU1NjkxNDg5MDI3N2U4OTk=:ZWI4MDQ1ZGMtYzkwZC00ZTRiLWE2ODUtZGEwMmY2MzE=", udp: true}
-- {name: "🇬🇧英国超速 霓虹醉影🌃💫 [wk1]", server: "uk.xn--mes91t7ofgnw.com", port: 20271, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "20201-20299", type: "hysteria2", password: "b9e25588-aa2d-47a1-949d-2601f3a04971"}
-- {name: "🇬🇧英国超速 海韵情怀🌊💖 [wk1]", server: "uk.xn--mes91t7ofgnw.com", port: 20246, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "20201-20299", type: "hysteria2", password: "b9e25588-aa2d-47a1-949d-2601f3a04971"}
-- {name: "🇬🇧英国超速 梦幻霓裳🌸🌟 [wk1]", server: "uk.xn--mes91t7ofgnw.com", port: 20266, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "20201-20299", type: "hysteria2", password: "b9e25588-aa2d-47a1-949d-2601f3a04971"}
-- {name: "🇬🇧英国超速 蓝海吟风🌊🍃 [wk1]", server: "uk.xn--mes91t7ofgnw.com", port: 20250, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "20201-20299", type: "hysteria2", password: "b9e25588-aa2d-47a1-949d-2601f3a04971"}
+- {name: "🇬🇧英国超速 霓虹醉影🌃💫 [wk1]", server: "uk.xn--mes91t7ofgnw.com", port: 20204, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "20201-20299", type: "hysteria2", password: "b9e25588-aa2d-47a1-949d-2601f3a04971"}
+- {name: "🇬🇧英国超速 海韵情怀🌊💖 [wk1]", server: "uk.xn--mes91t7ofgnw.com", port: 20289, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "20201-20299", type: "hysteria2", password: "b9e25588-aa2d-47a1-949d-2601f3a04971"}
+- {name: "🇬🇧英国超速 梦幻霓裳🌸🌟 [wk1]", server: "uk.xn--mes91t7ofgnw.com", port: 20246, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "20201-20299", type: "hysteria2", password: "b9e25588-aa2d-47a1-949d-2601f3a04971"}
+- {name: "🇬🇧英国超速 蓝海吟风🌊🍃 [wk2]", server: "uk.xn--mes91t7ofgnw.com", port: 20283, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "20201-20299", type: "hysteria2", password: "eb8045dc-c90d-4e4b-a685-da02f6318856"}
 - {name: "🇬🇧英国 英雨琴韵☔🎶 [wk2]", type: "ss", server: "zz.xn--mes91t7ofgnw.com", port: 8085, cipher: "2022-blake3-aes-256-gcm", password: "Zjk2M2ZjNTRhZmYwZDliMzVkODExNjg2ZjdmZTNhYjI=:ZWI4MDQ1ZGMtYzkwZC00ZTRiLWE2ODUtZGEwMmY2MzE=", udp: true}
-- {name: "TG交流群https://t.me/wukongjichang [wk2]", type: "ss", server: "us.xn--mes91t7ofgnw.com", port: 20278, cipher: "aes-128-gcm", password: "eb8045dc-c90d-4e4b-a685-da02f6318856", udp: true}
-- {name: "🇭🇰香港家宽 潮韵霓裳 🎶🌈 [wk2]", server: "hk.xn--mes91t7ofgnw.com", port: 20226, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "20201-20299", type: "hysteria2", password: "eb8045dc-c90d-4e4b-a685-da02f6318856"}
-- {name: "🇭🇰香港家宽 流光溢彩 🌃💫 [wk2]", server: "hk.xn--mes91t7ofgnw.com", port: 20282, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "20201-20299", type: "hysteria2", password: "eb8045dc-c90d-4e4b-a685-da02f6318856"}
-- {name: "🇭🇰香港家宽 云帆启航 ☁️⛵ [wk2]", server: "hk.xn--mes91t7ofgnw.com", port: 20232, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "20201-20299", type: "hysteria2", password: "eb8045dc-c90d-4e4b-a685-da02f6318856"}
-- {name: "🇺🇸美国巨容 光影旖旎 🌴🎬 [wk2]", server: "us.xn--mes91t7ofgnw.com", port: 20265, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "20201-20299", type: "hysteria2", password: "eb8045dc-c90d-4e4b-a685-da02f6318856"}
-- {name: "🇺🇸美国巨容 星梦幻城 🌟🏙️ [wk2]", server: "us.xn--mes91t7ofgnw.com", port: 20244, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "20201-20299", type: "hysteria2", password: "eb8045dc-c90d-4e4b-a685-da02f6318856"}
-- {name: "🇺🇸美国巨容 风情雅韵 🍂🏙️ [wk2]", server: "us.xn--mes91t7ofgnw.com", port: 20236, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "20201-20299", type: "hysteria2", password: "eb8045dc-c90d-4e4b-a685-da02f6318856"}
-- {name: "🇺🇸美国巨容 阳光碧海 🌞🌊 [wk2]", server: "us.xn--mes91t7ofgnw.com", port: 20293, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "20201-20299", type: "hysteria2", password: "eb8045dc-c90d-4e4b-a685-da02f6318856"}
-- {name: "🇯🇵日本低延 樱梦流光 🌸✨ [wk2]", server: "jp.xn--mes91t7ofgnw.com", port: 20215, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "20201-20299", type: "hysteria2", password: "eb8045dc-c90d-4e4b-a685-da02f6318856"}
-- {name: "🇯🇵日本低延 古韵流芳 🏯🌺 [wk2]", server: "jp.xn--mes91t7ofgnw.com", port: 20211, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "20201-20299", type: "hysteria2", password: "eb8045dc-c90d-4e4b-a685-da02f6318856"}
-- {name: "🇯🇵日本低延 霓虹恋曲 🌆💖 [wk2]", server: "jp.xn--mes91t7ofgnw.com", port: 20277, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "20201-20299", type: "hysteria2", password: "eb8045dc-c90d-4e4b-a685-da02f6318856"}
-- {name: "🇯🇵日本低延 雪韵悠然 ❄️🌌 [wk2]", server: "jp.xn--mes91t7ofgnw.com", port: 20255, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "20201-20299", type: "hysteria2", password: "eb8045dc-c90d-4e4b-a685-da02f6318856"}
-- {name: "🇸🇬新加坡稳 月映星澜🌙✨ [wk2]", server: "sg.xn--mes91t7ofgnw.com", port: 20213, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "20201-20299", type: "hysteria2", password: "eb8045dc-c90d-4e4b-a685-da02f6318856"}
-- {name: "🇸🇬新加坡稳 彩梦织锦🎨🌺 [wk2]", server: "sg.xn--mes91t7ofgnw.com", port: 20205, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "20201-20299", type: "hysteria2", password: "eb8045dc-c90d-4e4b-a685-da02f6318856"}
-- {name: "🇸🇬新加坡稳 翡翠星辰🍃⭐ [wk2]", server: "sg.xn--mes91t7ofgnw.com", port: 20224, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "20201-20299", type: "hysteria2", password: "eb8045dc-c90d-4e4b-a685-da02f6318856"}
-- {name: "🇬🇧英国超速 霓虹醉影🌃💫 [wk2]", server: "uk.xn--mes91t7ofgnw.com", port: 20236, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "20201-20299", type: "hysteria2", password: "eb8045dc-c90d-4e4b-a685-da02f6318856"}
-- {name: "🇬🇧英国超速 海韵情怀🌊💖 [wk2]", server: "uk.xn--mes91t7ofgnw.com", port: 20224, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "20201-20299", type: "hysteria2", password: "eb8045dc-c90d-4e4b-a685-da02f6318856"}
-- {name: "🇬🇧英国超速 梦幻霓裳🌸🌟 [wk2]", server: "uk.xn--mes91t7ofgnw.com", port: 20243, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "20201-20299", type: "hysteria2", password: "eb8045dc-c90d-4e4b-a685-da02f6318856"}
-- {name: "🇬🇧英国超速 蓝海吟风🌊🍃 [wk2]", server: "uk.xn--mes91t7ofgnw.com", port: 20203, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "20201-20299", type: "hysteria2", password: "eb8045dc-c90d-4e4b-a685-da02f6318856"}
+- {name: "TG交流群https://t.me/wukongjichang [wk2]", type: "ss", server: "us.xn--mes91t7ofgnw.com", port: 20270, cipher: "aes-128-gcm", password: "eb8045dc-c90d-4e4b-a685-da02f6318856", udp: true}
+- {name: "🇭🇰香港家宽 流光溢彩 🌃💫 [wk2]", server: "hk.xn--mes91t7ofgnw.com", port: 20276, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "20201-20299", type: "hysteria2", password: "eb8045dc-c90d-4e4b-a685-da02f6318856"}
+- {name: "🇭🇰香港家宽 潮韵霓裳 🎶🌈 [wk2]", server: "hk.xn--mes91t7ofgnw.com", port: 20270, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "20201-20299", type: "hysteria2", password: "eb8045dc-c90d-4e4b-a685-da02f6318856"}
+- {name: "🇭🇰香港家宽 云帆启航 ☁️⛵ [wk2]", server: "hk.xn--mes91t7ofgnw.com", port: 20265, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "20201-20299", type: "hysteria2", password: "eb8045dc-c90d-4e4b-a685-da02f6318856"}
+- {name: "🇺🇸美国巨容 光影旖旎 🌴🎬 [wk2]", server: "us.xn--mes91t7ofgnw.com", port: 20249, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "20201-20299", type: "hysteria2", password: "eb8045dc-c90d-4e4b-a685-da02f6318856"}
+- {name: "🇺🇸美国巨容 星梦幻城 🌟🏙️ [wk2]", server: "us.xn--mes91t7ofgnw.com", port: 20279, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "20201-20299", type: "hysteria2", password: "eb8045dc-c90d-4e4b-a685-da02f6318856"}
+- {name: "🇺🇸美国巨容 风情雅韵 🍂🏙️ [wk2]", server: "us.xn--mes91t7ofgnw.com", port: 20202, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "20201-20299", type: "hysteria2", password: "eb8045dc-c90d-4e4b-a685-da02f6318856"}
+- {name: "🇺🇸美国巨容 阳光碧海 🌞🌊 [wk2]", server: "us.xn--mes91t7ofgnw.com", port: 20269, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "20201-20299", type: "hysteria2", password: "eb8045dc-c90d-4e4b-a685-da02f6318856"}
+- {name: "🇯🇵日本低延 樱梦流光 🌸✨ [wk2]", server: "jp.xn--mes91t7ofgnw.com", port: 20252, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "20201-20299", type: "hysteria2", password: "eb8045dc-c90d-4e4b-a685-da02f6318856"}
+- {name: "🇯🇵日本低延 古韵流芳 🏯🌺 [wk2]", server: "jp.xn--mes91t7ofgnw.com", port: 20266, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "20201-20299", type: "hysteria2", password: "eb8045dc-c90d-4e4b-a685-da02f6318856"}
+- {name: "🇯🇵日本低延 霓虹恋曲 🌆💖 [wk2]", server: "jp.xn--mes91t7ofgnw.com", port: 20227, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "20201-20299", type: "hysteria2", password: "eb8045dc-c90d-4e4b-a685-da02f6318856"}
+- {name: "🇯🇵日本低延 雪韵悠然 ❄️🌌 [wk2]", server: "jp.xn--mes91t7ofgnw.com", port: 20261, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "20201-20299", type: "hysteria2", password: "eb8045dc-c90d-4e4b-a685-da02f6318856"}
+- {name: "🇸🇬新加坡稳 月映星澜🌙✨ [wk2]", server: "sg.xn--mes91t7ofgnw.com", port: 20265, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "20201-20299", type: "hysteria2", password: "eb8045dc-c90d-4e4b-a685-da02f6318856"}
+- {name: "🇸🇬新加坡稳 诗香弄影📜🌸 [wk2]", server: "sg.xn--mes91t7ofgnw.com", port: 20267, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "20201-20299", type: "hysteria2", password: "eb8045dc-c90d-4e4b-a685-da02f6318856"}
+- {name: "🇸🇬新加坡稳 彩梦织锦🎨🌺 [wk2]", server: "sg.xn--mes91t7ofgnw.com", port: 20249, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "20201-20299", type: "hysteria2", password: "eb8045dc-c90d-4e4b-a685-da02f6318856"}
+- {name: "🇸🇬新加坡稳 翡翠星辰🍃⭐ [wk2]", server: "sg.xn--mes91t7ofgnw.com", port: 20206, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "20201-20299", type: "hysteria2", password: "eb8045dc-c90d-4e4b-a685-da02f6318856"}
+- {name: "🇬🇧英国超速 霓虹醉影🌃💫 [wk2]", server: "uk.xn--mes91t7ofgnw.com", port: 20227, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "20201-20299", type: "hysteria2", password: "eb8045dc-c90d-4e4b-a685-da02f6318856"}
+- {name: "🇬🇧英国超速 海韵情怀🌊💖 [wk2]", server: "uk.xn--mes91t7ofgnw.com", port: 20217, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "20201-20299", type: "hysteria2", password: "eb8045dc-c90d-4e4b-a685-da02f6318856"}
+- {name: "🇬🇧英国超速 梦幻霓裳🌸🌟 [wk2]", server: "uk.xn--mes91t7ofgnw.com", port: 20216, sni: null, up: 1000, down: 1000, skip-cert-verify: false, ports: "20201-20299", type: "hysteria2", password: "eb8045dc-c90d-4e4b-a685-da02f6318856"}
 - {name: "🇹🇼 台湾 8 [whh5]", server: "82.152.90.200", port: 8443, sni: "tw.bailian.uk", up: 1000, down: 1000, skip-cert-verify: false, type: "hysteria2", password: "94d54d37-0149-4172-8ab7-60c9d1f60e33"}
 - {name: "🇭🇰  香港 4 [whh5]", server: "156.224.78.33", port: 8443, sni: "xg.bailian.uk", up: 1000, down: 1000, skip-cert-verify: false, type: "hysteria2", password: "94d54d37-0149-4172-8ab7-60c9d1f60e33"}
 - {name: "🇩🇪 德国 4 [whh5]", server: "156.226.175.130", port: 8443, sni: "dg.bailian.uk", up: 1000, down: 1000, skip-cert-verify: false, type: "hysteria2", password: "94d54d37-0149-4172-8ab7-60c9d1f60e33"}
-- {name: "🇹🇼 台湾 4 [whh5]", type: "vless", server: "tw2.bailian.uk", port: 8080, uuid: "94d54d37-0149-4172-8ab7-60c9d1f60e33", alterId: 0, cipher: "auto", udp: true, flow: "xtls-rprx-vision", tls: true, skip-cert-verify: false, servername: "www.python.org", reality-opts: {public-key: "KxaDHmQOH4D6EjSmLykBXuVvSYColRxqircuMt5AmzE", short-id: "3870949a921d"}, client-fingerprint: "chrome"}
+- {name: "🇹🇼 台湾 4 [whh5]", type: "vless", server: "tw2.bailian.uk", port: 8080, uuid: "94d54d37-0149-4172-8ab7-60c9d1f60e33", alterId: 0, cipher: "auto", udp: true, flow: "xtls-rprx-vision", tls: true, skip-cert-verify: false, servername: "www.python.org", reality-opts: {public-key: "KxaDHmQOH4D6EjSmLykBXuVvSYColRxqircuMt5AmzE", short-id: "3870949a921d"}, client-fingerprint: "qq"}
 - {name: "美国-德克萨斯州 [of2]", type: "vmess", server: "ourfast.asia", port: 443, uuid: "780306b6-8666-4db9-93f3-c45c50babe64", alterId: 0, cipher: "auto", udp: true, tls: true, skip-cert-verify: true, servername: "ourfast.asia"}
 - {name: "香港 [of2]", type: "vmess", server: "node3.ourfast.asia", port: 443, uuid: "780306b6-8666-4db9-93f3-c45c50babe64", alterId: 0, cipher: "auto", udp: true, tls: true, skip-cert-verify: true, servername: "node3.ourfast.asia"}
 - {name: "美国-加利福尼亚州 [of2]", type: "vmess", server: "node4.ourfast.asia", port: 443, uuid: "780306b6-8666-4db9-93f3-c45c50babe64", alterId: 0, cipher: "auto", udp: true, tls: true, skip-cert-verify: true, servername: "node4.ourfast.asia"}
@@ -3002,10 +2689,10 @@ proxy-groups:
   - "GigaMAX03🐼 [flynb]"
   - "대한민국15🐼 [flynb]"
   - "PremiumSK25🐼 [flynb]"
-  - "韩国 - Gwanak-gu - Korea Telecom - 3 [go4sharing]"
+  - "대한민국02🐼 [flynb]"
   - "대한민국03🐼 [flynb]"
   - "🇨🇳 Taiwan01@🐼 [flynb]"
-  - "韩国 - Gasan-dong - LG DACOM Corporation - 2 [go4sharing]"
+  - "TerraLG18🐼 [flynb]"
   - "🇯🇵 ⓢⓟ Tokyo Pro 4 [flynb]"
   - "ⓢⓟ Seoul Pro 3 [flynb]"
   - "ⓢⓟ Seoul Pro 1 [flynb]"
@@ -3142,7 +2829,7 @@ proxy-groups:
   - "🇳🇱|4-28🍯%40xkmfjd|荷兰 24 [tk1]"
   - "🇳🇱|4-28🍯%40xkmfjd|荷兰 25 [tk1]"
   - "🇨🇳|4-28🍯%40xkmfjd|台湾 01 [tk1]"
-  - "波兰 - 华沙 - 1337 Services GmbH - 1 [go4sharing]"
+  - "4-28🍯%40xkmfjd|🌀其他3-T1 | ⬇️ 3.1MB%2Fs 01 [tk1]"
   - "🇭🇰|4-28🍯%40xkmfjd|香港 03 [tk1]"
   - "🇩🇪|4-28🍯%40xkmfjd|德国 05 [tk1]"
   - "🇩🇪 德国_2 [dcj]"
@@ -3213,10 +2900,10 @@ proxy-groups:
   - "🇺🇸|4-28🍯@xkmfjd|美国 95 [tk1]"
   - "🇺🇸|4-28🍯@xkmfjd|美国 98 [tk1]"
   - "🇷🇺|4-28🍯@xkmfjd|俄罗斯 02 [tk1]"
-  - "中国 - 香港 - Google LLC - 4 [go4sharing]"
+  - "❓ 未知_1 [dcj]"
   - "🇫🇷|4-28🍯@xkmfjd|法国 10 [tk1]"
   - "🇫🇷|4-28🍯@xkmfjd|法国 11 [tk1]"
-  - "荷兰 - 阿姆斯特丹 - DigitalOcean, LLC - 1 [go4sharing]"
+  - "🇳🇱 荷兰_3 [dcj]"
   - "🇳🇱|4-28🍯@xkmfjd|荷兰 29 [tk1]"
   - "🇩🇪|4-28🍯@xkmfjd|德国 07 [tk1]"
   - "🇩🇪|4-28🍯@xkmfjd|德国 08 [tk1]"
@@ -3232,11 +2919,11 @@ proxy-groups:
   - "🇫🇷|4-28🍯@xkmfjd|法国 05 [tk1]"
   - "🇧🇷|4-28🍯@xkmfjd|巴西 01 [tk1]"
   - "🇺🇦|4-28🍯@xkmfjd|乌克兰 01 [tk1]"
-  - "中国 - 合肥 - China Unicom CHINA169 Anhui Province Network - 2 [go4sharing]"
+  - "❓ 未知_2 [dcj]"
   - "🇨🇳 中国_1 [dcj]"
   - "🇸🇬 新加坡_1 [dcj]"
   - "🇨🇳 中国_2 [dcj]"
-  - "中国 - 广州市 - China Mobile communications corporation - 3 [go4sharing]"
+  - "❓ 未知_3 [dcj]"
   - "🇨🇳 中国_3 [dcj]"
   - "❓ 未知_4 [dcj]"
   - "❓ 未知_5 [dcj]"
@@ -3254,18 +2941,18 @@ proxy-groups:
   - "❓ 未知_12 [dcj]"
   - "❓ 未知_13 [dcj]"
   - "🇭🇰 香港_2 [dcj]"
-  - "俄罗斯 - 莫斯科 - LLC BAXET - 2 [go4sharing]"
+  - "🇷🇺 俄罗斯_1 [dcj]"
   - "❓ 未知_14 [dcj]"
   - "🇰🇷 韩国_2 [dcj]"
   - "🇷🇺 俄罗斯_2 [dcj]"
   - "🇫🇷 法国_1 [dcj]"
-  - "俄罗斯 - 莫斯科 - LLC Baxet - 1 [go4sharing]"
+  - "🇷🇺 俄罗斯_3 [dcj]"
   - "🇩🇪 德国_1 [dcj]"
   - "❓ 未知_15 [dcj]"
   - "❓ 未知_16 [dcj]"
   - "❓ 未知_17 [dcj]"
   - "🇰🇷 韩国_3 [dcj]"
-  - "中国 - 香港 - CTG Server Ltd. - 9 [go4sharing]"
+  - "🇭🇰 香港_3 [dcj]"
   - "🇹🇼 台湾_1 [dcj]"
   - "❓ 未知_18 [dcj]"
   - "❓ 未知_19 [dcj]"
@@ -3277,7 +2964,7 @@ proxy-groups:
   - "❓ 未知_23 [dcj]"
   - "🇱🇮 列支敦士登 [dcj]"
   - "❓ 未知_24 [dcj]"
-  - "中国 - 台湾 - Akari Networks - 10 [go4sharing]"
+  - "🇹🇼 台湾_3 [dcj]"
   - "❓ 未知_25 [dcj]"
   - "🇨🇦 加拿大 [dcj]"
   - "🇭🇰 香港_4 [dcj]"
@@ -3316,9 +3003,9 @@ proxy-groups:
   - "🇩🇪 德国_4 [dcj]"
   - "🇬🇷 希腊 [dcj]"
   - "🇺🇸 美国_6 [dcj]"
-  - "法国 - 巴黎 - Online S.A.S. - 1 [go4sharing]"
+  - "❓ 未知_42 [dcj]"
   - "🇸🇬 新加坡_6 [dcj]"
-  - "美国 - 洛杉矶 - GTHost - 1 [go4sharing]"
+  - "🇺🇸 美国_7 [dcj]"
   - "❓ 未知_46 [dcj]"
   - "❓ 未知_49 [dcj]"
   - "🇹🇼 台湾_8 [dcj]"
@@ -3341,10 +3028,10 @@ proxy-groups:
   - "❓ 未知_59 [dcj]"
   - "加入我的频道t.me/CMLiussss解锁更多优选节点 [cml]"
   - "❓ 未知_60 [dcj]"
-  - "日本 - 东京 - Akamai Technologies - 1 [go4sharing]"
+  - "🇯🇵 日本_4 [dcj]"
   - "🇬🇧 英国_3 [dcj]"
   - "🇹🇼 台湾_10 [dcj]"
-  - "英国 - 豪恩斯洛 - Cloudflare, Inc. - 5 [go4sharing]"
+  - "🇹🇼 台湾_11 [dcj]"
   - "🇹🇼 台湾_12 [dcj]"
   - "🇹🇼 台湾_13 [dcj]"
   - "🇺🇸 美国_12 [dcj]"
@@ -3384,24 +3071,6 @@ proxy-groups:
   - "🇰🇷 韩国_5 [dcj]"
   - "🇩🇪 德国_6 [dcj]"
   - "🇺🇸 美国_16 [dcj]"
-  - "奥地利 - 維也納 - Foundation for Applied Privacy - 1 [go4sharing]"
-  - "🇦🇺 澳大利亚1 | ⬇️ 6.8MB/s|53%|Openai 2 [cml]"
-  - "韩国 - 首尔特别市 - Shenzhen Tencent Computer Systems Company Limited - 1 [go4sharing]"
-  - "美国 - 华盛顿特区 - GTHost - 2 [go4sharing]"
-  - "美国 - 华盛顿特区 - GTHost - 3 [go4sharing]"
-  - "美国 - 聖荷西 - Cloudflare, Inc. - 5 [go4sharing]"
-  - "美国 - 芝加哥 - Sharktech - 4 [go4sharing]"
-  - "泰国 - 曼谷 - Kaopu Cloud HK Limited - 1 [go4sharing]"
-  - "新加坡 - 新加坡 - DigitalOcean, LLC - 1 [go4sharing]"
-  - "意大利 - 罗马市 - SonderCloud Limited - 1 [go4sharing]"
-  - "英国 - 伦敦 - OVH SAS - 4 [go4sharing]"
-  - "英国 - 伦敦 - OVH SAS - 2 [go4sharing]"
-  - "中国 - 合肥 - China Unicom CHINA169 Anhui Province Network - 1 [go4sharing]"
-  - "中国 - 青园 - PEG TECH INC - 11 [go4sharing]"
-  - "中国 - 香港 - Global Connectivity Solutions LLP - 8 [go4sharing]"
-  - "中国 - 香港 - Hong Kong Telecommunications (HKT) Limited Mass Internet - 6 [go4sharing]"
-  - "中国 - 香港 - Polonetwork Limited - 7 [go4sharing]"
-  - "中国 - 香港 - SonderCloud Limited - 5 [go4sharing]"
   - "群里大佬分享更多节点 [cjbp]"
   - "订阅要换了 [cjbp]"
   - "这个订阅不好看 [cjbp]"
@@ -3513,6 +3182,7 @@ proxy-groups:
   - "🇯🇵 日本6 | ⬇️ 4.3MB/s|11%|Netflix|Disney|Youtube|Openai|Gemini 2 [cml]"
   - "🇫🇷 法国2 | ⬇️ 4.2MB/s|100%|Openai 2 [cml]"
   - "🇫🇷 法国3 | ⬇️ 14.0MB/s|46%|Netflix|Youtube|Openai 2 [cml]"
+  - "🇦🇺 澳大利亚1 | ⬇️ 6.8MB/s|53%|Openai 2 [cml]"
   - "🇺🇸 美国1 | ⬇️ 10.7MB/s|6%|Netflix|Openai|Gemini 2 [cml]"
   - "🇺🇸 美国12 | ⬇️ 5.6MB/s|Openai 2 [cml]"
   - "🇺🇸 美国13 | ⬇️ 4.2MB/s|Netflix|Openai|Gemini 2 [cml]"
@@ -3666,21 +3336,21 @@ proxy-groups:
   - "加入我的频道t.me/CMLiussss解锁更多优选节点 [cmj3]"
   - "CFnat [cmj3]"
   - "🇺🇸 US [cmj3]"
-  - "🇫🇷 FR [cmj3]"
   - "🇺🇸 US 2 [cmj3]"
   - "🇭🇰 HK [cmj3]"
-  - "🇺🇸 US 3 [cmj3]"
-  - "🇷🇺 RU [cmj3]"
-  - "🇺🇸 US 4 [cmj3]"
   - "🇭🇰 HK 2 [cmj3]"
+  - "🇺🇸 US 3 [cmj3]"
+  - "🇺🇸 US 4 [cmj3]"
   - "🇺🇸 US 5 [cmj3]"
+  - "🇭🇰 HK 3 [cmj3]"
+  - "🇭🇰 HK 4 [cmj3]"
+  - "🇭🇰 HK 5 [cmj3]"
   - "🇺🇸 US 6 [cmj3]"
+  - "🇨🇳 TW [cmj3]"
+  - "🇭🇰 HK 6 [cmj3]"
   - "🇺🇸 US 7 [cmj3]"
   - "🇺🇸 US 8 [cmj3]"
-  - "🇺🇸 US 9 [cmj3]"
-  - "🇺🇸 US 10 [cmj3]"
-  - "🇭🇰 HK 3 [cmj3]"
-  - "🇺🇸 US 11 [cmj3]"
+  - "🇭🇰 HK 7 [cmj3]"
   - "🇯🇵 JP [cmj3]"
   - "🇯🇵 JP 2 [cmj3]"
   - "🇸🇬 SG [cmj3]"
@@ -3691,22 +3361,22 @@ proxy-groups:
   - "🇰🇷 KR 2 [cmj3]"
   - "🇰🇷 KR 3 [cmj3]"
   - "🇰🇷 KR 4 [cmj3]"
+  - "🇺🇸 US 9 [cmj3]"
+  - "🇺🇸 US 10 [cmj3]"
+  - "🇺🇸 US 11 [cmj3]"
   - "🇺🇸 US 12 [cmj3]"
-  - "🇺🇸 US 13 [cmj3]"
-  - "🇺🇸 US 14 [cmj3]"
-  - "🇺🇸 US 15 [cmj3]"
   - "🇰🇷 KR 5 [cmj3]"
   - "🇸🇬 SG 3 [cmj3]"
   - "🇮🇳 IN [cmj3]"
-  - "🇺🇸 US 16 [cmj3]"
+  - "🇺🇸 US 13 [cmj3]"
   - "🇮🇳 IN 2 [cmj3]"
-  - "🇺🇸 US 17 [cmj3]"
+  - "🇺🇸 US 14 [cmj3]"
   - "🇦🇺 AU [cmj3]"
-  - "🇺🇸 US 18 [cmj3]"
-  - "🇨🇳 TW [cmj3]"
-  - "🇭🇰 HK 4 [cmj3]"
-  - "🇺🇸 US 19 [cmj3]"
-  - "🇭🇰 HK 5 [cmj3]"
+  - "🇺🇸 US 15 [cmj3]"
+  - "🇨🇳 TW 2 [cmj3]"
+  - "🇭🇰 HK 8 [cmj3]"
+  - "🇺🇸 US 16 [cmj3]"
+  - "🇭🇰 HK 9 [cmj3]"
   - "CT [cmj3]"
   - "CT 2 [cmj3]"
   - "CT 3 [cmj3]"
@@ -3751,7 +3421,7 @@ proxy-groups:
   - "巴西 [xl2]"
   - "加拿大 [xl2]"
   - "TG交流群https://t.me/wukongjichang [wk1]"
-  - "🇭🇰香港家宽 星河幻境 ✨🌌 [wk1]"
+  - "🇭🇰香港家宽 星河幻境 ✨🌌 [wk2]"
   - "🇭🇰香港家宽 流光溢彩 🌃💫 [wk1]"
   - "🇭🇰香港家宽 潮韵霓裳 🎶🌈 [wk1]"
   - "🇭🇰香港家宽 云帆启航 ☁️⛵ [wk1]"
@@ -3768,17 +3438,17 @@ proxy-groups:
   - "🇯🇵日本 云岚琉光☁️🌅 [wk2]"
   - "🇸🇬新加坡稳 月映星澜🌙✨ [wk1]"
   - "🇸🇬新加坡稳 诗香弄影📜🌸 [wk1]"
-  - "🇸🇬新加坡稳 诗香弄影📜🌸 [wk2]"
+  - "🇸🇬新加坡稳 彩梦织锦🎨🌺 [wk1]"
   - "🇸🇬新加坡稳 翡翠星辰🍃⭐ [wk1]"
   - "🇸🇬新加坡 霞光映水🌇💧 [wk2]"
   - "🇬🇧英国超速 霓虹醉影🌃💫 [wk1]"
   - "🇬🇧英国超速 海韵情怀🌊💖 [wk1]"
   - "🇬🇧英国超速 梦幻霓裳🌸🌟 [wk1]"
-  - "🇬🇧英国超速 蓝海吟风🌊🍃 [wk1]"
+  - "🇬🇧英国超速 蓝海吟风🌊🍃 [wk2]"
   - "🇬🇧英国 英雨琴韵☔🎶 [wk2]"
   - "TG交流群https://t.me/wukongjichang [wk2]"
-  - "🇭🇰香港家宽 潮韵霓裳 🎶🌈 [wk2]"
   - "🇭🇰香港家宽 流光溢彩 🌃💫 [wk2]"
+  - "🇭🇰香港家宽 潮韵霓裳 🎶🌈 [wk2]"
   - "🇭🇰香港家宽 云帆启航 ☁️⛵ [wk2]"
   - "🇺🇸美国巨容 光影旖旎 🌴🎬 [wk2]"
   - "🇺🇸美国巨容 星梦幻城 🌟🏙️ [wk2]"
@@ -3789,12 +3459,12 @@ proxy-groups:
   - "🇯🇵日本低延 霓虹恋曲 🌆💖 [wk2]"
   - "🇯🇵日本低延 雪韵悠然 ❄️🌌 [wk2]"
   - "🇸🇬新加坡稳 月映星澜🌙✨ [wk2]"
+  - "🇸🇬新加坡稳 诗香弄影📜🌸 [wk2]"
   - "🇸🇬新加坡稳 彩梦织锦🎨🌺 [wk2]"
   - "🇸🇬新加坡稳 翡翠星辰🍃⭐ [wk2]"
   - "🇬🇧英国超速 霓虹醉影🌃💫 [wk2]"
   - "🇬🇧英国超速 海韵情怀🌊💖 [wk2]"
   - "🇬🇧英国超速 梦幻霓裳🌸🌟 [wk2]"
-  - "🇬🇧英国超速 蓝海吟风🌊🍃 [wk2]"
   - "🇹🇼 台湾 8 [whh5]"
   - "🇭🇰  香港 4 [whh5]"
   - "🇩🇪 德国 4 [whh5]"
@@ -3995,10 +3665,10 @@ proxy-groups:
   - "GigaMAX03🐼 [flynb]"
   - "대한민국15🐼 [flynb]"
   - "PremiumSK25🐼 [flynb]"
-  - "韩国 - Gwanak-gu - Korea Telecom - 3 [go4sharing]"
+  - "대한민국02🐼 [flynb]"
   - "대한민국03🐼 [flynb]"
   - "🇨🇳 Taiwan01@🐼 [flynb]"
-  - "韩国 - Gasan-dong - LG DACOM Corporation - 2 [go4sharing]"
+  - "TerraLG18🐼 [flynb]"
   - "🇯🇵 ⓢⓟ Tokyo Pro 4 [flynb]"
   - "ⓢⓟ Seoul Pro 3 [flynb]"
   - "ⓢⓟ Seoul Pro 1 [flynb]"
@@ -4135,7 +3805,7 @@ proxy-groups:
   - "🇳🇱|4-28🍯%40xkmfjd|荷兰 24 [tk1]"
   - "🇳🇱|4-28🍯%40xkmfjd|荷兰 25 [tk1]"
   - "🇨🇳|4-28🍯%40xkmfjd|台湾 01 [tk1]"
-  - "波兰 - 华沙 - 1337 Services GmbH - 1 [go4sharing]"
+  - "4-28🍯%40xkmfjd|🌀其他3-T1 | ⬇️ 3.1MB%2Fs 01 [tk1]"
   - "🇭🇰|4-28🍯%40xkmfjd|香港 03 [tk1]"
   - "🇩🇪|4-28🍯%40xkmfjd|德国 05 [tk1]"
   - "🇩🇪 德国_2 [dcj]"
@@ -4206,10 +3876,10 @@ proxy-groups:
   - "🇺🇸|4-28🍯@xkmfjd|美国 95 [tk1]"
   - "🇺🇸|4-28🍯@xkmfjd|美国 98 [tk1]"
   - "🇷🇺|4-28🍯@xkmfjd|俄罗斯 02 [tk1]"
-  - "中国 - 香港 - Google LLC - 4 [go4sharing]"
+  - "❓ 未知_1 [dcj]"
   - "🇫🇷|4-28🍯@xkmfjd|法国 10 [tk1]"
   - "🇫🇷|4-28🍯@xkmfjd|法国 11 [tk1]"
-  - "荷兰 - 阿姆斯特丹 - DigitalOcean, LLC - 1 [go4sharing]"
+  - "🇳🇱 荷兰_3 [dcj]"
   - "🇳🇱|4-28🍯@xkmfjd|荷兰 29 [tk1]"
   - "🇩🇪|4-28🍯@xkmfjd|德国 07 [tk1]"
   - "🇩🇪|4-28🍯@xkmfjd|德国 08 [tk1]"
@@ -4225,11 +3895,11 @@ proxy-groups:
   - "🇫🇷|4-28🍯@xkmfjd|法国 05 [tk1]"
   - "🇧🇷|4-28🍯@xkmfjd|巴西 01 [tk1]"
   - "🇺🇦|4-28🍯@xkmfjd|乌克兰 01 [tk1]"
-  - "中国 - 合肥 - China Unicom CHINA169 Anhui Province Network - 2 [go4sharing]"
+  - "❓ 未知_2 [dcj]"
   - "🇨🇳 中国_1 [dcj]"
   - "🇸🇬 新加坡_1 [dcj]"
   - "🇨🇳 中国_2 [dcj]"
-  - "中国 - 广州市 - China Mobile communications corporation - 3 [go4sharing]"
+  - "❓ 未知_3 [dcj]"
   - "🇨🇳 中国_3 [dcj]"
   - "❓ 未知_4 [dcj]"
   - "❓ 未知_5 [dcj]"
@@ -4247,18 +3917,18 @@ proxy-groups:
   - "❓ 未知_12 [dcj]"
   - "❓ 未知_13 [dcj]"
   - "🇭🇰 香港_2 [dcj]"
-  - "俄罗斯 - 莫斯科 - LLC BAXET - 2 [go4sharing]"
+  - "🇷🇺 俄罗斯_1 [dcj]"
   - "❓ 未知_14 [dcj]"
   - "🇰🇷 韩国_2 [dcj]"
   - "🇷🇺 俄罗斯_2 [dcj]"
   - "🇫🇷 法国_1 [dcj]"
-  - "俄罗斯 - 莫斯科 - LLC Baxet - 1 [go4sharing]"
+  - "🇷🇺 俄罗斯_3 [dcj]"
   - "🇩🇪 德国_1 [dcj]"
   - "❓ 未知_15 [dcj]"
   - "❓ 未知_16 [dcj]"
   - "❓ 未知_17 [dcj]"
   - "🇰🇷 韩国_3 [dcj]"
-  - "中国 - 香港 - CTG Server Ltd. - 9 [go4sharing]"
+  - "🇭🇰 香港_3 [dcj]"
   - "🇹🇼 台湾_1 [dcj]"
   - "❓ 未知_18 [dcj]"
   - "❓ 未知_19 [dcj]"
@@ -4270,7 +3940,7 @@ proxy-groups:
   - "❓ 未知_23 [dcj]"
   - "🇱🇮 列支敦士登 [dcj]"
   - "❓ 未知_24 [dcj]"
-  - "中国 - 台湾 - Akari Networks - 10 [go4sharing]"
+  - "🇹🇼 台湾_3 [dcj]"
   - "❓ 未知_25 [dcj]"
   - "🇨🇦 加拿大 [dcj]"
   - "🇭🇰 香港_4 [dcj]"
@@ -4309,9 +3979,9 @@ proxy-groups:
   - "🇩🇪 德国_4 [dcj]"
   - "🇬🇷 希腊 [dcj]"
   - "🇺🇸 美国_6 [dcj]"
-  - "法国 - 巴黎 - Online S.A.S. - 1 [go4sharing]"
+  - "❓ 未知_42 [dcj]"
   - "🇸🇬 新加坡_6 [dcj]"
-  - "美国 - 洛杉矶 - GTHost - 1 [go4sharing]"
+  - "🇺🇸 美国_7 [dcj]"
   - "❓ 未知_46 [dcj]"
   - "❓ 未知_49 [dcj]"
   - "🇹🇼 台湾_8 [dcj]"
@@ -4334,10 +4004,10 @@ proxy-groups:
   - "❓ 未知_59 [dcj]"
   - "加入我的频道t.me/CMLiussss解锁更多优选节点 [cml]"
   - "❓ 未知_60 [dcj]"
-  - "日本 - 东京 - Akamai Technologies - 1 [go4sharing]"
+  - "🇯🇵 日本_4 [dcj]"
   - "🇬🇧 英国_3 [dcj]"
   - "🇹🇼 台湾_10 [dcj]"
-  - "英国 - 豪恩斯洛 - Cloudflare, Inc. - 5 [go4sharing]"
+  - "🇹🇼 台湾_11 [dcj]"
   - "🇹🇼 台湾_12 [dcj]"
   - "🇹🇼 台湾_13 [dcj]"
   - "🇺🇸 美国_12 [dcj]"
@@ -4377,24 +4047,6 @@ proxy-groups:
   - "🇰🇷 韩国_5 [dcj]"
   - "🇩🇪 德国_6 [dcj]"
   - "🇺🇸 美国_16 [dcj]"
-  - "奥地利 - 維也納 - Foundation for Applied Privacy - 1 [go4sharing]"
-  - "🇦🇺 澳大利亚1 | ⬇️ 6.8MB/s|53%|Openai 2 [cml]"
-  - "韩国 - 首尔特别市 - Shenzhen Tencent Computer Systems Company Limited - 1 [go4sharing]"
-  - "美国 - 华盛顿特区 - GTHost - 2 [go4sharing]"
-  - "美国 - 华盛顿特区 - GTHost - 3 [go4sharing]"
-  - "美国 - 聖荷西 - Cloudflare, Inc. - 5 [go4sharing]"
-  - "美国 - 芝加哥 - Sharktech - 4 [go4sharing]"
-  - "泰国 - 曼谷 - Kaopu Cloud HK Limited - 1 [go4sharing]"
-  - "新加坡 - 新加坡 - DigitalOcean, LLC - 1 [go4sharing]"
-  - "意大利 - 罗马市 - SonderCloud Limited - 1 [go4sharing]"
-  - "英国 - 伦敦 - OVH SAS - 4 [go4sharing]"
-  - "英国 - 伦敦 - OVH SAS - 2 [go4sharing]"
-  - "中国 - 合肥 - China Unicom CHINA169 Anhui Province Network - 1 [go4sharing]"
-  - "中国 - 青园 - PEG TECH INC - 11 [go4sharing]"
-  - "中国 - 香港 - Global Connectivity Solutions LLP - 8 [go4sharing]"
-  - "中国 - 香港 - Hong Kong Telecommunications (HKT) Limited Mass Internet - 6 [go4sharing]"
-  - "中国 - 香港 - Polonetwork Limited - 7 [go4sharing]"
-  - "中国 - 香港 - SonderCloud Limited - 5 [go4sharing]"
   - "群里大佬分享更多节点 [cjbp]"
   - "订阅要换了 [cjbp]"
   - "这个订阅不好看 [cjbp]"
@@ -4506,6 +4158,7 @@ proxy-groups:
   - "🇯🇵 日本6 | ⬇️ 4.3MB/s|11%|Netflix|Disney|Youtube|Openai|Gemini 2 [cml]"
   - "🇫🇷 法国2 | ⬇️ 4.2MB/s|100%|Openai 2 [cml]"
   - "🇫🇷 法国3 | ⬇️ 14.0MB/s|46%|Netflix|Youtube|Openai 2 [cml]"
+  - "🇦🇺 澳大利亚1 | ⬇️ 6.8MB/s|53%|Openai 2 [cml]"
   - "🇺🇸 美国1 | ⬇️ 10.7MB/s|6%|Netflix|Openai|Gemini 2 [cml]"
   - "🇺🇸 美国12 | ⬇️ 5.6MB/s|Openai 2 [cml]"
   - "🇺🇸 美国13 | ⬇️ 4.2MB/s|Netflix|Openai|Gemini 2 [cml]"
@@ -4659,21 +4312,21 @@ proxy-groups:
   - "加入我的频道t.me/CMLiussss解锁更多优选节点 [cmj3]"
   - "CFnat [cmj3]"
   - "🇺🇸 US [cmj3]"
-  - "🇫🇷 FR [cmj3]"
   - "🇺🇸 US 2 [cmj3]"
   - "🇭🇰 HK [cmj3]"
-  - "🇺🇸 US 3 [cmj3]"
-  - "🇷🇺 RU [cmj3]"
-  - "🇺🇸 US 4 [cmj3]"
   - "🇭🇰 HK 2 [cmj3]"
+  - "🇺🇸 US 3 [cmj3]"
+  - "🇺🇸 US 4 [cmj3]"
   - "🇺🇸 US 5 [cmj3]"
+  - "🇭🇰 HK 3 [cmj3]"
+  - "🇭🇰 HK 4 [cmj3]"
+  - "🇭🇰 HK 5 [cmj3]"
   - "🇺🇸 US 6 [cmj3]"
+  - "🇨🇳 TW [cmj3]"
+  - "🇭🇰 HK 6 [cmj3]"
   - "🇺🇸 US 7 [cmj3]"
   - "🇺🇸 US 8 [cmj3]"
-  - "🇺🇸 US 9 [cmj3]"
-  - "🇺🇸 US 10 [cmj3]"
-  - "🇭🇰 HK 3 [cmj3]"
-  - "🇺🇸 US 11 [cmj3]"
+  - "🇭🇰 HK 7 [cmj3]"
   - "🇯🇵 JP [cmj3]"
   - "🇯🇵 JP 2 [cmj3]"
   - "🇸🇬 SG [cmj3]"
@@ -4684,22 +4337,22 @@ proxy-groups:
   - "🇰🇷 KR 2 [cmj3]"
   - "🇰🇷 KR 3 [cmj3]"
   - "🇰🇷 KR 4 [cmj3]"
+  - "🇺🇸 US 9 [cmj3]"
+  - "🇺🇸 US 10 [cmj3]"
+  - "🇺🇸 US 11 [cmj3]"
   - "🇺🇸 US 12 [cmj3]"
-  - "🇺🇸 US 13 [cmj3]"
-  - "🇺🇸 US 14 [cmj3]"
-  - "🇺🇸 US 15 [cmj3]"
   - "🇰🇷 KR 5 [cmj3]"
   - "🇸🇬 SG 3 [cmj3]"
   - "🇮🇳 IN [cmj3]"
-  - "🇺🇸 US 16 [cmj3]"
+  - "🇺🇸 US 13 [cmj3]"
   - "🇮🇳 IN 2 [cmj3]"
-  - "🇺🇸 US 17 [cmj3]"
+  - "🇺🇸 US 14 [cmj3]"
   - "🇦🇺 AU [cmj3]"
-  - "🇺🇸 US 18 [cmj3]"
-  - "🇨🇳 TW [cmj3]"
-  - "🇭🇰 HK 4 [cmj3]"
-  - "🇺🇸 US 19 [cmj3]"
-  - "🇭🇰 HK 5 [cmj3]"
+  - "🇺🇸 US 15 [cmj3]"
+  - "🇨🇳 TW 2 [cmj3]"
+  - "🇭🇰 HK 8 [cmj3]"
+  - "🇺🇸 US 16 [cmj3]"
+  - "🇭🇰 HK 9 [cmj3]"
   - "CT [cmj3]"
   - "CT 2 [cmj3]"
   - "CT 3 [cmj3]"
@@ -4744,7 +4397,7 @@ proxy-groups:
   - "巴西 [xl2]"
   - "加拿大 [xl2]"
   - "TG交流群https://t.me/wukongjichang [wk1]"
-  - "🇭🇰香港家宽 星河幻境 ✨🌌 [wk1]"
+  - "🇭🇰香港家宽 星河幻境 ✨🌌 [wk2]"
   - "🇭🇰香港家宽 流光溢彩 🌃💫 [wk1]"
   - "🇭🇰香港家宽 潮韵霓裳 🎶🌈 [wk1]"
   - "🇭🇰香港家宽 云帆启航 ☁️⛵ [wk1]"
@@ -4761,17 +4414,17 @@ proxy-groups:
   - "🇯🇵日本 云岚琉光☁️🌅 [wk2]"
   - "🇸🇬新加坡稳 月映星澜🌙✨ [wk1]"
   - "🇸🇬新加坡稳 诗香弄影📜🌸 [wk1]"
-  - "🇸🇬新加坡稳 诗香弄影📜🌸 [wk2]"
+  - "🇸🇬新加坡稳 彩梦织锦🎨🌺 [wk1]"
   - "🇸🇬新加坡稳 翡翠星辰🍃⭐ [wk1]"
   - "🇸🇬新加坡 霞光映水🌇💧 [wk2]"
   - "🇬🇧英国超速 霓虹醉影🌃💫 [wk1]"
   - "🇬🇧英国超速 海韵情怀🌊💖 [wk1]"
   - "🇬🇧英国超速 梦幻霓裳🌸🌟 [wk1]"
-  - "🇬🇧英国超速 蓝海吟风🌊🍃 [wk1]"
+  - "🇬🇧英国超速 蓝海吟风🌊🍃 [wk2]"
   - "🇬🇧英国 英雨琴韵☔🎶 [wk2]"
   - "TG交流群https://t.me/wukongjichang [wk2]"
-  - "🇭🇰香港家宽 潮韵霓裳 🎶🌈 [wk2]"
   - "🇭🇰香港家宽 流光溢彩 🌃💫 [wk2]"
+  - "🇭🇰香港家宽 潮韵霓裳 🎶🌈 [wk2]"
   - "🇭🇰香港家宽 云帆启航 ☁️⛵ [wk2]"
   - "🇺🇸美国巨容 光影旖旎 🌴🎬 [wk2]"
   - "🇺🇸美国巨容 星梦幻城 🌟🏙️ [wk2]"
@@ -4782,12 +4435,12 @@ proxy-groups:
   - "🇯🇵日本低延 霓虹恋曲 🌆💖 [wk2]"
   - "🇯🇵日本低延 雪韵悠然 ❄️🌌 [wk2]"
   - "🇸🇬新加坡稳 月映星澜🌙✨ [wk2]"
+  - "🇸🇬新加坡稳 诗香弄影📜🌸 [wk2]"
   - "🇸🇬新加坡稳 彩梦织锦🎨🌺 [wk2]"
   - "🇸🇬新加坡稳 翡翠星辰🍃⭐ [wk2]"
   - "🇬🇧英国超速 霓虹醉影🌃💫 [wk2]"
   - "🇬🇧英国超速 海韵情怀🌊💖 [wk2]"
   - "🇬🇧英国超速 梦幻霓裳🌸🌟 [wk2]"
-  - "🇬🇧英国超速 蓝海吟风🌊🍃 [wk2]"
   - "🇹🇼 台湾 8 [whh5]"
   - "🇭🇰  香港 4 [whh5]"
   - "🇩🇪 德国 4 [whh5]"
@@ -4985,10 +4638,10 @@ proxy-groups:
   - "GigaMAX03🐼 [flynb]"
   - "대한민국15🐼 [flynb]"
   - "PremiumSK25🐼 [flynb]"
-  - "韩国 - Gwanak-gu - Korea Telecom - 3 [go4sharing]"
+  - "대한민국02🐼 [flynb]"
   - "대한민국03🐼 [flynb]"
   - "🇨🇳 Taiwan01@🐼 [flynb]"
-  - "韩国 - Gasan-dong - LG DACOM Corporation - 2 [go4sharing]"
+  - "TerraLG18🐼 [flynb]"
   - "🇯🇵 ⓢⓟ Tokyo Pro 4 [flynb]"
   - "ⓢⓟ Seoul Pro 3 [flynb]"
   - "ⓢⓟ Seoul Pro 1 [flynb]"
@@ -5125,7 +4778,7 @@ proxy-groups:
   - "🇳🇱|4-28🍯%40xkmfjd|荷兰 24 [tk1]"
   - "🇳🇱|4-28🍯%40xkmfjd|荷兰 25 [tk1]"
   - "🇨🇳|4-28🍯%40xkmfjd|台湾 01 [tk1]"
-  - "波兰 - 华沙 - 1337 Services GmbH - 1 [go4sharing]"
+  - "4-28🍯%40xkmfjd|🌀其他3-T1 | ⬇️ 3.1MB%2Fs 01 [tk1]"
   - "🇭🇰|4-28🍯%40xkmfjd|香港 03 [tk1]"
   - "🇩🇪|4-28🍯%40xkmfjd|德国 05 [tk1]"
   - "🇩🇪 德国_2 [dcj]"
@@ -5196,10 +4849,10 @@ proxy-groups:
   - "🇺🇸|4-28🍯@xkmfjd|美国 95 [tk1]"
   - "🇺🇸|4-28🍯@xkmfjd|美国 98 [tk1]"
   - "🇷🇺|4-28🍯@xkmfjd|俄罗斯 02 [tk1]"
-  - "中国 - 香港 - Google LLC - 4 [go4sharing]"
+  - "❓ 未知_1 [dcj]"
   - "🇫🇷|4-28🍯@xkmfjd|法国 10 [tk1]"
   - "🇫🇷|4-28🍯@xkmfjd|法国 11 [tk1]"
-  - "荷兰 - 阿姆斯特丹 - DigitalOcean, LLC - 1 [go4sharing]"
+  - "🇳🇱 荷兰_3 [dcj]"
   - "🇳🇱|4-28🍯@xkmfjd|荷兰 29 [tk1]"
   - "🇩🇪|4-28🍯@xkmfjd|德国 07 [tk1]"
   - "🇩🇪|4-28🍯@xkmfjd|德国 08 [tk1]"
@@ -5215,11 +4868,11 @@ proxy-groups:
   - "🇫🇷|4-28🍯@xkmfjd|法国 05 [tk1]"
   - "🇧🇷|4-28🍯@xkmfjd|巴西 01 [tk1]"
   - "🇺🇦|4-28🍯@xkmfjd|乌克兰 01 [tk1]"
-  - "中国 - 合肥 - China Unicom CHINA169 Anhui Province Network - 2 [go4sharing]"
+  - "❓ 未知_2 [dcj]"
   - "🇨🇳 中国_1 [dcj]"
   - "🇸🇬 新加坡_1 [dcj]"
   - "🇨🇳 中国_2 [dcj]"
-  - "中国 - 广州市 - China Mobile communications corporation - 3 [go4sharing]"
+  - "❓ 未知_3 [dcj]"
   - "🇨🇳 中国_3 [dcj]"
   - "❓ 未知_4 [dcj]"
   - "❓ 未知_5 [dcj]"
@@ -5237,18 +4890,18 @@ proxy-groups:
   - "❓ 未知_12 [dcj]"
   - "❓ 未知_13 [dcj]"
   - "🇭🇰 香港_2 [dcj]"
-  - "俄罗斯 - 莫斯科 - LLC BAXET - 2 [go4sharing]"
+  - "🇷🇺 俄罗斯_1 [dcj]"
   - "❓ 未知_14 [dcj]"
   - "🇰🇷 韩国_2 [dcj]"
   - "🇷🇺 俄罗斯_2 [dcj]"
   - "🇫🇷 法国_1 [dcj]"
-  - "俄罗斯 - 莫斯科 - LLC Baxet - 1 [go4sharing]"
+  - "🇷🇺 俄罗斯_3 [dcj]"
   - "🇩🇪 德国_1 [dcj]"
   - "❓ 未知_15 [dcj]"
   - "❓ 未知_16 [dcj]"
   - "❓ 未知_17 [dcj]"
   - "🇰🇷 韩国_3 [dcj]"
-  - "中国 - 香港 - CTG Server Ltd. - 9 [go4sharing]"
+  - "🇭🇰 香港_3 [dcj]"
   - "🇹🇼 台湾_1 [dcj]"
   - "❓ 未知_18 [dcj]"
   - "❓ 未知_19 [dcj]"
@@ -5260,7 +4913,7 @@ proxy-groups:
   - "❓ 未知_23 [dcj]"
   - "🇱🇮 列支敦士登 [dcj]"
   - "❓ 未知_24 [dcj]"
-  - "中国 - 台湾 - Akari Networks - 10 [go4sharing]"
+  - "🇹🇼 台湾_3 [dcj]"
   - "❓ 未知_25 [dcj]"
   - "🇨🇦 加拿大 [dcj]"
   - "🇭🇰 香港_4 [dcj]"
@@ -5299,9 +4952,9 @@ proxy-groups:
   - "🇩🇪 德国_4 [dcj]"
   - "🇬🇷 希腊 [dcj]"
   - "🇺🇸 美国_6 [dcj]"
-  - "法国 - 巴黎 - Online S.A.S. - 1 [go4sharing]"
+  - "❓ 未知_42 [dcj]"
   - "🇸🇬 新加坡_6 [dcj]"
-  - "美国 - 洛杉矶 - GTHost - 1 [go4sharing]"
+  - "🇺🇸 美国_7 [dcj]"
   - "❓ 未知_46 [dcj]"
   - "❓ 未知_49 [dcj]"
   - "🇹🇼 台湾_8 [dcj]"
@@ -5324,10 +4977,10 @@ proxy-groups:
   - "❓ 未知_59 [dcj]"
   - "加入我的频道t.me/CMLiussss解锁更多优选节点 [cml]"
   - "❓ 未知_60 [dcj]"
-  - "日本 - 东京 - Akamai Technologies - 1 [go4sharing]"
+  - "🇯🇵 日本_4 [dcj]"
   - "🇬🇧 英国_3 [dcj]"
   - "🇹🇼 台湾_10 [dcj]"
-  - "英国 - 豪恩斯洛 - Cloudflare, Inc. - 5 [go4sharing]"
+  - "🇹🇼 台湾_11 [dcj]"
   - "🇹🇼 台湾_12 [dcj]"
   - "🇹🇼 台湾_13 [dcj]"
   - "🇺🇸 美国_12 [dcj]"
@@ -5367,24 +5020,6 @@ proxy-groups:
   - "🇰🇷 韩国_5 [dcj]"
   - "🇩🇪 德国_6 [dcj]"
   - "🇺🇸 美国_16 [dcj]"
-  - "奥地利 - 維也納 - Foundation for Applied Privacy - 1 [go4sharing]"
-  - "🇦🇺 澳大利亚1 | ⬇️ 6.8MB/s|53%|Openai 2 [cml]"
-  - "韩国 - 首尔特别市 - Shenzhen Tencent Computer Systems Company Limited - 1 [go4sharing]"
-  - "美国 - 华盛顿特区 - GTHost - 2 [go4sharing]"
-  - "美国 - 华盛顿特区 - GTHost - 3 [go4sharing]"
-  - "美国 - 聖荷西 - Cloudflare, Inc. - 5 [go4sharing]"
-  - "美国 - 芝加哥 - Sharktech - 4 [go4sharing]"
-  - "泰国 - 曼谷 - Kaopu Cloud HK Limited - 1 [go4sharing]"
-  - "新加坡 - 新加坡 - DigitalOcean, LLC - 1 [go4sharing]"
-  - "意大利 - 罗马市 - SonderCloud Limited - 1 [go4sharing]"
-  - "英国 - 伦敦 - OVH SAS - 4 [go4sharing]"
-  - "英国 - 伦敦 - OVH SAS - 2 [go4sharing]"
-  - "中国 - 合肥 - China Unicom CHINA169 Anhui Province Network - 1 [go4sharing]"
-  - "中国 - 青园 - PEG TECH INC - 11 [go4sharing]"
-  - "中国 - 香港 - Global Connectivity Solutions LLP - 8 [go4sharing]"
-  - "中国 - 香港 - Hong Kong Telecommunications (HKT) Limited Mass Internet - 6 [go4sharing]"
-  - "中国 - 香港 - Polonetwork Limited - 7 [go4sharing]"
-  - "中国 - 香港 - SonderCloud Limited - 5 [go4sharing]"
   - "群里大佬分享更多节点 [cjbp]"
   - "订阅要换了 [cjbp]"
   - "这个订阅不好看 [cjbp]"
@@ -5496,6 +5131,7 @@ proxy-groups:
   - "🇯🇵 日本6 | ⬇️ 4.3MB/s|11%|Netflix|Disney|Youtube|Openai|Gemini 2 [cml]"
   - "🇫🇷 法国2 | ⬇️ 4.2MB/s|100%|Openai 2 [cml]"
   - "🇫🇷 法国3 | ⬇️ 14.0MB/s|46%|Netflix|Youtube|Openai 2 [cml]"
+  - "🇦🇺 澳大利亚1 | ⬇️ 6.8MB/s|53%|Openai 2 [cml]"
   - "🇺🇸 美国1 | ⬇️ 10.7MB/s|6%|Netflix|Openai|Gemini 2 [cml]"
   - "🇺🇸 美国12 | ⬇️ 5.6MB/s|Openai 2 [cml]"
   - "🇺🇸 美国13 | ⬇️ 4.2MB/s|Netflix|Openai|Gemini 2 [cml]"
@@ -5649,21 +5285,21 @@ proxy-groups:
   - "加入我的频道t.me/CMLiussss解锁更多优选节点 [cmj3]"
   - "CFnat [cmj3]"
   - "🇺🇸 US [cmj3]"
-  - "🇫🇷 FR [cmj3]"
   - "🇺🇸 US 2 [cmj3]"
   - "🇭🇰 HK [cmj3]"
-  - "🇺🇸 US 3 [cmj3]"
-  - "🇷🇺 RU [cmj3]"
-  - "🇺🇸 US 4 [cmj3]"
   - "🇭🇰 HK 2 [cmj3]"
+  - "🇺🇸 US 3 [cmj3]"
+  - "🇺🇸 US 4 [cmj3]"
   - "🇺🇸 US 5 [cmj3]"
+  - "🇭🇰 HK 3 [cmj3]"
+  - "🇭🇰 HK 4 [cmj3]"
+  - "🇭🇰 HK 5 [cmj3]"
   - "🇺🇸 US 6 [cmj3]"
+  - "🇨🇳 TW [cmj3]"
+  - "🇭🇰 HK 6 [cmj3]"
   - "🇺🇸 US 7 [cmj3]"
   - "🇺🇸 US 8 [cmj3]"
-  - "🇺🇸 US 9 [cmj3]"
-  - "🇺🇸 US 10 [cmj3]"
-  - "🇭🇰 HK 3 [cmj3]"
-  - "🇺🇸 US 11 [cmj3]"
+  - "🇭🇰 HK 7 [cmj3]"
   - "🇯🇵 JP [cmj3]"
   - "🇯🇵 JP 2 [cmj3]"
   - "🇸🇬 SG [cmj3]"
@@ -5674,22 +5310,22 @@ proxy-groups:
   - "🇰🇷 KR 2 [cmj3]"
   - "🇰🇷 KR 3 [cmj3]"
   - "🇰🇷 KR 4 [cmj3]"
+  - "🇺🇸 US 9 [cmj3]"
+  - "🇺🇸 US 10 [cmj3]"
+  - "🇺🇸 US 11 [cmj3]"
   - "🇺🇸 US 12 [cmj3]"
-  - "🇺🇸 US 13 [cmj3]"
-  - "🇺🇸 US 14 [cmj3]"
-  - "🇺🇸 US 15 [cmj3]"
   - "🇰🇷 KR 5 [cmj3]"
   - "🇸🇬 SG 3 [cmj3]"
   - "🇮🇳 IN [cmj3]"
-  - "🇺🇸 US 16 [cmj3]"
+  - "🇺🇸 US 13 [cmj3]"
   - "🇮🇳 IN 2 [cmj3]"
-  - "🇺🇸 US 17 [cmj3]"
+  - "🇺🇸 US 14 [cmj3]"
   - "🇦🇺 AU [cmj3]"
-  - "🇺🇸 US 18 [cmj3]"
-  - "🇨🇳 TW [cmj3]"
-  - "🇭🇰 HK 4 [cmj3]"
-  - "🇺🇸 US 19 [cmj3]"
-  - "🇭🇰 HK 5 [cmj3]"
+  - "🇺🇸 US 15 [cmj3]"
+  - "🇨🇳 TW 2 [cmj3]"
+  - "🇭🇰 HK 8 [cmj3]"
+  - "🇺🇸 US 16 [cmj3]"
+  - "🇭🇰 HK 9 [cmj3]"
   - "CT [cmj3]"
   - "CT 2 [cmj3]"
   - "CT 3 [cmj3]"
@@ -5734,7 +5370,7 @@ proxy-groups:
   - "巴西 [xl2]"
   - "加拿大 [xl2]"
   - "TG交流群https://t.me/wukongjichang [wk1]"
-  - "🇭🇰香港家宽 星河幻境 ✨🌌 [wk1]"
+  - "🇭🇰香港家宽 星河幻境 ✨🌌 [wk2]"
   - "🇭🇰香港家宽 流光溢彩 🌃💫 [wk1]"
   - "🇭🇰香港家宽 潮韵霓裳 🎶🌈 [wk1]"
   - "🇭🇰香港家宽 云帆启航 ☁️⛵ [wk1]"
@@ -5751,17 +5387,17 @@ proxy-groups:
   - "🇯🇵日本 云岚琉光☁️🌅 [wk2]"
   - "🇸🇬新加坡稳 月映星澜🌙✨ [wk1]"
   - "🇸🇬新加坡稳 诗香弄影📜🌸 [wk1]"
-  - "🇸🇬新加坡稳 诗香弄影📜🌸 [wk2]"
+  - "🇸🇬新加坡稳 彩梦织锦🎨🌺 [wk1]"
   - "🇸🇬新加坡稳 翡翠星辰🍃⭐ [wk1]"
   - "🇸🇬新加坡 霞光映水🌇💧 [wk2]"
   - "🇬🇧英国超速 霓虹醉影🌃💫 [wk1]"
   - "🇬🇧英国超速 海韵情怀🌊💖 [wk1]"
   - "🇬🇧英国超速 梦幻霓裳🌸🌟 [wk1]"
-  - "🇬🇧英国超速 蓝海吟风🌊🍃 [wk1]"
+  - "🇬🇧英国超速 蓝海吟风🌊🍃 [wk2]"
   - "🇬🇧英国 英雨琴韵☔🎶 [wk2]"
   - "TG交流群https://t.me/wukongjichang [wk2]"
-  - "🇭🇰香港家宽 潮韵霓裳 🎶🌈 [wk2]"
   - "🇭🇰香港家宽 流光溢彩 🌃💫 [wk2]"
+  - "🇭🇰香港家宽 潮韵霓裳 🎶🌈 [wk2]"
   - "🇭🇰香港家宽 云帆启航 ☁️⛵ [wk2]"
   - "🇺🇸美国巨容 光影旖旎 🌴🎬 [wk2]"
   - "🇺🇸美国巨容 星梦幻城 🌟🏙️ [wk2]"
@@ -5772,12 +5408,12 @@ proxy-groups:
   - "🇯🇵日本低延 霓虹恋曲 🌆💖 [wk2]"
   - "🇯🇵日本低延 雪韵悠然 ❄️🌌 [wk2]"
   - "🇸🇬新加坡稳 月映星澜🌙✨ [wk2]"
+  - "🇸🇬新加坡稳 诗香弄影📜🌸 [wk2]"
   - "🇸🇬新加坡稳 彩梦织锦🎨🌺 [wk2]"
   - "🇸🇬新加坡稳 翡翠星辰🍃⭐ [wk2]"
   - "🇬🇧英国超速 霓虹醉影🌃💫 [wk2]"
   - "🇬🇧英国超速 海韵情怀🌊💖 [wk2]"
   - "🇬🇧英国超速 梦幻霓裳🌸🌟 [wk2]"
-  - "🇬🇧英国超速 蓝海吟风🌊🍃 [wk2]"
   - "🇹🇼 台湾 8 [whh5]"
   - "🇭🇰  香港 4 [whh5]"
   - "🇩🇪 德国 4 [whh5]"
