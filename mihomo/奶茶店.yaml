@@ -54,10 +54,10 @@ dns:
     - "https://doh.pub/dns-query"
 proxies:
 - {name: "🇭🇰 YXVM-GuangZhou", type: "ss", server: "183.236.51.57", port: 25555, cipher: "aes-256-gcm", password: "cbbae268-e129-41fa-80d5-9f115f5a0a4b", udp: true}
-- {name: "🇺🇸 DMIT-CMIN2", type: "vless", server: "154.17.227.127", port: 65310, uuid: "cbbae268-e129-41fa-80d5-9f115f5a0a4b", alterId: 0, cipher: "auto", udp: true, flow: "xtls-rprx-vision", tls: true, reality-opts: {public-key: "UwObpjthXR56McGdJewxXsrNYygmiPl6cZxN84OVRTY", short-id: "0c08d8ba"}, client-fingerprint: "ios", network: "tcp", servername: "gamedownloads-rockstargames-com.akamaized.net"}
+- {name: "🇺🇸 DMIT-CMIN2", type: "vless", server: "154.17.227.127", port: 65310, uuid: "cbbae268-e129-41fa-80d5-9f115f5a0a4b", alterId: 0, cipher: "auto", udp: true, flow: "xtls-rprx-vision", tls: true, reality-opts: {public-key: "UwObpjthXR56McGdJewxXsrNYygmiPl6cZxN84OVRTY", short-id: "0c08d8ba"}, client-fingerprint: "firefox", network: "tcp", servername: "gamedownloads-rockstargames-com.akamaized.net"}
 - {name: "🇸🇬 Sharon", type: "vless", server: "172.99.138.5", port: 65300, uuid: "cbbae268-e129-41fa-80d5-9f115f5a0a4b", alterId: 0, cipher: "auto", udp: true, flow: "xtls-rprx-vision", tls: true, reality-opts: {public-key: "UwObpjthXR56McGdJewxXsrNYygmiPl6cZxN84OVRTY", short-id: "0c08d8ba"}, client-fingerprint: "safari", network: "tcp", servername: "gamedownloads-rockstargames-com.akamaized.net"}
-- {name: "🇯🇵 Claw-JP", type: "vless", server: "47.79.34.187", port: 65400, uuid: "cbbae268-e129-41fa-80d5-9f115f5a0a4b", alterId: 0, cipher: "auto", udp: true, flow: "xtls-rprx-vision", tls: true, reality-opts: {public-key: "UwObpjthXR56McGdJewxXsrNYygmiPl6cZxN84OVRTY", short-id: "0c08d8ba"}, client-fingerprint: "ios", network: "tcp", servername: "gamedownloads-rockstargames-com.akamaized.net"}
-- {name: "🇭🇰 YXVM-CMI", type: "vless", server: "46.3.104.215", port: 65300, uuid: "cbbae268-e129-41fa-80d5-9f115f5a0a4b", alterId: 0, cipher: "auto", udp: true, flow: "xtls-rprx-vision", tls: true, reality-opts: {public-key: "UwObpjthXR56McGdJewxXsrNYygmiPl6cZxN84OVRTY", short-id: "0c08d8ba"}, client-fingerprint: "edge", network: "tcp", servername: "gamedownloads-rockstargames-com.akamaized.net"}
+- {name: "🇯🇵 Claw-JP", type: "vless", server: "47.79.34.187", port: 65400, uuid: "cbbae268-e129-41fa-80d5-9f115f5a0a4b", alterId: 0, cipher: "auto", udp: true, flow: "xtls-rprx-vision", tls: true, reality-opts: {public-key: "UwObpjthXR56McGdJewxXsrNYygmiPl6cZxN84OVRTY", short-id: "0c08d8ba"}, client-fingerprint: "safari", network: "tcp", servername: "gamedownloads-rockstargames-com.akamaized.net"}
+- {name: "🇭🇰 YXVM-CMI", type: "vless", server: "46.3.104.215", port: 65300, uuid: "cbbae268-e129-41fa-80d5-9f115f5a0a4b", alterId: 0, cipher: "auto", udp: true, flow: "xtls-rprx-vision", tls: true, reality-opts: {public-key: "UwObpjthXR56McGdJewxXsrNYygmiPl6cZxN84OVRTY", short-id: "0c08d8ba"}, client-fingerprint: "qq", network: "tcp", servername: "gamedownloads-rockstargames-com.akamaized.net"}
 proxy-groups:
 - name: "PROXY"
   type: "select"
@@ -71,7 +71,7 @@ proxy-groups:
 - name: "AUTO"
   type: "url-test"
   url: "http://www.gstatic.com/generate_204"
-  interval: 300
+  interval: 900
   tolerance: 50
   proxies:
   - "🇭🇰 YXVM-GuangZhou"

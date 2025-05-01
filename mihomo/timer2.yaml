@@ -1,0 +1,1298 @@
+log-level: "debug"
+mixed-port: 7890
+allow-lan: true
+external-controller: "127.0.0.1:9090"
+unified-delay: true
+tcp-concurrent: true
+find-process-mode: "strict"
+global-client-fingerprint: "chrome"
+profile:
+  store-selected: true
+  store-fake-ip: true
+sniffer:
+  enable: true
+  force-dns-mapping: true
+  parse-pure-ip: true
+  override-destination: false
+  sniff:
+    HTTP:
+      ports:
+      - 80
+      - "8080-8880"
+    TLS:
+      ports:
+      - 443
+      - 8443
+    QUIC:
+      ports:
+      - 443
+      - 8443
+tun:
+  enable: true
+  stack: "mixed"
+  dns-hijack:
+  - "any:53"
+  - "tcp://any:53"
+  auto-route: true
+  auto-redirect: true
+  auto-detect-interface: true
+  strict-route: true
+dns:
+  enable: true
+  ipv6: false
+  default-nameserver:
+  - "223.5.5.5"
+  - "119.29.29.29"
+  enhanced-mode: "fake-ip"
+  fake-ip-range: "198.18.0.1/16"
+  nameserver:
+  - "https://dns.cloudflare.com/dns-query"
+  - "https://dns.google/dns-query"
+  nameserver-policy:
+    geosite:cn,private:
+    - "https://dns.alidns.com/dns-query"
+    - "https://doh.pub/dns-query"
+proxies:
+- {skip-cert-verify: true, sni: "q08m.vgraxiw73s.hasyaf.cn", type: "trojan", password: "31b96f11-ded9-4e00-ae24-496c065c5c30", server: "183.2.150.64", port: 27103, name: "🇭🇰 香港_原神-01"}
+- {skip-cert-verify: true, sni: "in01.trojanyyds.xyz", type: "trojan", password: "cd41b9d7-df15-46ad-a778-257b0851525a", server: "in01.trojanyyds.xyz", port: 443, name: "🇭🇰 香港_原神-02"}
+- {type: "vless", name: "🇭🇰 香港_鸣潮-01", server: "test123.zlqhdns.top", port: 54220, uuid: "459b4a80-bd61-4ecd-a26b-e9c1809d9e45", tls: true, flow: "xtls-rprx-vision", client-fingerprint: "chrome", skip-cert-verify: true, reality-opts: {public-key: "qhTzYYIgBzDLNYR79oxftqdo1kzL-1_hGJKfqrOliCY"}, network: "tcp", servername: "www.nvidia.com"}
+- {type: "vless", name: "🇭🇰 香港_青云", server: "shenyang001.dynu.net", port: 33782, uuid: "459b4a80-bd61-4ecd-a26b-e9c1809d9e45", tls: true, flow: "xtls-rprx-vision", client-fingerprint: "chrome", skip-cert-verify: true, reality-opts: {public-key: "qhTzYYIgBzDLNYR79oxftqdo1kzL-1_hGJKfqrOliCY"}, network: "tcp", servername: "www.nvidia.com"}
+- {skip-cert-verify: true, sni: "www.baidu.com", type: "trojan", password: "af182b96-3107-4e67-ac0c-1cd720d744cc", server: "105hk.czczcloud.top", port: 15833, name: "🇭🇰 香港_阿里云-01"}
+- {skip-cert-verify: true, sni: "sg01.trojanyyds.xyz", type: "trojan", password: "cd41b9d7-df15-46ad-a778-257b0851525a", server: "sg01.trojanyyds.xyz", port: 443, name: "🇭🇰 香港_鸣潮-02"}
+- {skip-cert-verify: true, sni: "q08m.vgraxiw73s.hasyaf.cn", type: "trojan", password: "ef128b26-3735-4a14-a725-29c22e01a404", server: "183.240.116.224", port: 10465, name: "🇭🇰 香港_原神-03"}
+- {skip-cert-verify: true, sni: "sg02.trojanyyds.xyz", type: "trojan", password: "cd41b9d7-df15-46ad-a778-257b0851525a", server: "sg02.trojanyyds.xyz", port: 443, name: "🇭🇰 香港_阿里云-02"}
+- {skip-cert-verify: true, sni: "q08m.vgraxiw73s.hasyaf.cn", type: "trojan", password: "8e515b71-0dc4-4227-9078-3884fa0c9b73", server: "183.240.116.224", port: 27101, name: "🇭🇰 香港_米哈游-01"}
+- {skip-cert-verify: true, sni: "q08m.vgraxiw73s.hasyaf.cn", type: "trojan", password: "a31b6c10-3633-4d20-b689-57ad1f2a8696", server: "183.2.150.98", port: 27101, name: "🇭🇰 香港_华为云"}
+- {skip-cert-verify: true, sni: "us01.trojanyyds.xyz", type: "trojan", password: "cd41b9d7-df15-46ad-a778-257b0851525a", server: "us01.trojanyyds.xyz", port: 443, name: "🇭🇰 香港_阿里云-03"}
+- {skip-cert-verify: true, sni: "q08m.vgraxiw73s.hasyaf.cn", type: "trojan", password: "3176ef41-20ae-4ddd-82b4-6d497ec30d4f", server: "163.177.47.36", port: 27102, name: "🇭🇰 香港_唯云"}
+- {skip-cert-verify: true, sni: "www.baidu.com", type: "trojan", password: "af182b96-3107-4e67-ac0c-1cd720d744cc", server: "1001hk.czczcloud.top", port: 15831, name: "🇭🇰 香港_IEPL-01"}
+- {type: "vless", name: "🇭🇰 香港_阿里云-04", server: "45.207.222.138", port: 8443, uuid: "693c6d73-2a9b-4b37-b91a-5743c88560b0", tls: true, flow: "xtls-rprx-vision", client-fingerprint: "chrome", skip-cert-verify: true, reality-opts: {public-key: "v3Dh0LxroRCxRYcpFos4rSyd5uCAsDvHfMOUVQeW-3U", short-id: "85fbcd4e"}, network: "tcp", servername: "www.yahoo.com"}
+- {type: "vless", name: "🇭🇰 香港_明懂", server: "csuzhou01.1cooldns.com", port: 28680, uuid: "459b4a80-bd61-4ecd-a26b-e9c1809d9e45", tls: true, flow: "xtls-rprx-vision", client-fingerprint: "chrome", skip-cert-verify: true, reality-opts: {public-key: "qhTzYYIgBzDLNYR79oxftqdo1kzL-1_hGJKfqrOliCY"}, network: "tcp", servername: "www.nvidia.com"}
+- {skip-cert-verify: true, sni: "vt-bana2-cn-11.ghpgwqswodgzv.com", network: "ws", ws-opts: {path: "/dl_media"}, type: "trojan", password: "a38c9e28-9960-4e31-9f18-ed2495a756aa", server: "vt-bana2-cn-11.ghpgwqswodgzv.com", port: 40021, name: "🇭🇰 香港_米哈游-02"}
+- {type: "hysteria2", name: "🇭🇰 香港_IEPL-02", server: "hk.nfsn666.gq", port: 8888, password: "nfsn666", sni: "hk.nfsn666.gq", skip-cert-verify: true, tfo: false}
+- {skip-cert-verify: true, sni: "www.baidu.com", type: "trojan", password: "af182b96-3107-4e67-ac0c-1cd720d744cc", server: "1002hk.czczcloud.top", port: 23681, name: "🇭🇰 香港_崩铁-01"}
+- {skip-cert-verify: true, sni: "www.baidu.com", type: "trojan", password: "af182b96-3107-4e67-ac0c-1cd720d744cc", server: "104hk.czczcloud.top", port: 11596, name: "🇭🇰 香港_金融"}
+- {type: "ss", server: "hk001.dogsvip.site", port: 16001, cipher: "aes-256-gcm", password: "3d421011-63e0-44b7-aa68-27aea3a57a17", name: "🇭🇰 香港_优刻得"}
+- {skip-cert-verify: true, sni: "www.baidu.com", type: "trojan", password: "af182b96-3107-4e67-ac0c-1cd720d744cc", server: "1003hk.czczcloud.top", port: 33808, name: "🇭🇰 香港_阿里云-05"}
+- {type: "ss", server: "103.149.182.61", port: 8388, cipher: "chacha20-ietf", password: "asd123456", name: "🇭🇰 香港_IEPL-03"}
+- {skip-cert-verify: true, sni: "q08m.vgraxiw73s.hasyaf.cn", type: "trojan", password: "229f4499-8057-453b-8997-9f91fd5f95a5", server: "183.2.150.64", port: 27102, name: "🇭🇰 香港_IEPL-04"}
+- {type: "ss", server: "154.197.26.237", port: 8388, cipher: "chacha20-ietf", password: "asd123456", name: "🇭🇰 香港_崩铁-02"}
+- {skip-cert-verify: true, sni: "sg1-trojan.bonds.id", type: "trojan", password: "71086710-33eb-11ed-adce-1239d0255272", server: "sg1-trojan.bonds.id", port: 443, name: "🇸🇬 新加坡_米哈游-01"}
+- {type: "vless", name: "🇸🇬 新加坡_优刻得", server: "shenyang001.dynu.net", port: 44003, uuid: "459b4a80-bd61-4ecd-a26b-e9c1809d9e45", tls: true, flow: "xtls-rprx-vision", client-fingerprint: "chrome", skip-cert-verify: true, reality-opts: {public-key: "qhTzYYIgBzDLNYR79oxftqdo1kzL-1_hGJKfqrOliCY"}, network: "tcp", servername: "www.nvidia.com"}
+- {skip-cert-verify: true, sni: "q08m.vgraxiw73s.hasyaf.cn", type: "trojan", password: "8a7bd4ba-bdc0-4713-9e34-3fe51a95b9fa", server: "183.2.150.90", port: 27401, name: "🇸🇬 新加坡_明懂"}
+- {type: "ss", server: "sg005.dogsvip.site", port: 18005, cipher: "aes-256-gcm", password: "3d421011-63e0-44b7-aa68-27aea3a57a17", name: "🇸🇬 新加坡_BGP"}
+- {type: "ss", server: "gw.liangyuandianwan.com", port: 35501, cipher: "chacha20-ietf-poly1305", password: "21e251c3-139c-4b81-b352-3b60734029e9", name: "🇸🇬 新加坡_米哈游-02"}
+- {skip-cert-verify: true, sni: "sg14.731732.xyz", type: "trojan", password: "e9e2f195-14d7-4d4f-8363-d7e568b21e3e", server: "sg14.731732.xyz", port: 443, name: "🇸🇬 新加坡_米哈游-03"}
+- {type: "vless", name: "🇸🇬 新加坡_金融", server: "shenyang001.dynu.net", port: 10778, uuid: "459b4a80-bd61-4ecd-a26b-e9c1809d9e45", tls: true, flow: "xtls-rprx-vision", client-fingerprint: "chrome", skip-cert-verify: true, reality-opts: {public-key: "qhTzYYIgBzDLNYR79oxftqdo1kzL-1_hGJKfqrOliCY"}, network: "tcp", servername: "www.nvidia.com"}
+- {skip-cert-verify: true, sni: "mention.protocolbuffer.com", type: "trojan", password: "8jqRgpyc5lEe34TzC9A8DuFD23aS3ZyCleIFuCxp3xOYnZRCeA3Oc3yCga8C2DKYBDaRp", server: "18.141.138.96", port: 443, name: "🇸🇬 新加坡_崩铁-01"}
+- {type: "ss", server: "sg010.dogsvip.site", port: 18010, cipher: "aes-256-gcm", password: "3d421011-63e0-44b7-aa68-27aea3a57a17", name: "🇸🇬 新加坡_阿里云-01"}
+- {type: "ss", server: "sg006.dogsvip.site", port: 18006, cipher: "aes-256-gcm", password: "3d421011-63e0-44b7-aa68-27aea3a57a17", name: "🇸🇬 新加坡_IEPL"}
+- {type: "ss", server: "aisalayer-a.upperlay.xyz", port: 568, cipher: "aes-128-gcm", password: "763bf612-4c66-4fd4-b54b-5349bdea6bca", name: "🇸🇬 新加坡_唯云"}
+- {skip-cert-verify: true, sni: "q08m.vgraxiw73s.hasyaf.cn", type: "trojan", password: "948c61c0-385a-4927-b4cf-46c65e064f9c", server: "58.254.186.233", port: 27401, name: "🇸🇬 新加坡_阿里云-02"}
+- {type: "ss", server: "aisalayer-a.upperlay.xyz", port: 569, cipher: "aes-128-gcm", password: "763bf612-4c66-4fd4-b54b-5349bdea6bca", name: "🇸🇬 新加坡_腾讯云"}
+- {type: "vless", name: "🇸🇬 新加坡_崩铁-02", server: "sg-a1.oci.ee", port: 10084, uuid: "7d73663f-52bd-4af0-b0ae-d0d3f165f017", tls: true, flow: "", client-fingerprint: "ios", skip-cert-verify: true, reality-opts: {public-key: "s2Lr_deTRNuRBKQ15Rsx04KFcujYRFImLNVLAoGFTl8", short-id: "a81cba9c"}, network: "tcp", servername: "www.amazon.com"}
+- {type: "ss", server: "aisalayer-b.upperlay.xyz", port: 570, cipher: "aes-128-gcm", password: "763bf612-4c66-4fd4-b54b-5349bdea6bca", name: "🇸🇬 新加坡_青云"}
+- {skip-cert-verify: true, sni: "q08m.vgraxiw73s.hasyaf.cn", type: "trojan", password: "a57005d8-710f-4fdd-b78d-2429555f2d03", server: "183.2.150.90", port: 27001, name: "🇯🇵 日本_鸣潮-01"}
+- {skip-cert-verify: true, sni: "q08m.vgraxiw73s.hasyaf.cn", type: "trojan", password: "db947018-efc4-4b17-9392-9a5be3dcf08d", server: "183.2.150.98", port: 27002, name: "🇯🇵 日本_青云-01"}
+- {skip-cert-verify: true, sni: "q08m.vgraxiw73s.hasyaf.cn", type: "trojan", password: "bc446863-e8e3-44bd-be04-c40fd2f53194", server: "183.2.150.98", port: 27001, name: "🇯🇵 日本_崩铁-01"}
+- {skip-cert-verify: true, sni: "jp12.426624.xyz", type: "trojan", password: "4a99dfe5-b924-4d76-a096-e5ba62795330", server: "jp12.426624.xyz", port: 443, name: "🇯🇵 日本_鸣潮-02"}
+- {skip-cert-verify: true, sni: "q08m.vgraxiw73s.hasyaf.cn", type: "trojan", password: "c10d0450-aa96-4c4d-aae4-14baf2e00bd5", server: "183.2.150.64", port: 27002, name: "🇯🇵 日本_华为云-01"}
+- {skip-cert-verify: true, sni: "q08m.vgraxiw73s.hasyaf.cn", type: "trojan", password: "b37191d5-640b-41de-970e-6516d5f8eb37", server: "183.2.150.64", port: 27001, name: "🇯🇵 日本_BGP-01"}
+- {skip-cert-verify: true, sni: "q08m.vgraxiw73s.hasyaf.cn", type: "trojan", password: "fb60de05-730e-4b8e-9bcd-e6b8ebfac30a", server: "183.2.150.64", port: 22269, name: "🇯🇵 日本_BGP-02"}
+- {skip-cert-verify: true, sni: "www.baidu.com", type: "trojan", password: "af182b96-3107-4e67-ac0c-1cd720d744cc", server: "1202jp.czczcloud.top", port: 12357, name: "🇯🇵 日本_青云-02"}
+- {type: "ss", server: "cdn.jp2.cocoduck.vip", port: 25642, cipher: "aes-128-gcm", password: "YzRlNjE4YjNiZDk0NDE1NDZlMmU5NGE1MmU1ZjBlZWY=", name: "🇯🇵 日本_华为云-02"}
+- {skip-cert-verify: true, sni: "q08m.vgraxiw73s.hasyaf.cn", type: "trojan", password: "5847f3aa-5384-4390-aeea-2c9c9e004676", server: "183.2.150.64", port: 22271, name: "🇯🇵 日本_阿里云-01"}
+- {skip-cert-verify: true, sni: "q08m.vgraxiw73s.hasyaf.cn", type: "trojan", password: "61c5fef1-be2e-4b52-92b4-86b6f660d0bd", server: "183.2.150.90", port: 22271, name: "🇯🇵 日本_腾讯云"}
+- {skip-cert-verify: true, sni: "www.baidu.com", type: "trojan", password: "af182b96-3107-4e67-ac0c-1cd720d744cc", server: "1203jp.czczcloud.top", port: 14582, name: "🇯🇵 日本_崩铁-02"}
+- {type: "vless", name: "🇯🇵 日本_华为云-03", server: "csuzhou01.1cooldns.com", port: 25768, uuid: "459b4a80-bd61-4ecd-a26b-e9c1809d9e45", tls: true, flow: "xtls-rprx-vision", client-fingerprint: "chrome", skip-cert-verify: true, reality-opts: {public-key: "qhTzYYIgBzDLNYR79oxftqdo1kzL-1_hGJKfqrOliCY"}, network: "tcp", servername: "www.nvidia.com"}
+- {skip-cert-verify: true, sni: "q08m.vgraxiw73s.hasyaf.cn", type: "trojan", password: "0a815ecd-800e-46f1-b11f-cf3b886e27fb", server: "183.2.150.98", port: 22269, name: "🇯🇵 日本_明懂-01"}
+- {skip-cert-verify: true, sni: "q08m.vgraxiw73s.hasyaf.cn", type: "trojan", password: "3dd6cae3-d0ab-4120-bd5b-f2fd16875771", server: "125.94.45.119", port: 22271, name: "🇯🇵 日本_青云-03"}
+- {skip-cert-verify: true, sni: "q08m.vgraxiw73s.hasyaf.cn", type: "trojan", password: "d74e192f-334d-4606-847f-e572880c7cd5", server: "58.254.186.231", port: 22269, name: "🇯🇵 日本_青云-04"}
+- {skip-cert-verify: true, sni: "download.windowsupdate.com", type: "trojan", password: "RBRuxmSMQ", server: "163.177.46.220", port: 28107, name: "🇯🇵 日本_金融"}
+- {skip-cert-verify: true, sni: "q08m.vgraxiw73s.hasyaf.cn", type: "trojan", password: "e4045162-fb72-4181-800c-7dc382d93965", server: "183.2.150.98", port: 22271, name: "🇯🇵 日本_崩铁-03"}
+- {skip-cert-verify: true, sni: "q08m.vgraxiw73s.hasyaf.cn", type: "trojan", password: "d91d0302-4a29-46ce-8fc3-9c31a379843a", server: "183.2.150.90", port: 27002, name: "🇯🇵 日本_阿里云-02"}
+- {type: "ss", server: "jp001.dogsvip.site", port: 19001, cipher: "aes-256-gcm", password: "3d421011-63e0-44b7-aa68-27aea3a57a17", name: "🇯🇵 日本_唯云"}
+- {skip-cert-verify: true, sni: "q08m.vgraxiw73s.hasyaf.cn", type: "trojan", password: "c1e82ea7-433d-4445-83b2-1f7647ec432f", server: "125.94.45.119", port: 22269, name: "🇯🇵 日本_IEPL"}
+- {skip-cert-verify: true, sni: "q08m.vgraxiw73s.hasyaf.cn", type: "trojan", password: "b9e1eb4a-7898-43c2-9e53-de265c6f61f4", server: "58.254.186.233", port: 22269, name: "🇯🇵 日本_米哈游-01"}
+- {type: "vless", name: "🇯🇵 日本_明懂-02", server: "47.79.37.171", port: 8443, uuid: "e5c89c14-3de9-4716-cbc3-6eae3ebed0a2", tls: true, flow: "", client-fingerprint: "chrome", skip-cert-verify: true, reality-opts: {public-key: "xokq1PlzXfunVbdUvWKkR7DpCMsZPr8mNMl74JZMxVg", short-id: "07204dd0"}, network: "tcp", servername: "www.yahoo.com"}
+- {type: "ss", server: "jsyd.piaomiaoxu.net", port: 24002, cipher: "aes-256-gcm", password: "5941dd2a-0e68-46a1-8d32-fa92344b2614", name: "🇯🇵 日本_鸣潮-03"}
+- {skip-cert-verify: true, sni: "download.windowsupdate.com", type: "trojan", password: "RBRuxmSMQ", server: "163.177.46.220", port: 28113, name: "🇯🇵 日本_BGP-03"}
+- {type: "ss", server: "35.72.2.134", port: 443, cipher: "aes-256-cfb", password: "amazonskr05", name: "🇯🇵 日本_明懂-03"}
+- {skip-cert-verify: true, sni: "ctldl.windowsupdate.com", type: "trojan", password: "RBRuxmSMQ", server: "163.177.46.220", port: 28117, name: "🇯🇵 日本_米哈游-02"}
+- {skip-cert-verify: true, sni: "q08m.vgraxiw73s.hasyaf.cn", type: "trojan", password: "020bbcd3-bdf7-497d-a23b-70a87dc6875d", server: "58.254.186.222", port: 27001, name: "🇯🇵 日本_青云-05"}
+- {skip-cert-verify: true, sni: "q08m.vgraxiw73s.hasyaf.cn", type: "trojan", password: "8f23af6b-ddac-4e7c-b328-e6ca3c50c057", server: "163.177.47.36", port: 22269, name: "🇯🇵 日本_原神"}
+- {skip-cert-verify: true, sni: "kr1.sanfen001.pics", type: "trojan", password: "8800c518-e68a-4441-a45c-cd67855784c8", server: "kr1.sanfen001.pics", port: 443, name: "🇺🇸 美国_唯云-01"}
+- {skip-cert-verify: true, sni: "q08m.vgraxiw73s.hasyaf.cn", type: "trojan", password: "5d84f3b9-fb95-45ac-8e53-2e396bc19fa1", server: "58.254.186.231", port: 33505, name: "🇺🇸 美国_鸣潮-01"}
+- {skip-cert-verify: true, sni: "ctldl.windowsupdate.com", type: "trojan", password: "RBRuxmSMQ", server: "163.177.46.220", port: 28175, name: "🇺🇸 美国_优刻得-01"}
+- {skip-cert-verify: true, sni: "q08m.vgraxiw73s.hasyaf.cn", type: "trojan", password: "6b03c9aa-8dbf-4338-9e49-260fe0134ad6", server: "183.240.116.235", port: 33505, name: "🇺🇸 美国_腾讯云-01"}
+- {type: "hysteria2", name: "🇺🇸 美国_唯云-02", server: "2ef15a2a-svi800-sw77c8-dnss.la.shifen.uk", port: 1443, password: "16955d72-1794-11f0-a035-f23c95b6f51d", sni: "2ef15a2a-svi800-sw77c8-dnss.la.shifen.uk", skip-cert-verify: true, tfo: false}
+- {skip-cert-verify: true, sni: "jp1.sanfen001.pics", type: "trojan", password: "8800c518-e68a-4441-a45c-cd67855784c8", server: "jp2.sanfen001.pics", port: 443, name: "🇺🇸 美国_阿里云-01"}
+- {type: "hysteria2", name: "🇺🇸 美国_明懂-01", server: "7aabd5cd-svsps0-t1xs0u-1ebxi.hy2.gotochinatown.net", port: 8443, password: "98a68920-e915-11ee-9534-f23c91cfbbc9", sni: "7aabd5cd-svsps0-t1xs0u-1ebxi.hy2.gotochinatown.net", skip-cert-verify: true, tfo: false}
+- {type: "hysteria2", name: "🇺🇸 美国_优刻得-02", server: "48c8cad6-svsps0-sxv7gp-8rja.hy2.gotochinatown.net", port: 8443, password: "d18bcaf4-1323-11ec-a0fc-f23c913c8d2b", sni: "48c8cad6-svsps0-sxv7gp-8rja.hy2.gotochinatown.net", skip-cert-verify: true, tfo: false}
+- {type: "ss", server: "cdn-p1-us.youku-dns.com", port: 11511, cipher: "aes-256-gcm", password: "77a12a3d-6df0-48c8-a189-b071fcda1456", name: "🇺🇸 美国_鸣潮-02"}
+- {type: "ss", server: "us006.dogsvip.site", port: 20006, cipher: "aes-256-gcm", password: "3d421011-63e0-44b7-aa68-27aea3a57a17", name: "🇺🇸 美国_原神-01"}
+- {skip-cert-verify: true, sni: "www.baidu.com", type: "trojan", password: "af182b96-3107-4e67-ac0c-1cd720d744cc", server: "1102us.czczcloud.top", port: 24582, name: "🇺🇸 美国_BGP-01"}
+- {skip-cert-verify: true, sni: "q08m.vgraxiw73s.hasyaf.cn", type: "trojan", password: "c88bcf68-8b48-4142-b136-e80f84cd573f", server: "183.2.150.90", port: 27301, name: "🇺🇸 美国_IEPL-01"}
+- {type: "ss", server: "us002.dogsvip.site", port: 20002, cipher: "aes-256-gcm", password: "3d421011-63e0-44b7-aa68-27aea3a57a17", name: "🇺🇸 美国_明懂-02"}
+- {type: "hysteria2", name: "🇺🇸 美国_腾讯云-02", server: "fe021254-suk9s0-sve5if-z93q.hy2.gotochinatown.net", port: 8443, password: "40639730-e027-11ea-87ad-f23c913c8d2b", sni: "fe021254-suk9s0-sve5if-z93q.hy2.gotochinatown.net", skip-cert-verify: true, tfo: false}
+- {skip-cert-verify: true, sni: "45.9.10.103", type: "trojan", password: "WpfQAbO2wg", server: "45.9.10.103", port: 443, name: "🇺🇸 美国_IEPL-02"}
+- {type: "vless", name: "🇺🇸 美国_华为云-01", server: "cos90-new2.dynu.net", port: 27932, uuid: "459b4a80-bd61-4ecd-a26b-e9c1809d9e45", tls: true, flow: "xtls-rprx-vision", client-fingerprint: "chrome", skip-cert-verify: true, reality-opts: {public-key: "qhTzYYIgBzDLNYR79oxftqdo1kzL-1_hGJKfqrOliCY"}, network: "tcp", servername: "www.amazon.com"}
+- {type: "vless", name: "🇺🇸 美国_阿里云-02", server: "shenyang001.dynu.net", port: 29023, uuid: "459b4a80-bd61-4ecd-a26b-e9c1809d9e45", tls: true, flow: "xtls-rprx-vision", client-fingerprint: "chrome", skip-cert-verify: true, reality-opts: {public-key: "qhTzYYIgBzDLNYR79oxftqdo1kzL-1_hGJKfqrOliCY"}, network: "tcp", servername: "www.amazon.com"}
+- {type: "hysteria2", name: "🇺🇸 美国_阿里云-03", server: "34a15372-svlxc0-sw77c8-dnss.la.shifen.uk", port: 1443, password: "16955d72-1794-11f0-a035-f23c95b6f51d", sni: "34a15372-svlxc0-sw77c8-dnss.la.shifen.uk", skip-cert-verify: true, tfo: false}
+- {skip-cert-verify: true, sni: "q08m.vgraxiw73s.hasyaf.cn", type: "trojan", password: "4aacfad1-5a56-4401-86df-9e039a7f34be", server: "183.240.116.224", port: 27301, name: "🇺🇸 美国_BGP-02"}
+- {skip-cert-verify: true, sni: "hk-13-568.flztjc.net", type: "trojan", password: "2c605663-b89a-5734-a9d6-97d4743d72cf", server: "183.232.235.2", port: 8313, name: "🇺🇸 美国_BGP-03"}
+- {skip-cert-verify: true, sni: "www.baidu.com", type: "trojan", password: "af182b96-3107-4e67-ac0c-1cd720d744cc", server: "1101us.czczcloud.top", port: 27017, name: "🇺🇸 美国_鸣潮-03"}
+- {skip-cert-verify: true, sni: "www.baidu.com", type: "trojan", password: "af182b96-3107-4e67-ac0c-1cd720d744cc", server: "143us.czczcloud.top", port: 12597, name: "🇺🇸 美国_鸣潮-04"}
+- {type: "vless", name: "🇺🇸 美国_唯云-03", server: "135.148.182.1", port: 443, uuid: "ea286109-d20f-415e-849e-4af20ab04b65", tls: true, skip-cert-verify: true, network: "tcp", servername: "147135001195.sec22org.com"}
+- {type: "hysteria2", name: "🇺🇸 美国_华为云-02", server: "dcf80f58-svsps0-t6fl0c-1r7od.hy2.gotochinatown.net", port: 8443, password: "6d56436c-150d-11f0-b0c8-f23c913c8d2b", sni: "dcf80f58-svsps0-t6fl0c-1r7od.hy2.gotochinatown.net", skip-cert-verify: true, tfo: false}
+- {type: "hysteria2", name: "🇺🇸 美国_崩铁-01", server: "a2a54fda-svtc00-swjgev-d9to.la.shifen.uk", port: 1443, password: "1a859d94-0b9f-11f0-9142-f23c9313b177", sni: "a2a54fda-svtc00-swjgev-d9to.la.shifen.uk", skip-cert-verify: true, tfo: false}
+- {type: "hysteria2", name: "🇺🇸 美国_原神-02", server: "22148d3b-svsps0-sw0nbj-1anhm.hy2.gotochinatown.net", port: 8443, password: "3f58d3fe-f4ea-11eb-8673-f23c9164ca5d", sni: "22148d3b-svsps0-sw0nbj-1anhm.hy2.gotochinatown.net", skip-cert-verify: true, tfo: false}
+- {skip-cert-verify: true, sni: "hk1.sanfen001.pics", type: "trojan", password: "8800c518-e68a-4441-a45c-cd67855784c8", server: "hk1.sanfen001.pics", port: 443, name: "🇺🇸 美国_优刻得-03"}
+- {type: "ss", server: "us003.dogsvip.site", port: 20003, cipher: "aes-256-gcm", password: "3d421011-63e0-44b7-aa68-27aea3a57a17", name: "🇺🇸 美国_阿里云-04"}
+- {type: "hysteria2", name: "🇺🇸 美国_唯云-04", server: "1d4f99bf-svsps0-t0ces9-1rs9e.hy2.gotochinatown.net", port: 8443, password: "e651d432-320c-11ef-a119-f23c9164ca5d", sni: "1d4f99bf-svsps0-t0ces9-1rs9e.hy2.gotochinatown.net", skip-cert-verify: true, tfo: false}
+- {type: "hysteria2", name: "🇺🇸 美国_崩铁-02", server: "5f1f749e-suk9s0-tcmdts-1mmu6.hy2.gotochinatown.net", port: 8443, password: "2ee8f830-09e2-11f0-90e2-f23c913c8d2b", sni: "5f1f749e-suk9s0-tcmdts-1mmu6.hy2.gotochinatown.net", skip-cert-verify: true, tfo: false}
+- {type: "ss", server: "us010.dogsvip.site", port: 20010, cipher: "aes-256-gcm", password: "3d421011-63e0-44b7-aa68-27aea3a57a17", name: "🇺🇸 美国_米哈游-01"}
+- {skip-cert-verify: true, sni: "q08m.vgraxiw73s.hasyaf.cn", type: "trojan", password: "df3b9fb4-14c5-40a6-a739-572d7d1a424f", server: "58.254.186.233", port: 27301, name: "🇺🇸 美国_崩铁-03"}
+- {type: "hysteria2", name: "🇺🇸 美国_唯云-05", server: "5ed03085-suvds0-sv5llu-1ldl3.hy2.gotochinatown.net", port: 8443, password: "fd224a6c-addc-11ed-a8bf-f23c91cfbbc9", sni: "5ed03085-suvds0-sv5llu-1ldl3.hy2.gotochinatown.net", skip-cert-verify: true, tfo: false}
+- {type: "hysteria2", name: "🇺🇸 美国_优刻得-04", server: "cab73f5e-svsps0-swzxpi-44k4.hy2.gotochinatown.net", port: 8443, password: "c5eb2c2c-bc1d-11ed-a8bf-f23c91cfbbc9", sni: "cab73f5e-svsps0-swzxpi-44k4.hy2.gotochinatown.net", skip-cert-verify: true, tfo: false}
+- {skip-cert-verify: true, sni: "download2hkt.windowsupdate.lol", type: "trojan", password: "af4d2493-9156-4514-9f6b-ee5d1a1e4713", server: "15.197.162.184", port: 443, name: "🇺🇸 美国_优刻得-05"}
+- {type: "ss", server: "gw.liangyuandianwan.com", port: 35504, cipher: "chacha20-ietf-poly1305", password: "21e251c3-139c-4b81-b352-3b60734029e9", name: "🇺🇸 美国_鸣潮-05"}
+- {skip-cert-verify: true, sni: "q08m.vgraxiw73s.hasyaf.cn", type: "trojan", password: "2745938d-2252-482e-aef3-0367f4de04c4", server: "183.2.150.98", port: 27301, name: "🇺🇸 美国_米哈游-02"}
+- {type: "hysteria2", name: "🇺🇸 美国_阿里云-05", server: "b7660b37-svsps0-svo46i-1tmhw.hy2.gotochinatown.net", port: 8443, password: "46459926-0fbd-11f0-b0c8-f23c913c8d2b", sni: "b7660b37-svsps0-svo46i-1tmhw.hy2.gotochinatown.net", skip-cert-verify: true, tfo: false}
+- {type: "ss", server: "us007.dogsvip.site", port: 20007, cipher: "aes-256-gcm", password: "3d421011-63e0-44b7-aa68-27aea3a57a17", name: "🇺🇸 美国_米哈游-03"}
+- {type: "hysteria2", name: "🇺🇸 美国_金融-01", server: "d7b8355e-suk9s0-t8ro7t-1ey07.hy2.gotochinatown.net", port: 8443, password: "203d1d64-3313-11ed-bb74-f23c9164ca5d", sni: "d7b8355e-suk9s0-t8ro7t-1ey07.hy2.gotochinatown.net", skip-cert-verify: true, tfo: false}
+- {type: "ss", server: "154.29.155.166", port: 58531, cipher: "aes-256-gcm", password: "yzYbBEqEpQ", name: "🇺🇸 美国_原神-03"}
+- {type: "vless", name: "🇺🇸 美国_阿里云-06", server: "shenzhou02.mysynology.net", port: 38400, uuid: "459b4a80-bd61-4ecd-a26b-e9c1809d9e45", tls: true, flow: "xtls-rprx-vision", client-fingerprint: "chrome", skip-cert-verify: true, reality-opts: {public-key: "qhTzYYIgBzDLNYR79oxftqdo1kzL-1_hGJKfqrOliCY"}, network: "tcp", servername: "www.yahoo.com"}
+- {type: "hysteria2", name: "🇺🇸 美国_腾讯云-03", server: "3123bfd7-suvds0-t2oosc-xm0q.hy2.gotochinatown.net", port: 8443, password: "3437f34e-1b77-11eb-8684-f23c913c8d2b", sni: "3123bfd7-suvds0-t2oosc-xm0q.hy2.gotochinatown.net", skip-cert-verify: true, tfo: false}
+- {type: "hysteria2", name: "🇺🇸 美国_BGP-04", server: "5f374286-svtc00-tdex4g-6qyv.la.shifen.uk", port: 1443, password: "a346c669-6374-11ef-bc6a-f23c9313b177", sni: "5f374286-svtc00-tdex4g-6qyv.la.shifen.uk", skip-cert-verify: true, tfo: false}
+- {skip-cert-verify: true, sni: "q08m.vgraxiw73s.hasyaf.cn", type: "trojan", password: "e5266bb4-b055-4c62-8cbd-cfe9a5bd29ca", server: "58.254.186.222", port: 27301, name: "🇺🇸 美国_崩铁-04"}
+- {type: "vless", name: "🇺🇸 美国_唯云-06", server: "gysz0000.dynu.net", port: 30274, uuid: "459b4a80-bd61-4ecd-a26b-e9c1809d9e45", tls: true, flow: "xtls-rprx-vision", client-fingerprint: "chrome", skip-cert-verify: true, reality-opts: {public-key: "qhTzYYIgBzDLNYR79oxftqdo1kzL-1_hGJKfqrOliCY"}, network: "tcp", servername: "gateway.icloud.com"}
+- {skip-cert-verify: true, sni: "usla.mjt000.com", type: "trojan", password: "d384ad6d-d259-45eb-ba2e-1799fa426ed4", server: "usla.mjt000.com", port: 443, name: "🇺🇸 美国_鸣潮-06"}
+- {type: "vless", name: "🇺🇸 美国_腾讯云-04", server: "gysz0000.dynu.net", port: 29023, uuid: "459b4a80-bd61-4ecd-a26b-e9c1809d9e45", tls: true, flow: "xtls-rprx-vision", client-fingerprint: "chrome", skip-cert-verify: true, reality-opts: {public-key: "qhTzYYIgBzDLNYR79oxftqdo1kzL-1_hGJKfqrOliCY"}, network: "tcp", servername: "www.amazon.com"}
+- {type: "hysteria2", name: "🇺🇸 美国_阿里云-07", server: "3b58370e-sv8cg0-tbhsus-1tgfe.hy2.gotochinatown.net", port: 8443, password: "262e7386-f8a9-11ef-ba82-f23c913c8d2b", sni: "3b58370e-sv8cg0-tbhsus-1tgfe.hy2.gotochinatown.net", skip-cert-verify: true, tfo: false}
+- {skip-cert-verify: true, sni: "www.baidu.com", type: "trojan", password: "af182b96-3107-4e67-ac0c-1cd720d744cc", server: "1103us.czczcloud.top", port: 23546, name: "🇺🇸 美国_IEPL-03"}
+- {skip-cert-verify: true, sni: "download.windowsupdate.com", type: "trojan", password: "RBRuxmSMQ", server: "163.177.46.220", port: 28136, name: "🇺🇸 美国_青云-01"}
+- {skip-cert-verify: true, sni: "q08m.vgraxiw73s.hasyaf.cn", type: "trojan", password: "71e5de08-5e03-4db5-b530-b6e09a945d98", server: "58.254.186.233", port: 33505, name: "🇺🇸 美国_BGP-05"}
+- {type: "hysteria2", name: "🇺🇸 美国_华为云-03", server: "573e9fd1-svsps0-ta64ri-1qzi1.hy2.gotochinatown.net", port: 8443, password: "8f99107c-f091-11ee-9935-f23c9164ca5d", sni: "573e9fd1-svsps0-ta64ri-1qzi1.hy2.gotochinatown.net", skip-cert-verify: true, tfo: false}
+- {skip-cert-verify: true, sni: "q08m.vgraxiw73s.hasyaf.cn", type: "trojan", password: "dd84159b-94ca-4133-800d-e1e61c2b51d5", server: "183.240.116.252", port: 27301, name: "🇺🇸 美国_鸣潮-07"}
+- {skip-cert-verify: true, sni: "q08m.vgraxiw73s.hasyaf.cn", type: "trojan", password: "f95bc0a3-6fe1-4f7c-a77d-a466803f3a0e", server: "58.254.186.231", port: 27301, name: "🇺🇸 美国_优刻得-06"}
+- {skip-cert-verify: true, sni: "q08m.vgraxiw73s.hasyaf.cn", type: "trojan", password: "e0795aa3-6d9c-43aa-9e18-a1bf57ad6f0a", server: "183.2.150.98", port: 33505, name: "🇺🇸 美国_青云-02"}
+- {skip-cert-verify: true, sni: "q08m.vgraxiw73s.hasyaf.cn", type: "trojan", password: "a8093ea8-f02e-4ffc-8a13-d068a62971bf", server: "183.2.150.64", port: 27301, name: "🇺🇸 美国_阿里云-08"}
+- {type: "hysteria2", name: "🇺🇸 美国_金融-02", server: "80f221ad-sv8cg0-sy9xc0-1s3lb.hy2.gotochinatown.net", port: 8443, password: "fbf91120-50ba-11ef-a203-f23c91cfbbc9", sni: "80f221ad-sv8cg0-sy9xc0-1s3lb.hy2.gotochinatown.net", skip-cert-verify: true, tfo: false}
+- {type: "vless", name: "🇺🇸 美国_崩铁-05", server: "shenzhou02.mysynology.net", port: 35311, uuid: "459b4a80-bd61-4ecd-a26b-e9c1809d9e45", tls: true, flow: "xtls-rprx-vision", client-fingerprint: "chrome", skip-cert-verify: true, reality-opts: {public-key: "qhTzYYIgBzDLNYR79oxftqdo1kzL-1_hGJKfqrOliCY"}, network: "tcp", servername: "www.yahoo.com"}
+- {skip-cert-verify: true, sni: "jp-h1.sshub.xyz", type: "trojan", password: "61605c66-6d41-4b9d-a496-b9898f3f95d0", server: "70.32.1.32", port: 443, name: "🇺🇸 美国_BGP-06"}
+- {skip-cert-verify: true, sni: "hk2.sanfen001.pics", type: "trojan", password: "8800c518-e68a-4441-a45c-cd67855784c8", server: "hk2.sanfen001.pics", port: 443, name: "🇺🇸 美国_金融-03"}
+- {skip-cert-verify: true, sni: "q08m.vgraxiw73s.hasyaf.cn", type: "trojan", password: "1a4181d3-5dc4-423b-92a3-aceb8a6c1487", server: "183.240.116.252", port: 33505, name: "🇺🇸 美国_阿里云-09"}
+- {type: "hysteria2", name: "🇺🇸 美国_原神-04", server: "ec36b24e-svsps0-t7h9gl-1q15s.hy2.gotochinatown.net", port: 8443, password: "11303a62-9a33-11ee-be7f-f23c9164ca5d", sni: "ec36b24e-svsps0-t7h9gl-1q15s.hy2.gotochinatown.net", skip-cert-verify: true, tfo: false}
+- {type: "hysteria2", name: "🇺🇸 美国_原神-05", server: "9c36d748-svlxc0-sw4ytq-dlm9.la.shifen.uk", port: 1443, password: "6d1dbd12-16a2-11f0-9ab7-f23c95b6f51d", sni: "9c36d748-svlxc0-sw4ytq-dlm9.la.shifen.uk", skip-cert-verify: true, tfo: false}
+- {type: "hysteria2", name: "🇺🇸 美国_阿里云-10", server: "4c35b2ca-svsps0-swvvxb-lys7.hy2.gotochinatown.net", port: 8443, password: "18c0664c-74f1-11ee-b51e-f23c9164ca5d", sni: "4c35b2ca-svsps0-swvvxb-lys7.hy2.gotochinatown.net", skip-cert-verify: true, tfo: false}
+- {type: "hysteria2", name: "🇺🇸 美国_IEPL-04", server: "4dbb0b72-sv8cg0-t5fh9u-1uni.hy2.gotochinatown.net", port: 8443, password: "adbd0a82-3336-11ed-bd7c-f23c913c8d2b", sni: "4dbb0b72-sv8cg0-t5fh9u-1uni.hy2.gotochinatown.net", skip-cert-verify: true, tfo: false}
+- {type: "hysteria2", name: "🇺🇸 美国_米哈游-04", server: "7de3017c-svsps0-sz6btt-1fee.hy2.gotochinatown.net", port: 8443, password: "fceba144-0aa0-11ee-bf3c-f23c9164ca5d", sni: "7de3017c-svsps0-sz6btt-1fee.hy2.gotochinatown.net", skip-cert-verify: true, tfo: false}
+- {skip-cert-verify: true, sni: "www.baidu.com", type: "trojan", password: "af182b96-3107-4e67-ac0c-1cd720d744cc", server: "142us.czczcloud.top", port: 45627, name: "🇺🇸 美国_崩铁-06"}
+- {type: "ss", server: "183.2.150.226", port: 11511, cipher: "aes-256-gcm", password: "77a12a3d-6df0-48c8-a189-b071fcda1456", name: "🇺🇸 美国_鸣潮-08"}
+- {skip-cert-verify: true, sni: "rolling.homeofbrave.net", type: "trojan", password: "SDYlNZ6z5DA8TZqz33YnN4lzpp88YBZOyXC5we8AZBqn6YXwI0gISyalXjIOyNwCaDpDORKSyDCSg9S", server: "154.17.10.32", port: 28333, name: "🇺🇸 美国_腾讯云-05"}
+- {type: "ss", server: "120.241.44.195", port: 11511, cipher: "aes-256-gcm", password: "77a12a3d-6df0-48c8-a189-b071fcda1456", name: "🇺🇸 美国_米哈游-05"}
+- {type: "vless", name: "🇺🇸 美国_米哈游-06", server: "vip.jddns0202.top", port: 60677, uuid: "459b4a80-bd61-4ecd-a26b-e9c1809d9e45", tls: true, flow: "xtls-rprx-vision", client-fingerprint: "chrome", skip-cert-verify: true, reality-opts: {public-key: "qhTzYYIgBzDLNYR79oxftqdo1kzL-1_hGJKfqrOliCY"}, network: "tcp", servername: "www.nvidia.com"}
+- {skip-cert-verify: true, sni: "www.baidu.com", type: "trojan", password: "af182b96-3107-4e67-ac0c-1cd720d744cc", server: "1100us.czczcloud.top", port: 26011, name: "🇺🇸 美国_青云-03"}
+- {skip-cert-verify: true, sni: "official.taipeicitygovernment.co.ua", type: "trojan", password: "96983eb4-c8f1-316e-ab00-500014ed3d8b", server: "183.240.139.234", port: 8443, name: "🇨🇳 台湾_BGP-01"}
+- {skip-cert-verify: true, sni: "q08m.vgraxiw73s.hasyaf.cn", type: "trojan", password: "259928ad-983a-46f8-b5ee-4c06062f6293", server: "183.240.116.252", port: 27202, name: "🇨🇳 台湾_原神-01"}
+- {skip-cert-verify: true, sni: "www.baidu.com", type: "trojan", password: "af182b96-3107-4e67-ac0c-1cd720d744cc", server: "1500tw.czczcloud.top", port: 30011, name: "🇨🇳 台湾_唯云"}
+- {type: "vless", name: "🇨🇳 台湾_原神-02", server: "beiyong.dynuddns.net", port: 65053, uuid: "459b4a80-bd61-4ecd-a26b-e9c1809d9e45", tls: true, flow: "xtls-rprx-vision", client-fingerprint: "chrome", skip-cert-verify: true, reality-opts: {public-key: "qhTzYYIgBzDLNYR79oxftqdo1kzL-1_hGJKfqrOliCY"}, network: "tcp", servername: "www.amazon.com"}
+- {type: "ss", server: "tw008.dogsvip.site", port: 17008, cipher: "aes-256-gcm", password: "3d421011-63e0-44b7-aa68-27aea3a57a17", name: "🇨🇳 台湾_IEPL-01"}
+- {type: "ss", server: "tw007.dogsvip.site", port: 17007, cipher: "aes-256-gcm", password: "3d421011-63e0-44b7-aa68-27aea3a57a17", name: "🇨🇳 台湾_IEPL-02"}
+- {skip-cert-verify: true, sni: "q08m.vgraxiw73s.hasyaf.cn", type: "trojan", password: "3b7c6840-39e1-4f02-b584-d229744a0f19", server: "163.177.47.36", port: 27202, name: "🇨🇳 台湾_BGP-02"}
+- {type: "vless", name: "🇨🇳 台湾_阿里云", server: "agaungzhou01.bumbleshrimp.com", port: 60677, uuid: "459b4a80-bd61-4ecd-a26b-e9c1809d9e45", tls: true, flow: "xtls-rprx-vision", client-fingerprint: "chrome", skip-cert-verify: true, reality-opts: {public-key: "qhTzYYIgBzDLNYR79oxftqdo1kzL-1_hGJKfqrOliCY"}, network: "tcp", servername: "www.nvidia.com"}
+- {type: "vless", name: "🇨🇳 台湾_青云", server: "agaungzhou01.bumbleshrimp.com", port: 13391, uuid: "459b4a80-bd61-4ecd-a26b-e9c1809d9e45", tls: true, flow: "xtls-rprx-vision", client-fingerprint: "chrome", skip-cert-verify: true, reality-opts: {public-key: "qhTzYYIgBzDLNYR79oxftqdo1kzL-1_hGJKfqrOliCY"}, network: "tcp", servername: "www.yahoo.com"}
+- {type: "vless", name: "🇨🇳 台湾_BGP-03", server: "agaungzhou01.bumbleshrimp.com", port: 30019, uuid: "459b4a80-bd61-4ecd-a26b-e9c1809d9e45", tls: true, flow: "xtls-rprx-vision", client-fingerprint: "chrome", skip-cert-verify: true, reality-opts: {public-key: "qhTzYYIgBzDLNYR79oxftqdo1kzL-1_hGJKfqrOliCY"}, network: "tcp", servername: "www.yahoo.com"}
+- {type: "vless", name: "🇨🇳 台湾_崩铁", server: "agaungzhou01.bumbleshrimp.com", port: 38302, uuid: "459b4a80-bd61-4ecd-a26b-e9c1809d9e45", tls: true, flow: "xtls-rprx-vision", client-fingerprint: "chrome", skip-cert-verify: true, reality-opts: {public-key: "qhTzYYIgBzDLNYR79oxftqdo1kzL-1_hGJKfqrOliCY"}, network: "tcp", servername: "www.amazon.com"}
+- {skip-cert-verify: true, sni: "www.baidu.com", type: "trojan", password: "af182b96-3107-4e67-ac0c-1cd720d744cc", server: "1501tw.czczcloud.top", port: 31015, name: "🇨🇳 台湾_华为云"}
+- {skip-cert-verify: true, sni: "q08m.vgraxiw73s.hasyaf.cn", type: "trojan", password: "e980be62-56ac-4c59-a428-aa3a92debc28", server: "183.240.116.235", port: 27201, name: "🇨🇳 台湾_BGP-04"}
+- {type: "ss", server: "dddd.zj-zz-bgp.qunimade.lol", port: 39132, cipher: "chacha20-ietf-poly1305", password: "ec31bf35-41a0-4178-9c6a-77623b159076", name: "🇨🇳 台湾_腾讯云"}
+- {type: "vless", name: "🇨🇳 台湾_BGP-05", server: "zhee01.dynu.net", port: 27932, uuid: "459b4a80-bd61-4ecd-a26b-e9c1809d9e45", tls: true, flow: "xtls-rprx-vision", client-fingerprint: "chrome", skip-cert-verify: true, reality-opts: {public-key: "qhTzYYIgBzDLNYR79oxftqdo1kzL-1_hGJKfqrOliCY"}, network: "tcp", servername: "www.amazon.com"}
+- {skip-cert-verify: true, sni: "q08m.vgraxiw73s.hasyaf.cn", type: "trojan", password: "b4e3c24b-67d9-4787-b0e5-16294678a318", server: "125.94.45.119", port: 27202, name: "🇨🇳 台湾_优刻得-01"}
+- {type: "vless", name: "🇨🇳 台湾_优刻得-02", server: "shenzhou05.mysynology.net", port: 21578, uuid: "459b4a80-bd61-4ecd-a26b-e9c1809d9e45", tls: true, flow: "xtls-rprx-vision", client-fingerprint: "chrome", skip-cert-verify: true, reality-opts: {public-key: "qhTzYYIgBzDLNYR79oxftqdo1kzL-1_hGJKfqrOliCY"}, network: "tcp", servername: "www.amazon.com"}
+- {type: "ss", server: "125.141.26.12", port: 4857, cipher: "aes-256-cfb", password: "qwerREWQ@@", name: "🇰🇷 韩国_崩铁"}
+- {skip-cert-verify: true, sni: "www.baidu.com", type: "trojan", password: "af182b96-3107-4e67-ac0c-1cd720d744cc", server: "1300kr.czczcloud.top", port: 20077, name: "🇰🇷 韩国_BGP-01"}
+- {type: "ss", server: "43.131.255.175", port: 3306, cipher: "aes-256-cfb", password: "1601e3c29c8db1a88942cf0cad731bf3", name: "🇰🇷 韩国_BGP-02"}
+- {skip-cert-verify: true, sni: "www.baidu.com", type: "trojan", password: "af182b96-3107-4e67-ac0c-1cd720d744cc", server: "1301kr.czczcloud.top", port: 30067, name: "🇰🇷 韩国_青云"}
+- {type: "vless", name: "🇰🇷 韩国_IEPL", server: "agaungzhou01.bumbleshrimp.com", port: 13483, uuid: "459b4a80-bd61-4ecd-a26b-e9c1809d9e45", tls: true, flow: "xtls-rprx-vision", client-fingerprint: "chrome", skip-cert-verify: true, reality-opts: {public-key: "qhTzYYIgBzDLNYR79oxftqdo1kzL-1_hGJKfqrOliCY"}, network: "tcp", servername: "www.nvidia.com"}
+- {type: "ss", server: "p080.panda001.net", port: 36379, cipher: "aes-256-cfb", password: "qwerREWQ@@", name: "🇰🇷 韩国_原神-01"}
+- {type: "ss", server: "43.202.0.189", port: 443, cipher: "aes-256-cfb", password: "amazonskr05", name: "🇰🇷 韩国_唯云-01"}
+- {type: "ss", server: "52.78.121.213", port: 443, cipher: "aes-256-cfb", password: "amazonskr05", name: "🇰🇷 韩国_阿里云"}
+- {type: "ss", server: "dddd.zj-zz-bgp.qunimade.lol", port: 39152, cipher: "chacha20-ietf-poly1305", password: "ec31bf35-41a0-4178-9c6a-77623b159076", name: "🇰🇷 韩国_原神-02"}
+- {type: "ss", server: "43.202.40.45", port: 443, cipher: "aes-256-cfb", password: "amazonskr05", name: "🇰🇷 韩国_金融"}
+- {type: "ss", server: "p141.panda001.net", port: 4652, cipher: "aes-256-cfb", password: "qwerREWQ@@", name: "🇰🇷 韩国_明懂"}
+- {type: "ss", server: "154.90.62.168", port: 989, cipher: "aes-256-cfb", password: "f8f7aCzcPKbsF8p3", name: "🇰🇷 韩国_唯云-02"}
+- {type: "ss", server: "62.100.205.48", port: 989, cipher: "aes-256-cfb", password: "f8f7aCzcPKbsF8p3", name: "🇬🇧 英国_优刻得"}
+- {type: "vless", name: "🇬🇧 英国_明懂-01", server: "84.32.41.200", port: 50123, uuid: "459b4a80-bd61-4ecd-a26b-e9c1809d9e45", tls: true, flow: "xtls-rprx-vision", client-fingerprint: "chrome", skip-cert-verify: true, reality-opts: {public-key: "qhTzYYIgBzDLNYR79oxftqdo1kzL-1_hGJKfqrOliCY"}, network: "tcp", servername: "www.amazon.com"}
+- {type: "ss", server: "gw.liangyuandianwan.com", port: 35506, cipher: "chacha20-ietf-poly1305", password: "21e251c3-139c-4b81-b352-3b60734029e9", name: "🇬🇧 英国_明懂-02"}
+- {type: "ss", server: "neweur.upperlay.xyz", port: 635, cipher: "aes-128-gcm", password: "763bf612-4c66-4fd4-b54b-5349bdea6bca", name: "🇬🇧 英国_米哈游"}
+- {type: "vless", name: "🇬🇧 英国_明懂-03", server: "ld-arm.nfsn666.gq", port: 8443, uuid: "4e834be5-0282-44cd-85a5-474d9eb79ab5", tls: true, flow: "xtls-rprx-vision", client-fingerprint: "chrome", skip-cert-verify: true, reality-opts: {public-key: "LY89pQgI-mMQ_53PxhLScS6SElFuB8dDPi3dTbzPmlc", short-id: "cb788c43"}, network: "tcp", servername: "www.yahoo.com"}
+- {type: "ss", server: "43.128.212.180", port: 3306, cipher: "aes-256-cfb", password: "1601e3c29c8db1a88942cf0cad731bf3", name: "🇬🇧 英国_鸣潮"}
+- {type: "ss", server: "fr001.dogsvip.site", port: 27001, cipher: "aes-256-gcm", password: "3d421011-63e0-44b7-aa68-27aea3a57a17", name: "🇫🇷 法国_阿里云"}
+- {type: "vless", name: "🇫🇷 法国_鸣潮", server: "shenzhou05.mysynology.net", port: 37809, uuid: "459b4a80-bd61-4ecd-a26b-e9c1809d9e45", tls: true, flow: "xtls-rprx-vision", client-fingerprint: "chrome", skip-cert-verify: true, reality-opts: {public-key: "qhTzYYIgBzDLNYR79oxftqdo1kzL-1_hGJKfqrOliCY"}, network: "tcp", servername: "www.yahoo.com"}
+- {skip-cert-verify: true, sni: "fr2-full.privateip.net", type: "trojan", password: "0280b529-2747-4b7a-ab11-bad6453150b9", server: "fr2-full.privateip.net", port: 443, name: "🇩🇪 德国_明懂-01"}
+- {type: "ss", server: "193.108.119.230", port: 8080, cipher: "rc4-md5", password: "14fFPrbezE3HDZzsMOr6", name: "🇩🇪 德国_明懂-02"}
+- {type: "vless", name: "🇩🇪 德国_阿里云", server: "vip.jddns0202.top", port: 33832, uuid: "459b4a80-bd61-4ecd-a26b-e9c1809d9e45", tls: true, flow: "xtls-rprx-vision", client-fingerprint: "chrome", skip-cert-verify: true, reality-opts: {public-key: "qhTzYYIgBzDLNYR79oxftqdo1kzL-1_hGJKfqrOliCY"}, network: "tcp", servername: "www.nvidia.com"}
+- {type: "ss", server: "221.132.29.208", port: 38388, cipher: "aes-256-cfb", password: "Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV", name: "🇮🇳 印度_原神"}
+- {skip-cert-verify: true, sni: "www.hk-jd.top", type: "trojan", password: "f8677b61-a450-4834-9f07-093c201aa0b3", server: "www.hk-jd.top", port: 10250, name: "🇮🇳 印度_鸣潮"}
+- {type: "ss", server: "103.186.154.36", port: 38388, cipher: "aes-256-cfb", password: "Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV", name: "🇮🇳 印度_唯云"}
+- {skip-cert-verify: true, sni: "jp-h1.sshub.xyz", type: "trojan", password: "61605c66-6d41-4b9d-a496-b9898f3f95d0", server: "jp-h1.sshub.xyz", port: 443, name: "🇦🇺 澳大利亚_IEPL"}
+- {type: "ss", server: "dddd.zj-zz-bgp.qunimade.lol", port: 39261, cipher: "chacha20-ietf-poly1305", password: "ec31bf35-41a0-4178-9c6a-77623b159076", name: "🇦🇺 澳大利亚_崩铁"}
+- {type: "vless", name: "🇲🇾 马来西亚_优刻得", server: "gysz0000.dynu.net", port: 20694, uuid: "459b4a80-bd61-4ecd-a26b-e9c1809d9e45", tls: true, flow: "xtls-rprx-vision", client-fingerprint: "chrome", skip-cert-verify: true, reality-opts: {public-key: "qhTzYYIgBzDLNYR79oxftqdo1kzL-1_hGJKfqrOliCY"}, network: "tcp", servername: "www.yahoo.com"}
+- {type: "vless", name: "🇲🇾 马来西亚_金融", server: "test123.zlqhdns.top", port: 23301, uuid: "459b4a80-bd61-4ecd-a26b-e9c1809d9e45", tls: true, flow: "xtls-rprx-vision", client-fingerprint: "chrome", skip-cert-verify: true, reality-opts: {public-key: "qhTzYYIgBzDLNYR79oxftqdo1kzL-1_hGJKfqrOliCY"}, network: "tcp", servername: "www.nvidia.com"}
+- {type: "ss", server: "dddd.zj-zz-bgp.qunimade.lol", port: 39503, cipher: "chacha20-ietf-poly1305", password: "ec31bf35-41a0-4178-9c6a-77623b159076", name: "🇳🇬 尼日利亚_金融"}
+- {type: "hysteria2", name: "🇨🇦 加拿大_唯云", server: "132.145.108.102", port: 45979, password: "cfe032e4-1bc3-454f-9d09-301b0aea08ff", sni: "www.bing.com", skip-cert-verify: true, tfo: false}
+- {type: "ss", server: "neweur.upperlay.xyz", port: 631, cipher: "aes-128-gcm", password: "763bf612-4c66-4fd4-b54b-5349bdea6bca", name: "🇷🇺 俄罗斯_青云"}
+- {skip-cert-verify: true, sni: "smdu5.731732.xyz", type: "trojan", password: "e9e2f195-14d7-4d4f-8363-d7e568b21e3e", server: "smdu5.731732.xyz", port: 443, name: "🇳🇱 荷兰_优刻得"}
+- {skip-cert-verify: true, sni: "132.145.51.172", type: "trojan", password: "02e653c9-7c93-46a9-999d-11834bd0c577", server: "132.145.51.172", port: 443, name: "🏴‍☠️ 其他地区_华为云-01"}
+- {skip-cert-verify: true, sni: "official.taipeicitygovernment.org.ua", type: "trojan", password: "96983eb4-c8f1-316e-ab00-500014ed3d8b", server: "official.taipeicitygovernment.org.ua", port: 8443, name: "🏴‍☠️ 其他地区_阿里云-01"}
+- {type: "hysteria2", name: "🏴‍☠️ 其他地区_优刻得-01", server: "cdb71208-suk9s0-sv6oiy-1p1b.hy2.gotochinatown.net", port: 8443, password: "279b8588-616b-11ed-a8bf-f23c91cfbbc9", sni: "cdb71208-suk9s0-sv6oiy-1p1b.hy2.gotochinatown.net", skip-cert-verify: true, tfo: false}
+- {type: "ss", server: "ph01.dogsvip.site", port: 29020, cipher: "aes-128-gcm", password: "3d421011-63e0-44b7-aa68-27aea3a57a17", name: "🏴‍☠️ 其他地区_金融-01"}
+- {skip-cert-verify: true, sni: "green2.cdntencentmusic.com", type: "trojan", password: "c96e40d2-2e62-4106-91e6-2d9c74ae4552", server: "green2.cdntencentmusic.com", port: 28505, name: "🏴‍☠️ 其他地区_金融-02"}
+- {type: "ss", server: "103.186.155.19", port: 38388, cipher: "aes-256-cfb", password: "Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV", name: "🏴‍☠️ 其他地区_鸣潮-01"}
+- {skip-cert-verify: true, sni: "official.taipeicitygovernment.net.ua", type: "trojan", password: "96983eb4-c8f1-316e-ab00-500014ed3d8b", server: "official.taipeicitygovernment.net.ua", port: 8443, name: "🏴‍☠️ 其他地区_IEPL-01"}
+- {type: "ss", server: "103.186.154.24", port: 38388, cipher: "aes-256-cfb", password: "Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV", name: "🏴‍☠️ 其他地区_明懂-01"}
+- {type: "vless", name: "🏴‍☠️ 其他地区_腾讯云-01", server: "155.248.219.28", port: 42557, uuid: "2429bee3-e0c1-47dd-b420-75e6512b184b", tls: true, flow: "xtls-rprx-vision", client-fingerprint: "chrome", skip-cert-verify: true, reality-opts: {public-key: "LiHpb4jWrgHBSpi1mjKH3I8m2ahpVNexeNDh-sMW3Xo", short-id: "f430927d"}, network: "tcp", servername: "www.yahoo.com"}
+- {skip-cert-verify: true, sni: "speedtestc.allbatech.net.prod.hosts.ooklaserver.net", type: "trojan", password: "30783c7e-8f28-48cf-af7f-de75fc61b60c", server: "adsc.allbatech.net", port: 443, name: "🏴‍☠️ 其他地区_明懂-02"}
+- {skip-cert-verify: true, sni: "official.taipeicitygovernment.kiev.ua", type: "trojan", password: "96983eb4-c8f1-316e-ab00-500014ed3d8b", server: "official.taipeicitygovernment.kiev.ua", port: 8443, name: "🏴‍☠️ 其他地区_原神-01"}
+- {skip-cert-verify: true, sni: "it.mjt000.com", type: "trojan", password: "46dce50f-cb9a-45d0-99f8-0107ea567bf2", server: "it.mjt000.com", port: 443, name: "🏴‍☠️ 其他地区_金融-03"}
+- {type: "ss", server: "103.186.155.24", port: 38388, cipher: "aes-256-cfb", password: "Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV", name: "🏴‍☠️ 其他地区_原神-02"}
+- {type: "hysteria2", name: "🏴‍☠️ 其他地区_IEPL-02", server: "0e1462f1-sum4g0-t8ro7t-1ey07.hy2.gotochinatown.net", port: 8443, password: "203d1d64-3313-11ed-bb74-f23c9164ca5d", sni: "0e1462f1-sum4g0-t8ro7t-1ey07.hy2.gotochinatown.net", skip-cert-verify: true, tfo: false}
+- {skip-cert-verify: true, sni: "official.tokyometropolis.chernigov.ua", type: "trojan", password: "96983eb4-c8f1-316e-ab00-500014ed3d8b", server: "official.tokyometropolis.chernigov.ua", port: 2053, name: "🏴‍☠️ 其他地区_IEPL-03"}
+- {type: "ss", server: "103.186.155.25", port: 38388, cipher: "aes-256-cfb", password: "Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV", name: "🏴‍☠️ 其他地区_阿里云-02"}
+- {type: "ss", server: "103.186.154.18", port: 38388, cipher: "aes-256-cfb", password: "Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV", name: "🏴‍☠️ 其他地区_阿里云-03"}
+- {skip-cert-verify: true, sni: "official.tokyometropolis.kherson.ua", type: "trojan", password: "96983eb4-c8f1-316e-ab00-500014ed3d8b", server: "official.tokyometropolis.kherson.ua", port: 2053, name: "🏴‍☠️ 其他地区_明懂-03"}
+- {skip-cert-verify: true, sni: "green2.cdntencentmusic.com", type: "trojan", password: "fb9222fb-17ab-4054-907f-438ead0bff27", server: "green2.cdntencentmusic.com", port: 28503, name: "🏴‍☠️ 其他地区_金融-04"}
+- {type: "hysteria2", name: "🏴‍☠️ 其他地区_金融-05", server: "468ce536-supts0-svp9t7-1oijm.hy2.gotochinatown.net", port: 8443, password: "bf140bc0-3f68-11ee-953a-f23c9164ca5d", sni: "468ce536-supts0-svp9t7-1oijm.hy2.gotochinatown.net", skip-cert-verify: true, tfo: false}
+- {skip-cert-verify: true, sni: "kz.mjt000.com", type: "trojan", password: "46dce50f-cb9a-45d0-99f8-0107ea567bf2", server: "kz.mjt000.com", port: 443, name: "🏴‍☠️ 其他地区_腾讯云-02"}
+- {skip-cert-verify: true, sni: "official.tokyometropolis.kharkov.ua", type: "trojan", password: "96983eb4-c8f1-316e-ab00-500014ed3d8b", server: "official.tokyometropolis.kharkov.ua", port: 2053, name: "🏴‍☠️ 其他地区_崩铁-01"}
+- {skip-cert-verify: true, sni: "official.taipeicitygovernment.ivano-frankivsk.ua", type: "trojan", password: "96983eb4-c8f1-316e-ab00-500014ed3d8b", server: "official.taipeicitygovernment.ivano-frankivsk.ua", port: 8443, name: "🏴‍☠️ 其他地区_腾讯云-03"}
+- {type: "ss", server: "103.186.154.19", port: 38388, cipher: "aes-256-cfb", password: "Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV", name: "🏴‍☠️ 其他地区_唯云-01"}
+- {skip-cert-verify: true, sni: "official.tokyometropolis.kyiv.ua", type: "trojan", password: "96983eb4-c8f1-316e-ab00-500014ed3d8b", server: "official.tokyometropolis.kyiv.ua", port: 2053, name: "🏴‍☠️ 其他地区_优刻得-02"}
+- {skip-cert-verify: true, sni: "fond-meerkat.lygames.cc", type: "trojan", password: "3747000103274291200", server: "fond-meerkat.lygames.cc", port: 443, name: "🏴‍☠️ 其他地区_华为云-02"}
+- {skip-cert-verify: true, sni: "bg.guangsu888.cc", type: "trojan", password: "ebb4703b-08ab-4b7f-90e9-b093ab33811f", server: "bg.guangsu888.cc", port: 21864, name: "🏴‍☠️ 其他地区_鸣潮-02"}
+- {type: "hysteria2", name: "🏴‍☠️ 其他地区_IEPL-04", server: "jpvl.681687.xyz", port: 10100, password: "9e7a0efe-e7fd-42f2-9f66-092fa9285da7", sni: "jpvl.681687.xyz", skip-cert-verify: true, tfo: false}
+- {type: "ss", server: "23.27.123.167", port: 55960, cipher: "aes-256-gcm", password: "0bOUFiMdbI", name: "🏴‍☠️ 其他地区_阿里云-04"}
+- {type: "vless", name: "🏴‍☠️ 其他地区_腾讯云-04", server: "de.uzilol.cn", port: 35097, uuid: "d9e674f2-b1ab-470d-937c-5e2eb0d74751", tls: true, skip-cert-verify: true, network: "ws", ws-opts: {path: "/rangws"}, servername: "de.uzilol.cn"}
+- {skip-cert-verify: true, sni: "official.tokyometropolis.ivano-frankivsk.ua", type: "trojan", password: "96983eb4-c8f1-316e-ab00-500014ed3d8b", server: "official.tokyometropolis.ivano-frankivsk.ua", port: 2053, name: "🏴‍☠️ 其他地区_优刻得-03"}
+- {type: "hysteria2", name: "🏴‍☠️ 其他地区_金融-06", server: "sj.nfsn666.gq", port: 8888, password: "nfsn666", sni: "sj.nfsn666.gq", skip-cert-verify: true, tfo: false}
+- {skip-cert-verify: true, sni: "pt.mjt000.com", type: "trojan", password: "46dce50f-cb9a-45d0-99f8-0107ea567bf2", server: "pt.mjt000.com", port: 443, name: "🏴‍☠️ 其他地区_崩铁-02"}
+- {skip-cert-verify: true, sni: "official.taipeicitygovernment.chernovtsy.ua", type: "trojan", password: "96983eb4-c8f1-316e-ab00-500014ed3d8b", server: "official.taipeicitygovernment.chernovtsy.ua", port: 8443, name: "🏴‍☠️ 其他地区_唯云-02"}
+- {type: "vless", name: "🏴‍☠️ 其他地区_优刻得-04", server: "sj.nfsn666.gq", port: 8443, uuid: "b7d94441-14d1-4f20-9e5a-d6668bba0cf7", tls: true, flow: "xtls-rprx-vision", client-fingerprint: "chrome", skip-cert-verify: true, reality-opts: {public-key: "PKjz5CMdPlq-x_2jeaBeEeh_1mX_yOZV_CizTZQhWm4", short-id: "c206f9d0"}, network: "tcp", servername: "www.yahoo.com"}
+- {type: "ss", server: "103.186.154.20", port: 38388, cipher: "aes-256-cfb", password: "Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV", name: "🏴‍☠️ 其他地区_原神-03"}
+- {type: "hysteria2", name: "🏴‍☠️ 其他地区_鸣潮-03", server: "debeadd2-supts0-t1rksu-1ssud.hy2.gotochinatown.net", port: 8443, password: "e6aa39b6-f0b5-11ef-bca1-f23c91cfbbc9", sni: "debeadd2-supts0-t1rksu-1ssud.hy2.gotochinatown.net", skip-cert-verify: true, tfo: false}
+- {skip-cert-verify: true, sni: "uk2-full.privateip.net", type: "trojan", password: "30761083-5dcd-49d6-85b5-33756ef1f7ed", server: "uk2-full.privateip.net", port: 443, name: "🏴‍☠️ 其他地区_明懂-04"}
+- {type: "hysteria2", name: "🏴‍☠️ 其他地区_腾讯云-05", server: "64.181.204.186", port: 47262, password: "b72ba5d5-2d5e-45b7-93b5-236d343baa7c", sni: "www.bing.com", skip-cert-verify: true, tfo: false}
+- {skip-cert-verify: true, sni: "official.tokyometropolis.odesa.ua", type: "trojan", password: "96983eb4-c8f1-316e-ab00-500014ed3d8b", server: "official.tokyometropolis.odesa.ua", port: 2053, name: "🏴‍☠️ 其他地区_阿里云-05"}
+- {type: "hysteria2", name: "🏴‍☠️ 其他地区_崩铁-03", server: "996b0aed-suz340-t21ryz-1rk0u.hy2.gotochinatown.net", port: 8443, password: "ae403676-1f72-11ef-98df-f23c91cfbbc9", sni: "996b0aed-suz340-t21ryz-1rk0u.hy2.gotochinatown.net", skip-cert-verify: true, tfo: false}
+- {skip-cert-verify: true, sni: "official.taipeicitygovernment.com.ua", type: "trojan", password: "96983eb4-c8f1-316e-ab00-500014ed3d8b", server: "official.taipeicitygovernment.com.ua", port: 8443, name: "🏴‍☠️ 其他地区_阿里云-06"}
+- {type: "hysteria2", name: "🏴‍☠️ 其他地区_鸣潮-04", server: "hy2-1.694463.xyz", port: 4489, password: "dongtaiwang.com", sni: "www.bing.com", skip-cert-verify: true, tfo: false}
+- {type: "ss", server: "p231.panda004.net", port: 11389, cipher: "aes-256-cfb", password: "qwerREWQ@@", name: "🏴‍☠️ 其他地区_腾讯云-06"}
+- {skip-cert-verify: true, sni: "official.taipeicitygovernment.kyiv.ua", type: "trojan", password: "96983eb4-c8f1-316e-ab00-500014ed3d8b", server: "official.taipeicitygovernment.kyiv.ua", port: 8443, name: "🏴‍☠️ 其他地区_华为云-03"}
+- {type: "ss", server: "arxfw2b78fi2q9hzylhn.freesocks.work", port: 443, cipher: "chacha20-ietf-poly1305", password: "Nk9asglDzHzjktVzTkvhaA", name: "🏴‍☠️ 其他地区_青云-01"}
+- {skip-cert-verify: true, sni: "103.168.56.77", type: "trojan", password: "4f2c305b-9a03-4493-b3e4-2dff2f1af8c9", server: "103.168.56.77", port: 443, name: "🏴‍☠️ 其他地区_BGP-01"}
+- {type: "hysteria2", name: "🏴‍☠️ 其他地区_阿里云-07", server: "155.248.219.28", port: 30300, password: "2429bee3-e0c1-47dd-b420-75e6512b184b", sni: "www.bing.com", skip-cert-verify: true, tfo: false}
+- {skip-cert-verify: true, sni: "official.taipeicitygovernment.biz.ua", type: "trojan", password: "96983eb4-c8f1-316e-ab00-500014ed3d8b", server: "official.taipeicitygovernment.biz.ua", port: 8443, name: "🏴‍☠️ 其他地区_唯云-03"}
+- {type: "ss", server: "103.186.154.38", port: 38388, cipher: "aes-256-cfb", password: "Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV", name: "🏴‍☠️ 其他地区_优刻得-05"}
+- {type: "hysteria2", name: "🏴‍☠️ 其他地区_金融-07", server: "p5.punchline.ir", port: 14055, password: "p27Iss2ByA", sni: "p5.punchline.ir", obfs: "salamander", obfs-password: "AOICMIWHB892R8LNKDQX", skip-cert-verify: true, tfo: false}
+- {type: "hysteria2", name: "🏴‍☠️ 其他地区_BGP-02", server: "8b21ebfd-suif40-tcvn0z-1tlyg.hy2.gotochinatown.net", port: 8443, password: "be8ba532-0dcf-11f0-9a65-f23c9164ca5d", sni: "8b21ebfd-suif40-tcvn0z-1tlyg.hy2.gotochinatown.net", skip-cert-verify: true, tfo: false}
+- {skip-cert-verify: true, sni: "nc.cm.xiaomi-api.xyz", type: "trojan", password: "e47af2c3-5500-4dea-a4ae-6f0ea48c2e73", server: "nc.cm.xiaomi-api.xyz", port: 19574, name: "🏴‍☠️ 其他地区_阿里云-08"}
+- {type: "ss", server: "p227.panda004.net", port: 4857, cipher: "aes-256-cfb", password: "qwerREWQ@@", name: "🏴‍☠️ 其他地区_原神-04"}
+- {type: "hysteria2", name: "🏴‍☠️ 其他地区_BGP-03", server: "b6ea3219-supts0-swbd0b-716s.hy2.gotochinatown.net", port: 8443, password: "088a0bbe-4f9f-11ea-a15d-f23c913c8d2b", sni: "b6ea3219-supts0-swbd0b-716s.hy2.gotochinatown.net", skip-cert-verify: true, tfo: false}
+- {type: "vless", name: "🏴‍☠️ 其他地区_唯云-04", server: "netb.5678919.xyz", port: 443, uuid: "be0efe12-7ff0-46aa-8769-560c4d7d5dae", tls: true, client-fingerprint: "random", skip-cert-verify: true, network: "ws", ws-opts: {path: "/"}, servername: "netb.5678919.xyz"}
+- {type: "ss", server: "103.186.154.33", port: 38388, cipher: "aes-256-cfb", password: "Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV", name: "🏴‍☠️ 其他地区_华为云-04"}
+- {skip-cert-verify: true, sni: "official.taipeicitygovernment.if.ua", type: "trojan", password: "96983eb4-c8f1-316e-ab00-500014ed3d8b", server: "official.taipeicitygovernment.if.ua", port: 8443, name: "🏴‍☠️ 其他地区_腾讯云-07"}
+- {skip-cert-verify: true, sni: "official.taipeicitygovernment.dp.ua", type: "trojan", password: "96983eb4-c8f1-316e-ab00-500014ed3d8b", server: "official.taipeicitygovernment.dp.ua", port: 8443, name: "🏴‍☠️ 其他地区_明懂-05"}
+- {type: "hysteria2", name: "🏴‍☠️ 其他地区_鸣潮-05", server: "51.159.226.1", port: 43496, password: "dongtaiwang.com", sni: "www.bing.com", skip-cert-verify: true, tfo: false}
+- {type: "vless", name: "🏴‍☠️ 其他地区_青云-02", server: "zhee01.dynu.net", port: 64654, uuid: "459b4a80-bd61-4ecd-a26b-e9c1809d9e45", tls: true, flow: "xtls-rprx-vision", client-fingerprint: "chrome", skip-cert-verify: true, reality-opts: {public-key: "qhTzYYIgBzDLNYR79oxftqdo1kzL-1_hGJKfqrOliCY"}, network: "tcp", servername: "gateway.icloud.com"}
+- {type: "hysteria2", name: "🏴‍☠️ 其他地区_鸣潮-06", server: "bec3dd81-suk9s0-sxv16d-1k09w.hy2.gotochinatown.net", port: 8443, password: "8de795d2-a06f-11ed-8edf-f23c913c8d2b", sni: "bec3dd81-suk9s0-sxv16d-1k09w.hy2.gotochinatown.net", skip-cert-verify: true, tfo: false}
+- {skip-cert-verify: true, sni: "official.taipeicitygovernment.co.ua", type: "trojan", password: "96983eb4-c8f1-316e-ab00-500014ed3d8b", server: "official.taipeicitygovernment.co.ua", port: 8443, name: "🏴‍☠️ 其他地区_崩铁-04"}
+- {type: "ss", server: "103.186.154.30", port: 38388, cipher: "aes-256-cfb", password: "Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV", name: "🏴‍☠️ 其他地区_崩铁-05"}
+- {type: "ss", server: "103.186.154.31", port: 38388, cipher: "aes-256-cfb", password: "Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV", name: "🏴‍☠️ 其他地区_IEPL-05"}
+- {skip-cert-verify: true, sni: "zz6.91js.pw", type: "trojan", password: "a13820c547fa34c5c45515c12f0cd576", server: "zz6.91js.pw", port: 10051, name: "🏴‍☠️ 其他地区_崩铁-06"}
+- {type: "ss", server: "dddd.zj-zz-bgp.qunimade.lol", port: 39331, cipher: "chacha20-ietf-poly1305", password: "ec31bf35-41a0-4178-9c6a-77623b159076", name: "🏴‍☠️ 其他地区_唯云-05"}
+- {skip-cert-verify: true, sni: "official.tokyometropolis.odessa.ua", type: "trojan", password: "96983eb4-c8f1-316e-ab00-500014ed3d8b", server: "official.tokyometropolis.odessa.ua", port: 2053, name: "🏴‍☠️ 其他地区_原神-05"}
+- {type: "hysteria2", name: "🏴‍☠️ 其他地区_明懂-06", server: "sinavm.soft10.ir", port: 443, password: "Bia-SiNAVM-Telegram-SiNAVM-Bia-SiNAVM", sni: "sinavm.soft10.ir", obfs: "salamander", obfs-password: "@SiNAVM-SiNAVM-SiNAVM-@SiNAVM-@SiNAVM", skip-cert-verify: true, tfo: false}
+- {type: "ss", server: "dddd.zj-zz-bgp.qunimade.lol", port: 39221, cipher: "chacha20-ietf-poly1305", password: "ec31bf35-41a0-4178-9c6a-77623b159076", name: "🏴‍☠️ 其他地区_阿里云-09"}
+- {skip-cert-verify: true, sni: "official.tokyometropolis.kiev.ua", type: "trojan", password: "96983eb4-c8f1-316e-ab00-500014ed3d8b", server: "official.tokyometropolis.kiev.ua", port: 2053, name: "🏴‍☠️ 其他地区_优刻得-06"}
+- {type: "hysteria2", name: "🏴‍☠️ 其他地区_米哈游-01", server: "74f0ee85-suk9s0-swtza9-1q91p.hy2.gotochinatown.net", port: 8443, password: "c11ff50c-f582-11ee-94df-f23c9164ca5d", sni: "74f0ee85-suk9s0-swtza9-1q91p.hy2.gotochinatown.net", skip-cert-verify: true, tfo: false}
+- {type: "vless", name: "🏴‍☠️ 其他地区_原神-06", server: "152.70.124.233", port: 30002, uuid: "cbeaa3aa-4364-4d79-8f60-e964a28724bf", tls: true, flow: "", client-fingerprint: "firefox", skip-cert-verify: true, reality-opts: {public-key: "Mg15AliRh4C_Jh5RQywOyLPxldCeKwlfGg_0Lt25TEM", short-id: "0cd46745"}, network: "tcp", servername: "icloud.cdn-apple.com"}
+- {skip-cert-verify: true, sni: "dried-chow-kite.stark-industries.solutions", type: "trojan", password: "8264f515-90b6-4152-9830-7abc0ec215c6", server: "193.57.136.137", port: 443, name: "🏴‍☠️ 其他地区_明懂-07"}
+- {skip-cert-verify: true, sni: "official.taipeicitygovernment.cn.ua", type: "trojan", password: "96983eb4-c8f1-316e-ab00-500014ed3d8b", server: "official.taipeicitygovernment.cn.ua", port: 8443, name: "🏴‍☠️ 其他地区_鸣潮-07"}
+- {type: "vless", name: "🏴‍☠️ 其他地区_金融-08", server: "shenzhou02.mysynology.net", port: 38562, uuid: "459b4a80-bd61-4ecd-a26b-e9c1809d9e45", tls: true, flow: "xtls-rprx-vision", client-fingerprint: "chrome", skip-cert-verify: true, reality-opts: {public-key: "qhTzYYIgBzDLNYR79oxftqdo1kzL-1_hGJKfqrOliCY"}, network: "tcp", servername: "www.amazon.com"}
+- {type: "ss", server: "103.186.154.29", port: 38388, cipher: "aes-256-cfb", password: "Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV", name: "🏴‍☠️ 其他地区_腾讯云-08"}
+- {type: "vless", name: "🏴‍☠️ 其他地区_优刻得-07", server: "agaungzhou01.bumbleshrimp.com", port: 11733, uuid: "459b4a80-bd61-4ecd-a26b-e9c1809d9e45", tls: true, flow: "xtls-rprx-vision", client-fingerprint: "chrome", skip-cert-verify: true, reality-opts: {public-key: "qhTzYYIgBzDLNYR79oxftqdo1kzL-1_hGJKfqrOliCY"}, network: "tcp", servername: "www.nvidia.com"}
+- {type: "hysteria2", name: "🏴‍☠️ 其他地区_IEPL-06", server: "c26d0357-supts0-tfvcxz-1nq4g.hy2.gotochinatown.net", port: 8443, password: "80aa5178-f936-11ed-8ce6-f23c91369f2d", sni: "c26d0357-supts0-tfvcxz-1nq4g.hy2.gotochinatown.net", skip-cert-verify: true, tfo: false}
+- {type: "hysteria2", name: "🏴‍☠️ 其他地区_明懂-08", server: "2zh6jubg6g.tiktok.casa", port: 12589, password: "4c0a1d05-21ff-461d-9fd6-897b70e4c716", sni: "2ZH6JUbG6g.tiktok.casa", skip-cert-verify: true, tfo: false}
+- {type: "vless", name: "🏴‍☠️ 其他地区_崩铁-07", server: "shenzhou02.mysynology.net", port: 32193, uuid: "459b4a80-bd61-4ecd-a26b-e9c1809d9e45", tls: true, flow: "xtls-rprx-vision", client-fingerprint: "chrome", skip-cert-verify: true, reality-opts: {public-key: "qhTzYYIgBzDLNYR79oxftqdo1kzL-1_hGJKfqrOliCY"}, network: "tcp", servername: "www.nvidia.com"}
+- {type: "vless", name: "🏴‍☠️ 其他地区_明懂-09", server: "zhee01.dynu.net", port: 46372, uuid: "459b4a80-bd61-4ecd-a26b-e9c1809d9e45", tls: true, flow: "xtls-rprx-vision", client-fingerprint: "chrome", skip-cert-verify: true, reality-opts: {public-key: "qhTzYYIgBzDLNYR79oxftqdo1kzL-1_hGJKfqrOliCY"}, network: "tcp", servername: "www.amazon.com"}
+- {type: "hysteria2", name: "🏴‍☠️ 其他地区_崩铁-08", server: "c157a1f7-suz340-sw0aec-1t3oz.hy2.gotochinatown.net", port: 8443, password: "b3370cdc-c26e-11ef-bd97-f23c9164ca5d", sni: "c157a1f7-suz340-sw0aec-1t3oz.hy2.gotochinatown.net", skip-cert-verify: true, tfo: false}
+- {type: "hysteria2", name: "🏴‍☠️ 其他地区_唯云-06", server: "6ce8fc7b-surog0-t2cl3c-14ubl.hy2.gotochinatown.net", port: 8443, password: "d0f35ada-c39c-11ef-8a98-f23c91cfbbc9", sni: "6ce8fc7b-surog0-t2cl3c-14ubl.hy2.gotochinatown.net", skip-cert-verify: true, tfo: false}
+- {type: "vless", name: "🏴‍☠️ 其他地区_青云-03", server: "cos90-new2.dynu.net", port: 13989, uuid: "459b4a80-bd61-4ecd-a26b-e9c1809d9e45", tls: true, flow: "xtls-rprx-vision", client-fingerprint: "chrome", skip-cert-verify: true, reality-opts: {public-key: "qhTzYYIgBzDLNYR79oxftqdo1kzL-1_hGJKfqrOliCY"}, network: "tcp", servername: "gateway.icloud.com"}
+- {type: "vless", name: "🏴‍☠️ 其他地区_鸣潮-08", server: "vip.jddns0202.top", port: 29316, uuid: "459b4a80-bd61-4ecd-a26b-e9c1809d9e45", tls: true, flow: "xtls-rprx-vision", client-fingerprint: "chrome", skip-cert-verify: true, reality-opts: {public-key: "qhTzYYIgBzDLNYR79oxftqdo1kzL-1_hGJKfqrOliCY"}, network: "tcp", servername: "www.amazon.com"}
+- {type: "vless", name: "🏴‍☠️ 其他地区_明懂-10", server: "shenzhou05.mysynology.net", port: 23657, uuid: "459b4a80-bd61-4ecd-a26b-e9c1809d9e45", tls: true, flow: "xtls-rprx-vision", client-fingerprint: "chrome", skip-cert-verify: true, reality-opts: {public-key: "qhTzYYIgBzDLNYR79oxftqdo1kzL-1_hGJKfqrOliCY"}, network: "tcp", servername: "www.nvidia.com"}
+- {type: "vless", name: "🏴‍☠️ 其他地区_鸣潮-09", server: "shenzhou05.mysynology.net", port: 49699, uuid: "459b4a80-bd61-4ecd-a26b-e9c1809d9e45", tls: true, flow: "xtls-rprx-vision", client-fingerprint: "chrome", skip-cert-verify: true, reality-opts: {public-key: "qhTzYYIgBzDLNYR79oxftqdo1kzL-1_hGJKfqrOliCY"}, network: "tcp", servername: "www.amazon.com"}
+- {skip-cert-verify: true, sni: "zz1.jckumao.cc", type: "trojan", password: "a87acf95-55b1-4ccd-8c6a-abea88f7c442", server: "zz1.jckumao.cc", port: 36045, name: "🏴‍☠️ 其他地区_崩铁-09"}
+- {type: "hysteria2", name: "🏴‍☠️ 其他地区_米哈游-02", server: "ld-arm.nfsn666.gq", port: 8888, password: "nfsn666", sni: "ld-arm.nfsn666.gq", skip-cert-verify: true, tfo: false}
+- {skip-cert-verify: true, sni: "bg.guangsu888.cc", type: "trojan", password: "c9a620fd-2a10-4301-ae3b-97525dac4078", server: "bg.guangsu888.cc", port: 21865, name: "🏴‍☠️ 其他地区_原神-07"}
+- {type: "ss", server: "gw.liangyuandianwan.com", port: 35507, cipher: "chacha20-ietf-poly1305", password: "21e251c3-139c-4b81-b352-3b60734029e9", name: "🏴‍☠️ 其他地区_米哈游-03"}
+- {type: "vless", name: "🏴‍☠️ 其他地区_优刻得-08", server: "sj-arm.nfsn666.gq", port: 8443, uuid: "06121b89-607b-44c9-9c01-cc2fc6a7321d", tls: true, flow: "xtls-rprx-vision", client-fingerprint: "chrome", skip-cert-verify: true, reality-opts: {public-key: "4Qekb9y1dqO8hvRzVSGeSRNyhko_gqpeWD94zrLCvjs", short-id: "5488b0e7"}, network: "tcp", servername: "www.yahoo.com"}
+- {type: "ss", server: "dddd.zj-zz-bgp.qunimade.lol", port: 39341, cipher: "chacha20-ietf-poly1305", password: "ec31bf35-41a0-4178-9c6a-77623b159076", name: "🏴‍☠️ 其他地区_明懂-11"}
+- {type: "hysteria2", name: "🏴‍☠️ 其他地区_明懂-12", server: "hy2.694463.xyz", port: 10011, password: "dongtaiwang.com", sni: "www.bing.com", skip-cert-verify: true, tfo: false}
+- {type: "ss", server: "103.186.154.23", port: 38388, cipher: "aes-256-cfb", password: "Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV", name: "🏴‍☠️ 其他地区_阿里云-10"}
+- {type: "ss", server: "104.234.0.218", port: 50001, cipher: "aes-256-gcm", password: "hw0kO9o3dq", name: "🏴‍☠️ 其他地区_阿里云-11"}
+- {skip-cert-verify: true, sni: "92.118.149.85", type: "trojan", password: "3gLlCYBipVwr6Y5F", server: "92.118.149.85", port: 443, name: "🏴‍☠️ 其他地区_米哈游-04"}
+- {type: "hysteria2", name: "🏴‍☠️ 其他地区_青云-04", server: "50b8214a-suz340-sx19e8-gacy.hy2.gotochinatown.net", port: 8443, password: "20f87b02-0eaa-11eb-8684-f23c913c8d2b", sni: "50b8214a-suz340-sx19e8-gacy.hy2.gotochinatown.net", skip-cert-verify: true, tfo: false}
+- {type: "vless", name: "🏴‍☠️ 其他地区_原神-08", server: "shenzhou02.mysynology.net", port: 33048, uuid: "459b4a80-bd61-4ecd-a26b-e9c1809d9e45", tls: true, flow: "xtls-rprx-vision", client-fingerprint: "chrome", skip-cert-verify: true, reality-opts: {public-key: "qhTzYYIgBzDLNYR79oxftqdo1kzL-1_hGJKfqrOliCY"}, network: "tcp", servername: "www.yahoo.com"}
+- {type: "ss", server: "www.csgo.com", port: 443, cipher: "none", password: "8d20dd38-0a85-413c-9605-c31e9fff831b", name: "🏴‍☠️ 其他地区_阿里云-12"}
+- {type: "hysteria2", name: "🏴‍☠️ 其他地区_崩铁-10", server: "b9a88fb8-suk9s0-t7qex7-1supq.hy2.gotochinatown.net", port: 8443, password: "7af3db60-b2d9-11ef-88ab-f23c913c8d2b", sni: "b9a88fb8-suk9s0-t7qex7-1supq.hy2.gotochinatown.net", skip-cert-verify: true, tfo: false}
+- {skip-cert-verify: true, sni: "bg.guangsu888.cc", type: "trojan", password: "7d6e465e-25c3-44b8-8fda-0e973e8d3b21", server: "bg.guangsu888.cc", port: 21868, name: "🏴‍☠️ 其他地区_明懂-13"}
+- {type: "vless", name: "🏴‍☠️ 其他地区_阿里云-13", server: "shenzhou02.mysynology.net", port: 47096, uuid: "459b4a80-bd61-4ecd-a26b-e9c1809d9e45", tls: true, flow: "xtls-rprx-vision", client-fingerprint: "chrome", skip-cert-verify: true, reality-opts: {public-key: "qhTzYYIgBzDLNYR79oxftqdo1kzL-1_hGJKfqrOliCY"}, network: "tcp", servername: "www.nvidia.com"}
+- {type: "ss", server: "48.218.67.58", port: 33534, cipher: "aes-256-gcm", password: "HEqa1WxJSB", name: "🏴‍☠️ 其他地区_IEPL-07"}
+- {skip-cert-verify: true, sni: "ua.mjt000.com", type: "trojan", password: "46dce50f-cb9a-45d0-99f8-0107ea567bf2", server: "ua.mjt000.com", port: 443, name: "🏴‍☠️ 其他地区_明懂-14"}
+- {type: "ss", server: "103.186.155.133", port: 38388, cipher: "aes-256-cfb", password: "Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV", name: "🏴‍☠️ 其他地区_米哈游-05"}
+- {type: "hysteria2", name: "🏴‍☠️ 其他地区_崩铁-11", server: "sj-arm.nfsn666.gq", port: 8888, password: "nfsn666", sni: "sj-arm.nfsn666.gq", skip-cert-verify: true, tfo: false}
+- {type: "vless", name: "🏴‍☠️ 其他地区_鸣潮-10", server: "test123.zlqhdns.top", port: 61178, uuid: "459b4a80-bd61-4ecd-a26b-e9c1809d9e45", tls: true, flow: "xtls-rprx-vision", client-fingerprint: "chrome", skip-cert-verify: true, reality-opts: {public-key: "qhTzYYIgBzDLNYR79oxftqdo1kzL-1_hGJKfqrOliCY"}, network: "tcp", servername: "www.nvidia.com"}
+- {type: "vless", name: "🏴‍☠️ 其他地区_腾讯云-09", server: "shenzhou05.mysynology.net", port: 50452, uuid: "459b4a80-bd61-4ecd-a26b-e9c1809d9e45", tls: true, flow: "xtls-rprx-vision", client-fingerprint: "chrome", skip-cert-verify: true, reality-opts: {public-key: "qhTzYYIgBzDLNYR79oxftqdo1kzL-1_hGJKfqrOliCY"}, network: "tcp", servername: "www.amazon.com"}
+- {type: "hysteria2", name: "🏴‍☠️ 其他地区_原神-09", server: "fr3.eyucdn.xyz", port: 2056, password: "45b46edb-679b-4ea5-befd-88c05bb94f80", sni: "fr3.eyucdn.xyz", skip-cert-verify: true, tfo: false}
+proxy-groups:
+- name: "PROXY"
+  type: "select"
+  proxies:
+  - "AUTO"
+  - "🇭🇰 香港_原神-01"
+  - "🇭🇰 香港_原神-02"
+  - "🇭🇰 香港_鸣潮-01"
+  - "🇭🇰 香港_青云"
+  - "🇭🇰 香港_阿里云-01"
+  - "🇭🇰 香港_鸣潮-02"
+  - "🇭🇰 香港_原神-03"
+  - "🇭🇰 香港_阿里云-02"
+  - "🇭🇰 香港_米哈游-01"
+  - "🇭🇰 香港_华为云"
+  - "🇭🇰 香港_阿里云-03"
+  - "🇭🇰 香港_唯云"
+  - "🇭🇰 香港_IEPL-01"
+  - "🇭🇰 香港_阿里云-04"
+  - "🇭🇰 香港_明懂"
+  - "🇭🇰 香港_米哈游-02"
+  - "🇭🇰 香港_IEPL-02"
+  - "🇭🇰 香港_崩铁-01"
+  - "🇭🇰 香港_金融"
+  - "🇭🇰 香港_优刻得"
+  - "🇭🇰 香港_阿里云-05"
+  - "🇭🇰 香港_IEPL-03"
+  - "🇭🇰 香港_IEPL-04"
+  - "🇭🇰 香港_崩铁-02"
+  - "🇸🇬 新加坡_米哈游-01"
+  - "🇸🇬 新加坡_优刻得"
+  - "🇸🇬 新加坡_明懂"
+  - "🇸🇬 新加坡_BGP"
+  - "🇸🇬 新加坡_米哈游-02"
+  - "🇸🇬 新加坡_米哈游-03"
+  - "🇸🇬 新加坡_金融"
+  - "🇸🇬 新加坡_崩铁-01"
+  - "🇸🇬 新加坡_阿里云-01"
+  - "🇸🇬 新加坡_IEPL"
+  - "🇸🇬 新加坡_唯云"
+  - "🇸🇬 新加坡_阿里云-02"
+  - "🇸🇬 新加坡_腾讯云"
+  - "🇸🇬 新加坡_崩铁-02"
+  - "🇸🇬 新加坡_青云"
+  - "🇯🇵 日本_鸣潮-01"
+  - "🇯🇵 日本_青云-01"
+  - "🇯🇵 日本_崩铁-01"
+  - "🇯🇵 日本_鸣潮-02"
+  - "🇯🇵 日本_华为云-01"
+  - "🇯🇵 日本_BGP-01"
+  - "🇯🇵 日本_BGP-02"
+  - "🇯🇵 日本_青云-02"
+  - "🇯🇵 日本_华为云-02"
+  - "🇯🇵 日本_阿里云-01"
+  - "🇯🇵 日本_腾讯云"
+  - "🇯🇵 日本_崩铁-02"
+  - "🇯🇵 日本_华为云-03"
+  - "🇯🇵 日本_明懂-01"
+  - "🇯🇵 日本_青云-03"
+  - "🇯🇵 日本_青云-04"
+  - "🇯🇵 日本_金融"
+  - "🇯🇵 日本_崩铁-03"
+  - "🇯🇵 日本_阿里云-02"
+  - "🇯🇵 日本_唯云"
+  - "🇯🇵 日本_IEPL"
+  - "🇯🇵 日本_米哈游-01"
+  - "🇯🇵 日本_明懂-02"
+  - "🇯🇵 日本_鸣潮-03"
+  - "🇯🇵 日本_BGP-03"
+  - "🇯🇵 日本_明懂-03"
+  - "🇯🇵 日本_米哈游-02"
+  - "🇯🇵 日本_青云-05"
+  - "🇯🇵 日本_原神"
+  - "🇺🇸 美国_唯云-01"
+  - "🇺🇸 美国_鸣潮-01"
+  - "🇺🇸 美国_优刻得-01"
+  - "🇺🇸 美国_腾讯云-01"
+  - "🇺🇸 美国_唯云-02"
+  - "🇺🇸 美国_阿里云-01"
+  - "🇺🇸 美国_明懂-01"
+  - "🇺🇸 美国_优刻得-02"
+  - "🇺🇸 美国_鸣潮-02"
+  - "🇺🇸 美国_原神-01"
+  - "🇺🇸 美国_BGP-01"
+  - "🇺🇸 美国_IEPL-01"
+  - "🇺🇸 美国_明懂-02"
+  - "🇺🇸 美国_腾讯云-02"
+  - "🇺🇸 美国_IEPL-02"
+  - "🇺🇸 美国_华为云-01"
+  - "🇺🇸 美国_阿里云-02"
+  - "🇺🇸 美国_阿里云-03"
+  - "🇺🇸 美国_BGP-02"
+  - "🇺🇸 美国_BGP-03"
+  - "🇺🇸 美国_鸣潮-03"
+  - "🇺🇸 美国_鸣潮-04"
+  - "🇺🇸 美国_唯云-03"
+  - "🇺🇸 美国_华为云-02"
+  - "🇺🇸 美国_崩铁-01"
+  - "🇺🇸 美国_原神-02"
+  - "🇺🇸 美国_优刻得-03"
+  - "🇺🇸 美国_阿里云-04"
+  - "🇺🇸 美国_唯云-04"
+  - "🇺🇸 美国_崩铁-02"
+  - "🇺🇸 美国_米哈游-01"
+  - "🇺🇸 美国_崩铁-03"
+  - "🇺🇸 美国_唯云-05"
+  - "🇺🇸 美国_优刻得-04"
+  - "🇺🇸 美国_优刻得-05"
+  - "🇺🇸 美国_鸣潮-05"
+  - "🇺🇸 美国_米哈游-02"
+  - "🇺🇸 美国_阿里云-05"
+  - "🇺🇸 美国_米哈游-03"
+  - "🇺🇸 美国_金融-01"
+  - "🇺🇸 美国_原神-03"
+  - "🇺🇸 美国_阿里云-06"
+  - "🇺🇸 美国_腾讯云-03"
+  - "🇺🇸 美国_BGP-04"
+  - "🇺🇸 美国_崩铁-04"
+  - "🇺🇸 美国_唯云-06"
+  - "🇺🇸 美国_鸣潮-06"
+  - "🇺🇸 美国_腾讯云-04"
+  - "🇺🇸 美国_阿里云-07"
+  - "🇺🇸 美国_IEPL-03"
+  - "🇺🇸 美国_青云-01"
+  - "🇺🇸 美国_BGP-05"
+  - "🇺🇸 美国_华为云-03"
+  - "🇺🇸 美国_鸣潮-07"
+  - "🇺🇸 美国_优刻得-06"
+  - "🇺🇸 美国_青云-02"
+  - "🇺🇸 美国_阿里云-08"
+  - "🇺🇸 美国_金融-02"
+  - "🇺🇸 美国_崩铁-05"
+  - "🇺🇸 美国_BGP-06"
+  - "🇺🇸 美国_金融-03"
+  - "🇺🇸 美国_阿里云-09"
+  - "🇺🇸 美国_原神-04"
+  - "🇺🇸 美国_原神-05"
+  - "🇺🇸 美国_阿里云-10"
+  - "🇺🇸 美国_IEPL-04"
+  - "🇺🇸 美国_米哈游-04"
+  - "🇺🇸 美国_崩铁-06"
+  - "🇺🇸 美国_鸣潮-08"
+  - "🇺🇸 美国_腾讯云-05"
+  - "🇺🇸 美国_米哈游-05"
+  - "🇺🇸 美国_米哈游-06"
+  - "🇺🇸 美国_青云-03"
+  - "🇨🇳 台湾_BGP-01"
+  - "🇨🇳 台湾_原神-01"
+  - "🇨🇳 台湾_唯云"
+  - "🇨🇳 台湾_原神-02"
+  - "🇨🇳 台湾_IEPL-01"
+  - "🇨🇳 台湾_IEPL-02"
+  - "🇨🇳 台湾_BGP-02"
+  - "🇨🇳 台湾_阿里云"
+  - "🇨🇳 台湾_青云"
+  - "🇨🇳 台湾_BGP-03"
+  - "🇨🇳 台湾_崩铁"
+  - "🇨🇳 台湾_华为云"
+  - "🇨🇳 台湾_BGP-04"
+  - "🇨🇳 台湾_腾讯云"
+  - "🇨🇳 台湾_BGP-05"
+  - "🇨🇳 台湾_优刻得-01"
+  - "🇨🇳 台湾_优刻得-02"
+  - "🇰🇷 韩国_崩铁"
+  - "🇰🇷 韩国_BGP-01"
+  - "🇰🇷 韩国_BGP-02"
+  - "🇰🇷 韩国_青云"
+  - "🇰🇷 韩国_IEPL"
+  - "🇰🇷 韩国_原神-01"
+  - "🇰🇷 韩国_唯云-01"
+  - "🇰🇷 韩国_阿里云"
+  - "🇰🇷 韩国_原神-02"
+  - "🇰🇷 韩国_金融"
+  - "🇰🇷 韩国_明懂"
+  - "🇰🇷 韩国_唯云-02"
+  - "🇬🇧 英国_优刻得"
+  - "🇬🇧 英国_明懂-01"
+  - "🇬🇧 英国_明懂-02"
+  - "🇬🇧 英国_米哈游"
+  - "🇬🇧 英国_明懂-03"
+  - "🇬🇧 英国_鸣潮"
+  - "🇫🇷 法国_阿里云"
+  - "🇫🇷 法国_鸣潮"
+  - "🇩🇪 德国_明懂-01"
+  - "🇩🇪 德国_明懂-02"
+  - "🇩🇪 德国_阿里云"
+  - "🇮🇳 印度_原神"
+  - "🇮🇳 印度_鸣潮"
+  - "🇮🇳 印度_唯云"
+  - "🇦🇺 澳大利亚_IEPL"
+  - "🇦🇺 澳大利亚_崩铁"
+  - "🇲🇾 马来西亚_优刻得"
+  - "🇲🇾 马来西亚_金融"
+  - "🇳🇬 尼日利亚_金融"
+  - "🇨🇦 加拿大_唯云"
+  - "🇷🇺 俄罗斯_青云"
+  - "🇳🇱 荷兰_优刻得"
+  - "🏴‍☠️ 其他地区_华为云-01"
+  - "🏴‍☠️ 其他地区_阿里云-01"
+  - "🏴‍☠️ 其他地区_优刻得-01"
+  - "🏴‍☠️ 其他地区_金融-01"
+  - "🏴‍☠️ 其他地区_金融-02"
+  - "🏴‍☠️ 其他地区_鸣潮-01"
+  - "🏴‍☠️ 其他地区_IEPL-01"
+  - "🏴‍☠️ 其他地区_明懂-01"
+  - "🏴‍☠️ 其他地区_腾讯云-01"
+  - "🏴‍☠️ 其他地区_明懂-02"
+  - "🏴‍☠️ 其他地区_原神-01"
+  - "🏴‍☠️ 其他地区_金融-03"
+  - "🏴‍☠️ 其他地区_原神-02"
+  - "🏴‍☠️ 其他地区_IEPL-02"
+  - "🏴‍☠️ 其他地区_IEPL-03"
+  - "🏴‍☠️ 其他地区_阿里云-02"
+  - "🏴‍☠️ 其他地区_阿里云-03"
+  - "🏴‍☠️ 其他地区_明懂-03"
+  - "🏴‍☠️ 其他地区_金融-04"
+  - "🏴‍☠️ 其他地区_金融-05"
+  - "🏴‍☠️ 其他地区_腾讯云-02"
+  - "🏴‍☠️ 其他地区_崩铁-01"
+  - "🏴‍☠️ 其他地区_腾讯云-03"
+  - "🏴‍☠️ 其他地区_唯云-01"
+  - "🏴‍☠️ 其他地区_优刻得-02"
+  - "🏴‍☠️ 其他地区_华为云-02"
+  - "🏴‍☠️ 其他地区_鸣潮-02"
+  - "🏴‍☠️ 其他地区_IEPL-04"
+  - "🏴‍☠️ 其他地区_阿里云-04"
+  - "🏴‍☠️ 其他地区_腾讯云-04"
+  - "🏴‍☠️ 其他地区_优刻得-03"
+  - "🏴‍☠️ 其他地区_金融-06"
+  - "🏴‍☠️ 其他地区_崩铁-02"
+  - "🏴‍☠️ 其他地区_唯云-02"
+  - "🏴‍☠️ 其他地区_优刻得-04"
+  - "🏴‍☠️ 其他地区_原神-03"
+  - "🏴‍☠️ 其他地区_鸣潮-03"
+  - "🏴‍☠️ 其他地区_明懂-04"
+  - "🏴‍☠️ 其他地区_腾讯云-05"
+  - "🏴‍☠️ 其他地区_阿里云-05"
+  - "🏴‍☠️ 其他地区_崩铁-03"
+  - "🏴‍☠️ 其他地区_阿里云-06"
+  - "🏴‍☠️ 其他地区_鸣潮-04"
+  - "🏴‍☠️ 其他地区_腾讯云-06"
+  - "🏴‍☠️ 其他地区_华为云-03"
+  - "🏴‍☠️ 其他地区_青云-01"
+  - "🏴‍☠️ 其他地区_BGP-01"
+  - "🏴‍☠️ 其他地区_阿里云-07"
+  - "🏴‍☠️ 其他地区_唯云-03"
+  - "🏴‍☠️ 其他地区_优刻得-05"
+  - "🏴‍☠️ 其他地区_金融-07"
+  - "🏴‍☠️ 其他地区_BGP-02"
+  - "🏴‍☠️ 其他地区_阿里云-08"
+  - "🏴‍☠️ 其他地区_原神-04"
+  - "🏴‍☠️ 其他地区_BGP-03"
+  - "🏴‍☠️ 其他地区_唯云-04"
+  - "🏴‍☠️ 其他地区_华为云-04"
+  - "🏴‍☠️ 其他地区_腾讯云-07"
+  - "🏴‍☠️ 其他地区_明懂-05"
+  - "🏴‍☠️ 其他地区_鸣潮-05"
+  - "🏴‍☠️ 其他地区_青云-02"
+  - "🏴‍☠️ 其他地区_鸣潮-06"
+  - "🏴‍☠️ 其他地区_崩铁-04"
+  - "🏴‍☠️ 其他地区_崩铁-05"
+  - "🏴‍☠️ 其他地区_IEPL-05"
+  - "🏴‍☠️ 其他地区_崩铁-06"
+  - "🏴‍☠️ 其他地区_唯云-05"
+  - "🏴‍☠️ 其他地区_原神-05"
+  - "🏴‍☠️ 其他地区_明懂-06"
+  - "🏴‍☠️ 其他地区_阿里云-09"
+  - "🏴‍☠️ 其他地区_优刻得-06"
+  - "🏴‍☠️ 其他地区_米哈游-01"
+  - "🏴‍☠️ 其他地区_原神-06"
+  - "🏴‍☠️ 其他地区_明懂-07"
+  - "🏴‍☠️ 其他地区_鸣潮-07"
+  - "🏴‍☠️ 其他地区_金融-08"
+  - "🏴‍☠️ 其他地区_腾讯云-08"
+  - "🏴‍☠️ 其他地区_优刻得-07"
+  - "🏴‍☠️ 其他地区_IEPL-06"
+  - "🏴‍☠️ 其他地区_明懂-08"
+  - "🏴‍☠️ 其他地区_崩铁-07"
+  - "🏴‍☠️ 其他地区_明懂-09"
+  - "🏴‍☠️ 其他地区_崩铁-08"
+  - "🏴‍☠️ 其他地区_唯云-06"
+  - "🏴‍☠️ 其他地区_青云-03"
+  - "🏴‍☠️ 其他地区_鸣潮-08"
+  - "🏴‍☠️ 其他地区_明懂-10"
+  - "🏴‍☠️ 其他地区_鸣潮-09"
+  - "🏴‍☠️ 其他地区_崩铁-09"
+  - "🏴‍☠️ 其他地区_米哈游-02"
+  - "🏴‍☠️ 其他地区_原神-07"
+  - "🏴‍☠️ 其他地区_米哈游-03"
+  - "🏴‍☠️ 其他地区_优刻得-08"
+  - "🏴‍☠️ 其他地区_明懂-11"
+  - "🏴‍☠️ 其他地区_明懂-12"
+  - "🏴‍☠️ 其他地区_阿里云-10"
+  - "🏴‍☠️ 其他地区_阿里云-11"
+  - "🏴‍☠️ 其他地区_米哈游-04"
+  - "🏴‍☠️ 其他地区_青云-04"
+  - "🏴‍☠️ 其他地区_原神-08"
+  - "🏴‍☠️ 其他地区_阿里云-12"
+  - "🏴‍☠️ 其他地区_崩铁-10"
+  - "🏴‍☠️ 其他地区_明懂-13"
+  - "🏴‍☠️ 其他地区_阿里云-13"
+  - "🏴‍☠️ 其他地区_IEPL-07"
+  - "🏴‍☠️ 其他地区_明懂-14"
+  - "🏴‍☠️ 其他地区_米哈游-05"
+  - "🏴‍☠️ 其他地区_崩铁-11"
+  - "🏴‍☠️ 其他地区_鸣潮-10"
+  - "🏴‍☠️ 其他地区_腾讯云-09"
+  - "🏴‍☠️ 其他地区_原神-09"
+- name: "AUTO"
+  type: "url-test"
+  url: "http://www.gstatic.com/generate_204"
+  interval: 900
+  tolerance: 50
+  proxies:
+  - "🇭🇰 香港_原神-01"
+  - "🇭🇰 香港_原神-02"
+  - "🇭🇰 香港_鸣潮-01"
+  - "🇭🇰 香港_青云"
+  - "🇭🇰 香港_阿里云-01"
+  - "🇭🇰 香港_鸣潮-02"
+  - "🇭🇰 香港_原神-03"
+  - "🇭🇰 香港_阿里云-02"
+  - "🇭🇰 香港_米哈游-01"
+  - "🇭🇰 香港_华为云"
+  - "🇭🇰 香港_阿里云-03"
+  - "🇭🇰 香港_唯云"
+  - "🇭🇰 香港_IEPL-01"
+  - "🇭🇰 香港_阿里云-04"
+  - "🇭🇰 香港_明懂"
+  - "🇭🇰 香港_米哈游-02"
+  - "🇭🇰 香港_IEPL-02"
+  - "🇭🇰 香港_崩铁-01"
+  - "🇭🇰 香港_金融"
+  - "🇭🇰 香港_优刻得"
+  - "🇭🇰 香港_阿里云-05"
+  - "🇭🇰 香港_IEPL-03"
+  - "🇭🇰 香港_IEPL-04"
+  - "🇭🇰 香港_崩铁-02"
+  - "🇸🇬 新加坡_米哈游-01"
+  - "🇸🇬 新加坡_优刻得"
+  - "🇸🇬 新加坡_明懂"
+  - "🇸🇬 新加坡_BGP"
+  - "🇸🇬 新加坡_米哈游-02"
+  - "🇸🇬 新加坡_米哈游-03"
+  - "🇸🇬 新加坡_金融"
+  - "🇸🇬 新加坡_崩铁-01"
+  - "🇸🇬 新加坡_阿里云-01"
+  - "🇸🇬 新加坡_IEPL"
+  - "🇸🇬 新加坡_唯云"
+  - "🇸🇬 新加坡_阿里云-02"
+  - "🇸🇬 新加坡_腾讯云"
+  - "🇸🇬 新加坡_崩铁-02"
+  - "🇸🇬 新加坡_青云"
+  - "🇯🇵 日本_鸣潮-01"
+  - "🇯🇵 日本_青云-01"
+  - "🇯🇵 日本_崩铁-01"
+  - "🇯🇵 日本_鸣潮-02"
+  - "🇯🇵 日本_华为云-01"
+  - "🇯🇵 日本_BGP-01"
+  - "🇯🇵 日本_BGP-02"
+  - "🇯🇵 日本_青云-02"
+  - "🇯🇵 日本_华为云-02"
+  - "🇯🇵 日本_阿里云-01"
+  - "🇯🇵 日本_腾讯云"
+  - "🇯🇵 日本_崩铁-02"
+  - "🇯🇵 日本_华为云-03"
+  - "🇯🇵 日本_明懂-01"
+  - "🇯🇵 日本_青云-03"
+  - "🇯🇵 日本_青云-04"
+  - "🇯🇵 日本_金融"
+  - "🇯🇵 日本_崩铁-03"
+  - "🇯🇵 日本_阿里云-02"
+  - "🇯🇵 日本_唯云"
+  - "🇯🇵 日本_IEPL"
+  - "🇯🇵 日本_米哈游-01"
+  - "🇯🇵 日本_明懂-02"
+  - "🇯🇵 日本_鸣潮-03"
+  - "🇯🇵 日本_BGP-03"
+  - "🇯🇵 日本_明懂-03"
+  - "🇯🇵 日本_米哈游-02"
+  - "🇯🇵 日本_青云-05"
+  - "🇯🇵 日本_原神"
+  - "🇺🇸 美国_唯云-01"
+  - "🇺🇸 美国_鸣潮-01"
+  - "🇺🇸 美国_优刻得-01"
+  - "🇺🇸 美国_腾讯云-01"
+  - "🇺🇸 美国_唯云-02"
+  - "🇺🇸 美国_阿里云-01"
+  - "🇺🇸 美国_明懂-01"
+  - "🇺🇸 美国_优刻得-02"
+  - "🇺🇸 美国_鸣潮-02"
+  - "🇺🇸 美国_原神-01"
+  - "🇺🇸 美国_BGP-01"
+  - "🇺🇸 美国_IEPL-01"
+  - "🇺🇸 美国_明懂-02"
+  - "🇺🇸 美国_腾讯云-02"
+  - "🇺🇸 美国_IEPL-02"
+  - "🇺🇸 美国_华为云-01"
+  - "🇺🇸 美国_阿里云-02"
+  - "🇺🇸 美国_阿里云-03"
+  - "🇺🇸 美国_BGP-02"
+  - "🇺🇸 美国_BGP-03"
+  - "🇺🇸 美国_鸣潮-03"
+  - "🇺🇸 美国_鸣潮-04"
+  - "🇺🇸 美国_唯云-03"
+  - "🇺🇸 美国_华为云-02"
+  - "🇺🇸 美国_崩铁-01"
+  - "🇺🇸 美国_原神-02"
+  - "🇺🇸 美国_优刻得-03"
+  - "🇺🇸 美国_阿里云-04"
+  - "🇺🇸 美国_唯云-04"
+  - "🇺🇸 美国_崩铁-02"
+  - "🇺🇸 美国_米哈游-01"
+  - "🇺🇸 美国_崩铁-03"
+  - "🇺🇸 美国_唯云-05"
+  - "🇺🇸 美国_优刻得-04"
+  - "🇺🇸 美国_优刻得-05"
+  - "🇺🇸 美国_鸣潮-05"
+  - "🇺🇸 美国_米哈游-02"
+  - "🇺🇸 美国_阿里云-05"
+  - "🇺🇸 美国_米哈游-03"
+  - "🇺🇸 美国_金融-01"
+  - "🇺🇸 美国_原神-03"
+  - "🇺🇸 美国_阿里云-06"
+  - "🇺🇸 美国_腾讯云-03"
+  - "🇺🇸 美国_BGP-04"
+  - "🇺🇸 美国_崩铁-04"
+  - "🇺🇸 美国_唯云-06"
+  - "🇺🇸 美国_鸣潮-06"
+  - "🇺🇸 美国_腾讯云-04"
+  - "🇺🇸 美国_阿里云-07"
+  - "🇺🇸 美国_IEPL-03"
+  - "🇺🇸 美国_青云-01"
+  - "🇺🇸 美国_BGP-05"
+  - "🇺🇸 美国_华为云-03"
+  - "🇺🇸 美国_鸣潮-07"
+  - "🇺🇸 美国_优刻得-06"
+  - "🇺🇸 美国_青云-02"
+  - "🇺🇸 美国_阿里云-08"
+  - "🇺🇸 美国_金融-02"
+  - "🇺🇸 美国_崩铁-05"
+  - "🇺🇸 美国_BGP-06"
+  - "🇺🇸 美国_金融-03"
+  - "🇺🇸 美国_阿里云-09"
+  - "🇺🇸 美国_原神-04"
+  - "🇺🇸 美国_原神-05"
+  - "🇺🇸 美国_阿里云-10"
+  - "🇺🇸 美国_IEPL-04"
+  - "🇺🇸 美国_米哈游-04"
+  - "🇺🇸 美国_崩铁-06"
+  - "🇺🇸 美国_鸣潮-08"
+  - "🇺🇸 美国_腾讯云-05"
+  - "🇺🇸 美国_米哈游-05"
+  - "🇺🇸 美国_米哈游-06"
+  - "🇺🇸 美国_青云-03"
+  - "🇨🇳 台湾_BGP-01"
+  - "🇨🇳 台湾_原神-01"
+  - "🇨🇳 台湾_唯云"
+  - "🇨🇳 台湾_原神-02"
+  - "🇨🇳 台湾_IEPL-01"
+  - "🇨🇳 台湾_IEPL-02"
+  - "🇨🇳 台湾_BGP-02"
+  - "🇨🇳 台湾_阿里云"
+  - "🇨🇳 台湾_青云"
+  - "🇨🇳 台湾_BGP-03"
+  - "🇨🇳 台湾_崩铁"
+  - "🇨🇳 台湾_华为云"
+  - "🇨🇳 台湾_BGP-04"
+  - "🇨🇳 台湾_腾讯云"
+  - "🇨🇳 台湾_BGP-05"
+  - "🇨🇳 台湾_优刻得-01"
+  - "🇨🇳 台湾_优刻得-02"
+  - "🇰🇷 韩国_崩铁"
+  - "🇰🇷 韩国_BGP-01"
+  - "🇰🇷 韩国_BGP-02"
+  - "🇰🇷 韩国_青云"
+  - "🇰🇷 韩国_IEPL"
+  - "🇰🇷 韩国_原神-01"
+  - "🇰🇷 韩国_唯云-01"
+  - "🇰🇷 韩国_阿里云"
+  - "🇰🇷 韩国_原神-02"
+  - "🇰🇷 韩国_金融"
+  - "🇰🇷 韩国_明懂"
+  - "🇰🇷 韩国_唯云-02"
+  - "🇬🇧 英国_优刻得"
+  - "🇬🇧 英国_明懂-01"
+  - "🇬🇧 英国_明懂-02"
+  - "🇬🇧 英国_米哈游"
+  - "🇬🇧 英国_明懂-03"
+  - "🇬🇧 英国_鸣潮"
+  - "🇫🇷 法国_阿里云"
+  - "🇫🇷 法国_鸣潮"
+  - "🇩🇪 德国_明懂-01"
+  - "🇩🇪 德国_明懂-02"
+  - "🇩🇪 德国_阿里云"
+  - "🇮🇳 印度_原神"
+  - "🇮🇳 印度_鸣潮"
+  - "🇮🇳 印度_唯云"
+  - "🇦🇺 澳大利亚_IEPL"
+  - "🇦🇺 澳大利亚_崩铁"
+  - "🇲🇾 马来西亚_优刻得"
+  - "🇲🇾 马来西亚_金融"
+  - "🇳🇬 尼日利亚_金融"
+  - "🇨🇦 加拿大_唯云"
+  - "🇷🇺 俄罗斯_青云"
+  - "🇳🇱 荷兰_优刻得"
+  - "🏴‍☠️ 其他地区_华为云-01"
+  - "🏴‍☠️ 其他地区_阿里云-01"
+  - "🏴‍☠️ 其他地区_优刻得-01"
+  - "🏴‍☠️ 其他地区_金融-01"
+  - "🏴‍☠️ 其他地区_金融-02"
+  - "🏴‍☠️ 其他地区_鸣潮-01"
+  - "🏴‍☠️ 其他地区_IEPL-01"
+  - "🏴‍☠️ 其他地区_明懂-01"
+  - "🏴‍☠️ 其他地区_腾讯云-01"
+  - "🏴‍☠️ 其他地区_明懂-02"
+  - "🏴‍☠️ 其他地区_原神-01"
+  - "🏴‍☠️ 其他地区_金融-03"
+  - "🏴‍☠️ 其他地区_原神-02"
+  - "🏴‍☠️ 其他地区_IEPL-02"
+  - "🏴‍☠️ 其他地区_IEPL-03"
+  - "🏴‍☠️ 其他地区_阿里云-02"
+  - "🏴‍☠️ 其他地区_阿里云-03"
+  - "🏴‍☠️ 其他地区_明懂-03"
+  - "🏴‍☠️ 其他地区_金融-04"
+  - "🏴‍☠️ 其他地区_金融-05"
+  - "🏴‍☠️ 其他地区_腾讯云-02"
+  - "🏴‍☠️ 其他地区_崩铁-01"
+  - "🏴‍☠️ 其他地区_腾讯云-03"
+  - "🏴‍☠️ 其他地区_唯云-01"
+  - "🏴‍☠️ 其他地区_优刻得-02"
+  - "🏴‍☠️ 其他地区_华为云-02"
+  - "🏴‍☠️ 其他地区_鸣潮-02"
+  - "🏴‍☠️ 其他地区_IEPL-04"
+  - "🏴‍☠️ 其他地区_阿里云-04"
+  - "🏴‍☠️ 其他地区_腾讯云-04"
+  - "🏴‍☠️ 其他地区_优刻得-03"
+  - "🏴‍☠️ 其他地区_金融-06"
+  - "🏴‍☠️ 其他地区_崩铁-02"
+  - "🏴‍☠️ 其他地区_唯云-02"
+  - "🏴‍☠️ 其他地区_优刻得-04"
+  - "🏴‍☠️ 其他地区_原神-03"
+  - "🏴‍☠️ 其他地区_鸣潮-03"
+  - "🏴‍☠️ 其他地区_明懂-04"
+  - "🏴‍☠️ 其他地区_腾讯云-05"
+  - "🏴‍☠️ 其他地区_阿里云-05"
+  - "🏴‍☠️ 其他地区_崩铁-03"
+  - "🏴‍☠️ 其他地区_阿里云-06"
+  - "🏴‍☠️ 其他地区_鸣潮-04"
+  - "🏴‍☠️ 其他地区_腾讯云-06"
+  - "🏴‍☠️ 其他地区_华为云-03"
+  - "🏴‍☠️ 其他地区_青云-01"
+  - "🏴‍☠️ 其他地区_BGP-01"
+  - "🏴‍☠️ 其他地区_阿里云-07"
+  - "🏴‍☠️ 其他地区_唯云-03"
+  - "🏴‍☠️ 其他地区_优刻得-05"
+  - "🏴‍☠️ 其他地区_金融-07"
+  - "🏴‍☠️ 其他地区_BGP-02"
+  - "🏴‍☠️ 其他地区_阿里云-08"
+  - "🏴‍☠️ 其他地区_原神-04"
+  - "🏴‍☠️ 其他地区_BGP-03"
+  - "🏴‍☠️ 其他地区_唯云-04"
+  - "🏴‍☠️ 其他地区_华为云-04"
+  - "🏴‍☠️ 其他地区_腾讯云-07"
+  - "🏴‍☠️ 其他地区_明懂-05"
+  - "🏴‍☠️ 其他地区_鸣潮-05"
+  - "🏴‍☠️ 其他地区_青云-02"
+  - "🏴‍☠️ 其他地区_鸣潮-06"
+  - "🏴‍☠️ 其他地区_崩铁-04"
+  - "🏴‍☠️ 其他地区_崩铁-05"
+  - "🏴‍☠️ 其他地区_IEPL-05"
+  - "🏴‍☠️ 其他地区_崩铁-06"
+  - "🏴‍☠️ 其他地区_唯云-05"
+  - "🏴‍☠️ 其他地区_原神-05"
+  - "🏴‍☠️ 其他地区_明懂-06"
+  - "🏴‍☠️ 其他地区_阿里云-09"
+  - "🏴‍☠️ 其他地区_优刻得-06"
+  - "🏴‍☠️ 其他地区_米哈游-01"
+  - "🏴‍☠️ 其他地区_原神-06"
+  - "🏴‍☠️ 其他地区_明懂-07"
+  - "🏴‍☠️ 其他地区_鸣潮-07"
+  - "🏴‍☠️ 其他地区_金融-08"
+  - "🏴‍☠️ 其他地区_腾讯云-08"
+  - "🏴‍☠️ 其他地区_优刻得-07"
+  - "🏴‍☠️ 其他地区_IEPL-06"
+  - "🏴‍☠️ 其他地区_明懂-08"
+  - "🏴‍☠️ 其他地区_崩铁-07"
+  - "🏴‍☠️ 其他地区_明懂-09"
+  - "🏴‍☠️ 其他地区_崩铁-08"
+  - "🏴‍☠️ 其他地区_唯云-06"
+  - "🏴‍☠️ 其他地区_青云-03"
+  - "🏴‍☠️ 其他地区_鸣潮-08"
+  - "🏴‍☠️ 其他地区_明懂-10"
+  - "🏴‍☠️ 其他地区_鸣潮-09"
+  - "🏴‍☠️ 其他地区_崩铁-09"
+  - "🏴‍☠️ 其他地区_米哈游-02"
+  - "🏴‍☠️ 其他地区_原神-07"
+  - "🏴‍☠️ 其他地区_米哈游-03"
+  - "🏴‍☠️ 其他地区_优刻得-08"
+  - "🏴‍☠️ 其他地区_明懂-11"
+  - "🏴‍☠️ 其他地区_明懂-12"
+  - "🏴‍☠️ 其他地区_阿里云-10"
+  - "🏴‍☠️ 其他地区_阿里云-11"
+  - "🏴‍☠️ 其他地区_米哈游-04"
+  - "🏴‍☠️ 其他地区_青云-04"
+  - "🏴‍☠️ 其他地区_原神-08"
+  - "🏴‍☠️ 其他地区_阿里云-12"
+  - "🏴‍☠️ 其他地区_崩铁-10"
+  - "🏴‍☠️ 其他地区_明懂-13"
+  - "🏴‍☠️ 其他地区_阿里云-13"
+  - "🏴‍☠️ 其他地区_IEPL-07"
+  - "🏴‍☠️ 其他地区_明懂-14"
+  - "🏴‍☠️ 其他地区_米哈游-05"
+  - "🏴‍☠️ 其他地区_崩铁-11"
+  - "🏴‍☠️ 其他地区_鸣潮-10"
+  - "🏴‍☠️ 其他地区_腾讯云-09"
+  - "🏴‍☠️ 其他地区_原神-09"
+- name: "AI"
+  type: "select"
+  proxies:
+  - "🇭🇰 香港_原神-01"
+  - "🇭🇰 香港_原神-02"
+  - "🇭🇰 香港_鸣潮-01"
+  - "🇭🇰 香港_青云"
+  - "🇭🇰 香港_阿里云-01"
+  - "🇭🇰 香港_鸣潮-02"
+  - "🇭🇰 香港_原神-03"
+  - "🇭🇰 香港_阿里云-02"
+  - "🇭🇰 香港_米哈游-01"
+  - "🇭🇰 香港_华为云"
+  - "🇭🇰 香港_阿里云-03"
+  - "🇭🇰 香港_唯云"
+  - "🇭🇰 香港_IEPL-01"
+  - "🇭🇰 香港_阿里云-04"
+  - "🇭🇰 香港_明懂"
+  - "🇭🇰 香港_米哈游-02"
+  - "🇭🇰 香港_IEPL-02"
+  - "🇭🇰 香港_崩铁-01"
+  - "🇭🇰 香港_金融"
+  - "🇭🇰 香港_优刻得"
+  - "🇭🇰 香港_阿里云-05"
+  - "🇭🇰 香港_IEPL-03"
+  - "🇭🇰 香港_IEPL-04"
+  - "🇭🇰 香港_崩铁-02"
+  - "🇸🇬 新加坡_米哈游-01"
+  - "🇸🇬 新加坡_优刻得"
+  - "🇸🇬 新加坡_明懂"
+  - "🇸🇬 新加坡_BGP"
+  - "🇸🇬 新加坡_米哈游-02"
+  - "🇸🇬 新加坡_米哈游-03"
+  - "🇸🇬 新加坡_金融"
+  - "🇸🇬 新加坡_崩铁-01"
+  - "🇸🇬 新加坡_阿里云-01"
+  - "🇸🇬 新加坡_IEPL"
+  - "🇸🇬 新加坡_唯云"
+  - "🇸🇬 新加坡_阿里云-02"
+  - "🇸🇬 新加坡_腾讯云"
+  - "🇸🇬 新加坡_崩铁-02"
+  - "🇸🇬 新加坡_青云"
+  - "🇯🇵 日本_鸣潮-01"
+  - "🇯🇵 日本_青云-01"
+  - "🇯🇵 日本_崩铁-01"
+  - "🇯🇵 日本_鸣潮-02"
+  - "🇯🇵 日本_华为云-01"
+  - "🇯🇵 日本_BGP-01"
+  - "🇯🇵 日本_BGP-02"
+  - "🇯🇵 日本_青云-02"
+  - "🇯🇵 日本_华为云-02"
+  - "🇯🇵 日本_阿里云-01"
+  - "🇯🇵 日本_腾讯云"
+  - "🇯🇵 日本_崩铁-02"
+  - "🇯🇵 日本_华为云-03"
+  - "🇯🇵 日本_明懂-01"
+  - "🇯🇵 日本_青云-03"
+  - "🇯🇵 日本_青云-04"
+  - "🇯🇵 日本_金融"
+  - "🇯🇵 日本_崩铁-03"
+  - "🇯🇵 日本_阿里云-02"
+  - "🇯🇵 日本_唯云"
+  - "🇯🇵 日本_IEPL"
+  - "🇯🇵 日本_米哈游-01"
+  - "🇯🇵 日本_明懂-02"
+  - "🇯🇵 日本_鸣潮-03"
+  - "🇯🇵 日本_BGP-03"
+  - "🇯🇵 日本_明懂-03"
+  - "🇯🇵 日本_米哈游-02"
+  - "🇯🇵 日本_青云-05"
+  - "🇯🇵 日本_原神"
+  - "🇺🇸 美国_唯云-01"
+  - "🇺🇸 美国_鸣潮-01"
+  - "🇺🇸 美国_优刻得-01"
+  - "🇺🇸 美国_腾讯云-01"
+  - "🇺🇸 美国_唯云-02"
+  - "🇺🇸 美国_阿里云-01"
+  - "🇺🇸 美国_明懂-01"
+  - "🇺🇸 美国_优刻得-02"
+  - "🇺🇸 美国_鸣潮-02"
+  - "🇺🇸 美国_原神-01"
+  - "🇺🇸 美国_BGP-01"
+  - "🇺🇸 美国_IEPL-01"
+  - "🇺🇸 美国_明懂-02"
+  - "🇺🇸 美国_腾讯云-02"
+  - "🇺🇸 美国_IEPL-02"
+  - "🇺🇸 美国_华为云-01"
+  - "🇺🇸 美国_阿里云-02"
+  - "🇺🇸 美国_阿里云-03"
+  - "🇺🇸 美国_BGP-02"
+  - "🇺🇸 美国_BGP-03"
+  - "🇺🇸 美国_鸣潮-03"
+  - "🇺🇸 美国_鸣潮-04"
+  - "🇺🇸 美国_唯云-03"
+  - "🇺🇸 美国_华为云-02"
+  - "🇺🇸 美国_崩铁-01"
+  - "🇺🇸 美国_原神-02"
+  - "🇺🇸 美国_优刻得-03"
+  - "🇺🇸 美国_阿里云-04"
+  - "🇺🇸 美国_唯云-04"
+  - "🇺🇸 美国_崩铁-02"
+  - "🇺🇸 美国_米哈游-01"
+  - "🇺🇸 美国_崩铁-03"
+  - "🇺🇸 美国_唯云-05"
+  - "🇺🇸 美国_优刻得-04"
+  - "🇺🇸 美国_优刻得-05"
+  - "🇺🇸 美国_鸣潮-05"
+  - "🇺🇸 美国_米哈游-02"
+  - "🇺🇸 美国_阿里云-05"
+  - "🇺🇸 美国_米哈游-03"
+  - "🇺🇸 美国_金融-01"
+  - "🇺🇸 美国_原神-03"
+  - "🇺🇸 美国_阿里云-06"
+  - "🇺🇸 美国_腾讯云-03"
+  - "🇺🇸 美国_BGP-04"
+  - "🇺🇸 美国_崩铁-04"
+  - "🇺🇸 美国_唯云-06"
+  - "🇺🇸 美国_鸣潮-06"
+  - "🇺🇸 美国_腾讯云-04"
+  - "🇺🇸 美国_阿里云-07"
+  - "🇺🇸 美国_IEPL-03"
+  - "🇺🇸 美国_青云-01"
+  - "🇺🇸 美国_BGP-05"
+  - "🇺🇸 美国_华为云-03"
+  - "🇺🇸 美国_鸣潮-07"
+  - "🇺🇸 美国_优刻得-06"
+  - "🇺🇸 美国_青云-02"
+  - "🇺🇸 美国_阿里云-08"
+  - "🇺🇸 美国_金融-02"
+  - "🇺🇸 美国_崩铁-05"
+  - "🇺🇸 美国_BGP-06"
+  - "🇺🇸 美国_金融-03"
+  - "🇺🇸 美国_阿里云-09"
+  - "🇺🇸 美国_原神-04"
+  - "🇺🇸 美国_原神-05"
+  - "🇺🇸 美国_阿里云-10"
+  - "🇺🇸 美国_IEPL-04"
+  - "🇺🇸 美国_米哈游-04"
+  - "🇺🇸 美国_崩铁-06"
+  - "🇺🇸 美国_鸣潮-08"
+  - "🇺🇸 美国_腾讯云-05"
+  - "🇺🇸 美国_米哈游-05"
+  - "🇺🇸 美国_米哈游-06"
+  - "🇺🇸 美国_青云-03"
+  - "🇨🇳 台湾_BGP-01"
+  - "🇨🇳 台湾_原神-01"
+  - "🇨🇳 台湾_唯云"
+  - "🇨🇳 台湾_原神-02"
+  - "🇨🇳 台湾_IEPL-01"
+  - "🇨🇳 台湾_IEPL-02"
+  - "🇨🇳 台湾_BGP-02"
+  - "🇨🇳 台湾_阿里云"
+  - "🇨🇳 台湾_青云"
+  - "🇨🇳 台湾_BGP-03"
+  - "🇨🇳 台湾_崩铁"
+  - "🇨🇳 台湾_华为云"
+  - "🇨🇳 台湾_BGP-04"
+  - "🇨🇳 台湾_腾讯云"
+  - "🇨🇳 台湾_BGP-05"
+  - "🇨🇳 台湾_优刻得-01"
+  - "🇨🇳 台湾_优刻得-02"
+  - "🇰🇷 韩国_崩铁"
+  - "🇰🇷 韩国_BGP-01"
+  - "🇰🇷 韩国_BGP-02"
+  - "🇰🇷 韩国_青云"
+  - "🇰🇷 韩国_IEPL"
+  - "🇰🇷 韩国_原神-01"
+  - "🇰🇷 韩国_唯云-01"
+  - "🇰🇷 韩国_阿里云"
+  - "🇰🇷 韩国_原神-02"
+  - "🇰🇷 韩国_金融"
+  - "🇰🇷 韩国_明懂"
+  - "🇰🇷 韩国_唯云-02"
+  - "🇬🇧 英国_优刻得"
+  - "🇬🇧 英国_明懂-01"
+  - "🇬🇧 英国_明懂-02"
+  - "🇬🇧 英国_米哈游"
+  - "🇬🇧 英国_明懂-03"
+  - "🇬🇧 英国_鸣潮"
+  - "🇫🇷 法国_阿里云"
+  - "🇫🇷 法国_鸣潮"
+  - "🇩🇪 德国_明懂-01"
+  - "🇩🇪 德国_明懂-02"
+  - "🇩🇪 德国_阿里云"
+  - "🇮🇳 印度_原神"
+  - "🇮🇳 印度_鸣潮"
+  - "🇮🇳 印度_唯云"
+  - "🇦🇺 澳大利亚_IEPL"
+  - "🇦🇺 澳大利亚_崩铁"
+  - "🇲🇾 马来西亚_优刻得"
+  - "🇲🇾 马来西亚_金融"
+  - "🇳🇬 尼日利亚_金融"
+  - "🇨🇦 加拿大_唯云"
+  - "🇷🇺 俄罗斯_青云"
+  - "🇳🇱 荷兰_优刻得"
+  - "🏴‍☠️ 其他地区_华为云-01"
+  - "🏴‍☠️ 其他地区_阿里云-01"
+  - "🏴‍☠️ 其他地区_优刻得-01"
+  - "🏴‍☠️ 其他地区_金融-01"
+  - "🏴‍☠️ 其他地区_金融-02"
+  - "🏴‍☠️ 其他地区_鸣潮-01"
+  - "🏴‍☠️ 其他地区_IEPL-01"
+  - "🏴‍☠️ 其他地区_明懂-01"
+  - "🏴‍☠️ 其他地区_腾讯云-01"
+  - "🏴‍☠️ 其他地区_明懂-02"
+  - "🏴‍☠️ 其他地区_原神-01"
+  - "🏴‍☠️ 其他地区_金融-03"
+  - "🏴‍☠️ 其他地区_原神-02"
+  - "🏴‍☠️ 其他地区_IEPL-02"
+  - "🏴‍☠️ 其他地区_IEPL-03"
+  - "🏴‍☠️ 其他地区_阿里云-02"
+  - "🏴‍☠️ 其他地区_阿里云-03"
+  - "🏴‍☠️ 其他地区_明懂-03"
+  - "🏴‍☠️ 其他地区_金融-04"
+  - "🏴‍☠️ 其他地区_金融-05"
+  - "🏴‍☠️ 其他地区_腾讯云-02"
+  - "🏴‍☠️ 其他地区_崩铁-01"
+  - "🏴‍☠️ 其他地区_腾讯云-03"
+  - "🏴‍☠️ 其他地区_唯云-01"
+  - "🏴‍☠️ 其他地区_优刻得-02"
+  - "🏴‍☠️ 其他地区_华为云-02"
+  - "🏴‍☠️ 其他地区_鸣潮-02"
+  - "🏴‍☠️ 其他地区_IEPL-04"
+  - "🏴‍☠️ 其他地区_阿里云-04"
+  - "🏴‍☠️ 其他地区_腾讯云-04"
+  - "🏴‍☠️ 其他地区_优刻得-03"
+  - "🏴‍☠️ 其他地区_金融-06"
+  - "🏴‍☠️ 其他地区_崩铁-02"
+  - "🏴‍☠️ 其他地区_唯云-02"
+  - "🏴‍☠️ 其他地区_优刻得-04"
+  - "🏴‍☠️ 其他地区_原神-03"
+  - "🏴‍☠️ 其他地区_鸣潮-03"
+  - "🏴‍☠️ 其他地区_明懂-04"
+  - "🏴‍☠️ 其他地区_腾讯云-05"
+  - "🏴‍☠️ 其他地区_阿里云-05"
+  - "🏴‍☠️ 其他地区_崩铁-03"
+  - "🏴‍☠️ 其他地区_阿里云-06"
+  - "🏴‍☠️ 其他地区_鸣潮-04"
+  - "🏴‍☠️ 其他地区_腾讯云-06"
+  - "🏴‍☠️ 其他地区_华为云-03"
+  - "🏴‍☠️ 其他地区_青云-01"
+  - "🏴‍☠️ 其他地区_BGP-01"
+  - "🏴‍☠️ 其他地区_阿里云-07"
+  - "🏴‍☠️ 其他地区_唯云-03"
+  - "🏴‍☠️ 其他地区_优刻得-05"
+  - "🏴‍☠️ 其他地区_金融-07"
+  - "🏴‍☠️ 其他地区_BGP-02"
+  - "🏴‍☠️ 其他地区_阿里云-08"
+  - "🏴‍☠️ 其他地区_原神-04"
+  - "🏴‍☠️ 其他地区_BGP-03"
+  - "🏴‍☠️ 其他地区_唯云-04"
+  - "🏴‍☠️ 其他地区_华为云-04"
+  - "🏴‍☠️ 其他地区_腾讯云-07"
+  - "🏴‍☠️ 其他地区_明懂-05"
+  - "🏴‍☠️ 其他地区_鸣潮-05"
+  - "🏴‍☠️ 其他地区_青云-02"
+  - "🏴‍☠️ 其他地区_鸣潮-06"
+  - "🏴‍☠️ 其他地区_崩铁-04"
+  - "🏴‍☠️ 其他地区_崩铁-05"
+  - "🏴‍☠️ 其他地区_IEPL-05"
+  - "🏴‍☠️ 其他地区_崩铁-06"
+  - "🏴‍☠️ 其他地区_唯云-05"
+  - "🏴‍☠️ 其他地区_原神-05"
+  - "🏴‍☠️ 其他地区_明懂-06"
+  - "🏴‍☠️ 其他地区_阿里云-09"
+  - "🏴‍☠️ 其他地区_优刻得-06"
+  - "🏴‍☠️ 其他地区_米哈游-01"
+  - "🏴‍☠️ 其他地区_原神-06"
+  - "🏴‍☠️ 其他地区_明懂-07"
+  - "🏴‍☠️ 其他地区_鸣潮-07"
+  - "🏴‍☠️ 其他地区_金融-08"
+  - "🏴‍☠️ 其他地区_腾讯云-08"
+  - "🏴‍☠️ 其他地区_优刻得-07"
+  - "🏴‍☠️ 其他地区_IEPL-06"
+  - "🏴‍☠️ 其他地区_明懂-08"
+  - "🏴‍☠️ 其他地区_崩铁-07"
+  - "🏴‍☠️ 其他地区_明懂-09"
+  - "🏴‍☠️ 其他地区_崩铁-08"
+  - "🏴‍☠️ 其他地区_唯云-06"
+  - "🏴‍☠️ 其他地区_青云-03"
+  - "🏴‍☠️ 其他地区_鸣潮-08"
+  - "🏴‍☠️ 其他地区_明懂-10"
+  - "🏴‍☠️ 其他地区_鸣潮-09"
+  - "🏴‍☠️ 其他地区_崩铁-09"
+  - "🏴‍☠️ 其他地区_米哈游-02"
+  - "🏴‍☠️ 其他地区_原神-07"
+  - "🏴‍☠️ 其他地区_米哈游-03"
+  - "🏴‍☠️ 其他地区_优刻得-08"
+  - "🏴‍☠️ 其他地区_明懂-11"
+  - "🏴‍☠️ 其他地区_明懂-12"
+  - "🏴‍☠️ 其他地区_阿里云-10"
+  - "🏴‍☠️ 其他地区_阿里云-11"
+  - "🏴‍☠️ 其他地区_米哈游-04"
+  - "🏴‍☠️ 其他地区_青云-04"
+  - "🏴‍☠️ 其他地区_原神-08"
+  - "🏴‍☠️ 其他地区_阿里云-12"
+  - "🏴‍☠️ 其他地区_崩铁-10"
+  - "🏴‍☠️ 其他地区_明懂-13"
+  - "🏴‍☠️ 其他地区_阿里云-13"
+  - "🏴‍☠️ 其他地区_IEPL-07"
+  - "🏴‍☠️ 其他地区_明懂-14"
+  - "🏴‍☠️ 其他地区_米哈游-05"
+  - "🏴‍☠️ 其他地区_崩铁-11"
+  - "🏴‍☠️ 其他地区_鸣潮-10"
+  - "🏴‍☠️ 其他地区_腾讯云-09"
+  - "🏴‍☠️ 其他地区_原神-09"
+rules:
+- "GEOSITE,CATEGORY-ADS-ALL,REJECT"
+- "DOMAIN-SUFFIX,ushd.xmsl.org,DIRECT"
+- "DOMAIN-SUFFIX,cf.gtlx.org,DIRECT"
+- "DOMAIN-SUFFIX,public-operation-hkrpg-sg.hoyoverse.com,DIRECT"
+- "DOMAIN-SUFFIX,public-operation-hk4e-sg.hoyoverse.com,DIRECT"
+- "DOMAIN-SUFFIX,public-operation-nap-sg.hoyoverse.com,DIRECT"
+- "DST-PORT,23301/22101-22102/20501/21601-21606,DIRECT"
+- "DOMAIN-KEYWORD,hoyoverse.com,PROXY"
+- "GEOSITE,OPENAI,AI"
+- "GEOSITE,GOOGLE-GEMINI,AI"
+- "GEOSITE,GOOGLEFCM,DIRECT"
+- "GEOSITE,PRIVATE,DIRECT"
+- "GEOSITE,CN,DIRECT"
+- "GEOIP,PRIVATE,DIRECT,no-resolve"
+- "GEOIP,CN,DIRECT"
+- "MATCH,PROXY"

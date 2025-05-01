@@ -5,6 +5,7 @@ import requests
 
 os.chdir(os.path.dirname(os.path.abspath(__file__)))
 
+
 def download_json_from_url(url):
     try:
         headers = {"User-Agent": "sing-box"}
@@ -15,14 +16,18 @@ def download_json_from_url(url):
         print(f"🎃下载 JSON 文件时发生网络错误 (URL: {url}): {e}")
         raise
     except json.JSONDecodeError:
-        print(f"🎃解析 JSON 文件时发生错误。请确保 URL 提供的是有效的 JSON 数据 (URL: {url})。")
+        print(
+            f"🎃解析 JSON 文件时发生错误。请确保 URL 提供的是有效的 JSON 数据 (URL: {url})。"
+        )
         raise
+
 
 def extract_and_generate_new_outbounds(source_data):
     try:
         outbounds = source_data.get("outbounds", [])
         server_objects = [
-            outbound for outbound in outbounds
+            outbound
+            for outbound in outbounds
             if "server" in outbound and outbound.get("method") != "chacha20"
         ]
         server_tags = [outbound["tag"] for outbound in server_objects]
@@ -33,7 +38,12 @@ def extract_and_generate_new_outbounds(source_data):
                 "default": "auto",
                 "outbounds": ["auto"] + server_tags,
             },
-            {"tag": "auto", "type": "urltest", "outbounds": server_tags},
+            {
+                "tag": "auto",
+                "type": "urltest",
+                "interval": "15m",
+                "outbounds": server_tags,
+            },
             {"tag": "ai", "type": "selector", "outbounds": server_tags},
         ]
         direct_object = {"tag": "direct", "type": "direct"}
@@ -43,6 +53,7 @@ def extract_and_generate_new_outbounds(source_data):
     except Exception as e:
         print(f"🎃生成新 outbounds 时发生错误: {e}")
         raise
+
 
 def replace_outbounds_in_fixed_target(source_data, output_file):
     target_file = "singbox-config/config-1.12.json"
@@ -55,7 +66,9 @@ def replace_outbounds_in_fixed_target(source_data, output_file):
         print(f"🎃未找到目标文件: {target_file}")
         raise
     except json.JSONDecodeError:
-        print(f"🎃读取目标 JSON 文件时发生错误。请检查文件内容是否有效 (文件路径: {target_file})。")
+        print(
+            f"🎃读取目标 JSON 文件时发生错误。请检查文件内容是否有效 (文件路径: {target_file})。"
+        )
         raise
 
     try:
@@ -77,6 +90,7 @@ def replace_outbounds_in_fixed_target(source_data, output_file):
         print(f"🎃保存文件时发生错误: {e}")
         raise
 
+
 def main():
     parser = argparse.ArgumentParser(description="处理 JSON 文件并替换 outbounds。")
     parser.add_argument("url", help="从指定 URL 下载源 JSON 文件（例如：1.json）")
@@ -89,7 +103,7 @@ def main():
     try:
         print(f"\n开始从 URL 下载 JSON 文件: {args.url}")
         source_data = download_json_from_url(args.url)
-        print(f"成功下载 JSON 文件，开始处理...")
+        print("成功下载 JSON 文件，开始处理...")
         replace_outbounds_in_fixed_target(source_data, args.output)
         print("✅处理完成！")
     except FileNotFoundError as e:
@@ -100,6 +114,7 @@ def main():
         print(f"🎃JSON 解析时发生错误: {e}")
     except Exception as e:
         print(f"🎃处理过程中发生未知错误: {e}")
+
 
 if __name__ == "__main__":
     main()
