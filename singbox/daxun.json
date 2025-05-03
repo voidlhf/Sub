@@ -1,0 +1,702 @@
+{
+  "log": {},
+  "dns": {
+    "servers": [
+      {
+        "tag": "dns_proxy",
+        "type": "https",
+        "server": "1.1.1.1",
+        "detour": "select"
+      },
+      {
+        "tag": "dns_direct",
+        "type": "https",
+        "server": "223.5.5.5"
+      },
+      {
+        "tag": "dns_fakeip",
+        "type": "fakeip",
+        "inet4_range": "198.18.0.0/15",
+        "inet6_range": "fc00::/18"
+      }
+    ],
+    "rules": [
+      {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "query_type": "HTTPS"
+          },
+          {
+            "rule_set": [
+              "geosite-category-ads-all"
+            ]
+          }
+        ],
+        "action": "reject"
+      },
+      {
+        "query_type": [
+          "A",
+          "AAAA"
+        ],
+        "server": "dns_fakeip",
+        "rewrite_ttl": 1
+      },
+      {
+        "clash_mode": "Global",
+        "server": "dns_proxy"
+      },
+      {
+        "clash_mode": "Direct",
+        "server": "dns_direct"
+      },
+      {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "rule_set": [
+              "geosite-cn"
+            ]
+          }
+        ],
+        "server": "dns_direct"
+      }
+    ],
+    "strategy": "ipv4_only",
+    "independent_cache": true
+  },
+  "inbounds": [
+    {
+      "type": "tun",
+      "address": [
+        "172.18.0.1/30",
+        "fdfe:dcba:9876::1/126"
+      ],
+      "auto_route": true,
+      "strict_route": true,
+      "route_exclude_address": [
+        "192.168.0.0/16",
+        "fc00::/7"
+      ]
+    }
+  ],
+  "outbounds": [
+    {
+      "tag": "🏳️‍🌈 剩余流量：115.76 GB",
+      "type": "shadowsocks",
+      "server": "cdn-p1-hk.weibo-dns.com",
+      "server_port": 11501,
+      "method": "aes-256-gcm",
+      "password": "e4b48409-d11e-4a8f-86b1-a7a897bb8769"
+    },
+    {
+      "tag": "🏴‍☠️ 套餐到期：2025-06-03",
+      "type": "shadowsocks",
+      "server": "cdn-p1-hk.weibo-dns.com",
+      "server_port": 11501,
+      "method": "aes-256-gcm",
+      "password": "e4b48409-d11e-4a8f-86b1-a7a897bb8769"
+    },
+    {
+      "tag": "🏴‍☠️ 防失联官网①:daxun.shop",
+      "type": "shadowsocks",
+      "server": "cdn-p1-hk.weibo-dns.com",
+      "server_port": 11501,
+      "method": "aes-256-gcm",
+      "password": "e4b48409-d11e-4a8f-86b1-a7a897bb8769"
+    },
+    {
+      "tag": "🏴‍☠️ 防失联官网②:daxun123.xyz",
+      "type": "shadowsocks",
+      "server": "cdn-p1-hk.weibo-dns.com",
+      "server_port": 11501,
+      "method": "aes-256-gcm",
+      "password": "e4b48409-d11e-4a8f-86b1-a7a897bb8769"
+    },
+    {
+      "tag": "🇭🇰 香港01",
+      "type": "shadowsocks",
+      "server": "cdn-p1-hk.weibo-dns.com",
+      "server_port": 11501,
+      "method": "aes-256-gcm",
+      "password": "e4b48409-d11e-4a8f-86b1-a7a897bb8769"
+    },
+    {
+      "tag": "🇭🇰 香港02",
+      "type": "shadowsocks",
+      "server": "cdn-p1-hk.weibo-dns.com",
+      "server_port": 11502,
+      "method": "aes-256-gcm",
+      "password": "e4b48409-d11e-4a8f-86b1-a7a897bb8769"
+    },
+    {
+      "tag": "🇭🇰 香港03",
+      "type": "shadowsocks",
+      "server": "cdn-p1-hk.weibo-dns.com",
+      "server_port": 11503,
+      "method": "aes-256-gcm",
+      "password": "e4b48409-d11e-4a8f-86b1-a7a897bb8769"
+    },
+    {
+      "tag": "🇭🇰 香港04",
+      "type": "shadowsocks",
+      "server": "cdn-p1-hk.weibo-dns.com",
+      "server_port": 11531,
+      "method": "aes-256-gcm",
+      "password": "e4b48409-d11e-4a8f-86b1-a7a897bb8769"
+    },
+    {
+      "tag": "🇭🇰 香港05",
+      "type": "shadowsocks",
+      "server": "cdn-p1-hk.weibo-dns.com",
+      "server_port": 11532,
+      "method": "aes-256-gcm",
+      "password": "e4b48409-d11e-4a8f-86b1-a7a897bb8769"
+    },
+    {
+      "tag": "🇭🇰 香港06 | IEPL专线",
+      "type": "shadowsocks",
+      "server": "ieplqz.youku-dns.com",
+      "server_port": 11533,
+      "method": "aes-256-gcm",
+      "password": "e4b48409-d11e-4a8f-86b1-a7a897bb8769"
+    },
+    {
+      "tag": "🇭🇰 香港07 | IEPL专线",
+      "type": "shadowsocks",
+      "server": "ieplqz.youku-dns.com",
+      "server_port": 11534,
+      "method": "aes-256-gcm",
+      "password": "e4b48409-d11e-4a8f-86b1-a7a897bb8769"
+    },
+    {
+      "tag": "🇸🇬 新加坡01 | IEPL专线",
+      "type": "shadowsocks",
+      "server": "cdn-p1-sg.weibo-dns.com",
+      "server_port": 11508,
+      "method": "aes-256-gcm",
+      "password": "e4b48409-d11e-4a8f-86b1-a7a897bb8769"
+    },
+    {
+      "tag": "🇸🇬 新加坡02 | IEPL专线",
+      "type": "shadowsocks",
+      "server": "cdn-p1-sg.weibo-dns.com",
+      "server_port": 11509,
+      "method": "aes-256-gcm",
+      "password": "e4b48409-d11e-4a8f-86b1-a7a897bb8769"
+    },
+    {
+      "tag": "🇸🇬 新加坡03 | IEPL专线",
+      "type": "shadowsocks",
+      "server": "cdn-p1-sg.weibo-dns.com",
+      "server_port": 11510,
+      "method": "aes-256-gcm",
+      "password": "e4b48409-d11e-4a8f-86b1-a7a897bb8769"
+    },
+    {
+      "tag": "🇸🇬 新加坡04 | IEPL专线",
+      "type": "shadowsocks",
+      "server": "cdn-p1-sg.weibo-dns.com",
+      "server_port": 11529,
+      "method": "aes-256-gcm",
+      "password": "e4b48409-d11e-4a8f-86b1-a7a897bb8769"
+    },
+    {
+      "tag": "🇸🇬 新加坡05 | IEPL专线",
+      "type": "shadowsocks",
+      "server": "cdn-p1-sg.weibo-dns.com",
+      "server_port": 11530,
+      "method": "aes-256-gcm",
+      "password": "e4b48409-d11e-4a8f-86b1-a7a897bb8769"
+    },
+    {
+      "tag": "🇸🇬 新加坡07 | IEPL专线",
+      "type": "shadowsocks",
+      "server": "ieplqz.youku-dns.com",
+      "server_port": 11535,
+      "method": "aes-256-gcm",
+      "password": "e4b48409-d11e-4a8f-86b1-a7a897bb8769"
+    },
+    {
+      "tag": "🇸🇬 新加坡08 | IEPL专线",
+      "type": "shadowsocks",
+      "server": "ieplqz.youku-dns.com",
+      "server_port": 11536,
+      "method": "aes-256-gcm",
+      "password": "e4b48409-d11e-4a8f-86b1-a7a897bb8769"
+    },
+    {
+      "tag": "🇨🇳 台湾 | IEPL专线",
+      "type": "shadowsocks",
+      "server": "cdn-p1-tw.youku-dns.com",
+      "server_port": 11541,
+      "method": "aes-256-gcm",
+      "password": "e4b48409-d11e-4a8f-86b1-a7a897bb8769"
+    },
+    {
+      "tag": "🇯🇵 日本01 | IEPL专线",
+      "type": "shadowsocks",
+      "server": "cdn-p1-jp.weibo-dns.com",
+      "server_port": 11504,
+      "method": "aes-256-gcm",
+      "password": "e4b48409-d11e-4a8f-86b1-a7a897bb8769"
+    },
+    {
+      "tag": "🇯🇵 日本02 | IEPL专线",
+      "type": "shadowsocks",
+      "server": "cdn-p1-jp.weibo-dns.com",
+      "server_port": 11505,
+      "method": "aes-256-gcm",
+      "password": "e4b48409-d11e-4a8f-86b1-a7a897bb8769"
+    },
+    {
+      "tag": "🇯🇵 日本03 | IEPL专线",
+      "type": "shadowsocks",
+      "server": "cdn-p1-jp.weibo-dns.com",
+      "server_port": 11506,
+      "method": "aes-256-gcm",
+      "password": "e4b48409-d11e-4a8f-86b1-a7a897bb8769"
+    },
+    {
+      "tag": "🇯🇵 日本04 | IEPL专线",
+      "type": "shadowsocks",
+      "server": "cdn-p1-jp.weibo-dns.com",
+      "server_port": 11528,
+      "method": "aes-256-gcm",
+      "password": "e4b48409-d11e-4a8f-86b1-a7a897bb8769"
+    },
+    {
+      "tag": "🇲🇾 马来西亚 | IEPL专线",
+      "type": "shadowsocks",
+      "server": "cdn-p1-lm.youku-dns.com",
+      "server_port": 11525,
+      "method": "aes-256-gcm",
+      "password": "e4b48409-d11e-4a8f-86b1-a7a897bb8769"
+    },
+    {
+      "tag": "🇮🇳 印度 | IEPL专线",
+      "type": "shadowsocks",
+      "server": "cdn-p1-lm.youku-dns.com",
+      "server_port": 11519,
+      "method": "aes-256-gcm",
+      "password": "e4b48409-d11e-4a8f-86b1-a7a897bb8769"
+    },
+    {
+      "tag": "🇦🇺 澳大利亚 | IEPL专线",
+      "type": "shadowsocks",
+      "server": "cdn-p1-lm.youku-dns.com",
+      "server_port": 11523,
+      "method": "aes-256-gcm",
+      "password": "e4b48409-d11e-4a8f-86b1-a7a897bb8769"
+    },
+    {
+      "tag": "🇺🇸 美国01 | IEPL专线",
+      "type": "shadowsocks",
+      "server": "cdn-p1-us.youku-dns.com",
+      "server_port": 11511,
+      "method": "aes-256-gcm",
+      "password": "e4b48409-d11e-4a8f-86b1-a7a897bb8769"
+    },
+    {
+      "tag": "🇺🇸 美国02 | IEPL专线",
+      "type": "shadowsocks",
+      "server": "cdn-p1-us.youku-dns.com",
+      "server_port": 11512,
+      "method": "aes-256-gcm",
+      "password": "e4b48409-d11e-4a8f-86b1-a7a897bb8769"
+    },
+    {
+      "tag": "🇺🇸 美国03 | IEPL专线",
+      "type": "shadowsocks",
+      "server": "cdn-p1-sg.weibo-dns.com",
+      "server_port": 11513,
+      "method": "aes-256-gcm",
+      "password": "e4b48409-d11e-4a8f-86b1-a7a897bb8769"
+    },
+    {
+      "tag": "🇺🇸 美国04 | IEPL专线",
+      "type": "shadowsocks",
+      "server": "cdn-p1-sg.weibo-dns.com",
+      "server_port": 11526,
+      "method": "aes-256-gcm",
+      "password": "e4b48409-d11e-4a8f-86b1-a7a897bb8769"
+    },
+    {
+      "tag": "🇺🇸 美国05 | IEPL专线",
+      "type": "shadowsocks",
+      "server": "cdn-p1-sg.weibo-dns.com",
+      "server_port": 11527,
+      "method": "aes-256-gcm",
+      "password": "e4b48409-d11e-4a8f-86b1-a7a897bb8769"
+    },
+    {
+      "tag": "🇺🇸 美国06 | IEPL专线",
+      "type": "shadowsocks",
+      "server": "ieplqz.youku-dns.com",
+      "server_port": 11538,
+      "method": "aes-256-gcm",
+      "password": "e4b48409-d11e-4a8f-86b1-a7a897bb8769"
+    },
+    {
+      "tag": "🇺🇸 美国07 | IEPL专线",
+      "type": "shadowsocks",
+      "server": "ieplqz.youku-dns.com",
+      "server_port": 11539,
+      "method": "aes-256-gcm",
+      "password": "e4b48409-d11e-4a8f-86b1-a7a897bb8769"
+    },
+    {
+      "tag": "🇬🇧 英国01 | IEPL专线",
+      "type": "shadowsocks",
+      "server": "cdn-p1-lm.youku-dns.com",
+      "server_port": 11514,
+      "method": "aes-256-gcm",
+      "password": "e4b48409-d11e-4a8f-86b1-a7a897bb8769"
+    },
+    {
+      "tag": "🇬🇧 英国02 | IEPL专线",
+      "type": "shadowsocks",
+      "server": "cdn-p1-lm.youku-dns.com",
+      "server_port": 11515,
+      "method": "aes-256-gcm",
+      "password": "e4b48409-d11e-4a8f-86b1-a7a897bb8769"
+    },
+    {
+      "tag": "🇬🇧 英国03 | IEPL专线",
+      "type": "shadowsocks",
+      "server": "cdn-p1-lm.youku-dns.com",
+      "server_port": 11516,
+      "method": "aes-256-gcm",
+      "password": "e4b48409-d11e-4a8f-86b1-a7a897bb8769"
+    },
+    {
+      "tag": "🇩🇪 德国 | IEPL专线",
+      "type": "shadowsocks",
+      "server": "cdn-p1-lm.youku-dns.com",
+      "server_port": 11518,
+      "method": "aes-256-gcm",
+      "password": "e4b48409-d11e-4a8f-86b1-a7a897bb8769"
+    },
+    {
+      "tag": "🇹🇷 土耳其 | IEPL专线",
+      "type": "shadowsocks",
+      "server": "cdn-p1-lm.youku-dns.com",
+      "server_port": 11520,
+      "method": "aes-256-gcm",
+      "password": "e4b48409-d11e-4a8f-86b1-a7a897bb8769"
+    },
+    {
+      "tag": "🇨🇦 加拿大 | IEPL专线",
+      "type": "shadowsocks",
+      "server": "cdn-p1-lm.youku-dns.com",
+      "server_port": 11522,
+      "method": "aes-256-gcm",
+      "password": "e4b48409-d11e-4a8f-86b1-a7a897bb8769"
+    },
+    {
+      "tag": "🇨🇳 台湾直连[新疆/境外专用]",
+      "type": "trojan",
+      "server": "tw.youku-dns.com",
+      "server_port": 443,
+      "password": "e4b48409-d11e-4a8f-86b1-a7a897bb8769",
+      "tls": {
+        "enabled": true,
+        "server_name": "vdx.douyinvod.com",
+        "insecure": true
+      }
+    },
+    {
+      "tag": "select",
+      "type": "selector",
+      "default": "auto",
+      "outbounds": [
+        "auto",
+        "🏳️‍🌈 剩余流量：115.76 GB",
+        "🏴‍☠️ 套餐到期：2025-06-03",
+        "🏴‍☠️ 防失联官网①:daxun.shop",
+        "🏴‍☠️ 防失联官网②:daxun123.xyz",
+        "🇭🇰 香港01",
+        "🇭🇰 香港02",
+        "🇭🇰 香港03",
+        "🇭🇰 香港04",
+        "🇭🇰 香港05",
+        "🇭🇰 香港06 | IEPL专线",
+        "🇭🇰 香港07 | IEPL专线",
+        "🇸🇬 新加坡01 | IEPL专线",
+        "🇸🇬 新加坡02 | IEPL专线",
+        "🇸🇬 新加坡03 | IEPL专线",
+        "🇸🇬 新加坡04 | IEPL专线",
+        "🇸🇬 新加坡05 | IEPL专线",
+        "🇸🇬 新加坡07 | IEPL专线",
+        "🇸🇬 新加坡08 | IEPL专线",
+        "🇨🇳 台湾 | IEPL专线",
+        "🇯🇵 日本01 | IEPL专线",
+        "🇯🇵 日本02 | IEPL专线",
+        "🇯🇵 日本03 | IEPL专线",
+        "🇯🇵 日本04 | IEPL专线",
+        "🇲🇾 马来西亚 | IEPL专线",
+        "🇮🇳 印度 | IEPL专线",
+        "🇦🇺 澳大利亚 | IEPL专线",
+        "🇺🇸 美国01 | IEPL专线",
+        "🇺🇸 美国02 | IEPL专线",
+        "🇺🇸 美国03 | IEPL专线",
+        "🇺🇸 美国04 | IEPL专线",
+        "🇺🇸 美国05 | IEPL专线",
+        "🇺🇸 美国06 | IEPL专线",
+        "🇺🇸 美国07 | IEPL专线",
+        "🇬🇧 英国01 | IEPL专线",
+        "🇬🇧 英国02 | IEPL专线",
+        "🇬🇧 英国03 | IEPL专线",
+        "🇩🇪 德国 | IEPL专线",
+        "🇹🇷 土耳其 | IEPL专线",
+        "🇨🇦 加拿大 | IEPL专线",
+        "🇨🇳 台湾直连[新疆/境外专用]"
+      ]
+    },
+    {
+      "tag": "auto",
+      "type": "urltest",
+      "interval": "15m",
+      "outbounds": [
+        "🏳️‍🌈 剩余流量：115.76 GB",
+        "🏴‍☠️ 套餐到期：2025-06-03",
+        "🏴‍☠️ 防失联官网①:daxun.shop",
+        "🏴‍☠️ 防失联官网②:daxun123.xyz",
+        "🇭🇰 香港01",
+        "🇭🇰 香港02",
+        "🇭🇰 香港03",
+        "🇭🇰 香港04",
+        "🇭🇰 香港05",
+        "🇭🇰 香港06 | IEPL专线",
+        "🇭🇰 香港07 | IEPL专线",
+        "🇸🇬 新加坡01 | IEPL专线",
+        "🇸🇬 新加坡02 | IEPL专线",
+        "🇸🇬 新加坡03 | IEPL专线",
+        "🇸🇬 新加坡04 | IEPL专线",
+        "🇸🇬 新加坡05 | IEPL专线",
+        "🇸🇬 新加坡07 | IEPL专线",
+        "🇸🇬 新加坡08 | IEPL专线",
+        "🇨🇳 台湾 | IEPL专线",
+        "🇯🇵 日本01 | IEPL专线",
+        "🇯🇵 日本02 | IEPL专线",
+        "🇯🇵 日本03 | IEPL专线",
+        "🇯🇵 日本04 | IEPL专线",
+        "🇲🇾 马来西亚 | IEPL专线",
+        "🇮🇳 印度 | IEPL专线",
+        "🇦🇺 澳大利亚 | IEPL专线",
+        "🇺🇸 美国01 | IEPL专线",
+        "🇺🇸 美国02 | IEPL专线",
+        "🇺🇸 美国03 | IEPL专线",
+        "🇺🇸 美国04 | IEPL专线",
+        "🇺🇸 美国05 | IEPL专线",
+        "🇺🇸 美国06 | IEPL专线",
+        "🇺🇸 美国07 | IEPL专线",
+        "🇬🇧 英国01 | IEPL专线",
+        "🇬🇧 英国02 | IEPL专线",
+        "🇬🇧 英国03 | IEPL专线",
+        "🇩🇪 德国 | IEPL专线",
+        "🇹🇷 土耳其 | IEPL专线",
+        "🇨🇦 加拿大 | IEPL专线",
+        "🇨🇳 台湾直连[新疆/境外专用]"
+      ]
+    },
+    {
+      "tag": "ai",
+      "type": "selector",
+      "outbounds": [
+        "🏳️‍🌈 剩余流量：115.76 GB",
+        "🏴‍☠️ 套餐到期：2025-06-03",
+        "🏴‍☠️ 防失联官网①:daxun.shop",
+        "🏴‍☠️ 防失联官网②:daxun123.xyz",
+        "🇭🇰 香港01",
+        "🇭🇰 香港02",
+        "🇭🇰 香港03",
+        "🇭🇰 香港04",
+        "🇭🇰 香港05",
+        "🇭🇰 香港06 | IEPL专线",
+        "🇭🇰 香港07 | IEPL专线",
+        "🇸🇬 新加坡01 | IEPL专线",
+        "🇸🇬 新加坡02 | IEPL专线",
+        "🇸🇬 新加坡03 | IEPL专线",
+        "🇸🇬 新加坡04 | IEPL专线",
+        "🇸🇬 新加坡05 | IEPL专线",
+        "🇸🇬 新加坡07 | IEPL专线",
+        "🇸🇬 新加坡08 | IEPL专线",
+        "🇨🇳 台湾 | IEPL专线",
+        "🇯🇵 日本01 | IEPL专线",
+        "🇯🇵 日本02 | IEPL专线",
+        "🇯🇵 日本03 | IEPL专线",
+        "🇯🇵 日本04 | IEPL专线",
+        "🇲🇾 马来西亚 | IEPL专线",
+        "🇮🇳 印度 | IEPL专线",
+        "🇦🇺 澳大利亚 | IEPL专线",
+        "🇺🇸 美国01 | IEPL专线",
+        "🇺🇸 美国02 | IEPL专线",
+        "🇺🇸 美国03 | IEPL专线",
+        "🇺🇸 美国04 | IEPL专线",
+        "🇺🇸 美国05 | IEPL专线",
+        "🇺🇸 美国06 | IEPL专线",
+        "🇺🇸 美国07 | IEPL专线",
+        "🇬🇧 英国01 | IEPL专线",
+        "🇬🇧 英国02 | IEPL专线",
+        "🇬🇧 英国03 | IEPL专线",
+        "🇩🇪 德国 | IEPL专线",
+        "🇹🇷 土耳其 | IEPL专线",
+        "🇨🇦 加拿大 | IEPL专线",
+        "🇨🇳 台湾直连[新疆/境外专用]"
+      ]
+    },
+    {
+      "tag": "direct",
+      "type": "direct"
+    }
+  ],
+  "route": {
+    "rules": [
+      {
+        "action": "sniff"
+      },
+      {
+        "protocol": "dns",
+        "action": "hijack-dns"
+      },
+      {
+        "action": "resolve",
+        "strategy": "ipv4_only"
+      },
+      {
+        "clash_mode": "Global",
+        "outbound": "select"
+      },
+      {
+        "clash_mode": "Direct",
+        "outbound": "direct"
+      },
+      {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "domain_suffix": [
+              "ushd.xmsl.org",
+              "cf.gtlx.org",
+              "public-operation-hkrpg-sg.hoyoverse.com",
+              "public-operation-hk4e-sg.hoyoverse.com",
+              "public-operation-nap-sg.hoyoverse.com"
+            ]
+          },
+          {
+            "port_range": [
+              "23301:23301",
+              "22101:22102",
+              "20501:20501",
+              "21601:21606"
+            ]
+          }
+        ],
+        "outbound": "direct"
+      },
+      {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "domain_keyword": [
+              "hoyoverse.com"
+            ]
+          }
+        ],
+        "outbound": "select"
+      },
+      {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "rule_set": [
+              "geosite-openai",
+              "geosite-google-gemini"
+            ]
+          }
+        ],
+        "outbound": "ai"
+      },
+      {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "ip_is_private": true
+          },
+          {
+            "rule_set": [
+              "geosite-googlefcm",
+              "geosite-cn",
+              "geoip-cn"
+            ]
+          }
+        ],
+        "outbound": "direct"
+      }
+    ],
+    "rule_set": [
+      {
+        "type": "remote",
+        "tag": "geoip-cn",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/lyc8503/sing-box-rules/rule-set-geoip/geoip-cn.srs",
+        "download_detour": "select"
+      },
+      {
+        "type": "remote",
+        "tag": "geosite-cn",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/lyc8503/sing-box-rules/rule-set-geosite/geosite-cn.srs",
+        "download_detour": "select"
+      },
+      {
+        "type": "remote",
+        "tag": "geosite-openai",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/lyc8503/sing-box-rules/rule-set-geosite/geosite-openai.srs",
+        "download_detour": "select"
+      },
+      {
+        "type": "remote",
+        "tag": "geosite-google-gemini",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/lyc8503/sing-box-rules/rule-set-geosite/geosite-google-gemini.srs",
+        "download_detour": "select"
+      },
+      {
+        "type": "remote",
+        "tag": "geosite-googlefcm",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/lyc8503/sing-box-rules/rule-set-geosite/geosite-googlefcm.srs",
+        "download_detour": "select"
+      },
+      {
+        "type": "remote",
+        "tag": "geosite-category-ads-all",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/lyc8503/sing-box-rules/rule-set-geosite/geosite-category-ads-all.srs",
+        "download_detour": "select"
+      }
+    ],
+    "final": "select",
+    "default_domain_resolver": "dns_direct",
+    "auto_detect_interface": true,
+    "override_android_vpn": true
+  },
+  "experimental": {
+    "cache_file": {
+      "enabled": true
+    },
+    "clash_api": {
+      "external_controller": "127.0.0.1:9090"
+    }
+  }
+}
