@@ -1,0 +1,174 @@
+log-level: "debug"
+mixed-port: 7890
+allow-lan: true
+external-controller: "127.0.0.1:9090"
+unified-delay: true
+tcp-concurrent: true
+find-process-mode: "strict"
+global-client-fingerprint: "chrome"
+profile:
+  store-selected: true
+  store-fake-ip: true
+sniffer:
+  enable: true
+  force-dns-mapping: true
+  parse-pure-ip: true
+  override-destination: false
+  sniff:
+    HTTP:
+      ports:
+      - 80
+      - "8080-8880"
+    TLS:
+      ports:
+      - 443
+      - 8443
+    QUIC:
+      ports:
+      - 443
+      - 8443
+tun:
+  enable: true
+  stack: "mixed"
+  dns-hijack:
+  - "any:53"
+  - "tcp://any:53"
+  auto-route: true
+  auto-redirect: true
+  auto-detect-interface: true
+  strict-route: true
+dns:
+  enable: true
+  ipv6: false
+  default-nameserver:
+  - "223.5.5.5"
+  - "119.29.29.29"
+  enhanced-mode: "fake-ip"
+  fake-ip-range: "198.18.0.1/16"
+  nameserver:
+  - "https://dns.cloudflare.com/dns-query"
+  - "https://dns.google/dns-query"
+  nameserver-policy:
+    geosite:cn,private:
+    - "https://dns.alidns.com/dns-query"
+    - "https://doh.pub/dns-query"
+proxies:
+- {name: "🏳️‍🌈 剩余流量：988.37 GB", server: "mg1.gywanglug.xyz", port: 21975, sni: "mg1.gywanglug.xyz", skip-cert-verify: true, ports: "21000-26000", type: "hysteria2", password: "597dc9ce-5ce8-4ff5-833b-76cd4e5789e1", obfs: "salamander", obfs-password: "LNAnPYDfFyesRAVn"}
+- {name: "🏴‍☠️ 套餐到期：2025-05-05", server: "mg1.gywanglug.xyz", port: 21975, sni: "mg1.gywanglug.xyz", skip-cert-verify: true, ports: "21000-26000", type: "hysteria2", password: "597dc9ce-5ce8-4ff5-833b-76cd4e5789e1", obfs: "salamander", obfs-password: "LNAnPYDfFyesRAVn"}
+- {name: "🇺🇸 美国1", server: "mg1.gywanglug.xyz", port: 21975, sni: "mg1.gywanglug.xyz", skip-cert-verify: true, ports: "21000-26000", type: "hysteria2", password: "597dc9ce-5ce8-4ff5-833b-76cd4e5789e1", obfs: "salamander", obfs-password: "LNAnPYDfFyesRAVn"}
+- {name: "🇺🇸 美国1-v", type: "vless", server: "mg11.gywanglug.xyz", port: 23179, uuid: "597dc9ce-5ce8-4ff5-833b-76cd4e5789e1", alterId: 0, cipher: "auto", udp: true, flow: "xtls-rprx-vision", tls: true, skip-cert-verify: true, reality-opts: {public-key: "1jupCbzD9RB34YhWct4C6_I1bx_O5Ct7ZnT5dfCiV18", short-id: null}, client-fingerprint: "edge", network: "tcp", servername: "www.apple.com.cn"}
+- {name: "🇺🇸 美国2", server: "mg2.gywanglug.xyz", port: 21110, sni: "mg2.gywanglug.xyz", skip-cert-verify: true, ports: "21000-26000", type: "hysteria2", password: "597dc9ce-5ce8-4ff5-833b-76cd4e5789e1"}
+- {name: "🇺🇸 美国2-v", type: "vless", server: "mg22.gywanglug.xyz", port: 21239, uuid: "597dc9ce-5ce8-4ff5-833b-76cd4e5789e1", alterId: 0, cipher: "auto", udp: true, flow: "xtls-rprx-vision", tls: true, skip-cert-verify: true, reality-opts: {public-key: "GcOtIhZbkznrBYohK7rvjV0oVoQvC4y38VIExs6KUwA", short-id: null}, client-fingerprint: "chrome", network: "tcp", servername: "www.apple.com.cn"}
+- {name: "🇺🇸 美国3", server: "mg3.gywanglug.xyz", port: 24194, sni: "mg3.gywanglug.xyz", skip-cert-verify: true, ports: "21000-26000", type: "hysteria2", password: "597dc9ce-5ce8-4ff5-833b-76cd4e5789e1", obfs: "salamander", obfs-password: "LNAnPYDfFyesRAVn"}
+- {name: "🇺🇸 美国3-v", type: "vless", server: "mg33.gywanglug.xyz", port: 23355, uuid: "597dc9ce-5ce8-4ff5-833b-76cd4e5789e1", alterId: 0, cipher: "auto", udp: true, flow: "xtls-rprx-vision", tls: true, skip-cert-verify: true, reality-opts: {public-key: "yDkCTYl7Ap0XeU9PNv_kBY9BwQrgYZPIov-MXvpf7R8", short-id: null}, client-fingerprint: "edge", network: "tcp", servername: "www.apple.com.cn"}
+- {name: "🇺🇸 美国4", type: "tuic", server: "mg4.gywanglug.xyz", port: 8443, udp: true, uuid: "597dc9ce-5ce8-4ff5-833b-76cd4e5789e1", password: "597dc9ce-5ce8-4ff5-833b-76cd4e5789e1", skip-cert-verify: true, sni: "mg4.gywanglug.xyz", alpn: ["h3"], congestion-controller: "bbr", udp-relay-mode: "quic", version: 5}
+- {name: "🇺🇸 美国4-v", type: "vless", server: "mg44.gywanglug.xyz", port: 24283, uuid: "597dc9ce-5ce8-4ff5-833b-76cd4e5789e1", alterId: 0, cipher: "auto", udp: true, flow: "xtls-rprx-vision", tls: true, skip-cert-verify: true, reality-opts: {public-key: "yDkCTYl7Ap0XeU9PNv_kBY9BwQrgYZPIov-MXvpf7R8", short-id: null}, client-fingerprint: "chrome", network: "tcp", servername: "www.apple.com.cn"}
+- {name: "🇺🇸 美国5", type: "tuic", server: "mg5.gywanglug.xyz", port: 443, udp: true, uuid: "597dc9ce-5ce8-4ff5-833b-76cd4e5789e1", password: "597dc9ce-5ce8-4ff5-833b-76cd4e5789e1", skip-cert-verify: false, sni: "mg5.gywanglug.xyz", alpn: ["h3"], congestion-controller: "bbr", udp-relay-mode: "native", version: 5}
+- {name: "🇺🇸 美国5-v", type: "vless", server: "mg55.gywanglug.xyz", port: 25163, uuid: "597dc9ce-5ce8-4ff5-833b-76cd4e5789e1", alterId: 0, cipher: "auto", udp: true, flow: "xtls-rprx-vision", tls: true, skip-cert-verify: true, reality-opts: {public-key: "kHtBu5SWzLuz79nw0LkDkH4luWft_A-M6MNq4LA-RB4", short-id: null}, client-fingerprint: "firefox", network: "tcp", servername: "www.apple.com.cn"}
+- {name: "🇺🇸 美国6", type: "tuic", server: "mg6.gywanglug.xyz", port: 443, udp: true, uuid: "597dc9ce-5ce8-4ff5-833b-76cd4e5789e1", password: "597dc9ce-5ce8-4ff5-833b-76cd4e5789e1", skip-cert-verify: false, sni: "mg6.gywanglug.xyz", alpn: ["h3"], congestion-controller: "bbr", udp-relay-mode: "native", version: 5}
+- {name: "🇺🇸 美国6-v", type: "vless", server: "mg66.gywanglug.xyz", port: 45445, uuid: "597dc9ce-5ce8-4ff5-833b-76cd4e5789e1", alterId: 0, cipher: "auto", udp: true, flow: "xtls-rprx-vision", tls: true, skip-cert-verify: true, reality-opts: {public-key: "yDkCTYl7Ap0XeU9PNv_kBY9BwQrgYZPIov-MXvpf7R8", short-id: null}, client-fingerprint: "chrome", network: "tcp", servername: "www.webilop.com"}
+- {name: "🇸🇬 新加坡1", server: "xjp1.gy6688.xyz", port: 23344, sni: "xjp1.gy6688.xyz", skip-cert-verify: true, ports: "21000-26000", type: "hysteria2", password: "597dc9ce-5ce8-4ff5-833b-76cd4e5789e1", obfs: "salamander", obfs-password: "LNAnPYDfFyesRAVn"}
+- {name: "🇸🇬 新加坡2", server: "xjp2.gywanglug.xyz", port: 25128, sni: "xjp2.gywanglug.xyz", skip-cert-verify: true, ports: "21000-26000", type: "hysteria2", password: "597dc9ce-5ce8-4ff5-833b-76cd4e5789e1"}
+- {name: "🇦🇺 澳大利亚测试", server: "au1.gy6688.xyz", port: 25453, sni: "au1.gy6688.xyz", skip-cert-verify: true, ports: "21000-26000", type: "hysteria2", password: "597dc9ce-5ce8-4ff5-833b-76cd4e5789e1", obfs: "salamander", obfs-password: "cP2sbTFOTkuTq1sW"}
+- {name: "🇬🇧 英国1", server: "yg1.gy6688.xyz", port: 21148, sni: "yg1.gy6688.xyz", skip-cert-verify: true, ports: "21000-26000", type: "hysteria2", password: "597dc9ce-5ce8-4ff5-833b-76cd4e5789e1", obfs: "salamander", obfs-password: "LNAnPYDfFyesRAVn"}
+- {name: "🇳🇱 荷兰1", server: "hl1.gy6688.xyz", port: 23546, sni: "hl1.gy6688.xyz", skip-cert-verify: true, ports: "21000-26000", type: "hysteria2", password: "597dc9ce-5ce8-4ff5-833b-76cd4e5789e1", obfs: "salamander", obfs-password: "LNAnPYDfFyesRAVn"}
+- {name: "🇩🇪 德国1", server: "dg1.gy6688.xyz", port: 23258, sni: "dg1.gy6688.xyz", skip-cert-verify: true, ports: "21000-26000", type: "hysteria2", password: "597dc9ce-5ce8-4ff5-833b-76cd4e5789e1", obfs: "salamander", obfs-password: "LNAnPYDfFyesRAVn"}
+- {name: "🇨🇦 加拿大1", server: "jnd1.gy6688.xyz", port: 22765, sni: "jnd1.gy6688.xyz", skip-cert-verify: true, ports: "21000-26000", type: "hysteria2", password: "597dc9ce-5ce8-4ff5-833b-76cd4e5789e1", obfs: "salamander", obfs-password: "LNAnPYDfFyesRAVn"}
+- {name: "🇮🇳 印度1", server: "yd1.gy6688.xyz", port: 22225, sni: "yd1.gy6688.xyz", skip-cert-verify: true, ports: "21000-26000", type: "hysteria2", password: "597dc9ce-5ce8-4ff5-833b-76cd4e5789e1", obfs: "salamander", obfs-password: "LNAnPYDfFyesRAVn"}
+proxy-groups:
+- name: "PROXY"
+  type: "select"
+  proxies:
+  - "AUTO"
+  - "🏳️‍🌈 剩余流量：988.37 GB"
+  - "🏴‍☠️ 套餐到期：2025-05-05"
+  - "🇺🇸 美国1"
+  - "🇺🇸 美国1-v"
+  - "🇺🇸 美国2"
+  - "🇺🇸 美国2-v"
+  - "🇺🇸 美国3"
+  - "🇺🇸 美国3-v"
+  - "🇺🇸 美国4"
+  - "🇺🇸 美国4-v"
+  - "🇺🇸 美国5"
+  - "🇺🇸 美国5-v"
+  - "🇺🇸 美国6"
+  - "🇺🇸 美国6-v"
+  - "🇸🇬 新加坡1"
+  - "🇸🇬 新加坡2"
+  - "🇦🇺 澳大利亚测试"
+  - "🇬🇧 英国1"
+  - "🇳🇱 荷兰1"
+  - "🇩🇪 德国1"
+  - "🇨🇦 加拿大1"
+  - "🇮🇳 印度1"
+- name: "AUTO"
+  type: "url-test"
+  url: "http://www.gstatic.com/generate_204"
+  interval: 300
+  tolerance: 50
+  proxies:
+  - "🏳️‍🌈 剩余流量：988.37 GB"
+  - "🏴‍☠️ 套餐到期：2025-05-05"
+  - "🇺🇸 美国1"
+  - "🇺🇸 美国1-v"
+  - "🇺🇸 美国2"
+  - "🇺🇸 美国2-v"
+  - "🇺🇸 美国3"
+  - "🇺🇸 美国3-v"
+  - "🇺🇸 美国4"
+  - "🇺🇸 美国4-v"
+  - "🇺🇸 美国5"
+  - "🇺🇸 美国5-v"
+  - "🇺🇸 美国6"
+  - "🇺🇸 美国6-v"
+  - "🇸🇬 新加坡1"
+  - "🇸🇬 新加坡2"
+  - "🇦🇺 澳大利亚测试"
+  - "🇬🇧 英国1"
+  - "🇳🇱 荷兰1"
+  - "🇩🇪 德国1"
+  - "🇨🇦 加拿大1"
+  - "🇮🇳 印度1"
+- name: "AI"
+  type: "select"
+  proxies:
+  - "🏳️‍🌈 剩余流量：988.37 GB"
+  - "🏴‍☠️ 套餐到期：2025-05-05"
+  - "🇺🇸 美国1"
+  - "🇺🇸 美国1-v"
+  - "🇺🇸 美国2"
+  - "🇺🇸 美国2-v"
+  - "🇺🇸 美国3"
+  - "🇺🇸 美国3-v"
+  - "🇺🇸 美国4"
+  - "🇺🇸 美国4-v"
+  - "🇺🇸 美国5"
+  - "🇺🇸 美国5-v"
+  - "🇺🇸 美国6"
+  - "🇺🇸 美国6-v"
+  - "🇸🇬 新加坡1"
+  - "🇸🇬 新加坡2"
+  - "🇦🇺 澳大利亚测试"
+  - "🇬🇧 英国1"
+  - "🇳🇱 荷兰1"
+  - "🇩🇪 德国1"
+  - "🇨🇦 加拿大1"
+  - "🇮🇳 印度1"
+rules:
+- "GEOSITE,CATEGORY-ADS-ALL,REJECT"
+- "DOMAIN-SUFFIX,ushd.xmsl.org,DIRECT"
+- "DOMAIN-SUFFIX,cf.gtlx.org,DIRECT"
+- "DOMAIN-SUFFIX,public-operation-hkrpg-sg.hoyoverse.com,DIRECT"
+- "DOMAIN-SUFFIX,public-operation-hk4e-sg.hoyoverse.com,DIRECT"
+- "DOMAIN-SUFFIX,public-operation-nap-sg.hoyoverse.com,DIRECT"
+- "DST-PORT,23301/22101-22102/20501/21601-21606,DIRECT"
+- "DOMAIN-KEYWORD,hoyoverse.com,PROXY"
+- "GEOSITE,OPENAI,AI"
+- "GEOSITE,GOOGLE-GEMINI,AI"
+- "GEOSITE,GOOGLEFCM,DIRECT"
+- "GEOSITE,PRIVATE,DIRECT"
+- "GEOSITE,CN,DIRECT"
+- "GEOIP,PRIVATE,DIRECT,no-resolve"
+- "GEOIP,CN,DIRECT"
+- "MATCH,PROXY"

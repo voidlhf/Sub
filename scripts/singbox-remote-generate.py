@@ -41,7 +41,7 @@ def extract_and_generate_new_outbounds(source_data):
             {
                 "tag": "auto",
                 "type": "urltest",
-                "interval": "15m",
+                "interval": "5m",
                 "outbounds": server_tags,
             },
             {"tag": "ai", "type": "selector", "outbounds": server_tags},
