@@ -1,0 +1,590 @@
+log-level: "debug"
+mixed-port: 7890
+allow-lan: true
+external-controller: "127.0.0.1:9090"
+unified-delay: true
+tcp-concurrent: true
+find-process-mode: "strict"
+global-client-fingerprint: "chrome"
+profile:
+  store-selected: true
+  store-fake-ip: true
+sniffer:
+  enable: true
+  force-dns-mapping: true
+  parse-pure-ip: true
+  override-destination: false
+  sniff:
+    HTTP:
+      ports:
+      - 80
+      - "8080-8880"
+    TLS:
+      ports:
+      - 443
+      - 8443
+    QUIC:
+      ports:
+      - 443
+      - 8443
+tun:
+  enable: true
+  stack: "mixed"
+  dns-hijack:
+  - "any:53"
+  - "tcp://any:53"
+  auto-route: true
+  auto-redirect: true
+  auto-detect-interface: true
+  strict-route: true
+dns:
+  enable: true
+  ipv6: false
+  default-nameserver:
+  - "223.5.5.5"
+  - "119.29.29.29"
+  enhanced-mode: "fake-ip"
+  fake-ip-range: "198.18.0.1/16"
+  nameserver:
+  - "https://dns.cloudflare.com/dns-query"
+  - "https://dns.google/dns-query"
+  nameserver-policy:
+    geosite:cn,private:
+    - "https://dns.alidns.com/dns-query"
+    - "https://doh.pub/dns-query"
+proxies:
+- {type: "vless", name: "🏴‍☠️ mas10rt.890602.xyz tls WS CDN vless § 443 4", server: "mas10rt.890602.xyz", port: 443, uuid: "4f3f7db1-f416-473e-8321-b2cec71c04ab", tls: true, client-fingerprint: "chrome", alpn: ["http/1.1"], skip-cert-verify: false, network: "ws", ws-opts: {headers: {Host: "mas10rt.890602.xyz"}, path: "/YzFLmzNIEQsAmceLxv94lPbgMw"}, servername: "MAs10Rt.890602.xYZ"}
+- {name: "🏴‍☠️ mas10rt.890602.xyz tls WS CDN vmess § 443 4", type: "vmess", server: "mas10rt.890602.XyZ", port: 443, cipher: "auto", uuid: "4f3f7db1-f416-473e-8321-b2cec71c04ab", alterId: 0, tls: true, network: "ws", ws-opts: {path: "/XV7e5RkwW8mceLxv94lPbgMw", headers: {Host: "mas10rt.890602.xyz"}}, servername: "mas10Rt.890602.xyz"}
+- {type: "vless", name: "🏴‍☠️ mas10.890602.xyz tls WS CDN vless § 443 5", server: "mas10.890602.xyz", port: 443, uuid: "4f3f7db1-f416-473e-8321-b2cec71c04ab", tls: true, client-fingerprint: "chrome", alpn: ["http/1.1"], skip-cert-verify: false, network: "ws", ws-opts: {headers: {Host: "mas10.890602.xyz"}, path: "/YzFLmzNIEQsAmceLxv94lPbgMw"}, servername: "maS10.890602.XYZ"}
+- {name: "🏴‍☠️ mas10.890602.xyz tls WS CDN vmess § 443 5", type: "vmess", server: "Mas10.890602.xYZ", port: 443, cipher: "auto", uuid: "4f3f7db1-f416-473e-8321-b2cec71c04ab", alterId: 0, tls: true, network: "ws", ws-opts: {path: "/XV7e5RkwW8mceLxv94lPbgMw", headers: {Host: "mas10.890602.xyz"}}, servername: "MaS10.890602.XYz"}
+- {type: "vless", name: "🏴‍☠️ mas10xyz.890602.xyz tls WS CDN vless § 443 6", server: "mas10xyz.890602.xyz", port: 443, uuid: "4f3f7db1-f416-473e-8321-b2cec71c04ab", tls: true, client-fingerprint: "chrome", alpn: ["http/1.1"], skip-cert-verify: false, network: "ws", ws-opts: {headers: {Host: "mas10xyz.890602.xyz"}, path: "/YzFLmzNIEQsAmceLxv94lPbgMw"}, servername: "maS10xyz.890602.Xyz"}
+- {name: "🏴‍☠️ mas10xyz.890602.xyz tls WS CDN vmess § 443 6", type: "vmess", server: "mas10XYz.890602.xyz", port: 443, cipher: "auto", uuid: "4f3f7db1-f416-473e-8321-b2cec71c04ab", alterId: 0, tls: true, network: "ws", ws-opts: {path: "/XV7e5RkwW8mceLxv94lPbgMw", headers: {Host: "mas10xyz.890602.xyz"}}, servername: "MaS10XYz.890602.XyZ"}
+- {type: "vless", name: "🏴‍☠️ mas10opiuooooo.huangdi2025.dpdns.org tls WS CDN vless § 443 10", server: "mas10opiuooooo.huangdi2025.dpdns.org", port: 443, uuid: "4f3f7db1-f416-473e-8321-b2cec71c04ab", tls: true, client-fingerprint: "chrome", alpn: ["http/1.1"], skip-cert-verify: false, network: "ws", ws-opts: {headers: {Host: "mas10opiuooooo.huangdi2025.dpdns.org"}, path: "/YzFLmzNIEQsAmceLxv94lPbgMw"}, servername: "MaS10opiUOoooo.huANGdi2025.dpDnS.OrG"}
+- {name: "🏴‍☠️ mas10opiuooooo.huangdi2025.dpdns.org tls WS CDN vmess § 443 10", type: "vmess", server: "mAS10OPIUOOoOO.HuaNgDi2025.DPdnS.OrG", port: 443, cipher: "auto", uuid: "4f3f7db1-f416-473e-8321-b2cec71c04ab", alterId: 0, tls: true, network: "ws", ws-opts: {path: "/XV7e5RkwW8mceLxv94lPbgMw", headers: {Host: "mas10opiuooooo.huangdi2025.dpdns.org"}}, servername: "MaS10oPiUOoOoO.hUangDi2025.dpDns.oRg"}
+- {type: "vless", name: "🏴‍☠️ mas10rtyui.huangdi2025.dpdns.org tls WS CDN vless § 443 11", server: "mas10rtyui.huangdi2025.dpdns.org", port: 443, uuid: "4f3f7db1-f416-473e-8321-b2cec71c04ab", tls: true, client-fingerprint: "chrome", alpn: ["http/1.1"], skip-cert-verify: false, network: "ws", ws-opts: {headers: {Host: "mas10rtyui.huangdi2025.dpdns.org"}, path: "/YzFLmzNIEQsAmceLxv94lPbgMw"}, servername: "mAs10rTYUI.HuAnGDI2025.dpDnS.OrG"}
+- {name: "🏴‍☠️ mas10rtyui.huangdi2025.dpdns.org tls WS CDN vmess § 443 11", type: "vmess", server: "mas10rTYUi.hUangDi2025.DPdNS.org", port: 443, cipher: "auto", uuid: "4f3f7db1-f416-473e-8321-b2cec71c04ab", alterId: 0, tls: true, network: "ws", ws-opts: {path: "/XV7e5RkwW8mceLxv94lPbgMw", headers: {Host: "mas10rtyui.huangdi2025.dpdns.org"}}, servername: "mAs10rtyuI.HuANGDi2025.DpdNS.oRG"}
+- {name: "🏴‍☠️ mas10rtyui.huangdi2025.dpdns.org http WS CDN vmess § 80 11", type: "vmess", server: "maS10RtYuI.huaNGdi2025.dPDnS.OrG", port: 80, cipher: "auto", uuid: "4f3f7db1-f416-473e-8321-b2cec71c04ab", alterId: 0, tls: false, network: "ws", ws-opts: {path: "/XV7e5RkwW8mceLxv94lPbgMw", headers: {Host: "mas10rtyui.huangdi2025.dpdns.org"}}}
+- {type: "vless", name: "🏴‍☠️ n10sdfghj.huangdi2025.dpdns.org tls WS CDN vless § 443 12", server: "n10sdfghj.huangdi2025.dpdns.org", port: 443, uuid: "4f3f7db1-f416-473e-8321-b2cec71c04ab", tls: true, client-fingerprint: "chrome", alpn: ["http/1.1"], skip-cert-verify: false, network: "ws", ws-opts: {headers: {Host: "n10sdfghj.huangdi2025.dpdns.org"}, path: "/YzFLmzNIEQsAmceLxv94lPbgMw"}, servername: "N10sDFGHj.HuANGdI2025.DpDNs.oRG"}
+- {name: "🏴‍☠️ n10sdfghj.huangdi2025.dpdns.org tls WS CDN vmess § 443 12", type: "vmess", server: "n10sdfGHJ.huaNGDi2025.DpdNs.orG", port: 443, cipher: "auto", uuid: "4f3f7db1-f416-473e-8321-b2cec71c04ab", alterId: 0, tls: true, network: "ws", ws-opts: {path: "/XV7e5RkwW8mceLxv94lPbgMw", headers: {Host: "n10sdfghj.huangdi2025.dpdns.org"}}, servername: "N10sDFGHJ.HUaNgdI2025.dpdNS.oRg"}
+- {type: "vless", name: "🏴‍☠️ ms10yyyyyyyyyyy.445.pp.ua tls WS CDN vless § 443 15", server: "ms10yyyyyyyyyyy.445.pp.ua", port: 443, uuid: "4f3f7db1-f416-473e-8321-b2cec71c04ab", tls: true, client-fingerprint: "chrome", alpn: ["http/1.1"], skip-cert-verify: false, network: "ws", ws-opts: {headers: {Host: "ms10yyyyyyyyyyy.445.pp.ua"}, path: "/YzFLmzNIEQsAmceLxv94lPbgMw"}, servername: "MS10yYyYyYyyYYY.445.pp.uA"}
+- {type: "vless", name: "🏴‍☠️ ms10yyy.445.pp.ua tls WS CDN vless § 443 16", server: "ms10yyy.445.pp.ua", port: 443, uuid: "4f3f7db1-f416-473e-8321-b2cec71c04ab", tls: true, client-fingerprint: "chrome", alpn: ["http/1.1"], skip-cert-verify: false, network: "ws", ws-opts: {headers: {Host: "ms10yyy.445.pp.ua"}, path: "/YzFLmzNIEQsAmceLxv94lPbgMw"}, servername: "Ms10YYy.445.pp.UA"}
+- {name: "🏴‍☠️ ms10yyy.445.pp.ua tls WS CDN vmess § 443 16", type: "vmess", server: "mS10yyy.445.pP.UA", port: 443, cipher: "auto", uuid: "4f3f7db1-f416-473e-8321-b2cec71c04ab", alterId: 0, tls: true, network: "ws", ws-opts: {path: "/XV7e5RkwW8mceLxv94lPbgMw", headers: {Host: "ms10yyy.445.pp.ua"}}, servername: "ms10YyY.445.pP.ua"}
+- {type: "vless", name: "🏴‍☠️ ms10yy.445.pp.ua tls WS CDN vless § 443 17", server: "ms10yy.445.pp.ua", port: 443, uuid: "4f3f7db1-f416-473e-8321-b2cec71c04ab", tls: true, client-fingerprint: "chrome", alpn: ["http/1.1"], skip-cert-verify: false, network: "ws", ws-opts: {headers: {Host: "ms10yy.445.pp.ua"}, path: "/YzFLmzNIEQsAmceLxv94lPbgMw"}, servername: "ms10yY.445.pP.ua"}
+- {name: "🏴‍☠️ ms10yy.445.pp.ua tls WS CDN vmess § 443 17", type: "vmess", server: "ms10yY.445.PP.uA", port: 443, cipher: "auto", uuid: "4f3f7db1-f416-473e-8321-b2cec71c04ab", alterId: 0, tls: true, network: "ws", ws-opts: {path: "/XV7e5RkwW8mceLxv94lPbgMw", headers: {Host: "ms10yy.445.pp.ua"}}, servername: "mS10Yy.445.pp.UA"}
+- {type: "vless", name: "🏴‍☠️ ms10yyyyyy.445.pp.ua tls WS CDN vless § 443 18", server: "ms10yyyyyy.445.pp.ua", port: 443, uuid: "4f3f7db1-f416-473e-8321-b2cec71c04ab", tls: true, client-fingerprint: "chrome", alpn: ["http/1.1"], skip-cert-verify: false, network: "ws", ws-opts: {headers: {Host: "ms10yyyyyy.445.pp.ua"}, path: "/YzFLmzNIEQsAmceLxv94lPbgMw"}, servername: "mS10yyyYYY.445.pp.ua"}
+- {name: "🏴‍☠️ ms10yyyyyy.445.pp.ua tls WS CDN vmess § 443 18", type: "vmess", server: "MS10yYyYYy.445.pP.ua", port: 443, cipher: "auto", uuid: "4f3f7db1-f416-473e-8321-b2cec71c04ab", alterId: 0, tls: true, network: "ws", ws-opts: {path: "/XV7e5RkwW8mceLxv94lPbgMw", headers: {Host: "ms10yyyyyy.445.pp.ua"}}, servername: "Ms10YyYyYy.445.Pp.Ua"}
+- {type: "vless", name: "🏴‍☠️ ms10ttttt.445.pp.ua tls WS CDN vless § 443 19", server: "ms10ttttt.445.pp.ua", port: 443, uuid: "4f3f7db1-f416-473e-8321-b2cec71c04ab", tls: true, client-fingerprint: "chrome", alpn: ["http/1.1"], skip-cert-verify: false, network: "ws", ws-opts: {headers: {Host: "ms10ttttt.445.pp.ua"}, path: "/YzFLmzNIEQsAmceLxv94lPbgMw"}, servername: "ms10tttTt.445.Pp.uA"}
+- {name: "🏴‍☠️ ms10ttttt.445.pp.ua tls WS CDN vmess § 443 19", type: "vmess", server: "MS10ttTTt.445.PP.UA", port: 443, cipher: "auto", uuid: "4f3f7db1-f416-473e-8321-b2cec71c04ab", alterId: 0, tls: true, network: "ws", ws-opts: {path: "/XV7e5RkwW8mceLxv94lPbgMw", headers: {Host: "ms10ttttt.445.pp.ua"}}, servername: "Ms10tTTTT.445.pP.UA"}
+- {type: "vless", name: "🏴‍☠️ ms10ttt.445.pp.ua tls WS CDN vless § 443 20", server: "ms10ttt.445.pp.ua", port: 443, uuid: "4f3f7db1-f416-473e-8321-b2cec71c04ab", tls: true, client-fingerprint: "chrome", alpn: ["http/1.1"], skip-cert-verify: false, network: "ws", ws-opts: {headers: {Host: "ms10ttt.445.pp.ua"}, path: "/YzFLmzNIEQsAmceLxv94lPbgMw"}, servername: "MS10TtT.445.Pp.UA"}
+- {name: "🏴‍☠️ ms10ttt.445.pp.ua tls WS CDN vmess § 443 20", type: "vmess", server: "Ms10TTT.445.pp.uA", port: 443, cipher: "auto", uuid: "4f3f7db1-f416-473e-8321-b2cec71c04ab", alterId: 0, tls: true, network: "ws", ws-opts: {path: "/XV7e5RkwW8mceLxv94lPbgMw", headers: {Host: "ms10ttt.445.pp.ua"}}, servername: "MS10ttT.445.pP.ua"}
+- {type: "vless", name: "🏴‍☠️ m10dfghj.890604.dpdns.org tls WS CDN vless § 443 22", server: "m10dfghj.890604.dpdns.org", port: 443, uuid: "4f3f7db1-f416-473e-8321-b2cec71c04ab", tls: true, client-fingerprint: "chrome", alpn: ["http/1.1"], skip-cert-verify: false, network: "ws", ws-opts: {headers: {Host: "m10dfghj.890604.dpdns.org"}, path: "/YzFLmzNIEQsAmceLxv94lPbgMw"}, servername: "m10DfgHJ.890604.DPdNs.oRg"}
+- {name: "🏴‍☠️ m10dfghj.890604.dpdns.org tls WS CDN vmess § 443 22", type: "vmess", server: "m10dfGHj.890604.dpDNS.ORg", port: 443, cipher: "auto", uuid: "4f3f7db1-f416-473e-8321-b2cec71c04ab", alterId: 0, tls: true, network: "ws", ws-opts: {path: "/XV7e5RkwW8mceLxv94lPbgMw", headers: {Host: "m10dfghj.890604.dpdns.org"}}, servername: "M10dFghJ.890604.DPDns.org"}
+- {name: "🏴‍☠️ m10dfghj.890604.dpdns.org http WS CDN vmess § 80 22", type: "vmess", server: "M10DfghJ.890604.DPdns.oRg", port: 80, cipher: "auto", uuid: "4f3f7db1-f416-473e-8321-b2cec71c04ab", alterId: 0, tls: false, network: "ws", ws-opts: {path: "/XV7e5RkwW8mceLxv94lPbgMw", headers: {Host: "m10dfghj.890604.dpdns.org"}}}
+- {type: "vless", name: "🏴‍☠️ m10d.890604.dpdns.org tls WS CDN vless § 443 23", server: "m10d.890604.dpdns.org", port: 443, uuid: "4f3f7db1-f416-473e-8321-b2cec71c04ab", tls: true, client-fingerprint: "chrome", alpn: ["http/1.1"], skip-cert-verify: false, network: "ws", ws-opts: {headers: {Host: "m10d.890604.dpdns.org"}, path: "/YzFLmzNIEQsAmceLxv94lPbgMw"}, servername: "m10D.890604.dPDNs.ORG"}
+- {name: "🏴‍☠️ m10d.890604.dpdns.org tls WS CDN vmess § 443 23", type: "vmess", server: "m10d.890604.DPdnS.ORG", port: 443, cipher: "auto", uuid: "4f3f7db1-f416-473e-8321-b2cec71c04ab", alterId: 0, tls: true, network: "ws", ws-opts: {path: "/XV7e5RkwW8mceLxv94lPbgMw", headers: {Host: "m10d.890604.dpdns.org"}}, servername: "M10d.890604.dpdNs.org"}
+- {name: "🏴‍☠️ m10d.890604.dpdns.org http WS CDN vmess § 80 23", type: "vmess", server: "M10d.890604.DpDNs.OrG", port: 80, cipher: "auto", uuid: "4f3f7db1-f416-473e-8321-b2cec71c04ab", alterId: 0, tls: false, network: "ws", ws-opts: {path: "/XV7e5RkwW8mceLxv94lPbgMw", headers: {Host: "m10d.890604.dpdns.org"}}}
+- {type: "vless", name: "🏴‍☠️ m10dwwww.890604.dpdns.org tls WS CDN vless § 443 27", server: "m10dwwww.890604.dpdns.org", port: 443, uuid: "4f3f7db1-f416-473e-8321-b2cec71c04ab", tls: true, client-fingerprint: "chrome", alpn: ["http/1.1"], skip-cert-verify: false, network: "ws", ws-opts: {headers: {Host: "m10dwwww.890604.dpdns.org"}, path: "/YzFLmzNIEQsAmceLxv94lPbgMw"}, servername: "M10dWWww.890604.dPdNS.ORG"}
+- {name: "🏴‍☠️ m10dwwww.890604.dpdns.org http WS CDN vmess § 80 27", type: "vmess", server: "m10dwwwW.890604.DpDNS.oRg", port: 80, cipher: "auto", uuid: "4f3f7db1-f416-473e-8321-b2cec71c04ab", alterId: 0, tls: false, network: "ws", ws-opts: {path: "/XV7e5RkwW8mceLxv94lPbgMw", headers: {Host: "m10dwwww.890604.dpdns.org"}}}
+- {type: "vless", name: "🏴‍☠️ m10dww.890604.dpdns.org tls WS CDN vless § 443 28", server: "m10dww.890604.dpdns.org", port: 443, uuid: "4f3f7db1-f416-473e-8321-b2cec71c04ab", tls: true, client-fingerprint: "chrome", alpn: ["http/1.1"], skip-cert-verify: false, network: "ws", ws-opts: {headers: {Host: "m10dww.890604.dpdns.org"}, path: "/YzFLmzNIEQsAmceLxv94lPbgMw"}, servername: "M10dww.890604.DPDns.oRg"}
+- {name: "🏴‍☠️ m10dww.890604.dpdns.org tls WS CDN vmess § 443 28", type: "vmess", server: "M10dWw.890604.dpDns.orG", port: 443, cipher: "auto", uuid: "4f3f7db1-f416-473e-8321-b2cec71c04ab", alterId: 0, tls: true, network: "ws", ws-opts: {path: "/XV7e5RkwW8mceLxv94lPbgMw", headers: {Host: "m10dww.890604.dpdns.org"}}, servername: "M10dWW.890604.dPDNS.Org"}
+- {name: "🏴‍☠️ m10dww.890604.dpdns.org http WS CDN vmess § 80 28", type: "vmess", server: "M10Dww.890604.DpdnS.Org", port: 80, cipher: "auto", uuid: "4f3f7db1-f416-473e-8321-b2cec71c04ab", alterId: 0, tls: false, network: "ws", ws-opts: {path: "/XV7e5RkwW8mceLxv94lPbgMw", headers: {Host: "m10dww.890604.dpdns.org"}}}
+- {type: "vless", name: "🏴‍☠️ m10dwwwwrrt.890604.dpdns.org tls WS CDN vless § 443 29", server: "m10dwwwwrrt.890604.dpdns.org", port: 443, uuid: "4f3f7db1-f416-473e-8321-b2cec71c04ab", tls: true, client-fingerprint: "chrome", alpn: ["http/1.1"], skip-cert-verify: false, network: "ws", ws-opts: {headers: {Host: "m10dwwwwrrt.890604.dpdns.org"}, path: "/YzFLmzNIEQsAmceLxv94lPbgMw"}, servername: "m10DWwwWRrT.890604.DPDnS.oRG"}
+- {name: "🏴‍☠️ m10dwwwwrrt.890604.dpdns.org tls WS CDN vmess § 443 29", type: "vmess", server: "m10dWWWwrrT.890604.DPdNs.ORG", port: 443, cipher: "auto", uuid: "4f3f7db1-f416-473e-8321-b2cec71c04ab", alterId: 0, tls: true, network: "ws", ws-opts: {path: "/XV7e5RkwW8mceLxv94lPbgMw", headers: {Host: "m10dwwwwrrt.890604.dpdns.org"}}, servername: "M10dwwwWrrT.890604.DPdNs.OrG"}
+- {name: "🏴‍☠️ m10dwwwwrrt.890604.dpdns.org http WS CDN vmess § 80 29", type: "vmess", server: "m10dWWwWrrt.890604.DpdNs.Org", port: 80, cipher: "auto", uuid: "4f3f7db1-f416-473e-8321-b2cec71c04ab", alterId: 0, tls: false, network: "ws", ws-opts: {path: "/XV7e5RkwW8mceLxv94lPbgMw", headers: {Host: "m10dwwwwrrt.890604.dpdns.org"}}}
+- {type: "vless", name: "🏴‍☠️ m10dfg.890604.dpdns.org tls WS CDN vless § 443 30", server: "m10dfg.890604.dpdns.org", port: 443, uuid: "4f3f7db1-f416-473e-8321-b2cec71c04ab", tls: true, client-fingerprint: "chrome", alpn: ["http/1.1"], skip-cert-verify: false, network: "ws", ws-opts: {headers: {Host: "m10dfg.890604.dpdns.org"}, path: "/YzFLmzNIEQsAmceLxv94lPbgMw"}, servername: "M10Dfg.890604.dPdns.orG"}
+- {name: "🏴‍☠️ m10dfg.890604.dpdns.org tls WS CDN vmess § 443 30", type: "vmess", server: "m10dfG.890604.DpDnS.ORG", port: 443, cipher: "auto", uuid: "4f3f7db1-f416-473e-8321-b2cec71c04ab", alterId: 0, tls: true, network: "ws", ws-opts: {path: "/XV7e5RkwW8mceLxv94lPbgMw", headers: {Host: "m10dfg.890604.dpdns.org"}}, servername: "m10dfG.890604.dpdns.oRG"}
+- {name: "🏴‍☠️ m10dfg.890604.dpdns.org http WS CDN vmess § 80 30", type: "vmess", server: "M10Dfg.890604.dpDNs.orG", port: 80, cipher: "auto", uuid: "4f3f7db1-f416-473e-8321-b2cec71c04ab", alterId: 0, tls: false, network: "ws", ws-opts: {path: "/XV7e5RkwW8mceLxv94lPbgMw", headers: {Host: "m10dfg.890604.dpdns.org"}}}
+- {type: "vless", name: "🏴‍☠️ m10ddddd.890604.dpdns.org tls WS CDN vless § 443 31", server: "m10ddddd.890604.dpdns.org", port: 443, uuid: "4f3f7db1-f416-473e-8321-b2cec71c04ab", tls: true, client-fingerprint: "chrome", alpn: ["http/1.1"], skip-cert-verify: false, network: "ws", ws-opts: {headers: {Host: "m10ddddd.890604.dpdns.org"}, path: "/YzFLmzNIEQsAmceLxv94lPbgMw"}, servername: "m10ddDdd.890604.dPdNS.ORg"}
+- {name: "🏴‍☠️ m10ddddd.890604.dpdns.org tls WS CDN vmess § 443 31", type: "vmess", server: "m10DDDDd.890604.dpdNs.orG", port: 443, cipher: "auto", uuid: "4f3f7db1-f416-473e-8321-b2cec71c04ab", alterId: 0, tls: true, network: "ws", ws-opts: {path: "/XV7e5RkwW8mceLxv94lPbgMw", headers: {Host: "m10ddddd.890604.dpdns.org"}}, servername: "M10DDdDD.890604.DpdNs.Org"}
+- {name: "🏴‍☠️ m10ddddd.890604.dpdns.org http WS CDN vmess § 80 31", type: "vmess", server: "M10dddDD.890604.dPDns.org", port: 80, cipher: "auto", uuid: "4f3f7db1-f416-473e-8321-b2cec71c04ab", alterId: 0, tls: false, network: "ws", ws-opts: {path: "/XV7e5RkwW8mceLxv94lPbgMw", headers: {Host: "m10ddddd.890604.dpdns.org"}}}
+- {type: "vless", name: "🏴‍☠️ m10ddddddddddddf.457.pp.ua tls WS CDN vless § 443 32", server: "m10ddddddddddddf.457.pp.ua", port: 443, uuid: "4f3f7db1-f416-473e-8321-b2cec71c04ab", tls: true, client-fingerprint: "chrome", alpn: ["http/1.1"], skip-cert-verify: false, network: "ws", ws-opts: {headers: {Host: "m10ddddddddddddf.457.pp.ua"}, path: "/YzFLmzNIEQsAmceLxv94lPbgMw"}, servername: "M10DDDdddDdDDDDf.457.pp.ua"}
+- {name: "🏴‍☠️ m10ddddddddddddf.457.pp.ua tls WS CDN vmess § 443 32", type: "vmess", server: "M10dddddddDDdDDf.457.PP.UA", port: 443, cipher: "auto", uuid: "4f3f7db1-f416-473e-8321-b2cec71c04ab", alterId: 0, tls: true, network: "ws", ws-opts: {path: "/XV7e5RkwW8mceLxv94lPbgMw", headers: {Host: "m10ddddddddddddf.457.pp.ua"}}, servername: "M10dddddDDdDdDdf.457.pp.UA"}
+- {type: "vless", name: "🏴‍☠️ m10dddd.457.pp.ua tls WS CDN vless § 443 33", server: "m10dddd.457.pp.ua", port: 443, uuid: "4f3f7db1-f416-473e-8321-b2cec71c04ab", tls: true, client-fingerprint: "chrome", alpn: ["http/1.1"], skip-cert-verify: false, network: "ws", ws-opts: {headers: {Host: "m10dddd.457.pp.ua"}, path: "/YzFLmzNIEQsAmceLxv94lPbgMw"}, servername: "M10dddd.457.pp.Ua"}
+- {name: "🏴‍☠️ m10dddd.457.pp.ua tls WS CDN vmess § 443 33", type: "vmess", server: "M10Dddd.457.pP.Ua", port: 443, cipher: "auto", uuid: "4f3f7db1-f416-473e-8321-b2cec71c04ab", alterId: 0, tls: true, network: "ws", ws-opts: {path: "/XV7e5RkwW8mceLxv94lPbgMw", headers: {Host: "m10dddd.457.pp.ua"}}, servername: "m10DddD.457.Pp.ua"}
+- {type: "vless", name: "🏴‍☠️ m10ddd.457.pp.ua tls WS CDN vless § 443 34", server: "m10ddd.457.pp.ua", port: 443, uuid: "4f3f7db1-f416-473e-8321-b2cec71c04ab", tls: true, client-fingerprint: "chrome", alpn: ["http/1.1"], skip-cert-verify: false, network: "ws", ws-opts: {headers: {Host: "m10ddd.457.pp.ua"}, path: "/YzFLmzNIEQsAmceLxv94lPbgMw"}, servername: "M10ddd.457.pp.UA"}
+- {name: "🏴‍☠️ m10ddd.457.pp.ua tls WS CDN vmess § 443 34", type: "vmess", server: "m10DDD.457.PP.Ua", port: 443, cipher: "auto", uuid: "4f3f7db1-f416-473e-8321-b2cec71c04ab", alterId: 0, tls: true, network: "ws", ws-opts: {path: "/XV7e5RkwW8mceLxv94lPbgMw", headers: {Host: "m10ddd.457.pp.ua"}}, servername: "m10ddD.457.Pp.uA"}
+- {type: "vless", name: "🏴‍☠️ m10dddyyyy.457.pp.ua tls WS CDN vless § 443 35", server: "m10dddyyyy.457.pp.ua", port: 443, uuid: "4f3f7db1-f416-473e-8321-b2cec71c04ab", tls: true, client-fingerprint: "chrome", alpn: ["http/1.1"], skip-cert-verify: false, network: "ws", ws-opts: {headers: {Host: "m10dddyyyy.457.pp.ua"}, path: "/YzFLmzNIEQsAmceLxv94lPbgMw"}, servername: "m10dddyYYy.457.pP.UA"}
+- {name: "🏴‍☠️ m10dddyyyy.457.pp.ua tls WS CDN vmess § 443 35", type: "vmess", server: "M10dDdYYYY.457.pP.ua", port: 443, cipher: "auto", uuid: "4f3f7db1-f416-473e-8321-b2cec71c04ab", alterId: 0, tls: true, network: "ws", ws-opts: {path: "/XV7e5RkwW8mceLxv94lPbgMw", headers: {Host: "m10dddyyyy.457.pp.ua"}}, servername: "m10DddyYYY.457.pp.Ua"}
+- {name: "🏴‍☠️ m10frtyu.459.pp.ua tls WS CDN vmess § 443 36", type: "vmess", server: "m10frtyU.459.PP.UA", port: 443, cipher: "auto", uuid: "4f3f7db1-f416-473e-8321-b2cec71c04ab", alterId: 0, tls: true, network: "ws", ws-opts: {path: "/XV7e5RkwW8mceLxv94lPbgMw", headers: {Host: "m10frtyu.459.pp.ua"}}, servername: "m10FRtYu.459.Pp.ua"}
+- {type: "vless", name: "🏴‍☠️ m10frtyuttttttt.459.pp.ua tls WS CDN vless § 443 37", server: "m10frtyuttttttt.459.pp.ua", port: 443, uuid: "4f3f7db1-f416-473e-8321-b2cec71c04ab", tls: true, client-fingerprint: "chrome", alpn: ["http/1.1"], skip-cert-verify: false, network: "ws", ws-opts: {headers: {Host: "m10frtyuttttttt.459.pp.ua"}, path: "/YzFLmzNIEQsAmceLxv94lPbgMw"}, servername: "m10frtyuTTTttTt.459.pP.ua"}
+- {name: "🏴‍☠️ m10frtyuttttttt.459.pp.ua tls WS CDN vmess § 443 37", type: "vmess", server: "m10fRTyUttttTtt.459.pP.uA", port: 443, cipher: "auto", uuid: "4f3f7db1-f416-473e-8321-b2cec71c04ab", alterId: 0, tls: true, network: "ws", ws-opts: {path: "/XV7e5RkwW8mceLxv94lPbgMw", headers: {Host: "m10frtyuttttttt.459.pp.ua"}}, servername: "m10fRTYUTTttttT.459.pp.Ua"}
+- {type: "vless", name: "🏴‍☠️ m10frtyuttttt.459.pp.ua tls WS CDN vless § 443 38", server: "m10frtyuttttt.459.pp.ua", port: 443, uuid: "4f3f7db1-f416-473e-8321-b2cec71c04ab", tls: true, client-fingerprint: "chrome", alpn: ["http/1.1"], skip-cert-verify: false, network: "ws", ws-opts: {headers: {Host: "m10frtyuttttt.459.pp.ua"}, path: "/YzFLmzNIEQsAmceLxv94lPbgMw"}, servername: "m10FrTYUTTTTT.459.pP.UA"}
+- {name: "🏴‍☠️ m10frtyuttttt.459.pp.ua tls WS CDN vmess § 443 38", type: "vmess", server: "M10fRtyuTTTtT.459.pp.uA", port: 443, cipher: "auto", uuid: "4f3f7db1-f416-473e-8321-b2cec71c04ab", alterId: 0, tls: true, network: "ws", ws-opts: {path: "/XV7e5RkwW8mceLxv94lPbgMw", headers: {Host: "m10frtyuttttt.459.pp.ua"}}, servername: "M10FrTYUTTTtt.459.PP.ua"}
+- {name: "🏴‍☠️ m10frtyuttttt.459.pp.ua http WS CDN vmess § 80 38", type: "vmess", server: "M10fRTyuTtttt.459.Pp.Ua", port: 80, cipher: "auto", uuid: "4f3f7db1-f416-473e-8321-b2cec71c04ab", alterId: 0, tls: false, network: "ws", ws-opts: {path: "/XV7e5RkwW8mceLxv94lPbgMw", headers: {Host: "m10frtyuttttt.459.pp.ua"}}}
+- {type: "vless", name: "🏴‍☠️ m10frtyutttttjjj.459.pp.ua tls WS CDN vless § 443 39", server: "m10frtyutttttjjj.459.pp.ua", port: 443, uuid: "4f3f7db1-f416-473e-8321-b2cec71c04ab", tls: true, client-fingerprint: "chrome", alpn: ["http/1.1"], skip-cert-verify: false, network: "ws", ws-opts: {headers: {Host: "m10frtyutttttjjj.459.pp.ua"}, path: "/YzFLmzNIEQsAmceLxv94lPbgMw"}, servername: "M10fRTyUttTttjjJ.459.Pp.uA"}
+- {name: "🏴‍☠️ m10frtyutttttjjj.459.pp.ua tls WS CDN vmess § 443 39", type: "vmess", server: "M10fRtYUtTTttJJj.459.PP.ua", port: 443, cipher: "auto", uuid: "4f3f7db1-f416-473e-8321-b2cec71c04ab", alterId: 0, tls: true, network: "ws", ws-opts: {path: "/XV7e5RkwW8mceLxv94lPbgMw", headers: {Host: "m10frtyutttttjjj.459.pp.ua"}}, servername: "m10frtyUTtTTTJjJ.459.pp.ua"}
+- {type: "vless", name: "🏴‍☠️ m10frtyutttt.459.pp.ua tls WS CDN vless § 443 40", server: "m10frtyutttt.459.pp.ua", port: 443, uuid: "4f3f7db1-f416-473e-8321-b2cec71c04ab", tls: true, client-fingerprint: "chrome", alpn: ["http/1.1"], skip-cert-verify: false, network: "ws", ws-opts: {headers: {Host: "m10frtyutttt.459.pp.ua"}, path: "/YzFLmzNIEQsAmceLxv94lPbgMw"}, servername: "M10FRtYUTTTT.459.PP.uA"}
+- {name: "🏴‍☠️ m10frtyutttt.459.pp.ua tls WS CDN vmess § 443 40", type: "vmess", server: "m10FRtYUTtTt.459.pp.UA", port: 443, cipher: "auto", uuid: "4f3f7db1-f416-473e-8321-b2cec71c04ab", alterId: 0, tls: true, network: "ws", ws-opts: {path: "/XV7e5RkwW8mceLxv94lPbgMw", headers: {Host: "m10frtyutttt.459.pp.ua"}}, servername: "m10fRtYUtTTt.459.pp.UA"}
+- {type: "vless", name: "🏴‍☠️ m10frtyutttt678.459.pp.ua tls WS CDN vless § 443 41", server: "m10frtyutttt678.459.pp.ua", port: 443, uuid: "4f3f7db1-f416-473e-8321-b2cec71c04ab", tls: true, client-fingerprint: "chrome", alpn: ["http/1.1"], skip-cert-verify: false, network: "ws", ws-opts: {headers: {Host: "m10frtyutttt678.459.pp.ua"}, path: "/YzFLmzNIEQsAmceLxv94lPbgMw"}, servername: "m10fRTyUTTtt678.459.PP.ua"}
+- {name: "🏴‍☠️ m10frtyutttt678.459.pp.ua tls WS CDN vmess § 443 41", type: "vmess", server: "m10FrtYUttTT678.459.PP.uA", port: 443, cipher: "auto", uuid: "4f3f7db1-f416-473e-8321-b2cec71c04ab", alterId: 0, tls: true, network: "ws", ws-opts: {path: "/XV7e5RkwW8mceLxv94lPbgMw", headers: {Host: "m10frtyutttt678.459.pp.ua"}}, servername: "M10FrTYUTtTT678.459.pP.ua"}
+- {type: "vless", name: "🏴‍☠️ m10derty.7777128.xyz tls WS CDN vless § 443 42", server: "m10derty.7777128.xyz", port: 443, uuid: "4f3f7db1-f416-473e-8321-b2cec71c04ab", tls: true, client-fingerprint: "chrome", alpn: ["http/1.1"], skip-cert-verify: false, network: "ws", ws-opts: {headers: {Host: "m10derty.7777128.xyz"}, path: "/YzFLmzNIEQsAmceLxv94lPbgMw"}, servername: "M10DErtY.7777128.xYz"}
+- {name: "🏴‍☠️ m10derty.7777128.xyz tls WS CDN vmess § 443 42", type: "vmess", server: "m10dErtY.7777128.xyZ", port: 443, cipher: "auto", uuid: "4f3f7db1-f416-473e-8321-b2cec71c04ab", alterId: 0, tls: true, network: "ws", ws-opts: {path: "/XV7e5RkwW8mceLxv94lPbgMw", headers: {Host: "m10derty.7777128.xyz"}}, servername: "M10DERty.7777128.Xyz"}
+- {name: "🏴‍☠️ m10derty.7777128.xyz http WS CDN vmess § 80 42", type: "vmess", server: "M10dErTy.7777128.XYZ", port: 80, cipher: "auto", uuid: "4f3f7db1-f416-473e-8321-b2cec71c04ab", alterId: 0, tls: false, network: "ws", ws-opts: {path: "/XV7e5RkwW8mceLxv94lPbgMw", headers: {Host: "m10derty.7777128.xyz"}}}
+- {type: "vless", name: "🏴‍☠️ m10uie.7777128.xyz tls WS CDN vless § 443 43", server: "m10uie.7777128.xyz", port: 443, uuid: "4f3f7db1-f416-473e-8321-b2cec71c04ab", tls: true, client-fingerprint: "chrome", alpn: ["http/1.1"], skip-cert-verify: false, network: "ws", ws-opts: {headers: {Host: "m10uie.7777128.xyz"}, path: "/YzFLmzNIEQsAmceLxv94lPbgMw"}, servername: "m10UIe.7777128.xYZ"}
+- {name: "🏴‍☠️ m10uie.7777128.xyz tls WS CDN vmess § 443 43", type: "vmess", server: "M10uiE.7777128.xYZ", port: 443, cipher: "auto", uuid: "4f3f7db1-f416-473e-8321-b2cec71c04ab", alterId: 0, tls: true, network: "ws", ws-opts: {path: "/XV7e5RkwW8mceLxv94lPbgMw", headers: {Host: "m10uie.7777128.xyz"}}, servername: "m10uIE.7777128.Xyz"}
+- {name: "🏴‍☠️ m10uie.7777128.xyz http WS CDN vmess § 80 43", type: "vmess", server: "m10uIe.7777128.xyZ", port: 80, cipher: "auto", uuid: "4f3f7db1-f416-473e-8321-b2cec71c04ab", alterId: 0, tls: false, network: "ws", ws-opts: {path: "/XV7e5RkwW8mceLxv94lPbgMw", headers: {Host: "m10uie.7777128.xyz"}}}
+- {type: "vless", name: "🏴‍☠️ m10eeeeeeeeeeeeeeeeeeeeeeeeeee.7777128.xyz tls WS CDN vless § 443 44", server: "m10eeeeeeeeeeeeeeeeeeeeeeeeeee.7777128.xyz", port: 443, uuid: "4f3f7db1-f416-473e-8321-b2cec71c04ab", tls: true, client-fingerprint: "chrome", alpn: ["http/1.1"], skip-cert-verify: false, network: "ws", ws-opts: {headers: {Host: "m10eeeeeeeeeeeeeeeeeeeeeeeeeee.7777128.xyz"}, path: "/YzFLmzNIEQsAmceLxv94lPbgMw"}, servername: "M10eEEeEeEeeEEeeEEEEEEeEeEEeEE.7777128.XYZ"}
+- {name: "🏴‍☠️ m10eeeeeeeeeeeeeeeeeeeeeeeeeee.7777128.xyz tls WS CDN vmess § 443 44", type: "vmess", server: "M10EeeEeEEEEeeeEeeEeeeEeEEeEeE.7777128.xYZ", port: 443, cipher: "auto", uuid: "4f3f7db1-f416-473e-8321-b2cec71c04ab", alterId: 0, tls: true, network: "ws", ws-opts: {path: "/XV7e5RkwW8mceLxv94lPbgMw", headers: {Host: "m10eeeeeeeeeeeeeeeeeeeeeeeeeee.7777128.xyz"}}, servername: "M10eeeEEeeEEEeeEEEEeeEEeeEeEEe.7777128.XyZ"}
+- {name: "🏴‍☠️ m10eeeeeeeeeeeeeeeeeeeeeeeeeee.7777128.xyz http WS CDN vmess § 80 44", type: "vmess", server: "M10EEeeeEEEEEeeeEEeeEeEeeeEeee.7777128.XYz", port: 80, cipher: "auto", uuid: "4f3f7db1-f416-473e-8321-b2cec71c04ab", alterId: 0, tls: false, network: "ws", ws-opts: {path: "/XV7e5RkwW8mceLxv94lPbgMw", headers: {Host: "m10eeeeeeeeeeeeeeeeeeeeeeeeeee.7777128.xyz"}}}
+- {type: "vless", name: "🏴‍☠️ m10eeeeerrrrttyu.7777128.xyz tls WS CDN vless § 443 45", server: "m10eeeeerrrrttyu.7777128.xyz", port: 443, uuid: "4f3f7db1-f416-473e-8321-b2cec71c04ab", tls: true, client-fingerprint: "chrome", alpn: ["http/1.1"], skip-cert-verify: false, network: "ws", ws-opts: {headers: {Host: "m10eeeeerrrrttyu.7777128.xyz"}, path: "/YzFLmzNIEQsAmceLxv94lPbgMw"}, servername: "m10EEeeErRrrtTYu.7777128.Xyz"}
+- {name: "🏴‍☠️ m10eeeeerrrrttyu.7777128.xyz http WS CDN vmess § 80 45", type: "vmess", server: "M10eeeEeRrRrTTYU.7777128.XyZ", port: 80, cipher: "auto", uuid: "4f3f7db1-f416-473e-8321-b2cec71c04ab", alterId: 0, tls: false, network: "ws", ws-opts: {path: "/XV7e5RkwW8mceLxv94lPbgMw", headers: {Host: "m10eeeeerrrrttyu.7777128.xyz"}}}
+- {type: "vless", name: "🏴‍☠️ m10dddddddddddddd.7777128.xyz tls WS CDN vless § 443 46", server: "m10dddddddddddddd.7777128.xyz", port: 443, uuid: "4f3f7db1-f416-473e-8321-b2cec71c04ab", tls: true, client-fingerprint: "chrome", alpn: ["http/1.1"], skip-cert-verify: false, network: "ws", ws-opts: {headers: {Host: "m10dddddddddddddd.7777128.xyz"}, path: "/YzFLmzNIEQsAmceLxv94lPbgMw"}, servername: "M10ddddDdDdDDDDDd.7777128.XYZ"}
+- {name: "🏴‍☠️ m10dddddddddddddd.7777128.xyz tls WS CDN vmess § 443 46", type: "vmess", server: "m10DdDDDdDDdDDDdd.7777128.xyZ", port: 443, cipher: "auto", uuid: "4f3f7db1-f416-473e-8321-b2cec71c04ab", alterId: 0, tls: true, network: "ws", ws-opts: {path: "/XV7e5RkwW8mceLxv94lPbgMw", headers: {Host: "m10dddddddddddddd.7777128.xyz"}}, servername: "M10dDdDDDdDdDDddd.7777128.xyz"}
+- {name: "🏴‍☠️ m10dddddddddddddd.7777128.xyz http WS CDN vmess § 80 46", type: "vmess", server: "m10DDdDDdddDDdDDd.7777128.XYz", port: 80, cipher: "auto", uuid: "4f3f7db1-f416-473e-8321-b2cec71c04ab", alterId: 0, tls: false, network: "ws", ws-opts: {path: "/XV7e5RkwW8mceLxv94lPbgMw", headers: {Host: "m10dddddddddddddd.7777128.xyz"}}}
+- {type: "vless", name: "🏴‍☠️ m10sssssss.7777128.xyz tls WS CDN vless § 443 47", server: "m10sssssss.7777128.xyz", port: 443, uuid: "4f3f7db1-f416-473e-8321-b2cec71c04ab", tls: true, client-fingerprint: "chrome", alpn: ["http/1.1"], skip-cert-verify: false, network: "ws", ws-opts: {headers: {Host: "m10sssssss.7777128.xyz"}, path: "/YzFLmzNIEQsAmceLxv94lPbgMw"}, servername: "M10sSsSSsS.7777128.xyZ"}
+- {name: "🏴‍☠️ m10sssssss.7777128.xyz tls WS CDN vmess § 443 47", type: "vmess", server: "m10SssSsSs.7777128.xYZ", port: 443, cipher: "auto", uuid: "4f3f7db1-f416-473e-8321-b2cec71c04ab", alterId: 0, tls: true, network: "ws", ws-opts: {path: "/XV7e5RkwW8mceLxv94lPbgMw", headers: {Host: "m10sssssss.7777128.xyz"}}, servername: "m10sSSssss.7777128.XyZ"}
+- {name: "🏴‍☠️ m10sssssss.7777128.xyz http WS CDN vmess § 80 47", type: "vmess", server: "M10SssSSSS.7777128.XyZ", port: 80, cipher: "auto", uuid: "4f3f7db1-f416-473e-8321-b2cec71c04ab", alterId: 0, tls: false, network: "ws", ws-opts: {path: "/XV7e5RkwW8mceLxv94lPbgMw", headers: {Host: "m10sssssss.7777128.xyz"}}}
+- {type: "vless", name: "🏴‍☠️ m10dertrr.7777128.xyz tls WS CDN vless § 443 48", server: "m10dertrr.7777128.xyz", port: 443, uuid: "4f3f7db1-f416-473e-8321-b2cec71c04ab", tls: true, client-fingerprint: "chrome", alpn: ["http/1.1"], skip-cert-verify: false, network: "ws", ws-opts: {headers: {Host: "m10dertrr.7777128.xyz"}, path: "/YzFLmzNIEQsAmceLxv94lPbgMw"}, servername: "M10DeRtrr.7777128.XYz"}
+- {name: "🏴‍☠️ m10dertrr.7777128.xyz tls WS CDN vmess § 443 48", type: "vmess", server: "M10DeRtrr.7777128.xyz", port: 443, cipher: "auto", uuid: "4f3f7db1-f416-473e-8321-b2cec71c04ab", alterId: 0, tls: true, network: "ws", ws-opts: {path: "/XV7e5RkwW8mceLxv94lPbgMw", headers: {Host: "m10dertrr.7777128.xyz"}}, servername: "m10dERtRr.7777128.xyZ"}
+- {name: "🏴‍☠️ m10dertrr.7777128.xyz http WS CDN vmess § 80 48", type: "vmess", server: "m10deRTrr.7777128.Xyz", port: 80, cipher: "auto", uuid: "4f3f7db1-f416-473e-8321-b2cec71c04ab", alterId: 0, tls: false, network: "ws", ws-opts: {path: "/XV7e5RkwW8mceLxv94lPbgMw", headers: {Host: "m10dertrr.7777128.xyz"}}}
+- {type: "vless", name: "🏴‍☠️ m10dertrrtty.7777128.xyz tls WS CDN vless § 443 49", server: "m10dertrrtty.7777128.xyz", port: 443, uuid: "4f3f7db1-f416-473e-8321-b2cec71c04ab", tls: true, client-fingerprint: "chrome", alpn: ["http/1.1"], skip-cert-verify: false, network: "ws", ws-opts: {headers: {Host: "m10dertrrtty.7777128.xyz"}, path: "/YzFLmzNIEQsAmceLxv94lPbgMw"}, servername: "m10deRtrrTty.7777128.XyZ"}
+- {name: "🏴‍☠️ m10dertrrtty.7777128.xyz tls WS CDN vmess § 443 49", type: "vmess", server: "M10dERtrRTTy.7777128.XYZ", port: 443, cipher: "auto", uuid: "4f3f7db1-f416-473e-8321-b2cec71c04ab", alterId: 0, tls: true, network: "ws", ws-opts: {path: "/XV7e5RkwW8mceLxv94lPbgMw", headers: {Host: "m10dertrrtty.7777128.xyz"}}, servername: "M10derTRRTtY.7777128.xyZ"}
+- {name: "🏴‍☠️ m10dertrrtty.7777128.xyz http WS CDN vmess § 80 49", type: "vmess", server: "m10DErtrRTTY.7777128.XYZ", port: 80, cipher: "auto", uuid: "4f3f7db1-f416-473e-8321-b2cec71c04ab", alterId: 0, tls: false, network: "ws", ws-opts: {path: "/XV7e5RkwW8mceLxv94lPbgMw", headers: {Host: "m10dertrrtty.7777128.xyz"}}}
+- {type: "vless", name: "🏴‍☠️ m10dertrrttyttyy.7777128.xyz tls WS CDN vless § 443 50", server: "m10dertrrttyttyy.7777128.xyz", port: 443, uuid: "4f3f7db1-f416-473e-8321-b2cec71c04ab", tls: true, client-fingerprint: "chrome", alpn: ["http/1.1"], skip-cert-verify: false, network: "ws", ws-opts: {headers: {Host: "m10dertrrttyttyy.7777128.xyz"}, path: "/YzFLmzNIEQsAmceLxv94lPbgMw"}, servername: "M10dErtrrTTYttyY.7777128.xyz"}
+- {name: "🏴‍☠️ m10dertrrttyttyy.7777128.xyz tls WS CDN vmess § 443 50", type: "vmess", server: "m10deRTrRTTyTtYY.7777128.XYZ", port: 443, cipher: "auto", uuid: "4f3f7db1-f416-473e-8321-b2cec71c04ab", alterId: 0, tls: true, network: "ws", ws-opts: {path: "/XV7e5RkwW8mceLxv94lPbgMw", headers: {Host: "m10dertrrttyttyy.7777128.xyz"}}, servername: "M10DeRTrRTTYTtyY.7777128.XYZ"}
+- {name: "🏴‍☠️ m10dertrrttyttyy.7777128.xyz http WS CDN vmess § 80 50", type: "vmess", server: "M10derTrRTTYTTyy.7777128.xyz", port: 80, cipher: "auto", uuid: "4f3f7db1-f416-473e-8321-b2cec71c04ab", alterId: 0, tls: false, network: "ws", ws-opts: {path: "/XV7e5RkwW8mceLxv94lPbgMw", headers: {Host: "m10dertrrttyttyy.7777128.xyz"}}}
+- {type: "vless", name: "🏴‍☠️ m10der.857657.xyz tls WS CDN vless § 443 52", server: "m10der.857657.xyz", port: 443, uuid: "4f3f7db1-f416-473e-8321-b2cec71c04ab", tls: true, client-fingerprint: "chrome", alpn: ["http/1.1"], skip-cert-verify: false, network: "ws", ws-opts: {headers: {Host: "m10der.857657.xyz"}, path: "/YzFLmzNIEQsAmceLxv94lPbgMw"}, servername: "M10deR.857657.Xyz"}
+- {name: "🏴‍☠️ m10der.857657.xyz tls WS CDN vmess § 443 52", type: "vmess", server: "M10DeR.857657.xyZ", port: 443, cipher: "auto", uuid: "4f3f7db1-f416-473e-8321-b2cec71c04ab", alterId: 0, tls: true, network: "ws", ws-opts: {path: "/XV7e5RkwW8mceLxv94lPbgMw", headers: {Host: "m10der.857657.xyz"}}, servername: "M10dER.857657.xyZ"}
+- {type: "vless", name: "🏴‍☠️ m10we.857657.xyz tls WS CDN vless § 443 53", server: "m10we.857657.xyz", port: 443, uuid: "4f3f7db1-f416-473e-8321-b2cec71c04ab", tls: true, client-fingerprint: "chrome", alpn: ["http/1.1"], skip-cert-verify: false, network: "ws", ws-opts: {headers: {Host: "m10we.857657.xyz"}, path: "/YzFLmzNIEQsAmceLxv94lPbgMw"}, servername: "M10we.857657.XYz"}
+- {name: "🏴‍☠️ m10we.857657.xyz http WS CDN vmess § 80 53", type: "vmess", server: "m10We.857657.xyz", port: 80, cipher: "auto", uuid: "4f3f7db1-f416-473e-8321-b2cec71c04ab", alterId: 0, tls: false, network: "ws", ws-opts: {path: "/XV7e5RkwW8mceLxv94lPbgMw", headers: {Host: "m10we.857657.xyz"}}}
+- {type: "vless", name: "🏴‍☠️ m10derer5.857657.xyz tls WS CDN vless § 443 54", server: "m10derer5.857657.xyz", port: 443, uuid: "4f3f7db1-f416-473e-8321-b2cec71c04ab", tls: true, client-fingerprint: "chrome", alpn: ["http/1.1"], skip-cert-verify: false, network: "ws", ws-opts: {headers: {Host: "m10derer5.857657.xyz"}, path: "/YzFLmzNIEQsAmceLxv94lPbgMw"}, servername: "m10derer5.857657.XyZ"}
+- {name: "🏴‍☠️ m10derer5.857657.xyz tls WS CDN vmess § 443 54", type: "vmess", server: "m10Derer5.857657.xYZ", port: 443, cipher: "auto", uuid: "4f3f7db1-f416-473e-8321-b2cec71c04ab", alterId: 0, tls: true, network: "ws", ws-opts: {path: "/XV7e5RkwW8mceLxv94lPbgMw", headers: {Host: "m10derer5.857657.xyz"}}, servername: "M10deRER5.857657.XYz"}
+- {type: "vless", name: "🏴‍☠️ m10derer5g.857657.xyz tls WS CDN vless § 443 55", server: "m10derer5g.857657.xyz", port: 443, uuid: "4f3f7db1-f416-473e-8321-b2cec71c04ab", tls: true, client-fingerprint: "chrome", alpn: ["http/1.1"], skip-cert-verify: false, network: "ws", ws-opts: {headers: {Host: "m10derer5g.857657.xyz"}, path: "/YzFLmzNIEQsAmceLxv94lPbgMw"}, servername: "m10dErEr5G.857657.XYz"}
+- {name: "🏴‍☠️ m10derer5g.857657.xyz tls WS CDN vmess § 443 55", type: "vmess", server: "m10DeRER5G.857657.xyz", port: 443, cipher: "auto", uuid: "4f3f7db1-f416-473e-8321-b2cec71c04ab", alterId: 0, tls: true, network: "ws", ws-opts: {path: "/XV7e5RkwW8mceLxv94lPbgMw", headers: {Host: "m10derer5g.857657.xyz"}}, servername: "M10DEReR5g.857657.xYZ"}
+- {name: "🏴‍☠️ m10derer5g.857657.xyz http WS CDN vmess § 80 55", type: "vmess", server: "m10deRer5G.857657.XYZ", port: 80, cipher: "auto", uuid: "4f3f7db1-f416-473e-8321-b2cec71c04ab", alterId: 0, tls: false, network: "ws", ws-opts: {path: "/XV7e5RkwW8mceLxv94lPbgMw", headers: {Host: "m10derer5g.857657.xyz"}}}
+- {type: "vless", name: "🏴‍☠️ m10derer5gw.857657.xyz tls WS CDN vless § 443 56", server: "m10derer5gw.857657.xyz", port: 443, uuid: "4f3f7db1-f416-473e-8321-b2cec71c04ab", tls: true, client-fingerprint: "chrome", alpn: ["http/1.1"], skip-cert-verify: false, network: "ws", ws-opts: {headers: {Host: "m10derer5gw.857657.xyz"}, path: "/YzFLmzNIEQsAmceLxv94lPbgMw"}, servername: "M10dERer5GW.857657.Xyz"}
+- {name: "🏴‍☠️ m10derer5gw.857657.xyz tls WS CDN vmess § 443 56", type: "vmess", server: "m10derER5gw.857657.XyZ", port: 443, cipher: "auto", uuid: "4f3f7db1-f416-473e-8321-b2cec71c04ab", alterId: 0, tls: true, network: "ws", ws-opts: {path: "/XV7e5RkwW8mceLxv94lPbgMw", headers: {Host: "m10derer5gw.857657.xyz"}}, servername: "M10DErER5gw.857657.XYZ"}
+- {type: "vless", name: "🏴‍☠️ m10derer5gwe.857657.xyz tls WS CDN vless § 443 57", server: "m10derer5gwe.857657.xyz", port: 443, uuid: "4f3f7db1-f416-473e-8321-b2cec71c04ab", tls: true, client-fingerprint: "chrome", alpn: ["http/1.1"], skip-cert-verify: false, network: "ws", ws-opts: {headers: {Host: "m10derer5gwe.857657.xyz"}, path: "/YzFLmzNIEQsAmceLxv94lPbgMw"}, servername: "M10DErer5Gwe.857657.xYZ"}
+- {name: "🏴‍☠️ m10derer5gwe.857657.xyz tls WS CDN vmess § 443 57", type: "vmess", server: "m10dErer5gwe.857657.XyZ", port: 443, cipher: "auto", uuid: "4f3f7db1-f416-473e-8321-b2cec71c04ab", alterId: 0, tls: true, network: "ws", ws-opts: {path: "/XV7e5RkwW8mceLxv94lPbgMw", headers: {Host: "m10derer5gwe.857657.xyz"}}, servername: "M10derEr5gwe.857657.Xyz"}
+- {name: "🏴‍☠️ m10derer5gwe.857657.xyz http WS CDN vmess § 80 57", type: "vmess", server: "m10dErER5gWe.857657.xyZ", port: 80, cipher: "auto", uuid: "4f3f7db1-f416-473e-8321-b2cec71c04ab", alterId: 0, tls: false, network: "ws", ws-opts: {path: "/XV7e5RkwW8mceLxv94lPbgMw", headers: {Host: "m10derer5gwe.857657.xyz"}}}
+- {type: "vless", name: "🏴‍☠️ m10iiiiii.857657.xyz tls WS CDN vless § 443 58", server: "m10iiiiii.857657.xyz", port: 443, uuid: "4f3f7db1-f416-473e-8321-b2cec71c04ab", tls: true, client-fingerprint: "chrome", alpn: ["http/1.1"], skip-cert-verify: false, network: "ws", ws-opts: {headers: {Host: "m10iiiiii.857657.xyz"}, path: "/YzFLmzNIEQsAmceLxv94lPbgMw"}, servername: "m10IIiiII.857657.XYZ"}
+- {name: "🏴‍☠️ m10iiiiii.857657.xyz tls WS CDN vmess § 443 58", type: "vmess", server: "m10iiIIIi.857657.xYZ", port: 443, cipher: "auto", uuid: "4f3f7db1-f416-473e-8321-b2cec71c04ab", alterId: 0, tls: true, network: "ws", ws-opts: {path: "/XV7e5RkwW8mceLxv94lPbgMw", headers: {Host: "m10iiiiii.857657.xyz"}}, servername: "m10iIiIIi.857657.xyz"}
+- {name: "🏴‍☠️ m10iiiiii.857657.xyz http WS CDN vmess § 80 58", type: "vmess", server: "m10IIIiiI.857657.xyZ", port: 80, cipher: "auto", uuid: "4f3f7db1-f416-473e-8321-b2cec71c04ab", alterId: 0, tls: false, network: "ws", ws-opts: {path: "/XV7e5RkwW8mceLxv94lPbgMw", headers: {Host: "m10iiiiii.857657.xyz"}}}
+- {type: "vless", name: "🏴‍☠️ m10iiiiiierwweee.857657.xyz tls WS CDN vless § 443 60", server: "m10iiiiiierwweee.857657.xyz", port: 443, uuid: "4f3f7db1-f416-473e-8321-b2cec71c04ab", tls: true, client-fingerprint: "chrome", alpn: ["http/1.1"], skip-cert-verify: false, network: "ws", ws-opts: {headers: {Host: "m10iiiiiierwweee.857657.xyz"}, path: "/YzFLmzNIEQsAmceLxv94lPbgMw"}, servername: "m10IIIIIIeRWweeE.857657.XyZ"}
+- {name: "🏴‍☠️ m10iiiiiierwweee.857657.xyz tls WS CDN vmess § 443 60", type: "vmess", server: "m10IiiIIIeRwWEeE.857657.XYZ", port: 443, cipher: "auto", uuid: "4f3f7db1-f416-473e-8321-b2cec71c04ab", alterId: 0, tls: true, network: "ws", ws-opts: {path: "/XV7e5RkwW8mceLxv94lPbgMw", headers: {Host: "m10iiiiiierwweee.857657.xyz"}}, servername: "m10IiiIIiErwweEe.857657.XYz"}
+- {type: "vless", name: "🏴‍☠️ m10e4r4wer.857856.xyz tls WS CDN vless § 443 62", server: "m10e4r4wer.857856.xyz", port: 443, uuid: "4f3f7db1-f416-473e-8321-b2cec71c04ab", tls: true, client-fingerprint: "chrome", alpn: ["http/1.1"], skip-cert-verify: false, network: "ws", ws-opts: {headers: {Host: "m10e4r4wer.857856.xyz"}, path: "/YzFLmzNIEQsAmceLxv94lPbgMw"}, servername: "m10E4r4Wer.857856.XYz"}
+- {name: "🏴‍☠️ m10e4r4wer.857856.xyz tls WS CDN vmess § 443 62", type: "vmess", server: "m10E4R4wer.857856.xYZ", port: 443, cipher: "auto", uuid: "4f3f7db1-f416-473e-8321-b2cec71c04ab", alterId: 0, tls: true, network: "ws", ws-opts: {path: "/XV7e5RkwW8mceLxv94lPbgMw", headers: {Host: "m10e4r4wer.857856.xyz"}}, servername: "m10e4r4wEr.857856.Xyz"}
+- {type: "vless", name: "🏴‍☠️ m10e4r4were45.857856.xyz tls WS CDN vless § 443 63", server: "m10e4r4were45.857856.xyz", port: 443, uuid: "4f3f7db1-f416-473e-8321-b2cec71c04ab", tls: true, client-fingerprint: "chrome", alpn: ["http/1.1"], skip-cert-verify: false, network: "ws", ws-opts: {headers: {Host: "m10e4r4were45.857856.xyz"}, path: "/YzFLmzNIEQsAmceLxv94lPbgMw"}, servername: "M10E4r4WEre45.857856.xYz"}
+- {name: "🏴‍☠️ m10e4r4were45.857856.xyz tls WS CDN vmess § 443 63", type: "vmess", server: "M10e4R4WEre45.857856.xYz", port: 443, cipher: "auto", uuid: "4f3f7db1-f416-473e-8321-b2cec71c04ab", alterId: 0, tls: true, network: "ws", ws-opts: {path: "/XV7e5RkwW8mceLxv94lPbgMw", headers: {Host: "m10e4r4were45.857856.xyz"}}, servername: "M10e4R4wERE45.857856.XYz"}
+- {name: "🏴‍☠️ m10e4r4were45.857856.xyz http WS CDN vmess § 80 63", type: "vmess", server: "M10e4r4WeRE45.857856.Xyz", port: 80, cipher: "auto", uuid: "4f3f7db1-f416-473e-8321-b2cec71c04ab", alterId: 0, tls: false, network: "ws", ws-opts: {path: "/XV7e5RkwW8mceLxv94lPbgMw", headers: {Host: "m10e4r4were45.857856.xyz"}}}
+- {type: "vless", name: "🏴‍☠️ m10e.857856.xyz tls WS CDN vless § 443 64", server: "m10e.857856.xyz", port: 443, uuid: "4f3f7db1-f416-473e-8321-b2cec71c04ab", tls: true, client-fingerprint: "chrome", alpn: ["http/1.1"], skip-cert-verify: false, network: "ws", ws-opts: {headers: {Host: "m10e.857856.xyz"}, path: "/YzFLmzNIEQsAmceLxv94lPbgMw"}, servername: "M10E.857856.xyz"}
+- {name: "🏴‍☠️ m10e.857856.xyz tls WS CDN vmess § 443 64", type: "vmess", server: "m10e.857856.xYz", port: 443, cipher: "auto", uuid: "4f3f7db1-f416-473e-8321-b2cec71c04ab", alterId: 0, tls: true, network: "ws", ws-opts: {path: "/XV7e5RkwW8mceLxv94lPbgMw", headers: {Host: "m10e.857856.xyz"}}, servername: "M10e.857856.XYZ"}
+- {name: "🏴‍☠️ m10e.857856.xyz http WS CDN vmess § 80 64", type: "vmess", server: "m10E.857856.xyZ", port: 80, cipher: "auto", uuid: "4f3f7db1-f416-473e-8321-b2cec71c04ab", alterId: 0, tls: false, network: "ws", ws-opts: {path: "/XV7e5RkwW8mceLxv94lPbgMw", headers: {Host: "m10e.857856.xyz"}}}
+- {type: "vless", name: "🏴‍☠️ m10ewwwwr.857856.xyz tls WS CDN vless § 443 65", server: "m10ewwwwr.857856.xyz", port: 443, uuid: "4f3f7db1-f416-473e-8321-b2cec71c04ab", tls: true, client-fingerprint: "chrome", alpn: ["http/1.1"], skip-cert-verify: false, network: "ws", ws-opts: {headers: {Host: "m10ewwwwr.857856.xyz"}, path: "/YzFLmzNIEQsAmceLxv94lPbgMw"}, servername: "M10EWwWWr.857856.xYz"}
+- {name: "🏴‍☠️ m10ewwwwr.857856.xyz tls WS CDN vmess § 443 65", type: "vmess", server: "m10ewWwwR.857856.xyz", port: 443, cipher: "auto", uuid: "4f3f7db1-f416-473e-8321-b2cec71c04ab", alterId: 0, tls: true, network: "ws", ws-opts: {path: "/XV7e5RkwW8mceLxv94lPbgMw", headers: {Host: "m10ewwwwr.857856.xyz"}}, servername: "m10EWWWWr.857856.xYZ"}
+- {name: "🏴‍☠️ m10ewwwwr.857856.xyz http WS CDN vmess § 80 65", type: "vmess", server: "m10EwwWWr.857856.XYZ", port: 80, cipher: "auto", uuid: "4f3f7db1-f416-473e-8321-b2cec71c04ab", alterId: 0, tls: false, network: "ws", ws-opts: {path: "/XV7e5RkwW8mceLxv94lPbgMw", headers: {Host: "m10ewwwwr.857856.xyz"}}}
+- {type: "vless", name: "🏴‍☠️ m10ess.857856.xyz tls WS CDN vless § 443 66", server: "m10ess.857856.xyz", port: 443, uuid: "4f3f7db1-f416-473e-8321-b2cec71c04ab", tls: true, client-fingerprint: "chrome", alpn: ["http/1.1"], skip-cert-verify: false, network: "ws", ws-opts: {headers: {Host: "m10ess.857856.xyz"}, path: "/YzFLmzNIEQsAmceLxv94lPbgMw"}, servername: "M10eSS.857856.xYZ"}
+- {name: "🏴‍☠️ m10ess.857856.xyz tls WS CDN vmess § 443 66", type: "vmess", server: "M10Ess.857856.xYZ", port: 443, cipher: "auto", uuid: "4f3f7db1-f416-473e-8321-b2cec71c04ab", alterId: 0, tls: true, network: "ws", ws-opts: {path: "/XV7e5RkwW8mceLxv94lPbgMw", headers: {Host: "m10ess.857856.xyz"}}, servername: "M10ESs.857856.XyZ"}
+- {name: "🏴‍☠️ m10ess.857856.xyz http WS CDN vmess § 80 66", type: "vmess", server: "m10ess.857856.XYz", port: 80, cipher: "auto", uuid: "4f3f7db1-f416-473e-8321-b2cec71c04ab", alterId: 0, tls: false, network: "ws", ws-opts: {path: "/XV7e5RkwW8mceLxv94lPbgMw", headers: {Host: "m10ess.857856.xyz"}}}
+- {type: "vless", name: "🏴‍☠️ m10kkk.857856.xyz tls WS CDN vless § 443 67", server: "m10kkk.857856.xyz", port: 443, uuid: "4f3f7db1-f416-473e-8321-b2cec71c04ab", tls: true, client-fingerprint: "chrome", alpn: ["http/1.1"], skip-cert-verify: false, network: "ws", ws-opts: {headers: {Host: "m10kkk.857856.xyz"}, path: "/YzFLmzNIEQsAmceLxv94lPbgMw"}, servername: "m10kKk.857856.xYZ"}
+- {name: "🏴‍☠️ m10kkk.857856.xyz tls WS CDN vmess § 443 67", type: "vmess", server: "m10Kkk.857856.XYz", port: 443, cipher: "auto", uuid: "4f3f7db1-f416-473e-8321-b2cec71c04ab", alterId: 0, tls: true, network: "ws", ws-opts: {path: "/XV7e5RkwW8mceLxv94lPbgMw", headers: {Host: "m10kkk.857856.xyz"}}, servername: "m10Kkk.857856.xyZ"}
+- {name: "🏴‍☠️ m10kkk.857856.xyz http WS CDN vmess § 80 67", type: "vmess", server: "m10kKK.857856.XyZ", port: 80, cipher: "auto", uuid: "4f3f7db1-f416-473e-8321-b2cec71c04ab", alterId: 0, tls: false, network: "ws", ws-opts: {path: "/XV7e5RkwW8mceLxv94lPbgMw", headers: {Host: "m10kkk.857856.xyz"}}}
+proxy-groups:
+- name: "PROXY"
+  type: "select"
+  proxies:
+  - "AUTO"
+  - "🏴‍☠️ mas10rt.890602.xyz tls WS CDN vless § 443 4"
+  - "🏴‍☠️ mas10rt.890602.xyz tls WS CDN vmess § 443 4"
+  - "🏴‍☠️ mas10.890602.xyz tls WS CDN vless § 443 5"
+  - "🏴‍☠️ mas10.890602.xyz tls WS CDN vmess § 443 5"
+  - "🏴‍☠️ mas10xyz.890602.xyz tls WS CDN vless § 443 6"
+  - "🏴‍☠️ mas10xyz.890602.xyz tls WS CDN vmess § 443 6"
+  - "🏴‍☠️ mas10opiuooooo.huangdi2025.dpdns.org tls WS CDN vless § 443 10"
+  - "🏴‍☠️ mas10opiuooooo.huangdi2025.dpdns.org tls WS CDN vmess § 443 10"
+  - "🏴‍☠️ mas10rtyui.huangdi2025.dpdns.org tls WS CDN vless § 443 11"
+  - "🏴‍☠️ mas10rtyui.huangdi2025.dpdns.org tls WS CDN vmess § 443 11"
+  - "🏴‍☠️ mas10rtyui.huangdi2025.dpdns.org http WS CDN vmess § 80 11"
+  - "🏴‍☠️ n10sdfghj.huangdi2025.dpdns.org tls WS CDN vless § 443 12"
+  - "🏴‍☠️ n10sdfghj.huangdi2025.dpdns.org tls WS CDN vmess § 443 12"
+  - "🏴‍☠️ ms10yyyyyyyyyyy.445.pp.ua tls WS CDN vless § 443 15"
+  - "🏴‍☠️ ms10yyy.445.pp.ua tls WS CDN vless § 443 16"
+  - "🏴‍☠️ ms10yyy.445.pp.ua tls WS CDN vmess § 443 16"
+  - "🏴‍☠️ ms10yy.445.pp.ua tls WS CDN vless § 443 17"
+  - "🏴‍☠️ ms10yy.445.pp.ua tls WS CDN vmess § 443 17"
+  - "🏴‍☠️ ms10yyyyyy.445.pp.ua tls WS CDN vless § 443 18"
+  - "🏴‍☠️ ms10yyyyyy.445.pp.ua tls WS CDN vmess § 443 18"
+  - "🏴‍☠️ ms10ttttt.445.pp.ua tls WS CDN vless § 443 19"
+  - "🏴‍☠️ ms10ttttt.445.pp.ua tls WS CDN vmess § 443 19"
+  - "🏴‍☠️ ms10ttt.445.pp.ua tls WS CDN vless § 443 20"
+  - "🏴‍☠️ ms10ttt.445.pp.ua tls WS CDN vmess § 443 20"
+  - "🏴‍☠️ m10dfghj.890604.dpdns.org tls WS CDN vless § 443 22"
+  - "🏴‍☠️ m10dfghj.890604.dpdns.org tls WS CDN vmess § 443 22"
+  - "🏴‍☠️ m10dfghj.890604.dpdns.org http WS CDN vmess § 80 22"
+  - "🏴‍☠️ m10d.890604.dpdns.org tls WS CDN vless § 443 23"
+  - "🏴‍☠️ m10d.890604.dpdns.org tls WS CDN vmess § 443 23"
+  - "🏴‍☠️ m10d.890604.dpdns.org http WS CDN vmess § 80 23"
+  - "🏴‍☠️ m10dwwww.890604.dpdns.org tls WS CDN vless § 443 27"
+  - "🏴‍☠️ m10dwwww.890604.dpdns.org http WS CDN vmess § 80 27"
+  - "🏴‍☠️ m10dww.890604.dpdns.org tls WS CDN vless § 443 28"
+  - "🏴‍☠️ m10dww.890604.dpdns.org tls WS CDN vmess § 443 28"
+  - "🏴‍☠️ m10dww.890604.dpdns.org http WS CDN vmess § 80 28"
+  - "🏴‍☠️ m10dwwwwrrt.890604.dpdns.org tls WS CDN vless § 443 29"
+  - "🏴‍☠️ m10dwwwwrrt.890604.dpdns.org tls WS CDN vmess § 443 29"
+  - "🏴‍☠️ m10dwwwwrrt.890604.dpdns.org http WS CDN vmess § 80 29"
+  - "🏴‍☠️ m10dfg.890604.dpdns.org tls WS CDN vless § 443 30"
+  - "🏴‍☠️ m10dfg.890604.dpdns.org tls WS CDN vmess § 443 30"
+  - "🏴‍☠️ m10dfg.890604.dpdns.org http WS CDN vmess § 80 30"
+  - "🏴‍☠️ m10ddddd.890604.dpdns.org tls WS CDN vless § 443 31"
+  - "🏴‍☠️ m10ddddd.890604.dpdns.org tls WS CDN vmess § 443 31"
+  - "🏴‍☠️ m10ddddd.890604.dpdns.org http WS CDN vmess § 80 31"
+  - "🏴‍☠️ m10ddddddddddddf.457.pp.ua tls WS CDN vless § 443 32"
+  - "🏴‍☠️ m10ddddddddddddf.457.pp.ua tls WS CDN vmess § 443 32"
+  - "🏴‍☠️ m10dddd.457.pp.ua tls WS CDN vless § 443 33"
+  - "🏴‍☠️ m10dddd.457.pp.ua tls WS CDN vmess § 443 33"
+  - "🏴‍☠️ m10ddd.457.pp.ua tls WS CDN vless § 443 34"
+  - "🏴‍☠️ m10ddd.457.pp.ua tls WS CDN vmess § 443 34"
+  - "🏴‍☠️ m10dddyyyy.457.pp.ua tls WS CDN vless § 443 35"
+  - "🏴‍☠️ m10dddyyyy.457.pp.ua tls WS CDN vmess § 443 35"
+  - "🏴‍☠️ m10frtyu.459.pp.ua tls WS CDN vmess § 443 36"
+  - "🏴‍☠️ m10frtyuttttttt.459.pp.ua tls WS CDN vless § 443 37"
+  - "🏴‍☠️ m10frtyuttttttt.459.pp.ua tls WS CDN vmess § 443 37"
+  - "🏴‍☠️ m10frtyuttttt.459.pp.ua tls WS CDN vless § 443 38"
+  - "🏴‍☠️ m10frtyuttttt.459.pp.ua tls WS CDN vmess § 443 38"
+  - "🏴‍☠️ m10frtyuttttt.459.pp.ua http WS CDN vmess § 80 38"
+  - "🏴‍☠️ m10frtyutttttjjj.459.pp.ua tls WS CDN vless § 443 39"
+  - "🏴‍☠️ m10frtyutttttjjj.459.pp.ua tls WS CDN vmess § 443 39"
+  - "🏴‍☠️ m10frtyutttt.459.pp.ua tls WS CDN vless § 443 40"
+  - "🏴‍☠️ m10frtyutttt.459.pp.ua tls WS CDN vmess § 443 40"
+  - "🏴‍☠️ m10frtyutttt678.459.pp.ua tls WS CDN vless § 443 41"
+  - "🏴‍☠️ m10frtyutttt678.459.pp.ua tls WS CDN vmess § 443 41"
+  - "🏴‍☠️ m10derty.7777128.xyz tls WS CDN vless § 443 42"
+  - "🏴‍☠️ m10derty.7777128.xyz tls WS CDN vmess § 443 42"
+  - "🏴‍☠️ m10derty.7777128.xyz http WS CDN vmess § 80 42"
+  - "🏴‍☠️ m10uie.7777128.xyz tls WS CDN vless § 443 43"
+  - "🏴‍☠️ m10uie.7777128.xyz tls WS CDN vmess § 443 43"
+  - "🏴‍☠️ m10uie.7777128.xyz http WS CDN vmess § 80 43"
+  - "🏴‍☠️ m10eeeeeeeeeeeeeeeeeeeeeeeeeee.7777128.xyz tls WS CDN vless § 443 44"
+  - "🏴‍☠️ m10eeeeeeeeeeeeeeeeeeeeeeeeeee.7777128.xyz tls WS CDN vmess § 443 44"
+  - "🏴‍☠️ m10eeeeeeeeeeeeeeeeeeeeeeeeeee.7777128.xyz http WS CDN vmess § 80 44"
+  - "🏴‍☠️ m10eeeeerrrrttyu.7777128.xyz tls WS CDN vless § 443 45"
+  - "🏴‍☠️ m10eeeeerrrrttyu.7777128.xyz http WS CDN vmess § 80 45"
+  - "🏴‍☠️ m10dddddddddddddd.7777128.xyz tls WS CDN vless § 443 46"
+  - "🏴‍☠️ m10dddddddddddddd.7777128.xyz tls WS CDN vmess § 443 46"
+  - "🏴‍☠️ m10dddddddddddddd.7777128.xyz http WS CDN vmess § 80 46"
+  - "🏴‍☠️ m10sssssss.7777128.xyz tls WS CDN vless § 443 47"
+  - "🏴‍☠️ m10sssssss.7777128.xyz tls WS CDN vmess § 443 47"
+  - "🏴‍☠️ m10sssssss.7777128.xyz http WS CDN vmess § 80 47"
+  - "🏴‍☠️ m10dertrr.7777128.xyz tls WS CDN vless § 443 48"
+  - "🏴‍☠️ m10dertrr.7777128.xyz tls WS CDN vmess § 443 48"
+  - "🏴‍☠️ m10dertrr.7777128.xyz http WS CDN vmess § 80 48"
+  - "🏴‍☠️ m10dertrrtty.7777128.xyz tls WS CDN vless § 443 49"
+  - "🏴‍☠️ m10dertrrtty.7777128.xyz tls WS CDN vmess § 443 49"
+  - "🏴‍☠️ m10dertrrtty.7777128.xyz http WS CDN vmess § 80 49"
+  - "🏴‍☠️ m10dertrrttyttyy.7777128.xyz tls WS CDN vless § 443 50"
+  - "🏴‍☠️ m10dertrrttyttyy.7777128.xyz tls WS CDN vmess § 443 50"
+  - "🏴‍☠️ m10dertrrttyttyy.7777128.xyz http WS CDN vmess § 80 50"
+  - "🏴‍☠️ m10der.857657.xyz tls WS CDN vless § 443 52"
+  - "🏴‍☠️ m10der.857657.xyz tls WS CDN vmess § 443 52"
+  - "🏴‍☠️ m10we.857657.xyz tls WS CDN vless § 443 53"
+  - "🏴‍☠️ m10we.857657.xyz http WS CDN vmess § 80 53"
+  - "🏴‍☠️ m10derer5.857657.xyz tls WS CDN vless § 443 54"
+  - "🏴‍☠️ m10derer5.857657.xyz tls WS CDN vmess § 443 54"
+  - "🏴‍☠️ m10derer5g.857657.xyz tls WS CDN vless § 443 55"
+  - "🏴‍☠️ m10derer5g.857657.xyz tls WS CDN vmess § 443 55"
+  - "🏴‍☠️ m10derer5g.857657.xyz http WS CDN vmess § 80 55"
+  - "🏴‍☠️ m10derer5gw.857657.xyz tls WS CDN vless § 443 56"
+  - "🏴‍☠️ m10derer5gw.857657.xyz tls WS CDN vmess § 443 56"
+  - "🏴‍☠️ m10derer5gwe.857657.xyz tls WS CDN vless § 443 57"
+  - "🏴‍☠️ m10derer5gwe.857657.xyz tls WS CDN vmess § 443 57"
+  - "🏴‍☠️ m10derer5gwe.857657.xyz http WS CDN vmess § 80 57"
+  - "🏴‍☠️ m10iiiiii.857657.xyz tls WS CDN vless § 443 58"
+  - "🏴‍☠️ m10iiiiii.857657.xyz tls WS CDN vmess § 443 58"
+  - "🏴‍☠️ m10iiiiii.857657.xyz http WS CDN vmess § 80 58"
+  - "🏴‍☠️ m10iiiiiierwweee.857657.xyz tls WS CDN vless § 443 60"
+  - "🏴‍☠️ m10iiiiiierwweee.857657.xyz tls WS CDN vmess § 443 60"
+  - "🏴‍☠️ m10e4r4wer.857856.xyz tls WS CDN vless § 443 62"
+  - "🏴‍☠️ m10e4r4wer.857856.xyz tls WS CDN vmess § 443 62"
+  - "🏴‍☠️ m10e4r4were45.857856.xyz tls WS CDN vless § 443 63"
+  - "🏴‍☠️ m10e4r4were45.857856.xyz tls WS CDN vmess § 443 63"
+  - "🏴‍☠️ m10e4r4were45.857856.xyz http WS CDN vmess § 80 63"
+  - "🏴‍☠️ m10e.857856.xyz tls WS CDN vless § 443 64"
+  - "🏴‍☠️ m10e.857856.xyz tls WS CDN vmess § 443 64"
+  - "🏴‍☠️ m10e.857856.xyz http WS CDN vmess § 80 64"
+  - "🏴‍☠️ m10ewwwwr.857856.xyz tls WS CDN vless § 443 65"
+  - "🏴‍☠️ m10ewwwwr.857856.xyz tls WS CDN vmess § 443 65"
+  - "🏴‍☠️ m10ewwwwr.857856.xyz http WS CDN vmess § 80 65"
+  - "🏴‍☠️ m10ess.857856.xyz tls WS CDN vless § 443 66"
+  - "🏴‍☠️ m10ess.857856.xyz tls WS CDN vmess § 443 66"
+  - "🏴‍☠️ m10ess.857856.xyz http WS CDN vmess § 80 66"
+  - "🏴‍☠️ m10kkk.857856.xyz tls WS CDN vless § 443 67"
+  - "🏴‍☠️ m10kkk.857856.xyz tls WS CDN vmess § 443 67"
+  - "🏴‍☠️ m10kkk.857856.xyz http WS CDN vmess § 80 67"
+- name: "AUTO"
+  type: "url-test"
+  url: "http://www.gstatic.com/generate_204"
+  interval: 300
+  tolerance: 50
+  proxies:
+  - "🏴‍☠️ mas10rt.890602.xyz tls WS CDN vless § 443 4"
+  - "🏴‍☠️ mas10rt.890602.xyz tls WS CDN vmess § 443 4"
+  - "🏴‍☠️ mas10.890602.xyz tls WS CDN vless § 443 5"
+  - "🏴‍☠️ mas10.890602.xyz tls WS CDN vmess § 443 5"
+  - "🏴‍☠️ mas10xyz.890602.xyz tls WS CDN vless § 443 6"
+  - "🏴‍☠️ mas10xyz.890602.xyz tls WS CDN vmess § 443 6"
+  - "🏴‍☠️ mas10opiuooooo.huangdi2025.dpdns.org tls WS CDN vless § 443 10"
+  - "🏴‍☠️ mas10opiuooooo.huangdi2025.dpdns.org tls WS CDN vmess § 443 10"
+  - "🏴‍☠️ mas10rtyui.huangdi2025.dpdns.org tls WS CDN vless § 443 11"
+  - "🏴‍☠️ mas10rtyui.huangdi2025.dpdns.org tls WS CDN vmess § 443 11"
+  - "🏴‍☠️ mas10rtyui.huangdi2025.dpdns.org http WS CDN vmess § 80 11"
+  - "🏴‍☠️ n10sdfghj.huangdi2025.dpdns.org tls WS CDN vless § 443 12"
+  - "🏴‍☠️ n10sdfghj.huangdi2025.dpdns.org tls WS CDN vmess § 443 12"
+  - "🏴‍☠️ ms10yyyyyyyyyyy.445.pp.ua tls WS CDN vless § 443 15"
+  - "🏴‍☠️ ms10yyy.445.pp.ua tls WS CDN vless § 443 16"
+  - "🏴‍☠️ ms10yyy.445.pp.ua tls WS CDN vmess § 443 16"
+  - "🏴‍☠️ ms10yy.445.pp.ua tls WS CDN vless § 443 17"
+  - "🏴‍☠️ ms10yy.445.pp.ua tls WS CDN vmess § 443 17"
+  - "🏴‍☠️ ms10yyyyyy.445.pp.ua tls WS CDN vless § 443 18"
+  - "🏴‍☠️ ms10yyyyyy.445.pp.ua tls WS CDN vmess § 443 18"
+  - "🏴‍☠️ ms10ttttt.445.pp.ua tls WS CDN vless § 443 19"
+  - "🏴‍☠️ ms10ttttt.445.pp.ua tls WS CDN vmess § 443 19"
+  - "🏴‍☠️ ms10ttt.445.pp.ua tls WS CDN vless § 443 20"
+  - "🏴‍☠️ ms10ttt.445.pp.ua tls WS CDN vmess § 443 20"
+  - "🏴‍☠️ m10dfghj.890604.dpdns.org tls WS CDN vless § 443 22"
+  - "🏴‍☠️ m10dfghj.890604.dpdns.org tls WS CDN vmess § 443 22"
+  - "🏴‍☠️ m10dfghj.890604.dpdns.org http WS CDN vmess § 80 22"
+  - "🏴‍☠️ m10d.890604.dpdns.org tls WS CDN vless § 443 23"
+  - "🏴‍☠️ m10d.890604.dpdns.org tls WS CDN vmess § 443 23"
+  - "🏴‍☠️ m10d.890604.dpdns.org http WS CDN vmess § 80 23"
+  - "🏴‍☠️ m10dwwww.890604.dpdns.org tls WS CDN vless § 443 27"
+  - "🏴‍☠️ m10dwwww.890604.dpdns.org http WS CDN vmess § 80 27"
+  - "🏴‍☠️ m10dww.890604.dpdns.org tls WS CDN vless § 443 28"
+  - "🏴‍☠️ m10dww.890604.dpdns.org tls WS CDN vmess § 443 28"
+  - "🏴‍☠️ m10dww.890604.dpdns.org http WS CDN vmess § 80 28"
+  - "🏴‍☠️ m10dwwwwrrt.890604.dpdns.org tls WS CDN vless § 443 29"
+  - "🏴‍☠️ m10dwwwwrrt.890604.dpdns.org tls WS CDN vmess § 443 29"
+  - "🏴‍☠️ m10dwwwwrrt.890604.dpdns.org http WS CDN vmess § 80 29"
+  - "🏴‍☠️ m10dfg.890604.dpdns.org tls WS CDN vless § 443 30"
+  - "🏴‍☠️ m10dfg.890604.dpdns.org tls WS CDN vmess § 443 30"
+  - "🏴‍☠️ m10dfg.890604.dpdns.org http WS CDN vmess § 80 30"
+  - "🏴‍☠️ m10ddddd.890604.dpdns.org tls WS CDN vless § 443 31"
+  - "🏴‍☠️ m10ddddd.890604.dpdns.org tls WS CDN vmess § 443 31"
+  - "🏴‍☠️ m10ddddd.890604.dpdns.org http WS CDN vmess § 80 31"
+  - "🏴‍☠️ m10ddddddddddddf.457.pp.ua tls WS CDN vless § 443 32"
+  - "🏴‍☠️ m10ddddddddddddf.457.pp.ua tls WS CDN vmess § 443 32"
+  - "🏴‍☠️ m10dddd.457.pp.ua tls WS CDN vless § 443 33"
+  - "🏴‍☠️ m10dddd.457.pp.ua tls WS CDN vmess § 443 33"
+  - "🏴‍☠️ m10ddd.457.pp.ua tls WS CDN vless § 443 34"
+  - "🏴‍☠️ m10ddd.457.pp.ua tls WS CDN vmess § 443 34"
+  - "🏴‍☠️ m10dddyyyy.457.pp.ua tls WS CDN vless § 443 35"
+  - "🏴‍☠️ m10dddyyyy.457.pp.ua tls WS CDN vmess § 443 35"
+  - "🏴‍☠️ m10frtyu.459.pp.ua tls WS CDN vmess § 443 36"
+  - "🏴‍☠️ m10frtyuttttttt.459.pp.ua tls WS CDN vless § 443 37"
+  - "🏴‍☠️ m10frtyuttttttt.459.pp.ua tls WS CDN vmess § 443 37"
+  - "🏴‍☠️ m10frtyuttttt.459.pp.ua tls WS CDN vless § 443 38"
+  - "🏴‍☠️ m10frtyuttttt.459.pp.ua tls WS CDN vmess § 443 38"
+  - "🏴‍☠️ m10frtyuttttt.459.pp.ua http WS CDN vmess § 80 38"
+  - "🏴‍☠️ m10frtyutttttjjj.459.pp.ua tls WS CDN vless § 443 39"
+  - "🏴‍☠️ m10frtyutttttjjj.459.pp.ua tls WS CDN vmess § 443 39"
+  - "🏴‍☠️ m10frtyutttt.459.pp.ua tls WS CDN vless § 443 40"
+  - "🏴‍☠️ m10frtyutttt.459.pp.ua tls WS CDN vmess § 443 40"
+  - "🏴‍☠️ m10frtyutttt678.459.pp.ua tls WS CDN vless § 443 41"
+  - "🏴‍☠️ m10frtyutttt678.459.pp.ua tls WS CDN vmess § 443 41"
+  - "🏴‍☠️ m10derty.7777128.xyz tls WS CDN vless § 443 42"
+  - "🏴‍☠️ m10derty.7777128.xyz tls WS CDN vmess § 443 42"
+  - "🏴‍☠️ m10derty.7777128.xyz http WS CDN vmess § 80 42"
+  - "🏴‍☠️ m10uie.7777128.xyz tls WS CDN vless § 443 43"
+  - "🏴‍☠️ m10uie.7777128.xyz tls WS CDN vmess § 443 43"
+  - "🏴‍☠️ m10uie.7777128.xyz http WS CDN vmess § 80 43"
+  - "🏴‍☠️ m10eeeeeeeeeeeeeeeeeeeeeeeeeee.7777128.xyz tls WS CDN vless § 443 44"
+  - "🏴‍☠️ m10eeeeeeeeeeeeeeeeeeeeeeeeeee.7777128.xyz tls WS CDN vmess § 443 44"
+  - "🏴‍☠️ m10eeeeeeeeeeeeeeeeeeeeeeeeeee.7777128.xyz http WS CDN vmess § 80 44"
+  - "🏴‍☠️ m10eeeeerrrrttyu.7777128.xyz tls WS CDN vless § 443 45"
+  - "🏴‍☠️ m10eeeeerrrrttyu.7777128.xyz http WS CDN vmess § 80 45"
+  - "🏴‍☠️ m10dddddddddddddd.7777128.xyz tls WS CDN vless § 443 46"
+  - "🏴‍☠️ m10dddddddddddddd.7777128.xyz tls WS CDN vmess § 443 46"
+  - "🏴‍☠️ m10dddddddddddddd.7777128.xyz http WS CDN vmess § 80 46"
+  - "🏴‍☠️ m10sssssss.7777128.xyz tls WS CDN vless § 443 47"
+  - "🏴‍☠️ m10sssssss.7777128.xyz tls WS CDN vmess § 443 47"
+  - "🏴‍☠️ m10sssssss.7777128.xyz http WS CDN vmess § 80 47"
+  - "🏴‍☠️ m10dertrr.7777128.xyz tls WS CDN vless § 443 48"
+  - "🏴‍☠️ m10dertrr.7777128.xyz tls WS CDN vmess § 443 48"
+  - "🏴‍☠️ m10dertrr.7777128.xyz http WS CDN vmess § 80 48"
+  - "🏴‍☠️ m10dertrrtty.7777128.xyz tls WS CDN vless § 443 49"
+  - "🏴‍☠️ m10dertrrtty.7777128.xyz tls WS CDN vmess § 443 49"
+  - "🏴‍☠️ m10dertrrtty.7777128.xyz http WS CDN vmess § 80 49"
+  - "🏴‍☠️ m10dertrrttyttyy.7777128.xyz tls WS CDN vless § 443 50"
+  - "🏴‍☠️ m10dertrrttyttyy.7777128.xyz tls WS CDN vmess § 443 50"
+  - "🏴‍☠️ m10dertrrttyttyy.7777128.xyz http WS CDN vmess § 80 50"
+  - "🏴‍☠️ m10der.857657.xyz tls WS CDN vless § 443 52"
+  - "🏴‍☠️ m10der.857657.xyz tls WS CDN vmess § 443 52"
+  - "🏴‍☠️ m10we.857657.xyz tls WS CDN vless § 443 53"
+  - "🏴‍☠️ m10we.857657.xyz http WS CDN vmess § 80 53"
+  - "🏴‍☠️ m10derer5.857657.xyz tls WS CDN vless § 443 54"
+  - "🏴‍☠️ m10derer5.857657.xyz tls WS CDN vmess § 443 54"
+  - "🏴‍☠️ m10derer5g.857657.xyz tls WS CDN vless § 443 55"
+  - "🏴‍☠️ m10derer5g.857657.xyz tls WS CDN vmess § 443 55"
+  - "🏴‍☠️ m10derer5g.857657.xyz http WS CDN vmess § 80 55"
+  - "🏴‍☠️ m10derer5gw.857657.xyz tls WS CDN vless § 443 56"
+  - "🏴‍☠️ m10derer5gw.857657.xyz tls WS CDN vmess § 443 56"
+  - "🏴‍☠️ m10derer5gwe.857657.xyz tls WS CDN vless § 443 57"
+  - "🏴‍☠️ m10derer5gwe.857657.xyz tls WS CDN vmess § 443 57"
+  - "🏴‍☠️ m10derer5gwe.857657.xyz http WS CDN vmess § 80 57"
+  - "🏴‍☠️ m10iiiiii.857657.xyz tls WS CDN vless § 443 58"
+  - "🏴‍☠️ m10iiiiii.857657.xyz tls WS CDN vmess § 443 58"
+  - "🏴‍☠️ m10iiiiii.857657.xyz http WS CDN vmess § 80 58"
+  - "🏴‍☠️ m10iiiiiierwweee.857657.xyz tls WS CDN vless § 443 60"
+  - "🏴‍☠️ m10iiiiiierwweee.857657.xyz tls WS CDN vmess § 443 60"
+  - "🏴‍☠️ m10e4r4wer.857856.xyz tls WS CDN vless § 443 62"
+  - "🏴‍☠️ m10e4r4wer.857856.xyz tls WS CDN vmess § 443 62"
+  - "🏴‍☠️ m10e4r4were45.857856.xyz tls WS CDN vless § 443 63"
+  - "🏴‍☠️ m10e4r4were45.857856.xyz tls WS CDN vmess § 443 63"
+  - "🏴‍☠️ m10e4r4were45.857856.xyz http WS CDN vmess § 80 63"
+  - "🏴‍☠️ m10e.857856.xyz tls WS CDN vless § 443 64"
+  - "🏴‍☠️ m10e.857856.xyz tls WS CDN vmess § 443 64"
+  - "🏴‍☠️ m10e.857856.xyz http WS CDN vmess § 80 64"
+  - "🏴‍☠️ m10ewwwwr.857856.xyz tls WS CDN vless § 443 65"
+  - "🏴‍☠️ m10ewwwwr.857856.xyz tls WS CDN vmess § 443 65"
+  - "🏴‍☠️ m10ewwwwr.857856.xyz http WS CDN vmess § 80 65"
+  - "🏴‍☠️ m10ess.857856.xyz tls WS CDN vless § 443 66"
+  - "🏴‍☠️ m10ess.857856.xyz tls WS CDN vmess § 443 66"
+  - "🏴‍☠️ m10ess.857856.xyz http WS CDN vmess § 80 66"
+  - "🏴‍☠️ m10kkk.857856.xyz tls WS CDN vless § 443 67"
+  - "🏴‍☠️ m10kkk.857856.xyz tls WS CDN vmess § 443 67"
+  - "🏴‍☠️ m10kkk.857856.xyz http WS CDN vmess § 80 67"
+- name: "AI"
+  type: "select"
+  proxies:
+  - "🏴‍☠️ mas10rt.890602.xyz tls WS CDN vless § 443 4"
+  - "🏴‍☠️ mas10rt.890602.xyz tls WS CDN vmess § 443 4"
+  - "🏴‍☠️ mas10.890602.xyz tls WS CDN vless § 443 5"
+  - "🏴‍☠️ mas10.890602.xyz tls WS CDN vmess § 443 5"
+  - "🏴‍☠️ mas10xyz.890602.xyz tls WS CDN vless § 443 6"
+  - "🏴‍☠️ mas10xyz.890602.xyz tls WS CDN vmess § 443 6"
+  - "🏴‍☠️ mas10opiuooooo.huangdi2025.dpdns.org tls WS CDN vless § 443 10"
+  - "🏴‍☠️ mas10opiuooooo.huangdi2025.dpdns.org tls WS CDN vmess § 443 10"
+  - "🏴‍☠️ mas10rtyui.huangdi2025.dpdns.org tls WS CDN vless § 443 11"
+  - "🏴‍☠️ mas10rtyui.huangdi2025.dpdns.org tls WS CDN vmess § 443 11"
+  - "🏴‍☠️ mas10rtyui.huangdi2025.dpdns.org http WS CDN vmess § 80 11"
+  - "🏴‍☠️ n10sdfghj.huangdi2025.dpdns.org tls WS CDN vless § 443 12"
+  - "🏴‍☠️ n10sdfghj.huangdi2025.dpdns.org tls WS CDN vmess § 443 12"
+  - "🏴‍☠️ ms10yyyyyyyyyyy.445.pp.ua tls WS CDN vless § 443 15"
+  - "🏴‍☠️ ms10yyy.445.pp.ua tls WS CDN vless § 443 16"
+  - "🏴‍☠️ ms10yyy.445.pp.ua tls WS CDN vmess § 443 16"
+  - "🏴‍☠️ ms10yy.445.pp.ua tls WS CDN vless § 443 17"
+  - "🏴‍☠️ ms10yy.445.pp.ua tls WS CDN vmess § 443 17"
+  - "🏴‍☠️ ms10yyyyyy.445.pp.ua tls WS CDN vless § 443 18"
+  - "🏴‍☠️ ms10yyyyyy.445.pp.ua tls WS CDN vmess § 443 18"
+  - "🏴‍☠️ ms10ttttt.445.pp.ua tls WS CDN vless § 443 19"
+  - "🏴‍☠️ ms10ttttt.445.pp.ua tls WS CDN vmess § 443 19"
+  - "🏴‍☠️ ms10ttt.445.pp.ua tls WS CDN vless § 443 20"
+  - "🏴‍☠️ ms10ttt.445.pp.ua tls WS CDN vmess § 443 20"
+  - "🏴‍☠️ m10dfghj.890604.dpdns.org tls WS CDN vless § 443 22"
+  - "🏴‍☠️ m10dfghj.890604.dpdns.org tls WS CDN vmess § 443 22"
+  - "🏴‍☠️ m10dfghj.890604.dpdns.org http WS CDN vmess § 80 22"
+  - "🏴‍☠️ m10d.890604.dpdns.org tls WS CDN vless § 443 23"
+  - "🏴‍☠️ m10d.890604.dpdns.org tls WS CDN vmess § 443 23"
+  - "🏴‍☠️ m10d.890604.dpdns.org http WS CDN vmess § 80 23"
+  - "🏴‍☠️ m10dwwww.890604.dpdns.org tls WS CDN vless § 443 27"
+  - "🏴‍☠️ m10dwwww.890604.dpdns.org http WS CDN vmess § 80 27"
+  - "🏴‍☠️ m10dww.890604.dpdns.org tls WS CDN vless § 443 28"
+  - "🏴‍☠️ m10dww.890604.dpdns.org tls WS CDN vmess § 443 28"
+  - "🏴‍☠️ m10dww.890604.dpdns.org http WS CDN vmess § 80 28"
+  - "🏴‍☠️ m10dwwwwrrt.890604.dpdns.org tls WS CDN vless § 443 29"
+  - "🏴‍☠️ m10dwwwwrrt.890604.dpdns.org tls WS CDN vmess § 443 29"
+  - "🏴‍☠️ m10dwwwwrrt.890604.dpdns.org http WS CDN vmess § 80 29"
+  - "🏴‍☠️ m10dfg.890604.dpdns.org tls WS CDN vless § 443 30"
+  - "🏴‍☠️ m10dfg.890604.dpdns.org tls WS CDN vmess § 443 30"
+  - "🏴‍☠️ m10dfg.890604.dpdns.org http WS CDN vmess § 80 30"
+  - "🏴‍☠️ m10ddddd.890604.dpdns.org tls WS CDN vless § 443 31"
+  - "🏴‍☠️ m10ddddd.890604.dpdns.org tls WS CDN vmess § 443 31"
+  - "🏴‍☠️ m10ddddd.890604.dpdns.org http WS CDN vmess § 80 31"
+  - "🏴‍☠️ m10ddddddddddddf.457.pp.ua tls WS CDN vless § 443 32"
+  - "🏴‍☠️ m10ddddddddddddf.457.pp.ua tls WS CDN vmess § 443 32"
+  - "🏴‍☠️ m10dddd.457.pp.ua tls WS CDN vless § 443 33"
+  - "🏴‍☠️ m10dddd.457.pp.ua tls WS CDN vmess § 443 33"
+  - "🏴‍☠️ m10ddd.457.pp.ua tls WS CDN vless § 443 34"
+  - "🏴‍☠️ m10ddd.457.pp.ua tls WS CDN vmess § 443 34"
+  - "🏴‍☠️ m10dddyyyy.457.pp.ua tls WS CDN vless § 443 35"
+  - "🏴‍☠️ m10dddyyyy.457.pp.ua tls WS CDN vmess § 443 35"
+  - "🏴‍☠️ m10frtyu.459.pp.ua tls WS CDN vmess § 443 36"
+  - "🏴‍☠️ m10frtyuttttttt.459.pp.ua tls WS CDN vless § 443 37"
+  - "🏴‍☠️ m10frtyuttttttt.459.pp.ua tls WS CDN vmess § 443 37"
+  - "🏴‍☠️ m10frtyuttttt.459.pp.ua tls WS CDN vless § 443 38"
+  - "🏴‍☠️ m10frtyuttttt.459.pp.ua tls WS CDN vmess § 443 38"
+  - "🏴‍☠️ m10frtyuttttt.459.pp.ua http WS CDN vmess § 80 38"
+  - "🏴‍☠️ m10frtyutttttjjj.459.pp.ua tls WS CDN vless § 443 39"
+  - "🏴‍☠️ m10frtyutttttjjj.459.pp.ua tls WS CDN vmess § 443 39"
+  - "🏴‍☠️ m10frtyutttt.459.pp.ua tls WS CDN vless § 443 40"
+  - "🏴‍☠️ m10frtyutttt.459.pp.ua tls WS CDN vmess § 443 40"
+  - "🏴‍☠️ m10frtyutttt678.459.pp.ua tls WS CDN vless § 443 41"
+  - "🏴‍☠️ m10frtyutttt678.459.pp.ua tls WS CDN vmess § 443 41"
+  - "🏴‍☠️ m10derty.7777128.xyz tls WS CDN vless § 443 42"
+  - "🏴‍☠️ m10derty.7777128.xyz tls WS CDN vmess § 443 42"
+  - "🏴‍☠️ m10derty.7777128.xyz http WS CDN vmess § 80 42"
+  - "🏴‍☠️ m10uie.7777128.xyz tls WS CDN vless § 443 43"
+  - "🏴‍☠️ m10uie.7777128.xyz tls WS CDN vmess § 443 43"
+  - "🏴‍☠️ m10uie.7777128.xyz http WS CDN vmess § 80 43"
+  - "🏴‍☠️ m10eeeeeeeeeeeeeeeeeeeeeeeeeee.7777128.xyz tls WS CDN vless § 443 44"
+  - "🏴‍☠️ m10eeeeeeeeeeeeeeeeeeeeeeeeeee.7777128.xyz tls WS CDN vmess § 443 44"
+  - "🏴‍☠️ m10eeeeeeeeeeeeeeeeeeeeeeeeeee.7777128.xyz http WS CDN vmess § 80 44"
+  - "🏴‍☠️ m10eeeeerrrrttyu.7777128.xyz tls WS CDN vless § 443 45"
+  - "🏴‍☠️ m10eeeeerrrrttyu.7777128.xyz http WS CDN vmess § 80 45"
+  - "🏴‍☠️ m10dddddddddddddd.7777128.xyz tls WS CDN vless § 443 46"
+  - "🏴‍☠️ m10dddddddddddddd.7777128.xyz tls WS CDN vmess § 443 46"
+  - "🏴‍☠️ m10dddddddddddddd.7777128.xyz http WS CDN vmess § 80 46"
+  - "🏴‍☠️ m10sssssss.7777128.xyz tls WS CDN vless § 443 47"
+  - "🏴‍☠️ m10sssssss.7777128.xyz tls WS CDN vmess § 443 47"
+  - "🏴‍☠️ m10sssssss.7777128.xyz http WS CDN vmess § 80 47"
+  - "🏴‍☠️ m10dertrr.7777128.xyz tls WS CDN vless § 443 48"
+  - "🏴‍☠️ m10dertrr.7777128.xyz tls WS CDN vmess § 443 48"
+  - "🏴‍☠️ m10dertrr.7777128.xyz http WS CDN vmess § 80 48"
+  - "🏴‍☠️ m10dertrrtty.7777128.xyz tls WS CDN vless § 443 49"
+  - "🏴‍☠️ m10dertrrtty.7777128.xyz tls WS CDN vmess § 443 49"
+  - "🏴‍☠️ m10dertrrtty.7777128.xyz http WS CDN vmess § 80 49"
+  - "🏴‍☠️ m10dertrrttyttyy.7777128.xyz tls WS CDN vless § 443 50"
+  - "🏴‍☠️ m10dertrrttyttyy.7777128.xyz tls WS CDN vmess § 443 50"
+  - "🏴‍☠️ m10dertrrttyttyy.7777128.xyz http WS CDN vmess § 80 50"
+  - "🏴‍☠️ m10der.857657.xyz tls WS CDN vless § 443 52"
+  - "🏴‍☠️ m10der.857657.xyz tls WS CDN vmess § 443 52"
+  - "🏴‍☠️ m10we.857657.xyz tls WS CDN vless § 443 53"
+  - "🏴‍☠️ m10we.857657.xyz http WS CDN vmess § 80 53"
+  - "🏴‍☠️ m10derer5.857657.xyz tls WS CDN vless § 443 54"
+  - "🏴‍☠️ m10derer5.857657.xyz tls WS CDN vmess § 443 54"
+  - "🏴‍☠️ m10derer5g.857657.xyz tls WS CDN vless § 443 55"
+  - "🏴‍☠️ m10derer5g.857657.xyz tls WS CDN vmess § 443 55"
+  - "🏴‍☠️ m10derer5g.857657.xyz http WS CDN vmess § 80 55"
+  - "🏴‍☠️ m10derer5gw.857657.xyz tls WS CDN vless § 443 56"
+  - "🏴‍☠️ m10derer5gw.857657.xyz tls WS CDN vmess § 443 56"
+  - "🏴‍☠️ m10derer5gwe.857657.xyz tls WS CDN vless § 443 57"
+  - "🏴‍☠️ m10derer5gwe.857657.xyz tls WS CDN vmess § 443 57"
+  - "🏴‍☠️ m10derer5gwe.857657.xyz http WS CDN vmess § 80 57"
+  - "🏴‍☠️ m10iiiiii.857657.xyz tls WS CDN vless § 443 58"
+  - "🏴‍☠️ m10iiiiii.857657.xyz tls WS CDN vmess § 443 58"
+  - "🏴‍☠️ m10iiiiii.857657.xyz http WS CDN vmess § 80 58"
+  - "🏴‍☠️ m10iiiiiierwweee.857657.xyz tls WS CDN vless § 443 60"
+  - "🏴‍☠️ m10iiiiiierwweee.857657.xyz tls WS CDN vmess § 443 60"
+  - "🏴‍☠️ m10e4r4wer.857856.xyz tls WS CDN vless § 443 62"
+  - "🏴‍☠️ m10e4r4wer.857856.xyz tls WS CDN vmess § 443 62"
+  - "🏴‍☠️ m10e4r4were45.857856.xyz tls WS CDN vless § 443 63"
+  - "🏴‍☠️ m10e4r4were45.857856.xyz tls WS CDN vmess § 443 63"
+  - "🏴‍☠️ m10e4r4were45.857856.xyz http WS CDN vmess § 80 63"
+  - "🏴‍☠️ m10e.857856.xyz tls WS CDN vless § 443 64"
+  - "🏴‍☠️ m10e.857856.xyz tls WS CDN vmess § 443 64"
+  - "🏴‍☠️ m10e.857856.xyz http WS CDN vmess § 80 64"
+  - "🏴‍☠️ m10ewwwwr.857856.xyz tls WS CDN vless § 443 65"
+  - "🏴‍☠️ m10ewwwwr.857856.xyz tls WS CDN vmess § 443 65"
+  - "🏴‍☠️ m10ewwwwr.857856.xyz http WS CDN vmess § 80 65"
+  - "🏴‍☠️ m10ess.857856.xyz tls WS CDN vless § 443 66"
+  - "🏴‍☠️ m10ess.857856.xyz tls WS CDN vmess § 443 66"
+  - "🏴‍☠️ m10ess.857856.xyz http WS CDN vmess § 80 66"
+  - "🏴‍☠️ m10kkk.857856.xyz tls WS CDN vless § 443 67"
+  - "🏴‍☠️ m10kkk.857856.xyz tls WS CDN vmess § 443 67"
+  - "🏴‍☠️ m10kkk.857856.xyz http WS CDN vmess § 80 67"
+rules:
+- "GEOSITE,CATEGORY-ADS-ALL,REJECT"
+- "DOMAIN-SUFFIX,ushd.xmsl.org,DIRECT"
+- "DOMAIN-SUFFIX,cf.gtlx.org,DIRECT"
+- "DOMAIN-SUFFIX,public-operation-hkrpg-sg.hoyoverse.com,DIRECT"
+- "DOMAIN-SUFFIX,public-operation-hk4e-sg.hoyoverse.com,DIRECT"
+- "DOMAIN-SUFFIX,public-operation-nap-sg.hoyoverse.com,DIRECT"
+- "DST-PORT,23301/22101-22102/20501/21601-21606,DIRECT"
+- "DOMAIN-KEYWORD,hoyoverse.com,PROXY"
+- "GEOSITE,OPENAI,AI"
+- "GEOSITE,GOOGLE-GEMINI,AI"
+- "GEOSITE,GOOGLEFCM,DIRECT"
+- "GEOSITE,PRIVATE,DIRECT"
+- "GEOSITE,CN,DIRECT"
+- "GEOIP,PRIVATE,DIRECT,no-resolve"
+- "GEOIP,CN,DIRECT"
+- "MATCH,PROXY"

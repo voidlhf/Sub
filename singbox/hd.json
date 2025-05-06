@@ -1,0 +1,3402 @@
+{
+  "log": {},
+  "dns": {
+    "servers": [
+      {
+        "tag": "dns_proxy",
+        "type": "https",
+        "server": "1.1.1.1",
+        "detour": "select"
+      },
+      {
+        "tag": "dns_direct",
+        "type": "https",
+        "server": "223.5.5.5"
+      },
+      {
+        "tag": "dns_fakeip",
+        "type": "fakeip",
+        "inet4_range": "198.18.0.0/15",
+        "inet6_range": "fc00::/18"
+      }
+    ],
+    "rules": [
+      {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "query_type": "HTTPS"
+          },
+          {
+            "rule_set": [
+              "geosite-category-ads-all"
+            ]
+          }
+        ],
+        "action": "reject"
+      },
+      {
+        "query_type": [
+          "A",
+          "AAAA"
+        ],
+        "server": "dns_fakeip",
+        "rewrite_ttl": 1
+      },
+      {
+        "clash_mode": "Global",
+        "server": "dns_proxy"
+      },
+      {
+        "clash_mode": "Direct",
+        "server": "dns_direct"
+      },
+      {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "rule_set": [
+              "geosite-cn"
+            ]
+          }
+        ],
+        "server": "dns_direct"
+      }
+    ],
+    "strategy": "ipv4_only",
+    "independent_cache": true
+  },
+  "inbounds": [
+    {
+      "type": "tun",
+      "address": [
+        "172.18.0.1/30",
+        "fdfe:dcba:9876::1/126"
+      ],
+      "auto_route": true,
+      "strict_route": true,
+      "route_exclude_address": [
+        "192.168.0.0/16",
+        "fc00::/7"
+      ]
+    }
+  ],
+  "outbounds": [
+    {
+      "tag": "🏴‍☠️ mas10rt.890602.xyz tls WS CDN vless § 443 4",
+      "type": "vless",
+      "server": "mas10rt.890602.xyz",
+      "server_port": 443,
+      "uuid": "4f3f7db1-f416-473e-8321-b2cec71c04ab",
+      "tls": {
+        "enabled": true,
+        "server_name": "MAs10Rt.890602.xYZ",
+        "insecure": false,
+        "alpn": [
+          "http/1.1"
+        ],
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "mas10rt.890602.xyz"
+        },
+        "path": "/YzFLmzNIEQsAmceLxv94lPbgMw"
+      }
+    },
+    {
+      "tag": "🏴‍☠️ mas10rt.890602.xyz tls WS CDN vmess § 443 4",
+      "type": "vmess",
+      "server": "mas10rt.890602.XyZ",
+      "server_port": 443,
+      "uuid": "4f3f7db1-f416-473e-8321-b2cec71c04ab",
+      "security": "auto",
+      "alter_id": 0,
+      "tls": {
+        "enabled": true,
+        "server_name": "mas10Rt.890602.xyz",
+        "insecure": false
+      },
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "mas10rt.890602.xyz"
+        },
+        "path": "/XV7e5RkwW8mceLxv94lPbgMw"
+      }
+    },
+    {
+      "tag": "🏴‍☠️ mas10.890602.xyz tls WS CDN vless § 443 5",
+      "type": "vless",
+      "server": "mas10.890602.xyz",
+      "server_port": 443,
+      "uuid": "4f3f7db1-f416-473e-8321-b2cec71c04ab",
+      "tls": {
+        "enabled": true,
+        "server_name": "maS10.890602.XYZ",
+        "insecure": false,
+        "alpn": [
+          "http/1.1"
+        ],
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "mas10.890602.xyz"
+        },
+        "path": "/YzFLmzNIEQsAmceLxv94lPbgMw"
+      }
+    },
+    {
+      "tag": "🏴‍☠️ mas10.890602.xyz tls WS CDN vmess § 443 5",
+      "type": "vmess",
+      "server": "Mas10.890602.xYZ",
+      "server_port": 443,
+      "uuid": "4f3f7db1-f416-473e-8321-b2cec71c04ab",
+      "security": "auto",
+      "alter_id": 0,
+      "tls": {
+        "enabled": true,
+        "server_name": "MaS10.890602.XYz",
+        "insecure": false
+      },
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "mas10.890602.xyz"
+        },
+        "path": "/XV7e5RkwW8mceLxv94lPbgMw"
+      }
+    },
+    {
+      "tag": "🏴‍☠️ mas10xyz.890602.xyz tls WS CDN vless § 443 6",
+      "type": "vless",
+      "server": "mas10xyz.890602.xyz",
+      "server_port": 443,
+      "uuid": "4f3f7db1-f416-473e-8321-b2cec71c04ab",
+      "tls": {
+        "enabled": true,
+        "server_name": "maS10xyz.890602.Xyz",
+        "insecure": false,
+        "alpn": [
+          "http/1.1"
+        ],
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "mas10xyz.890602.xyz"
+        },
+        "path": "/YzFLmzNIEQsAmceLxv94lPbgMw"
+      }
+    },
+    {
+      "tag": "🏴‍☠️ mas10xyz.890602.xyz tls WS CDN vmess § 443 6",
+      "type": "vmess",
+      "server": "mas10XYz.890602.xyz",
+      "server_port": 443,
+      "uuid": "4f3f7db1-f416-473e-8321-b2cec71c04ab",
+      "security": "auto",
+      "alter_id": 0,
+      "tls": {
+        "enabled": true,
+        "server_name": "MaS10XYz.890602.XyZ",
+        "insecure": false
+      },
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "mas10xyz.890602.xyz"
+        },
+        "path": "/XV7e5RkwW8mceLxv94lPbgMw"
+      }
+    },
+    {
+      "tag": "🏴‍☠️ mas10opiuooooo.huangdi2025.dpdns.org tls WS CDN vless § 443 10",
+      "type": "vless",
+      "server": "mas10opiuooooo.huangdi2025.dpdns.org",
+      "server_port": 443,
+      "uuid": "4f3f7db1-f416-473e-8321-b2cec71c04ab",
+      "tls": {
+        "enabled": true,
+        "server_name": "MaS10opiUOoooo.huANGdi2025.dpDnS.OrG",
+        "insecure": false,
+        "alpn": [
+          "http/1.1"
+        ],
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "mas10opiuooooo.huangdi2025.dpdns.org"
+        },
+        "path": "/YzFLmzNIEQsAmceLxv94lPbgMw"
+      }
+    },
+    {
+      "tag": "🏴‍☠️ mas10opiuooooo.huangdi2025.dpdns.org tls WS CDN vmess § 443 10",
+      "type": "vmess",
+      "server": "mAS10OPIUOOoOO.HuaNgDi2025.DPdnS.OrG",
+      "server_port": 443,
+      "uuid": "4f3f7db1-f416-473e-8321-b2cec71c04ab",
+      "security": "auto",
+      "alter_id": 0,
+      "tls": {
+        "enabled": true,
+        "server_name": "MaS10oPiUOoOoO.hUangDi2025.dpDns.oRg",
+        "insecure": false
+      },
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "mas10opiuooooo.huangdi2025.dpdns.org"
+        },
+        "path": "/XV7e5RkwW8mceLxv94lPbgMw"
+      }
+    },
+    {
+      "tag": "🏴‍☠️ mas10rtyui.huangdi2025.dpdns.org tls WS CDN vless § 443 11",
+      "type": "vless",
+      "server": "mas10rtyui.huangdi2025.dpdns.org",
+      "server_port": 443,
+      "uuid": "4f3f7db1-f416-473e-8321-b2cec71c04ab",
+      "tls": {
+        "enabled": true,
+        "server_name": "mAs10rTYUI.HuAnGDI2025.dpDnS.OrG",
+        "insecure": false,
+        "alpn": [
+          "http/1.1"
+        ],
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "mas10rtyui.huangdi2025.dpdns.org"
+        },
+        "path": "/YzFLmzNIEQsAmceLxv94lPbgMw"
+      }
+    },
+    {
+      "tag": "🏴‍☠️ mas10rtyui.huangdi2025.dpdns.org tls WS CDN vmess § 443 11",
+      "type": "vmess",
+      "server": "mas10rTYUi.hUangDi2025.DPdNS.org",
+      "server_port": 443,
+      "uuid": "4f3f7db1-f416-473e-8321-b2cec71c04ab",
+      "security": "auto",
+      "alter_id": 0,
+      "tls": {
+        "enabled": true,
+        "server_name": "mAs10rtyuI.HuANGDi2025.DpdNS.oRG",
+        "insecure": false
+      },
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "mas10rtyui.huangdi2025.dpdns.org"
+        },
+        "path": "/XV7e5RkwW8mceLxv94lPbgMw"
+      }
+    },
+    {
+      "tag": "🏴‍☠️ mas10rtyui.huangdi2025.dpdns.org http WS CDN vmess § 80 11",
+      "type": "vmess",
+      "server": "maS10RtYuI.huaNGdi2025.dPDnS.OrG",
+      "server_port": 80,
+      "uuid": "4f3f7db1-f416-473e-8321-b2cec71c04ab",
+      "security": "auto",
+      "alter_id": 0,
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "mas10rtyui.huangdi2025.dpdns.org"
+        },
+        "path": "/XV7e5RkwW8mceLxv94lPbgMw"
+      }
+    },
+    {
+      "tag": "🏴‍☠️ n10sdfghj.huangdi2025.dpdns.org tls WS CDN vless § 443 12",
+      "type": "vless",
+      "server": "n10sdfghj.huangdi2025.dpdns.org",
+      "server_port": 443,
+      "uuid": "4f3f7db1-f416-473e-8321-b2cec71c04ab",
+      "tls": {
+        "enabled": true,
+        "server_name": "N10sDFGHj.HuANGdI2025.DpDNs.oRG",
+        "insecure": false,
+        "alpn": [
+          "http/1.1"
+        ],
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "n10sdfghj.huangdi2025.dpdns.org"
+        },
+        "path": "/YzFLmzNIEQsAmceLxv94lPbgMw"
+      }
+    },
+    {
+      "tag": "🏴‍☠️ n10sdfghj.huangdi2025.dpdns.org tls WS CDN vmess § 443 12",
+      "type": "vmess",
+      "server": "n10sdfGHJ.huaNGDi2025.DpdNs.orG",
+      "server_port": 443,
+      "uuid": "4f3f7db1-f416-473e-8321-b2cec71c04ab",
+      "security": "auto",
+      "alter_id": 0,
+      "tls": {
+        "enabled": true,
+        "server_name": "N10sDFGHJ.HUaNgdI2025.dpdNS.oRg",
+        "insecure": false
+      },
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "n10sdfghj.huangdi2025.dpdns.org"
+        },
+        "path": "/XV7e5RkwW8mceLxv94lPbgMw"
+      }
+    },
+    {
+      "tag": "🏴‍☠️ ms10yyyyyyyyyyy.445.pp.ua tls WS CDN vless § 443 15",
+      "type": "vless",
+      "server": "ms10yyyyyyyyyyy.445.pp.ua",
+      "server_port": 443,
+      "uuid": "4f3f7db1-f416-473e-8321-b2cec71c04ab",
+      "tls": {
+        "enabled": true,
+        "server_name": "MS10yYyYyYyyYYY.445.pp.uA",
+        "insecure": false,
+        "alpn": [
+          "http/1.1"
+        ],
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "ms10yyyyyyyyyyy.445.pp.ua"
+        },
+        "path": "/YzFLmzNIEQsAmceLxv94lPbgMw"
+      }
+    },
+    {
+      "tag": "🏴‍☠️ ms10yyy.445.pp.ua tls WS CDN vless § 443 16",
+      "type": "vless",
+      "server": "ms10yyy.445.pp.ua",
+      "server_port": 443,
+      "uuid": "4f3f7db1-f416-473e-8321-b2cec71c04ab",
+      "tls": {
+        "enabled": true,
+        "server_name": "Ms10YYy.445.pp.UA",
+        "insecure": false,
+        "alpn": [
+          "http/1.1"
+        ],
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "ms10yyy.445.pp.ua"
+        },
+        "path": "/YzFLmzNIEQsAmceLxv94lPbgMw"
+      }
+    },
+    {
+      "tag": "🏴‍☠️ ms10yyy.445.pp.ua tls WS CDN vmess § 443 16",
+      "type": "vmess",
+      "server": "mS10yyy.445.pP.UA",
+      "server_port": 443,
+      "uuid": "4f3f7db1-f416-473e-8321-b2cec71c04ab",
+      "security": "auto",
+      "alter_id": 0,
+      "tls": {
+        "enabled": true,
+        "server_name": "ms10YyY.445.pP.ua",
+        "insecure": false
+      },
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "ms10yyy.445.pp.ua"
+        },
+        "path": "/XV7e5RkwW8mceLxv94lPbgMw"
+      }
+    },
+    {
+      "tag": "🏴‍☠️ ms10yy.445.pp.ua tls WS CDN vless § 443 17",
+      "type": "vless",
+      "server": "ms10yy.445.pp.ua",
+      "server_port": 443,
+      "uuid": "4f3f7db1-f416-473e-8321-b2cec71c04ab",
+      "tls": {
+        "enabled": true,
+        "server_name": "ms10yY.445.pP.ua",
+        "insecure": false,
+        "alpn": [
+          "http/1.1"
+        ],
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "ms10yy.445.pp.ua"
+        },
+        "path": "/YzFLmzNIEQsAmceLxv94lPbgMw"
+      }
+    },
+    {
+      "tag": "🏴‍☠️ ms10yy.445.pp.ua tls WS CDN vmess § 443 17",
+      "type": "vmess",
+      "server": "ms10yY.445.PP.uA",
+      "server_port": 443,
+      "uuid": "4f3f7db1-f416-473e-8321-b2cec71c04ab",
+      "security": "auto",
+      "alter_id": 0,
+      "tls": {
+        "enabled": true,
+        "server_name": "mS10Yy.445.pp.UA",
+        "insecure": false
+      },
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "ms10yy.445.pp.ua"
+        },
+        "path": "/XV7e5RkwW8mceLxv94lPbgMw"
+      }
+    },
+    {
+      "tag": "🏴‍☠️ ms10yyyyyy.445.pp.ua tls WS CDN vless § 443 18",
+      "type": "vless",
+      "server": "ms10yyyyyy.445.pp.ua",
+      "server_port": 443,
+      "uuid": "4f3f7db1-f416-473e-8321-b2cec71c04ab",
+      "tls": {
+        "enabled": true,
+        "server_name": "mS10yyyYYY.445.pp.ua",
+        "insecure": false,
+        "alpn": [
+          "http/1.1"
+        ],
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "ms10yyyyyy.445.pp.ua"
+        },
+        "path": "/YzFLmzNIEQsAmceLxv94lPbgMw"
+      }
+    },
+    {
+      "tag": "🏴‍☠️ ms10yyyyyy.445.pp.ua tls WS CDN vmess § 443 18",
+      "type": "vmess",
+      "server": "MS10yYyYYy.445.pP.ua",
+      "server_port": 443,
+      "uuid": "4f3f7db1-f416-473e-8321-b2cec71c04ab",
+      "security": "auto",
+      "alter_id": 0,
+      "tls": {
+        "enabled": true,
+        "server_name": "Ms10YyYyYy.445.Pp.Ua",
+        "insecure": false
+      },
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "ms10yyyyyy.445.pp.ua"
+        },
+        "path": "/XV7e5RkwW8mceLxv94lPbgMw"
+      }
+    },
+    {
+      "tag": "🏴‍☠️ ms10ttttt.445.pp.ua tls WS CDN vless § 443 19",
+      "type": "vless",
+      "server": "ms10ttttt.445.pp.ua",
+      "server_port": 443,
+      "uuid": "4f3f7db1-f416-473e-8321-b2cec71c04ab",
+      "tls": {
+        "enabled": true,
+        "server_name": "ms10tttTt.445.Pp.uA",
+        "insecure": false,
+        "alpn": [
+          "http/1.1"
+        ],
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "ms10ttttt.445.pp.ua"
+        },
+        "path": "/YzFLmzNIEQsAmceLxv94lPbgMw"
+      }
+    },
+    {
+      "tag": "🏴‍☠️ ms10ttttt.445.pp.ua tls WS CDN vmess § 443 19",
+      "type": "vmess",
+      "server": "MS10ttTTt.445.PP.UA",
+      "server_port": 443,
+      "uuid": "4f3f7db1-f416-473e-8321-b2cec71c04ab",
+      "security": "auto",
+      "alter_id": 0,
+      "tls": {
+        "enabled": true,
+        "server_name": "Ms10tTTTT.445.pP.UA",
+        "insecure": false
+      },
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "ms10ttttt.445.pp.ua"
+        },
+        "path": "/XV7e5RkwW8mceLxv94lPbgMw"
+      }
+    },
+    {
+      "tag": "🏴‍☠️ ms10ttt.445.pp.ua tls WS CDN vless § 443 20",
+      "type": "vless",
+      "server": "ms10ttt.445.pp.ua",
+      "server_port": 443,
+      "uuid": "4f3f7db1-f416-473e-8321-b2cec71c04ab",
+      "tls": {
+        "enabled": true,
+        "server_name": "MS10TtT.445.Pp.UA",
+        "insecure": false,
+        "alpn": [
+          "http/1.1"
+        ],
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "ms10ttt.445.pp.ua"
+        },
+        "path": "/YzFLmzNIEQsAmceLxv94lPbgMw"
+      }
+    },
+    {
+      "tag": "🏴‍☠️ ms10ttt.445.pp.ua tls WS CDN vmess § 443 20",
+      "type": "vmess",
+      "server": "Ms10TTT.445.pp.uA",
+      "server_port": 443,
+      "uuid": "4f3f7db1-f416-473e-8321-b2cec71c04ab",
+      "security": "auto",
+      "alter_id": 0,
+      "tls": {
+        "enabled": true,
+        "server_name": "MS10ttT.445.pP.ua",
+        "insecure": false
+      },
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "ms10ttt.445.pp.ua"
+        },
+        "path": "/XV7e5RkwW8mceLxv94lPbgMw"
+      }
+    },
+    {
+      "tag": "🏴‍☠️ m10dfghj.890604.dpdns.org tls WS CDN vless § 443 22",
+      "type": "vless",
+      "server": "m10dfghj.890604.dpdns.org",
+      "server_port": 443,
+      "uuid": "4f3f7db1-f416-473e-8321-b2cec71c04ab",
+      "tls": {
+        "enabled": true,
+        "server_name": "m10DfgHJ.890604.DPdNs.oRg",
+        "insecure": false,
+        "alpn": [
+          "http/1.1"
+        ],
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "m10dfghj.890604.dpdns.org"
+        },
+        "path": "/YzFLmzNIEQsAmceLxv94lPbgMw"
+      }
+    },
+    {
+      "tag": "🏴‍☠️ m10dfghj.890604.dpdns.org tls WS CDN vmess § 443 22",
+      "type": "vmess",
+      "server": "m10dfGHj.890604.dpDNS.ORg",
+      "server_port": 443,
+      "uuid": "4f3f7db1-f416-473e-8321-b2cec71c04ab",
+      "security": "auto",
+      "alter_id": 0,
+      "tls": {
+        "enabled": true,
+        "server_name": "M10dFghJ.890604.DPDns.org",
+        "insecure": false
+      },
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "m10dfghj.890604.dpdns.org"
+        },
+        "path": "/XV7e5RkwW8mceLxv94lPbgMw"
+      }
+    },
+    {
+      "tag": "🏴‍☠️ m10dfghj.890604.dpdns.org http WS CDN vmess § 80 22",
+      "type": "vmess",
+      "server": "M10DfghJ.890604.DPdns.oRg",
+      "server_port": 80,
+      "uuid": "4f3f7db1-f416-473e-8321-b2cec71c04ab",
+      "security": "auto",
+      "alter_id": 0,
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "m10dfghj.890604.dpdns.org"
+        },
+        "path": "/XV7e5RkwW8mceLxv94lPbgMw"
+      }
+    },
+    {
+      "tag": "🏴‍☠️ m10d.890604.dpdns.org tls WS CDN vless § 443 23",
+      "type": "vless",
+      "server": "m10d.890604.dpdns.org",
+      "server_port": 443,
+      "uuid": "4f3f7db1-f416-473e-8321-b2cec71c04ab",
+      "tls": {
+        "enabled": true,
+        "server_name": "m10D.890604.dPDNs.ORG",
+        "insecure": false,
+        "alpn": [
+          "http/1.1"
+        ],
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "m10d.890604.dpdns.org"
+        },
+        "path": "/YzFLmzNIEQsAmceLxv94lPbgMw"
+      }
+    },
+    {
+      "tag": "🏴‍☠️ m10d.890604.dpdns.org tls WS CDN vmess § 443 23",
+      "type": "vmess",
+      "server": "m10d.890604.DPdnS.ORG",
+      "server_port": 443,
+      "uuid": "4f3f7db1-f416-473e-8321-b2cec71c04ab",
+      "security": "auto",
+      "alter_id": 0,
+      "tls": {
+        "enabled": true,
+        "server_name": "M10d.890604.dpdNs.org",
+        "insecure": false
+      },
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "m10d.890604.dpdns.org"
+        },
+        "path": "/XV7e5RkwW8mceLxv94lPbgMw"
+      }
+    },
+    {
+      "tag": "🏴‍☠️ m10d.890604.dpdns.org http WS CDN vmess § 80 23",
+      "type": "vmess",
+      "server": "M10d.890604.DpDNs.OrG",
+      "server_port": 80,
+      "uuid": "4f3f7db1-f416-473e-8321-b2cec71c04ab",
+      "security": "auto",
+      "alter_id": 0,
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "m10d.890604.dpdns.org"
+        },
+        "path": "/XV7e5RkwW8mceLxv94lPbgMw"
+      }
+    },
+    {
+      "tag": "🏴‍☠️ m10dwwww.890604.dpdns.org tls WS CDN vless § 443 27",
+      "type": "vless",
+      "server": "m10dwwww.890604.dpdns.org",
+      "server_port": 443,
+      "uuid": "4f3f7db1-f416-473e-8321-b2cec71c04ab",
+      "tls": {
+        "enabled": true,
+        "server_name": "M10dWWww.890604.dPdNS.ORG",
+        "insecure": false,
+        "alpn": [
+          "http/1.1"
+        ],
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "m10dwwww.890604.dpdns.org"
+        },
+        "path": "/YzFLmzNIEQsAmceLxv94lPbgMw"
+      }
+    },
+    {
+      "tag": "🏴‍☠️ m10dwwww.890604.dpdns.org http WS CDN vmess § 80 27",
+      "type": "vmess",
+      "server": "m10dwwwW.890604.DpDNS.oRg",
+      "server_port": 80,
+      "uuid": "4f3f7db1-f416-473e-8321-b2cec71c04ab",
+      "security": "auto",
+      "alter_id": 0,
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "m10dwwww.890604.dpdns.org"
+        },
+        "path": "/XV7e5RkwW8mceLxv94lPbgMw"
+      }
+    },
+    {
+      "tag": "🏴‍☠️ m10dww.890604.dpdns.org tls WS CDN vless § 443 28",
+      "type": "vless",
+      "server": "m10dww.890604.dpdns.org",
+      "server_port": 443,
+      "uuid": "4f3f7db1-f416-473e-8321-b2cec71c04ab",
+      "tls": {
+        "enabled": true,
+        "server_name": "M10dww.890604.DPDns.oRg",
+        "insecure": false,
+        "alpn": [
+          "http/1.1"
+        ],
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "m10dww.890604.dpdns.org"
+        },
+        "path": "/YzFLmzNIEQsAmceLxv94lPbgMw"
+      }
+    },
+    {
+      "tag": "🏴‍☠️ m10dww.890604.dpdns.org tls WS CDN vmess § 443 28",
+      "type": "vmess",
+      "server": "M10dWw.890604.dpDns.orG",
+      "server_port": 443,
+      "uuid": "4f3f7db1-f416-473e-8321-b2cec71c04ab",
+      "security": "auto",
+      "alter_id": 0,
+      "tls": {
+        "enabled": true,
+        "server_name": "M10dWW.890604.dPDNS.Org",
+        "insecure": false
+      },
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "m10dww.890604.dpdns.org"
+        },
+        "path": "/XV7e5RkwW8mceLxv94lPbgMw"
+      }
+    },
+    {
+      "tag": "🏴‍☠️ m10dww.890604.dpdns.org http WS CDN vmess § 80 28",
+      "type": "vmess",
+      "server": "M10Dww.890604.DpdnS.Org",
+      "server_port": 80,
+      "uuid": "4f3f7db1-f416-473e-8321-b2cec71c04ab",
+      "security": "auto",
+      "alter_id": 0,
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "m10dww.890604.dpdns.org"
+        },
+        "path": "/XV7e5RkwW8mceLxv94lPbgMw"
+      }
+    },
+    {
+      "tag": "🏴‍☠️ m10dwwwwrrt.890604.dpdns.org tls WS CDN vless § 443 29",
+      "type": "vless",
+      "server": "m10dwwwwrrt.890604.dpdns.org",
+      "server_port": 443,
+      "uuid": "4f3f7db1-f416-473e-8321-b2cec71c04ab",
+      "tls": {
+        "enabled": true,
+        "server_name": "m10DWwwWRrT.890604.DPDnS.oRG",
+        "insecure": false,
+        "alpn": [
+          "http/1.1"
+        ],
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "m10dwwwwrrt.890604.dpdns.org"
+        },
+        "path": "/YzFLmzNIEQsAmceLxv94lPbgMw"
+      }
+    },
+    {
+      "tag": "🏴‍☠️ m10dwwwwrrt.890604.dpdns.org tls WS CDN vmess § 443 29",
+      "type": "vmess",
+      "server": "m10dWWWwrrT.890604.DPdNs.ORG",
+      "server_port": 443,
+      "uuid": "4f3f7db1-f416-473e-8321-b2cec71c04ab",
+      "security": "auto",
+      "alter_id": 0,
+      "tls": {
+        "enabled": true,
+        "server_name": "M10dwwwWrrT.890604.DPdNs.OrG",
+        "insecure": false
+      },
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "m10dwwwwrrt.890604.dpdns.org"
+        },
+        "path": "/XV7e5RkwW8mceLxv94lPbgMw"
+      }
+    },
+    {
+      "tag": "🏴‍☠️ m10dwwwwrrt.890604.dpdns.org http WS CDN vmess § 80 29",
+      "type": "vmess",
+      "server": "m10dWWwWrrt.890604.DpdNs.Org",
+      "server_port": 80,
+      "uuid": "4f3f7db1-f416-473e-8321-b2cec71c04ab",
+      "security": "auto",
+      "alter_id": 0,
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "m10dwwwwrrt.890604.dpdns.org"
+        },
+        "path": "/XV7e5RkwW8mceLxv94lPbgMw"
+      }
+    },
+    {
+      "tag": "🏴‍☠️ m10dfg.890604.dpdns.org tls WS CDN vless § 443 30",
+      "type": "vless",
+      "server": "m10dfg.890604.dpdns.org",
+      "server_port": 443,
+      "uuid": "4f3f7db1-f416-473e-8321-b2cec71c04ab",
+      "tls": {
+        "enabled": true,
+        "server_name": "M10Dfg.890604.dPdns.orG",
+        "insecure": false,
+        "alpn": [
+          "http/1.1"
+        ],
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "m10dfg.890604.dpdns.org"
+        },
+        "path": "/YzFLmzNIEQsAmceLxv94lPbgMw"
+      }
+    },
+    {
+      "tag": "🏴‍☠️ m10dfg.890604.dpdns.org tls WS CDN vmess § 443 30",
+      "type": "vmess",
+      "server": "m10dfG.890604.DpDnS.ORG",
+      "server_port": 443,
+      "uuid": "4f3f7db1-f416-473e-8321-b2cec71c04ab",
+      "security": "auto",
+      "alter_id": 0,
+      "tls": {
+        "enabled": true,
+        "server_name": "m10dfG.890604.dpdns.oRG",
+        "insecure": false
+      },
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "m10dfg.890604.dpdns.org"
+        },
+        "path": "/XV7e5RkwW8mceLxv94lPbgMw"
+      }
+    },
+    {
+      "tag": "🏴‍☠️ m10dfg.890604.dpdns.org http WS CDN vmess § 80 30",
+      "type": "vmess",
+      "server": "M10Dfg.890604.dpDNs.orG",
+      "server_port": 80,
+      "uuid": "4f3f7db1-f416-473e-8321-b2cec71c04ab",
+      "security": "auto",
+      "alter_id": 0,
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "m10dfg.890604.dpdns.org"
+        },
+        "path": "/XV7e5RkwW8mceLxv94lPbgMw"
+      }
+    },
+    {
+      "tag": "🏴‍☠️ m10ddddd.890604.dpdns.org tls WS CDN vless § 443 31",
+      "type": "vless",
+      "server": "m10ddddd.890604.dpdns.org",
+      "server_port": 443,
+      "uuid": "4f3f7db1-f416-473e-8321-b2cec71c04ab",
+      "tls": {
+        "enabled": true,
+        "server_name": "m10ddDdd.890604.dPdNS.ORg",
+        "insecure": false,
+        "alpn": [
+          "http/1.1"
+        ],
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "m10ddddd.890604.dpdns.org"
+        },
+        "path": "/YzFLmzNIEQsAmceLxv94lPbgMw"
+      }
+    },
+    {
+      "tag": "🏴‍☠️ m10ddddd.890604.dpdns.org tls WS CDN vmess § 443 31",
+      "type": "vmess",
+      "server": "m10DDDDd.890604.dpdNs.orG",
+      "server_port": 443,
+      "uuid": "4f3f7db1-f416-473e-8321-b2cec71c04ab",
+      "security": "auto",
+      "alter_id": 0,
+      "tls": {
+        "enabled": true,
+        "server_name": "M10DDdDD.890604.DpdNs.Org",
+        "insecure": false
+      },
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "m10ddddd.890604.dpdns.org"
+        },
+        "path": "/XV7e5RkwW8mceLxv94lPbgMw"
+      }
+    },
+    {
+      "tag": "🏴‍☠️ m10ddddd.890604.dpdns.org http WS CDN vmess § 80 31",
+      "type": "vmess",
+      "server": "M10dddDD.890604.dPDns.org",
+      "server_port": 80,
+      "uuid": "4f3f7db1-f416-473e-8321-b2cec71c04ab",
+      "security": "auto",
+      "alter_id": 0,
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "m10ddddd.890604.dpdns.org"
+        },
+        "path": "/XV7e5RkwW8mceLxv94lPbgMw"
+      }
+    },
+    {
+      "tag": "🏴‍☠️ m10ddddddddddddf.457.pp.ua tls WS CDN vless § 443 32",
+      "type": "vless",
+      "server": "m10ddddddddddddf.457.pp.ua",
+      "server_port": 443,
+      "uuid": "4f3f7db1-f416-473e-8321-b2cec71c04ab",
+      "tls": {
+        "enabled": true,
+        "server_name": "M10DDDdddDdDDDDf.457.pp.ua",
+        "insecure": false,
+        "alpn": [
+          "http/1.1"
+        ],
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "m10ddddddddddddf.457.pp.ua"
+        },
+        "path": "/YzFLmzNIEQsAmceLxv94lPbgMw"
+      }
+    },
+    {
+      "tag": "🏴‍☠️ m10ddddddddddddf.457.pp.ua tls WS CDN vmess § 443 32",
+      "type": "vmess",
+      "server": "M10dddddddDDdDDf.457.PP.UA",
+      "server_port": 443,
+      "uuid": "4f3f7db1-f416-473e-8321-b2cec71c04ab",
+      "security": "auto",
+      "alter_id": 0,
+      "tls": {
+        "enabled": true,
+        "server_name": "M10dddddDDdDdDdf.457.pp.UA",
+        "insecure": false
+      },
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "m10ddddddddddddf.457.pp.ua"
+        },
+        "path": "/XV7e5RkwW8mceLxv94lPbgMw"
+      }
+    },
+    {
+      "tag": "🏴‍☠️ m10dddd.457.pp.ua tls WS CDN vless § 443 33",
+      "type": "vless",
+      "server": "m10dddd.457.pp.ua",
+      "server_port": 443,
+      "uuid": "4f3f7db1-f416-473e-8321-b2cec71c04ab",
+      "tls": {
+        "enabled": true,
+        "server_name": "M10dddd.457.pp.Ua",
+        "insecure": false,
+        "alpn": [
+          "http/1.1"
+        ],
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "m10dddd.457.pp.ua"
+        },
+        "path": "/YzFLmzNIEQsAmceLxv94lPbgMw"
+      }
+    },
+    {
+      "tag": "🏴‍☠️ m10dddd.457.pp.ua tls WS CDN vmess § 443 33",
+      "type": "vmess",
+      "server": "M10Dddd.457.pP.Ua",
+      "server_port": 443,
+      "uuid": "4f3f7db1-f416-473e-8321-b2cec71c04ab",
+      "security": "auto",
+      "alter_id": 0,
+      "tls": {
+        "enabled": true,
+        "server_name": "m10DddD.457.Pp.ua",
+        "insecure": false
+      },
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "m10dddd.457.pp.ua"
+        },
+        "path": "/XV7e5RkwW8mceLxv94lPbgMw"
+      }
+    },
+    {
+      "tag": "🏴‍☠️ m10ddd.457.pp.ua tls WS CDN vless § 443 34",
+      "type": "vless",
+      "server": "m10ddd.457.pp.ua",
+      "server_port": 443,
+      "uuid": "4f3f7db1-f416-473e-8321-b2cec71c04ab",
+      "tls": {
+        "enabled": true,
+        "server_name": "M10ddd.457.pp.UA",
+        "insecure": false,
+        "alpn": [
+          "http/1.1"
+        ],
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "m10ddd.457.pp.ua"
+        },
+        "path": "/YzFLmzNIEQsAmceLxv94lPbgMw"
+      }
+    },
+    {
+      "tag": "🏴‍☠️ m10ddd.457.pp.ua tls WS CDN vmess § 443 34",
+      "type": "vmess",
+      "server": "m10DDD.457.PP.Ua",
+      "server_port": 443,
+      "uuid": "4f3f7db1-f416-473e-8321-b2cec71c04ab",
+      "security": "auto",
+      "alter_id": 0,
+      "tls": {
+        "enabled": true,
+        "server_name": "m10ddD.457.Pp.uA",
+        "insecure": false
+      },
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "m10ddd.457.pp.ua"
+        },
+        "path": "/XV7e5RkwW8mceLxv94lPbgMw"
+      }
+    },
+    {
+      "tag": "🏴‍☠️ m10dddyyyy.457.pp.ua tls WS CDN vless § 443 35",
+      "type": "vless",
+      "server": "m10dddyyyy.457.pp.ua",
+      "server_port": 443,
+      "uuid": "4f3f7db1-f416-473e-8321-b2cec71c04ab",
+      "tls": {
+        "enabled": true,
+        "server_name": "m10dddyYYy.457.pP.UA",
+        "insecure": false,
+        "alpn": [
+          "http/1.1"
+        ],
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "m10dddyyyy.457.pp.ua"
+        },
+        "path": "/YzFLmzNIEQsAmceLxv94lPbgMw"
+      }
+    },
+    {
+      "tag": "🏴‍☠️ m10dddyyyy.457.pp.ua tls WS CDN vmess § 443 35",
+      "type": "vmess",
+      "server": "M10dDdYYYY.457.pP.ua",
+      "server_port": 443,
+      "uuid": "4f3f7db1-f416-473e-8321-b2cec71c04ab",
+      "security": "auto",
+      "alter_id": 0,
+      "tls": {
+        "enabled": true,
+        "server_name": "m10DddyYYY.457.pp.Ua",
+        "insecure": false
+      },
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "m10dddyyyy.457.pp.ua"
+        },
+        "path": "/XV7e5RkwW8mceLxv94lPbgMw"
+      }
+    },
+    {
+      "tag": "🏴‍☠️ m10frtyu.459.pp.ua tls WS CDN vmess § 443 36",
+      "type": "vmess",
+      "server": "m10frtyU.459.PP.UA",
+      "server_port": 443,
+      "uuid": "4f3f7db1-f416-473e-8321-b2cec71c04ab",
+      "security": "auto",
+      "alter_id": 0,
+      "tls": {
+        "enabled": true,
+        "server_name": "m10FRtYu.459.Pp.ua",
+        "insecure": false
+      },
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "m10frtyu.459.pp.ua"
+        },
+        "path": "/XV7e5RkwW8mceLxv94lPbgMw"
+      }
+    },
+    {
+      "tag": "🏴‍☠️ m10frtyuttttttt.459.pp.ua tls WS CDN vless § 443 37",
+      "type": "vless",
+      "server": "m10frtyuttttttt.459.pp.ua",
+      "server_port": 443,
+      "uuid": "4f3f7db1-f416-473e-8321-b2cec71c04ab",
+      "tls": {
+        "enabled": true,
+        "server_name": "m10frtyuTTTttTt.459.pP.ua",
+        "insecure": false,
+        "alpn": [
+          "http/1.1"
+        ],
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "m10frtyuttttttt.459.pp.ua"
+        },
+        "path": "/YzFLmzNIEQsAmceLxv94lPbgMw"
+      }
+    },
+    {
+      "tag": "🏴‍☠️ m10frtyuttttttt.459.pp.ua tls WS CDN vmess § 443 37",
+      "type": "vmess",
+      "server": "m10fRTyUttttTtt.459.pP.uA",
+      "server_port": 443,
+      "uuid": "4f3f7db1-f416-473e-8321-b2cec71c04ab",
+      "security": "auto",
+      "alter_id": 0,
+      "tls": {
+        "enabled": true,
+        "server_name": "m10fRTYUTTttttT.459.pp.Ua",
+        "insecure": false
+      },
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "m10frtyuttttttt.459.pp.ua"
+        },
+        "path": "/XV7e5RkwW8mceLxv94lPbgMw"
+      }
+    },
+    {
+      "tag": "🏴‍☠️ m10frtyuttttt.459.pp.ua tls WS CDN vless § 443 38",
+      "type": "vless",
+      "server": "m10frtyuttttt.459.pp.ua",
+      "server_port": 443,
+      "uuid": "4f3f7db1-f416-473e-8321-b2cec71c04ab",
+      "tls": {
+        "enabled": true,
+        "server_name": "m10FrTYUTTTTT.459.pP.UA",
+        "insecure": false,
+        "alpn": [
+          "http/1.1"
+        ],
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "m10frtyuttttt.459.pp.ua"
+        },
+        "path": "/YzFLmzNIEQsAmceLxv94lPbgMw"
+      }
+    },
+    {
+      "tag": "🏴‍☠️ m10frtyuttttt.459.pp.ua tls WS CDN vmess § 443 38",
+      "type": "vmess",
+      "server": "M10fRtyuTTTtT.459.pp.uA",
+      "server_port": 443,
+      "uuid": "4f3f7db1-f416-473e-8321-b2cec71c04ab",
+      "security": "auto",
+      "alter_id": 0,
+      "tls": {
+        "enabled": true,
+        "server_name": "M10FrTYUTTTtt.459.PP.ua",
+        "insecure": false
+      },
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "m10frtyuttttt.459.pp.ua"
+        },
+        "path": "/XV7e5RkwW8mceLxv94lPbgMw"
+      }
+    },
+    {
+      "tag": "🏴‍☠️ m10frtyuttttt.459.pp.ua http WS CDN vmess § 80 38",
+      "type": "vmess",
+      "server": "M10fRTyuTtttt.459.Pp.Ua",
+      "server_port": 80,
+      "uuid": "4f3f7db1-f416-473e-8321-b2cec71c04ab",
+      "security": "auto",
+      "alter_id": 0,
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "m10frtyuttttt.459.pp.ua"
+        },
+        "path": "/XV7e5RkwW8mceLxv94lPbgMw"
+      }
+    },
+    {
+      "tag": "🏴‍☠️ m10frtyutttttjjj.459.pp.ua tls WS CDN vless § 443 39",
+      "type": "vless",
+      "server": "m10frtyutttttjjj.459.pp.ua",
+      "server_port": 443,
+      "uuid": "4f3f7db1-f416-473e-8321-b2cec71c04ab",
+      "tls": {
+        "enabled": true,
+        "server_name": "M10fRTyUttTttjjJ.459.Pp.uA",
+        "insecure": false,
+        "alpn": [
+          "http/1.1"
+        ],
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "m10frtyutttttjjj.459.pp.ua"
+        },
+        "path": "/YzFLmzNIEQsAmceLxv94lPbgMw"
+      }
+    },
+    {
+      "tag": "🏴‍☠️ m10frtyutttttjjj.459.pp.ua tls WS CDN vmess § 443 39",
+      "type": "vmess",
+      "server": "M10fRtYUtTTttJJj.459.PP.ua",
+      "server_port": 443,
+      "uuid": "4f3f7db1-f416-473e-8321-b2cec71c04ab",
+      "security": "auto",
+      "alter_id": 0,
+      "tls": {
+        "enabled": true,
+        "server_name": "m10frtyUTtTTTJjJ.459.pp.ua",
+        "insecure": false
+      },
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "m10frtyutttttjjj.459.pp.ua"
+        },
+        "path": "/XV7e5RkwW8mceLxv94lPbgMw"
+      }
+    },
+    {
+      "tag": "🏴‍☠️ m10frtyutttt.459.pp.ua tls WS CDN vless § 443 40",
+      "type": "vless",
+      "server": "m10frtyutttt.459.pp.ua",
+      "server_port": 443,
+      "uuid": "4f3f7db1-f416-473e-8321-b2cec71c04ab",
+      "tls": {
+        "enabled": true,
+        "server_name": "M10FRtYUTTTT.459.PP.uA",
+        "insecure": false,
+        "alpn": [
+          "http/1.1"
+        ],
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "m10frtyutttt.459.pp.ua"
+        },
+        "path": "/YzFLmzNIEQsAmceLxv94lPbgMw"
+      }
+    },
+    {
+      "tag": "🏴‍☠️ m10frtyutttt.459.pp.ua tls WS CDN vmess § 443 40",
+      "type": "vmess",
+      "server": "m10FRtYUTtTt.459.pp.UA",
+      "server_port": 443,
+      "uuid": "4f3f7db1-f416-473e-8321-b2cec71c04ab",
+      "security": "auto",
+      "alter_id": 0,
+      "tls": {
+        "enabled": true,
+        "server_name": "m10fRtYUtTTt.459.pp.UA",
+        "insecure": false
+      },
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "m10frtyutttt.459.pp.ua"
+        },
+        "path": "/XV7e5RkwW8mceLxv94lPbgMw"
+      }
+    },
+    {
+      "tag": "🏴‍☠️ m10frtyutttt678.459.pp.ua tls WS CDN vless § 443 41",
+      "type": "vless",
+      "server": "m10frtyutttt678.459.pp.ua",
+      "server_port": 443,
+      "uuid": "4f3f7db1-f416-473e-8321-b2cec71c04ab",
+      "tls": {
+        "enabled": true,
+        "server_name": "m10fRTyUTTtt678.459.PP.ua",
+        "insecure": false,
+        "alpn": [
+          "http/1.1"
+        ],
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "m10frtyutttt678.459.pp.ua"
+        },
+        "path": "/YzFLmzNIEQsAmceLxv94lPbgMw"
+      }
+    },
+    {
+      "tag": "🏴‍☠️ m10frtyutttt678.459.pp.ua tls WS CDN vmess § 443 41",
+      "type": "vmess",
+      "server": "m10FrtYUttTT678.459.PP.uA",
+      "server_port": 443,
+      "uuid": "4f3f7db1-f416-473e-8321-b2cec71c04ab",
+      "security": "auto",
+      "alter_id": 0,
+      "tls": {
+        "enabled": true,
+        "server_name": "M10FrTYUTtTT678.459.pP.ua",
+        "insecure": false
+      },
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "m10frtyutttt678.459.pp.ua"
+        },
+        "path": "/XV7e5RkwW8mceLxv94lPbgMw"
+      }
+    },
+    {
+      "tag": "🏴‍☠️ m10derty.7777128.xyz tls WS CDN vless § 443 42",
+      "type": "vless",
+      "server": "m10derty.7777128.xyz",
+      "server_port": 443,
+      "uuid": "4f3f7db1-f416-473e-8321-b2cec71c04ab",
+      "tls": {
+        "enabled": true,
+        "server_name": "M10DErtY.7777128.xYz",
+        "insecure": false,
+        "alpn": [
+          "http/1.1"
+        ],
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "m10derty.7777128.xyz"
+        },
+        "path": "/YzFLmzNIEQsAmceLxv94lPbgMw"
+      }
+    },
+    {
+      "tag": "🏴‍☠️ m10derty.7777128.xyz tls WS CDN vmess § 443 42",
+      "type": "vmess",
+      "server": "m10dErtY.7777128.xyZ",
+      "server_port": 443,
+      "uuid": "4f3f7db1-f416-473e-8321-b2cec71c04ab",
+      "security": "auto",
+      "alter_id": 0,
+      "tls": {
+        "enabled": true,
+        "server_name": "M10DERty.7777128.Xyz",
+        "insecure": false
+      },
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "m10derty.7777128.xyz"
+        },
+        "path": "/XV7e5RkwW8mceLxv94lPbgMw"
+      }
+    },
+    {
+      "tag": "🏴‍☠️ m10derty.7777128.xyz http WS CDN vmess § 80 42",
+      "type": "vmess",
+      "server": "M10dErTy.7777128.XYZ",
+      "server_port": 80,
+      "uuid": "4f3f7db1-f416-473e-8321-b2cec71c04ab",
+      "security": "auto",
+      "alter_id": 0,
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "m10derty.7777128.xyz"
+        },
+        "path": "/XV7e5RkwW8mceLxv94lPbgMw"
+      }
+    },
+    {
+      "tag": "🏴‍☠️ m10uie.7777128.xyz tls WS CDN vless § 443 43",
+      "type": "vless",
+      "server": "m10uie.7777128.xyz",
+      "server_port": 443,
+      "uuid": "4f3f7db1-f416-473e-8321-b2cec71c04ab",
+      "tls": {
+        "enabled": true,
+        "server_name": "m10UIe.7777128.xYZ",
+        "insecure": false,
+        "alpn": [
+          "http/1.1"
+        ],
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "m10uie.7777128.xyz"
+        },
+        "path": "/YzFLmzNIEQsAmceLxv94lPbgMw"
+      }
+    },
+    {
+      "tag": "🏴‍☠️ m10uie.7777128.xyz tls WS CDN vmess § 443 43",
+      "type": "vmess",
+      "server": "M10uiE.7777128.xYZ",
+      "server_port": 443,
+      "uuid": "4f3f7db1-f416-473e-8321-b2cec71c04ab",
+      "security": "auto",
+      "alter_id": 0,
+      "tls": {
+        "enabled": true,
+        "server_name": "m10uIE.7777128.Xyz",
+        "insecure": false
+      },
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "m10uie.7777128.xyz"
+        },
+        "path": "/XV7e5RkwW8mceLxv94lPbgMw"
+      }
+    },
+    {
+      "tag": "🏴‍☠️ m10uie.7777128.xyz http WS CDN vmess § 80 43",
+      "type": "vmess",
+      "server": "m10uIe.7777128.xyZ",
+      "server_port": 80,
+      "uuid": "4f3f7db1-f416-473e-8321-b2cec71c04ab",
+      "security": "auto",
+      "alter_id": 0,
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "m10uie.7777128.xyz"
+        },
+        "path": "/XV7e5RkwW8mceLxv94lPbgMw"
+      }
+    },
+    {
+      "tag": "🏴‍☠️ m10eeeeeeeeeeeeeeeeeeeeeeeeeee.7777128.xyz tls WS CDN vless § 443 44",
+      "type": "vless",
+      "server": "m10eeeeeeeeeeeeeeeeeeeeeeeeeee.7777128.xyz",
+      "server_port": 443,
+      "uuid": "4f3f7db1-f416-473e-8321-b2cec71c04ab",
+      "tls": {
+        "enabled": true,
+        "server_name": "M10eEEeEeEeeEEeeEEEEEEeEeEEeEE.7777128.XYZ",
+        "insecure": false,
+        "alpn": [
+          "http/1.1"
+        ],
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "m10eeeeeeeeeeeeeeeeeeeeeeeeeee.7777128.xyz"
+        },
+        "path": "/YzFLmzNIEQsAmceLxv94lPbgMw"
+      }
+    },
+    {
+      "tag": "🏴‍☠️ m10eeeeeeeeeeeeeeeeeeeeeeeeeee.7777128.xyz tls WS CDN vmess § 443 44",
+      "type": "vmess",
+      "server": "M10EeeEeEEEEeeeEeeEeeeEeEEeEeE.7777128.xYZ",
+      "server_port": 443,
+      "uuid": "4f3f7db1-f416-473e-8321-b2cec71c04ab",
+      "security": "auto",
+      "alter_id": 0,
+      "tls": {
+        "enabled": true,
+        "server_name": "M10eeeEEeeEEEeeEEEEeeEEeeEeEEe.7777128.XyZ",
+        "insecure": false
+      },
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "m10eeeeeeeeeeeeeeeeeeeeeeeeeee.7777128.xyz"
+        },
+        "path": "/XV7e5RkwW8mceLxv94lPbgMw"
+      }
+    },
+    {
+      "tag": "🏴‍☠️ m10eeeeeeeeeeeeeeeeeeeeeeeeeee.7777128.xyz http WS CDN vmess § 80 44",
+      "type": "vmess",
+      "server": "M10EEeeeEEEEEeeeEEeeEeEeeeEeee.7777128.XYz",
+      "server_port": 80,
+      "uuid": "4f3f7db1-f416-473e-8321-b2cec71c04ab",
+      "security": "auto",
+      "alter_id": 0,
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "m10eeeeeeeeeeeeeeeeeeeeeeeeeee.7777128.xyz"
+        },
+        "path": "/XV7e5RkwW8mceLxv94lPbgMw"
+      }
+    },
+    {
+      "tag": "🏴‍☠️ m10eeeeerrrrttyu.7777128.xyz tls WS CDN vless § 443 45",
+      "type": "vless",
+      "server": "m10eeeeerrrrttyu.7777128.xyz",
+      "server_port": 443,
+      "uuid": "4f3f7db1-f416-473e-8321-b2cec71c04ab",
+      "tls": {
+        "enabled": true,
+        "server_name": "m10EEeeErRrrtTYu.7777128.Xyz",
+        "insecure": false,
+        "alpn": [
+          "http/1.1"
+        ],
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "m10eeeeerrrrttyu.7777128.xyz"
+        },
+        "path": "/YzFLmzNIEQsAmceLxv94lPbgMw"
+      }
+    },
+    {
+      "tag": "🏴‍☠️ m10eeeeerrrrttyu.7777128.xyz http WS CDN vmess § 80 45",
+      "type": "vmess",
+      "server": "M10eeeEeRrRrTTYU.7777128.XyZ",
+      "server_port": 80,
+      "uuid": "4f3f7db1-f416-473e-8321-b2cec71c04ab",
+      "security": "auto",
+      "alter_id": 0,
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "m10eeeeerrrrttyu.7777128.xyz"
+        },
+        "path": "/XV7e5RkwW8mceLxv94lPbgMw"
+      }
+    },
+    {
+      "tag": "🏴‍☠️ m10dddddddddddddd.7777128.xyz tls WS CDN vless § 443 46",
+      "type": "vless",
+      "server": "m10dddddddddddddd.7777128.xyz",
+      "server_port": 443,
+      "uuid": "4f3f7db1-f416-473e-8321-b2cec71c04ab",
+      "tls": {
+        "enabled": true,
+        "server_name": "M10ddddDdDdDDDDDd.7777128.XYZ",
+        "insecure": false,
+        "alpn": [
+          "http/1.1"
+        ],
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "m10dddddddddddddd.7777128.xyz"
+        },
+        "path": "/YzFLmzNIEQsAmceLxv94lPbgMw"
+      }
+    },
+    {
+      "tag": "🏴‍☠️ m10dddddddddddddd.7777128.xyz tls WS CDN vmess § 443 46",
+      "type": "vmess",
+      "server": "m10DdDDDdDDdDDDdd.7777128.xyZ",
+      "server_port": 443,
+      "uuid": "4f3f7db1-f416-473e-8321-b2cec71c04ab",
+      "security": "auto",
+      "alter_id": 0,
+      "tls": {
+        "enabled": true,
+        "server_name": "M10dDdDDDdDdDDddd.7777128.xyz",
+        "insecure": false
+      },
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "m10dddddddddddddd.7777128.xyz"
+        },
+        "path": "/XV7e5RkwW8mceLxv94lPbgMw"
+      }
+    },
+    {
+      "tag": "🏴‍☠️ m10dddddddddddddd.7777128.xyz http WS CDN vmess § 80 46",
+      "type": "vmess",
+      "server": "m10DDdDDdddDDdDDd.7777128.XYz",
+      "server_port": 80,
+      "uuid": "4f3f7db1-f416-473e-8321-b2cec71c04ab",
+      "security": "auto",
+      "alter_id": 0,
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "m10dddddddddddddd.7777128.xyz"
+        },
+        "path": "/XV7e5RkwW8mceLxv94lPbgMw"
+      }
+    },
+    {
+      "tag": "🏴‍☠️ m10sssssss.7777128.xyz tls WS CDN vless § 443 47",
+      "type": "vless",
+      "server": "m10sssssss.7777128.xyz",
+      "server_port": 443,
+      "uuid": "4f3f7db1-f416-473e-8321-b2cec71c04ab",
+      "tls": {
+        "enabled": true,
+        "server_name": "M10sSsSSsS.7777128.xyZ",
+        "insecure": false,
+        "alpn": [
+          "http/1.1"
+        ],
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "m10sssssss.7777128.xyz"
+        },
+        "path": "/YzFLmzNIEQsAmceLxv94lPbgMw"
+      }
+    },
+    {
+      "tag": "🏴‍☠️ m10sssssss.7777128.xyz tls WS CDN vmess § 443 47",
+      "type": "vmess",
+      "server": "m10SssSsSs.7777128.xYZ",
+      "server_port": 443,
+      "uuid": "4f3f7db1-f416-473e-8321-b2cec71c04ab",
+      "security": "auto",
+      "alter_id": 0,
+      "tls": {
+        "enabled": true,
+        "server_name": "m10sSSssss.7777128.XyZ",
+        "insecure": false
+      },
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "m10sssssss.7777128.xyz"
+        },
+        "path": "/XV7e5RkwW8mceLxv94lPbgMw"
+      }
+    },
+    {
+      "tag": "🏴‍☠️ m10sssssss.7777128.xyz http WS CDN vmess § 80 47",
+      "type": "vmess",
+      "server": "M10SssSSSS.7777128.XyZ",
+      "server_port": 80,
+      "uuid": "4f3f7db1-f416-473e-8321-b2cec71c04ab",
+      "security": "auto",
+      "alter_id": 0,
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "m10sssssss.7777128.xyz"
+        },
+        "path": "/XV7e5RkwW8mceLxv94lPbgMw"
+      }
+    },
+    {
+      "tag": "🏴‍☠️ m10dertrr.7777128.xyz tls WS CDN vless § 443 48",
+      "type": "vless",
+      "server": "m10dertrr.7777128.xyz",
+      "server_port": 443,
+      "uuid": "4f3f7db1-f416-473e-8321-b2cec71c04ab",
+      "tls": {
+        "enabled": true,
+        "server_name": "M10DeRtrr.7777128.XYz",
+        "insecure": false,
+        "alpn": [
+          "http/1.1"
+        ],
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "m10dertrr.7777128.xyz"
+        },
+        "path": "/YzFLmzNIEQsAmceLxv94lPbgMw"
+      }
+    },
+    {
+      "tag": "🏴‍☠️ m10dertrr.7777128.xyz tls WS CDN vmess § 443 48",
+      "type": "vmess",
+      "server": "M10DeRtrr.7777128.xyz",
+      "server_port": 443,
+      "uuid": "4f3f7db1-f416-473e-8321-b2cec71c04ab",
+      "security": "auto",
+      "alter_id": 0,
+      "tls": {
+        "enabled": true,
+        "server_name": "m10dERtRr.7777128.xyZ",
+        "insecure": false
+      },
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "m10dertrr.7777128.xyz"
+        },
+        "path": "/XV7e5RkwW8mceLxv94lPbgMw"
+      }
+    },
+    {
+      "tag": "🏴‍☠️ m10dertrr.7777128.xyz http WS CDN vmess § 80 48",
+      "type": "vmess",
+      "server": "m10deRTrr.7777128.Xyz",
+      "server_port": 80,
+      "uuid": "4f3f7db1-f416-473e-8321-b2cec71c04ab",
+      "security": "auto",
+      "alter_id": 0,
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "m10dertrr.7777128.xyz"
+        },
+        "path": "/XV7e5RkwW8mceLxv94lPbgMw"
+      }
+    },
+    {
+      "tag": "🏴‍☠️ m10dertrrtty.7777128.xyz tls WS CDN vless § 443 49",
+      "type": "vless",
+      "server": "m10dertrrtty.7777128.xyz",
+      "server_port": 443,
+      "uuid": "4f3f7db1-f416-473e-8321-b2cec71c04ab",
+      "tls": {
+        "enabled": true,
+        "server_name": "m10deRtrrTty.7777128.XyZ",
+        "insecure": false,
+        "alpn": [
+          "http/1.1"
+        ],
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "m10dertrrtty.7777128.xyz"
+        },
+        "path": "/YzFLmzNIEQsAmceLxv94lPbgMw"
+      }
+    },
+    {
+      "tag": "🏴‍☠️ m10dertrrtty.7777128.xyz tls WS CDN vmess § 443 49",
+      "type": "vmess",
+      "server": "M10dERtrRTTy.7777128.XYZ",
+      "server_port": 443,
+      "uuid": "4f3f7db1-f416-473e-8321-b2cec71c04ab",
+      "security": "auto",
+      "alter_id": 0,
+      "tls": {
+        "enabled": true,
+        "server_name": "M10derTRRTtY.7777128.xyZ",
+        "insecure": false
+      },
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "m10dertrrtty.7777128.xyz"
+        },
+        "path": "/XV7e5RkwW8mceLxv94lPbgMw"
+      }
+    },
+    {
+      "tag": "🏴‍☠️ m10dertrrtty.7777128.xyz http WS CDN vmess § 80 49",
+      "type": "vmess",
+      "server": "m10DErtrRTTY.7777128.XYZ",
+      "server_port": 80,
+      "uuid": "4f3f7db1-f416-473e-8321-b2cec71c04ab",
+      "security": "auto",
+      "alter_id": 0,
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "m10dertrrtty.7777128.xyz"
+        },
+        "path": "/XV7e5RkwW8mceLxv94lPbgMw"
+      }
+    },
+    {
+      "tag": "🏴‍☠️ m10dertrrttyttyy.7777128.xyz tls WS CDN vless § 443 50",
+      "type": "vless",
+      "server": "m10dertrrttyttyy.7777128.xyz",
+      "server_port": 443,
+      "uuid": "4f3f7db1-f416-473e-8321-b2cec71c04ab",
+      "tls": {
+        "enabled": true,
+        "server_name": "M10dErtrrTTYttyY.7777128.xyz",
+        "insecure": false,
+        "alpn": [
+          "http/1.1"
+        ],
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "m10dertrrttyttyy.7777128.xyz"
+        },
+        "path": "/YzFLmzNIEQsAmceLxv94lPbgMw"
+      }
+    },
+    {
+      "tag": "🏴‍☠️ m10dertrrttyttyy.7777128.xyz tls WS CDN vmess § 443 50",
+      "type": "vmess",
+      "server": "m10deRTrRTTyTtYY.7777128.XYZ",
+      "server_port": 443,
+      "uuid": "4f3f7db1-f416-473e-8321-b2cec71c04ab",
+      "security": "auto",
+      "alter_id": 0,
+      "tls": {
+        "enabled": true,
+        "server_name": "M10DeRTrRTTYTtyY.7777128.XYZ",
+        "insecure": false
+      },
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "m10dertrrttyttyy.7777128.xyz"
+        },
+        "path": "/XV7e5RkwW8mceLxv94lPbgMw"
+      }
+    },
+    {
+      "tag": "🏴‍☠️ m10dertrrttyttyy.7777128.xyz http WS CDN vmess § 80 50",
+      "type": "vmess",
+      "server": "M10derTrRTTYTTyy.7777128.xyz",
+      "server_port": 80,
+      "uuid": "4f3f7db1-f416-473e-8321-b2cec71c04ab",
+      "security": "auto",
+      "alter_id": 0,
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "m10dertrrttyttyy.7777128.xyz"
+        },
+        "path": "/XV7e5RkwW8mceLxv94lPbgMw"
+      }
+    },
+    {
+      "tag": "🏴‍☠️ m10der.857657.xyz tls WS CDN vless § 443 52",
+      "type": "vless",
+      "server": "m10der.857657.xyz",
+      "server_port": 443,
+      "uuid": "4f3f7db1-f416-473e-8321-b2cec71c04ab",
+      "tls": {
+        "enabled": true,
+        "server_name": "M10deR.857657.Xyz",
+        "insecure": false,
+        "alpn": [
+          "http/1.1"
+        ],
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "m10der.857657.xyz"
+        },
+        "path": "/YzFLmzNIEQsAmceLxv94lPbgMw"
+      }
+    },
+    {
+      "tag": "🏴‍☠️ m10der.857657.xyz tls WS CDN vmess § 443 52",
+      "type": "vmess",
+      "server": "M10DeR.857657.xyZ",
+      "server_port": 443,
+      "uuid": "4f3f7db1-f416-473e-8321-b2cec71c04ab",
+      "security": "auto",
+      "alter_id": 0,
+      "tls": {
+        "enabled": true,
+        "server_name": "M10dER.857657.xyZ",
+        "insecure": false
+      },
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "m10der.857657.xyz"
+        },
+        "path": "/XV7e5RkwW8mceLxv94lPbgMw"
+      }
+    },
+    {
+      "tag": "🏴‍☠️ m10we.857657.xyz tls WS CDN vless § 443 53",
+      "type": "vless",
+      "server": "m10we.857657.xyz",
+      "server_port": 443,
+      "uuid": "4f3f7db1-f416-473e-8321-b2cec71c04ab",
+      "tls": {
+        "enabled": true,
+        "server_name": "M10we.857657.XYz",
+        "insecure": false,
+        "alpn": [
+          "http/1.1"
+        ],
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "m10we.857657.xyz"
+        },
+        "path": "/YzFLmzNIEQsAmceLxv94lPbgMw"
+      }
+    },
+    {
+      "tag": "🏴‍☠️ m10we.857657.xyz http WS CDN vmess § 80 53",
+      "type": "vmess",
+      "server": "m10We.857657.xyz",
+      "server_port": 80,
+      "uuid": "4f3f7db1-f416-473e-8321-b2cec71c04ab",
+      "security": "auto",
+      "alter_id": 0,
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "m10we.857657.xyz"
+        },
+        "path": "/XV7e5RkwW8mceLxv94lPbgMw"
+      }
+    },
+    {
+      "tag": "🏴‍☠️ m10derer5.857657.xyz tls WS CDN vless § 443 54",
+      "type": "vless",
+      "server": "m10derer5.857657.xyz",
+      "server_port": 443,
+      "uuid": "4f3f7db1-f416-473e-8321-b2cec71c04ab",
+      "tls": {
+        "enabled": true,
+        "server_name": "m10derer5.857657.XyZ",
+        "insecure": false,
+        "alpn": [
+          "http/1.1"
+        ],
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "m10derer5.857657.xyz"
+        },
+        "path": "/YzFLmzNIEQsAmceLxv94lPbgMw"
+      }
+    },
+    {
+      "tag": "🏴‍☠️ m10derer5.857657.xyz tls WS CDN vmess § 443 54",
+      "type": "vmess",
+      "server": "m10Derer5.857657.xYZ",
+      "server_port": 443,
+      "uuid": "4f3f7db1-f416-473e-8321-b2cec71c04ab",
+      "security": "auto",
+      "alter_id": 0,
+      "tls": {
+        "enabled": true,
+        "server_name": "M10deRER5.857657.XYz",
+        "insecure": false
+      },
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "m10derer5.857657.xyz"
+        },
+        "path": "/XV7e5RkwW8mceLxv94lPbgMw"
+      }
+    },
+    {
+      "tag": "🏴‍☠️ m10derer5g.857657.xyz tls WS CDN vless § 443 55",
+      "type": "vless",
+      "server": "m10derer5g.857657.xyz",
+      "server_port": 443,
+      "uuid": "4f3f7db1-f416-473e-8321-b2cec71c04ab",
+      "tls": {
+        "enabled": true,
+        "server_name": "m10dErEr5G.857657.XYz",
+        "insecure": false,
+        "alpn": [
+          "http/1.1"
+        ],
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "m10derer5g.857657.xyz"
+        },
+        "path": "/YzFLmzNIEQsAmceLxv94lPbgMw"
+      }
+    },
+    {
+      "tag": "🏴‍☠️ m10derer5g.857657.xyz tls WS CDN vmess § 443 55",
+      "type": "vmess",
+      "server": "m10DeRER5G.857657.xyz",
+      "server_port": 443,
+      "uuid": "4f3f7db1-f416-473e-8321-b2cec71c04ab",
+      "security": "auto",
+      "alter_id": 0,
+      "tls": {
+        "enabled": true,
+        "server_name": "M10DEReR5g.857657.xYZ",
+        "insecure": false
+      },
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "m10derer5g.857657.xyz"
+        },
+        "path": "/XV7e5RkwW8mceLxv94lPbgMw"
+      }
+    },
+    {
+      "tag": "🏴‍☠️ m10derer5g.857657.xyz http WS CDN vmess § 80 55",
+      "type": "vmess",
+      "server": "m10deRer5G.857657.XYZ",
+      "server_port": 80,
+      "uuid": "4f3f7db1-f416-473e-8321-b2cec71c04ab",
+      "security": "auto",
+      "alter_id": 0,
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "m10derer5g.857657.xyz"
+        },
+        "path": "/XV7e5RkwW8mceLxv94lPbgMw"
+      }
+    },
+    {
+      "tag": "🏴‍☠️ m10derer5gw.857657.xyz tls WS CDN vless § 443 56",
+      "type": "vless",
+      "server": "m10derer5gw.857657.xyz",
+      "server_port": 443,
+      "uuid": "4f3f7db1-f416-473e-8321-b2cec71c04ab",
+      "tls": {
+        "enabled": true,
+        "server_name": "M10dERer5GW.857657.Xyz",
+        "insecure": false,
+        "alpn": [
+          "http/1.1"
+        ],
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "m10derer5gw.857657.xyz"
+        },
+        "path": "/YzFLmzNIEQsAmceLxv94lPbgMw"
+      }
+    },
+    {
+      "tag": "🏴‍☠️ m10derer5gw.857657.xyz tls WS CDN vmess § 443 56",
+      "type": "vmess",
+      "server": "m10derER5gw.857657.XyZ",
+      "server_port": 443,
+      "uuid": "4f3f7db1-f416-473e-8321-b2cec71c04ab",
+      "security": "auto",
+      "alter_id": 0,
+      "tls": {
+        "enabled": true,
+        "server_name": "M10DErER5gw.857657.XYZ",
+        "insecure": false
+      },
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "m10derer5gw.857657.xyz"
+        },
+        "path": "/XV7e5RkwW8mceLxv94lPbgMw"
+      }
+    },
+    {
+      "tag": "🏴‍☠️ m10derer5gwe.857657.xyz tls WS CDN vless § 443 57",
+      "type": "vless",
+      "server": "m10derer5gwe.857657.xyz",
+      "server_port": 443,
+      "uuid": "4f3f7db1-f416-473e-8321-b2cec71c04ab",
+      "tls": {
+        "enabled": true,
+        "server_name": "M10DErer5Gwe.857657.xYZ",
+        "insecure": false,
+        "alpn": [
+          "http/1.1"
+        ],
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "m10derer5gwe.857657.xyz"
+        },
+        "path": "/YzFLmzNIEQsAmceLxv94lPbgMw"
+      }
+    },
+    {
+      "tag": "🏴‍☠️ m10derer5gwe.857657.xyz tls WS CDN vmess § 443 57",
+      "type": "vmess",
+      "server": "m10dErer5gwe.857657.XyZ",
+      "server_port": 443,
+      "uuid": "4f3f7db1-f416-473e-8321-b2cec71c04ab",
+      "security": "auto",
+      "alter_id": 0,
+      "tls": {
+        "enabled": true,
+        "server_name": "M10derEr5gwe.857657.Xyz",
+        "insecure": false
+      },
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "m10derer5gwe.857657.xyz"
+        },
+        "path": "/XV7e5RkwW8mceLxv94lPbgMw"
+      }
+    },
+    {
+      "tag": "🏴‍☠️ m10derer5gwe.857657.xyz http WS CDN vmess § 80 57",
+      "type": "vmess",
+      "server": "m10dErER5gWe.857657.xyZ",
+      "server_port": 80,
+      "uuid": "4f3f7db1-f416-473e-8321-b2cec71c04ab",
+      "security": "auto",
+      "alter_id": 0,
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "m10derer5gwe.857657.xyz"
+        },
+        "path": "/XV7e5RkwW8mceLxv94lPbgMw"
+      }
+    },
+    {
+      "tag": "🏴‍☠️ m10iiiiii.857657.xyz tls WS CDN vless § 443 58",
+      "type": "vless",
+      "server": "m10iiiiii.857657.xyz",
+      "server_port": 443,
+      "uuid": "4f3f7db1-f416-473e-8321-b2cec71c04ab",
+      "tls": {
+        "enabled": true,
+        "server_name": "m10IIiiII.857657.XYZ",
+        "insecure": false,
+        "alpn": [
+          "http/1.1"
+        ],
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "m10iiiiii.857657.xyz"
+        },
+        "path": "/YzFLmzNIEQsAmceLxv94lPbgMw"
+      }
+    },
+    {
+      "tag": "🏴‍☠️ m10iiiiii.857657.xyz tls WS CDN vmess § 443 58",
+      "type": "vmess",
+      "server": "m10iiIIIi.857657.xYZ",
+      "server_port": 443,
+      "uuid": "4f3f7db1-f416-473e-8321-b2cec71c04ab",
+      "security": "auto",
+      "alter_id": 0,
+      "tls": {
+        "enabled": true,
+        "server_name": "m10iIiIIi.857657.xyz",
+        "insecure": false
+      },
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "m10iiiiii.857657.xyz"
+        },
+        "path": "/XV7e5RkwW8mceLxv94lPbgMw"
+      }
+    },
+    {
+      "tag": "🏴‍☠️ m10iiiiii.857657.xyz http WS CDN vmess § 80 58",
+      "type": "vmess",
+      "server": "m10IIIiiI.857657.xyZ",
+      "server_port": 80,
+      "uuid": "4f3f7db1-f416-473e-8321-b2cec71c04ab",
+      "security": "auto",
+      "alter_id": 0,
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "m10iiiiii.857657.xyz"
+        },
+        "path": "/XV7e5RkwW8mceLxv94lPbgMw"
+      }
+    },
+    {
+      "tag": "🏴‍☠️ m10iiiiiierwweee.857657.xyz tls WS CDN vless § 443 60",
+      "type": "vless",
+      "server": "m10iiiiiierwweee.857657.xyz",
+      "server_port": 443,
+      "uuid": "4f3f7db1-f416-473e-8321-b2cec71c04ab",
+      "tls": {
+        "enabled": true,
+        "server_name": "m10IIIIIIeRWweeE.857657.XyZ",
+        "insecure": false,
+        "alpn": [
+          "http/1.1"
+        ],
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "m10iiiiiierwweee.857657.xyz"
+        },
+        "path": "/YzFLmzNIEQsAmceLxv94lPbgMw"
+      }
+    },
+    {
+      "tag": "🏴‍☠️ m10iiiiiierwweee.857657.xyz tls WS CDN vmess § 443 60",
+      "type": "vmess",
+      "server": "m10IiiIIIeRwWEeE.857657.XYZ",
+      "server_port": 443,
+      "uuid": "4f3f7db1-f416-473e-8321-b2cec71c04ab",
+      "security": "auto",
+      "alter_id": 0,
+      "tls": {
+        "enabled": true,
+        "server_name": "m10IiiIIiErwweEe.857657.XYz",
+        "insecure": false
+      },
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "m10iiiiiierwweee.857657.xyz"
+        },
+        "path": "/XV7e5RkwW8mceLxv94lPbgMw"
+      }
+    },
+    {
+      "tag": "🏴‍☠️ m10e4r4wer.857856.xyz tls WS CDN vless § 443 62",
+      "type": "vless",
+      "server": "m10e4r4wer.857856.xyz",
+      "server_port": 443,
+      "uuid": "4f3f7db1-f416-473e-8321-b2cec71c04ab",
+      "tls": {
+        "enabled": true,
+        "server_name": "m10E4r4Wer.857856.XYz",
+        "insecure": false,
+        "alpn": [
+          "http/1.1"
+        ],
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "m10e4r4wer.857856.xyz"
+        },
+        "path": "/YzFLmzNIEQsAmceLxv94lPbgMw"
+      }
+    },
+    {
+      "tag": "🏴‍☠️ m10e4r4wer.857856.xyz tls WS CDN vmess § 443 62",
+      "type": "vmess",
+      "server": "m10E4R4wer.857856.xYZ",
+      "server_port": 443,
+      "uuid": "4f3f7db1-f416-473e-8321-b2cec71c04ab",
+      "security": "auto",
+      "alter_id": 0,
+      "tls": {
+        "enabled": true,
+        "server_name": "m10e4r4wEr.857856.Xyz",
+        "insecure": false
+      },
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "m10e4r4wer.857856.xyz"
+        },
+        "path": "/XV7e5RkwW8mceLxv94lPbgMw"
+      }
+    },
+    {
+      "tag": "🏴‍☠️ m10e4r4were45.857856.xyz tls WS CDN vless § 443 63",
+      "type": "vless",
+      "server": "m10e4r4were45.857856.xyz",
+      "server_port": 443,
+      "uuid": "4f3f7db1-f416-473e-8321-b2cec71c04ab",
+      "tls": {
+        "enabled": true,
+        "server_name": "M10E4r4WEre45.857856.xYz",
+        "insecure": false,
+        "alpn": [
+          "http/1.1"
+        ],
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "m10e4r4were45.857856.xyz"
+        },
+        "path": "/YzFLmzNIEQsAmceLxv94lPbgMw"
+      }
+    },
+    {
+      "tag": "🏴‍☠️ m10e4r4were45.857856.xyz tls WS CDN vmess § 443 63",
+      "type": "vmess",
+      "server": "M10e4R4WEre45.857856.xYz",
+      "server_port": 443,
+      "uuid": "4f3f7db1-f416-473e-8321-b2cec71c04ab",
+      "security": "auto",
+      "alter_id": 0,
+      "tls": {
+        "enabled": true,
+        "server_name": "M10e4R4wERE45.857856.XYz",
+        "insecure": false
+      },
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "m10e4r4were45.857856.xyz"
+        },
+        "path": "/XV7e5RkwW8mceLxv94lPbgMw"
+      }
+    },
+    {
+      "tag": "🏴‍☠️ m10e4r4were45.857856.xyz http WS CDN vmess § 80 63",
+      "type": "vmess",
+      "server": "M10e4r4WeRE45.857856.Xyz",
+      "server_port": 80,
+      "uuid": "4f3f7db1-f416-473e-8321-b2cec71c04ab",
+      "security": "auto",
+      "alter_id": 0,
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "m10e4r4were45.857856.xyz"
+        },
+        "path": "/XV7e5RkwW8mceLxv94lPbgMw"
+      }
+    },
+    {
+      "tag": "🏴‍☠️ m10e.857856.xyz tls WS CDN vless § 443 64",
+      "type": "vless",
+      "server": "m10e.857856.xyz",
+      "server_port": 443,
+      "uuid": "4f3f7db1-f416-473e-8321-b2cec71c04ab",
+      "tls": {
+        "enabled": true,
+        "server_name": "M10E.857856.xyz",
+        "insecure": false,
+        "alpn": [
+          "http/1.1"
+        ],
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "m10e.857856.xyz"
+        },
+        "path": "/YzFLmzNIEQsAmceLxv94lPbgMw"
+      }
+    },
+    {
+      "tag": "🏴‍☠️ m10e.857856.xyz tls WS CDN vmess § 443 64",
+      "type": "vmess",
+      "server": "m10e.857856.xYz",
+      "server_port": 443,
+      "uuid": "4f3f7db1-f416-473e-8321-b2cec71c04ab",
+      "security": "auto",
+      "alter_id": 0,
+      "tls": {
+        "enabled": true,
+        "server_name": "M10e.857856.XYZ",
+        "insecure": false
+      },
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "m10e.857856.xyz"
+        },
+        "path": "/XV7e5RkwW8mceLxv94lPbgMw"
+      }
+    },
+    {
+      "tag": "🏴‍☠️ m10e.857856.xyz http WS CDN vmess § 80 64",
+      "type": "vmess",
+      "server": "m10E.857856.xyZ",
+      "server_port": 80,
+      "uuid": "4f3f7db1-f416-473e-8321-b2cec71c04ab",
+      "security": "auto",
+      "alter_id": 0,
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "m10e.857856.xyz"
+        },
+        "path": "/XV7e5RkwW8mceLxv94lPbgMw"
+      }
+    },
+    {
+      "tag": "🏴‍☠️ m10ewwwwr.857856.xyz tls WS CDN vless § 443 65",
+      "type": "vless",
+      "server": "m10ewwwwr.857856.xyz",
+      "server_port": 443,
+      "uuid": "4f3f7db1-f416-473e-8321-b2cec71c04ab",
+      "tls": {
+        "enabled": true,
+        "server_name": "M10EWwWWr.857856.xYz",
+        "insecure": false,
+        "alpn": [
+          "http/1.1"
+        ],
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "m10ewwwwr.857856.xyz"
+        },
+        "path": "/YzFLmzNIEQsAmceLxv94lPbgMw"
+      }
+    },
+    {
+      "tag": "🏴‍☠️ m10ewwwwr.857856.xyz tls WS CDN vmess § 443 65",
+      "type": "vmess",
+      "server": "m10ewWwwR.857856.xyz",
+      "server_port": 443,
+      "uuid": "4f3f7db1-f416-473e-8321-b2cec71c04ab",
+      "security": "auto",
+      "alter_id": 0,
+      "tls": {
+        "enabled": true,
+        "server_name": "m10EWWWWr.857856.xYZ",
+        "insecure": false
+      },
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "m10ewwwwr.857856.xyz"
+        },
+        "path": "/XV7e5RkwW8mceLxv94lPbgMw"
+      }
+    },
+    {
+      "tag": "🏴‍☠️ m10ewwwwr.857856.xyz http WS CDN vmess § 80 65",
+      "type": "vmess",
+      "server": "m10EwwWWr.857856.XYZ",
+      "server_port": 80,
+      "uuid": "4f3f7db1-f416-473e-8321-b2cec71c04ab",
+      "security": "auto",
+      "alter_id": 0,
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "m10ewwwwr.857856.xyz"
+        },
+        "path": "/XV7e5RkwW8mceLxv94lPbgMw"
+      }
+    },
+    {
+      "tag": "🏴‍☠️ m10ess.857856.xyz tls WS CDN vless § 443 66",
+      "type": "vless",
+      "server": "m10ess.857856.xyz",
+      "server_port": 443,
+      "uuid": "4f3f7db1-f416-473e-8321-b2cec71c04ab",
+      "tls": {
+        "enabled": true,
+        "server_name": "M10eSS.857856.xYZ",
+        "insecure": false,
+        "alpn": [
+          "http/1.1"
+        ],
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "m10ess.857856.xyz"
+        },
+        "path": "/YzFLmzNIEQsAmceLxv94lPbgMw"
+      }
+    },
+    {
+      "tag": "🏴‍☠️ m10ess.857856.xyz tls WS CDN vmess § 443 66",
+      "type": "vmess",
+      "server": "M10Ess.857856.xYZ",
+      "server_port": 443,
+      "uuid": "4f3f7db1-f416-473e-8321-b2cec71c04ab",
+      "security": "auto",
+      "alter_id": 0,
+      "tls": {
+        "enabled": true,
+        "server_name": "M10ESs.857856.XyZ",
+        "insecure": false
+      },
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "m10ess.857856.xyz"
+        },
+        "path": "/XV7e5RkwW8mceLxv94lPbgMw"
+      }
+    },
+    {
+      "tag": "🏴‍☠️ m10ess.857856.xyz http WS CDN vmess § 80 66",
+      "type": "vmess",
+      "server": "m10ess.857856.XYz",
+      "server_port": 80,
+      "uuid": "4f3f7db1-f416-473e-8321-b2cec71c04ab",
+      "security": "auto",
+      "alter_id": 0,
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "m10ess.857856.xyz"
+        },
+        "path": "/XV7e5RkwW8mceLxv94lPbgMw"
+      }
+    },
+    {
+      "tag": "🏴‍☠️ m10kkk.857856.xyz tls WS CDN vless § 443 67",
+      "type": "vless",
+      "server": "m10kkk.857856.xyz",
+      "server_port": 443,
+      "uuid": "4f3f7db1-f416-473e-8321-b2cec71c04ab",
+      "tls": {
+        "enabled": true,
+        "server_name": "m10kKk.857856.xYZ",
+        "insecure": false,
+        "alpn": [
+          "http/1.1"
+        ],
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "m10kkk.857856.xyz"
+        },
+        "path": "/YzFLmzNIEQsAmceLxv94lPbgMw"
+      }
+    },
+    {
+      "tag": "🏴‍☠️ m10kkk.857856.xyz tls WS CDN vmess § 443 67",
+      "type": "vmess",
+      "server": "m10Kkk.857856.XYz",
+      "server_port": 443,
+      "uuid": "4f3f7db1-f416-473e-8321-b2cec71c04ab",
+      "security": "auto",
+      "alter_id": 0,
+      "tls": {
+        "enabled": true,
+        "server_name": "m10Kkk.857856.xyZ",
+        "insecure": false
+      },
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "m10kkk.857856.xyz"
+        },
+        "path": "/XV7e5RkwW8mceLxv94lPbgMw"
+      }
+    },
+    {
+      "tag": "🏴‍☠️ m10kkk.857856.xyz http WS CDN vmess § 80 67",
+      "type": "vmess",
+      "server": "m10kKK.857856.XyZ",
+      "server_port": 80,
+      "uuid": "4f3f7db1-f416-473e-8321-b2cec71c04ab",
+      "security": "auto",
+      "alter_id": 0,
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "m10kkk.857856.xyz"
+        },
+        "path": "/XV7e5RkwW8mceLxv94lPbgMw"
+      }
+    },
+    {
+      "tag": "select",
+      "type": "selector",
+      "default": "auto",
+      "outbounds": [
+        "auto",
+        "🏴‍☠️ mas10rt.890602.xyz tls WS CDN vless § 443 4",
+        "🏴‍☠️ mas10rt.890602.xyz tls WS CDN vmess § 443 4",
+        "🏴‍☠️ mas10.890602.xyz tls WS CDN vless § 443 5",
+        "🏴‍☠️ mas10.890602.xyz tls WS CDN vmess § 443 5",
+        "🏴‍☠️ mas10xyz.890602.xyz tls WS CDN vless § 443 6",
+        "🏴‍☠️ mas10xyz.890602.xyz tls WS CDN vmess § 443 6",
+        "🏴‍☠️ mas10opiuooooo.huangdi2025.dpdns.org tls WS CDN vless § 443 10",
+        "🏴‍☠️ mas10opiuooooo.huangdi2025.dpdns.org tls WS CDN vmess § 443 10",
+        "🏴‍☠️ mas10rtyui.huangdi2025.dpdns.org tls WS CDN vless § 443 11",
+        "🏴‍☠️ mas10rtyui.huangdi2025.dpdns.org tls WS CDN vmess § 443 11",
+        "🏴‍☠️ mas10rtyui.huangdi2025.dpdns.org http WS CDN vmess § 80 11",
+        "🏴‍☠️ n10sdfghj.huangdi2025.dpdns.org tls WS CDN vless § 443 12",
+        "🏴‍☠️ n10sdfghj.huangdi2025.dpdns.org tls WS CDN vmess § 443 12",
+        "🏴‍☠️ ms10yyyyyyyyyyy.445.pp.ua tls WS CDN vless § 443 15",
+        "🏴‍☠️ ms10yyy.445.pp.ua tls WS CDN vless § 443 16",
+        "🏴‍☠️ ms10yyy.445.pp.ua tls WS CDN vmess § 443 16",
+        "🏴‍☠️ ms10yy.445.pp.ua tls WS CDN vless § 443 17",
+        "🏴‍☠️ ms10yy.445.pp.ua tls WS CDN vmess § 443 17",
+        "🏴‍☠️ ms10yyyyyy.445.pp.ua tls WS CDN vless § 443 18",
+        "🏴‍☠️ ms10yyyyyy.445.pp.ua tls WS CDN vmess § 443 18",
+        "🏴‍☠️ ms10ttttt.445.pp.ua tls WS CDN vless § 443 19",
+        "🏴‍☠️ ms10ttttt.445.pp.ua tls WS CDN vmess § 443 19",
+        "🏴‍☠️ ms10ttt.445.pp.ua tls WS CDN vless § 443 20",
+        "🏴‍☠️ ms10ttt.445.pp.ua tls WS CDN vmess § 443 20",
+        "🏴‍☠️ m10dfghj.890604.dpdns.org tls WS CDN vless § 443 22",
+        "🏴‍☠️ m10dfghj.890604.dpdns.org tls WS CDN vmess § 443 22",
+        "🏴‍☠️ m10dfghj.890604.dpdns.org http WS CDN vmess § 80 22",
+        "🏴‍☠️ m10d.890604.dpdns.org tls WS CDN vless § 443 23",
+        "🏴‍☠️ m10d.890604.dpdns.org tls WS CDN vmess § 443 23",
+        "🏴‍☠️ m10d.890604.dpdns.org http WS CDN vmess § 80 23",
+        "🏴‍☠️ m10dwwww.890604.dpdns.org tls WS CDN vless § 443 27",
+        "🏴‍☠️ m10dwwww.890604.dpdns.org http WS CDN vmess § 80 27",
+        "🏴‍☠️ m10dww.890604.dpdns.org tls WS CDN vless § 443 28",
+        "🏴‍☠️ m10dww.890604.dpdns.org tls WS CDN vmess § 443 28",
+        "🏴‍☠️ m10dww.890604.dpdns.org http WS CDN vmess § 80 28",
+        "🏴‍☠️ m10dwwwwrrt.890604.dpdns.org tls WS CDN vless § 443 29",
+        "🏴‍☠️ m10dwwwwrrt.890604.dpdns.org tls WS CDN vmess § 443 29",
+        "🏴‍☠️ m10dwwwwrrt.890604.dpdns.org http WS CDN vmess § 80 29",
+        "🏴‍☠️ m10dfg.890604.dpdns.org tls WS CDN vless § 443 30",
+        "🏴‍☠️ m10dfg.890604.dpdns.org tls WS CDN vmess § 443 30",
+        "🏴‍☠️ m10dfg.890604.dpdns.org http WS CDN vmess § 80 30",
+        "🏴‍☠️ m10ddddd.890604.dpdns.org tls WS CDN vless § 443 31",
+        "🏴‍☠️ m10ddddd.890604.dpdns.org tls WS CDN vmess § 443 31",
+        "🏴‍☠️ m10ddddd.890604.dpdns.org http WS CDN vmess § 80 31",
+        "🏴‍☠️ m10ddddddddddddf.457.pp.ua tls WS CDN vless § 443 32",
+        "🏴‍☠️ m10ddddddddddddf.457.pp.ua tls WS CDN vmess § 443 32",
+        "🏴‍☠️ m10dddd.457.pp.ua tls WS CDN vless § 443 33",
+        "🏴‍☠️ m10dddd.457.pp.ua tls WS CDN vmess § 443 33",
+        "🏴‍☠️ m10ddd.457.pp.ua tls WS CDN vless § 443 34",
+        "🏴‍☠️ m10ddd.457.pp.ua tls WS CDN vmess § 443 34",
+        "🏴‍☠️ m10dddyyyy.457.pp.ua tls WS CDN vless § 443 35",
+        "🏴‍☠️ m10dddyyyy.457.pp.ua tls WS CDN vmess § 443 35",
+        "🏴‍☠️ m10frtyu.459.pp.ua tls WS CDN vmess § 443 36",
+        "🏴‍☠️ m10frtyuttttttt.459.pp.ua tls WS CDN vless § 443 37",
+        "🏴‍☠️ m10frtyuttttttt.459.pp.ua tls WS CDN vmess § 443 37",
+        "🏴‍☠️ m10frtyuttttt.459.pp.ua tls WS CDN vless § 443 38",
+        "🏴‍☠️ m10frtyuttttt.459.pp.ua tls WS CDN vmess § 443 38",
+        "🏴‍☠️ m10frtyuttttt.459.pp.ua http WS CDN vmess § 80 38",
+        "🏴‍☠️ m10frtyutttttjjj.459.pp.ua tls WS CDN vless § 443 39",
+        "🏴‍☠️ m10frtyutttttjjj.459.pp.ua tls WS CDN vmess § 443 39",
+        "🏴‍☠️ m10frtyutttt.459.pp.ua tls WS CDN vless § 443 40",
+        "🏴‍☠️ m10frtyutttt.459.pp.ua tls WS CDN vmess § 443 40",
+        "🏴‍☠️ m10frtyutttt678.459.pp.ua tls WS CDN vless § 443 41",
+        "🏴‍☠️ m10frtyutttt678.459.pp.ua tls WS CDN vmess § 443 41",
+        "🏴‍☠️ m10derty.7777128.xyz tls WS CDN vless § 443 42",
+        "🏴‍☠️ m10derty.7777128.xyz tls WS CDN vmess § 443 42",
+        "🏴‍☠️ m10derty.7777128.xyz http WS CDN vmess § 80 42",
+        "🏴‍☠️ m10uie.7777128.xyz tls WS CDN vless § 443 43",
+        "🏴‍☠️ m10uie.7777128.xyz tls WS CDN vmess § 443 43",
+        "🏴‍☠️ m10uie.7777128.xyz http WS CDN vmess § 80 43",
+        "🏴‍☠️ m10eeeeeeeeeeeeeeeeeeeeeeeeeee.7777128.xyz tls WS CDN vless § 443 44",
+        "🏴‍☠️ m10eeeeeeeeeeeeeeeeeeeeeeeeeee.7777128.xyz tls WS CDN vmess § 443 44",
+        "🏴‍☠️ m10eeeeeeeeeeeeeeeeeeeeeeeeeee.7777128.xyz http WS CDN vmess § 80 44",
+        "🏴‍☠️ m10eeeeerrrrttyu.7777128.xyz tls WS CDN vless § 443 45",
+        "🏴‍☠️ m10eeeeerrrrttyu.7777128.xyz http WS CDN vmess § 80 45",
+        "🏴‍☠️ m10dddddddddddddd.7777128.xyz tls WS CDN vless § 443 46",
+        "🏴‍☠️ m10dddddddddddddd.7777128.xyz tls WS CDN vmess § 443 46",
+        "🏴‍☠️ m10dddddddddddddd.7777128.xyz http WS CDN vmess § 80 46",
+        "🏴‍☠️ m10sssssss.7777128.xyz tls WS CDN vless § 443 47",
+        "🏴‍☠️ m10sssssss.7777128.xyz tls WS CDN vmess § 443 47",
+        "🏴‍☠️ m10sssssss.7777128.xyz http WS CDN vmess § 80 47",
+        "🏴‍☠️ m10dertrr.7777128.xyz tls WS CDN vless § 443 48",
+        "🏴‍☠️ m10dertrr.7777128.xyz tls WS CDN vmess § 443 48",
+        "🏴‍☠️ m10dertrr.7777128.xyz http WS CDN vmess § 80 48",
+        "🏴‍☠️ m10dertrrtty.7777128.xyz tls WS CDN vless § 443 49",
+        "🏴‍☠️ m10dertrrtty.7777128.xyz tls WS CDN vmess § 443 49",
+        "🏴‍☠️ m10dertrrtty.7777128.xyz http WS CDN vmess § 80 49",
+        "🏴‍☠️ m10dertrrttyttyy.7777128.xyz tls WS CDN vless § 443 50",
+        "🏴‍☠️ m10dertrrttyttyy.7777128.xyz tls WS CDN vmess § 443 50",
+        "🏴‍☠️ m10dertrrttyttyy.7777128.xyz http WS CDN vmess § 80 50",
+        "🏴‍☠️ m10der.857657.xyz tls WS CDN vless § 443 52",
+        "🏴‍☠️ m10der.857657.xyz tls WS CDN vmess § 443 52",
+        "🏴‍☠️ m10we.857657.xyz tls WS CDN vless § 443 53",
+        "🏴‍☠️ m10we.857657.xyz http WS CDN vmess § 80 53",
+        "🏴‍☠️ m10derer5.857657.xyz tls WS CDN vless § 443 54",
+        "🏴‍☠️ m10derer5.857657.xyz tls WS CDN vmess § 443 54",
+        "🏴‍☠️ m10derer5g.857657.xyz tls WS CDN vless § 443 55",
+        "🏴‍☠️ m10derer5g.857657.xyz tls WS CDN vmess § 443 55",
+        "🏴‍☠️ m10derer5g.857657.xyz http WS CDN vmess § 80 55",
+        "🏴‍☠️ m10derer5gw.857657.xyz tls WS CDN vless § 443 56",
+        "🏴‍☠️ m10derer5gw.857657.xyz tls WS CDN vmess § 443 56",
+        "🏴‍☠️ m10derer5gwe.857657.xyz tls WS CDN vless § 443 57",
+        "🏴‍☠️ m10derer5gwe.857657.xyz tls WS CDN vmess § 443 57",
+        "🏴‍☠️ m10derer5gwe.857657.xyz http WS CDN vmess § 80 57",
+        "🏴‍☠️ m10iiiiii.857657.xyz tls WS CDN vless § 443 58",
+        "🏴‍☠️ m10iiiiii.857657.xyz tls WS CDN vmess § 443 58",
+        "🏴‍☠️ m10iiiiii.857657.xyz http WS CDN vmess § 80 58",
+        "🏴‍☠️ m10iiiiiierwweee.857657.xyz tls WS CDN vless § 443 60",
+        "🏴‍☠️ m10iiiiiierwweee.857657.xyz tls WS CDN vmess § 443 60",
+        "🏴‍☠️ m10e4r4wer.857856.xyz tls WS CDN vless § 443 62",
+        "🏴‍☠️ m10e4r4wer.857856.xyz tls WS CDN vmess § 443 62",
+        "🏴‍☠️ m10e4r4were45.857856.xyz tls WS CDN vless § 443 63",
+        "🏴‍☠️ m10e4r4were45.857856.xyz tls WS CDN vmess § 443 63",
+        "🏴‍☠️ m10e4r4were45.857856.xyz http WS CDN vmess § 80 63",
+        "🏴‍☠️ m10e.857856.xyz tls WS CDN vless § 443 64",
+        "🏴‍☠️ m10e.857856.xyz tls WS CDN vmess § 443 64",
+        "🏴‍☠️ m10e.857856.xyz http WS CDN vmess § 80 64",
+        "🏴‍☠️ m10ewwwwr.857856.xyz tls WS CDN vless § 443 65",
+        "🏴‍☠️ m10ewwwwr.857856.xyz tls WS CDN vmess § 443 65",
+        "🏴‍☠️ m10ewwwwr.857856.xyz http WS CDN vmess § 80 65",
+        "🏴‍☠️ m10ess.857856.xyz tls WS CDN vless § 443 66",
+        "🏴‍☠️ m10ess.857856.xyz tls WS CDN vmess § 443 66",
+        "🏴‍☠️ m10ess.857856.xyz http WS CDN vmess § 80 66",
+        "🏴‍☠️ m10kkk.857856.xyz tls WS CDN vless § 443 67",
+        "🏴‍☠️ m10kkk.857856.xyz tls WS CDN vmess § 443 67",
+        "🏴‍☠️ m10kkk.857856.xyz http WS CDN vmess § 80 67"
+      ]
+    },
+    {
+      "tag": "auto",
+      "type": "urltest",
+      "interval": "5m",
+      "outbounds": [
+        "🏴‍☠️ mas10rt.890602.xyz tls WS CDN vless § 443 4",
+        "🏴‍☠️ mas10rt.890602.xyz tls WS CDN vmess § 443 4",
+        "🏴‍☠️ mas10.890602.xyz tls WS CDN vless § 443 5",
+        "🏴‍☠️ mas10.890602.xyz tls WS CDN vmess § 443 5",
+        "🏴‍☠️ mas10xyz.890602.xyz tls WS CDN vless § 443 6",
+        "🏴‍☠️ mas10xyz.890602.xyz tls WS CDN vmess § 443 6",
+        "🏴‍☠️ mas10opiuooooo.huangdi2025.dpdns.org tls WS CDN vless § 443 10",
+        "🏴‍☠️ mas10opiuooooo.huangdi2025.dpdns.org tls WS CDN vmess § 443 10",
+        "🏴‍☠️ mas10rtyui.huangdi2025.dpdns.org tls WS CDN vless § 443 11",
+        "🏴‍☠️ mas10rtyui.huangdi2025.dpdns.org tls WS CDN vmess § 443 11",
+        "🏴‍☠️ mas10rtyui.huangdi2025.dpdns.org http WS CDN vmess § 80 11",
+        "🏴‍☠️ n10sdfghj.huangdi2025.dpdns.org tls WS CDN vless § 443 12",
+        "🏴‍☠️ n10sdfghj.huangdi2025.dpdns.org tls WS CDN vmess § 443 12",
+        "🏴‍☠️ ms10yyyyyyyyyyy.445.pp.ua tls WS CDN vless § 443 15",
+        "🏴‍☠️ ms10yyy.445.pp.ua tls WS CDN vless § 443 16",
+        "🏴‍☠️ ms10yyy.445.pp.ua tls WS CDN vmess § 443 16",
+        "🏴‍☠️ ms10yy.445.pp.ua tls WS CDN vless § 443 17",
+        "🏴‍☠️ ms10yy.445.pp.ua tls WS CDN vmess § 443 17",
+        "🏴‍☠️ ms10yyyyyy.445.pp.ua tls WS CDN vless § 443 18",
+        "🏴‍☠️ ms10yyyyyy.445.pp.ua tls WS CDN vmess § 443 18",
+        "🏴‍☠️ ms10ttttt.445.pp.ua tls WS CDN vless § 443 19",
+        "🏴‍☠️ ms10ttttt.445.pp.ua tls WS CDN vmess § 443 19",
+        "🏴‍☠️ ms10ttt.445.pp.ua tls WS CDN vless § 443 20",
+        "🏴‍☠️ ms10ttt.445.pp.ua tls WS CDN vmess § 443 20",
+        "🏴‍☠️ m10dfghj.890604.dpdns.org tls WS CDN vless § 443 22",
+        "🏴‍☠️ m10dfghj.890604.dpdns.org tls WS CDN vmess § 443 22",
+        "🏴‍☠️ m10dfghj.890604.dpdns.org http WS CDN vmess § 80 22",
+        "🏴‍☠️ m10d.890604.dpdns.org tls WS CDN vless § 443 23",
+        "🏴‍☠️ m10d.890604.dpdns.org tls WS CDN vmess § 443 23",
+        "🏴‍☠️ m10d.890604.dpdns.org http WS CDN vmess § 80 23",
+        "🏴‍☠️ m10dwwww.890604.dpdns.org tls WS CDN vless § 443 27",
+        "🏴‍☠️ m10dwwww.890604.dpdns.org http WS CDN vmess § 80 27",
+        "🏴‍☠️ m10dww.890604.dpdns.org tls WS CDN vless § 443 28",
+        "🏴‍☠️ m10dww.890604.dpdns.org tls WS CDN vmess § 443 28",
+        "🏴‍☠️ m10dww.890604.dpdns.org http WS CDN vmess § 80 28",
+        "🏴‍☠️ m10dwwwwrrt.890604.dpdns.org tls WS CDN vless § 443 29",
+        "🏴‍☠️ m10dwwwwrrt.890604.dpdns.org tls WS CDN vmess § 443 29",
+        "🏴‍☠️ m10dwwwwrrt.890604.dpdns.org http WS CDN vmess § 80 29",
+        "🏴‍☠️ m10dfg.890604.dpdns.org tls WS CDN vless § 443 30",
+        "🏴‍☠️ m10dfg.890604.dpdns.org tls WS CDN vmess § 443 30",
+        "🏴‍☠️ m10dfg.890604.dpdns.org http WS CDN vmess § 80 30",
+        "🏴‍☠️ m10ddddd.890604.dpdns.org tls WS CDN vless § 443 31",
+        "🏴‍☠️ m10ddddd.890604.dpdns.org tls WS CDN vmess § 443 31",
+        "🏴‍☠️ m10ddddd.890604.dpdns.org http WS CDN vmess § 80 31",
+        "🏴‍☠️ m10ddddddddddddf.457.pp.ua tls WS CDN vless § 443 32",
+        "🏴‍☠️ m10ddddddddddddf.457.pp.ua tls WS CDN vmess § 443 32",
+        "🏴‍☠️ m10dddd.457.pp.ua tls WS CDN vless § 443 33",
+        "🏴‍☠️ m10dddd.457.pp.ua tls WS CDN vmess § 443 33",
+        "🏴‍☠️ m10ddd.457.pp.ua tls WS CDN vless § 443 34",
+        "🏴‍☠️ m10ddd.457.pp.ua tls WS CDN vmess § 443 34",
+        "🏴‍☠️ m10dddyyyy.457.pp.ua tls WS CDN vless § 443 35",
+        "🏴‍☠️ m10dddyyyy.457.pp.ua tls WS CDN vmess § 443 35",
+        "🏴‍☠️ m10frtyu.459.pp.ua tls WS CDN vmess § 443 36",
+        "🏴‍☠️ m10frtyuttttttt.459.pp.ua tls WS CDN vless § 443 37",
+        "🏴‍☠️ m10frtyuttttttt.459.pp.ua tls WS CDN vmess § 443 37",
+        "🏴‍☠️ m10frtyuttttt.459.pp.ua tls WS CDN vless § 443 38",
+        "🏴‍☠️ m10frtyuttttt.459.pp.ua tls WS CDN vmess § 443 38",
+        "🏴‍☠️ m10frtyuttttt.459.pp.ua http WS CDN vmess § 80 38",
+        "🏴‍☠️ m10frtyutttttjjj.459.pp.ua tls WS CDN vless § 443 39",
+        "🏴‍☠️ m10frtyutttttjjj.459.pp.ua tls WS CDN vmess § 443 39",
+        "🏴‍☠️ m10frtyutttt.459.pp.ua tls WS CDN vless § 443 40",
+        "🏴‍☠️ m10frtyutttt.459.pp.ua tls WS CDN vmess § 443 40",
+        "🏴‍☠️ m10frtyutttt678.459.pp.ua tls WS CDN vless § 443 41",
+        "🏴‍☠️ m10frtyutttt678.459.pp.ua tls WS CDN vmess § 443 41",
+        "🏴‍☠️ m10derty.7777128.xyz tls WS CDN vless § 443 42",
+        "🏴‍☠️ m10derty.7777128.xyz tls WS CDN vmess § 443 42",
+        "🏴‍☠️ m10derty.7777128.xyz http WS CDN vmess § 80 42",
+        "🏴‍☠️ m10uie.7777128.xyz tls WS CDN vless § 443 43",
+        "🏴‍☠️ m10uie.7777128.xyz tls WS CDN vmess § 443 43",
+        "🏴‍☠️ m10uie.7777128.xyz http WS CDN vmess § 80 43",
+        "🏴‍☠️ m10eeeeeeeeeeeeeeeeeeeeeeeeeee.7777128.xyz tls WS CDN vless § 443 44",
+        "🏴‍☠️ m10eeeeeeeeeeeeeeeeeeeeeeeeeee.7777128.xyz tls WS CDN vmess § 443 44",
+        "🏴‍☠️ m10eeeeeeeeeeeeeeeeeeeeeeeeeee.7777128.xyz http WS CDN vmess § 80 44",
+        "🏴‍☠️ m10eeeeerrrrttyu.7777128.xyz tls WS CDN vless § 443 45",
+        "🏴‍☠️ m10eeeeerrrrttyu.7777128.xyz http WS CDN vmess § 80 45",
+        "🏴‍☠️ m10dddddddddddddd.7777128.xyz tls WS CDN vless § 443 46",
+        "🏴‍☠️ m10dddddddddddddd.7777128.xyz tls WS CDN vmess § 443 46",
+        "🏴‍☠️ m10dddddddddddddd.7777128.xyz http WS CDN vmess § 80 46",
+        "🏴‍☠️ m10sssssss.7777128.xyz tls WS CDN vless § 443 47",
+        "🏴‍☠️ m10sssssss.7777128.xyz tls WS CDN vmess § 443 47",
+        "🏴‍☠️ m10sssssss.7777128.xyz http WS CDN vmess § 80 47",
+        "🏴‍☠️ m10dertrr.7777128.xyz tls WS CDN vless § 443 48",
+        "🏴‍☠️ m10dertrr.7777128.xyz tls WS CDN vmess § 443 48",
+        "🏴‍☠️ m10dertrr.7777128.xyz http WS CDN vmess § 80 48",
+        "🏴‍☠️ m10dertrrtty.7777128.xyz tls WS CDN vless § 443 49",
+        "🏴‍☠️ m10dertrrtty.7777128.xyz tls WS CDN vmess § 443 49",
+        "🏴‍☠️ m10dertrrtty.7777128.xyz http WS CDN vmess § 80 49",
+        "🏴‍☠️ m10dertrrttyttyy.7777128.xyz tls WS CDN vless § 443 50",
+        "🏴‍☠️ m10dertrrttyttyy.7777128.xyz tls WS CDN vmess § 443 50",
+        "🏴‍☠️ m10dertrrttyttyy.7777128.xyz http WS CDN vmess § 80 50",
+        "🏴‍☠️ m10der.857657.xyz tls WS CDN vless § 443 52",
+        "🏴‍☠️ m10der.857657.xyz tls WS CDN vmess § 443 52",
+        "🏴‍☠️ m10we.857657.xyz tls WS CDN vless § 443 53",
+        "🏴‍☠️ m10we.857657.xyz http WS CDN vmess § 80 53",
+        "🏴‍☠️ m10derer5.857657.xyz tls WS CDN vless § 443 54",
+        "🏴‍☠️ m10derer5.857657.xyz tls WS CDN vmess § 443 54",
+        "🏴‍☠️ m10derer5g.857657.xyz tls WS CDN vless § 443 55",
+        "🏴‍☠️ m10derer5g.857657.xyz tls WS CDN vmess § 443 55",
+        "🏴‍☠️ m10derer5g.857657.xyz http WS CDN vmess § 80 55",
+        "🏴‍☠️ m10derer5gw.857657.xyz tls WS CDN vless § 443 56",
+        "🏴‍☠️ m10derer5gw.857657.xyz tls WS CDN vmess § 443 56",
+        "🏴‍☠️ m10derer5gwe.857657.xyz tls WS CDN vless § 443 57",
+        "🏴‍☠️ m10derer5gwe.857657.xyz tls WS CDN vmess § 443 57",
+        "🏴‍☠️ m10derer5gwe.857657.xyz http WS CDN vmess § 80 57",
+        "🏴‍☠️ m10iiiiii.857657.xyz tls WS CDN vless § 443 58",
+        "🏴‍☠️ m10iiiiii.857657.xyz tls WS CDN vmess § 443 58",
+        "🏴‍☠️ m10iiiiii.857657.xyz http WS CDN vmess § 80 58",
+        "🏴‍☠️ m10iiiiiierwweee.857657.xyz tls WS CDN vless § 443 60",
+        "🏴‍☠️ m10iiiiiierwweee.857657.xyz tls WS CDN vmess § 443 60",
+        "🏴‍☠️ m10e4r4wer.857856.xyz tls WS CDN vless § 443 62",
+        "🏴‍☠️ m10e4r4wer.857856.xyz tls WS CDN vmess § 443 62",
+        "🏴‍☠️ m10e4r4were45.857856.xyz tls WS CDN vless § 443 63",
+        "🏴‍☠️ m10e4r4were45.857856.xyz tls WS CDN vmess § 443 63",
+        "🏴‍☠️ m10e4r4were45.857856.xyz http WS CDN vmess § 80 63",
+        "🏴‍☠️ m10e.857856.xyz tls WS CDN vless § 443 64",
+        "🏴‍☠️ m10e.857856.xyz tls WS CDN vmess § 443 64",
+        "🏴‍☠️ m10e.857856.xyz http WS CDN vmess § 80 64",
+        "🏴‍☠️ m10ewwwwr.857856.xyz tls WS CDN vless § 443 65",
+        "🏴‍☠️ m10ewwwwr.857856.xyz tls WS CDN vmess § 443 65",
+        "🏴‍☠️ m10ewwwwr.857856.xyz http WS CDN vmess § 80 65",
+        "🏴‍☠️ m10ess.857856.xyz tls WS CDN vless § 443 66",
+        "🏴‍☠️ m10ess.857856.xyz tls WS CDN vmess § 443 66",
+        "🏴‍☠️ m10ess.857856.xyz http WS CDN vmess § 80 66",
+        "🏴‍☠️ m10kkk.857856.xyz tls WS CDN vless § 443 67",
+        "🏴‍☠️ m10kkk.857856.xyz tls WS CDN vmess § 443 67",
+        "🏴‍☠️ m10kkk.857856.xyz http WS CDN vmess § 80 67"
+      ]
+    },
+    {
+      "tag": "ai",
+      "type": "selector",
+      "outbounds": [
+        "🏴‍☠️ mas10rt.890602.xyz tls WS CDN vless § 443 4",
+        "🏴‍☠️ mas10rt.890602.xyz tls WS CDN vmess § 443 4",
+        "🏴‍☠️ mas10.890602.xyz tls WS CDN vless § 443 5",
+        "🏴‍☠️ mas10.890602.xyz tls WS CDN vmess § 443 5",
+        "🏴‍☠️ mas10xyz.890602.xyz tls WS CDN vless § 443 6",
+        "🏴‍☠️ mas10xyz.890602.xyz tls WS CDN vmess § 443 6",
+        "🏴‍☠️ mas10opiuooooo.huangdi2025.dpdns.org tls WS CDN vless § 443 10",
+        "🏴‍☠️ mas10opiuooooo.huangdi2025.dpdns.org tls WS CDN vmess § 443 10",
+        "🏴‍☠️ mas10rtyui.huangdi2025.dpdns.org tls WS CDN vless § 443 11",
+        "🏴‍☠️ mas10rtyui.huangdi2025.dpdns.org tls WS CDN vmess § 443 11",
+        "🏴‍☠️ mas10rtyui.huangdi2025.dpdns.org http WS CDN vmess § 80 11",
+        "🏴‍☠️ n10sdfghj.huangdi2025.dpdns.org tls WS CDN vless § 443 12",
+        "🏴‍☠️ n10sdfghj.huangdi2025.dpdns.org tls WS CDN vmess § 443 12",
+        "🏴‍☠️ ms10yyyyyyyyyyy.445.pp.ua tls WS CDN vless § 443 15",
+        "🏴‍☠️ ms10yyy.445.pp.ua tls WS CDN vless § 443 16",
+        "🏴‍☠️ ms10yyy.445.pp.ua tls WS CDN vmess § 443 16",
+        "🏴‍☠️ ms10yy.445.pp.ua tls WS CDN vless § 443 17",
+        "🏴‍☠️ ms10yy.445.pp.ua tls WS CDN vmess § 443 17",
+        "🏴‍☠️ ms10yyyyyy.445.pp.ua tls WS CDN vless § 443 18",
+        "🏴‍☠️ ms10yyyyyy.445.pp.ua tls WS CDN vmess § 443 18",
+        "🏴‍☠️ ms10ttttt.445.pp.ua tls WS CDN vless § 443 19",
+        "🏴‍☠️ ms10ttttt.445.pp.ua tls WS CDN vmess § 443 19",
+        "🏴‍☠️ ms10ttt.445.pp.ua tls WS CDN vless § 443 20",
+        "🏴‍☠️ ms10ttt.445.pp.ua tls WS CDN vmess § 443 20",
+        "🏴‍☠️ m10dfghj.890604.dpdns.org tls WS CDN vless § 443 22",
+        "🏴‍☠️ m10dfghj.890604.dpdns.org tls WS CDN vmess § 443 22",
+        "🏴‍☠️ m10dfghj.890604.dpdns.org http WS CDN vmess § 80 22",
+        "🏴‍☠️ m10d.890604.dpdns.org tls WS CDN vless § 443 23",
+        "🏴‍☠️ m10d.890604.dpdns.org tls WS CDN vmess § 443 23",
+        "🏴‍☠️ m10d.890604.dpdns.org http WS CDN vmess § 80 23",
+        "🏴‍☠️ m10dwwww.890604.dpdns.org tls WS CDN vless § 443 27",
+        "🏴‍☠️ m10dwwww.890604.dpdns.org http WS CDN vmess § 80 27",
+        "🏴‍☠️ m10dww.890604.dpdns.org tls WS CDN vless § 443 28",
+        "🏴‍☠️ m10dww.890604.dpdns.org tls WS CDN vmess § 443 28",
+        "🏴‍☠️ m10dww.890604.dpdns.org http WS CDN vmess § 80 28",
+        "🏴‍☠️ m10dwwwwrrt.890604.dpdns.org tls WS CDN vless § 443 29",
+        "🏴‍☠️ m10dwwwwrrt.890604.dpdns.org tls WS CDN vmess § 443 29",
+        "🏴‍☠️ m10dwwwwrrt.890604.dpdns.org http WS CDN vmess § 80 29",
+        "🏴‍☠️ m10dfg.890604.dpdns.org tls WS CDN vless § 443 30",
+        "🏴‍☠️ m10dfg.890604.dpdns.org tls WS CDN vmess § 443 30",
+        "🏴‍☠️ m10dfg.890604.dpdns.org http WS CDN vmess § 80 30",
+        "🏴‍☠️ m10ddddd.890604.dpdns.org tls WS CDN vless § 443 31",
+        "🏴‍☠️ m10ddddd.890604.dpdns.org tls WS CDN vmess § 443 31",
+        "🏴‍☠️ m10ddddd.890604.dpdns.org http WS CDN vmess § 80 31",
+        "🏴‍☠️ m10ddddddddddddf.457.pp.ua tls WS CDN vless § 443 32",
+        "🏴‍☠️ m10ddddddddddddf.457.pp.ua tls WS CDN vmess § 443 32",
+        "🏴‍☠️ m10dddd.457.pp.ua tls WS CDN vless § 443 33",
+        "🏴‍☠️ m10dddd.457.pp.ua tls WS CDN vmess § 443 33",
+        "🏴‍☠️ m10ddd.457.pp.ua tls WS CDN vless § 443 34",
+        "🏴‍☠️ m10ddd.457.pp.ua tls WS CDN vmess § 443 34",
+        "🏴‍☠️ m10dddyyyy.457.pp.ua tls WS CDN vless § 443 35",
+        "🏴‍☠️ m10dddyyyy.457.pp.ua tls WS CDN vmess § 443 35",
+        "🏴‍☠️ m10frtyu.459.pp.ua tls WS CDN vmess § 443 36",
+        "🏴‍☠️ m10frtyuttttttt.459.pp.ua tls WS CDN vless § 443 37",
+        "🏴‍☠️ m10frtyuttttttt.459.pp.ua tls WS CDN vmess § 443 37",
+        "🏴‍☠️ m10frtyuttttt.459.pp.ua tls WS CDN vless § 443 38",
+        "🏴‍☠️ m10frtyuttttt.459.pp.ua tls WS CDN vmess § 443 38",
+        "🏴‍☠️ m10frtyuttttt.459.pp.ua http WS CDN vmess § 80 38",
+        "🏴‍☠️ m10frtyutttttjjj.459.pp.ua tls WS CDN vless § 443 39",
+        "🏴‍☠️ m10frtyutttttjjj.459.pp.ua tls WS CDN vmess § 443 39",
+        "🏴‍☠️ m10frtyutttt.459.pp.ua tls WS CDN vless § 443 40",
+        "🏴‍☠️ m10frtyutttt.459.pp.ua tls WS CDN vmess § 443 40",
+        "🏴‍☠️ m10frtyutttt678.459.pp.ua tls WS CDN vless § 443 41",
+        "🏴‍☠️ m10frtyutttt678.459.pp.ua tls WS CDN vmess § 443 41",
+        "🏴‍☠️ m10derty.7777128.xyz tls WS CDN vless § 443 42",
+        "🏴‍☠️ m10derty.7777128.xyz tls WS CDN vmess § 443 42",
+        "🏴‍☠️ m10derty.7777128.xyz http WS CDN vmess § 80 42",
+        "🏴‍☠️ m10uie.7777128.xyz tls WS CDN vless § 443 43",
+        "🏴‍☠️ m10uie.7777128.xyz tls WS CDN vmess § 443 43",
+        "🏴‍☠️ m10uie.7777128.xyz http WS CDN vmess § 80 43",
+        "🏴‍☠️ m10eeeeeeeeeeeeeeeeeeeeeeeeeee.7777128.xyz tls WS CDN vless § 443 44",
+        "🏴‍☠️ m10eeeeeeeeeeeeeeeeeeeeeeeeeee.7777128.xyz tls WS CDN vmess § 443 44",
+        "🏴‍☠️ m10eeeeeeeeeeeeeeeeeeeeeeeeeee.7777128.xyz http WS CDN vmess § 80 44",
+        "🏴‍☠️ m10eeeeerrrrttyu.7777128.xyz tls WS CDN vless § 443 45",
+        "🏴‍☠️ m10eeeeerrrrttyu.7777128.xyz http WS CDN vmess § 80 45",
+        "🏴‍☠️ m10dddddddddddddd.7777128.xyz tls WS CDN vless § 443 46",
+        "🏴‍☠️ m10dddddddddddddd.7777128.xyz tls WS CDN vmess § 443 46",
+        "🏴‍☠️ m10dddddddddddddd.7777128.xyz http WS CDN vmess § 80 46",
+        "🏴‍☠️ m10sssssss.7777128.xyz tls WS CDN vless § 443 47",
+        "🏴‍☠️ m10sssssss.7777128.xyz tls WS CDN vmess § 443 47",
+        "🏴‍☠️ m10sssssss.7777128.xyz http WS CDN vmess § 80 47",
+        "🏴‍☠️ m10dertrr.7777128.xyz tls WS CDN vless § 443 48",
+        "🏴‍☠️ m10dertrr.7777128.xyz tls WS CDN vmess § 443 48",
+        "🏴‍☠️ m10dertrr.7777128.xyz http WS CDN vmess § 80 48",
+        "🏴‍☠️ m10dertrrtty.7777128.xyz tls WS CDN vless § 443 49",
+        "🏴‍☠️ m10dertrrtty.7777128.xyz tls WS CDN vmess § 443 49",
+        "🏴‍☠️ m10dertrrtty.7777128.xyz http WS CDN vmess § 80 49",
+        "🏴‍☠️ m10dertrrttyttyy.7777128.xyz tls WS CDN vless § 443 50",
+        "🏴‍☠️ m10dertrrttyttyy.7777128.xyz tls WS CDN vmess § 443 50",
+        "🏴‍☠️ m10dertrrttyttyy.7777128.xyz http WS CDN vmess § 80 50",
+        "🏴‍☠️ m10der.857657.xyz tls WS CDN vless § 443 52",
+        "🏴‍☠️ m10der.857657.xyz tls WS CDN vmess § 443 52",
+        "🏴‍☠️ m10we.857657.xyz tls WS CDN vless § 443 53",
+        "🏴‍☠️ m10we.857657.xyz http WS CDN vmess § 80 53",
+        "🏴‍☠️ m10derer5.857657.xyz tls WS CDN vless § 443 54",
+        "🏴‍☠️ m10derer5.857657.xyz tls WS CDN vmess § 443 54",
+        "🏴‍☠️ m10derer5g.857657.xyz tls WS CDN vless § 443 55",
+        "🏴‍☠️ m10derer5g.857657.xyz tls WS CDN vmess § 443 55",
+        "🏴‍☠️ m10derer5g.857657.xyz http WS CDN vmess § 80 55",
+        "🏴‍☠️ m10derer5gw.857657.xyz tls WS CDN vless § 443 56",
+        "🏴‍☠️ m10derer5gw.857657.xyz tls WS CDN vmess § 443 56",
+        "🏴‍☠️ m10derer5gwe.857657.xyz tls WS CDN vless § 443 57",
+        "🏴‍☠️ m10derer5gwe.857657.xyz tls WS CDN vmess § 443 57",
+        "🏴‍☠️ m10derer5gwe.857657.xyz http WS CDN vmess § 80 57",
+        "🏴‍☠️ m10iiiiii.857657.xyz tls WS CDN vless § 443 58",
+        "🏴‍☠️ m10iiiiii.857657.xyz tls WS CDN vmess § 443 58",
+        "🏴‍☠️ m10iiiiii.857657.xyz http WS CDN vmess § 80 58",
+        "🏴‍☠️ m10iiiiiierwweee.857657.xyz tls WS CDN vless § 443 60",
+        "🏴‍☠️ m10iiiiiierwweee.857657.xyz tls WS CDN vmess § 443 60",
+        "🏴‍☠️ m10e4r4wer.857856.xyz tls WS CDN vless § 443 62",
+        "🏴‍☠️ m10e4r4wer.857856.xyz tls WS CDN vmess § 443 62",
+        "🏴‍☠️ m10e4r4were45.857856.xyz tls WS CDN vless § 443 63",
+        "🏴‍☠️ m10e4r4were45.857856.xyz tls WS CDN vmess § 443 63",
+        "🏴‍☠️ m10e4r4were45.857856.xyz http WS CDN vmess § 80 63",
+        "🏴‍☠️ m10e.857856.xyz tls WS CDN vless § 443 64",
+        "🏴‍☠️ m10e.857856.xyz tls WS CDN vmess § 443 64",
+        "🏴‍☠️ m10e.857856.xyz http WS CDN vmess § 80 64",
+        "🏴‍☠️ m10ewwwwr.857856.xyz tls WS CDN vless § 443 65",
+        "🏴‍☠️ m10ewwwwr.857856.xyz tls WS CDN vmess § 443 65",
+        "🏴‍☠️ m10ewwwwr.857856.xyz http WS CDN vmess § 80 65",
+        "🏴‍☠️ m10ess.857856.xyz tls WS CDN vless § 443 66",
+        "🏴‍☠️ m10ess.857856.xyz tls WS CDN vmess § 443 66",
+        "🏴‍☠️ m10ess.857856.xyz http WS CDN vmess § 80 66",
+        "🏴‍☠️ m10kkk.857856.xyz tls WS CDN vless § 443 67",
+        "🏴‍☠️ m10kkk.857856.xyz tls WS CDN vmess § 443 67",
+        "🏴‍☠️ m10kkk.857856.xyz http WS CDN vmess § 80 67"
+      ]
+    },
+    {
+      "tag": "direct",
+      "type": "direct"
+    }
+  ],
+  "route": {
+    "rules": [
+      {
+        "action": "sniff"
+      },
+      {
+        "protocol": "dns",
+        "action": "hijack-dns"
+      },
+      {
+        "action": "resolve",
+        "strategy": "ipv4_only"
+      },
+      {
+        "clash_mode": "Global",
+        "outbound": "select"
+      },
+      {
+        "clash_mode": "Direct",
+        "outbound": "direct"
+      },
+      {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "domain_suffix": [
+              "ushd.xmsl.org",
+              "cf.gtlx.org",
+              "public-operation-hkrpg-sg.hoyoverse.com",
+              "public-operation-hk4e-sg.hoyoverse.com",
+              "public-operation-nap-sg.hoyoverse.com"
+            ]
+          },
+          {
+            "port_range": [
+              "23301:23301",
+              "22101:22102",
+              "20501:20501",
+              "21601:21606"
+            ]
+          }
+        ],
+        "outbound": "direct"
+      },
+      {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "domain_keyword": [
+              "hoyoverse.com"
+            ]
+          }
+        ],
+        "outbound": "select"
+      },
+      {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "rule_set": [
+              "geosite-openai",
+              "geosite-google-gemini"
+            ]
+          }
+        ],
+        "outbound": "ai"
+      },
+      {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "ip_is_private": true
+          },
+          {
+            "rule_set": [
+              "geosite-googlefcm",
+              "geosite-cn",
+              "geoip-cn"
+            ]
+          }
+        ],
+        "outbound": "direct"
+      }
+    ],
+    "rule_set": [
+      {
+        "type": "remote",
+        "tag": "geoip-cn",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/lyc8503/sing-box-rules/rule-set-geoip/geoip-cn.srs",
+        "download_detour": "select"
+      },
+      {
+        "type": "remote",
+        "tag": "geosite-cn",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/lyc8503/sing-box-rules/rule-set-geosite/geosite-cn.srs",
+        "download_detour": "select"
+      },
+      {
+        "type": "remote",
+        "tag": "geosite-openai",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/lyc8503/sing-box-rules/rule-set-geosite/geosite-openai.srs",
+        "download_detour": "select"
+      },
+      {
+        "type": "remote",
+        "tag": "geosite-google-gemini",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/lyc8503/sing-box-rules/rule-set-geosite/geosite-google-gemini.srs",
+        "download_detour": "select"
+      },
+      {
+        "type": "remote",
+        "tag": "geosite-googlefcm",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/lyc8503/sing-box-rules/rule-set-geosite/geosite-googlefcm.srs",
+        "download_detour": "select"
+      },
+      {
+        "type": "remote",
+        "tag": "geosite-category-ads-all",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/lyc8503/sing-box-rules/rule-set-geosite/geosite-category-ads-all.srs",
+        "download_detour": "select"
+      }
+    ],
+    "final": "select",
+    "default_domain_resolver": "dns_direct",
+    "auto_detect_interface": true,
+    "override_android_vpn": true
+  },
+  "experimental": {
+    "cache_file": {
+      "enabled": true
+    },
+    "clash_api": {
+      "external_controller": "127.0.0.1:9090"
+    }
+  }
+}
