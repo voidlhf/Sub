@@ -53,7 +53,7 @@ dns:
     - "https://dns.alidns.com/dns-query"
     - "https://doh.pub/dns-query"
 proxies:
-- {name: "剩余流量：248.69 GB", server: "38.146.28.134", port: 8443, sni: "mg.ziyouniao.site", up: 1000, down: 1000, skip-cert-verify: false, type: "hysteria2", password: "85b21004-9372-4a64-9d67-d49f057ebbf5"}
+- {name: "剩余流量：248.67 GB", server: "38.146.28.134", port: 8443, sni: "mg.ziyouniao.site", up: 1000, down: 1000, skip-cert-verify: false, type: "hysteria2", password: "85b21004-9372-4a64-9d67-d49f057ebbf5"}
 - {name: "距离下次重置剩余：14 天", server: "38.146.28.134", port: 8443, sni: "mg.ziyouniao.site", up: 1000, down: 1000, skip-cert-verify: false, type: "hysteria2", password: "85b21004-9372-4a64-9d67-d49f057ebbf5"}
 - {name: "套餐到期：2025-05-20", server: "38.146.28.134", port: 8443, sni: "mg.ziyouniao.site", up: 1000, down: 1000, skip-cert-verify: false, type: "hysteria2", password: "85b21004-9372-4a64-9d67-d49f057ebbf5"}
 - {name: "🇺🇸 美国洛杉矶 1", server: "38.146.28.134", port: 8443, sni: "mg.ziyouniao.site", up: 1000, down: 1000, skip-cert-verify: false, type: "hysteria2", password: "85b21004-9372-4a64-9d67-d49f057ebbf5"}
@@ -80,12 +80,13 @@ proxies:
 - {name: "🇹🇭 泰国 2", server: "103.40.119.221", port: 8443, sni: "tg.ziyouniao.site", up: 1000, down: 1000, skip-cert-verify: false, type: "hysteria2", password: "85b21004-9372-4a64-9d67-d49f057ebbf5"}
 - {name: "🇹🇭 泰国 3", server: "103.40.119.221", port: 8443, sni: "tg.ziyouniao.site", up: 1000, down: 1000, skip-cert-verify: false, type: "hysteria2", password: "85b21004-9372-4a64-9d67-d49f057ebbf5"}
 - {name: "🇹🇭 泰国 4", server: "103.40.119.221", port: 8443, sni: "tg.ziyouniao.site", up: 1000, down: 1000, skip-cert-verify: false, type: "hysteria2", password: "85b21004-9372-4a64-9d67-d49f057ebbf5"}
+- {name: "🇩🇪 德国 1", server: "185.140.12.82", port: 8443, sni: "dg.ziyouniao.site", up: 1000, down: 1000, skip-cert-verify: false, type: "hysteria2", password: "85b21004-9372-4a64-9d67-d49f057ebbf5"}
 proxy-groups:
 - name: "PROXY"
   type: "select"
   proxies:
   - "AUTO"
-  - "剩余流量：248.69 GB"
+  - "剩余流量：248.67 GB"
   - "距离下次重置剩余：14 天"
   - "套餐到期：2025-05-20"
   - "🇺🇸 美国洛杉矶 1"
@@ -112,13 +113,14 @@ proxy-groups:
   - "🇹🇭 泰国 2"
   - "🇹🇭 泰国 3"
   - "🇹🇭 泰国 4"
+  - "🇩🇪 德国 1"
 - name: "AUTO"
   type: "url-test"
   url: "http://www.gstatic.com/generate_204"
   interval: 300
   tolerance: 50
   proxies:
-  - "剩余流量：248.69 GB"
+  - "剩余流量：248.67 GB"
   - "距离下次重置剩余：14 天"
   - "套餐到期：2025-05-20"
   - "🇺🇸 美国洛杉矶 1"
@@ -145,10 +147,11 @@ proxy-groups:
   - "🇹🇭 泰国 2"
   - "🇹🇭 泰国 3"
   - "🇹🇭 泰国 4"
+  - "🇩🇪 德国 1"
 - name: "AI"
   type: "select"
   proxies:
-  - "剩余流量：248.69 GB"
+  - "剩余流量：248.67 GB"
   - "距离下次重置剩余：14 天"
   - "套餐到期：2025-05-20"
   - "🇺🇸 美国洛杉矶 1"
@@ -175,6 +178,7 @@ proxy-groups:
   - "🇹🇭 泰国 2"
   - "🇹🇭 泰国 3"
   - "🇹🇭 泰国 4"
+  - "🇩🇪 德国 1"
 rules:
 - "GEOSITE,CATEGORY-ADS-ALL,REJECT"
 - "DOMAIN-SUFFIX,ushd.xmsl.org,DIRECT"

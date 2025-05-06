@@ -80,6 +80,7 @@ proxies:
 - {name: "🇹🇭 泰国 2", server: "103.40.119.221", port: 8443, sni: "tg.ziyouniao.site", up: 1000, down: 1000, skip-cert-verify: false, type: "hysteria2", password: "dd976206-8c50-42f3-8788-6a8fc1f703a6"}
 - {name: "🇹🇭 泰国 3", server: "103.40.119.221", port: 8443, sni: "tg.ziyouniao.site", up: 1000, down: 1000, skip-cert-verify: false, type: "hysteria2", password: "dd976206-8c50-42f3-8788-6a8fc1f703a6"}
 - {name: "🇹🇭 泰国 4", server: "103.40.119.221", port: 8443, sni: "tg.ziyouniao.site", up: 1000, down: 1000, skip-cert-verify: false, type: "hysteria2", password: "dd976206-8c50-42f3-8788-6a8fc1f703a6"}
+- {name: "🇩🇪 德国 1", server: "185.140.12.82", port: 8443, sni: "dg.ziyouniao.site", up: 1000, down: 1000, skip-cert-verify: false, type: "hysteria2", password: "dd976206-8c50-42f3-8788-6a8fc1f703a6"}
 proxy-groups:
 - name: "PROXY"
   type: "select"
@@ -112,6 +113,7 @@ proxy-groups:
   - "🇹🇭 泰国 2"
   - "🇹🇭 泰国 3"
   - "🇹🇭 泰国 4"
+  - "🇩🇪 德国 1"
 - name: "AUTO"
   type: "url-test"
   url: "http://www.gstatic.com/generate_204"
@@ -145,6 +147,7 @@ proxy-groups:
   - "🇹🇭 泰国 2"
   - "🇹🇭 泰国 3"
   - "🇹🇭 泰国 4"
+  - "🇩🇪 德国 1"
 - name: "AI"
   type: "select"
   proxies:
@@ -175,6 +178,7 @@ proxy-groups:
   - "🇹🇭 泰国 2"
   - "🇹🇭 泰国 3"
   - "🇹🇭 泰国 4"
+  - "🇩🇪 德国 1"
 rules:
 - "GEOSITE,CATEGORY-ADS-ALL,REJECT"
 - "DOMAIN-SUFFIX,ushd.xmsl.org,DIRECT"
