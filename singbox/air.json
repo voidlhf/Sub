@@ -85,6 +85,79 @@
   ],
   "outbounds": [
     {
+      "tag": "direct",
+      "type": "direct"
+    },
+    {
+      "tag": "select",
+      "type": "selector",
+      "default": "auto",
+      "outbounds": [
+        "auto",
+        "🏴‍☠️ Netflix/Disney+/油管Premium/ChatGPT",
+        "🇨🇳 台湾 - VIP專線",
+        "🏴‍☠️ 更多节点,购买套餐: https://airapp.us",
+        "🇯🇵 JP - 2x - ChatGPT",
+        "🇺🇸 US - ChatGPT | 住宅IP",
+        "🇰🇷 韩国",
+        "🇬🇧 UK",
+        "🇸🇬 SG Netflix / Disney 流媒體",
+        "🇬🇧 ChatGPT - GB",
+        "🇩🇪 德国"
+      ]
+    },
+    {
+      "tag": "auto",
+      "type": "urltest",
+      "interval": "5m",
+      "outbounds": [
+        "🏴‍☠️ Netflix/Disney+/油管Premium/ChatGPT",
+        "🇨🇳 台湾 - VIP專線",
+        "🏴‍☠️ 更多节点,购买套餐: https://airapp.us",
+        "🇯🇵 JP - 2x - ChatGPT",
+        "🇺🇸 US - ChatGPT | 住宅IP",
+        "🇰🇷 韩国",
+        "🇬🇧 UK",
+        "🇸🇬 SG Netflix / Disney 流媒體",
+        "🇬🇧 ChatGPT - GB",
+        "🇩🇪 德国"
+      ]
+    },
+    {
+      "tag": "ai",
+      "type": "selector",
+      "outbounds": [
+        "🏴‍☠️ Netflix/Disney+/油管Premium/ChatGPT",
+        "🇨🇳 台湾 - VIP專線",
+        "🏴‍☠️ 更多节点,购买套餐: https://airapp.us",
+        "🇯🇵 JP - 2x - ChatGPT",
+        "🇺🇸 US - ChatGPT | 住宅IP",
+        "🇰🇷 韩国",
+        "🇬🇧 UK",
+        "🇸🇬 SG Netflix / Disney 流媒體",
+        "🇬🇧 ChatGPT - GB",
+        "🇩🇪 德国"
+      ]
+    },
+    {
+      "tag": "hoyo",
+      "type": "selector",
+      "default": "direct",
+      "outbounds": [
+        "direct",
+        "🏴‍☠️ Netflix/Disney+/油管Premium/ChatGPT",
+        "🇨🇳 台湾 - VIP專線",
+        "🏴‍☠️ 更多节点,购买套餐: https://airapp.us",
+        "🇯🇵 JP - 2x - ChatGPT",
+        "🇺🇸 US - ChatGPT | 住宅IP",
+        "🇰🇷 韩国",
+        "🇬🇧 UK",
+        "🇸🇬 SG Netflix / Disney 流媒體",
+        "🇬🇧 ChatGPT - GB",
+        "🇩🇪 德国"
+      ]
+    },
+    {
       "tag": "🏴‍☠️ Netflix/Disney+/油管Premium/ChatGPT",
       "type": "shadowsocks",
       "server": "hkdns.webcdn.me",
@@ -163,61 +236,6 @@
       "server_port": 30009,
       "method": "chacha20-ietf-poly1305",
       "password": "17995035-415e-422c-8527-6beb8899c054"
-    },
-    {
-      "tag": "select",
-      "type": "selector",
-      "default": "auto",
-      "outbounds": [
-        "auto",
-        "🏴‍☠️ Netflix/Disney+/油管Premium/ChatGPT",
-        "🇨🇳 台湾 - VIP專線",
-        "🏴‍☠️ 更多节点,购买套餐: https://airapp.us",
-        "🇯🇵 JP - 2x - ChatGPT",
-        "🇺🇸 US - ChatGPT | 住宅IP",
-        "🇰🇷 韩国",
-        "🇬🇧 UK",
-        "🇸🇬 SG Netflix / Disney 流媒體",
-        "🇬🇧 ChatGPT - GB",
-        "🇩🇪 德国"
-      ]
-    },
-    {
-      "tag": "auto",
-      "type": "urltest",
-      "interval": "5m",
-      "outbounds": [
-        "🏴‍☠️ Netflix/Disney+/油管Premium/ChatGPT",
-        "🇨🇳 台湾 - VIP專線",
-        "🏴‍☠️ 更多节点,购买套餐: https://airapp.us",
-        "🇯🇵 JP - 2x - ChatGPT",
-        "🇺🇸 US - ChatGPT | 住宅IP",
-        "🇰🇷 韩国",
-        "🇬🇧 UK",
-        "🇸🇬 SG Netflix / Disney 流媒體",
-        "🇬🇧 ChatGPT - GB",
-        "🇩🇪 德国"
-      ]
-    },
-    {
-      "tag": "ai",
-      "type": "selector",
-      "outbounds": [
-        "🏴‍☠️ Netflix/Disney+/油管Premium/ChatGPT",
-        "🇨🇳 台湾 - VIP專線",
-        "🏴‍☠️ 更多节点,购买套餐: https://airapp.us",
-        "🇯🇵 JP - 2x - ChatGPT",
-        "🇺🇸 US - ChatGPT | 住宅IP",
-        "🇰🇷 韩国",
-        "🇬🇧 UK",
-        "🇸🇬 SG Netflix / Disney 流媒體",
-        "🇬🇧 ChatGPT - GB",
-        "🇩🇪 德国"
-      ]
-    },
-    {
-      "tag": "direct",
-      "type": "direct"
     }
   ],
   "route": {
@@ -248,7 +266,18 @@
           {
             "domain_suffix": [
               "ushd.xmsl.org",
-              "cf.gtlx.org",
+              "cf.gtlx.org"
+            ]
+          }
+        ],
+        "outbound": "direct"
+      },
+      {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "domain_suffix": [
               "public-operation-hkrpg-sg.hoyoverse.com",
               "public-operation-hk4e-sg.hoyoverse.com",
               "public-operation-nap-sg.hoyoverse.com"
@@ -263,7 +292,7 @@
             ]
           }
         ],
-        "outbound": "direct"
+        "outbound": "hoyo"
       },
       {
         "type": "logical",
@@ -283,8 +312,7 @@
         "rules": [
           {
             "rule_set": [
-              "geosite-openai",
-              "geosite-google-gemini"
+              "geosite-category-ai-!cn"
             ]
           }
         ],
@@ -325,16 +353,9 @@
       },
       {
         "type": "remote",
-        "tag": "geosite-openai",
+        "tag": "geosite-category-ai-!cn",
         "format": "binary",
-        "url": "https://raw.githubusercontent.com/lyc8503/sing-box-rules/rule-set-geosite/geosite-openai.srs",
-        "download_detour": "select"
-      },
-      {
-        "type": "remote",
-        "tag": "geosite-google-gemini",
-        "format": "binary",
-        "url": "https://raw.githubusercontent.com/lyc8503/sing-box-rules/rule-set-geosite/geosite-google-gemini.srs",
+        "url": "https://raw.githubusercontent.com/lyc8503/sing-box-rules/rule-set-geosite/geosite-category-ai-!cn.srs",
         "download_detour": "select"
       },
       {

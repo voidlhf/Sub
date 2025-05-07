@@ -22,39 +22,6 @@ def download_json_from_url(url):
         raise
 
 
-def extract_and_generate_new_outbounds(source_data):
-    try:
-        outbounds = source_data.get("outbounds", [])
-        server_objects = [
-            outbound
-            for outbound in outbounds
-            if "server" in outbound and outbound.get("method") != "chacha20"
-        ]
-        server_tags = [outbound["tag"] for outbound in server_objects]
-        new_objects = [
-            {
-                "tag": "select",
-                "type": "selector",
-                "default": "auto",
-                "outbounds": ["auto"] + server_tags,
-            },
-            {
-                "tag": "auto",
-                "type": "urltest",
-                "interval": "5m",
-                "outbounds": server_tags,
-            },
-            {"tag": "ai", "type": "selector", "outbounds": server_tags},
-        ]
-        direct_object = {"tag": "direct", "type": "direct"}
-        server_objects.extend(new_objects)
-        server_objects.append(direct_object)
-        return server_objects
-    except Exception as e:
-        print(f"🎃生成新 outbounds 时发生错误: {e}")
-        raise
-
-
 def replace_outbounds_in_fixed_target(source_data, output_file):
     target_file = "singbox-config/config-1.12.json"
     if not os.path.exists(target_file):
@@ -72,8 +39,16 @@ def replace_outbounds_in_fixed_target(source_data, output_file):
         raise
 
     try:
-        new_outbounds = extract_and_generate_new_outbounds(source_data)
-        target_data["outbounds"] = new_outbounds
+        new_outbounds = source_data.get("outbounds", [])
+        existing_outbounds = target_data.get("outbounds", [])
+        target_data["outbounds"] = existing_outbounds + new_outbounds
+
+        for outbound in target_data["outbounds"]:
+            if "outbounds" in outbound:
+                for new_outbound in new_outbounds:
+                    if new_outbound["tag"] not in outbound["outbounds"]:
+                        outbound["outbounds"].append(new_outbound["tag"])
+
     except Exception as e:
         print(f"🎃替换 outbounds 时发生错误: {e}")
         raise
