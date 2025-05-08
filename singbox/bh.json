@@ -94,56 +94,6 @@
       "default": "auto",
       "outbounds": [
         "auto",
-        "select",
-        "urltest",
-        "已失效",
-        "加频道获取新订阅",
-        "@jdxll",
-        "http://t.me/jdxll",
-        "🇺🇸 美国备用1 tg@jdxll",
-        "🇺🇸 美国备用2 tg@jdxll",
-        "direct"
-      ]
-    },
-    {
-      "tag": "auto",
-      "type": "urltest",
-      "interval": "5m",
-      "outbounds": [
-        "select",
-        "urltest",
-        "已失效",
-        "加频道获取新订阅",
-        "@jdxll",
-        "http://t.me/jdxll",
-        "🇺🇸 美国备用1 tg@jdxll",
-        "🇺🇸 美国备用2 tg@jdxll",
-        "direct"
-      ]
-    },
-    {
-      "tag": "ai",
-      "type": "selector",
-      "outbounds": [
-        "select",
-        "urltest",
-        "已失效",
-        "加频道获取新订阅",
-        "@jdxll",
-        "http://t.me/jdxll",
-        "🇺🇸 美国备用1 tg@jdxll",
-        "🇺🇸 美国备用2 tg@jdxll",
-        "direct"
-      ]
-    },
-    {
-      "tag": "hoyo",
-      "type": "selector",
-      "default": "direct",
-      "outbounds": [
-        "direct",
-        "select",
-        "urltest",
         "已失效",
         "加频道获取新订阅",
         "@jdxll",
@@ -153,34 +103,42 @@
       ]
     },
     {
-      "tag": "select",
-      "type": "selector",
-      "default": "urltest",
+      "tag": "auto",
+      "type": "urltest",
+      "interval": "5m",
       "outbounds": [
-        "urltest",
         "已失效",
         "加频道获取新订阅",
         "@jdxll",
         "http://t.me/jdxll",
         "🇺🇸 美国备用1 tg@jdxll",
-        "🇺🇸 美国备用2 tg@jdxll",
-        "select",
-        "direct"
+        "🇺🇸 美国备用2 tg@jdxll"
       ]
     },
     {
-      "tag": "urltest",
-      "type": "urltest",
+      "tag": "ai",
+      "type": "selector",
       "outbounds": [
         "已失效",
         "加频道获取新订阅",
         "@jdxll",
         "http://t.me/jdxll",
         "🇺🇸 美国备用1 tg@jdxll",
-        "🇺🇸 美国备用2 tg@jdxll",
-        "select",
-        "urltest",
-        "direct"
+        "🇺🇸 美国备用2 tg@jdxll"
+      ]
+    },
+    {
+      "tag": "hoyo",
+      "type": "selector",
+      "default": "direct",
+      "outbounds": [
+        "direct",
+        "已失效",
+        "加频道获取新订阅",
+        "@jdxll",
+        "http://t.me/jdxll",
+        "🇺🇸 美国备用1 tg@jdxll",
+        "🇺🇸 美国备用2 tg@jdxll"
       ]
     },
     {
@@ -236,10 +194,6 @@
       "type": "shadowsocks",
       "method": "aes-256-gcm",
       "network": "tcp"
-    },
-    {
-      "tag": "direct",
-      "type": "direct"
     }
   ],
   "route": {

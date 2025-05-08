@@ -94,110 +94,6 @@
       "default": "auto",
       "outbounds": [
         "auto",
-        "select",
-        "urltest",
-        "BR_speednode_0001",
-        "CN_speednode_0002",
-        "CN_speednode_0003",
-        "CN_speednode_0004",
-        "EE_speednode_0005",
-        "KR_speednode_0006",
-        "KR_speednode_0007",
-        "US_speednode_0008",
-        "US_speednode_0010",
-        "US_speednode_0011",
-        "US_speednode_0013",
-        "US_speednode_0014",
-        "US_speednode_0016",
-        "US_speednode_0024",
-        "US_speednode_0035",
-        "US_speednode_0042",
-        "US_speednode_0047",
-        "US_speednode_0048",
-        "US_speednode_0052",
-        "US_speednode_0057",
-        "US_speednode_0058",
-        "US_speednode_0059",
-        "US_speednode_0060",
-        "US_speednode_0061",
-        "direct"
-      ]
-    },
-    {
-      "tag": "auto",
-      "type": "urltest",
-      "interval": "5m",
-      "outbounds": [
-        "select",
-        "urltest",
-        "BR_speednode_0001",
-        "CN_speednode_0002",
-        "CN_speednode_0003",
-        "CN_speednode_0004",
-        "EE_speednode_0005",
-        "KR_speednode_0006",
-        "KR_speednode_0007",
-        "US_speednode_0008",
-        "US_speednode_0010",
-        "US_speednode_0011",
-        "US_speednode_0013",
-        "US_speednode_0014",
-        "US_speednode_0016",
-        "US_speednode_0024",
-        "US_speednode_0035",
-        "US_speednode_0042",
-        "US_speednode_0047",
-        "US_speednode_0048",
-        "US_speednode_0052",
-        "US_speednode_0057",
-        "US_speednode_0058",
-        "US_speednode_0059",
-        "US_speednode_0060",
-        "US_speednode_0061",
-        "direct"
-      ]
-    },
-    {
-      "tag": "ai",
-      "type": "selector",
-      "outbounds": [
-        "select",
-        "urltest",
-        "BR_speednode_0001",
-        "CN_speednode_0002",
-        "CN_speednode_0003",
-        "CN_speednode_0004",
-        "EE_speednode_0005",
-        "KR_speednode_0006",
-        "KR_speednode_0007",
-        "US_speednode_0008",
-        "US_speednode_0010",
-        "US_speednode_0011",
-        "US_speednode_0013",
-        "US_speednode_0014",
-        "US_speednode_0016",
-        "US_speednode_0024",
-        "US_speednode_0035",
-        "US_speednode_0042",
-        "US_speednode_0047",
-        "US_speednode_0048",
-        "US_speednode_0052",
-        "US_speednode_0057",
-        "US_speednode_0058",
-        "US_speednode_0059",
-        "US_speednode_0060",
-        "US_speednode_0061",
-        "direct"
-      ]
-    },
-    {
-      "tag": "hoyo",
-      "type": "selector",
-      "default": "direct",
-      "outbounds": [
-        "direct",
-        "select",
-        "urltest",
         "BR_speednode_0001",
         "CN_speednode_0002",
         "CN_speednode_0003",
@@ -225,11 +121,10 @@
       ]
     },
     {
-      "tag": "select",
-      "type": "selector",
-      "default": "urltest",
+      "tag": "auto",
+      "type": "urltest",
+      "interval": "5m",
       "outbounds": [
-        "urltest",
         "BR_speednode_0001",
         "CN_speednode_0002",
         "CN_speednode_0003",
@@ -253,14 +148,12 @@
         "US_speednode_0058",
         "US_speednode_0059",
         "US_speednode_0060",
-        "US_speednode_0061",
-        "select",
-        "direct"
+        "US_speednode_0061"
       ]
     },
     {
-      "tag": "urltest",
-      "type": "urltest",
+      "tag": "ai",
+      "type": "selector",
       "outbounds": [
         "BR_speednode_0001",
         "CN_speednode_0002",
@@ -285,10 +178,39 @@
         "US_speednode_0058",
         "US_speednode_0059",
         "US_speednode_0060",
-        "US_speednode_0061",
-        "select",
-        "urltest",
-        "direct"
+        "US_speednode_0061"
+      ]
+    },
+    {
+      "tag": "hoyo",
+      "type": "selector",
+      "default": "direct",
+      "outbounds": [
+        "direct",
+        "BR_speednode_0001",
+        "CN_speednode_0002",
+        "CN_speednode_0003",
+        "CN_speednode_0004",
+        "EE_speednode_0005",
+        "KR_speednode_0006",
+        "KR_speednode_0007",
+        "US_speednode_0008",
+        "US_speednode_0010",
+        "US_speednode_0011",
+        "US_speednode_0013",
+        "US_speednode_0014",
+        "US_speednode_0016",
+        "US_speednode_0024",
+        "US_speednode_0035",
+        "US_speednode_0042",
+        "US_speednode_0047",
+        "US_speednode_0048",
+        "US_speednode_0052",
+        "US_speednode_0057",
+        "US_speednode_0058",
+        "US_speednode_0059",
+        "US_speednode_0060",
+        "US_speednode_0061"
       ]
     },
     {
@@ -722,10 +644,6 @@
       "type": "vless",
       "uuid": "c562022e-c51f-4742-cda8-9bff6b917558",
       "packet_encoding": "xudp"
-    },
-    {
-      "tag": "direct",
-      "type": "direct"
     }
   ],
   "route": {

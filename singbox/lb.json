@@ -94,68 +94,6 @@
       "default": "auto",
       "outbounds": [
         "auto",
-        "select",
-        "urltest",
-        "印度1",
-        "新加坡2",
-        "us美国2",
-        "us美国1-多机负载",
-        "新加坡1",
-        "日本1",
-        "de澳大利亚1",
-        "tw台湾1",
-        "俄罗斯1",
-        "香港1",
-        "direct"
-      ]
-    },
-    {
-      "tag": "auto",
-      "type": "urltest",
-      "interval": "5m",
-      "outbounds": [
-        "select",
-        "urltest",
-        "印度1",
-        "新加坡2",
-        "us美国2",
-        "us美国1-多机负载",
-        "新加坡1",
-        "日本1",
-        "de澳大利亚1",
-        "tw台湾1",
-        "俄罗斯1",
-        "香港1",
-        "direct"
-      ]
-    },
-    {
-      "tag": "ai",
-      "type": "selector",
-      "outbounds": [
-        "select",
-        "urltest",
-        "印度1",
-        "新加坡2",
-        "us美国2",
-        "us美国1-多机负载",
-        "新加坡1",
-        "日本1",
-        "de澳大利亚1",
-        "tw台湾1",
-        "俄罗斯1",
-        "香港1",
-        "direct"
-      ]
-    },
-    {
-      "tag": "hoyo",
-      "type": "selector",
-      "default": "direct",
-      "outbounds": [
-        "direct",
-        "select",
-        "urltest",
         "印度1",
         "新加坡2",
         "us美国2",
@@ -169,11 +107,10 @@
       ]
     },
     {
-      "tag": "select",
-      "type": "selector",
-      "default": "urltest",
+      "tag": "auto",
+      "type": "urltest",
+      "interval": "5m",
       "outbounds": [
-        "urltest",
         "印度1",
         "新加坡2",
         "us美国2",
@@ -183,14 +120,12 @@
         "de澳大利亚1",
         "tw台湾1",
         "俄罗斯1",
-        "香港1",
-        "select",
-        "direct"
+        "香港1"
       ]
     },
     {
-      "tag": "urltest",
-      "type": "urltest",
+      "tag": "ai",
+      "type": "selector",
       "outbounds": [
         "印度1",
         "新加坡2",
@@ -201,10 +136,25 @@
         "de澳大利亚1",
         "tw台湾1",
         "俄罗斯1",
-        "香港1",
-        "select",
-        "urltest",
-        "direct"
+        "香港1"
+      ]
+    },
+    {
+      "tag": "hoyo",
+      "type": "selector",
+      "default": "direct",
+      "outbounds": [
+        "direct",
+        "印度1",
+        "新加坡2",
+        "us美国2",
+        "us美国1-多机负载",
+        "新加坡1",
+        "日本1",
+        "de澳大利亚1",
+        "tw台湾1",
+        "俄罗斯1",
+        "香港1"
       ]
     },
     {
@@ -326,10 +276,6 @@
         "server_name": "hk1.laibajc.top"
       },
       "type": "hysteria2"
-    },
-    {
-      "tag": "direct",
-      "type": "direct"
     }
   ],
   "route": {

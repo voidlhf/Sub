@@ -94,71 +94,6 @@
       "default": "auto",
       "outbounds": [
         "auto",
-        "select",
-        "urltest",
-        "剩余流量：80.24 GB",
-        "距离下次重置剩余：17 天",
-        "套餐到期：2025-05-26",
-        "香港1",
-        "香港2",
-        "日本1",
-        "日本2",
-        "台湾1",
-        "台湾2",
-        "美国1",
-        "美国2",
-        "direct"
-      ]
-    },
-    {
-      "tag": "auto",
-      "type": "urltest",
-      "interval": "5m",
-      "outbounds": [
-        "select",
-        "urltest",
-        "剩余流量：80.24 GB",
-        "距离下次重置剩余：17 天",
-        "套餐到期：2025-05-26",
-        "香港1",
-        "香港2",
-        "日本1",
-        "日本2",
-        "台湾1",
-        "台湾2",
-        "美国1",
-        "美国2",
-        "direct"
-      ]
-    },
-    {
-      "tag": "ai",
-      "type": "selector",
-      "outbounds": [
-        "select",
-        "urltest",
-        "剩余流量：80.24 GB",
-        "距离下次重置剩余：17 天",
-        "套餐到期：2025-05-26",
-        "香港1",
-        "香港2",
-        "日本1",
-        "日本2",
-        "台湾1",
-        "台湾2",
-        "美国1",
-        "美国2",
-        "direct"
-      ]
-    },
-    {
-      "tag": "hoyo",
-      "type": "selector",
-      "default": "direct",
-      "outbounds": [
-        "direct",
-        "select",
-        "urltest",
         "剩余流量：80.24 GB",
         "距离下次重置剩余：17 天",
         "套餐到期：2025-05-26",
@@ -173,11 +108,10 @@
       ]
     },
     {
-      "tag": "select",
-      "type": "selector",
-      "default": "urltest",
+      "tag": "auto",
+      "type": "urltest",
+      "interval": "5m",
       "outbounds": [
-        "urltest",
         "剩余流量：80.24 GB",
         "距离下次重置剩余：17 天",
         "套餐到期：2025-05-26",
@@ -188,14 +122,12 @@
         "台湾1",
         "台湾2",
         "美国1",
-        "美国2",
-        "select",
-        "direct"
+        "美国2"
       ]
     },
     {
-      "tag": "urltest",
-      "type": "urltest",
+      "tag": "ai",
+      "type": "selector",
       "outbounds": [
         "剩余流量：80.24 GB",
         "距离下次重置剩余：17 天",
@@ -207,10 +139,26 @@
         "台湾1",
         "台湾2",
         "美国1",
-        "美国2",
-        "select",
-        "urltest",
-        "direct"
+        "美国2"
+      ]
+    },
+    {
+      "tag": "hoyo",
+      "type": "selector",
+      "default": "direct",
+      "outbounds": [
+        "direct",
+        "剩余流量：80.24 GB",
+        "距离下次重置剩余：17 天",
+        "套餐到期：2025-05-26",
+        "香港1",
+        "香港2",
+        "日本1",
+        "日本2",
+        "台湾1",
+        "台湾2",
+        "美国1",
+        "美国2"
       ]
     },
     {
@@ -300,10 +248,6 @@
       "server_port": "8964",
       "tag": "美国2",
       "type": "shadowsocks"
-    },
-    {
-      "tag": "direct",
-      "type": "direct"
     }
   ],
   "route": {
