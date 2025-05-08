@@ -43,6 +43,11 @@ jobs:
         run: |
           bash run_scripts.sh
 
+      - name: Clean up clash2sfa folder
+        run: |
+          pkill -f 'go run main.go' || true
+          rm -rf clash2sfa
+    
       - name: Commit changes if any
         run: |
           git config --global user.name "GitHub Actions"
