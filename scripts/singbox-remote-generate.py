@@ -44,7 +44,7 @@ def replace_outbounds_in_fixed_target(source_data, output_file):
         new_outbounds = [
             o
             for o in source_data.get("outbounds", [])
-            if o.get("type") not in skip_types
+            if o.get("type") not in skip_types and o.get("method") != "chacha20"
         ]
 
         existing_outbounds = target_data.get("outbounds", [])

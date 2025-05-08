@@ -9,7 +9,7 @@ generate_mihomo() {
 generate_singbox() {
   local url=$1
   local output=$2
-  local prefix="https://clash2sfa.xmdhs.com/sub?sub="
+  local prefix="http://127.0.0.1:8080/sub?sub="
   python scripts/singbox-remote-generate.py "${prefix}${url}" "$output"
 }
 
