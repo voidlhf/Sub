@@ -39,7 +39,14 @@ def replace_outbounds_in_fixed_target(source_data, output_file):
         raise
 
     try:
-        new_outbounds = source_data.get("outbounds", [])
+        skip_types = {"direct", "block", "dns", "urltest", "selector"}
+
+        new_outbounds = [
+            o
+            for o in source_data.get("outbounds", [])
+            if o.get("type") not in skip_types
+        ]
+
         existing_outbounds = target_data.get("outbounds", [])
         target_data["outbounds"] = existing_outbounds + new_outbounds
 
