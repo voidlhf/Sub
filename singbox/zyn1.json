@@ -1,0 +1,683 @@
+{
+  "log": {},
+  "dns": {
+    "servers": [
+      {
+        "tag": "dns_proxy",
+        "type": "https",
+        "server": "1.1.1.1",
+        "detour": "select"
+      },
+      {
+        "tag": "dns_direct",
+        "type": "https",
+        "server": "223.5.5.5"
+      },
+      {
+        "tag": "dns_fakeip",
+        "type": "fakeip",
+        "inet4_range": "198.18.0.0/15",
+        "inet6_range": "fc00::/18"
+      }
+    ],
+    "rules": [
+      {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "query_type": "HTTPS"
+          },
+          {
+            "rule_set": [
+              "geosite-category-ads-all"
+            ]
+          }
+        ],
+        "action": "reject"
+      },
+      {
+        "query_type": [
+          "A",
+          "AAAA"
+        ],
+        "server": "dns_fakeip",
+        "rewrite_ttl": 1
+      },
+      {
+        "clash_mode": "Global",
+        "server": "dns_proxy"
+      },
+      {
+        "clash_mode": "Direct",
+        "server": "dns_direct"
+      },
+      {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "rule_set": [
+              "geosite-cn"
+            ]
+          }
+        ],
+        "server": "dns_direct"
+      }
+    ],
+    "strategy": "ipv4_only",
+    "independent_cache": true
+  },
+  "inbounds": [
+    {
+      "type": "tun",
+      "address": [
+        "172.18.0.1/30",
+        "fdfe:dcba:9876::1/126"
+      ],
+      "auto_route": true,
+      "strict_route": true,
+      "route_exclude_address": [
+        "192.168.0.0/16",
+        "fc00::/7"
+      ]
+    }
+  ],
+  "outbounds": [
+    {
+      "tag": "direct",
+      "type": "direct"
+    },
+    {
+      "tag": "select",
+      "type": "selector",
+      "default": "auto",
+      "outbounds": [
+        "auto",
+        "select",
+        "urltest",
+        "剩余流量：259.45 GB",
+        "距离下次重置剩余：12 天",
+        "套餐到期：2025-05-20",
+        "🇺🇸 美国洛杉矶 1",
+        "🇺🇸 美国洛杉矶 2",
+        "🇺🇸 美国洛杉矶 3",
+        "🇺🇸 美国洛杉矶 4",
+        "🇭🇰 香港 1",
+        "🇭🇰 香港 2",
+        "🇭🇰 香港 3",
+        "🇭🇰 香港 4",
+        "🇸🇬 新加坡 1",
+        "🇸🇬 新加坡 2",
+        "🇸🇬 新加坡 3",
+        "🇸🇬 新加坡 4",
+        "🇨🇦 加拿大 1",
+        "🇨🇦 加拿大 2",
+        "🇨🇦 加拿大 3",
+        "🇨🇦 加拿大 4",
+        "direct"
+      ]
+    },
+    {
+      "tag": "auto",
+      "type": "urltest",
+      "interval": "5m",
+      "outbounds": [
+        "select",
+        "urltest",
+        "剩余流量：259.45 GB",
+        "距离下次重置剩余：12 天",
+        "套餐到期：2025-05-20",
+        "🇺🇸 美国洛杉矶 1",
+        "🇺🇸 美国洛杉矶 2",
+        "🇺🇸 美国洛杉矶 3",
+        "🇺🇸 美国洛杉矶 4",
+        "🇭🇰 香港 1",
+        "🇭🇰 香港 2",
+        "🇭🇰 香港 3",
+        "🇭🇰 香港 4",
+        "🇸🇬 新加坡 1",
+        "🇸🇬 新加坡 2",
+        "🇸🇬 新加坡 3",
+        "🇸🇬 新加坡 4",
+        "🇨🇦 加拿大 1",
+        "🇨🇦 加拿大 2",
+        "🇨🇦 加拿大 3",
+        "🇨🇦 加拿大 4",
+        "direct"
+      ]
+    },
+    {
+      "tag": "ai",
+      "type": "selector",
+      "outbounds": [
+        "select",
+        "urltest",
+        "剩余流量：259.45 GB",
+        "距离下次重置剩余：12 天",
+        "套餐到期：2025-05-20",
+        "🇺🇸 美国洛杉矶 1",
+        "🇺🇸 美国洛杉矶 2",
+        "🇺🇸 美国洛杉矶 3",
+        "🇺🇸 美国洛杉矶 4",
+        "🇭🇰 香港 1",
+        "🇭🇰 香港 2",
+        "🇭🇰 香港 3",
+        "🇭🇰 香港 4",
+        "🇸🇬 新加坡 1",
+        "🇸🇬 新加坡 2",
+        "🇸🇬 新加坡 3",
+        "🇸🇬 新加坡 4",
+        "🇨🇦 加拿大 1",
+        "🇨🇦 加拿大 2",
+        "🇨🇦 加拿大 3",
+        "🇨🇦 加拿大 4",
+        "direct"
+      ]
+    },
+    {
+      "tag": "hoyo",
+      "type": "selector",
+      "default": "direct",
+      "outbounds": [
+        "direct",
+        "select",
+        "urltest",
+        "剩余流量：259.45 GB",
+        "距离下次重置剩余：12 天",
+        "套餐到期：2025-05-20",
+        "🇺🇸 美国洛杉矶 1",
+        "🇺🇸 美国洛杉矶 2",
+        "🇺🇸 美国洛杉矶 3",
+        "🇺🇸 美国洛杉矶 4",
+        "🇭🇰 香港 1",
+        "🇭🇰 香港 2",
+        "🇭🇰 香港 3",
+        "🇭🇰 香港 4",
+        "🇸🇬 新加坡 1",
+        "🇸🇬 新加坡 2",
+        "🇸🇬 新加坡 3",
+        "🇸🇬 新加坡 4",
+        "🇨🇦 加拿大 1",
+        "🇨🇦 加拿大 2",
+        "🇨🇦 加拿大 3",
+        "🇨🇦 加拿大 4"
+      ]
+    },
+    {
+      "tag": "select",
+      "type": "selector",
+      "default": "urltest",
+      "outbounds": [
+        "urltest",
+        "剩余流量：259.45 GB",
+        "距离下次重置剩余：12 天",
+        "套餐到期：2025-05-20",
+        "🇺🇸 美国洛杉矶 1",
+        "🇺🇸 美国洛杉矶 2",
+        "🇺🇸 美国洛杉矶 3",
+        "🇺🇸 美国洛杉矶 4",
+        "🇭🇰 香港 1",
+        "🇭🇰 香港 2",
+        "🇭🇰 香港 3",
+        "🇭🇰 香港 4",
+        "🇸🇬 新加坡 1",
+        "🇸🇬 新加坡 2",
+        "🇸🇬 新加坡 3",
+        "🇸🇬 新加坡 4",
+        "🇨🇦 加拿大 1",
+        "🇨🇦 加拿大 2",
+        "🇨🇦 加拿大 3",
+        "🇨🇦 加拿大 4",
+        "select",
+        "direct"
+      ]
+    },
+    {
+      "tag": "urltest",
+      "type": "urltest",
+      "outbounds": [
+        "剩余流量：259.45 GB",
+        "距离下次重置剩余：12 天",
+        "套餐到期：2025-05-20",
+        "🇺🇸 美国洛杉矶 1",
+        "🇺🇸 美国洛杉矶 2",
+        "🇺🇸 美国洛杉矶 3",
+        "🇺🇸 美国洛杉矶 4",
+        "🇭🇰 香港 1",
+        "🇭🇰 香港 2",
+        "🇭🇰 香港 3",
+        "🇭🇰 香港 4",
+        "🇸🇬 新加坡 1",
+        "🇸🇬 新加坡 2",
+        "🇸🇬 新加坡 3",
+        "🇸🇬 新加坡 4",
+        "🇨🇦 加拿大 1",
+        "🇨🇦 加拿大 2",
+        "🇨🇦 加拿大 3",
+        "🇨🇦 加拿大 4",
+        "select",
+        "urltest",
+        "direct"
+      ]
+    },
+    {
+      "down_mbps": 1000,
+      "obfs": null,
+      "password": "0110133e-f672-4cfd-8741-b11c131e7bf5",
+      "server": "38.146.28.134",
+      "server_port": 8443,
+      "tag": "剩余流量：259.45 GB",
+      "tls": {
+        "enabled": true,
+        "insecure": false
+      },
+      "type": "hysteria2",
+      "up_mbps": 1000
+    },
+    {
+      "down_mbps": 1000,
+      "obfs": null,
+      "password": "0110133e-f672-4cfd-8741-b11c131e7bf5",
+      "server": "38.146.28.134",
+      "server_port": 8443,
+      "tag": "距离下次重置剩余：12 天",
+      "tls": {
+        "enabled": true,
+        "insecure": false
+      },
+      "type": "hysteria2",
+      "up_mbps": 1000
+    },
+    {
+      "down_mbps": 1000,
+      "obfs": null,
+      "password": "0110133e-f672-4cfd-8741-b11c131e7bf5",
+      "server": "38.146.28.134",
+      "server_port": 8443,
+      "tag": "套餐到期：2025-05-20",
+      "tls": {
+        "enabled": true,
+        "insecure": false
+      },
+      "type": "hysteria2",
+      "up_mbps": 1000
+    },
+    {
+      "down_mbps": 1000,
+      "obfs": null,
+      "password": "0110133e-f672-4cfd-8741-b11c131e7bf5",
+      "server": "38.146.28.134",
+      "server_port": 8443,
+      "tag": "🇺🇸 美国洛杉矶 1",
+      "tls": {
+        "enabled": true,
+        "insecure": false
+      },
+      "type": "hysteria2",
+      "up_mbps": 1000
+    },
+    {
+      "down_mbps": 1000,
+      "obfs": null,
+      "password": "0110133e-f672-4cfd-8741-b11c131e7bf5",
+      "server": "38.146.28.134",
+      "server_port": 8443,
+      "tag": "🇺🇸 美国洛杉矶 2",
+      "tls": {
+        "enabled": true,
+        "insecure": false
+      },
+      "type": "hysteria2",
+      "up_mbps": 1000
+    },
+    {
+      "down_mbps": 1000,
+      "obfs": null,
+      "password": "0110133e-f672-4cfd-8741-b11c131e7bf5",
+      "server": "38.146.28.134",
+      "server_port": 8443,
+      "tag": "🇺🇸 美国洛杉矶 3",
+      "tls": {
+        "enabled": true,
+        "insecure": false
+      },
+      "type": "hysteria2",
+      "up_mbps": 1000
+    },
+    {
+      "down_mbps": 1000,
+      "obfs": null,
+      "password": "0110133e-f672-4cfd-8741-b11c131e7bf5",
+      "server": "38.146.28.134",
+      "server_port": 8443,
+      "tag": "🇺🇸 美国洛杉矶 4",
+      "tls": {
+        "enabled": true,
+        "insecure": false
+      },
+      "type": "hysteria2",
+      "up_mbps": 1000
+    },
+    {
+      "down_mbps": 1000,
+      "obfs": null,
+      "password": "0110133e-f672-4cfd-8741-b11c131e7bf5",
+      "server": "192.142.4.219",
+      "server_port": 8443,
+      "tag": "🇭🇰 香港 1",
+      "tls": {
+        "enabled": true,
+        "insecure": false
+      },
+      "type": "hysteria2",
+      "up_mbps": 1000
+    },
+    {
+      "down_mbps": 1000,
+      "obfs": null,
+      "password": "0110133e-f672-4cfd-8741-b11c131e7bf5",
+      "server": "192.142.4.219",
+      "server_port": 8443,
+      "tag": "🇭🇰 香港 2",
+      "tls": {
+        "enabled": true,
+        "insecure": false
+      },
+      "type": "hysteria2",
+      "up_mbps": 1000
+    },
+    {
+      "down_mbps": 1000,
+      "obfs": null,
+      "password": "0110133e-f672-4cfd-8741-b11c131e7bf5",
+      "server": "192.142.4.219",
+      "server_port": 8443,
+      "tag": "🇭🇰 香港 3",
+      "tls": {
+        "enabled": true,
+        "insecure": false
+      },
+      "type": "hysteria2",
+      "up_mbps": 1000
+    },
+    {
+      "down_mbps": 1000,
+      "obfs": null,
+      "password": "0110133e-f672-4cfd-8741-b11c131e7bf5",
+      "server": "192.142.4.219",
+      "server_port": 8443,
+      "tag": "🇭🇰 香港 4",
+      "tls": {
+        "enabled": true,
+        "insecure": false
+      },
+      "type": "hysteria2",
+      "up_mbps": 1000
+    },
+    {
+      "down_mbps": 1000,
+      "obfs": null,
+      "password": "0110133e-f672-4cfd-8741-b11c131e7bf5",
+      "server": "146.103.45.231",
+      "server_port": 8443,
+      "tag": "🇸🇬 新加坡 1",
+      "tls": {
+        "enabled": true,
+        "insecure": false
+      },
+      "type": "hysteria2",
+      "up_mbps": 1000
+    },
+    {
+      "down_mbps": 1000,
+      "obfs": null,
+      "password": "0110133e-f672-4cfd-8741-b11c131e7bf5",
+      "server": "146.103.45.231",
+      "server_port": 8443,
+      "tag": "🇸🇬 新加坡 2",
+      "tls": {
+        "enabled": true,
+        "insecure": false
+      },
+      "type": "hysteria2",
+      "up_mbps": 1000
+    },
+    {
+      "down_mbps": 1000,
+      "obfs": null,
+      "password": "0110133e-f672-4cfd-8741-b11c131e7bf5",
+      "server": "146.103.45.231",
+      "server_port": 8443,
+      "tag": "🇸🇬 新加坡 3",
+      "tls": {
+        "enabled": true,
+        "insecure": false
+      },
+      "type": "hysteria2",
+      "up_mbps": 1000
+    },
+    {
+      "down_mbps": 1000,
+      "obfs": null,
+      "password": "0110133e-f672-4cfd-8741-b11c131e7bf5",
+      "server": "146.103.45.231",
+      "server_port": 8443,
+      "tag": "🇸🇬 新加坡 4",
+      "tls": {
+        "enabled": true,
+        "insecure": false
+      },
+      "type": "hysteria2",
+      "up_mbps": 1000
+    },
+    {
+      "down_mbps": 1000,
+      "obfs": null,
+      "password": "0110133e-f672-4cfd-8741-b11c131e7bf5",
+      "server": "104.234.240.159",
+      "server_port": 8443,
+      "tag": "🇨🇦 加拿大 1",
+      "tls": {
+        "enabled": true,
+        "insecure": false
+      },
+      "type": "hysteria2",
+      "up_mbps": 1000
+    },
+    {
+      "down_mbps": 1000,
+      "obfs": null,
+      "password": "0110133e-f672-4cfd-8741-b11c131e7bf5",
+      "server": "104.234.240.159",
+      "server_port": 8443,
+      "tag": "🇨🇦 加拿大 2",
+      "tls": {
+        "enabled": true,
+        "insecure": false
+      },
+      "type": "hysteria2",
+      "up_mbps": 1000
+    },
+    {
+      "down_mbps": 1000,
+      "obfs": null,
+      "password": "0110133e-f672-4cfd-8741-b11c131e7bf5",
+      "server": "104.234.240.159",
+      "server_port": 8443,
+      "tag": "🇨🇦 加拿大 3",
+      "tls": {
+        "enabled": true,
+        "insecure": false
+      },
+      "type": "hysteria2",
+      "up_mbps": 1000
+    },
+    {
+      "down_mbps": 1000,
+      "obfs": null,
+      "password": "0110133e-f672-4cfd-8741-b11c131e7bf5",
+      "server": "104.234.240.159",
+      "server_port": 8443,
+      "tag": "🇨🇦 加拿大 4",
+      "tls": {
+        "enabled": true,
+        "insecure": false
+      },
+      "type": "hysteria2",
+      "up_mbps": 1000
+    },
+    {
+      "tag": "direct",
+      "type": "direct"
+    }
+  ],
+  "route": {
+    "rules": [
+      {
+        "action": "sniff"
+      },
+      {
+        "protocol": "dns",
+        "action": "hijack-dns"
+      },
+      {
+        "action": "resolve",
+        "strategy": "ipv4_only"
+      },
+      {
+        "clash_mode": "Global",
+        "outbound": "select"
+      },
+      {
+        "clash_mode": "Direct",
+        "outbound": "direct"
+      },
+      {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "domain_suffix": [
+              "ushd.xmsl.org",
+              "cf.gtlx.org"
+            ]
+          }
+        ],
+        "outbound": "direct"
+      },
+      {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "domain_suffix": [
+              "public-operation-hkrpg-sg.hoyoverse.com",
+              "public-operation-hk4e-sg.hoyoverse.com",
+              "public-operation-nap-sg.hoyoverse.com"
+            ]
+          },
+          {
+            "port_range": [
+              "23301:23301",
+              "22101:22102",
+              "20501:20501",
+              "21601:21606"
+            ]
+          }
+        ],
+        "outbound": "hoyo"
+      },
+      {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "domain_keyword": [
+              "hoyoverse.com"
+            ]
+          }
+        ],
+        "outbound": "select"
+      },
+      {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "rule_set": [
+              "geosite-category-ai-!cn"
+            ]
+          }
+        ],
+        "outbound": "ai"
+      },
+      {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "ip_is_private": true
+          },
+          {
+            "rule_set": [
+              "geosite-googlefcm",
+              "geosite-cn",
+              "geoip-cn"
+            ]
+          }
+        ],
+        "outbound": "direct"
+      }
+    ],
+    "rule_set": [
+      {
+        "type": "remote",
+        "tag": "geoip-cn",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/lyc8503/sing-box-rules/rule-set-geoip/geoip-cn.srs",
+        "download_detour": "select"
+      },
+      {
+        "type": "remote",
+        "tag": "geosite-cn",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/lyc8503/sing-box-rules/rule-set-geosite/geosite-cn.srs",
+        "download_detour": "select"
+      },
+      {
+        "type": "remote",
+        "tag": "geosite-category-ai-!cn",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/lyc8503/sing-box-rules/rule-set-geosite/geosite-category-ai-!cn.srs",
+        "download_detour": "select"
+      },
+      {
+        "type": "remote",
+        "tag": "geosite-googlefcm",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/lyc8503/sing-box-rules/rule-set-geosite/geosite-googlefcm.srs",
+        "download_detour": "select"
+      },
+      {
+        "type": "remote",
+        "tag": "geosite-category-ads-all",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/lyc8503/sing-box-rules/rule-set-geosite/geosite-category-ads-all.srs",
+        "download_detour": "select"
+      }
+    ],
+    "final": "select",
+    "default_domain_resolver": "dns_direct",
+    "auto_detect_interface": true,
+    "override_android_vpn": true
+  },
+  "experimental": {
+    "cache_file": {
+      "enabled": true
+    },
+    "clash_api": {
+      "external_controller": "127.0.0.1:9090"
+    }
+  }
+}
