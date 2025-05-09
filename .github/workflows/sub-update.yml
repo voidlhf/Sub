@@ -17,18 +17,6 @@ jobs:
         run: |
           git fetch origin
           git checkout branch1
-          
-      - name: Set up Go
-        uses: actions/setup-go@v5
-        with:
-          cache: false
-          go-version: '1.24.3'
-          
-      - name: Run clash2sfa
-        run: |
-          git clone https://github.com/xmdhs/clash2sfa.git
-          cd clash2sfa
-          go run main.go &
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -55,11 +43,6 @@ jobs:
       - name: Run scripts
         run: |
           bash run_scripts.sh
-
-      - name: Clean up clash2sfa folder
-        run: |
-          pkill -f 'go run main.go' || true
-          rm -rf clash2sfa
           
       - name: Clean up substore folder
         run: |
