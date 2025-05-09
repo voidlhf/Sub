@@ -27,6 +27,8 @@ process_json() {
     elif [ "$mode" == "singbox" ]; then
       generate_singbox "$url" "$output_dir/$name.json"
     fi
+    
+    echo "--------------------"
   done
 }
 
