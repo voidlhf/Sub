@@ -9,7 +9,7 @@ os.chdir(os.path.dirname(os.path.abspath(__file__)))
 def download_json_from_url(url):
     try:
         headers = {"User-Agent": "sing-box"}
-        response = requests.get(url, headers=headers, timeout=10)
+        response = requests.get(url, headers=headers, timeout=30)
         response.raise_for_status()
         return response.json()
     except requests.exceptions.RequestException as e:
@@ -83,7 +83,7 @@ def main():
         args.output = os.path.join(os.getcwd(), args.output)
 
     try:
-        print(f"\n开始从 URL 下载 JSON 文件: {args.url}")
+        print(f"开始从 URL 下载 JSON 文件: {args.url}")
         source_data = download_json_from_url(args.url)
         print("成功下载 JSON 文件，开始处理...")
         replace_outbounds_in_fixed_target(source_data, args.output)

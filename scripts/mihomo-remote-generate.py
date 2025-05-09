@@ -13,7 +13,7 @@ os.chdir(script_dir)
 def download_yaml(url):
     try:
         headers = {"User-Agent": "clash.meta"}
-        response = requests.get(url, headers=headers, timeout=10)
+        response = requests.get(url, headers=headers, timeout=30)
         response.raise_for_status()
         return response.text
     except requests.exceptions.RequestException as e:
@@ -148,7 +148,7 @@ def save_result(config_data, result_path):
 
 def main(url, result_path):
     try:
-        print(f"\n正在下载 YAML 文件: {url}")
+        print(f"正在下载 YAML 文件: {url}")
         yaml_content = download_yaml(url)
         proxies = extract_proxies(yaml_content)
 
