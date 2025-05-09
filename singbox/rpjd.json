@@ -214,305 +214,295 @@
       ]
     },
     {
-      "password": "awsps0501",
-      "server": "18.179.178.170",
-      "server_port": 443,
       "tag": "tg频道:@ripaojiedian",
       "type": "shadowsocks",
+      "server": "18.179.178.170",
+      "server_port": 443,
       "method": "aes-256-cfb",
-      "network": "tcp"
+      "password": "awsps0501"
     },
     {
-      "password": "a38c9e28-9960-4e31-9f18-ed2495a756aa",
+      "tag": "🇭🇰 香港|@ripaojiedian",
+      "type": "trojan",
       "server": "vt-bana2-cn-11.ghpgwqswodgzv.com",
       "server_port": 40021,
-      "tag": "🇭🇰 香港|@ripaojiedian",
+      "password": "a38c9e28-9960-4e31-9f18-ed2495a756aa",
       "tls": {
         "enabled": true,
         "server_name": "vt-bana2-cn-11.ghpgwqswodgzv.com",
+        "insecure": false,
         "utls": {
           "enabled": true,
           "fingerprint": "chrome"
         }
       },
       "transport": {
+        "type": "ws",
         "headers": {
-          "Host": [
-            "vt-bana2-cn-11.ghpgwqswodgzv.com"
-          ]
+          "Host": "vt-bana2-cn-11.ghpgwqswodgzv.com"
         },
-        "path": "/dl_media",
-        "type": "ws"
-      },
-      "type": "trojan"
+        "path": "/dl_media"
+      }
     },
     {
-      "password": "91a41f4e02dc",
-      "server": "hkkh11v1.xpmc.cc",
-      "server_port": 48565,
       "tag": "🇭🇰 香港2|@ripaojiedian",
       "type": "shadowsocks",
+      "server": "hkkh11v1.xpmc.cc",
+      "server_port": 48565,
       "method": "chacha20-ietf-poly1305",
-      "network": "tcp",
+      "password": "91a41f4e02dc",
       "plugin": "v2ray-plugin",
-      "plugin_opts": "tls;host=hkkh11v1.xpmc.cc;path=/utvbnrzejpmt;mode=websocket;mux"
+      "multiplex": {
+        "enabled": true
+      },
+      "plugin_opts": "mode=websocket;host=hkkh11v1.xpmc.cc;path=/utvbnrzejpmt;tls;skip-cert-verify=false"
     },
     {
-      "server": "120.198.71.216",
-      "server_port": 35921,
       "tag": "🇭🇰 香港3|@ripaojiedian",
       "type": "vmess",
-      "alter_id": 64,
+      "server": "120.198.71.216",
+      "server_port": 35921,
+      "uuid": "418048af-a293-4b99-9b0c-98ca3580dd24",
       "security": "auto",
-      "uuid": "418048af-a293-4b99-9b0c-98ca3580dd24"
+      "alter_id": 64
     },
     {
+      "tag": "🇭🇰 香港4|@ripaojiedian",
+      "type": "vmess",
       "server": "43b5a616-sw04g0-swasv3-luwe.hgc1.tcpbbr.net",
       "server_port": 8080,
-      "tag": "🇭🇰 香港4|@ripaojiedian",
-      "transport": {
-        "headers": {
-          "Host": [
-            "broadcastlv.chat.bilibili.com"
-          ]
-        },
-        "path": "/",
-        "type": "ws"
-      },
-      "type": "vmess",
+      "uuid": "a2b0fd2b-716f-0df8-d4e2-03a1c00e5f1a",
       "security": "auto",
-      "uuid": "a2b0fd2b-716f-0df8-d4e2-03a1c00e5f1a"
+      "alter_id": 0,
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "broadcastlv.chat.bilibili.com"
+        },
+        "path": "/"
+      }
     },
     {
-      "server": "120.232.153.40",
-      "server_port": 59082,
       "tag": "🇭🇰 香港5|@ripaojiedian",
       "type": "vmess",
+      "server": "120.232.153.40",
+      "server_port": 59082,
+      "uuid": "418048af-a293-4b99-9b0c-98ca3580dd24",
       "security": "auto",
-      "uuid": "418048af-a293-4b99-9b0c-98ca3580dd24"
+      "alter_id": 0
     },
     {
-      "server": "120.232.153.40",
-      "server_port": 36609,
       "tag": "🇭🇰 香港6|@ripaojiedian",
       "type": "vmess",
-      "alter_id": 64,
+      "server": "120.232.153.40",
+      "server_port": 36609,
+      "uuid": "418048af-a293-4b99-9b0c-98ca3580dd24",
       "security": "auto",
-      "uuid": "418048af-a293-4b99-9b0c-98ca3580dd24"
+      "alter_id": 64
     },
     {
-      "password": "VMhGp5wEIyCDf90T",
+      "tag": "🇭🇰 香港7|@ripaojiedian",
+      "type": "trojan",
       "server": "csuzhou01.1cooldns.com",
       "server_port": 42303,
-      "tag": "🇭🇰 香港7|@ripaojiedian",
+      "password": "VMhGp5wEIyCDf90T",
       "tls": {
         "enabled": true,
         "server_name": "hk06.run.place",
+        "insecure": false,
         "utls": {
           "enabled": true,
           "fingerprint": "chrome"
         }
-      },
-      "type": "trojan"
+      }
     },
     {
-      "password": "6e1b9a65-884f-3aa9-9469-bf6ec0f08610",
+      "tag": "🇹🇼 台湾|@ripaojiedian",
+      "type": "trojan",
       "server": "a10.taipeicitygovernment.kyiv.ua",
       "server_port": 3462,
-      "tag": "🇹🇼 台湾|@ripaojiedian",
+      "password": "6e1b9a65-884f-3aa9-9469-bf6ec0f08610",
       "tls": {
         "enabled": true,
         "server_name": "45.32.28.232",
+        "insecure": false,
         "utls": {
           "enabled": true,
           "fingerprint": "chrome"
         }
-      },
-      "type": "trojan"
+      }
     },
     {
-      "password": "efanccyun",
-      "server": "cn01.efan8867801.xyz",
-      "server_port": 8766,
       "tag": "🇯🇵 日本|@ripaojiedian",
       "type": "shadowsocks",
+      "server": "cn01.efan8867801.xyz",
+      "server_port": 8766,
       "method": "rc4-md5",
-      "network": "tcp",
+      "password": "efanccyun",
       "plugin": "obfs-local",
       "plugin_opts": "obfs=http;obfs-host=202505081193439-fXcPpumg6a.download.microsoft.com"
     },
     {
-      "password": "ee003c5fb8d8",
-      "server": "103.140.136.242",
-      "server_port": 48512,
       "tag": "🇯🇵 日本2|@ripaojiedian",
       "type": "shadowsocks",
+      "server": "103.140.136.242",
+      "server_port": 48512,
       "method": "chacha20-ietf-poly1305",
-      "network": "tcp",
+      "password": "ee003c5fb8d8",
       "plugin": "v2ray-plugin",
-      "plugin_opts": "tls;host=jp06v1.3ci.xyz;path=/ywkyahjulb;mode=websocket;mux"
+      "multiplex": {
+        "enabled": true
+      },
+      "plugin_opts": "mode=websocket;host=jp06v1.3ci.xyz;path=/ywkyahjulb;tls;skip-cert-verify=false"
     },
     {
-      "server": "183.237.84.53",
-      "server_port": 55002,
       "tag": "🇯🇵 日本3|@ripaojiedian",
       "type": "vmess",
-      "alter_id": 64,
+      "server": "183.237.84.53",
+      "server_port": 55002,
+      "uuid": "418048af-a293-4b99-9b0c-98ca3580dd24",
       "security": "auto",
-      "uuid": "418048af-a293-4b99-9b0c-98ca3580dd24"
+      "alter_id": 64
     },
     {
+      "tag": "🇯🇵 日本4|@ripaojiedian",
+      "type": "vmess",
       "server": "59.42.247.189",
       "server_port": 8004,
-      "tag": "🇯🇵 日本4|@ripaojiedian",
-      "transport": {
-        "headers": {
-          "Host": [
-            "www.bing.com"
-          ]
-        },
-        "path": "/nmkj",
-        "type": "ws"
-      },
-      "type": "vmess",
+      "uuid": "7365fecd-64ef-485d-bf16-838abc3dddc3",
       "security": "auto",
-      "uuid": "7365fecd-64ef-485d-bf16-838abc3dddc3"
+      "alter_id": 0,
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "www.bing.com"
+        },
+        "path": "/nmkj"
+      }
     },
     {
-      "password": "feafc2ef-d5fd-4f6d-803b-fad4a5cc1f0e",
-      "server": "h.cm2.xiaomi-api.xyz",
-      "server_port": 19852,
       "tag": "🇰🇷 韩国|@ripaojiedian",
       "type": "shadowsocks",
+      "server": "h.cm2.xiaomi-api.xyz",
+      "server_port": 19852,
       "method": "chacha20-ietf-poly1305",
-      "network": "tcp"
+      "password": "feafc2ef-d5fd-4f6d-803b-fad4a5cc1f0e"
     },
     {
+      "tag": "🇸🇬 新加坡|@ripaojiedian",
+      "type": "vmess",
       "server": "v12.heduian.link",
       "server_port": 30812,
-      "tag": "🇸🇬 新加坡|@ripaojiedian",
-      "transport": {
-        "headers": {
-          "Host": [
-            "ocbc.com"
-          ]
-        },
-        "path": "/oooo",
-        "type": "ws"
-      },
-      "type": "vmess",
-      "alter_id": 2,
+      "uuid": "cbb3f877-d1fb-344c-87a9-d153bffd5484",
       "security": "auto",
-      "uuid": "cbb3f877-d1fb-344c-87a9-d153bffd5484"
+      "alter_id": 2,
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "ocbc.com"
+        },
+        "path": "/oooo"
+      }
     },
     {
+      "tag": "🇺🇸 美国|@ripaojiedian",
+      "type": "vmess",
       "server": "v32.heduian.link",
       "server_port": 30832,
-      "tag": "🇺🇸 美国|@ripaojiedian",
-      "transport": {
-        "headers": {
-          "Host": [
-            "baidu.com"
-          ]
-        },
-        "path": "/oooo",
-        "type": "ws"
-      },
-      "type": "vmess",
-      "alter_id": 2,
+      "uuid": "cbb3f877-d1fb-344c-87a9-d153bffd5484",
       "security": "auto",
-      "uuid": "cbb3f877-d1fb-344c-87a9-d153bffd5484"
+      "alter_id": 2,
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "baidu.com"
+        },
+        "path": "/oooo"
+      }
     },
     {
-      "password": "efanccyun",
-      "server": "cn01.efan8867801.xyz",
-      "server_port": 8774,
       "tag": "🇺🇸 美国2|@ripaojiedian",
       "type": "shadowsocks",
+      "server": "cn01.efan8867801.xyz",
+      "server_port": 8774,
       "method": "rc4-md5",
-      "network": "tcp",
+      "password": "efanccyun",
       "plugin": "obfs-local",
       "plugin_opts": "obfs=http;obfs-host=202505081193439-fXcPpumg6a.download.microsoft.com"
     },
     {
-      "password": "cdBIDV42DCwnfIN",
-      "server": "38.114.114.108",
-      "server_port": 8119,
       "tag": "🇺🇸 美国3|@ripaojiedian",
       "type": "shadowsocks",
+      "server": "38.114.114.108",
+      "server_port": 8119,
       "method": "aes-256-gcm",
-      "network": "tcp"
+      "password": "cdBIDV42DCwnfIN"
     },
     {
+      "tag": "🇺🇸 美国4|@ripaojiedian",
+      "type": "vmess",
       "server": "tk.hzlt.tkddns.xyz",
       "server_port": 22642,
-      "tag": "🇺🇸 美国4|@ripaojiedian",
+      "uuid": "98e96c9f-4bb3-39d4-9a2c-fac04257f7c7",
+      "security": "auto",
+      "alter_id": 2,
       "tls": {
         "enabled": true,
         "server_name": "zxjp-b.tkong.cc",
+        "insecure": false,
         "utls": {
           "enabled": true,
           "fingerprint": "chrome"
         }
       },
       "transport": {
+        "type": "ws",
         "headers": {
-          "Host": [
-            "zxjp-b.tkong.cc"
-          ]
+          "Host": "zxjp-b.tkong.cc"
         },
-        "path": "/",
-        "type": "ws"
-      },
-      "type": "vmess",
-      "alter_id": 2,
-      "security": "auto",
-      "uuid": "98e96c9f-4bb3-39d4-9a2c-fac04257f7c7"
+        "path": "/"
+      }
     },
     {
-      "server": "120.198.71.216",
-      "server_port": 46759,
       "tag": "🇺🇸 美国5|@ripaojiedian",
       "type": "vmess",
-      "alter_id": 64,
+      "server": "120.198.71.216",
+      "server_port": 46759,
+      "uuid": "418048af-a293-4b99-9b0c-98ca3580dd24",
       "security": "auto",
-      "uuid": "418048af-a293-4b99-9b0c-98ca3580dd24"
+      "alter_id": 64
     },
     {
-      "password": "awsps0501",
-      "server": "43.206.214.213",
-      "server_port": 443,
       "tag": "🇯🇵 日本特殊|@ripaojiedian",
       "type": "shadowsocks",
+      "server": "43.206.214.213",
+      "server_port": 443,
       "method": "aes-256-cfb",
-      "network": "tcp"
+      "password": "awsps0501"
     },
     {
-      "password": "awsps0501",
-      "server": "52.27.142.2",
-      "server_port": 443,
       "tag": "🇸🇬 狮城特殊|@ripaojiedian",
       "type": "shadowsocks",
+      "server": "52.27.142.2",
+      "server_port": 443,
       "method": "aes-256-cfb",
-      "network": "tcp"
+      "password": "awsps0501"
     },
     {
-      "password": "awsps0501",
-      "server": "13.212.202.199",
-      "server_port": 443,
       "tag": "🇰🇷 韩国特殊|@ripaojiedian",
       "type": "shadowsocks",
+      "server": "13.212.202.199",
+      "server_port": 443,
       "method": "aes-256-cfb",
-      "network": "tcp"
+      "password": "awsps0501"
     },
     {
-      "password": "Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV",
-      "server": "103.186.155.19",
-      "server_port": 38388,
       "tag": "🇻🇳 越南|@ripaojiedian",
       "type": "shadowsocks",
+      "server": "103.186.155.19",
+      "server_port": 38388,
       "method": "aes-256-cfb",
-      "network": "tcp"
+      "password": "Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV"
     }
   ],
   "route": {

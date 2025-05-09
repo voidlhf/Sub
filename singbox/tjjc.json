@@ -94,6 +94,9 @@
       "default": "auto",
       "outbounds": [
         "auto",
+        "剩余流量：197.71 GB",
+        "距离下次重置剩余：23 天",
+        "套餐到期：2025-07-02",
         "新加坡01|流媒体",
         "新加坡02|流媒体",
         "新加坡03|流媒体",
@@ -124,6 +127,9 @@
       "type": "urltest",
       "interval": "5m",
       "outbounds": [
+        "剩余流量：197.71 GB",
+        "距离下次重置剩余：23 天",
+        "套餐到期：2025-07-02",
         "新加坡01|流媒体",
         "新加坡02|流媒体",
         "新加坡03|流媒体",
@@ -153,6 +159,9 @@
       "tag": "ai",
       "type": "selector",
       "outbounds": [
+        "剩余流量：197.71 GB",
+        "距离下次重置剩余：23 天",
+        "套餐到期：2025-07-02",
         "新加坡01|流媒体",
         "新加坡02|流媒体",
         "新加坡03|流媒体",
@@ -184,6 +193,9 @@
       "default": "direct",
       "outbounds": [
         "direct",
+        "剩余流量：197.71 GB",
+        "距离下次重置剩余：23 天",
+        "套餐到期：2025-07-02",
         "新加坡01|流媒体",
         "新加坡02|流媒体",
         "新加坡03|流媒体",
@@ -210,455 +222,511 @@
       ]
     },
     {
-      "flow": "xtls-rprx-vision",
-      "packet_encoding": "xudp",
+      "tag": "剩余流量：197.71 GB",
+      "type": "vless",
       "server": "sg001.421421.xyz",
       "server_port": 20230,
-      "tag": "新加坡01|流媒体",
+      "uuid": "644a11df-a74a-49d7-a31e-8bf42e77eb47",
       "tls": {
         "enabled": true,
+        "server_name": "www.nvidia.com",
         "insecure": false,
         "reality": {
           "enabled": true,
           "public_key": "WEttTimK6Q9qB8cd2AQ8kyDJOVfKAlPIl5E1T7-q0Dw",
           "short_id": "1afbe06d"
         },
-        "server_name": "www.nvidia.com",
         "utls": {
           "enabled": true,
           "fingerprint": "chrome"
         }
       },
-      "type": "vless",
-      "uuid": "644a11df-a74a-49d7-a31e-8bf42e77eb47"
+      "flow": "xtls-rprx-vision"
     },
     {
-      "flow": "xtls-rprx-vision",
-      "packet_encoding": "xudp",
-      "server": "sg002.421421.xyz",
+      "tag": "距离下次重置剩余：23 天",
+      "type": "vless",
+      "server": "sg001.421421.xyz",
       "server_port": 20230,
-      "tag": "新加坡02|流媒体",
+      "uuid": "644a11df-a74a-49d7-a31e-8bf42e77eb47",
       "tls": {
         "enabled": true,
+        "server_name": "www.nvidia.com",
+        "insecure": false,
+        "reality": {
+          "enabled": true,
+          "public_key": "WEttTimK6Q9qB8cd2AQ8kyDJOVfKAlPIl5E1T7-q0Dw",
+          "short_id": "1afbe06d"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "flow": "xtls-rprx-vision"
+    },
+    {
+      "tag": "套餐到期：2025-07-02",
+      "type": "vless",
+      "server": "sg001.421421.xyz",
+      "server_port": 20230,
+      "uuid": "644a11df-a74a-49d7-a31e-8bf42e77eb47",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.nvidia.com",
+        "insecure": false,
+        "reality": {
+          "enabled": true,
+          "public_key": "WEttTimK6Q9qB8cd2AQ8kyDJOVfKAlPIl5E1T7-q0Dw",
+          "short_id": "1afbe06d"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "flow": "xtls-rprx-vision"
+    },
+    {
+      "tag": "新加坡01|流媒体",
+      "type": "vless",
+      "server": "sg001.421421.xyz",
+      "server_port": 20230,
+      "uuid": "644a11df-a74a-49d7-a31e-8bf42e77eb47",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.nvidia.com",
+        "insecure": false,
+        "reality": {
+          "enabled": true,
+          "public_key": "WEttTimK6Q9qB8cd2AQ8kyDJOVfKAlPIl5E1T7-q0Dw",
+          "short_id": "1afbe06d"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "flow": "xtls-rprx-vision"
+    },
+    {
+      "tag": "新加坡02|流媒体",
+      "type": "vless",
+      "server": "sg002.421421.xyz",
+      "server_port": 20230,
+      "uuid": "644a11df-a74a-49d7-a31e-8bf42e77eb47",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.nvidia.com",
         "insecure": false,
         "reality": {
           "enabled": true,
           "public_key": "1cs7mxEcoVKwcYepAnKgqHAFhRxPv6aO3tv7lNhwLDQ",
           "short_id": "46bf6ea0"
         },
-        "server_name": "www.nvidia.com",
         "utls": {
           "enabled": true,
           "fingerprint": "chrome"
         }
       },
-      "type": "vless",
-      "uuid": "644a11df-a74a-49d7-a31e-8bf42e77eb47"
+      "flow": "xtls-rprx-vision"
     },
     {
-      "flow": "xtls-rprx-vision",
-      "packet_encoding": "xudp",
+      "tag": "新加坡03|流媒体",
+      "type": "vless",
       "server": "sg003.421421.xyz",
       "server_port": 20230,
-      "tag": "新加坡03|流媒体",
+      "uuid": "644a11df-a74a-49d7-a31e-8bf42e77eb47",
       "tls": {
         "enabled": true,
+        "server_name": "www.nvidia.com",
         "insecure": false,
         "reality": {
           "enabled": true,
           "public_key": "hBXQa1tSoP0jjIezHxeyKhf1YKxe8CoBHoxvIxEJuAc",
           "short_id": "2c5ecaae"
         },
-        "server_name": "www.nvidia.com",
         "utls": {
           "enabled": true,
           "fingerprint": "chrome"
         }
       },
-      "type": "vless",
-      "uuid": "644a11df-a74a-49d7-a31e-8bf42e77eb47"
+      "flow": "xtls-rprx-vision"
     },
     {
-      "flow": "xtls-rprx-vision",
-      "packet_encoding": "xudp",
+      "tag": "新加坡04|流媒体",
+      "type": "vless",
       "server": "sg004.421421.xyz",
       "server_port": 20230,
-      "tag": "新加坡04|流媒体",
+      "uuid": "644a11df-a74a-49d7-a31e-8bf42e77eb47",
       "tls": {
         "enabled": true,
+        "server_name": "www.nvidia.com",
         "insecure": false,
         "reality": {
           "enabled": true,
           "public_key": "Bkxd25PPovqeYw6AevM-L266KM2kLDJomgmorzvGFmM",
           "short_id": "2c846487"
         },
-        "server_name": "www.nvidia.com",
         "utls": {
           "enabled": true,
           "fingerprint": "chrome"
         }
       },
-      "type": "vless",
-      "uuid": "644a11df-a74a-49d7-a31e-8bf42e77eb47"
+      "flow": "xtls-rprx-vision"
     },
     {
-      "flow": "xtls-rprx-vision",
-      "packet_encoding": "xudp",
+      "tag": "日本01",
+      "type": "vless",
       "server": "jp001.421421.xyz",
       "server_port": 20230,
-      "tag": "日本01",
+      "uuid": "644a11df-a74a-49d7-a31e-8bf42e77eb47",
       "tls": {
         "enabled": true,
+        "server_name": "www.nvidia.com",
         "insecure": false,
         "reality": {
           "enabled": true,
           "public_key": "opaO8sUF9JU5hP2wRoUgS6aWxFLfen83in6ZWJMonG4",
           "short_id": "b92b2a09"
         },
-        "server_name": "www.nvidia.com",
         "utls": {
           "enabled": true,
           "fingerprint": "chrome"
         }
       },
-      "type": "vless",
-      "uuid": "644a11df-a74a-49d7-a31e-8bf42e77eb47"
+      "flow": "xtls-rprx-vision"
     },
     {
-      "flow": "xtls-rprx-vision",
-      "packet_encoding": "xudp",
+      "tag": "日本02",
+      "type": "vless",
       "server": "jp002.421421.xyz",
       "server_port": 20230,
-      "tag": "日本02",
+      "uuid": "644a11df-a74a-49d7-a31e-8bf42e77eb47",
       "tls": {
         "enabled": true,
+        "server_name": "www.nvidia.com",
         "insecure": false,
         "reality": {
           "enabled": true,
           "public_key": "yNOemxnmT-HQ2HiR9fdHSN2B8HpHsRyMIsir_iAlaHE",
           "short_id": "5c3c9f11"
         },
-        "server_name": "www.nvidia.com",
         "utls": {
           "enabled": true,
           "fingerprint": "chrome"
         }
       },
-      "type": "vless",
-      "uuid": "644a11df-a74a-49d7-a31e-8bf42e77eb47"
+      "flow": "xtls-rprx-vision"
     },
     {
-      "flow": "xtls-rprx-vision",
-      "packet_encoding": "xudp",
+      "tag": "日本03",
+      "type": "vless",
       "server": "jp003.421421.xyz",
       "server_port": 20230,
-      "tag": "日本03",
+      "uuid": "644a11df-a74a-49d7-a31e-8bf42e77eb47",
       "tls": {
         "enabled": true,
+        "server_name": "www.nvidia.com",
         "insecure": false,
         "reality": {
           "enabled": true,
           "public_key": "4DQqVav-gK4Y1cMDDt4qyVpQf0GB6NkPgCPnjwude3c",
           "short_id": "d3b6f0c3"
         },
-        "server_name": "www.nvidia.com",
         "utls": {
           "enabled": true,
           "fingerprint": "chrome"
         }
       },
-      "type": "vless",
-      "uuid": "644a11df-a74a-49d7-a31e-8bf42e77eb47"
+      "flow": "xtls-rprx-vision"
     },
     {
-      "flow": "xtls-rprx-vision",
-      "packet_encoding": "xudp",
+      "tag": "日本04",
+      "type": "vless",
       "server": "jp004.421421.xyz",
       "server_port": 20230,
-      "tag": "日本04",
+      "uuid": "644a11df-a74a-49d7-a31e-8bf42e77eb47",
       "tls": {
         "enabled": true,
+        "server_name": "www.nvidia.com",
         "insecure": false,
         "reality": {
           "enabled": true,
           "public_key": "lbOfuIKCBPcQH4AEnwnPw1LNxWrl-Bul6KU99H240Fc",
           "short_id": "abae4722"
         },
-        "server_name": "www.nvidia.com",
         "utls": {
           "enabled": true,
           "fingerprint": "chrome"
         }
       },
-      "type": "vless",
-      "uuid": "644a11df-a74a-49d7-a31e-8bf42e77eb47"
+      "flow": "xtls-rprx-vision"
     },
     {
-      "flow": "xtls-rprx-vision",
-      "packet_encoding": "xudp",
+      "tag": "美国01",
+      "type": "vless",
       "server": "us001.421421.xyz",
       "server_port": 20230,
-      "tag": "美国01",
+      "uuid": "644a11df-a74a-49d7-a31e-8bf42e77eb47",
       "tls": {
         "enabled": true,
+        "server_name": "www.nvidia.com",
         "insecure": false,
         "reality": {
           "enabled": true,
           "public_key": "zWY5WwfH-Q8xvLZAr28WjRVk05L4WCp4B7F1lWPM0A8",
           "short_id": "c1839f26"
         },
-        "server_name": "www.nvidia.com",
         "utls": {
           "enabled": true,
           "fingerprint": "chrome"
         }
       },
-      "type": "vless",
-      "uuid": "644a11df-a74a-49d7-a31e-8bf42e77eb47"
+      "flow": "xtls-rprx-vision"
     },
     {
-      "flow": "xtls-rprx-vision",
-      "packet_encoding": "xudp",
+      "tag": "美国02",
+      "type": "vless",
       "server": "us002.421421.xyz",
       "server_port": 20230,
-      "tag": "美国02",
+      "uuid": "644a11df-a74a-49d7-a31e-8bf42e77eb47",
       "tls": {
         "enabled": true,
+        "server_name": "www.nvidia.com",
         "insecure": false,
         "reality": {
           "enabled": true,
           "public_key": "Bq_RQyPwxp7zTYywC37jLxmcjV9npNN6H6_1d_R6GT0",
           "short_id": "c9916730"
         },
-        "server_name": "www.nvidia.com",
         "utls": {
           "enabled": true,
           "fingerprint": "chrome"
         }
       },
-      "type": "vless",
-      "uuid": "644a11df-a74a-49d7-a31e-8bf42e77eb47"
+      "flow": "xtls-rprx-vision"
     },
     {
-      "password": "644a11df-a74a-49d7-a31e-8bf42e77eb47",
+      "tag": "新加坡05|流媒体",
+      "type": "trojan",
       "server": "sg005.421421.xyz",
       "server_port": 20230,
-      "tag": "新加坡05|流媒体",
+      "password": "644a11df-a74a-49d7-a31e-8bf42e77eb47",
       "tls": {
         "enabled": true,
-        "insecure": true,
-        "server_name": "www.alibaba.com"
+        "server_name": "www.alibaba.com",
+        "insecure": true
       },
       "transport": {
-        "early_data_header_name": "Sec-WebSocket-Protocol",
-        "max_early_data": 2048,
-        "type": "ws"
-      },
-      "type": "trojan"
+        "type": "ws",
+        "headers": {},
+        "path": "/"
+      }
     },
     {
-      "password": "644a11df-a74a-49d7-a31e-8bf42e77eb47",
+      "tag": "新加坡06|流媒体",
+      "type": "trojan",
       "server": "sg006.421421.xyz",
       "server_port": 20230,
-      "tag": "新加坡06|流媒体",
+      "password": "644a11df-a74a-49d7-a31e-8bf42e77eb47",
       "tls": {
         "enabled": true,
-        "insecure": true,
-        "server_name": "www.alibaba.com"
+        "server_name": "www.alibaba.com",
+        "insecure": true
       },
       "transport": {
-        "early_data_header_name": "Sec-WebSocket-Protocol",
-        "max_early_data": 2048,
-        "type": "ws"
-      },
-      "type": "trojan"
+        "type": "ws",
+        "headers": {},
+        "path": "/"
+      }
     },
     {
-      "password": "644a11df-a74a-49d7-a31e-8bf42e77eb47",
+      "tag": "新加坡07|流媒体",
+      "type": "trojan",
       "server": "sg007.421421.xyz",
       "server_port": 20230,
-      "tag": "新加坡07|流媒体",
+      "password": "644a11df-a74a-49d7-a31e-8bf42e77eb47",
       "tls": {
         "enabled": true,
-        "insecure": true,
-        "server_name": "www.alibaba.com"
+        "server_name": "www.alibaba.com",
+        "insecure": true
       },
       "transport": {
-        "early_data_header_name": "Sec-WebSocket-Protocol",
-        "max_early_data": 2048,
-        "type": "ws"
-      },
-      "type": "trojan"
+        "type": "ws",
+        "headers": {},
+        "path": "/"
+      }
     },
     {
-      "password": "644a11df-a74a-49d7-a31e-8bf42e77eb47",
+      "tag": "新加坡08|流媒体",
+      "type": "trojan",
       "server": "sg008.421421.xyz",
       "server_port": 20230,
-      "tag": "新加坡08|流媒体",
+      "password": "644a11df-a74a-49d7-a31e-8bf42e77eb47",
       "tls": {
         "enabled": true,
-        "insecure": true,
-        "server_name": "www.alibaba.com"
+        "server_name": "www.alibaba.com",
+        "insecure": true
       },
       "transport": {
-        "early_data_header_name": "Sec-WebSocket-Protocol",
-        "max_early_data": 2048,
-        "type": "ws"
-      },
-      "type": "trojan"
+        "type": "ws",
+        "headers": {},
+        "path": "/"
+      }
     },
     {
-      "password": "644a11df-a74a-49d7-a31e-8bf42e77eb47",
+      "tag": "日本05",
+      "type": "trojan",
       "server": "jp005.421421.xyz",
       "server_port": 20230,
-      "tag": "日本05",
+      "password": "644a11df-a74a-49d7-a31e-8bf42e77eb47",
       "tls": {
         "enabled": true,
-        "insecure": true,
-        "server_name": "www.alibaba.com"
+        "server_name": "www.alibaba.com",
+        "insecure": true
       },
       "transport": {
-        "early_data_header_name": "Sec-WebSocket-Protocol",
-        "max_early_data": 2048,
-        "type": "ws"
-      },
-      "type": "trojan"
+        "type": "ws",
+        "headers": {},
+        "path": "/"
+      }
     },
     {
-      "password": "644a11df-a74a-49d7-a31e-8bf42e77eb47",
+      "tag": "日本06",
+      "type": "trojan",
       "server": "jp006.421421.xyz",
       "server_port": 20230,
-      "tag": "日本06",
+      "password": "644a11df-a74a-49d7-a31e-8bf42e77eb47",
       "tls": {
         "enabled": true,
-        "insecure": true,
-        "server_name": "www.alibaba.com"
+        "server_name": "www.alibaba.com",
+        "insecure": true
       },
       "transport": {
-        "early_data_header_name": "Sec-WebSocket-Protocol",
-        "max_early_data": 2048,
-        "type": "ws"
-      },
-      "type": "trojan"
+        "type": "ws",
+        "headers": {},
+        "path": "/"
+      }
     },
     {
-      "password": "644a11df-a74a-49d7-a31e-8bf42e77eb47",
+      "tag": "日本07",
+      "type": "trojan",
       "server": "jp007.421421.xyz",
       "server_port": 20230,
-      "tag": "日本07",
+      "password": "644a11df-a74a-49d7-a31e-8bf42e77eb47",
       "tls": {
         "enabled": true,
-        "insecure": true,
-        "server_name": "www.alibaba.com"
+        "server_name": "www.alibaba.com",
+        "insecure": true
       },
       "transport": {
-        "early_data_header_name": "Sec-WebSocket-Protocol",
-        "max_early_data": 2048,
-        "type": "ws"
-      },
-      "type": "trojan"
+        "type": "ws",
+        "headers": {},
+        "path": "/"
+      }
     },
     {
-      "password": "644a11df-a74a-49d7-a31e-8bf42e77eb47",
+      "tag": "日本08",
+      "type": "trojan",
       "server": "jp008.421421.xyz",
       "server_port": 20230,
-      "tag": "日本08",
+      "password": "644a11df-a74a-49d7-a31e-8bf42e77eb47",
       "tls": {
         "enabled": true,
-        "insecure": true,
-        "server_name": "www.alibaba.com"
+        "server_name": "www.alibaba.com",
+        "insecure": true
       },
       "transport": {
-        "early_data_header_name": "Sec-WebSocket-Protocol",
-        "max_early_data": 2048,
-        "type": "ws"
-      },
-      "type": "trojan"
+        "type": "ws",
+        "headers": {},
+        "path": "/"
+      }
     },
     {
-      "password": "644a11df-a74a-49d7-a31e-8bf42e77eb47",
+      "tag": "美国03",
+      "type": "trojan",
       "server": "us003.421421.xyz",
       "server_port": 20230,
-      "tag": "美国03",
+      "password": "644a11df-a74a-49d7-a31e-8bf42e77eb47",
       "tls": {
         "enabled": true,
-        "insecure": true,
-        "server_name": "www.alibaba.com"
+        "server_name": "www.alibaba.com",
+        "insecure": true
       },
       "transport": {
-        "early_data_header_name": "Sec-WebSocket-Protocol",
-        "max_early_data": 2048,
-        "type": "ws"
-      },
-      "type": "trojan"
+        "type": "ws",
+        "headers": {},
+        "path": "/"
+      }
     },
     {
-      "password": "644a11df-a74a-49d7-a31e-8bf42e77eb47",
+      "tag": "美国04",
+      "type": "trojan",
       "server": "us004.421421.xyz",
       "server_port": 20230,
-      "tag": "美国04",
+      "password": "644a11df-a74a-49d7-a31e-8bf42e77eb47",
       "tls": {
         "enabled": true,
-        "insecure": true,
-        "server_name": "www.alibaba.com"
+        "server_name": "www.alibaba.com",
+        "insecure": true
       },
       "transport": {
-        "early_data_header_name": "Sec-WebSocket-Protocol",
-        "max_early_data": 2048,
-        "type": "ws"
-      },
-      "type": "trojan"
+        "type": "ws",
+        "headers": {},
+        "path": "/"
+      }
     },
     {
-      "password": "644a11df-a74a-49d7-a31e-8bf42e77eb47",
-      "server": "sg001.421421.xyz",
-      "server_port": 20230,
       "tag": "邀请好友返利60%",
-      "tls": {
-        "enabled": true,
-        "insecure": true,
-        "server_name": "www.alibaba.com"
-      },
-      "transport": {
-        "early_data_header_name": "Sec-WebSocket-Protocol",
-        "max_early_data": 2048,
-        "type": "ws"
-      },
-      "type": "trojan"
-    },
-    {
-      "password": "644a11df-a74a-49d7-a31e-8bf42e77eb47",
+      "type": "trojan",
       "server": "sg001.421421.xyz",
       "server_port": 20230,
+      "password": "644a11df-a74a-49d7-a31e-8bf42e77eb47",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.alibaba.com",
+        "insecure": true
+      },
+      "transport": {
+        "type": "ws",
+        "headers": {},
+        "path": "/"
+      }
+    },
+    {
       "tag": "官网：tejiajichang.com",
-      "tls": {
-        "enabled": true,
-        "insecure": true,
-        "server_name": "www.alibaba.com"
-      },
-      "transport": {
-        "early_data_header_name": "Sec-WebSocket-Protocol",
-        "max_early_data": 2048,
-        "type": "ws"
-      },
-      "type": "trojan"
-    },
-    {
-      "password": "644a11df-a74a-49d7-a31e-8bf42e77eb47",
+      "type": "trojan",
       "server": "sg001.421421.xyz",
       "server_port": 20230,
-      "tag": "tg群组: https://t.me/tjiajc1",
+      "password": "644a11df-a74a-49d7-a31e-8bf42e77eb47",
       "tls": {
         "enabled": true,
-        "insecure": true,
-        "server_name": "www.alibaba.com"
+        "server_name": "www.alibaba.com",
+        "insecure": true
       },
       "transport": {
-        "early_data_header_name": "Sec-WebSocket-Protocol",
-        "max_early_data": 2048,
-        "type": "ws"
+        "type": "ws",
+        "headers": {},
+        "path": "/"
+      }
+    },
+    {
+      "tag": "tg群组: https://t.me/tjiajc1",
+      "type": "trojan",
+      "server": "sg001.421421.xyz",
+      "server_port": 20230,
+      "password": "644a11df-a74a-49d7-a31e-8bf42e77eb47",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.alibaba.com",
+        "insecure": true
       },
-      "type": "trojan"
+      "transport": {
+        "type": "ws",
+        "headers": {},
+        "path": "/"
+      }
     }
   ],
   "route": {
