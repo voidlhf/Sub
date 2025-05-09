@@ -38,7 +38,7 @@ jobs:
           mkdir -p substore
           cd substore
           curl -OL "${{ vars.SUBSTORE_URL }}"
-          node sub-store.bundle.js &
+          node "${{ vars.SUBSTORE }}" &
 
       - name: Run scripts
         run: |
@@ -46,7 +46,7 @@ jobs:
           
       - name: Clean up substore folder
         run: |
-          pkill -f 'node sub-store.bundle.js' || true
+          pkill -f "node ${{ vars.SUBSTORE }}" || true
           rm -rf substore
     
       - name: Commit changes if any
