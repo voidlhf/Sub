@@ -37,7 +37,7 @@ jobs:
         run: |
           mkdir -p substore
           cd substore
-          curl -OL https://github.com/sub-store-org/Sub-Store/releases/latest/download/sub-store.bundle.js
+          curl -OL "${{ vars.SUBSTORE_URL }}"
           node sub-store.bundle.js &
 
       - name: Run scripts
