@@ -1,3 +1,3 @@
 #!/bin/bash
 
-python gen_configs.py --json "sub.json"
+python -u gen_configs.py --json "sub.json"
