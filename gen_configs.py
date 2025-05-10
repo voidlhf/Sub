@@ -4,6 +4,7 @@ import json
 import argparse
 import requests
 import subprocess
+from urllib.parse import quote
 
 os.chdir(os.path.dirname(os.path.abspath(__file__)))
 
@@ -14,7 +15,8 @@ SINGBOX_DIR = "../singbox"
 def handle_one(name, url):
     print(f"处理订阅: {name}")
 
-    local_url = f"{API_BASE}/download/sub?url={url}"
+    encoded_url = quote(url, safe="")
+    local_url = f"{API_BASE}/download/sub?url={encoded_url}"
     mihomo_out = os.path.join(MIHOMO_DIR, f"{name}.yaml")
     singbox_out = os.path.join(SINGBOX_DIR, f"{name}.json")
 
