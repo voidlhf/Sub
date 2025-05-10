@@ -12,11 +12,20 @@ API_BASE = "http://127.0.0.1:3000"
 MIHOMO_DIR = "../mihomo"
 SINGBOX_DIR = "../singbox"
 
+def encode_gitlab_url(raw_url):
+    encoded = raw_url.replace("%", "%25")
+    encoded = encoded.replace("%", "%25")
+    return encoded
+
 def handle_one(name, url):
     print(f"处理订阅: {name}")
 
-    encoded_url = quote(url, safe="")
+    if url.startswith("https://gitlab.com/api/"):
+        encoded_url = encode_gitlab_url(url)
+    else:
+        encoded_url = quote(url, safe="")
     local_url = f"{API_BASE}/download/sub?url={encoded_url}"
+    
     mihomo_out = os.path.join(MIHOMO_DIR, f"{name}.yaml")
     singbox_out = os.path.join(SINGBOX_DIR, f"{name}.json")
 
