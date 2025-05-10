@@ -1,0 +1,158 @@
+log-level: "debug"
+mixed-port: 7890
+allow-lan: true
+external-controller: "127.0.0.1:9090"
+unified-delay: true
+tcp-concurrent: true
+geodata-mode: true
+geox-url:
+  geoip: "https://ghfast.top/https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geoip.dat"
+  geosite: "https://ghfast.top/https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geosite.dat"
+find-process-mode: "strict"
+global-client-fingerprint: "chrome"
+profile:
+  store-selected: true
+  store-fake-ip: true
+sniffer:
+  enable: true
+  force-dns-mapping: true
+  parse-pure-ip: true
+  override-destination: false
+  sniff:
+    HTTP:
+      ports:
+      - 80
+      - "8080-8880"
+    TLS:
+      ports:
+      - 443
+      - 8443
+    QUIC:
+      ports:
+      - 443
+      - 8443
+tun:
+  enable: true
+  stack: "mixed"
+  dns-hijack:
+  - "any:53"
+  - "tcp://any:53"
+  auto-route: true
+  auto-redirect: true
+  auto-detect-interface: true
+  strict-route: true
+dns:
+  enable: true
+  ipv6: false
+  default-nameserver:
+  - "223.5.5.5"
+  - "119.29.29.29"
+  enhanced-mode: "fake-ip"
+  fake-ip-range: "198.18.0.1/16"
+  nameserver:
+  - "https://dns.cloudflare.com/dns-query"
+  - "https://dns.google/dns-query"
+  nameserver-policy:
+    geosite:cn,private:
+    - "https://dns.alidns.com/dns-query"
+    - "https://doh.pub/dns-query"
+proxies:
+- {name: "🏳️‍🌈 剩余流量：75.84 GB", type: "ss", server: "gdgs.tarioblink.me", port: 30001, cipher: "chacha20-ietf-poly1305", password: "7d77cb42-86e2-41fd-bb00-60b1c3d532d8", udp: true}
+- {name: "🏴‍☠️ 距离下次重置剩余：21 天", type: "ss", server: "gdgs.tarioblink.me", port: 30001, cipher: "chacha20-ietf-poly1305", password: "7d77cb42-86e2-41fd-bb00-60b1c3d532d8", udp: true}
+- {name: "🏴‍☠️ 套餐到期：2025-07-01", type: "ss", server: "gdgs.tarioblink.me", port: 30001, cipher: "chacha20-ietf-poly1305", password: "7d77cb42-86e2-41fd-bb00-60b1c3d532d8", udp: true}
+- {name: "🏴‍☠️ Win/Mac/安卓 教程已推出", type: "ss", server: "gdgs.tarioblink.me", port: 30001, cipher: "chacha20-ietf-poly1305", password: "7d77cb42-86e2-41fd-bb00-60b1c3d532d8", udp: true}
+- {name: "🏴‍☠️ ----👇免费续约地址👇----", type: "ss", server: "gdgs.tarioblink.me", port: 30001, cipher: "chacha20-ietf-poly1305", password: "7d77cb42-86e2-41fd-bb00-60b1c3d532d8", udp: true}
+- {name: "🏴‍☠️ 👉guobaotegong.me", type: "ss", server: "gdgs.tarioblink.me", port: 30001, cipher: "chacha20-ietf-poly1305", password: "7d77cb42-86e2-41fd-bb00-60b1c3d532d8", udp: true}
+- {name: "🏴‍☠️ ----以下为线路----", type: "ss", server: "gdgs.tarioblink.me", port: 30001, cipher: "chacha20-ietf-poly1305", password: "7d77cb42-86e2-41fd-bb00-60b1c3d532d8", udp: true}
+- {name: "🇸🇬 果宝特攻-免费节点-新加坡-A1", type: "ss", server: "xjp2.ydso.xyz", port: 30443, cipher: "chacha20-ietf-poly1305", password: "7d77cb42-86e2-41fd-bb00-60b1c3d532d8", udp: true}
+- {name: "🇸🇬 果宝特攻-免费节点-新加坡-A2", type: "ss", server: "gdgs.tarioblink.me", port: 30001, cipher: "chacha20-ietf-poly1305", password: "7d77cb42-86e2-41fd-bb00-60b1c3d532d8", udp: true}
+- {name: "🇯🇵 果宝特攻-免费节点-日本-A1", type: "ss", server: "147.45.49.219", port: 30443, cipher: "chacha20-ietf-poly1305", password: "7d77cb42-86e2-41fd-bb00-60b1c3d532d8", udp: true}
+- {name: "🇯🇵 果宝特攻-免费节点-日本-A2", type: "ss", server: "gdgs.tarioblink.me", port: 30003, cipher: "chacha20-ietf-poly1305", password: "7d77cb42-86e2-41fd-bb00-60b1c3d532d8", udp: true}
+- {name: "🇨🇳 果宝特攻-免费线路-台湾-01", type: "ss", server: "tw4.ydso.xyz", port: 30443, cipher: "chacha20-ietf-poly1305", password: "7d77cb42-86e2-41fd-bb00-60b1c3d532d8", udp: true}
+- {name: "🇨🇳 果宝特攻-免费线路-台湾-长期", type: "ss", server: "gdgs.tarioblink.me", port: 30002, cipher: "chacha20-ietf-poly1305", password: "7d77cb42-86e2-41fd-bb00-60b1c3d532d8", udp: true}
+proxy-groups:
+- name: "PROXY"
+  type: "select"
+  proxies:
+  - "AUTO"
+  - "🏳️‍🌈 剩余流量：75.84 GB"
+  - "🏴‍☠️ 距离下次重置剩余：21 天"
+  - "🏴‍☠️ 套餐到期：2025-07-01"
+  - "🏴‍☠️ Win/Mac/安卓 教程已推出"
+  - "🏴‍☠️ ----👇免费续约地址👇----"
+  - "🏴‍☠️ 👉guobaotegong.me"
+  - "🏴‍☠️ ----以下为线路----"
+  - "🇸🇬 果宝特攻-免费节点-新加坡-A1"
+  - "🇸🇬 果宝特攻-免费节点-新加坡-A2"
+  - "🇯🇵 果宝特攻-免费节点-日本-A1"
+  - "🇯🇵 果宝特攻-免费节点-日本-A2"
+  - "🇨🇳 果宝特攻-免费线路-台湾-01"
+  - "🇨🇳 果宝特攻-免费线路-台湾-长期"
+- name: "AUTO"
+  type: "url-test"
+  url: "http://www.gstatic.com/generate_204"
+  interval: 300
+  tolerance: 50
+  proxies:
+  - "🏳️‍🌈 剩余流量：75.84 GB"
+  - "🏴‍☠️ 距离下次重置剩余：21 天"
+  - "🏴‍☠️ 套餐到期：2025-07-01"
+  - "🏴‍☠️ Win/Mac/安卓 教程已推出"
+  - "🏴‍☠️ ----👇免费续约地址👇----"
+  - "🏴‍☠️ 👉guobaotegong.me"
+  - "🏴‍☠️ ----以下为线路----"
+  - "🇸🇬 果宝特攻-免费节点-新加坡-A1"
+  - "🇸🇬 果宝特攻-免费节点-新加坡-A2"
+  - "🇯🇵 果宝特攻-免费节点-日本-A1"
+  - "🇯🇵 果宝特攻-免费节点-日本-A2"
+  - "🇨🇳 果宝特攻-免费线路-台湾-01"
+  - "🇨🇳 果宝特攻-免费线路-台湾-长期"
+- name: "AI"
+  type: "select"
+  proxies:
+  - "🏳️‍🌈 剩余流量：75.84 GB"
+  - "🏴‍☠️ 距离下次重置剩余：21 天"
+  - "🏴‍☠️ 套餐到期：2025-07-01"
+  - "🏴‍☠️ Win/Mac/安卓 教程已推出"
+  - "🏴‍☠️ ----👇免费续约地址👇----"
+  - "🏴‍☠️ 👉guobaotegong.me"
+  - "🏴‍☠️ ----以下为线路----"
+  - "🇸🇬 果宝特攻-免费节点-新加坡-A1"
+  - "🇸🇬 果宝特攻-免费节点-新加坡-A2"
+  - "🇯🇵 果宝特攻-免费节点-日本-A1"
+  - "🇯🇵 果宝特攻-免费节点-日本-A2"
+  - "🇨🇳 果宝特攻-免费线路-台湾-01"
+  - "🇨🇳 果宝特攻-免费线路-台湾-长期"
+- name: "HOYO"
+  type: "select"
+  proxies:
+  - "DIRECT"
+  - "🏳️‍🌈 剩余流量：75.84 GB"
+  - "🏴‍☠️ 距离下次重置剩余：21 天"
+  - "🏴‍☠️ 套餐到期：2025-07-01"
+  - "🏴‍☠️ Win/Mac/安卓 教程已推出"
+  - "🏴‍☠️ ----👇免费续约地址👇----"
+  - "🏴‍☠️ 👉guobaotegong.me"
+  - "🏴‍☠️ ----以下为线路----"
+  - "🇸🇬 果宝特攻-免费节点-新加坡-A1"
+  - "🇸🇬 果宝特攻-免费节点-新加坡-A2"
+  - "🇯🇵 果宝特攻-免费节点-日本-A1"
+  - "🇯🇵 果宝特攻-免费节点-日本-A2"
+  - "🇨🇳 果宝特攻-免费线路-台湾-01"
+  - "🇨🇳 果宝特攻-免费线路-台湾-长期"
+rules:
+- "GEOSITE,CATEGORY-ADS-ALL,REJECT"
+- "DOMAIN-SUFFIX,ushd.xmsl.org,DIRECT"
+- "DOMAIN-SUFFIX,cf.gtlx.org,DIRECT"
+- "DOMAIN-SUFFIX,public-operation-hkrpg-sg.hoyoverse.com,HOYO"
+- "DOMAIN-SUFFIX,public-operation-hk4e-sg.hoyoverse.com,HOYO"
+- "DOMAIN-SUFFIX,public-operation-nap-sg.hoyoverse.com,HOYO"
+- "DST-PORT,23301/22101-22102/20501/21601-21606,HOYO"
+- "DOMAIN-KEYWORD,hoyoverse.com,PROXY"
+- "GEOSITE,CATEGORY-AI-!CN,AI"
+- "GEOSITE,GOOGLEFCM,DIRECT"
+- "GEOSITE,PRIVATE,DIRECT"
+- "GEOSITE,CN,DIRECT"
+- "GEOIP,PRIVATE,DIRECT,no-resolve"
+- "GEOIP,CN,DIRECT"
+- "MATCH,PROXY"
