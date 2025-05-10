@@ -12,32 +12,17 @@ MIHOMO_DIR = "../mihomo"
 SINGBOX_DIR = "../singbox"
 
 def handle_one(name, url):
-    print(f"正在添加订阅: {name}")
+    print(f"处理订阅: {name}")
 
-    response = requests.post(
-        f"{API_BASE}/api/subs",
-        headers={"Content-Type": "application/json"},
-        json={"name": name, "url": url}
-    )
+    local_url = f"{API_BASE}/download/sub?url={url}"
+    mihomo_out = os.path.join(MIHOMO_DIR, f"{name}.yaml")
+    singbox_out = os.path.join(SINGBOX_DIR, f"{name}.json")
 
-    if response.status_code in (200, 201):
-        print(f"订阅 [{name}] 添加成功")
+    print("生成 Mihomo 配置...")
+    subprocess.run(["python", "scripts/mihomo-remote-generate.py", local_url, mihomo_out])
 
-        local_url = f"{API_BASE}/download/{name}"
-        mihomo_out = os.path.join(MIHOMO_DIR, f"{name}.yaml")
-        singbox_out = os.path.join(SINGBOX_DIR, f"{name}.json")
-
-        print("生成 Mihomo 配置...")
-        subprocess.run(["python", "scripts/mihomo-remote-generate.py", local_url, mihomo_out])
-
-        print("生成 Singbox 配置...")
-        subprocess.run(["python", "scripts/singbox-remote-generate.py", local_url, singbox_out])
-
-        print(f"清理订阅 [{name}]...")
-        requests.delete(f"{API_BASE}/api/sub/{name}")
-        print(f"订阅 [{name}] 已删除")
-    else:
-        print(f"订阅 [{name}] 添加失败，状态码: {response.status_code}")
+    print("生成 Singbox 配置...")
+    subprocess.run(["python", "scripts/singbox-remote-generate.py", local_url, singbox_out])
 
     print("-----------------------------")
 
