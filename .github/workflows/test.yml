@@ -1,0 +1,16 @@
+name: Test Subscription Fetch
+
+on:
+  workflow_dispatch:  # 允许手动触发
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Fetch subscription
+        run: |
+          curl -v "http://sub.crosswall.org/s/79e5a9b5841e44a8b0fd6c97a6293b24"
