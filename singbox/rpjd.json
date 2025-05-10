@@ -103,6 +103,7 @@
         "🇭🇰 香港6|@ripaojiedian",
         "🇭🇰 香港7|@ripaojiedian",
         "🇹🇼 台湾|@ripaojiedian",
+        "🇹🇼 台湾2|@ripaojiedian",
         "🇯🇵 日本|@ripaojiedian",
         "🇯🇵 日本2|@ripaojiedian",
         "🇯🇵 日本3|@ripaojiedian",
@@ -134,6 +135,7 @@
         "🇭🇰 香港6|@ripaojiedian",
         "🇭🇰 香港7|@ripaojiedian",
         "🇹🇼 台湾|@ripaojiedian",
+        "🇹🇼 台湾2|@ripaojiedian",
         "🇯🇵 日本|@ripaojiedian",
         "🇯🇵 日本2|@ripaojiedian",
         "🇯🇵 日本3|@ripaojiedian",
@@ -164,6 +166,7 @@
         "🇭🇰 香港6|@ripaojiedian",
         "🇭🇰 香港7|@ripaojiedian",
         "🇹🇼 台湾|@ripaojiedian",
+        "🇹🇼 台湾2|@ripaojiedian",
         "🇯🇵 日本|@ripaojiedian",
         "🇯🇵 日本2|@ripaojiedian",
         "🇯🇵 日本3|@ripaojiedian",
@@ -196,6 +199,7 @@
         "🇭🇰 香港6|@ripaojiedian",
         "🇭🇰 香港7|@ripaojiedian",
         "🇹🇼 台湾|@ripaojiedian",
+        "🇹🇼 台湾2|@ripaojiedian",
         "🇯🇵 日本|@ripaojiedian",
         "🇯🇵 日本2|@ripaojiedian",
         "🇯🇵 日本3|@ripaojiedian",
@@ -216,7 +220,7 @@
     {
       "tag": "tg频道:@ripaojiedian",
       "type": "shadowsocks",
-      "server": "18.179.178.170",
+      "server": "18.236.149.239",
       "server_port": 443,
       "method": "aes-256-cfb",
       "password": "awsps0501"
@@ -248,7 +252,7 @@
       "tag": "🇭🇰 香港2|@ripaojiedian",
       "type": "shadowsocks",
       "server": "hkkh11v1.xpmc.cc",
-      "server_port": 48565,
+      "server_port": 54259,
       "method": "chacha20-ietf-poly1305",
       "password": "91a41f4e02dc",
       "plugin": "v2ray-plugin",
@@ -268,19 +272,11 @@
     },
     {
       "tag": "🇭🇰 香港4|@ripaojiedian",
-      "type": "vmess",
-      "server": "43b5a616-sw04g0-swasv3-luwe.hgc1.tcpbbr.net",
-      "server_port": 8080,
-      "uuid": "a2b0fd2b-716f-0df8-d4e2-03a1c00e5f1a",
-      "security": "auto",
-      "alter_id": 0,
-      "transport": {
-        "type": "ws",
-        "headers": {
-          "Host": "broadcastlv.chat.bilibili.com"
-        },
-        "path": "/"
-      }
+      "type": "shadowsocks",
+      "server": "103.149.182.191",
+      "server_port": 8388,
+      "method": "chacha20-ietf",
+      "password": "asd123456"
     },
     {
       "tag": "🇭🇰 香港5|@ripaojiedian",
@@ -333,6 +329,22 @@
       }
     },
     {
+      "tag": "🇹🇼 台湾2|@ripaojiedian",
+      "type": "trojan",
+      "server": "taifo01a.kbservice.club",
+      "server_port": 443,
+      "password": "6e1b9a65-884f-3aa9-9469-bf6ec0f08610",
+      "tls": {
+        "enabled": true,
+        "server_name": "45.32.28.232",
+        "insecure": false,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
       "tag": "🇯🇵 日本|@ripaojiedian",
       "type": "shadowsocks",
       "server": "cn01.efan8867801.xyz",
@@ -340,20 +352,20 @@
       "method": "rc4-md5",
       "password": "efanccyun",
       "plugin": "obfs-local",
-      "plugin_opts": "obfs=http;obfs-host=202505081193439-fXcPpumg6a.download.microsoft.com"
+      "plugin_opts": "obfs=http;obfs-host=202505081193439-ADTUVtshPJ.download.microsoft.com"
     },
     {
       "tag": "🇯🇵 日本2|@ripaojiedian",
       "type": "shadowsocks",
       "server": "103.140.136.242",
-      "server_port": 48512,
+      "server_port": 16622,
       "method": "chacha20-ietf-poly1305",
-      "password": "ee003c5fb8d8",
+      "password": "e03b35b40a25",
       "plugin": "v2ray-plugin",
       "multiplex": {
         "enabled": true
       },
-      "plugin_opts": "mode=websocket;host=jp06v1.3ci.xyz;path=/ywkyahjulb;tls;skip-cert-verify=false"
+      "plugin_opts": "mode=websocket;host=jp06v1.3ci.xyz;path=/ymfvpytvkdp;tls;skip-cert-verify=false"
     },
     {
       "tag": "🇯🇵 日本3|@ripaojiedian",
@@ -428,7 +440,7 @@
       "method": "rc4-md5",
       "password": "efanccyun",
       "plugin": "obfs-local",
-      "plugin_opts": "obfs=http;obfs-host=202505081193439-fXcPpumg6a.download.microsoft.com"
+      "plugin_opts": "obfs=http;obfs-host=202505081193439-ADTUVtshPJ.download.microsoft.com"
     },
     {
       "tag": "🇺🇸 美国3|@ripaojiedian",
@@ -475,7 +487,7 @@
     {
       "tag": "🇯🇵 日本特殊|@ripaojiedian",
       "type": "shadowsocks",
-      "server": "43.206.214.213",
+      "server": "52.199.191.145",
       "server_port": 443,
       "method": "aes-256-cfb",
       "password": "awsps0501"
@@ -483,7 +495,7 @@
     {
       "tag": "🇸🇬 狮城特殊|@ripaojiedian",
       "type": "shadowsocks",
-      "server": "52.27.142.2",
+      "server": "3.35.231.158",
       "server_port": 443,
       "method": "aes-256-cfb",
       "password": "awsps0501"
@@ -491,7 +503,7 @@
     {
       "tag": "🇰🇷 韩国特殊|@ripaojiedian",
       "type": "shadowsocks",
-      "server": "13.212.202.199",
+      "server": "52.197.184.25",
       "server_port": 443,
       "method": "aes-256-cfb",
       "password": "awsps0501"
