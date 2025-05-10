@@ -49,7 +49,7 @@ jobs:
         run: |
           pkill -f "node ${{ vars.SUBSTORE }}" || true
           #rm -rf substore
-          rm substore/root.json substore/{{ vars.SUBSTORE }}
+          rm -f substore/root.json substore/{{ vars.SUBSTORE }}
     
       - name: Commit changes if any
         run: |
