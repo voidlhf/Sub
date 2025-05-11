@@ -53,9 +53,12 @@ dns:
   - "https://dns.cloudflare.com/dns-query"
   - "https://dns.google/dns-query"
   nameserver-policy:
-    geosite:cn,private:
+    geosite:cn,private,googlefcm:
     - "https://dns.alidns.com/dns-query"
     - "https://doh.pub/dns-query"
+  proxy-server-nameserver:
+  - "https://dns.alidns.com/dns-query"
+  - "https://doh.pub/dns-query"
 proxies:
 - {name: "🇺🇸 _US_美国->🏳️_unKnow_未知", type: "trojan", server: "172.67.155.140", port: 443, udp: true, sni: "6667.HUAnGSHanG.dpdNs.orG", password: "1549e70f-dc57-45e3-ac7c-515f0161db72", network: "ws", alpn: ["http/1.1"], skip-cert-verify: false, ws-opts: {path: "/TomYJoQX0RSt1mktNrT"}}
 - {name: "🇺🇸 _CN_中国->_US_美国", type: "vmess", server: "v8.heduian.link", port: 30808, uuid: "cbb3f877-d1fb-344c-87a9-d153bffd5484", cipher: "auto", network: "ws", skip-cert-verify: true, ws-opts: {path: "/oooo", headers: {Host: "v8.heduian.link"}}, alterId: 2}

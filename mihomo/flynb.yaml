@@ -53,9 +53,12 @@ dns:
   - "https://dns.cloudflare.com/dns-query"
   - "https://dns.google/dns-query"
   nameserver-policy:
-    geosite:cn,private:
+    geosite:cn,private,googlefcm:
     - "https://dns.alidns.com/dns-query"
     - "https://doh.pub/dns-query"
+  proxy-server-nameserver:
+  - "https://dns.alidns.com/dns-query"
+  - "https://doh.pub/dns-query"
 proxies:
 - {name: "🏴‍☠️ ✈️ 频道：@HelloWorld_1024", server: "14.18.253.178", port: 9001, client-fingerprint: "chrome", type: "ss", cipher: "chacha20", password: "nUthZ7z3VmyV", tfo: true, udp: true}
 - {name: "🇨🇳 台湾 01", server: "tw01.sqx001.com", port: 443, client-fingerprint: "chrome", type: "http", username: "dmpyoary@mayorlogistic.com", password: "cacb4d4fa26f4eed25e4d17a6370083c", tls: true, skip-cert-verify: true, udp: true, sni: "tw01.sqx001.com"}

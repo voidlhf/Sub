@@ -53,9 +53,12 @@ dns:
   - "https://dns.cloudflare.com/dns-query"
   - "https://dns.google/dns-query"
   nameserver-policy:
-    geosite:cn,private:
+    geosite:cn,private,googlefcm:
     - "https://dns.alidns.com/dns-query"
     - "https://doh.pub/dns-query"
+  proxy-server-nameserver:
+  - "https://dns.alidns.com/dns-query"
+  - "https://doh.pub/dns-query"
 proxies:
 - {name: "🇨🇦 加拿大1@Marisa_kristi", server: "45.95.186.93", port: 50002, client-fingerprint: "random", type: "vless", uuid: "39eb11d9-74c1-4d48-b558-bc31d39f248d", tls: true, tfo: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/?ed=2560", headers: {Host: "etc.mesa.ip-ddns.com"}}, servername: "etc.mesa.ip-ddns.com"}
 - {name: "🇨🇦 加拿大2@Marisa_kristi", server: "45.95.186.147", port: 50002, client-fingerprint: "random", type: "vless", uuid: "39eb11d9-74c1-4d48-b558-bc31d39f248d", tls: true, tfo: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/?ed=2560", headers: {Host: "etc.mesa.ip-ddns.com"}}, servername: "etc.mesa.ip-ddns.com"}

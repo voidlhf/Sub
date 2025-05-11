@@ -53,12 +53,15 @@ dns:
   - "https://dns.cloudflare.com/dns-query"
   - "https://dns.google/dns-query"
   nameserver-policy:
-    geosite:cn,private:
+    geosite:cn,private,googlefcm:
     - "https://dns.alidns.com/dns-query"
     - "https://doh.pub/dns-query"
+  proxy-server-nameserver:
+  - "https://dns.alidns.com/dns-query"
+  - "https://doh.pub/dns-query"
 proxies:
 - {name: "🏳️‍🌈 剩余流量：298.09 GB", server: "38.146.28.134", port: 8443, sni: "mg.ziyouniao.site", up: 1000, down: 1000, skip-cert-verify: false, type: "hysteria2", password: "5c230128-bd04-4b2c-9ef9-0c8f30de71e4"}
-- {name: "🏴‍☠️ 距离下次重置剩余：9 天", server: "38.146.28.134", port: 8443, sni: "mg.ziyouniao.site", up: 1000, down: 1000, skip-cert-verify: false, type: "hysteria2", password: "5c230128-bd04-4b2c-9ef9-0c8f30de71e4"}
+- {name: "🏴‍☠️ 距离下次重置剩余：8 天", server: "38.146.28.134", port: 8443, sni: "mg.ziyouniao.site", up: 1000, down: 1000, skip-cert-verify: false, type: "hysteria2", password: "5c230128-bd04-4b2c-9ef9-0c8f30de71e4"}
 - {name: "🏴‍☠️ 套餐到期：2025-05-20", server: "38.146.28.134", port: 8443, sni: "mg.ziyouniao.site", up: 1000, down: 1000, skip-cert-verify: false, type: "hysteria2", password: "5c230128-bd04-4b2c-9ef9-0c8f30de71e4"}
 - {name: "🇺🇸 美国洛杉矶 1", server: "38.146.28.134", port: 8443, sni: "mg.ziyouniao.site", up: 1000, down: 1000, skip-cert-verify: false, type: "hysteria2", password: "5c230128-bd04-4b2c-9ef9-0c8f30de71e4"}
 - {name: "🇺🇸 美国洛杉矶 2", server: "38.146.28.134", port: 8443, sni: "mg.ziyouniao.site", up: 1000, down: 1000, skip-cert-verify: false, type: "hysteria2", password: "5c230128-bd04-4b2c-9ef9-0c8f30de71e4"}
@@ -82,7 +85,7 @@ proxy-groups:
   proxies:
   - "AUTO"
   - "🏳️‍🌈 剩余流量：298.09 GB"
-  - "🏴‍☠️ 距离下次重置剩余：9 天"
+  - "🏴‍☠️ 距离下次重置剩余：8 天"
   - "🏴‍☠️ 套餐到期：2025-05-20"
   - "🇺🇸 美国洛杉矶 1"
   - "🇺🇸 美国洛杉矶 2"
@@ -107,7 +110,7 @@ proxy-groups:
   tolerance: 50
   proxies:
   - "🏳️‍🌈 剩余流量：298.09 GB"
-  - "🏴‍☠️ 距离下次重置剩余：9 天"
+  - "🏴‍☠️ 距离下次重置剩余：8 天"
   - "🏴‍☠️ 套餐到期：2025-05-20"
   - "🇺🇸 美国洛杉矶 1"
   - "🇺🇸 美国洛杉矶 2"
@@ -129,7 +132,7 @@ proxy-groups:
   type: "select"
   proxies:
   - "🏳️‍🌈 剩余流量：298.09 GB"
-  - "🏴‍☠️ 距离下次重置剩余：9 天"
+  - "🏴‍☠️ 距离下次重置剩余：8 天"
   - "🏴‍☠️ 套餐到期：2025-05-20"
   - "🇺🇸 美国洛杉矶 1"
   - "🇺🇸 美国洛杉矶 2"
@@ -152,7 +155,7 @@ proxy-groups:
   proxies:
   - "DIRECT"
   - "🏳️‍🌈 剩余流量：298.09 GB"
-  - "🏴‍☠️ 距离下次重置剩余：9 天"
+  - "🏴‍☠️ 距离下次重置剩余：8 天"
   - "🏴‍☠️ 套餐到期：2025-05-20"
   - "🇺🇸 美国洛杉矶 1"
   - "🇺🇸 美国洛杉矶 2"

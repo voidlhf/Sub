@@ -53,9 +53,12 @@ dns:
   - "https://dns.cloudflare.com/dns-query"
   - "https://dns.google/dns-query"
   nameserver-policy:
-    geosite:cn,private:
+    geosite:cn,private,googlefcm:
     - "https://dns.alidns.com/dns-query"
     - "https://doh.pub/dns-query"
+  proxy-server-nameserver:
+  - "https://dns.alidns.com/dns-query"
+  - "https://doh.pub/dns-query"
 proxies:
 - {name: "🇨🇳 中国 - 北京 - Hangzhou Alibaba Advertising Co - 5", server: "47.92.152.169", port: 50002, type: "vmess", uuid: "418048af-a293-4b99-9b0c-98ca3580dd24", alterId: 0, cipher: "auto", tls: false, delay: 661}
 - {name: "🇨🇳 中国 - 台湾 - Akari Networks - 115", server: "ngzydd.sub-zrj.com", port: 600, type: "trojan", password: "2f653ecd-c290-451e-a848-f8f525bc5a21", sni: "streaming.sub-zrj.com", delay: 367}

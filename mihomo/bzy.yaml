@@ -53,9 +53,12 @@ dns:
   - "https://dns.cloudflare.com/dns-query"
   - "https://dns.google/dns-query"
   nameserver-policy:
-    geosite:cn,private:
+    geosite:cn,private,googlefcm:
     - "https://dns.alidns.com/dns-query"
     - "https://doh.pub/dns-query"
+  proxy-server-nameserver:
+  - "https://dns.alidns.com/dns-query"
+  - "https://doh.pub/dns-query"
 proxies:
 - {name: "🇭🇰 香港1 @mfbpn", server: "14.18.253.178", port: 9001, type: "ss", cipher: "chacha20", password: "nUthZ7z3VmyV"}
 - {name: "🇭🇰 香港2 @mfbpn", server: "14.18.253.178", port: 9002, type: "ss", cipher: "chacha20", password: "PTgFLLrT5pVg"}

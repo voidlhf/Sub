@@ -53,9 +53,12 @@ dns:
   - "https://dns.cloudflare.com/dns-query"
   - "https://dns.google/dns-query"
   nameserver-policy:
-    geosite:cn,private:
+    geosite:cn,private,googlefcm:
     - "https://dns.alidns.com/dns-query"
     - "https://doh.pub/dns-query"
+  proxy-server-nameserver:
+  - "https://dns.alidns.com/dns-query"
+  - "https://doh.pub/dns-query"
 proxies:
 - {name: "🏴‍☠️ tg频道:@ripaojiedian", server: "3.35.231.158", port: 443, client-fingerprint: "chrome", type: "ss", cipher: "aes-256-cfb", password: "awsps0501", tfo: false}
 - {name: "🇭🇰 香港|@ripaojiedian", server: "vt-bana2-cn-11.ghpgwqswodgzv.com", port: 40021, client-fingerprint: "chrome", type: "trojan", password: "a38c9e28-9960-4e31-9f18-ed2495a756aa", sni: "vt-bana2-cn-11.ghpgwqswodgzv.com", skip-cert-verify: false, network: "ws", ws-opts: {path: "/dl_media", headers: {Host: "vt-bana2-cn-11.ghpgwqswodgzv.com"}}}

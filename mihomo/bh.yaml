@@ -53,9 +53,12 @@ dns:
   - "https://dns.cloudflare.com/dns-query"
   - "https://dns.google/dns-query"
   nameserver-policy:
-    geosite:cn,private:
+    geosite:cn,private,googlefcm:
     - "https://dns.alidns.com/dns-query"
     - "https://doh.pub/dns-query"
+  proxy-server-nameserver:
+  - "https://dns.alidns.com/dns-query"
+  - "https://doh.pub/dns-query"
 proxies:
 - {name: "🏴‍☠️ 已失效", server: "121.227.107.71", port: 42156, type: "ss", cipher: "aes-128-gcm", password: "89b0fd33-9bea-1b7c-4f46-8b817328a901"}
 - {name: "🏴‍☠️ 加频道获取新订阅", server: "120.240.103.35", port: 17315, type: "ss", cipher: "aes-128-gcm", password: "89b0fd33-9bea-1b7c-4f46-8b817328a901"}

@@ -53,9 +53,12 @@ dns:
   - "https://dns.cloudflare.com/dns-query"
   - "https://dns.google/dns-query"
   nameserver-policy:
-    geosite:cn,private:
+    geosite:cn,private,googlefcm:
     - "https://dns.alidns.com/dns-query"
     - "https://doh.pub/dns-query"
+  proxy-server-nameserver:
+  - "https://dns.alidns.com/dns-query"
+  - "https://doh.pub/dns-query"
 proxies:
 - {cipher: "chacha20-ietf-poly1305", name: "🇭🇰 0| 香港 01 | 1x HK", password: "180aeb20-3ef2-41ab-8909-eba54ec35198", port: 36141, server: "free.2weradf.xyz", type: "ss", udp: true, client-fingerprint: "chrome"}
 - {cipher: "chacha20-ietf-poly1305", name: "🇭🇰 0| 香港 02 | 1x HK", password: "180aeb20-3ef2-41ab-8909-eba54ec35198", port: 36143, server: "free.2weradf.xyz", type: "ss", udp: true, client-fingerprint: "chrome"}
