@@ -47,9 +47,12 @@ dns:
     - https://dns.cloudflare.com/dns-query
     - https://dns.google/dns-query
   nameserver-policy:
-    geosite:cn,private:
+    geosite:cn,private,googlefcm:
       - https://dns.alidns.com/dns-query
       - https://doh.pub/dns-query
+  proxy-server-nameserver:
+    - "https://dns.alidns.com/dns-query"
+    - "https://doh.pub/dns-query"
 proxy-groups:
   - name: PROXY
     type: select

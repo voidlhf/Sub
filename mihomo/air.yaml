@@ -53,9 +53,12 @@ dns:
   - "https://dns.cloudflare.com/dns-query"
   - "https://dns.google/dns-query"
   nameserver-policy:
-    geosite:cn,private:
+    geosite:cn,private,googlefcm:
     - "https://dns.alidns.com/dns-query"
     - "https://doh.pub/dns-query"
+  proxy-server-nameserver:
+  - "https://dns.alidns.com/dns-query"
+  - "https://doh.pub/dns-query"
 proxies:
 - {type: "ss", server: "kr-cdn.webcdn.me", port: 55400, cipher: "chacha20-ietf-poly1305", password: "6f7af078-73da-440f-aba0-6378f129e872", name: "🏴‍☠️ 更多节点,购买套餐: https://airapp.us"}
 - {type: "ss", server: "ukai.webcdn.me", port: 37291, cipher: "chacha20-ietf-poly1305", password: "6f7af078-73da-440f-aba0-6378f129e872", name: "🇬🇧 UK"}

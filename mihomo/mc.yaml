@@ -53,211 +53,214 @@ dns:
   - "https://dns.cloudflare.com/dns-query"
   - "https://dns.google/dns-query"
   nameserver-policy:
-    geosite:cn,private:
+    geosite:cn,private,googlefcm:
     - "https://dns.alidns.com/dns-query"
     - "https://doh.pub/dns-query"
+  proxy-server-nameserver:
+  - "https://dns.alidns.com/dns-query"
+  - "https://doh.pub/dns-query"
 proxies:
-- {name: "🇺🇸 美国备用1 tg@jdxll", server: "120.241.44.195", port: 11511, type: "ss", cipher: "aes-256-gcm", password: "77a12a3d-6df0-48c8-a189-b071fcda1456"}
-- {name: "🇺🇸 美国备用2 tg@jdxll", server: "183.2.150.226", port: 11511, type: "ss", cipher: "aes-256-gcm", password: "77a12a3d-6df0-48c8-a189-b071fcda1456"}
-- {name: "🇭🇰 香港-鸣潮机场_联通 1", server: "58.254.186.222", port: 27101, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇭🇰 香港-鸣潮机场_联通 2", server: "58.254.186.231", port: 27101, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇭🇰 香港-鸣潮机场_联通 3", server: "58.254.186.233", port: 27101, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇭🇰 香港-鸣潮机场_联通 4", server: "163.177.47.36", port: 27101, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇭🇰 香港-鸣潮机场_移动 1", server: "120.232.220.45", port: 27101, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇭🇰 香港-鸣潮机场_移动 2", server: "183.240.116.224", port: 27101, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇭🇰 香港-鸣潮机场_移动 3", server: "183.240.116.235", port: 27101, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇭🇰 香港-鸣潮机场_移动 4", server: "183.240.116.252", port: 27101, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇭🇰 香港-鸣潮机场_电信 1", server: "125.94.45.119", port: 27101, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇭🇰 香港-鸣潮机场_电信 2", server: "183.2.150.64", port: 27101, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇭🇰 香港-鸣潮机场_电信 3", server: "183.2.150.90", port: 27101, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇭🇰 香港-鸣潮机场_电信 4", server: "183.2.150.98", port: 27101, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇭🇰 香港-鸣潮机场_联通 5", server: "58.254.186.222", port: 27102, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇭🇰 香港-鸣潮机场_联通 6", server: "58.254.186.231", port: 27102, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇭🇰 香港-鸣潮机场_联通 7", server: "58.254.186.233", port: 27102, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇭🇰 香港-鸣潮机场_联通 8", server: "163.177.47.36", port: 27102, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇭🇰 香港-鸣潮机场_移动 5", server: "120.232.220.45", port: 27102, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇭🇰 香港-鸣潮机场_移动 6", server: "183.240.116.224", port: 27102, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇭🇰 香港-鸣潮机场_移动 7", server: "183.240.116.235", port: 27102, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇭🇰 香港-鸣潮机场_移动 8", server: "183.240.116.252", port: 27102, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇭🇰 香港-鸣潮机场_电信 5", server: "125.94.45.119", port: 27102, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇭🇰 香港-鸣潮机场_电信 6", server: "183.2.150.64", port: 27102, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇭🇰 香港-鸣潮机场_电信 7", server: "183.2.150.90", port: 27102, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇭🇰 香港-鸣潮机场_电信 8", server: "183.2.150.98", port: 27102, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇭🇰 香港-鸣潮机场_联通 9", server: "58.254.186.222", port: 10465, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇭🇰 香港-鸣潮机场_联通 10", server: "58.254.186.231", port: 10465, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇭🇰 香港-鸣潮机场_联通 11", server: "58.254.186.233", port: 10465, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇭🇰 香港-鸣潮机场_联通 12", server: "163.177.47.36", port: 10465, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇭🇰 香港-鸣潮机场_移动 9", server: "120.232.220.45", port: 10465, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇭🇰 香港-鸣潮机场_移动 10", server: "183.240.116.224", port: 10465, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇭🇰 香港-鸣潮机场_移动 11", server: "183.240.116.235", port: 10465, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇭🇰 香港-鸣潮机场_移动 12", server: "183.240.116.252", port: 10465, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇭🇰 香港-鸣潮机场_电信 9", server: "125.94.45.119", port: 10465, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇭🇰 香港-鸣潮机场_电信 10", server: "183.2.150.64", port: 10465, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇭🇰 香港-鸣潮机场_电信 11", server: "183.2.150.90", port: 10465, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇭🇰 香港-鸣潮机场_电信 12", server: "183.2.150.98", port: 10465, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇭🇰 香港-鸣潮机场_联通 13", server: "58.254.186.222", port: 27103, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇭🇰 香港-鸣潮机场_联通 14", server: "58.254.186.231", port: 27103, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇭🇰 香港-鸣潮机场_联通 15", server: "58.254.186.233", port: 27103, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇭🇰 香港-鸣潮机场_联通 16", server: "163.177.47.36", port: 27103, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇭🇰 香港-鸣潮机场_移动 13", server: "120.232.220.45", port: 27103, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇭🇰 香港-鸣潮机场_移动 14", server: "183.240.116.224", port: 27103, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇭🇰 香港-鸣潮机场_移动 15", server: "183.240.116.235", port: 27103, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇭🇰 香港-鸣潮机场_移动 16", server: "183.240.116.252", port: 27103, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇭🇰 香港-鸣潮机场_电信 13", server: "125.94.45.119", port: 27103, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇭🇰 香港-鸣潮机场_电信 14", server: "183.2.150.64", port: 27103, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇭🇰 香港-鸣潮机场_电信 15", server: "183.2.150.90", port: 27103, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇭🇰 香港-鸣潮机场_电信 16", server: "183.2.150.98", port: 27103, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇸🇬 新加坡-鸣潮机场_联通 1", server: "58.254.186.222", port: 27401, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇸🇬 新加坡-鸣潮机场_联通 2", server: "58.254.186.231", port: 27401, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇸🇬 新加坡-鸣潮机场_联通 3", server: "58.254.186.233", port: 27401, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇸🇬 新加坡-鸣潮机场_联通 4", server: "163.177.47.36", port: 27401, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇸🇬 新加坡-鸣潮机场_移动 1", server: "120.232.220.45", port: 27401, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇸🇬 新加坡-鸣潮机场_移动 2", server: "183.240.116.224", port: 27401, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇸🇬 新加坡-鸣潮机场_移动 3", server: "183.240.116.235", port: 27401, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇸🇬 新加坡-鸣潮机场_移动 4", server: "183.240.116.252", port: 27401, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇸🇬 新加坡-鸣潮机场_电信 1", server: "125.94.45.119", port: 27401, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇸🇬 新加坡-鸣潮机场_电信 2", server: "183.2.150.64", port: 27401, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇸🇬 新加坡-鸣潮机场_电信 3", server: "183.2.150.90", port: 27401, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇸🇬 新加坡-鸣潮机场_电信 4", server: "183.2.150.98", port: 27401, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇸🇬 新加坡-鸣潮机场_联通 5", server: "58.254.186.222", port: 42881, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇸🇬 新加坡-鸣潮机场_联通 6", server: "58.254.186.231", port: 42881, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇸🇬 新加坡-鸣潮机场_联通 7", server: "58.254.186.233", port: 42881, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇸🇬 新加坡-鸣潮机场_联通 8", server: "163.177.47.36", port: 42881, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇸🇬 新加坡-鸣潮机场_移动 5", server: "120.232.220.45", port: 42881, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇸🇬 新加坡-鸣潮机场_移动 6", server: "183.240.116.224", port: 42881, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇸🇬 新加坡-鸣潮机场_移动 7", server: "183.240.116.235", port: 42881, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇸🇬 新加坡-鸣潮机场_移动 8", server: "183.240.116.252", port: 42881, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇸🇬 新加坡-鸣潮机场_电信 5", server: "125.94.45.119", port: 42881, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇸🇬 新加坡-鸣潮机场_电信 6", server: "183.2.150.64", port: 42881, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇸🇬 新加坡-鸣潮机场_电信 7", server: "183.2.150.90", port: 42881, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇸🇬 新加坡-鸣潮机场_电信 8", server: "183.2.150.98", port: 42881, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇯🇵 日本-鸣潮机场_联通 1", server: "58.254.186.222", port: 27001, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇯🇵 日本-鸣潮机场_联通 2", server: "58.254.186.231", port: 27001, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇯🇵 日本-鸣潮机场_联通 3", server: "58.254.186.233", port: 27001, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇯🇵 日本-鸣潮机场_联通 4", server: "163.177.47.36", port: 27001, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇯🇵 日本-鸣潮机场_移动 1", server: "120.232.220.45", port: 27001, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇯🇵 日本-鸣潮机场_移动 2", server: "183.240.116.224", port: 27001, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇯🇵 日本-鸣潮机场_移动 3", server: "183.240.116.235", port: 27001, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇯🇵 日本-鸣潮机场_移动 4", server: "183.240.116.252", port: 27001, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇯🇵 日本-鸣潮机场_电信 1", server: "125.94.45.119", port: 27001, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇯🇵 日本-鸣潮机场_电信 2", server: "183.2.150.64", port: 27001, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇯🇵 日本-鸣潮机场_电信 3", server: "183.2.150.90", port: 27001, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇯🇵 日本-鸣潮机场_电信 4", server: "183.2.150.98", port: 27001, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇯🇵 日本-鸣潮机场_联通 5", server: "58.254.186.222", port: 27002, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇯🇵 日本-鸣潮机场_联通 6", server: "58.254.186.231", port: 27002, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇯🇵 日本-鸣潮机场_联通 7", server: "58.254.186.233", port: 27002, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇯🇵 日本-鸣潮机场_联通 8", server: "163.177.47.36", port: 27002, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇯🇵 日本-鸣潮机场_移动 5", server: "120.232.220.45", port: 27002, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇯🇵 日本-鸣潮机场_移动 6", server: "183.240.116.224", port: 27002, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇯🇵 日本-鸣潮机场_移动 7", server: "183.240.116.235", port: 27002, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇯🇵 日本-鸣潮机场_移动 8", server: "183.240.116.252", port: 27002, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇯🇵 日本-鸣潮机场_电信 5", server: "125.94.45.119", port: 27002, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇯🇵 日本-鸣潮机场_电信 6", server: "183.2.150.64", port: 27002, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇯🇵 日本-鸣潮机场_电信 7", server: "183.2.150.90", port: 27002, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇯🇵 日本-鸣潮机场_电信 8", server: "183.2.150.98", port: 27002, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇯🇵 日本-鸣潮机场_联通 9", server: "58.254.186.222", port: 22271, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇯🇵 日本-鸣潮机场_联通 10", server: "58.254.186.231", port: 22271, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇯🇵 日本-鸣潮机场_联通 11", server: "58.254.186.233", port: 22271, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇯🇵 日本-鸣潮机场_联通 12", server: "163.177.47.36", port: 22271, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇯🇵 日本-鸣潮机场_移动 9", server: "120.232.220.45", port: 22271, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇯🇵 日本-鸣潮机场_移动 10", server: "183.240.116.224", port: 22271, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇯🇵 日本-鸣潮机场_移动 11", server: "183.240.116.235", port: 22271, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇯🇵 日本-鸣潮机场_移动 12", server: "183.240.116.252", port: 22271, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇯🇵 日本-鸣潮机场_电信 9", server: "125.94.45.119", port: 22271, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇯🇵 日本-鸣潮机场_电信 10", server: "183.2.150.64", port: 22271, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇯🇵 日本-鸣潮机场_电信 11", server: "183.2.150.90", port: 22271, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇯🇵 日本-鸣潮机场_电信 12", server: "183.2.150.98", port: 22271, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇯🇵 日本-鸣潮机场_联通 13", server: "58.254.186.222", port: 22269, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇯🇵 日本-鸣潮机场_联通 14", server: "58.254.186.231", port: 22269, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇯🇵 日本-鸣潮机场_联通 15", server: "58.254.186.233", port: 22269, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇯🇵 日本-鸣潮机场_联通 16", server: "163.177.47.36", port: 22269, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇯🇵 日本-鸣潮机场_移动 13", server: "120.232.220.45", port: 22269, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇯🇵 日本-鸣潮机场_移动 14", server: "183.240.116.224", port: 22269, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇯🇵 日本-鸣潮机场_移动 15", server: "183.240.116.235", port: 22269, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇯🇵 日本-鸣潮机场_移动 16", server: "183.240.116.252", port: 22269, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇯🇵 日本-鸣潮机场_电信 13", server: "125.94.45.119", port: 22269, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇯🇵 日本-鸣潮机场_电信 14", server: "183.2.150.64", port: 22269, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇯🇵 日本-鸣潮机场_电信 15", server: "183.2.150.90", port: 22269, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇯🇵 日本-鸣潮机场_电信 16", server: "183.2.150.98", port: 22269, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇺🇸 美国-鸣潮机场_联通 1", server: "58.254.186.222", port: 27301, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇺🇸 美国-鸣潮机场_联通 2", server: "58.254.186.231", port: 27301, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇺🇸 美国-鸣潮机场_联通 3", server: "58.254.186.233", port: 27301, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇺🇸 美国-鸣潮机场_联通 4", server: "163.177.47.36", port: 27301, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇺🇸 美国-鸣潮机场_移动 1", server: "120.232.220.45", port: 27301, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇺🇸 美国-鸣潮机场_移动 2", server: "183.240.116.224", port: 27301, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇺🇸 美国-鸣潮机场_移动 3", server: "183.240.116.235", port: 27301, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇺🇸 美国-鸣潮机场_移动 4", server: "183.240.116.252", port: 27301, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇺🇸 美国-鸣潮机场_电信 1", server: "125.94.45.119", port: 27301, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇺🇸 美国-鸣潮机场_电信 2", server: "183.2.150.64", port: 27301, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇺🇸 美国-鸣潮机场_电信 3", server: "183.2.150.90", port: 27301, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇺🇸 美国-鸣潮机场_电信 4", server: "183.2.150.98", port: 27301, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇺🇸 美国-鸣潮机场_联通 5", server: "58.254.186.222", port: 33505, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇺🇸 美国-鸣潮机场_联通 6", server: "58.254.186.231", port: 33505, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇺🇸 美国-鸣潮机场_联通 7", server: "58.254.186.233", port: 33505, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇺🇸 美国-鸣潮机场_联通 8", server: "163.177.47.36", port: 33505, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇺🇸 美国-鸣潮机场_移动 5", server: "120.232.220.45", port: 33505, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇺🇸 美国-鸣潮机场_移动 6", server: "183.240.116.224", port: 33505, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇺🇸 美国-鸣潮机场_移动 7", server: "183.240.116.235", port: 33505, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇺🇸 美国-鸣潮机场_移动 8", server: "183.240.116.252", port: 33505, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇺🇸 美国-鸣潮机场_电信 5", server: "125.94.45.119", port: 33505, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇺🇸 美国-鸣潮机场_电信 6", server: "183.2.150.64", port: 33505, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇺🇸 美国-鸣潮机场_电信 7", server: "183.2.150.90", port: 33505, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇺🇸 美国-鸣潮机场_电信 8", server: "183.2.150.98", port: 33505, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇺🇸 美国-鸣潮机场_联通 9", server: "58.254.186.222", port: 33506, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇺🇸 美国-鸣潮机场_联通 10", server: "58.254.186.231", port: 33506, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇺🇸 美国-鸣潮机场_联通 11", server: "58.254.186.233", port: 33506, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇺🇸 美国-鸣潮机场_联通 12", server: "163.177.47.36", port: 33506, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇺🇸 美国-鸣潮机场_移动 9", server: "120.232.220.45", port: 33506, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇺🇸 美国-鸣潮机场_移动 10", server: "183.240.116.224", port: 33506, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇺🇸 美国-鸣潮机场_移动 11", server: "183.240.116.235", port: 33506, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇺🇸 美国-鸣潮机场_移动 12", server: "183.240.116.252", port: 33506, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇺🇸 美国-鸣潮机场_电信 9", server: "125.94.45.119", port: 33506, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇺🇸 美国-鸣潮机场_电信 10", server: "183.2.150.64", port: 33506, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇺🇸 美国-鸣潮机场_电信 11", server: "183.2.150.90", port: 33506, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇺🇸 美国-鸣潮机场_电信 12", server: "183.2.150.98", port: 33506, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇺🇸 美国-鸣潮机场_联通 13", server: "58.254.186.222", port: 34014, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇺🇸 美国-鸣潮机场_联通 14", server: "58.254.186.231", port: 34014, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇺🇸 美国-鸣潮机场_联通 15", server: "58.254.186.233", port: 34014, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇺🇸 美国-鸣潮机场_联通 16", server: "163.177.47.36", port: 34014, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇺🇸 美国-鸣潮机场_移动 13", server: "120.232.220.45", port: 34014, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇺🇸 美国-鸣潮机场_移动 14", server: "183.240.116.224", port: 34014, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇺🇸 美国-鸣潮机场_移动 15", server: "183.240.116.235", port: 34014, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇺🇸 美国-鸣潮机场_移动 16", server: "183.240.116.252", port: 34014, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇺🇸 美国-鸣潮机场_电信 13", server: "125.94.45.119", port: 34014, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇺🇸 美国-鸣潮机场_电信 14", server: "183.2.150.64", port: 34014, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇺🇸 美国-鸣潮机场_电信 15", server: "183.2.150.90", port: 34014, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇺🇸 美国-鸣潮机场_电信 16", server: "183.2.150.98", port: 34014, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇨🇳 台湾-鸣潮机场_联通 1", server: "58.254.186.222", port: 27201, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇨🇳 台湾-鸣潮机场_联通 2", server: "58.254.186.231", port: 27201, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇨🇳 台湾-鸣潮机场_联通 3", server: "58.254.186.233", port: 27201, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇨🇳 台湾-鸣潮机场_联通 4", server: "163.177.47.36", port: 27201, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇨🇳 台湾-鸣潮机场_移动 1", server: "120.232.220.45", port: 27201, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇨🇳 台湾-鸣潮机场_移动 2", server: "183.240.116.224", port: 27201, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇨🇳 台湾-鸣潮机场_移动 3", server: "183.240.116.235", port: 27201, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇨🇳 台湾-鸣潮机场_移动 4", server: "183.240.116.252", port: 27201, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇨🇳 台湾-鸣潮机场_电信 1", server: "125.94.45.119", port: 27201, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇨🇳 台湾-鸣潮机场_电信 2", server: "183.2.150.64", port: 27201, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇨🇳 台湾-鸣潮机场_电信 3", server: "183.2.150.90", port: 27201, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇨🇳 台湾-鸣潮机场_电信 4", server: "183.2.150.98", port: 27201, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇨🇳 台湾-鸣潮机场_联通 5", server: "58.254.186.222", port: 27202, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇨🇳 台湾-鸣潮机场_联通 6", server: "58.254.186.231", port: 27202, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇨🇳 台湾-鸣潮机场_联通 7", server: "58.254.186.233", port: 27202, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇨🇳 台湾-鸣潮机场_联通 8", server: "163.177.47.36", port: 27202, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇨🇳 台湾-鸣潮机场_移动 5", server: "120.232.220.45", port: 27202, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇨🇳 台湾-鸣潮机场_移动 6", server: "183.240.116.224", port: 27202, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇨🇳 台湾-鸣潮机场_移动 7", server: "183.240.116.235", port: 27202, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇨🇳 台湾-鸣潮机场_移动 8", server: "183.240.116.252", port: 27202, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇨🇳 台湾-鸣潮机场_电信 5", server: "125.94.45.119", port: 27202, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇨🇳 台湾-鸣潮机场_电信 6", server: "183.2.150.64", port: 27202, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇨🇳 台湾-鸣潮机场_电信 7", server: "183.2.150.90", port: 27202, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
-- {name: "🇨🇳 台湾-鸣潮机场_电信 8", server: "183.2.150.98", port: 27202, type: "trojan", password: "a34e4371-4e4b-4695-9bb0-d6bab60a8389", sni: "q08m.vgraxiw73s.hasyaf.cn"}
+- {name: "🇺🇸 美国备用_加频道获取跟多订阅@jdxll", server: "120.232.91.137", port: 11511, type: "ss", cipher: "aes-256-gcm", password: "77a12a3d-6df0-48c8-a189-b071fcda1456"}
+- {name: "🇺🇸 美国备用_无法使用更新订阅", server: "183.2.150.226", port: 11511, type: "ss", cipher: "aes-256-gcm", password: "77a12a3d-6df0-48c8-a189-b071fcda1456"}
+- {name: "🇭🇰 香港-鸣潮机场_联通 1", server: "58.254.186.222", port: 27101, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇭🇰 香港-鸣潮机场_联通 2", server: "58.254.186.231", port: 27101, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇭🇰 香港-鸣潮机场_联通 3", server: "58.254.186.233", port: 27101, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇭🇰 香港-鸣潮机场_联通 4", server: "163.177.47.36", port: 27101, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇭🇰 香港-鸣潮机场_移动 1", server: "120.232.220.45", port: 27101, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇭🇰 香港-鸣潮机场_移动 2", server: "183.240.116.224", port: 27101, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇭🇰 香港-鸣潮机场_移动 3", server: "183.240.116.235", port: 27101, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇭🇰 香港-鸣潮机场_移动 4", server: "183.240.116.252", port: 27101, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇭🇰 香港-鸣潮机场_电信 1", server: "125.94.45.119", port: 27101, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇭🇰 香港-鸣潮机场_电信 2", server: "183.2.150.64", port: 27101, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇭🇰 香港-鸣潮机场_电信 3", server: "183.2.150.90", port: 27101, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇭🇰 香港-鸣潮机场_电信 4", server: "183.2.150.98", port: 27101, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇭🇰 香港-鸣潮机场_联通 5", server: "58.254.186.222", port: 27102, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇭🇰 香港-鸣潮机场_联通 6", server: "58.254.186.231", port: 27102, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇭🇰 香港-鸣潮机场_联通 7", server: "58.254.186.233", port: 27102, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇭🇰 香港-鸣潮机场_联通 8", server: "163.177.47.36", port: 27102, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇭🇰 香港-鸣潮机场_移动 5", server: "120.232.220.45", port: 27102, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇭🇰 香港-鸣潮机场_移动 6", server: "183.240.116.224", port: 27102, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇭🇰 香港-鸣潮机场_移动 7", server: "183.240.116.235", port: 27102, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇭🇰 香港-鸣潮机场_移动 8", server: "183.240.116.252", port: 27102, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇭🇰 香港-鸣潮机场_电信 5", server: "125.94.45.119", port: 27102, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇭🇰 香港-鸣潮机场_电信 6", server: "183.2.150.64", port: 27102, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇭🇰 香港-鸣潮机场_电信 7", server: "183.2.150.90", port: 27102, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇭🇰 香港-鸣潮机场_电信 8", server: "183.2.150.98", port: 27102, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇭🇰 香港-鸣潮机场_联通 9", server: "58.254.186.222", port: 10465, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇭🇰 香港-鸣潮机场_联通 10", server: "58.254.186.231", port: 10465, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇭🇰 香港-鸣潮机场_联通 11", server: "58.254.186.233", port: 10465, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇭🇰 香港-鸣潮机场_联通 12", server: "163.177.47.36", port: 10465, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇭🇰 香港-鸣潮机场_移动 9", server: "120.232.220.45", port: 10465, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇭🇰 香港-鸣潮机场_移动 10", server: "183.240.116.224", port: 10465, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇭🇰 香港-鸣潮机场_移动 11", server: "183.240.116.235", port: 10465, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇭🇰 香港-鸣潮机场_移动 12", server: "183.240.116.252", port: 10465, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇭🇰 香港-鸣潮机场_电信 9", server: "125.94.45.119", port: 10465, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇭🇰 香港-鸣潮机场_电信 10", server: "183.2.150.64", port: 10465, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇭🇰 香港-鸣潮机场_电信 11", server: "183.2.150.90", port: 10465, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇭🇰 香港-鸣潮机场_电信 12", server: "183.2.150.98", port: 10465, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇭🇰 香港-鸣潮机场_联通 13", server: "58.254.186.222", port: 27103, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇭🇰 香港-鸣潮机场_联通 14", server: "58.254.186.231", port: 27103, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇭🇰 香港-鸣潮机场_联通 15", server: "58.254.186.233", port: 27103, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇭🇰 香港-鸣潮机场_联通 16", server: "163.177.47.36", port: 27103, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇭🇰 香港-鸣潮机场_移动 13", server: "120.232.220.45", port: 27103, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇭🇰 香港-鸣潮机场_移动 14", server: "183.240.116.224", port: 27103, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇭🇰 香港-鸣潮机场_移动 15", server: "183.240.116.235", port: 27103, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇭🇰 香港-鸣潮机场_移动 16", server: "183.240.116.252", port: 27103, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇭🇰 香港-鸣潮机场_电信 13", server: "125.94.45.119", port: 27103, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇭🇰 香港-鸣潮机场_电信 14", server: "183.2.150.64", port: 27103, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇭🇰 香港-鸣潮机场_电信 15", server: "183.2.150.90", port: 27103, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇭🇰 香港-鸣潮机场_电信 16", server: "183.2.150.98", port: 27103, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇸🇬 新加坡-鸣潮机场_联通 1", server: "58.254.186.222", port: 27401, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇸🇬 新加坡-鸣潮机场_联通 2", server: "58.254.186.231", port: 27401, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇸🇬 新加坡-鸣潮机场_联通 3", server: "58.254.186.233", port: 27401, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇸🇬 新加坡-鸣潮机场_联通 4", server: "163.177.47.36", port: 27401, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇸🇬 新加坡-鸣潮机场_移动 1", server: "120.232.220.45", port: 27401, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇸🇬 新加坡-鸣潮机场_移动 2", server: "183.240.116.224", port: 27401, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇸🇬 新加坡-鸣潮机场_移动 3", server: "183.240.116.235", port: 27401, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇸🇬 新加坡-鸣潮机场_移动 4", server: "183.240.116.252", port: 27401, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇸🇬 新加坡-鸣潮机场_电信 1", server: "125.94.45.119", port: 27401, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇸🇬 新加坡-鸣潮机场_电信 2", server: "183.2.150.64", port: 27401, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇸🇬 新加坡-鸣潮机场_电信 3", server: "183.2.150.90", port: 27401, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇸🇬 新加坡-鸣潮机场_电信 4", server: "183.2.150.98", port: 27401, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇸🇬 新加坡-鸣潮机场_联通 5", server: "58.254.186.222", port: 42881, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇸🇬 新加坡-鸣潮机场_联通 6", server: "58.254.186.231", port: 42881, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇸🇬 新加坡-鸣潮机场_联通 7", server: "58.254.186.233", port: 42881, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇸🇬 新加坡-鸣潮机场_联通 8", server: "163.177.47.36", port: 42881, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇸🇬 新加坡-鸣潮机场_移动 5", server: "120.232.220.45", port: 42881, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇸🇬 新加坡-鸣潮机场_移动 6", server: "183.240.116.224", port: 42881, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇸🇬 新加坡-鸣潮机场_移动 7", server: "183.240.116.235", port: 42881, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇸🇬 新加坡-鸣潮机场_移动 8", server: "183.240.116.252", port: 42881, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇸🇬 新加坡-鸣潮机场_电信 5", server: "125.94.45.119", port: 42881, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇸🇬 新加坡-鸣潮机场_电信 6", server: "183.2.150.64", port: 42881, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇸🇬 新加坡-鸣潮机场_电信 7", server: "183.2.150.90", port: 42881, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇸🇬 新加坡-鸣潮机场_电信 8", server: "183.2.150.98", port: 42881, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇯🇵 日本-鸣潮机场_联通 1", server: "58.254.186.222", port: 27001, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇯🇵 日本-鸣潮机场_联通 2", server: "58.254.186.231", port: 27001, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇯🇵 日本-鸣潮机场_联通 3", server: "58.254.186.233", port: 27001, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇯🇵 日本-鸣潮机场_联通 4", server: "163.177.47.36", port: 27001, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇯🇵 日本-鸣潮机场_移动 1", server: "120.232.220.45", port: 27001, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇯🇵 日本-鸣潮机场_移动 2", server: "183.240.116.224", port: 27001, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇯🇵 日本-鸣潮机场_移动 3", server: "183.240.116.235", port: 27001, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇯🇵 日本-鸣潮机场_移动 4", server: "183.240.116.252", port: 27001, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇯🇵 日本-鸣潮机场_电信 1", server: "125.94.45.119", port: 27001, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇯🇵 日本-鸣潮机场_电信 2", server: "183.2.150.64", port: 27001, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇯🇵 日本-鸣潮机场_电信 3", server: "183.2.150.90", port: 27001, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇯🇵 日本-鸣潮机场_电信 4", server: "183.2.150.98", port: 27001, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇯🇵 日本-鸣潮机场_联通 5", server: "58.254.186.222", port: 27002, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇯🇵 日本-鸣潮机场_联通 6", server: "58.254.186.231", port: 27002, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇯🇵 日本-鸣潮机场_联通 7", server: "58.254.186.233", port: 27002, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇯🇵 日本-鸣潮机场_联通 8", server: "163.177.47.36", port: 27002, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇯🇵 日本-鸣潮机场_移动 5", server: "120.232.220.45", port: 27002, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇯🇵 日本-鸣潮机场_移动 6", server: "183.240.116.224", port: 27002, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇯🇵 日本-鸣潮机场_移动 7", server: "183.240.116.235", port: 27002, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇯🇵 日本-鸣潮机场_移动 8", server: "183.240.116.252", port: 27002, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇯🇵 日本-鸣潮机场_电信 5", server: "125.94.45.119", port: 27002, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇯🇵 日本-鸣潮机场_电信 6", server: "183.2.150.64", port: 27002, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇯🇵 日本-鸣潮机场_电信 7", server: "183.2.150.90", port: 27002, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇯🇵 日本-鸣潮机场_电信 8", server: "183.2.150.98", port: 27002, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇯🇵 日本-鸣潮机场_联通 9", server: "58.254.186.222", port: 22271, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇯🇵 日本-鸣潮机场_联通 10", server: "58.254.186.231", port: 22271, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇯🇵 日本-鸣潮机场_联通 11", server: "58.254.186.233", port: 22271, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇯🇵 日本-鸣潮机场_联通 12", server: "163.177.47.36", port: 22271, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇯🇵 日本-鸣潮机场_移动 9", server: "120.232.220.45", port: 22271, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇯🇵 日本-鸣潮机场_移动 10", server: "183.240.116.224", port: 22271, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇯🇵 日本-鸣潮机场_移动 11", server: "183.240.116.235", port: 22271, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇯🇵 日本-鸣潮机场_移动 12", server: "183.240.116.252", port: 22271, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇯🇵 日本-鸣潮机场_电信 9", server: "125.94.45.119", port: 22271, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇯🇵 日本-鸣潮机场_电信 10", server: "183.2.150.64", port: 22271, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇯🇵 日本-鸣潮机场_电信 11", server: "183.2.150.90", port: 22271, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇯🇵 日本-鸣潮机场_电信 12", server: "183.2.150.98", port: 22271, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇯🇵 日本-鸣潮机场_联通 13", server: "58.254.186.222", port: 22269, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇯🇵 日本-鸣潮机场_联通 14", server: "58.254.186.231", port: 22269, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇯🇵 日本-鸣潮机场_联通 15", server: "58.254.186.233", port: 22269, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇯🇵 日本-鸣潮机场_联通 16", server: "163.177.47.36", port: 22269, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇯🇵 日本-鸣潮机场_移动 13", server: "120.232.220.45", port: 22269, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇯🇵 日本-鸣潮机场_移动 14", server: "183.240.116.224", port: 22269, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇯🇵 日本-鸣潮机场_移动 15", server: "183.240.116.235", port: 22269, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇯🇵 日本-鸣潮机场_移动 16", server: "183.240.116.252", port: 22269, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇯🇵 日本-鸣潮机场_电信 13", server: "125.94.45.119", port: 22269, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇯🇵 日本-鸣潮机场_电信 14", server: "183.2.150.64", port: 22269, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇯🇵 日本-鸣潮机场_电信 15", server: "183.2.150.90", port: 22269, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇯🇵 日本-鸣潮机场_电信 16", server: "183.2.150.98", port: 22269, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇺🇸 美国-鸣潮机场_联通 1", server: "58.254.186.222", port: 27301, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇺🇸 美国-鸣潮机场_联通 2", server: "58.254.186.231", port: 27301, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇺🇸 美国-鸣潮机场_联通 3", server: "58.254.186.233", port: 27301, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇺🇸 美国-鸣潮机场_联通 4", server: "163.177.47.36", port: 27301, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇺🇸 美国-鸣潮机场_移动 1", server: "120.232.220.45", port: 27301, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇺🇸 美国-鸣潮机场_移动 2", server: "183.240.116.224", port: 27301, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇺🇸 美国-鸣潮机场_移动 3", server: "183.240.116.235", port: 27301, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇺🇸 美国-鸣潮机场_移动 4", server: "183.240.116.252", port: 27301, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇺🇸 美国-鸣潮机场_电信 1", server: "125.94.45.119", port: 27301, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇺🇸 美国-鸣潮机场_电信 2", server: "183.2.150.64", port: 27301, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇺🇸 美国-鸣潮机场_电信 3", server: "183.2.150.90", port: 27301, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇺🇸 美国-鸣潮机场_电信 4", server: "183.2.150.98", port: 27301, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇺🇸 美国-鸣潮机场_联通 5", server: "58.254.186.222", port: 33505, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇺🇸 美国-鸣潮机场_联通 6", server: "58.254.186.231", port: 33505, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇺🇸 美国-鸣潮机场_联通 7", server: "58.254.186.233", port: 33505, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇺🇸 美国-鸣潮机场_联通 8", server: "163.177.47.36", port: 33505, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇺🇸 美国-鸣潮机场_移动 5", server: "120.232.220.45", port: 33505, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇺🇸 美国-鸣潮机场_移动 6", server: "183.240.116.224", port: 33505, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇺🇸 美国-鸣潮机场_移动 7", server: "183.240.116.235", port: 33505, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇺🇸 美国-鸣潮机场_移动 8", server: "183.240.116.252", port: 33505, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇺🇸 美国-鸣潮机场_电信 5", server: "125.94.45.119", port: 33505, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇺🇸 美国-鸣潮机场_电信 6", server: "183.2.150.64", port: 33505, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇺🇸 美国-鸣潮机场_电信 7", server: "183.2.150.90", port: 33505, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇺🇸 美国-鸣潮机场_电信 8", server: "183.2.150.98", port: 33505, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇺🇸 美国-鸣潮机场_联通 9", server: "58.254.186.222", port: 33506, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇺🇸 美国-鸣潮机场_联通 10", server: "58.254.186.231", port: 33506, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇺🇸 美国-鸣潮机场_联通 11", server: "58.254.186.233", port: 33506, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇺🇸 美国-鸣潮机场_联通 12", server: "163.177.47.36", port: 33506, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇺🇸 美国-鸣潮机场_移动 9", server: "120.232.220.45", port: 33506, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇺🇸 美国-鸣潮机场_移动 10", server: "183.240.116.224", port: 33506, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇺🇸 美国-鸣潮机场_移动 11", server: "183.240.116.235", port: 33506, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇺🇸 美国-鸣潮机场_移动 12", server: "183.240.116.252", port: 33506, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇺🇸 美国-鸣潮机场_电信 9", server: "125.94.45.119", port: 33506, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇺🇸 美国-鸣潮机场_电信 10", server: "183.2.150.64", port: 33506, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇺🇸 美国-鸣潮机场_电信 11", server: "183.2.150.90", port: 33506, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇺🇸 美国-鸣潮机场_电信 12", server: "183.2.150.98", port: 33506, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇺🇸 美国-鸣潮机场_联通 13", server: "58.254.186.222", port: 34014, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇺🇸 美国-鸣潮机场_联通 14", server: "58.254.186.231", port: 34014, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇺🇸 美国-鸣潮机场_联通 15", server: "58.254.186.233", port: 34014, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇺🇸 美国-鸣潮机场_联通 16", server: "163.177.47.36", port: 34014, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇺🇸 美国-鸣潮机场_移动 13", server: "120.232.220.45", port: 34014, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇺🇸 美国-鸣潮机场_移动 14", server: "183.240.116.224", port: 34014, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇺🇸 美国-鸣潮机场_移动 15", server: "183.240.116.235", port: 34014, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇺🇸 美国-鸣潮机场_移动 16", server: "183.240.116.252", port: 34014, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇺🇸 美国-鸣潮机场_电信 13", server: "125.94.45.119", port: 34014, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇺🇸 美国-鸣潮机场_电信 14", server: "183.2.150.64", port: 34014, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇺🇸 美国-鸣潮机场_电信 15", server: "183.2.150.90", port: 34014, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇺🇸 美国-鸣潮机场_电信 16", server: "183.2.150.98", port: 34014, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇨🇳 台湾-鸣潮机场_联通 1", server: "58.254.186.222", port: 27201, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇨🇳 台湾-鸣潮机场_联通 2", server: "58.254.186.231", port: 27201, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇨🇳 台湾-鸣潮机场_联通 3", server: "58.254.186.233", port: 27201, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇨🇳 台湾-鸣潮机场_联通 4", server: "163.177.47.36", port: 27201, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇨🇳 台湾-鸣潮机场_移动 1", server: "120.232.220.45", port: 27201, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇨🇳 台湾-鸣潮机场_移动 2", server: "183.240.116.224", port: 27201, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇨🇳 台湾-鸣潮机场_移动 3", server: "183.240.116.235", port: 27201, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇨🇳 台湾-鸣潮机场_移动 4", server: "183.240.116.252", port: 27201, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇨🇳 台湾-鸣潮机场_电信 1", server: "125.94.45.119", port: 27201, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇨🇳 台湾-鸣潮机场_电信 2", server: "183.2.150.64", port: 27201, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇨🇳 台湾-鸣潮机场_电信 3", server: "183.2.150.90", port: 27201, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇨🇳 台湾-鸣潮机场_电信 4", server: "183.2.150.98", port: 27201, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇨🇳 台湾-鸣潮机场_联通 5", server: "58.254.186.222", port: 27202, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇨🇳 台湾-鸣潮机场_联通 6", server: "58.254.186.231", port: 27202, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇨🇳 台湾-鸣潮机场_联通 7", server: "58.254.186.233", port: 27202, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇨🇳 台湾-鸣潮机场_联通 8", server: "163.177.47.36", port: 27202, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇨🇳 台湾-鸣潮机场_移动 5", server: "120.232.220.45", port: 27202, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇨🇳 台湾-鸣潮机场_移动 6", server: "183.240.116.224", port: 27202, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇨🇳 台湾-鸣潮机场_移动 7", server: "183.240.116.235", port: 27202, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇨🇳 台湾-鸣潮机场_移动 8", server: "183.240.116.252", port: 27202, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇨🇳 台湾-鸣潮机场_电信 5", server: "125.94.45.119", port: 27202, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇨🇳 台湾-鸣潮机场_电信 6", server: "183.2.150.64", port: 27202, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇨🇳 台湾-鸣潮机场_电信 7", server: "183.2.150.90", port: 27202, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
+- {name: "🇨🇳 台湾-鸣潮机场_电信 8", server: "183.2.150.98", port: 27202, type: "trojan", password: "00adf586-fdca-461d-8ab6-bdb83e97f8ab", sni: "q08m.vgraxiw73s.hasyaf.cn", skip-cert-verify: true}
 proxy-groups:
 - name: "PROXY"
   type: "select"
   proxies:
   - "AUTO"
-  - "🇺🇸 美国备用1 tg@jdxll"
-  - "🇺🇸 美国备用2 tg@jdxll"
+  - "🇺🇸 美国备用_加频道获取跟多订阅@jdxll"
+  - "🇺🇸 美国备用_无法使用更新订阅"
   - "🇭🇰 香港-鸣潮机场_联通 1"
   - "🇭🇰 香港-鸣潮机场_联通 2"
   - "🇭🇰 香港-鸣潮机场_联通 3"
@@ -456,8 +459,8 @@ proxy-groups:
   interval: 300
   tolerance: 50
   proxies:
-  - "🇺🇸 美国备用1 tg@jdxll"
-  - "🇺🇸 美国备用2 tg@jdxll"
+  - "🇺🇸 美国备用_加频道获取跟多订阅@jdxll"
+  - "🇺🇸 美国备用_无法使用更新订阅"
   - "🇭🇰 香港-鸣潮机场_联通 1"
   - "🇭🇰 香港-鸣潮机场_联通 2"
   - "🇭🇰 香港-鸣潮机场_联通 3"
@@ -653,8 +656,8 @@ proxy-groups:
 - name: "AI"
   type: "select"
   proxies:
-  - "🇺🇸 美国备用1 tg@jdxll"
-  - "🇺🇸 美国备用2 tg@jdxll"
+  - "🇺🇸 美国备用_加频道获取跟多订阅@jdxll"
+  - "🇺🇸 美国备用_无法使用更新订阅"
   - "🇭🇰 香港-鸣潮机场_联通 1"
   - "🇭🇰 香港-鸣潮机场_联通 2"
   - "🇭🇰 香港-鸣潮机场_联通 3"
@@ -851,8 +854,8 @@ proxy-groups:
   type: "select"
   proxies:
   - "DIRECT"
-  - "🇺🇸 美国备用1 tg@jdxll"
-  - "🇺🇸 美国备用2 tg@jdxll"
+  - "🇺🇸 美国备用_加频道获取跟多订阅@jdxll"
+  - "🇺🇸 美国备用_无法使用更新订阅"
   - "🇭🇰 香港-鸣潮机场_联通 1"
   - "🇭🇰 香港-鸣潮机场_联通 2"
   - "🇭🇰 香港-鸣潮机场_联通 3"

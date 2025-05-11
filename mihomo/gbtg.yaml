@@ -53,12 +53,15 @@ dns:
   - "https://dns.cloudflare.com/dns-query"
   - "https://dns.google/dns-query"
   nameserver-policy:
-    geosite:cn,private:
+    geosite:cn,private,googlefcm:
     - "https://dns.alidns.com/dns-query"
     - "https://doh.pub/dns-query"
+  proxy-server-nameserver:
+  - "https://dns.alidns.com/dns-query"
+  - "https://doh.pub/dns-query"
 proxies:
-- {name: "🏳️‍🌈 剩余流量：75.84 GB", type: "ss", server: "gdgs.tarioblink.me", port: 30001, cipher: "chacha20-ietf-poly1305", password: "7d77cb42-86e2-41fd-bb00-60b1c3d532d8", udp: true}
-- {name: "🏴‍☠️ 距离下次重置剩余：21 天", type: "ss", server: "gdgs.tarioblink.me", port: 30001, cipher: "chacha20-ietf-poly1305", password: "7d77cb42-86e2-41fd-bb00-60b1c3d532d8", udp: true}
+- {name: "🏳️‍🌈 剩余流量：57.07 GB", type: "ss", server: "gdgs.tarioblink.me", port: 30001, cipher: "chacha20-ietf-poly1305", password: "7d77cb42-86e2-41fd-bb00-60b1c3d532d8", udp: true}
+- {name: "🏴‍☠️ 距离下次重置剩余：20 天", type: "ss", server: "gdgs.tarioblink.me", port: 30001, cipher: "chacha20-ietf-poly1305", password: "7d77cb42-86e2-41fd-bb00-60b1c3d532d8", udp: true}
 - {name: "🏴‍☠️ 套餐到期：2025-07-01", type: "ss", server: "gdgs.tarioblink.me", port: 30001, cipher: "chacha20-ietf-poly1305", password: "7d77cb42-86e2-41fd-bb00-60b1c3d532d8", udp: true}
 - {name: "🏴‍☠️ Win/Mac/安卓 教程已推出", type: "ss", server: "gdgs.tarioblink.me", port: 30001, cipher: "chacha20-ietf-poly1305", password: "7d77cb42-86e2-41fd-bb00-60b1c3d532d8", udp: true}
 - {name: "🏴‍☠️ ----👇免费续约地址👇----", type: "ss", server: "gdgs.tarioblink.me", port: 30001, cipher: "chacha20-ietf-poly1305", password: "7d77cb42-86e2-41fd-bb00-60b1c3d532d8", udp: true}
@@ -75,8 +78,8 @@ proxy-groups:
   type: "select"
   proxies:
   - "AUTO"
-  - "🏳️‍🌈 剩余流量：75.84 GB"
-  - "🏴‍☠️ 距离下次重置剩余：21 天"
+  - "🏳️‍🌈 剩余流量：57.07 GB"
+  - "🏴‍☠️ 距离下次重置剩余：20 天"
   - "🏴‍☠️ 套餐到期：2025-07-01"
   - "🏴‍☠️ Win/Mac/安卓 教程已推出"
   - "🏴‍☠️ ----👇免费续约地址👇----"
@@ -94,8 +97,8 @@ proxy-groups:
   interval: 300
   tolerance: 50
   proxies:
-  - "🏳️‍🌈 剩余流量：75.84 GB"
-  - "🏴‍☠️ 距离下次重置剩余：21 天"
+  - "🏳️‍🌈 剩余流量：57.07 GB"
+  - "🏴‍☠️ 距离下次重置剩余：20 天"
   - "🏴‍☠️ 套餐到期：2025-07-01"
   - "🏴‍☠️ Win/Mac/安卓 教程已推出"
   - "🏴‍☠️ ----👇免费续约地址👇----"
@@ -110,8 +113,8 @@ proxy-groups:
 - name: "AI"
   type: "select"
   proxies:
-  - "🏳️‍🌈 剩余流量：75.84 GB"
-  - "🏴‍☠️ 距离下次重置剩余：21 天"
+  - "🏳️‍🌈 剩余流量：57.07 GB"
+  - "🏴‍☠️ 距离下次重置剩余：20 天"
   - "🏴‍☠️ 套餐到期：2025-07-01"
   - "🏴‍☠️ Win/Mac/安卓 教程已推出"
   - "🏴‍☠️ ----👇免费续约地址👇----"
@@ -127,8 +130,8 @@ proxy-groups:
   type: "select"
   proxies:
   - "DIRECT"
-  - "🏳️‍🌈 剩余流量：75.84 GB"
-  - "🏴‍☠️ 距离下次重置剩余：21 天"
+  - "🏳️‍🌈 剩余流量：57.07 GB"
+  - "🏴‍☠️ 距离下次重置剩余：20 天"
   - "🏴‍☠️ 套餐到期：2025-07-01"
   - "🏴‍☠️ Win/Mac/安卓 教程已推出"
   - "🏴‍☠️ ----👇免费续约地址👇----"
