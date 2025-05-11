@@ -1,0 +1,226 @@
+log-level: "debug"
+mixed-port: 7890
+allow-lan: true
+external-controller: "127.0.0.1:9090"
+unified-delay: true
+tcp-concurrent: true
+geodata-mode: true
+geox-url:
+  geoip: "https://ghfast.top/https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geoip.dat"
+  geosite: "https://ghfast.top/https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geosite.dat"
+find-process-mode: "strict"
+global-client-fingerprint: "chrome"
+profile:
+  store-selected: true
+  store-fake-ip: true
+sniffer:
+  enable: true
+  force-dns-mapping: true
+  parse-pure-ip: true
+  override-destination: false
+  sniff:
+    HTTP:
+      ports:
+      - 80
+      - "8080-8880"
+    TLS:
+      ports:
+      - 443
+      - 8443
+    QUIC:
+      ports:
+      - 443
+      - 8443
+tun:
+  enable: true
+  stack: "mixed"
+  dns-hijack:
+  - "any:53"
+  - "tcp://any:53"
+  auto-route: true
+  auto-redirect: true
+  auto-detect-interface: true
+  strict-route: true
+dns:
+  enable: true
+  ipv6: false
+  default-nameserver:
+  - "223.5.5.5"
+  - "119.29.29.29"
+  enhanced-mode: "fake-ip"
+  fake-ip-range: "198.18.0.1/16"
+  nameserver:
+  - "https://dns.cloudflare.com/dns-query"
+  - "https://dns.google/dns-query"
+  nameserver-policy:
+    geosite:cn,private,googlefcm:
+    - "https://dns.alidns.com/dns-query"
+    - "https://doh.pub/dns-query"
+  proxy-server-nameserver:
+  - "https://dns.alidns.com/dns-query"
+  - "https://doh.pub/dns-query"
+proxies:
+- {name: "🏴‍☠️ 官网：hajimi.icu", type: "vmess", server: "a07757.cd5c61a3-2d40-2641.cfd", port: 80, uuid: "5be76fa5-3758-4282-bb54-b1efabd6ba3d", alterId: 0, cipher: "auto", network: "ws", ws-opts: {path: "/", headers: {Host: "kr03s.cd5c61a3-2d40-2641.cfd"}}, udp: true}
+- {name: "🏴‍☠️ 新的TG群组：@newhajimi", type: "vmess", server: "a07757.cd5c61a3-2d40-2641.cfd", port: 80, uuid: "5be76fa5-3758-4282-bb54-b1efabd6ba3d", alterId: 0, cipher: "auto", network: "ws", ws-opts: {path: "/", headers: {Host: "hk02s.cd5c61a3-2d40-2641.cfd"}}, udp: true}
+- {name: "🏳️‍🌈 节点全红检查是否流量已用完", type: "vmess", server: "a07757.cd5c61a3-2d40-2641.cfd", port: 80, uuid: "5be76fa5-3758-4282-bb54-b1efabd6ba3d", alterId: 0, cipher: "auto", network: "ws", ws-opts: {path: "/", headers: {Host: "us03s.cd5c61a3-2d40-2641.cfd"}}, udp: true}
+- {name: "🏴‍☠️ 直连订阅每日早更，注意更新你的本地订阅", type: "vmess", server: "a07757.cd5c61a3-2d40-2641.cfd", port: 80, uuid: "5be76fa5-3758-4282-bb54-b1efabd6ba3d", alterId: 0, cipher: "auto", network: "ws", ws-opts: {path: "/", headers: {Host: "hk03s.cd5c61a3-2d40-2641.cfd"}}, udp: true}
+- {name: "🏳️‍🌈 剩余流量：11037.32 GB", type: "vmess", server: "a07757.cd5c61a3-2d40-2641.cfd", port: 80, uuid: "5be76fa5-3758-4282-bb54-b1efabd6ba3d", alterId: 0, cipher: "auto", network: "ws", ws-opts: {path: "/", headers: {Host: "jp04s.cd5c61a3-2d40-2641.cfd"}}, udp: true}
+- {name: "🏴‍☠️ 订阅到期：2124-06-03", type: "vmess", server: "a07757.cd5c61a3-2d40-2641.cfd", port: 80, uuid: "5be76fa5-3758-4282-bb54-b1efabd6ba3d", alterId: 0, cipher: "auto", network: "ws", ws-opts: {path: "/", headers: {Host: "jp03s.cd5c61a3-2d40-2641.cfd"}}, udp: true}
+- {name: "🇭🇰 ?? 香港 - 1", type: "vmess", server: "a07757.cd5c61a3-2d40-2641.cfd", port: 80, uuid: "5be76fa5-3758-4282-bb54-b1efabd6ba3d", alterId: 0, cipher: "auto", network: "ws", ws-opts: {path: "/", headers: {Host: "hk01s.cd5c61a3-2d40-2641.cfd"}}, udp: true}
+- {name: "🇸🇬 ?? 新加坡 - 1", type: "vmess", server: "a07757.cd5c61a3-2d40-2641.cfd", port: 80, uuid: "5be76fa5-3758-4282-bb54-b1efabd6ba3d", alterId: 0, cipher: "auto", network: "ws", ws-opts: {path: "/", headers: {Host: "sg01s.cd5c61a3-2d40-2641.cfd"}}, udp: true}
+- {name: "🇺🇸 ?? 美国 - 1", type: "vmess", server: "a07757.cd5c61a3-2d40-2641.cfd", port: 80, uuid: "5be76fa5-3758-4282-bb54-b1efabd6ba3d", alterId: 0, cipher: "auto", network: "ws", ws-opts: {path: "/", headers: {Host: "us01s.cd5c61a3-2d40-2641.cfd"}}, udp: true}
+- {name: "🇯🇵 ?? 日本 - 1", type: "vmess", server: "a07757.cd5c61a3-2d40-2641.cfd", port: 80, uuid: "5be76fa5-3758-4282-bb54-b1efabd6ba3d", alterId: 0, cipher: "auto", network: "ws", ws-opts: {path: "/", headers: {Host: "jp01s.cd5c61a3-2d40-2641.cfd"}}, udp: true}
+- {name: "🇰🇷 ?? 韩国 - 1", type: "vmess", server: "a07757.cd5c61a3-2d40-2641.cfd", port: 80, uuid: "5be76fa5-3758-4282-bb54-b1efabd6ba3d", alterId: 0, cipher: "auto", network: "ws", ws-opts: {path: "/", headers: {Host: "kr01s.cd5c61a3-2d40-2641.cfd"}}, udp: true}
+- {name: "🇭🇰 ?? 香港 - 2", type: "vmess", server: "a07757.cd5c61a3-2d40-2641.cfd", port: 80, uuid: "5be76fa5-3758-4282-bb54-b1efabd6ba3d", alterId: 0, cipher: "auto", network: "ws", ws-opts: {path: "/", headers: {Host: "hk02s.cd5c61a3-2d40-2641.cfd"}}, udp: true}
+- {name: "🇸🇬 ?? 新加坡 - 2", type: "vmess", server: "a07757.cd5c61a3-2d40-2641.cfd", port: 80, uuid: "5be76fa5-3758-4282-bb54-b1efabd6ba3d", alterId: 0, cipher: "auto", network: "ws", ws-opts: {path: "/", headers: {Host: "sg02s.cd5c61a3-2d40-2641.cfd"}}, udp: true}
+- {name: "🇺🇸 ?? 美国 - 2", type: "vmess", server: "a07757.cd5c61a3-2d40-2641.cfd", port: 80, uuid: "5be76fa5-3758-4282-bb54-b1efabd6ba3d", alterId: 0, cipher: "auto", network: "ws", ws-opts: {path: "/", headers: {Host: "us02s.cd5c61a3-2d40-2641.cfd"}}, udp: true}
+- {name: "🇯🇵 ?? 日本 - 2", type: "vmess", server: "a07757.cd5c61a3-2d40-2641.cfd", port: 80, uuid: "5be76fa5-3758-4282-bb54-b1efabd6ba3d", alterId: 0, cipher: "auto", network: "ws", ws-opts: {path: "/", headers: {Host: "jp02s.cd5c61a3-2d40-2641.cfd"}}, udp: true}
+- {name: "🇰🇷 ?? 韩国 - 2", type: "vmess", server: "a07757.cd5c61a3-2d40-2641.cfd", port: 80, uuid: "5be76fa5-3758-4282-bb54-b1efabd6ba3d", alterId: 0, cipher: "auto", network: "ws", ws-opts: {path: "/", headers: {Host: "kr02s.cd5c61a3-2d40-2641.cfd"}}, udp: true}
+- {name: "🇭🇰 ?? 香港 - 3", type: "vmess", server: "a07757.cd5c61a3-2d40-2641.cfd", port: 80, uuid: "5be76fa5-3758-4282-bb54-b1efabd6ba3d", alterId: 0, cipher: "auto", network: "ws", ws-opts: {path: "/", headers: {Host: "hk03s.cd5c61a3-2d40-2641.cfd"}}, udp: true}
+- {name: "🇸🇬 ?? 新加坡 - 3", type: "vmess", server: "a07757.cd5c61a3-2d40-2641.cfd", port: 80, uuid: "5be76fa5-3758-4282-bb54-b1efabd6ba3d", alterId: 0, cipher: "auto", network: "ws", ws-opts: {path: "/", headers: {Host: "sg03s.cd5c61a3-2d40-2641.cfd"}}, udp: true}
+- {name: "🇺🇸 ?? 美国 - 3", type: "vmess", server: "a07757.cd5c61a3-2d40-2641.cfd", port: 80, uuid: "5be76fa5-3758-4282-bb54-b1efabd6ba3d", alterId: 0, cipher: "auto", network: "ws", ws-opts: {path: "/", headers: {Host: "us03s.cd5c61a3-2d40-2641.cfd"}}, udp: true}
+- {name: "🇯🇵 ?? 日本 - 3", type: "vmess", server: "a07757.cd5c61a3-2d40-2641.cfd", port: 80, uuid: "5be76fa5-3758-4282-bb54-b1efabd6ba3d", alterId: 0, cipher: "auto", network: "ws", ws-opts: {path: "/", headers: {Host: "jp03s.cd5c61a3-2d40-2641.cfd"}}, udp: true}
+- {name: "🇰🇷 ?? 韩国 - 3", type: "vmess", server: "a07757.cd5c61a3-2d40-2641.cfd", port: 80, uuid: "5be76fa5-3758-4282-bb54-b1efabd6ba3d", alterId: 0, cipher: "auto", network: "ws", ws-opts: {path: "/", headers: {Host: "kr03s.cd5c61a3-2d40-2641.cfd"}}, udp: true}
+- {name: "🇭🇰 ?? 香港 - 4", type: "vmess", server: "a07757.cd5c61a3-2d40-2641.cfd", port: 80, uuid: "5be76fa5-3758-4282-bb54-b1efabd6ba3d", alterId: 0, cipher: "auto", network: "ws", ws-opts: {path: "/", headers: {Host: "hk04s.cd5c61a3-2d40-2641.cfd"}}, udp: true}
+- {name: "🇸🇬 ?? 新加坡 - 4", type: "vmess", server: "a07757.cd5c61a3-2d40-2641.cfd", port: 80, uuid: "5be76fa5-3758-4282-bb54-b1efabd6ba3d", alterId: 0, cipher: "auto", network: "ws", ws-opts: {path: "/", headers: {Host: "sg04s.cd5c61a3-2d40-2641.cfd"}}, udp: true}
+- {name: "🇺🇸 ?? 美国 - 4", type: "vmess", server: "a07757.cd5c61a3-2d40-2641.cfd", port: 80, uuid: "5be76fa5-3758-4282-bb54-b1efabd6ba3d", alterId: 0, cipher: "auto", network: "ws", ws-opts: {path: "/", headers: {Host: "us04s.cd5c61a3-2d40-2641.cfd"}}, udp: true}
+- {name: "🇯🇵 ?? 日本 - 4", type: "vmess", server: "a07757.cd5c61a3-2d40-2641.cfd", port: 80, uuid: "5be76fa5-3758-4282-bb54-b1efabd6ba3d", alterId: 0, cipher: "auto", network: "ws", ws-opts: {path: "/", headers: {Host: "jp04s.cd5c61a3-2d40-2641.cfd"}}, udp: true}
+- {name: "🇰🇷 ?? 韩国 - 4", type: "vmess", server: "a07757.cd5c61a3-2d40-2641.cfd", port: 80, uuid: "5be76fa5-3758-4282-bb54-b1efabd6ba3d", alterId: 0, cipher: "auto", network: "ws", ws-opts: {path: "/", headers: {Host: "kr04s.cd5c61a3-2d40-2641.cfd"}}, udp: true}
+proxy-groups:
+- name: "PROXY"
+  type: "select"
+  proxies:
+  - "AUTO"
+  - "🏴‍☠️ 官网：hajimi.icu"
+  - "🏴‍☠️ 新的TG群组：@newhajimi"
+  - "🏳️‍🌈 节点全红检查是否流量已用完"
+  - "🏴‍☠️ 直连订阅每日早更，注意更新你的本地订阅"
+  - "🏳️‍🌈 剩余流量：11037.32 GB"
+  - "🏴‍☠️ 订阅到期：2124-06-03"
+  - "🇭🇰 ?? 香港 - 1"
+  - "🇸🇬 ?? 新加坡 - 1"
+  - "🇺🇸 ?? 美国 - 1"
+  - "🇯🇵 ?? 日本 - 1"
+  - "🇰🇷 ?? 韩国 - 1"
+  - "🇭🇰 ?? 香港 - 2"
+  - "🇸🇬 ?? 新加坡 - 2"
+  - "🇺🇸 ?? 美国 - 2"
+  - "🇯🇵 ?? 日本 - 2"
+  - "🇰🇷 ?? 韩国 - 2"
+  - "🇭🇰 ?? 香港 - 3"
+  - "🇸🇬 ?? 新加坡 - 3"
+  - "🇺🇸 ?? 美国 - 3"
+  - "🇯🇵 ?? 日本 - 3"
+  - "🇰🇷 ?? 韩国 - 3"
+  - "🇭🇰 ?? 香港 - 4"
+  - "🇸🇬 ?? 新加坡 - 4"
+  - "🇺🇸 ?? 美国 - 4"
+  - "🇯🇵 ?? 日本 - 4"
+  - "🇰🇷 ?? 韩国 - 4"
+- name: "AUTO"
+  type: "url-test"
+  url: "http://www.gstatic.com/generate_204"
+  interval: 300
+  tolerance: 50
+  proxies:
+  - "🏴‍☠️ 官网：hajimi.icu"
+  - "🏴‍☠️ 新的TG群组：@newhajimi"
+  - "🏳️‍🌈 节点全红检查是否流量已用完"
+  - "🏴‍☠️ 直连订阅每日早更，注意更新你的本地订阅"
+  - "🏳️‍🌈 剩余流量：11037.32 GB"
+  - "🏴‍☠️ 订阅到期：2124-06-03"
+  - "🇭🇰 ?? 香港 - 1"
+  - "🇸🇬 ?? 新加坡 - 1"
+  - "🇺🇸 ?? 美国 - 1"
+  - "🇯🇵 ?? 日本 - 1"
+  - "🇰🇷 ?? 韩国 - 1"
+  - "🇭🇰 ?? 香港 - 2"
+  - "🇸🇬 ?? 新加坡 - 2"
+  - "🇺🇸 ?? 美国 - 2"
+  - "🇯🇵 ?? 日本 - 2"
+  - "🇰🇷 ?? 韩国 - 2"
+  - "🇭🇰 ?? 香港 - 3"
+  - "🇸🇬 ?? 新加坡 - 3"
+  - "🇺🇸 ?? 美国 - 3"
+  - "🇯🇵 ?? 日本 - 3"
+  - "🇰🇷 ?? 韩国 - 3"
+  - "🇭🇰 ?? 香港 - 4"
+  - "🇸🇬 ?? 新加坡 - 4"
+  - "🇺🇸 ?? 美国 - 4"
+  - "🇯🇵 ?? 日本 - 4"
+  - "🇰🇷 ?? 韩国 - 4"
+- name: "AI"
+  type: "select"
+  proxies:
+  - "🏴‍☠️ 官网：hajimi.icu"
+  - "🏴‍☠️ 新的TG群组：@newhajimi"
+  - "🏳️‍🌈 节点全红检查是否流量已用完"
+  - "🏴‍☠️ 直连订阅每日早更，注意更新你的本地订阅"
+  - "🏳️‍🌈 剩余流量：11037.32 GB"
+  - "🏴‍☠️ 订阅到期：2124-06-03"
+  - "🇭🇰 ?? 香港 - 1"
+  - "🇸🇬 ?? 新加坡 - 1"
+  - "🇺🇸 ?? 美国 - 1"
+  - "🇯🇵 ?? 日本 - 1"
+  - "🇰🇷 ?? 韩国 - 1"
+  - "🇭🇰 ?? 香港 - 2"
+  - "🇸🇬 ?? 新加坡 - 2"
+  - "🇺🇸 ?? 美国 - 2"
+  - "🇯🇵 ?? 日本 - 2"
+  - "🇰🇷 ?? 韩国 - 2"
+  - "🇭🇰 ?? 香港 - 3"
+  - "🇸🇬 ?? 新加坡 - 3"
+  - "🇺🇸 ?? 美国 - 3"
+  - "🇯🇵 ?? 日本 - 3"
+  - "🇰🇷 ?? 韩国 - 3"
+  - "🇭🇰 ?? 香港 - 4"
+  - "🇸🇬 ?? 新加坡 - 4"
+  - "🇺🇸 ?? 美国 - 4"
+  - "🇯🇵 ?? 日本 - 4"
+  - "🇰🇷 ?? 韩国 - 4"
+- name: "HOYO"
+  type: "select"
+  proxies:
+  - "DIRECT"
+  - "🏴‍☠️ 官网：hajimi.icu"
+  - "🏴‍☠️ 新的TG群组：@newhajimi"
+  - "🏳️‍🌈 节点全红检查是否流量已用完"
+  - "🏴‍☠️ 直连订阅每日早更，注意更新你的本地订阅"
+  - "🏳️‍🌈 剩余流量：11037.32 GB"
+  - "🏴‍☠️ 订阅到期：2124-06-03"
+  - "🇭🇰 ?? 香港 - 1"
+  - "🇸🇬 ?? 新加坡 - 1"
+  - "🇺🇸 ?? 美国 - 1"
+  - "🇯🇵 ?? 日本 - 1"
+  - "🇰🇷 ?? 韩国 - 1"
+  - "🇭🇰 ?? 香港 - 2"
+  - "🇸🇬 ?? 新加坡 - 2"
+  - "🇺🇸 ?? 美国 - 2"
+  - "🇯🇵 ?? 日本 - 2"
+  - "🇰🇷 ?? 韩国 - 2"
+  - "🇭🇰 ?? 香港 - 3"
+  - "🇸🇬 ?? 新加坡 - 3"
+  - "🇺🇸 ?? 美国 - 3"
+  - "🇯🇵 ?? 日本 - 3"
+  - "🇰🇷 ?? 韩国 - 3"
+  - "🇭🇰 ?? 香港 - 4"
+  - "🇸🇬 ?? 新加坡 - 4"
+  - "🇺🇸 ?? 美国 - 4"
+  - "🇯🇵 ?? 日本 - 4"
+  - "🇰🇷 ?? 韩国 - 4"
+rules:
+- "GEOSITE,CATEGORY-ADS-ALL,REJECT"
+- "DOMAIN-SUFFIX,ushd.xmsl.org,DIRECT"
+- "DOMAIN-SUFFIX,cf.gtlx.org,DIRECT"
+- "DOMAIN-SUFFIX,public-operation-hkrpg-sg.hoyoverse.com,HOYO"
+- "DOMAIN-SUFFIX,public-operation-hk4e-sg.hoyoverse.com,HOYO"
+- "DOMAIN-SUFFIX,public-operation-nap-sg.hoyoverse.com,HOYO"
+- "DST-PORT,23301/22101-22102/20501/21601-21606,HOYO"
+- "DOMAIN-KEYWORD,hoyoverse.com,PROXY"
+- "GEOSITE,CATEGORY-AI-!CN,AI"
+- "GEOSITE,GOOGLEFCM,DIRECT"
+- "GEOSITE,PRIVATE,DIRECT"
+- "GEOSITE,CN,DIRECT"
+- "GEOIP,PRIVATE,DIRECT,no-resolve"
+- "GEOIP,CN,DIRECT"
+- "MATCH,PROXY"

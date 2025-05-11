@@ -1,0 +1,256 @@
+log-level: "debug"
+mixed-port: 7890
+allow-lan: true
+external-controller: "127.0.0.1:9090"
+unified-delay: true
+tcp-concurrent: true
+geodata-mode: true
+geox-url:
+  geoip: "https://ghfast.top/https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geoip.dat"
+  geosite: "https://ghfast.top/https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geosite.dat"
+find-process-mode: "strict"
+global-client-fingerprint: "chrome"
+profile:
+  store-selected: true
+  store-fake-ip: true
+sniffer:
+  enable: true
+  force-dns-mapping: true
+  parse-pure-ip: true
+  override-destination: false
+  sniff:
+    HTTP:
+      ports:
+      - 80
+      - "8080-8880"
+    TLS:
+      ports:
+      - 443
+      - 8443
+    QUIC:
+      ports:
+      - 443
+      - 8443
+tun:
+  enable: true
+  stack: "mixed"
+  dns-hijack:
+  - "any:53"
+  - "tcp://any:53"
+  auto-route: true
+  auto-redirect: true
+  auto-detect-interface: true
+  strict-route: true
+dns:
+  enable: true
+  ipv6: false
+  default-nameserver:
+  - "223.5.5.5"
+  - "119.29.29.29"
+  enhanced-mode: "fake-ip"
+  fake-ip-range: "198.18.0.1/16"
+  nameserver:
+  - "https://dns.cloudflare.com/dns-query"
+  - "https://dns.google/dns-query"
+  nameserver-policy:
+    geosite:cn,private,googlefcm:
+    - "https://dns.alidns.com/dns-query"
+    - "https://doh.pub/dns-query"
+  proxy-server-nameserver:
+  - "https://dns.alidns.com/dns-query"
+  - "https://doh.pub/dns-query"
+proxies:
+- {alterId: 0, cipher: "auto", name: "🇺🇸 专线 | 洛杉矶", network: "tcp", port: 3105, server: "6aeae3d2-sw7j40-szcxa1-dmd8.c.volczijie.com", tls: false, type: "vmess", uuid: "2058bdd6-1505-11f0-a035-f23c95b6f51d"}
+- {alterId: 0, cipher: "auto", name: "🇺🇸 专线 | 硅谷", network: "tcp", port: 3693, server: "5ac8fc8f-sw7j40-szcxa1-dmd8.77.iwskwai.com", tls: false, type: "vmess", uuid: "2058bdd6-1505-11f0-a035-f23c95b6f51d"}
+- {alterId: 0, cipher: "auto", name: "🇺🇸 专线 | 西雅图", network: "tcp", port: 3695, server: "eb6715c4-sw7j40-szcxa1-dmd8.82.iwskwai.com", tls: false, type: "vmess", uuid: "2058bdd6-1505-11f0-a035-f23c95b6f51d"}
+- {alterId: 0, cipher: "auto", name: "🇨🇳 专线 | 台湾", network: "tcp", port: 3687, server: "5ac8fc8f-sw7j40-szcxa1-dmd8.77.iwskwai.com", tls: false, type: "vmess", uuid: "2058bdd6-1505-11f0-a035-f23c95b6f51d"}
+- {alterId: 0, cipher: "auto", name: "🇨🇳 专线 | 台湾二号", network: "tcp", port: 3690, server: "eb6715c4-sw7j40-szcxa1-dmd8.82.iwskwai.com", tls: false, type: "vmess", uuid: "2058bdd6-1505-11f0-a035-f23c95b6f51d"}
+- {alterId: 0, cipher: "auto", name: "🇭🇰 专线 | 香港", network: "tcp", port: 4136, server: "54455be0-sw7j40-szcxa1-dmd8.d.volczijie.com", tls: false, type: "vmess", uuid: "2058bdd6-1505-11f0-a035-f23c95b6f51d"}
+- {alterId: 0, cipher: "auto", name: "🇭🇰 专线 | 香港二号", network: "tcp", port: 4138, server: "6aeae3d2-sw7j40-szcxa1-dmd8.c.volczijie.com", tls: false, type: "vmess", uuid: "2058bdd6-1505-11f0-a035-f23c95b6f51d"}
+- {alterId: 0, cipher: "auto", name: "🇯🇵 专线 | 东京", network: "tcp", port: 3684, server: "54455be0-sw7j40-szcxa1-dmd8.d.volczijie.com", tls: false, type: "vmess", uuid: "2058bdd6-1505-11f0-a035-f23c95b6f51d"}
+- {alterId: 0, cipher: "auto", name: "🇯🇵 专线 | 东京二号", network: "tcp", port: 4151, server: "6aeae3d2-sw7j40-szcxa1-dmd8.c.volczijie.com", tls: false, type: "vmess", uuid: "2058bdd6-1505-11f0-a035-f23c95b6f51d"}
+- {alterId: 0, cipher: "auto", name: "🇯🇵 专线 | 大阪", network: "tcp", port: 4134, server: "54455be0-sw7j40-szcxa1-dmd8.d.volczijie.com", tls: false, type: "vmess", uuid: "2058bdd6-1505-11f0-a035-f23c95b6f51d"}
+- {alterId: 0, cipher: "auto", name: "🇸🇬 专线 | 新加坡", network: "tcp", port: 3683, server: "eb6715c4-sw7j40-szcxa1-dmd8.82.iwskwai.com", tls: false, type: "vmess", uuid: "2058bdd6-1505-11f0-a035-f23c95b6f51d"}
+- {alterId: 0, cipher: "auto", name: "🇸🇬 专线 | 新加坡二号", network: "tcp", port: 3681, server: "6aeae3d2-sw7j40-szcxa1-dmd8.c.volczijie.com", tls: false, type: "vmess", uuid: "2058bdd6-1505-11f0-a035-f23c95b6f51d"}
+- {alterId: 0, cipher: "auto", name: "🇸🇬 专线 | 新加坡三号", network: "tcp", port: 4135, server: "54455be0-sw7j40-szcxa1-dmd8.d.volczijie.com", tls: false, type: "vmess", uuid: "2058bdd6-1505-11f0-a035-f23c95b6f51d"}
+- {alterId: 0, cipher: "auto", name: "🇸🇬 专线 | 新加坡四号", network: "tcp", port: 4137, server: "6aeae3d2-sw7j40-szcxa1-dmd8.c.volczijie.com", tls: false, type: "vmess", uuid: "2058bdd6-1505-11f0-a035-f23c95b6f51d"}
+- {alterId: 0, cipher: "auto", name: "🇳🇱 专线 | 荷兰", network: "tcp", port: 3686, server: "5ac8fc8f-sw7j40-szcxa1-dmd8.77.iwskwai.com", tls: false, type: "vmess", uuid: "2058bdd6-1505-11f0-a035-f23c95b6f51d"}
+- {alterId: 0, cipher: "auto", name: "🇫🇷 专线 | 法国", network: "tcp", port: 3691, server: "eb6715c4-sw7j40-szcxa1-dmd8.82.iwskwai.com", tls: false, type: "vmess", uuid: "2058bdd6-1505-11f0-a035-f23c95b6f51d"}
+- {alterId: 0, cipher: "auto", name: "🇩🇪 专线 | 德国", network: "tcp", port: 3102, server: "6aeae3d2-sw7j40-szcxa1-dmd8.c.volczijie.com", tls: false, type: "vmess", uuid: "2058bdd6-1505-11f0-a035-f23c95b6f51d"}
+- {alterId: 0, cipher: "auto", name: "🇰🇷 专线 | 韩国", network: "tcp", port: 3689, server: "54455be0-sw7j40-szcxa1-dmd8.d.volczijie.com", tls: false, type: "vmess", uuid: "2058bdd6-1505-11f0-a035-f23c95b6f51d"}
+- {alterId: 0, cipher: "auto", name: "🇲🇾 专线 | 马来西亚 V3", network: "tcp", port: 3682, server: "54455be0-sw7j40-szcxa1-dmd8.d.volczijie.com", tls: false, type: "vmess", uuid: "2058bdd6-1505-11f0-a035-f23c95b6f51d"}
+- {alterId: 0, cipher: "auto", name: "🇻🇳 专线 | 越南 V3", network: "tcp", port: 4133, server: "6aeae3d2-sw7j40-szcxa1-dmd8.c.volczijie.com", tls: false, type: "vmess", uuid: "2058bdd6-1505-11f0-a035-f23c95b6f51d"}
+- {alterId: 0, cipher: "auto", name: "🇹🇭 专线 | 泰国 V3", network: "tcp", port: 4140, server: "6aeae3d2-sw7j40-szcxa1-dmd8.c.volczijie.com", tls: false, type: "vmess", uuid: "2058bdd6-1505-11f0-a035-f23c95b6f51d"}
+- {alterId: 0, cipher: "auto", name: "🇵🇭 专线 | 菲律宾 V3", network: "tcp", port: 4139, server: "54455be0-sw7j40-szcxa1-dmd8.d.volczijie.com", tls: false, type: "vmess", uuid: "2058bdd6-1505-11f0-a035-f23c95b6f51d"}
+- {alterId: 0, cipher: "auto", name: "🇧🇷 专线 | 巴西", network: "tcp", port: 3688, server: "eb6715c4-sw7j40-szcxa1-dmd8.82.iwskwai.com", tls: false, type: "vmess", uuid: "2058bdd6-1505-11f0-a035-f23c95b6f51d"}
+- {name: "🇱🇦 US LA Hysteria 2", password: "2058bdd6-1505-11f0-a035-f23c95b6f51d", port: 1443, server: "aa440935-sw7j40-szcxa1-dmd8.la.shifen.uk", type: "hysteria2", sni: "aa440935-sw7j40-szcxa1-dmd8.la.shifen.uk"}
+- {alterId: 2, cipher: "auto", name: "🇺🇸 US Los Angeles", network: "tcp", port: 457, server: "b8c54127-sw7j40-szcxa1-dmd8.los.west.wctype.com", tls: true, type: "vmess", uuid: "2058bdd6-1505-11f0-a035-f23c95b6f51d", servername: "b8c54127-sw7j40-szcxa1-dmd8.los.west.wctype.com"}
+- {alterId: 2, cipher: "auto", name: "🇭🇰 Hongkong 3", network: "ws", port: 457, server: "49dcd024-sw7j40-szcxa1-dmd8.hkt.east.wctype.com", tls: false, type: "vmess", uuid: "2058bdd6-1505-11f0-a035-f23c95b6f51d", ws-opts: {path: "/", headers: {Host: "a605477178.m.ctrip.com"}}}
+- {alterId: 2, cipher: "auto", name: "🇸🇬 Singapore", network: "ws", port: 4157, server: "81db1805-sw7j40-szcxa1-dmd8.east.sgp2.189ti.com", tls: false, type: "vmess", uuid: "2058bdd6-1505-11f0-a035-f23c95b6f51d", ws-opts: {path: "/", headers: {Host: "webrtcpunch.video.qq.com"}}}
+- {alterId: 2, cipher: "auto", name: "🇮🇩 Indonesia", network: "tcp", port: 443, server: "893f80f6-sw7j40-szcxa1-dmd8.lnd-id.189ti.com", tls: true, type: "vmess", uuid: "2058bdd6-1505-11f0-a035-f23c95b6f51d", servername: "893f80f6-sw7j40-szcxa1-dmd8.lnd-id.189ti.com"}
+- {alterId: 2, cipher: "auto", name: "🇺🇸 US Fremont", network: "tcp", port: 455, server: "a7210c39-sw7j40-szcxa1-dmd8.fmt2-us.sghuawei.com", tls: true, type: "vmess", uuid: "2058bdd6-1505-11f0-a035-f23c95b6f51d", servername: "a7210c39-sw7j40-szcxa1-dmd8.fmt2-us.sghuawei.com"}
+- {alterId: 2, cipher: "auto", name: "🇺🇸 US Silicon Valley", network: "tcp", port: 5443, server: "d6f92bfe-sw7j40-szcxa1-dmd8.fmt-us.sghuawei.com", tls: true, type: "vmess", uuid: "2058bdd6-1505-11f0-a035-f23c95b6f51d", servername: "d6f92bfe-sw7j40-szcxa1-dmd8.fmt-us.sghuawei.com"}
+- {alterId: 2, cipher: "auto", name: "🇯🇵 JP Tokyo", network: "tcp", port: 457, server: "19ed50e3-sw7j40-szcxa1-dmd8.tky02.east.189ti.com", tls: true, type: "vmess", uuid: "2058bdd6-1505-11f0-a035-f23c95b6f51d", servername: "19ed50e3-sw7j40-szcxa1-dmd8.tky02.east.189ti.com"}
+- {alterId: 2, cipher: "auto", name: "🇬🇧 UK London", network: "tcp", port: 458, server: "f0b8e326-sw7j40-szcxa1-dmd8.ldn.west.yxlmgs.com", tls: true, type: "vmess", uuid: "2058bdd6-1505-11f0-a035-f23c95b6f51d", servername: "f0b8e326-sw7j40-szcxa1-dmd8.ldn.west.yxlmgs.com"}
+proxy-groups:
+- name: "PROXY"
+  type: "select"
+  proxies:
+  - "AUTO"
+  - "🇺🇸 专线 | 洛杉矶"
+  - "🇺🇸 专线 | 硅谷"
+  - "🇺🇸 专线 | 西雅图"
+  - "🇨🇳 专线 | 台湾"
+  - "🇨🇳 专线 | 台湾二号"
+  - "🇭🇰 专线 | 香港"
+  - "🇭🇰 专线 | 香港二号"
+  - "🇯🇵 专线 | 东京"
+  - "🇯🇵 专线 | 东京二号"
+  - "🇯🇵 专线 | 大阪"
+  - "🇸🇬 专线 | 新加坡"
+  - "🇸🇬 专线 | 新加坡二号"
+  - "🇸🇬 专线 | 新加坡三号"
+  - "🇸🇬 专线 | 新加坡四号"
+  - "🇳🇱 专线 | 荷兰"
+  - "🇫🇷 专线 | 法国"
+  - "🇩🇪 专线 | 德国"
+  - "🇰🇷 专线 | 韩国"
+  - "🇲🇾 专线 | 马来西亚 V3"
+  - "🇻🇳 专线 | 越南 V3"
+  - "🇹🇭 专线 | 泰国 V3"
+  - "🇵🇭 专线 | 菲律宾 V3"
+  - "🇧🇷 专线 | 巴西"
+  - "🇱🇦 US LA Hysteria 2"
+  - "🇺🇸 US Los Angeles"
+  - "🇭🇰 Hongkong 3"
+  - "🇸🇬 Singapore"
+  - "🇮🇩 Indonesia"
+  - "🇺🇸 US Fremont"
+  - "🇺🇸 US Silicon Valley"
+  - "🇯🇵 JP Tokyo"
+  - "🇬🇧 UK London"
+- name: "AUTO"
+  type: "url-test"
+  url: "http://www.gstatic.com/generate_204"
+  interval: 300
+  tolerance: 50
+  proxies:
+  - "🇺🇸 专线 | 洛杉矶"
+  - "🇺🇸 专线 | 硅谷"
+  - "🇺🇸 专线 | 西雅图"
+  - "🇨🇳 专线 | 台湾"
+  - "🇨🇳 专线 | 台湾二号"
+  - "🇭🇰 专线 | 香港"
+  - "🇭🇰 专线 | 香港二号"
+  - "🇯🇵 专线 | 东京"
+  - "🇯🇵 专线 | 东京二号"
+  - "🇯🇵 专线 | 大阪"
+  - "🇸🇬 专线 | 新加坡"
+  - "🇸🇬 专线 | 新加坡二号"
+  - "🇸🇬 专线 | 新加坡三号"
+  - "🇸🇬 专线 | 新加坡四号"
+  - "🇳🇱 专线 | 荷兰"
+  - "🇫🇷 专线 | 法国"
+  - "🇩🇪 专线 | 德国"
+  - "🇰🇷 专线 | 韩国"
+  - "🇲🇾 专线 | 马来西亚 V3"
+  - "🇻🇳 专线 | 越南 V3"
+  - "🇹🇭 专线 | 泰国 V3"
+  - "🇵🇭 专线 | 菲律宾 V3"
+  - "🇧🇷 专线 | 巴西"
+  - "🇱🇦 US LA Hysteria 2"
+  - "🇺🇸 US Los Angeles"
+  - "🇭🇰 Hongkong 3"
+  - "🇸🇬 Singapore"
+  - "🇮🇩 Indonesia"
+  - "🇺🇸 US Fremont"
+  - "🇺🇸 US Silicon Valley"
+  - "🇯🇵 JP Tokyo"
+  - "🇬🇧 UK London"
+- name: "AI"
+  type: "select"
+  proxies:
+  - "🇺🇸 专线 | 洛杉矶"
+  - "🇺🇸 专线 | 硅谷"
+  - "🇺🇸 专线 | 西雅图"
+  - "🇨🇳 专线 | 台湾"
+  - "🇨🇳 专线 | 台湾二号"
+  - "🇭🇰 专线 | 香港"
+  - "🇭🇰 专线 | 香港二号"
+  - "🇯🇵 专线 | 东京"
+  - "🇯🇵 专线 | 东京二号"
+  - "🇯🇵 专线 | 大阪"
+  - "🇸🇬 专线 | 新加坡"
+  - "🇸🇬 专线 | 新加坡二号"
+  - "🇸🇬 专线 | 新加坡三号"
+  - "🇸🇬 专线 | 新加坡四号"
+  - "🇳🇱 专线 | 荷兰"
+  - "🇫🇷 专线 | 法国"
+  - "🇩🇪 专线 | 德国"
+  - "🇰🇷 专线 | 韩国"
+  - "🇲🇾 专线 | 马来西亚 V3"
+  - "🇻🇳 专线 | 越南 V3"
+  - "🇹🇭 专线 | 泰国 V3"
+  - "🇵🇭 专线 | 菲律宾 V3"
+  - "🇧🇷 专线 | 巴西"
+  - "🇱🇦 US LA Hysteria 2"
+  - "🇺🇸 US Los Angeles"
+  - "🇭🇰 Hongkong 3"
+  - "🇸🇬 Singapore"
+  - "🇮🇩 Indonesia"
+  - "🇺🇸 US Fremont"
+  - "🇺🇸 US Silicon Valley"
+  - "🇯🇵 JP Tokyo"
+  - "🇬🇧 UK London"
+- name: "HOYO"
+  type: "select"
+  proxies:
+  - "DIRECT"
+  - "🇺🇸 专线 | 洛杉矶"
+  - "🇺🇸 专线 | 硅谷"
+  - "🇺🇸 专线 | 西雅图"
+  - "🇨🇳 专线 | 台湾"
+  - "🇨🇳 专线 | 台湾二号"
+  - "🇭🇰 专线 | 香港"
+  - "🇭🇰 专线 | 香港二号"
+  - "🇯🇵 专线 | 东京"
+  - "🇯🇵 专线 | 东京二号"
+  - "🇯🇵 专线 | 大阪"
+  - "🇸🇬 专线 | 新加坡"
+  - "🇸🇬 专线 | 新加坡二号"
+  - "🇸🇬 专线 | 新加坡三号"
+  - "🇸🇬 专线 | 新加坡四号"
+  - "🇳🇱 专线 | 荷兰"
+  - "🇫🇷 专线 | 法国"
+  - "🇩🇪 专线 | 德国"
+  - "🇰🇷 专线 | 韩国"
+  - "🇲🇾 专线 | 马来西亚 V3"
+  - "🇻🇳 专线 | 越南 V3"
+  - "🇹🇭 专线 | 泰国 V3"
+  - "🇵🇭 专线 | 菲律宾 V3"
+  - "🇧🇷 专线 | 巴西"
+  - "🇱🇦 US LA Hysteria 2"
+  - "🇺🇸 US Los Angeles"
+  - "🇭🇰 Hongkong 3"
+  - "🇸🇬 Singapore"
+  - "🇮🇩 Indonesia"
+  - "🇺🇸 US Fremont"
+  - "🇺🇸 US Silicon Valley"
+  - "🇯🇵 JP Tokyo"
+  - "🇬🇧 UK London"
+rules:
+- "GEOSITE,CATEGORY-ADS-ALL,REJECT"
+- "DOMAIN-SUFFIX,ushd.xmsl.org,DIRECT"
+- "DOMAIN-SUFFIX,cf.gtlx.org,DIRECT"
+- "DOMAIN-SUFFIX,public-operation-hkrpg-sg.hoyoverse.com,HOYO"
+- "DOMAIN-SUFFIX,public-operation-hk4e-sg.hoyoverse.com,HOYO"
+- "DOMAIN-SUFFIX,public-operation-nap-sg.hoyoverse.com,HOYO"
+- "DST-PORT,23301/22101-22102/20501/21601-21606,HOYO"
+- "DOMAIN-KEYWORD,hoyoverse.com,PROXY"
+- "GEOSITE,CATEGORY-AI-!CN,AI"
+- "GEOSITE,GOOGLEFCM,DIRECT"
+- "GEOSITE,PRIVATE,DIRECT"
+- "GEOSITE,CN,DIRECT"
+- "GEOIP,PRIVATE,DIRECT,no-resolve"
+- "GEOIP,CN,DIRECT"
+- "MATCH,PROXY"

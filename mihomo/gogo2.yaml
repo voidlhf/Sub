@@ -1,0 +1,186 @@
+log-level: "debug"
+mixed-port: 7890
+allow-lan: true
+external-controller: "127.0.0.1:9090"
+unified-delay: true
+tcp-concurrent: true
+geodata-mode: true
+geox-url:
+  geoip: "https://ghfast.top/https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geoip.dat"
+  geosite: "https://ghfast.top/https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geosite.dat"
+find-process-mode: "strict"
+global-client-fingerprint: "chrome"
+profile:
+  store-selected: true
+  store-fake-ip: true
+sniffer:
+  enable: true
+  force-dns-mapping: true
+  parse-pure-ip: true
+  override-destination: false
+  sniff:
+    HTTP:
+      ports:
+      - 80
+      - "8080-8880"
+    TLS:
+      ports:
+      - 443
+      - 8443
+    QUIC:
+      ports:
+      - 443
+      - 8443
+tun:
+  enable: true
+  stack: "mixed"
+  dns-hijack:
+  - "any:53"
+  - "tcp://any:53"
+  auto-route: true
+  auto-redirect: true
+  auto-detect-interface: true
+  strict-route: true
+dns:
+  enable: true
+  ipv6: false
+  default-nameserver:
+  - "223.5.5.5"
+  - "119.29.29.29"
+  enhanced-mode: "fake-ip"
+  fake-ip-range: "198.18.0.1/16"
+  nameserver:
+  - "https://dns.cloudflare.com/dns-query"
+  - "https://dns.google/dns-query"
+  nameserver-policy:
+    geosite:cn,private,googlefcm:
+    - "https://dns.alidns.com/dns-query"
+    - "https://doh.pub/dns-query"
+  proxy-server-nameserver:
+  - "https://dns.alidns.com/dns-query"
+  - "https://doh.pub/dns-query"
+proxies:
+- {name: "🏴‍☠️ 本站唯有网页售后", type: "trojan", server: "xg.jckumao.cc", port: 36044, password: "fac82010-8e83-48d2-b59c-2bacda096f6f", udp: true, skip-cert-verify: true, sni: "xg.jckumao.cc"}
+- {name: "🏴‍☠️ 续费官网guoguo001.com", type: "trojan", server: "xg.jckumao.cc", port: 36044, password: "fac82010-8e83-48d2-b59c-2bacda096f6f", udp: true, skip-cert-verify: true, sni: "xg.jckumao.cc"}
+- {name: "🏴‍☠️ 官网guoguo001.com", type: "trojan", server: "xg.jckumao.cc", port: 36044, password: "fac82010-8e83-48d2-b59c-2bacda096f6f", udp: true, skip-cert-verify: true, sni: "xg.jckumao.cc"}
+- {name: "🇭🇰 香港", type: "trojan", server: "xg.jckumao.cc", port: 36044, password: "fac82010-8e83-48d2-b59c-2bacda096f6f", udp: true, skip-cert-verify: true, sni: "xg.jckumao.cc"}
+- {name: "🇭🇰 香港1", type: "trojan", server: "xg.jckumao.cc", port: 36044, password: "fac82010-8e83-48d2-b59c-2bacda096f6f", udp: true, skip-cert-verify: true, sni: "xg.jckumao.cc"}
+- {name: "🇯🇵 日本", type: "trojan", server: "zz1.jckumao.cc", port: 36045, password: "fac82010-8e83-48d2-b59c-2bacda096f6f", udp: true, skip-cert-verify: true, sni: "zz1.jckumao.cc"}
+- {name: "🇯🇵 日本1", type: "trojan", server: "zz1.jckumao.cc", port: 36045, password: "fac82010-8e83-48d2-b59c-2bacda096f6f", udp: true, skip-cert-verify: true, sni: "zz1.jckumao.cc"}
+- {name: "🇨🇳 台湾", type: "trojan", server: "zz1.jckumao.cc", port: 36046, password: "fac82010-8e83-48d2-b59c-2bacda096f6f", udp: true, skip-cert-verify: true, sni: "zz1.jckumao.cc"}
+- {name: "🇨🇳 台湾1", type: "trojan", server: "zz1.jckumao.cc", port: 36046, password: "fac82010-8e83-48d2-b59c-2bacda096f6f", udp: true, skip-cert-verify: true, sni: "zz1.jckumao.cc"}
+- {name: "🇲🇾 马来西亚", type: "trojan", server: "zz1.jckumao.cc", port: 36047, password: "fac82010-8e83-48d2-b59c-2bacda096f6f", udp: true, skip-cert-verify: true, sni: "zz1.jckumao.cc"}
+- {name: "🇲🇾 马来西亚1", type: "trojan", server: "zz1.jckumao.cc", port: 36047, password: "fac82010-8e83-48d2-b59c-2bacda096f6f", udp: true, skip-cert-verify: true, sni: "zz1.jckumao.cc"}
+- {name: "🇻🇳 越南", type: "trojan", server: "zz1.jckumao.cc", port: 36048, password: "fac82010-8e83-48d2-b59c-2bacda096f6f", udp: true, skip-cert-verify: true, sni: "zz1.jckumao.cc"}
+- {name: "🇻🇳 越南1", type: "trojan", server: "zz1.jckumao.cc", port: 36048, password: "fac82010-8e83-48d2-b59c-2bacda096f6f", udp: true, skip-cert-verify: true, sni: "zz1.jckumao.cc"}
+- {name: "🇰🇷 韩国", type: "trojan", server: "zz1.jckumao.cc", port: 36049, password: "fac82010-8e83-48d2-b59c-2bacda096f6f", udp: true, skip-cert-verify: true, sni: "zz1.jckumao.cc"}
+- {name: "🇰🇷 韩国1", type: "trojan", server: "zz1.jckumao.cc", port: 36049, password: "fac82010-8e83-48d2-b59c-2bacda096f6f", udp: true, skip-cert-verify: true, sni: "zz1.jckumao.cc"}
+- {name: "🇺🇸 美国1", type: "trojan", server: "zz1.jckumao.cc", port: 36050, password: "fac82010-8e83-48d2-b59c-2bacda096f6f", udp: true, skip-cert-verify: true, sni: "zz1.jckumao.cc"}
+- {name: "🇺🇸 美国2", type: "trojan", server: "zz1.jckumao.cc", port: 36051, password: "fac82010-8e83-48d2-b59c-2bacda096f6f", udp: true, skip-cert-verify: true, sni: "zz1.jckumao.cc"}
+- {name: "🇺🇸 美国3", type: "trojan", server: "zz1.jckumao.cc", port: 36052, password: "fac82010-8e83-48d2-b59c-2bacda096f6f", udp: true, skip-cert-verify: true, sni: "zz1.jckumao.cc"}
+proxy-groups:
+- name: "PROXY"
+  type: "select"
+  proxies:
+  - "AUTO"
+  - "🏴‍☠️ 本站唯有网页售后"
+  - "🏴‍☠️ 续费官网guoguo001.com"
+  - "🏴‍☠️ 官网guoguo001.com"
+  - "🇭🇰 香港"
+  - "🇭🇰 香港1"
+  - "🇯🇵 日本"
+  - "🇯🇵 日本1"
+  - "🇨🇳 台湾"
+  - "🇨🇳 台湾1"
+  - "🇲🇾 马来西亚"
+  - "🇲🇾 马来西亚1"
+  - "🇻🇳 越南"
+  - "🇻🇳 越南1"
+  - "🇰🇷 韩国"
+  - "🇰🇷 韩国1"
+  - "🇺🇸 美国1"
+  - "🇺🇸 美国2"
+  - "🇺🇸 美国3"
+- name: "AUTO"
+  type: "url-test"
+  url: "http://www.gstatic.com/generate_204"
+  interval: 300
+  tolerance: 50
+  proxies:
+  - "🏴‍☠️ 本站唯有网页售后"
+  - "🏴‍☠️ 续费官网guoguo001.com"
+  - "🏴‍☠️ 官网guoguo001.com"
+  - "🇭🇰 香港"
+  - "🇭🇰 香港1"
+  - "🇯🇵 日本"
+  - "🇯🇵 日本1"
+  - "🇨🇳 台湾"
+  - "🇨🇳 台湾1"
+  - "🇲🇾 马来西亚"
+  - "🇲🇾 马来西亚1"
+  - "🇻🇳 越南"
+  - "🇻🇳 越南1"
+  - "🇰🇷 韩国"
+  - "🇰🇷 韩国1"
+  - "🇺🇸 美国1"
+  - "🇺🇸 美国2"
+  - "🇺🇸 美国3"
+- name: "AI"
+  type: "select"
+  proxies:
+  - "🏴‍☠️ 本站唯有网页售后"
+  - "🏴‍☠️ 续费官网guoguo001.com"
+  - "🏴‍☠️ 官网guoguo001.com"
+  - "🇭🇰 香港"
+  - "🇭🇰 香港1"
+  - "🇯🇵 日本"
+  - "🇯🇵 日本1"
+  - "🇨🇳 台湾"
+  - "🇨🇳 台湾1"
+  - "🇲🇾 马来西亚"
+  - "🇲🇾 马来西亚1"
+  - "🇻🇳 越南"
+  - "🇻🇳 越南1"
+  - "🇰🇷 韩国"
+  - "🇰🇷 韩国1"
+  - "🇺🇸 美国1"
+  - "🇺🇸 美国2"
+  - "🇺🇸 美国3"
+- name: "HOYO"
+  type: "select"
+  proxies:
+  - "DIRECT"
+  - "🏴‍☠️ 本站唯有网页售后"
+  - "🏴‍☠️ 续费官网guoguo001.com"
+  - "🏴‍☠️ 官网guoguo001.com"
+  - "🇭🇰 香港"
+  - "🇭🇰 香港1"
+  - "🇯🇵 日本"
+  - "🇯🇵 日本1"
+  - "🇨🇳 台湾"
+  - "🇨🇳 台湾1"
+  - "🇲🇾 马来西亚"
+  - "🇲🇾 马来西亚1"
+  - "🇻🇳 越南"
+  - "🇻🇳 越南1"
+  - "🇰🇷 韩国"
+  - "🇰🇷 韩国1"
+  - "🇺🇸 美国1"
+  - "🇺🇸 美国2"
+  - "🇺🇸 美国3"
+rules:
+- "GEOSITE,CATEGORY-ADS-ALL,REJECT"
+- "DOMAIN-SUFFIX,ushd.xmsl.org,DIRECT"
+- "DOMAIN-SUFFIX,cf.gtlx.org,DIRECT"
+- "DOMAIN-SUFFIX,public-operation-hkrpg-sg.hoyoverse.com,HOYO"
+- "DOMAIN-SUFFIX,public-operation-hk4e-sg.hoyoverse.com,HOYO"
+- "DOMAIN-SUFFIX,public-operation-nap-sg.hoyoverse.com,HOYO"
+- "DST-PORT,23301/22101-22102/20501/21601-21606,HOYO"
+- "DOMAIN-KEYWORD,hoyoverse.com,PROXY"
+- "GEOSITE,CATEGORY-AI-!CN,AI"
+- "GEOSITE,GOOGLEFCM,DIRECT"
+- "GEOSITE,PRIVATE,DIRECT"
+- "GEOSITE,CN,DIRECT"
+- "GEOIP,PRIVATE,DIRECT,no-resolve"
+- "GEOIP,CN,DIRECT"
+- "MATCH,PROXY"
