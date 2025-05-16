@@ -17,6 +17,15 @@ def encode_gitlab_url(raw_url):
     encoded = encoded.replace("%", "%25")
     return encoded
 
+def refresh_backend():
+    try:
+        print("刷新后端资源缓存...")
+        res = requests.get(f"{API_BASE}/api/utils/refresh")
+        res.raise_for_status()
+        print("刷新成功")
+    except Exception as e:
+        print(f"刷新失败：{e}")
+
 def handle_one(name, url):
     print(f"处理订阅: {name}")
 
@@ -38,6 +47,8 @@ def handle_one(name, url):
     print("-----------------------------")
 
 def handle_json(json_input):
+    refresh_backend()
+
     if json_input.startswith("http://") or json_input.startswith("https://"):
         try:
             response = requests.get(json_input)
@@ -73,6 +84,7 @@ if __name__ == "__main__":
     if args.json:
         handle_json(args.json)
     elif args.name and args.url:
+        refresh_backend()
         handle_one(args.name, args.url)
     else:
         print("参数不完整，请使用 --json 或 --name 与 --url")
