@@ -1,0 +1,1000 @@
+{
+  "log": {},
+  "dns": {
+    "servers": [
+      {
+        "tag": "dns_proxy",
+        "type": "https",
+        "server": "1.1.1.1",
+        "detour": "select"
+      },
+      {
+        "tag": "dns_direct",
+        "type": "https",
+        "server": "223.5.5.5"
+      },
+      {
+        "tag": "dns_fakeip",
+        "type": "fakeip",
+        "inet4_range": "198.18.0.0/15",
+        "inet6_range": "fc00::/18"
+      }
+    ],
+    "rules": [
+      {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "query_type": "HTTPS"
+          },
+          {
+            "rule_set": [
+              "geosite-category-ads-all"
+            ]
+          }
+        ],
+        "action": "reject"
+      },
+      {
+        "query_type": [
+          "A",
+          "AAAA"
+        ],
+        "server": "dns_fakeip",
+        "rewrite_ttl": 1
+      },
+      {
+        "clash_mode": "Global",
+        "server": "dns_proxy"
+      },
+      {
+        "clash_mode": "Direct",
+        "server": "dns_direct"
+      },
+      {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "rule_set": [
+              "geosite-cn",
+              "geosite-googlefcm"
+            ]
+          }
+        ],
+        "server": "dns_direct"
+      }
+    ],
+    "strategy": "ipv4_only",
+    "independent_cache": true
+  },
+  "inbounds": [
+    {
+      "type": "tun",
+      "address": [
+        "172.18.0.1/30",
+        "fdfe:dcba:9876::1/126"
+      ],
+      "auto_route": true,
+      "strict_route": true,
+      "route_exclude_address": [
+        "192.168.0.0/16",
+        "fc00::/7"
+      ]
+    }
+  ],
+  "outbounds": [
+    {
+      "tag": "direct",
+      "type": "direct"
+    },
+    {
+      "tag": "select",
+      "type": "selector",
+      "default": "auto",
+      "outbounds": [
+        "auto",
+        "🇯🇵 日本亚马逊/不要测速！",
+        "🇸🇬 新加坡/不要测速！",
+        "🇯🇵 日本阿里云/不要测速！",
+        "🇭🇰 香港2",
+        "🇸🇬 SG_t.me/ccdjbQaQ_2",
+        "🇺🇸 US_t.me/ccdjbQaQ_31",
+        "🇺🇸 US_t.me/ccdjbQaQ_58",
+        "🇰🇷 KR_t.me/ccdjbQaQ",
+        "🇺🇸 Madcity-US 02",
+        "🇺🇸 ·美国-Madison提供",
+        "🇺🇸 Madcity-US 03",
+        "🇺🇸 Madcity-US 04",
+        "🇺🇸 美国",
+        "🇺🇸 Madcity-US 01",
+        "🇫🇷 ·法国-Madison提供",
+        "🇷🇺 俄罗斯Youtube免广告",
+        "🇸🇪 ·瑞典-Madison提供",
+        "🏴‍☠️ ·爱莎尼亚-Madison提供",
+        "🇬🇧 GB_t.me/ccdjbQaQ_1",
+        "🇧🇬 ·保加利亚-Madison提供",
+        "🇭🇰 HK-Acck hysteria2-Aelen提供",
+        "🇯🇵 JP_t.me/ccdjbQaQ",
+        "🇭🇰 香港(IPv6)-Aelen提供",
+        "🇧🇷 巴西-硕 hysteria2",
+        "🇸🇬 Oracle-SG 移动快乐 01",
+        "🇸🇬 Oracle-SG 移动快乐 02",
+        "🇭🇰 HK-HY2",
+        "🇧🇷 巴西-hysteria2",
+        "🇯🇵 日本3",
+        "🇸🇬 ·新加坡"
+      ]
+    },
+    {
+      "tag": "auto",
+      "type": "urltest",
+      "interval": "5m",
+      "outbounds": [
+        "🇯🇵 日本亚马逊/不要测速！",
+        "🇸🇬 新加坡/不要测速！",
+        "🇯🇵 日本阿里云/不要测速！",
+        "🇭🇰 香港2",
+        "🇸🇬 SG_t.me/ccdjbQaQ_2",
+        "🇺🇸 US_t.me/ccdjbQaQ_31",
+        "🇺🇸 US_t.me/ccdjbQaQ_58",
+        "🇰🇷 KR_t.me/ccdjbQaQ",
+        "🇺🇸 Madcity-US 02",
+        "🇺🇸 ·美国-Madison提供",
+        "🇺🇸 Madcity-US 03",
+        "🇺🇸 Madcity-US 04",
+        "🇺🇸 美国",
+        "🇺🇸 Madcity-US 01",
+        "🇫🇷 ·法国-Madison提供",
+        "🇷🇺 俄罗斯Youtube免广告",
+        "🇸🇪 ·瑞典-Madison提供",
+        "🏴‍☠️ ·爱莎尼亚-Madison提供",
+        "🇬🇧 GB_t.me/ccdjbQaQ_1",
+        "🇧🇬 ·保加利亚-Madison提供",
+        "🇭🇰 HK-Acck hysteria2-Aelen提供",
+        "🇯🇵 JP_t.me/ccdjbQaQ",
+        "🇭🇰 香港(IPv6)-Aelen提供",
+        "🇧🇷 巴西-硕 hysteria2",
+        "🇸🇬 Oracle-SG 移动快乐 01",
+        "🇸🇬 Oracle-SG 移动快乐 02",
+        "🇭🇰 HK-HY2",
+        "🇧🇷 巴西-hysteria2",
+        "🇯🇵 日本3",
+        "🇸🇬 ·新加坡"
+      ]
+    },
+    {
+      "tag": "ai",
+      "type": "selector",
+      "outbounds": [
+        "🇯🇵 日本亚马逊/不要测速！",
+        "🇸🇬 新加坡/不要测速！",
+        "🇯🇵 日本阿里云/不要测速！",
+        "🇭🇰 香港2",
+        "🇸🇬 SG_t.me/ccdjbQaQ_2",
+        "🇺🇸 US_t.me/ccdjbQaQ_31",
+        "🇺🇸 US_t.me/ccdjbQaQ_58",
+        "🇰🇷 KR_t.me/ccdjbQaQ",
+        "🇺🇸 Madcity-US 02",
+        "🇺🇸 ·美国-Madison提供",
+        "🇺🇸 Madcity-US 03",
+        "🇺🇸 Madcity-US 04",
+        "🇺🇸 美国",
+        "🇺🇸 Madcity-US 01",
+        "🇫🇷 ·法国-Madison提供",
+        "🇷🇺 俄罗斯Youtube免广告",
+        "🇸🇪 ·瑞典-Madison提供",
+        "🏴‍☠️ ·爱莎尼亚-Madison提供",
+        "🇬🇧 GB_t.me/ccdjbQaQ_1",
+        "🇧🇬 ·保加利亚-Madison提供",
+        "🇭🇰 HK-Acck hysteria2-Aelen提供",
+        "🇯🇵 JP_t.me/ccdjbQaQ",
+        "🇭🇰 香港(IPv6)-Aelen提供",
+        "🇧🇷 巴西-硕 hysteria2",
+        "🇸🇬 Oracle-SG 移动快乐 01",
+        "🇸🇬 Oracle-SG 移动快乐 02",
+        "🇭🇰 HK-HY2",
+        "🇧🇷 巴西-hysteria2",
+        "🇯🇵 日本3",
+        "🇸🇬 ·新加坡"
+      ]
+    },
+    {
+      "tag": "hoyo",
+      "type": "selector",
+      "default": "direct",
+      "outbounds": [
+        "direct",
+        "🇯🇵 日本亚马逊/不要测速！",
+        "🇸🇬 新加坡/不要测速！",
+        "🇯🇵 日本阿里云/不要测速！",
+        "🇭🇰 香港2",
+        "🇸🇬 SG_t.me/ccdjbQaQ_2",
+        "🇺🇸 US_t.me/ccdjbQaQ_31",
+        "🇺🇸 US_t.me/ccdjbQaQ_58",
+        "🇰🇷 KR_t.me/ccdjbQaQ",
+        "🇺🇸 Madcity-US 02",
+        "🇺🇸 ·美国-Madison提供",
+        "🇺🇸 Madcity-US 03",
+        "🇺🇸 Madcity-US 04",
+        "🇺🇸 美国",
+        "🇺🇸 Madcity-US 01",
+        "🇫🇷 ·法国-Madison提供",
+        "🇷🇺 俄罗斯Youtube免广告",
+        "🇸🇪 ·瑞典-Madison提供",
+        "🏴‍☠️ ·爱莎尼亚-Madison提供",
+        "🇬🇧 GB_t.me/ccdjbQaQ_1",
+        "🇧🇬 ·保加利亚-Madison提供",
+        "🇭🇰 HK-Acck hysteria2-Aelen提供",
+        "🇯🇵 JP_t.me/ccdjbQaQ",
+        "🇭🇰 香港(IPv6)-Aelen提供",
+        "🇧🇷 巴西-硕 hysteria2",
+        "🇸🇬 Oracle-SG 移动快乐 01",
+        "🇸🇬 Oracle-SG 移动快乐 02",
+        "🇭🇰 HK-HY2",
+        "🇧🇷 巴西-hysteria2",
+        "🇯🇵 日本3",
+        "🇸🇬 ·新加坡"
+      ]
+    },
+    {
+      "tag": "🇯🇵 日本亚马逊/不要测速！",
+      "type": "vless",
+      "server": "35.75.160.251",
+      "server_port": 443,
+      "uuid": "f4522b1a-7cc2-4d4b-84c5-357242e052bb",
+      "tls": {
+        "enabled": true,
+        "server_name": "jd.chenchuanjin.sbs",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "jd.chenchuanjin.sbs"
+        },
+        "path": "/",
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇸🇬 新加坡/不要测速！",
+      "type": "vless",
+      "server": "3.0.39.179",
+      "server_port": 443,
+      "uuid": "f4522b1a-7cc2-4d4b-84c5-357242e052bb",
+      "tls": {
+        "enabled": true,
+        "server_name": "jd.chenchuanjin.sbs",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "jd.chenchuanjin.sbs"
+        },
+        "path": "/",
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇯🇵 日本阿里云/不要测速！",
+      "type": "vless",
+      "server": "8.209.216.251",
+      "server_port": 443,
+      "uuid": "f4522b1a-7cc2-4d4b-84c5-357242e052bb",
+      "tls": {
+        "enabled": true,
+        "server_name": "jd.chenchuanjin.sbs",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "jd.chenchuanjin.sbs"
+        },
+        "path": "/",
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇭🇰 香港2",
+      "type": "vless",
+      "server": "xg.chenchuanjin.sbs",
+      "server_port": 443,
+      "uuid": "f4522b1a-7cc2-4d4b-84c5-357242e052bb",
+      "tls": {
+        "enabled": true,
+        "server_name": "xg.chenchuanjin.sbs",
+        "insecure": true
+      },
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "xg.chenchuanjin.sbs"
+        },
+        "path": "/"
+      }
+    },
+    {
+      "tag": "🇸🇬 SG_t.me/ccdjbQaQ_2",
+      "type": "vless",
+      "server": "52.76.137.189",
+      "server_port": 443,
+      "uuid": "63601f9f-7c67-4952-919a-1ef802b5a7ec",
+      "tls": {
+        "enabled": true,
+        "server_name": "steep.skyfigure.top",
+        "insecure": true
+      },
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "steep.skyfigure.top"
+        },
+        "path": "/Telegram🇨🇳 @WangCai2 /",
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇺🇸 US_t.me/ccdjbQaQ_31",
+      "type": "vless",
+      "server": "47.245.105.192",
+      "server_port": 443,
+      "uuid": "1a79d43f-b41c-496b-a241-dcbeefa81f0e",
+      "tls": {
+        "enabled": true,
+        "server_name": "0926.qiang2000.link",
+        "insecure": true
+      },
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "0926.qiang2000.link"
+        },
+        "path": "/Telegram🇨🇳 @WangCai2 /",
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇺🇸 US_t.me/ccdjbQaQ_58",
+      "type": "trojan",
+      "server": "13.209.10.213",
+      "server_port": 6668,
+      "password": "1a17b19d-4896-4531-af79-6e91d8ef8228",
+      "tls": {
+        "enabled": true,
+        "server_name": "baidu.com",
+        "insecure": true
+      }
+    },
+    {
+      "tag": "🇰🇷 KR_t.me/ccdjbQaQ",
+      "type": "vless",
+      "server": "14.52.132.109",
+      "server_port": 50000,
+      "uuid": "63601f9f-7c67-4952-919a-1ef802b5a7ec",
+      "tls": {
+        "enabled": true,
+        "server_name": "steep.skyfigure.top",
+        "insecure": true
+      },
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "steep.skyfigure.top"
+        },
+        "path": "/Telegram🇨🇳 @WangCai2 /",
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇺🇸 Madcity-US 02",
+      "type": "vless",
+      "server": "104.18.148.234",
+      "server_port": 443,
+      "uuid": "d69b938c-cbf4-4b61-aa97-e5762c304a25",
+      "tls": {
+        "enabled": true,
+        "server_name": "madcity2.777999.lol",
+        "insecure": true,
+        "alpn": [
+          "h3%2Ch2%2Chttp%2F1.1"
+        ],
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "madcity2.777999.lol"
+        },
+        "path": "/",
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇺🇸 ·美国-Madison提供",
+      "type": "trojan",
+      "server": "us.madison.eu.org",
+      "server_port": 443,
+      "password": "bpb-trojan",
+      "tls": {
+        "enabled": true,
+        "server_name": "skwygx.top",
+        "insecure": true,
+        "alpn": [
+          "h3"
+        ]
+      },
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "skwygx.top"
+        },
+        "path": "/tr",
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇺🇸 Madcity-US 03",
+      "type": "vless",
+      "server": "5.10.247.255",
+      "server_port": 443,
+      "uuid": "9af46703-64fa-4d42-b87b-656372e517ae",
+      "tls": {
+        "enabled": true,
+        "server_name": "seen-israel-dining-sure.trycloudflare.com",
+        "insecure": true
+      },
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "seen-israel-dining-sure.trycloudflare.com"
+        },
+        "path": "/9af46703-64fa-4d42-b87b-656372e517ae-vless",
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2048
+      }
+    },
+    {
+      "tag": "🇺🇸 Madcity-US 04",
+      "type": "vless",
+      "server": "5.10.246.231",
+      "server_port": 443,
+      "uuid": "9af46703-64fa-4d42-b87b-656372e517ae",
+      "tls": {
+        "enabled": true,
+        "server_name": "seen-israel-dining-sure.trycloudflare.com",
+        "insecure": true
+      },
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "seen-israel-dining-sure.trycloudflare.com"
+        },
+        "path": "/9af46703-64fa-4d42-b87b-656372e517ae-vless",
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2048
+      }
+    },
+    {
+      "tag": "🇺🇸 美国",
+      "type": "vless",
+      "server": "xui.chenchuanjin.sbs",
+      "server_port": 8443,
+      "uuid": "4e789bac-e733-44da-fb0c-711b71c515be",
+      "tls": {
+        "enabled": true,
+        "server_name": "xui.chenchuanjin.sbs",
+        "insecure": true
+      },
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "xui.chenchuanjin.sbs"
+        },
+        "path": "/aa"
+      }
+    },
+    {
+      "tag": "🇺🇸 Madcity-US 01",
+      "type": "vless",
+      "server": "38.46.0.147",
+      "server_port": 39596,
+      "uuid": "d69b938c-cbf4-4b61-aa97-e5762c304a25",
+      "tls": {
+        "enabled": true,
+        "server_name": "madcity2.777999.lol",
+        "insecure": true,
+        "alpn": [
+          "h3%2Ch2%2Chttp%2F1.1"
+        ],
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "madcity2.777999.lol"
+        },
+        "path": "/",
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇫🇷 ·法国-Madison提供",
+      "type": "trojan",
+      "server": "fa.madison.eu.org",
+      "server_port": 443,
+      "password": "bpb-trojan",
+      "tls": {
+        "enabled": true,
+        "server_name": "skwygx.top",
+        "insecure": true,
+        "alpn": [
+          "h3"
+        ]
+      },
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "skwygx.top"
+        },
+        "path": "/tr",
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇷🇺 俄罗斯Youtube免广告",
+      "type": "hysteria2",
+      "server": "hy2.694463.xyz",
+      "server_port": 10011,
+      "password": "dongtaiwang.com",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.bing.com",
+        "insecure": true
+      }
+    },
+    {
+      "tag": "🇸🇪 ·瑞典-Madison提供",
+      "type": "trojan",
+      "server": "se.madison.eu.org",
+      "server_port": 443,
+      "password": "bpb-trojan",
+      "tls": {
+        "enabled": true,
+        "server_name": "skwygx.top",
+        "insecure": true,
+        "alpn": [
+          "h3"
+        ]
+      },
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "skwygx.top"
+        },
+        "path": "/tr",
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🏴‍☠️ ·爱莎尼亚-Madison提供",
+      "type": "trojan",
+      "server": "est.madison.eu.org",
+      "server_port": 443,
+      "password": "bpb-trojan",
+      "tls": {
+        "enabled": true,
+        "server_name": "skwygx.top",
+        "insecure": true,
+        "alpn": [
+          "h3"
+        ]
+      },
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "skwygx.top"
+        },
+        "path": "/tr",
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇬🇧 GB_t.me/ccdjbQaQ_1",
+      "type": "vless",
+      "server": "45.85.118.141",
+      "server_port": 443,
+      "uuid": "401374e6-df77-41fb-f638-dad8184f175b",
+      "tls": {
+        "enabled": true,
+        "server_name": "pqh44v2.hiddendom.shop",
+        "insecure": true
+      },
+      "transport": {
+        "type": "grpc",
+        "service_name": "/"
+      }
+    },
+    {
+      "tag": "🇧🇬 ·保加利亚-Madison提供",
+      "type": "trojan",
+      "server": "bg.madison.eu.org",
+      "server_port": 443,
+      "password": "bpb-trojan",
+      "tls": {
+        "enabled": true,
+        "server_name": "skwygx.top",
+        "insecure": true,
+        "alpn": [
+          "h3"
+        ]
+      },
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "skwygx.top"
+        },
+        "path": "/tr",
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇭🇰 HK-Acck hysteria2-Aelen提供",
+      "type": "hysteria2",
+      "server": "45.196.219.107",
+      "server_port": 443,
+      "password": "c0ace9a5-1266-48a8-b02c-681f21c8d5b0",
+      "tls": {
+        "enabled": true,
+        "server_name": "45.196.219.107",
+        "insecure": true
+      }
+    },
+    {
+      "tag": "🇯🇵 JP_t.me/ccdjbQaQ",
+      "type": "vless",
+      "server": "8.209.220.67",
+      "server_port": 443,
+      "uuid": "1a79d43f-b41c-496b-a241-dcbeefa81f0e",
+      "tls": {
+        "enabled": true,
+        "server_name": "0926.qiang2000.link",
+        "insecure": true
+      },
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "0926.qiang2000.link"
+        },
+        "path": "/Telegram🇨🇳 @WangCai2 /",
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇭🇰 香港(IPv6)-Aelen提供",
+      "type": "hysteria2",
+      "server": "yba.aelen.ggff.net",
+      "server_port": 47116,
+      "password": "231nXZsmfn",
+      "tls": {
+        "enabled": true,
+        "server_name": "yba.aelen.ggff.net",
+        "insecure": true
+      }
+    },
+    {
+      "tag": "🇧🇷 巴西-硕 hysteria2",
+      "type": "hysteria2",
+      "server": "br.huafei888.site",
+      "server_port": 60521,
+      "password": "84169100-34da-431a-88be-825430caa62c",
+      "tls": {
+        "enabled": true,
+        "server_name": "br.huafei888.site",
+        "insecure": true,
+        "alpn": [
+          "h3"
+        ]
+      }
+    },
+    {
+      "tag": "🇸🇬 Oracle-SG 移动快乐 01",
+      "type": "vless",
+      "server": "5.10.244.129",
+      "server_port": 443,
+      "uuid": "4484a8e0-8cd7-4db3-9098-99819d346dc3",
+      "tls": {
+        "enabled": true,
+        "server_name": "oracle-sg.777999.lol",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "oracle-sg.777999.lol"
+        },
+        "path": "/",
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇸🇬 Oracle-SG 移动快乐 02",
+      "type": "vless",
+      "server": "104.25.253.197",
+      "server_port": 8443,
+      "uuid": "4484a8e0-8cd7-4db3-9098-99819d346dc3",
+      "tls": {
+        "enabled": true,
+        "server_name": "oracle-sg.777999.lol",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "oracle-sg.777999.lol"
+        },
+        "path": "/",
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇭🇰 HK-HY2",
+      "type": "hysteria2",
+      "server": "2401:b60:5:7801:aa3b:4fd1:2b6f:fbab",
+      "server_port": 2096,
+      "password": "4376c0b7-06c1-36b7-bd87-1448b3664c18",
+      "tls": {
+        "enabled": true,
+        "server_name": "2401:b60:5:7801:aa3b:4fd1:2b6f:fbab",
+        "insecure": true,
+        "alpn": [
+          "h3"
+        ]
+      }
+    },
+    {
+      "tag": "🇧🇷 巴西-hysteria2",
+      "type": "hysteria2",
+      "server": "br.huafei888.site",
+      "server_port": 41000,
+      "password": "2d92d560-1bce-477c-8d2f-5ac1e6955f01",
+      "tls": {
+        "enabled": true,
+        "server_name": "br.huafei888.site",
+        "insecure": true,
+        "alpn": [
+          "h3"
+        ]
+      }
+    },
+    {
+      "tag": "🇯🇵 日本3",
+      "type": "trojan",
+      "server": "zz1.jckumao.cc",
+      "server_port": 36045,
+      "password": "2aa67a63-8de8-4ca9-b3b7-613ad9264c1c",
+      "tls": {
+        "enabled": true,
+        "server_name": "zz1.jckumao.cc",
+        "insecure": true
+      }
+    },
+    {
+      "tag": "🇸🇬 ·新加坡",
+      "type": "trojan",
+      "server": "sg.madison.eu.org",
+      "server_port": 443,
+      "password": "bpb-trojan",
+      "tls": {
+        "enabled": true,
+        "server_name": "skwygx.top",
+        "insecure": true,
+        "alpn": [
+          "h3"
+        ]
+      },
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "skwygx.top"
+        },
+        "path": "/tr",
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    }
+  ],
+  "route": {
+    "rules": [
+      {
+        "action": "sniff"
+      },
+      {
+        "protocol": "dns",
+        "action": "hijack-dns"
+      },
+      {
+        "action": "resolve",
+        "strategy": "ipv4_only"
+      },
+      {
+        "clash_mode": "Global",
+        "outbound": "select"
+      },
+      {
+        "clash_mode": "Direct",
+        "outbound": "direct"
+      },
+      {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "domain_suffix": [
+              "ushd.xmsl.org",
+              "cf.gtlx.org"
+            ]
+          }
+        ],
+        "outbound": "direct"
+      },
+      {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "domain_suffix": [
+              "public-operation-hkrpg-sg.hoyoverse.com",
+              "public-operation-hk4e-sg.hoyoverse.com",
+              "public-operation-nap-sg.hoyoverse.com"
+            ]
+          },
+          {
+            "port_range": [
+              "23301:23301",
+              "22101:22102",
+              "20501:20501",
+              "21601:21606"
+            ]
+          }
+        ],
+        "outbound": "hoyo"
+      },
+      {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "domain_keyword": [
+              "hoyoverse.com"
+            ]
+          }
+        ],
+        "outbound": "select"
+      },
+      {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "rule_set": [
+              "geosite-category-ai-!cn"
+            ]
+          }
+        ],
+        "outbound": "ai"
+      },
+      {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "ip_is_private": true
+          },
+          {
+            "rule_set": [
+              "geosite-googlefcm",
+              "geosite-cn",
+              "geoip-cn"
+            ]
+          }
+        ],
+        "outbound": "direct"
+      }
+    ],
+    "rule_set": [
+      {
+        "type": "remote",
+        "tag": "geoip-cn",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/lyc8503/sing-box-rules/rule-set-geoip/geoip-cn.srs",
+        "download_detour": "select"
+      },
+      {
+        "type": "remote",
+        "tag": "geosite-cn",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/lyc8503/sing-box-rules/rule-set-geosite/geosite-cn.srs",
+        "download_detour": "select"
+      },
+      {
+        "type": "remote",
+        "tag": "geosite-category-ai-!cn",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/lyc8503/sing-box-rules/rule-set-geosite/geosite-category-ai-!cn.srs",
+        "download_detour": "select"
+      },
+      {
+        "type": "remote",
+        "tag": "geosite-googlefcm",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/lyc8503/sing-box-rules/rule-set-geosite/geosite-googlefcm.srs",
+        "download_detour": "select"
+      },
+      {
+        "type": "remote",
+        "tag": "geosite-category-ads-all",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/lyc8503/sing-box-rules/rule-set-geosite/geosite-category-ads-all.srs",
+        "download_detour": "select"
+      }
+    ],
+    "final": "select",
+    "default_domain_resolver": "dns_direct",
+    "auto_detect_interface": true,
+    "override_android_vpn": true
+  },
+  "experimental": {
+    "cache_file": {
+      "enabled": true
+    },
+    "clash_api": {
+      "external_controller": "127.0.0.1:9090"
+    }
+  }
+}

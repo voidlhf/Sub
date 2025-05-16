@@ -1,0 +1,561 @@
+log-level: "debug"
+mixed-port: 7890
+allow-lan: true
+external-controller: "127.0.0.1:9090"
+unified-delay: true
+tcp-concurrent: true
+geodata-mode: true
+geox-url:
+  geoip: "https://ghfast.top/https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geoip.dat"
+  geosite: "https://ghfast.top/https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geosite.dat"
+find-process-mode: "strict"
+global-client-fingerprint: "chrome"
+profile:
+  store-selected: true
+  store-fake-ip: true
+sniffer:
+  enable: true
+  force-dns-mapping: true
+  parse-pure-ip: true
+  override-destination: false
+  sniff:
+    HTTP:
+      ports:
+      - 80
+      - "8080-8880"
+    TLS:
+      ports:
+      - 443
+      - 8443
+    QUIC:
+      ports:
+      - 443
+      - 8443
+tun:
+  enable: true
+  stack: "mixed"
+  dns-hijack:
+  - "any:53"
+  - "tcp://any:53"
+  auto-route: true
+  auto-redirect: true
+  auto-detect-interface: true
+  strict-route: true
+dns:
+  enable: true
+  ipv6: false
+  default-nameserver:
+  - "223.5.5.5"
+  - "119.29.29.29"
+  enhanced-mode: "fake-ip"
+  fake-ip-range: "198.18.0.1/16"
+  nameserver:
+  - "https://dns.cloudflare.com/dns-query"
+  - "https://dns.google/dns-query"
+  nameserver-policy:
+    geosite:cn,private,googlefcm:
+    - "https://dns.alidns.com/dns-query"
+    - "https://doh.pub/dns-query"
+  proxy-server-nameserver:
+  - "https://dns.alidns.com/dns-query"
+  - "https://doh.pub/dns-query"
+proxies:
+- {type: "ss", server: "8tv68qhq.slashdevslashnetslashtun.net", port: 15013, cipher: "aes-256-gcm", password: "TRCV4W1YD6FLQQ86", name: "🏴‍☠️ 当前更新0515日期为一天及时更新"}
+- {type: "ss", server: "w72tapyb.slashdevslashnetslashtun.net", port: 15016, cipher: "aes-256-gcm", password: "NPOA4WYID2WF8N4E", name: "🇭🇰 HK-015"}
+- {type: "ss", server: "8tv68qhq.slashdevslashnetslashtun.net", port: 15007, cipher: "aes-256-gcm", password: "GN4RQZC6LHQZW0AI", name: "🇭🇰 HK-06"}
+- {type: "ss", server: "8tv68qhq.slashdevslashnetslashtun.net", port: 15009, cipher: "aes-256-gcm", password: "4DI07MWMFRU0VJZB", name: "🇭🇰 HK-08"}
+- {type: "ss", server: "8tv68qhq.slashdevslashnetslashtun.net", port: 15003, cipher: "aes-256-gcm", password: "6Q9TR3G0YZG39DFG", name: "🇭🇰 HK-02"}
+- {type: "ss", server: "ti3hyra4.slashdevslashnetslashtun.net", port: 15014, cipher: "aes-256-gcm", password: "ZZANNH1LHXPBBESS", name: "🇭🇰 HK-013"}
+- {type: "ss", server: "w72tapyb.slashdevslashnetslashtun.net", port: 15008, cipher: "aes-256-gcm", password: "0S43J3FD6L7IEKGQ", name: "🇭🇰 HK-07"}
+- {type: "ss", server: "8tv68qhq.slashdevslashnetslashtun.net", port: 15005, cipher: "aes-256-gcm", password: "X98KSY6O663N7HNF", name: "🇭🇰 HK-04"}
+- {type: "ss", server: "qh62onjn.slashdevslashnetslashtun.net", port: 15015, cipher: "aes-256-gcm", password: "KBI2ZBUOTK35QZ1S", name: "🇭🇰 HK-014"}
+- {type: "ss", server: "23.185.248.19", port: 17009, cipher: "aes-256-gcm", password: "TGZJ7P7K4JSTMX7L", name: "🇺🇸 US-09"}
+- {type: "ss", server: "ti3hyra4.slashdevslashnetslashtun.net", port: 17001, cipher: "aes-256-gcm", password: "BGLIV9LVWXRZ8FKR", name: "🇺🇸 US-01"}
+- {type: "ss", server: "ti3hyra4.slashdevslashnetslashtun.net", port: 17002, cipher: "aes-256-gcm", password: "TI3JUYDIVKBW7K7Z", name: "🇺🇸 US-02"}
+- {type: "ss", server: "ti3hyra4.slashdevslashnetslashtun.net", port: 17008, cipher: "aes-256-gcm", password: "48DETNM5JHM59I86", name: "🇺🇸 US-08"}
+- {type: "ss", server: "23.185.248.20", port: 17010, cipher: "aes-256-gcm", password: "7N8BNTRKRGHD1ZQO", name: "🇺🇸 US-10"}
+- {type: "ss", server: "ti3hyra4.slashdevslashnetslashtun.net", port: 17005, cipher: "aes-256-gcm", password: "JKR339V7DJA58QC5", name: "🇺🇸 US-05"}
+- {type: "ss", server: "23.185.248.21", port: 17011, cipher: "aes-256-gcm", password: "YBMYN23L6H530NB4", name: "🇺🇸 US-11"}
+- {type: "ss", server: "23.185.248.26", port: 17016, cipher: "aes-256-gcm", password: "9JXGDA4RZWXQ0E0H", name: "🇺🇸 US-16"}
+- {type: "ss", server: "23.185.248.24", port: 17014, cipher: "aes-256-gcm", password: "6KNG3WBVGVXBDZPQ", name: "🇺🇸 US-14"}
+- {type: "ss", server: "ti3hyra4.slashdevslashnetslashtun.net", port: 17004, cipher: "aes-256-gcm", password: "EUYYE5FRT955QOT9", name: "🇺🇸 US-04"}
+- {type: "ss", server: "23.185.248.25", port: 17015, cipher: "aes-256-gcm", password: "OGO4UILIDT3TLR2T", name: "🇺🇸 US-15"}
+- {type: "ss", server: "ti3hyra4.slashdevslashnetslashtun.net", port: 17003, cipher: "aes-256-gcm", password: "Y6NR0SWF0SNPZV7F", name: "🇺🇸 US-03"}
+- {type: "ss", server: "23.185.248.23", port: 17013, cipher: "aes-256-gcm", password: "U1MD7EXS1Z6BX5F3", name: "🇺🇸 US-13"}
+- {type: "ss", server: "ti3hyra4.slashdevslashnetslashtun.net", port: 17007, cipher: "aes-256-gcm", password: "OP5EH17B8NGAD032", name: "🇺🇸 US-07"}
+- {type: "ss", server: "23.185.248.22", port: 17012, cipher: "aes-256-gcm", password: "AHHNU6NAWVWC3QTO", name: "🇺🇸 US-12"}
+- {type: "ss", server: "ti3hyra4.slashdevslashnetslashtun.net", port: 16004, cipher: "aes-256-gcm", password: "M8AOVZBATWXT5MTK", name: "🇸🇬 SG-04"}
+- {type: "ss", server: "w72tapyb.slashdevslashnetslashtun.net", port: 16011, cipher: "aes-256-gcm", password: "I4NQF6TODP1BBLNS", name: "🇸🇬 SG-011"}
+- {type: "ss", server: "ti3hyra4.slashdevslashnetslashtun.net", port: 16003, cipher: "aes-256-gcm", password: "UAO72K511KYT7NM7", name: "🇸🇬 SG-03"}
+- {type: "ss", server: "ti3hyra4.slashdevslashnetslashtun.net", port: 16008, cipher: "aes-256-gcm", password: "D597L82HFX70VL3N", name: "🇸🇬 SG-08"}
+- {type: "ss", server: "w72tapyb.slashdevslashnetslashtun.net", port: 16001, cipher: "aes-256-gcm", password: "KA4XT8N0AOD0J4XH", name: "🇸🇬 SG-01"}
+- {type: "ss", server: "w72tapyb.slashdevslashnetslashtun.net", port: 16010, cipher: "aes-256-gcm", password: "SW8EF0HI5TBOZ1P4", name: "🇸🇬 SG-010"}
+- {type: "ss", server: "ti3hyra4.slashdevslashnetslashtun.net", port: 16007, cipher: "aes-256-gcm", password: "8IKR1JDL8SNN8XF1", name: "🇸🇬 SG-07"}
+- {type: "ss", server: "ti3hyra4.slashdevslashnetslashtun.net", port: 16013, cipher: "aes-256-gcm", password: "OSS363DVK8A77G46", name: "🇸🇬 SG-013"}
+- {type: "ss", server: "ti3hyra4.slashdevslashnetslashtun.net", port: 16009, cipher: "aes-256-gcm", password: "9JXYNQ52WW37QFFM", name: "🇸🇬 SG-09"}
+- {type: "ss", server: "ti3hyra4.slashdevslashnetslashtun.net", port: 16015, cipher: "aes-256-gcm", password: "95K8FAAMNXZHVQJI", name: "🇸🇬 SG-015"}
+- {type: "ss", server: "w72tapyb.slashdevslashnetslashtun.net", port: 16012, cipher: "aes-256-gcm", password: "GCJX5NQBYKAPSBMG", name: "🇸🇬 SG-012"}
+- {type: "ss", server: "ti3hyra4.slashdevslashnetslashtun.net", port: 16005, cipher: "aes-256-gcm", password: "LTJNG2AA36M2BJ8T", name: "🇸🇬 SG-05"}
+- {type: "ss", server: "ti3hyra4.slashdevslashnetslashtun.net", port: 16016, cipher: "aes-256-gcm", password: "JVZJAQSO7NX48LFQ", name: "🇸🇬 SG-016"}
+- {type: "ss", server: "ti3hyra4.slashdevslashnetslashtun.net", port: 16002, cipher: "aes-256-gcm", password: "T1OTLU2P79B0QMGD", name: "🇸🇬 SG-02"}
+- {type: "ss", server: "ti3hyra4.slashdevslashnetslashtun.net", port: 16014, cipher: "aes-256-gcm", password: "TUYS13ZAK2KCKKX7", name: "🇸🇬 SG-014"}
+- {type: "ss", server: "37.143.131.121", port: 20001, cipher: "aes-256-gcm", password: "HY49XVOOZXBDPA5Q", name: "🇨🇭 CH-01"}
+- {type: "ss", server: "ti3hyra4.slashdevslashnetslashtun.net", port: 20002, cipher: "aes-256-gcm", password: "BMR5UT6SA47L6ZKZ", name: "🇷🇺 RU-01"}
+- {type: "ss", server: "185.231.233.32", port: 20003, cipher: "aes-256-gcm", password: "GLALDSD6JF9H2IIT", name: "🇵🇹 PT-01"}
+- {type: "ss", server: "8tv68qhq.slashdevslashnetslashtun.net", port: 20004, cipher: "aes-256-gcm", password: "DKBL71UESNMEZ67J", name: "🇬🇷 GR-01"}
+- {type: "ss", server: "109.104.154.131", port: 20000, cipher: "aes-256-gcm", password: "BYBIT5ORYLR3U6SW", name: "🇳🇱 NL-01"}
+- {type: "ss", server: "ti3hyra4.slashdevslashnetslashtun.net", port: 18015, cipher: "aes-256-gcm", password: "CFVK00M24Y2PPN4V", name: "🇯🇵 JP-15"}
+- {type: "ss", server: "156.231.104.15", port: 18005, cipher: "aes-256-gcm", password: "UKLXTSGDCHCTXPXL", name: "🇯🇵 JP-05"}
+- {type: "ss", server: "ti3hyra4.slashdevslashnetslashtun.net", port: 18011, cipher: "aes-256-gcm", password: "65AQWBJZW8FDUYRU", name: "🇯🇵 JP-11"}
+- {type: "ss", server: "156.231.104.13", port: 18003, cipher: "aes-256-gcm", password: "FEPV5A1QYLA8JH4O", name: "🇯🇵 JP-03"}
+- {type: "ss", server: "ti3hyra4.slashdevslashnetslashtun.net", port: 18010, cipher: "aes-256-gcm", password: "LQYS0BGZIYNDDC5A", name: "🇯🇵 JP-10"}
+- {type: "ss", server: "ti3hyra4.slashdevslashnetslashtun.net", port: 18014, cipher: "aes-256-gcm", password: "EUAM0OIIAKZSM6DA", name: "🇯🇵 JP-14"}
+- {type: "ss", server: "ti3hyra4.slashdevslashnetslashtun.net", port: 18001, cipher: "aes-256-gcm", password: "99MLVZ6GITDEEI8V", name: "🇯🇵 JP-01"}
+- {type: "ss", server: "156.231.104.22", port: 18012, cipher: "aes-256-gcm", password: "IGS1X43ZWO2J6A0B", name: "🇯🇵 JP-12"}
+- {type: "ss", server: "ti3hyra4.slashdevslashnetslashtun.net", port: 18013, cipher: "aes-256-gcm", password: "FOOVVXJHW3561FBF", name: "🇯🇵 JP-13"}
+- {type: "ss", server: "ti3hyra4.slashdevslashnetslashtun.net", port: 18002, cipher: "aes-256-gcm", password: "W4G1W1KUWHN00FCL", name: "🇯🇵 JP-02"}
+- {type: "ss", server: "ti3hyra4.slashdevslashnetslashtun.net", port: 18016, cipher: "aes-256-gcm", password: "NMXANR9BIXDUXOU0", name: "🇯🇵 JP-16"}
+- {type: "ss", server: "ti3hyra4.slashdevslashnetslashtun.net", port: 18009, cipher: "aes-256-gcm", password: "QFFD3IJSJW1GP1RL", name: "🇯🇵 JP-09"}
+- {type: "ss", server: "ti3hyra4.slashdevslashnetslashtun.net", port: 18004, cipher: "aes-256-gcm", password: "AIGL9SDL8Q1Y9GGP", name: "🇯🇵 JP-04"}
+- {type: "ss", server: "ti3hyra4.slashdevslashnetslashtun.net", port: 18007, cipher: "aes-256-gcm", password: "L6SVLQ4JX4QIZ375", name: "🇯🇵 JP-07"}
+- {type: "ss", server: "156.231.104.16", port: 18006, cipher: "aes-256-gcm", password: "WTVARGI45K9C0O5Z", name: "🇯🇵 JP-06"}
+- {type: "ss", server: "ti3hyra4.slashdevslashnetslashtun.net", port: 18008, cipher: "aes-256-gcm", password: "0ENBV5YDBA4O4JMV", name: "🇯🇵 JP-08"}
+- {type: "ss", server: "91.148.134.106", port: 20005, cipher: "aes-256-gcm", password: "PADN5TMNUIY06ZDY", name: "🇨🇴 CO-01"}
+- {type: "ss", server: "8tv68qhq.slashdevslashnetslashtun.net", port: 20006, cipher: "aes-256-gcm", password: "02CPKNGWWVUGQ6O4", name: "🇦🇷 AR-01"}
+- {type: "ss", server: "185.47.254.177", port: 20007, cipher: "aes-256-gcm", password: "NEVEEKRNG2T2U1YA", name: "🇬🇹 GT-01"}
+- {type: "ss", server: "185.93.173.246", port: 20008, cipher: "aes-256-gcm", password: "ZTA5OO90OV0SC2J1", name: "🇧🇴 BO-01"}
+- {type: "ss", server: "185.47.252.16", port: 20009, cipher: "aes-256-gcm", password: "PBC4TDNU0H4ULXMO", name: "🇵🇪 PE-01"}
+- {type: "ss", server: "185.47.253.144", port: 20010, cipher: "aes-256-gcm", password: "LYIPL7SRZ0JQDWHV", name: "🇪🇨 EC-01"}
+- {type: "ss", server: "qh62onjn.slashdevslashnetslashtun.net", port: 20011, cipher: "aes-256-gcm", password: "J5ENRJK652OQT0Y7", name: "🇨🇷 CR-01"}
+- {type: "ss", server: "37.143.128.125", port: 20012, cipher: "aes-256-gcm", password: "GC0A6KXARM6K1KW6", name: "🇨🇱 CL-01"}
+- {type: "ss", server: "185.192.124.41", port: 20013, cipher: "aes-256-gcm", password: "VZV3XU9VT5954XGN", name: "🇧🇷 BR-01"}
+- {type: "ss", server: "ti3hyra4.slashdevslashnetslashtun.net", port: 20014, cipher: "aes-256-gcm", password: "MP4HB9T2LP8N1TTS", name: "🇲🇦 MA-01"}
+- {type: "ss", server: "129.232.133.62", port: 20015, cipher: "aes-256-gcm", password: "K3P2W4D8ZPR7E3K0", name: "🇿🇦 ZA-01"}
+- {type: "ss", server: "185.255.123.183", port: 20016, cipher: "aes-256-gcm", password: "2HWYCPNT1H5NRIIC", name: "🇳🇬 NG-01"}
+- {type: "ss", server: "8tv68qhq.slashdevslashnetslashtun.net", port: 20017, cipher: "aes-256-gcm", password: "AES9SGFRX290LFM2", name: "🇦🇪 AE-01"}
+- {type: "ss", server: "ti3hyra4.slashdevslashnetslashtun.net", port: 20018, cipher: "aes-256-gcm", password: "ZQM173RDUI5QLX98", name: "🇲🇾 MY-01"}
+- {type: "ss", server: "147.78.2.35", port: 20020, cipher: "aes-256-gcm", password: "X8KRCX4XO36HY5EE", name: "🇮🇱 IL-01"}
+- {type: "ss", server: "103.75.119.144", port: 20021, cipher: "aes-256-gcm", password: "81TTPLICAKQ3YA93", name: "🇦🇺 AU-01"}
+- {type: "ss", server: "46.16.129.217", port: 20022, cipher: "aes-256-gcm", password: "G8BE7IG992T8DE85", name: "🇹🇭 TH-01"}
+- {type: "ss", server: "223.165.5.107", port: 20023, cipher: "aes-256-gcm", password: "01E4DZ3RI53AUQI5", name: "🇵🇰 PK-01"}
+- {type: "ss", server: "185.123.100.140", port: 20024, cipher: "aes-256-gcm", password: "TOIBX44O6MIGPICK", name: "🇹🇷 TR-01"}
+- {type: "ss", server: "185.186.77.137", port: 20025, cipher: "aes-256-gcm", password: "MWFH24437CJHX310", name: "🇷🇸 RS-01"}
+- {type: "ss", server: "185.213.22.93", port: 20026, cipher: "aes-256-gcm", password: "RQRAZGOPHT1BEOJN", name: "🇧🇪 BE-01"}
+- {type: "ss", server: "185.126.237.58", port: 20027, cipher: "aes-256-gcm", password: "65Q6OFRYDZU406H9", name: "🇷🇴 RO-01"}
+- {type: "ss", server: "185.186.79.135", port: 20028, cipher: "aes-256-gcm", password: "2Q3BEZYK3GOUQZUW", name: "🇩🇰 DK-01"}
+- {type: "ss", server: "185.213.20.36", port: 20029, cipher: "aes-256-gcm", password: "S781V28CPJ4RVYT3", name: "🇮🇹 IT-01"}
+- {type: "ss", server: "45.154.207.246", port: 20030, cipher: "aes-256-gcm", password: "QCY9ISX5S7NS7LEB", name: "🇩🇪 DE-01"}
+- {type: "ss", server: "37.143.129.127", port: 20031, cipher: "aes-256-gcm", password: "6J7529YTK4BNVD72", name: "🇫🇮 FI-01"}
+- {type: "ss", server: "147.78.3.137", port: 20032, cipher: "aes-256-gcm", password: "8JPPVUXIWL88BDU4", name: "🇺🇦 UA-01"}
+- {type: "ss", server: "185.90.61.157", port: 20034, cipher: "aes-256-gcm", password: "F33MWFG8Z6QTGS9I", name: "🇳🇴 NO-01"}
+- {type: "ss", server: "185.186.78.220", port: 20035, cipher: "aes-256-gcm", password: "M5HVK643SGKX11HC", name: "🇸🇪 SE-01"}
+- {type: "ss", server: "185.237.185.77", port: 20036, cipher: "aes-256-gcm", password: "E1ZORFH04H7CQCPD", name: "🇱🇹 LT-01"}
+- {type: "ss", server: "92.118.205.219", port: 20037, cipher: "aes-256-gcm", password: "C2U3DVDSCALK17UO", name: "🇵🇱 PL-01"}
+- {type: "ss", server: "45.154.206.189", port: 20038, cipher: "aes-256-gcm", password: "YBG2IEL7AOP7A8C9", name: "🇪🇸 ES-01"}
+- {type: "ss", server: "91.148.135.48", port: 20039, cipher: "aes-256-gcm", password: "EJD8X22LY4F6NUXJ", name: "🇨🇾 CY-01"}
+proxy-groups:
+- name: "PROXY"
+  type: "select"
+  proxies:
+  - "AUTO"
+  - "🏴‍☠️ 当前更新0515日期为一天及时更新"
+  - "🇭🇰 HK-015"
+  - "🇭🇰 HK-06"
+  - "🇭🇰 HK-08"
+  - "🇭🇰 HK-02"
+  - "🇭🇰 HK-013"
+  - "🇭🇰 HK-07"
+  - "🇭🇰 HK-04"
+  - "🇭🇰 HK-014"
+  - "🇺🇸 US-09"
+  - "🇺🇸 US-01"
+  - "🇺🇸 US-02"
+  - "🇺🇸 US-08"
+  - "🇺🇸 US-10"
+  - "🇺🇸 US-05"
+  - "🇺🇸 US-11"
+  - "🇺🇸 US-16"
+  - "🇺🇸 US-14"
+  - "🇺🇸 US-04"
+  - "🇺🇸 US-15"
+  - "🇺🇸 US-03"
+  - "🇺🇸 US-13"
+  - "🇺🇸 US-07"
+  - "🇺🇸 US-12"
+  - "🇸🇬 SG-04"
+  - "🇸🇬 SG-011"
+  - "🇸🇬 SG-03"
+  - "🇸🇬 SG-08"
+  - "🇸🇬 SG-01"
+  - "🇸🇬 SG-010"
+  - "🇸🇬 SG-07"
+  - "🇸🇬 SG-013"
+  - "🇸🇬 SG-09"
+  - "🇸🇬 SG-015"
+  - "🇸🇬 SG-012"
+  - "🇸🇬 SG-05"
+  - "🇸🇬 SG-016"
+  - "🇸🇬 SG-02"
+  - "🇸🇬 SG-014"
+  - "🇨🇭 CH-01"
+  - "🇷🇺 RU-01"
+  - "🇵🇹 PT-01"
+  - "🇬🇷 GR-01"
+  - "🇳🇱 NL-01"
+  - "🇯🇵 JP-15"
+  - "🇯🇵 JP-05"
+  - "🇯🇵 JP-11"
+  - "🇯🇵 JP-03"
+  - "🇯🇵 JP-10"
+  - "🇯🇵 JP-14"
+  - "🇯🇵 JP-01"
+  - "🇯🇵 JP-12"
+  - "🇯🇵 JP-13"
+  - "🇯🇵 JP-02"
+  - "🇯🇵 JP-16"
+  - "🇯🇵 JP-09"
+  - "🇯🇵 JP-04"
+  - "🇯🇵 JP-07"
+  - "🇯🇵 JP-06"
+  - "🇯🇵 JP-08"
+  - "🇨🇴 CO-01"
+  - "🇦🇷 AR-01"
+  - "🇬🇹 GT-01"
+  - "🇧🇴 BO-01"
+  - "🇵🇪 PE-01"
+  - "🇪🇨 EC-01"
+  - "🇨🇷 CR-01"
+  - "🇨🇱 CL-01"
+  - "🇧🇷 BR-01"
+  - "🇲🇦 MA-01"
+  - "🇿🇦 ZA-01"
+  - "🇳🇬 NG-01"
+  - "🇦🇪 AE-01"
+  - "🇲🇾 MY-01"
+  - "🇮🇱 IL-01"
+  - "🇦🇺 AU-01"
+  - "🇹🇭 TH-01"
+  - "🇵🇰 PK-01"
+  - "🇹🇷 TR-01"
+  - "🇷🇸 RS-01"
+  - "🇧🇪 BE-01"
+  - "🇷🇴 RO-01"
+  - "🇩🇰 DK-01"
+  - "🇮🇹 IT-01"
+  - "🇩🇪 DE-01"
+  - "🇫🇮 FI-01"
+  - "🇺🇦 UA-01"
+  - "🇳🇴 NO-01"
+  - "🇸🇪 SE-01"
+  - "🇱🇹 LT-01"
+  - "🇵🇱 PL-01"
+  - "🇪🇸 ES-01"
+  - "🇨🇾 CY-01"
+- name: "AUTO"
+  type: "url-test"
+  url: "http://www.gstatic.com/generate_204"
+  interval: 300
+  tolerance: 50
+  proxies:
+  - "🏴‍☠️ 当前更新0515日期为一天及时更新"
+  - "🇭🇰 HK-015"
+  - "🇭🇰 HK-06"
+  - "🇭🇰 HK-08"
+  - "🇭🇰 HK-02"
+  - "🇭🇰 HK-013"
+  - "🇭🇰 HK-07"
+  - "🇭🇰 HK-04"
+  - "🇭🇰 HK-014"
+  - "🇺🇸 US-09"
+  - "🇺🇸 US-01"
+  - "🇺🇸 US-02"
+  - "🇺🇸 US-08"
+  - "🇺🇸 US-10"
+  - "🇺🇸 US-05"
+  - "🇺🇸 US-11"
+  - "🇺🇸 US-16"
+  - "🇺🇸 US-14"
+  - "🇺🇸 US-04"
+  - "🇺🇸 US-15"
+  - "🇺🇸 US-03"
+  - "🇺🇸 US-13"
+  - "🇺🇸 US-07"
+  - "🇺🇸 US-12"
+  - "🇸🇬 SG-04"
+  - "🇸🇬 SG-011"
+  - "🇸🇬 SG-03"
+  - "🇸🇬 SG-08"
+  - "🇸🇬 SG-01"
+  - "🇸🇬 SG-010"
+  - "🇸🇬 SG-07"
+  - "🇸🇬 SG-013"
+  - "🇸🇬 SG-09"
+  - "🇸🇬 SG-015"
+  - "🇸🇬 SG-012"
+  - "🇸🇬 SG-05"
+  - "🇸🇬 SG-016"
+  - "🇸🇬 SG-02"
+  - "🇸🇬 SG-014"
+  - "🇨🇭 CH-01"
+  - "🇷🇺 RU-01"
+  - "🇵🇹 PT-01"
+  - "🇬🇷 GR-01"
+  - "🇳🇱 NL-01"
+  - "🇯🇵 JP-15"
+  - "🇯🇵 JP-05"
+  - "🇯🇵 JP-11"
+  - "🇯🇵 JP-03"
+  - "🇯🇵 JP-10"
+  - "🇯🇵 JP-14"
+  - "🇯🇵 JP-01"
+  - "🇯🇵 JP-12"
+  - "🇯🇵 JP-13"
+  - "🇯🇵 JP-02"
+  - "🇯🇵 JP-16"
+  - "🇯🇵 JP-09"
+  - "🇯🇵 JP-04"
+  - "🇯🇵 JP-07"
+  - "🇯🇵 JP-06"
+  - "🇯🇵 JP-08"
+  - "🇨🇴 CO-01"
+  - "🇦🇷 AR-01"
+  - "🇬🇹 GT-01"
+  - "🇧🇴 BO-01"
+  - "🇵🇪 PE-01"
+  - "🇪🇨 EC-01"
+  - "🇨🇷 CR-01"
+  - "🇨🇱 CL-01"
+  - "🇧🇷 BR-01"
+  - "🇲🇦 MA-01"
+  - "🇿🇦 ZA-01"
+  - "🇳🇬 NG-01"
+  - "🇦🇪 AE-01"
+  - "🇲🇾 MY-01"
+  - "🇮🇱 IL-01"
+  - "🇦🇺 AU-01"
+  - "🇹🇭 TH-01"
+  - "🇵🇰 PK-01"
+  - "🇹🇷 TR-01"
+  - "🇷🇸 RS-01"
+  - "🇧🇪 BE-01"
+  - "🇷🇴 RO-01"
+  - "🇩🇰 DK-01"
+  - "🇮🇹 IT-01"
+  - "🇩🇪 DE-01"
+  - "🇫🇮 FI-01"
+  - "🇺🇦 UA-01"
+  - "🇳🇴 NO-01"
+  - "🇸🇪 SE-01"
+  - "🇱🇹 LT-01"
+  - "🇵🇱 PL-01"
+  - "🇪🇸 ES-01"
+  - "🇨🇾 CY-01"
+- name: "AI"
+  type: "select"
+  proxies:
+  - "🏴‍☠️ 当前更新0515日期为一天及时更新"
+  - "🇭🇰 HK-015"
+  - "🇭🇰 HK-06"
+  - "🇭🇰 HK-08"
+  - "🇭🇰 HK-02"
+  - "🇭🇰 HK-013"
+  - "🇭🇰 HK-07"
+  - "🇭🇰 HK-04"
+  - "🇭🇰 HK-014"
+  - "🇺🇸 US-09"
+  - "🇺🇸 US-01"
+  - "🇺🇸 US-02"
+  - "🇺🇸 US-08"
+  - "🇺🇸 US-10"
+  - "🇺🇸 US-05"
+  - "🇺🇸 US-11"
+  - "🇺🇸 US-16"
+  - "🇺🇸 US-14"
+  - "🇺🇸 US-04"
+  - "🇺🇸 US-15"
+  - "🇺🇸 US-03"
+  - "🇺🇸 US-13"
+  - "🇺🇸 US-07"
+  - "🇺🇸 US-12"
+  - "🇸🇬 SG-04"
+  - "🇸🇬 SG-011"
+  - "🇸🇬 SG-03"
+  - "🇸🇬 SG-08"
+  - "🇸🇬 SG-01"
+  - "🇸🇬 SG-010"
+  - "🇸🇬 SG-07"
+  - "🇸🇬 SG-013"
+  - "🇸🇬 SG-09"
+  - "🇸🇬 SG-015"
+  - "🇸🇬 SG-012"
+  - "🇸🇬 SG-05"
+  - "🇸🇬 SG-016"
+  - "🇸🇬 SG-02"
+  - "🇸🇬 SG-014"
+  - "🇨🇭 CH-01"
+  - "🇷🇺 RU-01"
+  - "🇵🇹 PT-01"
+  - "🇬🇷 GR-01"
+  - "🇳🇱 NL-01"
+  - "🇯🇵 JP-15"
+  - "🇯🇵 JP-05"
+  - "🇯🇵 JP-11"
+  - "🇯🇵 JP-03"
+  - "🇯🇵 JP-10"
+  - "🇯🇵 JP-14"
+  - "🇯🇵 JP-01"
+  - "🇯🇵 JP-12"
+  - "🇯🇵 JP-13"
+  - "🇯🇵 JP-02"
+  - "🇯🇵 JP-16"
+  - "🇯🇵 JP-09"
+  - "🇯🇵 JP-04"
+  - "🇯🇵 JP-07"
+  - "🇯🇵 JP-06"
+  - "🇯🇵 JP-08"
+  - "🇨🇴 CO-01"
+  - "🇦🇷 AR-01"
+  - "🇬🇹 GT-01"
+  - "🇧🇴 BO-01"
+  - "🇵🇪 PE-01"
+  - "🇪🇨 EC-01"
+  - "🇨🇷 CR-01"
+  - "🇨🇱 CL-01"
+  - "🇧🇷 BR-01"
+  - "🇲🇦 MA-01"
+  - "🇿🇦 ZA-01"
+  - "🇳🇬 NG-01"
+  - "🇦🇪 AE-01"
+  - "🇲🇾 MY-01"
+  - "🇮🇱 IL-01"
+  - "🇦🇺 AU-01"
+  - "🇹🇭 TH-01"
+  - "🇵🇰 PK-01"
+  - "🇹🇷 TR-01"
+  - "🇷🇸 RS-01"
+  - "🇧🇪 BE-01"
+  - "🇷🇴 RO-01"
+  - "🇩🇰 DK-01"
+  - "🇮🇹 IT-01"
+  - "🇩🇪 DE-01"
+  - "🇫🇮 FI-01"
+  - "🇺🇦 UA-01"
+  - "🇳🇴 NO-01"
+  - "🇸🇪 SE-01"
+  - "🇱🇹 LT-01"
+  - "🇵🇱 PL-01"
+  - "🇪🇸 ES-01"
+  - "🇨🇾 CY-01"
+- name: "HOYO"
+  type: "select"
+  proxies:
+  - "DIRECT"
+  - "🏴‍☠️ 当前更新0515日期为一天及时更新"
+  - "🇭🇰 HK-015"
+  - "🇭🇰 HK-06"
+  - "🇭🇰 HK-08"
+  - "🇭🇰 HK-02"
+  - "🇭🇰 HK-013"
+  - "🇭🇰 HK-07"
+  - "🇭🇰 HK-04"
+  - "🇭🇰 HK-014"
+  - "🇺🇸 US-09"
+  - "🇺🇸 US-01"
+  - "🇺🇸 US-02"
+  - "🇺🇸 US-08"
+  - "🇺🇸 US-10"
+  - "🇺🇸 US-05"
+  - "🇺🇸 US-11"
+  - "🇺🇸 US-16"
+  - "🇺🇸 US-14"
+  - "🇺🇸 US-04"
+  - "🇺🇸 US-15"
+  - "🇺🇸 US-03"
+  - "🇺🇸 US-13"
+  - "🇺🇸 US-07"
+  - "🇺🇸 US-12"
+  - "🇸🇬 SG-04"
+  - "🇸🇬 SG-011"
+  - "🇸🇬 SG-03"
+  - "🇸🇬 SG-08"
+  - "🇸🇬 SG-01"
+  - "🇸🇬 SG-010"
+  - "🇸🇬 SG-07"
+  - "🇸🇬 SG-013"
+  - "🇸🇬 SG-09"
+  - "🇸🇬 SG-015"
+  - "🇸🇬 SG-012"
+  - "🇸🇬 SG-05"
+  - "🇸🇬 SG-016"
+  - "🇸🇬 SG-02"
+  - "🇸🇬 SG-014"
+  - "🇨🇭 CH-01"
+  - "🇷🇺 RU-01"
+  - "🇵🇹 PT-01"
+  - "🇬🇷 GR-01"
+  - "🇳🇱 NL-01"
+  - "🇯🇵 JP-15"
+  - "🇯🇵 JP-05"
+  - "🇯🇵 JP-11"
+  - "🇯🇵 JP-03"
+  - "🇯🇵 JP-10"
+  - "🇯🇵 JP-14"
+  - "🇯🇵 JP-01"
+  - "🇯🇵 JP-12"
+  - "🇯🇵 JP-13"
+  - "🇯🇵 JP-02"
+  - "🇯🇵 JP-16"
+  - "🇯🇵 JP-09"
+  - "🇯🇵 JP-04"
+  - "🇯🇵 JP-07"
+  - "🇯🇵 JP-06"
+  - "🇯🇵 JP-08"
+  - "🇨🇴 CO-01"
+  - "🇦🇷 AR-01"
+  - "🇬🇹 GT-01"
+  - "🇧🇴 BO-01"
+  - "🇵🇪 PE-01"
+  - "🇪🇨 EC-01"
+  - "🇨🇷 CR-01"
+  - "🇨🇱 CL-01"
+  - "🇧🇷 BR-01"
+  - "🇲🇦 MA-01"
+  - "🇿🇦 ZA-01"
+  - "🇳🇬 NG-01"
+  - "🇦🇪 AE-01"
+  - "🇲🇾 MY-01"
+  - "🇮🇱 IL-01"
+  - "🇦🇺 AU-01"
+  - "🇹🇭 TH-01"
+  - "🇵🇰 PK-01"
+  - "🇹🇷 TR-01"
+  - "🇷🇸 RS-01"
+  - "🇧🇪 BE-01"
+  - "🇷🇴 RO-01"
+  - "🇩🇰 DK-01"
+  - "🇮🇹 IT-01"
+  - "🇩🇪 DE-01"
+  - "🇫🇮 FI-01"
+  - "🇺🇦 UA-01"
+  - "🇳🇴 NO-01"
+  - "🇸🇪 SE-01"
+  - "🇱🇹 LT-01"
+  - "🇵🇱 PL-01"
+  - "🇪🇸 ES-01"
+  - "🇨🇾 CY-01"
+rules:
+- "GEOSITE,CATEGORY-ADS-ALL,REJECT"
+- "DOMAIN-SUFFIX,ushd.xmsl.org,DIRECT"
+- "DOMAIN-SUFFIX,cf.gtlx.org,DIRECT"
+- "DOMAIN-SUFFIX,public-operation-hkrpg-sg.hoyoverse.com,HOYO"
+- "DOMAIN-SUFFIX,public-operation-hk4e-sg.hoyoverse.com,HOYO"
+- "DOMAIN-SUFFIX,public-operation-nap-sg.hoyoverse.com,HOYO"
+- "DST-PORT,23301/22101-22102/20501/21601-21606,HOYO"
+- "DOMAIN-KEYWORD,hoyoverse.com,PROXY"
+- "GEOSITE,CATEGORY-AI-!CN,AI"
+- "GEOSITE,GOOGLEFCM,DIRECT"
+- "GEOSITE,PRIVATE,DIRECT"
+- "GEOSITE,CN,DIRECT"
+- "GEOIP,PRIVATE,DIRECT,no-resolve"
+- "GEOIP,CN,DIRECT"
+- "MATCH,PROXY"

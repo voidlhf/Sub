@@ -1,0 +1,256 @@
+log-level: "debug"
+mixed-port: 7890
+allow-lan: true
+external-controller: "127.0.0.1:9090"
+unified-delay: true
+tcp-concurrent: true
+geodata-mode: true
+geox-url:
+  geoip: "https://ghfast.top/https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geoip.dat"
+  geosite: "https://ghfast.top/https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geosite.dat"
+find-process-mode: "strict"
+global-client-fingerprint: "chrome"
+profile:
+  store-selected: true
+  store-fake-ip: true
+sniffer:
+  enable: true
+  force-dns-mapping: true
+  parse-pure-ip: true
+  override-destination: false
+  sniff:
+    HTTP:
+      ports:
+      - 80
+      - "8080-8880"
+    TLS:
+      ports:
+      - 443
+      - 8443
+    QUIC:
+      ports:
+      - 443
+      - 8443
+tun:
+  enable: true
+  stack: "mixed"
+  dns-hijack:
+  - "any:53"
+  - "tcp://any:53"
+  auto-route: true
+  auto-redirect: true
+  auto-detect-interface: true
+  strict-route: true
+dns:
+  enable: true
+  ipv6: false
+  default-nameserver:
+  - "223.5.5.5"
+  - "119.29.29.29"
+  enhanced-mode: "fake-ip"
+  fake-ip-range: "198.18.0.1/16"
+  nameserver:
+  - "https://dns.cloudflare.com/dns-query"
+  - "https://dns.google/dns-query"
+  nameserver-policy:
+    geosite:cn,private,googlefcm:
+    - "https://dns.alidns.com/dns-query"
+    - "https://doh.pub/dns-query"
+  proxy-server-nameserver:
+  - "https://dns.alidns.com/dns-query"
+  - "https://doh.pub/dns-query"
+proxies:
+- {name: "🇨🇦 加拿大1@Marisa_kristi", server: "45.95.186.93", port: 50002, client-fingerprint: "random", type: "vless", uuid: "5508b6d6-bbd1-7895-135d-8f0c1e25f102", tls: true, tfo: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/?ed=2560", headers: {Host: "d6b.895135.xyz"}}, servername: "d6b.895135.xyz"}
+- {name: "🇨🇦 加拿大2@Marisa_kristi", server: "45.95.186.147", port: 50002, client-fingerprint: "random", type: "vless", uuid: "5508b6d6-bbd1-7895-135d-8f0c1e25f102", tls: true, tfo: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/?ed=2560", headers: {Host: "d6b.895135.xyz"}}, servername: "d6b.895135.xyz"}
+- {name: "🇨🇦 加拿大3@Marisa_kristi", server: "107.173.41.185", port: 4443, client-fingerprint: "random", type: "vless", uuid: "5508b6d6-bbd1-7895-135d-8f0c1e25f102", tls: true, tfo: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/?ed=2560", headers: {Host: "d6b.895135.xyz"}}, servername: "d6b.895135.xyz"}
+- {name: "🇨🇦 加拿大4@Marisa_kristi", server: "45.95.186.9", port: 50002, client-fingerprint: "random", type: "vless", uuid: "5508b6d6-bbd1-7895-135d-8f0c1e25f102", tls: true, tfo: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/?ed=2560", headers: {Host: "d6b.895135.xyz"}}, servername: "d6b.895135.xyz"}
+- {name: "🇬🇧 英国1@Marisa_kristi", server: "193.8.173.133", port: 12443, client-fingerprint: "random", type: "vless", uuid: "5508b6d6-bbd1-7895-135d-8f0c1e25f102", tls: true, tfo: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/?ed=2560", headers: {Host: "d6b.895135.xyz"}}, servername: "d6b.895135.xyz"}
+- {name: "🇬🇧 英国2@Marisa_kristi", server: "45.14.112.152", port: 12443, client-fingerprint: "random", type: "vless", uuid: "5508b6d6-bbd1-7895-135d-8f0c1e25f102", tls: true, tfo: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/?ed=2560", headers: {Host: "d6b.895135.xyz"}}, servername: "d6b.895135.xyz"}
+- {name: "🇬🇧 英国3@Marisa_kristi", server: "78.157.214.115", port: 8504, client-fingerprint: "random", type: "vless", uuid: "5508b6d6-bbd1-7895-135d-8f0c1e25f102", tls: true, tfo: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/?ed=2560", headers: {Host: "d6b.895135.xyz"}}, servername: "d6b.895135.xyz"}
+- {name: "🇭🇰 香港1@Marisa_kristi", server: "123.111.135.83", port: 11562, client-fingerprint: "random", type: "vless", uuid: "5508b6d6-bbd1-7895-135d-8f0c1e25f102", tls: true, tfo: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/?ed=2560", headers: {Host: "d6b.895135.xyz"}}, servername: "d6b.895135.xyz"}
+- {name: "🇭🇰 香港2@Marisa_kristi", server: "211.33.34.10", port: 12639, client-fingerprint: "random", type: "vless", uuid: "5508b6d6-bbd1-7895-135d-8f0c1e25f102", tls: true, tfo: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/?ed=2560", headers: {Host: "d6b.895135.xyz"}}, servername: "d6b.895135.xyz"}
+- {name: "🇭🇰 香港3@Marisa_kristi", server: "180.71.106.172", port: 10066, client-fingerprint: "random", type: "vless", uuid: "5508b6d6-bbd1-7895-135d-8f0c1e25f102", tls: true, tfo: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/?ed=2560", headers: {Host: "d6b.895135.xyz"}}, servername: "d6b.895135.xyz"}
+- {name: "🇭🇰 香港4@Marisa_kristi", server: "118.91.83.231", port: 10704, client-fingerprint: "random", type: "vless", uuid: "5508b6d6-bbd1-7895-135d-8f0c1e25f102", tls: true, tfo: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/?ed=2560", headers: {Host: "d6b.895135.xyz"}}, servername: "d6b.895135.xyz"}
+- {name: "🇭🇰 香港5@Marisa_kristi", server: "1.254.182.195", port: 14396, client-fingerprint: "random", type: "vless", uuid: "5508b6d6-bbd1-7895-135d-8f0c1e25f102", tls: true, tfo: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/?ed=2560", headers: {Host: "d6b.895135.xyz"}}, servername: "d6b.895135.xyz"}
+- {name: "🇯🇵 日本1@Marisa_kristi", server: "211.177.191.120", port: 10020, client-fingerprint: "random", type: "vless", uuid: "5508b6d6-bbd1-7895-135d-8f0c1e25f102", tls: true, tfo: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/?ed=2560", headers: {Host: "d6b.895135.xyz"}}, servername: "d6b.895135.xyz"}
+- {name: "🇯🇵 日本2@Marisa_kristi", server: "52.140.208.142", port: 33733, client-fingerprint: "random", type: "vless", uuid: "5508b6d6-bbd1-7895-135d-8f0c1e25f102", tls: true, tfo: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/?ed=2560", headers: {Host: "d6b.895135.xyz"}}, servername: "d6b.895135.xyz"}
+- {name: "🇯🇵 日本3@Marisa_kristi", server: "14.56.138.154", port: 10099, client-fingerprint: "random", type: "vless", uuid: "5508b6d6-bbd1-7895-135d-8f0c1e25f102", tls: true, tfo: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/?ed=2560", headers: {Host: "d6b.895135.xyz"}}, servername: "d6b.895135.xyz"}
+- {name: "🇯🇵 日本4@Marisa_kristi", server: "153.121.71.10", port: 7000, client-fingerprint: "random", type: "vless", uuid: "5508b6d6-bbd1-7895-135d-8f0c1e25f102", tls: true, tfo: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/?ed=2560", headers: {Host: "d6b.895135.xyz"}}, servername: "d6b.895135.xyz"}
+- {name: "🇯🇵 日本5@Marisa_kristi", server: "153.121.32.78", port: 7000, client-fingerprint: "random", type: "vless", uuid: "5508b6d6-bbd1-7895-135d-8f0c1e25f102", tls: true, tfo: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/?ed=2560", headers: {Host: "d6b.895135.xyz"}}, servername: "d6b.895135.xyz"}
+- {name: "🇰🇷 韩国1@Marisa_kristi", server: "121.130.207.97", port: 20109, client-fingerprint: "random", type: "vless", uuid: "5508b6d6-bbd1-7895-135d-8f0c1e25f102", tls: true, tfo: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/?ed=2560", headers: {Host: "d6b.895135.xyz"}}, servername: "d6b.895135.xyz"}
+- {name: "🇰🇷 韩国2@Marisa_kristi", server: "121.151.51.114", port: 10775, client-fingerprint: "random", type: "vless", uuid: "5508b6d6-bbd1-7895-135d-8f0c1e25f102", tls: true, tfo: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/?ed=2560", headers: {Host: "d6b.895135.xyz"}}, servername: "d6b.895135.xyz"}
+- {name: "🇰🇷 韩国3@Marisa_kristi", server: "14.39.43.121", port: 12766, client-fingerprint: "random", type: "vless", uuid: "5508b6d6-bbd1-7895-135d-8f0c1e25f102", tls: true, tfo: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/?ed=2560", headers: {Host: "d6b.895135.xyz"}}, servername: "d6b.895135.xyz"}
+- {name: "🇰🇷 韩国4@Marisa_kristi", server: "175.203.143.111", port: 11386, client-fingerprint: "random", type: "vless", uuid: "5508b6d6-bbd1-7895-135d-8f0c1e25f102", tls: true, tfo: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/?ed=2560", headers: {Host: "d6b.895135.xyz"}}, servername: "d6b.895135.xyz"}
+- {name: "🇰🇷 韩国5@Marisa_kristi", server: "210.222.30.180", port: 10425, client-fingerprint: "random", type: "vless", uuid: "5508b6d6-bbd1-7895-135d-8f0c1e25f102", tls: true, tfo: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/?ed=2560", headers: {Host: "d6b.895135.xyz"}}, servername: "d6b.895135.xyz"}
+- {name: "🇸🇬 新加坡1@Marisa_kristi", server: "170.205.36.122", port: 18890, client-fingerprint: "random", type: "vless", uuid: "5508b6d6-bbd1-7895-135d-8f0c1e25f102", tls: true, tfo: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/?ed=2560", headers: {Host: "d6b.895135.xyz"}}, servername: "d6b.895135.xyz"}
+- {name: "🇸🇬 新加坡2@Marisa_kristi", server: "43.134.167.135", port: 9952, client-fingerprint: "random", type: "vless", uuid: "5508b6d6-bbd1-7895-135d-8f0c1e25f102", tls: true, tfo: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/?ed=2560", headers: {Host: "d6b.895135.xyz"}}, servername: "d6b.895135.xyz"}
+- {name: "🇸🇬 新加坡3@Marisa_kristi", server: "150.109.94.144", port: 8900, client-fingerprint: "random", type: "vless", uuid: "5508b6d6-bbd1-7895-135d-8f0c1e25f102", tls: true, tfo: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/?ed=2560", headers: {Host: "d6b.895135.xyz"}}, servername: "d6b.895135.xyz"}
+- {name: "🇸🇬 新加坡4@Marisa_kristi", server: "101.32.169.234", port: 15933, client-fingerprint: "random", type: "vless", uuid: "5508b6d6-bbd1-7895-135d-8f0c1e25f102", tls: true, tfo: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/?ed=2560", headers: {Host: "d6b.895135.xyz"}}, servername: "d6b.895135.xyz"}
+- {name: "🇸🇬 新加坡5@Marisa_kristi", server: "43.156.37.138", port: 55555, client-fingerprint: "random", type: "vless", uuid: "5508b6d6-bbd1-7895-135d-8f0c1e25f102", tls: true, tfo: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/?ed=2560", headers: {Host: "d6b.895135.xyz"}}, servername: "d6b.895135.xyz"}
+- {name: "🇺🇸 美国1@Marisa_kristi", server: "112.165.17.199", port: 31246, client-fingerprint: "random", type: "vless", uuid: "5508b6d6-bbd1-7895-135d-8f0c1e25f102", tls: true, tfo: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/?ed=2560", headers: {Host: "d6b.895135.xyz"}}, servername: "d6b.895135.xyz"}
+- {name: "🇺🇸 美国2@Marisa_kristi", server: "222.112.210.236", port: 15303, client-fingerprint: "random", type: "vless", uuid: "5508b6d6-bbd1-7895-135d-8f0c1e25f102", tls: true, tfo: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/?ed=2560", headers: {Host: "d6b.895135.xyz"}}, servername: "d6b.895135.xyz"}
+- {name: "🇺🇸 美国3@Marisa_kristi", server: "121.160.125.55", port: 13654, client-fingerprint: "random", type: "vless", uuid: "5508b6d6-bbd1-7895-135d-8f0c1e25f102", tls: true, tfo: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/?ed=2560", headers: {Host: "d6b.895135.xyz"}}, servername: "d6b.895135.xyz"}
+- {name: "🇺🇸 美国4@Marisa_kristi", server: "220.94.32.227", port: 22737, client-fingerprint: "random", type: "vless", uuid: "5508b6d6-bbd1-7895-135d-8f0c1e25f102", tls: true, tfo: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/?ed=2560", headers: {Host: "d6b.895135.xyz"}}, servername: "d6b.895135.xyz"}
+- {name: "🇺🇸 美国5@Marisa_kristi", server: "121.160.125.55", port: 11084, client-fingerprint: "random", type: "vless", uuid: "5508b6d6-bbd1-7895-135d-8f0c1e25f102", tls: true, tfo: false, skip-cert-verify: true, network: "ws", ws-opts: {path: "/?ed=2560", headers: {Host: "d6b.895135.xyz"}}, servername: "d6b.895135.xyz"}
+proxy-groups:
+- name: "PROXY"
+  type: "select"
+  proxies:
+  - "AUTO"
+  - "🇨🇦 加拿大1@Marisa_kristi"
+  - "🇨🇦 加拿大2@Marisa_kristi"
+  - "🇨🇦 加拿大3@Marisa_kristi"
+  - "🇨🇦 加拿大4@Marisa_kristi"
+  - "🇬🇧 英国1@Marisa_kristi"
+  - "🇬🇧 英国2@Marisa_kristi"
+  - "🇬🇧 英国3@Marisa_kristi"
+  - "🇭🇰 香港1@Marisa_kristi"
+  - "🇭🇰 香港2@Marisa_kristi"
+  - "🇭🇰 香港3@Marisa_kristi"
+  - "🇭🇰 香港4@Marisa_kristi"
+  - "🇭🇰 香港5@Marisa_kristi"
+  - "🇯🇵 日本1@Marisa_kristi"
+  - "🇯🇵 日本2@Marisa_kristi"
+  - "🇯🇵 日本3@Marisa_kristi"
+  - "🇯🇵 日本4@Marisa_kristi"
+  - "🇯🇵 日本5@Marisa_kristi"
+  - "🇰🇷 韩国1@Marisa_kristi"
+  - "🇰🇷 韩国2@Marisa_kristi"
+  - "🇰🇷 韩国3@Marisa_kristi"
+  - "🇰🇷 韩国4@Marisa_kristi"
+  - "🇰🇷 韩国5@Marisa_kristi"
+  - "🇸🇬 新加坡1@Marisa_kristi"
+  - "🇸🇬 新加坡2@Marisa_kristi"
+  - "🇸🇬 新加坡3@Marisa_kristi"
+  - "🇸🇬 新加坡4@Marisa_kristi"
+  - "🇸🇬 新加坡5@Marisa_kristi"
+  - "🇺🇸 美国1@Marisa_kristi"
+  - "🇺🇸 美国2@Marisa_kristi"
+  - "🇺🇸 美国3@Marisa_kristi"
+  - "🇺🇸 美国4@Marisa_kristi"
+  - "🇺🇸 美国5@Marisa_kristi"
+- name: "AUTO"
+  type: "url-test"
+  url: "http://www.gstatic.com/generate_204"
+  interval: 300
+  tolerance: 50
+  proxies:
+  - "🇨🇦 加拿大1@Marisa_kristi"
+  - "🇨🇦 加拿大2@Marisa_kristi"
+  - "🇨🇦 加拿大3@Marisa_kristi"
+  - "🇨🇦 加拿大4@Marisa_kristi"
+  - "🇬🇧 英国1@Marisa_kristi"
+  - "🇬🇧 英国2@Marisa_kristi"
+  - "🇬🇧 英国3@Marisa_kristi"
+  - "🇭🇰 香港1@Marisa_kristi"
+  - "🇭🇰 香港2@Marisa_kristi"
+  - "🇭🇰 香港3@Marisa_kristi"
+  - "🇭🇰 香港4@Marisa_kristi"
+  - "🇭🇰 香港5@Marisa_kristi"
+  - "🇯🇵 日本1@Marisa_kristi"
+  - "🇯🇵 日本2@Marisa_kristi"
+  - "🇯🇵 日本3@Marisa_kristi"
+  - "🇯🇵 日本4@Marisa_kristi"
+  - "🇯🇵 日本5@Marisa_kristi"
+  - "🇰🇷 韩国1@Marisa_kristi"
+  - "🇰🇷 韩国2@Marisa_kristi"
+  - "🇰🇷 韩国3@Marisa_kristi"
+  - "🇰🇷 韩国4@Marisa_kristi"
+  - "🇰🇷 韩国5@Marisa_kristi"
+  - "🇸🇬 新加坡1@Marisa_kristi"
+  - "🇸🇬 新加坡2@Marisa_kristi"
+  - "🇸🇬 新加坡3@Marisa_kristi"
+  - "🇸🇬 新加坡4@Marisa_kristi"
+  - "🇸🇬 新加坡5@Marisa_kristi"
+  - "🇺🇸 美国1@Marisa_kristi"
+  - "🇺🇸 美国2@Marisa_kristi"
+  - "🇺🇸 美国3@Marisa_kristi"
+  - "🇺🇸 美国4@Marisa_kristi"
+  - "🇺🇸 美国5@Marisa_kristi"
+- name: "AI"
+  type: "select"
+  proxies:
+  - "🇨🇦 加拿大1@Marisa_kristi"
+  - "🇨🇦 加拿大2@Marisa_kristi"
+  - "🇨🇦 加拿大3@Marisa_kristi"
+  - "🇨🇦 加拿大4@Marisa_kristi"
+  - "🇬🇧 英国1@Marisa_kristi"
+  - "🇬🇧 英国2@Marisa_kristi"
+  - "🇬🇧 英国3@Marisa_kristi"
+  - "🇭🇰 香港1@Marisa_kristi"
+  - "🇭🇰 香港2@Marisa_kristi"
+  - "🇭🇰 香港3@Marisa_kristi"
+  - "🇭🇰 香港4@Marisa_kristi"
+  - "🇭🇰 香港5@Marisa_kristi"
+  - "🇯🇵 日本1@Marisa_kristi"
+  - "🇯🇵 日本2@Marisa_kristi"
+  - "🇯🇵 日本3@Marisa_kristi"
+  - "🇯🇵 日本4@Marisa_kristi"
+  - "🇯🇵 日本5@Marisa_kristi"
+  - "🇰🇷 韩国1@Marisa_kristi"
+  - "🇰🇷 韩国2@Marisa_kristi"
+  - "🇰🇷 韩国3@Marisa_kristi"
+  - "🇰🇷 韩国4@Marisa_kristi"
+  - "🇰🇷 韩国5@Marisa_kristi"
+  - "🇸🇬 新加坡1@Marisa_kristi"
+  - "🇸🇬 新加坡2@Marisa_kristi"
+  - "🇸🇬 新加坡3@Marisa_kristi"
+  - "🇸🇬 新加坡4@Marisa_kristi"
+  - "🇸🇬 新加坡5@Marisa_kristi"
+  - "🇺🇸 美国1@Marisa_kristi"
+  - "🇺🇸 美国2@Marisa_kristi"
+  - "🇺🇸 美国3@Marisa_kristi"
+  - "🇺🇸 美国4@Marisa_kristi"
+  - "🇺🇸 美国5@Marisa_kristi"
+- name: "HOYO"
+  type: "select"
+  proxies:
+  - "DIRECT"
+  - "🇨🇦 加拿大1@Marisa_kristi"
+  - "🇨🇦 加拿大2@Marisa_kristi"
+  - "🇨🇦 加拿大3@Marisa_kristi"
+  - "🇨🇦 加拿大4@Marisa_kristi"
+  - "🇬🇧 英国1@Marisa_kristi"
+  - "🇬🇧 英国2@Marisa_kristi"
+  - "🇬🇧 英国3@Marisa_kristi"
+  - "🇭🇰 香港1@Marisa_kristi"
+  - "🇭🇰 香港2@Marisa_kristi"
+  - "🇭🇰 香港3@Marisa_kristi"
+  - "🇭🇰 香港4@Marisa_kristi"
+  - "🇭🇰 香港5@Marisa_kristi"
+  - "🇯🇵 日本1@Marisa_kristi"
+  - "🇯🇵 日本2@Marisa_kristi"
+  - "🇯🇵 日本3@Marisa_kristi"
+  - "🇯🇵 日本4@Marisa_kristi"
+  - "🇯🇵 日本5@Marisa_kristi"
+  - "🇰🇷 韩国1@Marisa_kristi"
+  - "🇰🇷 韩国2@Marisa_kristi"
+  - "🇰🇷 韩国3@Marisa_kristi"
+  - "🇰🇷 韩国4@Marisa_kristi"
+  - "🇰🇷 韩国5@Marisa_kristi"
+  - "🇸🇬 新加坡1@Marisa_kristi"
+  - "🇸🇬 新加坡2@Marisa_kristi"
+  - "🇸🇬 新加坡3@Marisa_kristi"
+  - "🇸🇬 新加坡4@Marisa_kristi"
+  - "🇸🇬 新加坡5@Marisa_kristi"
+  - "🇺🇸 美国1@Marisa_kristi"
+  - "🇺🇸 美国2@Marisa_kristi"
+  - "🇺🇸 美国3@Marisa_kristi"
+  - "🇺🇸 美国4@Marisa_kristi"
+  - "🇺🇸 美国5@Marisa_kristi"
+rules:
+- "GEOSITE,CATEGORY-ADS-ALL,REJECT"
+- "DOMAIN-SUFFIX,ushd.xmsl.org,DIRECT"
+- "DOMAIN-SUFFIX,cf.gtlx.org,DIRECT"
+- "DOMAIN-SUFFIX,public-operation-hkrpg-sg.hoyoverse.com,HOYO"
+- "DOMAIN-SUFFIX,public-operation-hk4e-sg.hoyoverse.com,HOYO"
+- "DOMAIN-SUFFIX,public-operation-nap-sg.hoyoverse.com,HOYO"
+- "DST-PORT,23301/22101-22102/20501/21601-21606,HOYO"
+- "DOMAIN-KEYWORD,hoyoverse.com,PROXY"
+- "GEOSITE,CATEGORY-AI-!CN,AI"
+- "GEOSITE,GOOGLEFCM,DIRECT"
+- "GEOSITE,PRIVATE,DIRECT"
+- "GEOSITE,CN,DIRECT"
+- "GEOIP,PRIVATE,DIRECT,no-resolve"
+- "GEOIP,CN,DIRECT"
+- "MATCH,PROXY"
