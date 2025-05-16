@@ -1,0 +1,206 @@
+log-level: "debug"
+mixed-port: 7890
+allow-lan: true
+external-controller: "127.0.0.1:9090"
+unified-delay: true
+tcp-concurrent: true
+geodata-mode: true
+geox-url:
+  geoip: "https://ghfast.top/https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geoip.dat"
+  geosite: "https://ghfast.top/https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geosite.dat"
+find-process-mode: "strict"
+global-client-fingerprint: "chrome"
+profile:
+  store-selected: true
+  store-fake-ip: true
+sniffer:
+  enable: true
+  force-dns-mapping: true
+  parse-pure-ip: true
+  override-destination: false
+  sniff:
+    HTTP:
+      ports:
+      - 80
+      - "8080-8880"
+    TLS:
+      ports:
+      - 443
+      - 8443
+    QUIC:
+      ports:
+      - 443
+      - 8443
+tun:
+  enable: true
+  stack: "mixed"
+  dns-hijack:
+  - "any:53"
+  - "tcp://any:53"
+  auto-route: true
+  auto-redirect: true
+  auto-detect-interface: true
+  strict-route: true
+dns:
+  enable: true
+  ipv6: false
+  default-nameserver:
+  - "223.5.5.5"
+  - "119.29.29.29"
+  enhanced-mode: "fake-ip"
+  fake-ip-range: "198.18.0.1/16"
+  nameserver:
+  - "https://dns.cloudflare.com/dns-query"
+  - "https://dns.google/dns-query"
+  nameserver-policy:
+    geosite:cn,private,googlefcm:
+    - "https://dns.alidns.com/dns-query"
+    - "https://doh.pub/dns-query"
+  proxy-server-nameserver:
+  - "https://dns.alidns.com/dns-query"
+  - "https://doh.pub/dns-query"
+proxies:
+- {type: "ss", server: "103.186.154.29", port: 38388, cipher: "aes-256-cfb", password: "Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV", name: "🇻🇳 越南-24.2MB/s"}
+- {type: "ss", server: "43.131.255.175", port: 3306, cipher: "aes-256-cfb", password: "1601e3c29c8db1a88942cf0cad731bf3", name: "🇰🇷 韩国-405.5KB/s"}
+- {type: "ss", server: "184.170.241.194", port: 443, cipher: "aes-128-cfb", password: "shadowsocks", name: "🇺🇸 美国-12.0MB/s"}
+- {type: "ss", server: "103.151.57.123", port: 38388, cipher: "aes-256-cfb", password: "Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV", name: "🇻🇳 越南-23.4MB/s"}
+- {type: "ss", server: "103.186.154.31", port: 38388, cipher: "aes-256-cfb", password: "Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV", name: "🇻🇳 越南-15.9MB/s"}
+- {type: "ss", server: "103.186.154.28", port: 38388, cipher: "aes-256-cfb", password: "Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV", name: "🇻🇳 越南-62.4MB/s"}
+- {type: "ss", server: "103.186.154.35", port: 38388, cipher: "aes-256-cfb", password: "Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV", name: "🇻🇳 越南-84.4MB/s"}
+- {type: "ss", server: "103.186.154.37", port: 38388, cipher: "aes-256-cfb", password: "Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV", name: "🇻🇳 越南-8.9MB/s"}
+- {type: "ss", server: "103.186.154.24", port: 38388, cipher: "aes-256-cfb", password: "Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV", name: "🇻🇳 越南-9.7MB/s"}
+- {name: "🏴‍☠️ 中转节点-26.0MB/s", type: "vmess", server: "120.232.153.40", port: 40292, cipher: "auto", uuid: "418048af-a293-4b99-9b0c-98ca3580dd24", alterId: 0, tls: false}
+- {type: "ss", server: "103.186.155.20", port: 38388, cipher: "aes-256-cfb", password: "Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV", name: "🇻🇳 越南-8.5MB/s"}
+- {type: "ss", server: "okanc.node-is.green", port: 21115, cipher: "aes-256-gcm", password: "9acfc574-acc3-4c2b-ab3b-491d43a6eb83", name: "🏴‍☠️ 中转节点-15.56MB/s"}
+- {type: "ss", server: "154.223.16.212", port: 989, cipher: "aes-256-cfb", password: "f8f7aCzcPKbsF8p3", name: "🇭🇰 香港-10.8MB/s"}
+- {type: "ss", server: "45.128.151.67", port: 31348, cipher: "chacha20-ietf-poly1305", password: "d3TphPPfMkIxFmPJpA0j7RkPJHjeHqaJk2D7Co7VsFuUU2v1", name: "🇱🇻 拉脱维亚-12.0MB/s"}
+- {name: "🏴‍☠️ 中转节点-85.3MB/s", type: "vmess", server: "120.198.71.216", port: 35921, cipher: "auto", uuid: "418048af-a293-4b99-9b0c-98ca3580dd24", alterId: 64, tls: false}
+- {skip-cert-verify: true, sni: "76b15373-swd340-tcudgo-1sa5k.cu.plebai.net", type: "trojan", password: "3e6ae2e4-a8a5-11ef-8578-f23c913c8d2b", server: "76b15373-swd340-tcudgo-1sa5k.cu.plebai.net", port: 15229, name: "🏴‍☠️ 中转节点-999.0KB/s"}
+- {name: "🏴‍☠️ 中转节点-3.9MB/s", type: "vmess", server: "v12.heduian.link", port: 30812, cipher: "auto", uuid: "cbb3f877-d1fb-344c-87a9-d153bffd5484", alterId: 2, tls: false, network: "ws", ws-opts: {path: "/oooo", headers: {Host: "ocbc.com"}}}
+- {skip-cert-verify: true, sni: "hk-13-568.flztjc.net", type: "trojan", password: "2c605663-b89a-5734-a9d6-97d4743d72cf", server: "dozo01.flztjc.top", port: 8313, name: "🏴‍☠️ 中转节点-50.60MB/s"}
+- {name: "🏴‍☠️ 中转节点-301.2KB/s", type: "vmess", server: "183.236.51.38", port: 41554, cipher: "auto", uuid: "418048af-a293-4b99-9b0c-98ca3580dd24", alterId: 64, tls: false}
+- {name: "🏴‍☠️ 中转节点-137.2KB/s", type: "vmess", server: "183.236.51.38", port: 43302, cipher: "auto", uuid: "418048af-a293-4b99-9b0c-98ca3580dd24", alterId: 64, tls: false}
+- {name: "🏴‍☠️ 中转节点-40.5MB/s", type: "vmess", server: "tk.hzlt.tkddns.xyz", port: 22642, cipher: "auto", uuid: "98e96c9f-4bb3-39d4-9a2c-fac04257f7c7", alterId: 2, tls: true, network: "ws", ws-opts: {path: "/", headers: {Host: "zxjp-b.tkong.cc"}}, servername: "zxjp-b.tkong.cc"}
+- {name: "🏴‍☠️ 中转节点-280.0KB/s", type: "vmess", server: "183.237.84.53", port: 55002, cipher: "auto", uuid: "418048af-a293-4b99-9b0c-98ca3580dd24", alterId: 64, tls: false}
+proxy-groups:
+- name: "PROXY"
+  type: "select"
+  proxies:
+  - "AUTO"
+  - "🇻🇳 越南-24.2MB/s"
+  - "🇰🇷 韩国-405.5KB/s"
+  - "🇺🇸 美国-12.0MB/s"
+  - "🇻🇳 越南-23.4MB/s"
+  - "🇻🇳 越南-15.9MB/s"
+  - "🇻🇳 越南-62.4MB/s"
+  - "🇻🇳 越南-84.4MB/s"
+  - "🇻🇳 越南-8.9MB/s"
+  - "🇻🇳 越南-9.7MB/s"
+  - "🏴‍☠️ 中转节点-26.0MB/s"
+  - "🇻🇳 越南-8.5MB/s"
+  - "🏴‍☠️ 中转节点-15.56MB/s"
+  - "🇭🇰 香港-10.8MB/s"
+  - "🇱🇻 拉脱维亚-12.0MB/s"
+  - "🏴‍☠️ 中转节点-85.3MB/s"
+  - "🏴‍☠️ 中转节点-999.0KB/s"
+  - "🏴‍☠️ 中转节点-3.9MB/s"
+  - "🏴‍☠️ 中转节点-50.60MB/s"
+  - "🏴‍☠️ 中转节点-301.2KB/s"
+  - "🏴‍☠️ 中转节点-137.2KB/s"
+  - "🏴‍☠️ 中转节点-40.5MB/s"
+  - "🏴‍☠️ 中转节点-280.0KB/s"
+- name: "AUTO"
+  type: "url-test"
+  url: "http://www.gstatic.com/generate_204"
+  interval: 300
+  tolerance: 50
+  proxies:
+  - "🇻🇳 越南-24.2MB/s"
+  - "🇰🇷 韩国-405.5KB/s"
+  - "🇺🇸 美国-12.0MB/s"
+  - "🇻🇳 越南-23.4MB/s"
+  - "🇻🇳 越南-15.9MB/s"
+  - "🇻🇳 越南-62.4MB/s"
+  - "🇻🇳 越南-84.4MB/s"
+  - "🇻🇳 越南-8.9MB/s"
+  - "🇻🇳 越南-9.7MB/s"
+  - "🏴‍☠️ 中转节点-26.0MB/s"
+  - "🇻🇳 越南-8.5MB/s"
+  - "🏴‍☠️ 中转节点-15.56MB/s"
+  - "🇭🇰 香港-10.8MB/s"
+  - "🇱🇻 拉脱维亚-12.0MB/s"
+  - "🏴‍☠️ 中转节点-85.3MB/s"
+  - "🏴‍☠️ 中转节点-999.0KB/s"
+  - "🏴‍☠️ 中转节点-3.9MB/s"
+  - "🏴‍☠️ 中转节点-50.60MB/s"
+  - "🏴‍☠️ 中转节点-301.2KB/s"
+  - "🏴‍☠️ 中转节点-137.2KB/s"
+  - "🏴‍☠️ 中转节点-40.5MB/s"
+  - "🏴‍☠️ 中转节点-280.0KB/s"
+- name: "AI"
+  type: "select"
+  proxies:
+  - "🇻🇳 越南-24.2MB/s"
+  - "🇰🇷 韩国-405.5KB/s"
+  - "🇺🇸 美国-12.0MB/s"
+  - "🇻🇳 越南-23.4MB/s"
+  - "🇻🇳 越南-15.9MB/s"
+  - "🇻🇳 越南-62.4MB/s"
+  - "🇻🇳 越南-84.4MB/s"
+  - "🇻🇳 越南-8.9MB/s"
+  - "🇻🇳 越南-9.7MB/s"
+  - "🏴‍☠️ 中转节点-26.0MB/s"
+  - "🇻🇳 越南-8.5MB/s"
+  - "🏴‍☠️ 中转节点-15.56MB/s"
+  - "🇭🇰 香港-10.8MB/s"
+  - "🇱🇻 拉脱维亚-12.0MB/s"
+  - "🏴‍☠️ 中转节点-85.3MB/s"
+  - "🏴‍☠️ 中转节点-999.0KB/s"
+  - "🏴‍☠️ 中转节点-3.9MB/s"
+  - "🏴‍☠️ 中转节点-50.60MB/s"
+  - "🏴‍☠️ 中转节点-301.2KB/s"
+  - "🏴‍☠️ 中转节点-137.2KB/s"
+  - "🏴‍☠️ 中转节点-40.5MB/s"
+  - "🏴‍☠️ 中转节点-280.0KB/s"
+- name: "HOYO"
+  type: "select"
+  proxies:
+  - "DIRECT"
+  - "🇻🇳 越南-24.2MB/s"
+  - "🇰🇷 韩国-405.5KB/s"
+  - "🇺🇸 美国-12.0MB/s"
+  - "🇻🇳 越南-23.4MB/s"
+  - "🇻🇳 越南-15.9MB/s"
+  - "🇻🇳 越南-62.4MB/s"
+  - "🇻🇳 越南-84.4MB/s"
+  - "🇻🇳 越南-8.9MB/s"
+  - "🇻🇳 越南-9.7MB/s"
+  - "🏴‍☠️ 中转节点-26.0MB/s"
+  - "🇻🇳 越南-8.5MB/s"
+  - "🏴‍☠️ 中转节点-15.56MB/s"
+  - "🇭🇰 香港-10.8MB/s"
+  - "🇱🇻 拉脱维亚-12.0MB/s"
+  - "🏴‍☠️ 中转节点-85.3MB/s"
+  - "🏴‍☠️ 中转节点-999.0KB/s"
+  - "🏴‍☠️ 中转节点-3.9MB/s"
+  - "🏴‍☠️ 中转节点-50.60MB/s"
+  - "🏴‍☠️ 中转节点-301.2KB/s"
+  - "🏴‍☠️ 中转节点-137.2KB/s"
+  - "🏴‍☠️ 中转节点-40.5MB/s"
+  - "🏴‍☠️ 中转节点-280.0KB/s"
+rules:
+- "GEOSITE,CATEGORY-ADS-ALL,REJECT"
+- "DOMAIN-SUFFIX,ushd.xmsl.org,DIRECT"
+- "DOMAIN-SUFFIX,cf.gtlx.org,DIRECT"
+- "DOMAIN-SUFFIX,public-operation-hkrpg-sg.hoyoverse.com,HOYO"
+- "DOMAIN-SUFFIX,public-operation-hk4e-sg.hoyoverse.com,HOYO"
+- "DOMAIN-SUFFIX,public-operation-nap-sg.hoyoverse.com,HOYO"
+- "DST-PORT,23301/22101-22102/20501/21601-21606,HOYO"
+- "DOMAIN-KEYWORD,hoyoverse.com,PROXY"
+- "GEOSITE,CATEGORY-AI-!CN,AI"
+- "GEOSITE,GOOGLEFCM,DIRECT"
+- "GEOSITE,PRIVATE,DIRECT"
+- "GEOSITE,CN,DIRECT"
+- "GEOIP,PRIVATE,DIRECT,no-resolve"
+- "GEOIP,CN,DIRECT"
+- "MATCH,PROXY"
