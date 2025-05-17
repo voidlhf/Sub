@@ -96,6 +96,12 @@ proxies:
 - {name: "🏴‍☠️ m8dddc.457.pp.ua tls WS CDN vmess § 443 44", type: "vmess", server: "m8dddc.457.pp.ua", port: 443, cipher: "auto", uuid: "0017bbce-e963-4b81-8981-a8e4117d2cd4", alterId: 0, tls: true, network: "ws", ws-opts: {path: "/OhijtPrXs2pASR866TVMXPAl", headers: {Host: "m8dddc.457.pp.ua"}}, servername: "m8dddc.457.pp.ua"}
 - {type: "vless", name: "🏴‍☠️ m8nnn.457.pp.ua tls WS CDN vless § 443 43", server: "m8nnn.457.pp.ua", port: 443, uuid: "0017bbce-e963-4b81-8981-a8e4117d2cd4", tls: true, client-fingerprint: "chrome", alpn: ["http/1.1"], skip-cert-verify: false, network: "ws", ws-opts: {headers: {Host: "m8nnn.457.pp.ua"}, path: "/32FkuhQSR866TVMXPAl"}, servername: "m8nnn.457.pp.ua"}
 - {name: "🇮🇷 ddcvf4.iran2035.dpdns.org http WS CDN vmess § 80 49", type: "vmess", server: "ddcvf4.iran2035.dpdns.org", port: 80, cipher: "auto", uuid: "0017bbce-e963-4b81-8981-a8e4117d2cd4", alterId: 0, tls: false, network: "ws", ws-opts: {path: "/OhijtPrXs2pASR866TVMXPAl", headers: {Host: "ddcvf4.iran2035.dpdns.org"}}}
+- {type: "hysteria2", name: "🇩🇪 德国法兰克福 一号", server: "dg.xueshan.shop", port: 443, ports: "20101-20199", password: "4d0cdfd6-4cb9-4ec4-b1ed-6323109dd96d", sni: "dg.xueshan.shop", obfs: "salamander", obfs-password: "LYvPkPqz3EZchq67", skip-cert-verify: false, tfo: false}
+- {type: "hysteria2", name: "🇨🇳 台湾家宽", server: "tw00.xueshan.shop", port: 14120, password: "4d0cdfd6-4cb9-4ec4-b1ed-6323109dd96d", sni: "tw00.xueshan.shop", obfs: "salamander", obfs-password: "mPHuGQuOFgRGE5zz", skip-cert-verify: false, tfo: false}
+- {type: "hysteria2", name: "🇺🇸 美国洛杉矶 一号", server: "mg.xueshan.shop", port: 443, ports: "20101-20199", password: "4d0cdfd6-4cb9-4ec4-b1ed-6323109dd96d", sni: "mg.xueshan.shop", obfs: "salamander", obfs-password: "CdI7LlQ3xSYBks3H", skip-cert-verify: false, tfo: false}
+- {type: "hysteria2", name: "🇸🇬 新加坡椰子水 二号", server: "xjp.xueshan.shop", port: 443, ports: "20101-20199", password: "4d0cdfd6-4cb9-4ec4-b1ed-6323109dd96d", sni: "xjp.xueshan.shop", obfs: "salamander", obfs-password: "mIwDBXSGAJ7PjDBj", skip-cert-verify: false, tfo: false}
+- {type: "hysteria2", name: "🇨🇳 台湾牛肉面 四号", server: "tw.xueshan.shop", port: 443, ports: "20101-20199", password: "4d0cdfd6-4cb9-4ec4-b1ed-6323109dd96d", sni: "tw.xueshan.shop", obfs: "salamander", obfs-password: "PG8jOhQdnjt0yAEw", skip-cert-verify: false, tfo: false}
+- {type: "hysteria2", name: "🇯🇵 樱花✿ 三网优化 1", server: "153.121.58.35", port: 443, ports: "30101-30199", password: "4d0cdfd6-4cb9-4ec4-b1ed-6323109dd96d", sni: "rb3.xueshan.shop", skip-cert-verify: false, tfo: false}
 proxy-groups:
 - name: "PROXY"
   type: "select"
@@ -137,6 +143,12 @@ proxy-groups:
   - "🏴‍☠️ m8dddc.457.pp.ua tls WS CDN vmess § 443 44"
   - "🏴‍☠️ m8nnn.457.pp.ua tls WS CDN vless § 443 43"
   - "🇮🇷 ddcvf4.iran2035.dpdns.org http WS CDN vmess § 80 49"
+  - "🇩🇪 德国法兰克福 一号"
+  - "🇨🇳 台湾家宽"
+  - "🇺🇸 美国洛杉矶 一号"
+  - "🇸🇬 新加坡椰子水 二号"
+  - "🇨🇳 台湾牛肉面 四号"
+  - "🇯🇵 樱花✿ 三网优化 1"
 - name: "AUTO"
   type: "url-test"
   url: "http://www.gstatic.com/generate_204"
@@ -179,6 +191,12 @@ proxy-groups:
   - "🏴‍☠️ m8dddc.457.pp.ua tls WS CDN vmess § 443 44"
   - "🏴‍☠️ m8nnn.457.pp.ua tls WS CDN vless § 443 43"
   - "🇮🇷 ddcvf4.iran2035.dpdns.org http WS CDN vmess § 80 49"
+  - "🇩🇪 德国法兰克福 一号"
+  - "🇨🇳 台湾家宽"
+  - "🇺🇸 美国洛杉矶 一号"
+  - "🇸🇬 新加坡椰子水 二号"
+  - "🇨🇳 台湾牛肉面 四号"
+  - "🇯🇵 樱花✿ 三网优化 1"
 - name: "AI"
   type: "select"
   proxies:
@@ -218,6 +236,12 @@ proxy-groups:
   - "🏴‍☠️ m8dddc.457.pp.ua tls WS CDN vmess § 443 44"
   - "🏴‍☠️ m8nnn.457.pp.ua tls WS CDN vless § 443 43"
   - "🇮🇷 ddcvf4.iran2035.dpdns.org http WS CDN vmess § 80 49"
+  - "🇩🇪 德国法兰克福 一号"
+  - "🇨🇳 台湾家宽"
+  - "🇺🇸 美国洛杉矶 一号"
+  - "🇸🇬 新加坡椰子水 二号"
+  - "🇨🇳 台湾牛肉面 四号"
+  - "🇯🇵 樱花✿ 三网优化 1"
 - name: "HOYO"
   type: "select"
   proxies:
@@ -258,6 +282,12 @@ proxy-groups:
   - "🏴‍☠️ m8dddc.457.pp.ua tls WS CDN vmess § 443 44"
   - "🏴‍☠️ m8nnn.457.pp.ua tls WS CDN vless § 443 43"
   - "🇮🇷 ddcvf4.iran2035.dpdns.org http WS CDN vmess § 80 49"
+  - "🇩🇪 德国法兰克福 一号"
+  - "🇨🇳 台湾家宽"
+  - "🇺🇸 美国洛杉矶 一号"
+  - "🇸🇬 新加坡椰子水 二号"
+  - "🇨🇳 台湾牛肉面 四号"
+  - "🇯🇵 樱花✿ 三网优化 1"
 rules:
 - "GEOSITE,CATEGORY-ADS-ALL,REJECT"
 - "DOMAIN-SUFFIX,ushd.xmsl.org,DIRECT"
