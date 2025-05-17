@@ -83,6 +83,9 @@ proxies:
 - {type: "ss", server: "103.186.154.24", port: 38388, cipher: "aes-256-cfb", password: "Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV", name: "🇻🇳 越南-9.7MB/s"}
 - {skip-cert-verify: true, sni: "8941bc90-swexs0-t1bnjq-1krtb.cu.plebai.net", type: "trojan", password: "60f6b4c4-9d70-11ed-a4d2-f23c9164ca5d", server: "8941bc90-swexs0-t1bnjq-1krtb.cu.plebai.net", port: 15229, name: "🏴‍☠️ 中转节点-4.89MB/s"}
 - {skip-cert-verify: true, sni: "120.233.128.68", type: "trojan", password: "b6200af42ccadea353f5b5856dd20d70", server: "120.233.128.68", port: 39001, name: "🏴‍☠️ 中转节点-14.78MB/s"}
+- {type: "vless", name: "🇯🇵 日本 清风明月本无价", server: "japantunshubest.tsjc.shop", port: 36152, uuid: "5a3c1e11-591a-47fd-b660-f4fcda513d3b", tls: true, flow: "xtls-rprx-vision", client-fingerprint: "qq", skip-cert-verify: true, reality-opts: {public-key: "ap0FQD7LYC9oRF-_qv_0WSTx9gMy9RTRbLREOrDShy0", short-id: "e13fccc2f63fa52f"}, network: "tcp", servername: "s0.awsstatic.com"}
+- {type: "hysteria2", name: "🇦🇹 奥地利", server: "152.53.47.16", port: 13852, password: "fbZYdngMs7US5yJHmFNEpqOtfUQ", sni: "bing.com", skip-cert-verify: true, tfo: false}
+- {type: "vless", name: "🇸🇬 阿里云200m-新加坡", server: "8.219.230.21", port: 14640, uuid: "e52f6b9e-8846-4da7-af83-053c153df610", tls: true, flow: "", client-fingerprint: "chrome", skip-cert-verify: false, reality-opts: {public-key: "wdf0lBxIRqOnjKIpZahyG3e0mn9i6MO6n2iBRDhEBxc", short-id: "d715e20dae"}, network: "tcp", servername: "tesla.com"}
 proxy-groups:
 - name: "PROXY"
   type: "select"
@@ -111,6 +114,9 @@ proxy-groups:
   - "🇻🇳 越南-9.7MB/s"
   - "🏴‍☠️ 中转节点-4.89MB/s"
   - "🏴‍☠️ 中转节点-14.78MB/s"
+  - "🇯🇵 日本 清风明月本无价"
+  - "🇦🇹 奥地利"
+  - "🇸🇬 阿里云200m-新加坡"
 - name: "AUTO"
   type: "url-test"
   url: "http://www.gstatic.com/generate_204"
@@ -140,6 +146,9 @@ proxy-groups:
   - "🇻🇳 越南-9.7MB/s"
   - "🏴‍☠️ 中转节点-4.89MB/s"
   - "🏴‍☠️ 中转节点-14.78MB/s"
+  - "🇯🇵 日本 清风明月本无价"
+  - "🇦🇹 奥地利"
+  - "🇸🇬 阿里云200m-新加坡"
 - name: "AI"
   type: "select"
   proxies:
@@ -166,6 +175,9 @@ proxy-groups:
   - "🇻🇳 越南-9.7MB/s"
   - "🏴‍☠️ 中转节点-4.89MB/s"
   - "🏴‍☠️ 中转节点-14.78MB/s"
+  - "🇯🇵 日本 清风明月本无价"
+  - "🇦🇹 奥地利"
+  - "🇸🇬 阿里云200m-新加坡"
 - name: "HOYO"
   type: "select"
   proxies:
@@ -193,6 +205,9 @@ proxy-groups:
   - "🇻🇳 越南-9.7MB/s"
   - "🏴‍☠️ 中转节点-4.89MB/s"
   - "🏴‍☠️ 中转节点-14.78MB/s"
+  - "🇯🇵 日本 清风明月本无价"
+  - "🇦🇹 奥地利"
+  - "🇸🇬 阿里云200m-新加坡"
 rules:
 - "GEOSITE,CATEGORY-ADS-ALL,REJECT"
 - "DOMAIN-SUFFIX,ushd.xmsl.org,DIRECT"
