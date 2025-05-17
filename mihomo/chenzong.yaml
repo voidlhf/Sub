@@ -78,6 +78,7 @@ proxies:
 - {name: "🇯🇵 [Hy2]日本01", server: "jp1.xiaoliyu.us", port: 27102, type: "hysteria2", password: "ab4c9bf8-6bed-4dac-ba4e-461d8f589eda", auth: "ab4c9bf8-6bed-4dac-ba4e-461d8f589eda", sni: "jp1.xiaoliyu.us", skip-cert-verify: true}
 - {name: "🇺🇸 [Hy2]美国04", server: "us4.xiaoliyu.us", port: 2052, type: "hysteria2", password: "ab4c9bf8-6bed-4dac-ba4e-461d8f589eda", auth: "ab4c9bf8-6bed-4dac-ba4e-461d8f589eda", sni: "us4.xiaoliyu.us", skip-cert-verify: true}
 - {name: "🇻🇳 [Hy2]越南01youtube免广告", server: "vn1.xiaoliyu.us", port: 30220, type: "hysteria2", password: "ab4c9bf8-6bed-4dac-ba4e-461d8f589eda", auth: "ab4c9bf8-6bed-4dac-ba4e-461d8f589eda", sni: "vn1.xiaoliyu.us", skip-cert-verify: true}
+- {name: "🇯🇵 JP hysteria2", server: "150.230.61.253", port: 42952, type: "hysteria2", password: "68e48881-a514-4c74-a74c-2839224827c5", auth: "68e48881-a514-4c74-a74c-2839224827c5", skip-cert-verify: true}
 proxy-groups:
 - name: "PROXY"
   type: "select"
@@ -101,6 +102,7 @@ proxy-groups:
   - "🇯🇵 [Hy2]日本01"
   - "🇺🇸 [Hy2]美国04"
   - "🇻🇳 [Hy2]越南01youtube免广告"
+  - "🇯🇵 JP hysteria2"
 - name: "AUTO"
   type: "url-test"
   url: "http://www.gstatic.com/generate_204"
@@ -125,6 +127,7 @@ proxy-groups:
   - "🇯🇵 [Hy2]日本01"
   - "🇺🇸 [Hy2]美国04"
   - "🇻🇳 [Hy2]越南01youtube免广告"
+  - "🇯🇵 JP hysteria2"
 - name: "AI"
   type: "select"
   proxies:
@@ -146,6 +149,7 @@ proxy-groups:
   - "🇯🇵 [Hy2]日本01"
   - "🇺🇸 [Hy2]美国04"
   - "🇻🇳 [Hy2]越南01youtube免广告"
+  - "🇯🇵 JP hysteria2"
 - name: "HOYO"
   type: "select"
   proxies:
@@ -168,6 +172,7 @@ proxy-groups:
   - "🇯🇵 [Hy2]日本01"
   - "🇺🇸 [Hy2]美国04"
   - "🇻🇳 [Hy2]越南01youtube免广告"
+  - "🇯🇵 JP hysteria2"
 rules:
 - "GEOSITE,CATEGORY-ADS-ALL,REJECT"
 - "DOMAIN-SUFFIX,ushd.xmsl.org,DIRECT"
