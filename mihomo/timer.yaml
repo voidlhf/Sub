@@ -60,11 +60,10 @@ dns:
   - "https://dns.alidns.com/dns-query"
   - "https://doh.pub/dns-query"
 proxies:
+- {type: "hysteria2", name: "🇦🇹 奥地利", server: "152.53.47.16", port: 13852, password: "fbZYdngMs7US5yJHmFNEpqOtfUQ", sni: "bing.com", skip-cert-verify: true, tfo: false}
 - {skip-cert-verify: true, type: "trojan", password: "RlzoEILU", server: "36.151.251.59", port: 7815, name: "🏴‍☠️ 中转节点-4.96MB/s"}
 - {name: "🏴‍☠️ 中转节点-10.2MB/s", type: "vmess", server: "v32.heduian.link", port: 30832, cipher: "auto", uuid: "cbb3f877-d1fb-344c-87a9-d153bffd5484", alterId: 2, tls: false, network: "ws", ws-opts: {path: "/oooo", headers: {Host: "baidu.com"}}}
-- {name: "🏴‍☠️ 中转节点-64.6MB/s", type: "vmess", server: "tk.hzlt.tkddns.xyz", port: 22642, cipher: "auto", uuid: "98e96c9f-4bb3-39d4-9a2c-fac04257f7c7", alterId: 2, tls: true, network: "ws", ws-opts: {path: "/", headers: {Host: "zxjp-b.tkong.cc"}}, servername: "zxjp-b.tkong.cc"}
 - {type: "ss", server: "184.170.241.194", port: 443, cipher: "aes-128-cfb", password: "shadowsocks", name: "🇺🇸 美国-15.7MB/s"}
-- {type: "ss", server: "125.141.31.72", port: 15098, cipher: "aes-256-cfb", password: "qwerREWQ@@", name: "🇰🇷 韩国-130.1KB/s"}
 - {type: "ss", server: "103.186.154.31", port: 38388, cipher: "aes-256-cfb", password: "Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV", name: "🇻🇳 越南-20.3MB/s"}
 - {type: "ss", server: "103.186.154.35", port: 38388, cipher: "aes-256-cfb", password: "Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV", name: "🇻🇳 越南-9.0MB/s"}
 - {type: "ss", server: "103.186.155.20", port: 38388, cipher: "aes-256-cfb", password: "Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV", name: "🇻🇳 越南-45.0MB/s"}
@@ -74,33 +73,14 @@ proxies:
 - {type: "ss", server: "154.223.16.212", port: 989, cipher: "aes-256-cfb", password: "f8f7aCzcPKbsF8p3", name: "🇭🇰 香港-10.8MB/s"}
 - {type: "ss", server: "103.186.154.29", port: 38388, cipher: "aes-256-cfb", password: "Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV", name: "🇻🇳 越南-10.3MB/s"}
 - {type: "ss", server: "103.186.154.28", port: 38388, cipher: "aes-256-cfb", password: "Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV", name: "🇻🇳 越南-62.4MB/s"}
-- {type: "ss", server: "103.186.154.24", port: 38388, cipher: "aes-256-cfb", password: "Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV", name: "🇻🇳 越南-9.7MB/s"}
 - {skip-cert-verify: true, sni: "8941bc90-swexs0-t1bnjq-1krtb.cu.plebai.net", type: "trojan", password: "60f6b4c4-9d70-11ed-a4d2-f23c9164ca5d", server: "8941bc90-swexs0-t1bnjq-1krtb.cu.plebai.net", port: 15229, name: "🏴‍☠️ 中转节点-4.89MB/s"}
 - {skip-cert-verify: true, sni: "120.233.128.68", type: "trojan", password: "b6200af42ccadea353f5b5856dd20d70", server: "120.233.128.68", port: 39001, name: "🏴‍☠️ 中转节点-14.78MB/s"}
-- {type: "vless", name: "🇯🇵 日本 清风明月本无价", server: "japantunshubest.tsjc.shop", port: 36152, uuid: "5a3c1e11-591a-47fd-b660-f4fcda513d3b", tls: true, flow: "xtls-rprx-vision", client-fingerprint: "qq", skip-cert-verify: true, reality-opts: {public-key: "ap0FQD7LYC9oRF-_qv_0WSTx9gMy9RTRbLREOrDShy0", short-id: "e13fccc2f63fa52f"}, network: "tcp", servername: "s0.awsstatic.com"}
-- {type: "hysteria2", name: "🇦🇹 奥地利", server: "152.53.47.16", port: 13852, password: "fbZYdngMs7US5yJHmFNEpqOtfUQ", sni: "bing.com", skip-cert-verify: true, tfo: false}
-- {type: "vless", name: "🇸🇬 阿里云200m-新加坡", server: "8.219.230.21", port: 14640, uuid: "e52f6b9e-8846-4da7-af83-053c153df610", tls: true, flow: "", client-fingerprint: "chrome", skip-cert-verify: false, reality-opts: {public-key: "wdf0lBxIRqOnjKIpZahyG3e0mn9i6MO6n2iBRDhEBxc", short-id: "d715e20dae"}, network: "tcp", servername: "tesla.com"}
-- {type: "vless", name: "🇸🇬 新加坡 当时明月在", server: "xinjiapotunshuyyds.tsjc.shop", port: 36152, uuid: "5a3c1e11-591a-47fd-b660-f4fcda513d3b", tls: true, flow: "xtls-rprx-vision", client-fingerprint: "qq", skip-cert-verify: true, reality-opts: {public-key: "ap0FQD7LYC9oRF-_qv_0WSTx9gMy9RTRbLREOrDShy0", short-id: "e13fccc2f63fa52f"}, network: "tcp", servername: "s0.awsstatic.com"}
 - {type: "vless", name: "🇺🇸 美国 俱怀逸兴壮思飞", server: "usatunshuedrtfgyhujikdxfcgvbhjk.tsjc.shop", port: 36152, uuid: "5a3c1e11-591a-47fd-b660-f4fcda513d3b", tls: true, flow: "xtls-rprx-vision", client-fingerprint: "ios", skip-cert-verify: true, reality-opts: {public-key: "ap0FQD7LYC9oRF-_qv_0WSTx9gMy9RTRbLREOrDShy0", short-id: "e13fccc2f63fa52f"}, network: "tcp", servername: "s0.awsstatic.com"}
-- {name: "🏴‍☠️ m8yyyujh.457.pp.ua tls WS CDN vmess § 443 14", type: "vmess", server: "m8yyyujh.457.pp.ua", port: 443, cipher: "auto", uuid: "0017bbce-e963-4b81-8981-a8e4117d2cd4", alterId: 0, tls: true, network: "ws", ws-opts: {path: "/OhijtPrXs2pASR866TVMXPAl", headers: {Host: "m8yyyujh.457.pp.ua"}}, servername: "m8yyyujh.457.pp.ua"}
-- {sni: "m8yyyujh.457.pp.ua", client-fingerprint: "chrome", alpn: ["http/1.1"], network: "ws", ws-opts: {path: "/KLcD0D18SR866TVMXPAl", headers: {Host: "m8yyyujh.457.pp.ua"}}, type: "trojan", password: "0017bbce-e963-4b81-8981-a8e4117d2cd4", server: "m8yyyujh.457.pp.ua", port: 443, name: "🏴‍☠️ m8yyyujh.457.pp.ua tls WS CDN trojan § 443 14"}
-- {type: "vless", name: "🏴‍☠️ m8yyyujh.457.pp.ua tls WS CDN vless § 443 14", server: "m8yyyujh.457.pp.ua", port: 443, uuid: "0017bbce-e963-4b81-8981-a8e4117d2cd4", tls: true, client-fingerprint: "chrome", alpn: ["http/1.1"], skip-cert-verify: false, network: "ws", ws-opts: {headers: {Host: "m8yyyujh.457.pp.ua"}, path: "/32FkuhQSR866TVMXPAl"}, servername: "m8yyyujh.457.pp.ua"}
-- {name: "🇮🇷 ddcvf4.iran2035.dpdns.org tls WS CDN vmess § 443 49", type: "vmess", server: "ddcvf4.iran2035.dpdns.org", port: 443, cipher: "auto", uuid: "0017bbce-e963-4b81-8981-a8e4117d2cd4", alterId: 0, tls: true, network: "ws", ws-opts: {path: "/OhijtPrXs2pASR866TVMXPAl", headers: {Host: "ddcvf4.iran2035.dpdns.org"}}, servername: "ddcvf4.iran2035.dpdns.org"}
-- {sni: "m8dddc.457.pp.ua", client-fingerprint: "chrome", alpn: ["http/1.1"], network: "ws", ws-opts: {path: "/KLcD0D18SR866TVMXPAl", headers: {Host: "m8dddc.457.pp.ua"}}, type: "trojan", password: "0017bbce-e963-4b81-8981-a8e4117d2cd4", server: "m8dddc.457.pp.ua", port: 443, name: "🏴‍☠️ m8dddc.457.pp.ua tls WS CDN trojan § 443 44"}
-- {name: "🏴‍☠️ m8dddc.457.pp.ua tls WS CDN vmess § 443 44", type: "vmess", server: "m8dddc.457.pp.ua", port: 443, cipher: "auto", uuid: "0017bbce-e963-4b81-8981-a8e4117d2cd4", alterId: 0, tls: true, network: "ws", ws-opts: {path: "/OhijtPrXs2pASR866TVMXPAl", headers: {Host: "m8dddc.457.pp.ua"}}, servername: "m8dddc.457.pp.ua"}
-- {type: "vless", name: "🏴‍☠️ m8nnn.457.pp.ua tls WS CDN vless § 443 43", server: "m8nnn.457.pp.ua", port: 443, uuid: "0017bbce-e963-4b81-8981-a8e4117d2cd4", tls: true, client-fingerprint: "chrome", alpn: ["http/1.1"], skip-cert-verify: false, network: "ws", ws-opts: {headers: {Host: "m8nnn.457.pp.ua"}, path: "/32FkuhQSR866TVMXPAl"}, servername: "m8nnn.457.pp.ua"}
-- {name: "🇮🇷 ddcvf4.iran2035.dpdns.org http WS CDN vmess § 80 49", type: "vmess", server: "ddcvf4.iran2035.dpdns.org", port: 80, cipher: "auto", uuid: "0017bbce-e963-4b81-8981-a8e4117d2cd4", alterId: 0, tls: false, network: "ws", ws-opts: {path: "/OhijtPrXs2pASR866TVMXPAl", headers: {Host: "ddcvf4.iran2035.dpdns.org"}}}
-- {type: "hysteria2", name: "🇩🇪 德国法兰克福 一号", server: "dg.xueshan.shop", port: 443, ports: "20101-20199", password: "4d0cdfd6-4cb9-4ec4-b1ed-6323109dd96d", sni: "dg.xueshan.shop", obfs: "salamander", obfs-password: "LYvPkPqz3EZchq67", skip-cert-verify: false, tfo: false}
-- {type: "hysteria2", name: "🇨🇳 台湾家宽", server: "tw00.xueshan.shop", port: 14120, password: "4d0cdfd6-4cb9-4ec4-b1ed-6323109dd96d", sni: "tw00.xueshan.shop", obfs: "salamander", obfs-password: "mPHuGQuOFgRGE5zz", skip-cert-verify: false, tfo: false}
-- {type: "hysteria2", name: "🇺🇸 美国洛杉矶 一号", server: "mg.xueshan.shop", port: 443, ports: "20101-20199", password: "4d0cdfd6-4cb9-4ec4-b1ed-6323109dd96d", sni: "mg.xueshan.shop", obfs: "salamander", obfs-password: "CdI7LlQ3xSYBks3H", skip-cert-verify: false, tfo: false}
-- {type: "hysteria2", name: "🇸🇬 新加坡椰子水 二号", server: "xjp.xueshan.shop", port: 443, ports: "20101-20199", password: "4d0cdfd6-4cb9-4ec4-b1ed-6323109dd96d", sni: "xjp.xueshan.shop", obfs: "salamander", obfs-password: "mIwDBXSGAJ7PjDBj", skip-cert-verify: false, tfo: false}
-- {type: "hysteria2", name: "🇨🇳 台湾牛肉面 四号", server: "tw.xueshan.shop", port: 443, ports: "20101-20199", password: "4d0cdfd6-4cb9-4ec4-b1ed-6323109dd96d", sni: "tw.xueshan.shop", obfs: "salamander", obfs-password: "PG8jOhQdnjt0yAEw", skip-cert-verify: false, tfo: false}
 - {type: "ss", server: "8tv68qhq.slashdevslashnetslashtun.net", port: 15010, cipher: "aes-256-gcm", password: "ENYGONDU94UW1G6X", name: "🏴‍☠️ 中转节点-8.59MB/s"}
 - {skip-cert-verify: true, sni: "301b8cf2-swexs0-sxgzej-1teze.cu.plebai.net", type: "trojan", password: "8f55b5d6-f98f-11ef-ba82-f23c913c8d2b", server: "301b8cf2-swexs0-sxgzej-1teze.cu.plebai.net", port: 15229, name: "🏴‍☠️ 中转节点-2.45MB/s"}
 - {name: "🏴‍☠️ 中转节点-26.4MB/s", type: "vmess", server: "111.26.109.79", port: 30828, cipher: "auto", uuid: "cbb3f877-d1fb-344c-87a9-d153bffd5484", alterId: 2, tls: false, network: "ws", ws-opts: {path: "/oooo", headers: {Host: "ocbc.com"}}}
 - {type: "ss", server: "45.128.151.67", port: 31348, cipher: "chacha20-ietf-poly1305", password: "d3TphPPfMkIxFmPJpA0j7RkPJHjeHqaJk2D7Co7VsFuUU2v1", name: "🇱🇻 拉脱维亚-14.4MB/s"}
 - {type: "ss", server: "185.231.233.112", port: 989, cipher: "aes-256-cfb", password: "f8f7aCzcPKbsF8p3", name: "🇵🇹 葡萄牙-81.6MB/s"}
-- {skip-cert-verify: true, sni: "cgsg2.hysality.com", type: "trojan", password: "09e8b39a-4c09-4df0-a50c-af3bef01567e", server: "gzyd.cg.xxality.cn", port: 35000, name: "🏴‍☠️ 中转节点-426.6KB/s"}
 - {name: "🏴‍☠️ 未知国家-60.4MB/s", type: "vmess", server: "v37.emoyes.top", port: 8443, cipher: "auto", uuid: "a78fc14e-4e8b-4fc0-8cab-86fd81c583ca", alterId: 0, tls: true, network: "ws", ws-opts: {path: "/", headers: {Host: "v37.emoyes.top"}}, servername: "v37.emoyes.top"}
 - {type: "vless", name: "🇺🇸 美国", server: "216.230.233.49", port: 25536, uuid: "4a3dc64b-17e1-4ae7-a9a4-851f9794d4c6", tls: true, flow: "xtls-rprx-vision", client-fingerprint: "firefox", skip-cert-verify: false, reality-opts: {public-key: "ydfJ-qHuqDCqmGnFbRwzqYT7gA9mWoh0gtYvMzt8OmI", short-id: "fc3d"}, network: "tcp", servername: "apps.apple.com"}
 - {type: "vless", name: "🇨🇦 加拿大", server: "104.152.210.36", port: 25536, uuid: "4a3dc64b-17e1-4ae7-a9a4-851f9794d4c6", tls: true, flow: "xtls-rprx-vision", client-fingerprint: "chrome", skip-cert-verify: false, reality-opts: {public-key: "t4dzgL6Q-l6Y8d-Z0FSEvtAygZFDQqg0FPHn7Qxg90M", short-id: "c40fa703ffa3d3b8"}, network: "tcp", servername: "apps.apple.com"}
@@ -160,8 +140,6 @@ proxies:
 - {type: "ss", server: "185.47.254.177", port: 20007, cipher: "aes-256-gcm", password: "DLLNE4KUBHIE9I8B", name: "🇬🇹 GT-01"}
 - {type: "ss", server: "109.104.154.131", port: 20000, cipher: "aes-256-gcm", password: "7I5Q2SGQO747EVK6", name: "🇳🇱 NL-01"}
 - {type: "ss", server: "185.47.253.144", port: 20010, cipher: "aes-256-gcm", password: "1GO1TQX50JCANUVJ", name: "🇪🇨 EC-01"}
-- {type: "ss", server: "185.90.61.157", port: 20034, cipher: "aes-256-gcm", password: "383HVZ69SKK65IMH", name: "🇳🇴 NO-01"}
-- {type: "ss", server: "31.40.212.221", port: 20006, cipher: "aes-256-gcm", password: "QDEJP7VMKAAISAR7", name: "🇦🇷 AR-01"}
 - {type: "ss", server: "185.126.238.37", port: 20004, cipher: "aes-256-gcm", password: "HEI2219EARNH0UNC", name: "🇬🇷 GR-01"}
 - {type: "ss", server: "185.47.252.16", port: 20009, cipher: "aes-256-gcm", password: "SM0S9G3GP05J8FSW", name: "🇵🇪 PE-01"}
 - {type: "ss", server: "185.126.237.58", port: 20027, cipher: "aes-256-gcm", password: "SOMFC2UP3VWX9AUR", name: "🇷🇴 RO-01"}
@@ -169,16 +147,35 @@ proxies:
 - {type: "ss", server: "37.143.128.125", port: 20012, cipher: "aes-256-gcm", password: "CPDC65DBC7IK0V4N", name: "🇨🇱 CL-01"}
 - {type: "ss", server: "185.255.123.183", port: 20016, cipher: "aes-256-gcm", password: "45BG96CY2SHX381W", name: "🇳🇬 NG-01"}
 - {type: "ss", server: "46.16.129.217", port: 20022, cipher: "aes-256-gcm", password: "Z26NZ9PJBSWGFNHS", name: "🇹🇭 TH-01"}
+- {type: "vless", name: "🇯🇵 日本 清风明月本无价", server: "japantunshubest.tsjc.shop", port: 36152, uuid: "5a3c1e11-591a-47fd-b660-f4fcda513d3b", tls: true, flow: "xtls-rprx-vision", client-fingerprint: "qq", skip-cert-verify: true, reality-opts: {public-key: "ap0FQD7LYC9oRF-_qv_0WSTx9gMy9RTRbLREOrDShy0", short-id: "e13fccc2f63fa52f"}, network: "tcp", servername: "s0.awsstatic.com"}
+- {type: "vless", name: "🇸🇬 新加坡 当时明月在", server: "xinjiapotunshuyyds.tsjc.shop", port: 36152, uuid: "5a3c1e11-591a-47fd-b660-f4fcda513d3b", tls: true, flow: "xtls-rprx-vision", client-fingerprint: "qq", skip-cert-verify: true, reality-opts: {public-key: "ap0FQD7LYC9oRF-_qv_0WSTx9gMy9RTRbLREOrDShy0", short-id: "e13fccc2f63fa52f"}, network: "tcp", servername: "s0.awsstatic.com"}
+- {name: "🇺🇸 美國西雅圖", type: "http", tls: true, server: "b1fde348-swin40-tcr97d-2b2n.sv.plebai.net/", port: 443, username: "fcd39788-ca23-11ed-86e2-f23c913c8d2b", password: "fcd39788-ca23-11ed-86e2-f23c913c8d2b", sni: "b1fde348-swin40-tcr97d-2b2n.sv.plebai.net/"}
+- {sni: "90ba6c48-swin40-tcr97d-2b2n.cu.plebai.net", type: "trojan", password: "fcd39788-ca23-11ed-86e2-f23c913c8d2b", server: "90ba6c48-swin40-tcr97d-2b2n.cu.plebai.net", port: 15229, name: "🇺🇸 美国加州[CUB]"}
+- {name: "🇺🇸 硅谷HTTP", type: "http", tls: true, server: "921c2f80-swin40-tcr97d-2b2n.sj.gotochinatown.net/", port: 443, username: "fcd39788-ca23-11ed-86e2-f23c913c8d2b", password: "fcd39788-ca23-11ed-86e2-f23c913c8d2b", sni: "921c2f80-swin40-tcr97d-2b2n.sj.gotochinatown.net/"}
+- {name: "🇺🇸 美国测试HTTP", type: "http", tls: true, server: "8c297927-swin40-tcr97d-2b2n.los.gotochinatown.net/", port: 443, username: "fcd39788-ca23-11ed-86e2-f23c913c8d2b", password: "fcd39788-ca23-11ed-86e2-f23c913c8d2b", sni: "8c297927-swin40-tcr97d-2b2n.los.gotochinatown.net/"}
+- {type: "ss", server: "ti3hyra4.slashdevslashnetslashtun.net", port: 17008, cipher: "aes-256-gcm", password: "DDRA7131WY5N87PJ", name: "🇺🇸 US-08"}
+- {type: "ss", server: "185.90.61.157", port: 20034, cipher: "aes-256-gcm", password: "383HVZ69SKK65IMH", name: "🇳🇴 NO-01"}
+- {type: "ss", server: "31.40.212.221", port: 20006, cipher: "aes-256-gcm", password: "QDEJP7VMKAAISAR7", name: "🇦🇷 AR-01"}
+- {type: "hysteria2", name: "🏴‍☠️ 官网：keluosi.top", server: "us01.node.cross666.top", port: 36298, password: "6f304c35-f3a4-4265-8878-1a90f1349fb0", sni: "www.yahoo.com", skip-cert-verify: true, tfo: false}
+- {type: "hysteria2", name: "🇺🇸 美国2|0.2倍", server: "us2.node.cross666.top", port: 35364, password: "6f304c35-f3a4-4265-8878-1a90f1349fb0", sni: "www.yahoo.com", skip-cert-verify: true, tfo: false}
+- {type: "hysteria2", name: "🇺🇸 美国3|1.5倍|电信优化", server: "us3.node.cross666.top", port: 36753, password: "6f304c35-f3a4-4265-8878-1a90f1349fb0", sni: "www.yahoo.com", skip-cert-verify: true, tfo: false}
+- {type: "hysteria2", name: "🇺🇸 美国4|0.8倍", server: "us4.node.cross666.top", port: 38359, password: "6f304c35-f3a4-4265-8878-1a90f1349fb0", sni: "www.yahoo.com", skip-cert-verify: true, tfo: false}
+- {type: "hysteria2", name: "🇸🇬 新加坡2|1.2倍|移动优化", server: "sg02.node.cross666.top", port: 39999, password: "6f304c35-f3a4-4265-8878-1a90f1349fb0", sni: "mirror.sg.gs", skip-cert-verify: true, tfo: false}
+- {type: "hysteria2", name: "🇩🇪 德国1|0.8倍", server: "de1.node.cross666.top", port: 38324, password: "6f304c35-f3a4-4265-8878-1a90f1349fb0", sni: "mirror.dogado.de", skip-cert-verify: true, tfo: false}
+- {type: "hysteria2", name: "🇫🇷 法国1|0.8倍", server: "fr1.node.cross666.top", port: 38116, password: "6f304c35-f3a4-4265-8878-1a90f1349fb0", sni: "ubuntu.mirrors.ovh.net", skip-cert-verify: true, tfo: false}
+- {type: "hysteria2", name: "🇻🇳 越南1|0.8倍", server: "vn1r.node.cross666.top", port: 37982, password: "6f304c35-f3a4-4265-8878-1a90f1349fb0", sni: "mirror.sg.gs", skip-cert-verify: true, tfo: false}
+- {type: "hysteria2", name: "🇷🇺 俄罗斯A1|0.5倍|电信联通优化", server: "rua.node.cross666.top", port: 37264, password: "6f304c35-f3a4-4265-8878-1a90f1349fb0", sni: "mirror.hyperdedic.ru", skip-cert-verify: true, tfo: false}
+- {type: "hysteria2", name: "🇷🇺 俄罗斯2|0.5倍|联通优化", server: "ru2.node.cross666.top", port: 39729, password: "6f304c35-f3a4-4265-8878-1a90f1349fb0", sni: "mirror.hyperdedic.ru", skip-cert-verify: true, tfo: false}
+- {type: "hysteria2", name: "🇹🇷 土耳其1|0.8倍", server: "tr01.node.cross666.top", port: 35866, password: "6f304c35-f3a4-4265-8878-1a90f1349fb0", sni: "mirror.dogado.de", skip-cert-verify: true, tfo: false}
 proxy-groups:
 - name: "PROXY"
   type: "select"
   proxies:
   - "AUTO"
+  - "🇦🇹 奥地利"
   - "🏴‍☠️ 中转节点-4.96MB/s"
   - "🏴‍☠️ 中转节点-10.2MB/s"
-  - "🏴‍☠️ 中转节点-64.6MB/s"
   - "🇺🇸 美国-15.7MB/s"
-  - "🇰🇷 韩国-130.1KB/s"
   - "🇻🇳 越南-20.3MB/s"
   - "🇻🇳 越南-9.0MB/s"
   - "🇻🇳 越南-45.0MB/s"
@@ -188,33 +185,14 @@ proxy-groups:
   - "🇭🇰 香港-10.8MB/s"
   - "🇻🇳 越南-10.3MB/s"
   - "🇻🇳 越南-62.4MB/s"
-  - "🇻🇳 越南-9.7MB/s"
   - "🏴‍☠️ 中转节点-4.89MB/s"
   - "🏴‍☠️ 中转节点-14.78MB/s"
-  - "🇯🇵 日本 清风明月本无价"
-  - "🇦🇹 奥地利"
-  - "🇸🇬 阿里云200m-新加坡"
-  - "🇸🇬 新加坡 当时明月在"
   - "🇺🇸 美国 俱怀逸兴壮思飞"
-  - "🏴‍☠️ m8yyyujh.457.pp.ua tls WS CDN vmess § 443 14"
-  - "🏴‍☠️ m8yyyujh.457.pp.ua tls WS CDN trojan § 443 14"
-  - "🏴‍☠️ m8yyyujh.457.pp.ua tls WS CDN vless § 443 14"
-  - "🇮🇷 ddcvf4.iran2035.dpdns.org tls WS CDN vmess § 443 49"
-  - "🏴‍☠️ m8dddc.457.pp.ua tls WS CDN trojan § 443 44"
-  - "🏴‍☠️ m8dddc.457.pp.ua tls WS CDN vmess § 443 44"
-  - "🏴‍☠️ m8nnn.457.pp.ua tls WS CDN vless § 443 43"
-  - "🇮🇷 ddcvf4.iran2035.dpdns.org http WS CDN vmess § 80 49"
-  - "🇩🇪 德国法兰克福 一号"
-  - "🇨🇳 台湾家宽"
-  - "🇺🇸 美国洛杉矶 一号"
-  - "🇸🇬 新加坡椰子水 二号"
-  - "🇨🇳 台湾牛肉面 四号"
   - "🏴‍☠️ 中转节点-8.59MB/s"
   - "🏴‍☠️ 中转节点-2.45MB/s"
   - "🏴‍☠️ 中转节点-26.4MB/s"
   - "🇱🇻 拉脱维亚-14.4MB/s"
   - "🇵🇹 葡萄牙-81.6MB/s"
-  - "🏴‍☠️ 中转节点-426.6KB/s"
   - "🏴‍☠️ 未知国家-60.4MB/s"
   - "🇺🇸 美国"
   - "🇨🇦 加拿大"
@@ -274,8 +252,6 @@ proxy-groups:
   - "🇬🇹 GT-01"
   - "🇳🇱 NL-01"
   - "🇪🇨 EC-01"
-  - "🇳🇴 NO-01"
-  - "🇦🇷 AR-01"
   - "🇬🇷 GR-01"
   - "🇵🇪 PE-01"
   - "🇷🇴 RO-01"
@@ -283,17 +259,36 @@ proxy-groups:
   - "🇨🇱 CL-01"
   - "🇳🇬 NG-01"
   - "🇹🇭 TH-01"
+  - "🇯🇵 日本 清风明月本无价"
+  - "🇸🇬 新加坡 当时明月在"
+  - "🇺🇸 美國西雅圖"
+  - "🇺🇸 美国加州[CUB]"
+  - "🇺🇸 硅谷HTTP"
+  - "🇺🇸 美国测试HTTP"
+  - "🇺🇸 US-08"
+  - "🇳🇴 NO-01"
+  - "🇦🇷 AR-01"
+  - "🏴‍☠️ 官网：keluosi.top"
+  - "🇺🇸 美国2|0.2倍"
+  - "🇺🇸 美国3|1.5倍|电信优化"
+  - "🇺🇸 美国4|0.8倍"
+  - "🇸🇬 新加坡2|1.2倍|移动优化"
+  - "🇩🇪 德国1|0.8倍"
+  - "🇫🇷 法国1|0.8倍"
+  - "🇻🇳 越南1|0.8倍"
+  - "🇷🇺 俄罗斯A1|0.5倍|电信联通优化"
+  - "🇷🇺 俄罗斯2|0.5倍|联通优化"
+  - "🇹🇷 土耳其1|0.8倍"
 - name: "AUTO"
   type: "url-test"
   url: "http://www.gstatic.com/generate_204"
   interval: 300
   tolerance: 50
   proxies:
+  - "🇦🇹 奥地利"
   - "🏴‍☠️ 中转节点-4.96MB/s"
   - "🏴‍☠️ 中转节点-10.2MB/s"
-  - "🏴‍☠️ 中转节点-64.6MB/s"
   - "🇺🇸 美国-15.7MB/s"
-  - "🇰🇷 韩国-130.1KB/s"
   - "🇻🇳 越南-20.3MB/s"
   - "🇻🇳 越南-9.0MB/s"
   - "🇻🇳 越南-45.0MB/s"
@@ -303,33 +298,14 @@ proxy-groups:
   - "🇭🇰 香港-10.8MB/s"
   - "🇻🇳 越南-10.3MB/s"
   - "🇻🇳 越南-62.4MB/s"
-  - "🇻🇳 越南-9.7MB/s"
   - "🏴‍☠️ 中转节点-4.89MB/s"
   - "🏴‍☠️ 中转节点-14.78MB/s"
-  - "🇯🇵 日本 清风明月本无价"
-  - "🇦🇹 奥地利"
-  - "🇸🇬 阿里云200m-新加坡"
-  - "🇸🇬 新加坡 当时明月在"
   - "🇺🇸 美国 俱怀逸兴壮思飞"
-  - "🏴‍☠️ m8yyyujh.457.pp.ua tls WS CDN vmess § 443 14"
-  - "🏴‍☠️ m8yyyujh.457.pp.ua tls WS CDN trojan § 443 14"
-  - "🏴‍☠️ m8yyyujh.457.pp.ua tls WS CDN vless § 443 14"
-  - "🇮🇷 ddcvf4.iran2035.dpdns.org tls WS CDN vmess § 443 49"
-  - "🏴‍☠️ m8dddc.457.pp.ua tls WS CDN trojan § 443 44"
-  - "🏴‍☠️ m8dddc.457.pp.ua tls WS CDN vmess § 443 44"
-  - "🏴‍☠️ m8nnn.457.pp.ua tls WS CDN vless § 443 43"
-  - "🇮🇷 ddcvf4.iran2035.dpdns.org http WS CDN vmess § 80 49"
-  - "🇩🇪 德国法兰克福 一号"
-  - "🇨🇳 台湾家宽"
-  - "🇺🇸 美国洛杉矶 一号"
-  - "🇸🇬 新加坡椰子水 二号"
-  - "🇨🇳 台湾牛肉面 四号"
   - "🏴‍☠️ 中转节点-8.59MB/s"
   - "🏴‍☠️ 中转节点-2.45MB/s"
   - "🏴‍☠️ 中转节点-26.4MB/s"
   - "🇱🇻 拉脱维亚-14.4MB/s"
   - "🇵🇹 葡萄牙-81.6MB/s"
-  - "🏴‍☠️ 中转节点-426.6KB/s"
   - "🏴‍☠️ 未知国家-60.4MB/s"
   - "🇺🇸 美国"
   - "🇨🇦 加拿大"
@@ -389,8 +365,6 @@ proxy-groups:
   - "🇬🇹 GT-01"
   - "🇳🇱 NL-01"
   - "🇪🇨 EC-01"
-  - "🇳🇴 NO-01"
-  - "🇦🇷 AR-01"
   - "🇬🇷 GR-01"
   - "🇵🇪 PE-01"
   - "🇷🇴 RO-01"
@@ -398,14 +372,33 @@ proxy-groups:
   - "🇨🇱 CL-01"
   - "🇳🇬 NG-01"
   - "🇹🇭 TH-01"
+  - "🇯🇵 日本 清风明月本无价"
+  - "🇸🇬 新加坡 当时明月在"
+  - "🇺🇸 美國西雅圖"
+  - "🇺🇸 美国加州[CUB]"
+  - "🇺🇸 硅谷HTTP"
+  - "🇺🇸 美国测试HTTP"
+  - "🇺🇸 US-08"
+  - "🇳🇴 NO-01"
+  - "🇦🇷 AR-01"
+  - "🏴‍☠️ 官网：keluosi.top"
+  - "🇺🇸 美国2|0.2倍"
+  - "🇺🇸 美国3|1.5倍|电信优化"
+  - "🇺🇸 美国4|0.8倍"
+  - "🇸🇬 新加坡2|1.2倍|移动优化"
+  - "🇩🇪 德国1|0.8倍"
+  - "🇫🇷 法国1|0.8倍"
+  - "🇻🇳 越南1|0.8倍"
+  - "🇷🇺 俄罗斯A1|0.5倍|电信联通优化"
+  - "🇷🇺 俄罗斯2|0.5倍|联通优化"
+  - "🇹🇷 土耳其1|0.8倍"
 - name: "AI"
   type: "select"
   proxies:
+  - "🇦🇹 奥地利"
   - "🏴‍☠️ 中转节点-4.96MB/s"
   - "🏴‍☠️ 中转节点-10.2MB/s"
-  - "🏴‍☠️ 中转节点-64.6MB/s"
   - "🇺🇸 美国-15.7MB/s"
-  - "🇰🇷 韩国-130.1KB/s"
   - "🇻🇳 越南-20.3MB/s"
   - "🇻🇳 越南-9.0MB/s"
   - "🇻🇳 越南-45.0MB/s"
@@ -415,33 +408,14 @@ proxy-groups:
   - "🇭🇰 香港-10.8MB/s"
   - "🇻🇳 越南-10.3MB/s"
   - "🇻🇳 越南-62.4MB/s"
-  - "🇻🇳 越南-9.7MB/s"
   - "🏴‍☠️ 中转节点-4.89MB/s"
   - "🏴‍☠️ 中转节点-14.78MB/s"
-  - "🇯🇵 日本 清风明月本无价"
-  - "🇦🇹 奥地利"
-  - "🇸🇬 阿里云200m-新加坡"
-  - "🇸🇬 新加坡 当时明月在"
   - "🇺🇸 美国 俱怀逸兴壮思飞"
-  - "🏴‍☠️ m8yyyujh.457.pp.ua tls WS CDN vmess § 443 14"
-  - "🏴‍☠️ m8yyyujh.457.pp.ua tls WS CDN trojan § 443 14"
-  - "🏴‍☠️ m8yyyujh.457.pp.ua tls WS CDN vless § 443 14"
-  - "🇮🇷 ddcvf4.iran2035.dpdns.org tls WS CDN vmess § 443 49"
-  - "🏴‍☠️ m8dddc.457.pp.ua tls WS CDN trojan § 443 44"
-  - "🏴‍☠️ m8dddc.457.pp.ua tls WS CDN vmess § 443 44"
-  - "🏴‍☠️ m8nnn.457.pp.ua tls WS CDN vless § 443 43"
-  - "🇮🇷 ddcvf4.iran2035.dpdns.org http WS CDN vmess § 80 49"
-  - "🇩🇪 德国法兰克福 一号"
-  - "🇨🇳 台湾家宽"
-  - "🇺🇸 美国洛杉矶 一号"
-  - "🇸🇬 新加坡椰子水 二号"
-  - "🇨🇳 台湾牛肉面 四号"
   - "🏴‍☠️ 中转节点-8.59MB/s"
   - "🏴‍☠️ 中转节点-2.45MB/s"
   - "🏴‍☠️ 中转节点-26.4MB/s"
   - "🇱🇻 拉脱维亚-14.4MB/s"
   - "🇵🇹 葡萄牙-81.6MB/s"
-  - "🏴‍☠️ 中转节点-426.6KB/s"
   - "🏴‍☠️ 未知国家-60.4MB/s"
   - "🇺🇸 美国"
   - "🇨🇦 加拿大"
@@ -501,8 +475,6 @@ proxy-groups:
   - "🇬🇹 GT-01"
   - "🇳🇱 NL-01"
   - "🇪🇨 EC-01"
-  - "🇳🇴 NO-01"
-  - "🇦🇷 AR-01"
   - "🇬🇷 GR-01"
   - "🇵🇪 PE-01"
   - "🇷🇴 RO-01"
@@ -510,15 +482,34 @@ proxy-groups:
   - "🇨🇱 CL-01"
   - "🇳🇬 NG-01"
   - "🇹🇭 TH-01"
+  - "🇯🇵 日本 清风明月本无价"
+  - "🇸🇬 新加坡 当时明月在"
+  - "🇺🇸 美國西雅圖"
+  - "🇺🇸 美国加州[CUB]"
+  - "🇺🇸 硅谷HTTP"
+  - "🇺🇸 美国测试HTTP"
+  - "🇺🇸 US-08"
+  - "🇳🇴 NO-01"
+  - "🇦🇷 AR-01"
+  - "🏴‍☠️ 官网：keluosi.top"
+  - "🇺🇸 美国2|0.2倍"
+  - "🇺🇸 美国3|1.5倍|电信优化"
+  - "🇺🇸 美国4|0.8倍"
+  - "🇸🇬 新加坡2|1.2倍|移动优化"
+  - "🇩🇪 德国1|0.8倍"
+  - "🇫🇷 法国1|0.8倍"
+  - "🇻🇳 越南1|0.8倍"
+  - "🇷🇺 俄罗斯A1|0.5倍|电信联通优化"
+  - "🇷🇺 俄罗斯2|0.5倍|联通优化"
+  - "🇹🇷 土耳其1|0.8倍"
 - name: "HOYO"
   type: "select"
   proxies:
   - "DIRECT"
+  - "🇦🇹 奥地利"
   - "🏴‍☠️ 中转节点-4.96MB/s"
   - "🏴‍☠️ 中转节点-10.2MB/s"
-  - "🏴‍☠️ 中转节点-64.6MB/s"
   - "🇺🇸 美国-15.7MB/s"
-  - "🇰🇷 韩国-130.1KB/s"
   - "🇻🇳 越南-20.3MB/s"
   - "🇻🇳 越南-9.0MB/s"
   - "🇻🇳 越南-45.0MB/s"
@@ -528,33 +519,14 @@ proxy-groups:
   - "🇭🇰 香港-10.8MB/s"
   - "🇻🇳 越南-10.3MB/s"
   - "🇻🇳 越南-62.4MB/s"
-  - "🇻🇳 越南-9.7MB/s"
   - "🏴‍☠️ 中转节点-4.89MB/s"
   - "🏴‍☠️ 中转节点-14.78MB/s"
-  - "🇯🇵 日本 清风明月本无价"
-  - "🇦🇹 奥地利"
-  - "🇸🇬 阿里云200m-新加坡"
-  - "🇸🇬 新加坡 当时明月在"
   - "🇺🇸 美国 俱怀逸兴壮思飞"
-  - "🏴‍☠️ m8yyyujh.457.pp.ua tls WS CDN vmess § 443 14"
-  - "🏴‍☠️ m8yyyujh.457.pp.ua tls WS CDN trojan § 443 14"
-  - "🏴‍☠️ m8yyyujh.457.pp.ua tls WS CDN vless § 443 14"
-  - "🇮🇷 ddcvf4.iran2035.dpdns.org tls WS CDN vmess § 443 49"
-  - "🏴‍☠️ m8dddc.457.pp.ua tls WS CDN trojan § 443 44"
-  - "🏴‍☠️ m8dddc.457.pp.ua tls WS CDN vmess § 443 44"
-  - "🏴‍☠️ m8nnn.457.pp.ua tls WS CDN vless § 443 43"
-  - "🇮🇷 ddcvf4.iran2035.dpdns.org http WS CDN vmess § 80 49"
-  - "🇩🇪 德国法兰克福 一号"
-  - "🇨🇳 台湾家宽"
-  - "🇺🇸 美国洛杉矶 一号"
-  - "🇸🇬 新加坡椰子水 二号"
-  - "🇨🇳 台湾牛肉面 四号"
   - "🏴‍☠️ 中转节点-8.59MB/s"
   - "🏴‍☠️ 中转节点-2.45MB/s"
   - "🏴‍☠️ 中转节点-26.4MB/s"
   - "🇱🇻 拉脱维亚-14.4MB/s"
   - "🇵🇹 葡萄牙-81.6MB/s"
-  - "🏴‍☠️ 中转节点-426.6KB/s"
   - "🏴‍☠️ 未知国家-60.4MB/s"
   - "🇺🇸 美国"
   - "🇨🇦 加拿大"
@@ -614,8 +586,6 @@ proxy-groups:
   - "🇬🇹 GT-01"
   - "🇳🇱 NL-01"
   - "🇪🇨 EC-01"
-  - "🇳🇴 NO-01"
-  - "🇦🇷 AR-01"
   - "🇬🇷 GR-01"
   - "🇵🇪 PE-01"
   - "🇷🇴 RO-01"
@@ -623,6 +593,26 @@ proxy-groups:
   - "🇨🇱 CL-01"
   - "🇳🇬 NG-01"
   - "🇹🇭 TH-01"
+  - "🇯🇵 日本 清风明月本无价"
+  - "🇸🇬 新加坡 当时明月在"
+  - "🇺🇸 美國西雅圖"
+  - "🇺🇸 美国加州[CUB]"
+  - "🇺🇸 硅谷HTTP"
+  - "🇺🇸 美国测试HTTP"
+  - "🇺🇸 US-08"
+  - "🇳🇴 NO-01"
+  - "🇦🇷 AR-01"
+  - "🏴‍☠️ 官网：keluosi.top"
+  - "🇺🇸 美国2|0.2倍"
+  - "🇺🇸 美国3|1.5倍|电信优化"
+  - "🇺🇸 美国4|0.8倍"
+  - "🇸🇬 新加坡2|1.2倍|移动优化"
+  - "🇩🇪 德国1|0.8倍"
+  - "🇫🇷 法国1|0.8倍"
+  - "🇻🇳 越南1|0.8倍"
+  - "🇷🇺 俄罗斯A1|0.5倍|电信联通优化"
+  - "🇷🇺 俄罗斯2|0.5倍|联通优化"
+  - "🇹🇷 土耳其1|0.8倍"
 rules:
 - "GEOSITE,CATEGORY-ADS-ALL,REJECT"
 - "DOMAIN-SUFFIX,ushd.xmsl.org,DIRECT"
