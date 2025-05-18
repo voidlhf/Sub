@@ -92,7 +92,7 @@
     {
       "tag": "select",
       "type": "selector",
-      "default": "auto",
+      "interrupt_exist_connections": true,
       "outbounds": [
         "auto",
         "🇦🇲 AM_speednode_0001",
@@ -452,6 +452,7 @@
       "tag": "auto",
       "type": "urltest",
       "interval": "5m",
+      "interrupt_exist_connections": true,
       "outbounds": [
         "🇦🇲 AM_speednode_0001",
         "🇦🇲 AM_speednode_0002",
@@ -809,6 +810,7 @@
     {
       "tag": "ai",
       "type": "selector",
+      "interrupt_exist_connections": true,
       "outbounds": [
         "🇦🇲 AM_speednode_0001",
         "🇦🇲 AM_speednode_0002",
@@ -1166,7 +1168,7 @@
     {
       "tag": "hoyo",
       "type": "selector",
-      "default": "direct",
+      "interrupt_exist_connections": true,
       "outbounds": [
         "direct",
         "🇦🇲 AM_speednode_0001",

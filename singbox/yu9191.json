@@ -92,7 +92,7 @@
     {
       "tag": "select",
       "type": "selector",
-      "default": "auto",
+      "interrupt_exist_connections": true,
       "outbounds": [
         "auto",
         "🏴‍☠️ 当前更新0518日期为一天及时更新",
@@ -201,6 +201,7 @@
       "tag": "auto",
       "type": "urltest",
       "interval": "5m",
+      "interrupt_exist_connections": true,
       "outbounds": [
         "🏴‍☠️ 当前更新0518日期为一天及时更新",
         "🇭🇰 HK-014",
@@ -307,6 +308,7 @@
     {
       "tag": "ai",
       "type": "selector",
+      "interrupt_exist_connections": true,
       "outbounds": [
         "🏴‍☠️ 当前更新0518日期为一天及时更新",
         "🇭🇰 HK-014",
@@ -413,7 +415,7 @@
     {
       "tag": "hoyo",
       "type": "selector",
-      "default": "direct",
+      "interrupt_exist_connections": true,
       "outbounds": [
         "direct",
         "🏴‍☠️ 当前更新0518日期为一天及时更新",

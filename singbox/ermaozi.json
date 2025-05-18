@@ -92,7 +92,7 @@
     {
       "tag": "select",
       "type": "selector",
-      "default": "auto",
+      "interrupt_exist_connections": true,
       "outbounds": [
         "auto",
         "🇷🇺 _RU_俄罗斯",
@@ -124,6 +124,7 @@
       "tag": "auto",
       "type": "urltest",
       "interval": "5m",
+      "interrupt_exist_connections": true,
       "outbounds": [
         "🇷🇺 _RU_俄罗斯",
         "🇸🇪 _US_美国->_SE_瑞典",
@@ -153,6 +154,7 @@
     {
       "tag": "ai",
       "type": "selector",
+      "interrupt_exist_connections": true,
       "outbounds": [
         "🇷🇺 _RU_俄罗斯",
         "🇸🇪 _US_美国->_SE_瑞典",
@@ -182,7 +184,7 @@
     {
       "tag": "hoyo",
       "type": "selector",
-      "default": "direct",
+      "interrupt_exist_connections": true,
       "outbounds": [
         "direct",
         "🇷🇺 _RU_俄罗斯",

@@ -92,7 +92,7 @@
     {
       "tag": "select",
       "type": "selector",
-      "default": "auto",
+      "interrupt_exist_connections": true,
       "outbounds": [
         "auto",
         "🏴‍☠️ 订阅免费谨防受骗",
@@ -197,6 +197,7 @@
       "tag": "auto",
       "type": "urltest",
       "interval": "5m",
+      "interrupt_exist_connections": true,
       "outbounds": [
         "🏴‍☠️ 订阅免费谨防受骗",
         "🏴‍☠️ Tg里的欢乐时光",
@@ -299,6 +300,7 @@
     {
       "tag": "ai",
       "type": "selector",
+      "interrupt_exist_connections": true,
       "outbounds": [
         "🏴‍☠️ 订阅免费谨防受骗",
         "🏴‍☠️ Tg里的欢乐时光",
@@ -401,7 +403,7 @@
     {
       "tag": "hoyo",
       "type": "selector",
-      "default": "direct",
+      "interrupt_exist_connections": true,
       "outbounds": [
         "direct",
         "🏴‍☠️ 订阅免费谨防受骗",

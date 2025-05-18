@@ -92,7 +92,7 @@
     {
       "tag": "select",
       "type": "selector",
-      "default": "auto",
+      "interrupt_exist_connections": true,
       "outbounds": [
         "auto",
         "🇸🇬 新加坡_1",
@@ -304,6 +304,7 @@
       "tag": "auto",
       "type": "urltest",
       "interval": "5m",
+      "interrupt_exist_connections": true,
       "outbounds": [
         "🇸🇬 新加坡_1",
         "🏴‍☠️ ❓ 未知_1",
@@ -513,6 +514,7 @@
     {
       "tag": "ai",
       "type": "selector",
+      "interrupt_exist_connections": true,
       "outbounds": [
         "🇸🇬 新加坡_1",
         "🏴‍☠️ ❓ 未知_1",
@@ -722,7 +724,7 @@
     {
       "tag": "hoyo",
       "type": "selector",
-      "default": "direct",
+      "interrupt_exist_connections": true,
       "outbounds": [
         "direct",
         "🇸🇬 新加坡_1",

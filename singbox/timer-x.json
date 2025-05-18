@@ -92,7 +92,7 @@
     {
       "tag": "select",
       "type": "selector",
-      "default": "auto",
+      "interrupt_exist_connections": true,
       "outbounds": [
         "auto",
         "🇦🇹 奥地利",
@@ -302,6 +302,7 @@
       "tag": "auto",
       "type": "urltest",
       "interval": "5m",
+      "interrupt_exist_connections": true,
       "outbounds": [
         "🇦🇹 奥地利",
         "🏴‍☠️ 中转节点-4.96MB/s",
@@ -509,6 +510,7 @@
     {
       "tag": "ai",
       "type": "selector",
+      "interrupt_exist_connections": true,
       "outbounds": [
         "🇦🇹 奥地利",
         "🏴‍☠️ 中转节点-4.96MB/s",
@@ -716,7 +718,7 @@
     {
       "tag": "hoyo",
       "type": "selector",
-      "default": "direct",
+      "interrupt_exist_connections": true,
       "outbounds": [
         "direct",
         "🇦🇹 奥地利",
