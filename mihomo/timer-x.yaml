@@ -53,7 +53,7 @@ dns:
   - "https://dns.cloudflare.com/dns-query"
   - "https://dns.google/dns-query"
   nameserver-policy:
-    geosite:cn,private,googlefcm:
+    geosite:cn,private:
     - "https://dns.alidns.com/dns-query"
     - "https://doh.pub/dns-query"
   proxy-server-nameserver:
@@ -338,7 +338,6 @@ rules:
 - "DST-PORT,23301/22101-22102/20501/21601-21606,HOYO"
 - "DOMAIN-KEYWORD,hoyoverse.com,PROXY"
 - "GEOSITE,CATEGORY-AI-!CN,AI"
-- "GEOSITE,GOOGLEFCM,DIRECT"
 - "GEOSITE,PRIVATE,DIRECT"
 - "GEOSITE,CN,DIRECT"
 - "GEOIP,PRIVATE,DIRECT,no-resolve"

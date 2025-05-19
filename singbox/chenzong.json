@@ -58,8 +58,7 @@
         "rules": [
           {
             "rule_set": [
-              "geosite-cn",
-              "geosite-googlefcm"
+              "geosite-cn"
             ]
           }
         ],
@@ -99,8 +98,7 @@
         "🇸🇬 新加坡/不要测速！",
         "🇺🇸 美国",
         "🇭🇰 香港",
-        "🇯🇵 日本2",
-        "🇯🇵 日本2cf反代",
+        "🇯🇵 日本",
         "🇮🇹 意大利",
         "🇸🇬 SG_t.me/ccdjbQaQ",
         "🇺🇸 US_t.me/ccdjbQaQ",
@@ -119,8 +117,7 @@
         "🇸🇬 新加坡/不要测速！",
         "🇺🇸 美国",
         "🇭🇰 香港",
-        "🇯🇵 日本2",
-        "🇯🇵 日本2cf反代",
+        "🇯🇵 日本",
         "🇮🇹 意大利",
         "🇸🇬 SG_t.me/ccdjbQaQ",
         "🇺🇸 US_t.me/ccdjbQaQ",
@@ -138,8 +135,7 @@
         "🇸🇬 新加坡/不要测速！",
         "🇺🇸 美国",
         "🇭🇰 香港",
-        "🇯🇵 日本2",
-        "🇯🇵 日本2cf反代",
+        "🇯🇵 日本",
         "🇮🇹 意大利",
         "🇸🇬 SG_t.me/ccdjbQaQ",
         "🇺🇸 US_t.me/ccdjbQaQ",
@@ -158,8 +154,7 @@
         "🇸🇬 新加坡/不要测速！",
         "🇺🇸 美国",
         "🇭🇰 香港",
-        "🇯🇵 日本2",
-        "🇯🇵 日本2cf反代",
+        "🇯🇵 日本",
         "🇮🇹 意大利",
         "🇸🇬 SG_t.me/ccdjbQaQ",
         "🇺🇸 US_t.me/ccdjbQaQ",
@@ -245,25 +240,32 @@
     },
     {
       "tag": "🇺🇸 美国",
-      "type": "hysteria2",
+      "type": "vless",
       "server": "xui.chenchuanjin.sbs",
-      "server_port": 8882,
-      "password": "2c96ea70-ac50-4606-b03b-6f5e5d311ce5",
+      "server_port": 52338,
+      "uuid": "7ee5f5fd-fb1a-4630-8d35-d41e073b46d3",
       "tls": {
         "enabled": true,
-        "server_name": "xui.chenchuanjin.sbs",
+        "server_name": "www.yahoo.com",
         "insecure": true,
-        "alpn": [
-          "h3"
-        ]
-      }
+        "reality": {
+          "enabled": true,
+          "public_key": "v8cRa28zpycKEwMHDLgdUmH1748iOHALOCAjRabj0ys",
+          "short_id": "9c221325"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "flow": "xtls-rprx-vision"
     },
     {
       "tag": "🇭🇰 香港",
       "type": "vless",
       "server": "xg2.31427397.xyz",
       "server_port": 443,
-      "uuid": "658bb96c-f7a4-49ac-d8c5-44bcafec1b64",
+      "uuid": "7bd9ff37-f419-4470-c645-428e237a22f6",
       "tls": {
         "enabled": true,
         "server_name": "xg2.31427397.xyz",
@@ -278,30 +280,11 @@
       }
     },
     {
-      "tag": "🇯🇵 日本2",
+      "tag": "🇯🇵 日本",
       "type": "vless",
       "server": "riben2.31427397.xyz",
       "server_port": 443,
-      "uuid": "d08b6380-486c-4107-9534-3dce6254510e",
-      "tls": {
-        "enabled": true,
-        "server_name": "riben2.31427397.xyz",
-        "insecure": true
-      },
-      "transport": {
-        "type": "ws",
-        "headers": {
-          "Host": "riben2.31427397.xyz"
-        },
-        "path": "/"
-      }
-    },
-    {
-      "tag": "🇯🇵 日本2cf反代",
-      "type": "vless",
-      "server": "74.82.194.233",
-      "server_port": 443,
-      "uuid": "d08b6380-486c-4107-9534-3dce6254510e",
+      "uuid": "b5f3ea41-78d3-454a-bd4d-292e5636783e",
       "tls": {
         "enabled": true,
         "server_name": "riben2.31427397.xyz",
@@ -318,17 +301,17 @@
     {
       "tag": "🇮🇹 意大利",
       "type": "vless",
-      "server": "ydl.ccjdjb.dpdns.org",
-      "server_port": 24562,
-      "uuid": "805d84ec-acfb-483d-559c-d6973b2081e1",
+      "server": "ydl.31427397.xyz",
+      "server_port": 16638,
+      "uuid": "8e4ece90-97ab-4a6d-8099-22f4e4d0c751",
       "tls": {
         "enabled": true,
         "server_name": "www.yahoo.com",
         "insecure": true,
         "reality": {
           "enabled": true,
-          "public_key": "N8oFG5NzIfYz4Pvm9EOSwdowffPFGk4M4GatpYxLSiU",
-          "short_id": "1d4120a1c48978b3"
+          "public_key": "pM83R4Rm57yjD-EHSUBRI690nwVmPR0UF5PjzGGr_xw",
+          "short_id": "4873b39f"
         },
         "utls": {
           "enabled": true,
@@ -530,7 +513,6 @@
           },
           {
             "rule_set": [
-              "geosite-googlefcm",
               "geosite-cn",
               "geoip-cn"
             ]
@@ -559,13 +541,6 @@
         "tag": "geosite-category-ai-!cn",
         "format": "binary",
         "url": "https://raw.githubusercontent.com/lyc8503/sing-box-rules/rule-set-geosite/geosite-category-ai-!cn.srs",
-        "download_detour": "select"
-      },
-      {
-        "type": "remote",
-        "tag": "geosite-googlefcm",
-        "format": "binary",
-        "url": "https://raw.githubusercontent.com/lyc8503/sing-box-rules/rule-set-geosite/geosite-googlefcm.srs",
         "download_detour": "select"
       },
       {
