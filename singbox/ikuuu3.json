@@ -53,14 +53,8 @@
         "server": "dns_direct"
       },
       {
-        "type": "logical",
-        "mode": "or",
-        "rules": [
-          {
-            "rule_set": [
-              "geosite-cn"
-            ]
-          }
+        "rule_set": [
+          "geosite-cn"
         ],
         "server": "dns_direct"
       }
@@ -130,6 +124,21 @@
       ]
     },
     {
+      "tag": "tg",
+      "type": "selector",
+      "outbounds": [
+        "select",
+        "direct",
+        "🇯🇵 免费-日本1-Ver.6",
+        "🇯🇵 免费-日本2-Ver.7",
+        "🇯🇵 免费-日本3-Ver.6",
+        "🇯🇵 免费-日本4-Ver.7",
+        "🇯🇵 免费-日本5-Ver.8",
+        "🇯🇵 免费-日本6-Ver.7",
+        "🇯🇵 免费-日本7-Ver.1"
+      ]
+    },
+    {
       "tag": "hoyo",
       "type": "selector",
       "outbounds": [
@@ -146,21 +155,21 @@
     {
       "tag": "🇯🇵 免费-日本1-Ver.6",
       "type": "vmess",
-      "server": "4ahd6-g05.jp01-0986-vm0.entry.fr0307a.art",
+      "server": "bplhy-g05.jp01-0986-vm0.entry.fr0307a.art",
       "server_port": 21585,
       "uuid": "3e7347c1-83dc-3ceb-9e07-d4484c056d32",
       "security": "auto",
       "alter_id": 1,
       "tls": {
         "enabled": true,
-        "server_name": "4ahd6-g05.jp01-0986-vm0.entry.fr0307a.art",
+        "server_name": "bplhy-g05.jp01-0986-vm0.entry.fr0307a.art",
         "insecure": false
       }
     },
     {
       "tag": "🇯🇵 免费-日本2-Ver.7",
       "type": "vmess",
-      "server": "vha1v-g05.jp02-9a99-vm0.entry.fr0307a.art",
+      "server": "lvmzw-g05.jp02-9a99-vm0.entry.fr0307a.art",
       "server_port": 11777,
       "uuid": "3e7347c1-83dc-3ceb-9e07-d4484c056d32",
       "security": "auto",
@@ -169,21 +178,21 @@
     {
       "tag": "🇯🇵 免费-日本3-Ver.6",
       "type": "vmess",
-      "server": "i8n5b-g05.jp03-7d22-vm0.entry.fr0307a.art",
+      "server": "wcfof-g05.jp03-7d22-vm0.entry.fr0307a.art",
       "server_port": 21585,
       "uuid": "3e7347c1-83dc-3ceb-9e07-d4484c056d32",
       "security": "auto",
       "alter_id": 1,
       "tls": {
         "enabled": true,
-        "server_name": "i8n5b-g05.jp03-7d22-vm0.entry.fr0307a.art",
+        "server_name": "wcfof-g05.jp03-7d22-vm0.entry.fr0307a.art",
         "insecure": false
       }
     },
     {
       "tag": "🇯🇵 免费-日本4-Ver.7",
       "type": "vmess",
-      "server": "dkgec-g05.jp04-3771-vm0.entry.fr0307a.art",
+      "server": "j2pco-g05.jp04-3771-vm0.entry.fr0307a.art",
       "server_port": 448,
       "uuid": "3e7347c1-83dc-3ceb-9e07-d4484c056d32",
       "security": "auto",
@@ -192,7 +201,7 @@
     {
       "tag": "🇯🇵 免费-日本5-Ver.8",
       "type": "vmess",
-      "server": "ufuf3-g05.jp05-6786-vm0.entry.fr0307a.art",
+      "server": "idday-g05.jp05-6786-vm0.entry.fr0307a.art",
       "server_port": 46486,
       "uuid": "3e7347c1-83dc-3ceb-9e07-d4484c056d32",
       "security": "auto",
@@ -201,21 +210,21 @@
     {
       "tag": "🇯🇵 免费-日本6-Ver.7",
       "type": "vmess",
-      "server": "r4z53-g05.jp06-7c5a-vm0.entry.fr0307a.art",
+      "server": "qobb8-g05.jp06-7c5a-vm0.entry.fr0307a.art",
       "server_port": 28787,
       "uuid": "3e7347c1-83dc-3ceb-9e07-d4484c056d32",
       "security": "auto",
       "alter_id": 1,
       "tls": {
         "enabled": true,
-        "server_name": "r4z53-g05.jp06-7c5a-vm0.entry.fr0307a.art",
+        "server_name": "qobb8-g05.jp06-7c5a-vm0.entry.fr0307a.art",
         "insecure": false
       }
     },
     {
       "tag": "🇯🇵 免费-日本7-Ver.1",
       "type": "vmess",
-      "server": "vcwx4-g05.jp07-1f28-vm0.entry.fr0307a.art",
+      "server": "ygixu-g05.jp07-1f28-vm0.entry.fr0307a.art",
       "server_port": 28787,
       "uuid": "3e7347c1-83dc-3ceb-9e07-d4484c056d32",
       "security": "auto",
@@ -249,19 +258,6 @@
         "rules": [
           {
             "domain_suffix": [
-              "ushd.xmsl.org",
-              "cf.gtlx.org"
-            ]
-          }
-        ],
-        "outbound": "direct"
-      },
-      {
-        "type": "logical",
-        "mode": "or",
-        "rules": [
-          {
-            "domain_suffix": [
               "public-operation-hkrpg-sg.hoyoverse.com",
               "public-operation-hk4e-sg.hoyoverse.com",
               "public-operation-nap-sg.hoyoverse.com"
@@ -279,28 +275,23 @@
         "outbound": "hoyo"
       },
       {
-        "type": "logical",
-        "mode": "or",
-        "rules": [
-          {
-            "domain_keyword": [
-              "hoyoverse.com"
-            ]
-          }
+        "domain_keyword": [
+          "hoyoverse.com"
         ],
         "outbound": "select"
       },
       {
-        "type": "logical",
-        "mode": "or",
-        "rules": [
-          {
-            "rule_set": [
-              "geosite-category-ai-!cn"
-            ]
-          }
+        "rule_set": [
+          "geosite-category-ai-!cn"
         ],
         "outbound": "ai"
+      },
+      {
+        "rule_set": [
+          "geosite-telegram",
+          "geoip-telegram"
+        ],
+        "outbound": "tg"
       },
       {
         "type": "logical",
@@ -308,6 +299,12 @@
         "rules": [
           {
             "ip_is_private": true
+          },
+          {
+            "domain_suffix": [
+              "ushd.xmsl.org",
+              "cf.gtlx.org"
+            ]
           },
           {
             "rule_set": [
@@ -339,6 +336,20 @@
         "tag": "geosite-category-ai-!cn",
         "format": "binary",
         "url": "https://raw.githubusercontent.com/lyc8503/sing-box-rules/rule-set-geosite/geosite-category-ai-!cn.srs",
+        "download_detour": "select"
+      },
+      {
+        "type": "remote",
+        "tag": "geosite-telegram",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/lyc8503/sing-box-rules/rule-set-geosite/geosite-telegram.srs",
+        "download_detour": "select"
+      },
+      {
+        "type": "remote",
+        "tag": "geoip-telegram",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/lyc8503/sing-box-rules/rule-set-geoip/geoip-telegram.srs",
         "download_detour": "select"
       },
       {

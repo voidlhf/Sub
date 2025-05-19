@@ -53,14 +53,8 @@
         "server": "dns_direct"
       },
       {
-        "type": "logical",
-        "mode": "or",
-        "rules": [
-          {
-            "rule_set": [
-              "geosite-cn"
-            ]
-          }
+        "rule_set": [
+          "geosite-cn"
         ],
         "server": "dns_direct"
       }
@@ -166,6 +160,44 @@
       "tag": "ai",
       "type": "selector",
       "outbounds": [
+        "🇨🇦 加拿大1@Marisa_kristi",
+        "🇨🇦 加拿大2@Marisa_kristi",
+        "🇨🇦 加拿大3@Marisa_kristi",
+        "🇬🇧 英国1@Marisa_kristi",
+        "🇬🇧 英国2@Marisa_kristi",
+        "🇭🇰 香港1@Marisa_kristi",
+        "🇭🇰 香港2@Marisa_kristi",
+        "🇭🇰 香港3@Marisa_kristi",
+        "🇭🇰 香港4@Marisa_kristi",
+        "🇭🇰 香港5@Marisa_kristi",
+        "🇯🇵 日本1@Marisa_kristi",
+        "🇯🇵 日本2@Marisa_kristi",
+        "🇯🇵 日本3@Marisa_kristi",
+        "🇯🇵 日本4@Marisa_kristi",
+        "🇯🇵 日本5@Marisa_kristi",
+        "🇰🇷 韩国1@Marisa_kristi",
+        "🇰🇷 韩国2@Marisa_kristi",
+        "🇰🇷 韩国3@Marisa_kristi",
+        "🇰🇷 韩国4@Marisa_kristi",
+        "🇰🇷 韩国5@Marisa_kristi",
+        "🇸🇬 新加坡1@Marisa_kristi",
+        "🇸🇬 新加坡2@Marisa_kristi",
+        "🇸🇬 新加坡3@Marisa_kristi",
+        "🇸🇬 新加坡4@Marisa_kristi",
+        "🇸🇬 新加坡5@Marisa_kristi",
+        "🇺🇸 美国1@Marisa_kristi",
+        "🇺🇸 美国2@Marisa_kristi",
+        "🇺🇸 美国3@Marisa_kristi",
+        "🇺🇸 美国4@Marisa_kristi",
+        "🇺🇸 美国5@Marisa_kristi"
+      ]
+    },
+    {
+      "tag": "tg",
+      "type": "selector",
+      "outbounds": [
+        "select",
+        "direct",
         "🇨🇦 加拿大1@Marisa_kristi",
         "🇨🇦 加拿大2@Marisa_kristi",
         "🇨🇦 加拿大3@Marisa_kristi",
@@ -1013,19 +1045,6 @@
         "rules": [
           {
             "domain_suffix": [
-              "ushd.xmsl.org",
-              "cf.gtlx.org"
-            ]
-          }
-        ],
-        "outbound": "direct"
-      },
-      {
-        "type": "logical",
-        "mode": "or",
-        "rules": [
-          {
-            "domain_suffix": [
               "public-operation-hkrpg-sg.hoyoverse.com",
               "public-operation-hk4e-sg.hoyoverse.com",
               "public-operation-nap-sg.hoyoverse.com"
@@ -1043,28 +1062,23 @@
         "outbound": "hoyo"
       },
       {
-        "type": "logical",
-        "mode": "or",
-        "rules": [
-          {
-            "domain_keyword": [
-              "hoyoverse.com"
-            ]
-          }
+        "domain_keyword": [
+          "hoyoverse.com"
         ],
         "outbound": "select"
       },
       {
-        "type": "logical",
-        "mode": "or",
-        "rules": [
-          {
-            "rule_set": [
-              "geosite-category-ai-!cn"
-            ]
-          }
+        "rule_set": [
+          "geosite-category-ai-!cn"
         ],
         "outbound": "ai"
+      },
+      {
+        "rule_set": [
+          "geosite-telegram",
+          "geoip-telegram"
+        ],
+        "outbound": "tg"
       },
       {
         "type": "logical",
@@ -1072,6 +1086,12 @@
         "rules": [
           {
             "ip_is_private": true
+          },
+          {
+            "domain_suffix": [
+              "ushd.xmsl.org",
+              "cf.gtlx.org"
+            ]
           },
           {
             "rule_set": [
@@ -1103,6 +1123,20 @@
         "tag": "geosite-category-ai-!cn",
         "format": "binary",
         "url": "https://raw.githubusercontent.com/lyc8503/sing-box-rules/rule-set-geosite/geosite-category-ai-!cn.srs",
+        "download_detour": "select"
+      },
+      {
+        "type": "remote",
+        "tag": "geosite-telegram",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/lyc8503/sing-box-rules/rule-set-geosite/geosite-telegram.srs",
+        "download_detour": "select"
+      },
+      {
+        "type": "remote",
+        "tag": "geoip-telegram",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/lyc8503/sing-box-rules/rule-set-geoip/geoip-telegram.srs",
         "download_detour": "select"
       },
       {
