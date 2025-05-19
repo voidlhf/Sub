@@ -53,14 +53,8 @@
         "server": "dns_direct"
       },
       {
-        "type": "logical",
-        "mode": "or",
-        "rules": [
-          {
-            "rule_set": [
-              "geosite-cn"
-            ]
-          }
+        "rule_set": [
+          "geosite-cn"
         ],
         "server": "dns_direct"
       }
@@ -107,6 +101,14 @@
       "outbounds": []
     },
     {
+      "tag": "tg",
+      "type": "selector",
+      "outbounds": [
+        "select",
+        "direct"
+      ]
+    },
+    {
       "tag": "hoyo",
       "type": "selector",
       "outbounds": [
@@ -141,19 +143,6 @@
         "rules": [
           {
             "domain_suffix": [
-              "ushd.xmsl.org",
-              "cf.gtlx.org"
-            ]
-          }
-        ],
-        "outbound": "direct"
-      },
-      {
-        "type": "logical",
-        "mode": "or",
-        "rules": [
-          {
-            "domain_suffix": [
               "public-operation-hkrpg-sg.hoyoverse.com",
               "public-operation-hk4e-sg.hoyoverse.com",
               "public-operation-nap-sg.hoyoverse.com"
@@ -171,28 +160,23 @@
         "outbound": "hoyo"
       },
       {
-        "type": "logical",
-        "mode": "or",
-        "rules": [
-          {
-            "domain_keyword": [
-              "hoyoverse.com"
-            ]
-          }
+        "domain_keyword": [
+          "hoyoverse.com"
         ],
         "outbound": "select"
       },
       {
-        "type": "logical",
-        "mode": "or",
-        "rules": [
-          {
-            "rule_set": [
-              "geosite-category-ai-!cn"
-            ]
-          }
+        "rule_set": [
+          "geosite-category-ai-!cn"
         ],
         "outbound": "ai"
+      },
+      {
+        "rule_set": [
+          "geosite-telegram",
+          "geoip-telegram"
+        ],
+        "outbound": "tg"
       },
       {
         "type": "logical",
@@ -200,6 +184,12 @@
         "rules": [
           {
             "ip_is_private": true
+          },
+          {
+            "domain_suffix": [
+              "ushd.xmsl.org",
+              "cf.gtlx.org"
+            ]
           },
           {
             "rule_set": [
@@ -231,6 +221,20 @@
         "tag": "geosite-category-ai-!cn",
         "format": "binary",
         "url": "https://raw.githubusercontent.com/lyc8503/sing-box-rules/rule-set-geosite/geosite-category-ai-!cn.srs",
+        "download_detour": "select"
+      },
+      {
+        "type": "remote",
+        "tag": "geosite-telegram",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/lyc8503/sing-box-rules/rule-set-geosite/geosite-telegram.srs",
+        "download_detour": "select"
+      },
+      {
+        "type": "remote",
+        "tag": "geoip-telegram",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/lyc8503/sing-box-rules/rule-set-geoip/geoip-telegram.srs",
         "download_detour": "select"
       },
       {
