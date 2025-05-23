@@ -1,0 +1,458 @@
+log-level: "debug"
+mixed-port: 7890
+allow-lan: true
+external-controller: "127.0.0.1:9090"
+unified-delay: true
+tcp-concurrent: true
+geodata-mode: true
+geox-url:
+  geoip: "https://ghfast.top/https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geoip.dat"
+  geosite: "https://ghfast.top/https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geosite.dat"
+find-process-mode: "strict"
+global-client-fingerprint: "chrome"
+profile:
+  store-selected: true
+  store-fake-ip: true
+sniffer:
+  enable: true
+  force-dns-mapping: true
+  parse-pure-ip: true
+  override-destination: false
+  sniff:
+    HTTP:
+      ports:
+      - 80
+      - "8080-8880"
+    TLS:
+      ports:
+      - 443
+      - 8443
+    QUIC:
+      ports:
+      - 443
+      - 8443
+tun:
+  enable: true
+  stack: "mixed"
+  dns-hijack:
+  - "any:53"
+  - "tcp://any:53"
+  auto-route: true
+  auto-redirect: true
+  auto-detect-interface: true
+  strict-route: true
+dns:
+  enable: true
+  ipv6: false
+  default-nameserver:
+  - "223.5.5.5"
+  - "119.29.29.29"
+  enhanced-mode: "fake-ip"
+  fake-ip-range: "198.18.0.1/16"
+  nameserver:
+  - "https://dns.cloudflare.com/dns-query"
+  - "https://dns.google/dns-query"
+  nameserver-policy:
+    geosite:cn,private:
+    - "https://dns.alidns.com/dns-query"
+    - "https://doh.pub/dns-query"
+  proxy-server-nameserver:
+  - "https://dns.alidns.com/dns-query"
+  - "https://doh.pub/dns-query"
+proxies:
+- {name: "🇭🇰 GLaDOS-HK-03", server: "23b9393.h3.gladns.com", port: 2377, type: "ss", cipher: "chacha20-ietf-poly1305", password: "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv", plugin: "obfs", plugin-opts: {mode: "tls", host: "23b9393.dl.nvidia.com:108512"}}
+- {name: "🇸🇬 SGP-Hy2-2", server: "13.215.50.242", port: 19647, type: "hysteria2", password: "ayugXYUKGKFwS2B1QKWPGFlW4Rg", auth: "ayugXYUKGKFwS2B1QKWPGFlW4Rg", skip-cert-verify: true}
+- {name: "🇸🇬 GLaDOS-SG-03", server: "23b9393.s3.gladns.com", port: 2377, type: "ss", cipher: "chacha20-ietf-poly1305", password: "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv", plugin: "obfs", plugin-opts: {mode: "tls", host: "23b9393.dl.nintendo.be:108512"}}
+- {name: "🇸🇬 SGP-Hy2-1", server: "54.169.190.172", port: 31667, type: "hysteria2", password: "hf96oOugMgvkOAlVykIA0EKHk", auth: "hf96oOugMgvkOAlVykIA0EKHk", skip-cert-verify: true}
+- {name: "🇭🇰 Claw-HK-12.6", server: "8.210.184.183", port: 6116, type: "hysteria2", password: "DRAAoEbDU6dRMrVKMNKEvhBrAY", auth: "DRAAoEbDU6dRMrVKMNKEvhBrAY", skip-cert-verify: true}
+- {name: "🇯🇵 JP-KDDI-2", server: "43.206.255.50", port: 26182, type: "hysteria2", password: "KUP1LshgSRNGg4vsCNGDPBXYNis", auth: "KUP1LshgSRNGg4vsCNGDPBXYNis", skip-cert-verify: true}
+- {name: "🇭🇰 [ss]香港1[中转]", server: "pic.aibox.tv", port: 10888, type: "ss", cipher: "chacha20-ietf-poly1305", password: "36c9fb47-8ad3-4059-bd8b-eefde9e68bcb"}
+- {name: "🏴‍☠️ GLaDOS-B1-02", server: "23b9393.b2.gladns.com", port: 2377, type: "ss", cipher: "chacha20-ietf-poly1305", password: "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv", plugin: "obfs", plugin-opts: {mode: "tls", host: "23b9393.dl.nintendo.de:108512"}}
+- {name: "🇨🇳 GLaDOS-TW-04", server: "23b9393.t4.gladns.com", port: 2377, type: "ss", cipher: "chacha20-ietf-poly1305", password: "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv", plugin: "obfs", plugin-opts: {mode: "tls", host: "23b9393.dl.microsoft.fi:108512"}}
+- {name: "🏴‍☠️ GLaDOS-S2-02", server: "23b9393.f2.gladns.com", port: 2377, type: "ss", cipher: "chacha20-ietf-poly1305", password: "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv", plugin: "obfs", plugin-opts: {mode: "tls", host: "23b9393.dl.xboxlive.com.net:108512"}}
+- {name: "🇺🇸 GLaDOS-US-05", server: "23b9393.u5.gladns.com", port: 2377, type: "ss", cipher: "chacha20-ietf-poly1305", password: "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv", plugin: "obfs", plugin-opts: {mode: "tls", host: "23b9393.dl.microsoft.lv:108512"}}
+- {name: "🇨🇳 CN", server: "120.233.128.68", port: 39001, type: "trojan", password: "b6200af42ccadea353f5b5856dd20d70", skip-cert-verify: true}
+- {name: "🏴‍☠️ GLaDOS-Netflix-02", server: "23b9393.d2.gladns.com", port: 2377, type: "ss", cipher: "chacha20-ietf-poly1305", password: "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv", plugin: "obfs", plugin-opts: {mode: "tls", host: "23b9393.dl.nintendo.eu.net:108512"}}
+- {name: "🇩🇪 DE-2", server: "3.122.115.64", port: 22024, type: "hysteria2", password: "C1AhcuZ9TW9A2tnL7Q8TF1s1g", auth: "C1AhcuZ9TW9A2tnL7Q8TF1s1g", skip-cert-verify: true}
+- {name: "🇨🇳 GLaDOS-TW-06", server: "23b9393.t6.gladns.com", port: 2377, type: "ss", cipher: "chacha20-ietf-poly1305", password: "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv", plugin: "obfs", plugin-opts: {mode: "tls", host: "23b9393.dl.microsoft.es:108512"}}
+- {name: "🏴‍☠️ GLaDOS-B1-04", server: "23b9393.b4.gladns.com", port: 2377, type: "ss", cipher: "chacha20-ietf-poly1305", password: "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv", plugin: "obfs", plugin-opts: {mode: "tls", host: "23b9393.dl.microsoft.md:108512"}}
+- {name: "🇺🇸 GLaDOS-US-06", server: "23b9393.u6.gladns.com", port: 2377, type: "ss", cipher: "chacha20-ietf-poly1305", password: "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv", plugin: "obfs", plugin-opts: {mode: "tls", host: "23b9393.dl.microsoft.dk:108512"}}
+- {name: "🏴‍☠️ GLaDOS-S2-03", server: "23b9393.f3.gladns.com", port: 2377, type: "ss", cipher: "chacha20-ietf-poly1305", password: "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv", plugin: "obfs", plugin-opts: {mode: "tls", host: "23b9393.dl.microsoft.ch.net:108512"}}
+- {name: "🏴‍☠️ GLaDOS-D1-01", server: "23b9393.da.gladns.com", port: 2377, type: "ss", cipher: "chacha20-ietf-poly1305", password: "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv", plugin: "obfs", plugin-opts: {mode: "tls", host: "23b9393.dl.nintendo.be:108512"}}
+- {name: "🏴‍☠️ GLaDOS-Netflix-03", server: "23b9393.d3.gladns.com", port: 2377, type: "ss", cipher: "chacha20-ietf-poly1305", password: "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv", plugin: "obfs", plugin-opts: {mode: "tls", host: "23b9393.dl.microsoft.de.net:108512"}}
+- {name: "🏴‍☠️ GLaDOS-D1-03", server: "23b9393.dc.gladns.com", port: 2377, type: "ss", cipher: "chacha20-ietf-poly1305", password: "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv", plugin: "obfs", plugin-opts: {mode: "tls", host: "23b9393.dl.microsoft.md:108512"}}
+- {name: "🏴‍☠️ GLaDOS-B1-03", server: "23b9393.b3.gladns.com", port: 2377, type: "ss", cipher: "chacha20-ietf-poly1305", password: "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv", plugin: "obfs", plugin-opts: {mode: "tls", host: "23b9393.dl.xboxlive.com:108512"}}
+- {name: "🇨🇳 GLaDOS-TW-03", server: "23b9393.t3.gladns.com", port: 2377, type: "ss", cipher: "chacha20-ietf-poly1305", password: "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv", plugin: "obfs", plugin-opts: {mode: "tls", host: "23b9393.dl.nintendo.com:108512"}}
+- {name: "🇪🇨 JP-AWS-EC2", server: "54.238.229.239", port: 31771, type: "hysteria2", password: "OWTXTQv1bF61nvyLERhzmKotao", auth: "OWTXTQv1bF61nvyLERhzmKotao", skip-cert-verify: true}
+- {name: "🇭🇰 [ss]香港2[中转]", server: "pic.aibox.tv", port: 10999, type: "ss", cipher: "chacha20-ietf-poly1305", password: "36c9fb47-8ad3-4059-bd8b-eefde9e68bcb"}
+- {name: "🇺🇸 GLaDOS-US-02", server: "23b9393.u2.gladns.com", port: 2377, type: "ss", cipher: "chacha20-ietf-poly1305", password: "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv", plugin: "obfs", plugin-opts: {mode: "tls", host: "23b9393.dl.microsoft.ch:108512"}}
+- {name: "🏴‍☠️ GLaDOS-B1-06", server: "23b9393.b6.gladns.com", port: 2377, type: "ss", cipher: "chacha20-ietf-poly1305", password: "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv", plugin: "obfs", plugin-opts: {mode: "tls", host: "23b9393.dl.microsoft.net:108512"}}
+- {name: "🏴‍☠️ GLaDOS-D1-02", server: "23b9393.db.gladns.com", port: 2377, type: "ss", cipher: "chacha20-ietf-poly1305", password: "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv", plugin: "obfs", plugin-opts: {mode: "tls", host: "23b9393.dl.microsoft.md:108512"}}
+- {name: "🇨🇳 GLaDOS-TW-02", server: "23b9393.t2.gladns.com", port: 2377, type: "ss", cipher: "chacha20-ietf-poly1305", password: "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv", plugin: "obfs", plugin-opts: {mode: "tls", host: "23b9393.dl.microsoft.lu:108512"}}
+- {name: "🇺🇸 US-Hy2-2", server: "54.202.31.170", port: 8288, type: "hysteria2", password: "Pet6beTavtYCwkkPQci5eYg", auth: "Pet6beTavtYCwkkPQci5eYg", skip-cert-verify: true}
+- {name: "🇺🇸 US-Hy2-1", server: "35.95.118.185", port: 12096, type: "hysteria2", password: "o7qQ56nYlcXUNGPEMybEzezMns", auth: "o7qQ56nYlcXUNGPEMybEzezMns", skip-cert-verify: true}
+- {name: "🇨🇳 GLaDOS-TW-01", server: "23b9393.t1.gladns.com", port: 2377, type: "ss", cipher: "chacha20-ietf-poly1305", password: "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv", plugin: "obfs", plugin-opts: {mode: "tls", host: "23b9393.dl.microsoft.cat:108512"}}
+- {name: "🏴‍☠️ GLaDOS-B1-05", server: "23b9393.b5.gladns.com", port: 2377, type: "ss", cipher: "chacha20-ietf-poly1305", password: "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv", plugin: "obfs", plugin-opts: {mode: "tls", host: "23b9393.dl.nintendo.de:108512"}}
+- {name: "🇩🇪 DE-1", server: "3.120.153.207", port: 32816, type: "hysteria2", password: "0I8k2r7DPbQQsR1buvf8FaWF4U", auth: "0I8k2r7DPbQQsR1buvf8FaWF4U", skip-cert-verify: true}
+- {name: "🇸🇬 GLaDOS-SG-01", server: "23b9393.s1.gladns.com", port: 2377, type: "ss", cipher: "chacha20-ietf-poly1305", password: "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv", plugin: "obfs", plugin-opts: {mode: "tls", host: "23b9393.dl.microsoft.lu:108512"}}
+- {name: "🇨🇳 GLaDOS-TW-05", server: "23b9393.t5.gladns.com", port: 2377, type: "ss", cipher: "chacha20-ietf-poly1305", password: "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv", plugin: "obfs", plugin-opts: {mode: "tls", host: "23b9393.dl.microsoft.hu:108512"}}
+- {name: "🇯🇵 GLaDOS-JP-02", server: "23b9393.j2.gladns.com", port: 2377, type: "ss", cipher: "chacha20-ietf-poly1305", password: "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv", plugin: "obfs", plugin-opts: {mode: "tls", host: "23b9393.dl.microsoft.de:108512"}}
+- {name: "🇯🇵 GLaDOS-JP-01", server: "23b9393.j1.gladns.com", port: 2377, type: "ss", cipher: "chacha20-ietf-poly1305", password: "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv", plugin: "obfs", plugin-opts: {mode: "tls", host: "23b9393.dl.microsoft.md:108512"}}
+- {name: "🏴‍☠️ GLaDOS-B1-08", server: "23b9393.b8.gladns.com", port: 2377, type: "ss", cipher: "chacha20-ietf-poly1305", password: "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv", plugin: "obfs", plugin-opts: {mode: "tls", host: "23b9393.dl.microsoft.jp:108512"}}
+- {name: "🇭🇰 HK-HY2", server: "2401:b60:5:7801:aa3b:4fd1:2b6f:fbab", port: 2096, type: "hysteria2", password: "4376c0b7-06c1-36b7-bd87-1448b3664c18", auth: "4376c0b7-06c1-36b7-bd87-1448b3664c18", skip-cert-verify: true, alpn: ["h3"]}
+- {name: "🇯🇵 GLaDOS-JP-03", server: "23b9393.j3.gladns.com", port: 2377, type: "ss", cipher: "chacha20-ietf-poly1305", password: "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv", plugin: "obfs", plugin-opts: {mode: "tls", host: "23b9393.dl.microsoft.fi:108512"}}
+- {name: "🇺🇸 美国14 | ⬇️ 1.9MB/s|23%|Netflix|Openai|Gemini", server: "64.181.207.162", port: 47262, type: "hysteria2", password: "b72ba5d5-2d5e-45b7-93b5-236d343baa7c", auth: "b72ba5d5-2d5e-45b7-93b5-236d343baa7c", skip-cert-verify: true}
+- {name: "🇭🇰 GLaDOS-HK-02", server: "23b9393.h2.gladns.com", port: 2377, type: "ss", cipher: "chacha20-ietf-poly1305", password: "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv", plugin: "obfs", plugin-opts: {mode: "tls", host: "23b9393.dl.microsoft.hu:108512"}}
+- {name: "🏴‍☠️ GLaDOS-B1-09", server: "23b9393.b9.gladns.com", port: 2377, type: "ss", cipher: "chacha20-ietf-poly1305", password: "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv", plugin: "obfs", plugin-opts: {mode: "tls", host: "23b9393.dl.microsoft.md:108512"}}
+- {name: "🇭🇰 GLaDOS-HK-01", server: "23b9393.h1.gladns.com", port: 2377, type: "ss", cipher: "chacha20-ietf-poly1305", password: "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv", plugin: "obfs", plugin-opts: {mode: "tls", host: "23b9393.dl.nintendo.net:108512"}}
+- {name: "🇭🇰 香港(IPv6)-Aelen提供", server: "yba.aelen.ggff.net", port: 47116, type: "hysteria2", password: "231nXZsmfn", auth: "231nXZsmfn", skip-cert-verify: true, sni: "yba.aelen.ggff.net"}
+- {name: "🇭🇰 HK-Acck hysteria2-Aelen提供", server: "45.196.219.107", port: 21942, type: "hysteria2", password: "c0ace9a5-1266-48a8-b02c-681f21c8d5b0", auth: "c0ace9a5-1266-48a8-b02c-681f21c8d5b0", skip-cert-verify: true}
+- {name: "🏴‍☠️ GLaDOS-B1-01", server: "23b9393.b1.gladns.com", port: 2377, type: "ss", cipher: "chacha20-ietf-poly1305", password: "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv", plugin: "obfs", plugin-opts: {mode: "tls", host: "23b9393.dl.microsoft.ee:108512"}}
+- {name: "🏴‍☠️ 节点分享@iamdt002", server: "nc.ct.xiaomi-api.xyz", port: 19552, type: "trojan", password: "9b531eaa-ec0e-4c28-81db-9e08a110d4b1", skip-cert-verify: true, sni: "nc.ct.xiaomi-api.xyz"}
+- {name: "🇸🇬 ⚠不能用就更新⚠", server: "52.89.248.218", port: 11136, type: "hysteria2", password: "yDtaQpO8NeVVkInIkaqXlMa7et4", auth: "yDtaQpO8NeVVkInIkaqXlMa7et4", skip-cert-verify: true}
+proxy-groups:
+- name: "PROXY"
+  type: "select"
+  proxies:
+  - "AUTO"
+  - "🇭🇰 GLaDOS-HK-03"
+  - "🇸🇬 SGP-Hy2-2"
+  - "🇸🇬 GLaDOS-SG-03"
+  - "🇸🇬 SGP-Hy2-1"
+  - "🇭🇰 Claw-HK-12.6"
+  - "🇯🇵 JP-KDDI-2"
+  - "🇭🇰 [ss]香港1[中转]"
+  - "🏴‍☠️ GLaDOS-B1-02"
+  - "🇨🇳 GLaDOS-TW-04"
+  - "🏴‍☠️ GLaDOS-S2-02"
+  - "🇺🇸 GLaDOS-US-05"
+  - "🇨🇳 CN"
+  - "🏴‍☠️ GLaDOS-Netflix-02"
+  - "🇩🇪 DE-2"
+  - "🇨🇳 GLaDOS-TW-06"
+  - "🏴‍☠️ GLaDOS-B1-04"
+  - "🇺🇸 GLaDOS-US-06"
+  - "🏴‍☠️ GLaDOS-S2-03"
+  - "🏴‍☠️ GLaDOS-D1-01"
+  - "🏴‍☠️ GLaDOS-Netflix-03"
+  - "🏴‍☠️ GLaDOS-D1-03"
+  - "🏴‍☠️ GLaDOS-B1-03"
+  - "🇨🇳 GLaDOS-TW-03"
+  - "🇪🇨 JP-AWS-EC2"
+  - "🇭🇰 [ss]香港2[中转]"
+  - "🇺🇸 GLaDOS-US-02"
+  - "🏴‍☠️ GLaDOS-B1-06"
+  - "🏴‍☠️ GLaDOS-D1-02"
+  - "🇨🇳 GLaDOS-TW-02"
+  - "🇺🇸 US-Hy2-2"
+  - "🇺🇸 US-Hy2-1"
+  - "🇨🇳 GLaDOS-TW-01"
+  - "🏴‍☠️ GLaDOS-B1-05"
+  - "🇩🇪 DE-1"
+  - "🇸🇬 GLaDOS-SG-01"
+  - "🇨🇳 GLaDOS-TW-05"
+  - "🇯🇵 GLaDOS-JP-02"
+  - "🇯🇵 GLaDOS-JP-01"
+  - "🏴‍☠️ GLaDOS-B1-08"
+  - "🇭🇰 HK-HY2"
+  - "🇯🇵 GLaDOS-JP-03"
+  - "🇺🇸 美国14 | ⬇️ 1.9MB/s|23%|Netflix|Openai|Gemini"
+  - "🇭🇰 GLaDOS-HK-02"
+  - "🏴‍☠️ GLaDOS-B1-09"
+  - "🇭🇰 GLaDOS-HK-01"
+  - "🇭🇰 香港(IPv6)-Aelen提供"
+  - "🇭🇰 HK-Acck hysteria2-Aelen提供"
+  - "🏴‍☠️ GLaDOS-B1-01"
+  - "🏴‍☠️ 节点分享@iamdt002"
+  - "🇸🇬 ⚠不能用就更新⚠"
+- name: "AUTO"
+  type: "url-test"
+  url: "http://www.gstatic.com/generate_204"
+  interval: 300
+  tolerance: 50
+  proxies:
+  - "🇭🇰 GLaDOS-HK-03"
+  - "🇸🇬 SGP-Hy2-2"
+  - "🇸🇬 GLaDOS-SG-03"
+  - "🇸🇬 SGP-Hy2-1"
+  - "🇭🇰 Claw-HK-12.6"
+  - "🇯🇵 JP-KDDI-2"
+  - "🇭🇰 [ss]香港1[中转]"
+  - "🏴‍☠️ GLaDOS-B1-02"
+  - "🇨🇳 GLaDOS-TW-04"
+  - "🏴‍☠️ GLaDOS-S2-02"
+  - "🇺🇸 GLaDOS-US-05"
+  - "🇨🇳 CN"
+  - "🏴‍☠️ GLaDOS-Netflix-02"
+  - "🇩🇪 DE-2"
+  - "🇨🇳 GLaDOS-TW-06"
+  - "🏴‍☠️ GLaDOS-B1-04"
+  - "🇺🇸 GLaDOS-US-06"
+  - "🏴‍☠️ GLaDOS-S2-03"
+  - "🏴‍☠️ GLaDOS-D1-01"
+  - "🏴‍☠️ GLaDOS-Netflix-03"
+  - "🏴‍☠️ GLaDOS-D1-03"
+  - "🏴‍☠️ GLaDOS-B1-03"
+  - "🇨🇳 GLaDOS-TW-03"
+  - "🇪🇨 JP-AWS-EC2"
+  - "🇭🇰 [ss]香港2[中转]"
+  - "🇺🇸 GLaDOS-US-02"
+  - "🏴‍☠️ GLaDOS-B1-06"
+  - "🏴‍☠️ GLaDOS-D1-02"
+  - "🇨🇳 GLaDOS-TW-02"
+  - "🇺🇸 US-Hy2-2"
+  - "🇺🇸 US-Hy2-1"
+  - "🇨🇳 GLaDOS-TW-01"
+  - "🏴‍☠️ GLaDOS-B1-05"
+  - "🇩🇪 DE-1"
+  - "🇸🇬 GLaDOS-SG-01"
+  - "🇨🇳 GLaDOS-TW-05"
+  - "🇯🇵 GLaDOS-JP-02"
+  - "🇯🇵 GLaDOS-JP-01"
+  - "🏴‍☠️ GLaDOS-B1-08"
+  - "🇭🇰 HK-HY2"
+  - "🇯🇵 GLaDOS-JP-03"
+  - "🇺🇸 美国14 | ⬇️ 1.9MB/s|23%|Netflix|Openai|Gemini"
+  - "🇭🇰 GLaDOS-HK-02"
+  - "🏴‍☠️ GLaDOS-B1-09"
+  - "🇭🇰 GLaDOS-HK-01"
+  - "🇭🇰 香港(IPv6)-Aelen提供"
+  - "🇭🇰 HK-Acck hysteria2-Aelen提供"
+  - "🏴‍☠️ GLaDOS-B1-01"
+  - "🏴‍☠️ 节点分享@iamdt002"
+  - "🇸🇬 ⚠不能用就更新⚠"
+- name: "AI"
+  type: "select"
+  proxies:
+  - "🇭🇰 GLaDOS-HK-03"
+  - "🇸🇬 SGP-Hy2-2"
+  - "🇸🇬 GLaDOS-SG-03"
+  - "🇸🇬 SGP-Hy2-1"
+  - "🇭🇰 Claw-HK-12.6"
+  - "🇯🇵 JP-KDDI-2"
+  - "🇭🇰 [ss]香港1[中转]"
+  - "🏴‍☠️ GLaDOS-B1-02"
+  - "🇨🇳 GLaDOS-TW-04"
+  - "🏴‍☠️ GLaDOS-S2-02"
+  - "🇺🇸 GLaDOS-US-05"
+  - "🇨🇳 CN"
+  - "🏴‍☠️ GLaDOS-Netflix-02"
+  - "🇩🇪 DE-2"
+  - "🇨🇳 GLaDOS-TW-06"
+  - "🏴‍☠️ GLaDOS-B1-04"
+  - "🇺🇸 GLaDOS-US-06"
+  - "🏴‍☠️ GLaDOS-S2-03"
+  - "🏴‍☠️ GLaDOS-D1-01"
+  - "🏴‍☠️ GLaDOS-Netflix-03"
+  - "🏴‍☠️ GLaDOS-D1-03"
+  - "🏴‍☠️ GLaDOS-B1-03"
+  - "🇨🇳 GLaDOS-TW-03"
+  - "🇪🇨 JP-AWS-EC2"
+  - "🇭🇰 [ss]香港2[中转]"
+  - "🇺🇸 GLaDOS-US-02"
+  - "🏴‍☠️ GLaDOS-B1-06"
+  - "🏴‍☠️ GLaDOS-D1-02"
+  - "🇨🇳 GLaDOS-TW-02"
+  - "🇺🇸 US-Hy2-2"
+  - "🇺🇸 US-Hy2-1"
+  - "🇨🇳 GLaDOS-TW-01"
+  - "🏴‍☠️ GLaDOS-B1-05"
+  - "🇩🇪 DE-1"
+  - "🇸🇬 GLaDOS-SG-01"
+  - "🇨🇳 GLaDOS-TW-05"
+  - "🇯🇵 GLaDOS-JP-02"
+  - "🇯🇵 GLaDOS-JP-01"
+  - "🏴‍☠️ GLaDOS-B1-08"
+  - "🇭🇰 HK-HY2"
+  - "🇯🇵 GLaDOS-JP-03"
+  - "🇺🇸 美国14 | ⬇️ 1.9MB/s|23%|Netflix|Openai|Gemini"
+  - "🇭🇰 GLaDOS-HK-02"
+  - "🏴‍☠️ GLaDOS-B1-09"
+  - "🇭🇰 GLaDOS-HK-01"
+  - "🇭🇰 香港(IPv6)-Aelen提供"
+  - "🇭🇰 HK-Acck hysteria2-Aelen提供"
+  - "🏴‍☠️ GLaDOS-B1-01"
+  - "🏴‍☠️ 节点分享@iamdt002"
+  - "🇸🇬 ⚠不能用就更新⚠"
+- name: "GOOGLEFCM"
+  type: "select"
+  proxies:
+  - "PROXY"
+  - "🇭🇰 GLaDOS-HK-03"
+  - "🇸🇬 SGP-Hy2-2"
+  - "🇸🇬 GLaDOS-SG-03"
+  - "🇸🇬 SGP-Hy2-1"
+  - "🇭🇰 Claw-HK-12.6"
+  - "🇯🇵 JP-KDDI-2"
+  - "🇭🇰 [ss]香港1[中转]"
+  - "🏴‍☠️ GLaDOS-B1-02"
+  - "🇨🇳 GLaDOS-TW-04"
+  - "🏴‍☠️ GLaDOS-S2-02"
+  - "🇺🇸 GLaDOS-US-05"
+  - "🇨🇳 CN"
+  - "🏴‍☠️ GLaDOS-Netflix-02"
+  - "🇩🇪 DE-2"
+  - "🇨🇳 GLaDOS-TW-06"
+  - "🏴‍☠️ GLaDOS-B1-04"
+  - "🇺🇸 GLaDOS-US-06"
+  - "🏴‍☠️ GLaDOS-S2-03"
+  - "🏴‍☠️ GLaDOS-D1-01"
+  - "🏴‍☠️ GLaDOS-Netflix-03"
+  - "🏴‍☠️ GLaDOS-D1-03"
+  - "🏴‍☠️ GLaDOS-B1-03"
+  - "🇨🇳 GLaDOS-TW-03"
+  - "🇪🇨 JP-AWS-EC2"
+  - "🇭🇰 [ss]香港2[中转]"
+  - "🇺🇸 GLaDOS-US-02"
+  - "🏴‍☠️ GLaDOS-B1-06"
+  - "🏴‍☠️ GLaDOS-D1-02"
+  - "🇨🇳 GLaDOS-TW-02"
+  - "🇺🇸 US-Hy2-2"
+  - "🇺🇸 US-Hy2-1"
+  - "🇨🇳 GLaDOS-TW-01"
+  - "🏴‍☠️ GLaDOS-B1-05"
+  - "🇩🇪 DE-1"
+  - "🇸🇬 GLaDOS-SG-01"
+  - "🇨🇳 GLaDOS-TW-05"
+  - "🇯🇵 GLaDOS-JP-02"
+  - "🇯🇵 GLaDOS-JP-01"
+  - "🏴‍☠️ GLaDOS-B1-08"
+  - "🇭🇰 HK-HY2"
+  - "🇯🇵 GLaDOS-JP-03"
+  - "🇺🇸 美国14 | ⬇️ 1.9MB/s|23%|Netflix|Openai|Gemini"
+  - "🇭🇰 GLaDOS-HK-02"
+  - "🏴‍☠️ GLaDOS-B1-09"
+  - "🇭🇰 GLaDOS-HK-01"
+  - "🇭🇰 香港(IPv6)-Aelen提供"
+  - "🇭🇰 HK-Acck hysteria2-Aelen提供"
+  - "🏴‍☠️ GLaDOS-B1-01"
+  - "🏴‍☠️ 节点分享@iamdt002"
+  - "🇸🇬 ⚠不能用就更新⚠"
+- name: "TELEGRAM"
+  type: "select"
+  proxies:
+  - "PROXY"
+  - "DIRECT"
+  - "🇭🇰 GLaDOS-HK-03"
+  - "🇸🇬 SGP-Hy2-2"
+  - "🇸🇬 GLaDOS-SG-03"
+  - "🇸🇬 SGP-Hy2-1"
+  - "🇭🇰 Claw-HK-12.6"
+  - "🇯🇵 JP-KDDI-2"
+  - "🇭🇰 [ss]香港1[中转]"
+  - "🏴‍☠️ GLaDOS-B1-02"
+  - "🇨🇳 GLaDOS-TW-04"
+  - "🏴‍☠️ GLaDOS-S2-02"
+  - "🇺🇸 GLaDOS-US-05"
+  - "🇨🇳 CN"
+  - "🏴‍☠️ GLaDOS-Netflix-02"
+  - "🇩🇪 DE-2"
+  - "🇨🇳 GLaDOS-TW-06"
+  - "🏴‍☠️ GLaDOS-B1-04"
+  - "🇺🇸 GLaDOS-US-06"
+  - "🏴‍☠️ GLaDOS-S2-03"
+  - "🏴‍☠️ GLaDOS-D1-01"
+  - "🏴‍☠️ GLaDOS-Netflix-03"
+  - "🏴‍☠️ GLaDOS-D1-03"
+  - "🏴‍☠️ GLaDOS-B1-03"
+  - "🇨🇳 GLaDOS-TW-03"
+  - "🇪🇨 JP-AWS-EC2"
+  - "🇭🇰 [ss]香港2[中转]"
+  - "🇺🇸 GLaDOS-US-02"
+  - "🏴‍☠️ GLaDOS-B1-06"
+  - "🏴‍☠️ GLaDOS-D1-02"
+  - "🇨🇳 GLaDOS-TW-02"
+  - "🇺🇸 US-Hy2-2"
+  - "🇺🇸 US-Hy2-1"
+  - "🇨🇳 GLaDOS-TW-01"
+  - "🏴‍☠️ GLaDOS-B1-05"
+  - "🇩🇪 DE-1"
+  - "🇸🇬 GLaDOS-SG-01"
+  - "🇨🇳 GLaDOS-TW-05"
+  - "🇯🇵 GLaDOS-JP-02"
+  - "🇯🇵 GLaDOS-JP-01"
+  - "🏴‍☠️ GLaDOS-B1-08"
+  - "🇭🇰 HK-HY2"
+  - "🇯🇵 GLaDOS-JP-03"
+  - "🇺🇸 美国14 | ⬇️ 1.9MB/s|23%|Netflix|Openai|Gemini"
+  - "🇭🇰 GLaDOS-HK-02"
+  - "🏴‍☠️ GLaDOS-B1-09"
+  - "🇭🇰 GLaDOS-HK-01"
+  - "🇭🇰 香港(IPv6)-Aelen提供"
+  - "🇭🇰 HK-Acck hysteria2-Aelen提供"
+  - "🏴‍☠️ GLaDOS-B1-01"
+  - "🏴‍☠️ 节点分享@iamdt002"
+  - "🇸🇬 ⚠不能用就更新⚠"
+- name: "HOYO"
+  type: "select"
+  proxies:
+  - "DIRECT"
+  - "PROXY"
+  - "🇭🇰 GLaDOS-HK-03"
+  - "🇸🇬 SGP-Hy2-2"
+  - "🇸🇬 GLaDOS-SG-03"
+  - "🇸🇬 SGP-Hy2-1"
+  - "🇭🇰 Claw-HK-12.6"
+  - "🇯🇵 JP-KDDI-2"
+  - "🇭🇰 [ss]香港1[中转]"
+  - "🏴‍☠️ GLaDOS-B1-02"
+  - "🇨🇳 GLaDOS-TW-04"
+  - "🏴‍☠️ GLaDOS-S2-02"
+  - "🇺🇸 GLaDOS-US-05"
+  - "🇨🇳 CN"
+  - "🏴‍☠️ GLaDOS-Netflix-02"
+  - "🇩🇪 DE-2"
+  - "🇨🇳 GLaDOS-TW-06"
+  - "🏴‍☠️ GLaDOS-B1-04"
+  - "🇺🇸 GLaDOS-US-06"
+  - "🏴‍☠️ GLaDOS-S2-03"
+  - "🏴‍☠️ GLaDOS-D1-01"
+  - "🏴‍☠️ GLaDOS-Netflix-03"
+  - "🏴‍☠️ GLaDOS-D1-03"
+  - "🏴‍☠️ GLaDOS-B1-03"
+  - "🇨🇳 GLaDOS-TW-03"
+  - "🇪🇨 JP-AWS-EC2"
+  - "🇭🇰 [ss]香港2[中转]"
+  - "🇺🇸 GLaDOS-US-02"
+  - "🏴‍☠️ GLaDOS-B1-06"
+  - "🏴‍☠️ GLaDOS-D1-02"
+  - "🇨🇳 GLaDOS-TW-02"
+  - "🇺🇸 US-Hy2-2"
+  - "🇺🇸 US-Hy2-1"
+  - "🇨🇳 GLaDOS-TW-01"
+  - "🏴‍☠️ GLaDOS-B1-05"
+  - "🇩🇪 DE-1"
+  - "🇸🇬 GLaDOS-SG-01"
+  - "🇨🇳 GLaDOS-TW-05"
+  - "🇯🇵 GLaDOS-JP-02"
+  - "🇯🇵 GLaDOS-JP-01"
+  - "🏴‍☠️ GLaDOS-B1-08"
+  - "🇭🇰 HK-HY2"
+  - "🇯🇵 GLaDOS-JP-03"
+  - "🇺🇸 美国14 | ⬇️ 1.9MB/s|23%|Netflix|Openai|Gemini"
+  - "🇭🇰 GLaDOS-HK-02"
+  - "🏴‍☠️ GLaDOS-B1-09"
+  - "🇭🇰 GLaDOS-HK-01"
+  - "🇭🇰 香港(IPv6)-Aelen提供"
+  - "🇭🇰 HK-Acck hysteria2-Aelen提供"
+  - "🏴‍☠️ GLaDOS-B1-01"
+  - "🏴‍☠️ 节点分享@iamdt002"
+  - "🇸🇬 ⚠不能用就更新⚠"
+rules:
+- "GEOSITE,CATEGORY-ADS-ALL,REJECT"
+- "DOMAIN-SUFFIX,ushd.xmsl.org,DIRECT"
+- "DOMAIN-SUFFIX,cf.gtlx.org,DIRECT"
+- "DOMAIN-SUFFIX,public-operation-hkrpg-sg.hoyoverse.com,HOYO"
+- "DOMAIN-SUFFIX,public-operation-hk4e-sg.hoyoverse.com,HOYO"
+- "DOMAIN-SUFFIX,public-operation-nap-sg.hoyoverse.com,HOYO"
+- "DST-PORT,23301/22101-22102/20501/21601-21606,HOYO"
+- "DOMAIN-KEYWORD,hoyoverse.com,PROXY"
+- "GEOSITE,CATEGORY-AI-!CN,AI"
+- "GEOSITE,GOOGLEFCM,GOOGLEFCM"
+- "GEOSITE,TELEGRAM,TELEGRAM"
+- "GEOSITE,PRIVATE,DIRECT"
+- "GEOSITE,CN,DIRECT"
+- "GEOIP,TELEGRAM,TELEGRAM"
+- "GEOIP,PRIVATE,DIRECT,no-resolve"
+- "GEOIP,CN,DIRECT"
+- "MATCH,PROXY"

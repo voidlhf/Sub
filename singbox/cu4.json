@@ -1,0 +1,1115 @@
+{
+  "log": {},
+  "dns": {
+    "servers": [
+      {
+        "tag": "dns_proxy",
+        "type": "https",
+        "server": "1.1.1.1",
+        "detour": "select"
+      },
+      {
+        "tag": "dns_direct",
+        "type": "https",
+        "server": "223.5.5.5"
+      },
+      {
+        "tag": "dns_fakeip",
+        "type": "fakeip",
+        "inet4_range": "198.18.0.0/15",
+        "inet6_range": "fc00::/18"
+      }
+    ],
+    "rules": [
+      {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "query_type": "HTTPS"
+          },
+          {
+            "rule_set": [
+              "geosite-category-ads-all"
+            ]
+          }
+        ],
+        "action": "reject"
+      },
+      {
+        "query_type": [
+          "A",
+          "AAAA"
+        ],
+        "server": "dns_fakeip",
+        "rewrite_ttl": 1
+      },
+      {
+        "clash_mode": "Global",
+        "server": "dns_proxy"
+      },
+      {
+        "clash_mode": "Direct",
+        "server": "dns_direct"
+      },
+      {
+        "rule_set": [
+          "geosite-cn"
+        ],
+        "server": "dns_direct"
+      }
+    ],
+    "strategy": "ipv4_only",
+    "independent_cache": true
+  },
+  "inbounds": [
+    {
+      "type": "tun",
+      "address": [
+        "172.18.0.1/30",
+        "fdfe:dcba:9876::1/126"
+      ],
+      "auto_route": true,
+      "strict_route": true,
+      "route_exclude_address": [
+        "192.168.0.0/16",
+        "fc00::/7"
+      ]
+    }
+  ],
+  "outbounds": [
+    {
+      "tag": "direct",
+      "type": "direct"
+    },
+    {
+      "tag": "select",
+      "type": "selector",
+      "outbounds": [
+        "auto",
+        "🇭🇰 GLaDOS-HK-03",
+        "🇸🇬 SGP-Hy2-2",
+        "🇸🇬 GLaDOS-SG-03",
+        "🇸🇬 SGP-Hy2-1",
+        "🇭🇰 Claw-HK-12.6",
+        "🇯🇵 JP-KDDI-2",
+        "🇭🇰 [ss]香港1[中转]",
+        "🏴‍☠️ GLaDOS-B1-02",
+        "🇨🇳 GLaDOS-TW-04",
+        "🏴‍☠️ GLaDOS-S2-02",
+        "🇺🇸 GLaDOS-US-05",
+        "🇨🇳 CN",
+        "🏴‍☠️ GLaDOS-Netflix-02",
+        "🇩🇪 DE-2",
+        "🇨🇳 GLaDOS-TW-06",
+        "🏴‍☠️ GLaDOS-B1-04",
+        "🇺🇸 GLaDOS-US-06",
+        "🏴‍☠️ GLaDOS-S2-03",
+        "🏴‍☠️ GLaDOS-D1-01",
+        "🏴‍☠️ GLaDOS-Netflix-03",
+        "🏴‍☠️ GLaDOS-D1-03",
+        "🏴‍☠️ GLaDOS-B1-03",
+        "🇨🇳 GLaDOS-TW-03",
+        "🇪🇨 JP-AWS-EC2",
+        "🇭🇰 [ss]香港2[中转]",
+        "🇺🇸 GLaDOS-US-02",
+        "🏴‍☠️ GLaDOS-B1-06",
+        "🏴‍☠️ GLaDOS-D1-02",
+        "🇨🇳 GLaDOS-TW-02",
+        "🇺🇸 US-Hy2-2",
+        "🇺🇸 US-Hy2-1",
+        "🇨🇳 GLaDOS-TW-01",
+        "🏴‍☠️ GLaDOS-B1-05",
+        "🇩🇪 DE-1",
+        "🇸🇬 GLaDOS-SG-01",
+        "🇨🇳 GLaDOS-TW-05",
+        "🇯🇵 GLaDOS-JP-02",
+        "🇯🇵 GLaDOS-JP-01",
+        "🏴‍☠️ GLaDOS-B1-08",
+        "🇭🇰 HK-HY2",
+        "🇯🇵 GLaDOS-JP-03",
+        "🇺🇸 美国14 | ⬇️ 1.9MB/s|23%|Netflix|Openai|Gemini",
+        "🇭🇰 GLaDOS-HK-02",
+        "🏴‍☠️ GLaDOS-B1-09",
+        "🇭🇰 GLaDOS-HK-01",
+        "🇭🇰 香港(IPv6)-Aelen提供",
+        "🇭🇰 HK-Acck hysteria2-Aelen提供",
+        "🏴‍☠️ GLaDOS-B1-01",
+        "🏴‍☠️ 节点分享@iamdt002",
+        "🇸🇬 ⚠不能用就更新⚠"
+      ]
+    },
+    {
+      "tag": "auto",
+      "type": "urltest",
+      "interval": "5m",
+      "outbounds": [
+        "🇭🇰 GLaDOS-HK-03",
+        "🇸🇬 SGP-Hy2-2",
+        "🇸🇬 GLaDOS-SG-03",
+        "🇸🇬 SGP-Hy2-1",
+        "🇭🇰 Claw-HK-12.6",
+        "🇯🇵 JP-KDDI-2",
+        "🇭🇰 [ss]香港1[中转]",
+        "🏴‍☠️ GLaDOS-B1-02",
+        "🇨🇳 GLaDOS-TW-04",
+        "🏴‍☠️ GLaDOS-S2-02",
+        "🇺🇸 GLaDOS-US-05",
+        "🇨🇳 CN",
+        "🏴‍☠️ GLaDOS-Netflix-02",
+        "🇩🇪 DE-2",
+        "🇨🇳 GLaDOS-TW-06",
+        "🏴‍☠️ GLaDOS-B1-04",
+        "🇺🇸 GLaDOS-US-06",
+        "🏴‍☠️ GLaDOS-S2-03",
+        "🏴‍☠️ GLaDOS-D1-01",
+        "🏴‍☠️ GLaDOS-Netflix-03",
+        "🏴‍☠️ GLaDOS-D1-03",
+        "🏴‍☠️ GLaDOS-B1-03",
+        "🇨🇳 GLaDOS-TW-03",
+        "🇪🇨 JP-AWS-EC2",
+        "🇭🇰 [ss]香港2[中转]",
+        "🇺🇸 GLaDOS-US-02",
+        "🏴‍☠️ GLaDOS-B1-06",
+        "🏴‍☠️ GLaDOS-D1-02",
+        "🇨🇳 GLaDOS-TW-02",
+        "🇺🇸 US-Hy2-2",
+        "🇺🇸 US-Hy2-1",
+        "🇨🇳 GLaDOS-TW-01",
+        "🏴‍☠️ GLaDOS-B1-05",
+        "🇩🇪 DE-1",
+        "🇸🇬 GLaDOS-SG-01",
+        "🇨🇳 GLaDOS-TW-05",
+        "🇯🇵 GLaDOS-JP-02",
+        "🇯🇵 GLaDOS-JP-01",
+        "🏴‍☠️ GLaDOS-B1-08",
+        "🇭🇰 HK-HY2",
+        "🇯🇵 GLaDOS-JP-03",
+        "🇺🇸 美国14 | ⬇️ 1.9MB/s|23%|Netflix|Openai|Gemini",
+        "🇭🇰 GLaDOS-HK-02",
+        "🏴‍☠️ GLaDOS-B1-09",
+        "🇭🇰 GLaDOS-HK-01",
+        "🇭🇰 香港(IPv6)-Aelen提供",
+        "🇭🇰 HK-Acck hysteria2-Aelen提供",
+        "🏴‍☠️ GLaDOS-B1-01",
+        "🏴‍☠️ 节点分享@iamdt002",
+        "🇸🇬 ⚠不能用就更新⚠"
+      ]
+    },
+    {
+      "tag": "ai",
+      "type": "selector",
+      "outbounds": [
+        "🇭🇰 GLaDOS-HK-03",
+        "🇸🇬 SGP-Hy2-2",
+        "🇸🇬 GLaDOS-SG-03",
+        "🇸🇬 SGP-Hy2-1",
+        "🇭🇰 Claw-HK-12.6",
+        "🇯🇵 JP-KDDI-2",
+        "🇭🇰 [ss]香港1[中转]",
+        "🏴‍☠️ GLaDOS-B1-02",
+        "🇨🇳 GLaDOS-TW-04",
+        "🏴‍☠️ GLaDOS-S2-02",
+        "🇺🇸 GLaDOS-US-05",
+        "🇨🇳 CN",
+        "🏴‍☠️ GLaDOS-Netflix-02",
+        "🇩🇪 DE-2",
+        "🇨🇳 GLaDOS-TW-06",
+        "🏴‍☠️ GLaDOS-B1-04",
+        "🇺🇸 GLaDOS-US-06",
+        "🏴‍☠️ GLaDOS-S2-03",
+        "🏴‍☠️ GLaDOS-D1-01",
+        "🏴‍☠️ GLaDOS-Netflix-03",
+        "🏴‍☠️ GLaDOS-D1-03",
+        "🏴‍☠️ GLaDOS-B1-03",
+        "🇨🇳 GLaDOS-TW-03",
+        "🇪🇨 JP-AWS-EC2",
+        "🇭🇰 [ss]香港2[中转]",
+        "🇺🇸 GLaDOS-US-02",
+        "🏴‍☠️ GLaDOS-B1-06",
+        "🏴‍☠️ GLaDOS-D1-02",
+        "🇨🇳 GLaDOS-TW-02",
+        "🇺🇸 US-Hy2-2",
+        "🇺🇸 US-Hy2-1",
+        "🇨🇳 GLaDOS-TW-01",
+        "🏴‍☠️ GLaDOS-B1-05",
+        "🇩🇪 DE-1",
+        "🇸🇬 GLaDOS-SG-01",
+        "🇨🇳 GLaDOS-TW-05",
+        "🇯🇵 GLaDOS-JP-02",
+        "🇯🇵 GLaDOS-JP-01",
+        "🏴‍☠️ GLaDOS-B1-08",
+        "🇭🇰 HK-HY2",
+        "🇯🇵 GLaDOS-JP-03",
+        "🇺🇸 美国14 | ⬇️ 1.9MB/s|23%|Netflix|Openai|Gemini",
+        "🇭🇰 GLaDOS-HK-02",
+        "🏴‍☠️ GLaDOS-B1-09",
+        "🇭🇰 GLaDOS-HK-01",
+        "🇭🇰 香港(IPv6)-Aelen提供",
+        "🇭🇰 HK-Acck hysteria2-Aelen提供",
+        "🏴‍☠️ GLaDOS-B1-01",
+        "🏴‍☠️ 节点分享@iamdt002",
+        "🇸🇬 ⚠不能用就更新⚠"
+      ]
+    },
+    {
+      "tag": "googlefcm",
+      "type": "selector",
+      "outbounds": [
+        "select",
+        "🇭🇰 GLaDOS-HK-03",
+        "🇸🇬 SGP-Hy2-2",
+        "🇸🇬 GLaDOS-SG-03",
+        "🇸🇬 SGP-Hy2-1",
+        "🇭🇰 Claw-HK-12.6",
+        "🇯🇵 JP-KDDI-2",
+        "🇭🇰 [ss]香港1[中转]",
+        "🏴‍☠️ GLaDOS-B1-02",
+        "🇨🇳 GLaDOS-TW-04",
+        "🏴‍☠️ GLaDOS-S2-02",
+        "🇺🇸 GLaDOS-US-05",
+        "🇨🇳 CN",
+        "🏴‍☠️ GLaDOS-Netflix-02",
+        "🇩🇪 DE-2",
+        "🇨🇳 GLaDOS-TW-06",
+        "🏴‍☠️ GLaDOS-B1-04",
+        "🇺🇸 GLaDOS-US-06",
+        "🏴‍☠️ GLaDOS-S2-03",
+        "🏴‍☠️ GLaDOS-D1-01",
+        "🏴‍☠️ GLaDOS-Netflix-03",
+        "🏴‍☠️ GLaDOS-D1-03",
+        "🏴‍☠️ GLaDOS-B1-03",
+        "🇨🇳 GLaDOS-TW-03",
+        "🇪🇨 JP-AWS-EC2",
+        "🇭🇰 [ss]香港2[中转]",
+        "🇺🇸 GLaDOS-US-02",
+        "🏴‍☠️ GLaDOS-B1-06",
+        "🏴‍☠️ GLaDOS-D1-02",
+        "🇨🇳 GLaDOS-TW-02",
+        "🇺🇸 US-Hy2-2",
+        "🇺🇸 US-Hy2-1",
+        "🇨🇳 GLaDOS-TW-01",
+        "🏴‍☠️ GLaDOS-B1-05",
+        "🇩🇪 DE-1",
+        "🇸🇬 GLaDOS-SG-01",
+        "🇨🇳 GLaDOS-TW-05",
+        "🇯🇵 GLaDOS-JP-02",
+        "🇯🇵 GLaDOS-JP-01",
+        "🏴‍☠️ GLaDOS-B1-08",
+        "🇭🇰 HK-HY2",
+        "🇯🇵 GLaDOS-JP-03",
+        "🇺🇸 美国14 | ⬇️ 1.9MB/s|23%|Netflix|Openai|Gemini",
+        "🇭🇰 GLaDOS-HK-02",
+        "🏴‍☠️ GLaDOS-B1-09",
+        "🇭🇰 GLaDOS-HK-01",
+        "🇭🇰 香港(IPv6)-Aelen提供",
+        "🇭🇰 HK-Acck hysteria2-Aelen提供",
+        "🏴‍☠️ GLaDOS-B1-01",
+        "🏴‍☠️ 节点分享@iamdt002",
+        "🇸🇬 ⚠不能用就更新⚠"
+      ]
+    },
+    {
+      "tag": "telegram",
+      "type": "selector",
+      "outbounds": [
+        "select",
+        "direct",
+        "🇭🇰 GLaDOS-HK-03",
+        "🇸🇬 SGP-Hy2-2",
+        "🇸🇬 GLaDOS-SG-03",
+        "🇸🇬 SGP-Hy2-1",
+        "🇭🇰 Claw-HK-12.6",
+        "🇯🇵 JP-KDDI-2",
+        "🇭🇰 [ss]香港1[中转]",
+        "🏴‍☠️ GLaDOS-B1-02",
+        "🇨🇳 GLaDOS-TW-04",
+        "🏴‍☠️ GLaDOS-S2-02",
+        "🇺🇸 GLaDOS-US-05",
+        "🇨🇳 CN",
+        "🏴‍☠️ GLaDOS-Netflix-02",
+        "🇩🇪 DE-2",
+        "🇨🇳 GLaDOS-TW-06",
+        "🏴‍☠️ GLaDOS-B1-04",
+        "🇺🇸 GLaDOS-US-06",
+        "🏴‍☠️ GLaDOS-S2-03",
+        "🏴‍☠️ GLaDOS-D1-01",
+        "🏴‍☠️ GLaDOS-Netflix-03",
+        "🏴‍☠️ GLaDOS-D1-03",
+        "🏴‍☠️ GLaDOS-B1-03",
+        "🇨🇳 GLaDOS-TW-03",
+        "🇪🇨 JP-AWS-EC2",
+        "🇭🇰 [ss]香港2[中转]",
+        "🇺🇸 GLaDOS-US-02",
+        "🏴‍☠️ GLaDOS-B1-06",
+        "🏴‍☠️ GLaDOS-D1-02",
+        "🇨🇳 GLaDOS-TW-02",
+        "🇺🇸 US-Hy2-2",
+        "🇺🇸 US-Hy2-1",
+        "🇨🇳 GLaDOS-TW-01",
+        "🏴‍☠️ GLaDOS-B1-05",
+        "🇩🇪 DE-1",
+        "🇸🇬 GLaDOS-SG-01",
+        "🇨🇳 GLaDOS-TW-05",
+        "🇯🇵 GLaDOS-JP-02",
+        "🇯🇵 GLaDOS-JP-01",
+        "🏴‍☠️ GLaDOS-B1-08",
+        "🇭🇰 HK-HY2",
+        "🇯🇵 GLaDOS-JP-03",
+        "🇺🇸 美国14 | ⬇️ 1.9MB/s|23%|Netflix|Openai|Gemini",
+        "🇭🇰 GLaDOS-HK-02",
+        "🏴‍☠️ GLaDOS-B1-09",
+        "🇭🇰 GLaDOS-HK-01",
+        "🇭🇰 香港(IPv6)-Aelen提供",
+        "🇭🇰 HK-Acck hysteria2-Aelen提供",
+        "🏴‍☠️ GLaDOS-B1-01",
+        "🏴‍☠️ 节点分享@iamdt002",
+        "🇸🇬 ⚠不能用就更新⚠"
+      ]
+    },
+    {
+      "tag": "hoyo",
+      "type": "selector",
+      "outbounds": [
+        "direct",
+        "select",
+        "🇭🇰 GLaDOS-HK-03",
+        "🇸🇬 SGP-Hy2-2",
+        "🇸🇬 GLaDOS-SG-03",
+        "🇸🇬 SGP-Hy2-1",
+        "🇭🇰 Claw-HK-12.6",
+        "🇯🇵 JP-KDDI-2",
+        "🇭🇰 [ss]香港1[中转]",
+        "🏴‍☠️ GLaDOS-B1-02",
+        "🇨🇳 GLaDOS-TW-04",
+        "🏴‍☠️ GLaDOS-S2-02",
+        "🇺🇸 GLaDOS-US-05",
+        "🇨🇳 CN",
+        "🏴‍☠️ GLaDOS-Netflix-02",
+        "🇩🇪 DE-2",
+        "🇨🇳 GLaDOS-TW-06",
+        "🏴‍☠️ GLaDOS-B1-04",
+        "🇺🇸 GLaDOS-US-06",
+        "🏴‍☠️ GLaDOS-S2-03",
+        "🏴‍☠️ GLaDOS-D1-01",
+        "🏴‍☠️ GLaDOS-Netflix-03",
+        "🏴‍☠️ GLaDOS-D1-03",
+        "🏴‍☠️ GLaDOS-B1-03",
+        "🇨🇳 GLaDOS-TW-03",
+        "🇪🇨 JP-AWS-EC2",
+        "🇭🇰 [ss]香港2[中转]",
+        "🇺🇸 GLaDOS-US-02",
+        "🏴‍☠️ GLaDOS-B1-06",
+        "🏴‍☠️ GLaDOS-D1-02",
+        "🇨🇳 GLaDOS-TW-02",
+        "🇺🇸 US-Hy2-2",
+        "🇺🇸 US-Hy2-1",
+        "🇨🇳 GLaDOS-TW-01",
+        "🏴‍☠️ GLaDOS-B1-05",
+        "🇩🇪 DE-1",
+        "🇸🇬 GLaDOS-SG-01",
+        "🇨🇳 GLaDOS-TW-05",
+        "🇯🇵 GLaDOS-JP-02",
+        "🇯🇵 GLaDOS-JP-01",
+        "🏴‍☠️ GLaDOS-B1-08",
+        "🇭🇰 HK-HY2",
+        "🇯🇵 GLaDOS-JP-03",
+        "🇺🇸 美国14 | ⬇️ 1.9MB/s|23%|Netflix|Openai|Gemini",
+        "🇭🇰 GLaDOS-HK-02",
+        "🏴‍☠️ GLaDOS-B1-09",
+        "🇭🇰 GLaDOS-HK-01",
+        "🇭🇰 香港(IPv6)-Aelen提供",
+        "🇭🇰 HK-Acck hysteria2-Aelen提供",
+        "🏴‍☠️ GLaDOS-B1-01",
+        "🏴‍☠️ 节点分享@iamdt002",
+        "🇸🇬 ⚠不能用就更新⚠"
+      ]
+    },
+    {
+      "tag": "🇭🇰 GLaDOS-HK-03",
+      "type": "shadowsocks",
+      "server": "23b9393.h3.gladns.com",
+      "server_port": 2377,
+      "method": "chacha20-ietf-poly1305",
+      "password": "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=tls;obfs-host=23b9393.dl.nvidia.com:108512"
+    },
+    {
+      "tag": "🇸🇬 SGP-Hy2-2",
+      "type": "hysteria2",
+      "server": "13.215.50.242",
+      "server_port": 19647,
+      "password": "ayugXYUKGKFwS2B1QKWPGFlW4Rg",
+      "tls": {
+        "enabled": true,
+        "server_name": "13.215.50.242",
+        "insecure": true
+      }
+    },
+    {
+      "tag": "🇸🇬 GLaDOS-SG-03",
+      "type": "shadowsocks",
+      "server": "23b9393.s3.gladns.com",
+      "server_port": 2377,
+      "method": "chacha20-ietf-poly1305",
+      "password": "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=tls;obfs-host=23b9393.dl.nintendo.be:108512"
+    },
+    {
+      "tag": "🇸🇬 SGP-Hy2-1",
+      "type": "hysteria2",
+      "server": "54.169.190.172",
+      "server_port": 31667,
+      "password": "hf96oOugMgvkOAlVykIA0EKHk",
+      "tls": {
+        "enabled": true,
+        "server_name": "54.169.190.172",
+        "insecure": true
+      }
+    },
+    {
+      "tag": "🇭🇰 Claw-HK-12.6",
+      "type": "hysteria2",
+      "server": "8.210.184.183",
+      "server_port": 6116,
+      "password": "DRAAoEbDU6dRMrVKMNKEvhBrAY",
+      "tls": {
+        "enabled": true,
+        "server_name": "8.210.184.183",
+        "insecure": true
+      }
+    },
+    {
+      "tag": "🇯🇵 JP-KDDI-2",
+      "type": "hysteria2",
+      "server": "43.206.255.50",
+      "server_port": 26182,
+      "password": "KUP1LshgSRNGg4vsCNGDPBXYNis",
+      "tls": {
+        "enabled": true,
+        "server_name": "43.206.255.50",
+        "insecure": true
+      }
+    },
+    {
+      "tag": "🇭🇰 [ss]香港1[中转]",
+      "type": "shadowsocks",
+      "server": "pic.aibox.tv",
+      "server_port": 10888,
+      "method": "chacha20-ietf-poly1305",
+      "password": "36c9fb47-8ad3-4059-bd8b-eefde9e68bcb"
+    },
+    {
+      "tag": "🏴‍☠️ GLaDOS-B1-02",
+      "type": "shadowsocks",
+      "server": "23b9393.b2.gladns.com",
+      "server_port": 2377,
+      "method": "chacha20-ietf-poly1305",
+      "password": "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=tls;obfs-host=23b9393.dl.nintendo.de:108512"
+    },
+    {
+      "tag": "🇨🇳 GLaDOS-TW-04",
+      "type": "shadowsocks",
+      "server": "23b9393.t4.gladns.com",
+      "server_port": 2377,
+      "method": "chacha20-ietf-poly1305",
+      "password": "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=tls;obfs-host=23b9393.dl.microsoft.fi:108512"
+    },
+    {
+      "tag": "🏴‍☠️ GLaDOS-S2-02",
+      "type": "shadowsocks",
+      "server": "23b9393.f2.gladns.com",
+      "server_port": 2377,
+      "method": "chacha20-ietf-poly1305",
+      "password": "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=tls;obfs-host=23b9393.dl.xboxlive.com.net:108512"
+    },
+    {
+      "tag": "🇺🇸 GLaDOS-US-05",
+      "type": "shadowsocks",
+      "server": "23b9393.u5.gladns.com",
+      "server_port": 2377,
+      "method": "chacha20-ietf-poly1305",
+      "password": "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=tls;obfs-host=23b9393.dl.microsoft.lv:108512"
+    },
+    {
+      "tag": "🇨🇳 CN",
+      "type": "trojan",
+      "server": "120.233.128.68",
+      "server_port": 39001,
+      "password": "b6200af42ccadea353f5b5856dd20d70",
+      "tls": {
+        "enabled": true,
+        "server_name": "120.233.128.68",
+        "insecure": true
+      }
+    },
+    {
+      "tag": "🏴‍☠️ GLaDOS-Netflix-02",
+      "type": "shadowsocks",
+      "server": "23b9393.d2.gladns.com",
+      "server_port": 2377,
+      "method": "chacha20-ietf-poly1305",
+      "password": "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=tls;obfs-host=23b9393.dl.nintendo.eu.net:108512"
+    },
+    {
+      "tag": "🇩🇪 DE-2",
+      "type": "hysteria2",
+      "server": "3.122.115.64",
+      "server_port": 22024,
+      "password": "C1AhcuZ9TW9A2tnL7Q8TF1s1g",
+      "tls": {
+        "enabled": true,
+        "server_name": "3.122.115.64",
+        "insecure": true
+      }
+    },
+    {
+      "tag": "🇨🇳 GLaDOS-TW-06",
+      "type": "shadowsocks",
+      "server": "23b9393.t6.gladns.com",
+      "server_port": 2377,
+      "method": "chacha20-ietf-poly1305",
+      "password": "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=tls;obfs-host=23b9393.dl.microsoft.es:108512"
+    },
+    {
+      "tag": "🏴‍☠️ GLaDOS-B1-04",
+      "type": "shadowsocks",
+      "server": "23b9393.b4.gladns.com",
+      "server_port": 2377,
+      "method": "chacha20-ietf-poly1305",
+      "password": "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=tls;obfs-host=23b9393.dl.microsoft.md:108512"
+    },
+    {
+      "tag": "🇺🇸 GLaDOS-US-06",
+      "type": "shadowsocks",
+      "server": "23b9393.u6.gladns.com",
+      "server_port": 2377,
+      "method": "chacha20-ietf-poly1305",
+      "password": "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=tls;obfs-host=23b9393.dl.microsoft.dk:108512"
+    },
+    {
+      "tag": "🏴‍☠️ GLaDOS-S2-03",
+      "type": "shadowsocks",
+      "server": "23b9393.f3.gladns.com",
+      "server_port": 2377,
+      "method": "chacha20-ietf-poly1305",
+      "password": "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=tls;obfs-host=23b9393.dl.microsoft.ch.net:108512"
+    },
+    {
+      "tag": "🏴‍☠️ GLaDOS-D1-01",
+      "type": "shadowsocks",
+      "server": "23b9393.da.gladns.com",
+      "server_port": 2377,
+      "method": "chacha20-ietf-poly1305",
+      "password": "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=tls;obfs-host=23b9393.dl.nintendo.be:108512"
+    },
+    {
+      "tag": "🏴‍☠️ GLaDOS-Netflix-03",
+      "type": "shadowsocks",
+      "server": "23b9393.d3.gladns.com",
+      "server_port": 2377,
+      "method": "chacha20-ietf-poly1305",
+      "password": "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=tls;obfs-host=23b9393.dl.microsoft.de.net:108512"
+    },
+    {
+      "tag": "🏴‍☠️ GLaDOS-D1-03",
+      "type": "shadowsocks",
+      "server": "23b9393.dc.gladns.com",
+      "server_port": 2377,
+      "method": "chacha20-ietf-poly1305",
+      "password": "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=tls;obfs-host=23b9393.dl.microsoft.md:108512"
+    },
+    {
+      "tag": "🏴‍☠️ GLaDOS-B1-03",
+      "type": "shadowsocks",
+      "server": "23b9393.b3.gladns.com",
+      "server_port": 2377,
+      "method": "chacha20-ietf-poly1305",
+      "password": "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=tls;obfs-host=23b9393.dl.xboxlive.com:108512"
+    },
+    {
+      "tag": "🇨🇳 GLaDOS-TW-03",
+      "type": "shadowsocks",
+      "server": "23b9393.t3.gladns.com",
+      "server_port": 2377,
+      "method": "chacha20-ietf-poly1305",
+      "password": "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=tls;obfs-host=23b9393.dl.nintendo.com:108512"
+    },
+    {
+      "tag": "🇪🇨 JP-AWS-EC2",
+      "type": "hysteria2",
+      "server": "54.238.229.239",
+      "server_port": 31771,
+      "password": "OWTXTQv1bF61nvyLERhzmKotao",
+      "tls": {
+        "enabled": true,
+        "server_name": "54.238.229.239",
+        "insecure": true
+      }
+    },
+    {
+      "tag": "🇭🇰 [ss]香港2[中转]",
+      "type": "shadowsocks",
+      "server": "pic.aibox.tv",
+      "server_port": 10999,
+      "method": "chacha20-ietf-poly1305",
+      "password": "36c9fb47-8ad3-4059-bd8b-eefde9e68bcb"
+    },
+    {
+      "tag": "🇺🇸 GLaDOS-US-02",
+      "type": "shadowsocks",
+      "server": "23b9393.u2.gladns.com",
+      "server_port": 2377,
+      "method": "chacha20-ietf-poly1305",
+      "password": "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=tls;obfs-host=23b9393.dl.microsoft.ch:108512"
+    },
+    {
+      "tag": "🏴‍☠️ GLaDOS-B1-06",
+      "type": "shadowsocks",
+      "server": "23b9393.b6.gladns.com",
+      "server_port": 2377,
+      "method": "chacha20-ietf-poly1305",
+      "password": "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=tls;obfs-host=23b9393.dl.microsoft.net:108512"
+    },
+    {
+      "tag": "🏴‍☠️ GLaDOS-D1-02",
+      "type": "shadowsocks",
+      "server": "23b9393.db.gladns.com",
+      "server_port": 2377,
+      "method": "chacha20-ietf-poly1305",
+      "password": "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=tls;obfs-host=23b9393.dl.microsoft.md:108512"
+    },
+    {
+      "tag": "🇨🇳 GLaDOS-TW-02",
+      "type": "shadowsocks",
+      "server": "23b9393.t2.gladns.com",
+      "server_port": 2377,
+      "method": "chacha20-ietf-poly1305",
+      "password": "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=tls;obfs-host=23b9393.dl.microsoft.lu:108512"
+    },
+    {
+      "tag": "🇺🇸 US-Hy2-2",
+      "type": "hysteria2",
+      "server": "54.202.31.170",
+      "server_port": 8288,
+      "password": "Pet6beTavtYCwkkPQci5eYg",
+      "tls": {
+        "enabled": true,
+        "server_name": "54.202.31.170",
+        "insecure": true
+      }
+    },
+    {
+      "tag": "🇺🇸 US-Hy2-1",
+      "type": "hysteria2",
+      "server": "35.95.118.185",
+      "server_port": 12096,
+      "password": "o7qQ56nYlcXUNGPEMybEzezMns",
+      "tls": {
+        "enabled": true,
+        "server_name": "35.95.118.185",
+        "insecure": true
+      }
+    },
+    {
+      "tag": "🇨🇳 GLaDOS-TW-01",
+      "type": "shadowsocks",
+      "server": "23b9393.t1.gladns.com",
+      "server_port": 2377,
+      "method": "chacha20-ietf-poly1305",
+      "password": "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=tls;obfs-host=23b9393.dl.microsoft.cat:108512"
+    },
+    {
+      "tag": "🏴‍☠️ GLaDOS-B1-05",
+      "type": "shadowsocks",
+      "server": "23b9393.b5.gladns.com",
+      "server_port": 2377,
+      "method": "chacha20-ietf-poly1305",
+      "password": "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=tls;obfs-host=23b9393.dl.nintendo.de:108512"
+    },
+    {
+      "tag": "🇩🇪 DE-1",
+      "type": "hysteria2",
+      "server": "3.120.153.207",
+      "server_port": 32816,
+      "password": "0I8k2r7DPbQQsR1buvf8FaWF4U",
+      "tls": {
+        "enabled": true,
+        "server_name": "3.120.153.207",
+        "insecure": true
+      }
+    },
+    {
+      "tag": "🇸🇬 GLaDOS-SG-01",
+      "type": "shadowsocks",
+      "server": "23b9393.s1.gladns.com",
+      "server_port": 2377,
+      "method": "chacha20-ietf-poly1305",
+      "password": "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=tls;obfs-host=23b9393.dl.microsoft.lu:108512"
+    },
+    {
+      "tag": "🇨🇳 GLaDOS-TW-05",
+      "type": "shadowsocks",
+      "server": "23b9393.t5.gladns.com",
+      "server_port": 2377,
+      "method": "chacha20-ietf-poly1305",
+      "password": "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=tls;obfs-host=23b9393.dl.microsoft.hu:108512"
+    },
+    {
+      "tag": "🇯🇵 GLaDOS-JP-02",
+      "type": "shadowsocks",
+      "server": "23b9393.j2.gladns.com",
+      "server_port": 2377,
+      "method": "chacha20-ietf-poly1305",
+      "password": "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=tls;obfs-host=23b9393.dl.microsoft.de:108512"
+    },
+    {
+      "tag": "🇯🇵 GLaDOS-JP-01",
+      "type": "shadowsocks",
+      "server": "23b9393.j1.gladns.com",
+      "server_port": 2377,
+      "method": "chacha20-ietf-poly1305",
+      "password": "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=tls;obfs-host=23b9393.dl.microsoft.md:108512"
+    },
+    {
+      "tag": "🏴‍☠️ GLaDOS-B1-08",
+      "type": "shadowsocks",
+      "server": "23b9393.b8.gladns.com",
+      "server_port": 2377,
+      "method": "chacha20-ietf-poly1305",
+      "password": "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=tls;obfs-host=23b9393.dl.microsoft.jp:108512"
+    },
+    {
+      "tag": "🇭🇰 HK-HY2",
+      "type": "hysteria2",
+      "server": "2401:b60:5:7801:aa3b:4fd1:2b6f:fbab",
+      "server_port": 2096,
+      "password": "4376c0b7-06c1-36b7-bd87-1448b3664c18",
+      "tls": {
+        "enabled": true,
+        "server_name": "2401:b60:5:7801:aa3b:4fd1:2b6f:fbab",
+        "insecure": true,
+        "alpn": [
+          "h3"
+        ]
+      }
+    },
+    {
+      "tag": "🇯🇵 GLaDOS-JP-03",
+      "type": "shadowsocks",
+      "server": "23b9393.j3.gladns.com",
+      "server_port": 2377,
+      "method": "chacha20-ietf-poly1305",
+      "password": "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=tls;obfs-host=23b9393.dl.microsoft.fi:108512"
+    },
+    {
+      "tag": "🇺🇸 美国14 | ⬇️ 1.9MB/s|23%|Netflix|Openai|Gemini",
+      "type": "hysteria2",
+      "server": "64.181.207.162",
+      "server_port": 47262,
+      "password": "b72ba5d5-2d5e-45b7-93b5-236d343baa7c",
+      "tls": {
+        "enabled": true,
+        "server_name": "64.181.207.162",
+        "insecure": true
+      }
+    },
+    {
+      "tag": "🇭🇰 GLaDOS-HK-02",
+      "type": "shadowsocks",
+      "server": "23b9393.h2.gladns.com",
+      "server_port": 2377,
+      "method": "chacha20-ietf-poly1305",
+      "password": "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=tls;obfs-host=23b9393.dl.microsoft.hu:108512"
+    },
+    {
+      "tag": "🏴‍☠️ GLaDOS-B1-09",
+      "type": "shadowsocks",
+      "server": "23b9393.b9.gladns.com",
+      "server_port": 2377,
+      "method": "chacha20-ietf-poly1305",
+      "password": "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=tls;obfs-host=23b9393.dl.microsoft.md:108512"
+    },
+    {
+      "tag": "🇭🇰 GLaDOS-HK-01",
+      "type": "shadowsocks",
+      "server": "23b9393.h1.gladns.com",
+      "server_port": 2377,
+      "method": "chacha20-ietf-poly1305",
+      "password": "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=tls;obfs-host=23b9393.dl.nintendo.net:108512"
+    },
+    {
+      "tag": "🇭🇰 香港(IPv6)-Aelen提供",
+      "type": "hysteria2",
+      "server": "yba.aelen.ggff.net",
+      "server_port": 47116,
+      "password": "231nXZsmfn",
+      "tls": {
+        "enabled": true,
+        "server_name": "yba.aelen.ggff.net",
+        "insecure": true
+      }
+    },
+    {
+      "tag": "🇭🇰 HK-Acck hysteria2-Aelen提供",
+      "type": "hysteria2",
+      "server": "45.196.219.107",
+      "server_port": 21942,
+      "password": "c0ace9a5-1266-48a8-b02c-681f21c8d5b0",
+      "tls": {
+        "enabled": true,
+        "server_name": "45.196.219.107",
+        "insecure": true
+      }
+    },
+    {
+      "tag": "🏴‍☠️ GLaDOS-B1-01",
+      "type": "shadowsocks",
+      "server": "23b9393.b1.gladns.com",
+      "server_port": 2377,
+      "method": "chacha20-ietf-poly1305",
+      "password": "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=tls;obfs-host=23b9393.dl.microsoft.ee:108512"
+    },
+    {
+      "tag": "🏴‍☠️ 节点分享@iamdt002",
+      "type": "trojan",
+      "server": "nc.ct.xiaomi-api.xyz",
+      "server_port": 19552,
+      "password": "9b531eaa-ec0e-4c28-81db-9e08a110d4b1",
+      "tls": {
+        "enabled": true,
+        "server_name": "nc.ct.xiaomi-api.xyz",
+        "insecure": true
+      }
+    },
+    {
+      "tag": "🇸🇬 ⚠不能用就更新⚠",
+      "type": "hysteria2",
+      "server": "52.89.248.218",
+      "server_port": 11136,
+      "password": "yDtaQpO8NeVVkInIkaqXlMa7et4",
+      "tls": {
+        "enabled": true,
+        "server_name": "52.89.248.218",
+        "insecure": true
+      }
+    }
+  ],
+  "route": {
+    "rules": [
+      {
+        "action": "sniff"
+      },
+      {
+        "protocol": "dns",
+        "action": "hijack-dns"
+      },
+      {
+        "action": "resolve",
+        "strategy": "ipv4_only"
+      },
+      {
+        "clash_mode": "Global",
+        "outbound": "select"
+      },
+      {
+        "clash_mode": "Direct",
+        "outbound": "direct"
+      },
+      {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "domain_suffix": [
+              "public-operation-hkrpg-sg.hoyoverse.com",
+              "public-operation-hk4e-sg.hoyoverse.com",
+              "public-operation-nap-sg.hoyoverse.com"
+            ]
+          },
+          {
+            "port_range": [
+              "23301:23301",
+              "22101:22102",
+              "20501:20501",
+              "21601:21606"
+            ]
+          }
+        ],
+        "outbound": "hoyo"
+      },
+      {
+        "domain_keyword": [
+          "hoyoverse.com"
+        ],
+        "outbound": "select"
+      },
+      {
+        "rule_set": [
+          "geosite-category-ai-!cn"
+        ],
+        "outbound": "ai"
+      },
+      {
+        "rule_set": [
+          "geosite-googlefcm"
+        ],
+        "outbound": "googlefcm"
+      },
+      {
+        "rule_set": [
+          "geosite-telegram",
+          "geoip-telegram"
+        ],
+        "outbound": "telegram"
+      },
+      {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "ip_is_private": true
+          },
+          {
+            "domain_suffix": [
+              "ushd.xmsl.org",
+              "cf.gtlx.org"
+            ]
+          },
+          {
+            "rule_set": [
+              "geosite-cn",
+              "geoip-cn"
+            ]
+          }
+        ],
+        "outbound": "direct"
+      }
+    ],
+    "rule_set": [
+      {
+        "type": "remote",
+        "tag": "geoip-cn",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/lyc8503/sing-box-rules/rule-set-geoip/geoip-cn.srs",
+        "download_detour": "select"
+      },
+      {
+        "type": "remote",
+        "tag": "geosite-cn",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/lyc8503/sing-box-rules/rule-set-geosite/geosite-cn.srs",
+        "download_detour": "select"
+      },
+      {
+        "type": "remote",
+        "tag": "geosite-category-ai-!cn",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/lyc8503/sing-box-rules/rule-set-geosite/geosite-category-ai-!cn.srs",
+        "download_detour": "select"
+      },
+      {
+        "type": "remote",
+        "tag": "geosite-googlefcm",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/lyc8503/sing-box-rules/rule-set-geosite/geosite-googlefcm.srs",
+        "download_detour": "select"
+      },
+      {
+        "type": "remote",
+        "tag": "geosite-telegram",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/lyc8503/sing-box-rules/rule-set-geosite/geosite-telegram.srs",
+        "download_detour": "select"
+      },
+      {
+        "type": "remote",
+        "tag": "geoip-telegram",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/lyc8503/sing-box-rules/rule-set-geoip/geoip-telegram.srs",
+        "download_detour": "select"
+      },
+      {
+        "type": "remote",
+        "tag": "geosite-category-ads-all",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/lyc8503/sing-box-rules/rule-set-geosite/geosite-category-ads-all.srs",
+        "download_detour": "select"
+      }
+    ],
+    "final": "select",
+    "default_domain_resolver": "dns_direct",
+    "auto_detect_interface": true,
+    "override_android_vpn": true
+  },
+  "experimental": {
+    "cache_file": {
+      "enabled": true
+    },
+    "clash_api": {
+      "external_controller": "127.0.0.1:9090"
+    }
+  }
+}
